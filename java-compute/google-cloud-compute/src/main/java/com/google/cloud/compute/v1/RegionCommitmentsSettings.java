@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -87,6 +88,12 @@ public class RegionCommitmentsSettings extends ClientSettings<RegionCommitmentsS
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertRegionCommitmentRequest, Operation> insertSettings() {
     return ((RegionCommitmentsStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertRegionCommitmentRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((RegionCommitmentsStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -210,6 +217,12 @@ public class RegionCommitmentsSettings extends ClientSettings<RegionCommitmentsS
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertRegionCommitmentRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertRegionCommitmentRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */

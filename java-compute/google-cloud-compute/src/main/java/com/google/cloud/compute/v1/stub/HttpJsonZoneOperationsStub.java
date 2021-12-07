@@ -25,21 +25,27 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonLongRunningClient;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LongRunningClient;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteZoneOperationRequest;
 import com.google.cloud.compute.v1.DeleteZoneOperationResponse;
 import com.google.cloud.compute.v1.GetZoneOperationRequest;
 import com.google.cloud.compute.v1.ListZoneOperationsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.OperationList;
 import com.google.cloud.compute.v1.WaitZoneOperationRequest;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -55,6 +61,8 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
   private static final ApiMethodDescriptor<DeleteZoneOperationRequest, DeleteZoneOperationResponse>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteZoneOperationRequest, DeleteZoneOperationResponse>newBuilder()
@@ -85,6 +93,7 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<DeleteZoneOperationResponse>newBuilder()
                       .setDefaultInstance(DeleteZoneOperationResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -117,7 +126,28 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (GetZoneOperationRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
+          .setPollingRequestFactory(
+              compoundOperationId -> {
+                List<String> idComponents = Arrays.asList(compoundOperationId.split(":"));
+                return GetZoneOperationRequest.newBuilder()
+                    .setOperation(idComponents.get(0))
+                    .setProject(idComponents.get(1))
+                    .setZone(idComponents.get(2))
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<ListZoneOperationsRequest, OperationList>
@@ -168,6 +198,7 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<OperationList>newBuilder()
                       .setDefaultInstance(OperationList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -201,6 +232,7 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -212,6 +244,7 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
   private final UnaryCallable<WaitZoneOperationRequest, Operation> waitCallable;
 
   private final BackgroundResource backgroundResources;
+  private final LongRunningClient longRunningClient;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonZoneOperationsStub create(ZoneOperationsStubSettings settings)
@@ -258,18 +291,22 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
             HttpJsonCallSettings
                 .<DeleteZoneOperationRequest, DeleteZoneOperationResponse>newBuilder()
                 .setMethodDescriptor(deleteMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<GetZoneOperationRequest, Operation> getTransportSettings =
         HttpJsonCallSettings.<GetZoneOperationRequest, Operation>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListZoneOperationsRequest, OperationList> listTransportSettings =
         HttpJsonCallSettings.<ListZoneOperationsRequest, OperationList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<WaitZoneOperationRequest, Operation> waitTransportSettings =
         HttpJsonCallSettings.<WaitZoneOperationRequest, Operation>newBuilder()
             .setMethodDescriptor(waitMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.deleteCallable =
@@ -288,6 +325,11 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
         callableFactory.createUnaryCallable(
             waitTransportSettings, settings.waitSettings(), clientContext);
 
+    this.longRunningClient =
+        new HttpJsonLongRunningClient<GetZoneOperationRequest, Operation>(
+            getCallable,
+            getMethodDescriptor.getOperationSnapshotFactory(),
+            getMethodDescriptor.getPollingRequestFactory());
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -325,6 +367,11 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
   @Override
   public UnaryCallable<WaitZoneOperationRequest, Operation> waitCallable() {
     return waitCallable;
+  }
+
+  @Override
+  public LongRunningClient longRunningClient() {
+    return longRunningClient;
   }
 
   @Override

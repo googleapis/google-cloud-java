@@ -28,10 +28,10 @@ public interface NetworkRoutingConfigOrBuilder
    *
    * <pre>
    * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
+   * Check the RoutingMode enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 475143548;
-   * </code>
+   * <code>optional string routing_mode = 475143548;</code>
    *
    * @return Whether the routingMode field is set.
    */
@@ -41,25 +41,25 @@ public interface NetworkRoutingConfigOrBuilder
    *
    * <pre>
    * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
+   * Check the RoutingMode enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 475143548;
-   * </code>
+   * <code>optional string routing_mode = 475143548;</code>
    *
-   * @return The enum numeric value on the wire for routingMode.
+   * @return The routingMode.
    */
-  int getRoutingModeValue();
+  java.lang.String getRoutingMode();
   /**
    *
    *
    * <pre>
    * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
+   * Check the RoutingMode enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 475143548;
-   * </code>
+   * <code>optional string routing_mode = 475143548;</code>
    *
-   * @return The routingMode.
+   * @return The bytes for routingMode.
    */
-  com.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode getRoutingMode();
+  com.google.protobuf.ByteString getRoutingModeBytes();
 }

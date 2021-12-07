@@ -124,7 +124,7 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest
    * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>optional string instance_template = 309248228;</code>
    *
    * @return Whether the instanceTemplate field is set.
    */
@@ -139,7 +139,7 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest
    * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>optional string instance_template = 309248228;</code>
    *
    * @return The instanceTemplate.
    */
@@ -162,7 +162,7 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest
    * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>optional string instance_template = 309248228;</code>
    *
    * @return The bytes for instanceTemplate.
    */
@@ -539,7 +539,7 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @return Whether the instanceTemplate field is set.
      */
@@ -553,7 +553,7 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @return The instanceTemplate.
      */
@@ -575,7 +575,7 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @return The bytes for instanceTemplate.
      */
@@ -597,7 +597,7 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @param value The instanceTemplate to set.
      * @return This builder for chaining.
@@ -618,7 +618,7 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @return This builder for chaining.
      */
@@ -635,7 +635,7 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @param value The bytes for instanceTemplate to set.
      * @return This builder for chaining.

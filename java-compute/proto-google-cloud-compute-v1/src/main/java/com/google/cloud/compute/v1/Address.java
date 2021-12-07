@@ -22,14 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Use global external addresses for GFE-based external HTTP(S) load balancers in Premium Tier.
- * Use global internal addresses for reserved peering network range.
- * Use regional external addresses for the following resources:
- * - External IP addresses for VM instances - Regional external forwarding rules - Cloud NAT external IP addresses - GFE based LBs in Standard Tier - Network LBs in Premium or Standard Tier - Cloud VPN gateways (both Classic and HA)
- * Use regional internal IP addresses for subnet IP ranges (primary and secondary). This includes:
- * - Internal IP addresses for VM instances - Alias IP ranges of VM instances (/32 only) - Regional internal forwarding rules - Internal TCP/UDP load balancer addresses - Internal HTTP(S) load balancer addresses - Cloud DNS inbound forwarding IP addresses
- * For more information, read reserved IP address.
- * (== resource_for {$api_version}.addresses ==) (== resource_for {$api_version}.globalAddresses ==)
+ * Represents an IP Address resource. Google Compute Engine has two IP Address resources: * [Global (external and internal)](https://cloud.google.com/compute/docs/reference/rest/v1/globalAddresses) * [Regional (external and internal)](https://cloud.google.com/compute/docs/reference/rest/v1/addresses) For more information, see Reserving a static external IP address.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Address}
@@ -46,18 +39,18 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
 
   private Address() {
     address_ = "";
-    addressType_ = 0;
+    addressType_ = "";
     creationTimestamp_ = "";
     description_ = "";
-    ipVersion_ = 0;
+    ipVersion_ = "";
     kind_ = "";
     name_ = "";
     network_ = "";
-    networkTier_ = 0;
-    purpose_ = 0;
+    networkTier_ = "";
+    purpose_ = "";
     region_ = "";
     selfLink_ = "";
-    status_ = 0;
+    status_ = "";
     subnetwork_ = "";
     users_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
@@ -136,11 +129,11 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
               region_ = s;
               break;
             }
-          case 1450082192:
+          case 1450082194:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00004000;
-              status_ = rawValue;
+              status_ = s;
               break;
             }
           case 1862979954:
@@ -150,18 +143,18 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
               network_ = s;
               break;
             }
-          case 2114463016:
+          case 2114463018:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
-              addressType_ = rawValue;
+              addressType_ = s;
               break;
             }
-          case -1935290880:
+          case -1935290878:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000020;
-              ipVersion_ = rawValue;
+              ipVersion_ = s;
               break;
             }
           case -1832345742:
@@ -171,11 +164,11 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
               subnetwork_ = s;
               break;
             }
-          case -1763710736:
+          case -1763710734:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000800;
-              purpose_ = rawValue;
+              purpose_ = s;
               break;
             }
           case -911466526:
@@ -205,11 +198,11 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
               address_ = s;
               break;
             }
-          case -155784552:
+          case -155784550:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000200;
-              networkTier_ = rawValue;
+              networkTier_ = s;
               break;
             }
           default:
@@ -269,9 +262,25 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ADDRESS_TYPE = 0;</code>
      */
     UNDEFINED_ADDRESS_TYPE(0),
-    /** <code>EXTERNAL = 35607499;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A publicly visible external IP address.
+     * </pre>
+     *
+     * <code>EXTERNAL = 35607499;</code>
+     */
     EXTERNAL(35607499),
-    /** <code>INTERNAL = 279295677;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A private network IP address, for use with an Instance or Internal Load Balancer forwarding rule.
+     * </pre>
+     *
+     * <code>INTERNAL = 279295677;</code>
+     */
     INTERNAL(279295677),
     /** <code>UNSPECIFIED_TYPE = 53933922;</code> */
     UNSPECIFIED_TYPE(53933922),
@@ -288,9 +297,25 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ADDRESS_TYPE = 0;</code>
      */
     public static final int UNDEFINED_ADDRESS_TYPE_VALUE = 0;
-    /** <code>EXTERNAL = 35607499;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A publicly visible external IP address.
+     * </pre>
+     *
+     * <code>EXTERNAL = 35607499;</code>
+     */
     public static final int EXTERNAL_VALUE = 35607499;
-    /** <code>INTERNAL = 279295677;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A private network IP address, for use with an Instance or Internal Load Balancer forwarding rule.
+     * </pre>
+     *
+     * <code>INTERNAL = 279295677;</code>
+     */
     public static final int INTERNAL_VALUE = 279295677;
     /** <code>UNSPECIFIED_TYPE = 53933922;</code> */
     public static final int UNSPECIFIED_TYPE_VALUE = 53933922;
@@ -515,8 +540,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-   * If this field is not specified, it is assumed to be PREMIUM.
+   * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Address.NetworkTier}
@@ -532,9 +556,25 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     UNDEFINED_NETWORK_TIER(0),
-    /** <code>PREMIUM = 399530551;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * High quality, Google-grade network tier, support for all networking products.
+     * </pre>
+     *
+     * <code>PREMIUM = 399530551;</code>
+     */
     PREMIUM(399530551),
-    /** <code>STANDARD = 484642493;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Public internet quality, only limited support for other networking products.
+     * </pre>
+     *
+     * <code>STANDARD = 484642493;</code>
+     */
     STANDARD(484642493),
     UNRECOGNIZED(-1),
     ;
@@ -549,9 +589,25 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     public static final int UNDEFINED_NETWORK_TIER_VALUE = 0;
-    /** <code>PREMIUM = 399530551;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * High quality, Google-grade network tier, support for all networking products.
+     * </pre>
+     *
+     * <code>PREMIUM = 399530551;</code>
+     */
     public static final int PREMIUM_VALUE = 399530551;
-    /** <code>STANDARD = 484642493;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Public internet quality, only limited support for other networking products.
+     * </pre>
+     *
+     * <code>STANDARD = 484642493;</code>
+     */
     public static final int STANDARD_VALUE = 484642493;
 
     public final int getNumber() {
@@ -641,12 +697,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The purpose of this resource, which can be one of the following values:
-   * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-   * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-   * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-   * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
+   * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Address.Purpose}
@@ -662,19 +713,75 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PURPOSE = 0;</code>
      */
     UNDEFINED_PURPOSE(0),
-    /** <code>DNS_RESOLVER = 476114556;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * DNS resolver address in the subnetwork.
+     * </pre>
+     *
+     * <code>DNS_RESOLVER = 476114556;</code>
+     */
     DNS_RESOLVER(476114556),
-    /** <code>GCE_ENDPOINT = 230515243;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * VM internal/alias IP, Internal LB service IP, etc.
+     * </pre>
+     *
+     * <code>GCE_ENDPOINT = 230515243;</code>
+     */
     GCE_ENDPOINT(230515243),
-    /** <code>IPSEC_INTERCONNECT = 340437251;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A regional internal IP address range reserved for the VLAN attachment that is used in IPsec-encrypted Cloud Interconnect. This regional internal IP address range must not overlap with any IP address range of subnet/route in the VPC network and its peering networks. After the VLAN attachment is created with the reserved IP address range, when creating a new VPN gateway, its interface IP address is allocated from the associated VLAN attachment’s IP address range.
+     * </pre>
+     *
+     * <code>IPSEC_INTERCONNECT = 340437251;</code>
+     */
     IPSEC_INTERCONNECT(340437251),
-    /** <code>NAT_AUTO = 163666477;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * External IP automatically reserved for Cloud NAT.
+     * </pre>
+     *
+     * <code>NAT_AUTO = 163666477;</code>
+     */
     NAT_AUTO(163666477),
-    /** <code>PRIVATE_SERVICE_CONNECT = 48134724;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A private network IP address that can be used to configure Private Service Connect. This purpose can be specified only for GLOBAL addresses of Type INTERNAL
+     * </pre>
+     *
+     * <code>PRIVATE_SERVICE_CONNECT = 48134724;</code>
+     */
     PRIVATE_SERVICE_CONNECT(48134724),
-    /** <code>SHARED_LOADBALANCER_VIP = 294447572;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A private network IP address that can be shared by multiple Internal Load Balancer forwarding rules.
+     * </pre>
+     *
+     * <code>SHARED_LOADBALANCER_VIP = 294447572;</code>
+     */
     SHARED_LOADBALANCER_VIP(294447572),
-    /** <code>VPC_PEERING = 400800170;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * IP range for peer networks.
+     * </pre>
+     *
+     * <code>VPC_PEERING = 400800170;</code>
+     */
     VPC_PEERING(400800170),
     UNRECOGNIZED(-1),
     ;
@@ -689,19 +796,75 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PURPOSE = 0;</code>
      */
     public static final int UNDEFINED_PURPOSE_VALUE = 0;
-    /** <code>DNS_RESOLVER = 476114556;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * DNS resolver address in the subnetwork.
+     * </pre>
+     *
+     * <code>DNS_RESOLVER = 476114556;</code>
+     */
     public static final int DNS_RESOLVER_VALUE = 476114556;
-    /** <code>GCE_ENDPOINT = 230515243;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * VM internal/alias IP, Internal LB service IP, etc.
+     * </pre>
+     *
+     * <code>GCE_ENDPOINT = 230515243;</code>
+     */
     public static final int GCE_ENDPOINT_VALUE = 230515243;
-    /** <code>IPSEC_INTERCONNECT = 340437251;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A regional internal IP address range reserved for the VLAN attachment that is used in IPsec-encrypted Cloud Interconnect. This regional internal IP address range must not overlap with any IP address range of subnet/route in the VPC network and its peering networks. After the VLAN attachment is created with the reserved IP address range, when creating a new VPN gateway, its interface IP address is allocated from the associated VLAN attachment’s IP address range.
+     * </pre>
+     *
+     * <code>IPSEC_INTERCONNECT = 340437251;</code>
+     */
     public static final int IPSEC_INTERCONNECT_VALUE = 340437251;
-    /** <code>NAT_AUTO = 163666477;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * External IP automatically reserved for Cloud NAT.
+     * </pre>
+     *
+     * <code>NAT_AUTO = 163666477;</code>
+     */
     public static final int NAT_AUTO_VALUE = 163666477;
-    /** <code>PRIVATE_SERVICE_CONNECT = 48134724;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A private network IP address that can be used to configure Private Service Connect. This purpose can be specified only for GLOBAL addresses of Type INTERNAL
+     * </pre>
+     *
+     * <code>PRIVATE_SERVICE_CONNECT = 48134724;</code>
+     */
     public static final int PRIVATE_SERVICE_CONNECT_VALUE = 48134724;
-    /** <code>SHARED_LOADBALANCER_VIP = 294447572;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A private network IP address that can be shared by multiple Internal Load Balancer forwarding rules.
+     * </pre>
+     *
+     * <code>SHARED_LOADBALANCER_VIP = 294447572;</code>
+     */
     public static final int SHARED_LOADBALANCER_VIP_VALUE = 294447572;
-    /** <code>VPC_PEERING = 400800170;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * IP range for peer networks.
+     * </pre>
+     *
+     * <code>VPC_PEERING = 400800170;</code>
+     */
     public static final int VPC_PEERING_VALUE = 400800170;
 
     public final int getNumber() {
@@ -817,11 +980,35 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>IN_USE = 17393485;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Address is being used by another resource and is not available.
+     * </pre>
+     *
+     * <code>IN_USE = 17393485;</code>
+     */
     IN_USE(17393485),
-    /** <code>RESERVED = 432241448;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Address is reserved and available to use.
+     * </pre>
+     *
+     * <code>RESERVED = 432241448;</code>
+     */
     RESERVED(432241448),
-    /** <code>RESERVING = 514587225;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Address is being reserved.
+     * </pre>
+     *
+     * <code>RESERVING = 514587225;</code>
+     */
     RESERVING(514587225),
     UNRECOGNIZED(-1),
     ;
@@ -836,11 +1023,35 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>IN_USE = 17393485;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Address is being used by another resource and is not available.
+     * </pre>
+     *
+     * <code>IN_USE = 17393485;</code>
+     */
     public static final int IN_USE_VALUE = 17393485;
-    /** <code>RESERVED = 432241448;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Address is reserved and available to use.
+     * </pre>
+     *
+     * <code>RESERVED = 432241448;</code>
+     */
     public static final int RESERVED_VALUE = 432241448;
-    /** <code>RESERVING = 514587225;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Address is being reserved.
+     * </pre>
+     *
+     * <code>RESERVING = 514587225;</code>
+     */
     public static final int RESERVING_VALUE = 514587225;
 
     public final int getNumber() {
@@ -938,7 +1149,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * The static IP address represented by this resource.
    * </pre>
    *
-   * <code>string address = 462920692;</code>
+   * <code>optional string address = 462920692;</code>
    *
    * @return Whether the address field is set.
    */
@@ -953,7 +1164,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * The static IP address represented by this resource.
    * </pre>
    *
-   * <code>string address = 462920692;</code>
+   * <code>optional string address = 462920692;</code>
    *
    * @return The address.
    */
@@ -976,7 +1187,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * The static IP address represented by this resource.
    * </pre>
    *
-   * <code>string address = 462920692;</code>
+   * <code>optional string address = 462920692;</code>
    *
    * @return The bytes for address.
    */
@@ -994,15 +1205,16 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ADDRESS_TYPE_FIELD_NUMBER = 264307877;
-  private int addressType_;
+  private volatile java.lang.Object addressType_;
   /**
    *
    *
    * <pre>
    * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+   * Check the AddressType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.AddressType address_type = 264307877;</code>
+   * <code>optional string address_type = 264307877;</code>
    *
    * @return Whether the addressType field is set.
    */
@@ -1015,33 +1227,48 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+   * Check the AddressType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.AddressType address_type = 264307877;</code>
+   * <code>optional string address_type = 264307877;</code>
    *
-   * @return The enum numeric value on the wire for addressType.
+   * @return The addressType.
    */
   @java.lang.Override
-  public int getAddressTypeValue() {
-    return addressType_;
+  public java.lang.String getAddressType() {
+    java.lang.Object ref = addressType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      addressType_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+   * Check the AddressType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.AddressType address_type = 264307877;</code>
+   * <code>optional string address_type = 264307877;</code>
    *
-   * @return The addressType.
+   * @return The bytes for addressType.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.Address.AddressType getAddressType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Address.AddressType result =
-        com.google.cloud.compute.v1.Address.AddressType.valueOf(addressType_);
-    return result == null ? com.google.cloud.compute.v1.Address.AddressType.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getAddressTypeBytes() {
+    java.lang.Object ref = addressType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      addressType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
@@ -1053,7 +1280,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -1068,7 +1295,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -1091,7 +1318,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -1117,7 +1344,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -1132,7 +1359,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -1155,7 +1382,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -1181,7 +1408,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -1196,7 +1423,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -1206,15 +1433,16 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IP_VERSION_FIELD_NUMBER = 294959552;
-  private int ipVersion_;
+  private volatile java.lang.Object ipVersion_;
   /**
    *
    *
    * <pre>
    * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+   * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
+   * <code>optional string ip_version = 294959552;</code>
    *
    * @return Whether the ipVersion field is set.
    */
@@ -1227,33 +1455,48 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+   * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
+   * <code>optional string ip_version = 294959552;</code>
    *
-   * @return The enum numeric value on the wire for ipVersion.
+   * @return The ipVersion.
    */
   @java.lang.Override
-  public int getIpVersionValue() {
-    return ipVersion_;
+  public java.lang.String getIpVersion() {
+    java.lang.Object ref = ipVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipVersion_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+   * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
+   * <code>optional string ip_version = 294959552;</code>
    *
-   * @return The ipVersion.
+   * @return The bytes for ipVersion.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.Address.IpVersion getIpVersion() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Address.IpVersion result =
-        com.google.cloud.compute.v1.Address.IpVersion.valueOf(ipVersion_);
-    return result == null ? com.google.cloud.compute.v1.Address.IpVersion.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getIpVersionBytes() {
+    java.lang.Object ref = ipVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ipVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
@@ -1265,7 +1508,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#address for addresses.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -1280,7 +1523,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#address for addresses.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -1303,7 +1546,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#address for addresses.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -1329,7 +1572,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -1344,7 +1587,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -1367,7 +1610,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -1393,7 +1636,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * The URL of the network in which to reserve the address. This field can only be used with INTERNAL type with the VPC_PEERING purpose.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return Whether the network field is set.
    */
@@ -1408,7 +1651,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * The URL of the network in which to reserve the address. This field can only be used with INTERNAL type with the VPC_PEERING purpose.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The network.
    */
@@ -1431,7 +1674,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * The URL of the network in which to reserve the address. This field can only be used with INTERNAL type with the VPC_PEERING purpose.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The bytes for network.
    */
@@ -1449,16 +1692,16 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NETWORK_TIER_FIELD_NUMBER = 517397843;
-  private int networkTier_;
+  private volatile java.lang.Object networkTier_;
   /**
    *
    *
    * <pre>
-   * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-   * If this field is not specified, it is assumed to be PREMIUM.
+   * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
+   * <code>optional string network_tier = 517397843;</code>
    *
    * @return Whether the networkTier field is set.
    */
@@ -1470,36 +1713,49 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-   * If this field is not specified, it is assumed to be PREMIUM.
+   * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
+   * <code>optional string network_tier = 517397843;</code>
    *
-   * @return The enum numeric value on the wire for networkTier.
+   * @return The networkTier.
    */
   @java.lang.Override
-  public int getNetworkTierValue() {
-    return networkTier_;
+  public java.lang.String getNetworkTier() {
+    java.lang.Object ref = networkTier_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      networkTier_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-   * If this field is not specified, it is assumed to be PREMIUM.
+   * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
+   * <code>optional string network_tier = 517397843;</code>
    *
-   * @return The networkTier.
+   * @return The bytes for networkTier.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.Address.NetworkTier getNetworkTier() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Address.NetworkTier result =
-        com.google.cloud.compute.v1.Address.NetworkTier.valueOf(networkTier_);
-    return result == null ? com.google.cloud.compute.v1.Address.NetworkTier.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getNetworkTierBytes() {
+    java.lang.Object ref = networkTier_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      networkTier_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PREFIX_LENGTH_FIELD_NUMBER = 453565747;
@@ -1511,7 +1767,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * The prefix length if the resource represents an IP range.
    * </pre>
    *
-   * <code>int32 prefix_length = 453565747;</code>
+   * <code>optional int32 prefix_length = 453565747;</code>
    *
    * @return Whether the prefixLength field is set.
    */
@@ -1526,7 +1782,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * The prefix length if the resource represents an IP range.
    * </pre>
    *
-   * <code>int32 prefix_length = 453565747;</code>
+   * <code>optional int32 prefix_length = 453565747;</code>
    *
    * @return The prefixLength.
    */
@@ -1536,20 +1792,16 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PURPOSE_FIELD_NUMBER = 316407070;
-  private int purpose_;
+  private volatile java.lang.Object purpose_;
   /**
    *
    *
    * <pre>
-   * The purpose of this resource, which can be one of the following values:
-   * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-   * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-   * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-   * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
+   * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
+   * Check the Purpose enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+   * <code>optional string purpose = 316407070;</code>
    *
    * @return Whether the purpose field is set.
    */
@@ -1561,44 +1813,49 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The purpose of this resource, which can be one of the following values:
-   * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-   * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-   * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-   * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
+   * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
+   * Check the Purpose enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+   * <code>optional string purpose = 316407070;</code>
    *
-   * @return The enum numeric value on the wire for purpose.
+   * @return The purpose.
    */
   @java.lang.Override
-  public int getPurposeValue() {
-    return purpose_;
+  public java.lang.String getPurpose() {
+    java.lang.Object ref = purpose_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      purpose_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * The purpose of this resource, which can be one of the following values:
-   * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-   * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-   * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-   * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
+   * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
+   * Check the Purpose enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+   * <code>optional string purpose = 316407070;</code>
    *
-   * @return The purpose.
+   * @return The bytes for purpose.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.Address.Purpose getPurpose() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Address.Purpose result =
-        com.google.cloud.compute.v1.Address.Purpose.valueOf(purpose_);
-    return result == null ? com.google.cloud.compute.v1.Address.Purpose.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getPurposeBytes() {
+    java.lang.Object ref = purpose_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      purpose_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
@@ -1607,10 +1864,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
+   * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. *This field is not applicable to global addresses.*
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -1622,10 +1879,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
+   * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. *This field is not applicable to global addresses.*
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -1645,10 +1902,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
+   * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. *This field is not applicable to global addresses.*
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -1674,7 +1931,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -1689,7 +1946,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1712,7 +1969,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1730,15 +1987,16 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    *
    *
    * <pre>
    * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -1751,33 +2009,48 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
   @java.lang.Override
-  public int getStatusValue() {
-    return status_;
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.Address.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Address.Status result =
-        com.google.cloud.compute.v1.Address.Status.valueOf(status_);
-    return result == null ? com.google.cloud.compute.v1.Address.Status.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
@@ -1789,7 +2062,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>optional string subnetwork = 307827694;</code>
    *
    * @return Whether the subnetwork field is set.
    */
@@ -1804,7 +2077,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>optional string subnetwork = 307827694;</code>
    *
    * @return The subnetwork.
    */
@@ -1827,7 +2100,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>optional string subnetwork = 307827694;</code>
    *
    * @return The bytes for subnetwork.
    */
@@ -1938,22 +2211,22 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (((bitField0_ & 0x00004000) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(264307877, addressType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 264307877, addressType_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
-      output.writeEnum(294959552, ipVersion_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 294959552, ipVersion_);
     }
     if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
-      output.writeEnum(316407070, purpose_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 316407070, purpose_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
@@ -1968,7 +2241,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 462920692, address_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      output.writeEnum(517397843, networkTier_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 517397843, networkTier_);
     }
     unknownFields.writeTo(output);
   }
@@ -2004,22 +2277,22 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (((bitField0_ & 0x00004000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(264307877, addressType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(264307877, addressType_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(294959552, ipVersion_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(294959552, ipVersion_);
     }
     if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(316407070, purpose_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(316407070, purpose_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
@@ -2034,7 +2307,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(462920692, address_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(517397843, networkTier_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(517397843, networkTier_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2057,7 +2330,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasAddressType() != other.hasAddressType()) return false;
     if (hasAddressType()) {
-      if (addressType_ != other.addressType_) return false;
+      if (!getAddressType().equals(other.getAddressType())) return false;
     }
     if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
     if (hasCreationTimestamp()) {
@@ -2073,7 +2346,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasIpVersion() != other.hasIpVersion()) return false;
     if (hasIpVersion()) {
-      if (ipVersion_ != other.ipVersion_) return false;
+      if (!getIpVersion().equals(other.getIpVersion())) return false;
     }
     if (hasKind() != other.hasKind()) return false;
     if (hasKind()) {
@@ -2089,7 +2362,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasNetworkTier() != other.hasNetworkTier()) return false;
     if (hasNetworkTier()) {
-      if (networkTier_ != other.networkTier_) return false;
+      if (!getNetworkTier().equals(other.getNetworkTier())) return false;
     }
     if (hasPrefixLength() != other.hasPrefixLength()) return false;
     if (hasPrefixLength()) {
@@ -2097,7 +2370,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasPurpose() != other.hasPurpose()) return false;
     if (hasPurpose()) {
-      if (purpose_ != other.purpose_) return false;
+      if (!getPurpose().equals(other.getPurpose())) return false;
     }
     if (hasRegion() != other.hasRegion()) return false;
     if (hasRegion()) {
@@ -2109,7 +2382,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus().equals(other.getStatus())) return false;
     }
     if (hasSubnetwork() != other.hasSubnetwork()) return false;
     if (hasSubnetwork()) {
@@ -2133,7 +2406,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasAddressType()) {
       hash = (37 * hash) + ADDRESS_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + addressType_;
+      hash = (53 * hash) + getAddressType().hashCode();
     }
     if (hasCreationTimestamp()) {
       hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
@@ -2149,7 +2422,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasIpVersion()) {
       hash = (37 * hash) + IP_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + ipVersion_;
+      hash = (53 * hash) + getIpVersion().hashCode();
     }
     if (hasKind()) {
       hash = (37 * hash) + KIND_FIELD_NUMBER;
@@ -2165,7 +2438,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasNetworkTier()) {
       hash = (37 * hash) + NETWORK_TIER_FIELD_NUMBER;
-      hash = (53 * hash) + networkTier_;
+      hash = (53 * hash) + getNetworkTier().hashCode();
     }
     if (hasPrefixLength()) {
       hash = (37 * hash) + PREFIX_LENGTH_FIELD_NUMBER;
@@ -2173,7 +2446,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasPurpose()) {
       hash = (37 * hash) + PURPOSE_FIELD_NUMBER;
-      hash = (53 * hash) + purpose_;
+      hash = (53 * hash) + getPurpose().hashCode();
     }
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -2185,7 +2458,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     if (hasSubnetwork()) {
       hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
@@ -2298,14 +2571,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Use global external addresses for GFE-based external HTTP(S) load balancers in Premium Tier.
-   * Use global internal addresses for reserved peering network range.
-   * Use regional external addresses for the following resources:
-   * - External IP addresses for VM instances - Regional external forwarding rules - Cloud NAT external IP addresses - GFE based LBs in Standard Tier - Network LBs in Premium or Standard Tier - Cloud VPN gateways (both Classic and HA)
-   * Use regional internal IP addresses for subnet IP ranges (primary and secondary). This includes:
-   * - Internal IP addresses for VM instances - Alias IP ranges of VM instances (/32 only) - Regional internal forwarding rules - Internal TCP/UDP load balancer addresses - Internal HTTP(S) load balancer addresses - Cloud DNS inbound forwarding IP addresses
-   * For more information, read reserved IP address.
-   * (== resource_for {$api_version}.addresses ==) (== resource_for {$api_version}.globalAddresses ==)
+   * Represents an IP Address resource. Google Compute Engine has two IP Address resources: * [Global (external and internal)](https://cloud.google.com/compute/docs/reference/rest/v1/globalAddresses) * [Regional (external and internal)](https://cloud.google.com/compute/docs/reference/rest/v1/addresses) For more information, see Reserving a static external IP address.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Address}
@@ -2348,7 +2614,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       address_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
-      addressType_ = 0;
+      addressType_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -2356,7 +2622,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000008);
       id_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000010);
-      ipVersion_ = 0;
+      ipVersion_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
       kind_ = "";
       bitField0_ = (bitField0_ & ~0x00000040);
@@ -2364,17 +2630,17 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000080);
       network_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
-      networkTier_ = 0;
+      networkTier_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
       prefixLength_ = 0;
       bitField0_ = (bitField0_ & ~0x00000400);
-      purpose_ = 0;
+      purpose_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
       region_ = "";
       bitField0_ = (bitField0_ & ~0x00001000);
       selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00002000);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00004000);
       subnetwork_ = "";
       bitField0_ = (bitField0_ & ~0x00008000);
@@ -2533,7 +2799,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasAddressType()) {
-        setAddressType(other.getAddressType());
+        bitField0_ |= 0x00000002;
+        addressType_ = other.addressType_;
+        onChanged();
       }
       if (other.hasCreationTimestamp()) {
         bitField0_ |= 0x00000004;
@@ -2549,7 +2817,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         setId(other.getId());
       }
       if (other.hasIpVersion()) {
-        setIpVersion(other.getIpVersion());
+        bitField0_ |= 0x00000020;
+        ipVersion_ = other.ipVersion_;
+        onChanged();
       }
       if (other.hasKind()) {
         bitField0_ |= 0x00000040;
@@ -2567,13 +2837,17 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasNetworkTier()) {
-        setNetworkTier(other.getNetworkTier());
+        bitField0_ |= 0x00000200;
+        networkTier_ = other.networkTier_;
+        onChanged();
       }
       if (other.hasPrefixLength()) {
         setPrefixLength(other.getPrefixLength());
       }
       if (other.hasPurpose()) {
-        setPurpose(other.getPurpose());
+        bitField0_ |= 0x00000800;
+        purpose_ = other.purpose_;
+        onChanged();
       }
       if (other.hasRegion()) {
         bitField0_ |= 0x00001000;
@@ -2586,7 +2860,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00004000;
+        status_ = other.status_;
+        onChanged();
       }
       if (other.hasSubnetwork()) {
         bitField0_ |= 0x00008000;
@@ -2642,7 +2918,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The static IP address represented by this resource.
      * </pre>
      *
-     * <code>string address = 462920692;</code>
+     * <code>optional string address = 462920692;</code>
      *
      * @return Whether the address field is set.
      */
@@ -2656,7 +2932,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The static IP address represented by this resource.
      * </pre>
      *
-     * <code>string address = 462920692;</code>
+     * <code>optional string address = 462920692;</code>
      *
      * @return The address.
      */
@@ -2678,7 +2954,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The static IP address represented by this resource.
      * </pre>
      *
-     * <code>string address = 462920692;</code>
+     * <code>optional string address = 462920692;</code>
      *
      * @return The bytes for address.
      */
@@ -2700,7 +2976,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The static IP address represented by this resource.
      * </pre>
      *
-     * <code>string address = 462920692;</code>
+     * <code>optional string address = 462920692;</code>
      *
      * @param value The address to set.
      * @return This builder for chaining.
@@ -2721,7 +2997,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The static IP address represented by this resource.
      * </pre>
      *
-     * <code>string address = 462920692;</code>
+     * <code>optional string address = 462920692;</code>
      *
      * @return This builder for chaining.
      */
@@ -2738,7 +3014,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The static IP address represented by this resource.
      * </pre>
      *
-     * <code>string address = 462920692;</code>
+     * <code>optional string address = 462920692;</code>
      *
      * @param value The bytes for address to set.
      * @return This builder for chaining.
@@ -2754,19 +3030,19 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int addressType_ = 0;
+    private java.lang.Object addressType_ = "";
     /**
      *
      *
      * <pre>
      * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+     * Check the AddressType enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.AddressType address_type = 264307877;</code>
+     * <code>optional string address_type = 264307877;</code>
      *
      * @return Whether the addressType field is set.
      */
-    @java.lang.Override
     public boolean hasAddressType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -2775,29 +3051,64 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+     * Check the AddressType enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.AddressType address_type = 264307877;</code>
+     * <code>optional string address_type = 264307877;</code>
      *
-     * @return The enum numeric value on the wire for addressType.
+     * @return The addressType.
      */
-    @java.lang.Override
-    public int getAddressTypeValue() {
-      return addressType_;
+    public java.lang.String getAddressType() {
+      java.lang.Object ref = addressType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        addressType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+     * Check the AddressType enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.AddressType address_type = 264307877;</code>
+     * <code>optional string address_type = 264307877;</code>
      *
-     * @param value The enum numeric value on the wire for addressType to set.
+     * @return The bytes for addressType.
+     */
+    public com.google.protobuf.ByteString getAddressTypeBytes() {
+      java.lang.Object ref = addressType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        addressType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+     * Check the AddressType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string address_type = 264307877;</code>
+     *
+     * @param value The addressType to set.
      * @return This builder for chaining.
      */
-    public Builder setAddressTypeValue(int value) {
+    public Builder setAddressType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000002;
       addressType_ = value;
       onChanged();
@@ -2808,37 +3119,16 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+     * Check the AddressType enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.AddressType address_type = 264307877;</code>
+     * <code>optional string address_type = 264307877;</code>
      *
-     * @return The addressType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Address.AddressType getAddressType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Address.AddressType result =
-          com.google.cloud.compute.v1.Address.AddressType.valueOf(addressType_);
-      return result == null ? com.google.cloud.compute.v1.Address.AddressType.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.Address.AddressType address_type = 264307877;</code>
-     *
-     * @param value The addressType to set.
      * @return This builder for chaining.
      */
-    public Builder setAddressType(com.google.cloud.compute.v1.Address.AddressType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      addressType_ = value.getNumber();
+    public Builder clearAddressType() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      addressType_ = getDefaultInstance().getAddressType();
       onChanged();
       return this;
     }
@@ -2847,15 +3137,21 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+     * Check the AddressType enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.AddressType address_type = 264307877;</code>
+     * <code>optional string address_type = 264307877;</code>
      *
+     * @param value The bytes for addressType to set.
      * @return This builder for chaining.
      */
-    public Builder clearAddressType() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      addressType_ = 0;
+    public Builder setAddressTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      addressType_ = value;
       onChanged();
       return this;
     }
@@ -2868,7 +3164,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -2882,7 +3178,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -2904,7 +3200,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -2926,7 +3222,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -2947,7 +3243,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -2964,7 +3260,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -2988,7 +3284,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -3002,7 +3298,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -3024,7 +3320,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -3046,7 +3342,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -3067,7 +3363,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -3084,7 +3380,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -3108,7 +3404,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -3123,7 +3419,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -3138,7 +3434,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -3156,7 +3452,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -3167,19 +3463,19 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int ipVersion_ = 0;
+    private java.lang.Object ipVersion_ = "";
     /**
      *
      *
      * <pre>
      * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+     * Check the IpVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
+     * <code>optional string ip_version = 294959552;</code>
      *
      * @return Whether the ipVersion field is set.
      */
-    @java.lang.Override
     public boolean hasIpVersion() {
       return ((bitField0_ & 0x00000020) != 0);
     }
@@ -3188,29 +3484,64 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+     * Check the IpVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
+     * <code>optional string ip_version = 294959552;</code>
      *
-     * @return The enum numeric value on the wire for ipVersion.
+     * @return The ipVersion.
      */
-    @java.lang.Override
-    public int getIpVersionValue() {
-      return ipVersion_;
+    public java.lang.String getIpVersion() {
+      java.lang.Object ref = ipVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+     * Check the IpVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
+     * <code>optional string ip_version = 294959552;</code>
      *
-     * @param value The enum numeric value on the wire for ipVersion to set.
+     * @return The bytes for ipVersion.
+     */
+    public com.google.protobuf.ByteString getIpVersionBytes() {
+      java.lang.Object ref = ipVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ipVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+     * Check the IpVersion enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ip_version = 294959552;</code>
+     *
+     * @param value The ipVersion to set.
      * @return This builder for chaining.
      */
-    public Builder setIpVersionValue(int value) {
+    public Builder setIpVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000020;
       ipVersion_ = value;
       onChanged();
@@ -3221,37 +3552,16 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+     * Check the IpVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
+     * <code>optional string ip_version = 294959552;</code>
      *
-     * @return The ipVersion.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Address.IpVersion getIpVersion() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Address.IpVersion result =
-          com.google.cloud.compute.v1.Address.IpVersion.valueOf(ipVersion_);
-      return result == null ? com.google.cloud.compute.v1.Address.IpVersion.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
-     *
-     * @param value The ipVersion to set.
      * @return This builder for chaining.
      */
-    public Builder setIpVersion(com.google.cloud.compute.v1.Address.IpVersion value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000020;
-      ipVersion_ = value.getNumber();
+    public Builder clearIpVersion() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      ipVersion_ = getDefaultInstance().getIpVersion();
       onChanged();
       return this;
     }
@@ -3260,15 +3570,21 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+     * Check the IpVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
+     * <code>optional string ip_version = 294959552;</code>
      *
+     * @param value The bytes for ipVersion to set.
      * @return This builder for chaining.
      */
-    public Builder clearIpVersion() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      ipVersion_ = 0;
+    public Builder setIpVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000020;
+      ipVersion_ = value;
       onChanged();
       return this;
     }
@@ -3281,7 +3597,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#address for addresses.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -3295,7 +3611,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#address for addresses.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -3317,7 +3633,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#address for addresses.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -3339,7 +3655,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#address for addresses.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -3360,7 +3676,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#address for addresses.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -3377,7 +3693,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#address for addresses.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -3401,7 +3717,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -3415,7 +3731,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -3437,7 +3753,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -3459,7 +3775,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -3480,7 +3796,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -3497,7 +3813,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -3521,7 +3837,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The URL of the network in which to reserve the address. This field can only be used with INTERNAL type with the VPC_PEERING purpose.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @return Whether the network field is set.
      */
@@ -3535,7 +3851,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The URL of the network in which to reserve the address. This field can only be used with INTERNAL type with the VPC_PEERING purpose.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @return The network.
      */
@@ -3557,7 +3873,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The URL of the network in which to reserve the address. This field can only be used with INTERNAL type with the VPC_PEERING purpose.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @return The bytes for network.
      */
@@ -3579,7 +3895,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The URL of the network in which to reserve the address. This field can only be used with INTERNAL type with the VPC_PEERING purpose.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @param value The network to set.
      * @return This builder for chaining.
@@ -3600,7 +3916,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The URL of the network in which to reserve the address. This field can only be used with INTERNAL type with the VPC_PEERING purpose.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @return This builder for chaining.
      */
@@ -3617,7 +3933,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The URL of the network in which to reserve the address. This field can only be used with INTERNAL type with the VPC_PEERING purpose.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @param value The bytes for network to set.
      * @return This builder for chaining.
@@ -3633,20 +3949,19 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int networkTier_ = 0;
+    private java.lang.Object networkTier_ = "";
     /**
      *
      *
      * <pre>
-     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-     * If this field is not specified, it is assumed to be PREMIUM.
+     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
+     * <code>optional string network_tier = 517397843;</code>
      *
      * @return Whether the networkTier field is set.
      */
-    @java.lang.Override
     public boolean hasNetworkTier() {
       return ((bitField0_ & 0x00000200) != 0);
     }
@@ -3654,32 +3969,65 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-     * If this field is not specified, it is assumed to be PREMIUM.
+     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
+     * <code>optional string network_tier = 517397843;</code>
      *
-     * @return The enum numeric value on the wire for networkTier.
+     * @return The networkTier.
      */
-    @java.lang.Override
-    public int getNetworkTierValue() {
-      return networkTier_;
+    public java.lang.String getNetworkTier() {
+      java.lang.Object ref = networkTier_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        networkTier_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-     * If this field is not specified, it is assumed to be PREMIUM.
+     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
+     * <code>optional string network_tier = 517397843;</code>
      *
-     * @param value The enum numeric value on the wire for networkTier to set.
+     * @return The bytes for networkTier.
+     */
+    public com.google.protobuf.ByteString getNetworkTierBytes() {
+      java.lang.Object ref = networkTier_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        networkTier_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
+     * Check the NetworkTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string network_tier = 517397843;</code>
+     *
+     * @param value The networkTier to set.
      * @return This builder for chaining.
      */
-    public Builder setNetworkTierValue(int value) {
+    public Builder setNetworkTier(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000200;
       networkTier_ = value;
       onChanged();
@@ -3689,40 +4037,17 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-     * If this field is not specified, it is assumed to be PREMIUM.
+     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
+     * <code>optional string network_tier = 517397843;</code>
      *
-     * @return The networkTier.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Address.NetworkTier getNetworkTier() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Address.NetworkTier result =
-          com.google.cloud.compute.v1.Address.NetworkTier.valueOf(networkTier_);
-      return result == null ? com.google.cloud.compute.v1.Address.NetworkTier.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-     * If this field is not specified, it is assumed to be PREMIUM.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
-     *
-     * @param value The networkTier to set.
      * @return This builder for chaining.
      */
-    public Builder setNetworkTier(com.google.cloud.compute.v1.Address.NetworkTier value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000200;
-      networkTier_ = value.getNumber();
+    public Builder clearNetworkTier() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      networkTier_ = getDefaultInstance().getNetworkTier();
       onChanged();
       return this;
     }
@@ -3730,17 +4055,22 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-     * If this field is not specified, it is assumed to be PREMIUM.
+     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
+     * <code>optional string network_tier = 517397843;</code>
      *
+     * @param value The bytes for networkTier to set.
      * @return This builder for chaining.
      */
-    public Builder clearNetworkTier() {
-      bitField0_ = (bitField0_ & ~0x00000200);
-      networkTier_ = 0;
+    public Builder setNetworkTierBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000200;
+      networkTier_ = value;
       onChanged();
       return this;
     }
@@ -3753,7 +4083,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The prefix length if the resource represents an IP range.
      * </pre>
      *
-     * <code>int32 prefix_length = 453565747;</code>
+     * <code>optional int32 prefix_length = 453565747;</code>
      *
      * @return Whether the prefixLength field is set.
      */
@@ -3768,7 +4098,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The prefix length if the resource represents an IP range.
      * </pre>
      *
-     * <code>int32 prefix_length = 453565747;</code>
+     * <code>optional int32 prefix_length = 453565747;</code>
      *
      * @return The prefixLength.
      */
@@ -3783,7 +4113,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The prefix length if the resource represents an IP range.
      * </pre>
      *
-     * <code>int32 prefix_length = 453565747;</code>
+     * <code>optional int32 prefix_length = 453565747;</code>
      *
      * @param value The prefixLength to set.
      * @return This builder for chaining.
@@ -3801,7 +4131,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The prefix length if the resource represents an IP range.
      * </pre>
      *
-     * <code>int32 prefix_length = 453565747;</code>
+     * <code>optional int32 prefix_length = 453565747;</code>
      *
      * @return This builder for chaining.
      */
@@ -3812,24 +4142,19 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int purpose_ = 0;
+    private java.lang.Object purpose_ = "";
     /**
      *
      *
      * <pre>
-     * The purpose of this resource, which can be one of the following values:
-     * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-     * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-     * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-     * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
+     * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
+     * Check the Purpose enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+     * <code>optional string purpose = 316407070;</code>
      *
      * @return Whether the purpose field is set.
      */
-    @java.lang.Override
     public boolean hasPurpose() {
       return ((bitField0_ & 0x00000800) != 0);
     }
@@ -3837,40 +4162,65 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The purpose of this resource, which can be one of the following values:
-     * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-     * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-     * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-     * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
+     * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
+     * Check the Purpose enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+     * <code>optional string purpose = 316407070;</code>
      *
-     * @return The enum numeric value on the wire for purpose.
+     * @return The purpose.
      */
-    @java.lang.Override
-    public int getPurposeValue() {
-      return purpose_;
+    public java.lang.String getPurpose() {
+      java.lang.Object ref = purpose_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        purpose_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * The purpose of this resource, which can be one of the following values:
-     * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-     * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-     * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-     * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
+     * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
+     * Check the Purpose enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+     * <code>optional string purpose = 316407070;</code>
      *
-     * @param value The enum numeric value on the wire for purpose to set.
+     * @return The bytes for purpose.
+     */
+    public com.google.protobuf.ByteString getPurposeBytes() {
+      java.lang.Object ref = purpose_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        purpose_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
+     * Check the Purpose enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string purpose = 316407070;</code>
+     *
+     * @param value The purpose to set.
      * @return This builder for chaining.
      */
-    public Builder setPurposeValue(int value) {
+    public Builder setPurpose(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000800;
       purpose_ = value;
       onChanged();
@@ -3880,48 +4230,17 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The purpose of this resource, which can be one of the following values:
-     * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-     * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-     * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-     * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
+     * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
+     * Check the Purpose enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+     * <code>optional string purpose = 316407070;</code>
      *
-     * @return The purpose.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Address.Purpose getPurpose() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Address.Purpose result =
-          com.google.cloud.compute.v1.Address.Purpose.valueOf(purpose_);
-      return result == null ? com.google.cloud.compute.v1.Address.Purpose.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The purpose of this resource, which can be one of the following values:
-     * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-     * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-     * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-     * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
-     *
-     * @param value The purpose to set.
      * @return This builder for chaining.
      */
-    public Builder setPurpose(com.google.cloud.compute.v1.Address.Purpose value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000800;
-      purpose_ = value.getNumber();
+    public Builder clearPurpose() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      purpose_ = getDefaultInstance().getPurpose();
       onChanged();
       return this;
     }
@@ -3929,21 +4248,22 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The purpose of this resource, which can be one of the following values:
-     * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-     * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-     * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-     * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
+     * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
+     * Check the Purpose enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+     * <code>optional string purpose = 316407070;</code>
      *
+     * @param value The bytes for purpose to set.
      * @return This builder for chaining.
      */
-    public Builder clearPurpose() {
-      bitField0_ = (bitField0_ & ~0x00000800);
-      purpose_ = 0;
+    public Builder setPurposeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000800;
+      purpose_ = value;
       onChanged();
       return this;
     }
@@ -3953,10 +4273,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
+     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. *This field is not applicable to global addresses.*
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return Whether the region field is set.
      */
@@ -3967,10 +4287,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
+     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. *This field is not applicable to global addresses.*
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The region.
      */
@@ -3989,10 +4309,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
+     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. *This field is not applicable to global addresses.*
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The bytes for region.
      */
@@ -4011,10 +4331,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
+     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. *This field is not applicable to global addresses.*
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -4032,10 +4352,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
+     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. *This field is not applicable to global addresses.*
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return This builder for chaining.
      */
@@ -4049,10 +4369,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
+     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. *This field is not applicable to global addresses.*
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.
@@ -4076,7 +4396,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -4090,7 +4410,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -4112,7 +4432,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -4134,7 +4454,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -4155,7 +4475,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -4172,7 +4492,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -4188,19 +4508,19 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      *
      *
      * <pre>
      * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
      * @return Whether the status field is set.
      */
-    @java.lang.Override
     public boolean hasStatus() {
       return ((bitField0_ & 0x00004000) != 0);
     }
@@ -4209,29 +4529,64 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The enum numeric value on the wire for status.
+     * @return The status.
      */
-    @java.lang.Override
-    public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @param value The enum numeric value on the wire for status to set.
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     *
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
+    public Builder setStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00004000;
       status_ = value;
       onChanged();
@@ -4242,37 +4597,16 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Address.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Address.Status result =
-          com.google.cloud.compute.v1.Address.Status.valueOf(status_);
-      return result == null ? com.google.cloud.compute.v1.Address.Status.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.Address.Status status = 181260274;</code>
-     *
-     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloud.compute.v1.Address.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00004000;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
@@ -4281,15 +4615,21 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00004000);
-      status_ = 0;
+    public Builder setStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00004000;
+      status_ = value;
       onChanged();
       return this;
     }
@@ -4302,7 +4642,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>optional string subnetwork = 307827694;</code>
      *
      * @return Whether the subnetwork field is set.
      */
@@ -4316,7 +4656,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>optional string subnetwork = 307827694;</code>
      *
      * @return The subnetwork.
      */
@@ -4338,7 +4678,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>optional string subnetwork = 307827694;</code>
      *
      * @return The bytes for subnetwork.
      */
@@ -4360,7 +4700,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>optional string subnetwork = 307827694;</code>
      *
      * @param value The subnetwork to set.
      * @return This builder for chaining.
@@ -4381,7 +4721,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>optional string subnetwork = 307827694;</code>
      *
      * @return This builder for chaining.
      */
@@ -4398,7 +4738,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>optional string subnetwork = 307827694;</code>
      *
      * @param value The bytes for subnetwork to set.
      * @return This builder for chaining.

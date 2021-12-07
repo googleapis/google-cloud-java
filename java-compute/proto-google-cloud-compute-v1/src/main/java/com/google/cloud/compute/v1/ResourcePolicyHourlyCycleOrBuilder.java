@@ -30,7 +30,7 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
    * </pre>
    *
-   * <code>string duration = 155471252;</code>
+   * <code>optional string duration = 155471252;</code>
    *
    * @return Whether the duration field is set.
    */
@@ -42,7 +42,7 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
    * </pre>
    *
-   * <code>string duration = 155471252;</code>
+   * <code>optional string duration = 155471252;</code>
    *
    * @return The duration.
    */
@@ -54,7 +54,7 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
    * </pre>
    *
-   * <code>string duration = 155471252;</code>
+   * <code>optional string duration = 155471252;</code>
    *
    * @return The bytes for duration.
    */
@@ -67,7 +67,7 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    * Defines a schedule with units measured in hours. The value determines how many hours pass between the start of each cycle.
    * </pre>
    *
-   * <code>int32 hours_in_cycle = 526763132;</code>
+   * <code>optional int32 hours_in_cycle = 526763132;</code>
    *
    * @return Whether the hoursInCycle field is set.
    */
@@ -79,7 +79,7 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    * Defines a schedule with units measured in hours. The value determines how many hours pass between the start of each cycle.
    * </pre>
    *
-   * <code>int32 hours_in_cycle = 526763132;</code>
+   * <code>optional int32 hours_in_cycle = 526763132;</code>
    *
    * @return The hoursInCycle.
    */
@@ -92,7 +92,7 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return Whether the startTime field is set.
    */
@@ -104,7 +104,7 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return The startTime.
    */
@@ -116,7 +116,7 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return The bytes for startTime.
    */

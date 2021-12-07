@@ -133,10 +133,10 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    * <pre>
    * [Output only] Status of the managed certificate resource.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status status = 181260274;
-   * </code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -146,25 +146,25 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    * <pre>
    * [Output only] Status of the managed certificate resource.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status status = 181260274;
-   * </code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    *
    *
    * <pre>
    * [Output only] Status of the managed certificate resource.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status status = 181260274;
-   * </code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status getStatus();
+  com.google.protobuf.ByteString getStatusBytes();
 }

@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.SslCertificatesClient.AggregatedListPa
 import static com.google.cloud.compute.v1.SslCertificatesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListSslCertificatesRequest;
 import com.google.cloud.compute.v1.DeleteSslCertificateRequest;
@@ -51,12 +52,22 @@ public abstract class SslCertificatesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<DeleteSslCertificateRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteSslCertificateRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetSslCertificateRequest, SslCertificate> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertSslCertificateRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertSslCertificateRequest, Operation> insertCallable() {

@@ -26,6 +26,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -49,16 +50,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * TargetTcpProxiesSettings.Builder targetTcpProxiesSettingsBuilder =
  *     TargetTcpProxiesSettings.newBuilder();
  * targetTcpProxiesSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         targetTcpProxiesSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -74,6 +75,12 @@ public class TargetTcpProxiesSettings extends ClientSettings<TargetTcpProxiesSet
     return ((TargetTcpProxiesStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteTargetTcpProxyRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((TargetTcpProxiesStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetTargetTcpProxyRequest, TargetTcpProxy> getSettings() {
     return ((TargetTcpProxiesStubSettings) getStubSettings()).getSettings();
@@ -82,6 +89,12 @@ public class TargetTcpProxiesSettings extends ClientSettings<TargetTcpProxiesSet
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertTargetTcpProxyRequest, Operation> insertSettings() {
     return ((TargetTcpProxiesStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertTargetTcpProxyRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((TargetTcpProxiesStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -96,10 +109,22 @@ public class TargetTcpProxiesSettings extends ClientSettings<TargetTcpProxiesSet
     return ((TargetTcpProxiesStubSettings) getStubSettings()).setBackendServiceSettings();
   }
 
+  /** Returns the object with the settings used for calls to setBackendService. */
+  public OperationCallSettings<SetBackendServiceTargetTcpProxyRequest, Operation, Operation>
+      setBackendServiceOperationSettings() {
+    return ((TargetTcpProxiesStubSettings) getStubSettings()).setBackendServiceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setProxyHeader. */
   public UnaryCallSettings<SetProxyHeaderTargetTcpProxyRequest, Operation>
       setProxyHeaderSettings() {
     return ((TargetTcpProxiesStubSettings) getStubSettings()).setProxyHeaderSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setProxyHeader. */
+  public OperationCallSettings<SetProxyHeaderTargetTcpProxyRequest, Operation, Operation>
+      setProxyHeaderOperationSettings() {
+    return ((TargetTcpProxiesStubSettings) getStubSettings()).setProxyHeaderOperationSettings();
   }
 
   public static final TargetTcpProxiesSettings create(TargetTcpProxiesStubSettings stub)
@@ -205,6 +230,12 @@ public class TargetTcpProxiesSettings extends ClientSettings<TargetTcpProxiesSet
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteTargetTcpProxyRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetTargetTcpProxyRequest, TargetTcpProxy> getSettings() {
       return getStubSettingsBuilder().getSettings();
@@ -213,6 +244,12 @@ public class TargetTcpProxiesSettings extends ClientSettings<TargetTcpProxiesSet
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertTargetTcpProxyRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertTargetTcpProxyRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -228,10 +265,23 @@ public class TargetTcpProxiesSettings extends ClientSettings<TargetTcpProxiesSet
       return getStubSettingsBuilder().setBackendServiceSettings();
     }
 
+    /** Returns the builder for the settings used for calls to setBackendService. */
+    public OperationCallSettings.Builder<
+            SetBackendServiceTargetTcpProxyRequest, Operation, Operation>
+        setBackendServiceOperationSettings() {
+      return getStubSettingsBuilder().setBackendServiceOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setProxyHeader. */
     public UnaryCallSettings.Builder<SetProxyHeaderTargetTcpProxyRequest, Operation>
         setProxyHeaderSettings() {
       return getStubSettingsBuilder().setProxyHeaderSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setProxyHeader. */
+    public OperationCallSettings.Builder<SetProxyHeaderTargetTcpProxyRequest, Operation, Operation>
+        setProxyHeaderOperationSettings() {
+      return getStubSettingsBuilder().setProxyHeaderOperationSettings();
     }
 
     @Override

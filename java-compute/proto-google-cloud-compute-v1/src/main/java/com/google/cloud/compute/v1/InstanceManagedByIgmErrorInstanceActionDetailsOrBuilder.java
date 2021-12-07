@@ -28,11 +28,10 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    * <pre>
    * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+   * Check the Action enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action action = 187661878;
-   * </code>
+   * <code>optional string action = 187661878;</code>
    *
    * @return Whether the action field is set.
    */
@@ -42,29 +41,27 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    * <pre>
    * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+   * Check the Action enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action action = 187661878;
-   * </code>
+   * <code>optional string action = 187661878;</code>
    *
-   * @return The enum numeric value on the wire for action.
+   * @return The action.
    */
-  int getActionValue();
+  java.lang.String getAction();
   /**
    *
    *
    * <pre>
    * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+   * Check the Action enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action action = 187661878;
-   * </code>
+   * <code>optional string action = 187661878;</code>
    *
-   * @return The action.
+   * @return The bytes for action.
    */
-  com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action getAction();
+  com.google.protobuf.ByteString getActionBytes();
 
   /**
    *
@@ -73,7 +70,7 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    * [Output Only] The URL of the instance. The URL can be set even if the instance has not yet been created.
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return Whether the instance field is set.
    */
@@ -85,7 +82,7 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    * [Output Only] The URL of the instance. The URL can be set even if the instance has not yet been created.
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return The instance.
    */
@@ -97,7 +94,7 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    * [Output Only] The URL of the instance. The URL can be set even if the instance has not yet been created.
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return The bytes for instance.
    */
@@ -110,7 +107,7 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
+   * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
    *
    * @return Whether the version field is set.
    */
@@ -122,7 +119,7 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
+   * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
    *
    * @return The version.
    */
@@ -134,7 +131,7 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
+   * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
    */
   com.google.cloud.compute.v1.ManagedInstanceVersionOrBuilder getVersionOrBuilder();
 }

@@ -25,20 +25,24 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeletePublicAdvertisedPrefixeRequest;
 import com.google.cloud.compute.v1.GetPublicAdvertisedPrefixeRequest;
 import com.google.cloud.compute.v1.InsertPublicAdvertisedPrefixeRequest;
 import com.google.cloud.compute.v1.ListPublicAdvertisedPrefixesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchPublicAdvertisedPrefixeRequest;
 import com.google.cloud.compute.v1.PublicAdvertisedPrefix;
 import com.google.cloud.compute.v1.PublicAdvertisedPrefixList;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -56,6 +60,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefixesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<DeletePublicAdvertisedPrefixeRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeletePublicAdvertisedPrefixeRequest, Operation>newBuilder()
@@ -91,7 +98,20 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeletePublicAdvertisedPrefixeRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -128,6 +148,7 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
               .setResponseParser(
                   ProtoMessageResponseParser.<PublicAdvertisedPrefix>newBuilder()
                       .setDefaultInstance(PublicAdvertisedPrefix.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -167,7 +188,20 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertPublicAdvertisedPrefixeRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -219,6 +253,7 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
               .setResponseParser(
                   ProtoMessageResponseParser.<PublicAdvertisedPrefixList>newBuilder()
                       .setDefaultInstance(PublicAdvertisedPrefixList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -262,20 +297,40 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchPublicAdvertisedPrefixeRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<DeletePublicAdvertisedPrefixeRequest, Operation> deleteCallable;
+  private final OperationCallable<DeletePublicAdvertisedPrefixeRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetPublicAdvertisedPrefixeRequest, PublicAdvertisedPrefix>
       getCallable;
   private final UnaryCallable<InsertPublicAdvertisedPrefixeRequest, Operation> insertCallable;
+  private final OperationCallable<InsertPublicAdvertisedPrefixeRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListPublicAdvertisedPrefixesRequest, PublicAdvertisedPrefixList>
       listCallable;
   private final UnaryCallable<ListPublicAdvertisedPrefixesRequest, ListPagedResponse>
       listPagedCallable;
   private final UnaryCallable<PatchPublicAdvertisedPrefixeRequest, Operation> patchCallable;
+  private final OperationCallable<PatchPublicAdvertisedPrefixeRequest, Operation, Operation>
+      patchOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonPublicAdvertisedPrefixesStub create(
@@ -317,41 +372,60 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<DeletePublicAdvertisedPrefixeRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeletePublicAdvertisedPrefixeRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetPublicAdvertisedPrefixeRequest, PublicAdvertisedPrefix>
         getTransportSettings =
             HttpJsonCallSettings
                 .<GetPublicAdvertisedPrefixeRequest, PublicAdvertisedPrefix>newBuilder()
                 .setMethodDescriptor(getMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<InsertPublicAdvertisedPrefixeRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertPublicAdvertisedPrefixeRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListPublicAdvertisedPrefixesRequest, PublicAdvertisedPrefixList>
         listTransportSettings =
             HttpJsonCallSettings
                 .<ListPublicAdvertisedPrefixesRequest, PublicAdvertisedPrefixList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<PatchPublicAdvertisedPrefixeRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchPublicAdvertisedPrefixeRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -361,6 +435,12 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -383,6 +463,12 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
   }
 
   @Override
+  public OperationCallable<DeletePublicAdvertisedPrefixeRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetPublicAdvertisedPrefixeRequest, PublicAdvertisedPrefix> getCallable() {
     return getCallable;
   }
@@ -390,6 +476,12 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
   @Override
   public UnaryCallable<InsertPublicAdvertisedPrefixeRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertPublicAdvertisedPrefixeRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -406,6 +498,12 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
   @Override
   public UnaryCallable<PatchPublicAdvertisedPrefixeRequest, Operation> patchCallable() {
     return patchCallable;
+  }
+
+  @Override
+  public OperationCallable<PatchPublicAdvertisedPrefixeRequest, Operation, Operation>
+      patchOperationCallable() {
+    return patchOperationCallable;
   }
 
   @Override

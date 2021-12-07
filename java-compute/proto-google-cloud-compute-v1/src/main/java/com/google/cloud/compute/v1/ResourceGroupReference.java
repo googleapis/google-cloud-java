@@ -121,7 +121,7 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
    * A URI referencing one of the instance groups or network endpoint groups listed in the backend service.
    * </pre>
    *
-   * <code>string group = 98629247;</code>
+   * <code>optional string group = 98629247;</code>
    *
    * @return Whether the group field is set.
    */
@@ -136,7 +136,7 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
    * A URI referencing one of the instance groups or network endpoint groups listed in the backend service.
    * </pre>
    *
-   * <code>string group = 98629247;</code>
+   * <code>optional string group = 98629247;</code>
    *
    * @return The group.
    */
@@ -159,7 +159,7 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
    * A URI referencing one of the instance groups or network endpoint groups listed in the backend service.
    * </pre>
    *
-   * <code>string group = 98629247;</code>
+   * <code>optional string group = 98629247;</code>
    *
    * @return The bytes for group.
    */
@@ -515,7 +515,7 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
      * A URI referencing one of the instance groups or network endpoint groups listed in the backend service.
      * </pre>
      *
-     * <code>string group = 98629247;</code>
+     * <code>optional string group = 98629247;</code>
      *
      * @return Whether the group field is set.
      */
@@ -529,7 +529,7 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
      * A URI referencing one of the instance groups or network endpoint groups listed in the backend service.
      * </pre>
      *
-     * <code>string group = 98629247;</code>
+     * <code>optional string group = 98629247;</code>
      *
      * @return The group.
      */
@@ -551,7 +551,7 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
      * A URI referencing one of the instance groups or network endpoint groups listed in the backend service.
      * </pre>
      *
-     * <code>string group = 98629247;</code>
+     * <code>optional string group = 98629247;</code>
      *
      * @return The bytes for group.
      */
@@ -573,7 +573,7 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
      * A URI referencing one of the instance groups or network endpoint groups listed in the backend service.
      * </pre>
      *
-     * <code>string group = 98629247;</code>
+     * <code>optional string group = 98629247;</code>
      *
      * @param value The group to set.
      * @return This builder for chaining.
@@ -594,7 +594,7 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
      * A URI referencing one of the instance groups or network endpoint groups listed in the backend service.
      * </pre>
      *
-     * <code>string group = 98629247;</code>
+     * <code>optional string group = 98629247;</code>
      *
      * @return This builder for chaining.
      */
@@ -611,7 +611,7 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
      * A URI referencing one of the instance groups or network endpoint groups listed in the backend service.
      * </pre>
      *
-     * <code>string group = 98629247;</code>
+     * <code>optional string group = 98629247;</code>
      *
      * @param value The bytes for group to set.
      * @return This builder for chaining.

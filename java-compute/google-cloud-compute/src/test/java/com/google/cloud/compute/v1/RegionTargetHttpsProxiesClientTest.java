@@ -27,12 +27,14 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonRegionTargetHttpsProxiesStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -86,7 +88,7 @@ public class RegionTargetHttpsProxiesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -97,6 +99,7 @@ public class RegionTargetHttpsProxiesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -110,7 +113,7 @@ public class RegionTargetHttpsProxiesClientTest {
     String region = "region-934795532";
     String targetHttpsProxy = "targetHttpsProxy833943732";
 
-    Operation actualResponse = client.delete(project, region, targetHttpsProxy);
+    Operation actualResponse = client.deleteAsync(project, region, targetHttpsProxy).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -139,10 +142,9 @@ public class RegionTargetHttpsProxiesClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       String targetHttpsProxy = "targetHttpsProxy833943732";
-      client.delete(project, region, targetHttpsProxy);
+      client.deleteAsync(project, region, targetHttpsProxy).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -158,6 +160,7 @@ public class RegionTargetHttpsProxiesClientTest {
             .setKind("kind3292052")
             .setName("name3373707")
             .setProxyBind(true)
+            .setQuicOverride("quicOverride502760490")
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setServerTlsPolicy("serverTlsPolicy-1897015798")
@@ -217,7 +220,7 @@ public class RegionTargetHttpsProxiesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -228,6 +231,7 @@ public class RegionTargetHttpsProxiesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -241,7 +245,7 @@ public class RegionTargetHttpsProxiesClientTest {
     String region = "region-934795532";
     TargetHttpsProxy targetHttpsProxyResource = TargetHttpsProxy.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, region, targetHttpsProxyResource);
+    Operation actualResponse = client.insertAsync(project, region, targetHttpsProxyResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -270,10 +274,9 @@ public class RegionTargetHttpsProxiesClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       TargetHttpsProxy targetHttpsProxyResource = TargetHttpsProxy.newBuilder().build();
-      client.insert(project, region, targetHttpsProxyResource);
+      client.insertAsync(project, region, targetHttpsProxyResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -339,7 +342,7 @@ public class RegionTargetHttpsProxiesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -350,6 +353,7 @@ public class RegionTargetHttpsProxiesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -367,11 +371,13 @@ public class RegionTargetHttpsProxiesClientTest {
             RegionTargetHttpsProxiesSetSslCertificatesRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.setSslCertificates(
-            project,
-            region,
-            targetHttpsProxy,
-            regionTargetHttpsProxiesSetSslCertificatesRequestResource);
+        client
+            .setSslCertificatesAsync(
+                project,
+                region,
+                targetHttpsProxy,
+                regionTargetHttpsProxiesSetSslCertificatesRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -403,14 +409,15 @@ public class RegionTargetHttpsProxiesClientTest {
       RegionTargetHttpsProxiesSetSslCertificatesRequest
           regionTargetHttpsProxiesSetSslCertificatesRequestResource =
               RegionTargetHttpsProxiesSetSslCertificatesRequest.newBuilder().build();
-      client.setSslCertificates(
-          project,
-          region,
-          targetHttpsProxy,
-          regionTargetHttpsProxiesSetSslCertificatesRequestResource);
+      client
+          .setSslCertificatesAsync(
+              project,
+              region,
+              targetHttpsProxy,
+              regionTargetHttpsProxiesSetSslCertificatesRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -424,7 +431,7 @@ public class RegionTargetHttpsProxiesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -435,6 +442,7 @@ public class RegionTargetHttpsProxiesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -450,7 +458,7 @@ public class RegionTargetHttpsProxiesClientTest {
     UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
 
     Operation actualResponse =
-        client.setUrlMap(project, region, targetHttpsProxy, urlMapReferenceResource);
+        client.setUrlMapAsync(project, region, targetHttpsProxy, urlMapReferenceResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -480,10 +488,9 @@ public class RegionTargetHttpsProxiesClientTest {
       String region = "region-934795532";
       String targetHttpsProxy = "targetHttpsProxy833943732";
       UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
-      client.setUrlMap(project, region, targetHttpsProxy, urlMapReferenceResource);
+      client.setUrlMapAsync(project, region, targetHttpsProxy, urlMapReferenceResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 }

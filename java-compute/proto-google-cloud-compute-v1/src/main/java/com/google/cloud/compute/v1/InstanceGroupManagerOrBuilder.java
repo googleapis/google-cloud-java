@@ -96,7 +96,7 @@ public interface InstanceGroupManagerOrBuilder
    * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
    * </pre>
    *
-   * <code>string base_instance_name = 389106439;</code>
+   * <code>optional string base_instance_name = 389106439;</code>
    *
    * @return Whether the baseInstanceName field is set.
    */
@@ -108,7 +108,7 @@ public interface InstanceGroupManagerOrBuilder
    * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
    * </pre>
    *
-   * <code>string base_instance_name = 389106439;</code>
+   * <code>optional string base_instance_name = 389106439;</code>
    *
    * @return The baseInstanceName.
    */
@@ -120,7 +120,7 @@ public interface InstanceGroupManagerOrBuilder
    * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
    * </pre>
    *
-   * <code>string base_instance_name = 389106439;</code>
+   * <code>optional string base_instance_name = 389106439;</code>
    *
    * @return The bytes for baseInstanceName.
    */
@@ -133,7 +133,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -145,7 +145,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -157,7 +157,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -170,7 +170,8 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The list of instance actions and the number of instances in this managed instance group that are scheduled for each of those actions.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
    * </code>
    *
    * @return Whether the currentActions field is set.
@@ -183,7 +184,8 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The list of instance actions and the number of instances in this managed instance group that are scheduled for each of those actions.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
    * </code>
    *
    * @return The currentActions.
@@ -196,7 +198,8 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The list of instance actions and the number of instances in this managed instance group that are scheduled for each of those actions.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagerActionsSummaryOrBuilder
@@ -206,10 +209,10 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -218,10 +221,10 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -230,10 +233,10 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -246,7 +249,8 @@ public interface InstanceGroupManagerOrBuilder
    * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+   * <code>optional .google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;
+   * </code>
    *
    * @return Whether the distributionPolicy field is set.
    */
@@ -258,7 +262,8 @@ public interface InstanceGroupManagerOrBuilder
    * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+   * <code>optional .google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;
+   * </code>
    *
    * @return The distributionPolicy.
    */
@@ -270,7 +275,8 @@ public interface InstanceGroupManagerOrBuilder
    * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+   * <code>optional .google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;
+   * </code>
    */
   com.google.cloud.compute.v1.DistributionPolicyOrBuilder getDistributionPolicyOrBuilder();
 
@@ -278,11 +284,10 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return Whether the fingerprint field is set.
    */
@@ -291,11 +296,10 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The fingerprint.
    */
@@ -304,11 +308,10 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The bytes for fingerprint.
    */
@@ -321,7 +324,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] A unique identifier for this resource type. The server generates this identifier.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -333,7 +336,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] A unique identifier for this resource type. The server generates this identifier.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -346,7 +349,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The URL of the Instance Group resource.
    * </pre>
    *
-   * <code>string instance_group = 81095253;</code>
+   * <code>optional string instance_group = 81095253;</code>
    *
    * @return Whether the instanceGroup field is set.
    */
@@ -358,7 +361,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The URL of the Instance Group resource.
    * </pre>
    *
-   * <code>string instance_group = 81095253;</code>
+   * <code>optional string instance_group = 81095253;</code>
    *
    * @return The instanceGroup.
    */
@@ -370,7 +373,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The URL of the Instance Group resource.
    * </pre>
    *
-   * <code>string instance_group = 81095253;</code>
+   * <code>optional string instance_group = 81095253;</code>
    *
    * @return The bytes for instanceGroup.
    */
@@ -383,7 +386,7 @@ public interface InstanceGroupManagerOrBuilder
    * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>optional string instance_template = 309248228;</code>
    *
    * @return Whether the instanceTemplate field is set.
    */
@@ -395,7 +398,7 @@ public interface InstanceGroupManagerOrBuilder
    * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>optional string instance_template = 309248228;</code>
    *
    * @return The instanceTemplate.
    */
@@ -407,7 +410,7 @@ public interface InstanceGroupManagerOrBuilder
    * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>optional string instance_template = 309248228;</code>
    *
    * @return The bytes for instanceTemplate.
    */
@@ -420,7 +423,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -432,7 +435,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -444,7 +447,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -457,7 +460,7 @@ public interface InstanceGroupManagerOrBuilder
    * The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -469,7 +472,7 @@ public interface InstanceGroupManagerOrBuilder
    * The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -481,7 +484,7 @@ public interface InstanceGroupManagerOrBuilder
    * The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -546,7 +549,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The URL of the region where the managed instance group resides (for regional resources).
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -558,7 +561,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The URL of the region where the managed instance group resides (for regional resources).
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -570,7 +573,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The URL of the region where the managed instance group resides (for regional resources).
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -583,7 +586,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The URL for this managed instance group. The server defines this URL.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -595,7 +598,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The URL for this managed instance group. The server defines this URL.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -607,7 +610,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The URL for this managed instance group. The server defines this URL.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -620,7 +623,7 @@ public interface InstanceGroupManagerOrBuilder
    * Stateful configuration for this Instanced Group Manager
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
+   * <code>optional .google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
    *
    * @return Whether the statefulPolicy field is set.
    */
@@ -632,7 +635,7 @@ public interface InstanceGroupManagerOrBuilder
    * Stateful configuration for this Instanced Group Manager
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
+   * <code>optional .google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
    *
    * @return The statefulPolicy.
    */
@@ -644,7 +647,7 @@ public interface InstanceGroupManagerOrBuilder
    * Stateful configuration for this Instanced Group Manager
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
+   * <code>optional .google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
    */
   com.google.cloud.compute.v1.StatefulPolicyOrBuilder getStatefulPolicyOrBuilder();
 
@@ -655,7 +658,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The status of this managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
+   * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -667,7 +670,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The status of this managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
+   * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
    *
    * @return The status.
    */
@@ -679,7 +682,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The status of this managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
+   * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagerStatusOrBuilder getStatusOrBuilder();
 
@@ -741,7 +744,7 @@ public interface InstanceGroupManagerOrBuilder
    * The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
    * </pre>
    *
-   * <code>int32 target_size = 62880239;</code>
+   * <code>optional int32 target_size = 62880239;</code>
    *
    * @return Whether the targetSize field is set.
    */
@@ -753,7 +756,7 @@ public interface InstanceGroupManagerOrBuilder
    * The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
    * </pre>
    *
-   * <code>int32 target_size = 62880239;</code>
+   * <code>optional int32 target_size = 62880239;</code>
    *
    * @return The targetSize.
    */
@@ -766,7 +769,8 @@ public interface InstanceGroupManagerOrBuilder
    * The update policy for this managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
    * </code>
    *
    * @return Whether the updatePolicy field is set.
@@ -779,7 +783,8 @@ public interface InstanceGroupManagerOrBuilder
    * The update policy for this managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
    * </code>
    *
    * @return The updatePolicy.
@@ -792,7 +797,8 @@ public interface InstanceGroupManagerOrBuilder
    * The update policy for this managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicyOrBuilder getUpdatePolicyOrBuilder();
@@ -801,8 +807,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance templates used by this managed instance group to create instances.
-   * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+   * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -813,8 +818,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance templates used by this managed instance group to create instances.
-   * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+   * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -825,8 +829,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance templates used by this managed instance group to create instances.
-   * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+   * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -837,8 +840,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance templates used by this managed instance group to create instances.
-   * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+   * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -850,8 +852,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance templates used by this managed instance group to create instances.
-   * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+   * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -866,7 +867,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return Whether the zone field is set.
    */
@@ -878,7 +879,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The zone.
    */
@@ -890,7 +891,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The bytes for zone.
    */

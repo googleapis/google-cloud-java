@@ -84,10 +84,46 @@
   </difference>
   <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
   <!-- Originally caused by https://github.com/googleapis/java-compute/pull/477 -->
+
+  <!-- changes parameter type in methods starting with add* and set* to String -->
   <difference>
     <differenceType>7005</differenceType>
     <className>com/google/cloud/compute/v1/**</className>
-    <method>*</method>
-    <to>*</to>
+    <method>* *(*)</method>
+    <to>* *(*java.lang.String*)</to>
+  </difference>
+  <!-- changes return type in methods starting with get* to String and ProtocolStringList-->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/compute/v1/**</className>
+    <method>* get*(*)</method>
+    <to>java.lang.String</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/compute/v1/**</className>
+    <method>* get*(*)</method>
+    <to>com.google.protobuf.ProtocolStringList</to>
+  </difference>
+  <!-- Removes method -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/compute/v1/**</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/compute/v1/**</className>
+    <method>* set*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/compute/v1/**</className>
+    <method>* has*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/compute/v1/**</className>
+    <method>* add*(*)</method>
   </difference>
 </differences>

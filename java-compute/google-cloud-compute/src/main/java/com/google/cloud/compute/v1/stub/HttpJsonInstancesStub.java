@@ -27,11 +27,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddAccessConfigInstanceRequest;
 import com.google.cloud.compute.v1.AddResourcePoliciesInstanceRequest;
@@ -58,10 +60,13 @@ import com.google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponse;
 import com.google.cloud.compute.v1.ListInstancesRequest;
 import com.google.cloud.compute.v1.ListReferrersInstancesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceRequest;
 import com.google.cloud.compute.v1.ResetInstanceRequest;
 import com.google.cloud.compute.v1.Screenshot;
+import com.google.cloud.compute.v1.SendDiagnosticInterruptInstanceRequest;
+import com.google.cloud.compute.v1.SendDiagnosticInterruptInstanceResponse;
 import com.google.cloud.compute.v1.SerialPortOutput;
 import com.google.cloud.compute.v1.SetDeletionProtectionInstanceRequest;
 import com.google.cloud.compute.v1.SetDiskAutoDeleteInstanceRequest;
@@ -87,6 +92,7 @@ import com.google.cloud.compute.v1.UpdateDisplayDeviceInstanceRequest;
 import com.google.cloud.compute.v1.UpdateInstanceRequest;
 import com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceRequest;
 import com.google.cloud.compute.v1.UpdateShieldedInstanceConfigInstanceRequest;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -104,6 +110,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonInstancesStub extends InstancesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<AddAccessConfigInstanceRequest, Operation>
       addAccessConfigMethodDescriptor =
           ApiMethodDescriptor.<AddAccessConfigInstanceRequest, Operation>newBuilder()
@@ -143,7 +152,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (AddAccessConfigInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<AddResourcePoliciesInstanceRequest, Operation>
@@ -184,7 +207,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (AddResourcePoliciesInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<AggregatedListInstancesRequest, InstanceAggregatedList>
@@ -238,6 +275,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<InstanceAggregatedList>newBuilder()
                       .setDefaultInstance(InstanceAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -282,7 +320,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (AttachDiskInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<BulkInsertInstanceRequest, Operation>
@@ -322,7 +374,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (BulkInsertInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<DeleteInstanceRequest, Operation>
@@ -358,7 +424,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<DeleteAccessConfigInstanceRequest, Operation>
@@ -398,7 +478,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteAccessConfigInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<DetachDiskInstanceRequest, Operation>
@@ -435,7 +529,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DetachDiskInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetInstanceRequest, Instance> getMethodDescriptor =
@@ -467,6 +575,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Instance>newBuilder()
                   .setDefaultInstance(Instance.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -506,6 +615,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   ProtoMessageResponseParser.<InstancesGetEffectiveFirewallsResponse>newBuilder()
                       .setDefaultInstance(
                           InstancesGetEffectiveFirewallsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -546,6 +656,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<GuestAttributes>newBuilder()
                       .setDefaultInstance(GuestAttributes.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -585,6 +696,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -618,6 +730,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Screenshot>newBuilder()
                       .setDefaultInstance(Screenshot.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -657,6 +770,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<SerialPortOutput>newBuilder()
                       .setDefaultInstance(SerialPortOutput.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -693,6 +807,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ShieldedInstanceIdentity>newBuilder()
                       .setDefaultInstance(ShieldedInstanceIdentity.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -737,7 +852,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListInstancesRequest, InstanceList>
@@ -788,6 +917,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<InstanceList>newBuilder()
                       .setDefaultInstance(InstanceList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -840,6 +970,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<InstanceListReferrers>newBuilder()
                       .setDefaultInstance(InstanceListReferrers.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -881,7 +1012,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (RemoveResourcePoliciesInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ResetInstanceRequest, Operation> resetMethodDescriptor =
@@ -916,8 +1061,60 @@ public class HttpJsonInstancesStub extends InstancesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (ResetInstanceRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                opName.append(":").append(request.getZone());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
+
+  private static final ApiMethodDescriptor<
+          SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+      sendDiagnosticInterruptMethodDescriptor =
+          ApiMethodDescriptor
+              .<SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+                  newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Instances/SendDiagnosticInterrupt")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SendDiagnosticInterruptInstanceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/sendDiagnosticInterrupt",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SendDiagnosticInterruptInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SendDiagnosticInterruptInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SendDiagnosticInterruptInstanceResponse>newBuilder()
+                      .setDefaultInstance(
+                          SendDiagnosticInterruptInstanceResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<SetDeletionProtectionInstanceRequest, Operation>
       setDeletionProtectionMethodDescriptor =
@@ -956,7 +1153,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetDeletionProtectionInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetDiskAutoDeleteInstanceRequest, Operation>
@@ -994,7 +1205,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetDiskAutoDeleteInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetIamPolicyInstanceRequest, Policy>
@@ -1032,6 +1257,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -1073,7 +1299,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetLabelsInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetMachineResourcesInstanceRequest, Operation>
@@ -1114,7 +1354,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetMachineResourcesInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetMachineTypeInstanceRequest, Operation>
@@ -1155,7 +1409,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetMachineTypeInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetMetadataInstanceRequest, Operation>
@@ -1194,7 +1462,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetMetadataInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetMinCpuPlatformInstanceRequest, Operation>
@@ -1235,7 +1517,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetMinCpuPlatformInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetSchedulingInstanceRequest, Operation>
@@ -1274,7 +1570,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetSchedulingInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetServiceAccountInstanceRequest, Operation>
@@ -1315,7 +1625,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetServiceAccountInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -1360,7 +1684,22 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetShieldedInstanceIntegrityPolicyInstanceRequest request,
+                      Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetTagsInstanceRequest, Operation>
@@ -1399,7 +1738,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetTagsInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SimulateMaintenanceEventInstanceRequest, Operation>
@@ -1432,7 +1785,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SimulateMaintenanceEventInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<StartInstanceRequest, Operation> startMethodDescriptor =
@@ -1467,7 +1834,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (StartInstanceRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                opName.append(":").append(request.getZone());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<StartWithEncryptionKeyInstanceRequest, Operation>
@@ -1508,7 +1889,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (StartWithEncryptionKeyInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<StopInstanceRequest, Operation> stopMethodDescriptor =
@@ -1543,7 +1938,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (StopInstanceRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                opName.append(":").append(request.getZone());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<
@@ -1583,6 +1992,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
                       .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -1632,7 +2042,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (UpdateInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<UpdateAccessConfigInstanceRequest, Operation>
@@ -1674,7 +2098,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (UpdateAccessConfigInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<UpdateDisplayDeviceInstanceRequest, Operation>
@@ -1714,7 +2152,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (UpdateDisplayDeviceInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<UpdateNetworkInterfaceInstanceRequest, Operation>
@@ -1757,7 +2209,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (UpdateNetworkInterfaceInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<UpdateShieldedInstanceConfigInstanceRequest, Operation>
@@ -1799,22 +2265,50 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (UpdateShieldedInstanceConfigInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<AddAccessConfigInstanceRequest, Operation> addAccessConfigCallable;
+  private final OperationCallable<AddAccessConfigInstanceRequest, Operation, Operation>
+      addAccessConfigOperationCallable;
   private final UnaryCallable<AddResourcePoliciesInstanceRequest, Operation>
       addResourcePoliciesCallable;
+  private final OperationCallable<AddResourcePoliciesInstanceRequest, Operation, Operation>
+      addResourcePoliciesOperationCallable;
   private final UnaryCallable<AggregatedListInstancesRequest, InstanceAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListInstancesRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
   private final UnaryCallable<AttachDiskInstanceRequest, Operation> attachDiskCallable;
+  private final OperationCallable<AttachDiskInstanceRequest, Operation, Operation>
+      attachDiskOperationCallable;
   private final UnaryCallable<BulkInsertInstanceRequest, Operation> bulkInsertCallable;
+  private final OperationCallable<BulkInsertInstanceRequest, Operation, Operation>
+      bulkInsertOperationCallable;
   private final UnaryCallable<DeleteInstanceRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteInstanceRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<DeleteAccessConfigInstanceRequest, Operation>
       deleteAccessConfigCallable;
+  private final OperationCallable<DeleteAccessConfigInstanceRequest, Operation, Operation>
+      deleteAccessConfigOperationCallable;
   private final UnaryCallable<DetachDiskInstanceRequest, Operation> detachDiskCallable;
+  private final OperationCallable<DetachDiskInstanceRequest, Operation, Operation>
+      detachDiskOperationCallable;
   private final UnaryCallable<GetInstanceRequest, Instance> getCallable;
   private final UnaryCallable<
           GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
@@ -1828,6 +2322,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
   private final UnaryCallable<GetShieldedInstanceIdentityInstanceRequest, ShieldedInstanceIdentity>
       getShieldedInstanceIdentityCallable;
   private final UnaryCallable<InsertInstanceRequest, Operation> insertCallable;
+  private final OperationCallable<InsertInstanceRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListInstancesRequest, InstanceList> listCallable;
   private final UnaryCallable<ListInstancesRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<ListReferrersInstancesRequest, InstanceListReferrers>
@@ -1836,44 +2332,92 @@ public class HttpJsonInstancesStub extends InstancesStub {
       listReferrersPagedCallable;
   private final UnaryCallable<RemoveResourcePoliciesInstanceRequest, Operation>
       removeResourcePoliciesCallable;
+  private final OperationCallable<RemoveResourcePoliciesInstanceRequest, Operation, Operation>
+      removeResourcePoliciesOperationCallable;
   private final UnaryCallable<ResetInstanceRequest, Operation> resetCallable;
+  private final OperationCallable<ResetInstanceRequest, Operation, Operation>
+      resetOperationCallable;
+  private final UnaryCallable<
+          SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+      sendDiagnosticInterruptCallable;
   private final UnaryCallable<SetDeletionProtectionInstanceRequest, Operation>
       setDeletionProtectionCallable;
+  private final OperationCallable<SetDeletionProtectionInstanceRequest, Operation, Operation>
+      setDeletionProtectionOperationCallable;
   private final UnaryCallable<SetDiskAutoDeleteInstanceRequest, Operation>
       setDiskAutoDeleteCallable;
+  private final OperationCallable<SetDiskAutoDeleteInstanceRequest, Operation, Operation>
+      setDiskAutoDeleteOperationCallable;
   private final UnaryCallable<SetIamPolicyInstanceRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<SetLabelsInstanceRequest, Operation> setLabelsCallable;
+  private final OperationCallable<SetLabelsInstanceRequest, Operation, Operation>
+      setLabelsOperationCallable;
   private final UnaryCallable<SetMachineResourcesInstanceRequest, Operation>
       setMachineResourcesCallable;
+  private final OperationCallable<SetMachineResourcesInstanceRequest, Operation, Operation>
+      setMachineResourcesOperationCallable;
   private final UnaryCallable<SetMachineTypeInstanceRequest, Operation> setMachineTypeCallable;
+  private final OperationCallable<SetMachineTypeInstanceRequest, Operation, Operation>
+      setMachineTypeOperationCallable;
   private final UnaryCallable<SetMetadataInstanceRequest, Operation> setMetadataCallable;
+  private final OperationCallable<SetMetadataInstanceRequest, Operation, Operation>
+      setMetadataOperationCallable;
   private final UnaryCallable<SetMinCpuPlatformInstanceRequest, Operation>
       setMinCpuPlatformCallable;
+  private final OperationCallable<SetMinCpuPlatformInstanceRequest, Operation, Operation>
+      setMinCpuPlatformOperationCallable;
   private final UnaryCallable<SetSchedulingInstanceRequest, Operation> setSchedulingCallable;
+  private final OperationCallable<SetSchedulingInstanceRequest, Operation, Operation>
+      setSchedulingOperationCallable;
   private final UnaryCallable<SetServiceAccountInstanceRequest, Operation>
       setServiceAccountCallable;
+  private final OperationCallable<SetServiceAccountInstanceRequest, Operation, Operation>
+      setServiceAccountOperationCallable;
   private final UnaryCallable<SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation>
       setShieldedInstanceIntegrityPolicyCallable;
+  private final OperationCallable<
+          SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation, Operation>
+      setShieldedInstanceIntegrityPolicyOperationCallable;
   private final UnaryCallable<SetTagsInstanceRequest, Operation> setTagsCallable;
+  private final OperationCallable<SetTagsInstanceRequest, Operation, Operation>
+      setTagsOperationCallable;
   private final UnaryCallable<SimulateMaintenanceEventInstanceRequest, Operation>
       simulateMaintenanceEventCallable;
+  private final OperationCallable<SimulateMaintenanceEventInstanceRequest, Operation, Operation>
+      simulateMaintenanceEventOperationCallable;
   private final UnaryCallable<StartInstanceRequest, Operation> startCallable;
+  private final OperationCallable<StartInstanceRequest, Operation, Operation>
+      startOperationCallable;
   private final UnaryCallable<StartWithEncryptionKeyInstanceRequest, Operation>
       startWithEncryptionKeyCallable;
+  private final OperationCallable<StartWithEncryptionKeyInstanceRequest, Operation, Operation>
+      startWithEncryptionKeyOperationCallable;
   private final UnaryCallable<StopInstanceRequest, Operation> stopCallable;
+  private final OperationCallable<StopInstanceRequest, Operation, Operation> stopOperationCallable;
   private final UnaryCallable<TestIamPermissionsInstanceRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
   private final UnaryCallable<UpdateInstanceRequest, Operation> updateCallable;
+  private final OperationCallable<UpdateInstanceRequest, Operation, Operation>
+      updateOperationCallable;
   private final UnaryCallable<UpdateAccessConfigInstanceRequest, Operation>
       updateAccessConfigCallable;
+  private final OperationCallable<UpdateAccessConfigInstanceRequest, Operation, Operation>
+      updateAccessConfigOperationCallable;
   private final UnaryCallable<UpdateDisplayDeviceInstanceRequest, Operation>
       updateDisplayDeviceCallable;
+  private final OperationCallable<UpdateDisplayDeviceInstanceRequest, Operation, Operation>
+      updateDisplayDeviceOperationCallable;
   private final UnaryCallable<UpdateNetworkInterfaceInstanceRequest, Operation>
       updateNetworkInterfaceCallable;
+  private final OperationCallable<UpdateNetworkInterfaceInstanceRequest, Operation, Operation>
+      updateNetworkInterfaceOperationCallable;
   private final UnaryCallable<UpdateShieldedInstanceConfigInstanceRequest, Operation>
       updateShieldedInstanceConfigCallable;
+  private final OperationCallable<UpdateShieldedInstanceConfigInstanceRequest, Operation, Operation>
+      updateShieldedInstanceConfigOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonInstancesStub create(InstancesStubSettings settings)
@@ -1912,47 +2456,57 @@ public class HttpJsonInstancesStub extends InstancesStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub = HttpJsonZoneOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AddAccessConfigInstanceRequest, Operation>
         addAccessConfigTransportSettings =
             HttpJsonCallSettings.<AddAccessConfigInstanceRequest, Operation>newBuilder()
                 .setMethodDescriptor(addAccessConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<AddResourcePoliciesInstanceRequest, Operation>
         addResourcePoliciesTransportSettings =
             HttpJsonCallSettings.<AddResourcePoliciesInstanceRequest, Operation>newBuilder()
                 .setMethodDescriptor(addResourcePoliciesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<AggregatedListInstancesRequest, InstanceAggregatedList>
         aggregatedListTransportSettings =
             HttpJsonCallSettings
                 .<AggregatedListInstancesRequest, InstanceAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<AttachDiskInstanceRequest, Operation> attachDiskTransportSettings =
         HttpJsonCallSettings.<AttachDiskInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(attachDiskMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<BulkInsertInstanceRequest, Operation> bulkInsertTransportSettings =
         HttpJsonCallSettings.<BulkInsertInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(bulkInsertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<DeleteInstanceRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<DeleteAccessConfigInstanceRequest, Operation>
         deleteAccessConfigTransportSettings =
             HttpJsonCallSettings.<DeleteAccessConfigInstanceRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteAccessConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DetachDiskInstanceRequest, Operation> detachDiskTransportSettings =
         HttpJsonCallSettings.<DetachDiskInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(detachDiskMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetInstanceRequest, Instance> getTransportSettings =
         HttpJsonCallSettings.<GetInstanceRequest, Instance>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<
             GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
@@ -1961,166 +2515,220 @@ public class HttpJsonInstancesStub extends InstancesStub {
                 .<GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
                     newBuilder()
                 .setMethodDescriptor(getEffectiveFirewallsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<GetGuestAttributesInstanceRequest, GuestAttributes>
         getGuestAttributesTransportSettings =
             HttpJsonCallSettings.<GetGuestAttributesInstanceRequest, GuestAttributes>newBuilder()
                 .setMethodDescriptor(getGuestAttributesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<GetIamPolicyInstanceRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyInstanceRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetScreenshotInstanceRequest, Screenshot> getScreenshotTransportSettings =
         HttpJsonCallSettings.<GetScreenshotInstanceRequest, Screenshot>newBuilder()
             .setMethodDescriptor(getScreenshotMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetSerialPortOutputInstanceRequest, SerialPortOutput>
         getSerialPortOutputTransportSettings =
             HttpJsonCallSettings.<GetSerialPortOutputInstanceRequest, SerialPortOutput>newBuilder()
                 .setMethodDescriptor(getSerialPortOutputMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<GetShieldedInstanceIdentityInstanceRequest, ShieldedInstanceIdentity>
         getShieldedInstanceIdentityTransportSettings =
             HttpJsonCallSettings
                 .<GetShieldedInstanceIdentityInstanceRequest, ShieldedInstanceIdentity>newBuilder()
                 .setMethodDescriptor(getShieldedInstanceIdentityMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<InsertInstanceRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListInstancesRequest, InstanceList> listTransportSettings =
         HttpJsonCallSettings.<ListInstancesRequest, InstanceList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListReferrersInstancesRequest, InstanceListReferrers>
         listReferrersTransportSettings =
             HttpJsonCallSettings.<ListReferrersInstancesRequest, InstanceListReferrers>newBuilder()
                 .setMethodDescriptor(listReferrersMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<RemoveResourcePoliciesInstanceRequest, Operation>
         removeResourcePoliciesTransportSettings =
             HttpJsonCallSettings.<RemoveResourcePoliciesInstanceRequest, Operation>newBuilder()
                 .setMethodDescriptor(removeResourcePoliciesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<ResetInstanceRequest, Operation> resetTransportSettings =
         HttpJsonCallSettings.<ResetInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(resetMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<
+            SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+        sendDiagnosticInterruptTransportSettings =
+            HttpJsonCallSettings
+                .<SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+                    newBuilder()
+                .setMethodDescriptor(sendDiagnosticInterruptMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<SetDeletionProtectionInstanceRequest, Operation>
         setDeletionProtectionTransportSettings =
             HttpJsonCallSettings.<SetDeletionProtectionInstanceRequest, Operation>newBuilder()
                 .setMethodDescriptor(setDeletionProtectionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<SetDiskAutoDeleteInstanceRequest, Operation>
         setDiskAutoDeleteTransportSettings =
             HttpJsonCallSettings.<SetDiskAutoDeleteInstanceRequest, Operation>newBuilder()
                 .setMethodDescriptor(setDiskAutoDeleteMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<SetIamPolicyInstanceRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyInstanceRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetLabelsInstanceRequest, Operation> setLabelsTransportSettings =
         HttpJsonCallSettings.<SetLabelsInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(setLabelsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetMachineResourcesInstanceRequest, Operation>
         setMachineResourcesTransportSettings =
             HttpJsonCallSettings.<SetMachineResourcesInstanceRequest, Operation>newBuilder()
                 .setMethodDescriptor(setMachineResourcesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<SetMachineTypeInstanceRequest, Operation> setMachineTypeTransportSettings =
         HttpJsonCallSettings.<SetMachineTypeInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(setMachineTypeMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetMetadataInstanceRequest, Operation> setMetadataTransportSettings =
         HttpJsonCallSettings.<SetMetadataInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(setMetadataMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetMinCpuPlatformInstanceRequest, Operation>
         setMinCpuPlatformTransportSettings =
             HttpJsonCallSettings.<SetMinCpuPlatformInstanceRequest, Operation>newBuilder()
                 .setMethodDescriptor(setMinCpuPlatformMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<SetSchedulingInstanceRequest, Operation> setSchedulingTransportSettings =
         HttpJsonCallSettings.<SetSchedulingInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(setSchedulingMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetServiceAccountInstanceRequest, Operation>
         setServiceAccountTransportSettings =
             HttpJsonCallSettings.<SetServiceAccountInstanceRequest, Operation>newBuilder()
                 .setMethodDescriptor(setServiceAccountMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation>
         setShieldedInstanceIntegrityPolicyTransportSettings =
             HttpJsonCallSettings
                 .<SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation>newBuilder()
                 .setMethodDescriptor(setShieldedInstanceIntegrityPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<SetTagsInstanceRequest, Operation> setTagsTransportSettings =
         HttpJsonCallSettings.<SetTagsInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(setTagsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SimulateMaintenanceEventInstanceRequest, Operation>
         simulateMaintenanceEventTransportSettings =
             HttpJsonCallSettings.<SimulateMaintenanceEventInstanceRequest, Operation>newBuilder()
                 .setMethodDescriptor(simulateMaintenanceEventMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<StartInstanceRequest, Operation> startTransportSettings =
         HttpJsonCallSettings.<StartInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(startMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<StartWithEncryptionKeyInstanceRequest, Operation>
         startWithEncryptionKeyTransportSettings =
             HttpJsonCallSettings.<StartWithEncryptionKeyInstanceRequest, Operation>newBuilder()
                 .setMethodDescriptor(startWithEncryptionKeyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<StopInstanceRequest, Operation> stopTransportSettings =
         HttpJsonCallSettings.<StopInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(stopMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<TestIamPermissionsInstanceRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings
                 .<TestIamPermissionsInstanceRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<UpdateInstanceRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<UpdateAccessConfigInstanceRequest, Operation>
         updateAccessConfigTransportSettings =
             HttpJsonCallSettings.<UpdateAccessConfigInstanceRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateAccessConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<UpdateDisplayDeviceInstanceRequest, Operation>
         updateDisplayDeviceTransportSettings =
             HttpJsonCallSettings.<UpdateDisplayDeviceInstanceRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateDisplayDeviceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<UpdateNetworkInterfaceInstanceRequest, Operation>
         updateNetworkInterfaceTransportSettings =
             HttpJsonCallSettings.<UpdateNetworkInterfaceInstanceRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateNetworkInterfaceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<UpdateShieldedInstanceConfigInstanceRequest, Operation>
         updateShieldedInstanceConfigTransportSettings =
             HttpJsonCallSettings
                 .<UpdateShieldedInstanceConfigInstanceRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateShieldedInstanceConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.addAccessConfigCallable =
         callableFactory.createUnaryCallable(
             addAccessConfigTransportSettings, settings.addAccessConfigSettings(), clientContext);
+    this.addAccessConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            addAccessConfigTransportSettings,
+            settings.addAccessConfigOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.addResourcePoliciesCallable =
         callableFactory.createUnaryCallable(
             addResourcePoliciesTransportSettings,
             settings.addResourcePoliciesSettings(),
             clientContext);
+    this.addResourcePoliciesOperationCallable =
+        callableFactory.createOperationCallable(
+            addResourcePoliciesTransportSettings,
+            settings.addResourcePoliciesOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.aggregatedListCallable =
         callableFactory.createUnaryCallable(
             aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
@@ -2130,20 +2738,50 @@ public class HttpJsonInstancesStub extends InstancesStub {
     this.attachDiskCallable =
         callableFactory.createUnaryCallable(
             attachDiskTransportSettings, settings.attachDiskSettings(), clientContext);
+    this.attachDiskOperationCallable =
+        callableFactory.createOperationCallable(
+            attachDiskTransportSettings,
+            settings.attachDiskOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.bulkInsertCallable =
         callableFactory.createUnaryCallable(
             bulkInsertTransportSettings, settings.bulkInsertSettings(), clientContext);
+    this.bulkInsertOperationCallable =
+        callableFactory.createOperationCallable(
+            bulkInsertTransportSettings,
+            settings.bulkInsertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteAccessConfigCallable =
         callableFactory.createUnaryCallable(
             deleteAccessConfigTransportSettings,
             settings.deleteAccessConfigSettings(),
             clientContext);
+    this.deleteAccessConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAccessConfigTransportSettings,
+            settings.deleteAccessConfigOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.detachDiskCallable =
         callableFactory.createUnaryCallable(
             detachDiskTransportSettings, settings.detachDiskSettings(), clientContext);
+    this.detachDiskOperationCallable =
+        callableFactory.createOperationCallable(
+            detachDiskTransportSettings,
+            settings.detachDiskOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
@@ -2176,6 +2814,12 @@ public class HttpJsonInstancesStub extends InstancesStub {
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -2193,73 +2837,180 @@ public class HttpJsonInstancesStub extends InstancesStub {
             removeResourcePoliciesTransportSettings,
             settings.removeResourcePoliciesSettings(),
             clientContext);
+    this.removeResourcePoliciesOperationCallable =
+        callableFactory.createOperationCallable(
+            removeResourcePoliciesTransportSettings,
+            settings.removeResourcePoliciesOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.resetCallable =
         callableFactory.createUnaryCallable(
             resetTransportSettings, settings.resetSettings(), clientContext);
+    this.resetOperationCallable =
+        callableFactory.createOperationCallable(
+            resetTransportSettings,
+            settings.resetOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.sendDiagnosticInterruptCallable =
+        callableFactory.createUnaryCallable(
+            sendDiagnosticInterruptTransportSettings,
+            settings.sendDiagnosticInterruptSettings(),
+            clientContext);
     this.setDeletionProtectionCallable =
         callableFactory.createUnaryCallable(
             setDeletionProtectionTransportSettings,
             settings.setDeletionProtectionSettings(),
             clientContext);
+    this.setDeletionProtectionOperationCallable =
+        callableFactory.createOperationCallable(
+            setDeletionProtectionTransportSettings,
+            settings.setDeletionProtectionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setDiskAutoDeleteCallable =
         callableFactory.createUnaryCallable(
             setDiskAutoDeleteTransportSettings,
             settings.setDiskAutoDeleteSettings(),
             clientContext);
+    this.setDiskAutoDeleteOperationCallable =
+        callableFactory.createOperationCallable(
+            setDiskAutoDeleteTransportSettings,
+            settings.setDiskAutoDeleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
     this.setLabelsCallable =
         callableFactory.createUnaryCallable(
             setLabelsTransportSettings, settings.setLabelsSettings(), clientContext);
+    this.setLabelsOperationCallable =
+        callableFactory.createOperationCallable(
+            setLabelsTransportSettings,
+            settings.setLabelsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setMachineResourcesCallable =
         callableFactory.createUnaryCallable(
             setMachineResourcesTransportSettings,
             settings.setMachineResourcesSettings(),
             clientContext);
+    this.setMachineResourcesOperationCallable =
+        callableFactory.createOperationCallable(
+            setMachineResourcesTransportSettings,
+            settings.setMachineResourcesOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setMachineTypeCallable =
         callableFactory.createUnaryCallable(
             setMachineTypeTransportSettings, settings.setMachineTypeSettings(), clientContext);
+    this.setMachineTypeOperationCallable =
+        callableFactory.createOperationCallable(
+            setMachineTypeTransportSettings,
+            settings.setMachineTypeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setMetadataCallable =
         callableFactory.createUnaryCallable(
             setMetadataTransportSettings, settings.setMetadataSettings(), clientContext);
+    this.setMetadataOperationCallable =
+        callableFactory.createOperationCallable(
+            setMetadataTransportSettings,
+            settings.setMetadataOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setMinCpuPlatformCallable =
         callableFactory.createUnaryCallable(
             setMinCpuPlatformTransportSettings,
             settings.setMinCpuPlatformSettings(),
             clientContext);
+    this.setMinCpuPlatformOperationCallable =
+        callableFactory.createOperationCallable(
+            setMinCpuPlatformTransportSettings,
+            settings.setMinCpuPlatformOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setSchedulingCallable =
         callableFactory.createUnaryCallable(
             setSchedulingTransportSettings, settings.setSchedulingSettings(), clientContext);
+    this.setSchedulingOperationCallable =
+        callableFactory.createOperationCallable(
+            setSchedulingTransportSettings,
+            settings.setSchedulingOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setServiceAccountCallable =
         callableFactory.createUnaryCallable(
             setServiceAccountTransportSettings,
             settings.setServiceAccountSettings(),
             clientContext);
+    this.setServiceAccountOperationCallable =
+        callableFactory.createOperationCallable(
+            setServiceAccountTransportSettings,
+            settings.setServiceAccountOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setShieldedInstanceIntegrityPolicyCallable =
         callableFactory.createUnaryCallable(
             setShieldedInstanceIntegrityPolicyTransportSettings,
             settings.setShieldedInstanceIntegrityPolicySettings(),
             clientContext);
+    this.setShieldedInstanceIntegrityPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            setShieldedInstanceIntegrityPolicyTransportSettings,
+            settings.setShieldedInstanceIntegrityPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setTagsCallable =
         callableFactory.createUnaryCallable(
             setTagsTransportSettings, settings.setTagsSettings(), clientContext);
+    this.setTagsOperationCallable =
+        callableFactory.createOperationCallable(
+            setTagsTransportSettings,
+            settings.setTagsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.simulateMaintenanceEventCallable =
         callableFactory.createUnaryCallable(
             simulateMaintenanceEventTransportSettings,
             settings.simulateMaintenanceEventSettings(),
             clientContext);
+    this.simulateMaintenanceEventOperationCallable =
+        callableFactory.createOperationCallable(
+            simulateMaintenanceEventTransportSettings,
+            settings.simulateMaintenanceEventOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.startCallable =
         callableFactory.createUnaryCallable(
             startTransportSettings, settings.startSettings(), clientContext);
+    this.startOperationCallable =
+        callableFactory.createOperationCallable(
+            startTransportSettings,
+            settings.startOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.startWithEncryptionKeyCallable =
         callableFactory.createUnaryCallable(
             startWithEncryptionKeyTransportSettings,
             settings.startWithEncryptionKeySettings(),
             clientContext);
+    this.startWithEncryptionKeyOperationCallable =
+        callableFactory.createOperationCallable(
+            startWithEncryptionKeyTransportSettings,
+            settings.startWithEncryptionKeyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.stopCallable =
         callableFactory.createUnaryCallable(
             stopTransportSettings, settings.stopSettings(), clientContext);
+    this.stopOperationCallable =
+        callableFactory.createOperationCallable(
+            stopTransportSettings,
+            settings.stopOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.testIamPermissionsCallable =
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
@@ -2268,26 +3019,56 @@ public class HttpJsonInstancesStub extends InstancesStub {
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
+    this.updateOperationCallable =
+        callableFactory.createOperationCallable(
+            updateTransportSettings,
+            settings.updateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.updateAccessConfigCallable =
         callableFactory.createUnaryCallable(
             updateAccessConfigTransportSettings,
             settings.updateAccessConfigSettings(),
             clientContext);
+    this.updateAccessConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAccessConfigTransportSettings,
+            settings.updateAccessConfigOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.updateDisplayDeviceCallable =
         callableFactory.createUnaryCallable(
             updateDisplayDeviceTransportSettings,
             settings.updateDisplayDeviceSettings(),
             clientContext);
+    this.updateDisplayDeviceOperationCallable =
+        callableFactory.createOperationCallable(
+            updateDisplayDeviceTransportSettings,
+            settings.updateDisplayDeviceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.updateNetworkInterfaceCallable =
         callableFactory.createUnaryCallable(
             updateNetworkInterfaceTransportSettings,
             settings.updateNetworkInterfaceSettings(),
             clientContext);
+    this.updateNetworkInterfaceOperationCallable =
+        callableFactory.createOperationCallable(
+            updateNetworkInterfaceTransportSettings,
+            settings.updateNetworkInterfaceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.updateShieldedInstanceConfigCallable =
         callableFactory.createUnaryCallable(
             updateShieldedInstanceConfigTransportSettings,
             settings.updateShieldedInstanceConfigSettings(),
             clientContext);
+    this.updateShieldedInstanceConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            updateShieldedInstanceConfigTransportSettings,
+            settings.updateShieldedInstanceConfigOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -2316,6 +3097,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
     methodDescriptors.add(listReferrersMethodDescriptor);
     methodDescriptors.add(removeResourcePoliciesMethodDescriptor);
     methodDescriptors.add(resetMethodDescriptor);
+    methodDescriptors.add(sendDiagnosticInterruptMethodDescriptor);
     methodDescriptors.add(setDeletionProtectionMethodDescriptor);
     methodDescriptors.add(setDiskAutoDeleteMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -2347,9 +3129,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
   }
 
   @Override
+  public OperationCallable<AddAccessConfigInstanceRequest, Operation, Operation>
+      addAccessConfigOperationCallable() {
+    return addAccessConfigOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<AddResourcePoliciesInstanceRequest, Operation>
       addResourcePoliciesCallable() {
     return addResourcePoliciesCallable;
+  }
+
+  @Override
+  public OperationCallable<AddResourcePoliciesInstanceRequest, Operation, Operation>
+      addResourcePoliciesOperationCallable() {
+    return addResourcePoliciesOperationCallable;
   }
 
   @Override
@@ -2370,8 +3164,20 @@ public class HttpJsonInstancesStub extends InstancesStub {
   }
 
   @Override
+  public OperationCallable<AttachDiskInstanceRequest, Operation, Operation>
+      attachDiskOperationCallable() {
+    return attachDiskOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<BulkInsertInstanceRequest, Operation> bulkInsertCallable() {
     return bulkInsertCallable;
+  }
+
+  @Override
+  public OperationCallable<BulkInsertInstanceRequest, Operation, Operation>
+      bulkInsertOperationCallable() {
+    return bulkInsertOperationCallable;
   }
 
   @Override
@@ -2380,13 +3186,30 @@ public class HttpJsonInstancesStub extends InstancesStub {
   }
 
   @Override
+  public OperationCallable<DeleteInstanceRequest, Operation, Operation> deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteAccessConfigInstanceRequest, Operation> deleteAccessConfigCallable() {
     return deleteAccessConfigCallable;
   }
 
   @Override
+  public OperationCallable<DeleteAccessConfigInstanceRequest, Operation, Operation>
+      deleteAccessConfigOperationCallable() {
+    return deleteAccessConfigOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DetachDiskInstanceRequest, Operation> detachDiskCallable() {
     return detachDiskCallable;
+  }
+
+  @Override
+  public OperationCallable<DetachDiskInstanceRequest, Operation, Operation>
+      detachDiskOperationCallable() {
+    return detachDiskOperationCallable;
   }
 
   @Override
@@ -2434,6 +3257,11 @@ public class HttpJsonInstancesStub extends InstancesStub {
   }
 
   @Override
+  public OperationCallable<InsertInstanceRequest, Operation, Operation> insertOperationCallable() {
+    return insertOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<ListInstancesRequest, InstanceList> listCallable() {
     return listCallable;
   }
@@ -2462,8 +3290,26 @@ public class HttpJsonInstancesStub extends InstancesStub {
   }
 
   @Override
+  public OperationCallable<RemoveResourcePoliciesInstanceRequest, Operation, Operation>
+      removeResourcePoliciesOperationCallable() {
+    return removeResourcePoliciesOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<ResetInstanceRequest, Operation> resetCallable() {
     return resetCallable;
+  }
+
+  @Override
+  public OperationCallable<ResetInstanceRequest, Operation, Operation> resetOperationCallable() {
+    return resetOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+      sendDiagnosticInterruptCallable() {
+    return sendDiagnosticInterruptCallable;
   }
 
   @Override
@@ -2473,8 +3319,20 @@ public class HttpJsonInstancesStub extends InstancesStub {
   }
 
   @Override
+  public OperationCallable<SetDeletionProtectionInstanceRequest, Operation, Operation>
+      setDeletionProtectionOperationCallable() {
+    return setDeletionProtectionOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetDiskAutoDeleteInstanceRequest, Operation> setDiskAutoDeleteCallable() {
     return setDiskAutoDeleteCallable;
+  }
+
+  @Override
+  public OperationCallable<SetDiskAutoDeleteInstanceRequest, Operation, Operation>
+      setDiskAutoDeleteOperationCallable() {
+    return setDiskAutoDeleteOperationCallable;
   }
 
   @Override
@@ -2488,9 +3346,21 @@ public class HttpJsonInstancesStub extends InstancesStub {
   }
 
   @Override
+  public OperationCallable<SetLabelsInstanceRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return setLabelsOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetMachineResourcesInstanceRequest, Operation>
       setMachineResourcesCallable() {
     return setMachineResourcesCallable;
+  }
+
+  @Override
+  public OperationCallable<SetMachineResourcesInstanceRequest, Operation, Operation>
+      setMachineResourcesOperationCallable() {
+    return setMachineResourcesOperationCallable;
   }
 
   @Override
@@ -2499,8 +3369,20 @@ public class HttpJsonInstancesStub extends InstancesStub {
   }
 
   @Override
+  public OperationCallable<SetMachineTypeInstanceRequest, Operation, Operation>
+      setMachineTypeOperationCallable() {
+    return setMachineTypeOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetMetadataInstanceRequest, Operation> setMetadataCallable() {
     return setMetadataCallable;
+  }
+
+  @Override
+  public OperationCallable<SetMetadataInstanceRequest, Operation, Operation>
+      setMetadataOperationCallable() {
+    return setMetadataOperationCallable;
   }
 
   @Override
@@ -2509,13 +3391,31 @@ public class HttpJsonInstancesStub extends InstancesStub {
   }
 
   @Override
+  public OperationCallable<SetMinCpuPlatformInstanceRequest, Operation, Operation>
+      setMinCpuPlatformOperationCallable() {
+    return setMinCpuPlatformOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetSchedulingInstanceRequest, Operation> setSchedulingCallable() {
     return setSchedulingCallable;
   }
 
   @Override
+  public OperationCallable<SetSchedulingInstanceRequest, Operation, Operation>
+      setSchedulingOperationCallable() {
+    return setSchedulingOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetServiceAccountInstanceRequest, Operation> setServiceAccountCallable() {
     return setServiceAccountCallable;
+  }
+
+  @Override
+  public OperationCallable<SetServiceAccountInstanceRequest, Operation, Operation>
+      setServiceAccountOperationCallable() {
+    return setServiceAccountOperationCallable;
   }
 
   @Override
@@ -2525,8 +3425,20 @@ public class HttpJsonInstancesStub extends InstancesStub {
   }
 
   @Override
+  public OperationCallable<SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation, Operation>
+      setShieldedInstanceIntegrityPolicyOperationCallable() {
+    return setShieldedInstanceIntegrityPolicyOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetTagsInstanceRequest, Operation> setTagsCallable() {
     return setTagsCallable;
+  }
+
+  @Override
+  public OperationCallable<SetTagsInstanceRequest, Operation, Operation>
+      setTagsOperationCallable() {
+    return setTagsOperationCallable;
   }
 
   @Override
@@ -2536,8 +3448,19 @@ public class HttpJsonInstancesStub extends InstancesStub {
   }
 
   @Override
+  public OperationCallable<SimulateMaintenanceEventInstanceRequest, Operation, Operation>
+      simulateMaintenanceEventOperationCallable() {
+    return simulateMaintenanceEventOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<StartInstanceRequest, Operation> startCallable() {
     return startCallable;
+  }
+
+  @Override
+  public OperationCallable<StartInstanceRequest, Operation, Operation> startOperationCallable() {
+    return startOperationCallable;
   }
 
   @Override
@@ -2547,8 +3470,19 @@ public class HttpJsonInstancesStub extends InstancesStub {
   }
 
   @Override
+  public OperationCallable<StartWithEncryptionKeyInstanceRequest, Operation, Operation>
+      startWithEncryptionKeyOperationCallable() {
+    return startWithEncryptionKeyOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<StopInstanceRequest, Operation> stopCallable() {
     return stopCallable;
+  }
+
+  @Override
+  public OperationCallable<StopInstanceRequest, Operation, Operation> stopOperationCallable() {
+    return stopOperationCallable;
   }
 
   @Override
@@ -2563,8 +3497,19 @@ public class HttpJsonInstancesStub extends InstancesStub {
   }
 
   @Override
+  public OperationCallable<UpdateInstanceRequest, Operation, Operation> updateOperationCallable() {
+    return updateOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateAccessConfigInstanceRequest, Operation> updateAccessConfigCallable() {
     return updateAccessConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAccessConfigInstanceRequest, Operation, Operation>
+      updateAccessConfigOperationCallable() {
+    return updateAccessConfigOperationCallable;
   }
 
   @Override
@@ -2574,15 +3519,33 @@ public class HttpJsonInstancesStub extends InstancesStub {
   }
 
   @Override
+  public OperationCallable<UpdateDisplayDeviceInstanceRequest, Operation, Operation>
+      updateDisplayDeviceOperationCallable() {
+    return updateDisplayDeviceOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateNetworkInterfaceInstanceRequest, Operation>
       updateNetworkInterfaceCallable() {
     return updateNetworkInterfaceCallable;
   }
 
   @Override
+  public OperationCallable<UpdateNetworkInterfaceInstanceRequest, Operation, Operation>
+      updateNetworkInterfaceOperationCallable() {
+    return updateNetworkInterfaceOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateShieldedInstanceConfigInstanceRequest, Operation>
       updateShieldedInstanceConfigCallable() {
     return updateShieldedInstanceConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateShieldedInstanceConfigInstanceRequest, Operation, Operation>
+      updateShieldedInstanceConfigOperationCallable() {
+    return updateShieldedInstanceConfigOperationCallable;
   }
 
   @Override

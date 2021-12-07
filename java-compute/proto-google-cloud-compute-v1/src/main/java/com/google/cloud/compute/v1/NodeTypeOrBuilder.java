@@ -30,7 +30,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The CPU platform used by this node type.
    * </pre>
    *
-   * <code>string cpu_platform = 410285354;</code>
+   * <code>optional string cpu_platform = 410285354;</code>
    *
    * @return Whether the cpuPlatform field is set.
    */
@@ -42,7 +42,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The CPU platform used by this node type.
    * </pre>
    *
-   * <code>string cpu_platform = 410285354;</code>
+   * <code>optional string cpu_platform = 410285354;</code>
    *
    * @return The cpuPlatform.
    */
@@ -54,7 +54,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The CPU platform used by this node type.
    * </pre>
    *
-   * <code>string cpu_platform = 410285354;</code>
+   * <code>optional string cpu_platform = 410285354;</code>
    *
    * @return The bytes for cpuPlatform.
    */
@@ -67,7 +67,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -79,7 +79,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -91,7 +91,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -104,7 +104,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The deprecation status associated with this node type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return Whether the deprecated field is set.
    */
@@ -116,7 +116,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The deprecation status associated with this node type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return The deprecated.
    */
@@ -128,7 +128,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The deprecation status associated with this node type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    */
   com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder();
 
@@ -139,7 +139,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -151,7 +151,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -163,7 +163,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -176,7 +176,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The number of virtual CPUs that are available to the node type.
    * </pre>
    *
-   * <code>int32 guest_cpus = 393356754;</code>
+   * <code>optional int32 guest_cpus = 393356754;</code>
    *
    * @return Whether the guestCpus field is set.
    */
@@ -188,7 +188,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The number of virtual CPUs that are available to the node type.
    * </pre>
    *
-   * <code>int32 guest_cpus = 393356754;</code>
+   * <code>optional int32 guest_cpus = 393356754;</code>
    *
    * @return The guestCpus.
    */
@@ -201,7 +201,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -213,7 +213,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -226,7 +226,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The type of the resource. Always compute#nodeType for node types.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -238,7 +238,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The type of the resource. Always compute#nodeType for node types.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -250,7 +250,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The type of the resource. Always compute#nodeType for node types.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -263,7 +263,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] Local SSD available to the node type, defined in GB.
    * </pre>
    *
-   * <code>int32 local_ssd_gb = 329237578;</code>
+   * <code>optional int32 local_ssd_gb = 329237578;</code>
    *
    * @return Whether the localSsdGb field is set.
    */
@@ -275,7 +275,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] Local SSD available to the node type, defined in GB.
    * </pre>
    *
-   * <code>int32 local_ssd_gb = 329237578;</code>
+   * <code>optional int32 local_ssd_gb = 329237578;</code>
    *
    * @return The localSsdGb.
    */
@@ -288,7 +288,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The amount of physical memory available to the node type, defined in MB.
    * </pre>
    *
-   * <code>int32 memory_mb = 116001171;</code>
+   * <code>optional int32 memory_mb = 116001171;</code>
    *
    * @return Whether the memoryMb field is set.
    */
@@ -300,7 +300,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The amount of physical memory available to the node type, defined in MB.
    * </pre>
    *
-   * <code>int32 memory_mb = 116001171;</code>
+   * <code>optional int32 memory_mb = 116001171;</code>
    *
    * @return The memoryMb.
    */
@@ -313,7 +313,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] Name of the resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -325,7 +325,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] Name of the resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -337,7 +337,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] Name of the resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -350,7 +350,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -362,7 +362,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -374,7 +374,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -387,7 +387,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The name of the zone where the node type resides, such as us-central1-a.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return Whether the zone field is set.
    */
@@ -399,7 +399,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The name of the zone where the node type resides, such as us-central1-a.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The zone.
    */
@@ -411,7 +411,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The name of the zone where the node type resides, such as us-central1-a.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The bytes for zone.
    */

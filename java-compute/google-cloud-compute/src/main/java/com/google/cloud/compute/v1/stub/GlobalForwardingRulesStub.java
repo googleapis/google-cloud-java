@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.GlobalForwardingRulesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteGlobalForwardingRuleRequest;
 import com.google.cloud.compute.v1.ForwardingRule;
@@ -41,12 +42,22 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class GlobalForwardingRulesStub implements BackgroundResource {
 
+  public OperationCallable<DeleteGlobalForwardingRuleRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteGlobalForwardingRuleRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetGlobalForwardingRuleRequest, ForwardingRule> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertGlobalForwardingRuleRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertGlobalForwardingRuleRequest, Operation> insertCallable() {
@@ -61,12 +72,27 @@ public abstract class GlobalForwardingRulesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
   }
 
+  public OperationCallable<PatchGlobalForwardingRuleRequest, Operation, Operation>
+      patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
+  }
+
   public UnaryCallable<PatchGlobalForwardingRuleRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
   }
 
+  public OperationCallable<SetLabelsGlobalForwardingRuleRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsOperationCallable()");
+  }
+
   public UnaryCallable<SetLabelsGlobalForwardingRuleRequest, Operation> setLabelsCallable() {
     throw new UnsupportedOperationException("Not implemented: setLabelsCallable()");
+  }
+
+  public OperationCallable<SetTargetGlobalForwardingRuleRequest, Operation, Operation>
+      setTargetOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setTargetOperationCallable()");
   }
 
   public UnaryCallable<SetTargetGlobalForwardingRuleRequest, Operation> setTargetCallable() {

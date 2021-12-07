@@ -135,7 +135,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
+   * optional .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
    * </code>
    *
    * @return Whether the instanceSchedulePolicy field is set.
@@ -152,7 +152,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
+   * optional .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
    * </code>
    *
    * @return The instanceSchedulePolicy.
@@ -173,7 +173,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
+   * optional .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
    * </code>
    */
   @java.lang.Override
@@ -546,7 +546,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
+     * optional .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
      * </code>
      *
      * @return Whether the instanceSchedulePolicy field is set.
@@ -562,7 +562,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
+     * optional .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
      * </code>
      *
      * @return The instanceSchedulePolicy.
@@ -586,7 +586,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
+     * optional .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
      * </code>
      */
     public Builder setInstanceSchedulePolicy(
@@ -612,7 +612,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
+     * optional .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
      * </code>
      */
     public Builder setInstanceSchedulePolicy(
@@ -635,7 +635,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
+     * optional .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
      * </code>
      */
     public Builder mergeInstanceSchedulePolicy(
@@ -671,7 +671,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
+     * optional .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
      * </code>
      */
     public Builder clearInstanceSchedulePolicy() {
@@ -692,7 +692,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
+     * optional .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
      * </code>
      */
     public com.google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
@@ -710,7 +710,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
+     * optional .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
      * </code>
      */
     public com.google.cloud.compute.v1
@@ -733,7 +733,7 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
+     * optional .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

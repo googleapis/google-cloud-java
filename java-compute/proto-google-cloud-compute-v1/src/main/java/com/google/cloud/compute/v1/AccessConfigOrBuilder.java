@@ -27,10 +27,72 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
+   * [Output Only] The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+   * </pre>
+   *
+   * <code>optional string external_ipv6 = 532703707;</code>
+   *
+   * @return Whether the externalIpv6 field is set.
+   */
+  boolean hasExternalIpv6();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+   * </pre>
+   *
+   * <code>optional string external_ipv6 = 532703707;</code>
+   *
+   * @return The externalIpv6.
+   */
+  java.lang.String getExternalIpv6();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+   * </pre>
+   *
+   * <code>optional string external_ipv6 = 532703707;</code>
+   *
+   * @return The bytes for externalIpv6.
+   */
+  com.google.protobuf.ByteString getExternalIpv6Bytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The prefix length of the external IPv6 range.
+   * </pre>
+   *
+   * <code>optional int32 external_ipv6_prefix_length = 425672143;</code>
+   *
+   * @return Whether the externalIpv6PrefixLength field is set.
+   */
+  boolean hasExternalIpv6PrefixLength();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The prefix length of the external IPv6 range.
+   * </pre>
+   *
+   * <code>optional int32 external_ipv6_prefix_length = 425672143;</code>
+   *
+   * @return The externalIpv6PrefixLength.
+   */
+  int getExternalIpv6PrefixLength();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Type of the resource. Always compute#accessConfig for access configs.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -42,7 +104,7 @@ public interface AccessConfigOrBuilder
    * [Output Only] Type of the resource. Always compute#accessConfig for access configs.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -54,7 +116,7 @@ public interface AccessConfigOrBuilder
    * [Output Only] Type of the resource. Always compute#accessConfig for access configs.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -67,7 +129,7 @@ public interface AccessConfigOrBuilder
    * The name of this access configuration. The default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -79,7 +141,7 @@ public interface AccessConfigOrBuilder
    * The name of this access configuration. The default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -91,7 +153,7 @@ public interface AccessConfigOrBuilder
    * The name of this access configuration. The default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -104,7 +166,7 @@ public interface AccessConfigOrBuilder
    * An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
    * </pre>
    *
-   * <code>string nat_i_p = 117634556;</code>
+   * <code>optional string nat_i_p = 117634556;</code>
    *
    * @return Whether the natIP field is set.
    */
@@ -116,7 +178,7 @@ public interface AccessConfigOrBuilder
    * An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
    * </pre>
    *
-   * <code>string nat_i_p = 117634556;</code>
+   * <code>optional string nat_i_p = 117634556;</code>
    *
    * @return The natIP.
    */
@@ -128,7 +190,7 @@ public interface AccessConfigOrBuilder
    * An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
    * </pre>
    *
-   * <code>string nat_i_p = 117634556;</code>
+   * <code>optional string nat_i_p = 117634556;</code>
    *
    * @return The bytes for natIP.
    */
@@ -138,12 +200,11 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD.
-   * If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier.
-   * If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+   * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
+   * <code>optional string network_tier = 517397843;</code>
    *
    * @return Whether the networkTier field is set.
    */
@@ -152,30 +213,28 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD.
-   * If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier.
-   * If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+   * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
+   * <code>optional string network_tier = 517397843;</code>
    *
-   * @return The enum numeric value on the wire for networkTier.
+   * @return The networkTier.
    */
-  int getNetworkTierValue();
+  java.lang.String getNetworkTier();
   /**
    *
    *
    * <pre>
-   * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD.
-   * If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier.
-   * If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+   * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
+   * <code>optional string network_tier = 517397843;</code>
    *
-   * @return The networkTier.
+   * @return The bytes for networkTier.
    */
-  com.google.cloud.compute.v1.AccessConfig.NetworkTier getNetworkTier();
+  com.google.protobuf.ByteString getNetworkTierBytes();
 
   /**
    *
@@ -184,7 +243,7 @@ public interface AccessConfigOrBuilder
    * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
    * </pre>
    *
-   * <code>string public_ptr_domain_name = 316599167;</code>
+   * <code>optional string public_ptr_domain_name = 316599167;</code>
    *
    * @return Whether the publicPtrDomainName field is set.
    */
@@ -196,7 +255,7 @@ public interface AccessConfigOrBuilder
    * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
    * </pre>
    *
-   * <code>string public_ptr_domain_name = 316599167;</code>
+   * <code>optional string public_ptr_domain_name = 316599167;</code>
    *
    * @return The publicPtrDomainName.
    */
@@ -208,7 +267,7 @@ public interface AccessConfigOrBuilder
    * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
    * </pre>
    *
-   * <code>string public_ptr_domain_name = 316599167;</code>
+   * <code>optional string public_ptr_domain_name = 316599167;</code>
    *
    * @return The bytes for publicPtrDomainName.
    */
@@ -221,7 +280,7 @@ public interface AccessConfigOrBuilder
    * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name.
    * </pre>
    *
-   * <code>bool set_public_ptr = 523870229;</code>
+   * <code>optional bool set_public_ptr = 523870229;</code>
    *
    * @return Whether the setPublicPtr field is set.
    */
@@ -233,7 +292,7 @@ public interface AccessConfigOrBuilder
    * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name.
    * </pre>
    *
-   * <code>bool set_public_ptr = 523870229;</code>
+   * <code>optional bool set_public_ptr = 523870229;</code>
    *
    * @return The setPublicPtr.
    */
@@ -244,9 +303,10 @@ public interface AccessConfigOrBuilder
    *
    * <pre>
    * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
    * @return Whether the type field is set.
    */
@@ -256,23 +316,25 @@ public interface AccessConfigOrBuilder
    *
    * <pre>
    * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The enum numeric value on the wire for type.
+   * @return The type.
    */
-  int getTypeValue();
+  java.lang.String getType();
   /**
    *
    *
    * <pre>
    * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The type.
+   * @return The bytes for type.
    */
-  com.google.cloud.compute.v1.AccessConfig.Type getType();
+  com.google.protobuf.ByteString getTypeBytes();
 }

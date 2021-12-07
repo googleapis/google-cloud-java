@@ -25,11 +25,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteInstanceTemplateRequest;
 import com.google.cloud.compute.v1.GetIamPolicyInstanceTemplateRequest;
@@ -39,10 +41,12 @@ import com.google.cloud.compute.v1.InstanceTemplate;
 import com.google.cloud.compute.v1.InstanceTemplateList;
 import com.google.cloud.compute.v1.ListInstanceTemplatesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyInstanceTemplateRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsInstanceTemplateRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -60,6 +64,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<DeleteInstanceTemplateRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteInstanceTemplateRequest, Operation>newBuilder()
@@ -93,7 +100,20 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteInstanceTemplateRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetInstanceTemplateRequest, InstanceTemplate>
@@ -126,6 +146,7 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<InstanceTemplate>newBuilder()
                       .setDefaultInstance(InstanceTemplate.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -164,6 +185,7 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -203,7 +225,20 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertInstanceTemplateRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListInstanceTemplatesRequest, InstanceTemplateList>
@@ -253,6 +288,7 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<InstanceTemplateList>newBuilder()
                       .setDefaultInstance(InstanceTemplateList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -290,6 +326,7 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -330,13 +367,18 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
                       .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
   private final UnaryCallable<DeleteInstanceTemplateRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteInstanceTemplateRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetInstanceTemplateRequest, InstanceTemplate> getCallable;
   private final UnaryCallable<GetIamPolicyInstanceTemplateRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<InsertInstanceTemplateRequest, Operation> insertCallable;
+  private final OperationCallable<InsertInstanceTemplateRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListInstanceTemplatesRequest, InstanceTemplateList> listCallable;
   private final UnaryCallable<ListInstanceTemplatesRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<SetIamPolicyInstanceTemplateRequest, Policy> setIamPolicyCallable;
@@ -344,6 +386,7 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
       testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonInstanceTemplatesStub create(InstanceTemplatesStubSettings settings)
@@ -384,43 +427,58 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<DeleteInstanceTemplateRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteInstanceTemplateRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetInstanceTemplateRequest, InstanceTemplate> getTransportSettings =
         HttpJsonCallSettings.<GetInstanceTemplateRequest, InstanceTemplate>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetIamPolicyInstanceTemplateRequest, Policy>
         getIamPolicyTransportSettings =
             HttpJsonCallSettings.<GetIamPolicyInstanceTemplateRequest, Policy>newBuilder()
                 .setMethodDescriptor(getIamPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<InsertInstanceTemplateRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertInstanceTemplateRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListInstanceTemplatesRequest, InstanceTemplateList> listTransportSettings =
         HttpJsonCallSettings.<ListInstanceTemplatesRequest, InstanceTemplateList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetIamPolicyInstanceTemplateRequest, Policy>
         setIamPolicyTransportSettings =
             HttpJsonCallSettings.<SetIamPolicyInstanceTemplateRequest, Policy>newBuilder()
                 .setMethodDescriptor(setIamPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<TestIamPermissionsInstanceTemplateRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings
                 .<TestIamPermissionsInstanceTemplateRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
@@ -430,6 +488,12 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -468,6 +532,12 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
   }
 
   @Override
+  public OperationCallable<DeleteInstanceTemplateRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetInstanceTemplateRequest, InstanceTemplate> getCallable() {
     return getCallable;
   }
@@ -480,6 +550,12 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
   @Override
   public UnaryCallable<InsertInstanceTemplateRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertInstanceTemplateRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override

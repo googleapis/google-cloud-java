@@ -30,7 +30,8 @@ public interface InstanceManagedByIgmErrorOrBuilder
    * [Output Only] Contents of the error.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
    * </code>
    *
    * @return Whether the error field is set.
@@ -43,7 +44,8 @@ public interface InstanceManagedByIgmErrorOrBuilder
    * [Output Only] Contents of the error.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
    * </code>
    *
    * @return The error.
@@ -56,7 +58,8 @@ public interface InstanceManagedByIgmErrorOrBuilder
    * [Output Only] Contents of the error.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
    * </code>
    */
   com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
@@ -70,7 +73,7 @@ public interface InstanceManagedByIgmErrorOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+   * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
    * </code>
    *
    * @return Whether the instanceActionDetails field is set.
@@ -84,7 +87,7 @@ public interface InstanceManagedByIgmErrorOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+   * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
    * </code>
    *
    * @return The instanceActionDetails.
@@ -99,7 +102,7 @@ public interface InstanceManagedByIgmErrorOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+   * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
    * </code>
    */
   com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
@@ -112,7 +115,7 @@ public interface InstanceManagedByIgmErrorOrBuilder
    * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string timestamp = 55126294;</code>
+   * <code>optional string timestamp = 55126294;</code>
    *
    * @return Whether the timestamp field is set.
    */
@@ -124,7 +127,7 @@ public interface InstanceManagedByIgmErrorOrBuilder
    * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string timestamp = 55126294;</code>
+   * <code>optional string timestamp = 55126294;</code>
    *
    * @return The timestamp.
    */
@@ -136,7 +139,7 @@ public interface InstanceManagedByIgmErrorOrBuilder
    * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string timestamp = 55126294;</code>
+   * <code>optional string timestamp = 55126294;</code>
    *
    * @return The bytes for timestamp.
    */

@@ -125,7 +125,7 @@ public final class BackendServiceCdnPolicyBypassCacheOnRequestHeader
    * The header field name to match on when bypassing cache. Values are case-insensitive.
    * </pre>
    *
-   * <code>string header_name = 110223613;</code>
+   * <code>optional string header_name = 110223613;</code>
    *
    * @return Whether the headerName field is set.
    */
@@ -140,7 +140,7 @@ public final class BackendServiceCdnPolicyBypassCacheOnRequestHeader
    * The header field name to match on when bypassing cache. Values are case-insensitive.
    * </pre>
    *
-   * <code>string header_name = 110223613;</code>
+   * <code>optional string header_name = 110223613;</code>
    *
    * @return The headerName.
    */
@@ -163,7 +163,7 @@ public final class BackendServiceCdnPolicyBypassCacheOnRequestHeader
    * The header field name to match on when bypassing cache. Values are case-insensitive.
    * </pre>
    *
-   * <code>string header_name = 110223613;</code>
+   * <code>optional string header_name = 110223613;</code>
    *
    * @return The bytes for headerName.
    */
@@ -541,7 +541,7 @@ public final class BackendServiceCdnPolicyBypassCacheOnRequestHeader
      * The header field name to match on when bypassing cache. Values are case-insensitive.
      * </pre>
      *
-     * <code>string header_name = 110223613;</code>
+     * <code>optional string header_name = 110223613;</code>
      *
      * @return Whether the headerName field is set.
      */
@@ -555,7 +555,7 @@ public final class BackendServiceCdnPolicyBypassCacheOnRequestHeader
      * The header field name to match on when bypassing cache. Values are case-insensitive.
      * </pre>
      *
-     * <code>string header_name = 110223613;</code>
+     * <code>optional string header_name = 110223613;</code>
      *
      * @return The headerName.
      */
@@ -577,7 +577,7 @@ public final class BackendServiceCdnPolicyBypassCacheOnRequestHeader
      * The header field name to match on when bypassing cache. Values are case-insensitive.
      * </pre>
      *
-     * <code>string header_name = 110223613;</code>
+     * <code>optional string header_name = 110223613;</code>
      *
      * @return The bytes for headerName.
      */
@@ -599,7 +599,7 @@ public final class BackendServiceCdnPolicyBypassCacheOnRequestHeader
      * The header field name to match on when bypassing cache. Values are case-insensitive.
      * </pre>
      *
-     * <code>string header_name = 110223613;</code>
+     * <code>optional string header_name = 110223613;</code>
      *
      * @param value The headerName to set.
      * @return This builder for chaining.
@@ -620,7 +620,7 @@ public final class BackendServiceCdnPolicyBypassCacheOnRequestHeader
      * The header field name to match on when bypassing cache. Values are case-insensitive.
      * </pre>
      *
-     * <code>string header_name = 110223613;</code>
+     * <code>optional string header_name = 110223613;</code>
      *
      * @return This builder for chaining.
      */
@@ -637,7 +637,7 @@ public final class BackendServiceCdnPolicyBypassCacheOnRequestHeader
      * The header field name to match on when bypassing cache. Values are case-insensitive.
      * </pre>
      *
-     * <code>string header_name = 110223613;</code>
+     * <code>optional string header_name = 110223613;</code>
      *
      * @param value The bytes for headerName to set.
      * @return This builder for chaining.

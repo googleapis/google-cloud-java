@@ -30,7 +30,7 @@ public interface DiskAggregatedListOrBuilder
    * [Output Only] Unique identifier for the resource; defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>optional string id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -42,7 +42,7 @@ public interface DiskAggregatedListOrBuilder
    * [Output Only] Unique identifier for the resource; defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>optional string id = 3355;</code>
    *
    * @return The id.
    */
@@ -54,7 +54,7 @@ public interface DiskAggregatedListOrBuilder
    * [Output Only] Unique identifier for the resource; defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>optional string id = 3355;</code>
    *
    * @return The bytes for id.
    */
@@ -122,7 +122,7 @@ public interface DiskAggregatedListOrBuilder
    * [Output Only] Type of resource. Always compute#diskAggregatedList for aggregated lists of persistent disks.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -134,7 +134,7 @@ public interface DiskAggregatedListOrBuilder
    * [Output Only] Type of resource. Always compute#diskAggregatedList for aggregated lists of persistent disks.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -146,7 +146,7 @@ public interface DiskAggregatedListOrBuilder
    * [Output Only] Type of resource. Always compute#diskAggregatedList for aggregated lists of persistent disks.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -159,7 +159,7 @@ public interface DiskAggregatedListOrBuilder
    * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
    * </pre>
    *
-   * <code>string next_page_token = 79797525;</code>
+   * <code>optional string next_page_token = 79797525;</code>
    *
    * @return Whether the nextPageToken field is set.
    */
@@ -171,7 +171,7 @@ public interface DiskAggregatedListOrBuilder
    * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
    * </pre>
    *
-   * <code>string next_page_token = 79797525;</code>
+   * <code>optional string next_page_token = 79797525;</code>
    *
    * @return The nextPageToken.
    */
@@ -183,7 +183,7 @@ public interface DiskAggregatedListOrBuilder
    * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
    * </pre>
    *
-   * <code>string next_page_token = 79797525;</code>
+   * <code>optional string next_page_token = 79797525;</code>
    *
    * @return The bytes for nextPageToken.
    */
@@ -196,7 +196,7 @@ public interface DiskAggregatedListOrBuilder
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -208,7 +208,7 @@ public interface DiskAggregatedListOrBuilder
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -220,7 +220,7 @@ public interface DiskAggregatedListOrBuilder
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -284,7 +284,7 @@ public interface DiskAggregatedListOrBuilder
    * [Output Only] Informational warning message.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+   * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
    *
    * @return Whether the warning field is set.
    */
@@ -296,7 +296,7 @@ public interface DiskAggregatedListOrBuilder
    * [Output Only] Informational warning message.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+   * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
    *
    * @return The warning.
    */
@@ -308,7 +308,7 @@ public interface DiskAggregatedListOrBuilder
    * [Output Only] Informational warning message.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+   * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
    */
   com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder();
 }

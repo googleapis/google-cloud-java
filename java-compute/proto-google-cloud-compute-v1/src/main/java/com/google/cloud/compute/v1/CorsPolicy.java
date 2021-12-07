@@ -199,11 +199,10 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This translates to the Access-Control-Allow-Credentials header.
-   * Default is false.
+   * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This translates to the Access-Control-Allow-Credentials header. Default is false.
    * </pre>
    *
-   * <code>bool allow_credentials = 481263366;</code>
+   * <code>optional bool allow_credentials = 481263366;</code>
    *
    * @return Whether the allowCredentials field is set.
    */
@@ -215,11 +214,10 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This translates to the Access-Control-Allow-Credentials header.
-   * Default is false.
+   * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This translates to the Access-Control-Allow-Credentials header. Default is false.
    * </pre>
    *
-   * <code>bool allow_credentials = 481263366;</code>
+   * <code>optional bool allow_credentials = 481263366;</code>
    *
    * @return The allowCredentials.
    */
@@ -356,8 +354,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
-   * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
    * </pre>
    *
    * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -371,8 +368,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
-   * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
    * </pre>
    *
    * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -386,8 +382,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
-   * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
    * </pre>
    *
    * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -402,8 +397,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
-   * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
    * </pre>
    *
    * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -421,8 +415,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the list of origins that will be allowed to do CORS requests.
-   * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
    * </pre>
    *
    * <code>repeated string allow_origins = 194914071;</code>
@@ -436,8 +429,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the list of origins that will be allowed to do CORS requests.
-   * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
    * </pre>
    *
    * <code>repeated string allow_origins = 194914071;</code>
@@ -451,8 +443,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the list of origins that will be allowed to do CORS requests.
-   * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
    * </pre>
    *
    * <code>repeated string allow_origins = 194914071;</code>
@@ -467,8 +458,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the list of origins that will be allowed to do CORS requests.
-   * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
    * </pre>
    *
    * <code>repeated string allow_origins = 194914071;</code>
@@ -489,7 +479,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    * If true, specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
    * </pre>
    *
-   * <code>bool disabled = 270940796;</code>
+   * <code>optional bool disabled = 270940796;</code>
    *
    * @return Whether the disabled field is set.
    */
@@ -504,7 +494,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    * If true, specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
    * </pre>
    *
-   * <code>bool disabled = 270940796;</code>
+   * <code>optional bool disabled = 270940796;</code>
    *
    * @return The disabled.
    */
@@ -583,7 +573,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    * Specifies how long results of a preflight request can be cached in seconds. This translates to the Access-Control-Max-Age header.
    * </pre>
    *
-   * <code>int32 max_age = 307559332;</code>
+   * <code>optional int32 max_age = 307559332;</code>
    *
    * @return Whether the maxAge field is set.
    */
@@ -598,7 +588,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    * Specifies how long results of a preflight request can be cached in seconds. This translates to the Access-Control-Max-Age header.
    * </pre>
    *
-   * <code>int32 max_age = 307559332;</code>
+   * <code>optional int32 max_age = 307559332;</code>
    *
    * @return The maxAge.
    */
@@ -1154,11 +1144,10 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This translates to the Access-Control-Allow-Credentials header.
-     * Default is false.
+     * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This translates to the Access-Control-Allow-Credentials header. Default is false.
      * </pre>
      *
-     * <code>bool allow_credentials = 481263366;</code>
+     * <code>optional bool allow_credentials = 481263366;</code>
      *
      * @return Whether the allowCredentials field is set.
      */
@@ -1170,11 +1159,10 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This translates to the Access-Control-Allow-Credentials header.
-     * Default is false.
+     * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This translates to the Access-Control-Allow-Credentials header. Default is false.
      * </pre>
      *
-     * <code>bool allow_credentials = 481263366;</code>
+     * <code>optional bool allow_credentials = 481263366;</code>
      *
      * @return The allowCredentials.
      */
@@ -1186,11 +1174,10 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This translates to the Access-Control-Allow-Credentials header.
-     * Default is false.
+     * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This translates to the Access-Control-Allow-Credentials header. Default is false.
      * </pre>
      *
-     * <code>bool allow_credentials = 481263366;</code>
+     * <code>optional bool allow_credentials = 481263366;</code>
      *
      * @param value The allowCredentials to set.
      * @return This builder for chaining.
@@ -1205,11 +1192,10 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This translates to the Access-Control-Allow-Credentials header.
-     * Default is false.
+     * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This translates to the Access-Control-Allow-Credentials header. Default is false.
      * </pre>
      *
-     * <code>bool allow_credentials = 481263366;</code>
+     * <code>optional bool allow_credentials = 481263366;</code>
      *
      * @return This builder for chaining.
      */
@@ -1569,8 +1555,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
-     * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
      * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -1584,8 +1569,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
-     * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
      * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -1599,8 +1583,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
-     * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
      * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -1615,8 +1598,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
-     * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
      * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -1631,8 +1613,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
-     * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
      * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -1654,8 +1635,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
-     * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
      * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -1676,8 +1656,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
-     * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
      * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -1695,8 +1674,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
-     * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
      * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -1713,8 +1691,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
-     * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
      * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -1746,8 +1723,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the list of origins that will be allowed to do CORS requests.
-     * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
      * <code>repeated string allow_origins = 194914071;</code>
@@ -1761,8 +1737,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the list of origins that will be allowed to do CORS requests.
-     * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
      * <code>repeated string allow_origins = 194914071;</code>
@@ -1776,8 +1751,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the list of origins that will be allowed to do CORS requests.
-     * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
      * <code>repeated string allow_origins = 194914071;</code>
@@ -1792,8 +1766,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the list of origins that will be allowed to do CORS requests.
-     * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
      * <code>repeated string allow_origins = 194914071;</code>
@@ -1808,8 +1781,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the list of origins that will be allowed to do CORS requests.
-     * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
      * <code>repeated string allow_origins = 194914071;</code>
@@ -1831,8 +1803,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the list of origins that will be allowed to do CORS requests.
-     * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
      * <code>repeated string allow_origins = 194914071;</code>
@@ -1853,8 +1824,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the list of origins that will be allowed to do CORS requests.
-     * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
      * <code>repeated string allow_origins = 194914071;</code>
@@ -1872,8 +1842,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the list of origins that will be allowed to do CORS requests.
-     * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
      * <code>repeated string allow_origins = 194914071;</code>
@@ -1890,8 +1859,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the list of origins that will be allowed to do CORS requests.
-     * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
      * <code>repeated string allow_origins = 194914071;</code>
@@ -1918,7 +1886,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * If true, specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
      * </pre>
      *
-     * <code>bool disabled = 270940796;</code>
+     * <code>optional bool disabled = 270940796;</code>
      *
      * @return Whether the disabled field is set.
      */
@@ -1933,7 +1901,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * If true, specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
      * </pre>
      *
-     * <code>bool disabled = 270940796;</code>
+     * <code>optional bool disabled = 270940796;</code>
      *
      * @return The disabled.
      */
@@ -1948,7 +1916,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * If true, specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
      * </pre>
      *
-     * <code>bool disabled = 270940796;</code>
+     * <code>optional bool disabled = 270940796;</code>
      *
      * @param value The disabled to set.
      * @return This builder for chaining.
@@ -1966,7 +1934,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * If true, specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
      * </pre>
      *
-     * <code>bool disabled = 270940796;</code>
+     * <code>optional bool disabled = 270940796;</code>
      *
      * @return This builder for chaining.
      */
@@ -2153,7 +2121,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * Specifies how long results of a preflight request can be cached in seconds. This translates to the Access-Control-Max-Age header.
      * </pre>
      *
-     * <code>int32 max_age = 307559332;</code>
+     * <code>optional int32 max_age = 307559332;</code>
      *
      * @return Whether the maxAge field is set.
      */
@@ -2168,7 +2136,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * Specifies how long results of a preflight request can be cached in seconds. This translates to the Access-Control-Max-Age header.
      * </pre>
      *
-     * <code>int32 max_age = 307559332;</code>
+     * <code>optional int32 max_age = 307559332;</code>
      *
      * @return The maxAge.
      */
@@ -2183,7 +2151,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * Specifies how long results of a preflight request can be cached in seconds. This translates to the Access-Control-Max-Age header.
      * </pre>
      *
-     * <code>int32 max_age = 307559332;</code>
+     * <code>optional int32 max_age = 307559332;</code>
      *
      * @param value The maxAge to set.
      * @return This builder for chaining.
@@ -2201,7 +2169,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * Specifies how long results of a preflight request can be cached in seconds. This translates to the Access-Control-Max-Age header.
      * </pre>
      *
-     * <code>int32 max_age = 307559332;</code>
+     * <code>optional int32 max_age = 307559332;</code>
      *
      * @return This builder for chaining.
      */

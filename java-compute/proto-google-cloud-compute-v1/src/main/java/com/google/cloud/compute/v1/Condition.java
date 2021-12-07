@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * A condition to be met.
+ * This is deprecated and has no effect. Do not use.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Condition}
@@ -157,10 +157,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Trusted attributes supplied by the IAM system.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string iam = 104021;</code>
+   * <code>optional string iam = 104021;</code>
    *
    * @return Whether the iam field is set.
    */
@@ -172,10 +172,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Trusted attributes supplied by the IAM system.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string iam = 104021;</code>
+   * <code>optional string iam = 104021;</code>
    *
    * @return The iam.
    */
@@ -195,10 +195,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Trusted attributes supplied by the IAM system.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string iam = 104021;</code>
+   * <code>optional string iam = 104021;</code>
    *
    * @return The bytes for iam.
    */
@@ -221,10 +221,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An operator to apply the subject with.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string op = 3553;</code>
+   * <code>optional string op = 3553;</code>
    *
    * @return Whether the op field is set.
    */
@@ -236,10 +236,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An operator to apply the subject with.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string op = 3553;</code>
+   * <code>optional string op = 3553;</code>
    *
    * @return The op.
    */
@@ -259,10 +259,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An operator to apply the subject with.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string op = 3553;</code>
+   * <code>optional string op = 3553;</code>
    *
    * @return The bytes for op.
    */
@@ -285,10 +285,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Trusted attributes discharged by the service.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string svc = 114272;</code>
+   * <code>optional string svc = 114272;</code>
    *
    * @return Whether the svc field is set.
    */
@@ -300,10 +300,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Trusted attributes discharged by the service.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string svc = 114272;</code>
+   * <code>optional string svc = 114272;</code>
    *
    * @return The svc.
    */
@@ -323,10 +323,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Trusted attributes discharged by the service.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string svc = 114272;</code>
+   * <code>optional string svc = 114272;</code>
    *
    * @return The bytes for svc.
    */
@@ -349,10 +349,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Trusted attributes supplied by any service that owns resources and uses the IAM system for access control.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string sys = 114381;</code>
+   * <code>optional string sys = 114381;</code>
    *
    * @return Whether the sys field is set.
    */
@@ -364,10 +364,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Trusted attributes supplied by any service that owns resources and uses the IAM system for access control.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string sys = 114381;</code>
+   * <code>optional string sys = 114381;</code>
    *
    * @return The sys.
    */
@@ -387,10 +387,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Trusted attributes supplied by any service that owns resources and uses the IAM system for access control.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string sys = 114381;</code>
+   * <code>optional string sys = 114381;</code>
    *
    * @return The bytes for sys.
    */
@@ -413,7 +413,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The objects of the condition.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string values = 249928994;</code>
@@ -427,7 +427,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The objects of the condition.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string values = 249928994;</code>
@@ -441,7 +441,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The objects of the condition.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string values = 249928994;</code>
@@ -456,7 +456,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The objects of the condition.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string values = 249928994;</code>
@@ -692,7 +692,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A condition to be met.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Condition}
@@ -909,10 +909,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Trusted attributes supplied by the IAM system.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string iam = 104021;</code>
+     * <code>optional string iam = 104021;</code>
      *
      * @return Whether the iam field is set.
      */
@@ -923,10 +923,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Trusted attributes supplied by the IAM system.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string iam = 104021;</code>
+     * <code>optional string iam = 104021;</code>
      *
      * @return The iam.
      */
@@ -945,10 +945,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Trusted attributes supplied by the IAM system.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string iam = 104021;</code>
+     * <code>optional string iam = 104021;</code>
      *
      * @return The bytes for iam.
      */
@@ -967,10 +967,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Trusted attributes supplied by the IAM system.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string iam = 104021;</code>
+     * <code>optional string iam = 104021;</code>
      *
      * @param value The iam to set.
      * @return This builder for chaining.
@@ -988,10 +988,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Trusted attributes supplied by the IAM system.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string iam = 104021;</code>
+     * <code>optional string iam = 104021;</code>
      *
      * @return This builder for chaining.
      */
@@ -1005,10 +1005,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Trusted attributes supplied by the IAM system.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string iam = 104021;</code>
+     * <code>optional string iam = 104021;</code>
      *
      * @param value The bytes for iam to set.
      * @return This builder for chaining.
@@ -1029,10 +1029,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An operator to apply the subject with.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string op = 3553;</code>
+     * <code>optional string op = 3553;</code>
      *
      * @return Whether the op field is set.
      */
@@ -1043,10 +1043,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An operator to apply the subject with.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string op = 3553;</code>
+     * <code>optional string op = 3553;</code>
      *
      * @return The op.
      */
@@ -1065,10 +1065,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An operator to apply the subject with.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string op = 3553;</code>
+     * <code>optional string op = 3553;</code>
      *
      * @return The bytes for op.
      */
@@ -1087,10 +1087,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An operator to apply the subject with.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string op = 3553;</code>
+     * <code>optional string op = 3553;</code>
      *
      * @param value The op to set.
      * @return This builder for chaining.
@@ -1108,10 +1108,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An operator to apply the subject with.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string op = 3553;</code>
+     * <code>optional string op = 3553;</code>
      *
      * @return This builder for chaining.
      */
@@ -1125,10 +1125,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An operator to apply the subject with.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string op = 3553;</code>
+     * <code>optional string op = 3553;</code>
      *
      * @param value The bytes for op to set.
      * @return This builder for chaining.
@@ -1149,10 +1149,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Trusted attributes discharged by the service.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string svc = 114272;</code>
+     * <code>optional string svc = 114272;</code>
      *
      * @return Whether the svc field is set.
      */
@@ -1163,10 +1163,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Trusted attributes discharged by the service.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string svc = 114272;</code>
+     * <code>optional string svc = 114272;</code>
      *
      * @return The svc.
      */
@@ -1185,10 +1185,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Trusted attributes discharged by the service.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string svc = 114272;</code>
+     * <code>optional string svc = 114272;</code>
      *
      * @return The bytes for svc.
      */
@@ -1207,10 +1207,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Trusted attributes discharged by the service.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string svc = 114272;</code>
+     * <code>optional string svc = 114272;</code>
      *
      * @param value The svc to set.
      * @return This builder for chaining.
@@ -1228,10 +1228,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Trusted attributes discharged by the service.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string svc = 114272;</code>
+     * <code>optional string svc = 114272;</code>
      *
      * @return This builder for chaining.
      */
@@ -1245,10 +1245,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Trusted attributes discharged by the service.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string svc = 114272;</code>
+     * <code>optional string svc = 114272;</code>
      *
      * @param value The bytes for svc to set.
      * @return This builder for chaining.
@@ -1269,10 +1269,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Trusted attributes supplied by any service that owns resources and uses the IAM system for access control.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string sys = 114381;</code>
+     * <code>optional string sys = 114381;</code>
      *
      * @return Whether the sys field is set.
      */
@@ -1283,10 +1283,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Trusted attributes supplied by any service that owns resources and uses the IAM system for access control.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string sys = 114381;</code>
+     * <code>optional string sys = 114381;</code>
      *
      * @return The sys.
      */
@@ -1305,10 +1305,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Trusted attributes supplied by any service that owns resources and uses the IAM system for access control.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string sys = 114381;</code>
+     * <code>optional string sys = 114381;</code>
      *
      * @return The bytes for sys.
      */
@@ -1327,10 +1327,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Trusted attributes supplied by any service that owns resources and uses the IAM system for access control.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string sys = 114381;</code>
+     * <code>optional string sys = 114381;</code>
      *
      * @param value The sys to set.
      * @return This builder for chaining.
@@ -1348,10 +1348,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Trusted attributes supplied by any service that owns resources and uses the IAM system for access control.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string sys = 114381;</code>
+     * <code>optional string sys = 114381;</code>
      *
      * @return This builder for chaining.
      */
@@ -1365,10 +1365,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Trusted attributes supplied by any service that owns resources and uses the IAM system for access control.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string sys = 114381;</code>
+     * <code>optional string sys = 114381;</code>
      *
      * @param value The bytes for sys to set.
      * @return This builder for chaining.
@@ -1397,7 +1397,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The objects of the condition.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string values = 249928994;</code>
@@ -1411,7 +1411,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The objects of the condition.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string values = 249928994;</code>
@@ -1425,7 +1425,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The objects of the condition.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string values = 249928994;</code>
@@ -1440,7 +1440,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The objects of the condition.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string values = 249928994;</code>
@@ -1455,7 +1455,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The objects of the condition.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string values = 249928994;</code>
@@ -1477,7 +1477,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The objects of the condition.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string values = 249928994;</code>
@@ -1498,7 +1498,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The objects of the condition.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string values = 249928994;</code>
@@ -1516,7 +1516,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The objects of the condition.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string values = 249928994;</code>
@@ -1533,7 +1533,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The objects of the condition.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string values = 249928994;</code>

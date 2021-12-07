@@ -121,7 +121,7 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
    * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy associated with the target proxy resource.
    * </pre>
    *
-   * <code>string ssl_policy = 295190213;</code>
+   * <code>optional string ssl_policy = 295190213;</code>
    *
    * @return Whether the sslPolicy field is set.
    */
@@ -136,7 +136,7 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
    * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy associated with the target proxy resource.
    * </pre>
    *
-   * <code>string ssl_policy = 295190213;</code>
+   * <code>optional string ssl_policy = 295190213;</code>
    *
    * @return The sslPolicy.
    */
@@ -159,7 +159,7 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
    * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy associated with the target proxy resource.
    * </pre>
    *
-   * <code>string ssl_policy = 295190213;</code>
+   * <code>optional string ssl_policy = 295190213;</code>
    *
    * @return The bytes for sslPolicy.
    */
@@ -513,7 +513,7 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
      * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy associated with the target proxy resource.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213;</code>
+     * <code>optional string ssl_policy = 295190213;</code>
      *
      * @return Whether the sslPolicy field is set.
      */
@@ -527,7 +527,7 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
      * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy associated with the target proxy resource.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213;</code>
+     * <code>optional string ssl_policy = 295190213;</code>
      *
      * @return The sslPolicy.
      */
@@ -549,7 +549,7 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
      * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy associated with the target proxy resource.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213;</code>
+     * <code>optional string ssl_policy = 295190213;</code>
      *
      * @return The bytes for sslPolicy.
      */
@@ -571,7 +571,7 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
      * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy associated with the target proxy resource.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213;</code>
+     * <code>optional string ssl_policy = 295190213;</code>
      *
      * @param value The sslPolicy to set.
      * @return This builder for chaining.
@@ -592,7 +592,7 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
      * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy associated with the target proxy resource.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213;</code>
+     * <code>optional string ssl_policy = 295190213;</code>
      *
      * @return This builder for chaining.
      */
@@ -609,7 +609,7 @@ public final class SslPolicyReference extends com.google.protobuf.GeneratedMessa
      * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy associated with the target proxy resource.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213;</code>
+     * <code>optional string ssl_policy = 295190213;</code>
      *
      * @param value The bytes for sslPolicy to set.
      * @return This builder for chaining.

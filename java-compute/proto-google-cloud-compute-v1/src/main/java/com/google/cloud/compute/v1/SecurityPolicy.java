@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Google Cloud Armor security policy resource.
- * Only external backend services that use load balancers can reference a security policy. For more information, see  Google Cloud Armor security policy overview. (== resource_for {$api_version}.securityPolicies ==)
+ * Represents a Google Cloud Armor security policy resource. Only external backend services that use load balancers can reference a security policy. For more information, see Google Cloud Armor security policy overview.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.SecurityPolicy}
@@ -80,60 +79,96 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             break;
           case 26840:
             {
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000020;
               id_ = input.readUInt64();
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000040;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000080;
               name_ = s;
               break;
             }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000004;
               creationTimestamp_ = s;
               break;
             }
           case 870991802:
             {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                 rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.SecurityPolicyRule>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000100;
               }
               rules_.add(
                   input.readMessage(
                       com.google.cloud.compute.v1.SecurityPolicyRule.parser(), extensionRegistry));
               break;
             }
+          case 1201925882:
+            {
+              com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig.Builder
+                  subBuilder = null;
+              if (((bitField0_ & 0x00000001) != 0)) {
+                subBuilder = adaptiveProtectionConfig_.toBuilder();
+              }
+              adaptiveProtectionConfig_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(adaptiveProtectionConfig_);
+                adaptiveProtectionConfig_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
           case 1877428002:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000010;
               fingerprint_ = s;
               break;
             }
           case -911466526:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000008;
               description_ = s;
+              break;
+            }
+          case -700756478:
+            {
+              com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.Builder subBuilder =
+                  null;
+              if (((bitField0_ & 0x00000002) != 0)) {
+                subBuilder = advancedOptionsConfig_.toBuilder();
+              }
+              advancedOptionsConfig_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(advancedOptionsConfig_);
+                advancedOptionsConfig_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
               break;
             }
           case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000100;
               selfLink_ = s;
               break;
             }
@@ -151,7 +186,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
         rules_ = java.util.Collections.unmodifiableList(rules_);
       }
       this.unknownFields = unknownFields.build();
@@ -175,6 +210,87 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bitField0_;
+  public static final int ADAPTIVE_PROTECTION_CONFIG_FIELD_NUMBER = 150240735;
+  private com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig
+      adaptiveProtectionConfig_;
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
+   * </code>
+   *
+   * @return Whether the adaptiveProtectionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdaptiveProtectionConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
+   * </code>
+   *
+   * @return The adaptiveProtectionConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig
+      getAdaptiveProtectionConfig() {
+    return adaptiveProtectionConfig_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig.getDefaultInstance()
+        : adaptiveProtectionConfig_;
+  }
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigOrBuilder
+      getAdaptiveProtectionConfigOrBuilder() {
+    return adaptiveProtectionConfig_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig.getDefaultInstance()
+        : adaptiveProtectionConfig_;
+  }
+
+  public static final int ADVANCED_OPTIONS_CONFIG_FIELD_NUMBER = 449276352;
+  private com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advancedOptionsConfig_;
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
+   * </code>
+   *
+   * @return Whether the advancedOptionsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdvancedOptionsConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
+   * </code>
+   *
+   * @return The advancedOptionsConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig
+      getAdvancedOptionsConfig() {
+    return advancedOptionsConfig_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.getDefaultInstance()
+        : advancedOptionsConfig_;
+  }
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigOrBuilder
+      getAdvancedOptionsConfigOrBuilder() {
+    return advancedOptionsConfig_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.getDefaultInstance()
+        : advancedOptionsConfig_;
+  }
+
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
   private volatile java.lang.Object creationTimestamp_;
   /**
@@ -184,13 +300,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
   @java.lang.Override
   public boolean hasCreationTimestamp() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -199,7 +315,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -222,7 +338,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -248,13 +364,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
   @java.lang.Override
   public boolean hasDescription() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -263,7 +379,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -286,7 +402,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -309,27 +425,25 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make get() request to the security policy.
+   * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return Whether the fingerprint field is set.
    */
   @java.lang.Override
   public boolean hasFingerprint() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make get() request to the security policy.
+   * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The fingerprint.
    */
@@ -349,11 +463,10 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make get() request to the security policy.
+   * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The bytes for fingerprint.
    */
@@ -379,13 +492,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
   @java.lang.Override
   public boolean hasId() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -394,7 +507,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -412,13 +525,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output only] Type of the resource. Always compute#securityPolicyfor security policies
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -427,7 +540,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output only] Type of the resource. Always compute#securityPolicyfor security policies
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -450,7 +563,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output only] Type of the resource. Always compute#securityPolicyfor security policies
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -476,13 +589,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -491,7 +604,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -514,7 +627,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -609,13 +722,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -624,7 +737,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -647,7 +760,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -678,28 +791,34 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
     for (int i = 0; i < rules_.size(); i++) {
       output.writeMessage(108873975, rules_.get(i));
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(150240735, getAdaptiveProtectionConfig());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(449276352, getAdvancedOptionsConfig());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     unknownFields.writeTo(output);
@@ -711,29 +830,39 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
     for (int i = 0; i < rules_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(108873975, rules_.get(i));
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              150240735, getAdaptiveProtectionConfig());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              449276352, getAdvancedOptionsConfig());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += unknownFields.getSerializedSize();
@@ -752,6 +881,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.SecurityPolicy other =
         (com.google.cloud.compute.v1.SecurityPolicy) obj;
 
+    if (hasAdaptiveProtectionConfig() != other.hasAdaptiveProtectionConfig()) return false;
+    if (hasAdaptiveProtectionConfig()) {
+      if (!getAdaptiveProtectionConfig().equals(other.getAdaptiveProtectionConfig())) return false;
+    }
+    if (hasAdvancedOptionsConfig() != other.hasAdvancedOptionsConfig()) return false;
+    if (hasAdvancedOptionsConfig()) {
+      if (!getAdvancedOptionsConfig().equals(other.getAdvancedOptionsConfig())) return false;
+    }
     if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
     if (hasCreationTimestamp()) {
       if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
@@ -792,6 +929,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasAdaptiveProtectionConfig()) {
+      hash = (37 * hash) + ADAPTIVE_PROTECTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAdaptiveProtectionConfig().hashCode();
+    }
+    if (hasAdvancedOptionsConfig()) {
+      hash = (37 * hash) + ADVANCED_OPTIONS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAdvancedOptionsConfig().hashCode();
+    }
     if (hasCreationTimestamp()) {
       hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + getCreationTimestamp().hashCode();
@@ -928,8 +1073,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Google Cloud Armor security policy resource.
-   * Only external backend services that use load balancers can reference a security policy. For more information, see  Google Cloud Armor security policy overview. (== resource_for {$api_version}.securityPolicies ==)
+   * Represents a Google Cloud Armor security policy resource. Only external backend services that use load balancers can reference a security policy. For more information, see Google Cloud Armor security policy overview.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.SecurityPolicy}
@@ -965,6 +1109,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getAdaptiveProtectionConfigFieldBuilder();
+        getAdvancedOptionsConfigFieldBuilder();
         getRulesFieldBuilder();
       }
     }
@@ -972,26 +1118,38 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      creationTimestamp_ = "";
+      if (adaptiveProtectionConfigBuilder_ == null) {
+        adaptiveProtectionConfig_ = null;
+      } else {
+        adaptiveProtectionConfigBuilder_.clear();
+      }
       bitField0_ = (bitField0_ & ~0x00000001);
-      description_ = "";
+      if (advancedOptionsConfigBuilder_ == null) {
+        advancedOptionsConfig_ = null;
+      } else {
+        advancedOptionsConfigBuilder_.clear();
+      }
       bitField0_ = (bitField0_ & ~0x00000002);
-      fingerprint_ = "";
+      creationTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
-      id_ = 0L;
+      description_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
-      kind_ = "";
+      fingerprint_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
-      name_ = "";
+      id_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000020);
+      kind_ = "";
+      bitField0_ = (bitField0_ & ~0x00000040);
+      name_ = "";
+      bitField0_ = (bitField0_ & ~0x00000080);
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000100);
       } else {
         rulesBuilder_.clear();
       }
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -1022,40 +1180,56 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (adaptiveProtectionConfigBuilder_ == null) {
+          result.adaptiveProtectionConfig_ = adaptiveProtectionConfig_;
+        } else {
+          result.adaptiveProtectionConfig_ = adaptiveProtectionConfigBuilder_.build();
+        }
         to_bitField0_ |= 0x00000001;
       }
-      result.creationTimestamp_ = creationTimestamp_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (advancedOptionsConfigBuilder_ == null) {
+          result.advancedOptionsConfig_ = advancedOptionsConfig_;
+        } else {
+          result.advancedOptionsConfig_ = advancedOptionsConfigBuilder_.build();
+        }
         to_bitField0_ |= 0x00000002;
       }
-      result.description_ = description_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         to_bitField0_ |= 0x00000004;
       }
-      result.fingerprint_ = fingerprint_;
+      result.creationTimestamp_ = creationTimestamp_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.id_ = id_;
         to_bitField0_ |= 0x00000008;
       }
+      result.description_ = description_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         to_bitField0_ |= 0x00000010;
       }
-      result.kind_ = kind_;
+      result.fingerprint_ = fingerprint_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.id_ = id_;
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
+      result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000080;
       }
       result.name_ = name_;
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.rules_ = rules_;
       } else {
         result.rules_ = rulesBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        to_bitField0_ |= 0x00000040;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        to_bitField0_ |= 0x00000100;
       }
       result.selfLink_ = selfLink_;
       result.bitField0_ = to_bitField0_;
@@ -1108,18 +1282,24 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.SecurityPolicy other) {
       if (other == com.google.cloud.compute.v1.SecurityPolicy.getDefaultInstance()) return this;
+      if (other.hasAdaptiveProtectionConfig()) {
+        mergeAdaptiveProtectionConfig(other.getAdaptiveProtectionConfig());
+      }
+      if (other.hasAdvancedOptionsConfig()) {
+        mergeAdvancedOptionsConfig(other.getAdvancedOptionsConfig());
+      }
       if (other.hasCreationTimestamp()) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         description_ = other.description_;
         onChanged();
       }
       if (other.hasFingerprint()) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         fingerprint_ = other.fingerprint_;
         onChanged();
       }
@@ -1127,12 +1307,12 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         setId(other.getId());
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         kind_ = other.kind_;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         name_ = other.name_;
         onChanged();
       }
@@ -1140,7 +1320,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         if (!other.rules_.isEmpty()) {
           if (rules_.isEmpty()) {
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureRulesIsMutable();
             rules_.addAll(other.rules_);
@@ -1153,7 +1333,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             rulesBuilder_.dispose();
             rulesBuilder_ = null;
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000100);
             rulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRulesFieldBuilder()
@@ -1164,7 +1344,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         selfLink_ = other.selfLink_;
         onChanged();
       }
@@ -1199,6 +1379,328 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
+    private com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig
+        adaptiveProtectionConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig,
+            com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig.Builder,
+            com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigOrBuilder>
+        adaptiveProtectionConfigBuilder_;
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
+     * </code>
+     *
+     * @return Whether the adaptiveProtectionConfig field is set.
+     */
+    public boolean hasAdaptiveProtectionConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
+     * </code>
+     *
+     * @return The adaptiveProtectionConfig.
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig
+        getAdaptiveProtectionConfig() {
+      if (adaptiveProtectionConfigBuilder_ == null) {
+        return adaptiveProtectionConfig_ == null
+            ? com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig
+                .getDefaultInstance()
+            : adaptiveProtectionConfig_;
+      } else {
+        return adaptiveProtectionConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
+     * </code>
+     */
+    public Builder setAdaptiveProtectionConfig(
+        com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig value) {
+      if (adaptiveProtectionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        adaptiveProtectionConfig_ = value;
+        onChanged();
+      } else {
+        adaptiveProtectionConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
+     * </code>
+     */
+    public Builder setAdaptiveProtectionConfig(
+        com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig.Builder
+            builderForValue) {
+      if (adaptiveProtectionConfigBuilder_ == null) {
+        adaptiveProtectionConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        adaptiveProtectionConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
+     * </code>
+     */
+    public Builder mergeAdaptiveProtectionConfig(
+        com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig value) {
+      if (adaptiveProtectionConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && adaptiveProtectionConfig_ != null
+            && adaptiveProtectionConfig_
+                != com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig
+                    .getDefaultInstance()) {
+          adaptiveProtectionConfig_ =
+              com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig.newBuilder(
+                      adaptiveProtectionConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          adaptiveProtectionConfig_ = value;
+        }
+        onChanged();
+      } else {
+        adaptiveProtectionConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000001;
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
+     * </code>
+     */
+    public Builder clearAdaptiveProtectionConfig() {
+      if (adaptiveProtectionConfigBuilder_ == null) {
+        adaptiveProtectionConfig_ = null;
+        onChanged();
+      } else {
+        adaptiveProtectionConfigBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000001);
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig.Builder
+        getAdaptiveProtectionConfigBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getAdaptiveProtectionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigOrBuilder
+        getAdaptiveProtectionConfigOrBuilder() {
+      if (adaptiveProtectionConfigBuilder_ != null) {
+        return adaptiveProtectionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return adaptiveProtectionConfig_ == null
+            ? com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig
+                .getDefaultInstance()
+            : adaptiveProtectionConfig_;
+      }
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig,
+            com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig.Builder,
+            com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigOrBuilder>
+        getAdaptiveProtectionConfigFieldBuilder() {
+      if (adaptiveProtectionConfigBuilder_ == null) {
+        adaptiveProtectionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig,
+                com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig.Builder,
+                com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigOrBuilder>(
+                getAdaptiveProtectionConfig(), getParentForChildren(), isClean());
+        adaptiveProtectionConfig_ = null;
+      }
+      return adaptiveProtectionConfigBuilder_;
+    }
+
+    private com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advancedOptionsConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig,
+            com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.Builder,
+            com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigOrBuilder>
+        advancedOptionsConfigBuilder_;
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
+     * </code>
+     *
+     * @return Whether the advancedOptionsConfig field is set.
+     */
+    public boolean hasAdvancedOptionsConfig() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
+     * </code>
+     *
+     * @return The advancedOptionsConfig.
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig
+        getAdvancedOptionsConfig() {
+      if (advancedOptionsConfigBuilder_ == null) {
+        return advancedOptionsConfig_ == null
+            ? com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.getDefaultInstance()
+            : advancedOptionsConfig_;
+      } else {
+        return advancedOptionsConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
+     * </code>
+     */
+    public Builder setAdvancedOptionsConfig(
+        com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig value) {
+      if (advancedOptionsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        advancedOptionsConfig_ = value;
+        onChanged();
+      } else {
+        advancedOptionsConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
+     * </code>
+     */
+    public Builder setAdvancedOptionsConfig(
+        com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.Builder builderForValue) {
+      if (advancedOptionsConfigBuilder_ == null) {
+        advancedOptionsConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        advancedOptionsConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
+     * </code>
+     */
+    public Builder mergeAdvancedOptionsConfig(
+        com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig value) {
+      if (advancedOptionsConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && advancedOptionsConfig_ != null
+            && advancedOptionsConfig_
+                != com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig
+                    .getDefaultInstance()) {
+          advancedOptionsConfig_ =
+              com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.newBuilder(
+                      advancedOptionsConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          advancedOptionsConfig_ = value;
+        }
+        onChanged();
+      } else {
+        advancedOptionsConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
+     * </code>
+     */
+    public Builder clearAdvancedOptionsConfig() {
+      if (advancedOptionsConfigBuilder_ == null) {
+        advancedOptionsConfig_ = null;
+        onChanged();
+      } else {
+        advancedOptionsConfigBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.Builder
+        getAdvancedOptionsConfigBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getAdvancedOptionsConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigOrBuilder
+        getAdvancedOptionsConfigOrBuilder() {
+      if (advancedOptionsConfigBuilder_ != null) {
+        return advancedOptionsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return advancedOptionsConfig_ == null
+            ? com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.getDefaultInstance()
+            : advancedOptionsConfig_;
+      }
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig,
+            com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.Builder,
+            com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigOrBuilder>
+        getAdvancedOptionsConfigFieldBuilder() {
+      if (advancedOptionsConfigBuilder_ == null) {
+        advancedOptionsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig,
+                com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.Builder,
+                com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigOrBuilder>(
+                getAdvancedOptionsConfig(), getParentForChildren(), isClean());
+        advancedOptionsConfig_ = null;
+      }
+      return advancedOptionsConfigBuilder_;
+    }
+
     private java.lang.Object creationTimestamp_ = "";
     /**
      *
@@ -1207,12 +1709,12 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
     public boolean hasCreationTimestamp() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1221,7 +1723,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -1243,7 +1745,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -1265,7 +1767,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -1274,7 +1776,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1286,12 +1788,12 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -1303,7 +1805,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -1313,7 +1815,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1327,12 +1829,12 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1341,7 +1843,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1363,7 +1865,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1385,7 +1887,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1394,7 +1896,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       description_ = value;
       onChanged();
       return this;
@@ -1406,12 +1908,12 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -1423,7 +1925,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1433,7 +1935,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       description_ = value;
       onChanged();
       return this;
@@ -1444,26 +1946,24 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make get() request to the security policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return Whether the fingerprint field is set.
      */
     public boolean hasFingerprint() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make get() request to the security policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The fingerprint.
      */
@@ -1482,11 +1982,10 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make get() request to the security policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The bytes for fingerprint.
      */
@@ -1505,11 +2004,10 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make get() request to the security policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The fingerprint to set.
      * @return This builder for chaining.
@@ -1518,7 +2016,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -1527,16 +2025,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make get() request to the security policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearFingerprint() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       fingerprint_ = getDefaultInstance().getFingerprint();
       onChanged();
       return this;
@@ -1545,11 +2042,10 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make get() request to the security policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The bytes for fingerprint to set.
      * @return This builder for chaining.
@@ -1559,7 +2055,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -1573,13 +2069,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1588,7 +2084,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -1603,13 +2099,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       id_ = value;
       onChanged();
       return this;
@@ -1621,12 +2117,12 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       id_ = 0L;
       onChanged();
       return this;
@@ -1640,12 +2136,12 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Type of the resource. Always compute#securityPolicyfor security policies
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1654,7 +2150,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Type of the resource. Always compute#securityPolicyfor security policies
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -1676,7 +2172,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Type of the resource. Always compute#securityPolicyfor security policies
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -1698,7 +2194,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Type of the resource. Always compute#securityPolicyfor security policies
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -1707,7 +2203,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       kind_ = value;
       onChanged();
       return this;
@@ -1719,12 +2215,12 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Type of the resource. Always compute#securityPolicyfor security policies
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -1736,7 +2232,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Type of the resource. Always compute#securityPolicyfor security policies
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -1746,7 +2242,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       kind_ = value;
       onChanged();
       return this;
@@ -1760,12 +2256,12 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -1774,7 +2270,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -1796,7 +2292,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -1818,7 +2314,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1827,7 +2323,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       name_ = value;
       onChanged();
       return this;
@@ -1839,12 +2335,12 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -1856,7 +2352,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1866,7 +2362,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       name_ = value;
       onChanged();
       return this;
@@ -1876,9 +2372,9 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.SecurityPolicyRule>(rules_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -2094,7 +2590,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         rulesBuilder_.clear();
@@ -2216,7 +2712,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.SecurityPolicyRule,
                 com.google.cloud.compute.v1.SecurityPolicyRule.Builder,
                 com.google.cloud.compute.v1.SecurityPolicyRuleOrBuilder>(
-                rules_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
+                rules_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
         rules_ = null;
       }
       return rulesBuilder_;
@@ -2230,12 +2726,12 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2244,7 +2740,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -2266,7 +2762,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2288,7 +2784,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2297,7 +2793,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       selfLink_ = value;
       onChanged();
       return this;
@@ -2309,12 +2805,12 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -2326,7 +2822,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2336,7 +2832,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       selfLink_ = value;
       onChanged();
       return this;

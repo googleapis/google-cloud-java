@@ -25,19 +25,23 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteRegionSslCertificateRequest;
 import com.google.cloud.compute.v1.GetRegionSslCertificateRequest;
 import com.google.cloud.compute.v1.InsertRegionSslCertificateRequest;
 import com.google.cloud.compute.v1.ListRegionSslCertificatesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.SslCertificate;
 import com.google.cloud.compute.v1.SslCertificateList;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,6 +59,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionSslCertificatesStub extends RegionSslCertificatesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<DeleteRegionSslCertificateRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionSslCertificateRequest, Operation>newBuilder()
@@ -89,7 +96,21 @@ public class HttpJsonRegionSslCertificatesStub extends RegionSslCertificatesStub
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteRegionSslCertificateRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetRegionSslCertificateRequest, SslCertificate>
@@ -123,6 +144,7 @@ public class HttpJsonRegionSslCertificatesStub extends RegionSslCertificatesStub
               .setResponseParser(
                   ProtoMessageResponseParser.<SslCertificate>newBuilder()
                       .setDefaultInstance(SslCertificate.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -163,7 +185,21 @@ public class HttpJsonRegionSslCertificatesStub extends RegionSslCertificatesStub
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertRegionSslCertificateRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListRegionSslCertificatesRequest, SslCertificateList>
@@ -214,17 +250,23 @@ public class HttpJsonRegionSslCertificatesStub extends RegionSslCertificatesStub
               .setResponseParser(
                   ProtoMessageResponseParser.<SslCertificateList>newBuilder()
                       .setDefaultInstance(SslCertificateList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
   private final UnaryCallable<DeleteRegionSslCertificateRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteRegionSslCertificateRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetRegionSslCertificateRequest, SslCertificate> getCallable;
   private final UnaryCallable<InsertRegionSslCertificateRequest, Operation> insertCallable;
+  private final OperationCallable<InsertRegionSslCertificateRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListRegionSslCertificatesRequest, SslCertificateList> listCallable;
   private final UnaryCallable<ListRegionSslCertificatesRequest, ListPagedResponse>
       listPagedCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionSslCertificatesStub create(
@@ -265,34 +307,52 @@ public class HttpJsonRegionSslCertificatesStub extends RegionSslCertificatesStub
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<DeleteRegionSslCertificateRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteRegionSslCertificateRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetRegionSslCertificateRequest, SslCertificate> getTransportSettings =
         HttpJsonCallSettings.<GetRegionSslCertificateRequest, SslCertificate>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertRegionSslCertificateRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionSslCertificateRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListRegionSslCertificatesRequest, SslCertificateList>
         listTransportSettings =
             HttpJsonCallSettings.<ListRegionSslCertificatesRequest, SslCertificateList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -320,6 +380,12 @@ public class HttpJsonRegionSslCertificatesStub extends RegionSslCertificatesStub
   }
 
   @Override
+  public OperationCallable<DeleteRegionSslCertificateRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetRegionSslCertificateRequest, SslCertificate> getCallable() {
     return getCallable;
   }
@@ -327,6 +393,12 @@ public class HttpJsonRegionSslCertificatesStub extends RegionSslCertificatesStub
   @Override
   public UnaryCallable<InsertRegionSslCertificateRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertRegionSslCertificateRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override

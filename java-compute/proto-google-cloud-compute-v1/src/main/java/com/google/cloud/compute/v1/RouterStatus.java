@@ -398,7 +398,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
    * URI of the network to which this router belongs.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return Whether the network field is set.
    */
@@ -413,7 +413,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
    * URI of the network to which this router belongs.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The network.
    */
@@ -436,7 +436,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
    * URI of the network to which this router belongs.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The bytes for network.
    */
@@ -2253,7 +2253,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * URI of the network to which this router belongs.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @return Whether the network field is set.
      */
@@ -2267,7 +2267,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * URI of the network to which this router belongs.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @return The network.
      */
@@ -2289,7 +2289,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * URI of the network to which this router belongs.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @return The bytes for network.
      */
@@ -2311,7 +2311,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * URI of the network to which this router belongs.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @param value The network to set.
      * @return This builder for chaining.
@@ -2332,7 +2332,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * URI of the network to which this router belongs.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @return This builder for chaining.
      */
@@ -2349,7 +2349,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * URI of the network to which this router belongs.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @param value The bytes for network to set.
      * @return This builder for chaining.

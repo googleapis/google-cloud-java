@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.UrlMapsClient.AggregatedListPagedRespo
 import static com.google.cloud.compute.v1.UrlMapsClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListUrlMapsRequest;
 import com.google.cloud.compute.v1.DeleteUrlMapRequest;
@@ -56,6 +57,10 @@ public abstract class UrlMapsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<DeleteUrlMapRequest, Operation, Operation> deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteUrlMapRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
@@ -64,8 +69,17 @@ public abstract class UrlMapsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
   }
 
+  public OperationCallable<InsertUrlMapRequest, Operation, Operation> insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
+  }
+
   public UnaryCallable<InsertUrlMapRequest, Operation> insertCallable() {
     throw new UnsupportedOperationException("Not implemented: insertCallable()");
+  }
+
+  public OperationCallable<InvalidateCacheUrlMapRequest, Operation, Operation>
+      invalidateCacheOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: invalidateCacheOperationCallable()");
   }
 
   public UnaryCallable<InvalidateCacheUrlMapRequest, Operation> invalidateCacheCallable() {
@@ -80,8 +94,16 @@ public abstract class UrlMapsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
   }
 
+  public OperationCallable<PatchUrlMapRequest, Operation, Operation> patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
+  }
+
   public UnaryCallable<PatchUrlMapRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public OperationCallable<UpdateUrlMapRequest, Operation, Operation> updateOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOperationCallable()");
   }
 
   public UnaryCallable<UpdateUrlMapRequest, Operation> updateCallable() {

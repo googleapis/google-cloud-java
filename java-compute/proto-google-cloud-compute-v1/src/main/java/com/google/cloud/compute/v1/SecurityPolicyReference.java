@@ -115,7 +115,7 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
   public static final int SECURITY_POLICY_FIELD_NUMBER = 171082513;
   private volatile java.lang.Object securityPolicy_;
   /**
-   * <code>string security_policy = 171082513;</code>
+   * <code>optional string security_policy = 171082513;</code>
    *
    * @return Whether the securityPolicy field is set.
    */
@@ -124,7 +124,7 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>string security_policy = 171082513;</code>
+   * <code>optional string security_policy = 171082513;</code>
    *
    * @return The securityPolicy.
    */
@@ -141,7 +141,7 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
     }
   }
   /**
-   * <code>string security_policy = 171082513;</code>
+   * <code>optional string security_policy = 171082513;</code>
    *
    * @return The bytes for securityPolicy.
    */
@@ -491,7 +491,7 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
 
     private java.lang.Object securityPolicy_ = "";
     /**
-     * <code>string security_policy = 171082513;</code>
+     * <code>optional string security_policy = 171082513;</code>
      *
      * @return Whether the securityPolicy field is set.
      */
@@ -499,7 +499,7 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>string security_policy = 171082513;</code>
+     * <code>optional string security_policy = 171082513;</code>
      *
      * @return The securityPolicy.
      */
@@ -515,7 +515,7 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
       }
     }
     /**
-     * <code>string security_policy = 171082513;</code>
+     * <code>optional string security_policy = 171082513;</code>
      *
      * @return The bytes for securityPolicy.
      */
@@ -531,7 +531,7 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
       }
     }
     /**
-     * <code>string security_policy = 171082513;</code>
+     * <code>optional string security_policy = 171082513;</code>
      *
      * @param value The securityPolicy to set.
      * @return This builder for chaining.
@@ -546,7 +546,7 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
       return this;
     }
     /**
-     * <code>string security_policy = 171082513;</code>
+     * <code>optional string security_policy = 171082513;</code>
      *
      * @return This builder for chaining.
      */
@@ -557,7 +557,7 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
       return this;
     }
     /**
-     * <code>string security_policy = 171082513;</code>
+     * <code>optional string security_policy = 171082513;</code>
      *
      * @param value The bytes for securityPolicy to set.
      * @return This builder for chaining.

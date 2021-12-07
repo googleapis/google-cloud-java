@@ -21,6 +21,7 @@ import static com.google.cloud.compute.v1.NodeGroupsClient.ListNodesPagedRespons
 import static com.google.cloud.compute.v1.NodeGroupsClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddNodesNodeGroupRequest;
 import com.google.cloud.compute.v1.AggregatedListNodeGroupsRequest;
@@ -53,6 +54,11 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class NodeGroupsStub implements BackgroundResource {
 
+  public OperationCallable<AddNodesNodeGroupRequest, Operation, Operation>
+      addNodesOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: addNodesOperationCallable()");
+  }
+
   public UnaryCallable<AddNodesNodeGroupRequest, Operation> addNodesCallable() {
     throw new UnsupportedOperationException("Not implemented: addNodesCallable()");
   }
@@ -67,8 +73,17 @@ public abstract class NodeGroupsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<DeleteNodeGroupRequest, Operation, Operation> deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteNodeGroupRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
+  }
+
+  public OperationCallable<DeleteNodesNodeGroupRequest, Operation, Operation>
+      deleteNodesOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteNodesOperationCallable()");
   }
 
   public UnaryCallable<DeleteNodesNodeGroupRequest, Operation> deleteNodesCallable() {
@@ -81,6 +96,10 @@ public abstract class NodeGroupsStub implements BackgroundResource {
 
   public UnaryCallable<GetIamPolicyNodeGroupRequest, Policy> getIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public OperationCallable<InsertNodeGroupRequest, Operation, Operation> insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertNodeGroupRequest, Operation> insertCallable() {
@@ -104,12 +123,21 @@ public abstract class NodeGroupsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listNodesCallable()");
   }
 
+  public OperationCallable<PatchNodeGroupRequest, Operation, Operation> patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
+  }
+
   public UnaryCallable<PatchNodeGroupRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
   }
 
   public UnaryCallable<SetIamPolicyNodeGroupRequest, Policy> setIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public OperationCallable<SetNodeTemplateNodeGroupRequest, Operation, Operation>
+      setNodeTemplateOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setNodeTemplateOperationCallable()");
   }
 
   public UnaryCallable<SetNodeTemplateNodeGroupRequest, Operation> setNodeTemplateCallable() {

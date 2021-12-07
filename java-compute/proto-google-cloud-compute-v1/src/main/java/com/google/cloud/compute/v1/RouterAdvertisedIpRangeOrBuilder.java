@@ -30,7 +30,7 @@ public interface RouterAdvertisedIpRangeOrBuilder
    * User-specified description for the IP range.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -42,7 +42,7 @@ public interface RouterAdvertisedIpRangeOrBuilder
    * User-specified description for the IP range.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -54,7 +54,7 @@ public interface RouterAdvertisedIpRangeOrBuilder
    * User-specified description for the IP range.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -67,7 +67,7 @@ public interface RouterAdvertisedIpRangeOrBuilder
    * The IP range to advertise. The value must be a CIDR-formatted string.
    * </pre>
    *
-   * <code>string range = 108280125;</code>
+   * <code>optional string range = 108280125;</code>
    *
    * @return Whether the range field is set.
    */
@@ -79,7 +79,7 @@ public interface RouterAdvertisedIpRangeOrBuilder
    * The IP range to advertise. The value must be a CIDR-formatted string.
    * </pre>
    *
-   * <code>string range = 108280125;</code>
+   * <code>optional string range = 108280125;</code>
    *
    * @return The range.
    */
@@ -91,7 +91,7 @@ public interface RouterAdvertisedIpRangeOrBuilder
    * The IP range to advertise. The value must be a CIDR-formatted string.
    * </pre>
    *
-   * <code>string range = 108280125;</code>
+   * <code>optional string range = 108280125;</code>
    *
    * @return The bytes for range.
    */

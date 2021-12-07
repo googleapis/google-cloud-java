@@ -30,7 +30,7 @@ public interface LicenseCodeOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -42,7 +42,7 @@ public interface LicenseCodeOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -54,7 +54,7 @@ public interface LicenseCodeOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -67,7 +67,7 @@ public interface LicenseCodeOrBuilder
    * [Output Only] Description of this License Code.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -79,7 +79,7 @@ public interface LicenseCodeOrBuilder
    * [Output Only] Description of this License Code.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -91,7 +91,7 @@ public interface LicenseCodeOrBuilder
    * [Output Only] Description of this License Code.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -104,7 +104,7 @@ public interface LicenseCodeOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -116,7 +116,7 @@ public interface LicenseCodeOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -129,7 +129,7 @@ public interface LicenseCodeOrBuilder
    * [Output Only] Type of resource. Always compute#licenseCode for licenses.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -141,7 +141,7 @@ public interface LicenseCodeOrBuilder
    * [Output Only] Type of resource. Always compute#licenseCode for licenses.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -153,7 +153,7 @@ public interface LicenseCodeOrBuilder
    * [Output Only] Type of resource. Always compute#licenseCode for licenses.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -223,7 +223,7 @@ public interface LicenseCodeOrBuilder
    * [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit integer.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -235,7 +235,7 @@ public interface LicenseCodeOrBuilder
    * [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit integer.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -247,7 +247,7 @@ public interface LicenseCodeOrBuilder
    * [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit integer.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -260,7 +260,7 @@ public interface LicenseCodeOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -272,7 +272,7 @@ public interface LicenseCodeOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -284,7 +284,7 @@ public interface LicenseCodeOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -295,9 +295,10 @@ public interface LicenseCodeOrBuilder
    *
    * <pre>
    * [Output Only] Current state of this License Code.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LicenseCode.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
    * @return Whether the state field is set.
    */
@@ -307,25 +308,27 @@ public interface LicenseCodeOrBuilder
    *
    * <pre>
    * [Output Only] Current state of this License Code.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LicenseCode.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The enum numeric value on the wire for state.
+   * @return The state.
    */
-  int getStateValue();
+  java.lang.String getState();
   /**
    *
    *
    * <pre>
    * [Output Only] Current state of this License Code.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LicenseCode.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The state.
+   * @return The bytes for state.
    */
-  com.google.cloud.compute.v1.LicenseCode.State getState();
+  com.google.protobuf.ByteString getStateBytes();
 
   /**
    *
@@ -334,7 +337,7 @@ public interface LicenseCodeOrBuilder
    * [Output Only] If true, the license will remain attached when creating images or snapshots from disks. Otherwise, the license is not transferred.
    * </pre>
    *
-   * <code>bool transferable = 4349893;</code>
+   * <code>optional bool transferable = 4349893;</code>
    *
    * @return Whether the transferable field is set.
    */
@@ -346,7 +349,7 @@ public interface LicenseCodeOrBuilder
    * [Output Only] If true, the license will remain attached when creating images or snapshots from disks. Otherwise, the license is not transferred.
    * </pre>
    *
-   * <code>bool transferable = 4349893;</code>
+   * <code>optional bool transferable = 4349893;</code>
    *
    * @return The transferable.
    */

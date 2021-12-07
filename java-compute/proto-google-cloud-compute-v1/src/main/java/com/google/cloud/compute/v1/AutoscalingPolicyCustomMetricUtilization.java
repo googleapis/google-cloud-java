@@ -42,7 +42,7 @@ public final class AutoscalingPolicyCustomMetricUtilization
   private AutoscalingPolicyCustomMetricUtilization() {
     filter_ = "";
     metric_ = "";
-    utilizationTargetType_ = 0;
+    utilizationTargetType_ = "";
   }
 
   @java.lang.Override
@@ -88,11 +88,11 @@ public final class AutoscalingPolicyCustomMetricUtilization
               filter_ = s;
               break;
             }
-          case -1573612456:
+          case -1573612454:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
-              utilizationTargetType_ = rawValue;
+              utilizationTargetType_ = s;
               break;
             }
           case -256822783:
@@ -163,11 +163,35 @@ public final class AutoscalingPolicyCustomMetricUtilization
      * <code>UNDEFINED_UTILIZATION_TARGET_TYPE = 0;</code>
      */
     UNDEFINED_UTILIZATION_TARGET_TYPE(0),
-    /** <code>DELTA_PER_MINUTE = 87432861;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Sets the utilization target value for a cumulative or delta metric, expressed as the rate of growth per minute.
+     * </pre>
+     *
+     * <code>DELTA_PER_MINUTE = 87432861;</code>
+     */
     DELTA_PER_MINUTE(87432861),
-    /** <code>DELTA_PER_SECOND = 255180029;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Sets the utilization target value for a cumulative or delta metric, expressed as the rate of growth per second.
+     * </pre>
+     *
+     * <code>DELTA_PER_SECOND = 255180029;</code>
+     */
     DELTA_PER_SECOND(255180029),
-    /** <code>GAUGE = 67590361;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Sets the utilization target value for a gauge metric. The autoscaler will collect the average utilization of the virtual machines from the last couple of minutes, and compare the value to the utilization target value to perform autoscaling.
+     * </pre>
+     *
+     * <code>GAUGE = 67590361;</code>
+     */
     GAUGE(67590361),
     UNRECOGNIZED(-1),
     ;
@@ -182,11 +206,35 @@ public final class AutoscalingPolicyCustomMetricUtilization
      * <code>UNDEFINED_UTILIZATION_TARGET_TYPE = 0;</code>
      */
     public static final int UNDEFINED_UTILIZATION_TARGET_TYPE_VALUE = 0;
-    /** <code>DELTA_PER_MINUTE = 87432861;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Sets the utilization target value for a cumulative or delta metric, expressed as the rate of growth per minute.
+     * </pre>
+     *
+     * <code>DELTA_PER_MINUTE = 87432861;</code>
+     */
     public static final int DELTA_PER_MINUTE_VALUE = 87432861;
-    /** <code>DELTA_PER_SECOND = 255180029;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Sets the utilization target value for a cumulative or delta metric, expressed as the rate of growth per second.
+     * </pre>
+     *
+     * <code>DELTA_PER_SECOND = 255180029;</code>
+     */
     public static final int DELTA_PER_SECOND_VALUE = 255180029;
-    /** <code>GAUGE = 67590361;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Sets the utilization target value for a gauge metric. The autoscaler will collect the average utilization of the virtual machines from the last couple of minutes, and compare the value to the utilization target value to perform autoscaling.
+     * </pre>
+     *
+     * <code>GAUGE = 67590361;</code>
+     */
     public static final int GAUGE_VALUE = 67590361;
 
     public final int getNumber() {
@@ -286,18 +334,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
    *
    *
    * <pre>
-   * A filter string, compatible with a Stackdriver Monitoring filter string for TimeSeries.list API call. This filter is used to select a specific TimeSeries for the purpose of autoscaling and to determine whether the metric is exporting per-instance or per-group data.
-   * For the filter to be valid for autoscaling purposes, the following rules apply:
-   * - You can only use the AND operator for joining selectors.
-   * - You can only use direct equality comparison operator (=) without any functions for each selector.
-   * - You can specify the metric in both the filter string and in the metric field. However, if specified in both places, the metric must be identical.
-   * - The monitored resource type determines what kind of values are expected for the metric. If it is a gce_instance, the autoscaler expects the metric to include a separate TimeSeries for each instance in a group. In such a case, you cannot filter on resource labels.
-   * If the resource type is any other value, the autoscaler expects this metric to contain values that apply to the entire autoscaled instance group and resource label filtering can be performed to point autoscaler at the correct TimeSeries to scale upon. This is called a per-group metric for the purpose of autoscaling.
-   * If not specified, the type defaults to gce_instance.
-   * Try to provide a filter that is selective enough to pick just one TimeSeries for the autoscaled group or for each of the instances (if you are using gce_instance resource type). If multiple TimeSeries are returned upon the query execution, the autoscaler will sum their respective values to obtain its scaling value.
+   * A filter string, compatible with a Stackdriver Monitoring filter string for TimeSeries.list API call. This filter is used to select a specific TimeSeries for the purpose of autoscaling and to determine whether the metric is exporting per-instance or per-group data. For the filter to be valid for autoscaling purposes, the following rules apply: - You can only use the AND operator for joining selectors. - You can only use direct equality comparison operator (=) without any functions for each selector. - You can specify the metric in both the filter string and in the metric field. However, if specified in both places, the metric must be identical. - The monitored resource type determines what kind of values are expected for the metric. If it is a gce_instance, the autoscaler expects the metric to include a separate TimeSeries for each instance in a group. In such a case, you cannot filter on resource labels. If the resource type is any other value, the autoscaler expects this metric to contain values that apply to the entire autoscaled instance group and resource label filtering can be performed to point autoscaler at the correct TimeSeries to scale upon. This is called a *per-group metric* for the purpose of autoscaling. If not specified, the type defaults to gce_instance. Try to provide a filter that is selective enough to pick just one TimeSeries for the autoscaled group or for each of the instances (if you are using gce_instance resource type). If multiple TimeSeries are returned upon the query execution, the autoscaler will sum their respective values to obtain its scaling value.
    * </pre>
    *
-   * <code>string filter = 336120696;</code>
+   * <code>optional string filter = 336120696;</code>
    *
    * @return Whether the filter field is set.
    */
@@ -309,18 +349,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
    *
    *
    * <pre>
-   * A filter string, compatible with a Stackdriver Monitoring filter string for TimeSeries.list API call. This filter is used to select a specific TimeSeries for the purpose of autoscaling and to determine whether the metric is exporting per-instance or per-group data.
-   * For the filter to be valid for autoscaling purposes, the following rules apply:
-   * - You can only use the AND operator for joining selectors.
-   * - You can only use direct equality comparison operator (=) without any functions for each selector.
-   * - You can specify the metric in both the filter string and in the metric field. However, if specified in both places, the metric must be identical.
-   * - The monitored resource type determines what kind of values are expected for the metric. If it is a gce_instance, the autoscaler expects the metric to include a separate TimeSeries for each instance in a group. In such a case, you cannot filter on resource labels.
-   * If the resource type is any other value, the autoscaler expects this metric to contain values that apply to the entire autoscaled instance group and resource label filtering can be performed to point autoscaler at the correct TimeSeries to scale upon. This is called a per-group metric for the purpose of autoscaling.
-   * If not specified, the type defaults to gce_instance.
-   * Try to provide a filter that is selective enough to pick just one TimeSeries for the autoscaled group or for each of the instances (if you are using gce_instance resource type). If multiple TimeSeries are returned upon the query execution, the autoscaler will sum their respective values to obtain its scaling value.
+   * A filter string, compatible with a Stackdriver Monitoring filter string for TimeSeries.list API call. This filter is used to select a specific TimeSeries for the purpose of autoscaling and to determine whether the metric is exporting per-instance or per-group data. For the filter to be valid for autoscaling purposes, the following rules apply: - You can only use the AND operator for joining selectors. - You can only use direct equality comparison operator (=) without any functions for each selector. - You can specify the metric in both the filter string and in the metric field. However, if specified in both places, the metric must be identical. - The monitored resource type determines what kind of values are expected for the metric. If it is a gce_instance, the autoscaler expects the metric to include a separate TimeSeries for each instance in a group. In such a case, you cannot filter on resource labels. If the resource type is any other value, the autoscaler expects this metric to contain values that apply to the entire autoscaled instance group and resource label filtering can be performed to point autoscaler at the correct TimeSeries to scale upon. This is called a *per-group metric* for the purpose of autoscaling. If not specified, the type defaults to gce_instance. Try to provide a filter that is selective enough to pick just one TimeSeries for the autoscaled group or for each of the instances (if you are using gce_instance resource type). If multiple TimeSeries are returned upon the query execution, the autoscaler will sum their respective values to obtain its scaling value.
    * </pre>
    *
-   * <code>string filter = 336120696;</code>
+   * <code>optional string filter = 336120696;</code>
    *
    * @return The filter.
    */
@@ -340,18 +372,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
    *
    *
    * <pre>
-   * A filter string, compatible with a Stackdriver Monitoring filter string for TimeSeries.list API call. This filter is used to select a specific TimeSeries for the purpose of autoscaling and to determine whether the metric is exporting per-instance or per-group data.
-   * For the filter to be valid for autoscaling purposes, the following rules apply:
-   * - You can only use the AND operator for joining selectors.
-   * - You can only use direct equality comparison operator (=) without any functions for each selector.
-   * - You can specify the metric in both the filter string and in the metric field. However, if specified in both places, the metric must be identical.
-   * - The monitored resource type determines what kind of values are expected for the metric. If it is a gce_instance, the autoscaler expects the metric to include a separate TimeSeries for each instance in a group. In such a case, you cannot filter on resource labels.
-   * If the resource type is any other value, the autoscaler expects this metric to contain values that apply to the entire autoscaled instance group and resource label filtering can be performed to point autoscaler at the correct TimeSeries to scale upon. This is called a per-group metric for the purpose of autoscaling.
-   * If not specified, the type defaults to gce_instance.
-   * Try to provide a filter that is selective enough to pick just one TimeSeries for the autoscaled group or for each of the instances (if you are using gce_instance resource type). If multiple TimeSeries are returned upon the query execution, the autoscaler will sum their respective values to obtain its scaling value.
+   * A filter string, compatible with a Stackdriver Monitoring filter string for TimeSeries.list API call. This filter is used to select a specific TimeSeries for the purpose of autoscaling and to determine whether the metric is exporting per-instance or per-group data. For the filter to be valid for autoscaling purposes, the following rules apply: - You can only use the AND operator for joining selectors. - You can only use direct equality comparison operator (=) without any functions for each selector. - You can specify the metric in both the filter string and in the metric field. However, if specified in both places, the metric must be identical. - The monitored resource type determines what kind of values are expected for the metric. If it is a gce_instance, the autoscaler expects the metric to include a separate TimeSeries for each instance in a group. In such a case, you cannot filter on resource labels. If the resource type is any other value, the autoscaler expects this metric to contain values that apply to the entire autoscaled instance group and resource label filtering can be performed to point autoscaler at the correct TimeSeries to scale upon. This is called a *per-group metric* for the purpose of autoscaling. If not specified, the type defaults to gce_instance. Try to provide a filter that is selective enough to pick just one TimeSeries for the autoscaled group or for each of the instances (if you are using gce_instance resource type). If multiple TimeSeries are returned upon the query execution, the autoscaler will sum their respective values to obtain its scaling value.
    * </pre>
    *
-   * <code>string filter = 336120696;</code>
+   * <code>optional string filter = 336120696;</code>
    *
    * @return The bytes for filter.
    */
@@ -374,11 +398,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
    *
    *
    * <pre>
-   * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values.
-   * The metric must have a value type of INT64 or DOUBLE.
+   * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values. The metric must have a value type of INT64 or DOUBLE.
    * </pre>
    *
-   * <code>string metric = 533067184;</code>
+   * <code>optional string metric = 533067184;</code>
    *
    * @return Whether the metric field is set.
    */
@@ -390,11 +413,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
    *
    *
    * <pre>
-   * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values.
-   * The metric must have a value type of INT64 or DOUBLE.
+   * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values. The metric must have a value type of INT64 or DOUBLE.
    * </pre>
    *
-   * <code>string metric = 533067184;</code>
+   * <code>optional string metric = 533067184;</code>
    *
    * @return The metric.
    */
@@ -414,11 +436,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
    *
    *
    * <pre>
-   * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values.
-   * The metric must have a value type of INT64 or DOUBLE.
+   * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values. The metric must have a value type of INT64 or DOUBLE.
    * </pre>
    *
-   * <code>string metric = 533067184;</code>
+   * <code>optional string metric = 533067184;</code>
    *
    * @return The bytes for metric.
    */
@@ -441,12 +462,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
    *
    *
    * <pre>
-   * If scaling is based on a per-group metric value that represents the total amount of work to be done or resource usage, set this value to an amount assigned for a single instance of the scaled group. Autoscaler keeps the number of instances proportional to the value of this metric. The metric itself does not change value due to group resizing.
-   * A good metric to use with the target is for example pubsub.googleapis.com/subscription/num_undelivered_messages or a custom metric exporting the total number of requests coming to your instances.
-   * A bad example would be a metric exporting an average or median latency, since this value can't include a chunk assignable to a single instance, it could be better used with utilization_target instead.
+   * If scaling is based on a per-group metric value that represents the total amount of work to be done or resource usage, set this value to an amount assigned for a single instance of the scaled group. Autoscaler keeps the number of instances proportional to the value of this metric. The metric itself does not change value due to group resizing. A good metric to use with the target is for example pubsub.googleapis.com/subscription/num_undelivered_messages or a custom metric exporting the total number of requests coming to your instances. A bad example would be a metric exporting an average or median latency, since this value can't include a chunk assignable to a single instance, it could be better used with utilization_target instead.
    * </pre>
    *
-   * <code>double single_instance_assignment = 504768064;</code>
+   * <code>optional double single_instance_assignment = 504768064;</code>
    *
    * @return Whether the singleInstanceAssignment field is set.
    */
@@ -458,12 +477,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
    *
    *
    * <pre>
-   * If scaling is based on a per-group metric value that represents the total amount of work to be done or resource usage, set this value to an amount assigned for a single instance of the scaled group. Autoscaler keeps the number of instances proportional to the value of this metric. The metric itself does not change value due to group resizing.
-   * A good metric to use with the target is for example pubsub.googleapis.com/subscription/num_undelivered_messages or a custom metric exporting the total number of requests coming to your instances.
-   * A bad example would be a metric exporting an average or median latency, since this value can't include a chunk assignable to a single instance, it could be better used with utilization_target instead.
+   * If scaling is based on a per-group metric value that represents the total amount of work to be done or resource usage, set this value to an amount assigned for a single instance of the scaled group. Autoscaler keeps the number of instances proportional to the value of this metric. The metric itself does not change value due to group resizing. A good metric to use with the target is for example pubsub.googleapis.com/subscription/num_undelivered_messages or a custom metric exporting the total number of requests coming to your instances. A bad example would be a metric exporting an average or median latency, since this value can't include a chunk assignable to a single instance, it could be better used with utilization_target instead.
    * </pre>
    *
-   * <code>double single_instance_assignment = 504768064;</code>
+   * <code>optional double single_instance_assignment = 504768064;</code>
    *
    * @return The singleInstanceAssignment.
    */
@@ -478,11 +495,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
    *
    *
    * <pre>
-   * The target value of the metric that autoscaler maintains. This must be a positive value. A utilization metric scales number of virtual machines handling requests to increase or decrease proportionally to the metric.
-   * For example, a good metric to use as a utilization_target is https://www.googleapis.com/compute/v1/instance/network/received_bytes_count. The autoscaler works to keep this value constant for each of the instances.
+   * The target value of the metric that autoscaler maintains. This must be a positive value. A utilization metric scales number of virtual machines handling requests to increase or decrease proportionally to the metric. For example, a good metric to use as a utilization_target is https://www.googleapis.com/compute/v1/instance/network/received_bytes_count. The autoscaler works to keep this value constant for each of the instances.
    * </pre>
    *
-   * <code>double utilization_target = 215905870;</code>
+   * <code>optional double utilization_target = 215905870;</code>
    *
    * @return Whether the utilizationTarget field is set.
    */
@@ -494,11 +510,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
    *
    *
    * <pre>
-   * The target value of the metric that autoscaler maintains. This must be a positive value. A utilization metric scales number of virtual machines handling requests to increase or decrease proportionally to the metric.
-   * For example, a good metric to use as a utilization_target is https://www.googleapis.com/compute/v1/instance/network/received_bytes_count. The autoscaler works to keep this value constant for each of the instances.
+   * The target value of the metric that autoscaler maintains. This must be a positive value. A utilization metric scales number of virtual machines handling requests to increase or decrease proportionally to the metric. For example, a good metric to use as a utilization_target is https://www.googleapis.com/compute/v1/instance/network/received_bytes_count. The autoscaler works to keep this value constant for each of the instances.
    * </pre>
    *
-   * <code>double utilization_target = 215905870;</code>
+   * <code>optional double utilization_target = 215905870;</code>
    *
    * @return The utilizationTarget.
    */
@@ -508,17 +523,16 @@ public final class AutoscalingPolicyCustomMetricUtilization
   }
 
   public static final int UTILIZATION_TARGET_TYPE_FIELD_NUMBER = 340169355;
-  private int utilizationTargetType_;
+  private volatile java.lang.Object utilizationTargetType_;
   /**
    *
    *
    * <pre>
    * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+   * Check the UtilizationTargetType enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;
-   * </code>
+   * <code>optional string utilization_target_type = 340169355;</code>
    *
    * @return Whether the utilizationTargetType field is set.
    */
@@ -531,43 +545,48 @@ public final class AutoscalingPolicyCustomMetricUtilization
    *
    * <pre>
    * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+   * Check the UtilizationTargetType enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;
-   * </code>
+   * <code>optional string utilization_target_type = 340169355;</code>
    *
-   * @return The enum numeric value on the wire for utilizationTargetType.
+   * @return The utilizationTargetType.
    */
   @java.lang.Override
-  public int getUtilizationTargetTypeValue() {
-    return utilizationTargetType_;
+  public java.lang.String getUtilizationTargetType() {
+    java.lang.Object ref = utilizationTargetType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      utilizationTargetType_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+   * Check the UtilizationTargetType enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;
-   * </code>
+   * <code>optional string utilization_target_type = 340169355;</code>
    *
-   * @return The utilizationTargetType.
+   * @return The bytes for utilizationTargetType.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType
-      getUtilizationTargetType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType
-        result =
-            com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization
-                .UtilizationTargetType.valueOf(utilizationTargetType_);
-    return result == null
-        ? com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType
-            .UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getUtilizationTargetTypeBytes() {
+    java.lang.Object ref = utilizationTargetType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      utilizationTargetType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -591,7 +610,7 @@ public final class AutoscalingPolicyCustomMetricUtilization
       com.google.protobuf.GeneratedMessageV3.writeString(output, 336120696, filter_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeEnum(340169355, utilizationTargetType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 340169355, utilizationTargetType_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeDouble(504768064, singleInstanceAssignment_);
@@ -617,7 +636,8 @@ public final class AutoscalingPolicyCustomMetricUtilization
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeEnumSize(340169355, utilizationTargetType_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              340169355, utilizationTargetType_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size +=
@@ -663,7 +683,7 @@ public final class AutoscalingPolicyCustomMetricUtilization
     }
     if (hasUtilizationTargetType() != other.hasUtilizationTargetType()) return false;
     if (hasUtilizationTargetType()) {
-      if (utilizationTargetType_ != other.utilizationTargetType_) return false;
+      if (!getUtilizationTargetType().equals(other.getUtilizationTargetType())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -700,7 +720,7 @@ public final class AutoscalingPolicyCustomMetricUtilization
     }
     if (hasUtilizationTargetType()) {
       hash = (37 * hash) + UTILIZATION_TARGET_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + utilizationTargetType_;
+      hash = (53 * hash) + getUtilizationTargetType().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -858,7 +878,7 @@ public final class AutoscalingPolicyCustomMetricUtilization
       bitField0_ = (bitField0_ & ~0x00000004);
       utilizationTarget_ = 0D;
       bitField0_ = (bitField0_ & ~0x00000008);
-      utilizationTargetType_ = 0;
+      utilizationTargetType_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
@@ -982,7 +1002,9 @@ public final class AutoscalingPolicyCustomMetricUtilization
         setUtilizationTarget(other.getUtilizationTarget());
       }
       if (other.hasUtilizationTargetType()) {
-        setUtilizationTargetType(other.getUtilizationTargetType());
+        bitField0_ |= 0x00000010;
+        utilizationTargetType_ = other.utilizationTargetType_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1022,18 +1044,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      *
      * <pre>
-     * A filter string, compatible with a Stackdriver Monitoring filter string for TimeSeries.list API call. This filter is used to select a specific TimeSeries for the purpose of autoscaling and to determine whether the metric is exporting per-instance or per-group data.
-     * For the filter to be valid for autoscaling purposes, the following rules apply:
-     * - You can only use the AND operator for joining selectors.
-     * - You can only use direct equality comparison operator (=) without any functions for each selector.
-     * - You can specify the metric in both the filter string and in the metric field. However, if specified in both places, the metric must be identical.
-     * - The monitored resource type determines what kind of values are expected for the metric. If it is a gce_instance, the autoscaler expects the metric to include a separate TimeSeries for each instance in a group. In such a case, you cannot filter on resource labels.
-     * If the resource type is any other value, the autoscaler expects this metric to contain values that apply to the entire autoscaled instance group and resource label filtering can be performed to point autoscaler at the correct TimeSeries to scale upon. This is called a per-group metric for the purpose of autoscaling.
-     * If not specified, the type defaults to gce_instance.
-     * Try to provide a filter that is selective enough to pick just one TimeSeries for the autoscaled group or for each of the instances (if you are using gce_instance resource type). If multiple TimeSeries are returned upon the query execution, the autoscaler will sum their respective values to obtain its scaling value.
+     * A filter string, compatible with a Stackdriver Monitoring filter string for TimeSeries.list API call. This filter is used to select a specific TimeSeries for the purpose of autoscaling and to determine whether the metric is exporting per-instance or per-group data. For the filter to be valid for autoscaling purposes, the following rules apply: - You can only use the AND operator for joining selectors. - You can only use direct equality comparison operator (=) without any functions for each selector. - You can specify the metric in both the filter string and in the metric field. However, if specified in both places, the metric must be identical. - The monitored resource type determines what kind of values are expected for the metric. If it is a gce_instance, the autoscaler expects the metric to include a separate TimeSeries for each instance in a group. In such a case, you cannot filter on resource labels. If the resource type is any other value, the autoscaler expects this metric to contain values that apply to the entire autoscaled instance group and resource label filtering can be performed to point autoscaler at the correct TimeSeries to scale upon. This is called a *per-group metric* for the purpose of autoscaling. If not specified, the type defaults to gce_instance. Try to provide a filter that is selective enough to pick just one TimeSeries for the autoscaled group or for each of the instances (if you are using gce_instance resource type). If multiple TimeSeries are returned upon the query execution, the autoscaler will sum their respective values to obtain its scaling value.
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
      * @return Whether the filter field is set.
      */
@@ -1044,18 +1058,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      *
      * <pre>
-     * A filter string, compatible with a Stackdriver Monitoring filter string for TimeSeries.list API call. This filter is used to select a specific TimeSeries for the purpose of autoscaling and to determine whether the metric is exporting per-instance or per-group data.
-     * For the filter to be valid for autoscaling purposes, the following rules apply:
-     * - You can only use the AND operator for joining selectors.
-     * - You can only use direct equality comparison operator (=) without any functions for each selector.
-     * - You can specify the metric in both the filter string and in the metric field. However, if specified in both places, the metric must be identical.
-     * - The monitored resource type determines what kind of values are expected for the metric. If it is a gce_instance, the autoscaler expects the metric to include a separate TimeSeries for each instance in a group. In such a case, you cannot filter on resource labels.
-     * If the resource type is any other value, the autoscaler expects this metric to contain values that apply to the entire autoscaled instance group and resource label filtering can be performed to point autoscaler at the correct TimeSeries to scale upon. This is called a per-group metric for the purpose of autoscaling.
-     * If not specified, the type defaults to gce_instance.
-     * Try to provide a filter that is selective enough to pick just one TimeSeries for the autoscaled group or for each of the instances (if you are using gce_instance resource type). If multiple TimeSeries are returned upon the query execution, the autoscaler will sum their respective values to obtain its scaling value.
+     * A filter string, compatible with a Stackdriver Monitoring filter string for TimeSeries.list API call. This filter is used to select a specific TimeSeries for the purpose of autoscaling and to determine whether the metric is exporting per-instance or per-group data. For the filter to be valid for autoscaling purposes, the following rules apply: - You can only use the AND operator for joining selectors. - You can only use direct equality comparison operator (=) without any functions for each selector. - You can specify the metric in both the filter string and in the metric field. However, if specified in both places, the metric must be identical. - The monitored resource type determines what kind of values are expected for the metric. If it is a gce_instance, the autoscaler expects the metric to include a separate TimeSeries for each instance in a group. In such a case, you cannot filter on resource labels. If the resource type is any other value, the autoscaler expects this metric to contain values that apply to the entire autoscaled instance group and resource label filtering can be performed to point autoscaler at the correct TimeSeries to scale upon. This is called a *per-group metric* for the purpose of autoscaling. If not specified, the type defaults to gce_instance. Try to provide a filter that is selective enough to pick just one TimeSeries for the autoscaled group or for each of the instances (if you are using gce_instance resource type). If multiple TimeSeries are returned upon the query execution, the autoscaler will sum their respective values to obtain its scaling value.
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
      * @return The filter.
      */
@@ -1074,18 +1080,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      *
      * <pre>
-     * A filter string, compatible with a Stackdriver Monitoring filter string for TimeSeries.list API call. This filter is used to select a specific TimeSeries for the purpose of autoscaling and to determine whether the metric is exporting per-instance or per-group data.
-     * For the filter to be valid for autoscaling purposes, the following rules apply:
-     * - You can only use the AND operator for joining selectors.
-     * - You can only use direct equality comparison operator (=) without any functions for each selector.
-     * - You can specify the metric in both the filter string and in the metric field. However, if specified in both places, the metric must be identical.
-     * - The monitored resource type determines what kind of values are expected for the metric. If it is a gce_instance, the autoscaler expects the metric to include a separate TimeSeries for each instance in a group. In such a case, you cannot filter on resource labels.
-     * If the resource type is any other value, the autoscaler expects this metric to contain values that apply to the entire autoscaled instance group and resource label filtering can be performed to point autoscaler at the correct TimeSeries to scale upon. This is called a per-group metric for the purpose of autoscaling.
-     * If not specified, the type defaults to gce_instance.
-     * Try to provide a filter that is selective enough to pick just one TimeSeries for the autoscaled group or for each of the instances (if you are using gce_instance resource type). If multiple TimeSeries are returned upon the query execution, the autoscaler will sum their respective values to obtain its scaling value.
+     * A filter string, compatible with a Stackdriver Monitoring filter string for TimeSeries.list API call. This filter is used to select a specific TimeSeries for the purpose of autoscaling and to determine whether the metric is exporting per-instance or per-group data. For the filter to be valid for autoscaling purposes, the following rules apply: - You can only use the AND operator for joining selectors. - You can only use direct equality comparison operator (=) without any functions for each selector. - You can specify the metric in both the filter string and in the metric field. However, if specified in both places, the metric must be identical. - The monitored resource type determines what kind of values are expected for the metric. If it is a gce_instance, the autoscaler expects the metric to include a separate TimeSeries for each instance in a group. In such a case, you cannot filter on resource labels. If the resource type is any other value, the autoscaler expects this metric to contain values that apply to the entire autoscaled instance group and resource label filtering can be performed to point autoscaler at the correct TimeSeries to scale upon. This is called a *per-group metric* for the purpose of autoscaling. If not specified, the type defaults to gce_instance. Try to provide a filter that is selective enough to pick just one TimeSeries for the autoscaled group or for each of the instances (if you are using gce_instance resource type). If multiple TimeSeries are returned upon the query execution, the autoscaler will sum their respective values to obtain its scaling value.
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
      * @return The bytes for filter.
      */
@@ -1104,18 +1102,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      *
      * <pre>
-     * A filter string, compatible with a Stackdriver Monitoring filter string for TimeSeries.list API call. This filter is used to select a specific TimeSeries for the purpose of autoscaling and to determine whether the metric is exporting per-instance or per-group data.
-     * For the filter to be valid for autoscaling purposes, the following rules apply:
-     * - You can only use the AND operator for joining selectors.
-     * - You can only use direct equality comparison operator (=) without any functions for each selector.
-     * - You can specify the metric in both the filter string and in the metric field. However, if specified in both places, the metric must be identical.
-     * - The monitored resource type determines what kind of values are expected for the metric. If it is a gce_instance, the autoscaler expects the metric to include a separate TimeSeries for each instance in a group. In such a case, you cannot filter on resource labels.
-     * If the resource type is any other value, the autoscaler expects this metric to contain values that apply to the entire autoscaled instance group and resource label filtering can be performed to point autoscaler at the correct TimeSeries to scale upon. This is called a per-group metric for the purpose of autoscaling.
-     * If not specified, the type defaults to gce_instance.
-     * Try to provide a filter that is selective enough to pick just one TimeSeries for the autoscaled group or for each of the instances (if you are using gce_instance resource type). If multiple TimeSeries are returned upon the query execution, the autoscaler will sum their respective values to obtain its scaling value.
+     * A filter string, compatible with a Stackdriver Monitoring filter string for TimeSeries.list API call. This filter is used to select a specific TimeSeries for the purpose of autoscaling and to determine whether the metric is exporting per-instance or per-group data. For the filter to be valid for autoscaling purposes, the following rules apply: - You can only use the AND operator for joining selectors. - You can only use direct equality comparison operator (=) without any functions for each selector. - You can specify the metric in both the filter string and in the metric field. However, if specified in both places, the metric must be identical. - The monitored resource type determines what kind of values are expected for the metric. If it is a gce_instance, the autoscaler expects the metric to include a separate TimeSeries for each instance in a group. In such a case, you cannot filter on resource labels. If the resource type is any other value, the autoscaler expects this metric to contain values that apply to the entire autoscaled instance group and resource label filtering can be performed to point autoscaler at the correct TimeSeries to scale upon. This is called a *per-group metric* for the purpose of autoscaling. If not specified, the type defaults to gce_instance. Try to provide a filter that is selective enough to pick just one TimeSeries for the autoscaled group or for each of the instances (if you are using gce_instance resource type). If multiple TimeSeries are returned upon the query execution, the autoscaler will sum their respective values to obtain its scaling value.
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -1133,18 +1123,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      *
      * <pre>
-     * A filter string, compatible with a Stackdriver Monitoring filter string for TimeSeries.list API call. This filter is used to select a specific TimeSeries for the purpose of autoscaling and to determine whether the metric is exporting per-instance or per-group data.
-     * For the filter to be valid for autoscaling purposes, the following rules apply:
-     * - You can only use the AND operator for joining selectors.
-     * - You can only use direct equality comparison operator (=) without any functions for each selector.
-     * - You can specify the metric in both the filter string and in the metric field. However, if specified in both places, the metric must be identical.
-     * - The monitored resource type determines what kind of values are expected for the metric. If it is a gce_instance, the autoscaler expects the metric to include a separate TimeSeries for each instance in a group. In such a case, you cannot filter on resource labels.
-     * If the resource type is any other value, the autoscaler expects this metric to contain values that apply to the entire autoscaled instance group and resource label filtering can be performed to point autoscaler at the correct TimeSeries to scale upon. This is called a per-group metric for the purpose of autoscaling.
-     * If not specified, the type defaults to gce_instance.
-     * Try to provide a filter that is selective enough to pick just one TimeSeries for the autoscaled group or for each of the instances (if you are using gce_instance resource type). If multiple TimeSeries are returned upon the query execution, the autoscaler will sum their respective values to obtain its scaling value.
+     * A filter string, compatible with a Stackdriver Monitoring filter string for TimeSeries.list API call. This filter is used to select a specific TimeSeries for the purpose of autoscaling and to determine whether the metric is exporting per-instance or per-group data. For the filter to be valid for autoscaling purposes, the following rules apply: - You can only use the AND operator for joining selectors. - You can only use direct equality comparison operator (=) without any functions for each selector. - You can specify the metric in both the filter string and in the metric field. However, if specified in both places, the metric must be identical. - The monitored resource type determines what kind of values are expected for the metric. If it is a gce_instance, the autoscaler expects the metric to include a separate TimeSeries for each instance in a group. In such a case, you cannot filter on resource labels. If the resource type is any other value, the autoscaler expects this metric to contain values that apply to the entire autoscaled instance group and resource label filtering can be performed to point autoscaler at the correct TimeSeries to scale upon. This is called a *per-group metric* for the purpose of autoscaling. If not specified, the type defaults to gce_instance. Try to provide a filter that is selective enough to pick just one TimeSeries for the autoscaled group or for each of the instances (if you are using gce_instance resource type). If multiple TimeSeries are returned upon the query execution, the autoscaler will sum their respective values to obtain its scaling value.
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
      * @return This builder for chaining.
      */
@@ -1158,18 +1140,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      *
      * <pre>
-     * A filter string, compatible with a Stackdriver Monitoring filter string for TimeSeries.list API call. This filter is used to select a specific TimeSeries for the purpose of autoscaling and to determine whether the metric is exporting per-instance or per-group data.
-     * For the filter to be valid for autoscaling purposes, the following rules apply:
-     * - You can only use the AND operator for joining selectors.
-     * - You can only use direct equality comparison operator (=) without any functions for each selector.
-     * - You can specify the metric in both the filter string and in the metric field. However, if specified in both places, the metric must be identical.
-     * - The monitored resource type determines what kind of values are expected for the metric. If it is a gce_instance, the autoscaler expects the metric to include a separate TimeSeries for each instance in a group. In such a case, you cannot filter on resource labels.
-     * If the resource type is any other value, the autoscaler expects this metric to contain values that apply to the entire autoscaled instance group and resource label filtering can be performed to point autoscaler at the correct TimeSeries to scale upon. This is called a per-group metric for the purpose of autoscaling.
-     * If not specified, the type defaults to gce_instance.
-     * Try to provide a filter that is selective enough to pick just one TimeSeries for the autoscaled group or for each of the instances (if you are using gce_instance resource type). If multiple TimeSeries are returned upon the query execution, the autoscaler will sum their respective values to obtain its scaling value.
+     * A filter string, compatible with a Stackdriver Monitoring filter string for TimeSeries.list API call. This filter is used to select a specific TimeSeries for the purpose of autoscaling and to determine whether the metric is exporting per-instance or per-group data. For the filter to be valid for autoscaling purposes, the following rules apply: - You can only use the AND operator for joining selectors. - You can only use direct equality comparison operator (=) without any functions for each selector. - You can specify the metric in both the filter string and in the metric field. However, if specified in both places, the metric must be identical. - The monitored resource type determines what kind of values are expected for the metric. If it is a gce_instance, the autoscaler expects the metric to include a separate TimeSeries for each instance in a group. In such a case, you cannot filter on resource labels. If the resource type is any other value, the autoscaler expects this metric to contain values that apply to the entire autoscaled instance group and resource label filtering can be performed to point autoscaler at the correct TimeSeries to scale upon. This is called a *per-group metric* for the purpose of autoscaling. If not specified, the type defaults to gce_instance. Try to provide a filter that is selective enough to pick just one TimeSeries for the autoscaled group or for each of the instances (if you are using gce_instance resource type). If multiple TimeSeries are returned upon the query execution, the autoscaler will sum their respective values to obtain its scaling value.
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -1190,11 +1164,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      *
      * <pre>
-     * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values.
-     * The metric must have a value type of INT64 or DOUBLE.
+     * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values. The metric must have a value type of INT64 or DOUBLE.
      * </pre>
      *
-     * <code>string metric = 533067184;</code>
+     * <code>optional string metric = 533067184;</code>
      *
      * @return Whether the metric field is set.
      */
@@ -1205,11 +1178,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      *
      * <pre>
-     * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values.
-     * The metric must have a value type of INT64 or DOUBLE.
+     * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values. The metric must have a value type of INT64 or DOUBLE.
      * </pre>
      *
-     * <code>string metric = 533067184;</code>
+     * <code>optional string metric = 533067184;</code>
      *
      * @return The metric.
      */
@@ -1228,11 +1200,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      *
      * <pre>
-     * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values.
-     * The metric must have a value type of INT64 or DOUBLE.
+     * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values. The metric must have a value type of INT64 or DOUBLE.
      * </pre>
      *
-     * <code>string metric = 533067184;</code>
+     * <code>optional string metric = 533067184;</code>
      *
      * @return The bytes for metric.
      */
@@ -1251,11 +1222,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      *
      * <pre>
-     * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values.
-     * The metric must have a value type of INT64 or DOUBLE.
+     * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values. The metric must have a value type of INT64 or DOUBLE.
      * </pre>
      *
-     * <code>string metric = 533067184;</code>
+     * <code>optional string metric = 533067184;</code>
      *
      * @param value The metric to set.
      * @return This builder for chaining.
@@ -1273,11 +1243,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      *
      * <pre>
-     * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values.
-     * The metric must have a value type of INT64 or DOUBLE.
+     * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values. The metric must have a value type of INT64 or DOUBLE.
      * </pre>
      *
-     * <code>string metric = 533067184;</code>
+     * <code>optional string metric = 533067184;</code>
      *
      * @return This builder for chaining.
      */
@@ -1291,11 +1260,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      *
      * <pre>
-     * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values.
-     * The metric must have a value type of INT64 or DOUBLE.
+     * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values. The metric must have a value type of INT64 or DOUBLE.
      * </pre>
      *
-     * <code>string metric = 533067184;</code>
+     * <code>optional string metric = 533067184;</code>
      *
      * @param value The bytes for metric to set.
      * @return This builder for chaining.
@@ -1316,12 +1284,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      *
      * <pre>
-     * If scaling is based on a per-group metric value that represents the total amount of work to be done or resource usage, set this value to an amount assigned for a single instance of the scaled group. Autoscaler keeps the number of instances proportional to the value of this metric. The metric itself does not change value due to group resizing.
-     * A good metric to use with the target is for example pubsub.googleapis.com/subscription/num_undelivered_messages or a custom metric exporting the total number of requests coming to your instances.
-     * A bad example would be a metric exporting an average or median latency, since this value can't include a chunk assignable to a single instance, it could be better used with utilization_target instead.
+     * If scaling is based on a per-group metric value that represents the total amount of work to be done or resource usage, set this value to an amount assigned for a single instance of the scaled group. Autoscaler keeps the number of instances proportional to the value of this metric. The metric itself does not change value due to group resizing. A good metric to use with the target is for example pubsub.googleapis.com/subscription/num_undelivered_messages or a custom metric exporting the total number of requests coming to your instances. A bad example would be a metric exporting an average or median latency, since this value can't include a chunk assignable to a single instance, it could be better used with utilization_target instead.
      * </pre>
      *
-     * <code>double single_instance_assignment = 504768064;</code>
+     * <code>optional double single_instance_assignment = 504768064;</code>
      *
      * @return Whether the singleInstanceAssignment field is set.
      */
@@ -1333,12 +1299,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      *
      * <pre>
-     * If scaling is based on a per-group metric value that represents the total amount of work to be done or resource usage, set this value to an amount assigned for a single instance of the scaled group. Autoscaler keeps the number of instances proportional to the value of this metric. The metric itself does not change value due to group resizing.
-     * A good metric to use with the target is for example pubsub.googleapis.com/subscription/num_undelivered_messages or a custom metric exporting the total number of requests coming to your instances.
-     * A bad example would be a metric exporting an average or median latency, since this value can't include a chunk assignable to a single instance, it could be better used with utilization_target instead.
+     * If scaling is based on a per-group metric value that represents the total amount of work to be done or resource usage, set this value to an amount assigned for a single instance of the scaled group. Autoscaler keeps the number of instances proportional to the value of this metric. The metric itself does not change value due to group resizing. A good metric to use with the target is for example pubsub.googleapis.com/subscription/num_undelivered_messages or a custom metric exporting the total number of requests coming to your instances. A bad example would be a metric exporting an average or median latency, since this value can't include a chunk assignable to a single instance, it could be better used with utilization_target instead.
      * </pre>
      *
-     * <code>double single_instance_assignment = 504768064;</code>
+     * <code>optional double single_instance_assignment = 504768064;</code>
      *
      * @return The singleInstanceAssignment.
      */
@@ -1350,12 +1314,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      *
      * <pre>
-     * If scaling is based on a per-group metric value that represents the total amount of work to be done or resource usage, set this value to an amount assigned for a single instance of the scaled group. Autoscaler keeps the number of instances proportional to the value of this metric. The metric itself does not change value due to group resizing.
-     * A good metric to use with the target is for example pubsub.googleapis.com/subscription/num_undelivered_messages or a custom metric exporting the total number of requests coming to your instances.
-     * A bad example would be a metric exporting an average or median latency, since this value can't include a chunk assignable to a single instance, it could be better used with utilization_target instead.
+     * If scaling is based on a per-group metric value that represents the total amount of work to be done or resource usage, set this value to an amount assigned for a single instance of the scaled group. Autoscaler keeps the number of instances proportional to the value of this metric. The metric itself does not change value due to group resizing. A good metric to use with the target is for example pubsub.googleapis.com/subscription/num_undelivered_messages or a custom metric exporting the total number of requests coming to your instances. A bad example would be a metric exporting an average or median latency, since this value can't include a chunk assignable to a single instance, it could be better used with utilization_target instead.
      * </pre>
      *
-     * <code>double single_instance_assignment = 504768064;</code>
+     * <code>optional double single_instance_assignment = 504768064;</code>
      *
      * @param value The singleInstanceAssignment to set.
      * @return This builder for chaining.
@@ -1370,12 +1332,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      *
      * <pre>
-     * If scaling is based on a per-group metric value that represents the total amount of work to be done or resource usage, set this value to an amount assigned for a single instance of the scaled group. Autoscaler keeps the number of instances proportional to the value of this metric. The metric itself does not change value due to group resizing.
-     * A good metric to use with the target is for example pubsub.googleapis.com/subscription/num_undelivered_messages or a custom metric exporting the total number of requests coming to your instances.
-     * A bad example would be a metric exporting an average or median latency, since this value can't include a chunk assignable to a single instance, it could be better used with utilization_target instead.
+     * If scaling is based on a per-group metric value that represents the total amount of work to be done or resource usage, set this value to an amount assigned for a single instance of the scaled group. Autoscaler keeps the number of instances proportional to the value of this metric. The metric itself does not change value due to group resizing. A good metric to use with the target is for example pubsub.googleapis.com/subscription/num_undelivered_messages or a custom metric exporting the total number of requests coming to your instances. A bad example would be a metric exporting an average or median latency, since this value can't include a chunk assignable to a single instance, it could be better used with utilization_target instead.
      * </pre>
      *
-     * <code>double single_instance_assignment = 504768064;</code>
+     * <code>optional double single_instance_assignment = 504768064;</code>
      *
      * @return This builder for chaining.
      */
@@ -1391,11 +1351,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      *
      * <pre>
-     * The target value of the metric that autoscaler maintains. This must be a positive value. A utilization metric scales number of virtual machines handling requests to increase or decrease proportionally to the metric.
-     * For example, a good metric to use as a utilization_target is https://www.googleapis.com/compute/v1/instance/network/received_bytes_count. The autoscaler works to keep this value constant for each of the instances.
+     * The target value of the metric that autoscaler maintains. This must be a positive value. A utilization metric scales number of virtual machines handling requests to increase or decrease proportionally to the metric. For example, a good metric to use as a utilization_target is https://www.googleapis.com/compute/v1/instance/network/received_bytes_count. The autoscaler works to keep this value constant for each of the instances.
      * </pre>
      *
-     * <code>double utilization_target = 215905870;</code>
+     * <code>optional double utilization_target = 215905870;</code>
      *
      * @return Whether the utilizationTarget field is set.
      */
@@ -1407,11 +1366,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      *
      * <pre>
-     * The target value of the metric that autoscaler maintains. This must be a positive value. A utilization metric scales number of virtual machines handling requests to increase or decrease proportionally to the metric.
-     * For example, a good metric to use as a utilization_target is https://www.googleapis.com/compute/v1/instance/network/received_bytes_count. The autoscaler works to keep this value constant for each of the instances.
+     * The target value of the metric that autoscaler maintains. This must be a positive value. A utilization metric scales number of virtual machines handling requests to increase or decrease proportionally to the metric. For example, a good metric to use as a utilization_target is https://www.googleapis.com/compute/v1/instance/network/received_bytes_count. The autoscaler works to keep this value constant for each of the instances.
      * </pre>
      *
-     * <code>double utilization_target = 215905870;</code>
+     * <code>optional double utilization_target = 215905870;</code>
      *
      * @return The utilizationTarget.
      */
@@ -1423,11 +1381,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      *
      * <pre>
-     * The target value of the metric that autoscaler maintains. This must be a positive value. A utilization metric scales number of virtual machines handling requests to increase or decrease proportionally to the metric.
-     * For example, a good metric to use as a utilization_target is https://www.googleapis.com/compute/v1/instance/network/received_bytes_count. The autoscaler works to keep this value constant for each of the instances.
+     * The target value of the metric that autoscaler maintains. This must be a positive value. A utilization metric scales number of virtual machines handling requests to increase or decrease proportionally to the metric. For example, a good metric to use as a utilization_target is https://www.googleapis.com/compute/v1/instance/network/received_bytes_count. The autoscaler works to keep this value constant for each of the instances.
      * </pre>
      *
-     * <code>double utilization_target = 215905870;</code>
+     * <code>optional double utilization_target = 215905870;</code>
      *
      * @param value The utilizationTarget to set.
      * @return This builder for chaining.
@@ -1442,11 +1399,10 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      *
      * <pre>
-     * The target value of the metric that autoscaler maintains. This must be a positive value. A utilization metric scales number of virtual machines handling requests to increase or decrease proportionally to the metric.
-     * For example, a good metric to use as a utilization_target is https://www.googleapis.com/compute/v1/instance/network/received_bytes_count. The autoscaler works to keep this value constant for each of the instances.
+     * The target value of the metric that autoscaler maintains. This must be a positive value. A utilization metric scales number of virtual machines handling requests to increase or decrease proportionally to the metric. For example, a good metric to use as a utilization_target is https://www.googleapis.com/compute/v1/instance/network/received_bytes_count. The autoscaler works to keep this value constant for each of the instances.
      * </pre>
      *
-     * <code>double utilization_target = 215905870;</code>
+     * <code>optional double utilization_target = 215905870;</code>
      *
      * @return This builder for chaining.
      */
@@ -1457,21 +1413,19 @@ public final class AutoscalingPolicyCustomMetricUtilization
       return this;
     }
 
-    private int utilizationTargetType_ = 0;
+    private java.lang.Object utilizationTargetType_ = "";
     /**
      *
      *
      * <pre>
      * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+     * Check the UtilizationTargetType enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;
-     * </code>
+     * <code>optional string utilization_target_type = 340169355;</code>
      *
      * @return Whether the utilizationTargetType field is set.
      */
-    @java.lang.Override
     public boolean hasUtilizationTargetType() {
       return ((bitField0_ & 0x00000010) != 0);
     }
@@ -1480,33 +1434,64 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      * <pre>
      * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+     * Check the UtilizationTargetType enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;
-     * </code>
+     * <code>optional string utilization_target_type = 340169355;</code>
      *
-     * @return The enum numeric value on the wire for utilizationTargetType.
+     * @return The utilizationTargetType.
      */
-    @java.lang.Override
-    public int getUtilizationTargetTypeValue() {
-      return utilizationTargetType_;
+    public java.lang.String getUtilizationTargetType() {
+      java.lang.Object ref = utilizationTargetType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        utilizationTargetType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+     * Check the UtilizationTargetType enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;
-     * </code>
+     * <code>optional string utilization_target_type = 340169355;</code>
      *
-     * @param value The enum numeric value on the wire for utilizationTargetType to set.
+     * @return The bytes for utilizationTargetType.
+     */
+    public com.google.protobuf.ByteString getUtilizationTargetTypeBytes() {
+      java.lang.Object ref = utilizationTargetType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        utilizationTargetType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+     * Check the UtilizationTargetType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string utilization_target_type = 340169355;</code>
+     *
+     * @param value The utilizationTargetType to set.
      * @return This builder for chaining.
      */
-    public Builder setUtilizationTargetTypeValue(int value) {
+    public Builder setUtilizationTargetType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000010;
       utilizationTargetType_ = value;
       onChanged();
@@ -1517,50 +1502,16 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      * <pre>
      * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+     * Check the UtilizationTargetType enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;
-     * </code>
+     * <code>optional string utilization_target_type = 340169355;</code>
      *
-     * @return The utilizationTargetType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization
-            .UtilizationTargetType
-        getUtilizationTargetType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType
-          result =
-              com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization
-                  .UtilizationTargetType.valueOf(utilizationTargetType_);
-      return result == null
-          ? com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization
-              .UtilizationTargetType.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;
-     * </code>
-     *
-     * @param value The utilizationTargetType to set.
      * @return This builder for chaining.
      */
-    public Builder setUtilizationTargetType(
-        com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType
-            value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000010;
-      utilizationTargetType_ = value.getNumber();
+    public Builder clearUtilizationTargetType() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      utilizationTargetType_ = getDefaultInstance().getUtilizationTargetType();
       onChanged();
       return this;
     }
@@ -1569,17 +1520,21 @@ public final class AutoscalingPolicyCustomMetricUtilization
      *
      * <pre>
      * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+     * Check the UtilizationTargetType enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;
-     * </code>
+     * <code>optional string utilization_target_type = 340169355;</code>
      *
+     * @param value The bytes for utilizationTargetType to set.
      * @return This builder for chaining.
      */
-    public Builder clearUtilizationTargetType() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      utilizationTargetType_ = 0;
+    public Builder setUtilizationTargetTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000010;
+      utilizationTargetType_ = value;
       onChanged();
       return this;
     }

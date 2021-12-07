@@ -127,11 +127,10 @@ public final class MetadataFilterLabelMatch extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Name of metadata label.
-   * The name can have a maximum length of 1024 characters and must be at least 1 character long.
+   * Name of metadata label. The name can have a maximum length of 1024 characters and must be at least 1 character long.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -143,11 +142,10 @@ public final class MetadataFilterLabelMatch extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Name of metadata label.
-   * The name can have a maximum length of 1024 characters and must be at least 1 character long.
+   * Name of metadata label. The name can have a maximum length of 1024 characters and must be at least 1 character long.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -167,11 +165,10 @@ public final class MetadataFilterLabelMatch extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Name of metadata label.
-   * The name can have a maximum length of 1024 characters and must be at least 1 character long.
+   * Name of metadata label. The name can have a maximum length of 1024 characters and must be at least 1 character long.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -194,11 +191,10 @@ public final class MetadataFilterLabelMatch extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The value of the label must match the specified value.
-   * value can have a maximum length of 1024 characters.
+   * The value of the label must match the specified value. value can have a maximum length of 1024 characters.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return Whether the value field is set.
    */
@@ -210,11 +206,10 @@ public final class MetadataFilterLabelMatch extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The value of the label must match the specified value.
-   * value can have a maximum length of 1024 characters.
+   * The value of the label must match the specified value. value can have a maximum length of 1024 characters.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return The value.
    */
@@ -234,11 +229,10 @@ public final class MetadataFilterLabelMatch extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The value of the label must match the specified value.
-   * value can have a maximum length of 1024 characters.
+   * The value of the label must match the specified value. value can have a maximum length of 1024 characters.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return The bytes for value.
    */
@@ -617,11 +611,10 @@ public final class MetadataFilterLabelMatch extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Name of metadata label.
-     * The name can have a maximum length of 1024 characters and must be at least 1 character long.
+     * Name of metadata label. The name can have a maximum length of 1024 characters and must be at least 1 character long.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -632,11 +625,10 @@ public final class MetadataFilterLabelMatch extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Name of metadata label.
-     * The name can have a maximum length of 1024 characters and must be at least 1 character long.
+     * Name of metadata label. The name can have a maximum length of 1024 characters and must be at least 1 character long.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -655,11 +647,10 @@ public final class MetadataFilterLabelMatch extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Name of metadata label.
-     * The name can have a maximum length of 1024 characters and must be at least 1 character long.
+     * Name of metadata label. The name can have a maximum length of 1024 characters and must be at least 1 character long.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -678,11 +669,10 @@ public final class MetadataFilterLabelMatch extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Name of metadata label.
-     * The name can have a maximum length of 1024 characters and must be at least 1 character long.
+     * Name of metadata label. The name can have a maximum length of 1024 characters and must be at least 1 character long.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -700,11 +690,10 @@ public final class MetadataFilterLabelMatch extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Name of metadata label.
-     * The name can have a maximum length of 1024 characters and must be at least 1 character long.
+     * Name of metadata label. The name can have a maximum length of 1024 characters and must be at least 1 character long.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -718,11 +707,10 @@ public final class MetadataFilterLabelMatch extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Name of metadata label.
-     * The name can have a maximum length of 1024 characters and must be at least 1 character long.
+     * Name of metadata label. The name can have a maximum length of 1024 characters and must be at least 1 character long.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -743,11 +731,10 @@ public final class MetadataFilterLabelMatch extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The value of the label must match the specified value.
-     * value can have a maximum length of 1024 characters.
+     * The value of the label must match the specified value. value can have a maximum length of 1024 characters.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @return Whether the value field is set.
      */
@@ -758,11 +745,10 @@ public final class MetadataFilterLabelMatch extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The value of the label must match the specified value.
-     * value can have a maximum length of 1024 characters.
+     * The value of the label must match the specified value. value can have a maximum length of 1024 characters.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @return The value.
      */
@@ -781,11 +767,10 @@ public final class MetadataFilterLabelMatch extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The value of the label must match the specified value.
-     * value can have a maximum length of 1024 characters.
+     * The value of the label must match the specified value. value can have a maximum length of 1024 characters.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @return The bytes for value.
      */
@@ -804,11 +789,10 @@ public final class MetadataFilterLabelMatch extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The value of the label must match the specified value.
-     * value can have a maximum length of 1024 characters.
+     * The value of the label must match the specified value. value can have a maximum length of 1024 characters.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @param value The value to set.
      * @return This builder for chaining.
@@ -826,11 +810,10 @@ public final class MetadataFilterLabelMatch extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The value of the label must match the specified value.
-     * value can have a maximum length of 1024 characters.
+     * The value of the label must match the specified value. value can have a maximum length of 1024 characters.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @return This builder for chaining.
      */
@@ -844,11 +827,10 @@ public final class MetadataFilterLabelMatch extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The value of the label must match the specified value.
-     * value can have a maximum length of 1024 characters.
+     * The value of the label must match the specified value. value can have a maximum length of 1024 characters.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @param value The bytes for value to set.
      * @return This builder for chaining.

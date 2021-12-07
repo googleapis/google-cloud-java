@@ -163,7 +163,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    * [Output Only] The URL of the Autoscaler that targets this instance group manager.
    * </pre>
    *
-   * <code>string autoscaler = 517258967;</code>
+   * <code>optional string autoscaler = 517258967;</code>
    *
    * @return Whether the autoscaler field is set.
    */
@@ -178,7 +178,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    * [Output Only] The URL of the Autoscaler that targets this instance group manager.
    * </pre>
    *
-   * <code>string autoscaler = 517258967;</code>
+   * <code>optional string autoscaler = 517258967;</code>
    *
    * @return The autoscaler.
    */
@@ -201,7 +201,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    * [Output Only] The URL of the Autoscaler that targets this instance group manager.
    * </pre>
    *
-   * <code>string autoscaler = 517258967;</code>
+   * <code>optional string autoscaler = 517258967;</code>
    *
    * @return The bytes for autoscaler.
    */
@@ -227,7 +227,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    * [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
    * </pre>
    *
-   * <code>bool is_stable = 108410864;</code>
+   * <code>optional bool is_stable = 108410864;</code>
    *
    * @return Whether the isStable field is set.
    */
@@ -242,7 +242,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    * [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
    * </pre>
    *
-   * <code>bool is_stable = 108410864;</code>
+   * <code>optional bool is_stable = 108410864;</code>
    *
    * @return The isStable.
    */
@@ -260,7 +260,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    * [Output Only] Stateful status of the given Instance Group Manager.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
+   * </code>
    *
    * @return Whether the stateful field is set.
    */
@@ -275,7 +277,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    * [Output Only] Stateful status of the given Instance Group Manager.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
+   * </code>
    *
    * @return The stateful.
    */
@@ -292,7 +296,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    * [Output Only] Stateful status of the given Instance Group Manager.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulOrBuilder
@@ -312,7 +318,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
    * </code>
    *
    * @return Whether the versionTarget field is set.
@@ -329,7 +335,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
    * </code>
    *
    * @return The versionTarget.
@@ -348,7 +354,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
    * </code>
    */
   @java.lang.Override
@@ -788,7 +794,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] The URL of the Autoscaler that targets this instance group manager.
      * </pre>
      *
-     * <code>string autoscaler = 517258967;</code>
+     * <code>optional string autoscaler = 517258967;</code>
      *
      * @return Whether the autoscaler field is set.
      */
@@ -802,7 +808,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] The URL of the Autoscaler that targets this instance group manager.
      * </pre>
      *
-     * <code>string autoscaler = 517258967;</code>
+     * <code>optional string autoscaler = 517258967;</code>
      *
      * @return The autoscaler.
      */
@@ -824,7 +830,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] The URL of the Autoscaler that targets this instance group manager.
      * </pre>
      *
-     * <code>string autoscaler = 517258967;</code>
+     * <code>optional string autoscaler = 517258967;</code>
      *
      * @return The bytes for autoscaler.
      */
@@ -846,7 +852,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] The URL of the Autoscaler that targets this instance group manager.
      * </pre>
      *
-     * <code>string autoscaler = 517258967;</code>
+     * <code>optional string autoscaler = 517258967;</code>
      *
      * @param value The autoscaler to set.
      * @return This builder for chaining.
@@ -867,7 +873,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] The URL of the Autoscaler that targets this instance group manager.
      * </pre>
      *
-     * <code>string autoscaler = 517258967;</code>
+     * <code>optional string autoscaler = 517258967;</code>
      *
      * @return This builder for chaining.
      */
@@ -884,7 +890,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] The URL of the Autoscaler that targets this instance group manager.
      * </pre>
      *
-     * <code>string autoscaler = 517258967;</code>
+     * <code>optional string autoscaler = 517258967;</code>
      *
      * @param value The bytes for autoscaler to set.
      * @return This builder for chaining.
@@ -908,7 +914,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
      * </pre>
      *
-     * <code>bool is_stable = 108410864;</code>
+     * <code>optional bool is_stable = 108410864;</code>
      *
      * @return Whether the isStable field is set.
      */
@@ -923,7 +929,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
      * </pre>
      *
-     * <code>bool is_stable = 108410864;</code>
+     * <code>optional bool is_stable = 108410864;</code>
      *
      * @return The isStable.
      */
@@ -938,7 +944,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
      * </pre>
      *
-     * <code>bool is_stable = 108410864;</code>
+     * <code>optional bool is_stable = 108410864;</code>
      *
      * @param value The isStable to set.
      * @return This builder for chaining.
@@ -956,7 +962,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
      * </pre>
      *
-     * <code>bool is_stable = 108410864;</code>
+     * <code>optional bool is_stable = 108410864;</code>
      *
      * @return This builder for chaining.
      */
@@ -980,7 +986,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] Stateful status of the given Instance Group Manager.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
      * </code>
      *
      * @return Whether the stateful field is set.
@@ -995,7 +1002,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] Stateful status of the given Instance Group Manager.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
      * </code>
      *
      * @return The stateful.
@@ -1016,7 +1024,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] Stateful status of the given Instance Group Manager.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
      * </code>
      */
     public Builder setStateful(
@@ -1040,7 +1049,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] Stateful status of the given Instance Group Manager.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
      * </code>
      */
     public Builder setStateful(
@@ -1061,7 +1071,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] Stateful status of the given Instance Group Manager.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
      * </code>
      */
     public Builder mergeStateful(
@@ -1093,7 +1104,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] Stateful status of the given Instance Group Manager.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
      * </code>
      */
     public Builder clearStateful() {
@@ -1113,7 +1125,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] Stateful status of the given Instance Group Manager.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful.Builder
@@ -1129,7 +1142,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] Stateful status of the given Instance Group Manager.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulOrBuilder
@@ -1149,7 +1163,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] Stateful status of the given Instance Group Manager.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStateful stateful = 244462412;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1183,7 +1198,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
      * </code>
      *
      * @return Whether the versionTarget field is set.
@@ -1199,7 +1214,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
      * </code>
      *
      * @return The versionTarget.
@@ -1222,7 +1237,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
      * </code>
      */
     public Builder setVersionTarget(
@@ -1247,7 +1262,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
      * </code>
      */
     public Builder setVersionTarget(
@@ -1270,7 +1285,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
      * </code>
      */
     public Builder mergeVersionTarget(
@@ -1304,7 +1319,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
      * </code>
      */
     public Builder clearVersionTarget() {
@@ -1325,7 +1340,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget.Builder
@@ -1342,7 +1357,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTargetOrBuilder
@@ -1364,7 +1379,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

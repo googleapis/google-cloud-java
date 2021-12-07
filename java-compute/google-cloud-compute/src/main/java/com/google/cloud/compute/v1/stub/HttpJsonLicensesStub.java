@@ -25,11 +25,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteLicenseRequest;
 import com.google.cloud.compute.v1.GetIamPolicyLicenseRequest;
@@ -39,10 +41,12 @@ import com.google.cloud.compute.v1.License;
 import com.google.cloud.compute.v1.LicensesListResponse;
 import com.google.cloud.compute.v1.ListLicensesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyLicenseRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsLicenseRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -60,6 +64,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonLicensesStub extends LicensesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<DeleteLicenseRequest, Operation> deleteMethodDescriptor =
       ApiMethodDescriptor.<DeleteLicenseRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Licenses/Delete")
@@ -91,7 +98,20 @@ public class HttpJsonLicensesStub extends LicensesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (DeleteLicenseRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<GetLicenseRequest, License> getMethodDescriptor =
@@ -122,6 +142,7 @@ public class HttpJsonLicensesStub extends LicensesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<License>newBuilder()
                   .setDefaultInstance(License.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -160,6 +181,7 @@ public class HttpJsonLicensesStub extends LicensesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -196,7 +218,20 @@ public class HttpJsonLicensesStub extends LicensesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (InsertLicenseRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<ListLicensesRequest, LicensesListResponse>
@@ -246,6 +281,7 @@ public class HttpJsonLicensesStub extends LicensesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<LicensesListResponse>newBuilder()
                       .setDefaultInstance(LicensesListResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -283,6 +319,7 @@ public class HttpJsonLicensesStub extends LicensesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -322,13 +359,18 @@ public class HttpJsonLicensesStub extends LicensesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
                       .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
   private final UnaryCallable<DeleteLicenseRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteLicenseRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetLicenseRequest, License> getCallable;
   private final UnaryCallable<GetIamPolicyLicenseRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<InsertLicenseRequest, Operation> insertCallable;
+  private final OperationCallable<InsertLicenseRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListLicensesRequest, LicensesListResponse> listCallable;
   private final UnaryCallable<ListLicensesRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<SetIamPolicyLicenseRequest, Policy> setIamPolicyCallable;
@@ -336,6 +378,7 @@ public class HttpJsonLicensesStub extends LicensesStub {
       testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonLicensesStub create(LicensesStubSettings settings)
@@ -374,41 +417,56 @@ public class HttpJsonLicensesStub extends LicensesStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<DeleteLicenseRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteLicenseRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetLicenseRequest, License> getTransportSettings =
         HttpJsonCallSettings.<GetLicenseRequest, License>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetIamPolicyLicenseRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyLicenseRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertLicenseRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertLicenseRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListLicensesRequest, LicensesListResponse> listTransportSettings =
         HttpJsonCallSettings.<ListLicensesRequest, LicensesListResponse>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetIamPolicyLicenseRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyLicenseRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<TestIamPermissionsLicenseRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings
                 .<TestIamPermissionsLicenseRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
@@ -418,6 +476,12 @@ public class HttpJsonLicensesStub extends LicensesStub {
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -456,6 +520,11 @@ public class HttpJsonLicensesStub extends LicensesStub {
   }
 
   @Override
+  public OperationCallable<DeleteLicenseRequest, Operation, Operation> deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetLicenseRequest, License> getCallable() {
     return getCallable;
   }
@@ -468,6 +537,11 @@ public class HttpJsonLicensesStub extends LicensesStub {
   @Override
   public UnaryCallable<InsertLicenseRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertLicenseRequest, Operation, Operation> insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override

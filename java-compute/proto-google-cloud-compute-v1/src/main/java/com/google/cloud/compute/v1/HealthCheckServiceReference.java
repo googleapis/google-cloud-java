@@ -22,10 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * A full or valid partial URL to a health check service. For example, the following are valid URLs:
- * - https://www.googleapis.com/compute/beta/projects/project-id/regions/us-west1/healthCheckServices/health-check-service
- * - projects/project-id/regions/us-west1/healthCheckServices/health-check-service
- * - regions/us-west1/healthCheckServices/health-check-service
+ * A full or valid partial URL to a health check service. For example, the following are valid URLs: - https://www.googleapis.com/compute/beta/projects/project-id/regions/us-west1/healthCheckServices/health-check-service - projects/project-id/regions/us-west1/healthCheckServices/health-check-service - regions/us-west1/healthCheckServices/health-check-service
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.HealthCheckServiceReference}
@@ -119,7 +116,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
   public static final int HEALTH_CHECK_SERVICE_FIELD_NUMBER = 408374747;
   private volatile java.lang.Object healthCheckService_;
   /**
-   * <code>string health_check_service = 408374747;</code>
+   * <code>optional string health_check_service = 408374747;</code>
    *
    * @return Whether the healthCheckService field is set.
    */
@@ -128,7 +125,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>string health_check_service = 408374747;</code>
+   * <code>optional string health_check_service = 408374747;</code>
    *
    * @return The healthCheckService.
    */
@@ -145,7 +142,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
     }
   }
   /**
-   * <code>string health_check_service = 408374747;</code>
+   * <code>optional string health_check_service = 408374747;</code>
    *
    * @return The bytes for healthCheckService.
    */
@@ -332,10 +329,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * A full or valid partial URL to a health check service. For example, the following are valid URLs:
-   * - https://www.googleapis.com/compute/beta/projects/project-id/regions/us-west1/healthCheckServices/health-check-service
-   * - projects/project-id/regions/us-west1/healthCheckServices/health-check-service
-   * - regions/us-west1/healthCheckServices/health-check-service
+   * A full or valid partial URL to a health check service. For example, the following are valid URLs: - https://www.googleapis.com/compute/beta/projects/project-id/regions/us-west1/healthCheckServices/health-check-service - projects/project-id/regions/us-west1/healthCheckServices/health-check-service - regions/us-west1/healthCheckServices/health-check-service
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.HealthCheckServiceReference}
@@ -501,7 +495,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
 
     private java.lang.Object healthCheckService_ = "";
     /**
-     * <code>string health_check_service = 408374747;</code>
+     * <code>optional string health_check_service = 408374747;</code>
      *
      * @return Whether the healthCheckService field is set.
      */
@@ -509,7 +503,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>string health_check_service = 408374747;</code>
+     * <code>optional string health_check_service = 408374747;</code>
      *
      * @return The healthCheckService.
      */
@@ -525,7 +519,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
       }
     }
     /**
-     * <code>string health_check_service = 408374747;</code>
+     * <code>optional string health_check_service = 408374747;</code>
      *
      * @return The bytes for healthCheckService.
      */
@@ -541,7 +535,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
       }
     }
     /**
-     * <code>string health_check_service = 408374747;</code>
+     * <code>optional string health_check_service = 408374747;</code>
      *
      * @param value The healthCheckService to set.
      * @return This builder for chaining.
@@ -556,7 +550,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
       return this;
     }
     /**
-     * <code>string health_check_service = 408374747;</code>
+     * <code>optional string health_check_service = 408374747;</code>
      *
      * @return This builder for chaining.
      */
@@ -567,7 +561,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
       return this;
     }
     /**
-     * <code>string health_check_service = 408374747;</code>
+     * <code>optional string health_check_service = 408374747;</code>
      *
      * @param value The bytes for healthCheckService to set.
      * @return This builder for chaining.

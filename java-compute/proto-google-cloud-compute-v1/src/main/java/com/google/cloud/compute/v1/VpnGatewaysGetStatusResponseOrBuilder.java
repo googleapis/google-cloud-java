@@ -24,17 +24,17 @@ public interface VpnGatewaysGetStatusResponseOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.VpnGatewayStatus result = 139315229;</code>
+   * <code>optional .google.cloud.compute.v1.VpnGatewayStatus result = 139315229;</code>
    *
    * @return Whether the result field is set.
    */
   boolean hasResult();
   /**
-   * <code>.google.cloud.compute.v1.VpnGatewayStatus result = 139315229;</code>
+   * <code>optional .google.cloud.compute.v1.VpnGatewayStatus result = 139315229;</code>
    *
    * @return The result.
    */
   com.google.cloud.compute.v1.VpnGatewayStatus getResult();
-  /** <code>.google.cloud.compute.v1.VpnGatewayStatus result = 139315229;</code> */
+  /** <code>optional .google.cloud.compute.v1.VpnGatewayStatus result = 139315229;</code> */
   com.google.cloud.compute.v1.VpnGatewayStatusOrBuilder getResultOrBuilder();
 }

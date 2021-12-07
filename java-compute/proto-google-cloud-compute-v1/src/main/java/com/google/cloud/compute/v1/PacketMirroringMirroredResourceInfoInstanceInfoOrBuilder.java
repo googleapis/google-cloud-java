@@ -30,7 +30,7 @@ public interface PacketMirroringMirroredResourceInfoInstanceInfoOrBuilder
    * [Output Only] Unique identifier for the instance; defined by the server.
    * </pre>
    *
-   * <code>string canonical_url = 512294820;</code>
+   * <code>optional string canonical_url = 512294820;</code>
    *
    * @return Whether the canonicalUrl field is set.
    */
@@ -42,7 +42,7 @@ public interface PacketMirroringMirroredResourceInfoInstanceInfoOrBuilder
    * [Output Only] Unique identifier for the instance; defined by the server.
    * </pre>
    *
-   * <code>string canonical_url = 512294820;</code>
+   * <code>optional string canonical_url = 512294820;</code>
    *
    * @return The canonicalUrl.
    */
@@ -54,7 +54,7 @@ public interface PacketMirroringMirroredResourceInfoInstanceInfoOrBuilder
    * [Output Only] Unique identifier for the instance; defined by the server.
    * </pre>
    *
-   * <code>string canonical_url = 512294820;</code>
+   * <code>optional string canonical_url = 512294820;</code>
    *
    * @return The bytes for canonicalUrl.
    */
@@ -67,7 +67,7 @@ public interface PacketMirroringMirroredResourceInfoInstanceInfoOrBuilder
    * Resource URL to the virtual machine instance which is being mirrored.
    * </pre>
    *
-   * <code>string url = 116079;</code>
+   * <code>optional string url = 116079;</code>
    *
    * @return Whether the url field is set.
    */
@@ -79,7 +79,7 @@ public interface PacketMirroringMirroredResourceInfoInstanceInfoOrBuilder
    * Resource URL to the virtual machine instance which is being mirrored.
    * </pre>
    *
-   * <code>string url = 116079;</code>
+   * <code>optional string url = 116079;</code>
    *
    * @return The url.
    */
@@ -91,7 +91,7 @@ public interface PacketMirroringMirroredResourceInfoInstanceInfoOrBuilder
    * Resource URL to the virtual machine instance which is being mirrored.
    * </pre>
    *
-   * <code>string url = 116079;</code>
+   * <code>optional string url = 116079;</code>
    *
    * @return The bytes for url.
    */

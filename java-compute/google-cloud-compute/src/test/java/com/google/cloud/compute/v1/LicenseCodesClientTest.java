@@ -83,6 +83,7 @@ public class LicenseCodesClientTest {
             .addAllLicenseAlias(new ArrayList<LicenseCodeLicenseAlias>())
             .setName("name3373707")
             .setSelfLink("selfLink1191800166")
+            .setState("state109757585")
             .setTransferable(true)
             .build();
     mockService.addResponse(expectedResponse);

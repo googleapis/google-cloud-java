@@ -26,11 +26,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListPacketMirroringsRequest;
 import com.google.cloud.compute.v1.DeletePacketMirroringRequest;
@@ -38,12 +40,14 @@ import com.google.cloud.compute.v1.GetPacketMirroringRequest;
 import com.google.cloud.compute.v1.InsertPacketMirroringRequest;
 import com.google.cloud.compute.v1.ListPacketMirroringsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PacketMirroring;
 import com.google.cloud.compute.v1.PacketMirroringAggregatedList;
 import com.google.cloud.compute.v1.PacketMirroringList;
 import com.google.cloud.compute.v1.PatchPacketMirroringRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsPacketMirroringRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -61,6 +65,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<
           AggregatedListPacketMirroringsRequest, PacketMirroringAggregatedList>
       aggregatedListMethodDescriptor =
@@ -114,6 +121,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<PacketMirroringAggregatedList>newBuilder()
                       .setDefaultInstance(PacketMirroringAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -151,7 +159,21 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeletePacketMirroringRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetPacketMirroringRequest, PacketMirroring>
@@ -185,6 +207,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<PacketMirroring>newBuilder()
                       .setDefaultInstance(PacketMirroring.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -225,7 +248,21 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertPacketMirroringRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListPacketMirroringsRequest, PacketMirroringList>
@@ -276,6 +313,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<PacketMirroringList>newBuilder()
                       .setDefaultInstance(PacketMirroringList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -318,7 +356,21 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchPacketMirroringRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -359,6 +411,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
                       .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -367,15 +420,22 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
   private final UnaryCallable<AggregatedListPacketMirroringsRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
   private final UnaryCallable<DeletePacketMirroringRequest, Operation> deleteCallable;
+  private final OperationCallable<DeletePacketMirroringRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetPacketMirroringRequest, PacketMirroring> getCallable;
   private final UnaryCallable<InsertPacketMirroringRequest, Operation> insertCallable;
+  private final OperationCallable<InsertPacketMirroringRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListPacketMirroringsRequest, PacketMirroringList> listCallable;
   private final UnaryCallable<ListPacketMirroringsRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<PatchPacketMirroringRequest, Operation> patchCallable;
+  private final OperationCallable<PatchPacketMirroringRequest, Operation, Operation>
+      patchOperationCallable;
   private final UnaryCallable<TestIamPermissionsPacketMirroringRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonPacketMirroringsStub create(PacketMirroringsStubSettings settings)
@@ -416,38 +476,47 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AggregatedListPacketMirroringsRequest, PacketMirroringAggregatedList>
         aggregatedListTransportSettings =
             HttpJsonCallSettings
                 .<AggregatedListPacketMirroringsRequest, PacketMirroringAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeletePacketMirroringRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeletePacketMirroringRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetPacketMirroringRequest, PacketMirroring> getTransportSettings =
         HttpJsonCallSettings.<GetPacketMirroringRequest, PacketMirroring>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertPacketMirroringRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertPacketMirroringRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListPacketMirroringsRequest, PacketMirroringList> listTransportSettings =
         HttpJsonCallSettings.<ListPacketMirroringsRequest, PacketMirroringList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<PatchPacketMirroringRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchPacketMirroringRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<TestIamPermissionsPacketMirroringRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings
                 .<TestIamPermissionsPacketMirroringRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.aggregatedListCallable =
@@ -459,12 +528,24 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -474,6 +555,12 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.testIamPermissionsCallable =
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
@@ -515,6 +602,12 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
   }
 
   @Override
+  public OperationCallable<DeletePacketMirroringRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetPacketMirroringRequest, PacketMirroring> getCallable() {
     return getCallable;
   }
@@ -522,6 +615,12 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
   @Override
   public UnaryCallable<InsertPacketMirroringRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertPacketMirroringRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -537,6 +636,12 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
   @Override
   public UnaryCallable<PatchPacketMirroringRequest, Operation> patchCallable() {
     return patchCallable;
+  }
+
+  @Override
+  public OperationCallable<PatchPacketMirroringRequest, Operation, Operation>
+      patchOperationCallable() {
+    return patchOperationCallable;
   }
 
   @Override

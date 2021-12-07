@@ -30,7 +30,7 @@ public interface InstanceTemplateOrBuilder
    * [Output Only] The creation timestamp for this instance template in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -42,7 +42,7 @@ public interface InstanceTemplateOrBuilder
    * [Output Only] The creation timestamp for this instance template in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -54,7 +54,7 @@ public interface InstanceTemplateOrBuilder
    * [Output Only] The creation timestamp for this instance template in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -67,7 +67,7 @@ public interface InstanceTemplateOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -79,7 +79,7 @@ public interface InstanceTemplateOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -91,7 +91,7 @@ public interface InstanceTemplateOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -104,7 +104,7 @@ public interface InstanceTemplateOrBuilder
    * [Output Only] A unique identifier for this instance template. The server defines this identifier.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -116,7 +116,7 @@ public interface InstanceTemplateOrBuilder
    * [Output Only] A unique identifier for this instance template. The server defines this identifier.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -129,7 +129,7 @@ public interface InstanceTemplateOrBuilder
    * [Output Only] The resource type, which is always compute#instanceTemplate for instance templates.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -141,7 +141,7 @@ public interface InstanceTemplateOrBuilder
    * [Output Only] The resource type, which is always compute#instanceTemplate for instance templates.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -153,7 +153,7 @@ public interface InstanceTemplateOrBuilder
    * [Output Only] The resource type, which is always compute#instanceTemplate for instance templates.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -166,7 +166,7 @@ public interface InstanceTemplateOrBuilder
    * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -178,7 +178,7 @@ public interface InstanceTemplateOrBuilder
    * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -190,7 +190,7 @@ public interface InstanceTemplateOrBuilder
    * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -203,7 +203,7 @@ public interface InstanceTemplateOrBuilder
    * The instance properties for this instance template.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceProperties properties = 147688755;</code>
+   * <code>optional .google.cloud.compute.v1.InstanceProperties properties = 147688755;</code>
    *
    * @return Whether the properties field is set.
    */
@@ -215,7 +215,7 @@ public interface InstanceTemplateOrBuilder
    * The instance properties for this instance template.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceProperties properties = 147688755;</code>
+   * <code>optional .google.cloud.compute.v1.InstanceProperties properties = 147688755;</code>
    *
    * @return The properties.
    */
@@ -227,7 +227,7 @@ public interface InstanceTemplateOrBuilder
    * The instance properties for this instance template.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceProperties properties = 147688755;</code>
+   * <code>optional .google.cloud.compute.v1.InstanceProperties properties = 147688755;</code>
    */
   com.google.cloud.compute.v1.InstancePropertiesOrBuilder getPropertiesOrBuilder();
 
@@ -238,7 +238,7 @@ public interface InstanceTemplateOrBuilder
    * [Output Only] The URL for this instance template. The server defines this URL.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -250,7 +250,7 @@ public interface InstanceTemplateOrBuilder
    * [Output Only] The URL for this instance template. The server defines this URL.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -262,7 +262,7 @@ public interface InstanceTemplateOrBuilder
    * [Output Only] The URL for this instance template. The server defines this URL.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -272,12 +272,10 @@ public interface InstanceTemplateOrBuilder
    *
    *
    * <pre>
-   * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
-   * - projects/project/zones/zone/instances/instance
+   * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
    * </pre>
    *
-   * <code>string source_instance = 396315705;</code>
+   * <code>optional string source_instance = 396315705;</code>
    *
    * @return Whether the sourceInstance field is set.
    */
@@ -286,12 +284,10 @@ public interface InstanceTemplateOrBuilder
    *
    *
    * <pre>
-   * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
-   * - projects/project/zones/zone/instances/instance
+   * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
    * </pre>
    *
-   * <code>string source_instance = 396315705;</code>
+   * <code>optional string source_instance = 396315705;</code>
    *
    * @return The sourceInstance.
    */
@@ -300,12 +296,10 @@ public interface InstanceTemplateOrBuilder
    *
    *
    * <pre>
-   * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
-   * - projects/project/zones/zone/instances/instance
+   * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
    * </pre>
    *
-   * <code>string source_instance = 396315705;</code>
+   * <code>optional string source_instance = 396315705;</code>
    *
    * @return The bytes for sourceInstance.
    */
@@ -318,7 +312,9 @@ public interface InstanceTemplateOrBuilder
    * The source instance params to use to create this instance template.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SourceInstanceParams source_instance_params = 135342156;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.SourceInstanceParams source_instance_params = 135342156;
+   * </code>
    *
    * @return Whether the sourceInstanceParams field is set.
    */
@@ -330,7 +326,9 @@ public interface InstanceTemplateOrBuilder
    * The source instance params to use to create this instance template.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SourceInstanceParams source_instance_params = 135342156;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.SourceInstanceParams source_instance_params = 135342156;
+   * </code>
    *
    * @return The sourceInstanceParams.
    */
@@ -342,7 +340,9 @@ public interface InstanceTemplateOrBuilder
    * The source instance params to use to create this instance template.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SourceInstanceParams source_instance_params = 135342156;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.SourceInstanceParams source_instance_params = 135342156;
+   * </code>
    */
   com.google.cloud.compute.v1.SourceInstanceParamsOrBuilder getSourceInstanceParamsOrBuilder();
 }

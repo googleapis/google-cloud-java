@@ -30,7 +30,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * The destination range of the route.
    * </pre>
    *
-   * <code>string dest_range = 381327712;</code>
+   * <code>optional string dest_range = 381327712;</code>
    *
    * @return Whether the destRange field is set.
    */
@@ -42,7 +42,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * The destination range of the route.
    * </pre>
    *
-   * <code>string dest_range = 381327712;</code>
+   * <code>optional string dest_range = 381327712;</code>
    *
    * @return The destRange.
    */
@@ -54,7 +54,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * The destination range of the route.
    * </pre>
    *
-   * <code>string dest_range = 381327712;</code>
+   * <code>optional string dest_range = 381327712;</code>
    *
    * @return The bytes for destRange.
    */
@@ -67,7 +67,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * True if the peering route has been imported from a peer. The actual import happens if the field networkPeering.importCustomRoutes is true for this network, and networkPeering.exportCustomRoutes is true for the peer network, and the import does not result in a route conflict.
    * </pre>
    *
-   * <code>bool imported = 114502404;</code>
+   * <code>optional bool imported = 114502404;</code>
    *
    * @return Whether the imported field is set.
    */
@@ -79,7 +79,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * True if the peering route has been imported from a peer. The actual import happens if the field networkPeering.importCustomRoutes is true for this network, and networkPeering.exportCustomRoutes is true for the peer network, and the import does not result in a route conflict.
    * </pre>
    *
-   * <code>bool imported = 114502404;</code>
+   * <code>optional bool imported = 114502404;</code>
    *
    * @return The imported.
    */
@@ -92,7 +92,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * The region of peering route next hop, only applies to dynamic routes.
    * </pre>
    *
-   * <code>string next_hop_region = 122577014;</code>
+   * <code>optional string next_hop_region = 122577014;</code>
    *
    * @return Whether the nextHopRegion field is set.
    */
@@ -104,7 +104,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * The region of peering route next hop, only applies to dynamic routes.
    * </pre>
    *
-   * <code>string next_hop_region = 122577014;</code>
+   * <code>optional string next_hop_region = 122577014;</code>
    *
    * @return The nextHopRegion.
    */
@@ -116,7 +116,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * The region of peering route next hop, only applies to dynamic routes.
    * </pre>
    *
-   * <code>string next_hop_region = 122577014;</code>
+   * <code>optional string next_hop_region = 122577014;</code>
    *
    * @return The bytes for nextHopRegion.
    */
@@ -129,7 +129,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * The priority of the peering route.
    * </pre>
    *
-   * <code>uint32 priority = 445151652;</code>
+   * <code>optional uint32 priority = 445151652;</code>
    *
    * @return Whether the priority field is set.
    */
@@ -141,7 +141,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * The priority of the peering route.
    * </pre>
    *
-   * <code>uint32 priority = 445151652;</code>
+   * <code>optional uint32 priority = 445151652;</code>
    *
    * @return The priority.
    */
@@ -152,9 +152,10 @@ public interface ExchangedPeeringRouteOrBuilder
    *
    * <pre>
    * The type of the peering route.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ExchangedPeeringRoute.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
    * @return Whether the type field is set.
    */
@@ -164,23 +165,25 @@ public interface ExchangedPeeringRouteOrBuilder
    *
    * <pre>
    * The type of the peering route.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ExchangedPeeringRoute.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The enum numeric value on the wire for type.
+   * @return The type.
    */
-  int getTypeValue();
+  java.lang.String getType();
   /**
    *
    *
    * <pre>
    * The type of the peering route.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ExchangedPeeringRoute.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The type.
+   * @return The bytes for type.
    */
-  com.google.cloud.compute.v1.ExchangedPeeringRoute.Type getType();
+  com.google.protobuf.ByteString getTypeBytes();
 }

@@ -30,7 +30,7 @@ public interface ResourcePolicySnapshotSchedulePolicyRetentionPolicyOrBuilder
    * Maximum age of the snapshot that is allowed to be kept.
    * </pre>
    *
-   * <code>int32 max_retention_days = 324296979;</code>
+   * <code>optional int32 max_retention_days = 324296979;</code>
    *
    * @return Whether the maxRetentionDays field is set.
    */
@@ -42,7 +42,7 @@ public interface ResourcePolicySnapshotSchedulePolicyRetentionPolicyOrBuilder
    * Maximum age of the snapshot that is allowed to be kept.
    * </pre>
    *
-   * <code>int32 max_retention_days = 324296979;</code>
+   * <code>optional int32 max_retention_days = 324296979;</code>
    *
    * @return The maxRetentionDays.
    */
@@ -53,11 +53,10 @@ public interface ResourcePolicySnapshotSchedulePolicyRetentionPolicyOrBuilder
    *
    * <pre>
    * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+   * Check the OnSourceDiskDelete enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;
-   * </code>
+   * <code>optional string on_source_disk_delete = 321955529;</code>
    *
    * @return Whether the onSourceDiskDelete field is set.
    */
@@ -67,28 +66,25 @@ public interface ResourcePolicySnapshotSchedulePolicyRetentionPolicyOrBuilder
    *
    * <pre>
    * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+   * Check the OnSourceDiskDelete enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;
-   * </code>
+   * <code>optional string on_source_disk_delete = 321955529;</code>
    *
-   * @return The enum numeric value on the wire for onSourceDiskDelete.
+   * @return The onSourceDiskDelete.
    */
-  int getOnSourceDiskDeleteValue();
+  java.lang.String getOnSourceDiskDelete();
   /**
    *
    *
    * <pre>
    * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+   * Check the OnSourceDiskDelete enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;
-   * </code>
+   * <code>optional string on_source_disk_delete = 321955529;</code>
    *
-   * @return The onSourceDiskDelete.
+   * @return The bytes for onSourceDiskDelete.
    */
-  com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete
-      getOnSourceDiskDelete();
+  com.google.protobuf.ByteString getOnSourceDiskDeleteBytes();
 }

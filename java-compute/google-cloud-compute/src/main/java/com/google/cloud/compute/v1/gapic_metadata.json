@@ -32,13 +32,13 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -56,22 +56,22 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "Update": {
-              "methods": ["update", "update", "updateCallable"]
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
           }
         }
@@ -83,28 +83,28 @@
           "libraryClient": "BackendBucketsClient",
           "rpcs": {
             "AddSignedUrlKey": {
-              "methods": ["addSignedUrlKey", "addSignedUrlKey", "addSignedUrlKeyCallable"]
+              "methods": ["addSignedUrlKeyAsync", "addSignedUrlKeyAsync", "addSignedUrlKeyOperationCallable", "addSignedUrlKeyCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "DeleteSignedUrlKey": {
-              "methods": ["deleteSignedUrlKey", "deleteSignedUrlKey", "deleteSignedUrlKeyCallable"]
+              "methods": ["deleteSignedUrlKeyAsync", "deleteSignedUrlKeyAsync", "deleteSignedUrlKeyOperationCallable", "deleteSignedUrlKeyCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "Update": {
-              "methods": ["update", "update", "updateCallable"]
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
           }
         }
@@ -116,16 +116,16 @@
           "libraryClient": "BackendServicesClient",
           "rpcs": {
             "AddSignedUrlKey": {
-              "methods": ["addSignedUrlKey", "addSignedUrlKey", "addSignedUrlKeyCallable"]
+              "methods": ["addSignedUrlKeyAsync", "addSignedUrlKeyAsync", "addSignedUrlKeyOperationCallable", "addSignedUrlKeyCallable"]
             },
             "AggregatedList": {
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "DeleteSignedUrlKey": {
-              "methods": ["deleteSignedUrlKey", "deleteSignedUrlKey", "deleteSignedUrlKeyCallable"]
+              "methods": ["deleteSignedUrlKeyAsync", "deleteSignedUrlKeyAsync", "deleteSignedUrlKeyOperationCallable", "deleteSignedUrlKeyCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -134,19 +134,19 @@
               "methods": ["getHealth", "getHealth", "getHealthCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "SetSecurityPolicy": {
-              "methods": ["setSecurityPolicy", "setSecurityPolicy", "setSecurityPolicyCallable"]
+              "methods": ["setSecurityPolicyAsync", "setSecurityPolicyAsync", "setSecurityPolicyOperationCallable", "setSecurityPolicyCallable"]
             },
             "Update": {
-              "methods": ["update", "update", "updateCallable"]
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
           }
         }
@@ -176,16 +176,16 @@
           "libraryClient": "DisksClient",
           "rpcs": {
             "AddResourcePolicies": {
-              "methods": ["addResourcePolicies", "addResourcePolicies", "addResourcePoliciesCallable"]
+              "methods": ["addResourcePoliciesAsync", "addResourcePoliciesAsync", "addResourcePoliciesOperationCallable", "addResourcePoliciesCallable"]
             },
             "AggregatedList": {
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "CreateSnapshot": {
-              "methods": ["createSnapshot", "createSnapshot", "createSnapshotCallable"]
+              "methods": ["createSnapshotAsync", "createSnapshotAsync", "createSnapshotOperationCallable", "createSnapshotCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -194,22 +194,22 @@
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "RemoveResourcePolicies": {
-              "methods": ["removeResourcePolicies", "removeResourcePolicies", "removeResourcePoliciesCallable"]
+              "methods": ["removeResourcePoliciesAsync", "removeResourcePoliciesAsync", "removeResourcePoliciesOperationCallable", "removeResourcePoliciesCallable"]
             },
             "Resize": {
-              "methods": ["resize", "resize", "resizeCallable"]
+              "methods": ["resizeAsync", "resizeAsync", "resizeOperationCallable", "resizeCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
             },
             "SetLabels": {
-              "methods": ["setLabels", "setLabels", "setLabelsCallable"]
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
@@ -224,19 +224,19 @@
           "libraryClient": "ExternalVpnGatewaysClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "SetLabels": {
-              "methods": ["setLabels", "setLabels", "setLabelsCallable"]
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
@@ -251,16 +251,16 @@
           "libraryClient": "FirewallPoliciesClient",
           "rpcs": {
             "AddAssociation": {
-              "methods": ["addAssociation", "addAssociation", "addAssociationCallable"]
+              "methods": ["addAssociationAsync", "addAssociationAsync", "addAssociationOperationCallable", "addAssociationCallable"]
             },
             "AddRule": {
-              "methods": ["addRule", "addRule", "addRuleCallable"]
+              "methods": ["addRuleAsync", "addRuleAsync", "addRuleOperationCallable", "addRuleCallable"]
             },
             "CloneRules": {
-              "methods": ["cloneRules", "cloneRules", "cloneRulesCallable"]
+              "methods": ["cloneRulesAsync", "cloneRulesAsync", "cloneRulesOperationCallable", "cloneRulesCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -275,7 +275,7 @@
               "methods": ["getRule", "getRule", "getRuleCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -284,19 +284,19 @@
               "methods": ["listAssociations", "listAssociations", "listAssociationsCallable"]
             },
             "Move": {
-              "methods": ["move", "move", "moveCallable"]
+              "methods": ["moveAsync", "moveAsync", "moveOperationCallable", "moveCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "PatchRule": {
-              "methods": ["patchRule", "patchRule", "patchRuleCallable"]
+              "methods": ["patchRuleAsync", "patchRuleAsync", "patchRuleOperationCallable", "patchRuleCallable"]
             },
             "RemoveAssociation": {
-              "methods": ["removeAssociation", "removeAssociation", "removeAssociationCallable"]
+              "methods": ["removeAssociationAsync", "removeAssociationAsync", "removeAssociationOperationCallable", "removeAssociationCallable"]
             },
             "RemoveRule": {
-              "methods": ["removeRule", "removeRule", "removeRuleCallable"]
+              "methods": ["removeRuleAsync", "removeRuleAsync", "removeRuleOperationCallable", "removeRuleCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
@@ -314,22 +314,22 @@
           "libraryClient": "FirewallsClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "Update": {
-              "methods": ["update", "update", "updateCallable"]
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
           }
         }
@@ -344,25 +344,25 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "SetLabels": {
-              "methods": ["setLabels", "setLabels", "setLabelsCallable"]
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
             },
             "SetTarget": {
-              "methods": ["setTarget", "setTarget", "setTargetCallable"]
+              "methods": ["setTargetAsync", "setTargetAsync", "setTargetOperationCallable", "setTargetCallable"]
             }
           }
         }
@@ -374,13 +374,13 @@
           "libraryClient": "GlobalAddressesClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -395,25 +395,25 @@
           "libraryClient": "GlobalForwardingRulesClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "SetLabels": {
-              "methods": ["setLabels", "setLabels", "setLabelsCallable"]
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
             },
             "SetTarget": {
-              "methods": ["setTarget", "setTarget", "setTargetCallable"]
+              "methods": ["setTargetAsync", "setTargetAsync", "setTargetOperationCallable", "setTargetCallable"]
             }
           }
         }
@@ -425,19 +425,19 @@
           "libraryClient": "GlobalNetworkEndpointGroupsClient",
           "rpcs": {
             "AttachNetworkEndpoints": {
-              "methods": ["attachNetworkEndpoints", "attachNetworkEndpoints", "attachNetworkEndpointsCallable"]
+              "methods": ["attachNetworkEndpointsAsync", "attachNetworkEndpointsAsync", "attachNetworkEndpointsOperationCallable", "attachNetworkEndpointsCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "DetachNetworkEndpoints": {
-              "methods": ["detachNetworkEndpoints", "detachNetworkEndpoints", "detachNetworkEndpointsCallable"]
+              "methods": ["detachNetworkEndpointsAsync", "detachNetworkEndpointsAsync", "detachNetworkEndpointsOperationCallable", "detachNetworkEndpointsCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -497,19 +497,19 @@
           "libraryClient": "GlobalPublicDelegatedPrefixesClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             }
           }
         }
@@ -524,22 +524,34 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "Update": {
-              "methods": ["update", "update", "updateCallable"]
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ImageFamilyViews": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ImageFamilyViewsClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
             }
           }
         }
@@ -551,10 +563,10 @@
           "libraryClient": "ImagesClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Deprecate": {
-              "methods": ["deprecate", "deprecate", "deprecateCallable"]
+              "methods": ["deprecateAsync", "deprecateAsync", "deprecateOperationCallable", "deprecateCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -566,19 +578,19 @@
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
             },
             "SetLabels": {
-              "methods": ["setLabels", "setLabels", "setLabelsCallable"]
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
@@ -593,31 +605,31 @@
           "libraryClient": "InstanceGroupManagersClient",
           "rpcs": {
             "AbandonInstances": {
-              "methods": ["abandonInstances", "abandonInstances", "abandonInstancesCallable"]
+              "methods": ["abandonInstancesAsync", "abandonInstancesAsync", "abandonInstancesOperationCallable", "abandonInstancesCallable"]
             },
             "AggregatedList": {
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "ApplyUpdatesToInstances": {
-              "methods": ["applyUpdatesToInstances", "applyUpdatesToInstances", "applyUpdatesToInstancesCallable"]
+              "methods": ["applyUpdatesToInstancesAsync", "applyUpdatesToInstancesAsync", "applyUpdatesToInstancesOperationCallable", "applyUpdatesToInstancesCallable"]
             },
             "CreateInstances": {
-              "methods": ["createInstances", "createInstances", "createInstancesCallable"]
+              "methods": ["createInstancesAsync", "createInstancesAsync", "createInstancesOperationCallable", "createInstancesCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "DeleteInstances": {
-              "methods": ["deleteInstances", "deleteInstances", "deleteInstancesCallable"]
+              "methods": ["deleteInstancesAsync", "deleteInstancesAsync", "deleteInstancesOperationCallable", "deleteInstancesCallable"]
             },
             "DeletePerInstanceConfigs": {
-              "methods": ["deletePerInstanceConfigs", "deletePerInstanceConfigs", "deletePerInstanceConfigsCallable"]
+              "methods": ["deletePerInstanceConfigsAsync", "deletePerInstanceConfigsAsync", "deletePerInstanceConfigsOperationCallable", "deletePerInstanceConfigsCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -632,25 +644,25 @@
               "methods": ["listPerInstanceConfigs", "listPerInstanceConfigs", "listPerInstanceConfigsPagedCallable", "listPerInstanceConfigsCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "PatchPerInstanceConfigs": {
-              "methods": ["patchPerInstanceConfigs", "patchPerInstanceConfigs", "patchPerInstanceConfigsCallable"]
+              "methods": ["patchPerInstanceConfigsAsync", "patchPerInstanceConfigsAsync", "patchPerInstanceConfigsOperationCallable", "patchPerInstanceConfigsCallable"]
             },
             "RecreateInstances": {
-              "methods": ["recreateInstances", "recreateInstances", "recreateInstancesCallable"]
+              "methods": ["recreateInstancesAsync", "recreateInstancesAsync", "recreateInstancesOperationCallable", "recreateInstancesCallable"]
             },
             "Resize": {
-              "methods": ["resize", "resize", "resizeCallable"]
+              "methods": ["resizeAsync", "resizeAsync", "resizeOperationCallable", "resizeCallable"]
             },
             "SetInstanceTemplate": {
-              "methods": ["setInstanceTemplate", "setInstanceTemplate", "setInstanceTemplateCallable"]
+              "methods": ["setInstanceTemplateAsync", "setInstanceTemplateAsync", "setInstanceTemplateOperationCallable", "setInstanceTemplateCallable"]
             },
             "SetTargetPools": {
-              "methods": ["setTargetPools", "setTargetPools", "setTargetPoolsCallable"]
+              "methods": ["setTargetPoolsAsync", "setTargetPoolsAsync", "setTargetPoolsOperationCallable", "setTargetPoolsCallable"]
             },
             "UpdatePerInstanceConfigs": {
-              "methods": ["updatePerInstanceConfigs", "updatePerInstanceConfigs", "updatePerInstanceConfigsCallable"]
+              "methods": ["updatePerInstanceConfigsAsync", "updatePerInstanceConfigsAsync", "updatePerInstanceConfigsOperationCallable", "updatePerInstanceConfigsCallable"]
             }
           }
         }
@@ -662,19 +674,19 @@
           "libraryClient": "InstanceGroupsClient",
           "rpcs": {
             "AddInstances": {
-              "methods": ["addInstances", "addInstances", "addInstancesCallable"]
+              "methods": ["addInstancesAsync", "addInstancesAsync", "addInstancesOperationCallable", "addInstancesCallable"]
             },
             "AggregatedList": {
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -683,10 +695,10 @@
               "methods": ["listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
             },
             "RemoveInstances": {
-              "methods": ["removeInstances", "removeInstances", "removeInstancesCallable"]
+              "methods": ["removeInstancesAsync", "removeInstancesAsync", "removeInstancesOperationCallable", "removeInstancesCallable"]
             },
             "SetNamedPorts": {
-              "methods": ["setNamedPorts", "setNamedPorts", "setNamedPortsCallable"]
+              "methods": ["setNamedPortsAsync", "setNamedPortsAsync", "setNamedPortsOperationCallable", "setNamedPortsCallable"]
             }
           }
         }
@@ -698,7 +710,7 @@
           "libraryClient": "InstanceTemplatesClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -707,7 +719,7 @@
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -728,28 +740,28 @@
           "libraryClient": "InstancesClient",
           "rpcs": {
             "AddAccessConfig": {
-              "methods": ["addAccessConfig", "addAccessConfig", "addAccessConfigCallable"]
+              "methods": ["addAccessConfigAsync", "addAccessConfigAsync", "addAccessConfigOperationCallable", "addAccessConfigCallable"]
             },
             "AddResourcePolicies": {
-              "methods": ["addResourcePolicies", "addResourcePolicies", "addResourcePoliciesCallable"]
+              "methods": ["addResourcePoliciesAsync", "addResourcePoliciesAsync", "addResourcePoliciesOperationCallable", "addResourcePoliciesCallable"]
             },
             "AggregatedList": {
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "AttachDisk": {
-              "methods": ["attachDisk", "attachDisk", "attachDiskCallable"]
+              "methods": ["attachDiskAsync", "attachDiskAsync", "attachDiskOperationCallable", "attachDiskCallable"]
             },
             "BulkInsert": {
-              "methods": ["bulkInsert", "bulkInsert", "bulkInsertCallable"]
+              "methods": ["bulkInsertAsync", "bulkInsertAsync", "bulkInsertOperationCallable", "bulkInsertCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "DeleteAccessConfig": {
-              "methods": ["deleteAccessConfig", "deleteAccessConfig", "deleteAccessConfigCallable"]
+              "methods": ["deleteAccessConfigAsync", "deleteAccessConfigAsync", "deleteAccessConfigOperationCallable", "deleteAccessConfigCallable"]
             },
             "DetachDisk": {
-              "methods": ["detachDisk", "detachDisk", "detachDiskCallable"]
+              "methods": ["detachDiskAsync", "detachDiskAsync", "detachDiskOperationCallable", "detachDiskCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -773,7 +785,7 @@
               "methods": ["getShieldedInstanceIdentity", "getShieldedInstanceIdentity", "getShieldedInstanceIdentityCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -782,76 +794,79 @@
               "methods": ["listReferrers", "listReferrers", "listReferrersPagedCallable", "listReferrersCallable"]
             },
             "RemoveResourcePolicies": {
-              "methods": ["removeResourcePolicies", "removeResourcePolicies", "removeResourcePoliciesCallable"]
+              "methods": ["removeResourcePoliciesAsync", "removeResourcePoliciesAsync", "removeResourcePoliciesOperationCallable", "removeResourcePoliciesCallable"]
             },
             "Reset": {
-              "methods": ["reset", "reset", "resetCallable"]
+              "methods": ["resetAsync", "resetAsync", "resetOperationCallable", "resetCallable"]
+            },
+            "SendDiagnosticInterrupt": {
+              "methods": ["sendDiagnosticInterrupt", "sendDiagnosticInterrupt", "sendDiagnosticInterruptCallable"]
             },
             "SetDeletionProtection": {
-              "methods": ["setDeletionProtection", "setDeletionProtection", "setDeletionProtectionCallable"]
+              "methods": ["setDeletionProtectionAsync", "setDeletionProtectionAsync", "setDeletionProtectionOperationCallable", "setDeletionProtectionCallable"]
             },
             "SetDiskAutoDelete": {
-              "methods": ["setDiskAutoDelete", "setDiskAutoDelete", "setDiskAutoDeleteCallable"]
+              "methods": ["setDiskAutoDeleteAsync", "setDiskAutoDeleteAsync", "setDiskAutoDeleteOperationCallable", "setDiskAutoDeleteCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
             },
             "SetLabels": {
-              "methods": ["setLabels", "setLabels", "setLabelsCallable"]
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
             },
             "SetMachineResources": {
-              "methods": ["setMachineResources", "setMachineResources", "setMachineResourcesCallable"]
+              "methods": ["setMachineResourcesAsync", "setMachineResourcesAsync", "setMachineResourcesOperationCallable", "setMachineResourcesCallable"]
             },
             "SetMachineType": {
-              "methods": ["setMachineType", "setMachineType", "setMachineTypeCallable"]
+              "methods": ["setMachineTypeAsync", "setMachineTypeAsync", "setMachineTypeOperationCallable", "setMachineTypeCallable"]
             },
             "SetMetadata": {
-              "methods": ["setMetadata", "setMetadata", "setMetadataCallable"]
+              "methods": ["setMetadataAsync", "setMetadataAsync", "setMetadataOperationCallable", "setMetadataCallable"]
             },
             "SetMinCpuPlatform": {
-              "methods": ["setMinCpuPlatform", "setMinCpuPlatform", "setMinCpuPlatformCallable"]
+              "methods": ["setMinCpuPlatformAsync", "setMinCpuPlatformAsync", "setMinCpuPlatformOperationCallable", "setMinCpuPlatformCallable"]
             },
             "SetScheduling": {
-              "methods": ["setScheduling", "setScheduling", "setSchedulingCallable"]
+              "methods": ["setSchedulingAsync", "setSchedulingAsync", "setSchedulingOperationCallable", "setSchedulingCallable"]
             },
             "SetServiceAccount": {
-              "methods": ["setServiceAccount", "setServiceAccount", "setServiceAccountCallable"]
+              "methods": ["setServiceAccountAsync", "setServiceAccountAsync", "setServiceAccountOperationCallable", "setServiceAccountCallable"]
             },
             "SetShieldedInstanceIntegrityPolicy": {
-              "methods": ["setShieldedInstanceIntegrityPolicy", "setShieldedInstanceIntegrityPolicy", "setShieldedInstanceIntegrityPolicyCallable"]
+              "methods": ["setShieldedInstanceIntegrityPolicyAsync", "setShieldedInstanceIntegrityPolicyAsync", "setShieldedInstanceIntegrityPolicyOperationCallable", "setShieldedInstanceIntegrityPolicyCallable"]
             },
             "SetTags": {
-              "methods": ["setTags", "setTags", "setTagsCallable"]
+              "methods": ["setTagsAsync", "setTagsAsync", "setTagsOperationCallable", "setTagsCallable"]
             },
             "SimulateMaintenanceEvent": {
-              "methods": ["simulateMaintenanceEvent", "simulateMaintenanceEvent", "simulateMaintenanceEventCallable"]
+              "methods": ["simulateMaintenanceEventAsync", "simulateMaintenanceEventAsync", "simulateMaintenanceEventOperationCallable", "simulateMaintenanceEventCallable"]
             },
             "Start": {
-              "methods": ["start", "start", "startCallable"]
+              "methods": ["startAsync", "startAsync", "startOperationCallable", "startCallable"]
             },
             "StartWithEncryptionKey": {
-              "methods": ["startWithEncryptionKey", "startWithEncryptionKey", "startWithEncryptionKeyCallable"]
+              "methods": ["startWithEncryptionKeyAsync", "startWithEncryptionKeyAsync", "startWithEncryptionKeyOperationCallable", "startWithEncryptionKeyCallable"]
             },
             "Stop": {
-              "methods": ["stop", "stop", "stopCallable"]
+              "methods": ["stopAsync", "stopAsync", "stopOperationCallable", "stopCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             },
             "Update": {
-              "methods": ["update", "update", "updateCallable"]
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             },
             "UpdateAccessConfig": {
-              "methods": ["updateAccessConfig", "updateAccessConfig", "updateAccessConfigCallable"]
+              "methods": ["updateAccessConfigAsync", "updateAccessConfigAsync", "updateAccessConfigOperationCallable", "updateAccessConfigCallable"]
             },
             "UpdateDisplayDevice": {
-              "methods": ["updateDisplayDevice", "updateDisplayDevice", "updateDisplayDeviceCallable"]
+              "methods": ["updateDisplayDeviceAsync", "updateDisplayDeviceAsync", "updateDisplayDeviceOperationCallable", "updateDisplayDeviceCallable"]
             },
             "UpdateNetworkInterface": {
-              "methods": ["updateNetworkInterface", "updateNetworkInterface", "updateNetworkInterfaceCallable"]
+              "methods": ["updateNetworkInterfaceAsync", "updateNetworkInterfaceAsync", "updateNetworkInterfaceOperationCallable", "updateNetworkInterfaceCallable"]
             },
             "UpdateShieldedInstanceConfig": {
-              "methods": ["updateShieldedInstanceConfig", "updateShieldedInstanceConfig", "updateShieldedInstanceConfigCallable"]
+              "methods": ["updateShieldedInstanceConfigAsync", "updateShieldedInstanceConfigAsync", "updateShieldedInstanceConfigOperationCallable", "updateShieldedInstanceConfigCallable"]
             }
           }
         }
@@ -866,19 +881,19 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             }
           }
         }
@@ -905,7 +920,7 @@
           "libraryClient": "InterconnectsClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -914,13 +929,13 @@
               "methods": ["getDiagnostics", "getDiagnostics", "getDiagnosticsCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             }
           }
         }
@@ -947,7 +962,7 @@
           "libraryClient": "LicensesClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -956,7 +971,7 @@
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -998,19 +1013,19 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "AttachNetworkEndpoints": {
-              "methods": ["attachNetworkEndpoints", "attachNetworkEndpoints", "attachNetworkEndpointsCallable"]
+              "methods": ["attachNetworkEndpointsAsync", "attachNetworkEndpointsAsync", "attachNetworkEndpointsOperationCallable", "attachNetworkEndpointsCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "DetachNetworkEndpoints": {
-              "methods": ["detachNetworkEndpoints", "detachNetworkEndpoints", "detachNetworkEndpointsCallable"]
+              "methods": ["detachNetworkEndpointsAsync", "detachNetworkEndpointsAsync", "detachNetworkEndpointsOperationCallable", "detachNetworkEndpointsCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -1031,10 +1046,10 @@
           "libraryClient": "NetworksClient",
           "rpcs": {
             "AddPeering": {
-              "methods": ["addPeering", "addPeering", "addPeeringCallable"]
+              "methods": ["addPeeringAsync", "addPeeringAsync", "addPeeringOperationCallable", "addPeeringCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -1043,7 +1058,7 @@
               "methods": ["getEffectiveFirewalls", "getEffectiveFirewalls", "getEffectiveFirewallsCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -1052,16 +1067,16 @@
               "methods": ["listPeeringRoutes", "listPeeringRoutes", "listPeeringRoutesPagedCallable", "listPeeringRoutesCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "RemovePeering": {
-              "methods": ["removePeering", "removePeering", "removePeeringCallable"]
+              "methods": ["removePeeringAsync", "removePeeringAsync", "removePeeringOperationCallable", "removePeeringCallable"]
             },
             "SwitchToCustomMode": {
-              "methods": ["switchToCustomMode", "switchToCustomMode", "switchToCustomModeCallable"]
+              "methods": ["switchToCustomModeAsync", "switchToCustomModeAsync", "switchToCustomModeOperationCallable", "switchToCustomModeCallable"]
             },
             "UpdatePeering": {
-              "methods": ["updatePeering", "updatePeering", "updatePeeringCallable"]
+              "methods": ["updatePeeringAsync", "updatePeeringAsync", "updatePeeringOperationCallable", "updatePeeringCallable"]
             }
           }
         }
@@ -1073,16 +1088,16 @@
           "libraryClient": "NodeGroupsClient",
           "rpcs": {
             "AddNodes": {
-              "methods": ["addNodes", "addNodes", "addNodesCallable"]
+              "methods": ["addNodesAsync", "addNodesAsync", "addNodesOperationCallable", "addNodesCallable"]
             },
             "AggregatedList": {
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "DeleteNodes": {
-              "methods": ["deleteNodes", "deleteNodes", "deleteNodesCallable"]
+              "methods": ["deleteNodesAsync", "deleteNodesAsync", "deleteNodesOperationCallable", "deleteNodesCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -1091,7 +1106,7 @@
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -1100,13 +1115,13 @@
               "methods": ["listNodes", "listNodes", "listNodesPagedCallable", "listNodesCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
             },
             "SetNodeTemplate": {
-              "methods": ["setNodeTemplate", "setNodeTemplate", "setNodeTemplateCallable"]
+              "methods": ["setNodeTemplateAsync", "setNodeTemplateAsync", "setNodeTemplateOperationCallable", "setNodeTemplateCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
@@ -1124,7 +1139,7 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -1133,7 +1148,7 @@
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -1175,19 +1190,19 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
@@ -1202,16 +1217,16 @@
           "libraryClient": "ProjectsClient",
           "rpcs": {
             "DisableXpnHost": {
-              "methods": ["disableXpnHost", "disableXpnHost", "disableXpnHostCallable"]
+              "methods": ["disableXpnHostAsync", "disableXpnHostAsync", "disableXpnHostOperationCallable", "disableXpnHostCallable"]
             },
             "DisableXpnResource": {
-              "methods": ["disableXpnResource", "disableXpnResource", "disableXpnResourceCallable"]
+              "methods": ["disableXpnResourceAsync", "disableXpnResourceAsync", "disableXpnResourceOperationCallable", "disableXpnResourceCallable"]
             },
             "EnableXpnHost": {
-              "methods": ["enableXpnHost", "enableXpnHost", "enableXpnHostCallable"]
+              "methods": ["enableXpnHostAsync", "enableXpnHostAsync", "enableXpnHostOperationCallable", "enableXpnHostCallable"]
             },
             "EnableXpnResource": {
-              "methods": ["enableXpnResource", "enableXpnResource", "enableXpnResourceCallable"]
+              "methods": ["enableXpnResourceAsync", "enableXpnResourceAsync", "enableXpnResourceOperationCallable", "enableXpnResourceCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -1226,19 +1241,19 @@
               "methods": ["listXpnHosts", "listXpnHosts", "listXpnHostsPagedCallable", "listXpnHostsCallable"]
             },
             "MoveDisk": {
-              "methods": ["moveDisk", "moveDisk", "moveDiskCallable"]
+              "methods": ["moveDiskAsync", "moveDiskAsync", "moveDiskOperationCallable", "moveDiskCallable"]
             },
             "MoveInstance": {
-              "methods": ["moveInstance", "moveInstance", "moveInstanceCallable"]
+              "methods": ["moveInstanceAsync", "moveInstanceAsync", "moveInstanceOperationCallable", "moveInstanceCallable"]
             },
             "SetCommonInstanceMetadata": {
-              "methods": ["setCommonInstanceMetadata", "setCommonInstanceMetadata", "setCommonInstanceMetadataCallable"]
+              "methods": ["setCommonInstanceMetadataAsync", "setCommonInstanceMetadataAsync", "setCommonInstanceMetadataOperationCallable", "setCommonInstanceMetadataCallable"]
             },
             "SetDefaultNetworkTier": {
-              "methods": ["setDefaultNetworkTier", "setDefaultNetworkTier", "setDefaultNetworkTierCallable"]
+              "methods": ["setDefaultNetworkTierAsync", "setDefaultNetworkTierAsync", "setDefaultNetworkTierOperationCallable", "setDefaultNetworkTierCallable"]
             },
             "SetUsageExportBucket": {
-              "methods": ["setUsageExportBucket", "setUsageExportBucket", "setUsageExportBucketCallable"]
+              "methods": ["setUsageExportBucketAsync", "setUsageExportBucketAsync", "setUsageExportBucketOperationCallable", "setUsageExportBucketCallable"]
             }
           }
         }
@@ -1250,19 +1265,19 @@
           "libraryClient": "PublicAdvertisedPrefixesClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             }
           }
         }
@@ -1277,19 +1292,19 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             }
           }
         }
@@ -1301,22 +1316,22 @@
           "libraryClient": "RegionAutoscalersClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "Update": {
-              "methods": ["update", "update", "updateCallable"]
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
           }
         }
@@ -1328,7 +1343,7 @@
           "libraryClient": "RegionBackendServicesClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -1337,16 +1352,16 @@
               "methods": ["getHealth", "getHealth", "getHealthCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "Update": {
-              "methods": ["update", "update", "updateCallable"]
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
           }
         }
@@ -1364,7 +1379,7 @@
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -1394,13 +1409,13 @@
           "libraryClient": "RegionDisksClient",
           "rpcs": {
             "AddResourcePolicies": {
-              "methods": ["addResourcePolicies", "addResourcePolicies", "addResourcePoliciesCallable"]
+              "methods": ["addResourcePoliciesAsync", "addResourcePoliciesAsync", "addResourcePoliciesOperationCallable", "addResourcePoliciesCallable"]
             },
             "CreateSnapshot": {
-              "methods": ["createSnapshot", "createSnapshot", "createSnapshotCallable"]
+              "methods": ["createSnapshotAsync", "createSnapshotAsync", "createSnapshotOperationCallable", "createSnapshotCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -1409,22 +1424,22 @@
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "RemoveResourcePolicies": {
-              "methods": ["removeResourcePolicies", "removeResourcePolicies", "removeResourcePoliciesCallable"]
+              "methods": ["removeResourcePoliciesAsync", "removeResourcePoliciesAsync", "removeResourcePoliciesOperationCallable", "removeResourcePoliciesCallable"]
             },
             "Resize": {
-              "methods": ["resize", "resize", "resizeCallable"]
+              "methods": ["resizeAsync", "resizeAsync", "resizeOperationCallable", "resizeCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
             },
             "SetLabels": {
-              "methods": ["setLabels", "setLabels", "setLabelsCallable"]
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
@@ -1439,19 +1454,19 @@
           "libraryClient": "RegionHealthCheckServicesClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             }
           }
         }
@@ -1463,22 +1478,22 @@
           "libraryClient": "RegionHealthChecksClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "Update": {
-              "methods": ["update", "update", "updateCallable"]
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
           }
         }
@@ -1490,28 +1505,28 @@
           "libraryClient": "RegionInstanceGroupManagersClient",
           "rpcs": {
             "AbandonInstances": {
-              "methods": ["abandonInstances", "abandonInstances", "abandonInstancesCallable"]
+              "methods": ["abandonInstancesAsync", "abandonInstancesAsync", "abandonInstancesOperationCallable", "abandonInstancesCallable"]
             },
             "ApplyUpdatesToInstances": {
-              "methods": ["applyUpdatesToInstances", "applyUpdatesToInstances", "applyUpdatesToInstancesCallable"]
+              "methods": ["applyUpdatesToInstancesAsync", "applyUpdatesToInstancesAsync", "applyUpdatesToInstancesOperationCallable", "applyUpdatesToInstancesCallable"]
             },
             "CreateInstances": {
-              "methods": ["createInstances", "createInstances", "createInstancesCallable"]
+              "methods": ["createInstancesAsync", "createInstancesAsync", "createInstancesOperationCallable", "createInstancesCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "DeleteInstances": {
-              "methods": ["deleteInstances", "deleteInstances", "deleteInstancesCallable"]
+              "methods": ["deleteInstancesAsync", "deleteInstancesAsync", "deleteInstancesOperationCallable", "deleteInstancesCallable"]
             },
             "DeletePerInstanceConfigs": {
-              "methods": ["deletePerInstanceConfigs", "deletePerInstanceConfigs", "deletePerInstanceConfigsCallable"]
+              "methods": ["deletePerInstanceConfigsAsync", "deletePerInstanceConfigsAsync", "deletePerInstanceConfigsOperationCallable", "deletePerInstanceConfigsCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -1526,25 +1541,25 @@
               "methods": ["listPerInstanceConfigs", "listPerInstanceConfigs", "listPerInstanceConfigsPagedCallable", "listPerInstanceConfigsCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "PatchPerInstanceConfigs": {
-              "methods": ["patchPerInstanceConfigs", "patchPerInstanceConfigs", "patchPerInstanceConfigsCallable"]
+              "methods": ["patchPerInstanceConfigsAsync", "patchPerInstanceConfigsAsync", "patchPerInstanceConfigsOperationCallable", "patchPerInstanceConfigsCallable"]
             },
             "RecreateInstances": {
-              "methods": ["recreateInstances", "recreateInstances", "recreateInstancesCallable"]
+              "methods": ["recreateInstancesAsync", "recreateInstancesAsync", "recreateInstancesOperationCallable", "recreateInstancesCallable"]
             },
             "Resize": {
-              "methods": ["resize", "resize", "resizeCallable"]
+              "methods": ["resizeAsync", "resizeAsync", "resizeOperationCallable", "resizeCallable"]
             },
             "SetInstanceTemplate": {
-              "methods": ["setInstanceTemplate", "setInstanceTemplate", "setInstanceTemplateCallable"]
+              "methods": ["setInstanceTemplateAsync", "setInstanceTemplateAsync", "setInstanceTemplateOperationCallable", "setInstanceTemplateCallable"]
             },
             "SetTargetPools": {
-              "methods": ["setTargetPools", "setTargetPools", "setTargetPoolsCallable"]
+              "methods": ["setTargetPoolsAsync", "setTargetPoolsAsync", "setTargetPoolsOperationCallable", "setTargetPoolsCallable"]
             },
             "UpdatePerInstanceConfigs": {
-              "methods": ["updatePerInstanceConfigs", "updatePerInstanceConfigs", "updatePerInstanceConfigsCallable"]
+              "methods": ["updatePerInstanceConfigsAsync", "updatePerInstanceConfigsAsync", "updatePerInstanceConfigsOperationCallable", "updatePerInstanceConfigsCallable"]
             }
           }
         }
@@ -1565,7 +1580,7 @@
               "methods": ["listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
             },
             "SetNamedPorts": {
-              "methods": ["setNamedPorts", "setNamedPorts", "setNamedPortsCallable"]
+              "methods": ["setNamedPortsAsync", "setNamedPortsAsync", "setNamedPortsOperationCallable", "setNamedPortsCallable"]
             }
           }
         }
@@ -1577,7 +1592,7 @@
           "libraryClient": "RegionInstancesClient",
           "rpcs": {
             "BulkInsert": {
-              "methods": ["bulkInsert", "bulkInsert", "bulkInsertCallable"]
+              "methods": ["bulkInsertAsync", "bulkInsertAsync", "bulkInsertOperationCallable", "bulkInsertCallable"]
             }
           }
         }
@@ -1589,13 +1604,13 @@
           "libraryClient": "RegionNetworkEndpointGroupsClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -1610,13 +1625,13 @@
           "libraryClient": "RegionNotificationEndpointsClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -1652,13 +1667,13 @@
           "libraryClient": "RegionSslCertificatesClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -1673,19 +1688,19 @@
           "libraryClient": "RegionTargetHttpProxiesClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "SetUrlMap": {
-              "methods": ["setUrlMap", "setUrlMap", "setUrlMapCallable"]
+              "methods": ["setUrlMapAsync", "setUrlMapAsync", "setUrlMapOperationCallable", "setUrlMapCallable"]
             }
           }
         }
@@ -1697,22 +1712,22 @@
           "libraryClient": "RegionTargetHttpsProxiesClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "SetSslCertificates": {
-              "methods": ["setSslCertificates", "setSslCertificates", "setSslCertificatesCallable"]
+              "methods": ["setSslCertificatesAsync", "setSslCertificatesAsync", "setSslCertificatesOperationCallable", "setSslCertificatesCallable"]
             },
             "SetUrlMap": {
-              "methods": ["setUrlMap", "setUrlMap", "setUrlMapCallable"]
+              "methods": ["setUrlMapAsync", "setUrlMapAsync", "setUrlMapOperationCallable", "setUrlMapCallable"]
             }
           }
         }
@@ -1724,22 +1739,22 @@
           "libraryClient": "RegionUrlMapsClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "Update": {
-              "methods": ["update", "update", "updateCallable"]
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             },
             "Validate": {
               "methods": ["validate", "validate", "validateCallable"]
@@ -1772,7 +1787,7 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -1781,13 +1796,13 @@
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Resize": {
-              "methods": ["resize", "resize", "resizeCallable"]
+              "methods": ["resizeAsync", "resizeAsync", "resizeOperationCallable", "resizeCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
@@ -1808,7 +1823,7 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -1817,7 +1832,7 @@
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -1841,7 +1856,7 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -1853,19 +1868,19 @@
               "methods": ["getRouterStatus", "getRouterStatus", "getRouterStatusCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "Preview": {
               "methods": ["preview", "preview", "previewCallable"]
             },
             "Update": {
-              "methods": ["update", "update", "updateCallable"]
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
           }
         }
@@ -1877,13 +1892,13 @@
           "libraryClient": "RoutesClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -1898,10 +1913,10 @@
           "libraryClient": "SecurityPoliciesClient",
           "rpcs": {
             "AddRule": {
-              "methods": ["addRule", "addRule", "addRuleCallable"]
+              "methods": ["addRuleAsync", "addRuleAsync", "addRuleOperationCallable", "addRuleCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -1910,7 +1925,7 @@
               "methods": ["getRule", "getRule", "getRuleCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -1919,13 +1934,49 @@
               "methods": ["listPreconfiguredExpressionSets", "listPreconfiguredExpressionSets", "listPreconfiguredExpressionSetsCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "PatchRule": {
-              "methods": ["patchRule", "patchRule", "patchRuleCallable"]
+              "methods": ["patchRuleAsync", "patchRuleAsync", "patchRuleOperationCallable", "patchRuleCallable"]
             },
             "RemoveRule": {
-              "methods": ["removeRule", "removeRule", "removeRuleCallable"]
+              "methods": ["removeRuleAsync", "removeRuleAsync", "removeRuleOperationCallable", "removeRuleCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ServiceAttachments": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ServiceAttachmentsClient",
+          "rpcs": {
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
+            },
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Patch": {
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -1937,7 +1988,7 @@
           "libraryClient": "SnapshotsClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -1952,7 +2003,7 @@
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
             },
             "SetLabels": {
-              "methods": ["setLabels", "setLabels", "setLabelsCallable"]
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
@@ -1970,13 +2021,13 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -1991,13 +2042,13 @@
           "libraryClient": "SslPoliciesClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -2006,7 +2057,7 @@
               "methods": ["listAvailableFeatures", "listAvailableFeatures", "listAvailableFeaturesCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             }
           }
         }
@@ -2021,10 +2072,10 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "ExpandIpCidrRange": {
-              "methods": ["expandIpCidrRange", "expandIpCidrRange", "expandIpCidrRangeCallable"]
+              "methods": ["expandIpCidrRangeAsync", "expandIpCidrRangeAsync", "expandIpCidrRangeOperationCallable", "expandIpCidrRangeCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -2033,7 +2084,7 @@
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -2042,13 +2093,13 @@
               "methods": ["listUsable", "listUsable", "listUsablePagedCallable", "listUsableCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
             },
             "SetPrivateIpGoogleAccess": {
-              "methods": ["setPrivateIpGoogleAccess", "setPrivateIpGoogleAccess", "setPrivateIpGoogleAccessCallable"]
+              "methods": ["setPrivateIpGoogleAccessAsync", "setPrivateIpGoogleAccessAsync", "setPrivateIpGoogleAccessOperationCallable", "setPrivateIpGoogleAccessCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
@@ -2063,19 +2114,19 @@
           "libraryClient": "TargetGrpcProxiesClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             }
           }
         }
@@ -2090,22 +2141,22 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "SetUrlMap": {
-              "methods": ["setUrlMap", "setUrlMap", "setUrlMapCallable"]
+              "methods": ["setUrlMapAsync", "setUrlMapAsync", "setUrlMapOperationCallable", "setUrlMapCallable"]
             }
           }
         }
@@ -2120,31 +2171,31 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "SetQuicOverride": {
-              "methods": ["setQuicOverride", "setQuicOverride", "setQuicOverrideCallable"]
+              "methods": ["setQuicOverrideAsync", "setQuicOverrideAsync", "setQuicOverrideOperationCallable", "setQuicOverrideCallable"]
             },
             "SetSslCertificates": {
-              "methods": ["setSslCertificates", "setSslCertificates", "setSslCertificatesCallable"]
+              "methods": ["setSslCertificatesAsync", "setSslCertificatesAsync", "setSslCertificatesOperationCallable", "setSslCertificatesCallable"]
             },
             "SetSslPolicy": {
-              "methods": ["setSslPolicy", "setSslPolicy", "setSslPolicyCallable"]
+              "methods": ["setSslPolicyAsync", "setSslPolicyAsync", "setSslPolicyOperationCallable", "setSslPolicyCallable"]
             },
             "SetUrlMap": {
-              "methods": ["setUrlMap", "setUrlMap", "setUrlMapCallable"]
+              "methods": ["setUrlMapAsync", "setUrlMapAsync", "setUrlMapOperationCallable", "setUrlMapCallable"]
             }
           }
         }
@@ -2159,13 +2210,13 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -2180,16 +2231,16 @@
           "libraryClient": "TargetPoolsClient",
           "rpcs": {
             "AddHealthCheck": {
-              "methods": ["addHealthCheck", "addHealthCheck", "addHealthCheckCallable"]
+              "methods": ["addHealthCheckAsync", "addHealthCheckAsync", "addHealthCheckOperationCallable", "addHealthCheckCallable"]
             },
             "AddInstance": {
-              "methods": ["addInstance", "addInstance", "addInstanceCallable"]
+              "methods": ["addInstanceAsync", "addInstanceAsync", "addInstanceOperationCallable", "addInstanceCallable"]
             },
             "AggregatedList": {
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -2198,19 +2249,19 @@
               "methods": ["getHealth", "getHealth", "getHealthCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "RemoveHealthCheck": {
-              "methods": ["removeHealthCheck", "removeHealthCheck", "removeHealthCheckCallable"]
+              "methods": ["removeHealthCheckAsync", "removeHealthCheckAsync", "removeHealthCheckOperationCallable", "removeHealthCheckCallable"]
             },
             "RemoveInstance": {
-              "methods": ["removeInstance", "removeInstance", "removeInstanceCallable"]
+              "methods": ["removeInstanceAsync", "removeInstanceAsync", "removeInstanceOperationCallable", "removeInstanceCallable"]
             },
             "SetBackup": {
-              "methods": ["setBackup", "setBackup", "setBackupCallable"]
+              "methods": ["setBackupAsync", "setBackupAsync", "setBackupOperationCallable", "setBackupCallable"]
             }
           }
         }
@@ -2222,28 +2273,28 @@
           "libraryClient": "TargetSslProxiesClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "SetBackendService": {
-              "methods": ["setBackendService", "setBackendService", "setBackendServiceCallable"]
+              "methods": ["setBackendServiceAsync", "setBackendServiceAsync", "setBackendServiceOperationCallable", "setBackendServiceCallable"]
             },
             "SetProxyHeader": {
-              "methods": ["setProxyHeader", "setProxyHeader", "setProxyHeaderCallable"]
+              "methods": ["setProxyHeaderAsync", "setProxyHeaderAsync", "setProxyHeaderOperationCallable", "setProxyHeaderCallable"]
             },
             "SetSslCertificates": {
-              "methods": ["setSslCertificates", "setSslCertificates", "setSslCertificatesCallable"]
+              "methods": ["setSslCertificatesAsync", "setSslCertificatesAsync", "setSslCertificatesOperationCallable", "setSslCertificatesCallable"]
             },
             "SetSslPolicy": {
-              "methods": ["setSslPolicy", "setSslPolicy", "setSslPolicyCallable"]
+              "methods": ["setSslPolicyAsync", "setSslPolicyAsync", "setSslPolicyOperationCallable", "setSslPolicyCallable"]
             }
           }
         }
@@ -2255,22 +2306,22 @@
           "libraryClient": "TargetTcpProxiesClient",
           "rpcs": {
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "SetBackendService": {
-              "methods": ["setBackendService", "setBackendService", "setBackendServiceCallable"]
+              "methods": ["setBackendServiceAsync", "setBackendServiceAsync", "setBackendServiceOperationCallable", "setBackendServiceCallable"]
             },
             "SetProxyHeader": {
-              "methods": ["setProxyHeader", "setProxyHeader", "setProxyHeaderCallable"]
+              "methods": ["setProxyHeaderAsync", "setProxyHeaderAsync", "setProxyHeaderOperationCallable", "setProxyHeaderCallable"]
             }
           }
         }
@@ -2285,13 +2336,13 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
@@ -2309,25 +2360,25 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "InvalidateCache": {
-              "methods": ["invalidateCache", "invalidateCache", "invalidateCacheCallable"]
+              "methods": ["invalidateCacheAsync", "invalidateCacheAsync", "invalidateCacheOperationCallable", "invalidateCacheCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "Patch": {
-              "methods": ["patch", "patch", "patchCallable"]
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "Update": {
-              "methods": ["update", "update", "updateCallable"]
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             },
             "Validate": {
               "methods": ["validate", "validate", "validateCallable"]
@@ -2345,7 +2396,7 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -2354,13 +2405,13 @@
               "methods": ["getStatus", "getStatus", "getStatusCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
             "SetLabels": {
-              "methods": ["setLabels", "setLabels", "setLabelsCallable"]
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
@@ -2378,13 +2429,13 @@
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
             "Delete": {
-              "methods": ["delete", "delete", "deleteCallable"]
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
             "Insert": {
-              "methods": ["insert", "insert", "insertCallable"]
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]

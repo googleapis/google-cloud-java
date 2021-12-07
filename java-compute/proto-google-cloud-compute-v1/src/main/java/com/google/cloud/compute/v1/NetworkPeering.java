@@ -40,7 +40,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
   private NetworkPeering() {
     name_ = "";
     network_ = "";
-    state_ = 0;
+    state_ = "";
     stateDetails_ = "";
   }
 
@@ -124,11 +124,11 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
               exportSubnetRoutesWithPublicIp_ = input.readBool();
               break;
             }
-          case 878060680:
+          case 878060682:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000200;
-              state_ = rawValue;
+              state_ = s;
               break;
             }
           case 1583859184:
@@ -198,9 +198,25 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Matching configuration exists on the peer.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     ACTIVE(314733318),
-    /** <code>INACTIVE = 270421099;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * There is no matching configuration on the peer, including the case when peer does not exist.
+     * </pre>
+     *
+     * <code>INACTIVE = 270421099;</code>
+     */
     INACTIVE(270421099),
     UNRECOGNIZED(-1),
     ;
@@ -215,9 +231,25 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Matching configuration exists on the peer.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     public static final int ACTIVE_VALUE = 314733318;
-    /** <code>INACTIVE = 270421099;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * There is no matching configuration on the peer, including the case when peer does not exist.
+     * </pre>
+     *
+     * <code>INACTIVE = 270421099;</code>
+     */
     public static final int INACTIVE_VALUE = 270421099;
 
     public final int getNumber() {
@@ -313,7 +345,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    * This field will be deprecated soon. Use the exchange_subnet_routes field instead. Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
    * </pre>
    *
-   * <code>bool auto_create_routes = 57454941;</code>
+   * <code>optional bool auto_create_routes = 57454941;</code>
    *
    * @return Whether the autoCreateRoutes field is set.
    */
@@ -328,7 +360,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    * This field will be deprecated soon. Use the exchange_subnet_routes field instead. Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
    * </pre>
    *
-   * <code>bool auto_create_routes = 57454941;</code>
+   * <code>optional bool auto_create_routes = 57454941;</code>
    *
    * @return The autoCreateRoutes.
    */
@@ -346,7 +378,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    * Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
    * </pre>
    *
-   * <code>bool exchange_subnet_routes = 26322256;</code>
+   * <code>optional bool exchange_subnet_routes = 26322256;</code>
    *
    * @return Whether the exchangeSubnetRoutes field is set.
    */
@@ -361,7 +393,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    * Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
    * </pre>
    *
-   * <code>bool exchange_subnet_routes = 26322256;</code>
+   * <code>optional bool exchange_subnet_routes = 26322256;</code>
    *
    * @return The exchangeSubnetRoutes.
    */
@@ -379,7 +411,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    * Whether to export the custom routes to peer network.
    * </pre>
    *
-   * <code>bool export_custom_routes = 60281485;</code>
+   * <code>optional bool export_custom_routes = 60281485;</code>
    *
    * @return Whether the exportCustomRoutes field is set.
    */
@@ -394,7 +426,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    * Whether to export the custom routes to peer network.
    * </pre>
    *
-   * <code>bool export_custom_routes = 60281485;</code>
+   * <code>optional bool export_custom_routes = 60281485;</code>
    *
    * @return The exportCustomRoutes.
    */
@@ -409,10 +441,10 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
+   * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. IPv4 special-use ranges are always exported to peers and are not controlled by this field.
    * </pre>
    *
-   * <code>bool export_subnet_routes_with_public_ip = 97940834;</code>
+   * <code>optional bool export_subnet_routes_with_public_ip = 97940834;</code>
    *
    * @return Whether the exportSubnetRoutesWithPublicIp field is set.
    */
@@ -424,10 +456,10 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
+   * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. IPv4 special-use ranges are always exported to peers and are not controlled by this field.
    * </pre>
    *
-   * <code>bool export_subnet_routes_with_public_ip = 97940834;</code>
+   * <code>optional bool export_subnet_routes_with_public_ip = 97940834;</code>
    *
    * @return The exportSubnetRoutesWithPublicIp.
    */
@@ -445,7 +477,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    * Whether to import the custom routes from peer network.
    * </pre>
    *
-   * <code>bool import_custom_routes = 197982398;</code>
+   * <code>optional bool import_custom_routes = 197982398;</code>
    *
    * @return Whether the importCustomRoutes field is set.
    */
@@ -460,7 +492,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    * Whether to import the custom routes from peer network.
    * </pre>
    *
-   * <code>bool import_custom_routes = 197982398;</code>
+   * <code>optional bool import_custom_routes = 197982398;</code>
    *
    * @return The importCustomRoutes.
    */
@@ -475,10 +507,10 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether subnet routes with public IP range are imported. The default value is false. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported from peers and are not controlled by this field.
+   * Whether subnet routes with public IP range are imported. The default value is false. IPv4 special-use ranges are always imported from peers and are not controlled by this field.
    * </pre>
    *
-   * <code>bool import_subnet_routes_with_public_ip = 14419729;</code>
+   * <code>optional bool import_subnet_routes_with_public_ip = 14419729;</code>
    *
    * @return Whether the importSubnetRoutesWithPublicIp field is set.
    */
@@ -490,10 +522,10 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether subnet routes with public IP range are imported. The default value is false. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported from peers and are not controlled by this field.
+   * Whether subnet routes with public IP range are imported. The default value is false. IPv4 special-use ranges are always imported from peers and are not controlled by this field.
    * </pre>
    *
-   * <code>bool import_subnet_routes_with_public_ip = 14419729;</code>
+   * <code>optional bool import_subnet_routes_with_public_ip = 14419729;</code>
    *
    * @return The importSubnetRoutesWithPublicIp.
    */
@@ -511,7 +543,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    * Name of this peering. Provided by the client when the peering is created. The name must comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all the following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -526,7 +558,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    * Name of this peering. Provided by the client when the peering is created. The name must comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all the following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -549,7 +581,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    * Name of this peering. Provided by the client when the peering is created. The name must comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all the following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -575,7 +607,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    * The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return Whether the network field is set.
    */
@@ -590,7 +622,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    * The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The network.
    */
@@ -613,7 +645,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    * The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The bytes for network.
    */
@@ -639,7 +671,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    * Maximum Transmission Unit in bytes.
    * </pre>
    *
-   * <code>int32 peer_mtu = 69584721;</code>
+   * <code>optional int32 peer_mtu = 69584721;</code>
    *
    * @return Whether the peerMtu field is set.
    */
@@ -654,7 +686,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    * Maximum Transmission Unit in bytes.
    * </pre>
    *
-   * <code>int32 peer_mtu = 69584721;</code>
+   * <code>optional int32 peer_mtu = 69584721;</code>
    *
    * @return The peerMtu.
    */
@@ -664,15 +696,16 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 109757585;
-  private int state_;
+  private volatile java.lang.Object state_;
   /**
    *
    *
    * <pre>
    * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
    * @return Whether the state field is set.
    */
@@ -685,33 +718,48 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The enum numeric value on the wire for state.
+   * @return The state.
    */
   @java.lang.Override
-  public int getStateValue() {
-    return state_;
+  public java.lang.String getState() {
+    java.lang.Object ref = state_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      state_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The state.
+   * @return The bytes for state.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.NetworkPeering.State getState() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.NetworkPeering.State result =
-        com.google.cloud.compute.v1.NetworkPeering.State.valueOf(state_);
-    return result == null ? com.google.cloud.compute.v1.NetworkPeering.State.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getStateBytes() {
+    java.lang.Object ref = state_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      state_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int STATE_DETAILS_FIELD_NUMBER = 95566996;
@@ -723,7 +771,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Details about the current state of the peering.
    * </pre>
    *
-   * <code>string state_details = 95566996;</code>
+   * <code>optional string state_details = 95566996;</code>
    *
    * @return Whether the stateDetails field is set.
    */
@@ -738,7 +786,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Details about the current state of the peering.
    * </pre>
    *
-   * <code>string state_details = 95566996;</code>
+   * <code>optional string state_details = 95566996;</code>
    *
    * @return The stateDetails.
    */
@@ -761,7 +809,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Details about the current state of the peering.
    * </pre>
    *
-   * <code>string state_details = 95566996;</code>
+   * <code>optional string state_details = 95566996;</code>
    *
    * @return The bytes for stateDetails.
    */
@@ -817,7 +865,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       output.writeBool(97940834, exportSubnetRoutesWithPublicIp_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      output.writeEnum(109757585, state_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 109757585, state_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeBool(197982398, importCustomRoutes_);
@@ -864,7 +912,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
               97940834, exportSubnetRoutesWithPublicIp_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(109757585, state_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757585, state_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(197982398, importCustomRoutes_);
@@ -930,7 +978,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasState() != other.hasState()) return false;
     if (hasState()) {
-      if (state_ != other.state_) return false;
+      if (!getState().equals(other.getState())) return false;
     }
     if (hasStateDetails() != other.hasStateDetails()) return false;
     if (hasStateDetails()) {
@@ -989,7 +1037,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasState()) {
       hash = (37 * hash) + STATE_FIELD_NUMBER;
-      hash = (53 * hash) + state_;
+      hash = (53 * hash) + getState().hashCode();
     }
     if (hasStateDetails()) {
       hash = (37 * hash) + STATE_DETAILS_FIELD_NUMBER;
@@ -1158,7 +1206,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000080);
       peerMtu_ = 0;
       bitField0_ = (bitField0_ & ~0x00000100);
-      state_ = 0;
+      state_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
       stateDetails_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
@@ -1317,7 +1365,9 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         setPeerMtu(other.getPeerMtu());
       }
       if (other.hasState()) {
-        setState(other.getState());
+        bitField0_ |= 0x00000200;
+        state_ = other.state_;
+        onChanged();
       }
       if (other.hasStateDetails()) {
         bitField0_ |= 0x00000400;
@@ -1363,7 +1413,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * This field will be deprecated soon. Use the exchange_subnet_routes field instead. Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
      * </pre>
      *
-     * <code>bool auto_create_routes = 57454941;</code>
+     * <code>optional bool auto_create_routes = 57454941;</code>
      *
      * @return Whether the autoCreateRoutes field is set.
      */
@@ -1378,7 +1428,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * This field will be deprecated soon. Use the exchange_subnet_routes field instead. Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
      * </pre>
      *
-     * <code>bool auto_create_routes = 57454941;</code>
+     * <code>optional bool auto_create_routes = 57454941;</code>
      *
      * @return The autoCreateRoutes.
      */
@@ -1393,7 +1443,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * This field will be deprecated soon. Use the exchange_subnet_routes field instead. Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
      * </pre>
      *
-     * <code>bool auto_create_routes = 57454941;</code>
+     * <code>optional bool auto_create_routes = 57454941;</code>
      *
      * @param value The autoCreateRoutes to set.
      * @return This builder for chaining.
@@ -1411,7 +1461,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * This field will be deprecated soon. Use the exchange_subnet_routes field instead. Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
      * </pre>
      *
-     * <code>bool auto_create_routes = 57454941;</code>
+     * <code>optional bool auto_create_routes = 57454941;</code>
      *
      * @return This builder for chaining.
      */
@@ -1430,7 +1480,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
      * </pre>
      *
-     * <code>bool exchange_subnet_routes = 26322256;</code>
+     * <code>optional bool exchange_subnet_routes = 26322256;</code>
      *
      * @return Whether the exchangeSubnetRoutes field is set.
      */
@@ -1445,7 +1495,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
      * </pre>
      *
-     * <code>bool exchange_subnet_routes = 26322256;</code>
+     * <code>optional bool exchange_subnet_routes = 26322256;</code>
      *
      * @return The exchangeSubnetRoutes.
      */
@@ -1460,7 +1510,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
      * </pre>
      *
-     * <code>bool exchange_subnet_routes = 26322256;</code>
+     * <code>optional bool exchange_subnet_routes = 26322256;</code>
      *
      * @param value The exchangeSubnetRoutes to set.
      * @return This builder for chaining.
@@ -1478,7 +1528,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
      * </pre>
      *
-     * <code>bool exchange_subnet_routes = 26322256;</code>
+     * <code>optional bool exchange_subnet_routes = 26322256;</code>
      *
      * @return This builder for chaining.
      */
@@ -1497,7 +1547,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Whether to export the custom routes to peer network.
      * </pre>
      *
-     * <code>bool export_custom_routes = 60281485;</code>
+     * <code>optional bool export_custom_routes = 60281485;</code>
      *
      * @return Whether the exportCustomRoutes field is set.
      */
@@ -1512,7 +1562,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Whether to export the custom routes to peer network.
      * </pre>
      *
-     * <code>bool export_custom_routes = 60281485;</code>
+     * <code>optional bool export_custom_routes = 60281485;</code>
      *
      * @return The exportCustomRoutes.
      */
@@ -1527,7 +1577,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Whether to export the custom routes to peer network.
      * </pre>
      *
-     * <code>bool export_custom_routes = 60281485;</code>
+     * <code>optional bool export_custom_routes = 60281485;</code>
      *
      * @param value The exportCustomRoutes to set.
      * @return This builder for chaining.
@@ -1545,7 +1595,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Whether to export the custom routes to peer network.
      * </pre>
      *
-     * <code>bool export_custom_routes = 60281485;</code>
+     * <code>optional bool export_custom_routes = 60281485;</code>
      *
      * @return This builder for chaining.
      */
@@ -1561,10 +1611,10 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
+     * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. IPv4 special-use ranges are always exported to peers and are not controlled by this field.
      * </pre>
      *
-     * <code>bool export_subnet_routes_with_public_ip = 97940834;</code>
+     * <code>optional bool export_subnet_routes_with_public_ip = 97940834;</code>
      *
      * @return Whether the exportSubnetRoutesWithPublicIp field is set.
      */
@@ -1576,10 +1626,10 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
+     * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. IPv4 special-use ranges are always exported to peers and are not controlled by this field.
      * </pre>
      *
-     * <code>bool export_subnet_routes_with_public_ip = 97940834;</code>
+     * <code>optional bool export_subnet_routes_with_public_ip = 97940834;</code>
      *
      * @return The exportSubnetRoutesWithPublicIp.
      */
@@ -1591,10 +1641,10 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
+     * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. IPv4 special-use ranges are always exported to peers and are not controlled by this field.
      * </pre>
      *
-     * <code>bool export_subnet_routes_with_public_ip = 97940834;</code>
+     * <code>optional bool export_subnet_routes_with_public_ip = 97940834;</code>
      *
      * @param value The exportSubnetRoutesWithPublicIp to set.
      * @return This builder for chaining.
@@ -1609,10 +1659,10 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
+     * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. IPv4 special-use ranges are always exported to peers and are not controlled by this field.
      * </pre>
      *
-     * <code>bool export_subnet_routes_with_public_ip = 97940834;</code>
+     * <code>optional bool export_subnet_routes_with_public_ip = 97940834;</code>
      *
      * @return This builder for chaining.
      */
@@ -1631,7 +1681,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Whether to import the custom routes from peer network.
      * </pre>
      *
-     * <code>bool import_custom_routes = 197982398;</code>
+     * <code>optional bool import_custom_routes = 197982398;</code>
      *
      * @return Whether the importCustomRoutes field is set.
      */
@@ -1646,7 +1696,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Whether to import the custom routes from peer network.
      * </pre>
      *
-     * <code>bool import_custom_routes = 197982398;</code>
+     * <code>optional bool import_custom_routes = 197982398;</code>
      *
      * @return The importCustomRoutes.
      */
@@ -1661,7 +1711,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Whether to import the custom routes from peer network.
      * </pre>
      *
-     * <code>bool import_custom_routes = 197982398;</code>
+     * <code>optional bool import_custom_routes = 197982398;</code>
      *
      * @param value The importCustomRoutes to set.
      * @return This builder for chaining.
@@ -1679,7 +1729,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Whether to import the custom routes from peer network.
      * </pre>
      *
-     * <code>bool import_custom_routes = 197982398;</code>
+     * <code>optional bool import_custom_routes = 197982398;</code>
      *
      * @return This builder for chaining.
      */
@@ -1695,10 +1745,10 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether subnet routes with public IP range are imported. The default value is false. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported from peers and are not controlled by this field.
+     * Whether subnet routes with public IP range are imported. The default value is false. IPv4 special-use ranges are always imported from peers and are not controlled by this field.
      * </pre>
      *
-     * <code>bool import_subnet_routes_with_public_ip = 14419729;</code>
+     * <code>optional bool import_subnet_routes_with_public_ip = 14419729;</code>
      *
      * @return Whether the importSubnetRoutesWithPublicIp field is set.
      */
@@ -1710,10 +1760,10 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether subnet routes with public IP range are imported. The default value is false. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported from peers and are not controlled by this field.
+     * Whether subnet routes with public IP range are imported. The default value is false. IPv4 special-use ranges are always imported from peers and are not controlled by this field.
      * </pre>
      *
-     * <code>bool import_subnet_routes_with_public_ip = 14419729;</code>
+     * <code>optional bool import_subnet_routes_with_public_ip = 14419729;</code>
      *
      * @return The importSubnetRoutesWithPublicIp.
      */
@@ -1725,10 +1775,10 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether subnet routes with public IP range are imported. The default value is false. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported from peers and are not controlled by this field.
+     * Whether subnet routes with public IP range are imported. The default value is false. IPv4 special-use ranges are always imported from peers and are not controlled by this field.
      * </pre>
      *
-     * <code>bool import_subnet_routes_with_public_ip = 14419729;</code>
+     * <code>optional bool import_subnet_routes_with_public_ip = 14419729;</code>
      *
      * @param value The importSubnetRoutesWithPublicIp to set.
      * @return This builder for chaining.
@@ -1743,10 +1793,10 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether subnet routes with public IP range are imported. The default value is false. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported from peers and are not controlled by this field.
+     * Whether subnet routes with public IP range are imported. The default value is false. IPv4 special-use ranges are always imported from peers and are not controlled by this field.
      * </pre>
      *
-     * <code>bool import_subnet_routes_with_public_ip = 14419729;</code>
+     * <code>optional bool import_subnet_routes_with_public_ip = 14419729;</code>
      *
      * @return This builder for chaining.
      */
@@ -1765,7 +1815,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Name of this peering. Provided by the client when the peering is created. The name must comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all the following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -1779,7 +1829,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Name of this peering. Provided by the client when the peering is created. The name must comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all the following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -1801,7 +1851,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Name of this peering. Provided by the client when the peering is created. The name must comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all the following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -1823,7 +1873,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Name of this peering. Provided by the client when the peering is created. The name must comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all the following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1844,7 +1894,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Name of this peering. Provided by the client when the peering is created. The name must comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all the following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -1861,7 +1911,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Name of this peering. Provided by the client when the peering is created. The name must comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all the following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1885,7 +1935,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @return Whether the network field is set.
      */
@@ -1899,7 +1949,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @return The network.
      */
@@ -1921,7 +1971,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @return The bytes for network.
      */
@@ -1943,7 +1993,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @param value The network to set.
      * @return This builder for chaining.
@@ -1964,7 +2014,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @return This builder for chaining.
      */
@@ -1981,7 +2031,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @param value The bytes for network to set.
      * @return This builder for chaining.
@@ -2005,7 +2055,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Maximum Transmission Unit in bytes.
      * </pre>
      *
-     * <code>int32 peer_mtu = 69584721;</code>
+     * <code>optional int32 peer_mtu = 69584721;</code>
      *
      * @return Whether the peerMtu field is set.
      */
@@ -2020,7 +2070,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Maximum Transmission Unit in bytes.
      * </pre>
      *
-     * <code>int32 peer_mtu = 69584721;</code>
+     * <code>optional int32 peer_mtu = 69584721;</code>
      *
      * @return The peerMtu.
      */
@@ -2035,7 +2085,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Maximum Transmission Unit in bytes.
      * </pre>
      *
-     * <code>int32 peer_mtu = 69584721;</code>
+     * <code>optional int32 peer_mtu = 69584721;</code>
      *
      * @param value The peerMtu to set.
      * @return This builder for chaining.
@@ -2053,7 +2103,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * Maximum Transmission Unit in bytes.
      * </pre>
      *
-     * <code>int32 peer_mtu = 69584721;</code>
+     * <code>optional int32 peer_mtu = 69584721;</code>
      *
      * @return This builder for chaining.
      */
@@ -2064,19 +2114,19 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int state_ = 0;
+    private java.lang.Object state_ = "";
     /**
      *
      *
      * <pre>
      * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
+     * <code>optional string state = 109757585;</code>
      *
      * @return Whether the state field is set.
      */
-    @java.lang.Override
     public boolean hasState() {
       return ((bitField0_ & 0x00000200) != 0);
     }
@@ -2085,29 +2135,64 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
+     * <code>optional string state = 109757585;</code>
      *
-     * @return The enum numeric value on the wire for state.
+     * @return The state.
      */
-    @java.lang.Override
-    public int getStateValue() {
-      return state_;
+    public java.lang.String getState() {
+      java.lang.Object ref = state_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        state_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
+     * <code>optional string state = 109757585;</code>
      *
-     * @param value The enum numeric value on the wire for state to set.
+     * @return The bytes for state.
+     */
+    public com.google.protobuf.ByteString getStateBytes() {
+      java.lang.Object ref = state_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        state_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+     * Check the State enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string state = 109757585;</code>
+     *
+     * @param value The state to set.
      * @return This builder for chaining.
      */
-    public Builder setStateValue(int value) {
+    public Builder setState(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000200;
       state_ = value;
       onChanged();
@@ -2118,39 +2203,16 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
+     * <code>optional string state = 109757585;</code>
      *
-     * @return The state.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.NetworkPeering.State getState() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.NetworkPeering.State result =
-          com.google.cloud.compute.v1.NetworkPeering.State.valueOf(state_);
-      return result == null
-          ? com.google.cloud.compute.v1.NetworkPeering.State.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
-     *
-     * @param value The state to set.
      * @return This builder for chaining.
      */
-    public Builder setState(com.google.cloud.compute.v1.NetworkPeering.State value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000200;
-      state_ = value.getNumber();
+    public Builder clearState() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      state_ = getDefaultInstance().getState();
       onChanged();
       return this;
     }
@@ -2159,15 +2221,21 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
+     * <code>optional string state = 109757585;</code>
      *
+     * @param value The bytes for state to set.
      * @return This builder for chaining.
      */
-    public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000200);
-      state_ = 0;
+    public Builder setStateBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000200;
+      state_ = value;
       onChanged();
       return this;
     }
@@ -2180,7 +2248,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Details about the current state of the peering.
      * </pre>
      *
-     * <code>string state_details = 95566996;</code>
+     * <code>optional string state_details = 95566996;</code>
      *
      * @return Whether the stateDetails field is set.
      */
@@ -2194,7 +2262,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Details about the current state of the peering.
      * </pre>
      *
-     * <code>string state_details = 95566996;</code>
+     * <code>optional string state_details = 95566996;</code>
      *
      * @return The stateDetails.
      */
@@ -2216,7 +2284,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Details about the current state of the peering.
      * </pre>
      *
-     * <code>string state_details = 95566996;</code>
+     * <code>optional string state_details = 95566996;</code>
      *
      * @return The bytes for stateDetails.
      */
@@ -2238,7 +2306,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Details about the current state of the peering.
      * </pre>
      *
-     * <code>string state_details = 95566996;</code>
+     * <code>optional string state_details = 95566996;</code>
      *
      * @param value The stateDetails to set.
      * @return This builder for chaining.
@@ -2259,7 +2327,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Details about the current state of the peering.
      * </pre>
      *
-     * <code>string state_details = 95566996;</code>
+     * <code>optional string state_details = 95566996;</code>
      *
      * @return This builder for chaining.
      */
@@ -2276,7 +2344,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Details about the current state of the peering.
      * </pre>
      *
-     * <code>string state_details = 95566996;</code>
+     * <code>optional string state_details = 95566996;</code>
      *
      * @param value The bytes for stateDetails to set.
      * @return This builder for chaining.

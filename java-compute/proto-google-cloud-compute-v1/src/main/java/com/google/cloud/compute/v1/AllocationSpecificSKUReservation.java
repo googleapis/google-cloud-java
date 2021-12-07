@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * This reservation type allows to pre allocate specific instance configuration.
+ * This reservation type allows to pre allocate specific instance configuration. Next ID: 5
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.AllocationSpecificSKUReservation}
@@ -146,7 +146,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    * Specifies the number of resources that are allocated.
    * </pre>
    *
-   * <code>int64 count = 94851343;</code>
+   * <code>optional int64 count = 94851343;</code>
    *
    * @return Whether the count field is set.
    */
@@ -161,7 +161,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    * Specifies the number of resources that are allocated.
    * </pre>
    *
-   * <code>int64 count = 94851343;</code>
+   * <code>optional int64 count = 94851343;</code>
    *
    * @return The count.
    */
@@ -179,7 +179,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    * [Output Only] Indicates how many instances are in use.
    * </pre>
    *
-   * <code>int64 in_use_count = 493458877;</code>
+   * <code>optional int64 in_use_count = 493458877;</code>
    *
    * @return Whether the inUseCount field is set.
    */
@@ -194,7 +194,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    * [Output Only] Indicates how many instances are in use.
    * </pre>
    *
-   * <code>int64 in_use_count = 493458877;</code>
+   * <code>optional int64 in_use_count = 493458877;</code>
    *
    * @return The inUseCount.
    */
@@ -214,7 +214,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
+   * optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
    * </code>
    *
    * @return Whether the instanceProperties field is set.
@@ -231,7 +231,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
+   * optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
    * </code>
    *
    * @return The instanceProperties.
@@ -252,7 +252,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
+   * optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
    * </code>
    */
   @java.lang.Override
@@ -464,7 +464,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    *
    *
    * <pre>
-   * This reservation type allows to pre allocate specific instance configuration.
+   * This reservation type allows to pre allocate specific instance configuration. Next ID: 5
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.AllocationSpecificSKUReservation}
@@ -664,7 +664,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * Specifies the number of resources that are allocated.
      * </pre>
      *
-     * <code>int64 count = 94851343;</code>
+     * <code>optional int64 count = 94851343;</code>
      *
      * @return Whether the count field is set.
      */
@@ -679,7 +679,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * Specifies the number of resources that are allocated.
      * </pre>
      *
-     * <code>int64 count = 94851343;</code>
+     * <code>optional int64 count = 94851343;</code>
      *
      * @return The count.
      */
@@ -694,7 +694,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * Specifies the number of resources that are allocated.
      * </pre>
      *
-     * <code>int64 count = 94851343;</code>
+     * <code>optional int64 count = 94851343;</code>
      *
      * @param value The count to set.
      * @return This builder for chaining.
@@ -712,7 +712,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * Specifies the number of resources that are allocated.
      * </pre>
      *
-     * <code>int64 count = 94851343;</code>
+     * <code>optional int64 count = 94851343;</code>
      *
      * @return This builder for chaining.
      */
@@ -731,7 +731,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * [Output Only] Indicates how many instances are in use.
      * </pre>
      *
-     * <code>int64 in_use_count = 493458877;</code>
+     * <code>optional int64 in_use_count = 493458877;</code>
      *
      * @return Whether the inUseCount field is set.
      */
@@ -746,7 +746,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * [Output Only] Indicates how many instances are in use.
      * </pre>
      *
-     * <code>int64 in_use_count = 493458877;</code>
+     * <code>optional int64 in_use_count = 493458877;</code>
      *
      * @return The inUseCount.
      */
@@ -761,7 +761,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * [Output Only] Indicates how many instances are in use.
      * </pre>
      *
-     * <code>int64 in_use_count = 493458877;</code>
+     * <code>optional int64 in_use_count = 493458877;</code>
      *
      * @param value The inUseCount to set.
      * @return This builder for chaining.
@@ -779,7 +779,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * [Output Only] Indicates how many instances are in use.
      * </pre>
      *
-     * <code>int64 in_use_count = 493458877;</code>
+     * <code>optional int64 in_use_count = 493458877;</code>
      *
      * @return This builder for chaining.
      */
@@ -807,7 +807,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
+     * optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
      * </code>
      *
      * @return Whether the instanceProperties field is set.
@@ -823,7 +823,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
+     * optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
      * </code>
      *
      * @return The instanceProperties.
@@ -847,7 +847,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
+     * optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
      * </code>
      */
     public Builder setInstanceProperties(
@@ -873,7 +873,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
+     * optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
      * </code>
      */
     public Builder setInstanceProperties(
@@ -897,7 +897,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
+     * optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
      * </code>
      */
     public Builder mergeInstanceProperties(
@@ -933,7 +933,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
+     * optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
      * </code>
      */
     public Builder clearInstanceProperties() {
@@ -954,7 +954,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
+     * optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
      * </code>
      */
     public com.google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties
@@ -972,7 +972,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
+     * optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
      * </code>
      */
     public com.google.cloud.compute.v1
@@ -995,7 +995,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
+     * optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

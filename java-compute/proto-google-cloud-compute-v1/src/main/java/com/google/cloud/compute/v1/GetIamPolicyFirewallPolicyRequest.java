@@ -129,7 +129,7 @@ public final class GetIamPolicyFirewallPolicyRequest extends com.google.protobuf
    * Requested IAM Policy version.
    * </pre>
    *
-   * <code>int32 options_requested_policy_version = 499220029;</code>
+   * <code>optional int32 options_requested_policy_version = 499220029;</code>
    *
    * @return Whether the optionsRequestedPolicyVersion field is set.
    */
@@ -144,7 +144,7 @@ public final class GetIamPolicyFirewallPolicyRequest extends com.google.protobuf
    * Requested IAM Policy version.
    * </pre>
    *
-   * <code>int32 options_requested_policy_version = 499220029;</code>
+   * <code>optional int32 options_requested_policy_version = 499220029;</code>
    *
    * @return The optionsRequestedPolicyVersion.
    */
@@ -216,7 +216,7 @@ public final class GetIamPolicyFirewallPolicyRequest extends com.google.protobuf
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 195806222, resource_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -231,7 +231,7 @@ public final class GetIamPolicyFirewallPolicyRequest extends com.google.protobuf
     if (size != -1) return size;
 
     size = 0;
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(195806222, resource_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -564,7 +564,7 @@ public final class GetIamPolicyFirewallPolicyRequest extends com.google.protobuf
      * Requested IAM Policy version.
      * </pre>
      *
-     * <code>int32 options_requested_policy_version = 499220029;</code>
+     * <code>optional int32 options_requested_policy_version = 499220029;</code>
      *
      * @return Whether the optionsRequestedPolicyVersion field is set.
      */
@@ -579,7 +579,7 @@ public final class GetIamPolicyFirewallPolicyRequest extends com.google.protobuf
      * Requested IAM Policy version.
      * </pre>
      *
-     * <code>int32 options_requested_policy_version = 499220029;</code>
+     * <code>optional int32 options_requested_policy_version = 499220029;</code>
      *
      * @return The optionsRequestedPolicyVersion.
      */
@@ -594,7 +594,7 @@ public final class GetIamPolicyFirewallPolicyRequest extends com.google.protobuf
      * Requested IAM Policy version.
      * </pre>
      *
-     * <code>int32 options_requested_policy_version = 499220029;</code>
+     * <code>optional int32 options_requested_policy_version = 499220029;</code>
      *
      * @param value The optionsRequestedPolicyVersion to set.
      * @return This builder for chaining.
@@ -612,7 +612,7 @@ public final class GetIamPolicyFirewallPolicyRequest extends com.google.protobuf
      * Requested IAM Policy version.
      * </pre>
      *
-     * <code>int32 options_requested_policy_version = 499220029;</code>
+     * <code>optional int32 options_requested_policy_version = 499220029;</code>
      *
      * @return This builder for chaining.
      */

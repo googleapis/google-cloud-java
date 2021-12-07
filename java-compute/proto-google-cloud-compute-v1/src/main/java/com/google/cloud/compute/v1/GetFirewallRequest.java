@@ -231,10 +231,10 @@ public final class GetFirewallRequest extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (!getFirewallBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firewall_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 511016192, firewall_);
     }
     unknownFields.writeTo(output);
@@ -246,10 +246,10 @@ public final class GetFirewallRequest extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
-    if (!getFirewallBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firewall_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(511016192, firewall_);
     }
     size += unknownFields.getSerializedSize();

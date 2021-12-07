@@ -26,11 +26,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListReservationsRequest;
 import com.google.cloud.compute.v1.DeleteReservationRequest;
@@ -39,6 +41,7 @@ import com.google.cloud.compute.v1.GetReservationRequest;
 import com.google.cloud.compute.v1.InsertReservationRequest;
 import com.google.cloud.compute.v1.ListReservationsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.Reservation;
 import com.google.cloud.compute.v1.ReservationAggregatedList;
@@ -47,6 +50,7 @@ import com.google.cloud.compute.v1.ResizeReservationRequest;
 import com.google.cloud.compute.v1.SetIamPolicyReservationRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsReservationRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -64,6 +68,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonReservationsStub extends ReservationsStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<
           AggregatedListReservationsRequest, ReservationAggregatedList>
       aggregatedListMethodDescriptor =
@@ -117,6 +124,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ReservationAggregatedList>newBuilder()
                       .setDefaultInstance(ReservationAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -154,7 +162,21 @@ public class HttpJsonReservationsStub extends ReservationsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteReservationRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetReservationRequest, Reservation> getMethodDescriptor =
@@ -186,6 +208,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Reservation>newBuilder()
                   .setDefaultInstance(Reservation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -225,6 +248,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -263,7 +287,21 @@ public class HttpJsonReservationsStub extends ReservationsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertReservationRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListReservationsRequest, ReservationList>
@@ -314,6 +352,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ReservationList>newBuilder()
                       .setDefaultInstance(ReservationList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -356,7 +395,21 @@ public class HttpJsonReservationsStub extends ReservationsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (ResizeReservationRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetIamPolicyReservationRequest, Policy>
@@ -394,6 +447,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -434,6 +488,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
                       .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -442,17 +497,24 @@ public class HttpJsonReservationsStub extends ReservationsStub {
   private final UnaryCallable<AggregatedListReservationsRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
   private final UnaryCallable<DeleteReservationRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteReservationRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetReservationRequest, Reservation> getCallable;
   private final UnaryCallable<GetIamPolicyReservationRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<InsertReservationRequest, Operation> insertCallable;
+  private final OperationCallable<InsertReservationRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListReservationsRequest, ReservationList> listCallable;
   private final UnaryCallable<ListReservationsRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<ResizeReservationRequest, Operation> resizeCallable;
+  private final OperationCallable<ResizeReservationRequest, Operation, Operation>
+      resizeOperationCallable;
   private final UnaryCallable<SetIamPolicyReservationRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsReservationRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonReservationsStub create(ReservationsStubSettings settings)
@@ -493,46 +555,56 @@ public class HttpJsonReservationsStub extends ReservationsStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub = HttpJsonZoneOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AggregatedListReservationsRequest, ReservationAggregatedList>
         aggregatedListTransportSettings =
             HttpJsonCallSettings
                 .<AggregatedListReservationsRequest, ReservationAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeleteReservationRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteReservationRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetReservationRequest, Reservation> getTransportSettings =
         HttpJsonCallSettings.<GetReservationRequest, Reservation>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetIamPolicyReservationRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyReservationRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertReservationRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertReservationRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListReservationsRequest, ReservationList> listTransportSettings =
         HttpJsonCallSettings.<ListReservationsRequest, ReservationList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ResizeReservationRequest, Operation> resizeTransportSettings =
         HttpJsonCallSettings.<ResizeReservationRequest, Operation>newBuilder()
             .setMethodDescriptor(resizeMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetIamPolicyReservationRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyReservationRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<TestIamPermissionsReservationRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings
                 .<TestIamPermissionsReservationRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.aggregatedListCallable =
@@ -544,6 +616,12 @@ public class HttpJsonReservationsStub extends ReservationsStub {
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
@@ -553,6 +631,12 @@ public class HttpJsonReservationsStub extends ReservationsStub {
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -562,6 +646,12 @@ public class HttpJsonReservationsStub extends ReservationsStub {
     this.resizeCallable =
         callableFactory.createUnaryCallable(
             resizeTransportSettings, settings.resizeSettings(), clientContext);
+    this.resizeOperationCallable =
+        callableFactory.createOperationCallable(
+            resizeTransportSettings,
+            settings.resizeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
@@ -608,6 +698,12 @@ public class HttpJsonReservationsStub extends ReservationsStub {
   }
 
   @Override
+  public OperationCallable<DeleteReservationRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetReservationRequest, Reservation> getCallable() {
     return getCallable;
   }
@@ -623,6 +719,12 @@ public class HttpJsonReservationsStub extends ReservationsStub {
   }
 
   @Override
+  public OperationCallable<InsertReservationRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<ListReservationsRequest, ReservationList> listCallable() {
     return listCallable;
   }
@@ -635,6 +737,12 @@ public class HttpJsonReservationsStub extends ReservationsStub {
   @Override
   public UnaryCallable<ResizeReservationRequest, Operation> resizeCallable() {
     return resizeCallable;
+  }
+
+  @Override
+  public OperationCallable<ResizeReservationRequest, Operation, Operation>
+      resizeOperationCallable() {
+    return resizeOperationCallable;
   }
 
   @Override

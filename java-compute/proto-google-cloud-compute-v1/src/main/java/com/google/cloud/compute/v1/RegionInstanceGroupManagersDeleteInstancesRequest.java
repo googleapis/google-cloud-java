@@ -82,6 +82,12 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
               instances_.add(s);
               break;
             }
+          case 325048584:
+            {
+              bitField0_ |= 0x00000001;
+              skipInstancesOnValidationError_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -120,6 +126,7 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
                 .class);
   }
 
+  private int bitField0_;
   public static final int INSTANCES_FIELD_NUMBER = 29097598;
   private com.google.protobuf.LazyStringList instances_;
   /**
@@ -181,6 +188,39 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
     return instances_.getByteString(index);
   }
 
+  public static final int SKIP_INSTANCES_ON_VALIDATION_ERROR_FIELD_NUMBER = 40631073;
+  private boolean skipInstancesOnValidationError_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether the request should proceed despite the inclusion of instances that are not members of the group or that are already in the process of being deleted or abandoned. If this field is set to `false` and such an instance is specified in the request, the operation fails. The operation always fails if the request contains a malformed instance URL or a reference to an instance that exists in a zone or region other than the group's zone or region.
+   * </pre>
+   *
+   * <code>optional bool skip_instances_on_validation_error = 40631073;</code>
+   *
+   * @return Whether the skipInstancesOnValidationError field is set.
+   */
+  @java.lang.Override
+  public boolean hasSkipInstancesOnValidationError() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether the request should proceed despite the inclusion of instances that are not members of the group or that are already in the process of being deleted or abandoned. If this field is set to `false` and such an instance is specified in the request, the operation fails. The operation always fails if the request contains a malformed instance URL or a reference to an instance that exists in a zone or region other than the group's zone or region.
+   * </pre>
+   *
+   * <code>optional bool skip_instances_on_validation_error = 40631073;</code>
+   *
+   * @return The skipInstancesOnValidationError.
+   */
+  @java.lang.Override
+  public boolean getSkipInstancesOnValidationError() {
+    return skipInstancesOnValidationError_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -198,6 +238,9 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
     for (int i = 0; i < instances_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 29097598, instances_.getRaw(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(40631073, skipInstancesOnValidationError_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -214,6 +257,11 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
       }
       size += dataSize;
       size += 4 * getInstancesList().size();
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              40631073, skipInstancesOnValidationError_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -233,6 +281,12 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
         (com.google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest) obj;
 
     if (!getInstancesList().equals(other.getInstancesList())) return false;
+    if (hasSkipInstancesOnValidationError() != other.hasSkipInstancesOnValidationError())
+      return false;
+    if (hasSkipInstancesOnValidationError()) {
+      if (getSkipInstancesOnValidationError() != other.getSkipInstancesOnValidationError())
+        return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -247,6 +301,12 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
     if (getInstancesCount() > 0) {
       hash = (37 * hash) + INSTANCES_FIELD_NUMBER;
       hash = (53 * hash) + getInstancesList().hashCode();
+    }
+    if (hasSkipInstancesOnValidationError()) {
+      hash = (37 * hash) + SKIP_INSTANCES_ON_VALIDATION_ERROR_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getSkipInstancesOnValidationError());
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -403,6 +463,8 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
       super.clear();
       instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      skipInstancesOnValidationError_ = false;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -435,11 +497,17 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
       com.google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest result =
           new com.google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         instances_ = instances_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.instances_ = instances_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.skipInstancesOnValidationError_ = skipInstancesOnValidationError_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -504,6 +572,9 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
           instances_.addAll(other.instances_);
         }
         onChanged();
+      }
+      if (other.hasSkipInstancesOnValidationError()) {
+        setSkipInstancesOnValidationError(other.getSkipInstancesOnValidationError());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -703,6 +774,73 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
       checkByteStringIsUtf8(value);
       ensureInstancesIsMutable();
       instances_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private boolean skipInstancesOnValidationError_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether the request should proceed despite the inclusion of instances that are not members of the group or that are already in the process of being deleted or abandoned. If this field is set to `false` and such an instance is specified in the request, the operation fails. The operation always fails if the request contains a malformed instance URL or a reference to an instance that exists in a zone or region other than the group's zone or region.
+     * </pre>
+     *
+     * <code>optional bool skip_instances_on_validation_error = 40631073;</code>
+     *
+     * @return Whether the skipInstancesOnValidationError field is set.
+     */
+    @java.lang.Override
+    public boolean hasSkipInstancesOnValidationError() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether the request should proceed despite the inclusion of instances that are not members of the group or that are already in the process of being deleted or abandoned. If this field is set to `false` and such an instance is specified in the request, the operation fails. The operation always fails if the request contains a malformed instance URL or a reference to an instance that exists in a zone or region other than the group's zone or region.
+     * </pre>
+     *
+     * <code>optional bool skip_instances_on_validation_error = 40631073;</code>
+     *
+     * @return The skipInstancesOnValidationError.
+     */
+    @java.lang.Override
+    public boolean getSkipInstancesOnValidationError() {
+      return skipInstancesOnValidationError_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether the request should proceed despite the inclusion of instances that are not members of the group or that are already in the process of being deleted or abandoned. If this field is set to `false` and such an instance is specified in the request, the operation fails. The operation always fails if the request contains a malformed instance URL or a reference to an instance that exists in a zone or region other than the group's zone or region.
+     * </pre>
+     *
+     * <code>optional bool skip_instances_on_validation_error = 40631073;</code>
+     *
+     * @param value The skipInstancesOnValidationError to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkipInstancesOnValidationError(boolean value) {
+      bitField0_ |= 0x00000002;
+      skipInstancesOnValidationError_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether the request should proceed despite the inclusion of instances that are not members of the group or that are already in the process of being deleted or abandoned. If this field is set to `false` and such an instance is specified in the request, the operation fails. The operation always fails if the request contains a malformed instance URL or a reference to an instance that exists in a zone or region other than the group's zone or region.
+     * </pre>
+     *
+     * <code>optional bool skip_instances_on_validation_error = 40631073;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSkipInstancesOnValidationError() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      skipInstancesOnValidationError_ = false;
       onChanged();
       return this;
     }

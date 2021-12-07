@@ -27,10 +27,10 @@ public interface InstanceReferenceOrBuilder
    *
    *
    * <pre>
-   * The URL for a specific instance.
+   * The URL for a specific instance. &#64;required compute.instancegroups.addInstances/removeInstances
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return Whether the instance field is set.
    */
@@ -39,10 +39,10 @@ public interface InstanceReferenceOrBuilder
    *
    *
    * <pre>
-   * The URL for a specific instance.
+   * The URL for a specific instance. &#64;required compute.instancegroups.addInstances/removeInstances
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return The instance.
    */
@@ -51,10 +51,10 @@ public interface InstanceReferenceOrBuilder
    *
    *
    * <pre>
-   * The URL for a specific instance.
+   * The URL for a specific instance. &#64;required compute.instancegroups.addInstances/removeInstances
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return The bytes for instance.
    */

@@ -24,19 +24,22 @@ public interface StatefulPolicyOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;</code>
+   * <code>optional .google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;
+   * </code>
    *
    * @return Whether the preservedState field is set.
    */
   boolean hasPreservedState();
   /**
-   * <code>.google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;</code>
+   * <code>optional .google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;
+   * </code>
    *
    * @return The preservedState.
    */
   com.google.cloud.compute.v1.StatefulPolicyPreservedState getPreservedState();
   /**
-   * <code>.google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;</code>
+   * <code>optional .google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;
+   * </code>
    */
   com.google.cloud.compute.v1.StatefulPolicyPreservedStateOrBuilder getPreservedStateOrBuilder();
 }

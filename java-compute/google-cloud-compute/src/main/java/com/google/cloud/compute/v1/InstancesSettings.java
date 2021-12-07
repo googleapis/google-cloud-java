@@ -28,6 +28,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -51,15 +52,15 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of addAccessConfig to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * InstancesSettings.Builder instancesSettingsBuilder = InstancesSettings.newBuilder();
  * instancesSettingsBuilder
- *     .addAccessConfigSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         instancesSettingsBuilder
- *             .addAccessConfigSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -75,10 +76,22 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).addAccessConfigSettings();
   }
 
+  /** Returns the object with the settings used for calls to addAccessConfig. */
+  public OperationCallSettings<AddAccessConfigInstanceRequest, Operation, Operation>
+      addAccessConfigOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).addAccessConfigOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to addResourcePolicies. */
   public UnaryCallSettings<AddResourcePoliciesInstanceRequest, Operation>
       addResourcePoliciesSettings() {
     return ((InstancesStubSettings) getStubSettings()).addResourcePoliciesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addResourcePolicies. */
+  public OperationCallSettings<AddResourcePoliciesInstanceRequest, Operation, Operation>
+      addResourcePoliciesOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).addResourcePoliciesOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to aggregatedList. */
@@ -93,14 +106,32 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).attachDiskSettings();
   }
 
+  /** Returns the object with the settings used for calls to attachDisk. */
+  public OperationCallSettings<AttachDiskInstanceRequest, Operation, Operation>
+      attachDiskOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).attachDiskOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to bulkInsert. */
   public UnaryCallSettings<BulkInsertInstanceRequest, Operation> bulkInsertSettings() {
     return ((InstancesStubSettings) getStubSettings()).bulkInsertSettings();
   }
 
+  /** Returns the object with the settings used for calls to bulkInsert. */
+  public OperationCallSettings<BulkInsertInstanceRequest, Operation, Operation>
+      bulkInsertOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).bulkInsertOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteInstanceRequest, Operation> deleteSettings() {
     return ((InstancesStubSettings) getStubSettings()).deleteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteInstanceRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).deleteOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteAccessConfig. */
@@ -109,9 +140,21 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).deleteAccessConfigSettings();
   }
 
+  /** Returns the object with the settings used for calls to deleteAccessConfig. */
+  public OperationCallSettings<DeleteAccessConfigInstanceRequest, Operation, Operation>
+      deleteAccessConfigOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).deleteAccessConfigOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to detachDisk. */
   public UnaryCallSettings<DetachDiskInstanceRequest, Operation> detachDiskSettings() {
     return ((InstancesStubSettings) getStubSettings()).detachDiskSettings();
+  }
+
+  /** Returns the object with the settings used for calls to detachDisk. */
+  public OperationCallSettings<DetachDiskInstanceRequest, Operation, Operation>
+      detachDiskOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).detachDiskOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -159,6 +202,12 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).insertSettings();
   }
 
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertInstanceRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).insertOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<ListInstancesRequest, InstanceList, ListPagedResponse> listSettings() {
     return ((InstancesStubSettings) getStubSettings()).listSettings();
@@ -177,9 +226,28 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).removeResourcePoliciesSettings();
   }
 
+  /** Returns the object with the settings used for calls to removeResourcePolicies. */
+  public OperationCallSettings<RemoveResourcePoliciesInstanceRequest, Operation, Operation>
+      removeResourcePoliciesOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).removeResourcePoliciesOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to reset. */
   public UnaryCallSettings<ResetInstanceRequest, Operation> resetSettings() {
     return ((InstancesStubSettings) getStubSettings()).resetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to reset. */
+  public OperationCallSettings<ResetInstanceRequest, Operation, Operation>
+      resetOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).resetOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to sendDiagnosticInterrupt. */
+  public UnaryCallSettings<
+          SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+      sendDiagnosticInterruptSettings() {
+    return ((InstancesStubSettings) getStubSettings()).sendDiagnosticInterruptSettings();
   }
 
   /** Returns the object with the settings used for calls to setDeletionProtection. */
@@ -188,10 +256,22 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).setDeletionProtectionSettings();
   }
 
+  /** Returns the object with the settings used for calls to setDeletionProtection. */
+  public OperationCallSettings<SetDeletionProtectionInstanceRequest, Operation, Operation>
+      setDeletionProtectionOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).setDeletionProtectionOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setDiskAutoDelete. */
   public UnaryCallSettings<SetDiskAutoDeleteInstanceRequest, Operation>
       setDiskAutoDeleteSettings() {
     return ((InstancesStubSettings) getStubSettings()).setDiskAutoDeleteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setDiskAutoDelete. */
+  public OperationCallSettings<SetDiskAutoDeleteInstanceRequest, Operation, Operation>
+      setDiskAutoDeleteOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).setDiskAutoDeleteOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
@@ -204,10 +284,22 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).setLabelsSettings();
   }
 
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsInstanceRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).setLabelsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setMachineResources. */
   public UnaryCallSettings<SetMachineResourcesInstanceRequest, Operation>
       setMachineResourcesSettings() {
     return ((InstancesStubSettings) getStubSettings()).setMachineResourcesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setMachineResources. */
+  public OperationCallSettings<SetMachineResourcesInstanceRequest, Operation, Operation>
+      setMachineResourcesOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).setMachineResourcesOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to setMachineType. */
@@ -215,9 +307,21 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).setMachineTypeSettings();
   }
 
+  /** Returns the object with the settings used for calls to setMachineType. */
+  public OperationCallSettings<SetMachineTypeInstanceRequest, Operation, Operation>
+      setMachineTypeOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).setMachineTypeOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setMetadata. */
   public UnaryCallSettings<SetMetadataInstanceRequest, Operation> setMetadataSettings() {
     return ((InstancesStubSettings) getStubSettings()).setMetadataSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setMetadata. */
+  public OperationCallSettings<SetMetadataInstanceRequest, Operation, Operation>
+      setMetadataOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).setMetadataOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to setMinCpuPlatform. */
@@ -226,9 +330,21 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).setMinCpuPlatformSettings();
   }
 
+  /** Returns the object with the settings used for calls to setMinCpuPlatform. */
+  public OperationCallSettings<SetMinCpuPlatformInstanceRequest, Operation, Operation>
+      setMinCpuPlatformOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).setMinCpuPlatformOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setScheduling. */
   public UnaryCallSettings<SetSchedulingInstanceRequest, Operation> setSchedulingSettings() {
     return ((InstancesStubSettings) getStubSettings()).setSchedulingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setScheduling. */
+  public OperationCallSettings<SetSchedulingInstanceRequest, Operation, Operation>
+      setSchedulingOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).setSchedulingOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to setServiceAccount. */
@@ -237,15 +353,35 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).setServiceAccountSettings();
   }
 
+  /** Returns the object with the settings used for calls to setServiceAccount. */
+  public OperationCallSettings<SetServiceAccountInstanceRequest, Operation, Operation>
+      setServiceAccountOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).setServiceAccountOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setShieldedInstanceIntegrityPolicy. */
   public UnaryCallSettings<SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation>
       setShieldedInstanceIntegrityPolicySettings() {
     return ((InstancesStubSettings) getStubSettings()).setShieldedInstanceIntegrityPolicySettings();
   }
 
+  /** Returns the object with the settings used for calls to setShieldedInstanceIntegrityPolicy. */
+  public OperationCallSettings<
+          SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation, Operation>
+      setShieldedInstanceIntegrityPolicyOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings())
+        .setShieldedInstanceIntegrityPolicyOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setTags. */
   public UnaryCallSettings<SetTagsInstanceRequest, Operation> setTagsSettings() {
     return ((InstancesStubSettings) getStubSettings()).setTagsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setTags. */
+  public OperationCallSettings<SetTagsInstanceRequest, Operation, Operation>
+      setTagsOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).setTagsOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to simulateMaintenanceEvent. */
@@ -254,9 +390,21 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).simulateMaintenanceEventSettings();
   }
 
+  /** Returns the object with the settings used for calls to simulateMaintenanceEvent. */
+  public OperationCallSettings<SimulateMaintenanceEventInstanceRequest, Operation, Operation>
+      simulateMaintenanceEventOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).simulateMaintenanceEventOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to start. */
   public UnaryCallSettings<StartInstanceRequest, Operation> startSettings() {
     return ((InstancesStubSettings) getStubSettings()).startSettings();
+  }
+
+  /** Returns the object with the settings used for calls to start. */
+  public OperationCallSettings<StartInstanceRequest, Operation, Operation>
+      startOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).startOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to startWithEncryptionKey. */
@@ -265,9 +413,20 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).startWithEncryptionKeySettings();
   }
 
+  /** Returns the object with the settings used for calls to startWithEncryptionKey. */
+  public OperationCallSettings<StartWithEncryptionKeyInstanceRequest, Operation, Operation>
+      startWithEncryptionKeyOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).startWithEncryptionKeyOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to stop. */
   public UnaryCallSettings<StopInstanceRequest, Operation> stopSettings() {
     return ((InstancesStubSettings) getStubSettings()).stopSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stop. */
+  public OperationCallSettings<StopInstanceRequest, Operation, Operation> stopOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).stopOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to testIamPermissions. */
@@ -281,10 +440,22 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).updateSettings();
   }
 
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateInstanceRequest, Operation, Operation>
+      updateOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).updateOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateAccessConfig. */
   public UnaryCallSettings<UpdateAccessConfigInstanceRequest, Operation>
       updateAccessConfigSettings() {
     return ((InstancesStubSettings) getStubSettings()).updateAccessConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAccessConfig. */
+  public OperationCallSettings<UpdateAccessConfigInstanceRequest, Operation, Operation>
+      updateAccessConfigOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).updateAccessConfigOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to updateDisplayDevice. */
@@ -293,16 +464,35 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).updateDisplayDeviceSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateDisplayDevice. */
+  public OperationCallSettings<UpdateDisplayDeviceInstanceRequest, Operation, Operation>
+      updateDisplayDeviceOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).updateDisplayDeviceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateNetworkInterface. */
   public UnaryCallSettings<UpdateNetworkInterfaceInstanceRequest, Operation>
       updateNetworkInterfaceSettings() {
     return ((InstancesStubSettings) getStubSettings()).updateNetworkInterfaceSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateNetworkInterface. */
+  public OperationCallSettings<UpdateNetworkInterfaceInstanceRequest, Operation, Operation>
+      updateNetworkInterfaceOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).updateNetworkInterfaceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateShieldedInstanceConfig. */
   public UnaryCallSettings<UpdateShieldedInstanceConfigInstanceRequest, Operation>
       updateShieldedInstanceConfigSettings() {
     return ((InstancesStubSettings) getStubSettings()).updateShieldedInstanceConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateShieldedInstanceConfig. */
+  public OperationCallSettings<UpdateShieldedInstanceConfigInstanceRequest, Operation, Operation>
+      updateShieldedInstanceConfigOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings())
+        .updateShieldedInstanceConfigOperationSettings();
   }
 
   public static final InstancesSettings create(InstancesStubSettings stub) throws IOException {
@@ -408,10 +598,22 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().addAccessConfigSettings();
     }
 
+    /** Returns the builder for the settings used for calls to addAccessConfig. */
+    public OperationCallSettings.Builder<AddAccessConfigInstanceRequest, Operation, Operation>
+        addAccessConfigOperationSettings() {
+      return getStubSettingsBuilder().addAccessConfigOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to addResourcePolicies. */
     public UnaryCallSettings.Builder<AddResourcePoliciesInstanceRequest, Operation>
         addResourcePoliciesSettings() {
       return getStubSettingsBuilder().addResourcePoliciesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addResourcePolicies. */
+    public OperationCallSettings.Builder<AddResourcePoliciesInstanceRequest, Operation, Operation>
+        addResourcePoliciesOperationSettings() {
+      return getStubSettingsBuilder().addResourcePoliciesOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to aggregatedList. */
@@ -426,14 +628,32 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().attachDiskSettings();
     }
 
+    /** Returns the builder for the settings used for calls to attachDisk. */
+    public OperationCallSettings.Builder<AttachDiskInstanceRequest, Operation, Operation>
+        attachDiskOperationSettings() {
+      return getStubSettingsBuilder().attachDiskOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to bulkInsert. */
     public UnaryCallSettings.Builder<BulkInsertInstanceRequest, Operation> bulkInsertSettings() {
       return getStubSettingsBuilder().bulkInsertSettings();
     }
 
+    /** Returns the builder for the settings used for calls to bulkInsert. */
+    public OperationCallSettings.Builder<BulkInsertInstanceRequest, Operation, Operation>
+        bulkInsertOperationSettings() {
+      return getStubSettingsBuilder().bulkInsertOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteInstanceRequest, Operation> deleteSettings() {
       return getStubSettingsBuilder().deleteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteInstanceRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteAccessConfig. */
@@ -442,9 +662,21 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().deleteAccessConfigSettings();
     }
 
+    /** Returns the builder for the settings used for calls to deleteAccessConfig. */
+    public OperationCallSettings.Builder<DeleteAccessConfigInstanceRequest, Operation, Operation>
+        deleteAccessConfigOperationSettings() {
+      return getStubSettingsBuilder().deleteAccessConfigOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to detachDisk. */
     public UnaryCallSettings.Builder<DetachDiskInstanceRequest, Operation> detachDiskSettings() {
       return getStubSettingsBuilder().detachDiskSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to detachDisk. */
+    public OperationCallSettings.Builder<DetachDiskInstanceRequest, Operation, Operation>
+        detachDiskOperationSettings() {
+      return getStubSettingsBuilder().detachDiskOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -494,6 +726,12 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().insertSettings();
     }
 
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertInstanceRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to list. */
     public PagedCallSettings.Builder<ListInstancesRequest, InstanceList, ListPagedResponse>
         listSettings() {
@@ -513,9 +751,29 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().removeResourcePoliciesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to removeResourcePolicies. */
+    public OperationCallSettings.Builder<
+            RemoveResourcePoliciesInstanceRequest, Operation, Operation>
+        removeResourcePoliciesOperationSettings() {
+      return getStubSettingsBuilder().removeResourcePoliciesOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to reset. */
     public UnaryCallSettings.Builder<ResetInstanceRequest, Operation> resetSettings() {
       return getStubSettingsBuilder().resetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to reset. */
+    public OperationCallSettings.Builder<ResetInstanceRequest, Operation, Operation>
+        resetOperationSettings() {
+      return getStubSettingsBuilder().resetOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to sendDiagnosticInterrupt. */
+    public UnaryCallSettings.Builder<
+            SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+        sendDiagnosticInterruptSettings() {
+      return getStubSettingsBuilder().sendDiagnosticInterruptSettings();
     }
 
     /** Returns the builder for the settings used for calls to setDeletionProtection. */
@@ -524,10 +782,22 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().setDeletionProtectionSettings();
     }
 
+    /** Returns the builder for the settings used for calls to setDeletionProtection. */
+    public OperationCallSettings.Builder<SetDeletionProtectionInstanceRequest, Operation, Operation>
+        setDeletionProtectionOperationSettings() {
+      return getStubSettingsBuilder().setDeletionProtectionOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setDiskAutoDelete. */
     public UnaryCallSettings.Builder<SetDiskAutoDeleteInstanceRequest, Operation>
         setDiskAutoDeleteSettings() {
       return getStubSettingsBuilder().setDiskAutoDeleteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setDiskAutoDelete. */
+    public OperationCallSettings.Builder<SetDiskAutoDeleteInstanceRequest, Operation, Operation>
+        setDiskAutoDeleteOperationSettings() {
+      return getStubSettingsBuilder().setDiskAutoDeleteOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */
@@ -540,10 +810,22 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().setLabelsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsInstanceRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setMachineResources. */
     public UnaryCallSettings.Builder<SetMachineResourcesInstanceRequest, Operation>
         setMachineResourcesSettings() {
       return getStubSettingsBuilder().setMachineResourcesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setMachineResources. */
+    public OperationCallSettings.Builder<SetMachineResourcesInstanceRequest, Operation, Operation>
+        setMachineResourcesOperationSettings() {
+      return getStubSettingsBuilder().setMachineResourcesOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setMachineType. */
@@ -552,9 +834,21 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().setMachineTypeSettings();
     }
 
+    /** Returns the builder for the settings used for calls to setMachineType. */
+    public OperationCallSettings.Builder<SetMachineTypeInstanceRequest, Operation, Operation>
+        setMachineTypeOperationSettings() {
+      return getStubSettingsBuilder().setMachineTypeOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setMetadata. */
     public UnaryCallSettings.Builder<SetMetadataInstanceRequest, Operation> setMetadataSettings() {
       return getStubSettingsBuilder().setMetadataSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setMetadata. */
+    public OperationCallSettings.Builder<SetMetadataInstanceRequest, Operation, Operation>
+        setMetadataOperationSettings() {
+      return getStubSettingsBuilder().setMetadataOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setMinCpuPlatform. */
@@ -563,16 +857,34 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().setMinCpuPlatformSettings();
     }
 
+    /** Returns the builder for the settings used for calls to setMinCpuPlatform. */
+    public OperationCallSettings.Builder<SetMinCpuPlatformInstanceRequest, Operation, Operation>
+        setMinCpuPlatformOperationSettings() {
+      return getStubSettingsBuilder().setMinCpuPlatformOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setScheduling. */
     public UnaryCallSettings.Builder<SetSchedulingInstanceRequest, Operation>
         setSchedulingSettings() {
       return getStubSettingsBuilder().setSchedulingSettings();
     }
 
+    /** Returns the builder for the settings used for calls to setScheduling. */
+    public OperationCallSettings.Builder<SetSchedulingInstanceRequest, Operation, Operation>
+        setSchedulingOperationSettings() {
+      return getStubSettingsBuilder().setSchedulingOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setServiceAccount. */
     public UnaryCallSettings.Builder<SetServiceAccountInstanceRequest, Operation>
         setServiceAccountSettings() {
       return getStubSettingsBuilder().setServiceAccountSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setServiceAccount. */
+    public OperationCallSettings.Builder<SetServiceAccountInstanceRequest, Operation, Operation>
+        setServiceAccountOperationSettings() {
+      return getStubSettingsBuilder().setServiceAccountOperationSettings();
     }
 
     /**
@@ -583,9 +895,24 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().setShieldedInstanceIntegrityPolicySettings();
     }
 
+    /**
+     * Returns the builder for the settings used for calls to setShieldedInstanceIntegrityPolicy.
+     */
+    public OperationCallSettings.Builder<
+            SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation, Operation>
+        setShieldedInstanceIntegrityPolicyOperationSettings() {
+      return getStubSettingsBuilder().setShieldedInstanceIntegrityPolicyOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setTags. */
     public UnaryCallSettings.Builder<SetTagsInstanceRequest, Operation> setTagsSettings() {
       return getStubSettingsBuilder().setTagsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setTags. */
+    public OperationCallSettings.Builder<SetTagsInstanceRequest, Operation, Operation>
+        setTagsOperationSettings() {
+      return getStubSettingsBuilder().setTagsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to simulateMaintenanceEvent. */
@@ -594,9 +921,22 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().simulateMaintenanceEventSettings();
     }
 
+    /** Returns the builder for the settings used for calls to simulateMaintenanceEvent. */
+    public OperationCallSettings.Builder<
+            SimulateMaintenanceEventInstanceRequest, Operation, Operation>
+        simulateMaintenanceEventOperationSettings() {
+      return getStubSettingsBuilder().simulateMaintenanceEventOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to start. */
     public UnaryCallSettings.Builder<StartInstanceRequest, Operation> startSettings() {
       return getStubSettingsBuilder().startSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to start. */
+    public OperationCallSettings.Builder<StartInstanceRequest, Operation, Operation>
+        startOperationSettings() {
+      return getStubSettingsBuilder().startOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to startWithEncryptionKey. */
@@ -605,9 +945,22 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().startWithEncryptionKeySettings();
     }
 
+    /** Returns the builder for the settings used for calls to startWithEncryptionKey. */
+    public OperationCallSettings.Builder<
+            StartWithEncryptionKeyInstanceRequest, Operation, Operation>
+        startWithEncryptionKeyOperationSettings() {
+      return getStubSettingsBuilder().startWithEncryptionKeyOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to stop. */
     public UnaryCallSettings.Builder<StopInstanceRequest, Operation> stopSettings() {
       return getStubSettingsBuilder().stopSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stop. */
+    public OperationCallSettings.Builder<StopInstanceRequest, Operation, Operation>
+        stopOperationSettings() {
+      return getStubSettingsBuilder().stopOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */
@@ -621,10 +974,22 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().updateSettings();
     }
 
+    /** Returns the builder for the settings used for calls to update. */
+    public OperationCallSettings.Builder<UpdateInstanceRequest, Operation, Operation>
+        updateOperationSettings() {
+      return getStubSettingsBuilder().updateOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to updateAccessConfig. */
     public UnaryCallSettings.Builder<UpdateAccessConfigInstanceRequest, Operation>
         updateAccessConfigSettings() {
       return getStubSettingsBuilder().updateAccessConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAccessConfig. */
+    public OperationCallSettings.Builder<UpdateAccessConfigInstanceRequest, Operation, Operation>
+        updateAccessConfigOperationSettings() {
+      return getStubSettingsBuilder().updateAccessConfigOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateDisplayDevice. */
@@ -633,16 +998,36 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().updateDisplayDeviceSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateDisplayDevice. */
+    public OperationCallSettings.Builder<UpdateDisplayDeviceInstanceRequest, Operation, Operation>
+        updateDisplayDeviceOperationSettings() {
+      return getStubSettingsBuilder().updateDisplayDeviceOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to updateNetworkInterface. */
     public UnaryCallSettings.Builder<UpdateNetworkInterfaceInstanceRequest, Operation>
         updateNetworkInterfaceSettings() {
       return getStubSettingsBuilder().updateNetworkInterfaceSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateNetworkInterface. */
+    public OperationCallSettings.Builder<
+            UpdateNetworkInterfaceInstanceRequest, Operation, Operation>
+        updateNetworkInterfaceOperationSettings() {
+      return getStubSettingsBuilder().updateNetworkInterfaceOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to updateShieldedInstanceConfig. */
     public UnaryCallSettings.Builder<UpdateShieldedInstanceConfigInstanceRequest, Operation>
         updateShieldedInstanceConfigSettings() {
       return getStubSettingsBuilder().updateShieldedInstanceConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateShieldedInstanceConfig. */
+    public OperationCallSettings.Builder<
+            UpdateShieldedInstanceConfigInstanceRequest, Operation, Operation>
+        updateShieldedInstanceConfigOperationSettings() {
+      return getStubSettingsBuilder().updateShieldedInstanceConfigOperationSettings();
     }
 
     @Override

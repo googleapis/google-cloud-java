@@ -38,9 +38,9 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
   }
 
   private SubnetworkLogConfig() {
-    aggregationInterval_ = 0;
+    aggregationInterval_ = "";
     filterExpr_ = "";
-    metadata_ = 0;
+    metadata_ = "";
     metadataFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -74,18 +74,18 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
           case 0:
             done = true;
             break;
-          case 694933880:
+          case 694933882:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
-              metadata_ = rawValue;
+              metadata_ = s;
               break;
             }
-          case 1399352336:
+          case 1399352338:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              aggregationInterval_ = rawValue;
+              aggregationInterval_ = s;
               break;
             }
           case 1466995426:
@@ -439,17 +439,16 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
 
   private int bitField0_;
   public static final int AGGREGATION_INTERVAL_FIELD_NUMBER = 174919042;
-  private int aggregationInterval_;
+  private volatile java.lang.Object aggregationInterval_;
   /**
    *
    *
    * <pre>
    * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+   * Check the AggregationInterval enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;
-   * </code>
+   * <code>optional string aggregation_interval = 174919042;</code>
    *
    * @return Whether the aggregationInterval field is set.
    */
@@ -462,41 +461,48 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+   * Check the AggregationInterval enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;
-   * </code>
+   * <code>optional string aggregation_interval = 174919042;</code>
    *
-   * @return The enum numeric value on the wire for aggregationInterval.
+   * @return The aggregationInterval.
    */
   @java.lang.Override
-  public int getAggregationIntervalValue() {
-    return aggregationInterval_;
+  public java.lang.String getAggregationInterval() {
+    java.lang.Object ref = aggregationInterval_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      aggregationInterval_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+   * Check the AggregationInterval enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;
-   * </code>
+   * <code>optional string aggregation_interval = 174919042;</code>
    *
-   * @return The aggregationInterval.
+   * @return The bytes for aggregationInterval.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval
-      getAggregationInterval() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval result =
-        com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval.valueOf(
-            aggregationInterval_);
-    return result == null
-        ? com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getAggregationIntervalBytes() {
+    java.lang.Object ref = aggregationInterval_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      aggregationInterval_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ENABLE_FIELD_NUMBER = 311764355;
@@ -508,7 +514,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
    * </pre>
    *
-   * <code>bool enable = 311764355;</code>
+   * <code>optional bool enable = 311764355;</code>
    *
    * @return Whether the enable field is set.
    */
@@ -523,7 +529,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
    * </pre>
    *
-   * <code>bool enable = 311764355;</code>
+   * <code>optional bool enable = 311764355;</code>
    *
    * @return The enable.
    */
@@ -541,7 +547,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
    * </pre>
    *
-   * <code>string filter_expr = 183374428;</code>
+   * <code>optional string filter_expr = 183374428;</code>
    *
    * @return Whether the filterExpr field is set.
    */
@@ -556,7 +562,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
    * </pre>
    *
-   * <code>string filter_expr = 183374428;</code>
+   * <code>optional string filter_expr = 183374428;</code>
    *
    * @return The filterExpr.
    */
@@ -579,7 +585,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
    * </pre>
    *
-   * <code>string filter_expr = 183374428;</code>
+   * <code>optional string filter_expr = 183374428;</code>
    *
    * @return The bytes for filterExpr.
    */
@@ -605,7 +611,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
    * </pre>
    *
-   * <code>float flow_sampling = 530150360;</code>
+   * <code>optional float flow_sampling = 530150360;</code>
    *
    * @return Whether the flowSampling field is set.
    */
@@ -620,7 +626,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
    * </pre>
    *
-   * <code>float flow_sampling = 530150360;</code>
+   * <code>optional float flow_sampling = 530150360;</code>
    *
    * @return The flowSampling.
    */
@@ -630,15 +636,16 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int METADATA_FIELD_NUMBER = 86866735;
-  private int metadata_;
+  private volatile java.lang.Object metadata_;
   /**
    *
    *
    * <pre>
    * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+   * Check the Metadata enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
+   * <code>optional string metadata = 86866735;</code>
    *
    * @return Whether the metadata field is set.
    */
@@ -651,35 +658,48 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+   * Check the Metadata enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
+   * <code>optional string metadata = 86866735;</code>
    *
-   * @return The enum numeric value on the wire for metadata.
+   * @return The metadata.
    */
   @java.lang.Override
-  public int getMetadataValue() {
-    return metadata_;
+  public java.lang.String getMetadata() {
+    java.lang.Object ref = metadata_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      metadata_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+   * Check the Metadata enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
+   * <code>optional string metadata = 86866735;</code>
    *
-   * @return The metadata.
+   * @return The bytes for metadata.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata getMetadata() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata result =
-        com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata.valueOf(metadata_);
-    return result == null
-        ? com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getMetadataBytes() {
+    java.lang.Object ref = metadata_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      metadata_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int METADATA_FIELDS_FIELD_NUMBER = 378461641;
@@ -758,10 +778,10 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeEnum(86866735, metadata_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 86866735, metadata_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(174919042, aggregationInterval_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 174919042, aggregationInterval_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 183374428, filterExpr_);
@@ -786,11 +806,11 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
 
     size = 0;
     if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(86866735, metadata_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(86866735, metadata_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeEnumSize(174919042, aggregationInterval_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(174919042, aggregationInterval_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(183374428, filterExpr_);
@@ -827,7 +847,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
 
     if (hasAggregationInterval() != other.hasAggregationInterval()) return false;
     if (hasAggregationInterval()) {
-      if (aggregationInterval_ != other.aggregationInterval_) return false;
+      if (!getAggregationInterval().equals(other.getAggregationInterval())) return false;
     }
     if (hasEnable() != other.hasEnable()) return false;
     if (hasEnable()) {
@@ -844,7 +864,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     }
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
-      if (metadata_ != other.metadata_) return false;
+      if (!getMetadata().equals(other.getMetadata())) return false;
     }
     if (!getMetadataFieldsList().equals(other.getMetadataFieldsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -860,7 +880,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasAggregationInterval()) {
       hash = (37 * hash) + AGGREGATION_INTERVAL_FIELD_NUMBER;
-      hash = (53 * hash) + aggregationInterval_;
+      hash = (53 * hash) + getAggregationInterval().hashCode();
     }
     if (hasEnable()) {
       hash = (37 * hash) + ENABLE_FIELD_NUMBER;
@@ -876,7 +896,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     }
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
-      hash = (53 * hash) + metadata_;
+      hash = (53 * hash) + getMetadata().hashCode();
     }
     if (getMetadataFieldsCount() > 0) {
       hash = (37 * hash) + METADATA_FIELDS_FIELD_NUMBER;
@@ -1027,7 +1047,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      aggregationInterval_ = 0;
+      aggregationInterval_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       enable_ = false;
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -1035,7 +1055,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       bitField0_ = (bitField0_ & ~0x00000004);
       flowSampling_ = 0F;
       bitField0_ = (bitField0_ & ~0x00000008);
-      metadata_ = 0;
+      metadata_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
       metadataFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -1145,7 +1165,9 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       if (other == com.google.cloud.compute.v1.SubnetworkLogConfig.getDefaultInstance())
         return this;
       if (other.hasAggregationInterval()) {
-        setAggregationInterval(other.getAggregationInterval());
+        bitField0_ |= 0x00000001;
+        aggregationInterval_ = other.aggregationInterval_;
+        onChanged();
       }
       if (other.hasEnable()) {
         setEnable(other.getEnable());
@@ -1159,7 +1181,9 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
         setFlowSampling(other.getFlowSampling());
       }
       if (other.hasMetadata()) {
-        setMetadata(other.getMetadata());
+        bitField0_ |= 0x00000010;
+        metadata_ = other.metadata_;
+        onChanged();
       }
       if (!other.metadataFields_.isEmpty()) {
         if (metadataFields_.isEmpty()) {
@@ -1202,21 +1226,19 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
 
     private int bitField0_;
 
-    private int aggregationInterval_ = 0;
+    private java.lang.Object aggregationInterval_ = "";
     /**
      *
      *
      * <pre>
      * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+     * Check the AggregationInterval enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;
-     * </code>
+     * <code>optional string aggregation_interval = 174919042;</code>
      *
      * @return Whether the aggregationInterval field is set.
      */
-    @java.lang.Override
     public boolean hasAggregationInterval() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -1225,33 +1247,64 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+     * Check the AggregationInterval enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;
-     * </code>
+     * <code>optional string aggregation_interval = 174919042;</code>
      *
-     * @return The enum numeric value on the wire for aggregationInterval.
+     * @return The aggregationInterval.
      */
-    @java.lang.Override
-    public int getAggregationIntervalValue() {
-      return aggregationInterval_;
+    public java.lang.String getAggregationInterval() {
+      java.lang.Object ref = aggregationInterval_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        aggregationInterval_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+     * Check the AggregationInterval enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;
-     * </code>
+     * <code>optional string aggregation_interval = 174919042;</code>
      *
-     * @param value The enum numeric value on the wire for aggregationInterval to set.
+     * @return The bytes for aggregationInterval.
+     */
+    public com.google.protobuf.ByteString getAggregationIntervalBytes() {
+      java.lang.Object ref = aggregationInterval_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        aggregationInterval_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+     * Check the AggregationInterval enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string aggregation_interval = 174919042;</code>
+     *
+     * @param value The aggregationInterval to set.
      * @return This builder for chaining.
      */
-    public Builder setAggregationIntervalValue(int value) {
+    public Builder setAggregationInterval(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000001;
       aggregationInterval_ = value;
       onChanged();
@@ -1262,46 +1315,16 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+     * Check the AggregationInterval enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;
-     * </code>
+     * <code>optional string aggregation_interval = 174919042;</code>
      *
-     * @return The aggregationInterval.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval
-        getAggregationInterval() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval result =
-          com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval.valueOf(
-              aggregationInterval_);
-      return result == null
-          ? com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;
-     * </code>
-     *
-     * @param value The aggregationInterval to set.
      * @return This builder for chaining.
      */
-    public Builder setAggregationInterval(
-        com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      aggregationInterval_ = value.getNumber();
+    public Builder clearAggregationInterval() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      aggregationInterval_ = getDefaultInstance().getAggregationInterval();
       onChanged();
       return this;
     }
@@ -1310,17 +1333,21 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+     * Check the AggregationInterval enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;
-     * </code>
+     * <code>optional string aggregation_interval = 174919042;</code>
      *
+     * @param value The bytes for aggregationInterval to set.
      * @return This builder for chaining.
      */
-    public Builder clearAggregationInterval() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      aggregationInterval_ = 0;
+    public Builder setAggregationIntervalBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      aggregationInterval_ = value;
       onChanged();
       return this;
     }
@@ -1333,7 +1360,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
      * </pre>
      *
-     * <code>bool enable = 311764355;</code>
+     * <code>optional bool enable = 311764355;</code>
      *
      * @return Whether the enable field is set.
      */
@@ -1348,7 +1375,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
      * </pre>
      *
-     * <code>bool enable = 311764355;</code>
+     * <code>optional bool enable = 311764355;</code>
      *
      * @return The enable.
      */
@@ -1363,7 +1390,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
      * </pre>
      *
-     * <code>bool enable = 311764355;</code>
+     * <code>optional bool enable = 311764355;</code>
      *
      * @param value The enable to set.
      * @return This builder for chaining.
@@ -1381,7 +1408,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
      * </pre>
      *
-     * <code>bool enable = 311764355;</code>
+     * <code>optional bool enable = 311764355;</code>
      *
      * @return This builder for chaining.
      */
@@ -1400,7 +1427,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
      * </pre>
      *
-     * <code>string filter_expr = 183374428;</code>
+     * <code>optional string filter_expr = 183374428;</code>
      *
      * @return Whether the filterExpr field is set.
      */
@@ -1414,7 +1441,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
      * </pre>
      *
-     * <code>string filter_expr = 183374428;</code>
+     * <code>optional string filter_expr = 183374428;</code>
      *
      * @return The filterExpr.
      */
@@ -1436,7 +1463,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
      * </pre>
      *
-     * <code>string filter_expr = 183374428;</code>
+     * <code>optional string filter_expr = 183374428;</code>
      *
      * @return The bytes for filterExpr.
      */
@@ -1458,7 +1485,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
      * </pre>
      *
-     * <code>string filter_expr = 183374428;</code>
+     * <code>optional string filter_expr = 183374428;</code>
      *
      * @param value The filterExpr to set.
      * @return This builder for chaining.
@@ -1479,7 +1506,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
      * </pre>
      *
-     * <code>string filter_expr = 183374428;</code>
+     * <code>optional string filter_expr = 183374428;</code>
      *
      * @return This builder for chaining.
      */
@@ -1496,7 +1523,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
      * </pre>
      *
-     * <code>string filter_expr = 183374428;</code>
+     * <code>optional string filter_expr = 183374428;</code>
      *
      * @param value The bytes for filterExpr to set.
      * @return This builder for chaining.
@@ -1520,7 +1547,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
      * </pre>
      *
-     * <code>float flow_sampling = 530150360;</code>
+     * <code>optional float flow_sampling = 530150360;</code>
      *
      * @return Whether the flowSampling field is set.
      */
@@ -1535,7 +1562,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
      * </pre>
      *
-     * <code>float flow_sampling = 530150360;</code>
+     * <code>optional float flow_sampling = 530150360;</code>
      *
      * @return The flowSampling.
      */
@@ -1550,7 +1577,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
      * </pre>
      *
-     * <code>float flow_sampling = 530150360;</code>
+     * <code>optional float flow_sampling = 530150360;</code>
      *
      * @param value The flowSampling to set.
      * @return This builder for chaining.
@@ -1568,7 +1595,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
      * </pre>
      *
-     * <code>float flow_sampling = 530150360;</code>
+     * <code>optional float flow_sampling = 530150360;</code>
      *
      * @return This builder for chaining.
      */
@@ -1579,19 +1606,19 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private int metadata_ = 0;
+    private java.lang.Object metadata_ = "";
     /**
      *
      *
      * <pre>
      * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+     * Check the Metadata enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
+     * <code>optional string metadata = 86866735;</code>
      *
      * @return Whether the metadata field is set.
      */
-    @java.lang.Override
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000010) != 0);
     }
@@ -1600,29 +1627,64 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+     * Check the Metadata enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
+     * <code>optional string metadata = 86866735;</code>
      *
-     * @return The enum numeric value on the wire for metadata.
+     * @return The metadata.
      */
-    @java.lang.Override
-    public int getMetadataValue() {
-      return metadata_;
+    public java.lang.String getMetadata() {
+      java.lang.Object ref = metadata_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        metadata_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+     * Check the Metadata enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
+     * <code>optional string metadata = 86866735;</code>
      *
-     * @param value The enum numeric value on the wire for metadata to set.
+     * @return The bytes for metadata.
+     */
+    public com.google.protobuf.ByteString getMetadataBytes() {
+      java.lang.Object ref = metadata_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        metadata_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+     * Check the Metadata enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string metadata = 86866735;</code>
+     *
+     * @param value The metadata to set.
      * @return This builder for chaining.
      */
-    public Builder setMetadataValue(int value) {
+    public Builder setMetadata(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000010;
       metadata_ = value;
       onChanged();
@@ -1633,39 +1695,16 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+     * Check the Metadata enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
+     * <code>optional string metadata = 86866735;</code>
      *
-     * @return The metadata.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata getMetadata() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata result =
-          com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata.valueOf(metadata_);
-      return result == null
-          ? com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
-     *
-     * @param value The metadata to set.
      * @return This builder for chaining.
      */
-    public Builder setMetadata(com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000010;
-      metadata_ = value.getNumber();
+    public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      metadata_ = getDefaultInstance().getMetadata();
       onChanged();
       return this;
     }
@@ -1674,15 +1713,21 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+     * Check the Metadata enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
+     * <code>optional string metadata = 86866735;</code>
      *
+     * @param value The bytes for metadata to set.
      * @return This builder for chaining.
      */
-    public Builder clearMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      metadata_ = 0;
+    public Builder setMetadataBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000010;
+      metadata_ = value;
       onChanged();
       return this;
     }

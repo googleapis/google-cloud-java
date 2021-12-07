@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.GlobalPublicDelegatedPrefixesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteGlobalPublicDelegatedPrefixeRequest;
 import com.google.cloud.compute.v1.GetGlobalPublicDelegatedPrefixeRequest;
@@ -39,6 +40,11 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class GlobalPublicDelegatedPrefixesStub implements BackgroundResource {
 
+  public OperationCallable<DeleteGlobalPublicDelegatedPrefixeRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteGlobalPublicDelegatedPrefixeRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
@@ -46,6 +52,11 @@ public abstract class GlobalPublicDelegatedPrefixesStub implements BackgroundRes
   public UnaryCallable<GetGlobalPublicDelegatedPrefixeRequest, PublicDelegatedPrefix>
       getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertGlobalPublicDelegatedPrefixeRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertGlobalPublicDelegatedPrefixeRequest, Operation> insertCallable() {
@@ -60,6 +71,11 @@ public abstract class GlobalPublicDelegatedPrefixesStub implements BackgroundRes
   public UnaryCallable<ListGlobalPublicDelegatedPrefixesRequest, PublicDelegatedPrefixList>
       listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<PatchGlobalPublicDelegatedPrefixeRequest, Operation, Operation>
+      patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
   }
 
   public UnaryCallable<PatchGlobalPublicDelegatedPrefixeRequest, Operation> patchCallable() {

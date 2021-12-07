@@ -26,11 +26,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListNodeTemplatesRequest;
 import com.google.cloud.compute.v1.DeleteNodeTemplateRequest;
@@ -42,10 +44,12 @@ import com.google.cloud.compute.v1.NodeTemplate;
 import com.google.cloud.compute.v1.NodeTemplateAggregatedList;
 import com.google.cloud.compute.v1.NodeTemplateList;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyNodeTemplateRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsNodeTemplateRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -63,6 +67,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<
           AggregatedListNodeTemplatesRequest, NodeTemplateAggregatedList>
       aggregatedListMethodDescriptor =
@@ -116,6 +123,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<NodeTemplateAggregatedList>newBuilder()
                       .setDefaultInstance(NodeTemplateAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -153,7 +161,21 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteNodeTemplateRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetNodeTemplateRequest, NodeTemplate>
@@ -187,6 +209,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<NodeTemplate>newBuilder()
                       .setDefaultInstance(NodeTemplate.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -226,6 +249,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -265,7 +289,21 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertNodeTemplateRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListNodeTemplatesRequest, NodeTemplateList>
@@ -316,6 +354,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<NodeTemplateList>newBuilder()
                       .setDefaultInstance(NodeTemplateList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -354,6 +393,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -394,6 +434,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
                       .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -402,9 +443,13 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
   private final UnaryCallable<AggregatedListNodeTemplatesRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
   private final UnaryCallable<DeleteNodeTemplateRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteNodeTemplateRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetNodeTemplateRequest, NodeTemplate> getCallable;
   private final UnaryCallable<GetIamPolicyNodeTemplateRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<InsertNodeTemplateRequest, Operation> insertCallable;
+  private final OperationCallable<InsertNodeTemplateRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListNodeTemplatesRequest, NodeTemplateList> listCallable;
   private final UnaryCallable<ListNodeTemplatesRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<SetIamPolicyNodeTemplateRequest, Policy> setIamPolicyCallable;
@@ -412,6 +457,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
       testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonNodeTemplatesStub create(NodeTemplatesStubSettings settings)
@@ -452,42 +498,52 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AggregatedListNodeTemplatesRequest, NodeTemplateAggregatedList>
         aggregatedListTransportSettings =
             HttpJsonCallSettings
                 .<AggregatedListNodeTemplatesRequest, NodeTemplateAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeleteNodeTemplateRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteNodeTemplateRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetNodeTemplateRequest, NodeTemplate> getTransportSettings =
         HttpJsonCallSettings.<GetNodeTemplateRequest, NodeTemplate>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetIamPolicyNodeTemplateRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyNodeTemplateRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertNodeTemplateRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertNodeTemplateRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListNodeTemplatesRequest, NodeTemplateList> listTransportSettings =
         HttpJsonCallSettings.<ListNodeTemplatesRequest, NodeTemplateList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetIamPolicyNodeTemplateRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyNodeTemplateRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<TestIamPermissionsNodeTemplateRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings
                 .<TestIamPermissionsNodeTemplateRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.aggregatedListCallable =
@@ -499,6 +555,12 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
@@ -508,6 +570,12 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -559,6 +627,12 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
   }
 
   @Override
+  public OperationCallable<DeleteNodeTemplateRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetNodeTemplateRequest, NodeTemplate> getCallable() {
     return getCallable;
   }
@@ -571,6 +645,12 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
   @Override
   public UnaryCallable<InsertNodeTemplateRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertNodeTemplateRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override

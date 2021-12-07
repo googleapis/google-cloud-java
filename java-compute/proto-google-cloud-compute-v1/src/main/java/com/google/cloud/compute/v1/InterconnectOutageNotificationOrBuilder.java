@@ -81,7 +81,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * A description about the purpose of the outage.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -93,7 +93,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * A description about the purpose of the outage.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -105,7 +105,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * A description about the purpose of the outage.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -118,7 +118,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * Scheduled end time for the outage (milliseconds since Unix epoch).
    * </pre>
    *
-   * <code>int64 end_time = 114938801;</code>
+   * <code>optional int64 end_time = 114938801;</code>
    *
    * @return Whether the endTime field is set.
    */
@@ -130,7 +130,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * Scheduled end time for the outage (milliseconds since Unix epoch).
    * </pre>
    *
-   * <code>int64 end_time = 114938801;</code>
+   * <code>optional int64 end_time = 114938801;</code>
    *
    * @return The endTime.
    */
@@ -140,13 +140,11 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * Form this outage is expected to take, which can take one of the following values:
-   * - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window.
-   * - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+   * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+   * Check the IssueType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 369639136;
-   * </code>
+   * <code>optional string issue_type = 369639136;</code>
    *
    * @return Whether the issueType field is set.
    */
@@ -155,32 +153,28 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * Form this outage is expected to take, which can take one of the following values:
-   * - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window.
-   * - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+   * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+   * Check the IssueType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 369639136;
-   * </code>
+   * <code>optional string issue_type = 369639136;</code>
    *
-   * @return The enum numeric value on the wire for issueType.
+   * @return The issueType.
    */
-  int getIssueTypeValue();
+  java.lang.String getIssueType();
   /**
    *
    *
    * <pre>
-   * Form this outage is expected to take, which can take one of the following values:
-   * - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window.
-   * - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+   * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+   * Check the IssueType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 369639136;
-   * </code>
+   * <code>optional string issue_type = 369639136;</code>
    *
-   * @return The issueType.
+   * @return The bytes for issueType.
    */
-  com.google.cloud.compute.v1.InterconnectOutageNotification.IssueType getIssueType();
+  com.google.protobuf.ByteString getIssueTypeBytes();
 
   /**
    *
@@ -189,7 +183,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * Unique identifier for this outage notification.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -201,7 +195,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * Unique identifier for this outage notification.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -213,7 +207,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * Unique identifier for this outage notification.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -223,11 +217,11 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * The party that generated this notification, which can take the following value:
-   * - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+   * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+   * Check the Source enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.Source source = 177235995;</code>
+   * <code>optional string source = 177235995;</code>
    *
    * @return Whether the source field is set.
    */
@@ -236,28 +230,28 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * The party that generated this notification, which can take the following value:
-   * - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+   * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+   * Check the Source enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.Source source = 177235995;</code>
+   * <code>optional string source = 177235995;</code>
    *
-   * @return The enum numeric value on the wire for source.
+   * @return The source.
    */
-  int getSourceValue();
+  java.lang.String getSource();
   /**
    *
    *
    * <pre>
-   * The party that generated this notification, which can take the following value:
-   * - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+   * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+   * Check the Source enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.Source source = 177235995;</code>
+   * <code>optional string source = 177235995;</code>
    *
-   * @return The source.
+   * @return The bytes for source.
    */
-  com.google.cloud.compute.v1.InterconnectOutageNotification.Source getSource();
+  com.google.protobuf.ByteString getSourceBytes();
 
   /**
    *
@@ -266,7 +260,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * Scheduled start time for the outage (milliseconds since Unix epoch).
    * </pre>
    *
-   * <code>int64 start_time = 37467274;</code>
+   * <code>optional int64 start_time = 37467274;</code>
    *
    * @return Whether the startTime field is set.
    */
@@ -278,7 +272,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * Scheduled start time for the outage (milliseconds since Unix epoch).
    * </pre>
    *
-   * <code>int64 start_time = 37467274;</code>
+   * <code>optional int64 start_time = 37467274;</code>
    *
    * @return The startTime.
    */
@@ -288,12 +282,11 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * State of this notification, which can take one of the following values:
-   * - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling.
-   * - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+   * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
    * @return Whether the state field is set.
    */
@@ -302,28 +295,26 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * State of this notification, which can take one of the following values:
-   * - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling.
-   * - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+   * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The enum numeric value on the wire for state.
+   * @return The state.
    */
-  int getStateValue();
+  java.lang.String getState();
   /**
    *
    *
    * <pre>
-   * State of this notification, which can take one of the following values:
-   * - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling.
-   * - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+   * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The state.
+   * @return The bytes for state.
    */
-  com.google.cloud.compute.v1.InterconnectOutageNotification.State getState();
+  com.google.protobuf.ByteString getStateBytes();
 }

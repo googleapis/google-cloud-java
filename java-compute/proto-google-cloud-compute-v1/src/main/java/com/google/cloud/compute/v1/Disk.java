@@ -22,12 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Persistent Disk resource.
- * Google Compute Engine has two Disk resources:
- * * [Zonal](/compute/docs/reference/rest/{$api_version}/disks) * [Regional](/compute/docs/reference/rest/{$api_version}/regionDisks)
- * Persistent disks are required for running your VM instances. Create both boot and non-boot (data) persistent disks. For more information, read Persistent Disks. For more storage options, read Storage options.
- * The disks resource represents a zonal persistent disk. For more information, read Zonal persistent disks.
- * The regionDisks resource represents a regional persistent disk. For more information, read  Regional resources. (== resource_for {$api_version}.disks ==) (== resource_for {$api_version}.regionDisks ==)
+ * Represents a Persistent Disk resource. Google Compute Engine has two Disk resources: * [Zonal](/compute/docs/reference/rest/v1/disks) * [Regional](/compute/docs/reference/rest/v1/regionDisks) Persistent disks are required for running your VM instances. Create both boot and non-boot (data) persistent disks. For more information, read Persistent Disks. For more storage options, read Storage options. The disks resource represents a zonal persistent disk. For more information, read Zonal persistent disks. The regionDisks resource represents a regional persistent disk. For more information, read Regional resources.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Disk}
@@ -66,7 +61,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     sourceSnapshot_ = "";
     sourceSnapshotId_ = "";
     sourceStorageObject_ = "";
-    status_ = 0;
+    status_ = "";
     type_ = "";
     users_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     zone_ = "";
@@ -265,11 +260,11 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
               labelFingerprint_ = s;
               break;
             }
-          case 1450082192:
+          case 1450082194:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x04000000;
-              status_ = rawValue;
+              status_ = s;
               break;
             }
           case 1494152864:
@@ -485,12 +480,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of disk creation.
-   * - CREATING: Disk is provisioning.
-   * - RESTORING: Source data is being copied into the disk.
-   * - FAILED: Disk creation failed.
-   * - READY: Disk is ready for use.
-   * - DELETING: Disk is deleting.
+   * [Output Only] The status of disk creation. - CREATING: Disk is provisioning. - RESTORING: Source data is being copied into the disk. - FAILED: Disk creation failed. - READY: Disk is ready for use. - DELETING: Disk is deleting.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Disk.Status}
@@ -506,15 +496,55 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>CREATING = 455564985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Disk is provisioning
+     * </pre>
+     *
+     * <code>CREATING = 455564985;</code>
+     */
     CREATING(455564985),
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Disk is deleting.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     DELETING(528602024),
-    /** <code>FAILED = 455706685;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Disk creation failed.
+     * </pre>
+     *
+     * <code>FAILED = 455706685;</code>
+     */
     FAILED(455706685),
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Disk is ready for use.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     READY(77848963),
-    /** <code>RESTORING = 404263851;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Source data is being copied into the disk.
+     * </pre>
+     *
+     * <code>RESTORING = 404263851;</code>
+     */
     RESTORING(404263851),
     UNRECOGNIZED(-1),
     ;
@@ -529,15 +559,55 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>CREATING = 455564985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Disk is provisioning
+     * </pre>
+     *
+     * <code>CREATING = 455564985;</code>
+     */
     public static final int CREATING_VALUE = 455564985;
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Disk is deleting.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     public static final int DELETING_VALUE = 528602024;
-    /** <code>FAILED = 455706685;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Disk creation failed.
+     * </pre>
+     *
+     * <code>FAILED = 455706685;</code>
+     */
     public static final int FAILED_VALUE = 455706685;
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Disk is ready for use.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     public static final int READY_VALUE = 77848963;
-    /** <code>RESTORING = 404263851;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Source data is being copied into the disk.
+     * </pre>
+     *
+     * <code>RESTORING = 404263851;</code>
+     */
     public static final int RESTORING_VALUE = 404263851;
 
     public final int getNumber() {
@@ -639,7 +709,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -654,7 +724,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -677,7 +747,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -703,7 +773,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -718,7 +788,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -741,7 +811,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -764,13 +834,11 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts the disk using a customer-supplied encryption key.
-   * After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later (e.g. to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine).
-   * Customer-supplied encryption keys do not protect access to metadata of the disk.
-   * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
+   * Encrypts the disk using a customer-supplied encryption key or a customer-managed encryption key. Encryption keys do not protect access to metadata of the disk. After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later. For example, to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine. After you encrypt a disk with a customer-managed key, the diskEncryptionKey.kmsKeyName is set to a key *version* name once the disk is created. The disk is encrypted with this version of the key. In the response, diskEncryptionKey.kmsKeyName appears in the following format: "diskEncryptionKey.kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeysVersions/version If you do not provide an encryption key when creating the disk, then the disk is encrypted using an automatically generated key and you don't need to provide a key to use the disk later.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+   * </code>
    *
    * @return Whether the diskEncryptionKey field is set.
    */
@@ -782,13 +850,11 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts the disk using a customer-supplied encryption key.
-   * After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later (e.g. to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine).
-   * Customer-supplied encryption keys do not protect access to metadata of the disk.
-   * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
+   * Encrypts the disk using a customer-supplied encryption key or a customer-managed encryption key. Encryption keys do not protect access to metadata of the disk. After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later. For example, to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine. After you encrypt a disk with a customer-managed key, the diskEncryptionKey.kmsKeyName is set to a key *version* name once the disk is created. The disk is encrypted with this version of the key. In the response, diskEncryptionKey.kmsKeyName appears in the following format: "diskEncryptionKey.kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeysVersions/version If you do not provide an encryption key when creating the disk, then the disk is encrypted using an automatically generated key and you don't need to provide a key to use the disk later.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+   * </code>
    *
    * @return The diskEncryptionKey.
    */
@@ -802,13 +868,11 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts the disk using a customer-supplied encryption key.
-   * After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later (e.g. to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine).
-   * Customer-supplied encryption keys do not protect access to metadata of the disk.
-   * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
+   * Encrypts the disk using a customer-supplied encryption key or a customer-managed encryption key. Encryption keys do not protect access to metadata of the disk. After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later. For example, to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine. After you encrypt a disk with a customer-managed key, the diskEncryptionKey.kmsKeyName is set to a key *version* name once the disk is created. The disk is encrypted with this version of the key. In the response, diskEncryptionKey.kmsKeyName appears in the following format: "diskEncryptionKey.kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeysVersions/version If you do not provide an encryption key when creating the disk, then the disk is encrypted using an automatically generated key and you don't need to provide a key to use the disk later.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
@@ -824,7 +888,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -837,7 +901,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -851,7 +915,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -864,7 +928,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -877,7 +941,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -897,7 +961,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -912,7 +976,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -930,7 +994,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#disk for disks.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -945,7 +1009,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#disk for disks.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -968,7 +1032,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#disk for disks.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -991,11 +1055,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a disk.
+   * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a disk.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return Whether the labelFingerprint field is set.
    */
@@ -1007,11 +1070,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a disk.
+   * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a disk.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return The labelFingerprint.
    */
@@ -1031,11 +1093,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a disk.
+   * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a disk.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return The bytes for labelFingerprint.
    */
@@ -1159,7 +1220,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Last attach timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_attach_timestamp = 42159653;</code>
+   * <code>optional string last_attach_timestamp = 42159653;</code>
    *
    * @return Whether the lastAttachTimestamp field is set.
    */
@@ -1174,7 +1235,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Last attach timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_attach_timestamp = 42159653;</code>
+   * <code>optional string last_attach_timestamp = 42159653;</code>
    *
    * @return The lastAttachTimestamp.
    */
@@ -1197,7 +1258,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Last attach timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_attach_timestamp = 42159653;</code>
+   * <code>optional string last_attach_timestamp = 42159653;</code>
    *
    * @return The bytes for lastAttachTimestamp.
    */
@@ -1223,7 +1284,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Last detach timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_detach_timestamp = 56471027;</code>
+   * <code>optional string last_detach_timestamp = 56471027;</code>
    *
    * @return Whether the lastDetachTimestamp field is set.
    */
@@ -1238,7 +1299,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Last detach timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_detach_timestamp = 56471027;</code>
+   * <code>optional string last_detach_timestamp = 56471027;</code>
    *
    * @return The lastDetachTimestamp.
    */
@@ -1261,7 +1322,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Last detach timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_detach_timestamp = 56471027;</code>
+   * <code>optional string last_detach_timestamp = 56471027;</code>
    *
    * @return The bytes for lastDetachTimestamp.
    */
@@ -1397,7 +1458,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * An opaque location hint used to place the disk close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return Whether the locationHint field is set.
    */
@@ -1412,7 +1473,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * An opaque location hint used to place the disk close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return The locationHint.
    */
@@ -1435,7 +1496,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * An opaque location hint used to place the disk close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return The bytes for locationHint.
    */
@@ -1461,7 +1522,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -1476,7 +1537,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -1499,7 +1560,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -1525,7 +1586,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Internal use only.
    * </pre>
    *
-   * <code>string options = 361137822;</code>
+   * <code>optional string options = 361137822;</code>
    *
    * @return Whether the options field is set.
    */
@@ -1540,7 +1601,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Internal use only.
    * </pre>
    *
-   * <code>string options = 361137822;</code>
+   * <code>optional string options = 361137822;</code>
    *
    * @return The options.
    */
@@ -1563,7 +1624,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Internal use only.
    * </pre>
    *
-   * <code>string options = 361137822;</code>
+   * <code>optional string options = 361137822;</code>
    *
    * @return The bytes for options.
    */
@@ -1589,7 +1650,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
    * </pre>
    *
-   * <code>int64 physical_block_size_bytes = 420007943;</code>
+   * <code>optional int64 physical_block_size_bytes = 420007943;</code>
    *
    * @return Whether the physicalBlockSizeBytes field is set.
    */
@@ -1604,7 +1665,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
    * </pre>
    *
-   * <code>int64 physical_block_size_bytes = 420007943;</code>
+   * <code>optional int64 physical_block_size_bytes = 420007943;</code>
    *
    * @return The physicalBlockSizeBytes.
    */
@@ -1619,10 +1680,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates how many IOPS must be provisioned for the disk.
+   * Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see the Extreme persistent disk documentation.
    * </pre>
    *
-   * <code>int64 provisioned_iops = 186769108;</code>
+   * <code>optional int64 provisioned_iops = 186769108;</code>
    *
    * @return Whether the provisionedIops field is set.
    */
@@ -1634,10 +1695,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates how many IOPS must be provisioned for the disk.
+   * Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see the Extreme persistent disk documentation.
    * </pre>
    *
-   * <code>int64 provisioned_iops = 186769108;</code>
+   * <code>optional int64 provisioned_iops = 186769108;</code>
    *
    * @return The provisionedIops.
    */
@@ -1655,7 +1716,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where the disk resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -1670,7 +1731,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where the disk resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -1693,7 +1754,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where the disk resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -1841,7 +1902,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Reserved for future use.
    * </pre>
    *
-   * <code>bool satisfies_pzs = 480964267;</code>
+   * <code>optional bool satisfies_pzs = 480964267;</code>
    *
    * @return Whether the satisfiesPzs field is set.
    */
@@ -1856,7 +1917,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Reserved for future use.
    * </pre>
    *
-   * <code>bool satisfies_pzs = 480964267;</code>
+   * <code>optional bool satisfies_pzs = 480964267;</code>
    *
    * @return The satisfiesPzs.
    */
@@ -1874,7 +1935,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -1889,7 +1950,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1912,7 +1973,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1935,11 +1996,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk.
-   * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
+   * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk. If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
    * </pre>
    *
-   * <code>int64 size_gb = 494929369;</code>
+   * <code>optional int64 size_gb = 494929369;</code>
    *
    * @return Whether the sizeGb field is set.
    */
@@ -1951,11 +2011,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk.
-   * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
+   * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk. If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
    * </pre>
    *
-   * <code>int64 size_gb = 494929369;</code>
+   * <code>optional int64 size_gb = 494929369;</code>
    *
    * @return The sizeGb.
    */
@@ -1970,16 +2029,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk
-   * - projects/project/zones/zone/disks/disk
-   * - projects/project/regions/region/disks/disk
-   * - zones/zone/disks/disk
-   * - regions/region/disks/disk
+   * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - https://www.googleapis.com/compute/v1/projects/project/regions/region /disks/disk - projects/project/zones/zone/disks/disk - projects/project/regions/region/disks/disk - zones/zone/disks/disk - regions/region/disks/disk
    * </pre>
    *
-   * <code>string source_disk = 451753793;</code>
+   * <code>optional string source_disk = 451753793;</code>
    *
    * @return Whether the sourceDisk field is set.
    */
@@ -1991,16 +2044,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk
-   * - projects/project/zones/zone/disks/disk
-   * - projects/project/regions/region/disks/disk
-   * - zones/zone/disks/disk
-   * - regions/region/disks/disk
+   * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - https://www.googleapis.com/compute/v1/projects/project/regions/region /disks/disk - projects/project/zones/zone/disks/disk - projects/project/regions/region/disks/disk - zones/zone/disks/disk - regions/region/disks/disk
    * </pre>
    *
-   * <code>string source_disk = 451753793;</code>
+   * <code>optional string source_disk = 451753793;</code>
    *
    * @return The sourceDisk.
    */
@@ -2020,16 +2067,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk
-   * - projects/project/zones/zone/disks/disk
-   * - projects/project/regions/region/disks/disk
-   * - zones/zone/disks/disk
-   * - regions/region/disks/disk
+   * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - https://www.googleapis.com/compute/v1/projects/project/regions/region /disks/disk - projects/project/zones/zone/disks/disk - projects/project/regions/region/disks/disk - zones/zone/disks/disk - regions/region/disks/disk
    * </pre>
    *
-   * <code>string source_disk = 451753793;</code>
+   * <code>optional string source_disk = 451753793;</code>
    *
    * @return The bytes for sourceDisk.
    */
@@ -2055,7 +2096,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
    * </pre>
    *
-   * <code>string source_disk_id = 454190809;</code>
+   * <code>optional string source_disk_id = 454190809;</code>
    *
    * @return Whether the sourceDiskId field is set.
    */
@@ -2070,7 +2111,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
    * </pre>
    *
-   * <code>string source_disk_id = 454190809;</code>
+   * <code>optional string source_disk_id = 454190809;</code>
    *
    * @return The sourceDiskId.
    */
@@ -2093,7 +2134,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
    * </pre>
    *
-   * <code>string source_disk_id = 454190809;</code>
+   * <code>optional string source_disk_id = 454190809;</code>
    *
    * @return The bytes for sourceDiskId.
    */
@@ -2116,18 +2157,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The source image used to create this disk. If the source image is deleted, this field will not be set.
-   * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-   * projects/debian-cloud/global/images/family/debian-9
-   * Alternatively, use a specific version of a public operating system image:
-   * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-   * To create a disk with a custom image that you created, specify the image name in the following format:
-   * global/images/my-custom-image
-   * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-   * global/images/family/my-image-family
+   * The source image used to create this disk. If the source image is deleted, this field will not be set. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family
    * </pre>
    *
-   * <code>string source_image = 50443319;</code>
+   * <code>optional string source_image = 50443319;</code>
    *
    * @return Whether the sourceImage field is set.
    */
@@ -2139,18 +2172,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The source image used to create this disk. If the source image is deleted, this field will not be set.
-   * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-   * projects/debian-cloud/global/images/family/debian-9
-   * Alternatively, use a specific version of a public operating system image:
-   * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-   * To create a disk with a custom image that you created, specify the image name in the following format:
-   * global/images/my-custom-image
-   * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-   * global/images/family/my-image-family
+   * The source image used to create this disk. If the source image is deleted, this field will not be set. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family
    * </pre>
    *
-   * <code>string source_image = 50443319;</code>
+   * <code>optional string source_image = 50443319;</code>
    *
    * @return The sourceImage.
    */
@@ -2170,18 +2195,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The source image used to create this disk. If the source image is deleted, this field will not be set.
-   * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-   * projects/debian-cloud/global/images/family/debian-9
-   * Alternatively, use a specific version of a public operating system image:
-   * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-   * To create a disk with a custom image that you created, specify the image name in the following format:
-   * global/images/my-custom-image
-   * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-   * global/images/family/my-image-family
+   * The source image used to create this disk. If the source image is deleted, this field will not be set. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family
    * </pre>
    *
-   * <code>string source_image = 50443319;</code>
+   * <code>optional string source_image = 50443319;</code>
    *
    * @return The bytes for sourceImage.
    */
@@ -2207,7 +2224,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    *
    * @return Whether the sourceImageEncryptionKey field is set.
@@ -2223,7 +2241,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    *
    * @return The sourceImageEncryptionKey.
@@ -2241,7 +2260,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    */
   @java.lang.Override
@@ -2261,7 +2281,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The ID value of the image used to create this disk. This value identifies the exact image that was used to create this persistent disk. For example, if you created the persistent disk from an image that was later deleted and recreated under the same name, the source image ID would identify the exact version of the image that was used.
    * </pre>
    *
-   * <code>string source_image_id = 55328291;</code>
+   * <code>optional string source_image_id = 55328291;</code>
    *
    * @return Whether the sourceImageId field is set.
    */
@@ -2276,7 +2296,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The ID value of the image used to create this disk. This value identifies the exact image that was used to create this persistent disk. For example, if you created the persistent disk from an image that was later deleted and recreated under the same name, the source image ID would identify the exact version of the image that was used.
    * </pre>
    *
-   * <code>string source_image_id = 55328291;</code>
+   * <code>optional string source_image_id = 55328291;</code>
    *
    * @return The sourceImageId.
    */
@@ -2299,7 +2319,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The ID value of the image used to create this disk. This value identifies the exact image that was used to create this persistent disk. For example, if you created the persistent disk from an image that was later deleted and recreated under the same name, the source image ID would identify the exact version of the image that was used.
    * </pre>
    *
-   * <code>string source_image_id = 55328291;</code>
+   * <code>optional string source_image_id = 55328291;</code>
    *
    * @return The bytes for sourceImageId.
    */
@@ -2322,13 +2342,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot
-   * - projects/project/global/snapshots/snapshot
-   * - global/snapshots/snapshot
+   * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project /global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot
    * </pre>
    *
-   * <code>string source_snapshot = 126061928;</code>
+   * <code>optional string source_snapshot = 126061928;</code>
    *
    * @return Whether the sourceSnapshot field is set.
    */
@@ -2340,13 +2357,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot
-   * - projects/project/global/snapshots/snapshot
-   * - global/snapshots/snapshot
+   * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project /global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot
    * </pre>
    *
-   * <code>string source_snapshot = 126061928;</code>
+   * <code>optional string source_snapshot = 126061928;</code>
    *
    * @return The sourceSnapshot.
    */
@@ -2366,13 +2380,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot
-   * - projects/project/global/snapshots/snapshot
-   * - global/snapshots/snapshot
+   * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project /global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot
    * </pre>
    *
-   * <code>string source_snapshot = 126061928;</code>
+   * <code>optional string source_snapshot = 126061928;</code>
    *
    * @return The bytes for sourceSnapshot.
    */
@@ -2399,7 +2410,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    *
    * @return Whether the sourceSnapshotEncryptionKey field is set.
@@ -2416,7 +2427,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    *
    * @return The sourceSnapshotEncryptionKey.
@@ -2435,7 +2446,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    */
   @java.lang.Override
@@ -2455,7 +2466,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique ID of the snapshot used to create this disk. This value identifies the exact snapshot that was used to create this persistent disk. For example, if you created the persistent disk from a snapshot that was later deleted and recreated under the same name, the source snapshot ID would identify the exact version of the snapshot that was used.
    * </pre>
    *
-   * <code>string source_snapshot_id = 98962258;</code>
+   * <code>optional string source_snapshot_id = 98962258;</code>
    *
    * @return Whether the sourceSnapshotId field is set.
    */
@@ -2470,7 +2481,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique ID of the snapshot used to create this disk. This value identifies the exact snapshot that was used to create this persistent disk. For example, if you created the persistent disk from a snapshot that was later deleted and recreated under the same name, the source snapshot ID would identify the exact version of the snapshot that was used.
    * </pre>
    *
-   * <code>string source_snapshot_id = 98962258;</code>
+   * <code>optional string source_snapshot_id = 98962258;</code>
    *
    * @return The sourceSnapshotId.
    */
@@ -2493,7 +2504,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique ID of the snapshot used to create this disk. This value identifies the exact snapshot that was used to create this persistent disk. For example, if you created the persistent disk from a snapshot that was later deleted and recreated under the same name, the source snapshot ID would identify the exact version of the snapshot that was used.
    * </pre>
    *
-   * <code>string source_snapshot_id = 98962258;</code>
+   * <code>optional string source_snapshot_id = 98962258;</code>
    *
    * @return The bytes for sourceSnapshotId.
    */
@@ -2519,7 +2530,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * The full Google Cloud Storage URI where the disk image is stored. This file must be a gzip-compressed tarball whose name ends in .tar.gz or virtual machine disk whose name ends in vmdk. Valid URIs may start with gs:// or https://storage.googleapis.com/. This flag is not optimized for creating multiple disks from a source storage object. To create many disks from a source storage object, use gcloud compute images import instead.
    * </pre>
    *
-   * <code>string source_storage_object = 233052711;</code>
+   * <code>optional string source_storage_object = 233052711;</code>
    *
    * @return Whether the sourceStorageObject field is set.
    */
@@ -2534,7 +2545,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * The full Google Cloud Storage URI where the disk image is stored. This file must be a gzip-compressed tarball whose name ends in .tar.gz or virtual machine disk whose name ends in vmdk. Valid URIs may start with gs:// or https://storage.googleapis.com/. This flag is not optimized for creating multiple disks from a source storage object. To create many disks from a source storage object, use gcloud compute images import instead.
    * </pre>
    *
-   * <code>string source_storage_object = 233052711;</code>
+   * <code>optional string source_storage_object = 233052711;</code>
    *
    * @return The sourceStorageObject.
    */
@@ -2557,7 +2568,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * The full Google Cloud Storage URI where the disk image is stored. This file must be a gzip-compressed tarball whose name ends in .tar.gz or virtual machine disk whose name ends in vmdk. Valid URIs may start with gs:// or https://storage.googleapis.com/. This flag is not optimized for creating multiple disks from a source storage object. To create many disks from a source storage object, use gcloud compute images import instead.
    * </pre>
    *
-   * <code>string source_storage_object = 233052711;</code>
+   * <code>optional string source_storage_object = 233052711;</code>
    *
    * @return The bytes for sourceStorageObject.
    */
@@ -2575,20 +2586,16 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    *
    *
    * <pre>
-   * [Output Only] The status of disk creation.
-   * - CREATING: Disk is provisioning.
-   * - RESTORING: Source data is being copied into the disk.
-   * - FAILED: Disk creation failed.
-   * - READY: Disk is ready for use.
-   * - DELETING: Disk is deleting.
+   * [Output Only] The status of disk creation. - CREATING: Disk is provisioning. - RESTORING: Source data is being copied into the disk. - FAILED: Disk creation failed. - READY: Disk is ready for use. - DELETING: Disk is deleting.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Disk.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -2600,44 +2607,49 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of disk creation.
-   * - CREATING: Disk is provisioning.
-   * - RESTORING: Source data is being copied into the disk.
-   * - FAILED: Disk creation failed.
-   * - READY: Disk is ready for use.
-   * - DELETING: Disk is deleting.
+   * [Output Only] The status of disk creation. - CREATING: Disk is provisioning. - RESTORING: Source data is being copied into the disk. - FAILED: Disk creation failed. - READY: Disk is ready for use. - DELETING: Disk is deleting.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Disk.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
   @java.lang.Override
-  public int getStatusValue() {
-    return status_;
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * [Output Only] The status of disk creation.
-   * - CREATING: Disk is provisioning.
-   * - RESTORING: Source data is being copied into the disk.
-   * - FAILED: Disk creation failed.
-   * - READY: Disk is ready for use.
-   * - DELETING: Disk is deleting.
+   * [Output Only] The status of disk creation. - CREATING: Disk is provisioning. - RESTORING: Source data is being copied into the disk. - FAILED: Disk creation failed. - READY: Disk is ready for use. - DELETING: Disk is deleting.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Disk.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.Disk.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Disk.Status result =
-        com.google.cloud.compute.v1.Disk.Status.valueOf(status_);
-    return result == null ? com.google.cloud.compute.v1.Disk.Status.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
@@ -2646,10 +2658,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project/zones/zone/diskTypes/pd-standard  or pd-ssd
+   * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project /zones/zone/diskTypes/pd-ssd . See Persistent disk types.
    * </pre>
    *
-   * <code>string type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
    * @return Whether the type field is set.
    */
@@ -2661,10 +2673,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project/zones/zone/diskTypes/pd-standard  or pd-ssd
+   * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project /zones/zone/diskTypes/pd-ssd . See Persistent disk types.
    * </pre>
    *
-   * <code>string type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
    * @return The type.
    */
@@ -2684,10 +2696,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project/zones/zone/diskTypes/pd-standard  or pd-ssd
+   * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project /zones/zone/diskTypes/pd-ssd . See Persistent disk types.
    * </pre>
    *
-   * <code>string type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
    * @return The bytes for type.
    */
@@ -2774,7 +2786,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the zone where the disk resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return Whether the zone field is set.
    */
@@ -2789,7 +2801,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the zone where the disk resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The zone.
    */
@@ -2812,7 +2824,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the zone where the disk resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The bytes for zone.
    */
@@ -2907,7 +2919,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178124825, labelFingerprint_);
     }
     if (((bitField0_ & 0x04000000) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00001000) != 0)) {
       output.writeInt64(186769108, provisionedIops_);
@@ -3054,7 +3066,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.GeneratedMessageV3.computeStringSize(178124825, labelFingerprint_);
     }
     if (((bitField0_ & 0x04000000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(186769108, provisionedIops_);
@@ -3253,7 +3265,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus().equals(other.getStatus())) return false;
     }
     if (hasType() != other.hasType()) return false;
     if (hasType()) {
@@ -3405,7 +3417,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     if (hasType()) {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
@@ -3522,12 +3534,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Persistent Disk resource.
-   * Google Compute Engine has two Disk resources:
-   * * [Zonal](/compute/docs/reference/rest/{$api_version}/disks) * [Regional](/compute/docs/reference/rest/{$api_version}/regionDisks)
-   * Persistent disks are required for running your VM instances. Create both boot and non-boot (data) persistent disks. For more information, read Persistent Disks. For more storage options, read Storage options.
-   * The disks resource represents a zonal persistent disk. For more information, read Zonal persistent disks.
-   * The regionDisks resource represents a regional persistent disk. For more information, read  Regional resources. (== resource_for {$api_version}.disks ==) (== resource_for {$api_version}.regionDisks ==)
+   * Represents a Persistent Disk resource. Google Compute Engine has two Disk resources: * [Zonal](/compute/docs/reference/rest/v1/disks) * [Regional](/compute/docs/reference/rest/v1/regionDisks) Persistent disks are required for running your VM instances. Create both boot and non-boot (data) persistent disks. For more information, read Persistent Disks. For more storage options, read Storage options. The disks resource represents a zonal persistent disk. For more information, read Zonal persistent disks. The regionDisks resource represents a regional persistent disk. For more information, read Regional resources.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Disk}
@@ -3672,7 +3679,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x40000000);
       sourceStorageObject_ = "";
       bitField0_ = (bitField0_ & ~0x80000000);
-      status_ = 0;
+      status_ = "";
       bitField1_ = (bitField1_ & ~0x00000001);
       type_ = "";
       bitField1_ = (bitField1_ & ~0x00000002);
@@ -4106,7 +4113,9 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField1_ |= 0x00000001;
+        status_ = other.status_;
+        onChanged();
       }
       if (other.hasType()) {
         bitField1_ |= 0x00000002;
@@ -4168,7 +4177,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -4182,7 +4191,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -4204,7 +4213,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -4226,7 +4235,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -4247,7 +4256,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -4264,7 +4273,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -4288,7 +4297,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -4302,7 +4311,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -4324,7 +4333,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -4346,7 +4355,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -4367,7 +4376,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -4384,7 +4393,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -4410,13 +4419,12 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the disk using a customer-supplied encryption key.
-     * After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later (e.g. to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine).
-     * Customer-supplied encryption keys do not protect access to metadata of the disk.
-     * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
+     * Encrypts the disk using a customer-supplied encryption key or a customer-managed encryption key. Encryption keys do not protect access to metadata of the disk. After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later. For example, to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine. After you encrypt a disk with a customer-managed key, the diskEncryptionKey.kmsKeyName is set to a key *version* name once the disk is created. The disk is encrypted with this version of the key. In the response, diskEncryptionKey.kmsKeyName appears in the following format: "diskEncryptionKey.kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeysVersions/version If you do not provide an encryption key when creating the disk, then the disk is encrypted using an automatically generated key and you don't need to provide a key to use the disk later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      *
      * @return Whether the diskEncryptionKey field is set.
      */
@@ -4427,13 +4435,12 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the disk using a customer-supplied encryption key.
-     * After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later (e.g. to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine).
-     * Customer-supplied encryption keys do not protect access to metadata of the disk.
-     * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
+     * Encrypts the disk using a customer-supplied encryption key or a customer-managed encryption key. Encryption keys do not protect access to metadata of the disk. After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later. For example, to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine. After you encrypt a disk with a customer-managed key, the diskEncryptionKey.kmsKeyName is set to a key *version* name once the disk is created. The disk is encrypted with this version of the key. In the response, diskEncryptionKey.kmsKeyName appears in the following format: "diskEncryptionKey.kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeysVersions/version If you do not provide an encryption key when creating the disk, then the disk is encrypted using an automatically generated key and you don't need to provide a key to use the disk later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      *
      * @return The diskEncryptionKey.
      */
@@ -4450,13 +4457,12 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the disk using a customer-supplied encryption key.
-     * After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later (e.g. to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine).
-     * Customer-supplied encryption keys do not protect access to metadata of the disk.
-     * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
+     * Encrypts the disk using a customer-supplied encryption key or a customer-managed encryption key. Encryption keys do not protect access to metadata of the disk. After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later. For example, to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine. After you encrypt a disk with a customer-managed key, the diskEncryptionKey.kmsKeyName is set to a key *version* name once the disk is created. The disk is encrypted with this version of the key. In the response, diskEncryptionKey.kmsKeyName appears in the following format: "diskEncryptionKey.kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeysVersions/version If you do not provide an encryption key when creating the disk, then the disk is encrypted using an automatically generated key and you don't need to provide a key to use the disk later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     public Builder setDiskEncryptionKey(com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (diskEncryptionKeyBuilder_ == null) {
@@ -4475,13 +4481,12 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the disk using a customer-supplied encryption key.
-     * After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later (e.g. to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine).
-     * Customer-supplied encryption keys do not protect access to metadata of the disk.
-     * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
+     * Encrypts the disk using a customer-supplied encryption key or a customer-managed encryption key. Encryption keys do not protect access to metadata of the disk. After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later. For example, to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine. After you encrypt a disk with a customer-managed key, the diskEncryptionKey.kmsKeyName is set to a key *version* name once the disk is created. The disk is encrypted with this version of the key. In the response, diskEncryptionKey.kmsKeyName appears in the following format: "diskEncryptionKey.kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeysVersions/version If you do not provide an encryption key when creating the disk, then the disk is encrypted using an automatically generated key and you don't need to provide a key to use the disk later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     public Builder setDiskEncryptionKey(
         com.google.cloud.compute.v1.CustomerEncryptionKey.Builder builderForValue) {
@@ -4498,13 +4503,12 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the disk using a customer-supplied encryption key.
-     * After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later (e.g. to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine).
-     * Customer-supplied encryption keys do not protect access to metadata of the disk.
-     * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
+     * Encrypts the disk using a customer-supplied encryption key or a customer-managed encryption key. Encryption keys do not protect access to metadata of the disk. After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later. For example, to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine. After you encrypt a disk with a customer-managed key, the diskEncryptionKey.kmsKeyName is set to a key *version* name once the disk is created. The disk is encrypted with this version of the key. In the response, diskEncryptionKey.kmsKeyName appears in the following format: "diskEncryptionKey.kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeysVersions/version If you do not provide an encryption key when creating the disk, then the disk is encrypted using an automatically generated key and you don't need to provide a key to use the disk later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     public Builder mergeDiskEncryptionKey(com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (diskEncryptionKeyBuilder_ == null) {
@@ -4530,13 +4534,12 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the disk using a customer-supplied encryption key.
-     * After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later (e.g. to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine).
-     * Customer-supplied encryption keys do not protect access to metadata of the disk.
-     * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
+     * Encrypts the disk using a customer-supplied encryption key or a customer-managed encryption key. Encryption keys do not protect access to metadata of the disk. After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later. For example, to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine. After you encrypt a disk with a customer-managed key, the diskEncryptionKey.kmsKeyName is set to a key *version* name once the disk is created. The disk is encrypted with this version of the key. In the response, diskEncryptionKey.kmsKeyName appears in the following format: "diskEncryptionKey.kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeysVersions/version If you do not provide an encryption key when creating the disk, then the disk is encrypted using an automatically generated key and you don't need to provide a key to use the disk later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     public Builder clearDiskEncryptionKey() {
       if (diskEncryptionKeyBuilder_ == null) {
@@ -4552,13 +4555,12 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the disk using a customer-supplied encryption key.
-     * After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later (e.g. to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine).
-     * Customer-supplied encryption keys do not protect access to metadata of the disk.
-     * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
+     * Encrypts the disk using a customer-supplied encryption key or a customer-managed encryption key. Encryption keys do not protect access to metadata of the disk. After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later. For example, to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine. After you encrypt a disk with a customer-managed key, the diskEncryptionKey.kmsKeyName is set to a key *version* name once the disk is created. The disk is encrypted with this version of the key. In the response, diskEncryptionKey.kmsKeyName appears in the following format: "diskEncryptionKey.kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeysVersions/version If you do not provide an encryption key when creating the disk, then the disk is encrypted using an automatically generated key and you don't need to provide a key to use the disk later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder getDiskEncryptionKeyBuilder() {
       bitField0_ |= 0x00000004;
@@ -4569,13 +4571,12 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the disk using a customer-supplied encryption key.
-     * After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later (e.g. to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine).
-     * Customer-supplied encryption keys do not protect access to metadata of the disk.
-     * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
+     * Encrypts the disk using a customer-supplied encryption key or a customer-managed encryption key. Encryption keys do not protect access to metadata of the disk. After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later. For example, to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine. After you encrypt a disk with a customer-managed key, the diskEncryptionKey.kmsKeyName is set to a key *version* name once the disk is created. The disk is encrypted with this version of the key. In the response, diskEncryptionKey.kmsKeyName appears in the following format: "diskEncryptionKey.kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeysVersions/version If you do not provide an encryption key when creating the disk, then the disk is encrypted using an automatically generated key and you don't need to provide a key to use the disk later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
         getDiskEncryptionKeyOrBuilder() {
@@ -4591,13 +4592,12 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the disk using a customer-supplied encryption key.
-     * After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later (e.g. to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine).
-     * Customer-supplied encryption keys do not protect access to metadata of the disk.
-     * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
+     * Encrypts the disk using a customer-supplied encryption key or a customer-managed encryption key. Encryption keys do not protect access to metadata of the disk. After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later. For example, to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine. After you encrypt a disk with a customer-managed key, the diskEncryptionKey.kmsKeyName is set to a key *version* name once the disk is created. The disk is encrypted with this version of the key. In the response, diskEncryptionKey.kmsKeyName appears in the following format: "diskEncryptionKey.kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeysVersions/version If you do not provide an encryption key when creating the disk, then the disk is encrypted using an automatically generated key and you don't need to provide a key to use the disk later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.CustomerEncryptionKey,
@@ -4637,7 +4637,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4653,7 +4653,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4669,7 +4669,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4685,7 +4685,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4707,7 +4707,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4727,7 +4727,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4749,7 +4749,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4771,7 +4771,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4791,7 +4791,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4811,7 +4811,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4831,7 +4831,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4850,7 +4850,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4869,7 +4869,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4881,7 +4881,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4898,7 +4898,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4915,7 +4915,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4928,7 +4928,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4941,7 +4941,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4979,7 +4979,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -4994,7 +4994,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -5009,7 +5009,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -5027,7 +5027,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -5046,7 +5046,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#disk for disks.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -5060,7 +5060,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#disk for disks.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -5082,7 +5082,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#disk for disks.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -5104,7 +5104,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#disk for disks.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -5125,7 +5125,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#disk for disks.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -5142,7 +5142,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#disk for disks.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -5163,11 +5163,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a disk.
+     * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a disk.
      * </pre>
      *
-     * <code>string label_fingerprint = 178124825;</code>
+     * <code>optional string label_fingerprint = 178124825;</code>
      *
      * @return Whether the labelFingerprint field is set.
      */
@@ -5178,11 +5177,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a disk.
+     * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a disk.
      * </pre>
      *
-     * <code>string label_fingerprint = 178124825;</code>
+     * <code>optional string label_fingerprint = 178124825;</code>
      *
      * @return The labelFingerprint.
      */
@@ -5201,11 +5199,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a disk.
+     * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a disk.
      * </pre>
      *
-     * <code>string label_fingerprint = 178124825;</code>
+     * <code>optional string label_fingerprint = 178124825;</code>
      *
      * @return The bytes for labelFingerprint.
      */
@@ -5224,11 +5221,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a disk.
+     * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a disk.
      * </pre>
      *
-     * <code>string label_fingerprint = 178124825;</code>
+     * <code>optional string label_fingerprint = 178124825;</code>
      *
      * @param value The labelFingerprint to set.
      * @return This builder for chaining.
@@ -5246,11 +5242,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a disk.
+     * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a disk.
      * </pre>
      *
-     * <code>string label_fingerprint = 178124825;</code>
+     * <code>optional string label_fingerprint = 178124825;</code>
      *
      * @return This builder for chaining.
      */
@@ -5264,11 +5259,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a disk.
+     * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a disk.
      * </pre>
      *
-     * <code>string label_fingerprint = 178124825;</code>
+     * <code>optional string label_fingerprint = 178124825;</code>
      *
      * @param value The bytes for labelFingerprint to set.
      * @return This builder for chaining.
@@ -5449,7 +5443,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Last attach timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string last_attach_timestamp = 42159653;</code>
+     * <code>optional string last_attach_timestamp = 42159653;</code>
      *
      * @return Whether the lastAttachTimestamp field is set.
      */
@@ -5463,7 +5457,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Last attach timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string last_attach_timestamp = 42159653;</code>
+     * <code>optional string last_attach_timestamp = 42159653;</code>
      *
      * @return The lastAttachTimestamp.
      */
@@ -5485,7 +5479,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Last attach timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string last_attach_timestamp = 42159653;</code>
+     * <code>optional string last_attach_timestamp = 42159653;</code>
      *
      * @return The bytes for lastAttachTimestamp.
      */
@@ -5507,7 +5501,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Last attach timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string last_attach_timestamp = 42159653;</code>
+     * <code>optional string last_attach_timestamp = 42159653;</code>
      *
      * @param value The lastAttachTimestamp to set.
      * @return This builder for chaining.
@@ -5528,7 +5522,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Last attach timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string last_attach_timestamp = 42159653;</code>
+     * <code>optional string last_attach_timestamp = 42159653;</code>
      *
      * @return This builder for chaining.
      */
@@ -5545,7 +5539,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Last attach timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string last_attach_timestamp = 42159653;</code>
+     * <code>optional string last_attach_timestamp = 42159653;</code>
      *
      * @param value The bytes for lastAttachTimestamp to set.
      * @return This builder for chaining.
@@ -5569,7 +5563,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Last detach timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string last_detach_timestamp = 56471027;</code>
+     * <code>optional string last_detach_timestamp = 56471027;</code>
      *
      * @return Whether the lastDetachTimestamp field is set.
      */
@@ -5583,7 +5577,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Last detach timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string last_detach_timestamp = 56471027;</code>
+     * <code>optional string last_detach_timestamp = 56471027;</code>
      *
      * @return The lastDetachTimestamp.
      */
@@ -5605,7 +5599,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Last detach timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string last_detach_timestamp = 56471027;</code>
+     * <code>optional string last_detach_timestamp = 56471027;</code>
      *
      * @return The bytes for lastDetachTimestamp.
      */
@@ -5627,7 +5621,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Last detach timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string last_detach_timestamp = 56471027;</code>
+     * <code>optional string last_detach_timestamp = 56471027;</code>
      *
      * @param value The lastDetachTimestamp to set.
      * @return This builder for chaining.
@@ -5648,7 +5642,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Last detach timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string last_detach_timestamp = 56471027;</code>
+     * <code>optional string last_detach_timestamp = 56471027;</code>
      *
      * @return This builder for chaining.
      */
@@ -5665,7 +5659,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Last detach timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string last_detach_timestamp = 56471027;</code>
+     * <code>optional string last_detach_timestamp = 56471027;</code>
      *
      * @param value The bytes for lastDetachTimestamp to set.
      * @return This builder for chaining.
@@ -5983,7 +5977,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the disk close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @return Whether the locationHint field is set.
      */
@@ -5997,7 +5991,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the disk close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @return The locationHint.
      */
@@ -6019,7 +6013,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the disk close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @return The bytes for locationHint.
      */
@@ -6041,7 +6035,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the disk close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @param value The locationHint to set.
      * @return This builder for chaining.
@@ -6062,7 +6056,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the disk close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @return This builder for chaining.
      */
@@ -6079,7 +6073,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the disk close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @param value The bytes for locationHint to set.
      * @return This builder for chaining.
@@ -6103,7 +6097,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -6117,7 +6111,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -6139,7 +6133,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -6161,7 +6155,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -6182,7 +6176,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -6199,7 +6193,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -6223,7 +6217,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Internal use only.
      * </pre>
      *
-     * <code>string options = 361137822;</code>
+     * <code>optional string options = 361137822;</code>
      *
      * @return Whether the options field is set.
      */
@@ -6237,7 +6231,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Internal use only.
      * </pre>
      *
-     * <code>string options = 361137822;</code>
+     * <code>optional string options = 361137822;</code>
      *
      * @return The options.
      */
@@ -6259,7 +6253,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Internal use only.
      * </pre>
      *
-     * <code>string options = 361137822;</code>
+     * <code>optional string options = 361137822;</code>
      *
      * @return The bytes for options.
      */
@@ -6281,7 +6275,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Internal use only.
      * </pre>
      *
-     * <code>string options = 361137822;</code>
+     * <code>optional string options = 361137822;</code>
      *
      * @param value The options to set.
      * @return This builder for chaining.
@@ -6302,7 +6296,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Internal use only.
      * </pre>
      *
-     * <code>string options = 361137822;</code>
+     * <code>optional string options = 361137822;</code>
      *
      * @return This builder for chaining.
      */
@@ -6319,7 +6313,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Internal use only.
      * </pre>
      *
-     * <code>string options = 361137822;</code>
+     * <code>optional string options = 361137822;</code>
      *
      * @param value The bytes for options to set.
      * @return This builder for chaining.
@@ -6343,7 +6337,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
      * </pre>
      *
-     * <code>int64 physical_block_size_bytes = 420007943;</code>
+     * <code>optional int64 physical_block_size_bytes = 420007943;</code>
      *
      * @return Whether the physicalBlockSizeBytes field is set.
      */
@@ -6358,7 +6352,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
      * </pre>
      *
-     * <code>int64 physical_block_size_bytes = 420007943;</code>
+     * <code>optional int64 physical_block_size_bytes = 420007943;</code>
      *
      * @return The physicalBlockSizeBytes.
      */
@@ -6373,7 +6367,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
      * </pre>
      *
-     * <code>int64 physical_block_size_bytes = 420007943;</code>
+     * <code>optional int64 physical_block_size_bytes = 420007943;</code>
      *
      * @param value The physicalBlockSizeBytes to set.
      * @return This builder for chaining.
@@ -6391,7 +6385,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
      * </pre>
      *
-     * <code>int64 physical_block_size_bytes = 420007943;</code>
+     * <code>optional int64 physical_block_size_bytes = 420007943;</code>
      *
      * @return This builder for chaining.
      */
@@ -6407,10 +6401,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates how many IOPS must be provisioned for the disk.
+     * Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see the Extreme persistent disk documentation.
      * </pre>
      *
-     * <code>int64 provisioned_iops = 186769108;</code>
+     * <code>optional int64 provisioned_iops = 186769108;</code>
      *
      * @return Whether the provisionedIops field is set.
      */
@@ -6422,10 +6416,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates how many IOPS must be provisioned for the disk.
+     * Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see the Extreme persistent disk documentation.
      * </pre>
      *
-     * <code>int64 provisioned_iops = 186769108;</code>
+     * <code>optional int64 provisioned_iops = 186769108;</code>
      *
      * @return The provisionedIops.
      */
@@ -6437,10 +6431,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates how many IOPS must be provisioned for the disk.
+     * Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see the Extreme persistent disk documentation.
      * </pre>
      *
-     * <code>int64 provisioned_iops = 186769108;</code>
+     * <code>optional int64 provisioned_iops = 186769108;</code>
      *
      * @param value The provisionedIops to set.
      * @return This builder for chaining.
@@ -6455,10 +6449,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates how many IOPS must be provisioned for the disk.
+     * Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see the Extreme persistent disk documentation.
      * </pre>
      *
-     * <code>int64 provisioned_iops = 186769108;</code>
+     * <code>optional int64 provisioned_iops = 186769108;</code>
      *
      * @return This builder for chaining.
      */
@@ -6477,7 +6471,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the disk resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return Whether the region field is set.
      */
@@ -6491,7 +6485,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the disk resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The region.
      */
@@ -6513,7 +6507,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the disk resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The bytes for region.
      */
@@ -6535,7 +6529,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the disk resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -6556,7 +6550,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the disk resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return This builder for chaining.
      */
@@ -6573,7 +6567,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the disk resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.
@@ -6933,7 +6927,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Reserved for future use.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 480964267;</code>
+     * <code>optional bool satisfies_pzs = 480964267;</code>
      *
      * @return Whether the satisfiesPzs field is set.
      */
@@ -6948,7 +6942,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Reserved for future use.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 480964267;</code>
+     * <code>optional bool satisfies_pzs = 480964267;</code>
      *
      * @return The satisfiesPzs.
      */
@@ -6963,7 +6957,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Reserved for future use.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 480964267;</code>
+     * <code>optional bool satisfies_pzs = 480964267;</code>
      *
      * @param value The satisfiesPzs to set.
      * @return This builder for chaining.
@@ -6981,7 +6975,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Reserved for future use.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 480964267;</code>
+     * <code>optional bool satisfies_pzs = 480964267;</code>
      *
      * @return This builder for chaining.
      */
@@ -7000,7 +6994,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -7014,7 +7008,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -7036,7 +7030,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -7058,7 +7052,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -7079,7 +7073,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -7096,7 +7090,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -7117,11 +7111,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk.
-     * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
+     * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk. If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
      * </pre>
      *
-     * <code>int64 size_gb = 494929369;</code>
+     * <code>optional int64 size_gb = 494929369;</code>
      *
      * @return Whether the sizeGb field is set.
      */
@@ -7133,11 +7126,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk.
-     * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
+     * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk. If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
      * </pre>
      *
-     * <code>int64 size_gb = 494929369;</code>
+     * <code>optional int64 size_gb = 494929369;</code>
      *
      * @return The sizeGb.
      */
@@ -7149,11 +7141,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk.
-     * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
+     * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk. If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
      * </pre>
      *
-     * <code>int64 size_gb = 494929369;</code>
+     * <code>optional int64 size_gb = 494929369;</code>
      *
      * @param value The sizeGb to set.
      * @return This builder for chaining.
@@ -7168,11 +7159,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk.
-     * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
+     * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk. If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
      * </pre>
      *
-     * <code>int64 size_gb = 494929369;</code>
+     * <code>optional int64 size_gb = 494929369;</code>
      *
      * @return This builder for chaining.
      */
@@ -7188,16 +7178,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-     * - https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk
-     * - projects/project/zones/zone/disks/disk
-     * - projects/project/regions/region/disks/disk
-     * - zones/zone/disks/disk
-     * - regions/region/disks/disk
+     * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - https://www.googleapis.com/compute/v1/projects/project/regions/region /disks/disk - projects/project/zones/zone/disks/disk - projects/project/regions/region/disks/disk - zones/zone/disks/disk - regions/region/disks/disk
      * </pre>
      *
-     * <code>string source_disk = 451753793;</code>
+     * <code>optional string source_disk = 451753793;</code>
      *
      * @return Whether the sourceDisk field is set.
      */
@@ -7208,16 +7192,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-     * - https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk
-     * - projects/project/zones/zone/disks/disk
-     * - projects/project/regions/region/disks/disk
-     * - zones/zone/disks/disk
-     * - regions/region/disks/disk
+     * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - https://www.googleapis.com/compute/v1/projects/project/regions/region /disks/disk - projects/project/zones/zone/disks/disk - projects/project/regions/region/disks/disk - zones/zone/disks/disk - regions/region/disks/disk
      * </pre>
      *
-     * <code>string source_disk = 451753793;</code>
+     * <code>optional string source_disk = 451753793;</code>
      *
      * @return The sourceDisk.
      */
@@ -7236,16 +7214,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-     * - https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk
-     * - projects/project/zones/zone/disks/disk
-     * - projects/project/regions/region/disks/disk
-     * - zones/zone/disks/disk
-     * - regions/region/disks/disk
+     * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - https://www.googleapis.com/compute/v1/projects/project/regions/region /disks/disk - projects/project/zones/zone/disks/disk - projects/project/regions/region/disks/disk - zones/zone/disks/disk - regions/region/disks/disk
      * </pre>
      *
-     * <code>string source_disk = 451753793;</code>
+     * <code>optional string source_disk = 451753793;</code>
      *
      * @return The bytes for sourceDisk.
      */
@@ -7264,16 +7236,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-     * - https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk
-     * - projects/project/zones/zone/disks/disk
-     * - projects/project/regions/region/disks/disk
-     * - zones/zone/disks/disk
-     * - regions/region/disks/disk
+     * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - https://www.googleapis.com/compute/v1/projects/project/regions/region /disks/disk - projects/project/zones/zone/disks/disk - projects/project/regions/region/disks/disk - zones/zone/disks/disk - regions/region/disks/disk
      * </pre>
      *
-     * <code>string source_disk = 451753793;</code>
+     * <code>optional string source_disk = 451753793;</code>
      *
      * @param value The sourceDisk to set.
      * @return This builder for chaining.
@@ -7291,16 +7257,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-     * - https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk
-     * - projects/project/zones/zone/disks/disk
-     * - projects/project/regions/region/disks/disk
-     * - zones/zone/disks/disk
-     * - regions/region/disks/disk
+     * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - https://www.googleapis.com/compute/v1/projects/project/regions/region /disks/disk - projects/project/zones/zone/disks/disk - projects/project/regions/region/disks/disk - zones/zone/disks/disk - regions/region/disks/disk
      * </pre>
      *
-     * <code>string source_disk = 451753793;</code>
+     * <code>optional string source_disk = 451753793;</code>
      *
      * @return This builder for chaining.
      */
@@ -7314,16 +7274,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-     * - https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk
-     * - projects/project/zones/zone/disks/disk
-     * - projects/project/regions/region/disks/disk
-     * - zones/zone/disks/disk
-     * - regions/region/disks/disk
+     * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - https://www.googleapis.com/compute/v1/projects/project/regions/region /disks/disk - projects/project/zones/zone/disks/disk - projects/project/regions/region/disks/disk - zones/zone/disks/disk - regions/region/disks/disk
      * </pre>
      *
-     * <code>string source_disk = 451753793;</code>
+     * <code>optional string source_disk = 451753793;</code>
      *
      * @param value The bytes for sourceDisk to set.
      * @return This builder for chaining.
@@ -7347,7 +7301,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
      * </pre>
      *
-     * <code>string source_disk_id = 454190809;</code>
+     * <code>optional string source_disk_id = 454190809;</code>
      *
      * @return Whether the sourceDiskId field is set.
      */
@@ -7361,7 +7315,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
      * </pre>
      *
-     * <code>string source_disk_id = 454190809;</code>
+     * <code>optional string source_disk_id = 454190809;</code>
      *
      * @return The sourceDiskId.
      */
@@ -7383,7 +7337,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
      * </pre>
      *
-     * <code>string source_disk_id = 454190809;</code>
+     * <code>optional string source_disk_id = 454190809;</code>
      *
      * @return The bytes for sourceDiskId.
      */
@@ -7405,7 +7359,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
      * </pre>
      *
-     * <code>string source_disk_id = 454190809;</code>
+     * <code>optional string source_disk_id = 454190809;</code>
      *
      * @param value The sourceDiskId to set.
      * @return This builder for chaining.
@@ -7426,7 +7380,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
      * </pre>
      *
-     * <code>string source_disk_id = 454190809;</code>
+     * <code>optional string source_disk_id = 454190809;</code>
      *
      * @return This builder for chaining.
      */
@@ -7443,7 +7397,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
      * </pre>
      *
-     * <code>string source_disk_id = 454190809;</code>
+     * <code>optional string source_disk_id = 454190809;</code>
      *
      * @param value The bytes for sourceDiskId to set.
      * @return This builder for chaining.
@@ -7464,18 +7418,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source image used to create this disk. If the source image is deleted, this field will not be set.
-     * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-     * projects/debian-cloud/global/images/family/debian-9
-     * Alternatively, use a specific version of a public operating system image:
-     * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-     * To create a disk with a custom image that you created, specify the image name in the following format:
-     * global/images/my-custom-image
-     * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-     * global/images/family/my-image-family
+     * The source image used to create this disk. If the source image is deleted, this field will not be set. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family
      * </pre>
      *
-     * <code>string source_image = 50443319;</code>
+     * <code>optional string source_image = 50443319;</code>
      *
      * @return Whether the sourceImage field is set.
      */
@@ -7486,18 +7432,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source image used to create this disk. If the source image is deleted, this field will not be set.
-     * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-     * projects/debian-cloud/global/images/family/debian-9
-     * Alternatively, use a specific version of a public operating system image:
-     * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-     * To create a disk with a custom image that you created, specify the image name in the following format:
-     * global/images/my-custom-image
-     * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-     * global/images/family/my-image-family
+     * The source image used to create this disk. If the source image is deleted, this field will not be set. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family
      * </pre>
      *
-     * <code>string source_image = 50443319;</code>
+     * <code>optional string source_image = 50443319;</code>
      *
      * @return The sourceImage.
      */
@@ -7516,18 +7454,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source image used to create this disk. If the source image is deleted, this field will not be set.
-     * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-     * projects/debian-cloud/global/images/family/debian-9
-     * Alternatively, use a specific version of a public operating system image:
-     * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-     * To create a disk with a custom image that you created, specify the image name in the following format:
-     * global/images/my-custom-image
-     * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-     * global/images/family/my-image-family
+     * The source image used to create this disk. If the source image is deleted, this field will not be set. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family
      * </pre>
      *
-     * <code>string source_image = 50443319;</code>
+     * <code>optional string source_image = 50443319;</code>
      *
      * @return The bytes for sourceImage.
      */
@@ -7546,18 +7476,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source image used to create this disk. If the source image is deleted, this field will not be set.
-     * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-     * projects/debian-cloud/global/images/family/debian-9
-     * Alternatively, use a specific version of a public operating system image:
-     * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-     * To create a disk with a custom image that you created, specify the image name in the following format:
-     * global/images/my-custom-image
-     * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-     * global/images/family/my-image-family
+     * The source image used to create this disk. If the source image is deleted, this field will not be set. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family
      * </pre>
      *
-     * <code>string source_image = 50443319;</code>
+     * <code>optional string source_image = 50443319;</code>
      *
      * @param value The sourceImage to set.
      * @return This builder for chaining.
@@ -7575,18 +7497,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source image used to create this disk. If the source image is deleted, this field will not be set.
-     * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-     * projects/debian-cloud/global/images/family/debian-9
-     * Alternatively, use a specific version of a public operating system image:
-     * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-     * To create a disk with a custom image that you created, specify the image name in the following format:
-     * global/images/my-custom-image
-     * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-     * global/images/family/my-image-family
+     * The source image used to create this disk. If the source image is deleted, this field will not be set. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family
      * </pre>
      *
-     * <code>string source_image = 50443319;</code>
+     * <code>optional string source_image = 50443319;</code>
      *
      * @return This builder for chaining.
      */
@@ -7600,18 +7514,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source image used to create this disk. If the source image is deleted, this field will not be set.
-     * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-     * projects/debian-cloud/global/images/family/debian-9
-     * Alternatively, use a specific version of a public operating system image:
-     * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-     * To create a disk with a custom image that you created, specify the image name in the following format:
-     * global/images/my-custom-image
-     * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-     * global/images/family/my-image-family
+     * The source image used to create this disk. If the source image is deleted, this field will not be set. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family
      * </pre>
      *
-     * <code>string source_image = 50443319;</code>
+     * <code>optional string source_image = 50443319;</code>
      *
      * @param value The bytes for sourceImage to set.
      * @return This builder for chaining.
@@ -7640,7 +7546,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      *
      * @return Whether the sourceImageEncryptionKey field is set.
@@ -7655,7 +7562,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      *
      * @return The sourceImageEncryptionKey.
@@ -7676,7 +7584,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     public Builder setSourceImageEncryptionKey(
@@ -7700,7 +7609,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     public Builder setSourceImageEncryptionKey(
@@ -7721,7 +7631,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     public Builder mergeSourceImageEncryptionKey(
@@ -7753,7 +7664,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     public Builder clearSourceImageEncryptionKey() {
@@ -7773,7 +7685,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
@@ -7789,7 +7702,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
@@ -7809,7 +7723,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -7837,7 +7752,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The ID value of the image used to create this disk. This value identifies the exact image that was used to create this persistent disk. For example, if you created the persistent disk from an image that was later deleted and recreated under the same name, the source image ID would identify the exact version of the image that was used.
      * </pre>
      *
-     * <code>string source_image_id = 55328291;</code>
+     * <code>optional string source_image_id = 55328291;</code>
      *
      * @return Whether the sourceImageId field is set.
      */
@@ -7851,7 +7766,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The ID value of the image used to create this disk. This value identifies the exact image that was used to create this persistent disk. For example, if you created the persistent disk from an image that was later deleted and recreated under the same name, the source image ID would identify the exact version of the image that was used.
      * </pre>
      *
-     * <code>string source_image_id = 55328291;</code>
+     * <code>optional string source_image_id = 55328291;</code>
      *
      * @return The sourceImageId.
      */
@@ -7873,7 +7788,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The ID value of the image used to create this disk. This value identifies the exact image that was used to create this persistent disk. For example, if you created the persistent disk from an image that was later deleted and recreated under the same name, the source image ID would identify the exact version of the image that was used.
      * </pre>
      *
-     * <code>string source_image_id = 55328291;</code>
+     * <code>optional string source_image_id = 55328291;</code>
      *
      * @return The bytes for sourceImageId.
      */
@@ -7895,7 +7810,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The ID value of the image used to create this disk. This value identifies the exact image that was used to create this persistent disk. For example, if you created the persistent disk from an image that was later deleted and recreated under the same name, the source image ID would identify the exact version of the image that was used.
      * </pre>
      *
-     * <code>string source_image_id = 55328291;</code>
+     * <code>optional string source_image_id = 55328291;</code>
      *
      * @param value The sourceImageId to set.
      * @return This builder for chaining.
@@ -7916,7 +7831,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The ID value of the image used to create this disk. This value identifies the exact image that was used to create this persistent disk. For example, if you created the persistent disk from an image that was later deleted and recreated under the same name, the source image ID would identify the exact version of the image that was used.
      * </pre>
      *
-     * <code>string source_image_id = 55328291;</code>
+     * <code>optional string source_image_id = 55328291;</code>
      *
      * @return This builder for chaining.
      */
@@ -7933,7 +7848,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The ID value of the image used to create this disk. This value identifies the exact image that was used to create this persistent disk. For example, if you created the persistent disk from an image that was later deleted and recreated under the same name, the source image ID would identify the exact version of the image that was used.
      * </pre>
      *
-     * <code>string source_image_id = 55328291;</code>
+     * <code>optional string source_image_id = 55328291;</code>
      *
      * @param value The bytes for sourceImageId to set.
      * @return This builder for chaining.
@@ -7954,13 +7869,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot
-     * - projects/project/global/snapshots/snapshot
-     * - global/snapshots/snapshot
+     * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project /global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot
      * </pre>
      *
-     * <code>string source_snapshot = 126061928;</code>
+     * <code>optional string source_snapshot = 126061928;</code>
      *
      * @return Whether the sourceSnapshot field is set.
      */
@@ -7971,13 +7883,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot
-     * - projects/project/global/snapshots/snapshot
-     * - global/snapshots/snapshot
+     * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project /global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot
      * </pre>
      *
-     * <code>string source_snapshot = 126061928;</code>
+     * <code>optional string source_snapshot = 126061928;</code>
      *
      * @return The sourceSnapshot.
      */
@@ -7996,13 +7905,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot
-     * - projects/project/global/snapshots/snapshot
-     * - global/snapshots/snapshot
+     * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project /global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot
      * </pre>
      *
-     * <code>string source_snapshot = 126061928;</code>
+     * <code>optional string source_snapshot = 126061928;</code>
      *
      * @return The bytes for sourceSnapshot.
      */
@@ -8021,13 +7927,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot
-     * - projects/project/global/snapshots/snapshot
-     * - global/snapshots/snapshot
+     * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project /global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot
      * </pre>
      *
-     * <code>string source_snapshot = 126061928;</code>
+     * <code>optional string source_snapshot = 126061928;</code>
      *
      * @param value The sourceSnapshot to set.
      * @return This builder for chaining.
@@ -8045,13 +7948,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot
-     * - projects/project/global/snapshots/snapshot
-     * - global/snapshots/snapshot
+     * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project /global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot
      * </pre>
      *
-     * <code>string source_snapshot = 126061928;</code>
+     * <code>optional string source_snapshot = 126061928;</code>
      *
      * @return This builder for chaining.
      */
@@ -8065,13 +7965,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot
-     * - projects/project/global/snapshots/snapshot
-     * - global/snapshots/snapshot
+     * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project /global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot
      * </pre>
      *
-     * <code>string source_snapshot = 126061928;</code>
+     * <code>optional string source_snapshot = 126061928;</code>
      *
      * @param value The bytes for sourceSnapshot to set.
      * @return This builder for chaining.
@@ -8101,7 +7998,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      *
      * @return Whether the sourceSnapshotEncryptionKey field is set.
@@ -8117,7 +8014,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      *
      * @return The sourceSnapshotEncryptionKey.
@@ -8139,7 +8036,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     public Builder setSourceSnapshotEncryptionKey(
@@ -8164,7 +8061,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     public Builder setSourceSnapshotEncryptionKey(
@@ -8186,7 +8083,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     public Builder mergeSourceSnapshotEncryptionKey(
@@ -8219,7 +8116,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     public Builder clearSourceSnapshotEncryptionKey() {
@@ -8240,7 +8137,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
@@ -8257,7 +8154,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
@@ -8278,7 +8175,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -8306,7 +8203,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique ID of the snapshot used to create this disk. This value identifies the exact snapshot that was used to create this persistent disk. For example, if you created the persistent disk from a snapshot that was later deleted and recreated under the same name, the source snapshot ID would identify the exact version of the snapshot that was used.
      * </pre>
      *
-     * <code>string source_snapshot_id = 98962258;</code>
+     * <code>optional string source_snapshot_id = 98962258;</code>
      *
      * @return Whether the sourceSnapshotId field is set.
      */
@@ -8320,7 +8217,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique ID of the snapshot used to create this disk. This value identifies the exact snapshot that was used to create this persistent disk. For example, if you created the persistent disk from a snapshot that was later deleted and recreated under the same name, the source snapshot ID would identify the exact version of the snapshot that was used.
      * </pre>
      *
-     * <code>string source_snapshot_id = 98962258;</code>
+     * <code>optional string source_snapshot_id = 98962258;</code>
      *
      * @return The sourceSnapshotId.
      */
@@ -8342,7 +8239,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique ID of the snapshot used to create this disk. This value identifies the exact snapshot that was used to create this persistent disk. For example, if you created the persistent disk from a snapshot that was later deleted and recreated under the same name, the source snapshot ID would identify the exact version of the snapshot that was used.
      * </pre>
      *
-     * <code>string source_snapshot_id = 98962258;</code>
+     * <code>optional string source_snapshot_id = 98962258;</code>
      *
      * @return The bytes for sourceSnapshotId.
      */
@@ -8364,7 +8261,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique ID of the snapshot used to create this disk. This value identifies the exact snapshot that was used to create this persistent disk. For example, if you created the persistent disk from a snapshot that was later deleted and recreated under the same name, the source snapshot ID would identify the exact version of the snapshot that was used.
      * </pre>
      *
-     * <code>string source_snapshot_id = 98962258;</code>
+     * <code>optional string source_snapshot_id = 98962258;</code>
      *
      * @param value The sourceSnapshotId to set.
      * @return This builder for chaining.
@@ -8385,7 +8282,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique ID of the snapshot used to create this disk. This value identifies the exact snapshot that was used to create this persistent disk. For example, if you created the persistent disk from a snapshot that was later deleted and recreated under the same name, the source snapshot ID would identify the exact version of the snapshot that was used.
      * </pre>
      *
-     * <code>string source_snapshot_id = 98962258;</code>
+     * <code>optional string source_snapshot_id = 98962258;</code>
      *
      * @return This builder for chaining.
      */
@@ -8402,7 +8299,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique ID of the snapshot used to create this disk. This value identifies the exact snapshot that was used to create this persistent disk. For example, if you created the persistent disk from a snapshot that was later deleted and recreated under the same name, the source snapshot ID would identify the exact version of the snapshot that was used.
      * </pre>
      *
-     * <code>string source_snapshot_id = 98962258;</code>
+     * <code>optional string source_snapshot_id = 98962258;</code>
      *
      * @param value The bytes for sourceSnapshotId to set.
      * @return This builder for chaining.
@@ -8426,7 +8323,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The full Google Cloud Storage URI where the disk image is stored. This file must be a gzip-compressed tarball whose name ends in .tar.gz or virtual machine disk whose name ends in vmdk. Valid URIs may start with gs:// or https://storage.googleapis.com/. This flag is not optimized for creating multiple disks from a source storage object. To create many disks from a source storage object, use gcloud compute images import instead.
      * </pre>
      *
-     * <code>string source_storage_object = 233052711;</code>
+     * <code>optional string source_storage_object = 233052711;</code>
      *
      * @return Whether the sourceStorageObject field is set.
      */
@@ -8440,7 +8337,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The full Google Cloud Storage URI where the disk image is stored. This file must be a gzip-compressed tarball whose name ends in .tar.gz or virtual machine disk whose name ends in vmdk. Valid URIs may start with gs:// or https://storage.googleapis.com/. This flag is not optimized for creating multiple disks from a source storage object. To create many disks from a source storage object, use gcloud compute images import instead.
      * </pre>
      *
-     * <code>string source_storage_object = 233052711;</code>
+     * <code>optional string source_storage_object = 233052711;</code>
      *
      * @return The sourceStorageObject.
      */
@@ -8462,7 +8359,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The full Google Cloud Storage URI where the disk image is stored. This file must be a gzip-compressed tarball whose name ends in .tar.gz or virtual machine disk whose name ends in vmdk. Valid URIs may start with gs:// or https://storage.googleapis.com/. This flag is not optimized for creating multiple disks from a source storage object. To create many disks from a source storage object, use gcloud compute images import instead.
      * </pre>
      *
-     * <code>string source_storage_object = 233052711;</code>
+     * <code>optional string source_storage_object = 233052711;</code>
      *
      * @return The bytes for sourceStorageObject.
      */
@@ -8484,7 +8381,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The full Google Cloud Storage URI where the disk image is stored. This file must be a gzip-compressed tarball whose name ends in .tar.gz or virtual machine disk whose name ends in vmdk. Valid URIs may start with gs:// or https://storage.googleapis.com/. This flag is not optimized for creating multiple disks from a source storage object. To create many disks from a source storage object, use gcloud compute images import instead.
      * </pre>
      *
-     * <code>string source_storage_object = 233052711;</code>
+     * <code>optional string source_storage_object = 233052711;</code>
      *
      * @param value The sourceStorageObject to set.
      * @return This builder for chaining.
@@ -8505,7 +8402,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The full Google Cloud Storage URI where the disk image is stored. This file must be a gzip-compressed tarball whose name ends in .tar.gz or virtual machine disk whose name ends in vmdk. Valid URIs may start with gs:// or https://storage.googleapis.com/. This flag is not optimized for creating multiple disks from a source storage object. To create many disks from a source storage object, use gcloud compute images import instead.
      * </pre>
      *
-     * <code>string source_storage_object = 233052711;</code>
+     * <code>optional string source_storage_object = 233052711;</code>
      *
      * @return This builder for chaining.
      */
@@ -8522,7 +8419,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The full Google Cloud Storage URI where the disk image is stored. This file must be a gzip-compressed tarball whose name ends in .tar.gz or virtual machine disk whose name ends in vmdk. Valid URIs may start with gs:// or https://storage.googleapis.com/. This flag is not optimized for creating multiple disks from a source storage object. To create many disks from a source storage object, use gcloud compute images import instead.
      * </pre>
      *
-     * <code>string source_storage_object = 233052711;</code>
+     * <code>optional string source_storage_object = 233052711;</code>
      *
      * @param value The bytes for sourceStorageObject to set.
      * @return This builder for chaining.
@@ -8538,24 +8435,19 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      *
      *
      * <pre>
-     * [Output Only] The status of disk creation.
-     * - CREATING: Disk is provisioning.
-     * - RESTORING: Source data is being copied into the disk.
-     * - FAILED: Disk creation failed.
-     * - READY: Disk is ready for use.
-     * - DELETING: Disk is deleting.
+     * [Output Only] The status of disk creation. - CREATING: Disk is provisioning. - RESTORING: Source data is being copied into the disk. - FAILED: Disk creation failed. - READY: Disk is ready for use. - DELETING: Disk is deleting.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Disk.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
      * @return Whether the status field is set.
      */
-    @java.lang.Override
     public boolean hasStatus() {
       return ((bitField1_ & 0x00000001) != 0);
     }
@@ -8563,40 +8455,65 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of disk creation.
-     * - CREATING: Disk is provisioning.
-     * - RESTORING: Source data is being copied into the disk.
-     * - FAILED: Disk creation failed.
-     * - READY: Disk is ready for use.
-     * - DELETING: Disk is deleting.
+     * [Output Only] The status of disk creation. - CREATING: Disk is provisioning. - RESTORING: Source data is being copied into the disk. - FAILED: Disk creation failed. - READY: Disk is ready for use. - DELETING: Disk is deleting.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Disk.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The enum numeric value on the wire for status.
+     * @return The status.
      */
-    @java.lang.Override
-    public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * [Output Only] The status of disk creation.
-     * - CREATING: Disk is provisioning.
-     * - RESTORING: Source data is being copied into the disk.
-     * - FAILED: Disk creation failed.
-     * - READY: Disk is ready for use.
-     * - DELETING: Disk is deleting.
+     * [Output Only] The status of disk creation. - CREATING: Disk is provisioning. - RESTORING: Source data is being copied into the disk. - FAILED: Disk creation failed. - READY: Disk is ready for use. - DELETING: Disk is deleting.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Disk.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @param value The enum numeric value on the wire for status to set.
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The status of disk creation. - CREATING: Disk is provisioning. - RESTORING: Source data is being copied into the disk. - FAILED: Disk creation failed. - READY: Disk is ready for use. - DELETING: Disk is deleting.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     *
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
+    public Builder setStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField1_ |= 0x00000001;
       status_ = value;
       onChanged();
@@ -8606,48 +8523,17 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of disk creation.
-     * - CREATING: Disk is provisioning.
-     * - RESTORING: Source data is being copied into the disk.
-     * - FAILED: Disk creation failed.
-     * - READY: Disk is ready for use.
-     * - DELETING: Disk is deleting.
+     * [Output Only] The status of disk creation. - CREATING: Disk is provisioning. - RESTORING: Source data is being copied into the disk. - FAILED: Disk creation failed. - READY: Disk is ready for use. - DELETING: Disk is deleting.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Disk.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Disk.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Disk.Status result =
-          com.google.cloud.compute.v1.Disk.Status.valueOf(status_);
-      return result == null ? com.google.cloud.compute.v1.Disk.Status.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The status of disk creation.
-     * - CREATING: Disk is provisioning.
-     * - RESTORING: Source data is being copied into the disk.
-     * - FAILED: Disk creation failed.
-     * - READY: Disk is ready for use.
-     * - DELETING: Disk is deleting.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.Disk.Status status = 181260274;</code>
-     *
-     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloud.compute.v1.Disk.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField1_ |= 0x00000001;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField1_ = (bitField1_ & ~0x00000001);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
@@ -8655,21 +8541,22 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of disk creation.
-     * - CREATING: Disk is provisioning.
-     * - RESTORING: Source data is being copied into the disk.
-     * - FAILED: Disk creation failed.
-     * - READY: Disk is ready for use.
-     * - DELETING: Disk is deleting.
+     * [Output Only] The status of disk creation. - CREATING: Disk is provisioning. - RESTORING: Source data is being copied into the disk. - FAILED: Disk creation failed. - READY: Disk is ready for use. - DELETING: Disk is deleting.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Disk.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField1_ = (bitField1_ & ~0x00000001);
-      status_ = 0;
+    public Builder setStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField1_ |= 0x00000001;
+      status_ = value;
       onChanged();
       return this;
     }
@@ -8679,10 +8566,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project/zones/zone/diskTypes/pd-standard  or pd-ssd
+     * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project /zones/zone/diskTypes/pd-ssd . See Persistent disk types.
      * </pre>
      *
-     * <code>string type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
      * @return Whether the type field is set.
      */
@@ -8693,10 +8580,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project/zones/zone/diskTypes/pd-standard  or pd-ssd
+     * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project /zones/zone/diskTypes/pd-ssd . See Persistent disk types.
      * </pre>
      *
-     * <code>string type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
      * @return The type.
      */
@@ -8715,10 +8602,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project/zones/zone/diskTypes/pd-standard  or pd-ssd
+     * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project /zones/zone/diskTypes/pd-ssd . See Persistent disk types.
      * </pre>
      *
-     * <code>string type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
      * @return The bytes for type.
      */
@@ -8737,10 +8624,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project/zones/zone/diskTypes/pd-standard  or pd-ssd
+     * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project /zones/zone/diskTypes/pd-ssd . See Persistent disk types.
      * </pre>
      *
-     * <code>string type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
      * @param value The type to set.
      * @return This builder for chaining.
@@ -8758,10 +8645,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project/zones/zone/diskTypes/pd-standard  or pd-ssd
+     * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project /zones/zone/diskTypes/pd-ssd . See Persistent disk types.
      * </pre>
      *
-     * <code>string type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
      * @return This builder for chaining.
      */
@@ -8775,10 +8662,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project/zones/zone/diskTypes/pd-standard  or pd-ssd
+     * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project /zones/zone/diskTypes/pd-ssd . See Persistent disk types.
      * </pre>
      *
-     * <code>string type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
      * @param value The bytes for type to set.
      * @return This builder for chaining.
@@ -8970,7 +8857,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the zone where the disk resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return Whether the zone field is set.
      */
@@ -8984,7 +8871,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the zone where the disk resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return The zone.
      */
@@ -9006,7 +8893,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the zone where the disk resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return The bytes for zone.
      */
@@ -9028,7 +8915,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the zone where the disk resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @param value The zone to set.
      * @return This builder for chaining.
@@ -9049,7 +8936,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the zone where the disk resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return This builder for chaining.
      */
@@ -9066,7 +8953,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the zone where the disk resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @param value The bytes for zone to set.
      * @return This builder for chaining.

@@ -156,7 +156,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
    * The IP address range of the public delegated prefix
    * </pre>
    *
-   * <code>string ip_range = 145092645;</code>
+   * <code>optional string ip_range = 145092645;</code>
    *
    * @return Whether the ipRange field is set.
    */
@@ -171,7 +171,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
    * The IP address range of the public delegated prefix
    * </pre>
    *
-   * <code>string ip_range = 145092645;</code>
+   * <code>optional string ip_range = 145092645;</code>
    *
    * @return The ipRange.
    */
@@ -194,7 +194,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
    * The IP address range of the public delegated prefix
    * </pre>
    *
-   * <code>string ip_range = 145092645;</code>
+   * <code>optional string ip_range = 145092645;</code>
    *
    * @return The bytes for ipRange.
    */
@@ -220,7 +220,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
    * The name of the public delegated prefix
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -235,7 +235,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
    * The name of the public delegated prefix
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -258,7 +258,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
    * The name of the public delegated prefix
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -284,7 +284,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
    * The project number of the public delegated prefix
    * </pre>
    *
-   * <code>string project = 227560217;</code>
+   * <code>optional string project = 227560217;</code>
    *
    * @return Whether the project field is set.
    */
@@ -299,7 +299,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
    * The project number of the public delegated prefix
    * </pre>
    *
-   * <code>string project = 227560217;</code>
+   * <code>optional string project = 227560217;</code>
    *
    * @return The project.
    */
@@ -322,7 +322,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
    * The project number of the public delegated prefix
    * </pre>
    *
-   * <code>string project = 227560217;</code>
+   * <code>optional string project = 227560217;</code>
    *
    * @return The bytes for project.
    */
@@ -348,7 +348,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
    * The region of the public delegated prefix if it is regional. If absent, the prefix is global.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -363,7 +363,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
    * The region of the public delegated prefix if it is regional. If absent, the prefix is global.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -386,7 +386,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
    * The region of the public delegated prefix if it is regional. If absent, the prefix is global.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -412,7 +412,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
    * The status of the public delegated prefix. Possible values are: INITIALIZING: The public delegated prefix is being initialized and addresses cannot be created yet. ANNOUNCED: The public delegated prefix is active.
    * </pre>
    *
-   * <code>string status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -427,7 +427,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
    * The status of the public delegated prefix. Possible values are: INITIALIZING: The public delegated prefix is being initialized and addresses cannot be created yet. ANNOUNCED: The public delegated prefix is active.
    * </pre>
    *
-   * <code>string status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return The status.
    */
@@ -450,7 +450,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
    * The status of the public delegated prefix. Possible values are: INITIALIZING: The public delegated prefix is being initialized and addresses cannot be created yet. ANNOUNCED: The public delegated prefix is active.
    * </pre>
    *
-   * <code>string status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return The bytes for status.
    */
@@ -919,7 +919,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The IP address range of the public delegated prefix
      * </pre>
      *
-     * <code>string ip_range = 145092645;</code>
+     * <code>optional string ip_range = 145092645;</code>
      *
      * @return Whether the ipRange field is set.
      */
@@ -933,7 +933,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The IP address range of the public delegated prefix
      * </pre>
      *
-     * <code>string ip_range = 145092645;</code>
+     * <code>optional string ip_range = 145092645;</code>
      *
      * @return The ipRange.
      */
@@ -955,7 +955,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The IP address range of the public delegated prefix
      * </pre>
      *
-     * <code>string ip_range = 145092645;</code>
+     * <code>optional string ip_range = 145092645;</code>
      *
      * @return The bytes for ipRange.
      */
@@ -977,7 +977,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The IP address range of the public delegated prefix
      * </pre>
      *
-     * <code>string ip_range = 145092645;</code>
+     * <code>optional string ip_range = 145092645;</code>
      *
      * @param value The ipRange to set.
      * @return This builder for chaining.
@@ -998,7 +998,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The IP address range of the public delegated prefix
      * </pre>
      *
-     * <code>string ip_range = 145092645;</code>
+     * <code>optional string ip_range = 145092645;</code>
      *
      * @return This builder for chaining.
      */
@@ -1015,7 +1015,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The IP address range of the public delegated prefix
      * </pre>
      *
-     * <code>string ip_range = 145092645;</code>
+     * <code>optional string ip_range = 145092645;</code>
      *
      * @param value The bytes for ipRange to set.
      * @return This builder for chaining.
@@ -1039,7 +1039,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The name of the public delegated prefix
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -1053,7 +1053,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The name of the public delegated prefix
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -1075,7 +1075,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The name of the public delegated prefix
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -1097,7 +1097,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The name of the public delegated prefix
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1118,7 +1118,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The name of the public delegated prefix
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -1135,7 +1135,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The name of the public delegated prefix
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1159,7 +1159,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The project number of the public delegated prefix
      * </pre>
      *
-     * <code>string project = 227560217;</code>
+     * <code>optional string project = 227560217;</code>
      *
      * @return Whether the project field is set.
      */
@@ -1173,7 +1173,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The project number of the public delegated prefix
      * </pre>
      *
-     * <code>string project = 227560217;</code>
+     * <code>optional string project = 227560217;</code>
      *
      * @return The project.
      */
@@ -1195,7 +1195,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The project number of the public delegated prefix
      * </pre>
      *
-     * <code>string project = 227560217;</code>
+     * <code>optional string project = 227560217;</code>
      *
      * @return The bytes for project.
      */
@@ -1217,7 +1217,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The project number of the public delegated prefix
      * </pre>
      *
-     * <code>string project = 227560217;</code>
+     * <code>optional string project = 227560217;</code>
      *
      * @param value The project to set.
      * @return This builder for chaining.
@@ -1238,7 +1238,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The project number of the public delegated prefix
      * </pre>
      *
-     * <code>string project = 227560217;</code>
+     * <code>optional string project = 227560217;</code>
      *
      * @return This builder for chaining.
      */
@@ -1255,7 +1255,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The project number of the public delegated prefix
      * </pre>
      *
-     * <code>string project = 227560217;</code>
+     * <code>optional string project = 227560217;</code>
      *
      * @param value The bytes for project to set.
      * @return This builder for chaining.
@@ -1279,7 +1279,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The region of the public delegated prefix if it is regional. If absent, the prefix is global.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return Whether the region field is set.
      */
@@ -1293,7 +1293,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The region of the public delegated prefix if it is regional. If absent, the prefix is global.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The region.
      */
@@ -1315,7 +1315,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The region of the public delegated prefix if it is regional. If absent, the prefix is global.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The bytes for region.
      */
@@ -1337,7 +1337,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The region of the public delegated prefix if it is regional. If absent, the prefix is global.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -1358,7 +1358,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The region of the public delegated prefix if it is regional. If absent, the prefix is global.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return This builder for chaining.
      */
@@ -1375,7 +1375,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The region of the public delegated prefix if it is regional. If absent, the prefix is global.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.
@@ -1399,7 +1399,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The status of the public delegated prefix. Possible values are: INITIALIZING: The public delegated prefix is being initialized and addresses cannot be created yet. ANNOUNCED: The public delegated prefix is active.
      * </pre>
      *
-     * <code>string status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
      * @return Whether the status field is set.
      */
@@ -1413,7 +1413,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The status of the public delegated prefix. Possible values are: INITIALIZING: The public delegated prefix is being initialized and addresses cannot be created yet. ANNOUNCED: The public delegated prefix is active.
      * </pre>
      *
-     * <code>string status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
      * @return The status.
      */
@@ -1435,7 +1435,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The status of the public delegated prefix. Possible values are: INITIALIZING: The public delegated prefix is being initialized and addresses cannot be created yet. ANNOUNCED: The public delegated prefix is active.
      * </pre>
      *
-     * <code>string status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
      * @return The bytes for status.
      */
@@ -1457,7 +1457,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The status of the public delegated prefix. Possible values are: INITIALIZING: The public delegated prefix is being initialized and addresses cannot be created yet. ANNOUNCED: The public delegated prefix is active.
      * </pre>
      *
-     * <code>string status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
      * @param value The status to set.
      * @return This builder for chaining.
@@ -1478,7 +1478,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The status of the public delegated prefix. Possible values are: INITIALIZING: The public delegated prefix is being initialized and addresses cannot be created yet. ANNOUNCED: The public delegated prefix is active.
      * </pre>
      *
-     * <code>string status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
      * @return This builder for chaining.
      */
@@ -1495,7 +1495,7 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
      * The status of the public delegated prefix. Possible values are: INITIALIZING: The public delegated prefix is being initialized and addresses cannot be created yet. ANNOUNCED: The public delegated prefix is active.
      * </pre>
      *
-     * <code>string status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
      * @param value The bytes for status to set.
      * @return This builder for chaining.

@@ -131,7 +131,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
    * The range of IP addresses belonging to this subnetwork secondary range.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return Whether the ipCidrRange field is set.
    */
@@ -146,7 +146,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
    * The range of IP addresses belonging to this subnetwork secondary range.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return The ipCidrRange.
    */
@@ -169,7 +169,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
    * The range of IP addresses belonging to this subnetwork secondary range.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return The bytes for ipCidrRange.
    */
@@ -195,7 +195,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
    * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
    * </pre>
    *
-   * <code>string range_name = 332216397;</code>
+   * <code>optional string range_name = 332216397;</code>
    *
    * @return Whether the rangeName field is set.
    */
@@ -210,7 +210,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
    * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
    * </pre>
    *
-   * <code>string range_name = 332216397;</code>
+   * <code>optional string range_name = 332216397;</code>
    *
    * @return The rangeName.
    */
@@ -233,7 +233,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
    * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
    * </pre>
    *
-   * <code>string range_name = 332216397;</code>
+   * <code>optional string range_name = 332216397;</code>
    *
    * @return The bytes for rangeName.
    */
@@ -616,7 +616,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The range of IP addresses belonging to this subnetwork secondary range.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return Whether the ipCidrRange field is set.
      */
@@ -630,7 +630,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The range of IP addresses belonging to this subnetwork secondary range.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return The ipCidrRange.
      */
@@ -652,7 +652,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The range of IP addresses belonging to this subnetwork secondary range.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return The bytes for ipCidrRange.
      */
@@ -674,7 +674,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The range of IP addresses belonging to this subnetwork secondary range.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @param value The ipCidrRange to set.
      * @return This builder for chaining.
@@ -695,7 +695,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The range of IP addresses belonging to this subnetwork secondary range.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return This builder for chaining.
      */
@@ -712,7 +712,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The range of IP addresses belonging to this subnetwork secondary range.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @param value The bytes for ipCidrRange to set.
      * @return This builder for chaining.
@@ -736,7 +736,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
      * </pre>
      *
-     * <code>string range_name = 332216397;</code>
+     * <code>optional string range_name = 332216397;</code>
      *
      * @return Whether the rangeName field is set.
      */
@@ -750,7 +750,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
      * </pre>
      *
-     * <code>string range_name = 332216397;</code>
+     * <code>optional string range_name = 332216397;</code>
      *
      * @return The rangeName.
      */
@@ -772,7 +772,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
      * </pre>
      *
-     * <code>string range_name = 332216397;</code>
+     * <code>optional string range_name = 332216397;</code>
      *
      * @return The bytes for rangeName.
      */
@@ -794,7 +794,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
      * </pre>
      *
-     * <code>string range_name = 332216397;</code>
+     * <code>optional string range_name = 332216397;</code>
      *
      * @param value The rangeName to set.
      * @return This builder for chaining.
@@ -815,7 +815,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
      * </pre>
      *
-     * <code>string range_name = 332216397;</code>
+     * <code>optional string range_name = 332216397;</code>
      *
      * @return This builder for chaining.
      */
@@ -832,7 +832,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
      * </pre>
      *
-     * <code>string range_name = 332216397;</code>
+     * <code>optional string range_name = 332216397;</code>
      *
      * @param value The bytes for rangeName to set.
      * @return This builder for chaining.

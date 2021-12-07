@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.RegionHealthCheckServicesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteRegionHealthCheckServiceRequest;
 import com.google.cloud.compute.v1.GetRegionHealthCheckServiceRequest;
@@ -39,12 +40,22 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class RegionHealthCheckServicesStub implements BackgroundResource {
 
+  public OperationCallable<DeleteRegionHealthCheckServiceRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteRegionHealthCheckServiceRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetRegionHealthCheckServiceRequest, HealthCheckService> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertRegionHealthCheckServiceRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertRegionHealthCheckServiceRequest, Operation> insertCallable() {
@@ -59,6 +70,11 @@ public abstract class RegionHealthCheckServicesStub implements BackgroundResourc
   public UnaryCallable<ListRegionHealthCheckServicesRequest, HealthCheckServicesList>
       listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<PatchRegionHealthCheckServiceRequest, Operation, Operation>
+      patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
   }
 
   public UnaryCallable<PatchRegionHealthCheckServiceRequest, Operation> patchCallable() {

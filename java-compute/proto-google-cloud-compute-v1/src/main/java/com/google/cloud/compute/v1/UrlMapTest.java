@@ -175,7 +175,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    * Description of this test case.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -190,7 +190,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    * Description of this test case.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -213,7 +213,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    * Description of this test case.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -236,13 +236,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
-   * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
-   * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
-   * expectedOutputUrl is optional when service is specified.
+   * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters. For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored. For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters. expectedOutputUrl is optional when service is specified.
    * </pre>
    *
-   * <code>string expected_output_url = 433967384;</code>
+   * <code>optional string expected_output_url = 433967384;</code>
    *
    * @return Whether the expectedOutputUrl field is set.
    */
@@ -254,13 +251,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
-   * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
-   * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
-   * expectedOutputUrl is optional when service is specified.
+   * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters. For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored. For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters. expectedOutputUrl is optional when service is specified.
    * </pre>
    *
-   * <code>string expected_output_url = 433967384;</code>
+   * <code>optional string expected_output_url = 433967384;</code>
    *
    * @return The expectedOutputUrl.
    */
@@ -280,13 +274,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
-   * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
-   * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
-   * expectedOutputUrl is optional when service is specified.
+   * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters. For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored. For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters. expectedOutputUrl is optional when service is specified.
    * </pre>
    *
-   * <code>string expected_output_url = 433967384;</code>
+   * <code>optional string expected_output_url = 433967384;</code>
    *
    * @return The bytes for expectedOutputUrl.
    */
@@ -309,11 +300,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response.
-   * expectedRedirectResponseCode cannot be set when service is set.
+   * For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response. expectedRedirectResponseCode cannot be set when service is set.
    * </pre>
    *
-   * <code>int32 expected_redirect_response_code = 18888047;</code>
+   * <code>optional int32 expected_redirect_response_code = 18888047;</code>
    *
    * @return Whether the expectedRedirectResponseCode field is set.
    */
@@ -325,11 +315,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response.
-   * expectedRedirectResponseCode cannot be set when service is set.
+   * For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response. expectedRedirectResponseCode cannot be set when service is set.
    * </pre>
    *
-   * <code>int32 expected_redirect_response_code = 18888047;</code>
+   * <code>optional int32 expected_redirect_response_code = 18888047;</code>
    *
    * @return The expectedRedirectResponseCode.
    */
@@ -416,7 +405,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    * Host portion of the URL. If headers contains a host header, then host must also match the header value.
    * </pre>
    *
-   * <code>string host = 3208616;</code>
+   * <code>optional string host = 3208616;</code>
    *
    * @return Whether the host field is set.
    */
@@ -431,7 +420,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    * Host portion of the URL. If headers contains a host header, then host must also match the header value.
    * </pre>
    *
-   * <code>string host = 3208616;</code>
+   * <code>optional string host = 3208616;</code>
    *
    * @return The host.
    */
@@ -454,7 +443,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    * Host portion of the URL. If headers contains a host header, then host must also match the header value.
    * </pre>
    *
-   * <code>string host = 3208616;</code>
+   * <code>optional string host = 3208616;</code>
    *
    * @return The bytes for host.
    */
@@ -480,7 +469,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    * Path portion of the URL.
    * </pre>
    *
-   * <code>string path = 3433509;</code>
+   * <code>optional string path = 3433509;</code>
    *
    * @return Whether the path field is set.
    */
@@ -495,7 +484,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    * Path portion of the URL.
    * </pre>
    *
-   * <code>string path = 3433509;</code>
+   * <code>optional string path = 3433509;</code>
    *
    * @return The path.
    */
@@ -518,7 +507,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    * Path portion of the URL.
    * </pre>
    *
-   * <code>string path = 3433509;</code>
+   * <code>optional string path = 3433509;</code>
    *
    * @return The bytes for path.
    */
@@ -541,11 +530,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Expected BackendService or BackendBucket resource the given URL should be mapped to.
-   * service cannot be set if expectedRedirectResponseCode is set.
+   * Expected BackendService or BackendBucket resource the given URL should be mapped to. service cannot be set if expectedRedirectResponseCode is set.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>optional string service = 373540533;</code>
    *
    * @return Whether the service field is set.
    */
@@ -557,11 +545,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Expected BackendService or BackendBucket resource the given URL should be mapped to.
-   * service cannot be set if expectedRedirectResponseCode is set.
+   * Expected BackendService or BackendBucket resource the given URL should be mapped to. service cannot be set if expectedRedirectResponseCode is set.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>optional string service = 373540533;</code>
    *
    * @return The service.
    */
@@ -581,11 +568,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Expected BackendService or BackendBucket resource the given URL should be mapped to.
-   * service cannot be set if expectedRedirectResponseCode is set.
+   * Expected BackendService or BackendBucket resource the given URL should be mapped to. service cannot be set if expectedRedirectResponseCode is set.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>optional string service = 373540533;</code>
    *
    * @return The bytes for service.
    */
@@ -1121,7 +1107,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Description of this test case.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -1135,7 +1121,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Description of this test case.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1157,7 +1143,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Description of this test case.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1179,7 +1165,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Description of this test case.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1200,7 +1186,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Description of this test case.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -1217,7 +1203,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Description of this test case.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1238,13 +1224,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
-     * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
-     * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
-     * expectedOutputUrl is optional when service is specified.
+     * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters. For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored. For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters. expectedOutputUrl is optional when service is specified.
      * </pre>
      *
-     * <code>string expected_output_url = 433967384;</code>
+     * <code>optional string expected_output_url = 433967384;</code>
      *
      * @return Whether the expectedOutputUrl field is set.
      */
@@ -1255,13 +1238,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
-     * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
-     * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
-     * expectedOutputUrl is optional when service is specified.
+     * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters. For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored. For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters. expectedOutputUrl is optional when service is specified.
      * </pre>
      *
-     * <code>string expected_output_url = 433967384;</code>
+     * <code>optional string expected_output_url = 433967384;</code>
      *
      * @return The expectedOutputUrl.
      */
@@ -1280,13 +1260,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
-     * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
-     * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
-     * expectedOutputUrl is optional when service is specified.
+     * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters. For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored. For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters. expectedOutputUrl is optional when service is specified.
      * </pre>
      *
-     * <code>string expected_output_url = 433967384;</code>
+     * <code>optional string expected_output_url = 433967384;</code>
      *
      * @return The bytes for expectedOutputUrl.
      */
@@ -1305,13 +1282,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
-     * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
-     * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
-     * expectedOutputUrl is optional when service is specified.
+     * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters. For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored. For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters. expectedOutputUrl is optional when service is specified.
      * </pre>
      *
-     * <code>string expected_output_url = 433967384;</code>
+     * <code>optional string expected_output_url = 433967384;</code>
      *
      * @param value The expectedOutputUrl to set.
      * @return This builder for chaining.
@@ -1329,13 +1303,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
-     * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
-     * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
-     * expectedOutputUrl is optional when service is specified.
+     * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters. For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored. For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters. expectedOutputUrl is optional when service is specified.
      * </pre>
      *
-     * <code>string expected_output_url = 433967384;</code>
+     * <code>optional string expected_output_url = 433967384;</code>
      *
      * @return This builder for chaining.
      */
@@ -1349,13 +1320,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
-     * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
-     * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
-     * expectedOutputUrl is optional when service is specified.
+     * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters. For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored. For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters. expectedOutputUrl is optional when service is specified.
      * </pre>
      *
-     * <code>string expected_output_url = 433967384;</code>
+     * <code>optional string expected_output_url = 433967384;</code>
      *
      * @param value The bytes for expectedOutputUrl to set.
      * @return This builder for chaining.
@@ -1376,11 +1344,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response.
-     * expectedRedirectResponseCode cannot be set when service is set.
+     * For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response. expectedRedirectResponseCode cannot be set when service is set.
      * </pre>
      *
-     * <code>int32 expected_redirect_response_code = 18888047;</code>
+     * <code>optional int32 expected_redirect_response_code = 18888047;</code>
      *
      * @return Whether the expectedRedirectResponseCode field is set.
      */
@@ -1392,11 +1359,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response.
-     * expectedRedirectResponseCode cannot be set when service is set.
+     * For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response. expectedRedirectResponseCode cannot be set when service is set.
      * </pre>
      *
-     * <code>int32 expected_redirect_response_code = 18888047;</code>
+     * <code>optional int32 expected_redirect_response_code = 18888047;</code>
      *
      * @return The expectedRedirectResponseCode.
      */
@@ -1408,11 +1374,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response.
-     * expectedRedirectResponseCode cannot be set when service is set.
+     * For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response. expectedRedirectResponseCode cannot be set when service is set.
      * </pre>
      *
-     * <code>int32 expected_redirect_response_code = 18888047;</code>
+     * <code>optional int32 expected_redirect_response_code = 18888047;</code>
      *
      * @param value The expectedRedirectResponseCode to set.
      * @return This builder for chaining.
@@ -1427,11 +1392,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response.
-     * expectedRedirectResponseCode cannot be set when service is set.
+     * For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response. expectedRedirectResponseCode cannot be set when service is set.
      * </pre>
      *
-     * <code>int32 expected_redirect_response_code = 18888047;</code>
+     * <code>optional int32 expected_redirect_response_code = 18888047;</code>
      *
      * @return This builder for chaining.
      */
@@ -1800,7 +1764,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Host portion of the URL. If headers contains a host header, then host must also match the header value.
      * </pre>
      *
-     * <code>string host = 3208616;</code>
+     * <code>optional string host = 3208616;</code>
      *
      * @return Whether the host field is set.
      */
@@ -1814,7 +1778,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Host portion of the URL. If headers contains a host header, then host must also match the header value.
      * </pre>
      *
-     * <code>string host = 3208616;</code>
+     * <code>optional string host = 3208616;</code>
      *
      * @return The host.
      */
@@ -1836,7 +1800,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Host portion of the URL. If headers contains a host header, then host must also match the header value.
      * </pre>
      *
-     * <code>string host = 3208616;</code>
+     * <code>optional string host = 3208616;</code>
      *
      * @return The bytes for host.
      */
@@ -1858,7 +1822,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Host portion of the URL. If headers contains a host header, then host must also match the header value.
      * </pre>
      *
-     * <code>string host = 3208616;</code>
+     * <code>optional string host = 3208616;</code>
      *
      * @param value The host to set.
      * @return This builder for chaining.
@@ -1879,7 +1843,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Host portion of the URL. If headers contains a host header, then host must also match the header value.
      * </pre>
      *
-     * <code>string host = 3208616;</code>
+     * <code>optional string host = 3208616;</code>
      *
      * @return This builder for chaining.
      */
@@ -1896,7 +1860,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Host portion of the URL. If headers contains a host header, then host must also match the header value.
      * </pre>
      *
-     * <code>string host = 3208616;</code>
+     * <code>optional string host = 3208616;</code>
      *
      * @param value The bytes for host to set.
      * @return This builder for chaining.
@@ -1920,7 +1884,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Path portion of the URL.
      * </pre>
      *
-     * <code>string path = 3433509;</code>
+     * <code>optional string path = 3433509;</code>
      *
      * @return Whether the path field is set.
      */
@@ -1934,7 +1898,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Path portion of the URL.
      * </pre>
      *
-     * <code>string path = 3433509;</code>
+     * <code>optional string path = 3433509;</code>
      *
      * @return The path.
      */
@@ -1956,7 +1920,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Path portion of the URL.
      * </pre>
      *
-     * <code>string path = 3433509;</code>
+     * <code>optional string path = 3433509;</code>
      *
      * @return The bytes for path.
      */
@@ -1978,7 +1942,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Path portion of the URL.
      * </pre>
      *
-     * <code>string path = 3433509;</code>
+     * <code>optional string path = 3433509;</code>
      *
      * @param value The path to set.
      * @return This builder for chaining.
@@ -1999,7 +1963,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Path portion of the URL.
      * </pre>
      *
-     * <code>string path = 3433509;</code>
+     * <code>optional string path = 3433509;</code>
      *
      * @return This builder for chaining.
      */
@@ -2016,7 +1980,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Path portion of the URL.
      * </pre>
      *
-     * <code>string path = 3433509;</code>
+     * <code>optional string path = 3433509;</code>
      *
      * @param value The bytes for path to set.
      * @return This builder for chaining.
@@ -2037,11 +2001,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Expected BackendService or BackendBucket resource the given URL should be mapped to.
-     * service cannot be set if expectedRedirectResponseCode is set.
+     * Expected BackendService or BackendBucket resource the given URL should be mapped to. service cannot be set if expectedRedirectResponseCode is set.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @return Whether the service field is set.
      */
@@ -2052,11 +2015,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Expected BackendService or BackendBucket resource the given URL should be mapped to.
-     * service cannot be set if expectedRedirectResponseCode is set.
+     * Expected BackendService or BackendBucket resource the given URL should be mapped to. service cannot be set if expectedRedirectResponseCode is set.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @return The service.
      */
@@ -2075,11 +2037,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Expected BackendService or BackendBucket resource the given URL should be mapped to.
-     * service cannot be set if expectedRedirectResponseCode is set.
+     * Expected BackendService or BackendBucket resource the given URL should be mapped to. service cannot be set if expectedRedirectResponseCode is set.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @return The bytes for service.
      */
@@ -2098,11 +2059,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Expected BackendService or BackendBucket resource the given URL should be mapped to.
-     * service cannot be set if expectedRedirectResponseCode is set.
+     * Expected BackendService or BackendBucket resource the given URL should be mapped to. service cannot be set if expectedRedirectResponseCode is set.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @param value The service to set.
      * @return This builder for chaining.
@@ -2120,11 +2080,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Expected BackendService or BackendBucket resource the given URL should be mapped to.
-     * service cannot be set if expectedRedirectResponseCode is set.
+     * Expected BackendService or BackendBucket resource the given URL should be mapped to. service cannot be set if expectedRedirectResponseCode is set.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @return This builder for chaining.
      */
@@ -2138,11 +2097,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Expected BackendService or BackendBucket resource the given URL should be mapped to.
-     * service cannot be set if expectedRedirectResponseCode is set.
+     * Expected BackendService or BackendBucket resource the given URL should be mapped to. service cannot be set if expectedRedirectResponseCode is set.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @param value The bytes for service to set.
      * @return This builder for chaining.

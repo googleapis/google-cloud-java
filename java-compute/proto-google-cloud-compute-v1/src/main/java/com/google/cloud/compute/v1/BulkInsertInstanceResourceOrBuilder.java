@@ -30,7 +30,7 @@ public interface BulkInsertInstanceResourceOrBuilder
    * The maximum number of instances to create.
    * </pre>
    *
-   * <code>int64 count = 94851343;</code>
+   * <code>optional int64 count = 94851343;</code>
    *
    * @return Whether the count field is set.
    */
@@ -42,7 +42,7 @@ public interface BulkInsertInstanceResourceOrBuilder
    * The maximum number of instances to create.
    * </pre>
    *
-   * <code>int64 count = 94851343;</code>
+   * <code>optional int64 count = 94851343;</code>
    *
    * @return The count.
    */
@@ -55,7 +55,8 @@ public interface BulkInsertInstanceResourceOrBuilder
    * The instance properties defining the VM instances to be created. Required if sourceInstanceTemplate is not provided.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceProperties instance_properties = 215355165;</code>
+   * <code>optional .google.cloud.compute.v1.InstanceProperties instance_properties = 215355165;
+   * </code>
    *
    * @return Whether the instanceProperties field is set.
    */
@@ -67,7 +68,8 @@ public interface BulkInsertInstanceResourceOrBuilder
    * The instance properties defining the VM instances to be created. Required if sourceInstanceTemplate is not provided.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceProperties instance_properties = 215355165;</code>
+   * <code>optional .google.cloud.compute.v1.InstanceProperties instance_properties = 215355165;
+   * </code>
    *
    * @return The instanceProperties.
    */
@@ -79,7 +81,8 @@ public interface BulkInsertInstanceResourceOrBuilder
    * The instance properties defining the VM instances to be created. Required if sourceInstanceTemplate is not provided.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceProperties instance_properties = 215355165;</code>
+   * <code>optional .google.cloud.compute.v1.InstanceProperties instance_properties = 215355165;
+   * </code>
    */
   com.google.cloud.compute.v1.InstancePropertiesOrBuilder getInstancePropertiesOrBuilder();
 
@@ -90,7 +93,7 @@ public interface BulkInsertInstanceResourceOrBuilder
    * Policy for chosing target zone.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
+   * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
    *
    * @return Whether the locationPolicy field is set.
    */
@@ -102,7 +105,7 @@ public interface BulkInsertInstanceResourceOrBuilder
    * Policy for chosing target zone.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
+   * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
    *
    * @return The locationPolicy.
    */
@@ -114,7 +117,7 @@ public interface BulkInsertInstanceResourceOrBuilder
    * Policy for chosing target zone.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
+   * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
    */
   com.google.cloud.compute.v1.LocationPolicyOrBuilder getLocationPolicyOrBuilder();
 
@@ -125,7 +128,7 @@ public interface BulkInsertInstanceResourceOrBuilder
    * The minimum number of instances to create. If no min_count is specified then count is used as the default value. If min_count instances cannot be created, then no instances will be created and instances already created will be deleted.
    * </pre>
    *
-   * <code>int64 min_count = 523228386;</code>
+   * <code>optional int64 min_count = 523228386;</code>
    *
    * @return Whether the minCount field is set.
    */
@@ -137,7 +140,7 @@ public interface BulkInsertInstanceResourceOrBuilder
    * The minimum number of instances to create. If no min_count is specified then count is used as the default value. If min_count instances cannot be created, then no instances will be created and instances already created will be deleted.
    * </pre>
    *
-   * <code>int64 min_count = 523228386;</code>
+   * <code>optional int64 min_count = 523228386;</code>
    *
    * @return The minCount.
    */
@@ -147,10 +150,10 @@ public interface BulkInsertInstanceResourceOrBuilder
    *
    *
    * <pre>
-   * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern should contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: name_pattern of inst-#### will generate instance names such as inst-0001, inst-0002, ... . If there already exist instance(s) whose names match the name pattern in the same project and zone, then the generated instance numbers will start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### will be inst-0051, inst-0052, etc. The name pattern placeholder #...# can contain up to 18 characters.
+   * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern must contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: a name_pattern of inst-#### generates instance names such as inst-0001 and inst-0002. If existing instances in the same project and zone have names that match the name pattern then the generated instance numbers start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### begin with inst-0051. The name pattern placeholder #...# can contain up to 18 characters.
    * </pre>
    *
-   * <code>string name_pattern = 413815260;</code>
+   * <code>optional string name_pattern = 413815260;</code>
    *
    * @return Whether the namePattern field is set.
    */
@@ -159,10 +162,10 @@ public interface BulkInsertInstanceResourceOrBuilder
    *
    *
    * <pre>
-   * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern should contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: name_pattern of inst-#### will generate instance names such as inst-0001, inst-0002, ... . If there already exist instance(s) whose names match the name pattern in the same project and zone, then the generated instance numbers will start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### will be inst-0051, inst-0052, etc. The name pattern placeholder #...# can contain up to 18 characters.
+   * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern must contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: a name_pattern of inst-#### generates instance names such as inst-0001 and inst-0002. If existing instances in the same project and zone have names that match the name pattern then the generated instance numbers start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### begin with inst-0051. The name pattern placeholder #...# can contain up to 18 characters.
    * </pre>
    *
-   * <code>string name_pattern = 413815260;</code>
+   * <code>optional string name_pattern = 413815260;</code>
    *
    * @return The namePattern.
    */
@@ -171,10 +174,10 @@ public interface BulkInsertInstanceResourceOrBuilder
    *
    *
    * <pre>
-   * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern should contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: name_pattern of inst-#### will generate instance names such as inst-0001, inst-0002, ... . If there already exist instance(s) whose names match the name pattern in the same project and zone, then the generated instance numbers will start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### will be inst-0051, inst-0052, etc. The name pattern placeholder #...# can contain up to 18 characters.
+   * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern must contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: a name_pattern of inst-#### generates instance names such as inst-0001 and inst-0002. If existing instances in the same project and zone have names that match the name pattern then the generated instance numbers start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### begin with inst-0051. The name pattern placeholder #...# can contain up to 18 characters.
    * </pre>
    *
-   * <code>string name_pattern = 413815260;</code>
+   * <code>optional string name_pattern = 413815260;</code>
    *
    * @return The bytes for namePattern.
    */
@@ -258,15 +261,10 @@ public interface BulkInsertInstanceResourceOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396.
-   * It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-   * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-   * - projects/project/global/instanceTemplates/instanceTemplate
-   * - global/instanceTemplates/instanceTemplate
-   * This field is optional.
+   * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate This field is optional.
    * </pre>
    *
-   * <code>string source_instance_template = 332423616;</code>
+   * <code>optional string source_instance_template = 332423616;</code>
    *
    * @return Whether the sourceInstanceTemplate field is set.
    */
@@ -275,15 +273,10 @@ public interface BulkInsertInstanceResourceOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396.
-   * It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-   * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-   * - projects/project/global/instanceTemplates/instanceTemplate
-   * - global/instanceTemplates/instanceTemplate
-   * This field is optional.
+   * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate This field is optional.
    * </pre>
    *
-   * <code>string source_instance_template = 332423616;</code>
+   * <code>optional string source_instance_template = 332423616;</code>
    *
    * @return The sourceInstanceTemplate.
    */
@@ -292,15 +285,10 @@ public interface BulkInsertInstanceResourceOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396.
-   * It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-   * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-   * - projects/project/global/instanceTemplates/instanceTemplate
-   * - global/instanceTemplates/instanceTemplate
-   * This field is optional.
+   * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate This field is optional.
    * </pre>
    *
-   * <code>string source_instance_template = 332423616;</code>
+   * <code>optional string source_instance_template = 332423616;</code>
    *
    * @return The bytes for sourceInstanceTemplate.
    */

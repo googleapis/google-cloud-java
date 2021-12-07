@@ -38,7 +38,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Quota() {
-    metric_ = 0;
+    metric_ = "";
     owner_ = "";
   }
 
@@ -91,11 +91,11 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
               usage_ = input.readDouble();
               break;
             }
-          case -30429824:
+          case -30429822:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
-              metric_ = rawValue;
+              metric_ = s;
               break;
             }
           default:
@@ -166,6 +166,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     C2D_CPUS(508182517),
     /** <code>C2_CPUS = 317601211;</code> */
     C2_CPUS(317601211),
+    /** <code>C3_CPUS = 346230362;</code> */
+    C3_CPUS(346230362),
     /** <code>COMMITMENTS = 456141790;</code> */
     COMMITMENTS(456141790),
     /** <code>COMMITTED_A2_CPUS = 59330902;</code> */
@@ -174,6 +176,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     COMMITTED_C2D_CPUS(282390904),
     /** <code>COMMITTED_C2_CPUS = 223725528;</code> */
     COMMITTED_C2_CPUS(223725528),
+    /** <code>COMMITTED_C3_CPUS = 252354679;</code> */
+    COMMITTED_C3_CPUS(252354679),
     /** <code>COMMITTED_CPUS = 292394702;</code> */
     COMMITTED_CPUS(292394702),
     /** <code>COMMITTED_E2_CPUS = 388120154;</code> */
@@ -202,7 +206,17 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     COMMITTED_NVIDIA_T4_GPUS(139871237),
     /** <code>COMMITTED_NVIDIA_V100_GPUS = 219562;</code> */
     COMMITTED_NVIDIA_V100_GPUS(219562),
-    /** <code>CPUS = 2075595;</code> */
+    /** <code>COMMITTED_T2D_CPUS = 382266439;</code> */
+    COMMITTED_T2D_CPUS(382266439),
+    /**
+     *
+     *
+     * <pre>
+     * Guest CPUs
+     * </pre>
+     *
+     * <code>CPUS = 2075595;</code>
+     */
     CPUS(2075595),
     /** <code>CPUS_ALL_REGIONS = 470911149;</code> */
     CPUS_ALL_REGIONS(470911149),
@@ -326,6 +340,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     PREEMPTIBLE_NVIDIA_V100_GPUS(230123813),
     /** <code>PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK = 231164291;</code> */
     PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK(231164291),
+    /** <code>PSC_INTERNAL_LB_FORWARDING_RULES = 169005435;</code> */
+    PSC_INTERNAL_LB_FORWARDING_RULES(169005435),
     /** <code>PUBLIC_ADVERTISED_PREFIXES = 471371980;</code> */
     PUBLIC_ADVERTISED_PREFIXES(471371980),
     /** <code>PUBLIC_DELEGATED_PREFIXES = 532465974;</code> */
@@ -344,11 +360,25 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     ROUTES(275680074),
     /** <code>SECURITY_POLICIES = 189518703;</code> */
     SECURITY_POLICIES(189518703),
+    /** <code>SECURITY_POLICIES_PER_REGION = 249041734;</code> */
+    SECURITY_POLICIES_PER_REGION(249041734),
     /** <code>SECURITY_POLICY_CEVAL_RULES = 470815689;</code> */
     SECURITY_POLICY_CEVAL_RULES(470815689),
     /** <code>SECURITY_POLICY_RULES = 203549225;</code> */
     SECURITY_POLICY_RULES(203549225),
-    /** <code>SNAPSHOTS = 343405327;</code> */
+    /** <code>SECURITY_POLICY_RULES_PER_REGION = 126510156;</code> */
+    SECURITY_POLICY_RULES_PER_REGION(126510156),
+    /** <code>SERVICE_ATTACHMENTS = 471521510;</code> */
+    SERVICE_ATTACHMENTS(471521510),
+    /**
+     *
+     *
+     * <pre>
+     * The total number of snapshots allowed for a single project.
+     * </pre>
+     *
+     * <code>SNAPSHOTS = 343405327;</code>
+     */
     SNAPSHOTS(343405327),
     /** <code>SSD_TOTAL_GB = 161732561;</code> */
     SSD_TOTAL_GB(161732561),
@@ -360,6 +390,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     STATIC_BYOIP_ADDRESSES(275809649),
     /** <code>SUBNETWORKS = 421330469;</code> */
     SUBNETWORKS(421330469),
+    /** <code>T2D_CPUS = 71187140;</code> */
+    T2D_CPUS(71187140),
     /** <code>TARGET_HTTPS_PROXIES = 219522506;</code> */
     TARGET_HTTPS_PROXIES(219522506),
     /** <code>TARGET_HTTP_PROXIES = 164117155;</code> */
@@ -409,6 +441,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int C2D_CPUS_VALUE = 508182517;
     /** <code>C2_CPUS = 317601211;</code> */
     public static final int C2_CPUS_VALUE = 317601211;
+    /** <code>C3_CPUS = 346230362;</code> */
+    public static final int C3_CPUS_VALUE = 346230362;
     /** <code>COMMITMENTS = 456141790;</code> */
     public static final int COMMITMENTS_VALUE = 456141790;
     /** <code>COMMITTED_A2_CPUS = 59330902;</code> */
@@ -417,6 +451,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int COMMITTED_C2D_CPUS_VALUE = 282390904;
     /** <code>COMMITTED_C2_CPUS = 223725528;</code> */
     public static final int COMMITTED_C2_CPUS_VALUE = 223725528;
+    /** <code>COMMITTED_C3_CPUS = 252354679;</code> */
+    public static final int COMMITTED_C3_CPUS_VALUE = 252354679;
     /** <code>COMMITTED_CPUS = 292394702;</code> */
     public static final int COMMITTED_CPUS_VALUE = 292394702;
     /** <code>COMMITTED_E2_CPUS = 388120154;</code> */
@@ -445,7 +481,17 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int COMMITTED_NVIDIA_T4_GPUS_VALUE = 139871237;
     /** <code>COMMITTED_NVIDIA_V100_GPUS = 219562;</code> */
     public static final int COMMITTED_NVIDIA_V100_GPUS_VALUE = 219562;
-    /** <code>CPUS = 2075595;</code> */
+    /** <code>COMMITTED_T2D_CPUS = 382266439;</code> */
+    public static final int COMMITTED_T2D_CPUS_VALUE = 382266439;
+    /**
+     *
+     *
+     * <pre>
+     * Guest CPUs
+     * </pre>
+     *
+     * <code>CPUS = 2075595;</code>
+     */
     public static final int CPUS_VALUE = 2075595;
     /** <code>CPUS_ALL_REGIONS = 470911149;</code> */
     public static final int CPUS_ALL_REGIONS_VALUE = 470911149;
@@ -570,6 +616,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     /** <code>PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK = 231164291;</code> */
     public static final int PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK_VALUE =
         231164291;
+    /** <code>PSC_INTERNAL_LB_FORWARDING_RULES = 169005435;</code> */
+    public static final int PSC_INTERNAL_LB_FORWARDING_RULES_VALUE = 169005435;
     /** <code>PUBLIC_ADVERTISED_PREFIXES = 471371980;</code> */
     public static final int PUBLIC_ADVERTISED_PREFIXES_VALUE = 471371980;
     /** <code>PUBLIC_DELEGATED_PREFIXES = 532465974;</code> */
@@ -588,11 +636,25 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int ROUTES_VALUE = 275680074;
     /** <code>SECURITY_POLICIES = 189518703;</code> */
     public static final int SECURITY_POLICIES_VALUE = 189518703;
+    /** <code>SECURITY_POLICIES_PER_REGION = 249041734;</code> */
+    public static final int SECURITY_POLICIES_PER_REGION_VALUE = 249041734;
     /** <code>SECURITY_POLICY_CEVAL_RULES = 470815689;</code> */
     public static final int SECURITY_POLICY_CEVAL_RULES_VALUE = 470815689;
     /** <code>SECURITY_POLICY_RULES = 203549225;</code> */
     public static final int SECURITY_POLICY_RULES_VALUE = 203549225;
-    /** <code>SNAPSHOTS = 343405327;</code> */
+    /** <code>SECURITY_POLICY_RULES_PER_REGION = 126510156;</code> */
+    public static final int SECURITY_POLICY_RULES_PER_REGION_VALUE = 126510156;
+    /** <code>SERVICE_ATTACHMENTS = 471521510;</code> */
+    public static final int SERVICE_ATTACHMENTS_VALUE = 471521510;
+    /**
+     *
+     *
+     * <pre>
+     * The total number of snapshots allowed for a single project.
+     * </pre>
+     *
+     * <code>SNAPSHOTS = 343405327;</code>
+     */
     public static final int SNAPSHOTS_VALUE = 343405327;
     /** <code>SSD_TOTAL_GB = 161732561;</code> */
     public static final int SSD_TOTAL_GB_VALUE = 161732561;
@@ -604,6 +666,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int STATIC_BYOIP_ADDRESSES_VALUE = 275809649;
     /** <code>SUBNETWORKS = 421330469;</code> */
     public static final int SUBNETWORKS_VALUE = 421330469;
+    /** <code>T2D_CPUS = 71187140;</code> */
+    public static final int T2D_CPUS_VALUE = 71187140;
     /** <code>TARGET_HTTPS_PROXIES = 219522506;</code> */
     public static final int TARGET_HTTPS_PROXIES_VALUE = 219522506;
     /** <code>TARGET_HTTP_PROXIES = 164117155;</code> */
@@ -667,6 +731,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return C2D_CPUS;
         case 317601211:
           return C2_CPUS;
+        case 346230362:
+          return C3_CPUS;
         case 456141790:
           return COMMITMENTS;
         case 59330902:
@@ -675,6 +741,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return COMMITTED_C2D_CPUS;
         case 223725528:
           return COMMITTED_C2_CPUS;
+        case 252354679:
+          return COMMITTED_C3_CPUS;
         case 292394702:
           return COMMITTED_CPUS;
         case 388120154:
@@ -703,6 +771,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return COMMITTED_NVIDIA_T4_GPUS;
         case 219562:
           return COMMITTED_NVIDIA_V100_GPUS;
+        case 382266439:
+          return COMMITTED_T2D_CPUS;
         case 2075595:
           return CPUS;
         case 470911149:
@@ -827,6 +897,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return PREEMPTIBLE_NVIDIA_V100_GPUS;
         case 231164291:
           return PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK;
+        case 169005435:
+          return PSC_INTERNAL_LB_FORWARDING_RULES;
         case 471371980:
           return PUBLIC_ADVERTISED_PREFIXES;
         case 532465974:
@@ -845,10 +917,16 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return ROUTES;
         case 189518703:
           return SECURITY_POLICIES;
+        case 249041734:
+          return SECURITY_POLICIES_PER_REGION;
         case 470815689:
           return SECURITY_POLICY_CEVAL_RULES;
         case 203549225:
           return SECURITY_POLICY_RULES;
+        case 126510156:
+          return SECURITY_POLICY_RULES_PER_REGION;
+        case 471521510:
+          return SERVICE_ATTACHMENTS;
         case 343405327:
           return SNAPSHOTS;
         case 161732561:
@@ -861,6 +939,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return STATIC_BYOIP_ADDRESSES;
         case 421330469:
           return SUBNETWORKS;
+        case 71187140:
+          return T2D_CPUS;
         case 219522506:
           return TARGET_HTTPS_PROXIES;
         case 164117155:
@@ -946,7 +1026,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Quota limit for this metric.
    * </pre>
    *
-   * <code>double limit = 102976443;</code>
+   * <code>optional double limit = 102976443;</code>
    *
    * @return Whether the limit field is set.
    */
@@ -961,7 +1041,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Quota limit for this metric.
    * </pre>
    *
-   * <code>double limit = 102976443;</code>
+   * <code>optional double limit = 102976443;</code>
    *
    * @return The limit.
    */
@@ -971,15 +1051,16 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int METRIC_FIELD_NUMBER = 533067184;
-  private int metric_;
+  private volatile java.lang.Object metric_;
   /**
    *
    *
    * <pre>
    * [Output Only] Name of the quota metric.
+   * Check the Metric enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+   * <code>optional string metric = 533067184;</code>
    *
    * @return Whether the metric field is set.
    */
@@ -992,33 +1073,48 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * [Output Only] Name of the quota metric.
+   * Check the Metric enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+   * <code>optional string metric = 533067184;</code>
    *
-   * @return The enum numeric value on the wire for metric.
+   * @return The metric.
    */
   @java.lang.Override
-  public int getMetricValue() {
-    return metric_;
+  public java.lang.String getMetric() {
+    java.lang.Object ref = metric_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      metric_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * [Output Only] Name of the quota metric.
+   * Check the Metric enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+   * <code>optional string metric = 533067184;</code>
    *
-   * @return The metric.
+   * @return The bytes for metric.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.Quota.Metric getMetric() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Quota.Metric result =
-        com.google.cloud.compute.v1.Quota.Metric.valueOf(metric_);
-    return result == null ? com.google.cloud.compute.v1.Quota.Metric.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getMetricBytes() {
+    java.lang.Object ref = metric_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      metric_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int OWNER_FIELD_NUMBER = 106164915;
@@ -1030,7 +1126,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Owning resource. This is the resource on which this quota is applied.
    * </pre>
    *
-   * <code>string owner = 106164915;</code>
+   * <code>optional string owner = 106164915;</code>
    *
    * @return Whether the owner field is set.
    */
@@ -1045,7 +1141,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Owning resource. This is the resource on which this quota is applied.
    * </pre>
    *
-   * <code>string owner = 106164915;</code>
+   * <code>optional string owner = 106164915;</code>
    *
    * @return The owner.
    */
@@ -1068,7 +1164,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Owning resource. This is the resource on which this quota is applied.
    * </pre>
    *
-   * <code>string owner = 106164915;</code>
+   * <code>optional string owner = 106164915;</code>
    *
    * @return The bytes for owner.
    */
@@ -1094,7 +1190,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Current usage of this metric.
    * </pre>
    *
-   * <code>double usage = 111574433;</code>
+   * <code>optional double usage = 111574433;</code>
    *
    * @return Whether the usage field is set.
    */
@@ -1109,7 +1205,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Current usage of this metric.
    * </pre>
    *
-   * <code>double usage = 111574433;</code>
+   * <code>optional double usage = 111574433;</code>
    *
    * @return The usage.
    */
@@ -1142,7 +1238,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
       output.writeDouble(111574433, usage_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(533067184, metric_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 533067184, metric_);
     }
     unknownFields.writeTo(output);
   }
@@ -1163,7 +1259,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(111574433, usage_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(533067184, metric_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(533067184, metric_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1187,7 +1283,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasMetric() != other.hasMetric()) return false;
     if (hasMetric()) {
-      if (metric_ != other.metric_) return false;
+      if (!getMetric().equals(other.getMetric())) return false;
     }
     if (hasOwner() != other.hasOwner()) return false;
     if (hasOwner()) {
@@ -1218,7 +1314,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasMetric()) {
       hash = (37 * hash) + METRIC_FIELD_NUMBER;
-      hash = (53 * hash) + metric_;
+      hash = (53 * hash) + getMetric().hashCode();
     }
     if (hasOwner()) {
       hash = (37 * hash) + OWNER_FIELD_NUMBER;
@@ -1377,7 +1473,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       limit_ = 0D;
       bitField0_ = (bitField0_ & ~0x00000001);
-      metric_ = 0;
+      metric_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       owner_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1481,7 +1577,9 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
         setLimit(other.getLimit());
       }
       if (other.hasMetric()) {
-        setMetric(other.getMetric());
+        bitField0_ |= 0x00000002;
+        metric_ = other.metric_;
+        onChanged();
       }
       if (other.hasOwner()) {
         bitField0_ |= 0x00000004;
@@ -1530,7 +1628,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Quota limit for this metric.
      * </pre>
      *
-     * <code>double limit = 102976443;</code>
+     * <code>optional double limit = 102976443;</code>
      *
      * @return Whether the limit field is set.
      */
@@ -1545,7 +1643,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Quota limit for this metric.
      * </pre>
      *
-     * <code>double limit = 102976443;</code>
+     * <code>optional double limit = 102976443;</code>
      *
      * @return The limit.
      */
@@ -1560,7 +1658,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Quota limit for this metric.
      * </pre>
      *
-     * <code>double limit = 102976443;</code>
+     * <code>optional double limit = 102976443;</code>
      *
      * @param value The limit to set.
      * @return This builder for chaining.
@@ -1578,7 +1676,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Quota limit for this metric.
      * </pre>
      *
-     * <code>double limit = 102976443;</code>
+     * <code>optional double limit = 102976443;</code>
      *
      * @return This builder for chaining.
      */
@@ -1589,19 +1687,19 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int metric_ = 0;
+    private java.lang.Object metric_ = "";
     /**
      *
      *
      * <pre>
      * [Output Only] Name of the quota metric.
+     * Check the Metric enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+     * <code>optional string metric = 533067184;</code>
      *
      * @return Whether the metric field is set.
      */
-    @java.lang.Override
     public boolean hasMetric() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -1610,29 +1708,64 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] Name of the quota metric.
+     * Check the Metric enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+     * <code>optional string metric = 533067184;</code>
      *
-     * @return The enum numeric value on the wire for metric.
+     * @return The metric.
      */
-    @java.lang.Override
-    public int getMetricValue() {
-      return metric_;
+    public java.lang.String getMetric() {
+      java.lang.Object ref = metric_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        metric_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * [Output Only] Name of the quota metric.
+     * Check the Metric enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+     * <code>optional string metric = 533067184;</code>
      *
-     * @param value The enum numeric value on the wire for metric to set.
+     * @return The bytes for metric.
+     */
+    public com.google.protobuf.ByteString getMetricBytes() {
+      java.lang.Object ref = metric_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        metric_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Name of the quota metric.
+     * Check the Metric enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string metric = 533067184;</code>
+     *
+     * @param value The metric to set.
      * @return This builder for chaining.
      */
-    public Builder setMetricValue(int value) {
+    public Builder setMetric(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000002;
       metric_ = value;
       onChanged();
@@ -1643,37 +1776,16 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] Name of the quota metric.
+     * Check the Metric enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+     * <code>optional string metric = 533067184;</code>
      *
-     * @return The metric.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Quota.Metric getMetric() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Quota.Metric result =
-          com.google.cloud.compute.v1.Quota.Metric.valueOf(metric_);
-      return result == null ? com.google.cloud.compute.v1.Quota.Metric.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] Name of the quota metric.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
-     *
-     * @param value The metric to set.
      * @return This builder for chaining.
      */
-    public Builder setMetric(com.google.cloud.compute.v1.Quota.Metric value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      metric_ = value.getNumber();
+    public Builder clearMetric() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      metric_ = getDefaultInstance().getMetric();
       onChanged();
       return this;
     }
@@ -1682,15 +1794,21 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] Name of the quota metric.
+     * Check the Metric enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+     * <code>optional string metric = 533067184;</code>
      *
+     * @param value The bytes for metric to set.
      * @return This builder for chaining.
      */
-    public Builder clearMetric() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      metric_ = 0;
+    public Builder setMetricBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      metric_ = value;
       onChanged();
       return this;
     }
@@ -1703,7 +1821,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Owning resource. This is the resource on which this quota is applied.
      * </pre>
      *
-     * <code>string owner = 106164915;</code>
+     * <code>optional string owner = 106164915;</code>
      *
      * @return Whether the owner field is set.
      */
@@ -1717,7 +1835,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Owning resource. This is the resource on which this quota is applied.
      * </pre>
      *
-     * <code>string owner = 106164915;</code>
+     * <code>optional string owner = 106164915;</code>
      *
      * @return The owner.
      */
@@ -1739,7 +1857,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Owning resource. This is the resource on which this quota is applied.
      * </pre>
      *
-     * <code>string owner = 106164915;</code>
+     * <code>optional string owner = 106164915;</code>
      *
      * @return The bytes for owner.
      */
@@ -1761,7 +1879,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Owning resource. This is the resource on which this quota is applied.
      * </pre>
      *
-     * <code>string owner = 106164915;</code>
+     * <code>optional string owner = 106164915;</code>
      *
      * @param value The owner to set.
      * @return This builder for chaining.
@@ -1782,7 +1900,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Owning resource. This is the resource on which this quota is applied.
      * </pre>
      *
-     * <code>string owner = 106164915;</code>
+     * <code>optional string owner = 106164915;</code>
      *
      * @return This builder for chaining.
      */
@@ -1799,7 +1917,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Owning resource. This is the resource on which this quota is applied.
      * </pre>
      *
-     * <code>string owner = 106164915;</code>
+     * <code>optional string owner = 106164915;</code>
      *
      * @param value The bytes for owner to set.
      * @return This builder for chaining.
@@ -1823,7 +1941,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Current usage of this metric.
      * </pre>
      *
-     * <code>double usage = 111574433;</code>
+     * <code>optional double usage = 111574433;</code>
      *
      * @return Whether the usage field is set.
      */
@@ -1838,7 +1956,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Current usage of this metric.
      * </pre>
      *
-     * <code>double usage = 111574433;</code>
+     * <code>optional double usage = 111574433;</code>
      *
      * @return The usage.
      */
@@ -1853,7 +1971,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Current usage of this metric.
      * </pre>
      *
-     * <code>double usage = 111574433;</code>
+     * <code>optional double usage = 111574433;</code>
      *
      * @param value The usage to set.
      * @return This builder for chaining.
@@ -1871,7 +1989,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Current usage of this metric.
      * </pre>
      *
-     * <code>double usage = 111574433;</code>
+     * <code>optional double usage = 111574433;</code>
      *
      * @return This builder for chaining.
      */

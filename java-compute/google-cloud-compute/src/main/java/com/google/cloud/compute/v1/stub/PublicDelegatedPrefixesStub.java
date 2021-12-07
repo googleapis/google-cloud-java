@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.PublicDelegatedPrefixesClient.Aggregat
 import static com.google.cloud.compute.v1.PublicDelegatedPrefixesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListPublicDelegatedPrefixesRequest;
 import com.google.cloud.compute.v1.DeletePublicDelegatedPrefixeRequest;
@@ -53,12 +54,22 @@ public abstract class PublicDelegatedPrefixesStub implements BackgroundResource 
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<DeletePublicDelegatedPrefixeRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeletePublicDelegatedPrefixeRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetPublicDelegatedPrefixeRequest, PublicDelegatedPrefix> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertPublicDelegatedPrefixeRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertPublicDelegatedPrefixeRequest, Operation> insertCallable() {
@@ -72,6 +83,11 @@ public abstract class PublicDelegatedPrefixesStub implements BackgroundResource 
   public UnaryCallable<ListPublicDelegatedPrefixesRequest, PublicDelegatedPrefixList>
       listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<PatchPublicDelegatedPrefixeRequest, Operation, Operation>
+      patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
   }
 
   public UnaryCallable<PatchPublicDelegatedPrefixeRequest, Operation> patchCallable() {

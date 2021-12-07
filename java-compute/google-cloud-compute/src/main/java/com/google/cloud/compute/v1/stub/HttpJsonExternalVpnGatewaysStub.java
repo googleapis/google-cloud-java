@@ -25,11 +25,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteExternalVpnGatewayRequest;
 import com.google.cloud.compute.v1.ExternalVpnGateway;
@@ -38,9 +40,11 @@ import com.google.cloud.compute.v1.GetExternalVpnGatewayRequest;
 import com.google.cloud.compute.v1.InsertExternalVpnGatewayRequest;
 import com.google.cloud.compute.v1.ListExternalVpnGatewaysRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.SetLabelsExternalVpnGatewayRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsExternalVpnGatewayRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -58,6 +62,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<DeleteExternalVpnGatewayRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteExternalVpnGatewayRequest, Operation>newBuilder()
@@ -91,7 +98,20 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteExternalVpnGatewayRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetExternalVpnGatewayRequest, ExternalVpnGateway>
@@ -124,6 +144,7 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ExternalVpnGateway>newBuilder()
                       .setDefaultInstance(ExternalVpnGateway.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -163,7 +184,20 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertExternalVpnGatewayRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListExternalVpnGatewaysRequest, ExternalVpnGatewayList>
@@ -213,6 +247,7 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ExternalVpnGatewayList>newBuilder()
                       .setDefaultInstance(ExternalVpnGatewayList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -250,7 +285,20 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetLabelsExternalVpnGatewayRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -290,19 +338,27 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
                       .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
   private final UnaryCallable<DeleteExternalVpnGatewayRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteExternalVpnGatewayRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetExternalVpnGatewayRequest, ExternalVpnGateway> getCallable;
   private final UnaryCallable<InsertExternalVpnGatewayRequest, Operation> insertCallable;
+  private final OperationCallable<InsertExternalVpnGatewayRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListExternalVpnGatewaysRequest, ExternalVpnGatewayList> listCallable;
   private final UnaryCallable<ListExternalVpnGatewaysRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<SetLabelsExternalVpnGatewayRequest, Operation> setLabelsCallable;
+  private final OperationCallable<SetLabelsExternalVpnGatewayRequest, Operation, Operation>
+      setLabelsOperationCallable;
   private final UnaryCallable<TestIamPermissionsExternalVpnGatewayRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonExternalVpnGatewaysStub create(
@@ -343,45 +399,65 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<DeleteExternalVpnGatewayRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteExternalVpnGatewayRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetExternalVpnGatewayRequest, ExternalVpnGateway> getTransportSettings =
         HttpJsonCallSettings.<GetExternalVpnGatewayRequest, ExternalVpnGateway>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertExternalVpnGatewayRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertExternalVpnGatewayRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListExternalVpnGatewaysRequest, ExternalVpnGatewayList>
         listTransportSettings =
             HttpJsonCallSettings
                 .<ListExternalVpnGatewaysRequest, ExternalVpnGatewayList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<SetLabelsExternalVpnGatewayRequest, Operation> setLabelsTransportSettings =
         HttpJsonCallSettings.<SetLabelsExternalVpnGatewayRequest, Operation>newBuilder()
             .setMethodDescriptor(setLabelsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<TestIamPermissionsExternalVpnGatewayRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings
                 .<TestIamPermissionsExternalVpnGatewayRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -391,6 +467,12 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
     this.setLabelsCallable =
         callableFactory.createUnaryCallable(
             setLabelsTransportSettings, settings.setLabelsSettings(), clientContext);
+    this.setLabelsOperationCallable =
+        callableFactory.createOperationCallable(
+            setLabelsTransportSettings,
+            settings.setLabelsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.testIamPermissionsCallable =
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
@@ -419,6 +501,12 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
   }
 
   @Override
+  public OperationCallable<DeleteExternalVpnGatewayRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetExternalVpnGatewayRequest, ExternalVpnGateway> getCallable() {
     return getCallable;
   }
@@ -426,6 +514,12 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
   @Override
   public UnaryCallable<InsertExternalVpnGatewayRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertExternalVpnGatewayRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -441,6 +535,12 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
   @Override
   public UnaryCallable<SetLabelsExternalVpnGatewayRequest, Operation> setLabelsCallable() {
     return setLabelsCallable;
+  }
+
+  @Override
+  public OperationCallable<SetLabelsExternalVpnGatewayRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return setLabelsOperationCallable;
   }
 
   @Override

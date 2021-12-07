@@ -149,7 +149,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
+   * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
    * </code>
    *
    * @return Whether the httpCookie field is set.
@@ -166,7 +166,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
+   * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
    * </code>
    *
    * @return The httpCookie.
@@ -186,7 +186,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
+   * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
    * </code>
    */
   @java.lang.Override
@@ -207,7 +207,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
    * The hash based on the value of the specified header field. This field is applicable if the sessionAffinity is set to HEADER_FIELD.
    * </pre>
    *
-   * <code>string http_header_name = 234798022;</code>
+   * <code>optional string http_header_name = 234798022;</code>
    *
    * @return Whether the httpHeaderName field is set.
    */
@@ -222,7 +222,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
    * The hash based on the value of the specified header field. This field is applicable if the sessionAffinity is set to HEADER_FIELD.
    * </pre>
    *
-   * <code>string http_header_name = 234798022;</code>
+   * <code>optional string http_header_name = 234798022;</code>
    *
    * @return The httpHeaderName.
    */
@@ -245,7 +245,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
    * The hash based on the value of the specified header field. This field is applicable if the sessionAffinity is set to HEADER_FIELD.
    * </pre>
    *
-   * <code>string http_header_name = 234798022;</code>
+   * <code>optional string http_header_name = 234798022;</code>
    *
    * @return The bytes for httpHeaderName.
    */
@@ -271,7 +271,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
    * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
    * </pre>
    *
-   * <code>int64 minimum_ring_size = 234380735;</code>
+   * <code>optional int64 minimum_ring_size = 234380735;</code>
    *
    * @return Whether the minimumRingSize field is set.
    */
@@ -286,7 +286,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
    * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
    * </pre>
    *
-   * <code>int64 minimum_ring_size = 234380735;</code>
+   * <code>optional int64 minimum_ring_size = 234380735;</code>
    *
    * @return The minimumRingSize.
    */
@@ -701,7 +701,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
+     * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
      * </code>
      *
      * @return Whether the httpCookie field is set.
@@ -717,7 +717,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
+     * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
      * </code>
      *
      * @return The httpCookie.
@@ -741,7 +741,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
+     * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
      * </code>
      */
     public Builder setHttpCookie(
@@ -766,7 +766,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
+     * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
      * </code>
      */
     public Builder setHttpCookie(
@@ -789,7 +789,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
+     * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
      * </code>
      */
     public Builder mergeHttpCookie(
@@ -823,7 +823,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
+     * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
      * </code>
      */
     public Builder clearHttpCookie() {
@@ -844,7 +844,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
+     * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
      * </code>
      */
     public com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie.Builder
@@ -861,7 +861,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
+     * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
      * </code>
      */
     public com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder
@@ -883,7 +883,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
+     * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -911,7 +911,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * The hash based on the value of the specified header field. This field is applicable if the sessionAffinity is set to HEADER_FIELD.
      * </pre>
      *
-     * <code>string http_header_name = 234798022;</code>
+     * <code>optional string http_header_name = 234798022;</code>
      *
      * @return Whether the httpHeaderName field is set.
      */
@@ -925,7 +925,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * The hash based on the value of the specified header field. This field is applicable if the sessionAffinity is set to HEADER_FIELD.
      * </pre>
      *
-     * <code>string http_header_name = 234798022;</code>
+     * <code>optional string http_header_name = 234798022;</code>
      *
      * @return The httpHeaderName.
      */
@@ -947,7 +947,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * The hash based on the value of the specified header field. This field is applicable if the sessionAffinity is set to HEADER_FIELD.
      * </pre>
      *
-     * <code>string http_header_name = 234798022;</code>
+     * <code>optional string http_header_name = 234798022;</code>
      *
      * @return The bytes for httpHeaderName.
      */
@@ -969,7 +969,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * The hash based on the value of the specified header field. This field is applicable if the sessionAffinity is set to HEADER_FIELD.
      * </pre>
      *
-     * <code>string http_header_name = 234798022;</code>
+     * <code>optional string http_header_name = 234798022;</code>
      *
      * @param value The httpHeaderName to set.
      * @return This builder for chaining.
@@ -990,7 +990,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * The hash based on the value of the specified header field. This field is applicable if the sessionAffinity is set to HEADER_FIELD.
      * </pre>
      *
-     * <code>string http_header_name = 234798022;</code>
+     * <code>optional string http_header_name = 234798022;</code>
      *
      * @return This builder for chaining.
      */
@@ -1007,7 +1007,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * The hash based on the value of the specified header field. This field is applicable if the sessionAffinity is set to HEADER_FIELD.
      * </pre>
      *
-     * <code>string http_header_name = 234798022;</code>
+     * <code>optional string http_header_name = 234798022;</code>
      *
      * @param value The bytes for httpHeaderName to set.
      * @return This builder for chaining.
@@ -1031,7 +1031,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
      * </pre>
      *
-     * <code>int64 minimum_ring_size = 234380735;</code>
+     * <code>optional int64 minimum_ring_size = 234380735;</code>
      *
      * @return Whether the minimumRingSize field is set.
      */
@@ -1046,7 +1046,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
      * </pre>
      *
-     * <code>int64 minimum_ring_size = 234380735;</code>
+     * <code>optional int64 minimum_ring_size = 234380735;</code>
      *
      * @return The minimumRingSize.
      */
@@ -1061,7 +1061,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
      * </pre>
      *
-     * <code>int64 minimum_ring_size = 234380735;</code>
+     * <code>optional int64 minimum_ring_size = 234380735;</code>
      *
      * @param value The minimumRingSize to set.
      * @return This builder for chaining.
@@ -1079,7 +1079,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
      * </pre>
      *
-     * <code>int64 minimum_ring_size = 234380735;</code>
+     * <code>optional int64 minimum_ring_size = 234380735;</code>
      *
      * @return This builder for chaining.
      */

@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.RegionTargetHttpProxiesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteRegionTargetHttpProxyRequest;
 import com.google.cloud.compute.v1.GetRegionTargetHttpProxyRequest;
@@ -39,12 +40,22 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class RegionTargetHttpProxiesStub implements BackgroundResource {
 
+  public OperationCallable<DeleteRegionTargetHttpProxyRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteRegionTargetHttpProxyRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetRegionTargetHttpProxyRequest, TargetHttpProxy> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertRegionTargetHttpProxyRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertRegionTargetHttpProxyRequest, Operation> insertCallable() {
@@ -57,6 +68,11 @@ public abstract class RegionTargetHttpProxiesStub implements BackgroundResource 
 
   public UnaryCallable<ListRegionTargetHttpProxiesRequest, TargetHttpProxyList> listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<SetUrlMapRegionTargetHttpProxyRequest, Operation, Operation>
+      setUrlMapOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setUrlMapOperationCallable()");
   }
 
   public UnaryCallable<SetUrlMapRegionTargetHttpProxyRequest, Operation> setUrlMapCallable() {

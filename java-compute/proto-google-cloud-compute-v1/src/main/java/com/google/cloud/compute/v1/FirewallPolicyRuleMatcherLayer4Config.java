@@ -137,7 +137,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
    * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp), or the IP protocol number.
    * </pre>
    *
-   * <code>string ip_protocol = 475958960;</code>
+   * <code>optional string ip_protocol = 475958960;</code>
    *
    * @return Whether the ipProtocol field is set.
    */
@@ -152,7 +152,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
    * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp), or the IP protocol number.
    * </pre>
    *
-   * <code>string ip_protocol = 475958960;</code>
+   * <code>optional string ip_protocol = 475958960;</code>
    *
    * @return The ipProtocol.
    */
@@ -175,7 +175,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
    * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp), or the IP protocol number.
    * </pre>
    *
-   * <code>string ip_protocol = 475958960;</code>
+   * <code>optional string ip_protocol = 475958960;</code>
    *
    * @return The bytes for ipProtocol.
    */
@@ -198,8 +198,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
    *
    *
    * <pre>
-   * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port.
-   * Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+   * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port. Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
    * </pre>
    *
    * <code>repeated string ports = 106854418;</code>
@@ -213,8 +212,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
    *
    *
    * <pre>
-   * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port.
-   * Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+   * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port. Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
    * </pre>
    *
    * <code>repeated string ports = 106854418;</code>
@@ -228,8 +226,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
    *
    *
    * <pre>
-   * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port.
-   * Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+   * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port. Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
    * </pre>
    *
    * <code>repeated string ports = 106854418;</code>
@@ -244,8 +241,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
    *
    *
    * <pre>
-   * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port.
-   * Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+   * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port. Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
    * </pre>
    *
    * <code>repeated string ports = 106854418;</code>
@@ -636,7 +632,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
      * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp), or the IP protocol number.
      * </pre>
      *
-     * <code>string ip_protocol = 475958960;</code>
+     * <code>optional string ip_protocol = 475958960;</code>
      *
      * @return Whether the ipProtocol field is set.
      */
@@ -650,7 +646,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
      * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp), or the IP protocol number.
      * </pre>
      *
-     * <code>string ip_protocol = 475958960;</code>
+     * <code>optional string ip_protocol = 475958960;</code>
      *
      * @return The ipProtocol.
      */
@@ -672,7 +668,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
      * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp), or the IP protocol number.
      * </pre>
      *
-     * <code>string ip_protocol = 475958960;</code>
+     * <code>optional string ip_protocol = 475958960;</code>
      *
      * @return The bytes for ipProtocol.
      */
@@ -694,7 +690,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
      * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp), or the IP protocol number.
      * </pre>
      *
-     * <code>string ip_protocol = 475958960;</code>
+     * <code>optional string ip_protocol = 475958960;</code>
      *
      * @param value The ipProtocol to set.
      * @return This builder for chaining.
@@ -715,7 +711,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
      * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp), or the IP protocol number.
      * </pre>
      *
-     * <code>string ip_protocol = 475958960;</code>
+     * <code>optional string ip_protocol = 475958960;</code>
      *
      * @return This builder for chaining.
      */
@@ -732,7 +728,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
      * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp), or the IP protocol number.
      * </pre>
      *
-     * <code>string ip_protocol = 475958960;</code>
+     * <code>optional string ip_protocol = 475958960;</code>
      *
      * @param value The bytes for ipProtocol to set.
      * @return This builder for chaining.
@@ -761,8 +757,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
      *
      *
      * <pre>
-     * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port.
-     * Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+     * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port. Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
      * </pre>
      *
      * <code>repeated string ports = 106854418;</code>
@@ -776,8 +771,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
      *
      *
      * <pre>
-     * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port.
-     * Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+     * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port. Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
      * </pre>
      *
      * <code>repeated string ports = 106854418;</code>
@@ -791,8 +785,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
      *
      *
      * <pre>
-     * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port.
-     * Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+     * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port. Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
      * </pre>
      *
      * <code>repeated string ports = 106854418;</code>
@@ -807,8 +800,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
      *
      *
      * <pre>
-     * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port.
-     * Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+     * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port. Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
      * </pre>
      *
      * <code>repeated string ports = 106854418;</code>
@@ -823,8 +815,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
      *
      *
      * <pre>
-     * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port.
-     * Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+     * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port. Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
      * </pre>
      *
      * <code>repeated string ports = 106854418;</code>
@@ -846,8 +837,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
      *
      *
      * <pre>
-     * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port.
-     * Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+     * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port. Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
      * </pre>
      *
      * <code>repeated string ports = 106854418;</code>
@@ -868,8 +858,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
      *
      *
      * <pre>
-     * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port.
-     * Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+     * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port. Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
      * </pre>
      *
      * <code>repeated string ports = 106854418;</code>
@@ -887,8 +876,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
      *
      *
      * <pre>
-     * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port.
-     * Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+     * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port. Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
      * </pre>
      *
      * <code>repeated string ports = 106854418;</code>
@@ -905,8 +893,7 @@ public final class FirewallPolicyRuleMatcherLayer4Config
      *
      *
      * <pre>
-     * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port.
-     * Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+     * An optional list of ports to which this rule applies. This field is only applicable for UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port. Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
      * </pre>
      *
      * <code>repeated string ports = 106854418;</code>

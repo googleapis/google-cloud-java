@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.NodeTemplatesStub;
@@ -46,7 +48,7 @@ import javax.annotation.Generated;
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String nodeTemplate = "nodeTemplate2118368412";
- *   Operation response = nodeTemplatesClient.delete(project, region, nodeTemplate);
+ *   NodeTemplate response = nodeTemplatesClient.get(project, region, nodeTemplate);
  * }
  * }</pre>
  *
@@ -289,7 +291,7 @@ public class NodeTemplatesClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   String nodeTemplate = "nodeTemplate2118368412";
-   *   Operation response = nodeTemplatesClient.delete(project, region, nodeTemplate);
+   *   Operation response = nodeTemplatesClient.deleteAsync(project, region, nodeTemplate).get();
    * }
    * }</pre>
    *
@@ -298,14 +300,15 @@ public class NodeTemplatesClient implements BackgroundResource {
    * @param nodeTemplate Name of the NodeTemplate resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String region, String nodeTemplate) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String region, String nodeTemplate) {
     DeleteNodeTemplateRequest request =
         DeleteNodeTemplateRequest.newBuilder()
             .setProject(project)
             .setRegion(region)
             .setNodeTemplate(nodeTemplate)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -323,15 +326,45 @@ public class NodeTemplatesClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = nodeTemplatesClient.delete(request);
+   *   Operation response = nodeTemplatesClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteNodeTemplateRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      DeleteNodeTemplateRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified NodeTemplate resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
+   *   DeleteNodeTemplateRequest request =
+   *       DeleteNodeTemplateRequest.newBuilder()
+   *           .setNodeTemplate("nodeTemplate2118368412")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       nodeTemplatesClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteNodeTemplateRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -537,7 +570,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   NodeTemplate nodeTemplateResource = NodeTemplate.newBuilder().build();
-   *   Operation response = nodeTemplatesClient.insert(project, region, nodeTemplateResource);
+   *   Operation response =
+   *       nodeTemplatesClient.insertAsync(project, region, nodeTemplateResource).get();
    * }
    * }</pre>
    *
@@ -546,14 +580,15 @@ public class NodeTemplatesClient implements BackgroundResource {
    * @param nodeTemplateResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(String project, String region, NodeTemplate nodeTemplateResource) {
+  public final OperationFuture<Operation, Operation> insertAsync(
+      String project, String region, NodeTemplate nodeTemplateResource) {
     InsertNodeTemplateRequest request =
         InsertNodeTemplateRequest.newBuilder()
             .setProject(project)
             .setRegion(region)
             .setNodeTemplateResource(nodeTemplateResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -572,15 +607,46 @@ public class NodeTemplatesClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = nodeTemplatesClient.insert(request);
+   *   Operation response = nodeTemplatesClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertNodeTemplateRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(
+      InsertNodeTemplateRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a NodeTemplate resource in the specified project using the data included in the
+   * request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
+   *   InsertNodeTemplateRequest request =
+   *       InsertNodeTemplateRequest.newBuilder()
+   *           .setNodeTemplateResource(NodeTemplate.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       nodeTemplatesClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertNodeTemplateRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

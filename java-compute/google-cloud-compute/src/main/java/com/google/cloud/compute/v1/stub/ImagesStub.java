@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.ImagesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteImageRequest;
 import com.google.cloud.compute.v1.DeprecateImageRequest;
@@ -47,8 +48,17 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class ImagesStub implements BackgroundResource {
 
+  public OperationCallable<DeleteImageRequest, Operation, Operation> deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteImageRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
+  }
+
+  public OperationCallable<DeprecateImageRequest, Operation, Operation>
+      deprecateOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deprecateOperationCallable()");
   }
 
   public UnaryCallable<DeprecateImageRequest, Operation> deprecateCallable() {
@@ -67,6 +77,10 @@ public abstract class ImagesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
   }
 
+  public OperationCallable<InsertImageRequest, Operation, Operation> insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
+  }
+
   public UnaryCallable<InsertImageRequest, Operation> insertCallable() {
     throw new UnsupportedOperationException("Not implemented: insertCallable()");
   }
@@ -79,12 +93,21 @@ public abstract class ImagesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
   }
 
+  public OperationCallable<PatchImageRequest, Operation, Operation> patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
+  }
+
   public UnaryCallable<PatchImageRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
   }
 
   public UnaryCallable<SetIamPolicyImageRequest, Policy> setIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public OperationCallable<SetLabelsImageRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsOperationCallable()");
   }
 
   public UnaryCallable<SetLabelsImageRequest, Operation> setLabelsCallable() {

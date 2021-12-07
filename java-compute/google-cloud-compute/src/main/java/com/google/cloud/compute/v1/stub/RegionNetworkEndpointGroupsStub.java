@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.RegionNetworkEndpointGroupsClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteRegionNetworkEndpointGroupRequest;
 import com.google.cloud.compute.v1.GetRegionNetworkEndpointGroupRequest;
@@ -38,12 +39,22 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class RegionNetworkEndpointGroupsStub implements BackgroundResource {
 
+  public OperationCallable<DeleteRegionNetworkEndpointGroupRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteRegionNetworkEndpointGroupRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetRegionNetworkEndpointGroupRequest, NetworkEndpointGroup> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertRegionNetworkEndpointGroupRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertRegionNetworkEndpointGroupRequest, Operation> insertCallable() {

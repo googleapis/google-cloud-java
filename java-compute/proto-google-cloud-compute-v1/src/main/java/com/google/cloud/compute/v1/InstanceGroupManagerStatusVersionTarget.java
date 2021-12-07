@@ -120,7 +120,7 @@ public final class InstanceGroupManagerStatusVersionTarget
    * [Output Only] A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.
    * </pre>
    *
-   * <code>bool is_reached = 433209149;</code>
+   * <code>optional bool is_reached = 433209149;</code>
    *
    * @return Whether the isReached field is set.
    */
@@ -135,7 +135,7 @@ public final class InstanceGroupManagerStatusVersionTarget
    * [Output Only] A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.
    * </pre>
    *
-   * <code>bool is_reached = 433209149;</code>
+   * <code>optional bool is_reached = 433209149;</code>
    *
    * @return The isReached.
    */
@@ -490,7 +490,7 @@ public final class InstanceGroupManagerStatusVersionTarget
      * [Output Only] A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.
      * </pre>
      *
-     * <code>bool is_reached = 433209149;</code>
+     * <code>optional bool is_reached = 433209149;</code>
      *
      * @return Whether the isReached field is set.
      */
@@ -505,7 +505,7 @@ public final class InstanceGroupManagerStatusVersionTarget
      * [Output Only] A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.
      * </pre>
      *
-     * <code>bool is_reached = 433209149;</code>
+     * <code>optional bool is_reached = 433209149;</code>
      *
      * @return The isReached.
      */
@@ -520,7 +520,7 @@ public final class InstanceGroupManagerStatusVersionTarget
      * [Output Only] A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.
      * </pre>
      *
-     * <code>bool is_reached = 433209149;</code>
+     * <code>optional bool is_reached = 433209149;</code>
      *
      * @param value The isReached to set.
      * @return This builder for chaining.
@@ -538,7 +538,7 @@ public final class InstanceGroupManagerStatusVersionTarget
      * [Output Only] A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.
      * </pre>
      *
-     * <code>bool is_reached = 433209149;</code>
+     * <code>optional bool is_reached = 433209149;</code>
      *
      * @return This builder for chaining.
      */

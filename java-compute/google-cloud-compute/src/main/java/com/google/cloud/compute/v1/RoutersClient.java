@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RoutersStub;
@@ -46,7 +48,7 @@ import javax.annotation.Generated;
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String router = "router-925132983";
- *   Operation response = routersClient.delete(project, region, router);
+ *   Router response = routersClient.get(project, region, router);
  * }
  * }</pre>
  *
@@ -284,7 +286,7 @@ public class RoutersClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   String router = "router-925132983";
-   *   Operation response = routersClient.delete(project, region, router);
+   *   Operation response = routersClient.deleteAsync(project, region, router).get();
    * }
    * }</pre>
    *
@@ -293,14 +295,15 @@ public class RoutersClient implements BackgroundResource {
    * @param router Name of the Router resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String region, String router) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String region, String router) {
     DeleteRouterRequest request =
         DeleteRouterRequest.newBuilder()
             .setProject(project)
             .setRegion(region)
             .setRouter(router)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -318,15 +321,44 @@ public class RoutersClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setRouter("router-925132983")
    *           .build();
-   *   Operation response = routersClient.delete(request);
+   *   Operation response = routersClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteRouterRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(DeleteRouterRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified Router resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   DeleteRouterRequest request =
+   *       DeleteRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       routersClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteRouterRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -669,7 +701,7 @@ public class RoutersClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   Router routerResource = Router.newBuilder().build();
-   *   Operation response = routersClient.insert(project, region, routerResource);
+   *   Operation response = routersClient.insertAsync(project, region, routerResource).get();
    * }
    * }</pre>
    *
@@ -678,14 +710,15 @@ public class RoutersClient implements BackgroundResource {
    * @param routerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(String project, String region, Router routerResource) {
+  public final OperationFuture<Operation, Operation> insertAsync(
+      String project, String region, Router routerResource) {
     InsertRouterRequest request =
         InsertRouterRequest.newBuilder()
             .setProject(project)
             .setRegion(region)
             .setRouterResource(routerResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -704,15 +737,45 @@ public class RoutersClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setRouterResource(Router.newBuilder().build())
    *           .build();
-   *   Operation response = routersClient.insert(request);
+   *   Operation response = routersClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertRouterRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(InsertRouterRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Router resource in the specified project and region using the data included in the
+   * request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   InsertRouterRequest request =
+   *       InsertRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouterResource(Router.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       routersClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertRouterRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -878,7 +941,7 @@ public class RoutersClient implements BackgroundResource {
    *   String region = "region-934795532";
    *   String router = "router-925132983";
    *   Router routerResource = Router.newBuilder().build();
-   *   Operation response = routersClient.patch(project, region, router, routerResource);
+   *   Operation response = routersClient.patchAsync(project, region, router, routerResource).get();
    * }
    * }</pre>
    *
@@ -888,7 +951,7 @@ public class RoutersClient implements BackgroundResource {
    * @param routerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(
+  public final OperationFuture<Operation, Operation> patchAsync(
       String project, String region, String router, Router routerResource) {
     PatchRouterRequest request =
         PatchRouterRequest.newBuilder()
@@ -897,7 +960,7 @@ public class RoutersClient implements BackgroundResource {
             .setRouter(router)
             .setRouterResource(routerResource)
             .build();
-    return patch(request);
+    return patchAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -917,15 +980,46 @@ public class RoutersClient implements BackgroundResource {
    *           .setRouter("router-925132983")
    *           .setRouterResource(Router.newBuilder().build())
    *           .build();
-   *   Operation response = routersClient.patch(request);
+   *   Operation response = routersClient.patchAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(PatchRouterRequest request) {
-    return patchCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> patchAsync(PatchRouterRequest request) {
+    return patchOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches the specified Router resource with the data included in the request. This method
+   * supports PATCH semantics and uses JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   PatchRouterRequest request =
+   *       PatchRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .setRouterResource(Router.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       routersClient.patchOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PatchRouterRequest, Operation, Operation>
+      patchOperationCallable() {
+    return stub.patchOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1059,7 +1153,7 @@ public class RoutersClient implements BackgroundResource {
    *   String region = "region-934795532";
    *   String router = "router-925132983";
    *   Router routerResource = Router.newBuilder().build();
-   *   Operation response = routersClient.update(project, region, router, routerResource);
+   *   Operation response = routersClient.updateAsync(project, region, router, routerResource).get();
    * }
    * }</pre>
    *
@@ -1069,7 +1163,7 @@ public class RoutersClient implements BackgroundResource {
    * @param routerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation update(
+  public final OperationFuture<Operation, Operation> updateAsync(
       String project, String region, String router, Router routerResource) {
     UpdateRouterRequest request =
         UpdateRouterRequest.newBuilder()
@@ -1078,7 +1172,7 @@ public class RoutersClient implements BackgroundResource {
             .setRouter(router)
             .setRouterResource(routerResource)
             .build();
-    return update(request);
+    return updateAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1099,15 +1193,47 @@ public class RoutersClient implements BackgroundResource {
    *           .setRouter("router-925132983")
    *           .setRouterResource(Router.newBuilder().build())
    *           .build();
-   *   Operation response = routersClient.update(request);
+   *   Operation response = routersClient.updateAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation update(UpdateRouterRequest request) {
-    return updateCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> updateAsync(UpdateRouterRequest request) {
+    return updateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified Router resource with the data included in the request. This method
+   * conforms to PUT semantics, which requests that the state of the target resource be created or
+   * replaced with the state defined by the representation enclosed in the request message payload.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   UpdateRouterRequest request =
+   *       UpdateRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .setRouterResource(Router.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       routersClient.updateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateRouterRequest, Operation, Operation>
+      updateOperationCallable() {
+    return stub.updateOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

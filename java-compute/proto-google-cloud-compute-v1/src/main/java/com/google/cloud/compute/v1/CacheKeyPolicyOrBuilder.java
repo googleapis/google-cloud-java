@@ -30,7 +30,7 @@ public interface CacheKeyPolicyOrBuilder
    * If true, requests to different hosts will be cached separately.
    * </pre>
    *
-   * <code>bool include_host = 486867679;</code>
+   * <code>optional bool include_host = 486867679;</code>
    *
    * @return Whether the includeHost field is set.
    */
@@ -42,7 +42,7 @@ public interface CacheKeyPolicyOrBuilder
    * If true, requests to different hosts will be cached separately.
    * </pre>
    *
-   * <code>bool include_host = 486867679;</code>
+   * <code>optional bool include_host = 486867679;</code>
    *
    * @return The includeHost.
    */
@@ -55,7 +55,7 @@ public interface CacheKeyPolicyOrBuilder
    * If true, http and https requests will be cached separately.
    * </pre>
    *
-   * <code>bool include_protocol = 303507535;</code>
+   * <code>optional bool include_protocol = 303507535;</code>
    *
    * @return Whether the includeProtocol field is set.
    */
@@ -67,7 +67,7 @@ public interface CacheKeyPolicyOrBuilder
    * If true, http and https requests will be cached separately.
    * </pre>
    *
-   * <code>bool include_protocol = 303507535;</code>
+   * <code>optional bool include_protocol = 303507535;</code>
    *
    * @return The includeProtocol.
    */
@@ -80,7 +80,7 @@ public interface CacheKeyPolicyOrBuilder
    * If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
    * </pre>
    *
-   * <code>bool include_query_string = 474036639;</code>
+   * <code>optional bool include_query_string = 474036639;</code>
    *
    * @return Whether the includeQueryString field is set.
    */
@@ -92,7 +92,7 @@ public interface CacheKeyPolicyOrBuilder
    * If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
    * </pre>
    *
-   * <code>bool include_query_string = 474036639;</code>
+   * <code>optional bool include_query_string = 474036639;</code>
    *
    * @return The includeQueryString.
    */

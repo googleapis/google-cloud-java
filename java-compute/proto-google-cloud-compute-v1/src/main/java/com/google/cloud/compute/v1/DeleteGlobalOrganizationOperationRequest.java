@@ -181,7 +181,7 @@ public final class DeleteGlobalOrganizationOperationRequest
    * Parent ID for this request.
    * </pre>
    *
-   * <code>string parent_id = 459714768;</code>
+   * <code>optional string parent_id = 459714768;</code>
    *
    * @return Whether the parentId field is set.
    */
@@ -196,7 +196,7 @@ public final class DeleteGlobalOrganizationOperationRequest
    * Parent ID for this request.
    * </pre>
    *
-   * <code>string parent_id = 459714768;</code>
+   * <code>optional string parent_id = 459714768;</code>
    *
    * @return The parentId.
    */
@@ -219,7 +219,7 @@ public final class DeleteGlobalOrganizationOperationRequest
    * Parent ID for this request.
    * </pre>
    *
-   * <code>string parent_id = 459714768;</code>
+   * <code>optional string parent_id = 459714768;</code>
    *
    * @return The bytes for parentId.
    */
@@ -250,7 +250,7 @@ public final class DeleteGlobalOrganizationOperationRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getOperationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 52090215, operation_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -265,7 +265,7 @@ public final class DeleteGlobalOrganizationOperationRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getOperationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(52090215, operation_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -707,7 +707,7 @@ public final class DeleteGlobalOrganizationOperationRequest
      * Parent ID for this request.
      * </pre>
      *
-     * <code>string parent_id = 459714768;</code>
+     * <code>optional string parent_id = 459714768;</code>
      *
      * @return Whether the parentId field is set.
      */
@@ -721,7 +721,7 @@ public final class DeleteGlobalOrganizationOperationRequest
      * Parent ID for this request.
      * </pre>
      *
-     * <code>string parent_id = 459714768;</code>
+     * <code>optional string parent_id = 459714768;</code>
      *
      * @return The parentId.
      */
@@ -743,7 +743,7 @@ public final class DeleteGlobalOrganizationOperationRequest
      * Parent ID for this request.
      * </pre>
      *
-     * <code>string parent_id = 459714768;</code>
+     * <code>optional string parent_id = 459714768;</code>
      *
      * @return The bytes for parentId.
      */
@@ -765,7 +765,7 @@ public final class DeleteGlobalOrganizationOperationRequest
      * Parent ID for this request.
      * </pre>
      *
-     * <code>string parent_id = 459714768;</code>
+     * <code>optional string parent_id = 459714768;</code>
      *
      * @param value The parentId to set.
      * @return This builder for chaining.
@@ -786,7 +786,7 @@ public final class DeleteGlobalOrganizationOperationRequest
      * Parent ID for this request.
      * </pre>
      *
-     * <code>string parent_id = 459714768;</code>
+     * <code>optional string parent_id = 459714768;</code>
      *
      * @return This builder for chaining.
      */
@@ -803,7 +803,7 @@ public final class DeleteGlobalOrganizationOperationRequest
      * Parent ID for this request.
      * </pre>
      *
-     * <code>string parent_id = 459714768;</code>
+     * <code>optional string parent_id = 459714768;</code>
      *
      * @param value The bytes for parentId to set.
      * @return This builder for chaining.

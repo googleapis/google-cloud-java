@@ -39,11 +39,11 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   private HealthStatus() {
     forwardingRule_ = "";
     forwardingRuleIp_ = "";
-    healthState_ = 0;
+    healthState_ = "";
     instance_ = "";
     ipAddress_ = "";
     weight_ = "";
-    weightError_ = 0;
+    weightError_ = "";
   }
 
   @java.lang.Override
@@ -125,11 +125,11 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
               weight_ = s;
               break;
             }
-          case -1702910096:
+          case -1702910094:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
-              healthState_ = rawValue;
+              healthState_ = s;
               break;
             }
           case -1044789534:
@@ -139,11 +139,11 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
               ipAddress_ = s;
               break;
             }
-          case -114955256:
+          case -114955254:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000080;
-              weightError_ = rawValue;
+              weightError_ = s;
               break;
             }
           default:
@@ -335,13 +335,45 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_WEIGHT_ERROR = 0;</code>
      */
     UNDEFINED_WEIGHT_ERROR(0),
-    /** <code>INVALID_WEIGHT = 383698400;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The response to a Health Check probe had the HTTP response header field X-Load-Balancing-Endpoint-Weight, but its content was invalid (i.e., not a non-negative single-precision floating-point number in decimal string representation).
+     * </pre>
+     *
+     * <code>INVALID_WEIGHT = 383698400;</code>
+     */
     INVALID_WEIGHT(383698400),
-    /** <code>MISSING_WEIGHT = 384027537;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The response to a Health Check probe did not have the HTTP response header field X-Load-Balancing-Endpoint-Weight.
+     * </pre>
+     *
+     * <code>MISSING_WEIGHT = 384027537;</code>
+     */
     MISSING_WEIGHT(384027537),
-    /** <code>UNAVAILABLE_WEIGHT = 439464295;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is the value when the accompanied health status is either TIMEOUT (i.e.,the Health Check probe was not able to get a response in time) or UNKNOWN. For the latter, it should be typically because there has not been sufficient time to parse and report the weight for a new backend (which is with 0.0.0.0 ip address). However, it can be also due to an outage case for which the health status is explicitly reset to UNKNOWN.
+     * </pre>
+     *
+     * <code>UNAVAILABLE_WEIGHT = 439464295;</code>
+     */
     UNAVAILABLE_WEIGHT(439464295),
-    /** <code>WEIGHT_NONE = 502428831;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is the default value when WeightReportMode is DISABLE, and is also the initial value when WeightReportMode has just updated to ENABLE or DRY_RUN and there has not been sufficient time to parse and report the backend weight.
+     * </pre>
+     *
+     * <code>WEIGHT_NONE = 502428831;</code>
+     */
     WEIGHT_NONE(502428831),
     UNRECOGNIZED(-1),
     ;
@@ -356,13 +388,45 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_WEIGHT_ERROR = 0;</code>
      */
     public static final int UNDEFINED_WEIGHT_ERROR_VALUE = 0;
-    /** <code>INVALID_WEIGHT = 383698400;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The response to a Health Check probe had the HTTP response header field X-Load-Balancing-Endpoint-Weight, but its content was invalid (i.e., not a non-negative single-precision floating-point number in decimal string representation).
+     * </pre>
+     *
+     * <code>INVALID_WEIGHT = 383698400;</code>
+     */
     public static final int INVALID_WEIGHT_VALUE = 383698400;
-    /** <code>MISSING_WEIGHT = 384027537;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The response to a Health Check probe did not have the HTTP response header field X-Load-Balancing-Endpoint-Weight.
+     * </pre>
+     *
+     * <code>MISSING_WEIGHT = 384027537;</code>
+     */
     public static final int MISSING_WEIGHT_VALUE = 384027537;
-    /** <code>UNAVAILABLE_WEIGHT = 439464295;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is the value when the accompanied health status is either TIMEOUT (i.e.,the Health Check probe was not able to get a response in time) or UNKNOWN. For the latter, it should be typically because there has not been sufficient time to parse and report the weight for a new backend (which is with 0.0.0.0 ip address). However, it can be also due to an outage case for which the health status is explicitly reset to UNKNOWN.
+     * </pre>
+     *
+     * <code>UNAVAILABLE_WEIGHT = 439464295;</code>
+     */
     public static final int UNAVAILABLE_WEIGHT_VALUE = 439464295;
-    /** <code>WEIGHT_NONE = 502428831;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is the default value when WeightReportMode is DISABLE, and is also the initial value when WeightReportMode has just updated to ENABLE or DRY_RUN and there has not been sufficient time to parse and report the backend weight.
+     * </pre>
+     *
+     * <code>WEIGHT_NONE = 502428831;</code>
+     */
     public static final int WEIGHT_NONE_VALUE = 502428831;
 
     public final int getNumber() {
@@ -562,7 +626,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    * URL of the forwarding rule associated with the health status of the instance.
    * </pre>
    *
-   * <code>string forwarding_rule = 269964030;</code>
+   * <code>optional string forwarding_rule = 269964030;</code>
    *
    * @return Whether the forwardingRule field is set.
    */
@@ -577,7 +641,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    * URL of the forwarding rule associated with the health status of the instance.
    * </pre>
    *
-   * <code>string forwarding_rule = 269964030;</code>
+   * <code>optional string forwarding_rule = 269964030;</code>
    *
    * @return The forwardingRule.
    */
@@ -600,7 +664,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    * URL of the forwarding rule associated with the health status of the instance.
    * </pre>
    *
-   * <code>string forwarding_rule = 269964030;</code>
+   * <code>optional string forwarding_rule = 269964030;</code>
    *
    * @return The bytes for forwardingRule.
    */
@@ -626,7 +690,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    * A forwarding rule IP address assigned to this instance.
    * </pre>
    *
-   * <code>string forwarding_rule_ip = 172250632;</code>
+   * <code>optional string forwarding_rule_ip = 172250632;</code>
    *
    * @return Whether the forwardingRuleIp field is set.
    */
@@ -641,7 +705,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    * A forwarding rule IP address assigned to this instance.
    * </pre>
    *
-   * <code>string forwarding_rule_ip = 172250632;</code>
+   * <code>optional string forwarding_rule_ip = 172250632;</code>
    *
    * @return The forwardingRuleIp.
    */
@@ -664,7 +728,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    * A forwarding rule IP address assigned to this instance.
    * </pre>
    *
-   * <code>string forwarding_rule_ip = 172250632;</code>
+   * <code>optional string forwarding_rule_ip = 172250632;</code>
    *
    * @return The bytes for forwardingRuleIp.
    */
@@ -682,15 +746,16 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HEALTH_STATE_FIELD_NUMBER = 324007150;
-  private int healthState_;
+  private volatile java.lang.Object healthState_;
   /**
    *
    *
    * <pre>
    * Health state of the instance.
+   * Check the HealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+   * <code>optional string health_state = 324007150;</code>
    *
    * @return Whether the healthState field is set.
    */
@@ -703,35 +768,48 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Health state of the instance.
+   * Check the HealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+   * <code>optional string health_state = 324007150;</code>
    *
-   * @return The enum numeric value on the wire for healthState.
+   * @return The healthState.
    */
   @java.lang.Override
-  public int getHealthStateValue() {
-    return healthState_;
+  public java.lang.String getHealthState() {
+    java.lang.Object ref = healthState_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      healthState_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * Health state of the instance.
+   * Check the HealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+   * <code>optional string health_state = 324007150;</code>
    *
-   * @return The healthState.
+   * @return The bytes for healthState.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.HealthStatus.HealthState getHealthState() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.HealthStatus.HealthState result =
-        com.google.cloud.compute.v1.HealthStatus.HealthState.valueOf(healthState_);
-    return result == null
-        ? com.google.cloud.compute.v1.HealthStatus.HealthState.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getHealthStateBytes() {
+    java.lang.Object ref = healthState_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      healthState_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
@@ -743,7 +821,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    * URL of the instance resource.
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return Whether the instance field is set.
    */
@@ -758,7 +836,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    * URL of the instance resource.
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return The instance.
    */
@@ -781,7 +859,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    * URL of the instance resource.
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return The bytes for instance.
    */
@@ -807,7 +885,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return Whether the ipAddress field is set.
    */
@@ -822,7 +900,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return The ipAddress.
    */
@@ -845,7 +923,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return The bytes for ipAddress.
    */
@@ -871,7 +949,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    * The named port of the instance group, not necessarily the port that is health-checked.
    * </pre>
    *
-   * <code>int32 port = 3446913;</code>
+   * <code>optional int32 port = 3446913;</code>
    *
    * @return Whether the port field is set.
    */
@@ -886,7 +964,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    * The named port of the instance group, not necessarily the port that is health-checked.
    * </pre>
    *
-   * <code>int32 port = 3446913;</code>
+   * <code>optional int32 port = 3446913;</code>
    *
    * @return The port.
    */
@@ -898,7 +976,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   public static final int WEIGHT_FIELD_NUMBER = 282149496;
   private volatile java.lang.Object weight_;
   /**
-   * <code>string weight = 282149496;</code>
+   * <code>optional string weight = 282149496;</code>
    *
    * @return Whether the weight field is set.
    */
@@ -907,7 +985,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     return ((bitField0_ & 0x00000040) != 0);
   }
   /**
-   * <code>string weight = 282149496;</code>
+   * <code>optional string weight = 282149496;</code>
    *
    * @return The weight.
    */
@@ -924,7 +1002,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
   }
   /**
-   * <code>string weight = 282149496;</code>
+   * <code>optional string weight = 282149496;</code>
    *
    * @return The bytes for weight.
    */
@@ -942,9 +1020,16 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WEIGHT_ERROR_FIELD_NUMBER = 522501505;
-  private int weightError_;
+  private volatile java.lang.Object weightError_;
   /**
-   * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
+   *
+   *
+   * <pre>
+   *
+   * Check the WeightError enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string weight_error = 522501505;</code>
    *
    * @return Whether the weightError field is set.
    */
@@ -953,27 +1038,52 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     return ((bitField0_ & 0x00000080) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
    *
-   * @return The enum numeric value on the wire for weightError.
-   */
-  @java.lang.Override
-  public int getWeightErrorValue() {
-    return weightError_;
-  }
-  /**
-   * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
+   *
+   * <pre>
+   *
+   * Check the WeightError enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string weight_error = 522501505;</code>
    *
    * @return The weightError.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.HealthStatus.WeightError getWeightError() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.HealthStatus.WeightError result =
-        com.google.cloud.compute.v1.HealthStatus.WeightError.valueOf(weightError_);
-    return result == null
-        ? com.google.cloud.compute.v1.HealthStatus.WeightError.UNRECOGNIZED
-        : result;
+  public java.lang.String getWeightError() {
+    java.lang.Object ref = weightError_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      weightError_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the WeightError enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string weight_error = 522501505;</code>
+   *
+   * @return The bytes for weightError.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getWeightErrorBytes() {
+    java.lang.Object ref = weightError_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      weightError_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1008,13 +1118,13 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 282149496, weight_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeEnum(324007150, healthState_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 324007150, healthState_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 406272220, ipAddress_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      output.writeEnum(522501505, weightError_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 522501505, weightError_);
     }
     unknownFields.writeTo(output);
   }
@@ -1052,13 +1162,13 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(282149496, weight_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(324007150, healthState_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(324007150, healthState_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(406272220, ipAddress_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(522501505, weightError_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(522501505, weightError_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1086,7 +1196,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasHealthState() != other.hasHealthState()) return false;
     if (hasHealthState()) {
-      if (healthState_ != other.healthState_) return false;
+      if (!getHealthState().equals(other.getHealthState())) return false;
     }
     if (hasInstance() != other.hasInstance()) return false;
     if (hasInstance()) {
@@ -1106,7 +1216,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasWeightError() != other.hasWeightError()) return false;
     if (hasWeightError()) {
-      if (weightError_ != other.weightError_) return false;
+      if (!getWeightError().equals(other.getWeightError())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1133,7 +1243,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasHealthState()) {
       hash = (37 * hash) + HEALTH_STATE_FIELD_NUMBER;
-      hash = (53 * hash) + healthState_;
+      hash = (53 * hash) + getHealthState().hashCode();
     }
     if (hasInstance()) {
       hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
@@ -1153,7 +1263,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasWeightError()) {
       hash = (37 * hash) + WEIGHT_ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + weightError_;
+      hash = (53 * hash) + getWeightError().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1324,7 +1434,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000002);
       forwardingRuleIp_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
-      healthState_ = 0;
+      healthState_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
       instance_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -1334,7 +1444,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000040);
       weight_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
-      weightError_ = 0;
+      weightError_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
@@ -1461,7 +1571,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasHealthState()) {
-        setHealthState(other.getHealthState());
+        bitField0_ |= 0x00000008;
+        healthState_ = other.healthState_;
+        onChanged();
       }
       if (other.hasInstance()) {
         bitField0_ |= 0x00000010;
@@ -1482,7 +1594,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasWeightError()) {
-        setWeightError(other.getWeightError());
+        bitField0_ |= 0x00000100;
+        weightError_ = other.weightError_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1683,7 +1797,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * URL of the forwarding rule associated with the health status of the instance.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030;</code>
+     * <code>optional string forwarding_rule = 269964030;</code>
      *
      * @return Whether the forwardingRule field is set.
      */
@@ -1697,7 +1811,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * URL of the forwarding rule associated with the health status of the instance.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030;</code>
+     * <code>optional string forwarding_rule = 269964030;</code>
      *
      * @return The forwardingRule.
      */
@@ -1719,7 +1833,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * URL of the forwarding rule associated with the health status of the instance.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030;</code>
+     * <code>optional string forwarding_rule = 269964030;</code>
      *
      * @return The bytes for forwardingRule.
      */
@@ -1741,7 +1855,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * URL of the forwarding rule associated with the health status of the instance.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030;</code>
+     * <code>optional string forwarding_rule = 269964030;</code>
      *
      * @param value The forwardingRule to set.
      * @return This builder for chaining.
@@ -1762,7 +1876,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * URL of the forwarding rule associated with the health status of the instance.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030;</code>
+     * <code>optional string forwarding_rule = 269964030;</code>
      *
      * @return This builder for chaining.
      */
@@ -1779,7 +1893,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * URL of the forwarding rule associated with the health status of the instance.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030;</code>
+     * <code>optional string forwarding_rule = 269964030;</code>
      *
      * @param value The bytes for forwardingRule to set.
      * @return This builder for chaining.
@@ -1803,7 +1917,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * A forwarding rule IP address assigned to this instance.
      * </pre>
      *
-     * <code>string forwarding_rule_ip = 172250632;</code>
+     * <code>optional string forwarding_rule_ip = 172250632;</code>
      *
      * @return Whether the forwardingRuleIp field is set.
      */
@@ -1817,7 +1931,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * A forwarding rule IP address assigned to this instance.
      * </pre>
      *
-     * <code>string forwarding_rule_ip = 172250632;</code>
+     * <code>optional string forwarding_rule_ip = 172250632;</code>
      *
      * @return The forwardingRuleIp.
      */
@@ -1839,7 +1953,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * A forwarding rule IP address assigned to this instance.
      * </pre>
      *
-     * <code>string forwarding_rule_ip = 172250632;</code>
+     * <code>optional string forwarding_rule_ip = 172250632;</code>
      *
      * @return The bytes for forwardingRuleIp.
      */
@@ -1861,7 +1975,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * A forwarding rule IP address assigned to this instance.
      * </pre>
      *
-     * <code>string forwarding_rule_ip = 172250632;</code>
+     * <code>optional string forwarding_rule_ip = 172250632;</code>
      *
      * @param value The forwardingRuleIp to set.
      * @return This builder for chaining.
@@ -1882,7 +1996,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * A forwarding rule IP address assigned to this instance.
      * </pre>
      *
-     * <code>string forwarding_rule_ip = 172250632;</code>
+     * <code>optional string forwarding_rule_ip = 172250632;</code>
      *
      * @return This builder for chaining.
      */
@@ -1899,7 +2013,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * A forwarding rule IP address assigned to this instance.
      * </pre>
      *
-     * <code>string forwarding_rule_ip = 172250632;</code>
+     * <code>optional string forwarding_rule_ip = 172250632;</code>
      *
      * @param value The bytes for forwardingRuleIp to set.
      * @return This builder for chaining.
@@ -1915,19 +2029,19 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int healthState_ = 0;
+    private java.lang.Object healthState_ = "";
     /**
      *
      *
      * <pre>
      * Health state of the instance.
+     * Check the HealthState enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+     * <code>optional string health_state = 324007150;</code>
      *
      * @return Whether the healthState field is set.
      */
-    @java.lang.Override
     public boolean hasHealthState() {
       return ((bitField0_ & 0x00000008) != 0);
     }
@@ -1936,29 +2050,64 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Health state of the instance.
+     * Check the HealthState enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+     * <code>optional string health_state = 324007150;</code>
      *
-     * @return The enum numeric value on the wire for healthState.
+     * @return The healthState.
      */
-    @java.lang.Override
-    public int getHealthStateValue() {
-      return healthState_;
+    public java.lang.String getHealthState() {
+      java.lang.Object ref = healthState_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        healthState_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * Health state of the instance.
+     * Check the HealthState enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+     * <code>optional string health_state = 324007150;</code>
      *
-     * @param value The enum numeric value on the wire for healthState to set.
+     * @return The bytes for healthState.
+     */
+    public com.google.protobuf.ByteString getHealthStateBytes() {
+      java.lang.Object ref = healthState_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        healthState_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Health state of the instance.
+     * Check the HealthState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string health_state = 324007150;</code>
+     *
+     * @param value The healthState to set.
      * @return This builder for chaining.
      */
-    public Builder setHealthStateValue(int value) {
+    public Builder setHealthState(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000008;
       healthState_ = value;
       onChanged();
@@ -1969,39 +2118,16 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Health state of the instance.
+     * Check the HealthState enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+     * <code>optional string health_state = 324007150;</code>
      *
-     * @return The healthState.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.HealthStatus.HealthState getHealthState() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.HealthStatus.HealthState result =
-          com.google.cloud.compute.v1.HealthStatus.HealthState.valueOf(healthState_);
-      return result == null
-          ? com.google.cloud.compute.v1.HealthStatus.HealthState.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Health state of the instance.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
-     *
-     * @param value The healthState to set.
      * @return This builder for chaining.
      */
-    public Builder setHealthState(com.google.cloud.compute.v1.HealthStatus.HealthState value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000008;
-      healthState_ = value.getNumber();
+    public Builder clearHealthState() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      healthState_ = getDefaultInstance().getHealthState();
       onChanged();
       return this;
     }
@@ -2010,15 +2136,21 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Health state of the instance.
+     * Check the HealthState enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+     * <code>optional string health_state = 324007150;</code>
      *
+     * @param value The bytes for healthState to set.
      * @return This builder for chaining.
      */
-    public Builder clearHealthState() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      healthState_ = 0;
+    public Builder setHealthStateBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000008;
+      healthState_ = value;
       onChanged();
       return this;
     }
@@ -2031,7 +2163,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * URL of the instance resource.
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @return Whether the instance field is set.
      */
@@ -2045,7 +2177,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * URL of the instance resource.
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @return The instance.
      */
@@ -2067,7 +2199,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * URL of the instance resource.
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @return The bytes for instance.
      */
@@ -2089,7 +2221,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * URL of the instance resource.
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @param value The instance to set.
      * @return This builder for chaining.
@@ -2110,7 +2242,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * URL of the instance resource.
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @return This builder for chaining.
      */
@@ -2127,7 +2259,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * URL of the instance resource.
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @param value The bytes for instance to set.
      * @return This builder for chaining.
@@ -2151,7 +2283,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @return Whether the ipAddress field is set.
      */
@@ -2165,7 +2297,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @return The ipAddress.
      */
@@ -2187,7 +2319,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @return The bytes for ipAddress.
      */
@@ -2209,7 +2341,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @param value The ipAddress to set.
      * @return This builder for chaining.
@@ -2230,7 +2362,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @return This builder for chaining.
      */
@@ -2247,7 +2379,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @param value The bytes for ipAddress to set.
      * @return This builder for chaining.
@@ -2271,7 +2403,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * The named port of the instance group, not necessarily the port that is health-checked.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @return Whether the port field is set.
      */
@@ -2286,7 +2418,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * The named port of the instance group, not necessarily the port that is health-checked.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @return The port.
      */
@@ -2301,7 +2433,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * The named port of the instance group, not necessarily the port that is health-checked.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @param value The port to set.
      * @return This builder for chaining.
@@ -2319,7 +2451,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * The named port of the instance group, not necessarily the port that is health-checked.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @return This builder for chaining.
      */
@@ -2332,7 +2464,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object weight_ = "";
     /**
-     * <code>string weight = 282149496;</code>
+     * <code>optional string weight = 282149496;</code>
      *
      * @return Whether the weight field is set.
      */
@@ -2340,7 +2472,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>string weight = 282149496;</code>
+     * <code>optional string weight = 282149496;</code>
      *
      * @return The weight.
      */
@@ -2356,7 +2488,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     * <code>string weight = 282149496;</code>
+     * <code>optional string weight = 282149496;</code>
      *
      * @return The bytes for weight.
      */
@@ -2372,7 +2504,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     * <code>string weight = 282149496;</code>
+     * <code>optional string weight = 282149496;</code>
      *
      * @param value The weight to set.
      * @return This builder for chaining.
@@ -2387,7 +2519,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>string weight = 282149496;</code>
+     * <code>optional string weight = 282149496;</code>
      *
      * @return This builder for chaining.
      */
@@ -2398,7 +2530,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>string weight = 282149496;</code>
+     * <code>optional string weight = 282149496;</code>
      *
      * @param value The bytes for weight to set.
      * @return This builder for chaining.
@@ -2414,74 +2546,128 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int weightError_ = 0;
+    private java.lang.Object weightError_ = "";
     /**
-     * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
+     *
+     *
+     * <pre>
+     *
+     * Check the WeightError enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string weight_error = 522501505;</code>
      *
      * @return Whether the weightError field is set.
      */
-    @java.lang.Override
     public boolean hasWeightError() {
       return ((bitField0_ & 0x00000100) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
      *
-     * @return The enum numeric value on the wire for weightError.
+     *
+     * <pre>
+     *
+     * Check the WeightError enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string weight_error = 522501505;</code>
+     *
+     * @return The weightError.
      */
-    @java.lang.Override
-    public int getWeightErrorValue() {
-      return weightError_;
+    public java.lang.String getWeightError() {
+      java.lang.Object ref = weightError_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        weightError_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
      *
-     * @param value The enum numeric value on the wire for weightError to set.
+     *
+     * <pre>
+     *
+     * Check the WeightError enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string weight_error = 522501505;</code>
+     *
+     * @return The bytes for weightError.
+     */
+    public com.google.protobuf.ByteString getWeightErrorBytes() {
+      java.lang.Object ref = weightError_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        weightError_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the WeightError enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string weight_error = 522501505;</code>
+     *
+     * @param value The weightError to set.
      * @return This builder for chaining.
      */
-    public Builder setWeightErrorValue(int value) {
+    public Builder setWeightError(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000100;
       weightError_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
      *
-     * @return The weightError.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.HealthStatus.WeightError getWeightError() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.HealthStatus.WeightError result =
-          com.google.cloud.compute.v1.HealthStatus.WeightError.valueOf(weightError_);
-      return result == null
-          ? com.google.cloud.compute.v1.HealthStatus.WeightError.UNRECOGNIZED
-          : result;
-    }
-    /**
-     * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
      *
-     * @param value The weightError to set.
-     * @return This builder for chaining.
-     */
-    public Builder setWeightError(com.google.cloud.compute.v1.HealthStatus.WeightError value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000100;
-      weightError_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
+     * <pre>
+     *
+     * Check the WeightError enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string weight_error = 522501505;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearWeightError() {
       bitField0_ = (bitField0_ & ~0x00000100);
-      weightError_ = 0;
+      weightError_ = getDefaultInstance().getWeightError();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the WeightError enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string weight_error = 522501505;</code>
+     *
+     * @param value The bytes for weightError to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWeightErrorBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000100;
+      weightError_ = value;
       onChanged();
       return this;
     }

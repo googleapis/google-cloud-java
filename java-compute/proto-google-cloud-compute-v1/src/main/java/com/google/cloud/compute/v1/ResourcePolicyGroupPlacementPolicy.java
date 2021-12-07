@@ -39,7 +39,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
   }
 
   private ResourcePolicyGroupPlacementPolicy() {
-    collocation_ = 0;
+    collocation_ = "";
   }
 
   @java.lang.Override
@@ -84,11 +84,11 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
               vmCount_ = input.readInt32();
               break;
             }
-          case -205715032:
+          case -205715030:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
-              collocation_ = rawValue;
+              collocation_ = s;
               break;
             }
           default:
@@ -262,7 +262,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
    * The number of availability domains instances will be spread across. If two instances are in different availability domain, they will not be put in the same low latency network
    * </pre>
    *
-   * <code>int32 availability_domain_count = 12453432;</code>
+   * <code>optional int32 availability_domain_count = 12453432;</code>
    *
    * @return Whether the availabilityDomainCount field is set.
    */
@@ -277,7 +277,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
    * The number of availability domains instances will be spread across. If two instances are in different availability domain, they will not be put in the same low latency network
    * </pre>
    *
-   * <code>int32 availability_domain_count = 12453432;</code>
+   * <code>optional int32 availability_domain_count = 12453432;</code>
    *
    * @return The availabilityDomainCount.
    */
@@ -287,17 +287,16 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
   }
 
   public static final int COLLOCATION_FIELD_NUMBER = 511156533;
-  private int collocation_;
+  private volatile java.lang.Object collocation_;
   /**
    *
    *
    * <pre>
    * Specifies network collocation
+   * Check the Collocation enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
-   * </code>
+   * <code>optional string collocation = 511156533;</code>
    *
    * @return Whether the collocation field is set.
    */
@@ -310,41 +309,48 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
    *
    * <pre>
    * Specifies network collocation
+   * Check the Collocation enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
-   * </code>
+   * <code>optional string collocation = 511156533;</code>
    *
-   * @return The enum numeric value on the wire for collocation.
+   * @return The collocation.
    */
   @java.lang.Override
-  public int getCollocationValue() {
-    return collocation_;
+  public java.lang.String getCollocation() {
+    java.lang.Object ref = collocation_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      collocation_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * Specifies network collocation
+   * Check the Collocation enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
-   * </code>
+   * <code>optional string collocation = 511156533;</code>
    *
-   * @return The collocation.
+   * @return The bytes for collocation.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation
-      getCollocation() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation result =
-        com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation.valueOf(
-            collocation_);
-    return result == null
-        ? com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getCollocationBytes() {
+    java.lang.Object ref = collocation_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      collocation_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int VM_COUNT_FIELD_NUMBER = 261463431;
@@ -356,7 +362,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
    * Number of vms in this placement group
    * </pre>
    *
-   * <code>int32 vm_count = 261463431;</code>
+   * <code>optional int32 vm_count = 261463431;</code>
    *
    * @return Whether the vmCount field is set.
    */
@@ -371,7 +377,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
    * Number of vms in this placement group
    * </pre>
    *
-   * <code>int32 vm_count = 261463431;</code>
+   * <code>optional int32 vm_count = 261463431;</code>
    *
    * @return The vmCount.
    */
@@ -401,7 +407,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
       output.writeInt32(261463431, vmCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(511156533, collocation_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 511156533, collocation_);
     }
     unknownFields.writeTo(output);
   }
@@ -421,7 +427,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(261463431, vmCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(511156533, collocation_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(511156533, collocation_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -445,7 +451,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     }
     if (hasCollocation() != other.hasCollocation()) return false;
     if (hasCollocation()) {
-      if (collocation_ != other.collocation_) return false;
+      if (!getCollocation().equals(other.getCollocation())) return false;
     }
     if (hasVmCount() != other.hasVmCount()) return false;
     if (hasVmCount()) {
@@ -468,7 +474,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     }
     if (hasCollocation()) {
       hash = (37 * hash) + COLLOCATION_FIELD_NUMBER;
-      hash = (53 * hash) + collocation_;
+      hash = (53 * hash) + getCollocation().hashCode();
     }
     if (hasVmCount()) {
       hash = (37 * hash) + VM_COUNT_FIELD_NUMBER;
@@ -622,7 +628,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
       super.clear();
       availabilityDomainCount_ = 0;
       bitField0_ = (bitField0_ & ~0x00000001);
-      collocation_ = 0;
+      collocation_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       vmCount_ = 0;
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -724,7 +730,9 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
         setAvailabilityDomainCount(other.getAvailabilityDomainCount());
       }
       if (other.hasCollocation()) {
-        setCollocation(other.getCollocation());
+        bitField0_ |= 0x00000002;
+        collocation_ = other.collocation_;
+        onChanged();
       }
       if (other.hasVmCount()) {
         setVmCount(other.getVmCount());
@@ -770,7 +778,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * The number of availability domains instances will be spread across. If two instances are in different availability domain, they will not be put in the same low latency network
      * </pre>
      *
-     * <code>int32 availability_domain_count = 12453432;</code>
+     * <code>optional int32 availability_domain_count = 12453432;</code>
      *
      * @return Whether the availabilityDomainCount field is set.
      */
@@ -785,7 +793,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * The number of availability domains instances will be spread across. If two instances are in different availability domain, they will not be put in the same low latency network
      * </pre>
      *
-     * <code>int32 availability_domain_count = 12453432;</code>
+     * <code>optional int32 availability_domain_count = 12453432;</code>
      *
      * @return The availabilityDomainCount.
      */
@@ -800,7 +808,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * The number of availability domains instances will be spread across. If two instances are in different availability domain, they will not be put in the same low latency network
      * </pre>
      *
-     * <code>int32 availability_domain_count = 12453432;</code>
+     * <code>optional int32 availability_domain_count = 12453432;</code>
      *
      * @param value The availabilityDomainCount to set.
      * @return This builder for chaining.
@@ -818,7 +826,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * The number of availability domains instances will be spread across. If two instances are in different availability domain, they will not be put in the same low latency network
      * </pre>
      *
-     * <code>int32 availability_domain_count = 12453432;</code>
+     * <code>optional int32 availability_domain_count = 12453432;</code>
      *
      * @return This builder for chaining.
      */
@@ -829,21 +837,19 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
       return this;
     }
 
-    private int collocation_ = 0;
+    private java.lang.Object collocation_ = "";
     /**
      *
      *
      * <pre>
      * Specifies network collocation
+     * Check the Collocation enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
-     * </code>
+     * <code>optional string collocation = 511156533;</code>
      *
      * @return Whether the collocation field is set.
      */
-    @java.lang.Override
     public boolean hasCollocation() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -852,33 +858,64 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      *
      * <pre>
      * Specifies network collocation
+     * Check the Collocation enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
-     * </code>
+     * <code>optional string collocation = 511156533;</code>
      *
-     * @return The enum numeric value on the wire for collocation.
+     * @return The collocation.
      */
-    @java.lang.Override
-    public int getCollocationValue() {
-      return collocation_;
+    public java.lang.String getCollocation() {
+      java.lang.Object ref = collocation_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        collocation_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * Specifies network collocation
+     * Check the Collocation enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
-     * </code>
+     * <code>optional string collocation = 511156533;</code>
      *
-     * @param value The enum numeric value on the wire for collocation to set.
+     * @return The bytes for collocation.
+     */
+    public com.google.protobuf.ByteString getCollocationBytes() {
+      java.lang.Object ref = collocation_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        collocation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies network collocation
+     * Check the Collocation enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string collocation = 511156533;</code>
+     *
+     * @param value The collocation to set.
      * @return This builder for chaining.
      */
-    public Builder setCollocationValue(int value) {
+    public Builder setCollocation(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000002;
       collocation_ = value;
       onChanged();
@@ -889,46 +926,16 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      *
      * <pre>
      * Specifies network collocation
+     * Check the Collocation enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
-     * </code>
+     * <code>optional string collocation = 511156533;</code>
      *
-     * @return The collocation.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation
-        getCollocation() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation result =
-          com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation.valueOf(
-              collocation_);
-      return result == null
-          ? com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies network collocation
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
-     * </code>
-     *
-     * @param value The collocation to set.
      * @return This builder for chaining.
      */
-    public Builder setCollocation(
-        com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      collocation_ = value.getNumber();
+    public Builder clearCollocation() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      collocation_ = getDefaultInstance().getCollocation();
       onChanged();
       return this;
     }
@@ -937,17 +944,21 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      *
      * <pre>
      * Specifies network collocation
+     * Check the Collocation enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
-     * </code>
+     * <code>optional string collocation = 511156533;</code>
      *
+     * @param value The bytes for collocation to set.
      * @return This builder for chaining.
      */
-    public Builder clearCollocation() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      collocation_ = 0;
+    public Builder setCollocationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      collocation_ = value;
       onChanged();
       return this;
     }
@@ -960,7 +971,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * Number of vms in this placement group
      * </pre>
      *
-     * <code>int32 vm_count = 261463431;</code>
+     * <code>optional int32 vm_count = 261463431;</code>
      *
      * @return Whether the vmCount field is set.
      */
@@ -975,7 +986,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * Number of vms in this placement group
      * </pre>
      *
-     * <code>int32 vm_count = 261463431;</code>
+     * <code>optional int32 vm_count = 261463431;</code>
      *
      * @return The vmCount.
      */
@@ -990,7 +1001,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * Number of vms in this placement group
      * </pre>
      *
-     * <code>int32 vm_count = 261463431;</code>
+     * <code>optional int32 vm_count = 261463431;</code>
      *
      * @param value The vmCount to set.
      * @return This builder for chaining.
@@ -1008,7 +1019,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * Number of vms in this placement group
      * </pre>
      *
-     * <code>int32 vm_count = 261463431;</code>
+     * <code>optional int32 vm_count = 261463431;</code>
      *
      * @return This builder for chaining.
      */

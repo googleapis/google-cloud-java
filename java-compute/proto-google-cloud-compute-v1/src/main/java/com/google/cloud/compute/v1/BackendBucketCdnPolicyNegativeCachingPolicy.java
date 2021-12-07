@@ -127,7 +127,7 @@ public final class BackendBucketCdnPolicyNegativeCachingPolicy
    * The HTTP status code to define a TTL against. Only HTTP status codes 300, 301, 302, 307, 308, 404, 405, 410, 421, 451 and 501 are can be specified as values, and you cannot specify a status code more than once.
    * </pre>
    *
-   * <code>int32 code = 3059181;</code>
+   * <code>optional int32 code = 3059181;</code>
    *
    * @return Whether the code field is set.
    */
@@ -142,7 +142,7 @@ public final class BackendBucketCdnPolicyNegativeCachingPolicy
    * The HTTP status code to define a TTL against. Only HTTP status codes 300, 301, 302, 307, 308, 404, 405, 410, 421, 451 and 501 are can be specified as values, and you cannot specify a status code more than once.
    * </pre>
    *
-   * <code>int32 code = 3059181;</code>
+   * <code>optional int32 code = 3059181;</code>
    *
    * @return The code.
    */
@@ -160,7 +160,7 @@ public final class BackendBucketCdnPolicyNegativeCachingPolicy
    * The TTL (in seconds) for which to cache responses with the corresponding status code. The maximum allowed value is 1800s (30 minutes), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
    * </pre>
    *
-   * <code>int32 ttl = 115180;</code>
+   * <code>optional int32 ttl = 115180;</code>
    *
    * @return Whether the ttl field is set.
    */
@@ -175,7 +175,7 @@ public final class BackendBucketCdnPolicyNegativeCachingPolicy
    * The TTL (in seconds) for which to cache responses with the corresponding status code. The maximum allowed value is 1800s (30 minutes), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
    * </pre>
    *
-   * <code>int32 ttl = 115180;</code>
+   * <code>optional int32 ttl = 115180;</code>
    *
    * @return The ttl.
    */
@@ -557,7 +557,7 @@ public final class BackendBucketCdnPolicyNegativeCachingPolicy
      * The HTTP status code to define a TTL against. Only HTTP status codes 300, 301, 302, 307, 308, 404, 405, 410, 421, 451 and 501 are can be specified as values, and you cannot specify a status code more than once.
      * </pre>
      *
-     * <code>int32 code = 3059181;</code>
+     * <code>optional int32 code = 3059181;</code>
      *
      * @return Whether the code field is set.
      */
@@ -572,7 +572,7 @@ public final class BackendBucketCdnPolicyNegativeCachingPolicy
      * The HTTP status code to define a TTL against. Only HTTP status codes 300, 301, 302, 307, 308, 404, 405, 410, 421, 451 and 501 are can be specified as values, and you cannot specify a status code more than once.
      * </pre>
      *
-     * <code>int32 code = 3059181;</code>
+     * <code>optional int32 code = 3059181;</code>
      *
      * @return The code.
      */
@@ -587,7 +587,7 @@ public final class BackendBucketCdnPolicyNegativeCachingPolicy
      * The HTTP status code to define a TTL against. Only HTTP status codes 300, 301, 302, 307, 308, 404, 405, 410, 421, 451 and 501 are can be specified as values, and you cannot specify a status code more than once.
      * </pre>
      *
-     * <code>int32 code = 3059181;</code>
+     * <code>optional int32 code = 3059181;</code>
      *
      * @param value The code to set.
      * @return This builder for chaining.
@@ -605,7 +605,7 @@ public final class BackendBucketCdnPolicyNegativeCachingPolicy
      * The HTTP status code to define a TTL against. Only HTTP status codes 300, 301, 302, 307, 308, 404, 405, 410, 421, 451 and 501 are can be specified as values, and you cannot specify a status code more than once.
      * </pre>
      *
-     * <code>int32 code = 3059181;</code>
+     * <code>optional int32 code = 3059181;</code>
      *
      * @return This builder for chaining.
      */
@@ -624,7 +624,7 @@ public final class BackendBucketCdnPolicyNegativeCachingPolicy
      * The TTL (in seconds) for which to cache responses with the corresponding status code. The maximum allowed value is 1800s (30 minutes), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
      * </pre>
      *
-     * <code>int32 ttl = 115180;</code>
+     * <code>optional int32 ttl = 115180;</code>
      *
      * @return Whether the ttl field is set.
      */
@@ -639,7 +639,7 @@ public final class BackendBucketCdnPolicyNegativeCachingPolicy
      * The TTL (in seconds) for which to cache responses with the corresponding status code. The maximum allowed value is 1800s (30 minutes), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
      * </pre>
      *
-     * <code>int32 ttl = 115180;</code>
+     * <code>optional int32 ttl = 115180;</code>
      *
      * @return The ttl.
      */
@@ -654,7 +654,7 @@ public final class BackendBucketCdnPolicyNegativeCachingPolicy
      * The TTL (in seconds) for which to cache responses with the corresponding status code. The maximum allowed value is 1800s (30 minutes), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
      * </pre>
      *
-     * <code>int32 ttl = 115180;</code>
+     * <code>optional int32 ttl = 115180;</code>
      *
      * @param value The ttl to set.
      * @return This builder for chaining.
@@ -672,7 +672,7 @@ public final class BackendBucketCdnPolicyNegativeCachingPolicy
      * The TTL (in seconds) for which to cache responses with the corresponding status code. The maximum allowed value is 1800s (30 minutes), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
      * </pre>
      *
-     * <code>int32 ttl = 115180;</code>
+     * <code>optional int32 ttl = 115180;</code>
      *
      * @return This builder for chaining.
      */

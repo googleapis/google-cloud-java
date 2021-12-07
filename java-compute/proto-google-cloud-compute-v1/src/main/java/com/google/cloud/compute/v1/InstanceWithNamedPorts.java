@@ -39,7 +39,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
   private InstanceWithNamedPorts() {
     instance_ = "";
     namedPorts_ = java.util.Collections.emptyList();
-    status_ = 0;
+    status_ = "";
   }
 
   @java.lang.Override
@@ -79,11 +79,11 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
               instance_ = s;
               break;
             }
-          case 1450082192:
+          case 1450082194:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
-              status_ = rawValue;
+              status_ = s;
               break;
             }
           case -874177438:
@@ -154,25 +154,105 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>DEPROVISIONING = 428935662;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The Nanny is halted and we are performing tear down tasks like network deprogramming, releasing quota, IP, tearing down disks etc.
+     * </pre>
+     *
+     * <code>DEPROVISIONING = 428935662;</code>
+     */
     DEPROVISIONING(428935662),
-    /** <code>PROVISIONING = 290896621;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resources are being allocated for the instance.
+     * </pre>
+     *
+     * <code>PROVISIONING = 290896621;</code>
+     */
     PROVISIONING(290896621),
-    /** <code>REPAIRING = 413483285;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is in repair.
+     * </pre>
+     *
+     * <code>REPAIRING = 413483285;</code>
+     */
     REPAIRING(413483285),
-    /** <code>RUNNING = 121282975;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is running.
+     * </pre>
+     *
+     * <code>RUNNING = 121282975;</code>
+     */
     RUNNING(121282975),
-    /** <code>STAGING = 431072283;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * All required resources have been allocated and the instance is being started.
+     * </pre>
+     *
+     * <code>STAGING = 431072283;</code>
+     */
     STAGING(431072283),
-    /** <code>STOPPED = 444276141;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has stopped successfully.
+     * </pre>
+     *
+     * <code>STOPPED = 444276141;</code>
+     */
     STOPPED(444276141),
-    /** <code>STOPPING = 350791796;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is currently stopping (either being deleted or killed).
+     * </pre>
+     *
+     * <code>STOPPING = 350791796;</code>
+     */
     STOPPING(350791796),
-    /** <code>SUSPENDED = 51223995;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has suspended.
+     * </pre>
+     *
+     * <code>SUSPENDED = 51223995;</code>
+     */
     SUSPENDED(51223995),
-    /** <code>SUSPENDING = 514206246;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspending.
+     * </pre>
+     *
+     * <code>SUSPENDING = 514206246;</code>
+     */
     SUSPENDING(514206246),
-    /** <code>TERMINATED = 250018339;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has stopped (either by explicit action or underlying failure).
+     * </pre>
+     *
+     * <code>TERMINATED = 250018339;</code>
+     */
     TERMINATED(250018339),
     UNRECOGNIZED(-1),
     ;
@@ -187,25 +267,105 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>DEPROVISIONING = 428935662;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The Nanny is halted and we are performing tear down tasks like network deprogramming, releasing quota, IP, tearing down disks etc.
+     * </pre>
+     *
+     * <code>DEPROVISIONING = 428935662;</code>
+     */
     public static final int DEPROVISIONING_VALUE = 428935662;
-    /** <code>PROVISIONING = 290896621;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resources are being allocated for the instance.
+     * </pre>
+     *
+     * <code>PROVISIONING = 290896621;</code>
+     */
     public static final int PROVISIONING_VALUE = 290896621;
-    /** <code>REPAIRING = 413483285;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is in repair.
+     * </pre>
+     *
+     * <code>REPAIRING = 413483285;</code>
+     */
     public static final int REPAIRING_VALUE = 413483285;
-    /** <code>RUNNING = 121282975;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is running.
+     * </pre>
+     *
+     * <code>RUNNING = 121282975;</code>
+     */
     public static final int RUNNING_VALUE = 121282975;
-    /** <code>STAGING = 431072283;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * All required resources have been allocated and the instance is being started.
+     * </pre>
+     *
+     * <code>STAGING = 431072283;</code>
+     */
     public static final int STAGING_VALUE = 431072283;
-    /** <code>STOPPED = 444276141;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has stopped successfully.
+     * </pre>
+     *
+     * <code>STOPPED = 444276141;</code>
+     */
     public static final int STOPPED_VALUE = 444276141;
-    /** <code>STOPPING = 350791796;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is currently stopping (either being deleted or killed).
+     * </pre>
+     *
+     * <code>STOPPING = 350791796;</code>
+     */
     public static final int STOPPING_VALUE = 350791796;
-    /** <code>SUSPENDED = 51223995;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has suspended.
+     * </pre>
+     *
+     * <code>SUSPENDED = 51223995;</code>
+     */
     public static final int SUSPENDED_VALUE = 51223995;
-    /** <code>SUSPENDING = 514206246;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspending.
+     * </pre>
+     *
+     * <code>SUSPENDING = 514206246;</code>
+     */
     public static final int SUSPENDING_VALUE = 514206246;
-    /** <code>TERMINATED = 250018339;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has stopped (either by explicit action or underlying failure).
+     * </pre>
+     *
+     * <code>TERMINATED = 250018339;</code>
+     */
     public static final int TERMINATED_VALUE = 250018339;
 
     public final int getNumber() {
@@ -319,7 +479,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    * [Output Only] The URL of the instance.
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return Whether the instance field is set.
    */
@@ -334,7 +494,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    * [Output Only] The URL of the instance.
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return The instance.
    */
@@ -357,7 +517,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    * [Output Only] The URL of the instance.
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return The bytes for instance.
    */
@@ -444,15 +604,16 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    *
    *
    * <pre>
    * [Output Only] The status of the instance.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceWithNamedPorts.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -465,35 +626,48 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * [Output Only] The status of the instance.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceWithNamedPorts.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
   @java.lang.Override
-  public int getStatusValue() {
-    return status_;
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * [Output Only] The status of the instance.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceWithNamedPorts.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.InstanceWithNamedPorts.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.InstanceWithNamedPorts.Status result =
-        com.google.cloud.compute.v1.InstanceWithNamedPorts.Status.valueOf(status_);
-    return result == null
-        ? com.google.cloud.compute.v1.InstanceWithNamedPorts.Status.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -514,7 +688,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     for (int i = 0; i < namedPorts_.size(); i++) {
       output.writeMessage(427598732, namedPorts_.get(i));
@@ -532,7 +706,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     for (int i = 0; i < namedPorts_.size(); i++) {
       size +=
@@ -561,7 +735,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
     if (!getNamedPortsList().equals(other.getNamedPortsList())) return false;
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus().equals(other.getStatus())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -584,7 +758,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -740,7 +914,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       } else {
         namedPortsBuilder_.clear();
       }
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
@@ -872,7 +1046,9 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
         }
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00000004;
+        status_ = other.status_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -914,7 +1090,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The URL of the instance.
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @return Whether the instance field is set.
      */
@@ -928,7 +1104,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The URL of the instance.
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @return The instance.
      */
@@ -950,7 +1126,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The URL of the instance.
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @return The bytes for instance.
      */
@@ -972,7 +1148,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The URL of the instance.
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @param value The instance to set.
      * @return This builder for chaining.
@@ -993,7 +1169,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The URL of the instance.
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @return This builder for chaining.
      */
@@ -1010,7 +1186,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The URL of the instance.
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @param value The bytes for instance to set.
      * @return This builder for chaining.
@@ -1375,19 +1551,19 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       return namedPortsBuilder_;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      *
      *
      * <pre>
      * [Output Only] The status of the instance.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceWithNamedPorts.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
      * @return Whether the status field is set.
      */
-    @java.lang.Override
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -1396,29 +1572,64 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * [Output Only] The status of the instance.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceWithNamedPorts.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The enum numeric value on the wire for status.
+     * @return The status.
      */
-    @java.lang.Override
-    public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * [Output Only] The status of the instance.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceWithNamedPorts.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @param value The enum numeric value on the wire for status to set.
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The status of the instance.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     *
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
+    public Builder setStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000004;
       status_ = value;
       onChanged();
@@ -1429,39 +1640,16 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * [Output Only] The status of the instance.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceWithNamedPorts.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.InstanceWithNamedPorts.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.InstanceWithNamedPorts.Status result =
-          com.google.cloud.compute.v1.InstanceWithNamedPorts.Status.valueOf(status_);
-      return result == null
-          ? com.google.cloud.compute.v1.InstanceWithNamedPorts.Status.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The status of the instance.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.InstanceWithNamedPorts.Status status = 181260274;</code>
-     *
-     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloud.compute.v1.InstanceWithNamedPorts.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000004;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
@@ -1470,15 +1658,21 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * [Output Only] The status of the instance.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceWithNamedPorts.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      status_ = 0;
+    public Builder setStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000004;
+      status_ = value;
       onChanged();
       return this;
     }

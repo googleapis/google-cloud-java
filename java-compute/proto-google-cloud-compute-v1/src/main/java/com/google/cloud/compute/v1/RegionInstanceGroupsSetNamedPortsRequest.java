@@ -138,7 +138,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
    * The fingerprint of the named ports information for this instance group. Use this optional property to prevent conflicts when multiple users change the named ports settings concurrently. Obtain the fingerprint with the instanceGroups.get method. Then, include the fingerprint in your request to ensure that you do not overwrite changes that were applied from another concurrent request.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return Whether the fingerprint field is set.
    */
@@ -153,7 +153,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
    * The fingerprint of the named ports information for this instance group. Use this optional property to prevent conflicts when multiple users change the named ports settings concurrently. Obtain the fingerprint with the instanceGroups.get method. Then, include the fingerprint in your request to ensure that you do not overwrite changes that were applied from another concurrent request.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The fingerprint.
    */
@@ -176,7 +176,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
    * The fingerprint of the named ports information for this instance group. Use this optional property to prevent conflicts when multiple users change the named ports settings concurrently. Obtain the fingerprint with the instanceGroups.get method. Then, include the fingerprint in your request to ensure that you do not overwrite changes that were applied from another concurrent request.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The bytes for fingerprint.
    */
@@ -666,7 +666,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The fingerprint of the named ports information for this instance group. Use this optional property to prevent conflicts when multiple users change the named ports settings concurrently. Obtain the fingerprint with the instanceGroups.get method. Then, include the fingerprint in your request to ensure that you do not overwrite changes that were applied from another concurrent request.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return Whether the fingerprint field is set.
      */
@@ -680,7 +680,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The fingerprint of the named ports information for this instance group. Use this optional property to prevent conflicts when multiple users change the named ports settings concurrently. Obtain the fingerprint with the instanceGroups.get method. Then, include the fingerprint in your request to ensure that you do not overwrite changes that were applied from another concurrent request.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The fingerprint.
      */
@@ -702,7 +702,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The fingerprint of the named ports information for this instance group. Use this optional property to prevent conflicts when multiple users change the named ports settings concurrently. Obtain the fingerprint with the instanceGroups.get method. Then, include the fingerprint in your request to ensure that you do not overwrite changes that were applied from another concurrent request.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The bytes for fingerprint.
      */
@@ -724,7 +724,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The fingerprint of the named ports information for this instance group. Use this optional property to prevent conflicts when multiple users change the named ports settings concurrently. Obtain the fingerprint with the instanceGroups.get method. Then, include the fingerprint in your request to ensure that you do not overwrite changes that were applied from another concurrent request.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The fingerprint to set.
      * @return This builder for chaining.
@@ -745,7 +745,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The fingerprint of the named ports information for this instance group. Use this optional property to prevent conflicts when multiple users change the named ports settings concurrently. Obtain the fingerprint with the instanceGroups.get method. Then, include the fingerprint in your request to ensure that you do not overwrite changes that were applied from another concurrent request.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return This builder for chaining.
      */
@@ -762,7 +762,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The fingerprint of the named ports information for this instance group. Use this optional property to prevent conflicts when multiple users change the named ports settings concurrently. Obtain the fingerprint with the instanceGroups.get method. Then, include the fingerprint in your request to ensure that you do not overwrite changes that were applied from another concurrent request.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The bytes for fingerprint to set.
      * @return This builder for chaining.

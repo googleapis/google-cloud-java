@@ -123,7 +123,7 @@ public final class UrlMapsValidateResponse extends com.google.protobuf.Generated
   public static final int RESULT_FIELD_NUMBER = 139315229;
   private com.google.cloud.compute.v1.UrlMapValidationResult result_;
   /**
-   * <code>.google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code>
+   * <code>optional .google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code>
    *
    * @return Whether the result field is set.
    */
@@ -132,7 +132,7 @@ public final class UrlMapsValidateResponse extends com.google.protobuf.Generated
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code>
+   * <code>optional .google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code>
    *
    * @return The result.
    */
@@ -142,7 +142,7 @@ public final class UrlMapsValidateResponse extends com.google.protobuf.Generated
         ? com.google.cloud.compute.v1.UrlMapValidationResult.getDefaultInstance()
         : result_;
   }
-  /** <code>.google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code> */
+  /** <code>optional .google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.UrlMapValidationResultOrBuilder getResultOrBuilder() {
     return result_ == null
@@ -496,7 +496,7 @@ public final class UrlMapsValidateResponse extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.UrlMapValidationResultOrBuilder>
         resultBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code>
+     * <code>optional .google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code>
      *
      * @return Whether the result field is set.
      */
@@ -504,7 +504,7 @@ public final class UrlMapsValidateResponse extends com.google.protobuf.Generated
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code>
+     * <code>optional .google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code>
      *
      * @return The result.
      */
@@ -517,7 +517,7 @@ public final class UrlMapsValidateResponse extends com.google.protobuf.Generated
         return resultBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code> */
+    /** <code>optional .google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code> */
     public Builder setResult(com.google.cloud.compute.v1.UrlMapValidationResult value) {
       if (resultBuilder_ == null) {
         if (value == null) {
@@ -531,7 +531,7 @@ public final class UrlMapsValidateResponse extends com.google.protobuf.Generated
       bitField0_ |= 0x00000001;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code> */
+    /** <code>optional .google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code> */
     public Builder setResult(
         com.google.cloud.compute.v1.UrlMapValidationResult.Builder builderForValue) {
       if (resultBuilder_ == null) {
@@ -543,7 +543,7 @@ public final class UrlMapsValidateResponse extends com.google.protobuf.Generated
       bitField0_ |= 0x00000001;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code> */
+    /** <code>optional .google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code> */
     public Builder mergeResult(com.google.cloud.compute.v1.UrlMapValidationResult value) {
       if (resultBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)
@@ -563,7 +563,7 @@ public final class UrlMapsValidateResponse extends com.google.protobuf.Generated
       bitField0_ |= 0x00000001;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code> */
+    /** <code>optional .google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code> */
     public Builder clearResult() {
       if (resultBuilder_ == null) {
         result_ = null;
@@ -574,13 +574,13 @@ public final class UrlMapsValidateResponse extends com.google.protobuf.Generated
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
-    /** <code>.google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code> */
+    /** <code>optional .google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code> */
     public com.google.cloud.compute.v1.UrlMapValidationResult.Builder getResultBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code> */
+    /** <code>optional .google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code> */
     public com.google.cloud.compute.v1.UrlMapValidationResultOrBuilder getResultOrBuilder() {
       if (resultBuilder_ != null) {
         return resultBuilder_.getMessageOrBuilder();
@@ -590,7 +590,7 @@ public final class UrlMapsValidateResponse extends com.google.protobuf.Generated
             : result_;
       }
     }
-    /** <code>.google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code> */
+    /** <code>optional .google.cloud.compute.v1.UrlMapValidationResult result = 139315229;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.UrlMapValidationResult,
             com.google.cloud.compute.v1.UrlMapValidationResult.Builder,

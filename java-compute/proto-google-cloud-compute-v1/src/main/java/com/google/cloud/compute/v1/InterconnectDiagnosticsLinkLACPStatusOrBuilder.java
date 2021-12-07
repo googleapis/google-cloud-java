@@ -30,7 +30,7 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    * System ID of the port on Google's side of the LACP exchange.
    * </pre>
    *
-   * <code>string google_system_id = 91210405;</code>
+   * <code>optional string google_system_id = 91210405;</code>
    *
    * @return Whether the googleSystemId field is set.
    */
@@ -42,7 +42,7 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    * System ID of the port on Google's side of the LACP exchange.
    * </pre>
    *
-   * <code>string google_system_id = 91210405;</code>
+   * <code>optional string google_system_id = 91210405;</code>
    *
    * @return The googleSystemId.
    */
@@ -54,7 +54,7 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    * System ID of the port on Google's side of the LACP exchange.
    * </pre>
    *
-   * <code>string google_system_id = 91210405;</code>
+   * <code>optional string google_system_id = 91210405;</code>
    *
    * @return The bytes for googleSystemId.
    */
@@ -67,7 +67,7 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    * System ID of the port on the neighbor's side of the LACP exchange.
    * </pre>
    *
-   * <code>string neighbor_system_id = 343821342;</code>
+   * <code>optional string neighbor_system_id = 343821342;</code>
    *
    * @return Whether the neighborSystemId field is set.
    */
@@ -79,7 +79,7 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    * System ID of the port on the neighbor's side of the LACP exchange.
    * </pre>
    *
-   * <code>string neighbor_system_id = 343821342;</code>
+   * <code>optional string neighbor_system_id = 343821342;</code>
    *
    * @return The neighborSystemId.
    */
@@ -91,7 +91,7 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    * System ID of the port on the neighbor's side of the LACP exchange.
    * </pre>
    *
-   * <code>string neighbor_system_id = 343821342;</code>
+   * <code>optional string neighbor_system_id = 343821342;</code>
    *
    * @return The bytes for neighborSystemId.
    */
@@ -101,13 +101,11 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    *
    *
    * <pre>
-   * The state of a LACP link, which can take one of the following values:
-   * - ACTIVE: The link is configured and active within the bundle.
-   * - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+   * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State state = 109757585;
-   * </code>
+   * <code>optional string state = 109757585;</code>
    *
    * @return Whether the state field is set.
    */
@@ -116,30 +114,26 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    *
    *
    * <pre>
-   * The state of a LACP link, which can take one of the following values:
-   * - ACTIVE: The link is configured and active within the bundle.
-   * - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+   * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State state = 109757585;
-   * </code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The enum numeric value on the wire for state.
+   * @return The state.
    */
-  int getStateValue();
+  java.lang.String getState();
   /**
    *
    *
    * <pre>
-   * The state of a LACP link, which can take one of the following values:
-   * - ACTIVE: The link is configured and active within the bundle.
-   * - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+   * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State state = 109757585;
-   * </code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The state.
+   * @return The bytes for state.
    */
-  com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State getState();
+  com.google.protobuf.ByteString getStateBytes();
 }

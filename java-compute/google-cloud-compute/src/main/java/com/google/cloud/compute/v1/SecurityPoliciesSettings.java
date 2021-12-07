@@ -26,6 +26,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -49,16 +50,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of addRule to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * SecurityPoliciesSettings.Builder securityPoliciesSettingsBuilder =
  *     SecurityPoliciesSettings.newBuilder();
  * securityPoliciesSettingsBuilder
- *     .addRuleSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         securityPoliciesSettingsBuilder
- *             .addRuleSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -74,9 +75,21 @@ public class SecurityPoliciesSettings extends ClientSettings<SecurityPoliciesSet
     return ((SecurityPoliciesStubSettings) getStubSettings()).addRuleSettings();
   }
 
+  /** Returns the object with the settings used for calls to addRule. */
+  public OperationCallSettings<AddRuleSecurityPolicyRequest, Operation, Operation>
+      addRuleOperationSettings() {
+    return ((SecurityPoliciesStubSettings) getStubSettings()).addRuleOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteSecurityPolicyRequest, Operation> deleteSettings() {
     return ((SecurityPoliciesStubSettings) getStubSettings()).deleteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteSecurityPolicyRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((SecurityPoliciesStubSettings) getStubSettings()).deleteOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -92,6 +105,12 @@ public class SecurityPoliciesSettings extends ClientSettings<SecurityPoliciesSet
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertSecurityPolicyRequest, Operation> insertSettings() {
     return ((SecurityPoliciesStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertSecurityPolicyRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((SecurityPoliciesStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -114,14 +133,32 @@ public class SecurityPoliciesSettings extends ClientSettings<SecurityPoliciesSet
     return ((SecurityPoliciesStubSettings) getStubSettings()).patchSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchSecurityPolicyRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((SecurityPoliciesStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to patchRule. */
   public UnaryCallSettings<PatchRuleSecurityPolicyRequest, Operation> patchRuleSettings() {
     return ((SecurityPoliciesStubSettings) getStubSettings()).patchRuleSettings();
   }
 
+  /** Returns the object with the settings used for calls to patchRule. */
+  public OperationCallSettings<PatchRuleSecurityPolicyRequest, Operation, Operation>
+      patchRuleOperationSettings() {
+    return ((SecurityPoliciesStubSettings) getStubSettings()).patchRuleOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to removeRule. */
   public UnaryCallSettings<RemoveRuleSecurityPolicyRequest, Operation> removeRuleSettings() {
     return ((SecurityPoliciesStubSettings) getStubSettings()).removeRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeRule. */
+  public OperationCallSettings<RemoveRuleSecurityPolicyRequest, Operation, Operation>
+      removeRuleOperationSettings() {
+    return ((SecurityPoliciesStubSettings) getStubSettings()).removeRuleOperationSettings();
   }
 
   public static final SecurityPoliciesSettings create(SecurityPoliciesStubSettings stub)
@@ -227,9 +264,21 @@ public class SecurityPoliciesSettings extends ClientSettings<SecurityPoliciesSet
       return getStubSettingsBuilder().addRuleSettings();
     }
 
+    /** Returns the builder for the settings used for calls to addRule. */
+    public OperationCallSettings.Builder<AddRuleSecurityPolicyRequest, Operation, Operation>
+        addRuleOperationSettings() {
+      return getStubSettingsBuilder().addRuleOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteSecurityPolicyRequest, Operation> deleteSettings() {
       return getStubSettingsBuilder().deleteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteSecurityPolicyRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -246,6 +295,12 @@ public class SecurityPoliciesSettings extends ClientSettings<SecurityPoliciesSet
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertSecurityPolicyRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertSecurityPolicyRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -268,16 +323,34 @@ public class SecurityPoliciesSettings extends ClientSettings<SecurityPoliciesSet
       return getStubSettingsBuilder().patchSettings();
     }
 
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchSecurityPolicyRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to patchRule. */
     public UnaryCallSettings.Builder<PatchRuleSecurityPolicyRequest, Operation>
         patchRuleSettings() {
       return getStubSettingsBuilder().patchRuleSettings();
     }
 
+    /** Returns the builder for the settings used for calls to patchRule. */
+    public OperationCallSettings.Builder<PatchRuleSecurityPolicyRequest, Operation, Operation>
+        patchRuleOperationSettings() {
+      return getStubSettingsBuilder().patchRuleOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to removeRule. */
     public UnaryCallSettings.Builder<RemoveRuleSecurityPolicyRequest, Operation>
         removeRuleSettings() {
       return getStubSettingsBuilder().removeRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeRule. */
+    public OperationCallSettings.Builder<RemoveRuleSecurityPolicyRequest, Operation, Operation>
+        removeRuleOperationSettings() {
+      return getStubSettingsBuilder().removeRuleOperationSettings();
     }
 
     @Override

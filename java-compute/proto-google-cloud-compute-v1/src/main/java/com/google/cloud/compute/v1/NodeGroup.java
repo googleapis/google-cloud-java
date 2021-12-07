@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represent a sole-tenant Node Group resource.
- * A sole-tenant node is a physical server that is dedicated to hosting VM instances only for your specific project. Use sole-tenant nodes to keep your instances physically separated from instances in other projects, or to group your instances together on the same host hardware. For more information, read Sole-tenant nodes. (== resource_for {$api_version}.nodeGroups ==)
+ * Represents a sole-tenant Node Group resource. A sole-tenant node is a physical server that is dedicated to hosting VM instances only for your specific project. Use sole-tenant nodes to keep your instances physically separated from instances in other projects, or to group your instances together on the same host hardware. For more information, read Sole-tenant nodes.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.NodeGroup}
@@ -44,11 +43,11 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     fingerprint_ = "";
     kind_ = "";
     locationHint_ = "";
-    maintenancePolicy_ = 0;
+    maintenancePolicy_ = "";
     name_ = "";
     nodeTemplate_ = "";
     selfLink_ = "";
-    status_ = 0;
+    status_ = "";
     zone_ = "";
   }
 
@@ -122,11 +121,11 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
               creationTimestamp_ = s;
               break;
             }
-          case 1450082192:
+          case 1450082194:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00002000;
-              status_ = rawValue;
+              status_ = s;
               break;
             }
           case 1490998498:
@@ -198,11 +197,11 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
               selfLink_ = s;
               break;
             }
-          case -68346128:
+          case -68346126:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000080;
-              maintenancePolicy_ = rawValue;
+              maintenancePolicy_ = s;
               break;
             }
           default:
@@ -243,7 +242,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NodeGroup.MaintenancePolicy}
@@ -259,13 +258,37 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_MAINTENANCE_POLICY = 0;</code>
      */
     UNDEFINED_MAINTENANCE_POLICY(0),
-    /** <code>DEFAULT = 115302945;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Allow the node and corresponding instances to retain default maintenance behavior.
+     * </pre>
+     *
+     * <code>DEFAULT = 115302945;</code>
+     */
     DEFAULT(115302945),
     /** <code>MAINTENANCE_POLICY_UNSPECIFIED = 72964182;</code> */
     MAINTENANCE_POLICY_UNSPECIFIED(72964182),
-    /** <code>MIGRATE_WITHIN_NODE_GROUP = 153483394;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * When maintenance must be done on a node, the instances on that node will be moved to other nodes in the group. Instances with onHostMaintenance = MIGRATE will live migrate to their destinations while instances with onHostMaintenance = TERMINATE will terminate and then restart on their destination nodes if automaticRestart = true.
+     * </pre>
+     *
+     * <code>MIGRATE_WITHIN_NODE_GROUP = 153483394;</code>
+     */
     MIGRATE_WITHIN_NODE_GROUP(153483394),
-    /** <code>RESTART_IN_PLACE = 228647325;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Instances in this group will restart on the same node when maintenance has completed. Instances must have onHostMaintenance = TERMINATE, and they will only restart if automaticRestart = true.
+     * </pre>
+     *
+     * <code>RESTART_IN_PLACE = 228647325;</code>
+     */
     RESTART_IN_PLACE(228647325),
     UNRECOGNIZED(-1),
     ;
@@ -280,13 +303,37 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_MAINTENANCE_POLICY = 0;</code>
      */
     public static final int UNDEFINED_MAINTENANCE_POLICY_VALUE = 0;
-    /** <code>DEFAULT = 115302945;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Allow the node and corresponding instances to retain default maintenance behavior.
+     * </pre>
+     *
+     * <code>DEFAULT = 115302945;</code>
+     */
     public static final int DEFAULT_VALUE = 115302945;
     /** <code>MAINTENANCE_POLICY_UNSPECIFIED = 72964182;</code> */
     public static final int MAINTENANCE_POLICY_UNSPECIFIED_VALUE = 72964182;
-    /** <code>MIGRATE_WITHIN_NODE_GROUP = 153483394;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * When maintenance must be done on a node, the instances on that node will be moved to other nodes in the group. Instances with onHostMaintenance = MIGRATE will live migrate to their destinations while instances with onHostMaintenance = TERMINATE will terminate and then restart on their destination nodes if automaticRestart = true.
+     * </pre>
+     *
+     * <code>MIGRATE_WITHIN_NODE_GROUP = 153483394;</code>
+     */
     public static final int MIGRATE_WITHIN_NODE_GROUP_VALUE = 153483394;
-    /** <code>RESTART_IN_PLACE = 228647325;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Instances in this group will restart on the same node when maintenance has completed. Instances must have onHostMaintenance = TERMINATE, and they will only restart if automaticRestart = true.
+     * </pre>
+     *
+     * <code>RESTART_IN_PLACE = 228647325;</code>
+     */
     public static final int RESTART_IN_PLACE_VALUE = 228647325;
 
     public final int getNumber() {
@@ -525,7 +572,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * Specifies how autoscaling should behave.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
+   * <code>
+   * optional .google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
    * </code>
    *
    * @return Whether the autoscalingPolicy field is set.
@@ -541,7 +589,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * Specifies how autoscaling should behave.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
+   * <code>
+   * optional .google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
    * </code>
    *
    * @return The autoscalingPolicy.
@@ -559,7 +608,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * Specifies how autoscaling should behave.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
+   * <code>
+   * optional .google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
    * </code>
    */
   @java.lang.Override
@@ -579,7 +629,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -594,7 +644,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -617,7 +667,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -643,7 +693,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -658,7 +708,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -681,7 +731,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -701,7 +751,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
   public static final int FINGERPRINT_FIELD_NUMBER = 234678500;
   private volatile java.lang.Object fingerprint_;
   /**
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return Whether the fingerprint field is set.
    */
@@ -710,7 +760,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The fingerprint.
    */
@@ -727,7 +777,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     }
   }
   /**
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The bytes for fingerprint.
    */
@@ -753,7 +803,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -768,7 +818,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -786,7 +836,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -801,7 +851,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -824,7 +874,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -850,7 +900,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return Whether the locationHint field is set.
    */
@@ -865,7 +915,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return The locationHint.
    */
@@ -888,7 +938,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return The bytes for locationHint.
    */
@@ -906,16 +956,16 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAINTENANCE_POLICY_FIELD_NUMBER = 528327646;
-  private int maintenancePolicy_;
+  private volatile java.lang.Object maintenancePolicy_;
   /**
    *
    *
    * <pre>
-   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+   * Check the MaintenancePolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
-   * </code>
+   * <code>optional string maintenance_policy = 528327646;</code>
    *
    * @return Whether the maintenancePolicy field is set.
    */
@@ -927,44 +977,56 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+   * Check the MaintenancePolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
-   * </code>
+   * <code>optional string maintenance_policy = 528327646;</code>
    *
-   * @return The enum numeric value on the wire for maintenancePolicy.
+   * @return The maintenancePolicy.
    */
   @java.lang.Override
-  public int getMaintenancePolicyValue() {
-    return maintenancePolicy_;
+  public java.lang.String getMaintenancePolicy() {
+    java.lang.Object ref = maintenancePolicy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      maintenancePolicy_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+   * Check the MaintenancePolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
-   * </code>
+   * <code>optional string maintenance_policy = 528327646;</code>
    *
-   * @return The maintenancePolicy.
+   * @return The bytes for maintenancePolicy.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy getMaintenancePolicy() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy result =
-        com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy.valueOf(maintenancePolicy_);
-    return result == null
-        ? com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getMaintenancePolicyBytes() {
+    java.lang.Object ref = maintenancePolicy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      maintenancePolicy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int MAINTENANCE_WINDOW_FIELD_NUMBER = 186374812;
   private com.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenanceWindow_;
   /**
-   * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+   * <code>
+   * optional .google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
    * </code>
    *
    * @return Whether the maintenanceWindow field is set.
@@ -974,7 +1036,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     return ((bitField0_ & 0x00000100) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+   * <code>
+   * optional .google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
    * </code>
    *
    * @return The maintenanceWindow.
@@ -986,7 +1049,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         : maintenanceWindow_;
   }
   /**
-   * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+   * <code>
+   * optional .google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
    * </code>
    */
   @java.lang.Override
@@ -1006,7 +1070,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -1021,7 +1085,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -1044,7 +1108,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -1070,7 +1134,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * URL of the node template to create the node group from.
    * </pre>
    *
-   * <code>string node_template = 323154455;</code>
+   * <code>optional string node_template = 323154455;</code>
    *
    * @return Whether the nodeTemplate field is set.
    */
@@ -1085,7 +1149,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * URL of the node template to create the node group from.
    * </pre>
    *
-   * <code>string node_template = 323154455;</code>
+   * <code>optional string node_template = 323154455;</code>
    *
    * @return The nodeTemplate.
    */
@@ -1108,7 +1172,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * URL of the node template to create the node group from.
    * </pre>
    *
-   * <code>string node_template = 323154455;</code>
+   * <code>optional string node_template = 323154455;</code>
    *
    * @return The bytes for nodeTemplate.
    */
@@ -1134,7 +1198,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -1149,7 +1213,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1172,7 +1236,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1198,7 +1262,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The total number of nodes in the node group.
    * </pre>
    *
-   * <code>int32 size = 3530753;</code>
+   * <code>optional int32 size = 3530753;</code>
    *
    * @return Whether the size field is set.
    */
@@ -1213,7 +1277,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The total number of nodes in the node group.
    * </pre>
    *
-   * <code>int32 size = 3530753;</code>
+   * <code>optional int32 size = 3530753;</code>
    *
    * @return The size.
    */
@@ -1223,9 +1287,16 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
-   * <code>.google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
+   *
+   *
+   * <pre>
+   *
+   * Check the Status enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -1234,25 +1305,52 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     return ((bitField0_ & 0x00002000) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
-   */
-  @java.lang.Override
-  public int getStatusValue() {
-    return status_;
-  }
-  /**
-   * <code>.google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
+   *
+   * <pre>
+   *
+   * Check the Status enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string status = 181260274;</code>
    *
    * @return The status.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.NodeGroup.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.NodeGroup.Status result =
-        com.google.cloud.compute.v1.NodeGroup.Status.valueOf(status_);
-    return result == null ? com.google.cloud.compute.v1.NodeGroup.Status.UNRECOGNIZED : result;
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the Status enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string status = 181260274;</code>
+   *
+   * @return The bytes for status.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
@@ -1264,7 +1362,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return Whether the zone field is set.
    */
@@ -1279,7 +1377,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The zone.
    */
@@ -1302,7 +1400,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The bytes for zone.
    */
@@ -1352,7 +1450,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(186374812, getMaintenanceWindow());
@@ -1376,7 +1474,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      output.writeEnum(528327646, maintenancePolicy_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 528327646, maintenancePolicy_);
     }
     unknownFields.writeTo(output);
   }
@@ -1407,7 +1505,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size +=
@@ -1435,7 +1533,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(528327646, maintenancePolicy_);
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(528327646, maintenancePolicy_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1482,7 +1581,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasMaintenancePolicy() != other.hasMaintenancePolicy()) return false;
     if (hasMaintenancePolicy()) {
-      if (maintenancePolicy_ != other.maintenancePolicy_) return false;
+      if (!getMaintenancePolicy().equals(other.getMaintenancePolicy())) return false;
     }
     if (hasMaintenanceWindow() != other.hasMaintenanceWindow()) return false;
     if (hasMaintenanceWindow()) {
@@ -1506,7 +1605,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus().equals(other.getStatus())) return false;
     }
     if (hasZone() != other.hasZone()) return false;
     if (hasZone()) {
@@ -1553,7 +1652,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasMaintenancePolicy()) {
       hash = (37 * hash) + MAINTENANCE_POLICY_FIELD_NUMBER;
-      hash = (53 * hash) + maintenancePolicy_;
+      hash = (53 * hash) + getMaintenancePolicy().hashCode();
     }
     if (hasMaintenanceWindow()) {
       hash = (37 * hash) + MAINTENANCE_WINDOW_FIELD_NUMBER;
@@ -1577,7 +1676,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     if (hasZone()) {
       hash = (37 * hash) + ZONE_FIELD_NUMBER;
@@ -1686,8 +1785,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represent a sole-tenant Node Group resource.
-   * A sole-tenant node is a physical server that is dedicated to hosting VM instances only for your specific project. Use sole-tenant nodes to keep your instances physically separated from instances in other projects, or to group your instances together on the same host hardware. For more information, read Sole-tenant nodes. (== resource_for {$api_version}.nodeGroups ==)
+   * Represents a sole-tenant Node Group resource. A sole-tenant node is a physical server that is dedicated to hosting VM instances only for your specific project. Use sole-tenant nodes to keep your instances physically separated from instances in other projects, or to group your instances together on the same host hardware. For more information, read Sole-tenant nodes.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.NodeGroup}
@@ -1749,7 +1847,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000020);
       locationHint_ = "";
       bitField0_ = (bitField0_ & ~0x00000040);
-      maintenancePolicy_ = 0;
+      maintenancePolicy_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
       if (maintenanceWindowBuilder_ == null) {
         maintenanceWindow_ = null;
@@ -1765,7 +1863,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000800);
       size_ = 0;
       bitField0_ = (bitField0_ & ~0x00001000);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00002000);
       zone_ = "";
       bitField0_ = (bitField0_ & ~0x00004000);
@@ -1948,7 +2046,9 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasMaintenancePolicy()) {
-        setMaintenancePolicy(other.getMaintenancePolicy());
+        bitField0_ |= 0x00000080;
+        maintenancePolicy_ = other.maintenancePolicy_;
+        onChanged();
       }
       if (other.hasMaintenanceWindow()) {
         mergeMaintenanceWindow(other.getMaintenanceWindow());
@@ -1972,7 +2072,9 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         setSize(other.getSize());
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00002000;
+        status_ = other.status_;
+        onChanged();
       }
       if (other.hasZone()) {
         bitField0_ |= 0x00004000;
@@ -2023,7 +2125,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * Specifies how autoscaling should behave.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
+     * <code>
+     * optional .google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
      * </code>
      *
      * @return Whether the autoscalingPolicy field is set.
@@ -2038,7 +2141,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * Specifies how autoscaling should behave.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
+     * <code>
+     * optional .google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
      * </code>
      *
      * @return The autoscalingPolicy.
@@ -2059,7 +2163,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * Specifies how autoscaling should behave.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
+     * <code>
+     * optional .google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
      * </code>
      */
     public Builder setAutoscalingPolicy(
@@ -2083,7 +2188,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * Specifies how autoscaling should behave.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
+     * <code>
+     * optional .google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
      * </code>
      */
     public Builder setAutoscalingPolicy(
@@ -2104,7 +2210,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * Specifies how autoscaling should behave.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
+     * <code>
+     * optional .google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
      * </code>
      */
     public Builder mergeAutoscalingPolicy(
@@ -2135,7 +2242,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * Specifies how autoscaling should behave.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
+     * <code>
+     * optional .google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
      * </code>
      */
     public Builder clearAutoscalingPolicy() {
@@ -2155,7 +2263,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * Specifies how autoscaling should behave.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
+     * <code>
+     * optional .google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
      * </code>
      */
     public com.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Builder
@@ -2171,7 +2280,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * Specifies how autoscaling should behave.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
+     * <code>
+     * optional .google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
      * </code>
      */
     public com.google.cloud.compute.v1.NodeGroupAutoscalingPolicyOrBuilder
@@ -2191,7 +2301,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * Specifies how autoscaling should behave.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
+     * <code>
+     * optional .google.cloud.compute.v1.NodeGroupAutoscalingPolicy autoscaling_policy = 221950041;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2219,7 +2330,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -2233,7 +2344,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -2255,7 +2366,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -2277,7 +2388,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -2298,7 +2409,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -2315,7 +2426,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -2339,7 +2450,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -2353,7 +2464,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -2375,7 +2486,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -2397,7 +2508,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2418,7 +2529,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -2435,7 +2546,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2453,7 +2564,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object fingerprint_ = "";
     /**
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return Whether the fingerprint field is set.
      */
@@ -2461,7 +2572,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The fingerprint.
      */
@@ -2477,7 +2588,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The bytes for fingerprint.
      */
@@ -2493,7 +2604,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The fingerprint to set.
      * @return This builder for chaining.
@@ -2508,7 +2619,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return This builder for chaining.
      */
@@ -2519,7 +2630,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The bytes for fingerprint to set.
      * @return This builder for chaining.
@@ -2543,7 +2654,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -2558,7 +2669,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -2573,7 +2684,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -2591,7 +2702,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -2610,7 +2721,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -2624,7 +2735,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -2646,7 +2757,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -2668,7 +2779,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -2689,7 +2800,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -2706,7 +2817,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -2730,7 +2841,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @return Whether the locationHint field is set.
      */
@@ -2744,7 +2855,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @return The locationHint.
      */
@@ -2766,7 +2877,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @return The bytes for locationHint.
      */
@@ -2788,7 +2899,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @param value The locationHint to set.
      * @return This builder for chaining.
@@ -2809,7 +2920,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @return This builder for chaining.
      */
@@ -2826,7 +2937,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @param value The bytes for locationHint to set.
      * @return This builder for chaining.
@@ -2842,20 +2953,19 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int maintenancePolicy_ = 0;
+    private java.lang.Object maintenancePolicy_ = "";
     /**
      *
      *
      * <pre>
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Check the MaintenancePolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
-     * </code>
+     * <code>optional string maintenance_policy = 528327646;</code>
      *
      * @return Whether the maintenancePolicy field is set.
      */
-    @java.lang.Override
     public boolean hasMaintenancePolicy() {
       return ((bitField0_ & 0x00000080) != 0);
     }
@@ -2863,32 +2973,65 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Check the MaintenancePolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
-     * </code>
+     * <code>optional string maintenance_policy = 528327646;</code>
      *
-     * @return The enum numeric value on the wire for maintenancePolicy.
+     * @return The maintenancePolicy.
      */
-    @java.lang.Override
-    public int getMaintenancePolicyValue() {
-      return maintenancePolicy_;
+    public java.lang.String getMaintenancePolicy() {
+      java.lang.Object ref = maintenancePolicy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        maintenancePolicy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Check the MaintenancePolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
-     * </code>
+     * <code>optional string maintenance_policy = 528327646;</code>
      *
-     * @param value The enum numeric value on the wire for maintenancePolicy to set.
+     * @return The bytes for maintenancePolicy.
+     */
+    public com.google.protobuf.ByteString getMaintenancePolicyBytes() {
+      java.lang.Object ref = maintenancePolicy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        maintenancePolicy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Check the MaintenancePolicy enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string maintenance_policy = 528327646;</code>
+     *
+     * @param value The maintenancePolicy to set.
      * @return This builder for chaining.
      */
-    public Builder setMaintenancePolicyValue(int value) {
+    public Builder setMaintenancePolicy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000080;
       maintenancePolicy_ = value;
       onChanged();
@@ -2898,43 +3041,17 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Check the MaintenancePolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
-     * </code>
+     * <code>optional string maintenance_policy = 528327646;</code>
      *
-     * @return The maintenancePolicy.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy getMaintenancePolicy() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy result =
-          com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy.valueOf(maintenancePolicy_);
-      return result == null
-          ? com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
-     * </code>
-     *
-     * @param value The maintenancePolicy to set.
      * @return This builder for chaining.
      */
-    public Builder setMaintenancePolicy(
-        com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000080;
-      maintenancePolicy_ = value.getNumber();
+    public Builder clearMaintenancePolicy() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      maintenancePolicy_ = getDefaultInstance().getMaintenancePolicy();
       onChanged();
       return this;
     }
@@ -2942,17 +3059,22 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Check the MaintenancePolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
-     * </code>
+     * <code>optional string maintenance_policy = 528327646;</code>
      *
+     * @param value The bytes for maintenancePolicy to set.
      * @return This builder for chaining.
      */
-    public Builder clearMaintenancePolicy() {
-      bitField0_ = (bitField0_ & ~0x00000080);
-      maintenancePolicy_ = 0;
+    public Builder setMaintenancePolicyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000080;
+      maintenancePolicy_ = value;
       onChanged();
       return this;
     }
@@ -2964,7 +3086,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.NodeGroupMaintenanceWindowOrBuilder>
         maintenanceWindowBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+     * <code>
+     * optional .google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
      * </code>
      *
      * @return Whether the maintenanceWindow field is set.
@@ -2973,7 +3096,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       return ((bitField0_ & 0x00000100) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+     * <code>
+     * optional .google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
      * </code>
      *
      * @return The maintenanceWindow.
@@ -2988,7 +3112,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+     * <code>
+     * optional .google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
      * </code>
      */
     public Builder setMaintenanceWindow(
@@ -3006,7 +3131,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+     * <code>
+     * optional .google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
      * </code>
      */
     public Builder setMaintenanceWindow(
@@ -3021,7 +3147,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+     * <code>
+     * optional .google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
      * </code>
      */
     public Builder mergeMaintenanceWindow(
@@ -3046,7 +3173,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+     * <code>
+     * optional .google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
      * </code>
      */
     public Builder clearMaintenanceWindow() {
@@ -3060,7 +3188,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+     * <code>
+     * optional .google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
      * </code>
      */
     public com.google.cloud.compute.v1.NodeGroupMaintenanceWindow.Builder
@@ -3070,7 +3199,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       return getMaintenanceWindowFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+     * <code>
+     * optional .google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
      * </code>
      */
     public com.google.cloud.compute.v1.NodeGroupMaintenanceWindowOrBuilder
@@ -3084,7 +3214,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+     * <code>
+     * optional .google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3112,7 +3243,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -3126,7 +3257,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -3148,7 +3279,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -3170,7 +3301,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -3191,7 +3322,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -3208,7 +3339,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -3232,7 +3363,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * URL of the node template to create the node group from.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>optional string node_template = 323154455;</code>
      *
      * @return Whether the nodeTemplate field is set.
      */
@@ -3246,7 +3377,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * URL of the node template to create the node group from.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>optional string node_template = 323154455;</code>
      *
      * @return The nodeTemplate.
      */
@@ -3268,7 +3399,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * URL of the node template to create the node group from.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>optional string node_template = 323154455;</code>
      *
      * @return The bytes for nodeTemplate.
      */
@@ -3290,7 +3421,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * URL of the node template to create the node group from.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>optional string node_template = 323154455;</code>
      *
      * @param value The nodeTemplate to set.
      * @return This builder for chaining.
@@ -3311,7 +3442,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * URL of the node template to create the node group from.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>optional string node_template = 323154455;</code>
      *
      * @return This builder for chaining.
      */
@@ -3328,7 +3459,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * URL of the node template to create the node group from.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>optional string node_template = 323154455;</code>
      *
      * @param value The bytes for nodeTemplate to set.
      * @return This builder for chaining.
@@ -3352,7 +3483,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -3366,7 +3497,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -3388,7 +3519,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3410,7 +3541,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3431,7 +3562,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -3448,7 +3579,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -3472,7 +3603,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The total number of nodes in the node group.
      * </pre>
      *
-     * <code>int32 size = 3530753;</code>
+     * <code>optional int32 size = 3530753;</code>
      *
      * @return Whether the size field is set.
      */
@@ -3487,7 +3618,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The total number of nodes in the node group.
      * </pre>
      *
-     * <code>int32 size = 3530753;</code>
+     * <code>optional int32 size = 3530753;</code>
      *
      * @return The size.
      */
@@ -3502,7 +3633,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The total number of nodes in the node group.
      * </pre>
      *
-     * <code>int32 size = 3530753;</code>
+     * <code>optional int32 size = 3530753;</code>
      *
      * @param value The size to set.
      * @return This builder for chaining.
@@ -3520,7 +3651,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The total number of nodes in the node group.
      * </pre>
      *
-     * <code>int32 size = 3530753;</code>
+     * <code>optional int32 size = 3530753;</code>
      *
      * @return This builder for chaining.
      */
@@ -3531,72 +3662,128 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
-     * <code>.google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
+     *
+     *
+     * <pre>
+     *
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
      *
      * @return Whether the status field is set.
      */
-    @java.lang.Override
     public boolean hasStatus() {
       return ((bitField0_ & 0x00002000) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
      *
-     * @return The enum numeric value on the wire for status.
+     *
+     * <pre>
+     *
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     *
+     * @return The status.
      */
-    @java.lang.Override
-    public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>.google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
      *
-     * @param value The enum numeric value on the wire for status to set.
+     *
+     * <pre>
+     *
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     *
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     *
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
+    public Builder setStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00002000;
       status_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
      *
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.NodeGroup.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.NodeGroup.Status result =
-          com.google.cloud.compute.v1.NodeGroup.Status.valueOf(status_);
-      return result == null ? com.google.cloud.compute.v1.NodeGroup.Status.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
      *
-     * @param value The status to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatus(com.google.cloud.compute.v1.NodeGroup.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00002000;
-      status_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
+     * <pre>
+     *
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
       bitField0_ = (bitField0_ & ~0x00002000);
-      status_ = 0;
+      status_ = getDefaultInstance().getStatus();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     *
+     * @param value The bytes for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00002000;
+      status_ = value;
       onChanged();
       return this;
     }
@@ -3609,7 +3796,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return Whether the zone field is set.
      */
@@ -3623,7 +3810,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return The zone.
      */
@@ -3645,7 +3832,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return The bytes for zone.
      */
@@ -3667,7 +3854,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @param value The zone to set.
      * @return This builder for chaining.
@@ -3688,7 +3875,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return This builder for chaining.
      */
@@ -3705,7 +3892,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @param value The bytes for zone to set.
      * @return This builder for chaining.

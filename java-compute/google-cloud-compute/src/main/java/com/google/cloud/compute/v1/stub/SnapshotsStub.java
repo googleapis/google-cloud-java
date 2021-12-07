@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.SnapshotsClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteSnapshotRequest;
 import com.google.cloud.compute.v1.GetIamPolicySnapshotRequest;
@@ -43,6 +44,10 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class SnapshotsStub implements BackgroundResource {
 
+  public OperationCallable<DeleteSnapshotRequest, Operation, Operation> deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteSnapshotRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
@@ -65,6 +70,11 @@ public abstract class SnapshotsStub implements BackgroundResource {
 
   public UnaryCallable<SetIamPolicySnapshotRequest, Policy> setIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public OperationCallable<SetLabelsSnapshotRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsOperationCallable()");
   }
 
   public UnaryCallable<SetLabelsSnapshotRequest, Operation> setLabelsCallable() {

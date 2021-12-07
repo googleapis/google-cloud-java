@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.RegionHealthChecksClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteRegionHealthCheckRequest;
 import com.google.cloud.compute.v1.GetRegionHealthCheckRequest;
@@ -40,12 +41,22 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class RegionHealthChecksStub implements BackgroundResource {
 
+  public OperationCallable<DeleteRegionHealthCheckRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteRegionHealthCheckRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetRegionHealthCheckRequest, HealthCheck> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertRegionHealthCheckRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertRegionHealthCheckRequest, Operation> insertCallable() {
@@ -60,8 +71,18 @@ public abstract class RegionHealthChecksStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
   }
 
+  public OperationCallable<PatchRegionHealthCheckRequest, Operation, Operation>
+      patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
+  }
+
   public UnaryCallable<PatchRegionHealthCheckRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public OperationCallable<UpdateRegionHealthCheckRequest, Operation, Operation>
+      updateOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOperationCallable()");
   }
 
   public UnaryCallable<UpdateRegionHealthCheckRequest, Operation> updateCallable() {

@@ -81,7 +81,7 @@ public interface ZoneOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -93,7 +93,7 @@ public interface ZoneOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -105,7 +105,7 @@ public interface ZoneOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -118,7 +118,7 @@ public interface ZoneOrBuilder
    * [Output Only] The deprecation status associated with this zone.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return Whether the deprecated field is set.
    */
@@ -130,7 +130,7 @@ public interface ZoneOrBuilder
    * [Output Only] The deprecation status associated with this zone.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return The deprecated.
    */
@@ -142,7 +142,7 @@ public interface ZoneOrBuilder
    * [Output Only] The deprecation status associated with this zone.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    */
   com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder();
 
@@ -153,7 +153,7 @@ public interface ZoneOrBuilder
    * [Output Only] Textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -165,7 +165,7 @@ public interface ZoneOrBuilder
    * [Output Only] Textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -177,7 +177,7 @@ public interface ZoneOrBuilder
    * [Output Only] Textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -190,7 +190,7 @@ public interface ZoneOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -202,7 +202,7 @@ public interface ZoneOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -215,7 +215,7 @@ public interface ZoneOrBuilder
    * [Output Only] Type of the resource. Always compute#zone for zones.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -227,7 +227,7 @@ public interface ZoneOrBuilder
    * [Output Only] Type of the resource. Always compute#zone for zones.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -239,7 +239,7 @@ public interface ZoneOrBuilder
    * [Output Only] Type of the resource. Always compute#zone for zones.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -252,7 +252,7 @@ public interface ZoneOrBuilder
    * [Output Only] Name of the resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -264,7 +264,7 @@ public interface ZoneOrBuilder
    * [Output Only] Name of the resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -276,7 +276,7 @@ public interface ZoneOrBuilder
    * [Output Only] Name of the resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -289,7 +289,7 @@ public interface ZoneOrBuilder
    * [Output Only] Full URL reference to the region which hosts the zone.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -301,7 +301,7 @@ public interface ZoneOrBuilder
    * [Output Only] Full URL reference to the region which hosts the zone.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -313,7 +313,7 @@ public interface ZoneOrBuilder
    * [Output Only] Full URL reference to the region which hosts the zone.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -326,7 +326,7 @@ public interface ZoneOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -338,7 +338,7 @@ public interface ZoneOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -350,7 +350,7 @@ public interface ZoneOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -361,9 +361,10 @@ public interface ZoneOrBuilder
    *
    * <pre>
    * [Output Only] Status of the zone, either UP or DOWN.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Zone.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -373,25 +374,27 @@ public interface ZoneOrBuilder
    *
    * <pre>
    * [Output Only] Status of the zone, either UP or DOWN.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Zone.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    *
    *
    * <pre>
    * [Output Only] Status of the zone, either UP or DOWN.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Zone.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1.Zone.Status getStatus();
+  com.google.protobuf.ByteString getStatusBytes();
 
   /**
    *
@@ -400,7 +403,7 @@ public interface ZoneOrBuilder
    * [Output Only] Reserved for future use.
    * </pre>
    *
-   * <code>bool supports_pzs = 83983214;</code>
+   * <code>optional bool supports_pzs = 83983214;</code>
    *
    * @return Whether the supportsPzs field is set.
    */
@@ -412,7 +415,7 @@ public interface ZoneOrBuilder
    * [Output Only] Reserved for future use.
    * </pre>
    *
-   * <code>bool supports_pzs = 83983214;</code>
+   * <code>optional bool supports_pzs = 83983214;</code>
    *
    * @return The supportsPzs.
    */

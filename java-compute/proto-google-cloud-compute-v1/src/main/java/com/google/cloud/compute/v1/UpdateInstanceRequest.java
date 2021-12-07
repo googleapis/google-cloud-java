@@ -281,7 +281,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
    * </pre>
    *
-   * <code>string minimal_action = 270567060;</code>
+   * <code>optional string minimal_action = 270567060;</code>
    *
    * @return Whether the minimalAction field is set.
    */
@@ -296,7 +296,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
    * </pre>
    *
-   * <code>string minimal_action = 270567060;</code>
+   * <code>optional string minimal_action = 270567060;</code>
    *
    * @return The minimalAction.
    */
@@ -319,7 +319,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
    * </pre>
    *
-   * <code>string minimal_action = 270567060;</code>
+   * <code>optional string minimal_action = 270567060;</code>
    *
    * @return The bytes for minimalAction.
    */
@@ -345,7 +345,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
    * </pre>
    *
-   * <code>string most_disruptive_allowed_action = 66103053;</code>
+   * <code>optional string most_disruptive_allowed_action = 66103053;</code>
    *
    * @return Whether the mostDisruptiveAllowedAction field is set.
    */
@@ -360,7 +360,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
    * </pre>
    *
-   * <code>string most_disruptive_allowed_action = 66103053;</code>
+   * <code>optional string most_disruptive_allowed_action = 66103053;</code>
    *
    * @return The mostDisruptiveAllowedAction.
    */
@@ -383,7 +383,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
    * </pre>
    *
-   * <code>string most_disruptive_allowed_action = 66103053;</code>
+   * <code>optional string most_disruptive_allowed_action = 66103053;</code>
    *
    * @return The bytes for mostDisruptiveAllowedAction.
    */
@@ -459,12 +459,10 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 37109963;</code>
+   * <code>optional string request_id = 37109963;</code>
    *
    * @return Whether the requestId field is set.
    */
@@ -476,12 +474,10 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 37109963;</code>
+   * <code>optional string request_id = 37109963;</code>
    *
    * @return The requestId.
    */
@@ -501,12 +497,10 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 37109963;</code>
+   * <code>optional string request_id = 37109963;</code>
    *
    * @return The bytes for requestId.
    */
@@ -590,10 +584,10 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (!getInstanceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instance_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -606,7 +600,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     if (instanceResource_ != null) {
       output.writeMessage(215988344, getInstanceResource());
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -621,10 +615,10 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (!getInstanceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instance_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -640,7 +634,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               215988344, getInstanceResource());
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -1358,7 +1352,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>optional string minimal_action = 270567060;</code>
      *
      * @return Whether the minimalAction field is set.
      */
@@ -1372,7 +1366,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>optional string minimal_action = 270567060;</code>
      *
      * @return The minimalAction.
      */
@@ -1394,7 +1388,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>optional string minimal_action = 270567060;</code>
      *
      * @return The bytes for minimalAction.
      */
@@ -1416,7 +1410,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>optional string minimal_action = 270567060;</code>
      *
      * @param value The minimalAction to set.
      * @return This builder for chaining.
@@ -1437,7 +1431,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>optional string minimal_action = 270567060;</code>
      *
      * @return This builder for chaining.
      */
@@ -1454,7 +1448,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>optional string minimal_action = 270567060;</code>
      *
      * @param value The bytes for minimalAction to set.
      * @return This builder for chaining.
@@ -1478,7 +1472,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
      * </pre>
      *
-     * <code>string most_disruptive_allowed_action = 66103053;</code>
+     * <code>optional string most_disruptive_allowed_action = 66103053;</code>
      *
      * @return Whether the mostDisruptiveAllowedAction field is set.
      */
@@ -1492,7 +1486,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
      * </pre>
      *
-     * <code>string most_disruptive_allowed_action = 66103053;</code>
+     * <code>optional string most_disruptive_allowed_action = 66103053;</code>
      *
      * @return The mostDisruptiveAllowedAction.
      */
@@ -1514,7 +1508,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
      * </pre>
      *
-     * <code>string most_disruptive_allowed_action = 66103053;</code>
+     * <code>optional string most_disruptive_allowed_action = 66103053;</code>
      *
      * @return The bytes for mostDisruptiveAllowedAction.
      */
@@ -1536,7 +1530,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
      * </pre>
      *
-     * <code>string most_disruptive_allowed_action = 66103053;</code>
+     * <code>optional string most_disruptive_allowed_action = 66103053;</code>
      *
      * @param value The mostDisruptiveAllowedAction to set.
      * @return This builder for chaining.
@@ -1557,7 +1551,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
      * </pre>
      *
-     * <code>string most_disruptive_allowed_action = 66103053;</code>
+     * <code>optional string most_disruptive_allowed_action = 66103053;</code>
      *
      * @return This builder for chaining.
      */
@@ -1574,7 +1568,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
      * </pre>
      *
-     * <code>string most_disruptive_allowed_action = 66103053;</code>
+     * <code>optional string most_disruptive_allowed_action = 66103053;</code>
      *
      * @param value The bytes for mostDisruptiveAllowedAction to set.
      * @return This builder for chaining.
@@ -1711,12 +1705,10 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @return Whether the requestId field is set.
      */
@@ -1727,12 +1719,10 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @return The requestId.
      */
@@ -1751,12 +1741,10 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @return The bytes for requestId.
      */
@@ -1775,12 +1763,10 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @param value The requestId to set.
      * @return This builder for chaining.
@@ -1798,12 +1784,10 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @return This builder for chaining.
      */
@@ -1817,12 +1801,10 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @param value The bytes for requestId to set.
      * @return This builder for chaining.

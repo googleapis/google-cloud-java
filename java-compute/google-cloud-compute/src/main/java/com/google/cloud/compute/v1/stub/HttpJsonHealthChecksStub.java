@@ -26,11 +26,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListHealthChecksRequest;
 import com.google.cloud.compute.v1.DeleteHealthCheckRequest;
@@ -41,8 +43,10 @@ import com.google.cloud.compute.v1.HealthChecksAggregatedList;
 import com.google.cloud.compute.v1.InsertHealthCheckRequest;
 import com.google.cloud.compute.v1.ListHealthChecksRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchHealthCheckRequest;
 import com.google.cloud.compute.v1.UpdateHealthCheckRequest;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -60,6 +64,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonHealthChecksStub extends HealthChecksStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<
           AggregatedListHealthChecksRequest, HealthChecksAggregatedList>
       aggregatedListMethodDescriptor =
@@ -113,6 +120,7 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<HealthChecksAggregatedList>newBuilder()
                       .setDefaultInstance(HealthChecksAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -149,7 +157,20 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteHealthCheckRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetHealthCheckRequest, HealthCheck> getMethodDescriptor =
@@ -180,6 +201,7 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
           .setResponseParser(
               ProtoMessageResponseParser.<HealthCheck>newBuilder()
                   .setDefaultInstance(HealthCheck.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -217,7 +239,20 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertHealthCheckRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListHealthChecksRequest, HealthCheckList>
@@ -267,6 +302,7 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<HealthCheckList>newBuilder()
                       .setDefaultInstance(HealthCheckList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -306,7 +342,20 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchHealthCheckRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<UpdateHealthCheckRequest, Operation>
@@ -345,7 +394,20 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (UpdateHealthCheckRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<AggregatedListHealthChecksRequest, HealthChecksAggregatedList>
@@ -353,14 +415,23 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
   private final UnaryCallable<AggregatedListHealthChecksRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
   private final UnaryCallable<DeleteHealthCheckRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteHealthCheckRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetHealthCheckRequest, HealthCheck> getCallable;
   private final UnaryCallable<InsertHealthCheckRequest, Operation> insertCallable;
+  private final OperationCallable<InsertHealthCheckRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListHealthChecksRequest, HealthCheckList> listCallable;
   private final UnaryCallable<ListHealthChecksRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<PatchHealthCheckRequest, Operation> patchCallable;
+  private final OperationCallable<PatchHealthCheckRequest, Operation, Operation>
+      patchOperationCallable;
   private final UnaryCallable<UpdateHealthCheckRequest, Operation> updateCallable;
+  private final OperationCallable<UpdateHealthCheckRequest, Operation, Operation>
+      updateOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonHealthChecksStub create(HealthChecksStubSettings settings)
@@ -401,36 +472,45 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AggregatedListHealthChecksRequest, HealthChecksAggregatedList>
         aggregatedListTransportSettings =
             HttpJsonCallSettings
                 .<AggregatedListHealthChecksRequest, HealthChecksAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeleteHealthCheckRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteHealthCheckRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetHealthCheckRequest, HealthCheck> getTransportSettings =
         HttpJsonCallSettings.<GetHealthCheckRequest, HealthCheck>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertHealthCheckRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertHealthCheckRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListHealthChecksRequest, HealthCheckList> listTransportSettings =
         HttpJsonCallSettings.<ListHealthChecksRequest, HealthCheckList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<PatchHealthCheckRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchHealthCheckRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<UpdateHealthCheckRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateHealthCheckRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.aggregatedListCallable =
@@ -442,12 +522,24 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -457,9 +549,21 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
+    this.updateOperationCallable =
+        callableFactory.createOperationCallable(
+            updateTransportSettings,
+            settings.updateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -496,6 +600,12 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
   }
 
   @Override
+  public OperationCallable<DeleteHealthCheckRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetHealthCheckRequest, HealthCheck> getCallable() {
     return getCallable;
   }
@@ -503,6 +613,12 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
   @Override
   public UnaryCallable<InsertHealthCheckRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertHealthCheckRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -521,8 +637,19 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
   }
 
   @Override
+  public OperationCallable<PatchHealthCheckRequest, Operation, Operation> patchOperationCallable() {
+    return patchOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateHealthCheckRequest, Operation> updateCallable() {
     return updateCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateHealthCheckRequest, Operation, Operation>
+      updateOperationCallable() {
+    return updateOperationCallable;
   }
 
   @Override

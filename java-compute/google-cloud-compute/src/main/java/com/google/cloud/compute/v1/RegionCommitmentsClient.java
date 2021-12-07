@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RegionCommitmentsStub;
@@ -154,7 +156,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of commitments.
+   * Retrieves an aggregated list of commitments by region.
    *
    * <p>Sample code:
    *
@@ -179,7 +181,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of commitments.
+   * Retrieves an aggregated list of commitments by region.
    *
    * <p>Sample code:
    *
@@ -212,7 +214,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of commitments.
+   * Retrieves an aggregated list of commitments by region.
    *
    * <p>Sample code:
    *
@@ -244,7 +246,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of commitments.
+   * Retrieves an aggregated list of commitments by region.
    *
    * <p>Sample code:
    *
@@ -374,7 +376,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   Commitment commitmentResource = Commitment.newBuilder().build();
-   *   Operation response = regionCommitmentsClient.insert(project, region, commitmentResource);
+   *   Operation response =
+   *       regionCommitmentsClient.insertAsync(project, region, commitmentResource).get();
    * }
    * }</pre>
    *
@@ -383,14 +386,15 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * @param commitmentResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(String project, String region, Commitment commitmentResource) {
+  public final OperationFuture<Operation, Operation> insertAsync(
+      String project, String region, Commitment commitmentResource) {
     InsertRegionCommitmentRequest request =
         InsertRegionCommitmentRequest.newBuilder()
             .setProject(project)
             .setRegion(region)
             .setCommitmentResource(commitmentResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -408,15 +412,45 @@ public class RegionCommitmentsClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = regionCommitmentsClient.insert(request);
+   *   Operation response = regionCommitmentsClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertRegionCommitmentRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(
+      InsertRegionCommitmentRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a commitment in the specified project using the data included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
+   *   InsertRegionCommitmentRequest request =
+   *       InsertRegionCommitmentRequest.newBuilder()
+   *           .setCommitmentResource(Commitment.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionCommitmentsClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertRegionCommitmentRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

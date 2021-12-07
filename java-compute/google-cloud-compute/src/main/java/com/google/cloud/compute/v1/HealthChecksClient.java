@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.HealthChecksStub;
@@ -45,7 +47,7 @@ import javax.annotation.Generated;
  * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
  *   String project = "project-309310695";
  *   String healthCheck = "healthCheck-1938093044";
- *   Operation response = healthChecksClient.delete(project, healthCheck);
+ *   HealthCheck response = healthChecksClient.get(project, healthCheck);
  * }
  * }</pre>
  *
@@ -290,7 +292,7 @@ public class HealthChecksClient implements BackgroundResource {
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
    *   String project = "project-309310695";
    *   String healthCheck = "healthCheck-1938093044";
-   *   Operation response = healthChecksClient.delete(project, healthCheck);
+   *   Operation response = healthChecksClient.deleteAsync(project, healthCheck).get();
    * }
    * }</pre>
    *
@@ -298,13 +300,14 @@ public class HealthChecksClient implements BackgroundResource {
    * @param healthCheck Name of the HealthCheck resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String healthCheck) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String healthCheck) {
     DeleteHealthCheckRequest request =
         DeleteHealthCheckRequest.newBuilder()
             .setProject(project)
             .setHealthCheck(healthCheck)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -321,15 +324,43 @@ public class HealthChecksClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = healthChecksClient.delete(request);
+   *   Operation response = healthChecksClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteHealthCheckRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(DeleteHealthCheckRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified HealthCheck resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
+   *   DeleteHealthCheckRequest request =
+   *       DeleteHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       healthChecksClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteHealthCheckRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -440,7 +471,7 @@ public class HealthChecksClient implements BackgroundResource {
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
    *   String project = "project-309310695";
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   Operation response = healthChecksClient.insert(project, healthCheckResource);
+   *   Operation response = healthChecksClient.insertAsync(project, healthCheckResource).get();
    * }
    * }</pre>
    *
@@ -448,13 +479,14 @@ public class HealthChecksClient implements BackgroundResource {
    * @param healthCheckResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(String project, HealthCheck healthCheckResource) {
+  public final OperationFuture<Operation, Operation> insertAsync(
+      String project, HealthCheck healthCheckResource) {
     InsertHealthCheckRequest request =
         InsertHealthCheckRequest.newBuilder()
             .setProject(project)
             .setHealthCheckResource(healthCheckResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -471,15 +503,43 @@ public class HealthChecksClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = healthChecksClient.insert(request);
+   *   Operation response = healthChecksClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertHealthCheckRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(InsertHealthCheckRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a HealthCheck resource in the specified project using the data included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
+   *   InsertHealthCheckRequest request =
+   *       InsertHealthCheckRequest.newBuilder()
+   *           .setHealthCheckResource(HealthCheck.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       healthChecksClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertHealthCheckRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -637,7 +697,8 @@ public class HealthChecksClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String healthCheck = "healthCheck-1938093044";
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   Operation response = healthChecksClient.patch(project, healthCheck, healthCheckResource);
+   *   Operation response =
+   *       healthChecksClient.patchAsync(project, healthCheck, healthCheckResource).get();
    * }
    * }</pre>
    *
@@ -646,7 +707,7 @@ public class HealthChecksClient implements BackgroundResource {
    * @param healthCheckResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(
+  public final OperationFuture<Operation, Operation> patchAsync(
       String project, String healthCheck, HealthCheck healthCheckResource) {
     PatchHealthCheckRequest request =
         PatchHealthCheckRequest.newBuilder()
@@ -654,7 +715,7 @@ public class HealthChecksClient implements BackgroundResource {
             .setHealthCheck(healthCheck)
             .setHealthCheckResource(healthCheckResource)
             .build();
-    return patch(request);
+    return patchAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -673,15 +734,45 @@ public class HealthChecksClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = healthChecksClient.patch(request);
+   *   Operation response = healthChecksClient.patchAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(PatchHealthCheckRequest request) {
-    return patchCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> patchAsync(PatchHealthCheckRequest request) {
+    return patchOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a HealthCheck resource in the specified project using the data included in the request.
+   * This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
+   *   PatchHealthCheckRequest request =
+   *       PatchHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setHealthCheckResource(HealthCheck.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       healthChecksClient.patchOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PatchHealthCheckRequest, Operation, Operation>
+      patchOperationCallable() {
+    return stub.patchOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -721,7 +812,8 @@ public class HealthChecksClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String healthCheck = "healthCheck-1938093044";
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   Operation response = healthChecksClient.update(project, healthCheck, healthCheckResource);
+   *   Operation response =
+   *       healthChecksClient.updateAsync(project, healthCheck, healthCheckResource).get();
    * }
    * }</pre>
    *
@@ -730,7 +822,7 @@ public class HealthChecksClient implements BackgroundResource {
    * @param healthCheckResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation update(
+  public final OperationFuture<Operation, Operation> updateAsync(
       String project, String healthCheck, HealthCheck healthCheckResource) {
     UpdateHealthCheckRequest request =
         UpdateHealthCheckRequest.newBuilder()
@@ -738,7 +830,7 @@ public class HealthChecksClient implements BackgroundResource {
             .setHealthCheck(healthCheck)
             .setHealthCheckResource(healthCheckResource)
             .build();
-    return update(request);
+    return updateAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -756,15 +848,44 @@ public class HealthChecksClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = healthChecksClient.update(request);
+   *   Operation response = healthChecksClient.updateAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation update(UpdateHealthCheckRequest request) {
-    return updateCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> updateAsync(UpdateHealthCheckRequest request) {
+    return updateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a HealthCheck resource in the specified project using the data included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
+   *   UpdateHealthCheckRequest request =
+   *       UpdateHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setHealthCheckResource(HealthCheck.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       healthChecksClient.updateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateHealthCheckRequest, Operation, Operation>
+      updateOperationCallable() {
+    return stub.updateOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

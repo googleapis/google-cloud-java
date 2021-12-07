@@ -30,7 +30,7 @@ public interface InstanceGroupManagerStatusStatefulOrBuilder
    * [Output Only] A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful config even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.
    * </pre>
    *
-   * <code>bool has_stateful_config = 110474224;</code>
+   * <code>optional bool has_stateful_config = 110474224;</code>
    *
    * @return Whether the hasStatefulConfig field is set.
    */
@@ -42,7 +42,7 @@ public interface InstanceGroupManagerStatusStatefulOrBuilder
    * [Output Only] A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful config even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.
    * </pre>
    *
-   * <code>bool has_stateful_config = 110474224;</code>
+   * <code>optional bool has_stateful_config = 110474224;</code>
    *
    * @return The hasStatefulConfig.
    */
@@ -56,7 +56,7 @@ public interface InstanceGroupManagerStatusStatefulOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
    * </code>
    *
    * @return Whether the perInstanceConfigs field is set.
@@ -70,7 +70,7 @@ public interface InstanceGroupManagerStatusStatefulOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
    * </code>
    *
    * @return The perInstanceConfigs.
@@ -85,7 +85,7 @@ public interface InstanceGroupManagerStatusStatefulOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigsOrBuilder

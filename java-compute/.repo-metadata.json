@@ -13,5 +13,7 @@
   "api_id": "compute.googleapis.com",
   "requires_billing": true,
   "codeowner_team": "@googleapis/actools-java",
-  "library_type": "GAPIC_AUTO"
+  "library_type": "GAPIC_AUTO",
+  "excluded_dependencies": "grpc-google-cloud-compute-v1",
+  "excluded_poms": "grpc-google-cloud-compute-v1"
 }

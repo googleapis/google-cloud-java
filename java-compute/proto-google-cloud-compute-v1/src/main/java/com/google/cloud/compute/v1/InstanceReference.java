@@ -118,10 +118,10 @@ public final class InstanceReference extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The URL for a specific instance.
+   * The URL for a specific instance. &#64;required compute.instancegroups.addInstances/removeInstances
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return Whether the instance field is set.
    */
@@ -133,10 +133,10 @@ public final class InstanceReference extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The URL for a specific instance.
+   * The URL for a specific instance. &#64;required compute.instancegroups.addInstances/removeInstances
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return The instance.
    */
@@ -156,10 +156,10 @@ public final class InstanceReference extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The URL for a specific instance.
+   * The URL for a specific instance. &#64;required compute.instancegroups.addInstances/removeInstances
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return The bytes for instance.
    */
@@ -510,10 +510,10 @@ public final class InstanceReference extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The URL for a specific instance.
+     * The URL for a specific instance. &#64;required compute.instancegroups.addInstances/removeInstances
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @return Whether the instance field is set.
      */
@@ -524,10 +524,10 @@ public final class InstanceReference extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The URL for a specific instance.
+     * The URL for a specific instance. &#64;required compute.instancegroups.addInstances/removeInstances
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @return The instance.
      */
@@ -546,10 +546,10 @@ public final class InstanceReference extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The URL for a specific instance.
+     * The URL for a specific instance. &#64;required compute.instancegroups.addInstances/removeInstances
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @return The bytes for instance.
      */
@@ -568,10 +568,10 @@ public final class InstanceReference extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The URL for a specific instance.
+     * The URL for a specific instance. &#64;required compute.instancegroups.addInstances/removeInstances
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @param value The instance to set.
      * @return This builder for chaining.
@@ -589,10 +589,10 @@ public final class InstanceReference extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The URL for a specific instance.
+     * The URL for a specific instance. &#64;required compute.instancegroups.addInstances/removeInstances
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @return This builder for chaining.
      */
@@ -606,10 +606,10 @@ public final class InstanceReference extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The URL for a specific instance.
+     * The URL for a specific instance. &#64;required compute.instancegroups.addInstances/removeInstances
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @param value The bytes for instance to set.
      * @return This builder for chaining.

@@ -87,6 +87,7 @@ public class RegionsClientTest {
             .setName("name3373707")
             .addAllQuotas(new ArrayList<Quota>())
             .setSelfLink("selfLink1191800166")
+            .setStatus("status-892481550")
             .setSupportsPzs(true)
             .addAllZones(new ArrayList<String>())
             .build();

@@ -30,7 +30,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * The IP address range of the public delegated prefix
    * </pre>
    *
-   * <code>string ip_range = 145092645;</code>
+   * <code>optional string ip_range = 145092645;</code>
    *
    * @return Whether the ipRange field is set.
    */
@@ -42,7 +42,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * The IP address range of the public delegated prefix
    * </pre>
    *
-   * <code>string ip_range = 145092645;</code>
+   * <code>optional string ip_range = 145092645;</code>
    *
    * @return The ipRange.
    */
@@ -54,7 +54,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * The IP address range of the public delegated prefix
    * </pre>
    *
-   * <code>string ip_range = 145092645;</code>
+   * <code>optional string ip_range = 145092645;</code>
    *
    * @return The bytes for ipRange.
    */
@@ -67,7 +67,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * The name of the public delegated prefix
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -79,7 +79,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * The name of the public delegated prefix
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -91,7 +91,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * The name of the public delegated prefix
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -104,7 +104,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * The project number of the public delegated prefix
    * </pre>
    *
-   * <code>string project = 227560217;</code>
+   * <code>optional string project = 227560217;</code>
    *
    * @return Whether the project field is set.
    */
@@ -116,7 +116,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * The project number of the public delegated prefix
    * </pre>
    *
-   * <code>string project = 227560217;</code>
+   * <code>optional string project = 227560217;</code>
    *
    * @return The project.
    */
@@ -128,7 +128,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * The project number of the public delegated prefix
    * </pre>
    *
-   * <code>string project = 227560217;</code>
+   * <code>optional string project = 227560217;</code>
    *
    * @return The bytes for project.
    */
@@ -141,7 +141,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * The region of the public delegated prefix if it is regional. If absent, the prefix is global.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -153,7 +153,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * The region of the public delegated prefix if it is regional. If absent, the prefix is global.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -165,7 +165,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * The region of the public delegated prefix if it is regional. If absent, the prefix is global.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -178,7 +178,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * The status of the public delegated prefix. Possible values are: INITIALIZING: The public delegated prefix is being initialized and addresses cannot be created yet. ANNOUNCED: The public delegated prefix is active.
    * </pre>
    *
-   * <code>string status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -190,7 +190,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * The status of the public delegated prefix. Possible values are: INITIALIZING: The public delegated prefix is being initialized and addresses cannot be created yet. ANNOUNCED: The public delegated prefix is active.
    * </pre>
    *
-   * <code>string status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return The status.
    */
@@ -202,7 +202,7 @@ public interface PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder
    * The status of the public delegated prefix. Possible values are: INITIALIZING: The public delegated prefix is being initialized and addresses cannot be created yet. ANNOUNCED: The public delegated prefix is active.
    * </pre>
    *
-   * <code>string status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return The bytes for status.
    */

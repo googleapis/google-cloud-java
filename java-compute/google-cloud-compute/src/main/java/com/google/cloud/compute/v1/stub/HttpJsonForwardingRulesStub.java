@@ -26,11 +26,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListForwardingRulesRequest;
 import com.google.cloud.compute.v1.DeleteForwardingRuleRequest;
@@ -41,9 +43,11 @@ import com.google.cloud.compute.v1.GetForwardingRuleRequest;
 import com.google.cloud.compute.v1.InsertForwardingRuleRequest;
 import com.google.cloud.compute.v1.ListForwardingRulesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchForwardingRuleRequest;
 import com.google.cloud.compute.v1.SetLabelsForwardingRuleRequest;
 import com.google.cloud.compute.v1.SetTargetForwardingRuleRequest;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -61,6 +65,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<
           AggregatedListForwardingRulesRequest, ForwardingRuleAggregatedList>
       aggregatedListMethodDescriptor =
@@ -114,6 +121,7 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ForwardingRuleAggregatedList>newBuilder()
                       .setDefaultInstance(ForwardingRuleAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -151,7 +159,21 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteForwardingRuleRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetForwardingRuleRequest, ForwardingRule>
@@ -185,6 +207,7 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ForwardingRule>newBuilder()
                       .setDefaultInstance(ForwardingRule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -225,7 +248,21 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertForwardingRuleRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListForwardingRulesRequest, ForwardingRuleList>
@@ -276,6 +313,7 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ForwardingRuleList>newBuilder()
                       .setDefaultInstance(ForwardingRuleList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -318,7 +356,21 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchForwardingRuleRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetLabelsForwardingRuleRequest, Operation>
@@ -359,7 +411,21 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetLabelsForwardingRuleRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetTargetForwardingRuleRequest, Operation>
@@ -401,7 +467,21 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetTargetForwardingRuleRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<AggregatedListForwardingRulesRequest, ForwardingRuleAggregatedList>
@@ -409,15 +489,26 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
   private final UnaryCallable<AggregatedListForwardingRulesRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
   private final UnaryCallable<DeleteForwardingRuleRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteForwardingRuleRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetForwardingRuleRequest, ForwardingRule> getCallable;
   private final UnaryCallable<InsertForwardingRuleRequest, Operation> insertCallable;
+  private final OperationCallable<InsertForwardingRuleRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListForwardingRulesRequest, ForwardingRuleList> listCallable;
   private final UnaryCallable<ListForwardingRulesRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<PatchForwardingRuleRequest, Operation> patchCallable;
+  private final OperationCallable<PatchForwardingRuleRequest, Operation, Operation>
+      patchOperationCallable;
   private final UnaryCallable<SetLabelsForwardingRuleRequest, Operation> setLabelsCallable;
+  private final OperationCallable<SetLabelsForwardingRuleRequest, Operation, Operation>
+      setLabelsOperationCallable;
   private final UnaryCallable<SetTargetForwardingRuleRequest, Operation> setTargetCallable;
+  private final OperationCallable<SetTargetForwardingRuleRequest, Operation, Operation>
+      setTargetOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonForwardingRulesStub create(ForwardingRulesStubSettings settings)
@@ -458,40 +549,50 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AggregatedListForwardingRulesRequest, ForwardingRuleAggregatedList>
         aggregatedListTransportSettings =
             HttpJsonCallSettings
                 .<AggregatedListForwardingRulesRequest, ForwardingRuleAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeleteForwardingRuleRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteForwardingRuleRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetForwardingRuleRequest, ForwardingRule> getTransportSettings =
         HttpJsonCallSettings.<GetForwardingRuleRequest, ForwardingRule>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertForwardingRuleRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertForwardingRuleRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListForwardingRulesRequest, ForwardingRuleList> listTransportSettings =
         HttpJsonCallSettings.<ListForwardingRulesRequest, ForwardingRuleList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<PatchForwardingRuleRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchForwardingRuleRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetLabelsForwardingRuleRequest, Operation> setLabelsTransportSettings =
         HttpJsonCallSettings.<SetLabelsForwardingRuleRequest, Operation>newBuilder()
             .setMethodDescriptor(setLabelsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetTargetForwardingRuleRequest, Operation> setTargetTransportSettings =
         HttpJsonCallSettings.<SetTargetForwardingRuleRequest, Operation>newBuilder()
             .setMethodDescriptor(setTargetMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.aggregatedListCallable =
@@ -503,12 +604,24 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -518,12 +631,30 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setLabelsCallable =
         callableFactory.createUnaryCallable(
             setLabelsTransportSettings, settings.setLabelsSettings(), clientContext);
+    this.setLabelsOperationCallable =
+        callableFactory.createOperationCallable(
+            setLabelsTransportSettings,
+            settings.setLabelsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setTargetCallable =
         callableFactory.createUnaryCallable(
             setTargetTransportSettings, settings.setTargetSettings(), clientContext);
+    this.setTargetOperationCallable =
+        callableFactory.createOperationCallable(
+            setTargetTransportSettings,
+            settings.setTargetOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -561,6 +692,12 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
   }
 
   @Override
+  public OperationCallable<DeleteForwardingRuleRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetForwardingRuleRequest, ForwardingRule> getCallable() {
     return getCallable;
   }
@@ -568,6 +705,12 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
   @Override
   public UnaryCallable<InsertForwardingRuleRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertForwardingRuleRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -586,13 +729,31 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
   }
 
   @Override
+  public OperationCallable<PatchForwardingRuleRequest, Operation, Operation>
+      patchOperationCallable() {
+    return patchOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetLabelsForwardingRuleRequest, Operation> setLabelsCallable() {
     return setLabelsCallable;
   }
 
   @Override
+  public OperationCallable<SetLabelsForwardingRuleRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return setLabelsOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetTargetForwardingRuleRequest, Operation> setTargetCallable() {
     return setTargetCallable;
+  }
+
+  @Override
+  public OperationCallable<SetTargetForwardingRuleRequest, Operation, Operation>
+      setTargetOperationCallable() {
+    return setTargetOperationCallable;
   }
 
   @Override

@@ -28,10 +28,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.httpjson.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -82,16 +86,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * ResourcePoliciesStubSettings.Builder resourcePoliciesSettingsBuilder =
  *     ResourcePoliciesStubSettings.newBuilder();
  * resourcePoliciesSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         resourcePoliciesSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -114,9 +118,13 @@ public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesS
           AggregatedListPagedResponse>
       aggregatedListSettings;
   private final UnaryCallSettings<DeleteResourcePolicyRequest, Operation> deleteSettings;
+  private final OperationCallSettings<DeleteResourcePolicyRequest, Operation, Operation>
+      deleteOperationSettings;
   private final UnaryCallSettings<GetResourcePolicyRequest, ResourcePolicy> getSettings;
   private final UnaryCallSettings<GetIamPolicyResourcePolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<InsertResourcePolicyRequest, Operation> insertSettings;
+  private final OperationCallSettings<InsertResourcePolicyRequest, Operation, Operation>
+      insertOperationSettings;
   private final PagedCallSettings<
           ListResourcePoliciesRequest, ResourcePolicyList, ListPagedResponse>
       listSettings;
@@ -272,6 +280,12 @@ public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesS
     return deleteSettings;
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteResourcePolicyRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return deleteOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetResourcePolicyRequest, ResourcePolicy> getSettings() {
     return getSettings;
@@ -285,6 +299,12 @@ public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesS
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertResourcePolicyRequest, Operation> insertSettings() {
     return insertSettings;
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertResourcePolicyRequest, Operation, Operation>
+      insertOperationSettings() {
+    return insertOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -338,7 +358,9 @@ public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesS
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return GoogleCredentialsProvider.newBuilder()
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        .setUseJwtAccessWithScope(true);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -381,9 +403,11 @@ public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesS
 
     aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
+    deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
+    insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
@@ -398,10 +422,14 @@ public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesS
             AggregatedListPagedResponse>
         aggregatedListSettings;
     private final UnaryCallSettings.Builder<DeleteResourcePolicyRequest, Operation> deleteSettings;
+    private final OperationCallSettings.Builder<DeleteResourcePolicyRequest, Operation, Operation>
+        deleteOperationSettings;
     private final UnaryCallSettings.Builder<GetResourcePolicyRequest, ResourcePolicy> getSettings;
     private final UnaryCallSettings.Builder<GetIamPolicyResourcePolicyRequest, Policy>
         getIamPolicySettings;
     private final UnaryCallSettings.Builder<InsertResourcePolicyRequest, Operation> insertSettings;
+    private final OperationCallSettings.Builder<InsertResourcePolicyRequest, Operation, Operation>
+        insertOperationSettings;
     private final PagedCallSettings.Builder<
             ListResourcePoliciesRequest, ResourcePolicyList, ListPagedResponse>
         listSettings;
@@ -462,9 +490,11 @@ public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesS
 
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -487,9 +517,11 @@ public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesS
 
       aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
+      deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
+      insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
@@ -560,6 +592,54 @@ public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesS
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .deleteOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteResourcePolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .insertOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<InsertResourcePolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -592,6 +672,14 @@ public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesS
       return deleteSettings;
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteResourcePolicyRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return deleteOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetResourcePolicyRequest, ResourcePolicy> getSettings() {
       return getSettings;
@@ -606,6 +694,14 @@ public class ResourcePoliciesStubSettings extends StubSettings<ResourcePoliciesS
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertResourcePolicyRequest, Operation> insertSettings() {
       return insertSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<InsertResourcePolicyRequest, Operation, Operation>
+        insertOperationSettings() {
+      return insertOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to list. */

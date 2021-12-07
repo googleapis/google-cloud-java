@@ -138,7 +138,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
    * Key for the guest attribute entry.
    * </pre>
    *
-   * <code>string key = 106079;</code>
+   * <code>optional string key = 106079;</code>
    *
    * @return Whether the key field is set.
    */
@@ -153,7 +153,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
    * Key for the guest attribute entry.
    * </pre>
    *
-   * <code>string key = 106079;</code>
+   * <code>optional string key = 106079;</code>
    *
    * @return The key.
    */
@@ -176,7 +176,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
    * Key for the guest attribute entry.
    * </pre>
    *
-   * <code>string key = 106079;</code>
+   * <code>optional string key = 106079;</code>
    *
    * @return The bytes for key.
    */
@@ -202,7 +202,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
    * Namespace for the guest attribute entry.
    * </pre>
    *
-   * <code>string namespace = 178476379;</code>
+   * <code>optional string namespace = 178476379;</code>
    *
    * @return Whether the namespace field is set.
    */
@@ -217,7 +217,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
    * Namespace for the guest attribute entry.
    * </pre>
    *
-   * <code>string namespace = 178476379;</code>
+   * <code>optional string namespace = 178476379;</code>
    *
    * @return The namespace.
    */
@@ -240,7 +240,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
    * Namespace for the guest attribute entry.
    * </pre>
    *
-   * <code>string namespace = 178476379;</code>
+   * <code>optional string namespace = 178476379;</code>
    *
    * @return The bytes for namespace.
    */
@@ -266,7 +266,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
    * Value for the guest attribute entry.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return Whether the value field is set.
    */
@@ -281,7 +281,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
    * Value for the guest attribute entry.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return The value.
    */
@@ -304,7 +304,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
    * Value for the guest attribute entry.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return The bytes for value.
    */
@@ -710,7 +710,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * Key for the guest attribute entry.
      * </pre>
      *
-     * <code>string key = 106079;</code>
+     * <code>optional string key = 106079;</code>
      *
      * @return Whether the key field is set.
      */
@@ -724,7 +724,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * Key for the guest attribute entry.
      * </pre>
      *
-     * <code>string key = 106079;</code>
+     * <code>optional string key = 106079;</code>
      *
      * @return The key.
      */
@@ -746,7 +746,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * Key for the guest attribute entry.
      * </pre>
      *
-     * <code>string key = 106079;</code>
+     * <code>optional string key = 106079;</code>
      *
      * @return The bytes for key.
      */
@@ -768,7 +768,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * Key for the guest attribute entry.
      * </pre>
      *
-     * <code>string key = 106079;</code>
+     * <code>optional string key = 106079;</code>
      *
      * @param value The key to set.
      * @return This builder for chaining.
@@ -789,7 +789,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * Key for the guest attribute entry.
      * </pre>
      *
-     * <code>string key = 106079;</code>
+     * <code>optional string key = 106079;</code>
      *
      * @return This builder for chaining.
      */
@@ -806,7 +806,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * Key for the guest attribute entry.
      * </pre>
      *
-     * <code>string key = 106079;</code>
+     * <code>optional string key = 106079;</code>
      *
      * @param value The bytes for key to set.
      * @return This builder for chaining.
@@ -830,7 +830,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * Namespace for the guest attribute entry.
      * </pre>
      *
-     * <code>string namespace = 178476379;</code>
+     * <code>optional string namespace = 178476379;</code>
      *
      * @return Whether the namespace field is set.
      */
@@ -844,7 +844,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * Namespace for the guest attribute entry.
      * </pre>
      *
-     * <code>string namespace = 178476379;</code>
+     * <code>optional string namespace = 178476379;</code>
      *
      * @return The namespace.
      */
@@ -866,7 +866,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * Namespace for the guest attribute entry.
      * </pre>
      *
-     * <code>string namespace = 178476379;</code>
+     * <code>optional string namespace = 178476379;</code>
      *
      * @return The bytes for namespace.
      */
@@ -888,7 +888,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * Namespace for the guest attribute entry.
      * </pre>
      *
-     * <code>string namespace = 178476379;</code>
+     * <code>optional string namespace = 178476379;</code>
      *
      * @param value The namespace to set.
      * @return This builder for chaining.
@@ -909,7 +909,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * Namespace for the guest attribute entry.
      * </pre>
      *
-     * <code>string namespace = 178476379;</code>
+     * <code>optional string namespace = 178476379;</code>
      *
      * @return This builder for chaining.
      */
@@ -926,7 +926,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * Namespace for the guest attribute entry.
      * </pre>
      *
-     * <code>string namespace = 178476379;</code>
+     * <code>optional string namespace = 178476379;</code>
      *
      * @param value The bytes for namespace to set.
      * @return This builder for chaining.
@@ -950,7 +950,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * Value for the guest attribute entry.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @return Whether the value field is set.
      */
@@ -964,7 +964,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * Value for the guest attribute entry.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @return The value.
      */
@@ -986,7 +986,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * Value for the guest attribute entry.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @return The bytes for value.
      */
@@ -1008,7 +1008,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * Value for the guest attribute entry.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @param value The value to set.
      * @return This builder for chaining.
@@ -1029,7 +1029,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * Value for the guest attribute entry.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @return This builder for chaining.
      */
@@ -1046,7 +1046,7 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
      * Value for the guest attribute entry.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @param value The bytes for value to set.
      * @return This builder for chaining.

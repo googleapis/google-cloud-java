@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RegionNetworkEndpointGroupsStub;
@@ -46,8 +48,8 @@ import javax.annotation.Generated;
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
- *   Operation response =
- *       regionNetworkEndpointGroupsClient.delete(project, region, networkEndpointGroup);
+ *   NetworkEndpointGroup response =
+ *       regionNetworkEndpointGroupsClient.get(project, region, networkEndpointGroup);
  * }
  * }</pre>
  *
@@ -170,7 +172,9 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    *   String region = "region-934795532";
    *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
    *   Operation response =
-   *       regionNetworkEndpointGroupsClient.delete(project, region, networkEndpointGroup);
+   *       regionNetworkEndpointGroupsClient
+   *           .deleteAsync(project, region, networkEndpointGroup)
+   *           .get();
    * }
    * }</pre>
    *
@@ -181,14 +185,15 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    *     with RFC1035.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String region, String networkEndpointGroup) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String region, String networkEndpointGroup) {
     DeleteRegionNetworkEndpointGroupRequest request =
         DeleteRegionNetworkEndpointGroupRequest.newBuilder()
             .setProject(project)
             .setRegion(region)
             .setNetworkEndpointGroup(networkEndpointGroup)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -208,15 +213,47 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = regionNetworkEndpointGroupsClient.delete(request);
+   *   Operation response = regionNetworkEndpointGroupsClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteRegionNetworkEndpointGroupRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      DeleteRegionNetworkEndpointGroupRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified network endpoint group. Note that the NEG cannot be deleted if it is
+   * configured as a backend of a backend service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
+   *     RegionNetworkEndpointGroupsClient.create()) {
+   *   DeleteRegionNetworkEndpointGroupRequest request =
+   *       DeleteRegionNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionNetworkEndpointGroupsClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteRegionNetworkEndpointGroupRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -352,7 +389,9 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    *   String region = "region-934795532";
    *   NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
    *   Operation response =
-   *       regionNetworkEndpointGroupsClient.insert(project, region, networkEndpointGroupResource);
+   *       regionNetworkEndpointGroupsClient
+   *           .insertAsync(project, region, networkEndpointGroupResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -362,7 +401,7 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * @param networkEndpointGroupResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(
+  public final OperationFuture<Operation, Operation> insertAsync(
       String project, String region, NetworkEndpointGroup networkEndpointGroupResource) {
     InsertRegionNetworkEndpointGroupRequest request =
         InsertRegionNetworkEndpointGroupRequest.newBuilder()
@@ -370,7 +409,7 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
             .setRegion(region)
             .setNetworkEndpointGroupResource(networkEndpointGroupResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -390,15 +429,47 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = regionNetworkEndpointGroupsClient.insert(request);
+   *   Operation response = regionNetworkEndpointGroupsClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertRegionNetworkEndpointGroupRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(
+      InsertRegionNetworkEndpointGroupRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a network endpoint group in the specified project using the parameters that are
+   * included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
+   *     RegionNetworkEndpointGroupsClient.create()) {
+   *   InsertRegionNetworkEndpointGroupRequest request =
+   *       InsertRegionNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroupResource(NetworkEndpointGroup.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionNetworkEndpointGroupsClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertRegionNetworkEndpointGroupRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

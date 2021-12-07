@@ -18,7 +18,9 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionOperationsClient.ListPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.LongRunningClient;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteRegionOperationRequest;
 import com.google.cloud.compute.v1.DeleteRegionOperationResponse;
@@ -37,6 +39,11 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class RegionOperationsStub implements BackgroundResource {
+
+  @BetaApi
+  public LongRunningClient longRunningClient() {
+    throw new UnsupportedOperationException("Not implemented: longRunningClient()");
+  }
 
   public UnaryCallable<DeleteRegionOperationRequest, DeleteRegionOperationResponse>
       deleteCallable() {

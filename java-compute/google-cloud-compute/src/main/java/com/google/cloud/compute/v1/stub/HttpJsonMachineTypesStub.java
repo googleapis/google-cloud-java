@@ -38,6 +38,7 @@ import com.google.cloud.compute.v1.ListMachineTypesRequest;
 import com.google.cloud.compute.v1.MachineType;
 import com.google.cloud.compute.v1.MachineTypeAggregatedList;
 import com.google.cloud.compute.v1.MachineTypeList;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,6 +56,8 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonMachineTypesStub extends MachineTypesStub {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
   private static final ApiMethodDescriptor<
           AggregatedListMachineTypesRequest, MachineTypeAggregatedList>
       aggregatedListMethodDescriptor =
@@ -108,6 +111,7 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<MachineTypeAggregatedList>newBuilder()
                       .setDefaultInstance(MachineTypeAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -140,6 +144,7 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<MachineType>newBuilder()
                   .setDefaultInstance(MachineType.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -191,6 +196,7 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<MachineTypeList>newBuilder()
                       .setDefaultInstance(MachineTypeList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -249,14 +255,17 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
             HttpJsonCallSettings
                 .<AggregatedListMachineTypesRequest, MachineTypeAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<GetMachineTypeRequest, MachineType> getTransportSettings =
         HttpJsonCallSettings.<GetMachineTypeRequest, MachineType>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListMachineTypesRequest, MachineTypeList> listTransportSettings =
         HttpJsonCallSettings.<ListMachineTypesRequest, MachineTypeList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.aggregatedListCallable =

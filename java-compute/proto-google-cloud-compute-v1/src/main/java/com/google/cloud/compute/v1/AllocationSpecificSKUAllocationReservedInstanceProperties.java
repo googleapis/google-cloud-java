@@ -347,7 +347,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return Whether the locationHint field is set.
    */
@@ -362,7 +362,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return The locationHint.
    */
@@ -385,7 +385,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return The bytes for locationHint.
    */
@@ -411,7 +411,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
    * </pre>
    *
-   * <code>string machine_type = 227711026;</code>
+   * <code>optional string machine_type = 227711026;</code>
    *
    * @return Whether the machineType field is set.
    */
@@ -426,7 +426,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
    * </pre>
    *
-   * <code>string machine_type = 227711026;</code>
+   * <code>optional string machine_type = 227711026;</code>
    *
    * @return The machineType.
    */
@@ -449,7 +449,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
    * </pre>
    *
-   * <code>string machine_type = 227711026;</code>
+   * <code>optional string machine_type = 227711026;</code>
    *
    * @return The bytes for machineType.
    */
@@ -475,7 +475,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    * Minimum cpu platform the reservation.
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return Whether the minCpuPlatform field is set.
    */
@@ -490,7 +490,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    * Minimum cpu platform the reservation.
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return The minCpuPlatform.
    */
@@ -513,7 +513,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    * Minimum cpu platform the reservation.
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return The bytes for minCpuPlatform.
    */
@@ -1902,7 +1902,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @return Whether the locationHint field is set.
      */
@@ -1916,7 +1916,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @return The locationHint.
      */
@@ -1938,7 +1938,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @return The bytes for locationHint.
      */
@@ -1960,7 +1960,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @param value The locationHint to set.
      * @return This builder for chaining.
@@ -1981,7 +1981,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @return This builder for chaining.
      */
@@ -1998,7 +1998,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @param value The bytes for locationHint to set.
      * @return This builder for chaining.
@@ -2022,7 +2022,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
      * </pre>
      *
-     * <code>string machine_type = 227711026;</code>
+     * <code>optional string machine_type = 227711026;</code>
      *
      * @return Whether the machineType field is set.
      */
@@ -2036,7 +2036,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
      * </pre>
      *
-     * <code>string machine_type = 227711026;</code>
+     * <code>optional string machine_type = 227711026;</code>
      *
      * @return The machineType.
      */
@@ -2058,7 +2058,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
      * </pre>
      *
-     * <code>string machine_type = 227711026;</code>
+     * <code>optional string machine_type = 227711026;</code>
      *
      * @return The bytes for machineType.
      */
@@ -2080,7 +2080,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
      * </pre>
      *
-     * <code>string machine_type = 227711026;</code>
+     * <code>optional string machine_type = 227711026;</code>
      *
      * @param value The machineType to set.
      * @return This builder for chaining.
@@ -2101,7 +2101,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
      * </pre>
      *
-     * <code>string machine_type = 227711026;</code>
+     * <code>optional string machine_type = 227711026;</code>
      *
      * @return This builder for chaining.
      */
@@ -2118,7 +2118,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
      * </pre>
      *
-     * <code>string machine_type = 227711026;</code>
+     * <code>optional string machine_type = 227711026;</code>
      *
      * @param value The bytes for machineType to set.
      * @return This builder for chaining.
@@ -2142,7 +2142,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Minimum cpu platform the reservation.
      * </pre>
      *
-     * <code>string min_cpu_platform = 242912759;</code>
+     * <code>optional string min_cpu_platform = 242912759;</code>
      *
      * @return Whether the minCpuPlatform field is set.
      */
@@ -2156,7 +2156,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Minimum cpu platform the reservation.
      * </pre>
      *
-     * <code>string min_cpu_platform = 242912759;</code>
+     * <code>optional string min_cpu_platform = 242912759;</code>
      *
      * @return The minCpuPlatform.
      */
@@ -2178,7 +2178,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Minimum cpu platform the reservation.
      * </pre>
      *
-     * <code>string min_cpu_platform = 242912759;</code>
+     * <code>optional string min_cpu_platform = 242912759;</code>
      *
      * @return The bytes for minCpuPlatform.
      */
@@ -2200,7 +2200,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Minimum cpu platform the reservation.
      * </pre>
      *
-     * <code>string min_cpu_platform = 242912759;</code>
+     * <code>optional string min_cpu_platform = 242912759;</code>
      *
      * @param value The minCpuPlatform to set.
      * @return This builder for chaining.
@@ -2221,7 +2221,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Minimum cpu platform the reservation.
      * </pre>
      *
-     * <code>string min_cpu_platform = 242912759;</code>
+     * <code>optional string min_cpu_platform = 242912759;</code>
      *
      * @return This builder for chaining.
      */
@@ -2238,7 +2238,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Minimum cpu platform the reservation.
      * </pre>
      *
-     * <code>string min_cpu_platform = 242912759;</code>
+     * <code>optional string min_cpu_platform = 242912759;</code>
      *
      * @param value The bytes for minCpuPlatform to set.
      * @return This builder for chaining.

@@ -160,7 +160,8 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
   public static final int DAILY_SCHEDULE_FIELD_NUMBER = 86159869;
   private com.google.cloud.compute.v1.ResourcePolicyDailyCycle dailySchedule_;
   /**
-   * <code>.google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;</code>
+   * <code>optional .google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;
+   * </code>
    *
    * @return Whether the dailySchedule field is set.
    */
@@ -169,7 +170,8 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;</code>
+   * <code>optional .google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;
+   * </code>
    *
    * @return The dailySchedule.
    */
@@ -179,7 +181,10 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
         ? com.google.cloud.compute.v1.ResourcePolicyDailyCycle.getDefaultInstance()
         : dailySchedule_;
   }
-  /** <code>.google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;</code> */
+  /**
+   * <code>optional .google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.ResourcePolicyDailyCycleOrBuilder getDailyScheduleOrBuilder() {
     return dailySchedule_ == null
@@ -190,7 +195,8 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
   public static final int HOURLY_SCHEDULE_FIELD_NUMBER = 38328485;
   private com.google.cloud.compute.v1.ResourcePolicyHourlyCycle hourlySchedule_;
   /**
-   * <code>.google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;</code>
+   * <code>optional .google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;
+   * </code>
    *
    * @return Whether the hourlySchedule field is set.
    */
@@ -199,7 +205,8 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;</code>
+   * <code>optional .google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;
+   * </code>
    *
    * @return The hourlySchedule.
    */
@@ -209,7 +216,10 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
         ? com.google.cloud.compute.v1.ResourcePolicyHourlyCycle.getDefaultInstance()
         : hourlySchedule_;
   }
-  /** <code>.google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;</code> */
+  /**
+   * <code>optional .google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.ResourcePolicyHourlyCycleOrBuilder
       getHourlyScheduleOrBuilder() {
@@ -221,7 +231,8 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
   public static final int WEEKLY_SCHEDULE_FIELD_NUMBER = 359548053;
   private com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weeklySchedule_;
   /**
-   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
+   * <code>optional .google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;
+   * </code>
    *
    * @return Whether the weeklySchedule field is set.
    */
@@ -230,7 +241,8 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
+   * <code>optional .google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;
+   * </code>
    *
    * @return The weeklySchedule.
    */
@@ -241,7 +253,8 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
         : weeklySchedule_;
   }
   /**
-   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
+   * <code>optional .google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleOrBuilder
@@ -678,7 +691,8 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
             com.google.cloud.compute.v1.ResourcePolicyDailyCycleOrBuilder>
         dailyScheduleBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;</code>
+     * <code>optional .google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;
+     * </code>
      *
      * @return Whether the dailySchedule field is set.
      */
@@ -686,7 +700,8 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;</code>
+     * <code>optional .google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;
+     * </code>
      *
      * @return The dailySchedule.
      */
@@ -699,7 +714,10 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
         return dailyScheduleBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;
+     * </code>
+     */
     public Builder setDailySchedule(com.google.cloud.compute.v1.ResourcePolicyDailyCycle value) {
       if (dailyScheduleBuilder_ == null) {
         if (value == null) {
@@ -713,7 +731,10 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       bitField0_ |= 0x00000001;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;
+     * </code>
+     */
     public Builder setDailySchedule(
         com.google.cloud.compute.v1.ResourcePolicyDailyCycle.Builder builderForValue) {
       if (dailyScheduleBuilder_ == null) {
@@ -725,7 +746,10 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       bitField0_ |= 0x00000001;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;
+     * </code>
+     */
     public Builder mergeDailySchedule(com.google.cloud.compute.v1.ResourcePolicyDailyCycle value) {
       if (dailyScheduleBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)
@@ -746,7 +770,10 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       bitField0_ |= 0x00000001;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;
+     * </code>
+     */
     public Builder clearDailySchedule() {
       if (dailyScheduleBuilder_ == null) {
         dailySchedule_ = null;
@@ -757,13 +784,19 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
-    /** <code>.google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;
+     * </code>
+     */
     public com.google.cloud.compute.v1.ResourcePolicyDailyCycle.Builder getDailyScheduleBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
       return getDailyScheduleFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;
+     * </code>
+     */
     public com.google.cloud.compute.v1.ResourcePolicyDailyCycleOrBuilder
         getDailyScheduleOrBuilder() {
       if (dailyScheduleBuilder_ != null) {
@@ -774,7 +807,10 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
             : dailySchedule_;
       }
     }
-    /** <code>.google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ResourcePolicyDailyCycle,
             com.google.cloud.compute.v1.ResourcePolicyDailyCycle.Builder,
@@ -799,7 +835,8 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
             com.google.cloud.compute.v1.ResourcePolicyHourlyCycleOrBuilder>
         hourlyScheduleBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;</code>
+     * <code>optional .google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;
+     * </code>
      *
      * @return Whether the hourlySchedule field is set.
      */
@@ -807,7 +844,8 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;</code>
+     * <code>optional .google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;
+     * </code>
      *
      * @return The hourlySchedule.
      */
@@ -821,7 +859,8 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;</code>
+     * <code>optional .google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;
+     * </code>
      */
     public Builder setHourlySchedule(com.google.cloud.compute.v1.ResourcePolicyHourlyCycle value) {
       if (hourlyScheduleBuilder_ == null) {
@@ -837,7 +876,8 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;</code>
+     * <code>optional .google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;
+     * </code>
      */
     public Builder setHourlySchedule(
         com.google.cloud.compute.v1.ResourcePolicyHourlyCycle.Builder builderForValue) {
@@ -851,7 +891,8 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;</code>
+     * <code>optional .google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;
+     * </code>
      */
     public Builder mergeHourlySchedule(
         com.google.cloud.compute.v1.ResourcePolicyHourlyCycle value) {
@@ -875,7 +916,8 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;</code>
+     * <code>optional .google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;
+     * </code>
      */
     public Builder clearHourlySchedule() {
       if (hourlyScheduleBuilder_ == null) {
@@ -888,7 +930,8 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;</code>
+     * <code>optional .google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;
+     * </code>
      */
     public com.google.cloud.compute.v1.ResourcePolicyHourlyCycle.Builder
         getHourlyScheduleBuilder() {
@@ -897,7 +940,8 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       return getHourlyScheduleFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;</code>
+     * <code>optional .google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;
+     * </code>
      */
     public com.google.cloud.compute.v1.ResourcePolicyHourlyCycleOrBuilder
         getHourlyScheduleOrBuilder() {
@@ -910,7 +954,8 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;</code>
+     * <code>optional .google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ResourcePolicyHourlyCycle,
@@ -936,7 +981,9 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
             com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleOrBuilder>
         weeklyScheduleBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;
+     * </code>
      *
      * @return Whether the weeklySchedule field is set.
      */
@@ -944,7 +991,9 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;
+     * </code>
      *
      * @return The weeklySchedule.
      */
@@ -958,7 +1007,9 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;
+     * </code>
      */
     public Builder setWeeklySchedule(com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle value) {
       if (weeklyScheduleBuilder_ == null) {
@@ -974,7 +1025,9 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;
+     * </code>
      */
     public Builder setWeeklySchedule(
         com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle.Builder builderForValue) {
@@ -988,7 +1041,9 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;
+     * </code>
      */
     public Builder mergeWeeklySchedule(
         com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle value) {
@@ -1012,7 +1067,9 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;
+     * </code>
      */
     public Builder clearWeeklySchedule() {
       if (weeklyScheduleBuilder_ == null) {
@@ -1025,7 +1082,9 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;
+     * </code>
      */
     public com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle.Builder
         getWeeklyScheduleBuilder() {
@@ -1034,7 +1093,9 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       return getWeeklyScheduleFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;
+     * </code>
      */
     public com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleOrBuilder
         getWeeklyScheduleOrBuilder() {
@@ -1047,7 +1108,9 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle,

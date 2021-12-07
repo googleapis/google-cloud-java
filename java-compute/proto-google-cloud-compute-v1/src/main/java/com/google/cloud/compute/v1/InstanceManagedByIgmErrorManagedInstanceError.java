@@ -132,7 +132,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
    * [Output Only] Error code.
    * </pre>
    *
-   * <code>string code = 3059181;</code>
+   * <code>optional string code = 3059181;</code>
    *
    * @return Whether the code field is set.
    */
@@ -147,7 +147,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
    * [Output Only] Error code.
    * </pre>
    *
-   * <code>string code = 3059181;</code>
+   * <code>optional string code = 3059181;</code>
    *
    * @return The code.
    */
@@ -170,7 +170,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
    * [Output Only] Error code.
    * </pre>
    *
-   * <code>string code = 3059181;</code>
+   * <code>optional string code = 3059181;</code>
    *
    * @return The bytes for code.
    */
@@ -196,7 +196,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
    * [Output Only] Error message.
    * </pre>
    *
-   * <code>string message = 418054151;</code>
+   * <code>optional string message = 418054151;</code>
    *
    * @return Whether the message field is set.
    */
@@ -211,7 +211,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
    * [Output Only] Error message.
    * </pre>
    *
-   * <code>string message = 418054151;</code>
+   * <code>optional string message = 418054151;</code>
    *
    * @return The message.
    */
@@ -234,7 +234,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
    * [Output Only] Error message.
    * </pre>
    *
-   * <code>string message = 418054151;</code>
+   * <code>optional string message = 418054151;</code>
    *
    * @return The bytes for message.
    */
@@ -630,7 +630,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
      * [Output Only] Error code.
      * </pre>
      *
-     * <code>string code = 3059181;</code>
+     * <code>optional string code = 3059181;</code>
      *
      * @return Whether the code field is set.
      */
@@ -644,7 +644,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
      * [Output Only] Error code.
      * </pre>
      *
-     * <code>string code = 3059181;</code>
+     * <code>optional string code = 3059181;</code>
      *
      * @return The code.
      */
@@ -666,7 +666,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
      * [Output Only] Error code.
      * </pre>
      *
-     * <code>string code = 3059181;</code>
+     * <code>optional string code = 3059181;</code>
      *
      * @return The bytes for code.
      */
@@ -688,7 +688,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
      * [Output Only] Error code.
      * </pre>
      *
-     * <code>string code = 3059181;</code>
+     * <code>optional string code = 3059181;</code>
      *
      * @param value The code to set.
      * @return This builder for chaining.
@@ -709,7 +709,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
      * [Output Only] Error code.
      * </pre>
      *
-     * <code>string code = 3059181;</code>
+     * <code>optional string code = 3059181;</code>
      *
      * @return This builder for chaining.
      */
@@ -726,7 +726,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
      * [Output Only] Error code.
      * </pre>
      *
-     * <code>string code = 3059181;</code>
+     * <code>optional string code = 3059181;</code>
      *
      * @param value The bytes for code to set.
      * @return This builder for chaining.
@@ -750,7 +750,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
      * [Output Only] Error message.
      * </pre>
      *
-     * <code>string message = 418054151;</code>
+     * <code>optional string message = 418054151;</code>
      *
      * @return Whether the message field is set.
      */
@@ -764,7 +764,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
      * [Output Only] Error message.
      * </pre>
      *
-     * <code>string message = 418054151;</code>
+     * <code>optional string message = 418054151;</code>
      *
      * @return The message.
      */
@@ -786,7 +786,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
      * [Output Only] Error message.
      * </pre>
      *
-     * <code>string message = 418054151;</code>
+     * <code>optional string message = 418054151;</code>
      *
      * @return The bytes for message.
      */
@@ -808,7 +808,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
      * [Output Only] Error message.
      * </pre>
      *
-     * <code>string message = 418054151;</code>
+     * <code>optional string message = 418054151;</code>
      *
      * @param value The message to set.
      * @return This builder for chaining.
@@ -829,7 +829,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
      * [Output Only] Error message.
      * </pre>
      *
-     * <code>string message = 418054151;</code>
+     * <code>optional string message = 418054151;</code>
      *
      * @return This builder for chaining.
      */
@@ -846,7 +846,7 @@ public final class InstanceManagedByIgmErrorManagedInstanceError
      * [Output Only] Error message.
      * </pre>
      *
-     * <code>string message = 418054151;</code>
+     * <code>optional string message = 418054151;</code>
      *
      * @param value The bytes for message to set.
      * @return This builder for chaining.

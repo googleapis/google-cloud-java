@@ -231,10 +231,10 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (!getFamilyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(family_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 328751972, family_);
     }
     unknownFields.writeTo(output);
@@ -246,10 +246,10 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
-    if (!getFamilyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(family_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(328751972, family_);
     }
     size += unknownFields.getSerializedSize();

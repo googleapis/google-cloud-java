@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonRegionBackendServicesStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -34,6 +35,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -87,7 +89,7 @@ public class RegionBackendServicesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -98,6 +100,7 @@ public class RegionBackendServicesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -111,7 +114,7 @@ public class RegionBackendServicesClientTest {
     String region = "region-934795532";
     String backendService = "backendService-1884714623";
 
-    Operation actualResponse = client.delete(project, region, backendService);
+    Operation actualResponse = client.deleteAsync(project, region, backendService).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -140,10 +143,9 @@ public class RegionBackendServicesClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       String backendService = "backendService-1884714623";
-      client.delete(project, region, backendService);
+      client.deleteAsync(project, region, backendService).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -168,6 +170,8 @@ public class RegionBackendServicesClientTest {
             .setIap(BackendServiceIAP.newBuilder().build())
             .setId(3355)
             .setKind("kind3292052")
+            .setLoadBalancingScheme("loadBalancingScheme-1223583272")
+            .setLocalityLbPolicy("localityLbPolicy-1807450933")
             .setLogConfig(BackendServiceLogConfig.newBuilder().build())
             .setMaxStreamDuration(Duration.newBuilder().build())
             .setName("name3373707")
@@ -175,10 +179,13 @@ public class RegionBackendServicesClientTest {
             .setOutlierDetection(OutlierDetection.newBuilder().build())
             .setPort(3446913)
             .setPortName("portName728194732")
+            .setProtocol("protocol-989163880")
             .setRegion("region-934795532")
             .setSecurityPolicy("securityPolicy-788621166")
             .setSecuritySettings(SecuritySettings.newBuilder().build())
             .setSelfLink("selfLink1191800166")
+            .setSessionAffinity("sessionAffinity-289859106")
+            .setSubsetting(Subsetting.newBuilder().build())
             .setTimeoutSec(-2067488653)
             .build();
     mockService.addResponse(expectedResponse);
@@ -288,7 +295,7 @@ public class RegionBackendServicesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -299,6 +306,7 @@ public class RegionBackendServicesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -312,7 +320,7 @@ public class RegionBackendServicesClientTest {
     String region = "region-934795532";
     BackendService backendServiceResource = BackendService.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, region, backendServiceResource);
+    Operation actualResponse = client.insertAsync(project, region, backendServiceResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -341,10 +349,9 @@ public class RegionBackendServicesClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       BackendService backendServiceResource = BackendService.newBuilder().build();
-      client.insert(project, region, backendServiceResource);
+      client.insertAsync(project, region, backendServiceResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -410,7 +417,7 @@ public class RegionBackendServicesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -421,6 +428,7 @@ public class RegionBackendServicesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -436,7 +444,7 @@ public class RegionBackendServicesClientTest {
     BackendService backendServiceResource = BackendService.newBuilder().build();
 
     Operation actualResponse =
-        client.patch(project, region, backendService, backendServiceResource);
+        client.patchAsync(project, region, backendService, backendServiceResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -466,10 +474,9 @@ public class RegionBackendServicesClientTest {
       String region = "region-934795532";
       String backendService = "backendService-1884714623";
       BackendService backendServiceResource = BackendService.newBuilder().build();
-      client.patch(project, region, backendService, backendServiceResource);
+      client.patchAsync(project, region, backendService, backendServiceResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -483,7 +490,7 @@ public class RegionBackendServicesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -494,6 +501,7 @@ public class RegionBackendServicesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -509,7 +517,7 @@ public class RegionBackendServicesClientTest {
     BackendService backendServiceResource = BackendService.newBuilder().build();
 
     Operation actualResponse =
-        client.update(project, region, backendService, backendServiceResource);
+        client.updateAsync(project, region, backendService, backendServiceResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -539,10 +547,9 @@ public class RegionBackendServicesClientTest {
       String region = "region-934795532";
       String backendService = "backendService-1884714623";
       BackendService backendServiceResource = BackendService.newBuilder().build();
-      client.update(project, region, backendService, backendServiceResource);
+      client.updateAsync(project, region, backendService, backendServiceResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 }

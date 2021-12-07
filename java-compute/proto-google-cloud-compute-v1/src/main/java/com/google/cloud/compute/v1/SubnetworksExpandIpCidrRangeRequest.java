@@ -123,7 +123,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
    * The IP (in CIDR format or netmask) of internal addresses that are legal on this Subnetwork. This range should be disjoint from other subnetworks within this network. This range can only be larger than (i.e. a superset of) the range previously defined before the update.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return Whether the ipCidrRange field is set.
    */
@@ -138,7 +138,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
    * The IP (in CIDR format or netmask) of internal addresses that are legal on this Subnetwork. This range should be disjoint from other subnetworks within this network. This range can only be larger than (i.e. a superset of) the range previously defined before the update.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return The ipCidrRange.
    */
@@ -161,7 +161,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
    * The IP (in CIDR format or netmask) of internal addresses that are legal on this Subnetwork. This range should be disjoint from other subnetworks within this network. This range can only be larger than (i.e. a superset of) the range previously defined before the update.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return The bytes for ipCidrRange.
    */
@@ -522,7 +522,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
      * The IP (in CIDR format or netmask) of internal addresses that are legal on this Subnetwork. This range should be disjoint from other subnetworks within this network. This range can only be larger than (i.e. a superset of) the range previously defined before the update.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return Whether the ipCidrRange field is set.
      */
@@ -536,7 +536,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
      * The IP (in CIDR format or netmask) of internal addresses that are legal on this Subnetwork. This range should be disjoint from other subnetworks within this network. This range can only be larger than (i.e. a superset of) the range previously defined before the update.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return The ipCidrRange.
      */
@@ -558,7 +558,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
      * The IP (in CIDR format or netmask) of internal addresses that are legal on this Subnetwork. This range should be disjoint from other subnetworks within this network. This range can only be larger than (i.e. a superset of) the range previously defined before the update.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return The bytes for ipCidrRange.
      */
@@ -580,7 +580,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
      * The IP (in CIDR format or netmask) of internal addresses that are legal on this Subnetwork. This range should be disjoint from other subnetworks within this network. This range can only be larger than (i.e. a superset of) the range previously defined before the update.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @param value The ipCidrRange to set.
      * @return This builder for chaining.
@@ -601,7 +601,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
      * The IP (in CIDR format or netmask) of internal addresses that are legal on this Subnetwork. This range should be disjoint from other subnetworks within this network. This range can only be larger than (i.e. a superset of) the range previously defined before the update.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return This builder for chaining.
      */
@@ -618,7 +618,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
      * The IP (in CIDR format or netmask) of internal addresses that are legal on this Subnetwork. This range should be disjoint from other subnetworks within this network. This range can only be larger than (i.e. a superset of) the range previously defined before the update.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @param value The bytes for ipCidrRange to set.
      * @return This builder for chaining.

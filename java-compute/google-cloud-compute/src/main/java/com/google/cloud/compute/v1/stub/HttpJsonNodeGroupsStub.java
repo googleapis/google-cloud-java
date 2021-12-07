@@ -27,11 +27,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddNodesNodeGroupRequest;
 import com.google.cloud.compute.v1.AggregatedListNodeGroupsRequest;
@@ -47,12 +49,14 @@ import com.google.cloud.compute.v1.NodeGroupAggregatedList;
 import com.google.cloud.compute.v1.NodeGroupList;
 import com.google.cloud.compute.v1.NodeGroupsListNodes;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchNodeGroupRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyNodeGroupRequest;
 import com.google.cloud.compute.v1.SetNodeTemplateNodeGroupRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsNodeGroupRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -70,6 +74,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<AddNodesNodeGroupRequest, Operation>
       addNodesMethodDescriptor =
           ApiMethodDescriptor.<AddNodesNodeGroupRequest, Operation>newBuilder()
@@ -108,7 +115,21 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (AddNodesNodeGroupRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<AggregatedListNodeGroupsRequest, NodeGroupAggregatedList>
@@ -162,6 +183,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<NodeGroupAggregatedList>newBuilder()
                       .setDefaultInstance(NodeGroupAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -198,7 +220,21 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteNodeGroupRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<DeleteNodesNodeGroupRequest, Operation>
@@ -239,7 +275,21 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteNodesNodeGroupRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetNodeGroupRequest, NodeGroup> getMethodDescriptor =
@@ -271,6 +321,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
           .setResponseParser(
               ProtoMessageResponseParser.<NodeGroup>newBuilder()
                   .setDefaultInstance(NodeGroup.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -310,6 +361,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -350,7 +402,21 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertNodeGroupRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListNodeGroupsRequest, NodeGroupList>
@@ -401,6 +467,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<NodeGroupList>newBuilder()
                       .setDefaultInstance(NodeGroupList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -453,6 +520,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<NodeGroupsListNodes>newBuilder()
                       .setDefaultInstance(NodeGroupsListNodes.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -491,7 +559,21 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (PatchNodeGroupRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                opName.append(":").append(request.getZone());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<SetIamPolicyNodeGroupRequest, Policy>
@@ -529,6 +611,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -570,7 +653,21 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetNodeTemplateNodeGroupRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -610,31 +707,45 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
                       .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
   private final UnaryCallable<AddNodesNodeGroupRequest, Operation> addNodesCallable;
+  private final OperationCallable<AddNodesNodeGroupRequest, Operation, Operation>
+      addNodesOperationCallable;
   private final UnaryCallable<AggregatedListNodeGroupsRequest, NodeGroupAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListNodeGroupsRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
   private final UnaryCallable<DeleteNodeGroupRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteNodeGroupRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<DeleteNodesNodeGroupRequest, Operation> deleteNodesCallable;
+  private final OperationCallable<DeleteNodesNodeGroupRequest, Operation, Operation>
+      deleteNodesOperationCallable;
   private final UnaryCallable<GetNodeGroupRequest, NodeGroup> getCallable;
   private final UnaryCallable<GetIamPolicyNodeGroupRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<InsertNodeGroupRequest, Operation> insertCallable;
+  private final OperationCallable<InsertNodeGroupRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListNodeGroupsRequest, NodeGroupList> listCallable;
   private final UnaryCallable<ListNodeGroupsRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<ListNodesNodeGroupsRequest, NodeGroupsListNodes> listNodesCallable;
   private final UnaryCallable<ListNodesNodeGroupsRequest, ListNodesPagedResponse>
       listNodesPagedCallable;
   private final UnaryCallable<PatchNodeGroupRequest, Operation> patchCallable;
+  private final OperationCallable<PatchNodeGroupRequest, Operation, Operation>
+      patchOperationCallable;
   private final UnaryCallable<SetIamPolicyNodeGroupRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<SetNodeTemplateNodeGroupRequest, Operation> setNodeTemplateCallable;
+  private final OperationCallable<SetNodeTemplateNodeGroupRequest, Operation, Operation>
+      setNodeTemplateOperationCallable;
   private final UnaryCallable<TestIamPermissionsNodeGroupRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonNodeGroupsStub create(NodeGroupsStubSettings settings)
@@ -674,69 +785,89 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub = HttpJsonZoneOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AddNodesNodeGroupRequest, Operation> addNodesTransportSettings =
         HttpJsonCallSettings.<AddNodesNodeGroupRequest, Operation>newBuilder()
             .setMethodDescriptor(addNodesMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<AggregatedListNodeGroupsRequest, NodeGroupAggregatedList>
         aggregatedListTransportSettings =
             HttpJsonCallSettings
                 .<AggregatedListNodeGroupsRequest, NodeGroupAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeleteNodeGroupRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteNodeGroupRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<DeleteNodesNodeGroupRequest, Operation> deleteNodesTransportSettings =
         HttpJsonCallSettings.<DeleteNodesNodeGroupRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteNodesMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetNodeGroupRequest, NodeGroup> getTransportSettings =
         HttpJsonCallSettings.<GetNodeGroupRequest, NodeGroup>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetIamPolicyNodeGroupRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyNodeGroupRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertNodeGroupRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertNodeGroupRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListNodeGroupsRequest, NodeGroupList> listTransportSettings =
         HttpJsonCallSettings.<ListNodeGroupsRequest, NodeGroupList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListNodesNodeGroupsRequest, NodeGroupsListNodes>
         listNodesTransportSettings =
             HttpJsonCallSettings.<ListNodesNodeGroupsRequest, NodeGroupsListNodes>newBuilder()
                 .setMethodDescriptor(listNodesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<PatchNodeGroupRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchNodeGroupRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetIamPolicyNodeGroupRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyNodeGroupRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetNodeTemplateNodeGroupRequest, Operation>
         setNodeTemplateTransportSettings =
             HttpJsonCallSettings.<SetNodeTemplateNodeGroupRequest, Operation>newBuilder()
                 .setMethodDescriptor(setNodeTemplateMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<TestIamPermissionsNodeGroupRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings
                 .<TestIamPermissionsNodeGroupRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.addNodesCallable =
         callableFactory.createUnaryCallable(
             addNodesTransportSettings, settings.addNodesSettings(), clientContext);
+    this.addNodesOperationCallable =
+        callableFactory.createOperationCallable(
+            addNodesTransportSettings,
+            settings.addNodesOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.aggregatedListCallable =
         callableFactory.createUnaryCallable(
             aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
@@ -746,9 +877,21 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteNodesCallable =
         callableFactory.createUnaryCallable(
             deleteNodesTransportSettings, settings.deleteNodesSettings(), clientContext);
+    this.deleteNodesOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteNodesTransportSettings,
+            settings.deleteNodesOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
@@ -758,6 +901,12 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -773,12 +922,24 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
     this.setNodeTemplateCallable =
         callableFactory.createUnaryCallable(
             setNodeTemplateTransportSettings, settings.setNodeTemplateSettings(), clientContext);
+    this.setNodeTemplateOperationCallable =
+        callableFactory.createOperationCallable(
+            setNodeTemplateTransportSettings,
+            settings.setNodeTemplateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.testIamPermissionsCallable =
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
@@ -814,6 +975,12 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
   }
 
   @Override
+  public OperationCallable<AddNodesNodeGroupRequest, Operation, Operation>
+      addNodesOperationCallable() {
+    return addNodesOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<AggregatedListNodeGroupsRequest, NodeGroupAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
@@ -831,8 +998,19 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
   }
 
   @Override
+  public OperationCallable<DeleteNodeGroupRequest, Operation, Operation> deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteNodesNodeGroupRequest, Operation> deleteNodesCallable() {
     return deleteNodesCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteNodesNodeGroupRequest, Operation, Operation>
+      deleteNodesOperationCallable() {
+    return deleteNodesOperationCallable;
   }
 
   @Override
@@ -848,6 +1026,11 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
   @Override
   public UnaryCallable<InsertNodeGroupRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertNodeGroupRequest, Operation, Operation> insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -877,6 +1060,11 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
   }
 
   @Override
+  public OperationCallable<PatchNodeGroupRequest, Operation, Operation> patchOperationCallable() {
+    return patchOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetIamPolicyNodeGroupRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
@@ -884,6 +1072,12 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
   @Override
   public UnaryCallable<SetNodeTemplateNodeGroupRequest, Operation> setNodeTemplateCallable() {
     return setNodeTemplateCallable;
+  }
+
+  @Override
+  public OperationCallable<SetNodeTemplateNodeGroupRequest, Operation, Operation>
+      setNodeTemplateOperationCallable() {
+    return setNodeTemplateOperationCallable;
   }
 
   @Override

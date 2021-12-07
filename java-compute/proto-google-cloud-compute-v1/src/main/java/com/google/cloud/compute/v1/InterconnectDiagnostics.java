@@ -312,7 +312,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    * The MAC address of the Interconnect's bundle interface.
    * </pre>
    *
-   * <code>string mac_address = 332540164;</code>
+   * <code>optional string mac_address = 332540164;</code>
    *
    * @return Whether the macAddress field is set.
    */
@@ -327,7 +327,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    * The MAC address of the Interconnect's bundle interface.
    * </pre>
    *
-   * <code>string mac_address = 332540164;</code>
+   * <code>optional string mac_address = 332540164;</code>
    *
    * @return The macAddress.
    */
@@ -350,7 +350,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    * The MAC address of the Interconnect's bundle interface.
    * </pre>
    *
-   * <code>string mac_address = 332540164;</code>
+   * <code>optional string mac_address = 332540164;</code>
    *
    * @return The bytes for macAddress.
    */
@@ -1602,7 +1602,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * The MAC address of the Interconnect's bundle interface.
      * </pre>
      *
-     * <code>string mac_address = 332540164;</code>
+     * <code>optional string mac_address = 332540164;</code>
      *
      * @return Whether the macAddress field is set.
      */
@@ -1616,7 +1616,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * The MAC address of the Interconnect's bundle interface.
      * </pre>
      *
-     * <code>string mac_address = 332540164;</code>
+     * <code>optional string mac_address = 332540164;</code>
      *
      * @return The macAddress.
      */
@@ -1638,7 +1638,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * The MAC address of the Interconnect's bundle interface.
      * </pre>
      *
-     * <code>string mac_address = 332540164;</code>
+     * <code>optional string mac_address = 332540164;</code>
      *
      * @return The bytes for macAddress.
      */
@@ -1660,7 +1660,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * The MAC address of the Interconnect's bundle interface.
      * </pre>
      *
-     * <code>string mac_address = 332540164;</code>
+     * <code>optional string mac_address = 332540164;</code>
      *
      * @param value The macAddress to set.
      * @return This builder for chaining.
@@ -1681,7 +1681,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * The MAC address of the Interconnect's bundle interface.
      * </pre>
      *
-     * <code>string mac_address = 332540164;</code>
+     * <code>optional string mac_address = 332540164;</code>
      *
      * @return This builder for chaining.
      */
@@ -1698,7 +1698,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * The MAC address of the Interconnect's bundle interface.
      * </pre>
      *
-     * <code>string mac_address = 332540164;</code>
+     * <code>optional string mac_address = 332540164;</code>
      *
      * @param value The bytes for macAddress to set.
      * @return This builder for chaining.

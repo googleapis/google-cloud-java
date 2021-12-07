@@ -24,19 +24,19 @@ public interface SecurityPolicyReferenceOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string security_policy = 171082513;</code>
+   * <code>optional string security_policy = 171082513;</code>
    *
    * @return Whether the securityPolicy field is set.
    */
   boolean hasSecurityPolicy();
   /**
-   * <code>string security_policy = 171082513;</code>
+   * <code>optional string security_policy = 171082513;</code>
    *
    * @return The securityPolicy.
    */
   java.lang.String getSecurityPolicy();
   /**
-   * <code>string security_policy = 171082513;</code>
+   * <code>optional string security_policy = 171082513;</code>
    *
    * @return The bytes for securityPolicy.
    */

@@ -23,6 +23,7 @@ import static com.google.cloud.compute.v1.InstanceGroupManagersClient.ListPagedR
 import static com.google.cloud.compute.v1.InstanceGroupManagersClient.ListPerInstanceConfigsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AbandonInstancesInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.AggregatedListInstanceGroupManagersRequest;
@@ -62,6 +63,11 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class InstanceGroupManagersStub implements BackgroundResource {
 
+  public OperationCallable<AbandonInstancesInstanceGroupManagerRequest, Operation, Operation>
+      abandonInstancesOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: abandonInstancesOperationCallable()");
+  }
+
   public UnaryCallable<AbandonInstancesInstanceGroupManagerRequest, Operation>
       abandonInstancesCallable() {
     throw new UnsupportedOperationException("Not implemented: abandonInstancesCallable()");
@@ -78,9 +84,20 @@ public abstract class InstanceGroupManagersStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<ApplyUpdatesToInstancesInstanceGroupManagerRequest, Operation, Operation>
+      applyUpdatesToInstancesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: applyUpdatesToInstancesOperationCallable()");
+  }
+
   public UnaryCallable<ApplyUpdatesToInstancesInstanceGroupManagerRequest, Operation>
       applyUpdatesToInstancesCallable() {
     throw new UnsupportedOperationException("Not implemented: applyUpdatesToInstancesCallable()");
+  }
+
+  public OperationCallable<CreateInstancesInstanceGroupManagerRequest, Operation, Operation>
+      createInstancesOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createInstancesOperationCallable()");
   }
 
   public UnaryCallable<CreateInstancesInstanceGroupManagerRequest, Operation>
@@ -88,13 +105,30 @@ public abstract class InstanceGroupManagersStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createInstancesCallable()");
   }
 
+  public OperationCallable<DeleteInstanceGroupManagerRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteInstanceGroupManagerRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
+  }
+
+  public OperationCallable<DeleteInstancesInstanceGroupManagerRequest, Operation, Operation>
+      deleteInstancesOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteInstancesOperationCallable()");
   }
 
   public UnaryCallable<DeleteInstancesInstanceGroupManagerRequest, Operation>
       deleteInstancesCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteInstancesCallable()");
+  }
+
+  public OperationCallable<
+          DeletePerInstanceConfigsInstanceGroupManagerRequest, Operation, Operation>
+      deletePerInstanceConfigsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deletePerInstanceConfigsOperationCallable()");
   }
 
   public UnaryCallable<DeletePerInstanceConfigsInstanceGroupManagerRequest, Operation>
@@ -104,6 +138,11 @@ public abstract class InstanceGroupManagersStub implements BackgroundResource {
 
   public UnaryCallable<GetInstanceGroupManagerRequest, InstanceGroupManager> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertInstanceGroupManagerRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertInstanceGroupManagerRequest, Operation> insertCallable() {
@@ -156,8 +195,19 @@ public abstract class InstanceGroupManagersStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listPerInstanceConfigsCallable()");
   }
 
+  public OperationCallable<PatchInstanceGroupManagerRequest, Operation, Operation>
+      patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
+  }
+
   public UnaryCallable<PatchInstanceGroupManagerRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public OperationCallable<PatchPerInstanceConfigsInstanceGroupManagerRequest, Operation, Operation>
+      patchPerInstanceConfigsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: patchPerInstanceConfigsOperationCallable()");
   }
 
   public UnaryCallable<PatchPerInstanceConfigsInstanceGroupManagerRequest, Operation>
@@ -165,13 +215,30 @@ public abstract class InstanceGroupManagersStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: patchPerInstanceConfigsCallable()");
   }
 
+  public OperationCallable<RecreateInstancesInstanceGroupManagerRequest, Operation, Operation>
+      recreateInstancesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: recreateInstancesOperationCallable()");
+  }
+
   public UnaryCallable<RecreateInstancesInstanceGroupManagerRequest, Operation>
       recreateInstancesCallable() {
     throw new UnsupportedOperationException("Not implemented: recreateInstancesCallable()");
   }
 
+  public OperationCallable<ResizeInstanceGroupManagerRequest, Operation, Operation>
+      resizeOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: resizeOperationCallable()");
+  }
+
   public UnaryCallable<ResizeInstanceGroupManagerRequest, Operation> resizeCallable() {
     throw new UnsupportedOperationException("Not implemented: resizeCallable()");
+  }
+
+  public OperationCallable<SetInstanceTemplateInstanceGroupManagerRequest, Operation, Operation>
+      setInstanceTemplateOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setInstanceTemplateOperationCallable()");
   }
 
   public UnaryCallable<SetInstanceTemplateInstanceGroupManagerRequest, Operation>
@@ -179,9 +246,21 @@ public abstract class InstanceGroupManagersStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: setInstanceTemplateCallable()");
   }
 
+  public OperationCallable<SetTargetPoolsInstanceGroupManagerRequest, Operation, Operation>
+      setTargetPoolsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setTargetPoolsOperationCallable()");
+  }
+
   public UnaryCallable<SetTargetPoolsInstanceGroupManagerRequest, Operation>
       setTargetPoolsCallable() {
     throw new UnsupportedOperationException("Not implemented: setTargetPoolsCallable()");
+  }
+
+  public OperationCallable<
+          UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation, Operation>
+      updatePerInstanceConfigsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updatePerInstanceConfigsOperationCallable()");
   }
 
   public UnaryCallable<UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation>

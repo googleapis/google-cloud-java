@@ -225,7 +225,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
    * [Output only] The network endpoint;
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
+   * <code>optional .google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
    *
    * @return Whether the networkEndpoint field is set.
    */
@@ -240,7 +240,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
    * [Output only] The network endpoint;
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
+   * <code>optional .google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
    *
    * @return The networkEndpoint.
    */
@@ -257,7 +257,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
    * [Output only] The network endpoint;
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
+   * <code>optional .google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NetworkEndpointOrBuilder getNetworkEndpointOrBuilder() {
@@ -1057,7 +1057,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      * [Output only] The network endpoint;
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
+     * <code>optional .google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
      *
      * @return Whether the networkEndpoint field is set.
      */
@@ -1071,7 +1071,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      * [Output only] The network endpoint;
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
+     * <code>optional .google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
      *
      * @return The networkEndpoint.
      */
@@ -1091,7 +1091,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      * [Output only] The network endpoint;
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
+     * <code>optional .google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
      */
     public Builder setNetworkEndpoint(com.google.cloud.compute.v1.NetworkEndpoint value) {
       if (networkEndpointBuilder_ == null) {
@@ -1113,7 +1113,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      * [Output only] The network endpoint;
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
+     * <code>optional .google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
      */
     public Builder setNetworkEndpoint(
         com.google.cloud.compute.v1.NetworkEndpoint.Builder builderForValue) {
@@ -1133,7 +1133,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      * [Output only] The network endpoint;
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
+     * <code>optional .google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
      */
     public Builder mergeNetworkEndpoint(com.google.cloud.compute.v1.NetworkEndpoint value) {
       if (networkEndpointBuilder_ == null) {
@@ -1162,7 +1162,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      * [Output only] The network endpoint;
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
+     * <code>optional .google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
      */
     public Builder clearNetworkEndpoint() {
       if (networkEndpointBuilder_ == null) {
@@ -1181,7 +1181,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      * [Output only] The network endpoint;
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
+     * <code>optional .google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
      */
     public com.google.cloud.compute.v1.NetworkEndpoint.Builder getNetworkEndpointBuilder() {
       bitField0_ |= 0x00000002;
@@ -1195,7 +1195,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      * [Output only] The network endpoint;
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
+     * <code>optional .google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
      */
     public com.google.cloud.compute.v1.NetworkEndpointOrBuilder getNetworkEndpointOrBuilder() {
       if (networkEndpointBuilder_ != null) {
@@ -1213,7 +1213,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      * [Output only] The network endpoint;
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
+     * <code>optional .google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.NetworkEndpoint,

@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RegionNotificationEndpointsStub;
@@ -46,8 +48,8 @@ import javax.annotation.Generated;
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String notificationEndpoint = "notificationEndpoint-354029664";
- *   Operation response =
- *       regionNotificationEndpointsClient.delete(project, region, notificationEndpoint);
+ *   NotificationEndpoint response =
+ *       regionNotificationEndpointsClient.get(project, region, notificationEndpoint);
  * }
  * }</pre>
  *
@@ -169,7 +171,9 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
    *   String region = "region-934795532";
    *   String notificationEndpoint = "notificationEndpoint-354029664";
    *   Operation response =
-   *       regionNotificationEndpointsClient.delete(project, region, notificationEndpoint);
+   *       regionNotificationEndpointsClient
+   *           .deleteAsync(project, region, notificationEndpoint)
+   *           .get();
    * }
    * }</pre>
    *
@@ -178,14 +182,15 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
    * @param notificationEndpoint Name of the NotificationEndpoint resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String region, String notificationEndpoint) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String region, String notificationEndpoint) {
     DeleteRegionNotificationEndpointRequest request =
         DeleteRegionNotificationEndpointRequest.newBuilder()
             .setProject(project)
             .setRegion(region)
             .setNotificationEndpoint(notificationEndpoint)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -204,15 +209,46 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = regionNotificationEndpointsClient.delete(request);
+   *   Operation response = regionNotificationEndpointsClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteRegionNotificationEndpointRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      DeleteRegionNotificationEndpointRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified NotificationEndpoint in the given region
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient =
+   *     RegionNotificationEndpointsClient.create()) {
+   *   DeleteRegionNotificationEndpointRequest request =
+   *       DeleteRegionNotificationEndpointRequest.newBuilder()
+   *           .setNotificationEndpoint("notificationEndpoint-354029664")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionNotificationEndpointsClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteRegionNotificationEndpointRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -342,7 +378,9 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
    *   String region = "region-934795532";
    *   NotificationEndpoint notificationEndpointResource = NotificationEndpoint.newBuilder().build();
    *   Operation response =
-   *       regionNotificationEndpointsClient.insert(project, region, notificationEndpointResource);
+   *       regionNotificationEndpointsClient
+   *           .insertAsync(project, region, notificationEndpointResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -351,7 +389,7 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
    * @param notificationEndpointResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(
+  public final OperationFuture<Operation, Operation> insertAsync(
       String project, String region, NotificationEndpoint notificationEndpointResource) {
     InsertRegionNotificationEndpointRequest request =
         InsertRegionNotificationEndpointRequest.newBuilder()
@@ -359,7 +397,7 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
             .setRegion(region)
             .setNotificationEndpointResource(notificationEndpointResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -379,15 +417,47 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = regionNotificationEndpointsClient.insert(request);
+   *   Operation response = regionNotificationEndpointsClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertRegionNotificationEndpointRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(
+      InsertRegionNotificationEndpointRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a NotificationEndpoint in the specified project in the given region using the parameters
+   * that are included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient =
+   *     RegionNotificationEndpointsClient.create()) {
+   *   InsertRegionNotificationEndpointRequest request =
+   *       InsertRegionNotificationEndpointRequest.newBuilder()
+   *           .setNotificationEndpointResource(NotificationEndpoint.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionNotificationEndpointsClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertRegionNotificationEndpointRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

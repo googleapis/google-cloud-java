@@ -145,7 +145,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
    * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>optional string instance_template = 309248228;</code>
    *
    * @return Whether the instanceTemplate field is set.
    */
@@ -160,7 +160,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
    * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>optional string instance_template = 309248228;</code>
    *
    * @return The instanceTemplate.
    */
@@ -183,7 +183,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
    * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>optional string instance_template = 309248228;</code>
    *
    * @return The bytes for instanceTemplate.
    */
@@ -209,7 +209,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
    * Name of the version. Unique among all versions in the scope of this managed instance group.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -224,7 +224,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
    * Name of the version. Unique among all versions in the scope of this managed instance group.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -247,7 +247,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
    * Name of the version. Unique among all versions in the scope of this managed instance group.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -270,12 +270,10 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to:
-   * - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used.
-   * - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded up.  If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
+   * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to: - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used. - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded. If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
+   * <code>optional .google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
    *
    * @return Whether the targetSize field is set.
    */
@@ -287,12 +285,10 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to:
-   * - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used.
-   * - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded up.  If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
+   * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to: - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used. - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded. If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
+   * <code>optional .google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
    *
    * @return The targetSize.
    */
@@ -306,12 +302,10 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to:
-   * - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used.
-   * - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded up.  If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
+   * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to: - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used. - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded. If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
+   * <code>optional .google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.FixedOrPercentOrBuilder getTargetSizeOrBuilder() {
@@ -719,7 +713,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @return Whether the instanceTemplate field is set.
      */
@@ -733,7 +727,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @return The instanceTemplate.
      */
@@ -755,7 +749,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @return The bytes for instanceTemplate.
      */
@@ -777,7 +771,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @param value The instanceTemplate to set.
      * @return This builder for chaining.
@@ -798,7 +792,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @return This builder for chaining.
      */
@@ -815,7 +809,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @param value The bytes for instanceTemplate to set.
      * @return This builder for chaining.
@@ -839,7 +833,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * Name of the version. Unique among all versions in the scope of this managed instance group.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -853,7 +847,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * Name of the version. Unique among all versions in the scope of this managed instance group.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -875,7 +869,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * Name of the version. Unique among all versions in the scope of this managed instance group.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -897,7 +891,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * Name of the version. Unique among all versions in the scope of this managed instance group.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -918,7 +912,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * Name of the version. Unique among all versions in the scope of this managed instance group.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -935,7 +929,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * Name of the version. Unique among all versions in the scope of this managed instance group.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -961,12 +955,10 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to:
-     * - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used.
-     * - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded up.  If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
+     * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to: - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used. - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded. If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
+     * <code>optional .google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
      *
      * @return Whether the targetSize field is set.
      */
@@ -977,12 +969,10 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to:
-     * - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used.
-     * - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded up.  If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
+     * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to: - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used. - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded. If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
+     * <code>optional .google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
      *
      * @return The targetSize.
      */
@@ -999,12 +989,10 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to:
-     * - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used.
-     * - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded up.  If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
+     * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to: - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used. - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded. If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
+     * <code>optional .google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
      */
     public Builder setTargetSize(com.google.cloud.compute.v1.FixedOrPercent value) {
       if (targetSizeBuilder_ == null) {
@@ -1023,12 +1011,10 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to:
-     * - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used.
-     * - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded up.  If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
+     * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to: - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used. - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded. If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
+     * <code>optional .google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
      */
     public Builder setTargetSize(
         com.google.cloud.compute.v1.FixedOrPercent.Builder builderForValue) {
@@ -1045,12 +1031,10 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to:
-     * - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used.
-     * - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded up.  If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
+     * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to: - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used. - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded. If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
+     * <code>optional .google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
      */
     public Builder mergeTargetSize(com.google.cloud.compute.v1.FixedOrPercent value) {
       if (targetSizeBuilder_ == null) {
@@ -1075,12 +1059,10 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to:
-     * - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used.
-     * - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded up.  If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
+     * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to: - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used. - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded. If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
+     * <code>optional .google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
      */
     public Builder clearTargetSize() {
       if (targetSizeBuilder_ == null) {
@@ -1096,12 +1078,10 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to:
-     * - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used.
-     * - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded up.  If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
+     * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to: - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used. - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded. If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
+     * <code>optional .google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
      */
     public com.google.cloud.compute.v1.FixedOrPercent.Builder getTargetSizeBuilder() {
       bitField0_ |= 0x00000004;
@@ -1112,12 +1092,10 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to:
-     * - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used.
-     * - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded up.  If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
+     * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to: - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used. - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded. If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
+     * <code>optional .google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
      */
     public com.google.cloud.compute.v1.FixedOrPercentOrBuilder getTargetSizeOrBuilder() {
       if (targetSizeBuilder_ != null) {
@@ -1132,12 +1110,10 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to:
-     * - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used.
-     * - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded up.  If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
+     * Specifies the intended number of instances to be created from the instanceTemplate. The final number of instances created from the template will be equal to: - If expressed as a fixed number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used. - if expressed as a percent, the targetSize would be (targetSize.percent/100 * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded. If unset, this version will update any remaining instances not updated by another version. Read Starting a canary update for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
+     * <code>optional .google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.FixedOrPercent,

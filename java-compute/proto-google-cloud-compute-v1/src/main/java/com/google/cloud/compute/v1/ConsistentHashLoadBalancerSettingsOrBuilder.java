@@ -31,7 +31,7 @@ public interface ConsistentHashLoadBalancerSettingsOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
+   * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
    * </code>
    *
    * @return Whether the httpCookie field is set.
@@ -45,7 +45,7 @@ public interface ConsistentHashLoadBalancerSettingsOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
+   * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
    * </code>
    *
    * @return The httpCookie.
@@ -59,7 +59,7 @@ public interface ConsistentHashLoadBalancerSettingsOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
+   * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie http_cookie = 6673915;
    * </code>
    */
   com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder
@@ -72,7 +72,7 @@ public interface ConsistentHashLoadBalancerSettingsOrBuilder
    * The hash based on the value of the specified header field. This field is applicable if the sessionAffinity is set to HEADER_FIELD.
    * </pre>
    *
-   * <code>string http_header_name = 234798022;</code>
+   * <code>optional string http_header_name = 234798022;</code>
    *
    * @return Whether the httpHeaderName field is set.
    */
@@ -84,7 +84,7 @@ public interface ConsistentHashLoadBalancerSettingsOrBuilder
    * The hash based on the value of the specified header field. This field is applicable if the sessionAffinity is set to HEADER_FIELD.
    * </pre>
    *
-   * <code>string http_header_name = 234798022;</code>
+   * <code>optional string http_header_name = 234798022;</code>
    *
    * @return The httpHeaderName.
    */
@@ -96,7 +96,7 @@ public interface ConsistentHashLoadBalancerSettingsOrBuilder
    * The hash based on the value of the specified header field. This field is applicable if the sessionAffinity is set to HEADER_FIELD.
    * </pre>
    *
-   * <code>string http_header_name = 234798022;</code>
+   * <code>optional string http_header_name = 234798022;</code>
    *
    * @return The bytes for httpHeaderName.
    */
@@ -109,7 +109,7 @@ public interface ConsistentHashLoadBalancerSettingsOrBuilder
    * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
    * </pre>
    *
-   * <code>int64 minimum_ring_size = 234380735;</code>
+   * <code>optional int64 minimum_ring_size = 234380735;</code>
    *
    * @return Whether the minimumRingSize field is set.
    */
@@ -121,7 +121,7 @@ public interface ConsistentHashLoadBalancerSettingsOrBuilder
    * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
    * </pre>
    *
-   * <code>int64 minimum_ring_size = 234380735;</code>
+   * <code>optional int64 minimum_ring_size = 234380735;</code>
    *
    * @return The minimumRingSize.
    */

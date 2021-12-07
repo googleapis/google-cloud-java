@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * The named port. For example: .
+ * The named port. For example: &lt;"http", 80&gt;.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.NamedPort}
@@ -128,7 +128,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
    * The name for this named port. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -143,7 +143,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
    * The name for this named port. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -166,7 +166,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
    * The name for this named port. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -192,7 +192,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
    * The port number, which can be a value between 1 and 65535.
    * </pre>
    *
-   * <code>int32 port = 3446913;</code>
+   * <code>optional int32 port = 3446913;</code>
    *
    * @return Whether the port field is set.
    */
@@ -207,7 +207,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
    * The port number, which can be a value between 1 and 65535.
    * </pre>
    *
-   * <code>int32 port = 3446913;</code>
+   * <code>optional int32 port = 3446913;</code>
    *
    * @return The port.
    */
@@ -396,7 +396,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The named port. For example: .
+   * The named port. For example: &lt;"http", 80&gt;.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.NamedPort}
@@ -575,7 +575,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
      * The name for this named port. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -589,7 +589,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
      * The name for this named port. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -611,7 +611,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
      * The name for this named port. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -633,7 +633,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
      * The name for this named port. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -654,7 +654,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
      * The name for this named port. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -671,7 +671,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
      * The name for this named port. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -695,7 +695,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
      * The port number, which can be a value between 1 and 65535.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @return Whether the port field is set.
      */
@@ -710,7 +710,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
      * The port number, which can be a value between 1 and 65535.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @return The port.
      */
@@ -725,7 +725,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
      * The port number, which can be a value between 1 and 65535.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @param value The port to set.
      * @return This builder for chaining.
@@ -743,7 +743,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
      * The port number, which can be a value between 1 and 65535.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @return This builder for chaining.
      */

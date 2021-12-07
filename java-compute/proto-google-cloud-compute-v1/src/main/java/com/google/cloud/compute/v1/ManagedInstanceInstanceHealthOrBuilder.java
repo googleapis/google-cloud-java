@@ -28,11 +28,10 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    *
    * <pre>
    * [Output Only] The current detailed instance health state.
+   * Check the DetailedHealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;
-   * </code>
+   * <code>optional string detailed_health_state = 510470173;</code>
    *
    * @return Whether the detailedHealthState field is set.
    */
@@ -42,30 +41,27 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    *
    * <pre>
    * [Output Only] The current detailed instance health state.
+   * Check the DetailedHealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;
-   * </code>
+   * <code>optional string detailed_health_state = 510470173;</code>
    *
-   * @return The enum numeric value on the wire for detailedHealthState.
+   * @return The detailedHealthState.
    */
-  int getDetailedHealthStateValue();
+  java.lang.String getDetailedHealthState();
   /**
    *
    *
    * <pre>
    * [Output Only] The current detailed instance health state.
+   * Check the DetailedHealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;
-   * </code>
+   * <code>optional string detailed_health_state = 510470173;</code>
    *
-   * @return The detailedHealthState.
+   * @return The bytes for detailedHealthState.
    */
-  com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState
-      getDetailedHealthState();
+  com.google.protobuf.ByteString getDetailedHealthStateBytes();
 
   /**
    *
@@ -74,7 +70,7 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    * [Output Only] The URL for the health check that verifies whether the instance is healthy.
    * </pre>
    *
-   * <code>string health_check = 308876645;</code>
+   * <code>optional string health_check = 308876645;</code>
    *
    * @return Whether the healthCheck field is set.
    */
@@ -86,7 +82,7 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    * [Output Only] The URL for the health check that verifies whether the instance is healthy.
    * </pre>
    *
-   * <code>string health_check = 308876645;</code>
+   * <code>optional string health_check = 308876645;</code>
    *
    * @return The healthCheck.
    */
@@ -98,7 +94,7 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    * [Output Only] The URL for the health check that verifies whether the instance is healthy.
    * </pre>
    *
-   * <code>string health_check = 308876645;</code>
+   * <code>optional string health_check = 308876645;</code>
    *
    * @return The bytes for healthCheck.
    */

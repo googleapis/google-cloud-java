@@ -28,12 +28,14 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonProjectsStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -86,7 +88,7 @@ public class ProjectsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -97,6 +99,7 @@ public class ProjectsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -108,7 +111,7 @@ public class ProjectsClientTest {
 
     String project = "project-309310695";
 
-    Operation actualResponse = client.disableXpnHost(project);
+    Operation actualResponse = client.disableXpnHostAsync(project).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -135,10 +138,9 @@ public class ProjectsClientTest {
 
     try {
       String project = "project-309310695";
-      client.disableXpnHost(project);
+      client.disableXpnHostAsync(project).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -152,7 +154,7 @@ public class ProjectsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -163,6 +165,7 @@ public class ProjectsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -177,7 +180,7 @@ public class ProjectsClientTest {
         ProjectsDisableXpnResourceRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.disableXpnResource(project, projectsDisableXpnResourceRequestResource);
+        client.disableXpnResourceAsync(project, projectsDisableXpnResourceRequestResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -206,10 +209,9 @@ public class ProjectsClientTest {
       String project = "project-309310695";
       ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource =
           ProjectsDisableXpnResourceRequest.newBuilder().build();
-      client.disableXpnResource(project, projectsDisableXpnResourceRequestResource);
+      client.disableXpnResourceAsync(project, projectsDisableXpnResourceRequestResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -223,7 +225,7 @@ public class ProjectsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -234,6 +236,7 @@ public class ProjectsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -245,7 +248,7 @@ public class ProjectsClientTest {
 
     String project = "project-309310695";
 
-    Operation actualResponse = client.enableXpnHost(project);
+    Operation actualResponse = client.enableXpnHostAsync(project).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -272,10 +275,9 @@ public class ProjectsClientTest {
 
     try {
       String project = "project-309310695";
-      client.enableXpnHost(project);
+      client.enableXpnHostAsync(project).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -289,7 +291,7 @@ public class ProjectsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -300,6 +302,7 @@ public class ProjectsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -314,7 +317,7 @@ public class ProjectsClientTest {
         ProjectsEnableXpnResourceRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.enableXpnResource(project, projectsEnableXpnResourceRequestResource);
+        client.enableXpnResourceAsync(project, projectsEnableXpnResourceRequestResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -343,10 +346,9 @@ public class ProjectsClientTest {
       String project = "project-309310695";
       ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource =
           ProjectsEnableXpnResourceRequest.newBuilder().build();
-      client.enableXpnResource(project, projectsEnableXpnResourceRequestResource);
+      client.enableXpnResourceAsync(project, projectsEnableXpnResourceRequestResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -356,6 +358,7 @@ public class ProjectsClientTest {
         Project.newBuilder()
             .setCommonInstanceMetadata(Metadata.newBuilder().build())
             .setCreationTimestamp("creationTimestamp-370203401")
+            .setDefaultNetworkTier("defaultNetworkTier-836540369")
             .setDefaultServiceAccount("defaultServiceAccount2129949273")
             .setDescription("description-1724546052")
             .addAllEnabledFeatures(new ArrayList<String>())
@@ -365,6 +368,7 @@ public class ProjectsClientTest {
             .addAllQuotas(new ArrayList<Quota>())
             .setSelfLink("selfLink1191800166")
             .setUsageExportLocation(UsageExportLocation.newBuilder().build())
+            .setXpnProjectStatus("xpnProjectStatus-52109419")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -410,6 +414,7 @@ public class ProjectsClientTest {
         Project.newBuilder()
             .setCommonInstanceMetadata(Metadata.newBuilder().build())
             .setCreationTimestamp("creationTimestamp-370203401")
+            .setDefaultNetworkTier("defaultNetworkTier-836540369")
             .setDefaultServiceAccount("defaultServiceAccount2129949273")
             .setDescription("description-1724546052")
             .addAllEnabledFeatures(new ArrayList<String>())
@@ -419,6 +424,7 @@ public class ProjectsClientTest {
             .addAllQuotas(new ArrayList<Quota>())
             .setSelfLink("selfLink1191800166")
             .setUsageExportLocation(UsageExportLocation.newBuilder().build())
+            .setXpnProjectStatus("xpnProjectStatus-52109419")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -573,7 +579,7 @@ public class ProjectsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -584,6 +590,7 @@ public class ProjectsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -596,7 +603,7 @@ public class ProjectsClientTest {
     String project = "project-309310695";
     DiskMoveRequest diskMoveRequestResource = DiskMoveRequest.newBuilder().build();
 
-    Operation actualResponse = client.moveDisk(project, diskMoveRequestResource);
+    Operation actualResponse = client.moveDiskAsync(project, diskMoveRequestResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -624,10 +631,9 @@ public class ProjectsClientTest {
     try {
       String project = "project-309310695";
       DiskMoveRequest diskMoveRequestResource = DiskMoveRequest.newBuilder().build();
-      client.moveDisk(project, diskMoveRequestResource);
+      client.moveDiskAsync(project, diskMoveRequestResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -641,7 +647,7 @@ public class ProjectsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -652,6 +658,7 @@ public class ProjectsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -664,7 +671,7 @@ public class ProjectsClientTest {
     String project = "project-309310695";
     InstanceMoveRequest instanceMoveRequestResource = InstanceMoveRequest.newBuilder().build();
 
-    Operation actualResponse = client.moveInstance(project, instanceMoveRequestResource);
+    Operation actualResponse = client.moveInstanceAsync(project, instanceMoveRequestResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -692,10 +699,9 @@ public class ProjectsClientTest {
     try {
       String project = "project-309310695";
       InstanceMoveRequest instanceMoveRequestResource = InstanceMoveRequest.newBuilder().build();
-      client.moveInstance(project, instanceMoveRequestResource);
+      client.moveInstanceAsync(project, instanceMoveRequestResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -709,7 +715,7 @@ public class ProjectsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -720,6 +726,7 @@ public class ProjectsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -732,7 +739,8 @@ public class ProjectsClientTest {
     String project = "project-309310695";
     Metadata metadataResource = Metadata.newBuilder().build();
 
-    Operation actualResponse = client.setCommonInstanceMetadata(project, metadataResource);
+    Operation actualResponse =
+        client.setCommonInstanceMetadataAsync(project, metadataResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -760,10 +768,9 @@ public class ProjectsClientTest {
     try {
       String project = "project-309310695";
       Metadata metadataResource = Metadata.newBuilder().build();
-      client.setCommonInstanceMetadata(project, metadataResource);
+      client.setCommonInstanceMetadataAsync(project, metadataResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -777,7 +784,7 @@ public class ProjectsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -788,6 +795,7 @@ public class ProjectsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -802,7 +810,9 @@ public class ProjectsClientTest {
         ProjectsSetDefaultNetworkTierRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.setDefaultNetworkTier(project, projectsSetDefaultNetworkTierRequestResource);
+        client
+            .setDefaultNetworkTierAsync(project, projectsSetDefaultNetworkTierRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -831,10 +841,11 @@ public class ProjectsClientTest {
       String project = "project-309310695";
       ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource =
           ProjectsSetDefaultNetworkTierRequest.newBuilder().build();
-      client.setDefaultNetworkTier(project, projectsSetDefaultNetworkTierRequestResource);
+      client
+          .setDefaultNetworkTierAsync(project, projectsSetDefaultNetworkTierRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -848,7 +859,7 @@ public class ProjectsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -859,6 +870,7 @@ public class ProjectsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -871,7 +883,8 @@ public class ProjectsClientTest {
     String project = "project-309310695";
     UsageExportLocation usageExportLocationResource = UsageExportLocation.newBuilder().build();
 
-    Operation actualResponse = client.setUsageExportBucket(project, usageExportLocationResource);
+    Operation actualResponse =
+        client.setUsageExportBucketAsync(project, usageExportLocationResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -899,10 +912,9 @@ public class ProjectsClientTest {
     try {
       String project = "project-309310695";
       UsageExportLocation usageExportLocationResource = UsageExportLocation.newBuilder().build();
-      client.setUsageExportBucket(project, usageExportLocationResource);
+      client.setUsageExportBucketAsync(project, usageExportLocationResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 }

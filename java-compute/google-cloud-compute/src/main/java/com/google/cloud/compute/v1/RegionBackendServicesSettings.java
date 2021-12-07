@@ -26,6 +26,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -49,16 +50,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * RegionBackendServicesSettings.Builder regionBackendServicesSettingsBuilder =
  *     RegionBackendServicesSettings.newBuilder();
  * regionBackendServicesSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         regionBackendServicesSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -73,6 +74,12 @@ public class RegionBackendServicesSettings extends ClientSettings<RegionBackendS
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteRegionBackendServiceRequest, Operation> deleteSettings() {
     return ((RegionBackendServicesStubSettings) getStubSettings()).deleteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteRegionBackendServiceRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((RegionBackendServicesStubSettings) getStubSettings()).deleteOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -91,6 +98,12 @@ public class RegionBackendServicesSettings extends ClientSettings<RegionBackendS
     return ((RegionBackendServicesStubSettings) getStubSettings()).insertSettings();
   }
 
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertRegionBackendServiceRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((RegionBackendServicesStubSettings) getStubSettings()).insertOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<ListRegionBackendServicesRequest, BackendServiceList, ListPagedResponse>
       listSettings() {
@@ -102,9 +115,21 @@ public class RegionBackendServicesSettings extends ClientSettings<RegionBackendS
     return ((RegionBackendServicesStubSettings) getStubSettings()).patchSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchRegionBackendServiceRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((RegionBackendServicesStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateRegionBackendServiceRequest, Operation> updateSettings() {
     return ((RegionBackendServicesStubSettings) getStubSettings()).updateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateRegionBackendServiceRequest, Operation, Operation>
+      updateOperationSettings() {
+    return ((RegionBackendServicesStubSettings) getStubSettings()).updateOperationSettings();
   }
 
   public static final RegionBackendServicesSettings create(RegionBackendServicesStubSettings stub)
@@ -212,6 +237,12 @@ public class RegionBackendServicesSettings extends ClientSettings<RegionBackendS
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteRegionBackendServiceRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetRegionBackendServiceRequest, BackendService> getSettings() {
       return getStubSettingsBuilder().getSettings();
@@ -230,6 +261,12 @@ public class RegionBackendServicesSettings extends ClientSettings<RegionBackendS
       return getStubSettingsBuilder().insertSettings();
     }
 
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertRegionBackendServiceRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to list. */
     public PagedCallSettings.Builder<
             ListRegionBackendServicesRequest, BackendServiceList, ListPagedResponse>
@@ -242,10 +279,22 @@ public class RegionBackendServicesSettings extends ClientSettings<RegionBackendS
       return getStubSettingsBuilder().patchSettings();
     }
 
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchRegionBackendServiceRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to update. */
     public UnaryCallSettings.Builder<UpdateRegionBackendServiceRequest, Operation>
         updateSettings() {
       return getStubSettingsBuilder().updateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public OperationCallSettings.Builder<UpdateRegionBackendServiceRequest, Operation, Operation>
+        updateOperationSettings() {
+      return getStubSettingsBuilder().updateOperationSettings();
     }
 
     @Override

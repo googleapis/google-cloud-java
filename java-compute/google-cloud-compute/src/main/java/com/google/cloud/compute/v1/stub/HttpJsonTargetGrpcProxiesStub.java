@@ -25,20 +25,24 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteTargetGrpcProxyRequest;
 import com.google.cloud.compute.v1.GetTargetGrpcProxyRequest;
 import com.google.cloud.compute.v1.InsertTargetGrpcProxyRequest;
 import com.google.cloud.compute.v1.ListTargetGrpcProxiesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchTargetGrpcProxyRequest;
 import com.google.cloud.compute.v1.TargetGrpcProxy;
 import com.google.cloud.compute.v1.TargetGrpcProxyList;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -56,6 +60,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<DeleteTargetGrpcProxyRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteTargetGrpcProxyRequest, Operation>newBuilder()
@@ -89,7 +96,20 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteTargetGrpcProxyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetTargetGrpcProxyRequest, TargetGrpcProxy>
@@ -122,6 +142,7 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetGrpcProxy>newBuilder()
                       .setDefaultInstance(TargetGrpcProxy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -161,7 +182,20 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertTargetGrpcProxyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListTargetGrpcProxiesRequest, TargetGrpcProxyList>
@@ -211,6 +245,7 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetGrpcProxyList>newBuilder()
                       .setDefaultInstance(TargetGrpcProxyList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -252,17 +287,37 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchTargetGrpcProxyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<DeleteTargetGrpcProxyRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteTargetGrpcProxyRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetTargetGrpcProxyRequest, TargetGrpcProxy> getCallable;
   private final UnaryCallable<InsertTargetGrpcProxyRequest, Operation> insertCallable;
+  private final OperationCallable<InsertTargetGrpcProxyRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListTargetGrpcProxiesRequest, TargetGrpcProxyList> listCallable;
   private final UnaryCallable<ListTargetGrpcProxiesRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<PatchTargetGrpcProxyRequest, Operation> patchCallable;
+  private final OperationCallable<PatchTargetGrpcProxyRequest, Operation, Operation>
+      patchOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonTargetGrpcProxiesStub create(TargetGrpcProxiesStubSettings settings)
@@ -303,37 +358,56 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<DeleteTargetGrpcProxyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteTargetGrpcProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetTargetGrpcProxyRequest, TargetGrpcProxy> getTransportSettings =
         HttpJsonCallSettings.<GetTargetGrpcProxyRequest, TargetGrpcProxy>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertTargetGrpcProxyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertTargetGrpcProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListTargetGrpcProxiesRequest, TargetGrpcProxyList> listTransportSettings =
         HttpJsonCallSettings.<ListTargetGrpcProxiesRequest, TargetGrpcProxyList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<PatchTargetGrpcProxyRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchTargetGrpcProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -343,6 +417,12 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -365,6 +445,12 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
   }
 
   @Override
+  public OperationCallable<DeleteTargetGrpcProxyRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetTargetGrpcProxyRequest, TargetGrpcProxy> getCallable() {
     return getCallable;
   }
@@ -372,6 +458,12 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
   @Override
   public UnaryCallable<InsertTargetGrpcProxyRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertTargetGrpcProxyRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -387,6 +479,12 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
   @Override
   public UnaryCallable<PatchTargetGrpcProxyRequest, Operation> patchCallable() {
     return patchCallable;
+  }
+
+  @Override
+  public OperationCallable<PatchTargetGrpcProxyRequest, Operation, Operation>
+      patchOperationCallable() {
+    return patchOperationCallable;
   }
 
   @Override

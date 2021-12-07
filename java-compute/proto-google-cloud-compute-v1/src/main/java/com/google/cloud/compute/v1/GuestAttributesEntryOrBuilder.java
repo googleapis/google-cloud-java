@@ -30,7 +30,7 @@ public interface GuestAttributesEntryOrBuilder
    * Key for the guest attribute entry.
    * </pre>
    *
-   * <code>string key = 106079;</code>
+   * <code>optional string key = 106079;</code>
    *
    * @return Whether the key field is set.
    */
@@ -42,7 +42,7 @@ public interface GuestAttributesEntryOrBuilder
    * Key for the guest attribute entry.
    * </pre>
    *
-   * <code>string key = 106079;</code>
+   * <code>optional string key = 106079;</code>
    *
    * @return The key.
    */
@@ -54,7 +54,7 @@ public interface GuestAttributesEntryOrBuilder
    * Key for the guest attribute entry.
    * </pre>
    *
-   * <code>string key = 106079;</code>
+   * <code>optional string key = 106079;</code>
    *
    * @return The bytes for key.
    */
@@ -67,7 +67,7 @@ public interface GuestAttributesEntryOrBuilder
    * Namespace for the guest attribute entry.
    * </pre>
    *
-   * <code>string namespace = 178476379;</code>
+   * <code>optional string namespace = 178476379;</code>
    *
    * @return Whether the namespace field is set.
    */
@@ -79,7 +79,7 @@ public interface GuestAttributesEntryOrBuilder
    * Namespace for the guest attribute entry.
    * </pre>
    *
-   * <code>string namespace = 178476379;</code>
+   * <code>optional string namespace = 178476379;</code>
    *
    * @return The namespace.
    */
@@ -91,7 +91,7 @@ public interface GuestAttributesEntryOrBuilder
    * Namespace for the guest attribute entry.
    * </pre>
    *
-   * <code>string namespace = 178476379;</code>
+   * <code>optional string namespace = 178476379;</code>
    *
    * @return The bytes for namespace.
    */
@@ -104,7 +104,7 @@ public interface GuestAttributesEntryOrBuilder
    * Value for the guest attribute entry.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return Whether the value field is set.
    */
@@ -116,7 +116,7 @@ public interface GuestAttributesEntryOrBuilder
    * Value for the guest attribute entry.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return The value.
    */
@@ -128,7 +128,7 @@ public interface GuestAttributesEntryOrBuilder
    * Value for the guest attribute entry.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return The bytes for value.
    */

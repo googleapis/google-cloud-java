@@ -80,10 +80,10 @@ public interface NodeGroupNodeOrBuilder
    *
    * <pre>
    * CPU overcommit.
+   * Check the CpuOvercommitType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeGroupNode.CpuOvercommitType cpu_overcommit_type = 247727959;
-   * </code>
+   * <code>optional string cpu_overcommit_type = 247727959;</code>
    *
    * @return Whether the cpuOvercommitType field is set.
    */
@@ -93,27 +93,27 @@ public interface NodeGroupNodeOrBuilder
    *
    * <pre>
    * CPU overcommit.
+   * Check the CpuOvercommitType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeGroupNode.CpuOvercommitType cpu_overcommit_type = 247727959;
-   * </code>
+   * <code>optional string cpu_overcommit_type = 247727959;</code>
    *
-   * @return The enum numeric value on the wire for cpuOvercommitType.
+   * @return The cpuOvercommitType.
    */
-  int getCpuOvercommitTypeValue();
+  java.lang.String getCpuOvercommitType();
   /**
    *
    *
    * <pre>
    * CPU overcommit.
+   * Check the CpuOvercommitType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeGroupNode.CpuOvercommitType cpu_overcommit_type = 247727959;
-   * </code>
+   * <code>optional string cpu_overcommit_type = 247727959;</code>
    *
-   * @return The cpuOvercommitType.
+   * @return The bytes for cpuOvercommitType.
    */
-  com.google.cloud.compute.v1.NodeGroupNode.CpuOvercommitType getCpuOvercommitType();
+  com.google.protobuf.ByteString getCpuOvercommitTypeBytes();
 
   /**
    *
@@ -224,7 +224,7 @@ public interface NodeGroupNodeOrBuilder
    * The name of the node.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -236,7 +236,7 @@ public interface NodeGroupNodeOrBuilder
    * The name of the node.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -248,7 +248,7 @@ public interface NodeGroupNodeOrBuilder
    * The name of the node.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -261,7 +261,7 @@ public interface NodeGroupNodeOrBuilder
    * The type of this node.
    * </pre>
    *
-   * <code>string node_type = 465832791;</code>
+   * <code>optional string node_type = 465832791;</code>
    *
    * @return Whether the nodeType field is set.
    */
@@ -273,7 +273,7 @@ public interface NodeGroupNodeOrBuilder
    * The type of this node.
    * </pre>
    *
-   * <code>string node_type = 465832791;</code>
+   * <code>optional string node_type = 465832791;</code>
    *
    * @return The nodeType.
    */
@@ -285,7 +285,7 @@ public interface NodeGroupNodeOrBuilder
    * The type of this node.
    * </pre>
    *
-   * <code>string node_type = 465832791;</code>
+   * <code>optional string node_type = 465832791;</code>
    *
    * @return The bytes for nodeType.
    */
@@ -298,7 +298,7 @@ public interface NodeGroupNodeOrBuilder
    * [Output Only] Reserved for future use.
    * </pre>
    *
-   * <code>bool satisfies_pzs = 480964267;</code>
+   * <code>optional bool satisfies_pzs = 480964267;</code>
    *
    * @return Whether the satisfiesPzs field is set.
    */
@@ -310,7 +310,7 @@ public interface NodeGroupNodeOrBuilder
    * [Output Only] Reserved for future use.
    * </pre>
    *
-   * <code>bool satisfies_pzs = 480964267;</code>
+   * <code>optional bool satisfies_pzs = 480964267;</code>
    *
    * @return The satisfiesPzs.
    */
@@ -323,7 +323,7 @@ public interface NodeGroupNodeOrBuilder
    * Binding properties for the physical server.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
+   * <code>optional .google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
    *
    * @return Whether the serverBinding field is set.
    */
@@ -335,7 +335,7 @@ public interface NodeGroupNodeOrBuilder
    * Binding properties for the physical server.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
+   * <code>optional .google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
    *
    * @return The serverBinding.
    */
@@ -347,7 +347,7 @@ public interface NodeGroupNodeOrBuilder
    * Binding properties for the physical server.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
+   * <code>optional .google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
    */
   com.google.cloud.compute.v1.ServerBindingOrBuilder getServerBindingOrBuilder();
 
@@ -358,7 +358,7 @@ public interface NodeGroupNodeOrBuilder
    * Server ID associated with this node.
    * </pre>
    *
-   * <code>string server_id = 339433367;</code>
+   * <code>optional string server_id = 339433367;</code>
    *
    * @return Whether the serverId field is set.
    */
@@ -370,7 +370,7 @@ public interface NodeGroupNodeOrBuilder
    * Server ID associated with this node.
    * </pre>
    *
-   * <code>string server_id = 339433367;</code>
+   * <code>optional string server_id = 339433367;</code>
    *
    * @return The serverId.
    */
@@ -382,28 +382,49 @@ public interface NodeGroupNodeOrBuilder
    * Server ID associated with this node.
    * </pre>
    *
-   * <code>string server_id = 339433367;</code>
+   * <code>optional string server_id = 339433367;</code>
    *
    * @return The bytes for serverId.
    */
   com.google.protobuf.ByteString getServerIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.NodeGroupNode.Status status = 181260274;</code>
+   *
+   *
+   * <pre>
+   *
+   * Check the Status enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
-   * <code>.google.cloud.compute.v1.NodeGroupNode.Status status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
-   */
-  int getStatusValue();
-  /**
-   * <code>.google.cloud.compute.v1.NodeGroupNode.Status status = 181260274;</code>
+   *
+   * <pre>
+   *
+   * Check the Status enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string status = 181260274;</code>
    *
    * @return The status.
    */
-  com.google.cloud.compute.v1.NodeGroupNode.Status getStatus();
+  java.lang.String getStatus();
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the Status enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string status = 181260274;</code>
+   *
+   * @return The bytes for status.
+   */
+  com.google.protobuf.ByteString getStatusBytes();
 }

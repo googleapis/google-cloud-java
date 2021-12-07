@@ -28,11 +28,10 @@ public interface ProjectsSetDefaultNetworkTierRequestOrBuilder
    *
    * <pre>
    * Default network tier to be set.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;
-   * </code>
+   * <code>optional string network_tier = 517397843;</code>
    *
    * @return Whether the networkTier field is set.
    */
@@ -42,27 +41,25 @@ public interface ProjectsSetDefaultNetworkTierRequestOrBuilder
    *
    * <pre>
    * Default network tier to be set.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;
-   * </code>
+   * <code>optional string network_tier = 517397843;</code>
    *
-   * @return The enum numeric value on the wire for networkTier.
+   * @return The networkTier.
    */
-  int getNetworkTierValue();
+  java.lang.String getNetworkTier();
   /**
    *
    *
    * <pre>
    * Default network tier to be set.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;
-   * </code>
+   * <code>optional string network_tier = 517397843;</code>
    *
-   * @return The networkTier.
+   * @return The bytes for networkTier.
    */
-  com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier getNetworkTier();
+  com.google.protobuf.ByteString getNetworkTierBytes();
 }

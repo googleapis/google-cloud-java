@@ -30,7 +30,7 @@ public interface AcceleratorsOrBuilder
    * Number of accelerator cards exposed to the guest.
    * </pre>
    *
-   * <code>int32 guest_accelerator_count = 479079316;</code>
+   * <code>optional int32 guest_accelerator_count = 479079316;</code>
    *
    * @return Whether the guestAcceleratorCount field is set.
    */
@@ -42,7 +42,7 @@ public interface AcceleratorsOrBuilder
    * Number of accelerator cards exposed to the guest.
    * </pre>
    *
-   * <code>int32 guest_accelerator_count = 479079316;</code>
+   * <code>optional int32 guest_accelerator_count = 479079316;</code>
    *
    * @return The guestAcceleratorCount.
    */
@@ -55,7 +55,7 @@ public interface AcceleratorsOrBuilder
    * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
    * </pre>
    *
-   * <code>string guest_accelerator_type = 293064725;</code>
+   * <code>optional string guest_accelerator_type = 293064725;</code>
    *
    * @return Whether the guestAcceleratorType field is set.
    */
@@ -67,7 +67,7 @@ public interface AcceleratorsOrBuilder
    * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
    * </pre>
    *
-   * <code>string guest_accelerator_type = 293064725;</code>
+   * <code>optional string guest_accelerator_type = 293064725;</code>
    *
    * @return The guestAcceleratorType.
    */
@@ -79,7 +79,7 @@ public interface AcceleratorsOrBuilder
    * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
    * </pre>
    *
-   * <code>string guest_accelerator_type = 293064725;</code>
+   * <code>optional string guest_accelerator_type = 293064725;</code>
    *
    * @return The bytes for guestAcceleratorType.
    */

@@ -30,7 +30,7 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder
    * The number of availability domains instances will be spread across. If two instances are in different availability domain, they will not be put in the same low latency network
    * </pre>
    *
-   * <code>int32 availability_domain_count = 12453432;</code>
+   * <code>optional int32 availability_domain_count = 12453432;</code>
    *
    * @return Whether the availabilityDomainCount field is set.
    */
@@ -42,7 +42,7 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder
    * The number of availability domains instances will be spread across. If two instances are in different availability domain, they will not be put in the same low latency network
    * </pre>
    *
-   * <code>int32 availability_domain_count = 12453432;</code>
+   * <code>optional int32 availability_domain_count = 12453432;</code>
    *
    * @return The availabilityDomainCount.
    */
@@ -53,11 +53,10 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder
    *
    * <pre>
    * Specifies network collocation
+   * Check the Collocation enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
-   * </code>
+   * <code>optional string collocation = 511156533;</code>
    *
    * @return Whether the collocation field is set.
    */
@@ -67,29 +66,27 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder
    *
    * <pre>
    * Specifies network collocation
+   * Check the Collocation enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
-   * </code>
+   * <code>optional string collocation = 511156533;</code>
    *
-   * @return The enum numeric value on the wire for collocation.
+   * @return The collocation.
    */
-  int getCollocationValue();
+  java.lang.String getCollocation();
   /**
    *
    *
    * <pre>
    * Specifies network collocation
+   * Check the Collocation enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
-   * </code>
+   * <code>optional string collocation = 511156533;</code>
    *
-   * @return The collocation.
+   * @return The bytes for collocation.
    */
-  com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation getCollocation();
+  com.google.protobuf.ByteString getCollocationBytes();
 
   /**
    *
@@ -98,7 +95,7 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder
    * Number of vms in this placement group
    * </pre>
    *
-   * <code>int32 vm_count = 261463431;</code>
+   * <code>optional int32 vm_count = 261463431;</code>
    *
    * @return Whether the vmCount field is set.
    */
@@ -110,7 +107,7 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder
    * Number of vms in this placement group
    * </pre>
    *
-   * <code>int32 vm_count = 261463431;</code>
+   * <code>optional int32 vm_count = 261463431;</code>
    *
    * @return The vmCount.
    */

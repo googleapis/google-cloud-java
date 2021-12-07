@@ -131,7 +131,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
    * The IP address of this ARP neighbor.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return Whether the ipAddress field is set.
    */
@@ -146,7 +146,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
    * The IP address of this ARP neighbor.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return The ipAddress.
    */
@@ -169,7 +169,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
    * The IP address of this ARP neighbor.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return The bytes for ipAddress.
    */
@@ -195,7 +195,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
    * The MAC address of this ARP neighbor.
    * </pre>
    *
-   * <code>string mac_address = 332540164;</code>
+   * <code>optional string mac_address = 332540164;</code>
    *
    * @return Whether the macAddress field is set.
    */
@@ -210,7 +210,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
    * The MAC address of this ARP neighbor.
    * </pre>
    *
-   * <code>string mac_address = 332540164;</code>
+   * <code>optional string mac_address = 332540164;</code>
    *
    * @return The macAddress.
    */
@@ -233,7 +233,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
    * The MAC address of this ARP neighbor.
    * </pre>
    *
-   * <code>string mac_address = 332540164;</code>
+   * <code>optional string mac_address = 332540164;</code>
    *
    * @return The bytes for macAddress.
    */
@@ -616,7 +616,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The IP address of this ARP neighbor.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @return Whether the ipAddress field is set.
      */
@@ -630,7 +630,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The IP address of this ARP neighbor.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @return The ipAddress.
      */
@@ -652,7 +652,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The IP address of this ARP neighbor.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @return The bytes for ipAddress.
      */
@@ -674,7 +674,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The IP address of this ARP neighbor.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @param value The ipAddress to set.
      * @return This builder for chaining.
@@ -695,7 +695,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The IP address of this ARP neighbor.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @return This builder for chaining.
      */
@@ -712,7 +712,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The IP address of this ARP neighbor.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @param value The bytes for ipAddress to set.
      * @return This builder for chaining.
@@ -736,7 +736,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The MAC address of this ARP neighbor.
      * </pre>
      *
-     * <code>string mac_address = 332540164;</code>
+     * <code>optional string mac_address = 332540164;</code>
      *
      * @return Whether the macAddress field is set.
      */
@@ -750,7 +750,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The MAC address of this ARP neighbor.
      * </pre>
      *
-     * <code>string mac_address = 332540164;</code>
+     * <code>optional string mac_address = 332540164;</code>
      *
      * @return The macAddress.
      */
@@ -772,7 +772,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The MAC address of this ARP neighbor.
      * </pre>
      *
-     * <code>string mac_address = 332540164;</code>
+     * <code>optional string mac_address = 332540164;</code>
      *
      * @return The bytes for macAddress.
      */
@@ -794,7 +794,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The MAC address of this ARP neighbor.
      * </pre>
      *
-     * <code>string mac_address = 332540164;</code>
+     * <code>optional string mac_address = 332540164;</code>
      *
      * @param value The macAddress to set.
      * @return This builder for chaining.
@@ -815,7 +815,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The MAC address of this ARP neighbor.
      * </pre>
      *
-     * <code>string mac_address = 332540164;</code>
+     * <code>optional string mac_address = 332540164;</code>
      *
      * @return This builder for chaining.
      */
@@ -832,7 +832,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The MAC address of this ARP neighbor.
      * </pre>
      *
-     * <code>string mac_address = 332540164;</code>
+     * <code>optional string mac_address = 332540164;</code>
      *
      * @param value The bytes for macAddress to set.
      * @return This builder for chaining.

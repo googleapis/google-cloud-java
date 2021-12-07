@@ -30,10 +30,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.httpjson.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -95,16 +99,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of abandonInstances to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * RegionInstanceGroupManagersStubSettings.Builder regionInstanceGroupManagersSettingsBuilder =
  *     RegionInstanceGroupManagersStubSettings.newBuilder();
  * regionInstanceGroupManagersSettingsBuilder
- *     .abandonInstancesSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         regionInstanceGroupManagersSettingsBuilder
- *             .abandonInstancesSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -125,22 +129,41 @@ public class RegionInstanceGroupManagersStubSettings
 
   private final UnaryCallSettings<AbandonInstancesRegionInstanceGroupManagerRequest, Operation>
       abandonInstancesSettings;
+  private final OperationCallSettings<
+          AbandonInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      abandonInstancesOperationSettings;
   private final UnaryCallSettings<
           ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest, Operation>
       applyUpdatesToInstancesSettings;
+  private final OperationCallSettings<
+          ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      applyUpdatesToInstancesOperationSettings;
   private final UnaryCallSettings<CreateInstancesRegionInstanceGroupManagerRequest, Operation>
       createInstancesSettings;
+  private final OperationCallSettings<
+          CreateInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      createInstancesOperationSettings;
   private final UnaryCallSettings<DeleteRegionInstanceGroupManagerRequest, Operation>
       deleteSettings;
+  private final OperationCallSettings<DeleteRegionInstanceGroupManagerRequest, Operation, Operation>
+      deleteOperationSettings;
   private final UnaryCallSettings<DeleteInstancesRegionInstanceGroupManagerRequest, Operation>
       deleteInstancesSettings;
+  private final OperationCallSettings<
+          DeleteInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      deleteInstancesOperationSettings;
   private final UnaryCallSettings<
           DeletePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
       deletePerInstanceConfigsSettings;
+  private final OperationCallSettings<
+          DeletePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation, Operation>
+      deletePerInstanceConfigsOperationSettings;
   private final UnaryCallSettings<GetRegionInstanceGroupManagerRequest, InstanceGroupManager>
       getSettings;
   private final UnaryCallSettings<InsertRegionInstanceGroupManagerRequest, Operation>
       insertSettings;
+  private final OperationCallSettings<InsertRegionInstanceGroupManagerRequest, Operation, Operation>
+      insertOperationSettings;
   private final PagedCallSettings<
           ListRegionInstanceGroupManagersRequest, RegionInstanceGroupManagerList, ListPagedResponse>
       listSettings;
@@ -160,20 +183,39 @@ public class RegionInstanceGroupManagersStubSettings
           ListPerInstanceConfigsPagedResponse>
       listPerInstanceConfigsSettings;
   private final UnaryCallSettings<PatchRegionInstanceGroupManagerRequest, Operation> patchSettings;
+  private final OperationCallSettings<PatchRegionInstanceGroupManagerRequest, Operation, Operation>
+      patchOperationSettings;
   private final UnaryCallSettings<
           PatchPerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
       patchPerInstanceConfigsSettings;
+  private final OperationCallSettings<
+          PatchPerInstanceConfigsRegionInstanceGroupManagerRequest, Operation, Operation>
+      patchPerInstanceConfigsOperationSettings;
   private final UnaryCallSettings<RecreateInstancesRegionInstanceGroupManagerRequest, Operation>
       recreateInstancesSettings;
+  private final OperationCallSettings<
+          RecreateInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      recreateInstancesOperationSettings;
   private final UnaryCallSettings<ResizeRegionInstanceGroupManagerRequest, Operation>
       resizeSettings;
+  private final OperationCallSettings<ResizeRegionInstanceGroupManagerRequest, Operation, Operation>
+      resizeOperationSettings;
   private final UnaryCallSettings<SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation>
       setInstanceTemplateSettings;
+  private final OperationCallSettings<
+          SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation, Operation>
+      setInstanceTemplateOperationSettings;
   private final UnaryCallSettings<SetTargetPoolsRegionInstanceGroupManagerRequest, Operation>
       setTargetPoolsSettings;
+  private final OperationCallSettings<
+          SetTargetPoolsRegionInstanceGroupManagerRequest, Operation, Operation>
+      setTargetPoolsOperationSettings;
   private final UnaryCallSettings<
           UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
       updatePerInstanceConfigsSettings;
+  private final OperationCallSettings<
+          UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation, Operation>
+      updatePerInstanceConfigsOperationSettings;
 
   private static final PagedListDescriptor<
           ListRegionInstanceGroupManagersRequest,
@@ -491,10 +533,24 @@ public class RegionInstanceGroupManagersStubSettings
     return abandonInstancesSettings;
   }
 
+  /** Returns the object with the settings used for calls to abandonInstances. */
+  public OperationCallSettings<
+          AbandonInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      abandonInstancesOperationSettings() {
+    return abandonInstancesOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to applyUpdatesToInstances. */
   public UnaryCallSettings<ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest, Operation>
       applyUpdatesToInstancesSettings() {
     return applyUpdatesToInstancesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to applyUpdatesToInstances. */
+  public OperationCallSettings<
+          ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      applyUpdatesToInstancesOperationSettings() {
+    return applyUpdatesToInstancesOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to createInstances. */
@@ -503,9 +559,22 @@ public class RegionInstanceGroupManagersStubSettings
     return createInstancesSettings;
   }
 
+  /** Returns the object with the settings used for calls to createInstances. */
+  public OperationCallSettings<
+          CreateInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      createInstancesOperationSettings() {
+    return createInstancesOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteRegionInstanceGroupManagerRequest, Operation> deleteSettings() {
     return deleteSettings;
+  }
+
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteRegionInstanceGroupManagerRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return deleteOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteInstances. */
@@ -514,10 +583,24 @@ public class RegionInstanceGroupManagersStubSettings
     return deleteInstancesSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteInstances. */
+  public OperationCallSettings<
+          DeleteInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      deleteInstancesOperationSettings() {
+    return deleteInstancesOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deletePerInstanceConfigs. */
   public UnaryCallSettings<DeletePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
       deletePerInstanceConfigsSettings() {
     return deletePerInstanceConfigsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deletePerInstanceConfigs. */
+  public OperationCallSettings<
+          DeletePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation, Operation>
+      deletePerInstanceConfigsOperationSettings() {
+    return deletePerInstanceConfigsOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -529,6 +612,12 @@ public class RegionInstanceGroupManagersStubSettings
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertRegionInstanceGroupManagerRequest, Operation> insertSettings() {
     return insertSettings;
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertRegionInstanceGroupManagerRequest, Operation, Operation>
+      insertOperationSettings() {
+    return insertOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -570,10 +659,23 @@ public class RegionInstanceGroupManagersStubSettings
     return patchSettings;
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchRegionInstanceGroupManagerRequest, Operation, Operation>
+      patchOperationSettings() {
+    return patchOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to patchPerInstanceConfigs. */
   public UnaryCallSettings<PatchPerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
       patchPerInstanceConfigsSettings() {
     return patchPerInstanceConfigsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to patchPerInstanceConfigs. */
+  public OperationCallSettings<
+          PatchPerInstanceConfigsRegionInstanceGroupManagerRequest, Operation, Operation>
+      patchPerInstanceConfigsOperationSettings() {
+    return patchPerInstanceConfigsOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to recreateInstances. */
@@ -582,9 +684,22 @@ public class RegionInstanceGroupManagersStubSettings
     return recreateInstancesSettings;
   }
 
+  /** Returns the object with the settings used for calls to recreateInstances. */
+  public OperationCallSettings<
+          RecreateInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      recreateInstancesOperationSettings() {
+    return recreateInstancesOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to resize. */
   public UnaryCallSettings<ResizeRegionInstanceGroupManagerRequest, Operation> resizeSettings() {
     return resizeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to resize. */
+  public OperationCallSettings<ResizeRegionInstanceGroupManagerRequest, Operation, Operation>
+      resizeOperationSettings() {
+    return resizeOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to setInstanceTemplate. */
@@ -593,16 +708,37 @@ public class RegionInstanceGroupManagersStubSettings
     return setInstanceTemplateSettings;
   }
 
+  /** Returns the object with the settings used for calls to setInstanceTemplate. */
+  public OperationCallSettings<
+          SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation, Operation>
+      setInstanceTemplateOperationSettings() {
+    return setInstanceTemplateOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setTargetPools. */
   public UnaryCallSettings<SetTargetPoolsRegionInstanceGroupManagerRequest, Operation>
       setTargetPoolsSettings() {
     return setTargetPoolsSettings;
   }
 
+  /** Returns the object with the settings used for calls to setTargetPools. */
+  public OperationCallSettings<
+          SetTargetPoolsRegionInstanceGroupManagerRequest, Operation, Operation>
+      setTargetPoolsOperationSettings() {
+    return setTargetPoolsOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to updatePerInstanceConfigs. */
   public UnaryCallSettings<UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
       updatePerInstanceConfigsSettings() {
     return updatePerInstanceConfigsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updatePerInstanceConfigs. */
+  public OperationCallSettings<
+          UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation, Operation>
+      updatePerInstanceConfigsOperationSettings() {
+    return updatePerInstanceConfigsOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -639,7 +775,9 @@ public class RegionInstanceGroupManagersStubSettings
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return GoogleCredentialsProvider.newBuilder()
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        .setUseJwtAccessWithScope(true);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -681,24 +819,44 @@ public class RegionInstanceGroupManagersStubSettings
     super(settingsBuilder);
 
     abandonInstancesSettings = settingsBuilder.abandonInstancesSettings().build();
+    abandonInstancesOperationSettings = settingsBuilder.abandonInstancesOperationSettings().build();
     applyUpdatesToInstancesSettings = settingsBuilder.applyUpdatesToInstancesSettings().build();
+    applyUpdatesToInstancesOperationSettings =
+        settingsBuilder.applyUpdatesToInstancesOperationSettings().build();
     createInstancesSettings = settingsBuilder.createInstancesSettings().build();
+    createInstancesOperationSettings = settingsBuilder.createInstancesOperationSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
+    deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     deleteInstancesSettings = settingsBuilder.deleteInstancesSettings().build();
+    deleteInstancesOperationSettings = settingsBuilder.deleteInstancesOperationSettings().build();
     deletePerInstanceConfigsSettings = settingsBuilder.deletePerInstanceConfigsSettings().build();
+    deletePerInstanceConfigsOperationSettings =
+        settingsBuilder.deletePerInstanceConfigsOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
+    insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     listErrorsSettings = settingsBuilder.listErrorsSettings().build();
     listManagedInstancesSettings = settingsBuilder.listManagedInstancesSettings().build();
     listPerInstanceConfigsSettings = settingsBuilder.listPerInstanceConfigsSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
+    patchOperationSettings = settingsBuilder.patchOperationSettings().build();
     patchPerInstanceConfigsSettings = settingsBuilder.patchPerInstanceConfigsSettings().build();
+    patchPerInstanceConfigsOperationSettings =
+        settingsBuilder.patchPerInstanceConfigsOperationSettings().build();
     recreateInstancesSettings = settingsBuilder.recreateInstancesSettings().build();
+    recreateInstancesOperationSettings =
+        settingsBuilder.recreateInstancesOperationSettings().build();
     resizeSettings = settingsBuilder.resizeSettings().build();
+    resizeOperationSettings = settingsBuilder.resizeOperationSettings().build();
     setInstanceTemplateSettings = settingsBuilder.setInstanceTemplateSettings().build();
+    setInstanceTemplateOperationSettings =
+        settingsBuilder.setInstanceTemplateOperationSettings().build();
     setTargetPoolsSettings = settingsBuilder.setTargetPoolsSettings().build();
+    setTargetPoolsOperationSettings = settingsBuilder.setTargetPoolsOperationSettings().build();
     updatePerInstanceConfigsSettings = settingsBuilder.updatePerInstanceConfigsSettings().build();
+    updatePerInstanceConfigsOperationSettings =
+        settingsBuilder.updatePerInstanceConfigsOperationSettings().build();
   }
 
   /** Builder for RegionInstanceGroupManagersStubSettings. */
@@ -708,25 +866,46 @@ public class RegionInstanceGroupManagersStubSettings
     private final UnaryCallSettings.Builder<
             AbandonInstancesRegionInstanceGroupManagerRequest, Operation>
         abandonInstancesSettings;
+    private final OperationCallSettings.Builder<
+            AbandonInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+        abandonInstancesOperationSettings;
     private final UnaryCallSettings.Builder<
             ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest, Operation>
         applyUpdatesToInstancesSettings;
+    private final OperationCallSettings.Builder<
+            ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+        applyUpdatesToInstancesOperationSettings;
     private final UnaryCallSettings.Builder<
             CreateInstancesRegionInstanceGroupManagerRequest, Operation>
         createInstancesSettings;
+    private final OperationCallSettings.Builder<
+            CreateInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+        createInstancesOperationSettings;
     private final UnaryCallSettings.Builder<DeleteRegionInstanceGroupManagerRequest, Operation>
         deleteSettings;
+    private final OperationCallSettings.Builder<
+            DeleteRegionInstanceGroupManagerRequest, Operation, Operation>
+        deleteOperationSettings;
     private final UnaryCallSettings.Builder<
             DeleteInstancesRegionInstanceGroupManagerRequest, Operation>
         deleteInstancesSettings;
+    private final OperationCallSettings.Builder<
+            DeleteInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+        deleteInstancesOperationSettings;
     private final UnaryCallSettings.Builder<
             DeletePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
         deletePerInstanceConfigsSettings;
+    private final OperationCallSettings.Builder<
+            DeletePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation, Operation>
+        deletePerInstanceConfigsOperationSettings;
     private final UnaryCallSettings.Builder<
             GetRegionInstanceGroupManagerRequest, InstanceGroupManager>
         getSettings;
     private final UnaryCallSettings.Builder<InsertRegionInstanceGroupManagerRequest, Operation>
         insertSettings;
+    private final OperationCallSettings.Builder<
+            InsertRegionInstanceGroupManagerRequest, Operation, Operation>
+        insertOperationSettings;
     private final PagedCallSettings.Builder<
             ListRegionInstanceGroupManagersRequest,
             RegionInstanceGroupManagerList,
@@ -749,23 +928,44 @@ public class RegionInstanceGroupManagersStubSettings
         listPerInstanceConfigsSettings;
     private final UnaryCallSettings.Builder<PatchRegionInstanceGroupManagerRequest, Operation>
         patchSettings;
+    private final OperationCallSettings.Builder<
+            PatchRegionInstanceGroupManagerRequest, Operation, Operation>
+        patchOperationSettings;
     private final UnaryCallSettings.Builder<
             PatchPerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
         patchPerInstanceConfigsSettings;
+    private final OperationCallSettings.Builder<
+            PatchPerInstanceConfigsRegionInstanceGroupManagerRequest, Operation, Operation>
+        patchPerInstanceConfigsOperationSettings;
     private final UnaryCallSettings.Builder<
             RecreateInstancesRegionInstanceGroupManagerRequest, Operation>
         recreateInstancesSettings;
+    private final OperationCallSettings.Builder<
+            RecreateInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+        recreateInstancesOperationSettings;
     private final UnaryCallSettings.Builder<ResizeRegionInstanceGroupManagerRequest, Operation>
         resizeSettings;
+    private final OperationCallSettings.Builder<
+            ResizeRegionInstanceGroupManagerRequest, Operation, Operation>
+        resizeOperationSettings;
     private final UnaryCallSettings.Builder<
             SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation>
         setInstanceTemplateSettings;
+    private final OperationCallSettings.Builder<
+            SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation, Operation>
+        setInstanceTemplateOperationSettings;
     private final UnaryCallSettings.Builder<
             SetTargetPoolsRegionInstanceGroupManagerRequest, Operation>
         setTargetPoolsSettings;
+    private final OperationCallSettings.Builder<
+            SetTargetPoolsRegionInstanceGroupManagerRequest, Operation, Operation>
+        setTargetPoolsOperationSettings;
     private final UnaryCallSettings.Builder<
             UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
         updatePerInstanceConfigsSettings;
+    private final OperationCallSettings.Builder<
+            UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation, Operation>
+        updatePerInstanceConfigsOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -817,13 +1017,20 @@ public class RegionInstanceGroupManagersStubSettings
       super(clientContext);
 
       abandonInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      abandonInstancesOperationSettings = OperationCallSettings.newBuilder();
       applyUpdatesToInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      applyUpdatesToInstancesOperationSettings = OperationCallSettings.newBuilder();
       createInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createInstancesOperationSettings = OperationCallSettings.newBuilder();
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteOperationSettings = OperationCallSettings.newBuilder();
       deleteInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteInstancesOperationSettings = OperationCallSettings.newBuilder();
       deletePerInstanceConfigsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deletePerInstanceConfigsOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       listErrorsSettings = PagedCallSettings.newBuilder(LIST_ERRORS_PAGE_STR_FACT);
       listManagedInstancesSettings =
@@ -831,12 +1038,19 @@ public class RegionInstanceGroupManagersStubSettings
       listPerInstanceConfigsSettings =
           PagedCallSettings.newBuilder(LIST_PER_INSTANCE_CONFIGS_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      patchOperationSettings = OperationCallSettings.newBuilder();
       patchPerInstanceConfigsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      patchPerInstanceConfigsOperationSettings = OperationCallSettings.newBuilder();
       recreateInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      recreateInstancesOperationSettings = OperationCallSettings.newBuilder();
       resizeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      resizeOperationSettings = OperationCallSettings.newBuilder();
       setInstanceTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setInstanceTemplateOperationSettings = OperationCallSettings.newBuilder();
       setTargetPoolsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setTargetPoolsOperationSettings = OperationCallSettings.newBuilder();
       updatePerInstanceConfigsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updatePerInstanceConfigsOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -866,24 +1080,43 @@ public class RegionInstanceGroupManagersStubSettings
       super(settings);
 
       abandonInstancesSettings = settings.abandonInstancesSettings.toBuilder();
+      abandonInstancesOperationSettings = settings.abandonInstancesOperationSettings.toBuilder();
       applyUpdatesToInstancesSettings = settings.applyUpdatesToInstancesSettings.toBuilder();
+      applyUpdatesToInstancesOperationSettings =
+          settings.applyUpdatesToInstancesOperationSettings.toBuilder();
       createInstancesSettings = settings.createInstancesSettings.toBuilder();
+      createInstancesOperationSettings = settings.createInstancesOperationSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
+      deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       deleteInstancesSettings = settings.deleteInstancesSettings.toBuilder();
+      deleteInstancesOperationSettings = settings.deleteInstancesOperationSettings.toBuilder();
       deletePerInstanceConfigsSettings = settings.deletePerInstanceConfigsSettings.toBuilder();
+      deletePerInstanceConfigsOperationSettings =
+          settings.deletePerInstanceConfigsOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
+      insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       listErrorsSettings = settings.listErrorsSettings.toBuilder();
       listManagedInstancesSettings = settings.listManagedInstancesSettings.toBuilder();
       listPerInstanceConfigsSettings = settings.listPerInstanceConfigsSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
+      patchOperationSettings = settings.patchOperationSettings.toBuilder();
       patchPerInstanceConfigsSettings = settings.patchPerInstanceConfigsSettings.toBuilder();
+      patchPerInstanceConfigsOperationSettings =
+          settings.patchPerInstanceConfigsOperationSettings.toBuilder();
       recreateInstancesSettings = settings.recreateInstancesSettings.toBuilder();
+      recreateInstancesOperationSettings = settings.recreateInstancesOperationSettings.toBuilder();
       resizeSettings = settings.resizeSettings.toBuilder();
+      resizeOperationSettings = settings.resizeOperationSettings.toBuilder();
       setInstanceTemplateSettings = settings.setInstanceTemplateSettings.toBuilder();
+      setInstanceTemplateOperationSettings =
+          settings.setInstanceTemplateOperationSettings.toBuilder();
       setTargetPoolsSettings = settings.setTargetPoolsSettings.toBuilder();
+      setTargetPoolsOperationSettings = settings.setTargetPoolsOperationSettings.toBuilder();
       updatePerInstanceConfigsSettings = settings.updatePerInstanceConfigsSettings.toBuilder();
+      updatePerInstanceConfigsOperationSettings =
+          settings.updatePerInstanceConfigsOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1017,6 +1250,356 @@ public class RegionInstanceGroupManagersStubSettings
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .abandonInstancesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AbandonInstancesRegionInstanceGroupManagerRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .applyUpdatesToInstancesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .createInstancesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateInstancesRegionInstanceGroupManagerRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .deleteOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteRegionInstanceGroupManagerRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .deleteInstancesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteInstancesRegionInstanceGroupManagerRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .deletePerInstanceConfigsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeletePerInstanceConfigsRegionInstanceGroupManagerRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .insertOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<InsertRegionInstanceGroupManagerRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .patchOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PatchRegionInstanceGroupManagerRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .patchPerInstanceConfigsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PatchPerInstanceConfigsRegionInstanceGroupManagerRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .recreateInstancesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RecreateInstancesRegionInstanceGroupManagerRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .resizeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ResizeRegionInstanceGroupManagerRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setInstanceTemplateOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetInstanceTemplateRegionInstanceGroupManagerRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setTargetPoolsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetTargetPoolsRegionInstanceGroupManagerRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .updatePerInstanceConfigsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1041,11 +1624,29 @@ public class RegionInstanceGroupManagersStubSettings
       return abandonInstancesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to abandonInstances. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            AbandonInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+        abandonInstancesOperationSettings() {
+      return abandonInstancesOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to applyUpdatesToInstances. */
     public UnaryCallSettings.Builder<
             ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest, Operation>
         applyUpdatesToInstancesSettings() {
       return applyUpdatesToInstancesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to applyUpdatesToInstances. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+        applyUpdatesToInstancesOperationSettings() {
+      return applyUpdatesToInstancesOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to createInstances. */
@@ -1054,10 +1655,28 @@ public class RegionInstanceGroupManagersStubSettings
       return createInstancesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to createInstances. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            CreateInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+        createInstancesOperationSettings() {
+      return createInstancesOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteRegionInstanceGroupManagerRequest, Operation>
         deleteSettings() {
       return deleteSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to delete. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            DeleteRegionInstanceGroupManagerRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return deleteOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteInstances. */
@@ -1066,11 +1685,29 @@ public class RegionInstanceGroupManagersStubSettings
       return deleteInstancesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to deleteInstances. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            DeleteInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+        deleteInstancesOperationSettings() {
+      return deleteInstancesOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deletePerInstanceConfigs. */
     public UnaryCallSettings.Builder<
             DeletePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
         deletePerInstanceConfigsSettings() {
       return deletePerInstanceConfigsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deletePerInstanceConfigs. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            DeletePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation, Operation>
+        deletePerInstanceConfigsOperationSettings() {
+      return deletePerInstanceConfigsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -1083,6 +1720,15 @@ public class RegionInstanceGroupManagersStubSettings
     public UnaryCallSettings.Builder<InsertRegionInstanceGroupManagerRequest, Operation>
         insertSettings() {
       return insertSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            InsertRegionInstanceGroupManagerRequest, Operation, Operation>
+        insertOperationSettings() {
+      return insertOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -1127,11 +1773,29 @@ public class RegionInstanceGroupManagersStubSettings
       return patchSettings;
     }
 
+    /** Returns the builder for the settings used for calls to patch. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            PatchRegionInstanceGroupManagerRequest, Operation, Operation>
+        patchOperationSettings() {
+      return patchOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to patchPerInstanceConfigs. */
     public UnaryCallSettings.Builder<
             PatchPerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
         patchPerInstanceConfigsSettings() {
       return patchPerInstanceConfigsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patchPerInstanceConfigs. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            PatchPerInstanceConfigsRegionInstanceGroupManagerRequest, Operation, Operation>
+        patchPerInstanceConfigsOperationSettings() {
+      return patchPerInstanceConfigsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to recreateInstances. */
@@ -1140,10 +1804,28 @@ public class RegionInstanceGroupManagersStubSettings
       return recreateInstancesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to recreateInstances. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            RecreateInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+        recreateInstancesOperationSettings() {
+      return recreateInstancesOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to resize. */
     public UnaryCallSettings.Builder<ResizeRegionInstanceGroupManagerRequest, Operation>
         resizeSettings() {
       return resizeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to resize. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ResizeRegionInstanceGroupManagerRequest, Operation, Operation>
+        resizeOperationSettings() {
+      return resizeOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to setInstanceTemplate. */
@@ -1153,10 +1835,28 @@ public class RegionInstanceGroupManagersStubSettings
       return setInstanceTemplateSettings;
     }
 
+    /** Returns the builder for the settings used for calls to setInstanceTemplate. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation, Operation>
+        setInstanceTemplateOperationSettings() {
+      return setInstanceTemplateOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setTargetPools. */
     public UnaryCallSettings.Builder<SetTargetPoolsRegionInstanceGroupManagerRequest, Operation>
         setTargetPoolsSettings() {
       return setTargetPoolsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setTargetPools. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            SetTargetPoolsRegionInstanceGroupManagerRequest, Operation, Operation>
+        setTargetPoolsOperationSettings() {
+      return setTargetPoolsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to updatePerInstanceConfigs. */
@@ -1164,6 +1864,15 @@ public class RegionInstanceGroupManagersStubSettings
             UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
         updatePerInstanceConfigsSettings() {
       return updatePerInstanceConfigsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updatePerInstanceConfigs. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation, Operation>
+        updatePerInstanceConfigsOperationSettings() {
+      return updatePerInstanceConfigsOperationSettings;
     }
 
     @Override

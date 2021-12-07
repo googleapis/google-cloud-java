@@ -30,7 +30,7 @@ public interface ImageOrBuilder
    * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
    * </pre>
    *
-   * <code>int64 archive_size_bytes = 381093450;</code>
+   * <code>optional int64 archive_size_bytes = 381093450;</code>
    *
    * @return Whether the archiveSizeBytes field is set.
    */
@@ -42,7 +42,7 @@ public interface ImageOrBuilder
    * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
    * </pre>
    *
-   * <code>int64 archive_size_bytes = 381093450;</code>
+   * <code>optional int64 archive_size_bytes = 381093450;</code>
    *
    * @return The archiveSizeBytes.
    */
@@ -55,7 +55,7 @@ public interface ImageOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -67,7 +67,7 @@ public interface ImageOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -79,7 +79,7 @@ public interface ImageOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -92,7 +92,7 @@ public interface ImageOrBuilder
    * The deprecation status associated with this image.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return Whether the deprecated field is set.
    */
@@ -104,7 +104,7 @@ public interface ImageOrBuilder
    * The deprecation status associated with this image.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return The deprecated.
    */
@@ -116,7 +116,7 @@ public interface ImageOrBuilder
    * The deprecation status associated with this image.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    */
   com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder();
 
@@ -127,7 +127,7 @@ public interface ImageOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -139,7 +139,7 @@ public interface ImageOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -151,7 +151,7 @@ public interface ImageOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -164,7 +164,7 @@ public interface ImageOrBuilder
    * Size of the image when restored onto a persistent disk (in GB).
    * </pre>
    *
-   * <code>int64 disk_size_gb = 316263735;</code>
+   * <code>optional int64 disk_size_gb = 316263735;</code>
    *
    * @return Whether the diskSizeGb field is set.
    */
@@ -176,7 +176,7 @@ public interface ImageOrBuilder
    * Size of the image when restored onto a persistent disk (in GB).
    * </pre>
    *
-   * <code>int64 disk_size_gb = 316263735;</code>
+   * <code>optional int64 disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
@@ -189,7 +189,7 @@ public interface ImageOrBuilder
    * The name of the image family to which this image belongs. You can create disks by specifying an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
    * </pre>
    *
-   * <code>string family = 328751972;</code>
+   * <code>optional string family = 328751972;</code>
    *
    * @return Whether the family field is set.
    */
@@ -201,7 +201,7 @@ public interface ImageOrBuilder
    * The name of the image family to which this image belongs. You can create disks by specifying an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
    * </pre>
    *
-   * <code>string family = 328751972;</code>
+   * <code>optional string family = 328751972;</code>
    *
    * @return The family.
    */
@@ -213,7 +213,7 @@ public interface ImageOrBuilder
    * The name of the image family to which this image belongs. You can create disks by specifying an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
    * </pre>
    *
-   * <code>string family = 328751972;</code>
+   * <code>optional string family = 328751972;</code>
    *
    * @return The bytes for family.
    */
@@ -223,7 +223,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -233,7 +233,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -243,7 +243,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -253,7 +253,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -264,7 +264,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -278,7 +278,7 @@ public interface ImageOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -290,7 +290,7 @@ public interface ImageOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -300,13 +300,11 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * Encrypts the image using a customer-supplied encryption key.
-   * After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image).
-   * Customer-supplied encryption keys do not protect access to metadata of the disk.
-   * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+   * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
+   * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;
+   * </code>
    *
    * @return Whether the imageEncryptionKey field is set.
    */
@@ -315,13 +313,11 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * Encrypts the image using a customer-supplied encryption key.
-   * After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image).
-   * Customer-supplied encryption keys do not protect access to metadata of the disk.
-   * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+   * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
+   * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;
+   * </code>
    *
    * @return The imageEncryptionKey.
    */
@@ -330,13 +326,11 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * Encrypts the image using a customer-supplied encryption key.
-   * After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image).
-   * Customer-supplied encryption keys do not protect access to metadata of the disk.
-   * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+   * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
+   * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;
+   * </code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder getImageEncryptionKeyOrBuilder();
 
@@ -347,7 +341,7 @@ public interface ImageOrBuilder
    * [Output Only] Type of the resource. Always compute#image for images.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -359,7 +353,7 @@ public interface ImageOrBuilder
    * [Output Only] Type of the resource. Always compute#image for images.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -371,7 +365,7 @@ public interface ImageOrBuilder
    * [Output Only] Type of the resource. Always compute#image for images.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -381,11 +375,10 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an image.
+   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return Whether the labelFingerprint field is set.
    */
@@ -394,11 +387,10 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an image.
+   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return The labelFingerprint.
    */
@@ -407,11 +399,10 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an image.
+   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return The bytes for labelFingerprint.
    */
@@ -567,7 +558,7 @@ public interface ImageOrBuilder
    * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -579,7 +570,7 @@ public interface ImageOrBuilder
    * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -591,7 +582,7 @@ public interface ImageOrBuilder
    * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -604,7 +595,7 @@ public interface ImageOrBuilder
    * The parameters of the raw disk image.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RawDisk raw_disk = 503113556;</code>
+   * <code>optional .google.cloud.compute.v1.RawDisk raw_disk = 503113556;</code>
    *
    * @return Whether the rawDisk field is set.
    */
@@ -616,7 +607,7 @@ public interface ImageOrBuilder
    * The parameters of the raw disk image.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RawDisk raw_disk = 503113556;</code>
+   * <code>optional .google.cloud.compute.v1.RawDisk raw_disk = 503113556;</code>
    *
    * @return The rawDisk.
    */
@@ -628,7 +619,7 @@ public interface ImageOrBuilder
    * The parameters of the raw disk image.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RawDisk raw_disk = 503113556;</code>
+   * <code>optional .google.cloud.compute.v1.RawDisk raw_disk = 503113556;</code>
    */
   com.google.cloud.compute.v1.RawDiskOrBuilder getRawDiskOrBuilder();
 
@@ -639,7 +630,7 @@ public interface ImageOrBuilder
    * [Output Only] Reserved for future use.
    * </pre>
    *
-   * <code>bool satisfies_pzs = 480964267;</code>
+   * <code>optional bool satisfies_pzs = 480964267;</code>
    *
    * @return Whether the satisfiesPzs field is set.
    */
@@ -651,7 +642,7 @@ public interface ImageOrBuilder
    * [Output Only] Reserved for future use.
    * </pre>
    *
-   * <code>bool satisfies_pzs = 480964267;</code>
+   * <code>optional bool satisfies_pzs = 480964267;</code>
    *
    * @return The satisfiesPzs.
    */
@@ -664,7 +655,7 @@ public interface ImageOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -676,7 +667,7 @@ public interface ImageOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -688,7 +679,7 @@ public interface ImageOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -701,7 +692,8 @@ public interface ImageOrBuilder
    * Set the secure boot keys of shielded instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
+   * <code>
+   * optional .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
    * </code>
    *
    * @return Whether the shieldedInstanceInitialState field is set.
@@ -714,7 +706,8 @@ public interface ImageOrBuilder
    * Set the secure boot keys of shielded instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
+   * <code>
+   * optional .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
    * </code>
    *
    * @return The shieldedInstanceInitialState.
@@ -727,7 +720,8 @@ public interface ImageOrBuilder
    * Set the secure boot keys of shielded instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
+   * <code>
+   * optional .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
    * </code>
    */
   com.google.cloud.compute.v1.InitialStateConfigOrBuilder
@@ -737,13 +731,10 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * URL of the source disk used to create this image. This can be a full or valid partial URL. You must provide either this property or the rawDisk.source property but not both to create an image. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-   * - projects/project/zones/zone/disks/disk
-   * - zones/zone/disks/disk
+   * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
-   * <code>string source_disk = 451753793;</code>
+   * <code>optional string source_disk = 451753793;</code>
    *
    * @return Whether the sourceDisk field is set.
    */
@@ -752,13 +743,10 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * URL of the source disk used to create this image. This can be a full or valid partial URL. You must provide either this property or the rawDisk.source property but not both to create an image. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-   * - projects/project/zones/zone/disks/disk
-   * - zones/zone/disks/disk
+   * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
-   * <code>string source_disk = 451753793;</code>
+   * <code>optional string source_disk = 451753793;</code>
    *
    * @return The sourceDisk.
    */
@@ -767,13 +755,10 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * URL of the source disk used to create this image. This can be a full or valid partial URL. You must provide either this property or the rawDisk.source property but not both to create an image. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-   * - projects/project/zones/zone/disks/disk
-   * - zones/zone/disks/disk
+   * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
-   * <code>string source_disk = 451753793;</code>
+   * <code>optional string source_disk = 451753793;</code>
    *
    * @return The bytes for sourceDisk.
    */
@@ -786,7 +771,8 @@ public interface ImageOrBuilder
    * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
    * </code>
    *
    * @return Whether the sourceDiskEncryptionKey field is set.
@@ -799,7 +785,8 @@ public interface ImageOrBuilder
    * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
    * </code>
    *
    * @return The sourceDiskEncryptionKey.
@@ -812,7 +799,8 @@ public interface ImageOrBuilder
    * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
    * </code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder getSourceDiskEncryptionKeyOrBuilder();
@@ -824,7 +812,7 @@ public interface ImageOrBuilder
    * [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
    * </pre>
    *
-   * <code>string source_disk_id = 454190809;</code>
+   * <code>optional string source_disk_id = 454190809;</code>
    *
    * @return Whether the sourceDiskId field is set.
    */
@@ -836,7 +824,7 @@ public interface ImageOrBuilder
    * [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
    * </pre>
    *
-   * <code>string source_disk_id = 454190809;</code>
+   * <code>optional string source_disk_id = 454190809;</code>
    *
    * @return The sourceDiskId.
    */
@@ -848,7 +836,7 @@ public interface ImageOrBuilder
    * [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
    * </pre>
    *
-   * <code>string source_disk_id = 454190809;</code>
+   * <code>optional string source_disk_id = 454190809;</code>
    *
    * @return The bytes for sourceDiskId.
    */
@@ -858,15 +846,10 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * URL of the source image used to create this image.
-   * In order to create an image, you must provide the full or partial URL of one of the following:
-   * - The selfLink URL
-   * - This property
-   * - The rawDisk.source URL
-   * - The sourceDisk URL
+   * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
-   * <code>string source_image = 50443319;</code>
+   * <code>optional string source_image = 50443319;</code>
    *
    * @return Whether the sourceImage field is set.
    */
@@ -875,15 +858,10 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * URL of the source image used to create this image.
-   * In order to create an image, you must provide the full or partial URL of one of the following:
-   * - The selfLink URL
-   * - This property
-   * - The rawDisk.source URL
-   * - The sourceDisk URL
+   * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
-   * <code>string source_image = 50443319;</code>
+   * <code>optional string source_image = 50443319;</code>
    *
    * @return The sourceImage.
    */
@@ -892,15 +870,10 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * URL of the source image used to create this image.
-   * In order to create an image, you must provide the full or partial URL of one of the following:
-   * - The selfLink URL
-   * - This property
-   * - The rawDisk.source URL
-   * - The sourceDisk URL
+   * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
-   * <code>string source_image = 50443319;</code>
+   * <code>optional string source_image = 50443319;</code>
    *
    * @return The bytes for sourceImage.
    */
@@ -913,7 +886,8 @@ public interface ImageOrBuilder
    * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    *
    * @return Whether the sourceImageEncryptionKey field is set.
@@ -926,7 +900,8 @@ public interface ImageOrBuilder
    * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    *
    * @return The sourceImageEncryptionKey.
@@ -939,7 +914,8 @@ public interface ImageOrBuilder
    * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder getSourceImageEncryptionKeyOrBuilder();
@@ -951,7 +927,7 @@ public interface ImageOrBuilder
    * [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
    * </pre>
    *
-   * <code>string source_image_id = 55328291;</code>
+   * <code>optional string source_image_id = 55328291;</code>
    *
    * @return Whether the sourceImageId field is set.
    */
@@ -963,7 +939,7 @@ public interface ImageOrBuilder
    * [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
    * </pre>
    *
-   * <code>string source_image_id = 55328291;</code>
+   * <code>optional string source_image_id = 55328291;</code>
    *
    * @return The sourceImageId.
    */
@@ -975,7 +951,7 @@ public interface ImageOrBuilder
    * [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
    * </pre>
    *
-   * <code>string source_image_id = 55328291;</code>
+   * <code>optional string source_image_id = 55328291;</code>
    *
    * @return The bytes for sourceImageId.
    */
@@ -985,16 +961,10 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * URL of the source snapshot used to create this image.
-   * In order to create an image, you must provide the full or partial URL of one of the following:
-   * - The selfLink URL
-   * - This property
-   * - The sourceImage URL
-   * - The rawDisk.source URL
-   * - The sourceDisk URL
+   * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
-   * <code>string source_snapshot = 126061928;</code>
+   * <code>optional string source_snapshot = 126061928;</code>
    *
    * @return Whether the sourceSnapshot field is set.
    */
@@ -1003,16 +973,10 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * URL of the source snapshot used to create this image.
-   * In order to create an image, you must provide the full or partial URL of one of the following:
-   * - The selfLink URL
-   * - This property
-   * - The sourceImage URL
-   * - The rawDisk.source URL
-   * - The sourceDisk URL
+   * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
-   * <code>string source_snapshot = 126061928;</code>
+   * <code>optional string source_snapshot = 126061928;</code>
    *
    * @return The sourceSnapshot.
    */
@@ -1021,16 +985,10 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * URL of the source snapshot used to create this image.
-   * In order to create an image, you must provide the full or partial URL of one of the following:
-   * - The selfLink URL
-   * - This property
-   * - The sourceImage URL
-   * - The rawDisk.source URL
-   * - The sourceDisk URL
+   * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
-   * <code>string source_snapshot = 126061928;</code>
+   * <code>optional string source_snapshot = 126061928;</code>
    *
    * @return The bytes for sourceSnapshot.
    */
@@ -1044,7 +1002,7 @@ public interface ImageOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    *
    * @return Whether the sourceSnapshotEncryptionKey field is set.
@@ -1058,7 +1016,7 @@ public interface ImageOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    *
    * @return The sourceSnapshotEncryptionKey.
@@ -1072,7 +1030,7 @@ public interface ImageOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
@@ -1085,7 +1043,7 @@ public interface ImageOrBuilder
    * [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
    * </pre>
    *
-   * <code>string source_snapshot_id = 98962258;</code>
+   * <code>optional string source_snapshot_id = 98962258;</code>
    *
    * @return Whether the sourceSnapshotId field is set.
    */
@@ -1097,7 +1055,7 @@ public interface ImageOrBuilder
    * [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
    * </pre>
    *
-   * <code>string source_snapshot_id = 98962258;</code>
+   * <code>optional string source_snapshot_id = 98962258;</code>
    *
    * @return The sourceSnapshotId.
    */
@@ -1109,7 +1067,7 @@ public interface ImageOrBuilder
    * [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
    * </pre>
    *
-   * <code>string source_snapshot_id = 98962258;</code>
+   * <code>optional string source_snapshot_id = 98962258;</code>
    *
    * @return The bytes for sourceSnapshotId.
    */
@@ -1120,9 +1078,10 @@ public interface ImageOrBuilder
    *
    * <pre>
    * The type of the image used to create this disk. The default and only value is RAW
+   * Check the SourceType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
+   * <code>optional string source_type = 452245726;</code>
    *
    * @return Whether the sourceType field is set.
    */
@@ -1132,34 +1091,37 @@ public interface ImageOrBuilder
    *
    * <pre>
    * The type of the image used to create this disk. The default and only value is RAW
+   * Check the SourceType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
+   * <code>optional string source_type = 452245726;</code>
    *
-   * @return The enum numeric value on the wire for sourceType.
+   * @return The sourceType.
    */
-  int getSourceTypeValue();
+  java.lang.String getSourceType();
   /**
    *
    *
    * <pre>
    * The type of the image used to create this disk. The default and only value is RAW
+   * Check the SourceType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
+   * <code>optional string source_type = 452245726;</code>
    *
-   * @return The sourceType.
+   * @return The bytes for sourceType.
    */
-  com.google.cloud.compute.v1.Image.SourceType getSourceType();
+  com.google.protobuf.ByteString getSourceTypeBytes();
 
   /**
    *
    *
    * <pre>
    * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Image.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -1169,25 +1131,27 @@ public interface ImageOrBuilder
    *
    * <pre>
    * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Image.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    *
    *
    * <pre>
    * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Image.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1.Image.Status getStatus();
+  com.google.protobuf.ByteString getStatusBytes();
 
   /**
    *

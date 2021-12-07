@@ -39,8 +39,8 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
   private HTTP2HealthCheck() {
     host_ = "";
     portName_ = "";
-    portSpecification_ = 0;
-    proxyHeader_ = 0;
+    portSpecification_ = "";
+    proxyHeader_ = "";
     requestPath_ = "";
     response_ = "";
   }
@@ -95,18 +95,18 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
               portName_ = s;
               break;
             }
-          case 412724776:
+          case 412724778:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
-              portSpecification_ = rawValue;
+              portSpecification_ = s;
               break;
             }
-          case 1282993136:
+          case 1282993138:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
-              proxyHeader_ = rawValue;
+              proxyHeader_ = s;
               break;
             }
           case 1572381194:
@@ -161,11 +161,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, HTTP2 health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, HTTP2 health check follows behavior specified in port and portName fields.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.HTTP2HealthCheck.PortSpecification}
@@ -181,11 +177,35 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * <code>UNDEFINED_PORT_SPECIFICATION = 0;</code>
      */
     UNDEFINED_PORT_SPECIFICATION(0),
-    /** <code>USE_FIXED_PORT = 190235748;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The port number in port is used for health checking.
+     * </pre>
+     *
+     * <code>USE_FIXED_PORT = 190235748;</code>
+     */
     USE_FIXED_PORT(190235748),
-    /** <code>USE_NAMED_PORT = 349300671;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The portName is used for health checking.
+     * </pre>
+     *
+     * <code>USE_NAMED_PORT = 349300671;</code>
+     */
     USE_NAMED_PORT(349300671),
-    /** <code>USE_SERVING_PORT = 362637516;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
+     * </pre>
+     *
+     * <code>USE_SERVING_PORT = 362637516;</code>
+     */
     USE_SERVING_PORT(362637516),
     UNRECOGNIZED(-1),
     ;
@@ -200,11 +220,35 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * <code>UNDEFINED_PORT_SPECIFICATION = 0;</code>
      */
     public static final int UNDEFINED_PORT_SPECIFICATION_VALUE = 0;
-    /** <code>USE_FIXED_PORT = 190235748;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The port number in port is used for health checking.
+     * </pre>
+     *
+     * <code>USE_FIXED_PORT = 190235748;</code>
+     */
     public static final int USE_FIXED_PORT_VALUE = 190235748;
-    /** <code>USE_NAMED_PORT = 349300671;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The portName is used for health checking.
+     * </pre>
+     *
+     * <code>USE_NAMED_PORT = 349300671;</code>
+     */
     public static final int USE_NAMED_PORT_VALUE = 349300671;
-    /** <code>USE_SERVING_PORT = 362637516;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
+     * </pre>
+     *
+     * <code>USE_SERVING_PORT = 362637516;</code>
+     */
     public static final int USE_SERVING_PORT_VALUE = 362637516;
 
     public final int getNumber() {
@@ -430,7 +474,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
    * The value of the host header in the HTTP/2 health check request. If left empty (default value), the IP on behalf of which this health check is performed will be used.
    * </pre>
    *
-   * <code>string host = 3208616;</code>
+   * <code>optional string host = 3208616;</code>
    *
    * @return Whether the host field is set.
    */
@@ -445,7 +489,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
    * The value of the host header in the HTTP/2 health check request. If left empty (default value), the IP on behalf of which this health check is performed will be used.
    * </pre>
    *
-   * <code>string host = 3208616;</code>
+   * <code>optional string host = 3208616;</code>
    *
    * @return The host.
    */
@@ -468,7 +512,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
    * The value of the host header in the HTTP/2 health check request. If left empty (default value), the IP on behalf of which this health check is performed will be used.
    * </pre>
    *
-   * <code>string host = 3208616;</code>
+   * <code>optional string host = 3208616;</code>
    *
    * @return The bytes for host.
    */
@@ -494,7 +538,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
    * The TCP port number for the health check request. The default value is 443. Valid values are 1 through 65535.
    * </pre>
    *
-   * <code>int32 port = 3446913;</code>
+   * <code>optional int32 port = 3446913;</code>
    *
    * @return Whether the port field is set.
    */
@@ -509,7 +553,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
    * The TCP port number for the health check request. The default value is 443. Valid values are 1 through 65535.
    * </pre>
    *
-   * <code>int32 port = 3446913;</code>
+   * <code>optional int32 port = 3446913;</code>
    *
    * @return The port.
    */
@@ -527,7 +571,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
    * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return Whether the portName field is set.
    */
@@ -542,7 +586,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
    * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return The portName.
    */
@@ -565,7 +609,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
    * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return The bytes for portName.
    */
@@ -583,21 +627,16 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PORT_SPECIFICATION_FIELD_NUMBER = 51590597;
-  private int portSpecification_;
+  private volatile java.lang.Object portSpecification_;
   /**
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, HTTP2 health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, HTTP2 health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.HTTP2HealthCheck.PortSpecification port_specification = 51590597;
-   * </code>
+   * <code>optional string port_specification = 51590597;</code>
    *
    * @return Whether the portSpecification field is set.
    */
@@ -609,60 +648,62 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, HTTP2 health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, HTTP2 health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.HTTP2HealthCheck.PortSpecification port_specification = 51590597;
-   * </code>
+   * <code>optional string port_specification = 51590597;</code>
    *
-   * @return The enum numeric value on the wire for portSpecification.
+   * @return The portSpecification.
    */
   @java.lang.Override
-  public int getPortSpecificationValue() {
-    return portSpecification_;
+  public java.lang.String getPortSpecification() {
+    java.lang.Object ref = portSpecification_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      portSpecification_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, HTTP2 health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, HTTP2 health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.HTTP2HealthCheck.PortSpecification port_specification = 51590597;
-   * </code>
+   * <code>optional string port_specification = 51590597;</code>
    *
-   * @return The portSpecification.
+   * @return The bytes for portSpecification.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.HTTP2HealthCheck.PortSpecification getPortSpecification() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.HTTP2HealthCheck.PortSpecification result =
-        com.google.cloud.compute.v1.HTTP2HealthCheck.PortSpecification.valueOf(portSpecification_);
-    return result == null
-        ? com.google.cloud.compute.v1.HTTP2HealthCheck.PortSpecification.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getPortSpecificationBytes() {
+    java.lang.Object ref = portSpecification_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      portSpecification_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PROXY_HEADER_FIELD_NUMBER = 160374142;
-  private int proxyHeader_;
+  private volatile java.lang.Object proxyHeader_;
   /**
    *
    *
    * <pre>
    * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HTTP2HealthCheck.ProxyHeader proxy_header = 160374142;</code>
+   * <code>optional string proxy_header = 160374142;</code>
    *
    * @return Whether the proxyHeader field is set.
    */
@@ -675,35 +716,48 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HTTP2HealthCheck.ProxyHeader proxy_header = 160374142;</code>
+   * <code>optional string proxy_header = 160374142;</code>
    *
-   * @return The enum numeric value on the wire for proxyHeader.
+   * @return The proxyHeader.
    */
   @java.lang.Override
-  public int getProxyHeaderValue() {
-    return proxyHeader_;
+  public java.lang.String getProxyHeader() {
+    java.lang.Object ref = proxyHeader_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      proxyHeader_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HTTP2HealthCheck.ProxyHeader proxy_header = 160374142;</code>
+   * <code>optional string proxy_header = 160374142;</code>
    *
-   * @return The proxyHeader.
+   * @return The bytes for proxyHeader.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.HTTP2HealthCheck.ProxyHeader getProxyHeader() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.HTTP2HealthCheck.ProxyHeader result =
-        com.google.cloud.compute.v1.HTTP2HealthCheck.ProxyHeader.valueOf(proxyHeader_);
-    return result == null
-        ? com.google.cloud.compute.v1.HTTP2HealthCheck.ProxyHeader.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getProxyHeaderBytes() {
+    java.lang.Object ref = proxyHeader_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      proxyHeader_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int REQUEST_PATH_FIELD_NUMBER = 229403605;
@@ -715,7 +769,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
    * The request path of the HTTP/2 health check request. The default value is /.
    * </pre>
    *
-   * <code>string request_path = 229403605;</code>
+   * <code>optional string request_path = 229403605;</code>
    *
    * @return Whether the requestPath field is set.
    */
@@ -730,7 +784,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
    * The request path of the HTTP/2 health check request. The default value is /.
    * </pre>
    *
-   * <code>string request_path = 229403605;</code>
+   * <code>optional string request_path = 229403605;</code>
    *
    * @return The requestPath.
    */
@@ -753,7 +807,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
    * The request path of the HTTP/2 health check request. The default value is /.
    * </pre>
    *
-   * <code>string request_path = 229403605;</code>
+   * <code>optional string request_path = 229403605;</code>
    *
    * @return The bytes for requestPath.
    */
@@ -779,7 +833,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
    * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the default value), the status code determines health. The response data can only be ASCII.
    * </pre>
    *
-   * <code>string response = 196547649;</code>
+   * <code>optional string response = 196547649;</code>
    *
    * @return Whether the response field is set.
    */
@@ -794,7 +848,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
    * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the default value), the status code determines health. The response data can only be ASCII.
    * </pre>
    *
-   * <code>string response = 196547649;</code>
+   * <code>optional string response = 196547649;</code>
    *
    * @return The response.
    */
@@ -817,7 +871,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
    * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the default value), the status code determines health. The response data can only be ASCII.
    * </pre>
    *
-   * <code>string response = 196547649;</code>
+   * <code>optional string response = 196547649;</code>
    *
    * @return The bytes for response.
    */
@@ -858,10 +912,10 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.GeneratedMessageV3.writeString(output, 41534345, portName_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeEnum(51590597, portSpecification_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 51590597, portSpecification_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeEnum(160374142, proxyHeader_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 160374142, proxyHeader_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 196547649, response_);
@@ -888,10 +942,11 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(41534345, portName_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(51590597, portSpecification_);
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(51590597, portSpecification_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(160374142, proxyHeader_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(160374142, proxyHeader_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(196547649, response_);
@@ -929,11 +984,11 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
     }
     if (hasPortSpecification() != other.hasPortSpecification()) return false;
     if (hasPortSpecification()) {
-      if (portSpecification_ != other.portSpecification_) return false;
+      if (!getPortSpecification().equals(other.getPortSpecification())) return false;
     }
     if (hasProxyHeader() != other.hasProxyHeader()) return false;
     if (hasProxyHeader()) {
-      if (proxyHeader_ != other.proxyHeader_) return false;
+      if (!getProxyHeader().equals(other.getProxyHeader())) return false;
     }
     if (hasRequestPath() != other.hasRequestPath()) return false;
     if (hasRequestPath()) {
@@ -968,11 +1023,11 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
     }
     if (hasPortSpecification()) {
       hash = (37 * hash) + PORT_SPECIFICATION_FIELD_NUMBER;
-      hash = (53 * hash) + portSpecification_;
+      hash = (53 * hash) + getPortSpecification().hashCode();
     }
     if (hasProxyHeader()) {
       hash = (37 * hash) + PROXY_HEADER_FIELD_NUMBER;
-      hash = (53 * hash) + proxyHeader_;
+      hash = (53 * hash) + getProxyHeader().hashCode();
     }
     if (hasRequestPath()) {
       hash = (37 * hash) + REQUEST_PATH_FIELD_NUMBER;
@@ -1132,9 +1187,9 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
       bitField0_ = (bitField0_ & ~0x00000002);
       portName_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
-      portSpecification_ = 0;
+      portSpecification_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
-      proxyHeader_ = 0;
+      proxyHeader_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
       requestPath_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -1261,10 +1316,14 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
         onChanged();
       }
       if (other.hasPortSpecification()) {
-        setPortSpecification(other.getPortSpecification());
+        bitField0_ |= 0x00000008;
+        portSpecification_ = other.portSpecification_;
+        onChanged();
       }
       if (other.hasProxyHeader()) {
-        setProxyHeader(other.getProxyHeader());
+        bitField0_ |= 0x00000010;
+        proxyHeader_ = other.proxyHeader_;
+        onChanged();
       }
       if (other.hasRequestPath()) {
         bitField0_ |= 0x00000020;
@@ -1315,7 +1374,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The value of the host header in the HTTP/2 health check request. If left empty (default value), the IP on behalf of which this health check is performed will be used.
      * </pre>
      *
-     * <code>string host = 3208616;</code>
+     * <code>optional string host = 3208616;</code>
      *
      * @return Whether the host field is set.
      */
@@ -1329,7 +1388,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The value of the host header in the HTTP/2 health check request. If left empty (default value), the IP on behalf of which this health check is performed will be used.
      * </pre>
      *
-     * <code>string host = 3208616;</code>
+     * <code>optional string host = 3208616;</code>
      *
      * @return The host.
      */
@@ -1351,7 +1410,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The value of the host header in the HTTP/2 health check request. If left empty (default value), the IP on behalf of which this health check is performed will be used.
      * </pre>
      *
-     * <code>string host = 3208616;</code>
+     * <code>optional string host = 3208616;</code>
      *
      * @return The bytes for host.
      */
@@ -1373,7 +1432,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The value of the host header in the HTTP/2 health check request. If left empty (default value), the IP on behalf of which this health check is performed will be used.
      * </pre>
      *
-     * <code>string host = 3208616;</code>
+     * <code>optional string host = 3208616;</code>
      *
      * @param value The host to set.
      * @return This builder for chaining.
@@ -1394,7 +1453,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The value of the host header in the HTTP/2 health check request. If left empty (default value), the IP on behalf of which this health check is performed will be used.
      * </pre>
      *
-     * <code>string host = 3208616;</code>
+     * <code>optional string host = 3208616;</code>
      *
      * @return This builder for chaining.
      */
@@ -1411,7 +1470,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The value of the host header in the HTTP/2 health check request. If left empty (default value), the IP on behalf of which this health check is performed will be used.
      * </pre>
      *
-     * <code>string host = 3208616;</code>
+     * <code>optional string host = 3208616;</code>
      *
      * @param value The bytes for host to set.
      * @return This builder for chaining.
@@ -1435,7 +1494,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The TCP port number for the health check request. The default value is 443. Valid values are 1 through 65535.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @return Whether the port field is set.
      */
@@ -1450,7 +1509,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The TCP port number for the health check request. The default value is 443. Valid values are 1 through 65535.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @return The port.
      */
@@ -1465,7 +1524,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The TCP port number for the health check request. The default value is 443. Valid values are 1 through 65535.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @param value The port to set.
      * @return This builder for chaining.
@@ -1483,7 +1542,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The TCP port number for the health check request. The default value is 443. Valid values are 1 through 65535.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @return This builder for chaining.
      */
@@ -1502,7 +1561,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @return Whether the portName field is set.
      */
@@ -1516,7 +1575,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @return The portName.
      */
@@ -1538,7 +1597,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @return The bytes for portName.
      */
@@ -1560,7 +1619,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @param value The portName to set.
      * @return This builder for chaining.
@@ -1581,7 +1640,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @return This builder for chaining.
      */
@@ -1598,7 +1657,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @param value The bytes for portName to set.
      * @return This builder for chaining.
@@ -1614,25 +1673,19 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private int portSpecification_ = 0;
+    private java.lang.Object portSpecification_ = "";
     /**
      *
      *
      * <pre>
-     * Specifies how port is selected for health checking, can be one of following values:
-     * USE_FIXED_PORT: The port number in port is used for health checking.
-     * USE_NAMED_PORT: The portName is used for health checking.
-     * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-     * If not specified, HTTP2 health check follows behavior specified in port and portName fields.
+     * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, HTTP2 health check follows behavior specified in port and portName fields.
+     * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.HTTP2HealthCheck.PortSpecification port_specification = 51590597;
-     * </code>
+     * <code>optional string port_specification = 51590597;</code>
      *
      * @return Whether the portSpecification field is set.
      */
-    @java.lang.Override
     public boolean hasPortSpecification() {
       return ((bitField0_ & 0x00000008) != 0);
     }
@@ -1640,42 +1693,65 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies how port is selected for health checking, can be one of following values:
-     * USE_FIXED_PORT: The port number in port is used for health checking.
-     * USE_NAMED_PORT: The portName is used for health checking.
-     * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-     * If not specified, HTTP2 health check follows behavior specified in port and portName fields.
+     * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, HTTP2 health check follows behavior specified in port and portName fields.
+     * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.HTTP2HealthCheck.PortSpecification port_specification = 51590597;
-     * </code>
+     * <code>optional string port_specification = 51590597;</code>
      *
-     * @return The enum numeric value on the wire for portSpecification.
+     * @return The portSpecification.
      */
-    @java.lang.Override
-    public int getPortSpecificationValue() {
-      return portSpecification_;
+    public java.lang.String getPortSpecification() {
+      java.lang.Object ref = portSpecification_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        portSpecification_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * Specifies how port is selected for health checking, can be one of following values:
-     * USE_FIXED_PORT: The port number in port is used for health checking.
-     * USE_NAMED_PORT: The portName is used for health checking.
-     * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-     * If not specified, HTTP2 health check follows behavior specified in port and portName fields.
+     * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, HTTP2 health check follows behavior specified in port and portName fields.
+     * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.HTTP2HealthCheck.PortSpecification port_specification = 51590597;
-     * </code>
+     * <code>optional string port_specification = 51590597;</code>
      *
-     * @param value The enum numeric value on the wire for portSpecification to set.
+     * @return The bytes for portSpecification.
+     */
+    public com.google.protobuf.ByteString getPortSpecificationBytes() {
+      java.lang.Object ref = portSpecification_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        portSpecification_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, HTTP2 health check follows behavior specified in port and portName fields.
+     * Check the PortSpecification enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string port_specification = 51590597;</code>
+     *
+     * @param value The portSpecification to set.
      * @return This builder for chaining.
      */
-    public Builder setPortSpecificationValue(int value) {
+    public Builder setPortSpecification(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000008;
       portSpecification_ = value;
       onChanged();
@@ -1685,94 +1761,57 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Specifies how port is selected for health checking, can be one of following values:
-     * USE_FIXED_PORT: The port number in port is used for health checking.
-     * USE_NAMED_PORT: The portName is used for health checking.
-     * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-     * If not specified, HTTP2 health check follows behavior specified in port and portName fields.
+     * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, HTTP2 health check follows behavior specified in port and portName fields.
+     * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.HTTP2HealthCheck.PortSpecification port_specification = 51590597;
-     * </code>
-     *
-     * @return The portSpecification.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.HTTP2HealthCheck.PortSpecification getPortSpecification() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.HTTP2HealthCheck.PortSpecification result =
-          com.google.cloud.compute.v1.HTTP2HealthCheck.PortSpecification.valueOf(
-              portSpecification_);
-      return result == null
-          ? com.google.cloud.compute.v1.HTTP2HealthCheck.PortSpecification.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies how port is selected for health checking, can be one of following values:
-     * USE_FIXED_PORT: The port number in port is used for health checking.
-     * USE_NAMED_PORT: The portName is used for health checking.
-     * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-     * If not specified, HTTP2 health check follows behavior specified in port and portName fields.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.HTTP2HealthCheck.PortSpecification port_specification = 51590597;
-     * </code>
-     *
-     * @param value The portSpecification to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPortSpecification(
-        com.google.cloud.compute.v1.HTTP2HealthCheck.PortSpecification value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000008;
-      portSpecification_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies how port is selected for health checking, can be one of following values:
-     * USE_FIXED_PORT: The port number in port is used for health checking.
-     * USE_NAMED_PORT: The portName is used for health checking.
-     * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-     * If not specified, HTTP2 health check follows behavior specified in port and portName fields.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.HTTP2HealthCheck.PortSpecification port_specification = 51590597;
-     * </code>
+     * <code>optional string port_specification = 51590597;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPortSpecification() {
       bitField0_ = (bitField0_ & ~0x00000008);
-      portSpecification_ = 0;
+      portSpecification_ = getDefaultInstance().getPortSpecification();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, HTTP2 health check follows behavior specified in port and portName fields.
+     * Check the PortSpecification enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string port_specification = 51590597;</code>
+     *
+     * @param value The bytes for portSpecification to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPortSpecificationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000008;
+      portSpecification_ = value;
       onChanged();
       return this;
     }
 
-    private int proxyHeader_ = 0;
+    private java.lang.Object proxyHeader_ = "";
     /**
      *
      *
      * <pre>
      * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HTTP2HealthCheck.ProxyHeader proxy_header = 160374142;</code>
+     * <code>optional string proxy_header = 160374142;</code>
      *
      * @return Whether the proxyHeader field is set.
      */
-    @java.lang.Override
     public boolean hasProxyHeader() {
       return ((bitField0_ & 0x00000010) != 0);
     }
@@ -1781,29 +1820,64 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HTTP2HealthCheck.ProxyHeader proxy_header = 160374142;</code>
+     * <code>optional string proxy_header = 160374142;</code>
      *
-     * @return The enum numeric value on the wire for proxyHeader.
+     * @return The proxyHeader.
      */
-    @java.lang.Override
-    public int getProxyHeaderValue() {
-      return proxyHeader_;
+    public java.lang.String getProxyHeader() {
+      java.lang.Object ref = proxyHeader_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        proxyHeader_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HTTP2HealthCheck.ProxyHeader proxy_header = 160374142;</code>
+     * <code>optional string proxy_header = 160374142;</code>
      *
-     * @param value The enum numeric value on the wire for proxyHeader to set.
+     * @return The bytes for proxyHeader.
+     */
+    public com.google.protobuf.ByteString getProxyHeaderBytes() {
+      java.lang.Object ref = proxyHeader_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        proxyHeader_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string proxy_header = 160374142;</code>
+     *
+     * @param value The proxyHeader to set.
      * @return This builder for chaining.
      */
-    public Builder setProxyHeaderValue(int value) {
+    public Builder setProxyHeader(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000010;
       proxyHeader_ = value;
       onChanged();
@@ -1814,39 +1888,16 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HTTP2HealthCheck.ProxyHeader proxy_header = 160374142;</code>
+     * <code>optional string proxy_header = 160374142;</code>
      *
-     * @return The proxyHeader.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.HTTP2HealthCheck.ProxyHeader getProxyHeader() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.HTTP2HealthCheck.ProxyHeader result =
-          com.google.cloud.compute.v1.HTTP2HealthCheck.ProxyHeader.valueOf(proxyHeader_);
-      return result == null
-          ? com.google.cloud.compute.v1.HTTP2HealthCheck.ProxyHeader.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.HTTP2HealthCheck.ProxyHeader proxy_header = 160374142;</code>
-     *
-     * @param value The proxyHeader to set.
      * @return This builder for chaining.
      */
-    public Builder setProxyHeader(com.google.cloud.compute.v1.HTTP2HealthCheck.ProxyHeader value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000010;
-      proxyHeader_ = value.getNumber();
+    public Builder clearProxyHeader() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      proxyHeader_ = getDefaultInstance().getProxyHeader();
       onChanged();
       return this;
     }
@@ -1855,15 +1906,21 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HTTP2HealthCheck.ProxyHeader proxy_header = 160374142;</code>
+     * <code>optional string proxy_header = 160374142;</code>
      *
+     * @param value The bytes for proxyHeader to set.
      * @return This builder for chaining.
      */
-    public Builder clearProxyHeader() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      proxyHeader_ = 0;
+    public Builder setProxyHeaderBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000010;
+      proxyHeader_ = value;
       onChanged();
       return this;
     }
@@ -1876,7 +1933,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The request path of the HTTP/2 health check request. The default value is /.
      * </pre>
      *
-     * <code>string request_path = 229403605;</code>
+     * <code>optional string request_path = 229403605;</code>
      *
      * @return Whether the requestPath field is set.
      */
@@ -1890,7 +1947,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The request path of the HTTP/2 health check request. The default value is /.
      * </pre>
      *
-     * <code>string request_path = 229403605;</code>
+     * <code>optional string request_path = 229403605;</code>
      *
      * @return The requestPath.
      */
@@ -1912,7 +1969,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The request path of the HTTP/2 health check request. The default value is /.
      * </pre>
      *
-     * <code>string request_path = 229403605;</code>
+     * <code>optional string request_path = 229403605;</code>
      *
      * @return The bytes for requestPath.
      */
@@ -1934,7 +1991,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The request path of the HTTP/2 health check request. The default value is /.
      * </pre>
      *
-     * <code>string request_path = 229403605;</code>
+     * <code>optional string request_path = 229403605;</code>
      *
      * @param value The requestPath to set.
      * @return This builder for chaining.
@@ -1955,7 +2012,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The request path of the HTTP/2 health check request. The default value is /.
      * </pre>
      *
-     * <code>string request_path = 229403605;</code>
+     * <code>optional string request_path = 229403605;</code>
      *
      * @return This builder for chaining.
      */
@@ -1972,7 +2029,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The request path of the HTTP/2 health check request. The default value is /.
      * </pre>
      *
-     * <code>string request_path = 229403605;</code>
+     * <code>optional string request_path = 229403605;</code>
      *
      * @param value The bytes for requestPath to set.
      * @return This builder for chaining.
@@ -1996,7 +2053,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the default value), the status code determines health. The response data can only be ASCII.
      * </pre>
      *
-     * <code>string response = 196547649;</code>
+     * <code>optional string response = 196547649;</code>
      *
      * @return Whether the response field is set.
      */
@@ -2010,7 +2067,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the default value), the status code determines health. The response data can only be ASCII.
      * </pre>
      *
-     * <code>string response = 196547649;</code>
+     * <code>optional string response = 196547649;</code>
      *
      * @return The response.
      */
@@ -2032,7 +2089,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the default value), the status code determines health. The response data can only be ASCII.
      * </pre>
      *
-     * <code>string response = 196547649;</code>
+     * <code>optional string response = 196547649;</code>
      *
      * @return The bytes for response.
      */
@@ -2054,7 +2111,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the default value), the status code determines health. The response data can only be ASCII.
      * </pre>
      *
-     * <code>string response = 196547649;</code>
+     * <code>optional string response = 196547649;</code>
      *
      * @param value The response to set.
      * @return This builder for chaining.
@@ -2075,7 +2132,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the default value), the status code determines health. The response data can only be ASCII.
      * </pre>
      *
-     * <code>string response = 196547649;</code>
+     * <code>optional string response = 196547649;</code>
      *
      * @return This builder for chaining.
      */
@@ -2092,7 +2149,7 @@ public final class HTTP2HealthCheck extends com.google.protobuf.GeneratedMessage
      * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the default value), the status code determines health. The response data can only be ASCII.
      * </pre>
      *
-     * <code>string response = 196547649;</code>
+     * <code>optional string response = 196547649;</code>
      *
      * @param value The bytes for response to set.
      * @return This builder for chaining.

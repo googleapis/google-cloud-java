@@ -39,7 +39,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
   private ScalingScheduleStatus() {
     lastStartTime_ = "";
     nextStartTime_ = "";
-    state_ = 0;
+    state_ = "";
   }
 
   @java.lang.Override
@@ -86,11 +86,11 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
               nextStartTime_ = s;
               break;
             }
-          case 878060680:
+          case 878060682:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
-              state_ = rawValue;
+              state_ = s;
               break;
             }
           default:
@@ -147,13 +147,45 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The current autoscaling recommendation is influenced by this scaling schedule.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     ACTIVE(314733318),
-    /** <code>DISABLED = 516696700;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This scaling schedule has been disabled by the user.
+     * </pre>
+     *
+     * <code>DISABLED = 516696700;</code>
+     */
     DISABLED(516696700),
-    /** <code>OBSOLETE = 66532761;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This scaling schedule will never become active again.
+     * </pre>
+     *
+     * <code>OBSOLETE = 66532761;</code>
+     */
     OBSOLETE(66532761),
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The current autoscaling recommendation is not influenced by this scaling schedule.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     READY(77848963),
     UNRECOGNIZED(-1),
     ;
@@ -168,13 +200,45 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The current autoscaling recommendation is influenced by this scaling schedule.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     public static final int ACTIVE_VALUE = 314733318;
-    /** <code>DISABLED = 516696700;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This scaling schedule has been disabled by the user.
+     * </pre>
+     *
+     * <code>DISABLED = 516696700;</code>
+     */
     public static final int DISABLED_VALUE = 516696700;
-    /** <code>OBSOLETE = 66532761;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This scaling schedule will never become active again.
+     * </pre>
+     *
+     * <code>OBSOLETE = 66532761;</code>
+     */
     public static final int OBSOLETE_VALUE = 66532761;
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The current autoscaling recommendation is not influenced by this scaling schedule.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     public static final int READY_VALUE = 77848963;
 
     public final int getNumber() {
@@ -276,7 +340,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
    * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_start_time = 34545107;</code>
+   * <code>optional string last_start_time = 34545107;</code>
    *
    * @return Whether the lastStartTime field is set.
    */
@@ -291,7 +355,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
    * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_start_time = 34545107;</code>
+   * <code>optional string last_start_time = 34545107;</code>
    *
    * @return The lastStartTime.
    */
@@ -314,7 +378,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
    * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_start_time = 34545107;</code>
+   * <code>optional string last_start_time = 34545107;</code>
    *
    * @return The bytes for lastStartTime.
    */
@@ -340,7 +404,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
    * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
    * </pre>
    *
-   * <code>string next_start_time = 97270102;</code>
+   * <code>optional string next_start_time = 97270102;</code>
    *
    * @return Whether the nextStartTime field is set.
    */
@@ -355,7 +419,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
    * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
    * </pre>
    *
-   * <code>string next_start_time = 97270102;</code>
+   * <code>optional string next_start_time = 97270102;</code>
    *
    * @return The nextStartTime.
    */
@@ -378,7 +442,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
    * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
    * </pre>
    *
-   * <code>string next_start_time = 97270102;</code>
+   * <code>optional string next_start_time = 97270102;</code>
    *
    * @return The bytes for nextStartTime.
    */
@@ -396,15 +460,16 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
   }
 
   public static final int STATE_FIELD_NUMBER = 109757585;
-  private int state_;
+  private volatile java.lang.Object state_;
   /**
    *
    *
    * <pre>
    * [Output Only] The current state of a scaling schedule.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ScalingScheduleStatus.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
    * @return Whether the state field is set.
    */
@@ -417,35 +482,48 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * [Output Only] The current state of a scaling schedule.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ScalingScheduleStatus.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The enum numeric value on the wire for state.
+   * @return The state.
    */
   @java.lang.Override
-  public int getStateValue() {
-    return state_;
+  public java.lang.String getState() {
+    java.lang.Object ref = state_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      state_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * [Output Only] The current state of a scaling schedule.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ScalingScheduleStatus.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The state.
+   * @return The bytes for state.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.ScalingScheduleStatus.State getState() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ScalingScheduleStatus.State result =
-        com.google.cloud.compute.v1.ScalingScheduleStatus.State.valueOf(state_);
-    return result == null
-        ? com.google.cloud.compute.v1.ScalingScheduleStatus.State.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getStateBytes() {
+    java.lang.Object ref = state_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      state_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -469,7 +547,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
       com.google.protobuf.GeneratedMessageV3.writeString(output, 97270102, nextStartTime_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeEnum(109757585, state_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 109757585, state_);
     }
     unknownFields.writeTo(output);
   }
@@ -487,7 +565,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(97270102, nextStartTime_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(109757585, state_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757585, state_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -515,7 +593,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
     }
     if (hasState() != other.hasState()) return false;
     if (hasState()) {
-      if (state_ != other.state_) return false;
+      if (!getState().equals(other.getState())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -538,7 +616,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
     }
     if (hasState()) {
       hash = (37 * hash) + STATE_FIELD_NUMBER;
-      hash = (53 * hash) + state_;
+      hash = (53 * hash) + getState().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -688,7 +766,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
       bitField0_ = (bitField0_ & ~0x00000001);
       nextStartTime_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
-      state_ = 0;
+      state_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
@@ -793,7 +871,9 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
         onChanged();
       }
       if (other.hasState()) {
-        setState(other.getState());
+        bitField0_ |= 0x00000004;
+        state_ = other.state_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -835,7 +915,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
      * </pre>
      *
-     * <code>string last_start_time = 34545107;</code>
+     * <code>optional string last_start_time = 34545107;</code>
      *
      * @return Whether the lastStartTime field is set.
      */
@@ -849,7 +929,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
      * </pre>
      *
-     * <code>string last_start_time = 34545107;</code>
+     * <code>optional string last_start_time = 34545107;</code>
      *
      * @return The lastStartTime.
      */
@@ -871,7 +951,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
      * </pre>
      *
-     * <code>string last_start_time = 34545107;</code>
+     * <code>optional string last_start_time = 34545107;</code>
      *
      * @return The bytes for lastStartTime.
      */
@@ -893,7 +973,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
      * </pre>
      *
-     * <code>string last_start_time = 34545107;</code>
+     * <code>optional string last_start_time = 34545107;</code>
      *
      * @param value The lastStartTime to set.
      * @return This builder for chaining.
@@ -914,7 +994,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
      * </pre>
      *
-     * <code>string last_start_time = 34545107;</code>
+     * <code>optional string last_start_time = 34545107;</code>
      *
      * @return This builder for chaining.
      */
@@ -931,7 +1011,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
      * </pre>
      *
-     * <code>string last_start_time = 34545107;</code>
+     * <code>optional string last_start_time = 34545107;</code>
      *
      * @param value The bytes for lastStartTime to set.
      * @return This builder for chaining.
@@ -955,7 +1035,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
      * </pre>
      *
-     * <code>string next_start_time = 97270102;</code>
+     * <code>optional string next_start_time = 97270102;</code>
      *
      * @return Whether the nextStartTime field is set.
      */
@@ -969,7 +1049,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
      * </pre>
      *
-     * <code>string next_start_time = 97270102;</code>
+     * <code>optional string next_start_time = 97270102;</code>
      *
      * @return The nextStartTime.
      */
@@ -991,7 +1071,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
      * </pre>
      *
-     * <code>string next_start_time = 97270102;</code>
+     * <code>optional string next_start_time = 97270102;</code>
      *
      * @return The bytes for nextStartTime.
      */
@@ -1013,7 +1093,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
      * </pre>
      *
-     * <code>string next_start_time = 97270102;</code>
+     * <code>optional string next_start_time = 97270102;</code>
      *
      * @param value The nextStartTime to set.
      * @return This builder for chaining.
@@ -1034,7 +1114,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
      * </pre>
      *
-     * <code>string next_start_time = 97270102;</code>
+     * <code>optional string next_start_time = 97270102;</code>
      *
      * @return This builder for chaining.
      */
@@ -1051,7 +1131,7 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
      * </pre>
      *
-     * <code>string next_start_time = 97270102;</code>
+     * <code>optional string next_start_time = 97270102;</code>
      *
      * @param value The bytes for nextStartTime to set.
      * @return This builder for chaining.
@@ -1067,19 +1147,19 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
       return this;
     }
 
-    private int state_ = 0;
+    private java.lang.Object state_ = "";
     /**
      *
      *
      * <pre>
      * [Output Only] The current state of a scaling schedule.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ScalingScheduleStatus.State state = 109757585;</code>
+     * <code>optional string state = 109757585;</code>
      *
      * @return Whether the state field is set.
      */
-    @java.lang.Override
     public boolean hasState() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -1088,29 +1168,64 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * [Output Only] The current state of a scaling schedule.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ScalingScheduleStatus.State state = 109757585;</code>
+     * <code>optional string state = 109757585;</code>
      *
-     * @return The enum numeric value on the wire for state.
+     * @return The state.
      */
-    @java.lang.Override
-    public int getStateValue() {
-      return state_;
+    public java.lang.String getState() {
+      java.lang.Object ref = state_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        state_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * [Output Only] The current state of a scaling schedule.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ScalingScheduleStatus.State state = 109757585;</code>
+     * <code>optional string state = 109757585;</code>
      *
-     * @param value The enum numeric value on the wire for state to set.
+     * @return The bytes for state.
+     */
+    public com.google.protobuf.ByteString getStateBytes() {
+      java.lang.Object ref = state_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        state_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The current state of a scaling schedule.
+     * Check the State enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string state = 109757585;</code>
+     *
+     * @param value The state to set.
      * @return This builder for chaining.
      */
-    public Builder setStateValue(int value) {
+    public Builder setState(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000004;
       state_ = value;
       onChanged();
@@ -1121,39 +1236,16 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * [Output Only] The current state of a scaling schedule.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ScalingScheduleStatus.State state = 109757585;</code>
+     * <code>optional string state = 109757585;</code>
      *
-     * @return The state.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ScalingScheduleStatus.State getState() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ScalingScheduleStatus.State result =
-          com.google.cloud.compute.v1.ScalingScheduleStatus.State.valueOf(state_);
-      return result == null
-          ? com.google.cloud.compute.v1.ScalingScheduleStatus.State.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The current state of a scaling schedule.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.ScalingScheduleStatus.State state = 109757585;</code>
-     *
-     * @param value The state to set.
      * @return This builder for chaining.
      */
-    public Builder setState(com.google.cloud.compute.v1.ScalingScheduleStatus.State value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000004;
-      state_ = value.getNumber();
+    public Builder clearState() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      state_ = getDefaultInstance().getState();
       onChanged();
       return this;
     }
@@ -1162,15 +1254,21 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * [Output Only] The current state of a scaling schedule.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ScalingScheduleStatus.State state = 109757585;</code>
+     * <code>optional string state = 109757585;</code>
      *
+     * @param value The bytes for state to set.
      * @return This builder for chaining.
      */
-    public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      state_ = 0;
+    public Builder setStateBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000004;
+      state_ = value;
       onChanged();
       return this;
     }

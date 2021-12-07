@@ -27,12 +27,14 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonSecurityPoliciesStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -86,7 +88,7 @@ public class SecurityPoliciesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -97,6 +99,7 @@ public class SecurityPoliciesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -110,7 +113,8 @@ public class SecurityPoliciesClientTest {
     String securityPolicy = "securityPolicy-788621166";
     SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
 
-    Operation actualResponse = client.addRule(project, securityPolicy, securityPolicyRuleResource);
+    Operation actualResponse =
+        client.addRuleAsync(project, securityPolicy, securityPolicyRuleResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -139,10 +143,9 @@ public class SecurityPoliciesClientTest {
       String project = "project-309310695";
       String securityPolicy = "securityPolicy-788621166";
       SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
-      client.addRule(project, securityPolicy, securityPolicyRuleResource);
+      client.addRuleAsync(project, securityPolicy, securityPolicyRuleResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -156,7 +159,7 @@ public class SecurityPoliciesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -167,6 +170,7 @@ public class SecurityPoliciesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -179,7 +183,7 @@ public class SecurityPoliciesClientTest {
     String project = "project-309310695";
     String securityPolicy = "securityPolicy-788621166";
 
-    Operation actualResponse = client.delete(project, securityPolicy);
+    Operation actualResponse = client.deleteAsync(project, securityPolicy).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -207,10 +211,9 @@ public class SecurityPoliciesClientTest {
     try {
       String project = "project-309310695";
       String securityPolicy = "securityPolicy-788621166";
-      client.delete(project, securityPolicy);
+      client.deleteAsync(project, securityPolicy).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -218,6 +221,9 @@ public class SecurityPoliciesClientTest {
   public void getTest() throws Exception {
     SecurityPolicy expectedResponse =
         SecurityPolicy.newBuilder()
+            .setAdaptiveProtectionConfig(
+                SecurityPolicyAdaptiveProtectionConfig.newBuilder().build())
+            .setAdvancedOptionsConfig(SecurityPolicyAdvancedOptionsConfig.newBuilder().build())
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setFingerprint("fingerprint-1375934236")
@@ -328,7 +334,7 @@ public class SecurityPoliciesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -339,6 +345,7 @@ public class SecurityPoliciesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -351,7 +358,7 @@ public class SecurityPoliciesClientTest {
     String project = "project-309310695";
     SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, securityPolicyResource);
+    Operation actualResponse = client.insertAsync(project, securityPolicyResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -379,10 +386,9 @@ public class SecurityPoliciesClientTest {
     try {
       String project = "project-309310695";
       SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
-      client.insert(project, securityPolicyResource);
+      client.insertAsync(project, securityPolicyResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -491,7 +497,7 @@ public class SecurityPoliciesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -502,6 +508,7 @@ public class SecurityPoliciesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -515,7 +522,8 @@ public class SecurityPoliciesClientTest {
     String securityPolicy = "securityPolicy-788621166";
     SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
 
-    Operation actualResponse = client.patch(project, securityPolicy, securityPolicyResource);
+    Operation actualResponse =
+        client.patchAsync(project, securityPolicy, securityPolicyResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -544,10 +552,9 @@ public class SecurityPoliciesClientTest {
       String project = "project-309310695";
       String securityPolicy = "securityPolicy-788621166";
       SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
-      client.patch(project, securityPolicy, securityPolicyResource);
+      client.patchAsync(project, securityPolicy, securityPolicyResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -561,7 +568,7 @@ public class SecurityPoliciesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -572,6 +579,7 @@ public class SecurityPoliciesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -586,7 +594,7 @@ public class SecurityPoliciesClientTest {
     SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
 
     Operation actualResponse =
-        client.patchRule(project, securityPolicy, securityPolicyRuleResource);
+        client.patchRuleAsync(project, securityPolicy, securityPolicyRuleResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -615,10 +623,9 @@ public class SecurityPoliciesClientTest {
       String project = "project-309310695";
       String securityPolicy = "securityPolicy-788621166";
       SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
-      client.patchRule(project, securityPolicy, securityPolicyRuleResource);
+      client.patchRuleAsync(project, securityPolicy, securityPolicyRuleResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -632,7 +639,7 @@ public class SecurityPoliciesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -643,6 +650,7 @@ public class SecurityPoliciesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -655,7 +663,7 @@ public class SecurityPoliciesClientTest {
     String project = "project-309310695";
     String securityPolicy = "securityPolicy-788621166";
 
-    Operation actualResponse = client.removeRule(project, securityPolicy);
+    Operation actualResponse = client.removeRuleAsync(project, securityPolicy).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -683,10 +691,9 @@ public class SecurityPoliciesClientTest {
     try {
       String project = "project-309310695";
       String securityPolicy = "securityPolicy-788621166";
-      client.removeRule(project, securityPolicy);
+      client.removeRuleAsync(project, securityPolicy).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 }

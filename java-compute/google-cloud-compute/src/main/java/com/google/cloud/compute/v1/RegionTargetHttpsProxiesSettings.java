@@ -26,6 +26,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -49,16 +50,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * RegionTargetHttpsProxiesSettings.Builder regionTargetHttpsProxiesSettingsBuilder =
  *     RegionTargetHttpsProxiesSettings.newBuilder();
  * regionTargetHttpsProxiesSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         regionTargetHttpsProxiesSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -76,6 +77,12 @@ public class RegionTargetHttpsProxiesSettings
     return ((RegionTargetHttpsProxiesStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteRegionTargetHttpsProxyRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((RegionTargetHttpsProxiesStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetRegionTargetHttpsProxyRequest, TargetHttpsProxy> getSettings() {
     return ((RegionTargetHttpsProxiesStubSettings) getStubSettings()).getSettings();
@@ -84,6 +91,12 @@ public class RegionTargetHttpsProxiesSettings
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertRegionTargetHttpsProxyRequest, Operation> insertSettings() {
     return ((RegionTargetHttpsProxiesStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertRegionTargetHttpsProxyRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((RegionTargetHttpsProxiesStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -99,9 +112,23 @@ public class RegionTargetHttpsProxiesSettings
     return ((RegionTargetHttpsProxiesStubSettings) getStubSettings()).setSslCertificatesSettings();
   }
 
+  /** Returns the object with the settings used for calls to setSslCertificates. */
+  public OperationCallSettings<
+          SetSslCertificatesRegionTargetHttpsProxyRequest, Operation, Operation>
+      setSslCertificatesOperationSettings() {
+    return ((RegionTargetHttpsProxiesStubSettings) getStubSettings())
+        .setSslCertificatesOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setUrlMap. */
   public UnaryCallSettings<SetUrlMapRegionTargetHttpsProxyRequest, Operation> setUrlMapSettings() {
     return ((RegionTargetHttpsProxiesStubSettings) getStubSettings()).setUrlMapSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setUrlMap. */
+  public OperationCallSettings<SetUrlMapRegionTargetHttpsProxyRequest, Operation, Operation>
+      setUrlMapOperationSettings() {
+    return ((RegionTargetHttpsProxiesStubSettings) getStubSettings()).setUrlMapOperationSettings();
   }
 
   public static final RegionTargetHttpsProxiesSettings create(
@@ -209,6 +236,12 @@ public class RegionTargetHttpsProxiesSettings
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteRegionTargetHttpsProxyRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetRegionTargetHttpsProxyRequest, TargetHttpsProxy>
         getSettings() {
@@ -219,6 +252,12 @@ public class RegionTargetHttpsProxiesSettings
     public UnaryCallSettings.Builder<InsertRegionTargetHttpsProxyRequest, Operation>
         insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertRegionTargetHttpsProxyRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -234,10 +273,24 @@ public class RegionTargetHttpsProxiesSettings
       return getStubSettingsBuilder().setSslCertificatesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to setSslCertificates. */
+    public OperationCallSettings.Builder<
+            SetSslCertificatesRegionTargetHttpsProxyRequest, Operation, Operation>
+        setSslCertificatesOperationSettings() {
+      return getStubSettingsBuilder().setSslCertificatesOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setUrlMap. */
     public UnaryCallSettings.Builder<SetUrlMapRegionTargetHttpsProxyRequest, Operation>
         setUrlMapSettings() {
       return getStubSettingsBuilder().setUrlMapSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setUrlMap. */
+    public OperationCallSettings.Builder<
+            SetUrlMapRegionTargetHttpsProxyRequest, Operation, Operation>
+        setUrlMapOperationSettings() {
+      return getStubSettingsBuilder().setUrlMapOperationSettings();
     }
 
     @Override

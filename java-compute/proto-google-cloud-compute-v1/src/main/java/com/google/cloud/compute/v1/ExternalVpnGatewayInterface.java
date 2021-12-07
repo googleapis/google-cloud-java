@@ -125,10 +125,10 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The numeric ID of this interface. The allowed input values for this id for different redundancy types of external VPN gateway: SINGLE_IP_INTERNALLY_REDUNDANT - 0 TWO_IPS_REDUNDANCY - 0, 1 FOUR_IPS_REDUNDANCY - 0, 1, 2, 3
+   * The numeric ID of this interface. The allowed input values for this id for different redundancy types of external VPN gateway: - SINGLE_IP_INTERNALLY_REDUNDANT - 0 - TWO_IPS_REDUNDANCY - 0, 1 - FOUR_IPS_REDUNDANCY - 0, 1, 2, 3
    * </pre>
    *
-   * <code>uint32 id = 3355;</code>
+   * <code>optional uint32 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -140,10 +140,10 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The numeric ID of this interface. The allowed input values for this id for different redundancy types of external VPN gateway: SINGLE_IP_INTERNALLY_REDUNDANT - 0 TWO_IPS_REDUNDANCY - 0, 1 FOUR_IPS_REDUNDANCY - 0, 1, 2, 3
+   * The numeric ID of this interface. The allowed input values for this id for different redundancy types of external VPN gateway: - SINGLE_IP_INTERNALLY_REDUNDANT - 0 - TWO_IPS_REDUNDANCY - 0, 1 - FOUR_IPS_REDUNDANCY - 0, 1, 2, 3
    * </pre>
    *
-   * <code>uint32 id = 3355;</code>
+   * <code>optional uint32 id = 3355;</code>
    *
    * @return The id.
    */
@@ -161,7 +161,7 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
    * IP address of the interface in the external VPN gateway. Only IPv4 is supported. This IP address can be either from your on-premise gateway or another Cloud provider's VPN gateway, it cannot be an IP address from Google Compute Engine.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return Whether the ipAddress field is set.
    */
@@ -176,7 +176,7 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
    * IP address of the interface in the external VPN gateway. Only IPv4 is supported. This IP address can be either from your on-premise gateway or another Cloud provider's VPN gateway, it cannot be an IP address from Google Compute Engine.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return The ipAddress.
    */
@@ -199,7 +199,7 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
    * IP address of the interface in the external VPN gateway. Only IPv4 is supported. This IP address can be either from your on-premise gateway or another Cloud provider's VPN gateway, it cannot be an IP address from Google Compute Engine.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return The bytes for ipAddress.
    */
@@ -577,10 +577,10 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The numeric ID of this interface. The allowed input values for this id for different redundancy types of external VPN gateway: SINGLE_IP_INTERNALLY_REDUNDANT - 0 TWO_IPS_REDUNDANCY - 0, 1 FOUR_IPS_REDUNDANCY - 0, 1, 2, 3
+     * The numeric ID of this interface. The allowed input values for this id for different redundancy types of external VPN gateway: - SINGLE_IP_INTERNALLY_REDUNDANT - 0 - TWO_IPS_REDUNDANCY - 0, 1 - FOUR_IPS_REDUNDANCY - 0, 1, 2, 3
      * </pre>
      *
-     * <code>uint32 id = 3355;</code>
+     * <code>optional uint32 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -592,10 +592,10 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The numeric ID of this interface. The allowed input values for this id for different redundancy types of external VPN gateway: SINGLE_IP_INTERNALLY_REDUNDANT - 0 TWO_IPS_REDUNDANCY - 0, 1 FOUR_IPS_REDUNDANCY - 0, 1, 2, 3
+     * The numeric ID of this interface. The allowed input values for this id for different redundancy types of external VPN gateway: - SINGLE_IP_INTERNALLY_REDUNDANT - 0 - TWO_IPS_REDUNDANCY - 0, 1 - FOUR_IPS_REDUNDANCY - 0, 1, 2, 3
      * </pre>
      *
-     * <code>uint32 id = 3355;</code>
+     * <code>optional uint32 id = 3355;</code>
      *
      * @return The id.
      */
@@ -607,10 +607,10 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The numeric ID of this interface. The allowed input values for this id for different redundancy types of external VPN gateway: SINGLE_IP_INTERNALLY_REDUNDANT - 0 TWO_IPS_REDUNDANCY - 0, 1 FOUR_IPS_REDUNDANCY - 0, 1, 2, 3
+     * The numeric ID of this interface. The allowed input values for this id for different redundancy types of external VPN gateway: - SINGLE_IP_INTERNALLY_REDUNDANT - 0 - TWO_IPS_REDUNDANCY - 0, 1 - FOUR_IPS_REDUNDANCY - 0, 1, 2, 3
      * </pre>
      *
-     * <code>uint32 id = 3355;</code>
+     * <code>optional uint32 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -625,10 +625,10 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The numeric ID of this interface. The allowed input values for this id for different redundancy types of external VPN gateway: SINGLE_IP_INTERNALLY_REDUNDANT - 0 TWO_IPS_REDUNDANCY - 0, 1 FOUR_IPS_REDUNDANCY - 0, 1, 2, 3
+     * The numeric ID of this interface. The allowed input values for this id for different redundancy types of external VPN gateway: - SINGLE_IP_INTERNALLY_REDUNDANT - 0 - TWO_IPS_REDUNDANCY - 0, 1 - FOUR_IPS_REDUNDANCY - 0, 1, 2, 3
      * </pre>
      *
-     * <code>uint32 id = 3355;</code>
+     * <code>optional uint32 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -647,7 +647,7 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
      * IP address of the interface in the external VPN gateway. Only IPv4 is supported. This IP address can be either from your on-premise gateway or another Cloud provider's VPN gateway, it cannot be an IP address from Google Compute Engine.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @return Whether the ipAddress field is set.
      */
@@ -661,7 +661,7 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
      * IP address of the interface in the external VPN gateway. Only IPv4 is supported. This IP address can be either from your on-premise gateway or another Cloud provider's VPN gateway, it cannot be an IP address from Google Compute Engine.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @return The ipAddress.
      */
@@ -683,7 +683,7 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
      * IP address of the interface in the external VPN gateway. Only IPv4 is supported. This IP address can be either from your on-premise gateway or another Cloud provider's VPN gateway, it cannot be an IP address from Google Compute Engine.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @return The bytes for ipAddress.
      */
@@ -705,7 +705,7 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
      * IP address of the interface in the external VPN gateway. Only IPv4 is supported. This IP address can be either from your on-premise gateway or another Cloud provider's VPN gateway, it cannot be an IP address from Google Compute Engine.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @param value The ipAddress to set.
      * @return This builder for chaining.
@@ -726,7 +726,7 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
      * IP address of the interface in the external VPN gateway. Only IPv4 is supported. This IP address can be either from your on-premise gateway or another Cloud provider's VPN gateway, it cannot be an IP address from Google Compute Engine.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @return This builder for chaining.
      */
@@ -743,7 +743,7 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
      * IP address of the interface in the external VPN gateway. Only IPv4 is supported. This IP address can be either from your on-premise gateway or another Cloud provider's VPN gateway, it cannot be an IP address from Google Compute Engine.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @param value The bytes for ipAddress to set.
      * @return This builder for chaining.

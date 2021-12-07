@@ -253,7 +253,7 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
     if (globalOrganizationSetPolicyRequestResource_ != null) {
       output.writeMessage(177408606, getGlobalOrganizationSetPolicyRequestResource());
     }
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 195806222, resource_);
     }
     unknownFields.writeTo(output);
@@ -270,7 +270,7 @@ public final class SetIamPolicyFirewallPolicyRequest extends com.google.protobuf
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               177408606, getGlobalOrganizationSetPolicyRequestResource());
     }
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(195806222, resource_);
     }
     size += unknownFields.getSerializedSize();

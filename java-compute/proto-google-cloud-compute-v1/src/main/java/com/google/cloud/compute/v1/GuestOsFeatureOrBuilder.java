@@ -27,10 +27,11 @@ public interface GuestOsFeatureOrBuilder
    *
    *
    * <pre>
-   * The ID of a supported feature. Read  Enabling guest operating system features to see a list of available options.
+   * The ID of a supported feature. Read Enabling guest operating system features to see a list of available options.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.GuestOsFeature.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
    * @return Whether the type field is set.
    */
@@ -39,24 +40,26 @@ public interface GuestOsFeatureOrBuilder
    *
    *
    * <pre>
-   * The ID of a supported feature. Read  Enabling guest operating system features to see a list of available options.
+   * The ID of a supported feature. Read Enabling guest operating system features to see a list of available options.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.GuestOsFeature.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The enum numeric value on the wire for type.
+   * @return The type.
    */
-  int getTypeValue();
+  java.lang.String getType();
   /**
    *
    *
    * <pre>
-   * The ID of a supported feature. Read  Enabling guest operating system features to see a list of available options.
+   * The ID of a supported feature. Read Enabling guest operating system features to see a list of available options.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.GuestOsFeature.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The type.
+   * @return The bytes for type.
    */
-  com.google.cloud.compute.v1.GuestOsFeature.Type getType();
+  com.google.protobuf.ByteString getTypeBytes();
 }

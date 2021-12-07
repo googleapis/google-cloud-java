@@ -48,7 +48,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     publicDelegatedSubPrefixs_ = java.util.Collections.emptyList();
     region_ = "";
     selfLink_ = "";
-    status_ = 0;
+    status_ = "";
   }
 
   @java.lang.Override
@@ -129,11 +129,11 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
               region_ = s;
               break;
             }
-          case 1450082192:
+          case 1450082194:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000800;
-              status_ = rawValue;
+              status_ = s;
               break;
             }
           case 1511520354:
@@ -243,6 +243,8 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     DELETING(528602024),
     /** <code>INITIALIZING = 306588749;</code> */
     INITIALIZING(306588749),
+    /** <code>READY_TO_ANNOUNCE = 64641265;</code> */
+    READY_TO_ANNOUNCE(64641265),
     UNRECOGNIZED(-1),
     ;
 
@@ -262,6 +264,8 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     public static final int DELETING_VALUE = 528602024;
     /** <code>INITIALIZING = 306588749;</code> */
     public static final int INITIALIZING_VALUE = 306588749;
+    /** <code>READY_TO_ANNOUNCE = 64641265;</code> */
+    public static final int READY_TO_ANNOUNCE_VALUE = 64641265;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -295,6 +299,8 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
           return DELETING;
         case 306588749:
           return INITIALIZING;
+        case 64641265:
+          return READY_TO_ANNOUNCE;
         default:
           return null;
       }
@@ -360,7 +366,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -375,7 +381,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -398,7 +404,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -424,7 +430,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -439,7 +445,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -462,7 +468,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -485,11 +491,10 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return Whether the fingerprint field is set.
    */
@@ -501,11 +506,10 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The fingerprint.
    */
@@ -525,11 +529,10 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The bytes for fingerprint.
    */
@@ -555,7 +558,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * [Output Only] The unique identifier for the resource type. The server generates this identifier.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -570,7 +573,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * [Output Only] The unique identifier for the resource type. The server generates this identifier.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -588,7 +591,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * The IPv4 address range, in CIDR format, represented by this public delegated prefix.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return Whether the ipCidrRange field is set.
    */
@@ -603,7 +606,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * The IPv4 address range, in CIDR format, represented by this public delegated prefix.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return The ipCidrRange.
    */
@@ -626,7 +629,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * The IPv4 address range, in CIDR format, represented by this public delegated prefix.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return The bytes for ipCidrRange.
    */
@@ -652,7 +655,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * If true, the prefix will be live migrated.
    * </pre>
    *
-   * <code>bool is_live_migration = 511823856;</code>
+   * <code>optional bool is_live_migration = 511823856;</code>
    *
    * @return Whether the isLiveMigration field is set.
    */
@@ -667,7 +670,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * If true, the prefix will be live migrated.
    * </pre>
    *
-   * <code>bool is_live_migration = 511823856;</code>
+   * <code>optional bool is_live_migration = 511823856;</code>
    *
    * @return The isLiveMigration.
    */
@@ -685,7 +688,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * [Output Only] Type of the resource. Always compute#publicDelegatedPrefix for public delegated prefixes.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -700,7 +703,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * [Output Only] Type of the resource. Always compute#publicDelegatedPrefix for public delegated prefixes.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -723,7 +726,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * [Output Only] Type of the resource. Always compute#publicDelegatedPrefix for public delegated prefixes.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -749,7 +752,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -764,7 +767,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -787,7 +790,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -813,7 +816,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * The URL of parent prefix. Either PublicAdvertisedPrefix or PublicDelegatedPrefix.
    * </pre>
    *
-   * <code>string parent_prefix = 15233991;</code>
+   * <code>optional string parent_prefix = 15233991;</code>
    *
    * @return Whether the parentPrefix field is set.
    */
@@ -828,7 +831,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * The URL of parent prefix. Either PublicAdvertisedPrefix or PublicDelegatedPrefix.
    * </pre>
    *
-   * <code>string parent_prefix = 15233991;</code>
+   * <code>optional string parent_prefix = 15233991;</code>
    *
    * @return The parentPrefix.
    */
@@ -851,7 +854,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * The URL of parent prefix. Either PublicAdvertisedPrefix or PublicDelegatedPrefix.
    * </pre>
    *
-   * <code>string parent_prefix = 15233991;</code>
+   * <code>optional string parent_prefix = 15233991;</code>
    *
    * @return The bytes for parentPrefix.
    */
@@ -962,7 +965,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * [Output Only] URL of the region where the public delegated prefix resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -977,7 +980,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * [Output Only] URL of the region where the public delegated prefix resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -1000,7 +1003,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * [Output Only] URL of the region where the public delegated prefix resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -1026,7 +1029,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -1041,7 +1044,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1064,7 +1067,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1082,15 +1085,16 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    *
    *
    * <pre>
    * [Output Only] The status of the public delegated prefix.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PublicDelegatedPrefix.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -1103,35 +1107,48 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * [Output Only] The status of the public delegated prefix.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PublicDelegatedPrefix.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
   @java.lang.Override
-  public int getStatusValue() {
-    return status_;
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * [Output Only] The status of the public delegated prefix.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PublicDelegatedPrefix.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.PublicDelegatedPrefix.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.PublicDelegatedPrefix.Status result =
-        com.google.cloud.compute.v1.PublicDelegatedPrefix.Status.valueOf(status_);
-    return result == null
-        ? com.google.cloud.compute.v1.PublicDelegatedPrefix.Status.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1170,7 +1187,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     for (int i = 0; i < publicDelegatedSubPrefixs_.size(); i++) {
       output.writeMessage(188940044, publicDelegatedSubPrefixs_.get(i));
@@ -1219,7 +1236,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     for (int i = 0; i < publicDelegatedSubPrefixs_.size(); i++) {
       size +=
@@ -1302,7 +1319,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus().equals(other.getStatus())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1365,7 +1382,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1542,7 +1559,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       bitField0_ = (bitField0_ & ~0x00000400);
       selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00001000);
       return this;
     }
@@ -1761,7 +1778,9 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
         onChanged();
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00001000;
+        status_ = other.status_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1803,7 +1822,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -1817,7 +1836,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -1839,7 +1858,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -1861,7 +1880,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -1882,7 +1901,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -1899,7 +1918,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -1923,7 +1942,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -1937,7 +1956,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1959,7 +1978,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1981,7 +2000,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2002,7 +2021,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -2019,7 +2038,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2040,11 +2059,10 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return Whether the fingerprint field is set.
      */
@@ -2055,11 +2073,10 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The fingerprint.
      */
@@ -2078,11 +2095,10 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The bytes for fingerprint.
      */
@@ -2101,11 +2117,10 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The fingerprint to set.
      * @return This builder for chaining.
@@ -2123,11 +2138,10 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return This builder for chaining.
      */
@@ -2141,11 +2155,10 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The bytes for fingerprint to set.
      * @return This builder for chaining.
@@ -2169,7 +2182,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] The unique identifier for the resource type. The server generates this identifier.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -2184,7 +2197,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] The unique identifier for the resource type. The server generates this identifier.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -2199,7 +2212,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] The unique identifier for the resource type. The server generates this identifier.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -2217,7 +2230,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] The unique identifier for the resource type. The server generates this identifier.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -2236,7 +2249,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * The IPv4 address range, in CIDR format, represented by this public delegated prefix.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return Whether the ipCidrRange field is set.
      */
@@ -2250,7 +2263,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * The IPv4 address range, in CIDR format, represented by this public delegated prefix.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return The ipCidrRange.
      */
@@ -2272,7 +2285,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * The IPv4 address range, in CIDR format, represented by this public delegated prefix.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return The bytes for ipCidrRange.
      */
@@ -2294,7 +2307,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * The IPv4 address range, in CIDR format, represented by this public delegated prefix.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @param value The ipCidrRange to set.
      * @return This builder for chaining.
@@ -2315,7 +2328,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * The IPv4 address range, in CIDR format, represented by this public delegated prefix.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return This builder for chaining.
      */
@@ -2332,7 +2345,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * The IPv4 address range, in CIDR format, represented by this public delegated prefix.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @param value The bytes for ipCidrRange to set.
      * @return This builder for chaining.
@@ -2356,7 +2369,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * If true, the prefix will be live migrated.
      * </pre>
      *
-     * <code>bool is_live_migration = 511823856;</code>
+     * <code>optional bool is_live_migration = 511823856;</code>
      *
      * @return Whether the isLiveMigration field is set.
      */
@@ -2371,7 +2384,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * If true, the prefix will be live migrated.
      * </pre>
      *
-     * <code>bool is_live_migration = 511823856;</code>
+     * <code>optional bool is_live_migration = 511823856;</code>
      *
      * @return The isLiveMigration.
      */
@@ -2386,7 +2399,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * If true, the prefix will be live migrated.
      * </pre>
      *
-     * <code>bool is_live_migration = 511823856;</code>
+     * <code>optional bool is_live_migration = 511823856;</code>
      *
      * @param value The isLiveMigration to set.
      * @return This builder for chaining.
@@ -2404,7 +2417,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * If true, the prefix will be live migrated.
      * </pre>
      *
-     * <code>bool is_live_migration = 511823856;</code>
+     * <code>optional bool is_live_migration = 511823856;</code>
      *
      * @return This builder for chaining.
      */
@@ -2423,7 +2436,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] Type of the resource. Always compute#publicDelegatedPrefix for public delegated prefixes.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -2437,7 +2450,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] Type of the resource. Always compute#publicDelegatedPrefix for public delegated prefixes.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -2459,7 +2472,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] Type of the resource. Always compute#publicDelegatedPrefix for public delegated prefixes.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -2481,7 +2494,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] Type of the resource. Always compute#publicDelegatedPrefix for public delegated prefixes.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -2502,7 +2515,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] Type of the resource. Always compute#publicDelegatedPrefix for public delegated prefixes.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -2519,7 +2532,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] Type of the resource. Always compute#publicDelegatedPrefix for public delegated prefixes.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -2543,7 +2556,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -2557,7 +2570,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -2579,7 +2592,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -2601,7 +2614,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2622,7 +2635,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -2639,7 +2652,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2663,7 +2676,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * The URL of parent prefix. Either PublicAdvertisedPrefix or PublicDelegatedPrefix.
      * </pre>
      *
-     * <code>string parent_prefix = 15233991;</code>
+     * <code>optional string parent_prefix = 15233991;</code>
      *
      * @return Whether the parentPrefix field is set.
      */
@@ -2677,7 +2690,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * The URL of parent prefix. Either PublicAdvertisedPrefix or PublicDelegatedPrefix.
      * </pre>
      *
-     * <code>string parent_prefix = 15233991;</code>
+     * <code>optional string parent_prefix = 15233991;</code>
      *
      * @return The parentPrefix.
      */
@@ -2699,7 +2712,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * The URL of parent prefix. Either PublicAdvertisedPrefix or PublicDelegatedPrefix.
      * </pre>
      *
-     * <code>string parent_prefix = 15233991;</code>
+     * <code>optional string parent_prefix = 15233991;</code>
      *
      * @return The bytes for parentPrefix.
      */
@@ -2721,7 +2734,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * The URL of parent prefix. Either PublicAdvertisedPrefix or PublicDelegatedPrefix.
      * </pre>
      *
-     * <code>string parent_prefix = 15233991;</code>
+     * <code>optional string parent_prefix = 15233991;</code>
      *
      * @param value The parentPrefix to set.
      * @return This builder for chaining.
@@ -2742,7 +2755,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * The URL of parent prefix. Either PublicAdvertisedPrefix or PublicDelegatedPrefix.
      * </pre>
      *
-     * <code>string parent_prefix = 15233991;</code>
+     * <code>optional string parent_prefix = 15233991;</code>
      *
      * @return This builder for chaining.
      */
@@ -2759,7 +2772,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * The URL of parent prefix. Either PublicAdvertisedPrefix or PublicDelegatedPrefix.
      * </pre>
      *
-     * <code>string parent_prefix = 15233991;</code>
+     * <code>optional string parent_prefix = 15233991;</code>
      *
      * @param value The bytes for parentPrefix to set.
      * @return This builder for chaining.
@@ -3202,7 +3215,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] URL of the region where the public delegated prefix resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return Whether the region field is set.
      */
@@ -3216,7 +3229,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] URL of the region where the public delegated prefix resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The region.
      */
@@ -3238,7 +3251,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] URL of the region where the public delegated prefix resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The bytes for region.
      */
@@ -3260,7 +3273,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] URL of the region where the public delegated prefix resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -3281,7 +3294,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] URL of the region where the public delegated prefix resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return This builder for chaining.
      */
@@ -3298,7 +3311,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] URL of the region where the public delegated prefix resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.
@@ -3322,7 +3335,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -3336,7 +3349,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -3358,7 +3371,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3380,7 +3393,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3401,7 +3414,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -3418,7 +3431,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -3434,19 +3447,19 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       return this;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      *
      *
      * <pre>
      * [Output Only] The status of the public delegated prefix.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PublicDelegatedPrefix.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
      * @return Whether the status field is set.
      */
-    @java.lang.Override
     public boolean hasStatus() {
       return ((bitField0_ & 0x00001000) != 0);
     }
@@ -3455,29 +3468,64 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * [Output Only] The status of the public delegated prefix.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PublicDelegatedPrefix.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The enum numeric value on the wire for status.
+     * @return The status.
      */
-    @java.lang.Override
-    public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * [Output Only] The status of the public delegated prefix.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PublicDelegatedPrefix.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @param value The enum numeric value on the wire for status to set.
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The status of the public delegated prefix.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     *
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
+    public Builder setStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00001000;
       status_ = value;
       onChanged();
@@ -3488,39 +3536,16 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * [Output Only] The status of the public delegated prefix.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PublicDelegatedPrefix.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.PublicDelegatedPrefix.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.PublicDelegatedPrefix.Status result =
-          com.google.cloud.compute.v1.PublicDelegatedPrefix.Status.valueOf(status_);
-      return result == null
-          ? com.google.cloud.compute.v1.PublicDelegatedPrefix.Status.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The status of the public delegated prefix.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.PublicDelegatedPrefix.Status status = 181260274;</code>
-     *
-     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloud.compute.v1.PublicDelegatedPrefix.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00001000;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
@@ -3529,15 +3554,21 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * [Output Only] The status of the public delegated prefix.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PublicDelegatedPrefix.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00001000);
-      status_ = 0;
+    public Builder setStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00001000;
+      status_ = value;
       onChanged();
       return this;
     }

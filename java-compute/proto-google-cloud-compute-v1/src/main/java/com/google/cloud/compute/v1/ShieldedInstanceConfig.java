@@ -131,7 +131,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
    * Defines whether the instance has integrity monitoring enabled. Enabled by default.
    * </pre>
    *
-   * <code>bool enable_integrity_monitoring = 409071030;</code>
+   * <code>optional bool enable_integrity_monitoring = 409071030;</code>
    *
    * @return Whether the enableIntegrityMonitoring field is set.
    */
@@ -146,7 +146,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
    * Defines whether the instance has integrity monitoring enabled. Enabled by default.
    * </pre>
    *
-   * <code>bool enable_integrity_monitoring = 409071030;</code>
+   * <code>optional bool enable_integrity_monitoring = 409071030;</code>
    *
    * @return The enableIntegrityMonitoring.
    */
@@ -164,7 +164,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
    * Defines whether the instance has Secure Boot enabled. Disabled by default.
    * </pre>
    *
-   * <code>bool enable_secure_boot = 123568638;</code>
+   * <code>optional bool enable_secure_boot = 123568638;</code>
    *
    * @return Whether the enableSecureBoot field is set.
    */
@@ -179,7 +179,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
    * Defines whether the instance has Secure Boot enabled. Disabled by default.
    * </pre>
    *
-   * <code>bool enable_secure_boot = 123568638;</code>
+   * <code>optional bool enable_secure_boot = 123568638;</code>
    *
    * @return The enableSecureBoot.
    */
@@ -197,7 +197,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
    * Defines whether the instance has the vTPM enabled. Enabled by default.
    * </pre>
    *
-   * <code>bool enable_vtpm = 181858935;</code>
+   * <code>optional bool enable_vtpm = 181858935;</code>
    *
    * @return Whether the enableVtpm field is set.
    */
@@ -212,7 +212,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
    * Defines whether the instance has the vTPM enabled. Enabled by default.
    * </pre>
    *
-   * <code>bool enable_vtpm = 181858935;</code>
+   * <code>optional bool enable_vtpm = 181858935;</code>
    *
    * @return The enableVtpm.
    */
@@ -607,7 +607,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * Defines whether the instance has integrity monitoring enabled. Enabled by default.
      * </pre>
      *
-     * <code>bool enable_integrity_monitoring = 409071030;</code>
+     * <code>optional bool enable_integrity_monitoring = 409071030;</code>
      *
      * @return Whether the enableIntegrityMonitoring field is set.
      */
@@ -622,7 +622,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * Defines whether the instance has integrity monitoring enabled. Enabled by default.
      * </pre>
      *
-     * <code>bool enable_integrity_monitoring = 409071030;</code>
+     * <code>optional bool enable_integrity_monitoring = 409071030;</code>
      *
      * @return The enableIntegrityMonitoring.
      */
@@ -637,7 +637,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * Defines whether the instance has integrity monitoring enabled. Enabled by default.
      * </pre>
      *
-     * <code>bool enable_integrity_monitoring = 409071030;</code>
+     * <code>optional bool enable_integrity_monitoring = 409071030;</code>
      *
      * @param value The enableIntegrityMonitoring to set.
      * @return This builder for chaining.
@@ -655,7 +655,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * Defines whether the instance has integrity monitoring enabled. Enabled by default.
      * </pre>
      *
-     * <code>bool enable_integrity_monitoring = 409071030;</code>
+     * <code>optional bool enable_integrity_monitoring = 409071030;</code>
      *
      * @return This builder for chaining.
      */
@@ -674,7 +674,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * Defines whether the instance has Secure Boot enabled. Disabled by default.
      * </pre>
      *
-     * <code>bool enable_secure_boot = 123568638;</code>
+     * <code>optional bool enable_secure_boot = 123568638;</code>
      *
      * @return Whether the enableSecureBoot field is set.
      */
@@ -689,7 +689,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * Defines whether the instance has Secure Boot enabled. Disabled by default.
      * </pre>
      *
-     * <code>bool enable_secure_boot = 123568638;</code>
+     * <code>optional bool enable_secure_boot = 123568638;</code>
      *
      * @return The enableSecureBoot.
      */
@@ -704,7 +704,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * Defines whether the instance has Secure Boot enabled. Disabled by default.
      * </pre>
      *
-     * <code>bool enable_secure_boot = 123568638;</code>
+     * <code>optional bool enable_secure_boot = 123568638;</code>
      *
      * @param value The enableSecureBoot to set.
      * @return This builder for chaining.
@@ -722,7 +722,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * Defines whether the instance has Secure Boot enabled. Disabled by default.
      * </pre>
      *
-     * <code>bool enable_secure_boot = 123568638;</code>
+     * <code>optional bool enable_secure_boot = 123568638;</code>
      *
      * @return This builder for chaining.
      */
@@ -741,7 +741,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * Defines whether the instance has the vTPM enabled. Enabled by default.
      * </pre>
      *
-     * <code>bool enable_vtpm = 181858935;</code>
+     * <code>optional bool enable_vtpm = 181858935;</code>
      *
      * @return Whether the enableVtpm field is set.
      */
@@ -756,7 +756,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * Defines whether the instance has the vTPM enabled. Enabled by default.
      * </pre>
      *
-     * <code>bool enable_vtpm = 181858935;</code>
+     * <code>optional bool enable_vtpm = 181858935;</code>
      *
      * @return The enableVtpm.
      */
@@ -771,7 +771,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * Defines whether the instance has the vTPM enabled. Enabled by default.
      * </pre>
      *
-     * <code>bool enable_vtpm = 181858935;</code>
+     * <code>optional bool enable_vtpm = 181858935;</code>
      *
      * @param value The enableVtpm to set.
      * @return This builder for chaining.
@@ -789,7 +789,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * Defines whether the instance has the vTPM enabled. Enabled by default.
      * </pre>
      *
-     * <code>bool enable_vtpm = 181858935;</code>
+     * <code>optional bool enable_vtpm = 181858935;</code>
      *
      * @return This builder for chaining.
      */

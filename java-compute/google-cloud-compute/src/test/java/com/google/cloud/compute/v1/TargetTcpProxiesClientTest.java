@@ -27,12 +27,14 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonTargetTcpProxiesStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -86,7 +88,7 @@ public class TargetTcpProxiesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -97,6 +99,7 @@ public class TargetTcpProxiesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -109,7 +112,7 @@ public class TargetTcpProxiesClientTest {
     String project = "project-309310695";
     String targetTcpProxy = "targetTcpProxy-337144898";
 
-    Operation actualResponse = client.delete(project, targetTcpProxy);
+    Operation actualResponse = client.deleteAsync(project, targetTcpProxy).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -137,10 +140,9 @@ public class TargetTcpProxiesClientTest {
     try {
       String project = "project-309310695";
       String targetTcpProxy = "targetTcpProxy-337144898";
-      client.delete(project, targetTcpProxy);
+      client.deleteAsync(project, targetTcpProxy).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -154,6 +156,7 @@ public class TargetTcpProxiesClientTest {
             .setKind("kind3292052")
             .setName("name3373707")
             .setProxyBind(true)
+            .setProxyHeader("proxyHeader1768394395")
             .setSelfLink("selfLink1191800166")
             .setService("service1984153269")
             .build();
@@ -207,7 +210,7 @@ public class TargetTcpProxiesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -218,6 +221,7 @@ public class TargetTcpProxiesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -230,7 +234,7 @@ public class TargetTcpProxiesClientTest {
     String project = "project-309310695";
     TargetTcpProxy targetTcpProxyResource = TargetTcpProxy.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, targetTcpProxyResource);
+    Operation actualResponse = client.insertAsync(project, targetTcpProxyResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -258,10 +262,9 @@ public class TargetTcpProxiesClientTest {
     try {
       String project = "project-309310695";
       TargetTcpProxy targetTcpProxyResource = TargetTcpProxy.newBuilder().build();
-      client.insert(project, targetTcpProxyResource);
+      client.insertAsync(project, targetTcpProxyResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -325,7 +328,7 @@ public class TargetTcpProxiesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -336,6 +339,7 @@ public class TargetTcpProxiesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -351,8 +355,10 @@ public class TargetTcpProxiesClientTest {
         TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.setBackendService(
-            project, targetTcpProxy, targetTcpProxiesSetBackendServiceRequestResource);
+        client
+            .setBackendServiceAsync(
+                project, targetTcpProxy, targetTcpProxiesSetBackendServiceRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -382,11 +388,12 @@ public class TargetTcpProxiesClientTest {
       String targetTcpProxy = "targetTcpProxy-337144898";
       TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource =
           TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
-      client.setBackendService(
-          project, targetTcpProxy, targetTcpProxiesSetBackendServiceRequestResource);
+      client
+          .setBackendServiceAsync(
+              project, targetTcpProxy, targetTcpProxiesSetBackendServiceRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -400,7 +407,7 @@ public class TargetTcpProxiesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -411,6 +418,7 @@ public class TargetTcpProxiesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -426,8 +434,10 @@ public class TargetTcpProxiesClientTest {
         TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.setProxyHeader(
-            project, targetTcpProxy, targetTcpProxiesSetProxyHeaderRequestResource);
+        client
+            .setProxyHeaderAsync(
+                project, targetTcpProxy, targetTcpProxiesSetProxyHeaderRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -457,10 +467,12 @@ public class TargetTcpProxiesClientTest {
       String targetTcpProxy = "targetTcpProxy-337144898";
       TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource =
           TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
-      client.setProxyHeader(project, targetTcpProxy, targetTcpProxiesSetProxyHeaderRequestResource);
+      client
+          .setProxyHeaderAsync(
+              project, targetTcpProxy, targetTcpProxiesSetProxyHeaderRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 }

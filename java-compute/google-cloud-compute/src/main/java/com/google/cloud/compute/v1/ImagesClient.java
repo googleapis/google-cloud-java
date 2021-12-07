@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.ImagesStub;
@@ -44,7 +46,7 @@ import javax.annotation.Generated;
  * try (ImagesClient imagesClient = ImagesClient.create()) {
  *   String project = "project-309310695";
  *   String image = "image100313435";
- *   Operation response = imagesClient.delete(project, image);
+ *   Image response = imagesClient.get(project, image);
  * }
  * }</pre>
  *
@@ -154,7 +156,7 @@ public class ImagesClient implements BackgroundResource {
    * try (ImagesClient imagesClient = ImagesClient.create()) {
    *   String project = "project-309310695";
    *   String image = "image100313435";
-   *   Operation response = imagesClient.delete(project, image);
+   *   Operation response = imagesClient.deleteAsync(project, image).get();
    * }
    * }</pre>
    *
@@ -162,10 +164,10 @@ public class ImagesClient implements BackgroundResource {
    * @param image Name of the image resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String image) {
+  public final OperationFuture<Operation, Operation> deleteAsync(String project, String image) {
     DeleteImageRequest request =
         DeleteImageRequest.newBuilder().setProject(project).setImage(image).build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -182,15 +184,43 @@ public class ImagesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = imagesClient.delete(request);
+   *   Operation response = imagesClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteImageRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(DeleteImageRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified image.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ImagesClient imagesClient = ImagesClient.create()) {
+   *   DeleteImageRequest request =
+   *       DeleteImageRequest.newBuilder()
+   *           .setImage("image100313435")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       imagesClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteImageRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -219,9 +249,8 @@ public class ImagesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the deprecation status of an image.
-   *
-   * <p>If an empty request body is given, clears the deprecation status instead.
+   * Sets the deprecation status of an image. If an empty request body is given, clears the
+   * deprecation status instead.
    *
    * <p>Sample code:
    *
@@ -230,7 +259,8 @@ public class ImagesClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String image = "image100313435";
    *   DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
-   *   Operation response = imagesClient.deprecate(project, image, deprecationStatusResource);
+   *   Operation response =
+   *       imagesClient.deprecateAsync(project, image, deprecationStatusResource).get();
    * }
    * }</pre>
    *
@@ -239,7 +269,7 @@ public class ImagesClient implements BackgroundResource {
    * @param deprecationStatusResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation deprecate(
+  public final OperationFuture<Operation, Operation> deprecateAsync(
       String project, String image, DeprecationStatus deprecationStatusResource) {
     DeprecateImageRequest request =
         DeprecateImageRequest.newBuilder()
@@ -247,14 +277,13 @@ public class ImagesClient implements BackgroundResource {
             .setImage(image)
             .setDeprecationStatusResource(deprecationStatusResource)
             .build();
-    return deprecate(request);
+    return deprecateAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the deprecation status of an image.
-   *
-   * <p>If an empty request body is given, clears the deprecation status instead.
+   * Sets the deprecation status of an image. If an empty request body is given, clears the
+   * deprecation status instead.
    *
    * <p>Sample code:
    *
@@ -267,22 +296,51 @@ public class ImagesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = imagesClient.deprecate(request);
+   *   Operation response = imagesClient.deprecateAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation deprecate(DeprecateImageRequest request) {
-    return deprecateCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deprecateAsync(DeprecateImageRequest request) {
+    return deprecateOperationCallable().futureCall(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the deprecation status of an image.
+   * Sets the deprecation status of an image. If an empty request body is given, clears the
+   * deprecation status instead.
    *
-   * <p>If an empty request body is given, clears the deprecation status instead.
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ImagesClient imagesClient = ImagesClient.create()) {
+   *   DeprecateImageRequest request =
+   *       DeprecateImageRequest.newBuilder()
+   *           .setDeprecationStatusResource(DeprecationStatus.newBuilder().build())
+   *           .setImage("image100313435")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       imagesClient.deprecateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeprecateImageRequest, Operation, Operation>
+      deprecateOperationCallable() {
+    return stub.deprecateOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the deprecation status of an image. If an empty request body is given, clears the
+   * deprecation status instead.
    *
    * <p>Sample code:
    *
@@ -533,7 +591,7 @@ public class ImagesClient implements BackgroundResource {
    * try (ImagesClient imagesClient = ImagesClient.create()) {
    *   String project = "project-309310695";
    *   Image imageResource = Image.newBuilder().build();
-   *   Operation response = imagesClient.insert(project, imageResource);
+   *   Operation response = imagesClient.insertAsync(project, imageResource).get();
    * }
    * }</pre>
    *
@@ -541,10 +599,11 @@ public class ImagesClient implements BackgroundResource {
    * @param imageResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(String project, Image imageResource) {
+  public final OperationFuture<Operation, Operation> insertAsync(
+      String project, Image imageResource) {
     InsertImageRequest request =
         InsertImageRequest.newBuilder().setProject(project).setImageResource(imageResource).build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -562,15 +621,44 @@ public class ImagesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = imagesClient.insert(request);
+   *   Operation response = imagesClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertImageRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(InsertImageRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an image in the specified project using the data included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ImagesClient imagesClient = ImagesClient.create()) {
+   *   InsertImageRequest request =
+   *       InsertImageRequest.newBuilder()
+   *           .setForceCreate(true)
+   *           .setImageResource(Image.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       imagesClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertImageRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -744,7 +832,7 @@ public class ImagesClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String image = "image100313435";
    *   Image imageResource = Image.newBuilder().build();
-   *   Operation response = imagesClient.patch(project, image, imageResource);
+   *   Operation response = imagesClient.patchAsync(project, image, imageResource).get();
    * }
    * }</pre>
    *
@@ -753,14 +841,15 @@ public class ImagesClient implements BackgroundResource {
    * @param imageResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(String project, String image, Image imageResource) {
+  public final OperationFuture<Operation, Operation> patchAsync(
+      String project, String image, Image imageResource) {
     PatchImageRequest request =
         PatchImageRequest.newBuilder()
             .setProject(project)
             .setImage(image)
             .setImageResource(imageResource)
             .build();
-    return patch(request);
+    return patchAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -779,15 +868,44 @@ public class ImagesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = imagesClient.patch(request);
+   *   Operation response = imagesClient.patchAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(PatchImageRequest request) {
-    return patchCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> patchAsync(PatchImageRequest request) {
+    return patchOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches the specified image with the data included in the request. Only the following fields
+   * can be modified: family, description, deprecation status.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ImagesClient imagesClient = ImagesClient.create()) {
+   *   PatchImageRequest request =
+   *       PatchImageRequest.newBuilder()
+   *           .setImage("image100313435")
+   *           .setImageResource(Image.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       imagesClient.patchOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PatchImageRequest, Operation, Operation> patchOperationCallable() {
+    return stub.patchOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -912,7 +1030,7 @@ public class ImagesClient implements BackgroundResource {
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource =
    *       GlobalSetLabelsRequest.newBuilder().build();
    *   Operation response =
-   *       imagesClient.setLabels(project, resource, globalSetLabelsRequestResource);
+   *       imagesClient.setLabelsAsync(project, resource, globalSetLabelsRequestResource).get();
    * }
    * }</pre>
    *
@@ -921,7 +1039,7 @@ public class ImagesClient implements BackgroundResource {
    * @param globalSetLabelsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setLabels(
+  public final OperationFuture<Operation, Operation> setLabelsAsync(
       String project, String resource, GlobalSetLabelsRequest globalSetLabelsRequestResource) {
     SetLabelsImageRequest request =
         SetLabelsImageRequest.newBuilder()
@@ -929,7 +1047,7 @@ public class ImagesClient implements BackgroundResource {
             .setResource(resource)
             .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
             .build();
-    return setLabels(request);
+    return setLabelsAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -947,15 +1065,44 @@ public class ImagesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setResource("resource-341064690")
    *           .build();
-   *   Operation response = imagesClient.setLabels(request);
+   *   Operation response = imagesClient.setLabelsAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setLabels(SetLabelsImageRequest request) {
-    return setLabelsCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setLabelsAsync(SetLabelsImageRequest request) {
+    return setLabelsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on an image. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ImagesClient imagesClient = ImagesClient.create()) {
+   *   SetLabelsImageRequest request =
+   *       SetLabelsImageRequest.newBuilder()
+   *           .setGlobalSetLabelsRequestResource(GlobalSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       imagesClient.setLabelsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetLabelsImageRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return stub.setLabelsOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -40,10 +40,10 @@ public interface NodeTemplateOrBuilder
    *
    * <pre>
    * CPU overcommit.
+   * Check the CpuOvercommitType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;
-   * </code>
+   * <code>optional string cpu_overcommit_type = 247727959;</code>
    *
    * @return Whether the cpuOvercommitType field is set.
    */
@@ -53,27 +53,27 @@ public interface NodeTemplateOrBuilder
    *
    * <pre>
    * CPU overcommit.
+   * Check the CpuOvercommitType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;
-   * </code>
+   * <code>optional string cpu_overcommit_type = 247727959;</code>
    *
-   * @return The enum numeric value on the wire for cpuOvercommitType.
+   * @return The cpuOvercommitType.
    */
-  int getCpuOvercommitTypeValue();
+  java.lang.String getCpuOvercommitType();
   /**
    *
    *
    * <pre>
    * CPU overcommit.
+   * Check the CpuOvercommitType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;
-   * </code>
+   * <code>optional string cpu_overcommit_type = 247727959;</code>
    *
-   * @return The cpuOvercommitType.
+   * @return The bytes for cpuOvercommitType.
    */
-  com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType getCpuOvercommitType();
+  com.google.protobuf.ByteString getCpuOvercommitTypeBytes();
 
   /**
    *
@@ -82,7 +82,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -94,7 +94,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -106,7 +106,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -119,7 +119,7 @@ public interface NodeTemplateOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -131,7 +131,7 @@ public interface NodeTemplateOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -143,7 +143,7 @@ public interface NodeTemplateOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -167,7 +167,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -179,7 +179,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -192,7 +192,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] The type of the resource. Always compute#nodeTemplate for node templates.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -204,7 +204,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] The type of the resource. Always compute#nodeTemplate for node templates.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -216,7 +216,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] The type of the resource. Always compute#nodeTemplate for node templates.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -229,7 +229,7 @@ public interface NodeTemplateOrBuilder
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -241,7 +241,7 @@ public interface NodeTemplateOrBuilder
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -253,7 +253,7 @@ public interface NodeTemplateOrBuilder
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -321,7 +321,7 @@ public interface NodeTemplateOrBuilder
    * The node type to use for nodes group that are created from this template.
    * </pre>
    *
-   * <code>string node_type = 465832791;</code>
+   * <code>optional string node_type = 465832791;</code>
    *
    * @return Whether the nodeType field is set.
    */
@@ -333,7 +333,7 @@ public interface NodeTemplateOrBuilder
    * The node type to use for nodes group that are created from this template.
    * </pre>
    *
-   * <code>string node_type = 465832791;</code>
+   * <code>optional string node_type = 465832791;</code>
    *
    * @return The nodeType.
    */
@@ -345,7 +345,7 @@ public interface NodeTemplateOrBuilder
    * The node type to use for nodes group that are created from this template.
    * </pre>
    *
-   * <code>string node_type = 465832791;</code>
+   * <code>optional string node_type = 465832791;</code>
    *
    * @return The bytes for nodeType.
    */
@@ -355,12 +355,11 @@ public interface NodeTemplateOrBuilder
    *
    *
    * <pre>
-   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-   * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+   * optional .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
    * </code>
    *
    * @return Whether the nodeTypeFlexibility field is set.
@@ -370,12 +369,11 @@ public interface NodeTemplateOrBuilder
    *
    *
    * <pre>
-   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-   * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+   * optional .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
    * </code>
    *
    * @return The nodeTypeFlexibility.
@@ -385,12 +383,11 @@ public interface NodeTemplateOrBuilder
    *
    *
    * <pre>
-   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-   * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+   * optional .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
    * </code>
    */
   com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibilityOrBuilder
@@ -403,7 +400,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] The name of the region where the node template resides, such as us-central1.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -415,7 +412,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] The name of the region where the node template resides, such as us-central1.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -427,7 +424,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] The name of the region where the node template resides, such as us-central1.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -440,7 +437,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -452,7 +449,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -464,7 +461,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -474,13 +471,10 @@ public interface NodeTemplateOrBuilder
    *
    *
    * <pre>
-   * Sets the binding properties for the physical server. Valid values include:
-   * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-   * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-   * See Sole-tenant node options for more information.
+   * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
+   * <code>optional .google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
    *
    * @return Whether the serverBinding field is set.
    */
@@ -489,13 +483,10 @@ public interface NodeTemplateOrBuilder
    *
    *
    * <pre>
-   * Sets the binding properties for the physical server. Valid values include:
-   * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-   * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-   * See Sole-tenant node options for more information.
+   * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
+   * <code>optional .google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
    *
    * @return The serverBinding.
    */
@@ -504,13 +495,10 @@ public interface NodeTemplateOrBuilder
    *
    *
    * <pre>
-   * Sets the binding properties for the physical server. Valid values include:
-   * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-   * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-   * See Sole-tenant node options for more information.
+   * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
+   * <code>optional .google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
    */
   com.google.cloud.compute.v1.ServerBindingOrBuilder getServerBindingOrBuilder();
 
@@ -519,9 +507,10 @@ public interface NodeTemplateOrBuilder
    *
    * <pre>
    * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -531,25 +520,27 @@ public interface NodeTemplateOrBuilder
    *
    * <pre>
    * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    *
    *
    * <pre>
    * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1.NodeTemplate.Status getStatus();
+  com.google.protobuf.ByteString getStatusBytes();
 
   /**
    *
@@ -558,7 +549,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return Whether the statusMessage field is set.
    */
@@ -570,7 +561,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return The statusMessage.
    */
@@ -582,7 +573,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return The bytes for statusMessage.
    */

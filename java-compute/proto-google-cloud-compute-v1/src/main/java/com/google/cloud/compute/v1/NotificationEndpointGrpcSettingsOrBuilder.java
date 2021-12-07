@@ -30,7 +30,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
    * </pre>
    *
-   * <code>string authority = 401868611;</code>
+   * <code>optional string authority = 401868611;</code>
    *
    * @return Whether the authority field is set.
    */
@@ -42,7 +42,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
    * </pre>
    *
-   * <code>string authority = 401868611;</code>
+   * <code>optional string authority = 401868611;</code>
    *
    * @return The authority.
    */
@@ -54,7 +54,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
    * </pre>
    *
-   * <code>string authority = 401868611;</code>
+   * <code>optional string authority = 401868611;</code>
    *
    * @return The bytes for authority.
    */
@@ -67,7 +67,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * Endpoint to which gRPC notifications are sent. This must be a valid gRPCLB DNS name.
    * </pre>
    *
-   * <code>string endpoint = 130489749;</code>
+   * <code>optional string endpoint = 130489749;</code>
    *
    * @return Whether the endpoint field is set.
    */
@@ -79,7 +79,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * Endpoint to which gRPC notifications are sent. This must be a valid gRPCLB DNS name.
    * </pre>
    *
-   * <code>string endpoint = 130489749;</code>
+   * <code>optional string endpoint = 130489749;</code>
    *
    * @return The endpoint.
    */
@@ -91,7 +91,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * Endpoint to which gRPC notifications are sent. This must be a valid gRPCLB DNS name.
    * </pre>
    *
-   * <code>string endpoint = 130489749;</code>
+   * <code>optional string endpoint = 130489749;</code>
    *
    * @return The bytes for endpoint.
    */
@@ -104,7 +104,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
    * </pre>
    *
-   * <code>string payload_name = 300358300;</code>
+   * <code>optional string payload_name = 300358300;</code>
    *
    * @return Whether the payloadName field is set.
    */
@@ -116,7 +116,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
    * </pre>
    *
-   * <code>string payload_name = 300358300;</code>
+   * <code>optional string payload_name = 300358300;</code>
    *
    * @return The payloadName.
    */
@@ -128,7 +128,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
    * </pre>
    *
-   * <code>string payload_name = 300358300;</code>
+   * <code>optional string payload_name = 300358300;</code>
    *
    * @return The bytes for payloadName.
    */
@@ -141,7 +141,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
+   * <code>optional .google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
    *
    * @return Whether the resendInterval field is set.
    */
@@ -153,7 +153,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
+   * <code>optional .google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
    *
    * @return The resendInterval.
    */
@@ -165,7 +165,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
+   * <code>optional .google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
    */
   com.google.cloud.compute.v1.DurationOrBuilder getResendIntervalOrBuilder();
 
@@ -176,7 +176,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * How much time (in seconds) is spent attempting notification retries until a successful response is received. Default is 30s. Limit is 20m (1200s). Must be a positive number.
    * </pre>
    *
-   * <code>uint32 retry_duration_sec = 115681117;</code>
+   * <code>optional uint32 retry_duration_sec = 115681117;</code>
    *
    * @return Whether the retryDurationSec field is set.
    */
@@ -188,7 +188,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * How much time (in seconds) is spent attempting notification retries until a successful response is received. Default is 30s. Limit is 20m (1200s). Must be a positive number.
    * </pre>
    *
-   * <code>uint32 retry_duration_sec = 115681117;</code>
+   * <code>optional uint32 retry_duration_sec = 115681117;</code>
    *
    * @return The retryDurationSec.
    */

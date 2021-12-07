@@ -132,7 +132,7 @@ public final class SslCertificateSelfManagedSslCertificate
    * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
    * </pre>
    *
-   * <code>string certificate = 341787031;</code>
+   * <code>optional string certificate = 341787031;</code>
    *
    * @return Whether the certificate field is set.
    */
@@ -147,7 +147,7 @@ public final class SslCertificateSelfManagedSslCertificate
    * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
    * </pre>
    *
-   * <code>string certificate = 341787031;</code>
+   * <code>optional string certificate = 341787031;</code>
    *
    * @return The certificate.
    */
@@ -170,7 +170,7 @@ public final class SslCertificateSelfManagedSslCertificate
    * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
    * </pre>
    *
-   * <code>string certificate = 341787031;</code>
+   * <code>optional string certificate = 341787031;</code>
    *
    * @return The bytes for certificate.
    */
@@ -196,7 +196,7 @@ public final class SslCertificateSelfManagedSslCertificate
    * A write-only private key in PEM format. Only insert requests will include this field.
    * </pre>
    *
-   * <code>string private_key = 361331107;</code>
+   * <code>optional string private_key = 361331107;</code>
    *
    * @return Whether the privateKey field is set.
    */
@@ -211,7 +211,7 @@ public final class SslCertificateSelfManagedSslCertificate
    * A write-only private key in PEM format. Only insert requests will include this field.
    * </pre>
    *
-   * <code>string private_key = 361331107;</code>
+   * <code>optional string private_key = 361331107;</code>
    *
    * @return The privateKey.
    */
@@ -234,7 +234,7 @@ public final class SslCertificateSelfManagedSslCertificate
    * A write-only private key in PEM format. Only insert requests will include this field.
    * </pre>
    *
-   * <code>string private_key = 361331107;</code>
+   * <code>optional string private_key = 361331107;</code>
    *
    * @return The bytes for privateKey.
    */
@@ -625,7 +625,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 341787031;</code>
+     * <code>optional string certificate = 341787031;</code>
      *
      * @return Whether the certificate field is set.
      */
@@ -639,7 +639,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 341787031;</code>
+     * <code>optional string certificate = 341787031;</code>
      *
      * @return The certificate.
      */
@@ -661,7 +661,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 341787031;</code>
+     * <code>optional string certificate = 341787031;</code>
      *
      * @return The bytes for certificate.
      */
@@ -683,7 +683,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 341787031;</code>
+     * <code>optional string certificate = 341787031;</code>
      *
      * @param value The certificate to set.
      * @return This builder for chaining.
@@ -704,7 +704,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 341787031;</code>
+     * <code>optional string certificate = 341787031;</code>
      *
      * @return This builder for chaining.
      */
@@ -721,7 +721,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 341787031;</code>
+     * <code>optional string certificate = 341787031;</code>
      *
      * @param value The bytes for certificate to set.
      * @return This builder for chaining.
@@ -745,7 +745,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A write-only private key in PEM format. Only insert requests will include this field.
      * </pre>
      *
-     * <code>string private_key = 361331107;</code>
+     * <code>optional string private_key = 361331107;</code>
      *
      * @return Whether the privateKey field is set.
      */
@@ -759,7 +759,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A write-only private key in PEM format. Only insert requests will include this field.
      * </pre>
      *
-     * <code>string private_key = 361331107;</code>
+     * <code>optional string private_key = 361331107;</code>
      *
      * @return The privateKey.
      */
@@ -781,7 +781,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A write-only private key in PEM format. Only insert requests will include this field.
      * </pre>
      *
-     * <code>string private_key = 361331107;</code>
+     * <code>optional string private_key = 361331107;</code>
      *
      * @return The bytes for privateKey.
      */
@@ -803,7 +803,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A write-only private key in PEM format. Only insert requests will include this field.
      * </pre>
      *
-     * <code>string private_key = 361331107;</code>
+     * <code>optional string private_key = 361331107;</code>
      *
      * @param value The privateKey to set.
      * @return This builder for chaining.
@@ -824,7 +824,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A write-only private key in PEM format. Only insert requests will include this field.
      * </pre>
      *
-     * <code>string private_key = 361331107;</code>
+     * <code>optional string private_key = 361331107;</code>
      *
      * @return This builder for chaining.
      */
@@ -841,7 +841,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A write-only private key in PEM format. Only insert requests will include this field.
      * </pre>
      *
-     * <code>string private_key = 361331107;</code>
+     * <code>optional string private_key = 361331107;</code>
      *
      * @param value The bytes for privateKey to set.
      * @return This builder for chaining.

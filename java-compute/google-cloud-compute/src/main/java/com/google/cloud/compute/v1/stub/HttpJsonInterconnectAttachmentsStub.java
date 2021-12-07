@@ -26,11 +26,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListInterconnectAttachmentsRequest;
 import com.google.cloud.compute.v1.DeleteInterconnectAttachmentRequest;
@@ -41,7 +43,9 @@ import com.google.cloud.compute.v1.InterconnectAttachmentAggregatedList;
 import com.google.cloud.compute.v1.InterconnectAttachmentList;
 import com.google.cloud.compute.v1.ListInterconnectAttachmentsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchInterconnectAttachmentRequest;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -59,6 +63,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachmentsStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<
           AggregatedListInterconnectAttachmentsRequest, InterconnectAttachmentAggregatedList>
       aggregatedListMethodDescriptor =
@@ -114,6 +121,7 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
               .setResponseParser(
                   ProtoMessageResponseParser.<InterconnectAttachmentAggregatedList>newBuilder()
                       .setDefaultInstance(InterconnectAttachmentAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -153,7 +161,21 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteInterconnectAttachmentRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetInterconnectAttachmentRequest, InterconnectAttachment>
@@ -189,6 +211,7 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
               .setResponseParser(
                   ProtoMessageResponseParser.<InterconnectAttachment>newBuilder()
                       .setDefaultInstance(InterconnectAttachment.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -233,7 +256,21 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertInterconnectAttachmentRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -286,6 +323,7 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
               .setResponseParser(
                   ProtoMessageResponseParser.<InterconnectAttachmentList>newBuilder()
                       .setDefaultInstance(InterconnectAttachmentList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -330,7 +368,21 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchInterconnectAttachmentRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<
@@ -340,15 +392,22 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
           AggregatedListInterconnectAttachmentsRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
   private final UnaryCallable<DeleteInterconnectAttachmentRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteInterconnectAttachmentRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetInterconnectAttachmentRequest, InterconnectAttachment> getCallable;
   private final UnaryCallable<InsertInterconnectAttachmentRequest, Operation> insertCallable;
+  private final OperationCallable<InsertInterconnectAttachmentRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListInterconnectAttachmentsRequest, InterconnectAttachmentList>
       listCallable;
   private final UnaryCallable<ListInterconnectAttachmentsRequest, ListPagedResponse>
       listPagedCallable;
   private final UnaryCallable<PatchInterconnectAttachmentRequest, Operation> patchCallable;
+  private final OperationCallable<PatchInterconnectAttachmentRequest, Operation, Operation>
+      patchOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonInterconnectAttachmentsStub create(
@@ -390,6 +449,8 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<
             AggregatedListInterconnectAttachmentsRequest, InterconnectAttachmentAggregatedList>
@@ -399,30 +460,36 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
                     InterconnectAttachmentAggregatedList>
                     newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeleteInterconnectAttachmentRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteInterconnectAttachmentRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetInterconnectAttachmentRequest, InterconnectAttachment>
         getTransportSettings =
             HttpJsonCallSettings
                 .<GetInterconnectAttachmentRequest, InterconnectAttachment>newBuilder()
                 .setMethodDescriptor(getMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<InsertInterconnectAttachmentRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertInterconnectAttachmentRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListInterconnectAttachmentsRequest, InterconnectAttachmentList>
         listTransportSettings =
             HttpJsonCallSettings
                 .<ListInterconnectAttachmentsRequest, InterconnectAttachmentList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<PatchInterconnectAttachmentRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchInterconnectAttachmentRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.aggregatedListCallable =
@@ -434,12 +501,24 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -449,6 +528,12 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -485,6 +570,12 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
   }
 
   @Override
+  public OperationCallable<DeleteInterconnectAttachmentRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetInterconnectAttachmentRequest, InterconnectAttachment> getCallable() {
     return getCallable;
   }
@@ -492,6 +583,12 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
   @Override
   public UnaryCallable<InsertInterconnectAttachmentRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertInterconnectAttachmentRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -508,6 +605,12 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
   @Override
   public UnaryCallable<PatchInterconnectAttachmentRequest, Operation> patchCallable() {
     return patchCallable;
+  }
+
+  @Override
+  public OperationCallable<PatchInterconnectAttachmentRequest, Operation, Operation>
+      patchOperationCallable() {
+    return patchOperationCallable;
   }
 
   @Override

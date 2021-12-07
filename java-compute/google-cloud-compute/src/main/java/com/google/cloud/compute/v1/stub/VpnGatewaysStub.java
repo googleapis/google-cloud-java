@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.VpnGatewaysClient.AggregatedListPagedR
 import static com.google.cloud.compute.v1.VpnGatewaysClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListVpnGatewaysRequest;
 import com.google.cloud.compute.v1.DeleteVpnGatewayRequest;
@@ -56,6 +57,11 @@ public abstract class VpnGatewaysStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<DeleteVpnGatewayRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteVpnGatewayRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
@@ -69,6 +75,11 @@ public abstract class VpnGatewaysStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getStatusCallable()");
   }
 
+  public OperationCallable<InsertVpnGatewayRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
+  }
+
   public UnaryCallable<InsertVpnGatewayRequest, Operation> insertCallable() {
     throw new UnsupportedOperationException("Not implemented: insertCallable()");
   }
@@ -79,6 +90,11 @@ public abstract class VpnGatewaysStub implements BackgroundResource {
 
   public UnaryCallable<ListVpnGatewaysRequest, VpnGatewayList> listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<SetLabelsVpnGatewayRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsOperationCallable()");
   }
 
   public UnaryCallable<SetLabelsVpnGatewayRequest, Operation> setLabelsCallable() {

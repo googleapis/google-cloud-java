@@ -30,7 +30,7 @@ public interface BulkInsertInstanceResourcePerInstancePropertiesOrBuilder
    * This field is only temporary. It will be removed. Do not use it.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -42,7 +42,7 @@ public interface BulkInsertInstanceResourcePerInstancePropertiesOrBuilder
    * This field is only temporary. It will be removed. Do not use it.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -54,7 +54,7 @@ public interface BulkInsertInstanceResourcePerInstancePropertiesOrBuilder
    * This field is only temporary. It will be removed. Do not use it.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */

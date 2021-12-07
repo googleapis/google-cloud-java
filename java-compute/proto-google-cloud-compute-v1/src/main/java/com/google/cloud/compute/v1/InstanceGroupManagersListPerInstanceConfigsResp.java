@@ -224,7 +224,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
    * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
    * </pre>
    *
-   * <code>string next_page_token = 79797525;</code>
+   * <code>optional string next_page_token = 79797525;</code>
    *
    * @return Whether the nextPageToken field is set.
    */
@@ -239,7 +239,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
    * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
    * </pre>
    *
-   * <code>string next_page_token = 79797525;</code>
+   * <code>optional string next_page_token = 79797525;</code>
    *
    * @return The nextPageToken.
    */
@@ -262,7 +262,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
    * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
    * </pre>
    *
-   * <code>string next_page_token = 79797525;</code>
+   * <code>optional string next_page_token = 79797525;</code>
    *
    * @return The bytes for nextPageToken.
    */
@@ -288,7 +288,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
    * [Output Only] Informational warning message.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+   * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
    *
    * @return Whether the warning field is set.
    */
@@ -303,7 +303,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
    * [Output Only] Informational warning message.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+   * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
    *
    * @return The warning.
    */
@@ -318,7 +318,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
    * [Output Only] Informational warning message.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+   * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
@@ -1120,7 +1120,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
      * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
      * </pre>
      *
-     * <code>string next_page_token = 79797525;</code>
+     * <code>optional string next_page_token = 79797525;</code>
      *
      * @return Whether the nextPageToken field is set.
      */
@@ -1134,7 +1134,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
      * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
      * </pre>
      *
-     * <code>string next_page_token = 79797525;</code>
+     * <code>optional string next_page_token = 79797525;</code>
      *
      * @return The nextPageToken.
      */
@@ -1156,7 +1156,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
      * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
      * </pre>
      *
-     * <code>string next_page_token = 79797525;</code>
+     * <code>optional string next_page_token = 79797525;</code>
      *
      * @return The bytes for nextPageToken.
      */
@@ -1178,7 +1178,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
      * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
      * </pre>
      *
-     * <code>string next_page_token = 79797525;</code>
+     * <code>optional string next_page_token = 79797525;</code>
      *
      * @param value The nextPageToken to set.
      * @return This builder for chaining.
@@ -1199,7 +1199,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
      * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
      * </pre>
      *
-     * <code>string next_page_token = 79797525;</code>
+     * <code>optional string next_page_token = 79797525;</code>
      *
      * @return This builder for chaining.
      */
@@ -1216,7 +1216,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
      * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
      * </pre>
      *
-     * <code>string next_page_token = 79797525;</code>
+     * <code>optional string next_page_token = 79797525;</code>
      *
      * @param value The bytes for nextPageToken to set.
      * @return This builder for chaining.
@@ -1245,7 +1245,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
      * [Output Only] Informational warning message.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      *
      * @return Whether the warning field is set.
      */
@@ -1259,7 +1259,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
      * [Output Only] Informational warning message.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      *
      * @return The warning.
      */
@@ -1279,7 +1279,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
      * [Output Only] Informational warning message.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public Builder setWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
@@ -1301,7 +1301,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
      * [Output Only] Informational warning message.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public Builder setWarning(com.google.cloud.compute.v1.Warning.Builder builderForValue) {
       if (warningBuilder_ == null) {
@@ -1320,7 +1320,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
      * [Output Only] Informational warning message.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public Builder mergeWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
@@ -1348,7 +1348,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
      * [Output Only] Informational warning message.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public Builder clearWarning() {
       if (warningBuilder_ == null) {
@@ -1367,7 +1367,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
      * [Output Only] Informational warning message.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.Warning.Builder getWarningBuilder() {
       bitField0_ |= 0x00000004;
@@ -1381,7 +1381,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
      * [Output Only] Informational warning message.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
       if (warningBuilder_ != null) {
@@ -1399,7 +1399,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
      * [Output Only] Informational warning message.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Warning,

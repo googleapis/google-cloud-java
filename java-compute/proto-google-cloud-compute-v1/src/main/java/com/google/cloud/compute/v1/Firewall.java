@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Firewall Rule resource.
- * Firewall rules allow or deny ingress traffic to, and egress traffic from your instances. For more information, read Firewall rules.
+ * Represents a Firewall Rule resource. Firewall rules allow or deny ingress traffic to, and egress traffic from your instances. For more information, read Firewall rules.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Firewall}
@@ -44,7 +43,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     denied_ = java.util.Collections.emptyList();
     description_ = "";
     destinationRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    direction_ = 0;
+    direction_ = "";
     kind_ = "";
     name_ = "";
     network_ = "";
@@ -133,11 +132,11 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
               sourceServiceAccounts_.add(s);
               break;
             }
-          case 889207800:
+          case 889207802:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
-              direction_ = rawValue;
+              direction_ = s;
               break;
             }
           case 1299189058:
@@ -329,9 +328,25 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_DIRECTION = 0;</code>
      */
     UNDEFINED_DIRECTION(0),
-    /** <code>EGRESS = 432880501;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that firewall should apply to outgoing traffic.
+     * </pre>
+     *
+     * <code>EGRESS = 432880501;</code>
+     */
     EGRESS(432880501),
-    /** <code>INGRESS = 516931221;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that firewall should apply to incoming traffic.
+     * </pre>
+     *
+     * <code>INGRESS = 516931221;</code>
+     */
     INGRESS(516931221),
     UNRECOGNIZED(-1),
     ;
@@ -346,9 +361,25 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_DIRECTION = 0;</code>
      */
     public static final int UNDEFINED_DIRECTION_VALUE = 0;
-    /** <code>EGRESS = 432880501;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that firewall should apply to outgoing traffic.
+     * </pre>
+     *
+     * <code>EGRESS = 432880501;</code>
+     */
     public static final int EGRESS_VALUE = 432880501;
-    /** <code>INGRESS = 516931221;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that firewall should apply to incoming traffic.
+     * </pre>
+     *
+     * <code>INGRESS = 516931221;</code>
+     */
     public static final int INGRESS_VALUE = 516931221;
 
     public final int getNumber() {
@@ -513,7 +544,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -528,7 +559,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -551,7 +582,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -646,7 +677,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -661,7 +692,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -684,7 +715,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -707,7 +738,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
+   * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Both IPv4 and IPv6 are supported.
    * </pre>
    *
    * <code>repeated string destination_ranges = 305699879;</code>
@@ -721,7 +752,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
+   * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Both IPv4 and IPv6 are supported.
    * </pre>
    *
    * <code>repeated string destination_ranges = 305699879;</code>
@@ -735,7 +766,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
+   * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Both IPv4 and IPv6 are supported.
    * </pre>
    *
    * <code>repeated string destination_ranges = 305699879;</code>
@@ -750,7 +781,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
+   * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Both IPv4 and IPv6 are supported.
    * </pre>
    *
    * <code>repeated string destination_ranges = 305699879;</code>
@@ -763,15 +794,16 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIRECTION_FIELD_NUMBER = 111150975;
-  private int direction_;
+  private volatile java.lang.Object direction_;
   /**
    *
    *
    * <pre>
    * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
+   * <code>optional string direction = 111150975;</code>
    *
    * @return Whether the direction field is set.
    */
@@ -784,33 +816,48 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
+   * <code>optional string direction = 111150975;</code>
    *
-   * @return The enum numeric value on the wire for direction.
+   * @return The direction.
    */
   @java.lang.Override
-  public int getDirectionValue() {
-    return direction_;
+  public java.lang.String getDirection() {
+    java.lang.Object ref = direction_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      direction_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
+   * <code>optional string direction = 111150975;</code>
    *
-   * @return The direction.
+   * @return The bytes for direction.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.Firewall.Direction getDirection() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Firewall.Direction result =
-        com.google.cloud.compute.v1.Firewall.Direction.valueOf(direction_);
-    return result == null ? com.google.cloud.compute.v1.Firewall.Direction.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getDirectionBytes() {
+    java.lang.Object ref = direction_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      direction_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int DISABLED_FIELD_NUMBER = 270940796;
@@ -822,7 +869,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
    * </pre>
    *
-   * <code>bool disabled = 270940796;</code>
+   * <code>optional bool disabled = 270940796;</code>
    *
    * @return Whether the disabled field is set.
    */
@@ -837,7 +884,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
    * </pre>
    *
-   * <code>bool disabled = 270940796;</code>
+   * <code>optional bool disabled = 270940796;</code>
    *
    * @return The disabled.
    */
@@ -855,7 +902,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -870,7 +917,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -888,7 +935,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#firewall for firewall rules.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -903,7 +950,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#firewall for firewall rules.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -926,7 +973,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#firewall for firewall rules.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -952,7 +999,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
+   * <code>optional .google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
    *
    * @return Whether the logConfig field is set.
    */
@@ -967,7 +1014,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
+   * <code>optional .google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
    *
    * @return The logConfig.
    */
@@ -984,7 +1031,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
+   * <code>optional .google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.FirewallLogConfigOrBuilder getLogConfigOrBuilder() {
@@ -999,10 +1046,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -1014,10 +1061,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -1037,10 +1084,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -1063,15 +1110,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used:
-   * global/networks/default
-   * If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs:
-   * - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network
-   * - projects/myproject/global/networks/my-network
-   * - global/networks/default
+   * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used: global/networks/default If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network - projects/myproject/global/networks/my-network - global/networks/default
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return Whether the network field is set.
    */
@@ -1083,15 +1125,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used:
-   * global/networks/default
-   * If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs:
-   * - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network
-   * - projects/myproject/global/networks/my-network
-   * - global/networks/default
+   * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used: global/networks/default If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network - projects/myproject/global/networks/my-network - global/networks/default
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The network.
    */
@@ -1111,15 +1148,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used:
-   * global/networks/default
-   * If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs:
-   * - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network
-   * - projects/myproject/global/networks/my-network
-   * - global/networks/default
+   * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used: global/networks/default If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network - projects/myproject/global/networks/my-network - global/networks/default
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The bytes for network.
    */
@@ -1145,7 +1177,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * Priority for this rule. This is an integer between `0` and `65535`, both inclusive. The default value is `1000`. Relative priorities determine which rule takes effect if multiple rules apply. Lower values indicate higher priority. For example, a rule with priority `0` has higher precedence than a rule with priority `1`. DENY rules take precedence over ALLOW rules if they have equal priority. Note that VPC networks have implied rules with a priority of `65535`. To avoid conflicts with the implied rules, use a priority number less than `65535`.
    * </pre>
    *
-   * <code>int32 priority = 445151652;</code>
+   * <code>optional int32 priority = 445151652;</code>
    *
    * @return Whether the priority field is set.
    */
@@ -1160,7 +1192,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * Priority for this rule. This is an integer between `0` and `65535`, both inclusive. The default value is `1000`. Relative priorities determine which rule takes effect if multiple rules apply. Lower values indicate higher priority. For example, a rule with priority `0` has higher precedence than a rule with priority `1`. DENY rules take precedence over ALLOW rules if they have equal priority. Note that VPC networks have implied rules with a priority of `65535`. To avoid conflicts with the implied rules, use a priority number less than `65535`.
    * </pre>
    *
-   * <code>int32 priority = 445151652;</code>
+   * <code>optional int32 priority = 445151652;</code>
    *
    * @return The priority.
    */
@@ -1178,7 +1210,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -1193,7 +1225,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1216,7 +1248,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1239,7 +1271,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Only IPv4 is supported.
+   * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Both IPv4 and IPv6 are supported.
    * </pre>
    *
    * <code>repeated string source_ranges = 200097658;</code>
@@ -1253,7 +1285,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Only IPv4 is supported.
+   * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Both IPv4 and IPv6 are supported.
    * </pre>
    *
    * <code>repeated string source_ranges = 200097658;</code>
@@ -1267,7 +1299,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Only IPv4 is supported.
+   * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Both IPv4 and IPv6 are supported.
    * </pre>
    *
    * <code>repeated string source_ranges = 200097658;</code>
@@ -1282,7 +1314,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Only IPv4 is supported.
+   * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Both IPv4 and IPv6 are supported.
    * </pre>
    *
    * <code>repeated string source_ranges = 200097658;</code>
@@ -1572,7 +1604,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
           output, 105100756, sourceServiceAccounts_.getRaw(i));
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeEnum(111150975, direction_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 111150975, direction_);
     }
     for (int i = 0; i < allowed_.size(); i++) {
       output.writeMessage(162398632, allowed_.get(i));
@@ -1652,7 +1684,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       size += 5 * getSourceServiceAccountsList().size();
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(111150975, direction_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(111150975, direction_);
     }
     for (int i = 0; i < allowed_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(162398632, allowed_.get(i));
@@ -1738,7 +1770,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     if (!getDestinationRangesList().equals(other.getDestinationRangesList())) return false;
     if (hasDirection() != other.hasDirection()) return false;
     if (hasDirection()) {
-      if (direction_ != other.direction_) return false;
+      if (!getDirection().equals(other.getDirection())) return false;
     }
     if (hasDisabled() != other.hasDisabled()) return false;
     if (hasDisabled()) {
@@ -1810,7 +1842,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasDirection()) {
       hash = (37 * hash) + DIRECTION_FIELD_NUMBER;
-      hash = (53 * hash) + direction_;
+      hash = (53 * hash) + getDirection().hashCode();
     }
     if (hasDisabled()) {
       hash = (37 * hash) + DISABLED_FIELD_NUMBER;
@@ -1967,8 +1999,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Firewall Rule resource.
-   * Firewall rules allow or deny ingress traffic to, and egress traffic from your instances. For more information, read Firewall rules.
+   * Represents a Firewall Rule resource. Firewall rules allow or deny ingress traffic to, and egress traffic from your instances. For more information, read Firewall rules.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Firewall}
@@ -2031,7 +2062,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000008);
       destinationRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000010);
-      direction_ = 0;
+      direction_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
       disabled_ = false;
       bitField0_ = (bitField0_ & ~0x00000040);
@@ -2312,7 +2343,9 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasDirection()) {
-        setDirection(other.getDirection());
+        bitField0_ |= 0x00000020;
+        direction_ = other.direction_;
+        onChanged();
       }
       if (other.hasDisabled()) {
         setDisabled(other.getDisabled());
@@ -2783,7 +2816,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -2797,7 +2830,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -2819,7 +2852,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -2841,7 +2874,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -2862,7 +2895,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -2879,7 +2912,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -3251,7 +3284,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -3265,7 +3298,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -3287,7 +3320,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -3309,7 +3342,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -3330,7 +3363,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -3347,7 +3380,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -3376,7 +3409,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
+     * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Both IPv4 and IPv6 are supported.
      * </pre>
      *
      * <code>repeated string destination_ranges = 305699879;</code>
@@ -3390,7 +3423,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
+     * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Both IPv4 and IPv6 are supported.
      * </pre>
      *
      * <code>repeated string destination_ranges = 305699879;</code>
@@ -3404,7 +3437,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
+     * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Both IPv4 and IPv6 are supported.
      * </pre>
      *
      * <code>repeated string destination_ranges = 305699879;</code>
@@ -3419,7 +3452,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
+     * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Both IPv4 and IPv6 are supported.
      * </pre>
      *
      * <code>repeated string destination_ranges = 305699879;</code>
@@ -3434,7 +3467,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
+     * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Both IPv4 and IPv6 are supported.
      * </pre>
      *
      * <code>repeated string destination_ranges = 305699879;</code>
@@ -3456,7 +3489,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
+     * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Both IPv4 and IPv6 are supported.
      * </pre>
      *
      * <code>repeated string destination_ranges = 305699879;</code>
@@ -3477,7 +3510,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
+     * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Both IPv4 and IPv6 are supported.
      * </pre>
      *
      * <code>repeated string destination_ranges = 305699879;</code>
@@ -3495,7 +3528,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
+     * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Both IPv4 and IPv6 are supported.
      * </pre>
      *
      * <code>repeated string destination_ranges = 305699879;</code>
@@ -3512,7 +3545,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
+     * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Both IPv4 and IPv6 are supported.
      * </pre>
      *
      * <code>repeated string destination_ranges = 305699879;</code>
@@ -3531,19 +3564,19 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int direction_ = 0;
+    private java.lang.Object direction_ = "";
     /**
      *
      *
      * <pre>
      * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
+     * <code>optional string direction = 111150975;</code>
      *
      * @return Whether the direction field is set.
      */
-    @java.lang.Override
     public boolean hasDirection() {
       return ((bitField0_ & 0x00000020) != 0);
     }
@@ -3552,29 +3585,64 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
+     * <code>optional string direction = 111150975;</code>
      *
-     * @return The enum numeric value on the wire for direction.
+     * @return The direction.
      */
-    @java.lang.Override
-    public int getDirectionValue() {
-      return direction_;
+    public java.lang.String getDirection() {
+      java.lang.Object ref = direction_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        direction_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
+     * <code>optional string direction = 111150975;</code>
      *
-     * @param value The enum numeric value on the wire for direction to set.
+     * @return The bytes for direction.
+     */
+    public com.google.protobuf.ByteString getDirectionBytes() {
+      java.lang.Object ref = direction_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        direction_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+     * Check the Direction enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string direction = 111150975;</code>
+     *
+     * @param value The direction to set.
      * @return This builder for chaining.
      */
-    public Builder setDirectionValue(int value) {
+    public Builder setDirection(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000020;
       direction_ = value;
       onChanged();
@@ -3585,37 +3653,16 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
+     * <code>optional string direction = 111150975;</code>
      *
-     * @return The direction.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Firewall.Direction getDirection() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Firewall.Direction result =
-          com.google.cloud.compute.v1.Firewall.Direction.valueOf(direction_);
-      return result == null ? com.google.cloud.compute.v1.Firewall.Direction.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
-     *
-     * @param value The direction to set.
      * @return This builder for chaining.
      */
-    public Builder setDirection(com.google.cloud.compute.v1.Firewall.Direction value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000020;
-      direction_ = value.getNumber();
+    public Builder clearDirection() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      direction_ = getDefaultInstance().getDirection();
       onChanged();
       return this;
     }
@@ -3624,15 +3671,21 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
+     * <code>optional string direction = 111150975;</code>
      *
+     * @param value The bytes for direction to set.
      * @return This builder for chaining.
      */
-    public Builder clearDirection() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      direction_ = 0;
+    public Builder setDirectionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000020;
+      direction_ = value;
       onChanged();
       return this;
     }
@@ -3645,7 +3698,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
      * </pre>
      *
-     * <code>bool disabled = 270940796;</code>
+     * <code>optional bool disabled = 270940796;</code>
      *
      * @return Whether the disabled field is set.
      */
@@ -3660,7 +3713,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
      * </pre>
      *
-     * <code>bool disabled = 270940796;</code>
+     * <code>optional bool disabled = 270940796;</code>
      *
      * @return The disabled.
      */
@@ -3675,7 +3728,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
      * </pre>
      *
-     * <code>bool disabled = 270940796;</code>
+     * <code>optional bool disabled = 270940796;</code>
      *
      * @param value The disabled to set.
      * @return This builder for chaining.
@@ -3693,7 +3746,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
      * </pre>
      *
-     * <code>bool disabled = 270940796;</code>
+     * <code>optional bool disabled = 270940796;</code>
      *
      * @return This builder for chaining.
      */
@@ -3712,7 +3765,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -3727,7 +3780,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -3742,7 +3795,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -3760,7 +3813,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -3779,7 +3832,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#firewall for firewall rules.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -3793,7 +3846,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#firewall for firewall rules.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -3815,7 +3868,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#firewall for firewall rules.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -3837,7 +3890,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#firewall for firewall rules.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -3858,7 +3911,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#firewall for firewall rules.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -3875,7 +3928,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#firewall for firewall rules.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -3904,7 +3957,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
+     * <code>optional .google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
      *
      * @return Whether the logConfig field is set.
      */
@@ -3918,7 +3971,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
+     * <code>optional .google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
      *
      * @return The logConfig.
      */
@@ -3938,7 +3991,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
+     * <code>optional .google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
      */
     public Builder setLogConfig(com.google.cloud.compute.v1.FirewallLogConfig value) {
       if (logConfigBuilder_ == null) {
@@ -3960,7 +4013,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
+     * <code>optional .google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
      */
     public Builder setLogConfig(
         com.google.cloud.compute.v1.FirewallLogConfig.Builder builderForValue) {
@@ -3980,7 +4033,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
+     * <code>optional .google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
      */
     public Builder mergeLogConfig(com.google.cloud.compute.v1.FirewallLogConfig value) {
       if (logConfigBuilder_ == null) {
@@ -4008,7 +4061,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
+     * <code>optional .google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
      */
     public Builder clearLogConfig() {
       if (logConfigBuilder_ == null) {
@@ -4027,7 +4080,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
+     * <code>optional .google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
      */
     public com.google.cloud.compute.v1.FirewallLogConfig.Builder getLogConfigBuilder() {
       bitField0_ |= 0x00000200;
@@ -4041,7 +4094,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
+     * <code>optional .google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
      */
     public com.google.cloud.compute.v1.FirewallLogConfigOrBuilder getLogConfigOrBuilder() {
       if (logConfigBuilder_ != null) {
@@ -4059,7 +4112,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
+     * <code>optional .google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.FirewallLogConfig,
@@ -4083,10 +4136,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -4097,10 +4150,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -4119,10 +4172,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -4141,10 +4194,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -4162,10 +4215,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -4179,10 +4232,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -4203,15 +4256,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used:
-     * global/networks/default
-     * If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs:
-     * - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network
-     * - projects/myproject/global/networks/my-network
-     * - global/networks/default
+     * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used: global/networks/default If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network - projects/myproject/global/networks/my-network - global/networks/default
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @return Whether the network field is set.
      */
@@ -4222,15 +4270,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used:
-     * global/networks/default
-     * If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs:
-     * - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network
-     * - projects/myproject/global/networks/my-network
-     * - global/networks/default
+     * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used: global/networks/default If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network - projects/myproject/global/networks/my-network - global/networks/default
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @return The network.
      */
@@ -4249,15 +4292,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used:
-     * global/networks/default
-     * If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs:
-     * - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network
-     * - projects/myproject/global/networks/my-network
-     * - global/networks/default
+     * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used: global/networks/default If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network - projects/myproject/global/networks/my-network - global/networks/default
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @return The bytes for network.
      */
@@ -4276,15 +4314,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used:
-     * global/networks/default
-     * If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs:
-     * - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network
-     * - projects/myproject/global/networks/my-network
-     * - global/networks/default
+     * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used: global/networks/default If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network - projects/myproject/global/networks/my-network - global/networks/default
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @param value The network to set.
      * @return This builder for chaining.
@@ -4302,15 +4335,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used:
-     * global/networks/default
-     * If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs:
-     * - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network
-     * - projects/myproject/global/networks/my-network
-     * - global/networks/default
+     * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used: global/networks/default If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network - projects/myproject/global/networks/my-network - global/networks/default
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @return This builder for chaining.
      */
@@ -4324,15 +4352,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used:
-     * global/networks/default
-     * If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs:
-     * - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network
-     * - projects/myproject/global/networks/my-network
-     * - global/networks/default
+     * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used: global/networks/default If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network - projects/myproject/global/networks/my-network - global/networks/default
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @param value The bytes for network to set.
      * @return This builder for chaining.
@@ -4356,7 +4379,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * Priority for this rule. This is an integer between `0` and `65535`, both inclusive. The default value is `1000`. Relative priorities determine which rule takes effect if multiple rules apply. Lower values indicate higher priority. For example, a rule with priority `0` has higher precedence than a rule with priority `1`. DENY rules take precedence over ALLOW rules if they have equal priority. Note that VPC networks have implied rules with a priority of `65535`. To avoid conflicts with the implied rules, use a priority number less than `65535`.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>optional int32 priority = 445151652;</code>
      *
      * @return Whether the priority field is set.
      */
@@ -4371,7 +4394,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * Priority for this rule. This is an integer between `0` and `65535`, both inclusive. The default value is `1000`. Relative priorities determine which rule takes effect if multiple rules apply. Lower values indicate higher priority. For example, a rule with priority `0` has higher precedence than a rule with priority `1`. DENY rules take precedence over ALLOW rules if they have equal priority. Note that VPC networks have implied rules with a priority of `65535`. To avoid conflicts with the implied rules, use a priority number less than `65535`.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>optional int32 priority = 445151652;</code>
      *
      * @return The priority.
      */
@@ -4386,7 +4409,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * Priority for this rule. This is an integer between `0` and `65535`, both inclusive. The default value is `1000`. Relative priorities determine which rule takes effect if multiple rules apply. Lower values indicate higher priority. For example, a rule with priority `0` has higher precedence than a rule with priority `1`. DENY rules take precedence over ALLOW rules if they have equal priority. Note that VPC networks have implied rules with a priority of `65535`. To avoid conflicts with the implied rules, use a priority number less than `65535`.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>optional int32 priority = 445151652;</code>
      *
      * @param value The priority to set.
      * @return This builder for chaining.
@@ -4404,7 +4427,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * Priority for this rule. This is an integer between `0` and `65535`, both inclusive. The default value is `1000`. Relative priorities determine which rule takes effect if multiple rules apply. Lower values indicate higher priority. For example, a rule with priority `0` has higher precedence than a rule with priority `1`. DENY rules take precedence over ALLOW rules if they have equal priority. Note that VPC networks have implied rules with a priority of `65535`. To avoid conflicts with the implied rules, use a priority number less than `65535`.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>optional int32 priority = 445151652;</code>
      *
      * @return This builder for chaining.
      */
@@ -4423,7 +4446,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -4437,7 +4460,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -4459,7 +4482,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -4481,7 +4504,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -4502,7 +4525,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -4519,7 +4542,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -4548,7 +4571,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Only IPv4 is supported.
+     * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Both IPv4 and IPv6 are supported.
      * </pre>
      *
      * <code>repeated string source_ranges = 200097658;</code>
@@ -4562,7 +4585,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Only IPv4 is supported.
+     * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Both IPv4 and IPv6 are supported.
      * </pre>
      *
      * <code>repeated string source_ranges = 200097658;</code>
@@ -4576,7 +4599,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Only IPv4 is supported.
+     * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Both IPv4 and IPv6 are supported.
      * </pre>
      *
      * <code>repeated string source_ranges = 200097658;</code>
@@ -4591,7 +4614,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Only IPv4 is supported.
+     * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Both IPv4 and IPv6 are supported.
      * </pre>
      *
      * <code>repeated string source_ranges = 200097658;</code>
@@ -4606,7 +4629,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Only IPv4 is supported.
+     * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Both IPv4 and IPv6 are supported.
      * </pre>
      *
      * <code>repeated string source_ranges = 200097658;</code>
@@ -4628,7 +4651,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Only IPv4 is supported.
+     * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Both IPv4 and IPv6 are supported.
      * </pre>
      *
      * <code>repeated string source_ranges = 200097658;</code>
@@ -4649,7 +4672,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Only IPv4 is supported.
+     * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Both IPv4 and IPv6 are supported.
      * </pre>
      *
      * <code>repeated string source_ranges = 200097658;</code>
@@ -4667,7 +4690,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Only IPv4 is supported.
+     * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Both IPv4 and IPv6 are supported.
      * </pre>
      *
      * <code>repeated string source_ranges = 200097658;</code>
@@ -4684,7 +4707,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Only IPv4 is supported.
+     * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Both IPv4 and IPv6 are supported.
      * </pre>
      *
      * <code>repeated string source_ranges = 200097658;</code>

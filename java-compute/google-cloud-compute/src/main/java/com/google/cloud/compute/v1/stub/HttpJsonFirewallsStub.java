@@ -25,11 +25,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteFirewallRequest;
 import com.google.cloud.compute.v1.Firewall;
@@ -38,8 +40,10 @@ import com.google.cloud.compute.v1.GetFirewallRequest;
 import com.google.cloud.compute.v1.InsertFirewallRequest;
 import com.google.cloud.compute.v1.ListFirewallsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchFirewallRequest;
 import com.google.cloud.compute.v1.UpdateFirewallRequest;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -57,6 +61,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonFirewallsStub extends FirewallsStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<DeleteFirewallRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteFirewallRequest, Operation>newBuilder()
@@ -89,7 +96,20 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteFirewallRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetFirewallRequest, Firewall> getMethodDescriptor =
@@ -120,6 +140,7 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Firewall>newBuilder()
                   .setDefaultInstance(Firewall.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -157,7 +178,20 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertFirewallRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListFirewallsRequest, FirewallList>
@@ -207,6 +241,7 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<FirewallList>newBuilder()
                       .setDefaultInstance(FirewallList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -244,7 +279,20 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (PatchFirewallRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<UpdateFirewallRequest, Operation>
@@ -282,18 +330,40 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (UpdateFirewallRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<DeleteFirewallRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteFirewallRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetFirewallRequest, Firewall> getCallable;
   private final UnaryCallable<InsertFirewallRequest, Operation> insertCallable;
+  private final OperationCallable<InsertFirewallRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListFirewallsRequest, FirewallList> listCallable;
   private final UnaryCallable<ListFirewallsRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<PatchFirewallRequest, Operation> patchCallable;
+  private final OperationCallable<PatchFirewallRequest, Operation, Operation>
+      patchOperationCallable;
   private final UnaryCallable<UpdateFirewallRequest, Operation> updateCallable;
+  private final OperationCallable<UpdateFirewallRequest, Operation, Operation>
+      updateOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonFirewallsStub create(FirewallsStubSettings settings)
@@ -332,41 +402,61 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<DeleteFirewallRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteFirewallRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetFirewallRequest, Firewall> getTransportSettings =
         HttpJsonCallSettings.<GetFirewallRequest, Firewall>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertFirewallRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertFirewallRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListFirewallsRequest, FirewallList> listTransportSettings =
         HttpJsonCallSettings.<ListFirewallsRequest, FirewallList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<PatchFirewallRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchFirewallRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<UpdateFirewallRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateFirewallRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -376,9 +466,21 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
+    this.updateOperationCallable =
+        callableFactory.createOperationCallable(
+            updateTransportSettings,
+            settings.updateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -402,6 +504,11 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
   }
 
   @Override
+  public OperationCallable<DeleteFirewallRequest, Operation, Operation> deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetFirewallRequest, Firewall> getCallable() {
     return getCallable;
   }
@@ -409,6 +516,11 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
   @Override
   public UnaryCallable<InsertFirewallRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertFirewallRequest, Operation, Operation> insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -427,8 +539,18 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
   }
 
   @Override
+  public OperationCallable<PatchFirewallRequest, Operation, Operation> patchOperationCallable() {
+    return patchOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateFirewallRequest, Operation> updateCallable() {
     return updateCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateFirewallRequest, Operation, Operation> updateOperationCallable() {
+    return updateOperationCallable;
   }
 
   @Override

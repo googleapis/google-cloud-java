@@ -30,7 +30,7 @@ public interface TargetTcpProxiesSetBackendServiceRequestOrBuilder
    * The URL of the new BackendService resource for the targetTcpProxy.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>optional string service = 373540533;</code>
    *
    * @return Whether the service field is set.
    */
@@ -42,7 +42,7 @@ public interface TargetTcpProxiesSetBackendServiceRequestOrBuilder
    * The URL of the new BackendService resource for the targetTcpProxy.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>optional string service = 373540533;</code>
    *
    * @return The service.
    */
@@ -54,7 +54,7 @@ public interface TargetTcpProxiesSetBackendServiceRequestOrBuilder
    * The URL of the new BackendService resource for the targetTcpProxy.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>optional string service = 373540533;</code>
    *
    * @return The bytes for service.
    */

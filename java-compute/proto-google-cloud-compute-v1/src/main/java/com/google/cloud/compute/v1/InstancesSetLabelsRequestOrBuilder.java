@@ -30,7 +30,7 @@ public interface InstancesSetLabelsRequestOrBuilder
    * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return Whether the labelFingerprint field is set.
    */
@@ -42,7 +42,7 @@ public interface InstancesSetLabelsRequestOrBuilder
    * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return The labelFingerprint.
    */
@@ -54,7 +54,7 @@ public interface InstancesSetLabelsRequestOrBuilder
    * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return The bytes for labelFingerprint.
    */

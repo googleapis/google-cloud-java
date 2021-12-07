@@ -30,7 +30,7 @@ public interface ServiceAccountOrBuilder
    * Email address of the service account.
    * </pre>
    *
-   * <code>string email = 96619420;</code>
+   * <code>optional string email = 96619420;</code>
    *
    * @return Whether the email field is set.
    */
@@ -42,7 +42,7 @@ public interface ServiceAccountOrBuilder
    * Email address of the service account.
    * </pre>
    *
-   * <code>string email = 96619420;</code>
+   * <code>optional string email = 96619420;</code>
    *
    * @return The email.
    */
@@ -54,7 +54,7 @@ public interface ServiceAccountOrBuilder
    * Email address of the service account.
    * </pre>
    *
-   * <code>string email = 96619420;</code>
+   * <code>optional string email = 96619420;</code>
    *
    * @return The bytes for email.
    */

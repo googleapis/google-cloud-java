@@ -30,7 +30,7 @@ public interface HttpHeaderOptionOrBuilder
    * The name of the header.
    * </pre>
    *
-   * <code>string header_name = 110223613;</code>
+   * <code>optional string header_name = 110223613;</code>
    *
    * @return Whether the headerName field is set.
    */
@@ -42,7 +42,7 @@ public interface HttpHeaderOptionOrBuilder
    * The name of the header.
    * </pre>
    *
-   * <code>string header_name = 110223613;</code>
+   * <code>optional string header_name = 110223613;</code>
    *
    * @return The headerName.
    */
@@ -54,7 +54,7 @@ public interface HttpHeaderOptionOrBuilder
    * The name of the header.
    * </pre>
    *
-   * <code>string header_name = 110223613;</code>
+   * <code>optional string header_name = 110223613;</code>
    *
    * @return The bytes for headerName.
    */
@@ -67,7 +67,7 @@ public interface HttpHeaderOptionOrBuilder
    * The value of the header to add.
    * </pre>
    *
-   * <code>string header_value = 203094335;</code>
+   * <code>optional string header_value = 203094335;</code>
    *
    * @return Whether the headerValue field is set.
    */
@@ -79,7 +79,7 @@ public interface HttpHeaderOptionOrBuilder
    * The value of the header to add.
    * </pre>
    *
-   * <code>string header_value = 203094335;</code>
+   * <code>optional string header_value = 203094335;</code>
    *
    * @return The headerValue.
    */
@@ -91,7 +91,7 @@ public interface HttpHeaderOptionOrBuilder
    * The value of the header to add.
    * </pre>
    *
-   * <code>string header_value = 203094335;</code>
+   * <code>optional string header_value = 203094335;</code>
    *
    * @return The bytes for headerValue.
    */
@@ -101,11 +101,10 @@ public interface HttpHeaderOptionOrBuilder
    *
    *
    * <pre>
-   * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header.
-   * The default value is false.
+   * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header. The default value is false.
    * </pre>
    *
-   * <code>bool replace = 20755124;</code>
+   * <code>optional bool replace = 20755124;</code>
    *
    * @return Whether the replace field is set.
    */
@@ -114,11 +113,10 @@ public interface HttpHeaderOptionOrBuilder
    *
    *
    * <pre>
-   * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header.
-   * The default value is false.
+   * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header. The default value is false.
    * </pre>
    *
-   * <code>bool replace = 20755124;</code>
+   * <code>optional bool replace = 20755124;</code>
    *
    * @return The replace.
    */

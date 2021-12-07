@@ -82,7 +82,7 @@ public interface InstanceGroupManagersListManagedInstancesResponseOrBuilder
    * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
    * </pre>
    *
-   * <code>string next_page_token = 79797525;</code>
+   * <code>optional string next_page_token = 79797525;</code>
    *
    * @return Whether the nextPageToken field is set.
    */
@@ -94,7 +94,7 @@ public interface InstanceGroupManagersListManagedInstancesResponseOrBuilder
    * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
    * </pre>
    *
-   * <code>string next_page_token = 79797525;</code>
+   * <code>optional string next_page_token = 79797525;</code>
    *
    * @return The nextPageToken.
    */
@@ -106,7 +106,7 @@ public interface InstanceGroupManagersListManagedInstancesResponseOrBuilder
    * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
    * </pre>
    *
-   * <code>string next_page_token = 79797525;</code>
+   * <code>optional string next_page_token = 79797525;</code>
    *
    * @return The bytes for nextPageToken.
    */

@@ -81,7 +81,7 @@ public interface FirewallOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -93,7 +93,7 @@ public interface FirewallOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -105,7 +105,7 @@ public interface FirewallOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -169,7 +169,7 @@ public interface FirewallOrBuilder
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -181,7 +181,7 @@ public interface FirewallOrBuilder
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -193,7 +193,7 @@ public interface FirewallOrBuilder
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -203,7 +203,7 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
+   * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Both IPv4 and IPv6 are supported.
    * </pre>
    *
    * <code>repeated string destination_ranges = 305699879;</code>
@@ -215,7 +215,7 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
+   * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Both IPv4 and IPv6 are supported.
    * </pre>
    *
    * <code>repeated string destination_ranges = 305699879;</code>
@@ -227,7 +227,7 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
+   * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Both IPv4 and IPv6 are supported.
    * </pre>
    *
    * <code>repeated string destination_ranges = 305699879;</code>
@@ -240,7 +240,7 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
+   * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Both IPv4 and IPv6 are supported.
    * </pre>
    *
    * <code>repeated string destination_ranges = 305699879;</code>
@@ -255,9 +255,10 @@ public interface FirewallOrBuilder
    *
    * <pre>
    * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
+   * <code>optional string direction = 111150975;</code>
    *
    * @return Whether the direction field is set.
    */
@@ -267,25 +268,27 @@ public interface FirewallOrBuilder
    *
    * <pre>
    * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
+   * <code>optional string direction = 111150975;</code>
    *
-   * @return The enum numeric value on the wire for direction.
+   * @return The direction.
    */
-  int getDirectionValue();
+  java.lang.String getDirection();
   /**
    *
    *
    * <pre>
    * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
+   * <code>optional string direction = 111150975;</code>
    *
-   * @return The direction.
+   * @return The bytes for direction.
    */
-  com.google.cloud.compute.v1.Firewall.Direction getDirection();
+  com.google.protobuf.ByteString getDirectionBytes();
 
   /**
    *
@@ -294,7 +297,7 @@ public interface FirewallOrBuilder
    * Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
    * </pre>
    *
-   * <code>bool disabled = 270940796;</code>
+   * <code>optional bool disabled = 270940796;</code>
    *
    * @return Whether the disabled field is set.
    */
@@ -306,7 +309,7 @@ public interface FirewallOrBuilder
    * Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
    * </pre>
    *
-   * <code>bool disabled = 270940796;</code>
+   * <code>optional bool disabled = 270940796;</code>
    *
    * @return The disabled.
    */
@@ -319,7 +322,7 @@ public interface FirewallOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -331,7 +334,7 @@ public interface FirewallOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -344,7 +347,7 @@ public interface FirewallOrBuilder
    * [Output Only] Type of the resource. Always compute#firewall for firewall rules.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -356,7 +359,7 @@ public interface FirewallOrBuilder
    * [Output Only] Type of the resource. Always compute#firewall for firewall rules.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -368,7 +371,7 @@ public interface FirewallOrBuilder
    * [Output Only] Type of the resource. Always compute#firewall for firewall rules.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -381,7 +384,7 @@ public interface FirewallOrBuilder
    * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
+   * <code>optional .google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
    *
    * @return Whether the logConfig field is set.
    */
@@ -393,7 +396,7 @@ public interface FirewallOrBuilder
    * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
+   * <code>optional .google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
    *
    * @return The logConfig.
    */
@@ -405,7 +408,7 @@ public interface FirewallOrBuilder
    * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
+   * <code>optional .google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
    */
   com.google.cloud.compute.v1.FirewallLogConfigOrBuilder getLogConfigOrBuilder();
 
@@ -413,10 +416,10 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -425,10 +428,10 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -437,10 +440,10 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -450,15 +453,10 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used:
-   * global/networks/default
-   * If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs:
-   * - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network
-   * - projects/myproject/global/networks/my-network
-   * - global/networks/default
+   * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used: global/networks/default If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network - projects/myproject/global/networks/my-network - global/networks/default
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return Whether the network field is set.
    */
@@ -467,15 +465,10 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used:
-   * global/networks/default
-   * If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs:
-   * - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network
-   * - projects/myproject/global/networks/my-network
-   * - global/networks/default
+   * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used: global/networks/default If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network - projects/myproject/global/networks/my-network - global/networks/default
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The network.
    */
@@ -484,15 +477,10 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used:
-   * global/networks/default
-   * If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs:
-   * - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network
-   * - projects/myproject/global/networks/my-network
-   * - global/networks/default
+   * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used: global/networks/default If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network - projects/myproject/global/networks/my-network - global/networks/default
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The bytes for network.
    */
@@ -505,7 +493,7 @@ public interface FirewallOrBuilder
    * Priority for this rule. This is an integer between `0` and `65535`, both inclusive. The default value is `1000`. Relative priorities determine which rule takes effect if multiple rules apply. Lower values indicate higher priority. For example, a rule with priority `0` has higher precedence than a rule with priority `1`. DENY rules take precedence over ALLOW rules if they have equal priority. Note that VPC networks have implied rules with a priority of `65535`. To avoid conflicts with the implied rules, use a priority number less than `65535`.
    * </pre>
    *
-   * <code>int32 priority = 445151652;</code>
+   * <code>optional int32 priority = 445151652;</code>
    *
    * @return Whether the priority field is set.
    */
@@ -517,7 +505,7 @@ public interface FirewallOrBuilder
    * Priority for this rule. This is an integer between `0` and `65535`, both inclusive. The default value is `1000`. Relative priorities determine which rule takes effect if multiple rules apply. Lower values indicate higher priority. For example, a rule with priority `0` has higher precedence than a rule with priority `1`. DENY rules take precedence over ALLOW rules if they have equal priority. Note that VPC networks have implied rules with a priority of `65535`. To avoid conflicts with the implied rules, use a priority number less than `65535`.
    * </pre>
    *
-   * <code>int32 priority = 445151652;</code>
+   * <code>optional int32 priority = 445151652;</code>
    *
    * @return The priority.
    */
@@ -530,7 +518,7 @@ public interface FirewallOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -542,7 +530,7 @@ public interface FirewallOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -554,7 +542,7 @@ public interface FirewallOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -564,7 +552,7 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Only IPv4 is supported.
+   * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Both IPv4 and IPv6 are supported.
    * </pre>
    *
    * <code>repeated string source_ranges = 200097658;</code>
@@ -576,7 +564,7 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Only IPv4 is supported.
+   * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Both IPv4 and IPv6 are supported.
    * </pre>
    *
    * <code>repeated string source_ranges = 200097658;</code>
@@ -588,7 +576,7 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Only IPv4 is supported.
+   * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Both IPv4 and IPv6 are supported.
    * </pre>
    *
    * <code>repeated string source_ranges = 200097658;</code>
@@ -601,7 +589,7 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Only IPv4 is supported.
+   * If source ranges are specified, the firewall rule applies only to traffic that has a source IP address in these ranges. These ranges must be expressed in CIDR format. One or both of sourceRanges and sourceTags may be set. If both fields are set, the rule applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the rule to apply. Both IPv4 and IPv6 are supported.
    * </pre>
    *
    * <code>repeated string source_ranges = 200097658;</code>

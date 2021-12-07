@@ -118,7 +118,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
    * Number of allocated resources can be resized with minimum = 1 and maximum = 1000.
    * </pre>
    *
-   * <code>int64 specific_sku_count = 13890720;</code>
+   * <code>optional int64 specific_sku_count = 13890720;</code>
    *
    * @return Whether the specificSkuCount field is set.
    */
@@ -133,7 +133,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
    * Number of allocated resources can be resized with minimum = 1 and maximum = 1000.
    * </pre>
    *
-   * <code>int64 specific_sku_count = 13890720;</code>
+   * <code>optional int64 specific_sku_count = 13890720;</code>
    *
    * @return The specificSkuCount.
    */
@@ -480,7 +480,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
      * Number of allocated resources can be resized with minimum = 1 and maximum = 1000.
      * </pre>
      *
-     * <code>int64 specific_sku_count = 13890720;</code>
+     * <code>optional int64 specific_sku_count = 13890720;</code>
      *
      * @return Whether the specificSkuCount field is set.
      */
@@ -495,7 +495,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
      * Number of allocated resources can be resized with minimum = 1 and maximum = 1000.
      * </pre>
      *
-     * <code>int64 specific_sku_count = 13890720;</code>
+     * <code>optional int64 specific_sku_count = 13890720;</code>
      *
      * @return The specificSkuCount.
      */
@@ -510,7 +510,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
      * Number of allocated resources can be resized with minimum = 1 and maximum = 1000.
      * </pre>
      *
-     * <code>int64 specific_sku_count = 13890720;</code>
+     * <code>optional int64 specific_sku_count = 13890720;</code>
      *
      * @param value The specificSkuCount to set.
      * @return This builder for chaining.
@@ -528,7 +528,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
      * Number of allocated resources can be resized with minimum = 1 and maximum = 1000.
      * </pre>
      *
-     * <code>int64 specific_sku_count = 13890720;</code>
+     * <code>optional int64 specific_sku_count = 13890720;</code>
      *
      * @return This builder for chaining.
      */

@@ -30,7 +30,8 @@ public interface InstanceOrBuilder
    * Controls for advanced machine-related behavior features.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+   * <code>
+   * optional .google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
    * </code>
    *
    * @return Whether the advancedMachineFeatures field is set.
@@ -43,7 +44,8 @@ public interface InstanceOrBuilder
    * Controls for advanced machine-related behavior features.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+   * <code>
+   * optional .google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
    * </code>
    *
    * @return The advancedMachineFeatures.
@@ -56,7 +58,8 @@ public interface InstanceOrBuilder
    * Controls for advanced machine-related behavior features.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+   * <code>
+   * optional .google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
    * </code>
    */
   com.google.cloud.compute.v1.AdvancedMachineFeaturesOrBuilder
@@ -66,10 +69,10 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding.
+   * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding .
    * </pre>
    *
-   * <code>bool can_ip_forward = 467731324;</code>
+   * <code>optional bool can_ip_forward = 467731324;</code>
    *
    * @return Whether the canIpForward field is set.
    */
@@ -78,10 +81,10 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding.
+   * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding .
    * </pre>
    *
-   * <code>bool can_ip_forward = 467731324;</code>
+   * <code>optional bool can_ip_forward = 467731324;</code>
    *
    * @return The canIpForward.
    */
@@ -89,7 +92,7 @@ public interface InstanceOrBuilder
 
   /**
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+   * optional .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
    * </code>
    *
    * @return Whether the confidentialInstanceConfig field is set.
@@ -97,7 +100,7 @@ public interface InstanceOrBuilder
   boolean hasConfidentialInstanceConfig();
   /**
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+   * optional .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
    * </code>
    *
    * @return The confidentialInstanceConfig.
@@ -105,7 +108,7 @@ public interface InstanceOrBuilder
   com.google.cloud.compute.v1.ConfidentialInstanceConfig getConfidentialInstanceConfig();
   /**
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+   * optional .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
    * </code>
    */
   com.google.cloud.compute.v1.ConfidentialInstanceConfigOrBuilder
@@ -118,7 +121,7 @@ public interface InstanceOrBuilder
    * [Output Only] The CPU platform used by this instance.
    * </pre>
    *
-   * <code>string cpu_platform = 410285354;</code>
+   * <code>optional string cpu_platform = 410285354;</code>
    *
    * @return Whether the cpuPlatform field is set.
    */
@@ -130,7 +133,7 @@ public interface InstanceOrBuilder
    * [Output Only] The CPU platform used by this instance.
    * </pre>
    *
-   * <code>string cpu_platform = 410285354;</code>
+   * <code>optional string cpu_platform = 410285354;</code>
    *
    * @return The cpuPlatform.
    */
@@ -142,7 +145,7 @@ public interface InstanceOrBuilder
    * [Output Only] The CPU platform used by this instance.
    * </pre>
    *
-   * <code>string cpu_platform = 410285354;</code>
+   * <code>optional string cpu_platform = 410285354;</code>
    *
    * @return The bytes for cpuPlatform.
    */
@@ -155,7 +158,7 @@ public interface InstanceOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -167,7 +170,7 @@ public interface InstanceOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -179,7 +182,7 @@ public interface InstanceOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -192,7 +195,7 @@ public interface InstanceOrBuilder
    * Whether the resource should be protected against deletion.
    * </pre>
    *
-   * <code>bool deletion_protection = 458014698;</code>
+   * <code>optional bool deletion_protection = 458014698;</code>
    *
    * @return Whether the deletionProtection field is set.
    */
@@ -204,7 +207,7 @@ public interface InstanceOrBuilder
    * Whether the resource should be protected against deletion.
    * </pre>
    *
-   * <code>bool deletion_protection = 458014698;</code>
+   * <code>optional bool deletion_protection = 458014698;</code>
    *
    * @return The deletionProtection.
    */
@@ -217,7 +220,7 @@ public interface InstanceOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -229,7 +232,7 @@ public interface InstanceOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -241,7 +244,7 @@ public interface InstanceOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -306,7 +309,7 @@ public interface InstanceOrBuilder
    * Enables display device for the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DisplayDevice display_device = 258933875;</code>
+   * <code>optional .google.cloud.compute.v1.DisplayDevice display_device = 258933875;</code>
    *
    * @return Whether the displayDevice field is set.
    */
@@ -318,7 +321,7 @@ public interface InstanceOrBuilder
    * Enables display device for the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DisplayDevice display_device = 258933875;</code>
+   * <code>optional .google.cloud.compute.v1.DisplayDevice display_device = 258933875;</code>
    *
    * @return The displayDevice.
    */
@@ -330,7 +333,7 @@ public interface InstanceOrBuilder
    * Enables display device for the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DisplayDevice display_device = 258933875;</code>
+   * <code>optional .google.cloud.compute.v1.DisplayDevice display_device = 258933875;</code>
    */
   com.google.cloud.compute.v1.DisplayDeviceOrBuilder getDisplayDeviceOrBuilder();
 
@@ -338,11 +341,10 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance.
-   * To see the latest fingerprint, make get() request to the instance.
+   * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return Whether the fingerprint field is set.
    */
@@ -351,11 +353,10 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance.
-   * To see the latest fingerprint, make get() request to the instance.
+   * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The fingerprint.
    */
@@ -364,11 +365,10 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance.
-   * To see the latest fingerprint, make get() request to the instance.
+   * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The bytes for fingerprint.
    */
@@ -438,7 +438,7 @@ public interface InstanceOrBuilder
    * Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
    * </pre>
    *
-   * <code>string hostname = 237067315;</code>
+   * <code>optional string hostname = 237067315;</code>
    *
    * @return Whether the hostname field is set.
    */
@@ -450,7 +450,7 @@ public interface InstanceOrBuilder
    * Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
    * </pre>
    *
-   * <code>string hostname = 237067315;</code>
+   * <code>optional string hostname = 237067315;</code>
    *
    * @return The hostname.
    */
@@ -462,7 +462,7 @@ public interface InstanceOrBuilder
    * Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
    * </pre>
    *
-   * <code>string hostname = 237067315;</code>
+   * <code>optional string hostname = 237067315;</code>
    *
    * @return The bytes for hostname.
    */
@@ -475,7 +475,7 @@ public interface InstanceOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -487,7 +487,7 @@ public interface InstanceOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -500,7 +500,7 @@ public interface InstanceOrBuilder
    * [Output Only] Type of the resource. Always compute#instance for instances.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -512,7 +512,7 @@ public interface InstanceOrBuilder
    * [Output Only] Type of the resource. Always compute#instance for instances.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -524,7 +524,7 @@ public interface InstanceOrBuilder
    * [Output Only] Type of the resource. Always compute#instance for instances.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -534,11 +534,10 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels.
-   * To see the latest fingerprint, make get() request to the instance.
+   * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return Whether the labelFingerprint field is set.
    */
@@ -547,11 +546,10 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels.
-   * To see the latest fingerprint, make get() request to the instance.
+   * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return The labelFingerprint.
    */
@@ -560,11 +558,10 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels.
-   * To see the latest fingerprint, make get() request to the instance.
+   * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return The bytes for labelFingerprint.
    */
@@ -631,7 +628,7 @@ public interface InstanceOrBuilder
    * [Output Only] Last start timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_start_timestamp = 443830736;</code>
+   * <code>optional string last_start_timestamp = 443830736;</code>
    *
    * @return Whether the lastStartTimestamp field is set.
    */
@@ -643,7 +640,7 @@ public interface InstanceOrBuilder
    * [Output Only] Last start timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_start_timestamp = 443830736;</code>
+   * <code>optional string last_start_timestamp = 443830736;</code>
    *
    * @return The lastStartTimestamp.
    */
@@ -655,7 +652,7 @@ public interface InstanceOrBuilder
    * [Output Only] Last start timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_start_timestamp = 443830736;</code>
+   * <code>optional string last_start_timestamp = 443830736;</code>
    *
    * @return The bytes for lastStartTimestamp.
    */
@@ -668,7 +665,7 @@ public interface InstanceOrBuilder
    * [Output Only] Last stop timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_stop_timestamp = 412823010;</code>
+   * <code>optional string last_stop_timestamp = 412823010;</code>
    *
    * @return Whether the lastStopTimestamp field is set.
    */
@@ -680,7 +677,7 @@ public interface InstanceOrBuilder
    * [Output Only] Last stop timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_stop_timestamp = 412823010;</code>
+   * <code>optional string last_stop_timestamp = 412823010;</code>
    *
    * @return The lastStopTimestamp.
    */
@@ -692,7 +689,7 @@ public interface InstanceOrBuilder
    * [Output Only] Last stop timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_stop_timestamp = 412823010;</code>
+   * <code>optional string last_stop_timestamp = 412823010;</code>
    *
    * @return The bytes for lastStopTimestamp.
    */
@@ -705,7 +702,7 @@ public interface InstanceOrBuilder
    * [Output Only] Last suspended timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_suspended_timestamp = 356275337;</code>
+   * <code>optional string last_suspended_timestamp = 356275337;</code>
    *
    * @return Whether the lastSuspendedTimestamp field is set.
    */
@@ -717,7 +714,7 @@ public interface InstanceOrBuilder
    * [Output Only] Last suspended timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_suspended_timestamp = 356275337;</code>
+   * <code>optional string last_suspended_timestamp = 356275337;</code>
    *
    * @return The lastSuspendedTimestamp.
    */
@@ -729,7 +726,7 @@ public interface InstanceOrBuilder
    * [Output Only] Last suspended timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_suspended_timestamp = 356275337;</code>
+   * <code>optional string last_suspended_timestamp = 356275337;</code>
    *
    * @return The bytes for lastSuspendedTimestamp.
    */
@@ -739,15 +736,10 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type:
-   * zones/us-central1-f/machineTypes/n1-standard-1
-   * To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB):
-   * zones/zone/machineTypes/custom-CPUS-MEMORY
-   * For example: zones/us-central1-f/machineTypes/custom-4-5120
-   * For a full list of restrictions, read the Specifications for custom machine types.
+   * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
    * </pre>
    *
-   * <code>string machine_type = 227711026;</code>
+   * <code>optional string machine_type = 227711026;</code>
    *
    * @return Whether the machineType field is set.
    */
@@ -756,15 +748,10 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type:
-   * zones/us-central1-f/machineTypes/n1-standard-1
-   * To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB):
-   * zones/zone/machineTypes/custom-CPUS-MEMORY
-   * For example: zones/us-central1-f/machineTypes/custom-4-5120
-   * For a full list of restrictions, read the Specifications for custom machine types.
+   * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
    * </pre>
    *
-   * <code>string machine_type = 227711026;</code>
+   * <code>optional string machine_type = 227711026;</code>
    *
    * @return The machineType.
    */
@@ -773,15 +760,10 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type:
-   * zones/us-central1-f/machineTypes/n1-standard-1
-   * To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB):
-   * zones/zone/machineTypes/custom-CPUS-MEMORY
-   * For example: zones/us-central1-f/machineTypes/custom-4-5120
-   * For a full list of restrictions, read the Specifications for custom machine types.
+   * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
    * </pre>
    *
-   * <code>string machine_type = 227711026;</code>
+   * <code>optional string machine_type = 227711026;</code>
    *
    * @return The bytes for machineType.
    */
@@ -794,7 +776,7 @@ public interface InstanceOrBuilder
    * The metadata key/value pairs assigned to this instance. This includes custom metadata and predefined keys.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Metadata metadata = 86866735;</code>
+   * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
    *
    * @return Whether the metadata field is set.
    */
@@ -806,7 +788,7 @@ public interface InstanceOrBuilder
    * The metadata key/value pairs assigned to this instance. This includes custom metadata and predefined keys.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Metadata metadata = 86866735;</code>
+   * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
    *
    * @return The metadata.
    */
@@ -818,7 +800,7 @@ public interface InstanceOrBuilder
    * The metadata key/value pairs assigned to this instance. This includes custom metadata and predefined keys.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Metadata metadata = 86866735;</code>
+   * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
    */
   com.google.cloud.compute.v1.MetadataOrBuilder getMetadataOrBuilder();
 
@@ -829,7 +811,7 @@ public interface InstanceOrBuilder
    * Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge".
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return Whether the minCpuPlatform field is set.
    */
@@ -841,7 +823,7 @@ public interface InstanceOrBuilder
    * Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge".
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return The minCpuPlatform.
    */
@@ -853,7 +835,7 @@ public interface InstanceOrBuilder
    * Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge".
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return The bytes for minCpuPlatform.
    */
@@ -866,7 +848,7 @@ public interface InstanceOrBuilder
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -878,7 +860,7 @@ public interface InstanceOrBuilder
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -890,7 +872,7 @@ public interface InstanceOrBuilder
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -952,12 +934,11 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VM. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.Instance.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
-   * </code>
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
    *
    * @return Whether the privateIpv6GoogleAccess field is set.
    */
@@ -966,30 +947,28 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VM. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.Instance.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
-   * </code>
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
    *
-   * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
+   * @return The privateIpv6GoogleAccess.
    */
-  int getPrivateIpv6GoogleAccessValue();
+  java.lang.String getPrivateIpv6GoogleAccess();
   /**
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VM. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.Instance.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
-   * </code>
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
    *
-   * @return The privateIpv6GoogleAccess.
+   * @return The bytes for privateIpv6GoogleAccess.
    */
-  com.google.cloud.compute.v1.Instance.PrivateIpv6GoogleAccess getPrivateIpv6GoogleAccess();
+  com.google.protobuf.ByteString getPrivateIpv6GoogleAccessBytes();
 
   /**
    *
@@ -998,7 +977,8 @@ public interface InstanceOrBuilder
    * Specifies the reservations that this instance can consume from.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;</code>
+   * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
+   * </code>
    *
    * @return Whether the reservationAffinity field is set.
    */
@@ -1010,7 +990,8 @@ public interface InstanceOrBuilder
    * Specifies the reservations that this instance can consume from.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;</code>
+   * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
+   * </code>
    *
    * @return The reservationAffinity.
    */
@@ -1022,7 +1003,8 @@ public interface InstanceOrBuilder
    * Specifies the reservations that this instance can consume from.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;</code>
+   * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
+   * </code>
    */
   com.google.cloud.compute.v1.ReservationAffinityOrBuilder getReservationAffinityOrBuilder();
 
@@ -1084,7 +1066,7 @@ public interface InstanceOrBuilder
    * [Output Only] Reserved for future use.
    * </pre>
    *
-   * <code>bool satisfies_pzs = 480964267;</code>
+   * <code>optional bool satisfies_pzs = 480964267;</code>
    *
    * @return Whether the satisfiesPzs field is set.
    */
@@ -1096,7 +1078,7 @@ public interface InstanceOrBuilder
    * [Output Only] Reserved for future use.
    * </pre>
    *
-   * <code>bool satisfies_pzs = 480964267;</code>
+   * <code>optional bool satisfies_pzs = 480964267;</code>
    *
    * @return The satisfiesPzs.
    */
@@ -1109,7 +1091,7 @@ public interface InstanceOrBuilder
    * Sets the scheduling options for this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+   * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
    *
    * @return Whether the scheduling field is set.
    */
@@ -1121,7 +1103,7 @@ public interface InstanceOrBuilder
    * Sets the scheduling options for this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+   * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
    *
    * @return The scheduling.
    */
@@ -1133,7 +1115,7 @@ public interface InstanceOrBuilder
    * Sets the scheduling options for this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+   * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
    */
   com.google.cloud.compute.v1.SchedulingOrBuilder getSchedulingOrBuilder();
 
@@ -1144,7 +1126,7 @@ public interface InstanceOrBuilder
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -1156,7 +1138,7 @@ public interface InstanceOrBuilder
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1168,7 +1150,7 @@ public interface InstanceOrBuilder
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1178,8 +1160,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-   * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -1189,8 +1170,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-   * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -1200,8 +1180,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-   * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -1211,8 +1190,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-   * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -1223,8 +1201,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-   * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -1232,28 +1209,31 @@ public interface InstanceOrBuilder
   com.google.cloud.compute.v1.ServiceAccountOrBuilder getServiceAccountsOrBuilder(int index);
 
   /**
-   * <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
    * </code>
    *
    * @return Whether the shieldedInstanceConfig field is set.
    */
   boolean hasShieldedInstanceConfig();
   /**
-   * <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
    * </code>
    *
    * @return The shieldedInstanceConfig.
    */
   com.google.cloud.compute.v1.ShieldedInstanceConfig getShieldedInstanceConfig();
   /**
-   * <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
    * </code>
    */
   com.google.cloud.compute.v1.ShieldedInstanceConfigOrBuilder getShieldedInstanceConfigOrBuilder();
 
   /**
    * <code>
-   * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy = 163696919;
+   * optional .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy = 163696919;
    * </code>
    *
    * @return Whether the shieldedInstanceIntegrityPolicy field is set.
@@ -1261,7 +1241,7 @@ public interface InstanceOrBuilder
   boolean hasShieldedInstanceIntegrityPolicy();
   /**
    * <code>
-   * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy = 163696919;
+   * optional .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy = 163696919;
    * </code>
    *
    * @return The shieldedInstanceIntegrityPolicy.
@@ -1269,7 +1249,7 @@ public interface InstanceOrBuilder
   com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy getShieldedInstanceIntegrityPolicy();
   /**
    * <code>
-   * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy = 163696919;
+   * optional .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy = 163696919;
    * </code>
    */
   com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicyOrBuilder
@@ -1282,7 +1262,7 @@ public interface InstanceOrBuilder
    * [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity.
    * </pre>
    *
-   * <code>bool start_restricted = 123693144;</code>
+   * <code>optional bool start_restricted = 123693144;</code>
    *
    * @return Whether the startRestricted field is set.
    */
@@ -1294,7 +1274,7 @@ public interface InstanceOrBuilder
    * [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity.
    * </pre>
    *
-   * <code>bool start_restricted = 123693144;</code>
+   * <code>optional bool start_restricted = 123693144;</code>
    *
    * @return The startRestricted.
    */
@@ -1304,10 +1284,11 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see  Instance life cycle.
+   * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Instance.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -1316,26 +1297,28 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see  Instance life cycle.
+   * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Instance.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see  Instance life cycle.
+   * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Instance.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1.Instance.Status getStatus();
+  com.google.protobuf.ByteString getStatusBytes();
 
   /**
    *
@@ -1344,7 +1327,7 @@ public interface InstanceOrBuilder
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return Whether the statusMessage field is set.
    */
@@ -1356,7 +1339,7 @@ public interface InstanceOrBuilder
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return The statusMessage.
    */
@@ -1368,7 +1351,7 @@ public interface InstanceOrBuilder
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return The bytes for statusMessage.
    */
@@ -1381,7 +1364,7 @@ public interface InstanceOrBuilder
    * Tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple tags can be specified via the 'tags.items' field.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Tags tags = 3552281;</code>
+   * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
    *
    * @return Whether the tags field is set.
    */
@@ -1393,7 +1376,7 @@ public interface InstanceOrBuilder
    * Tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple tags can be specified via the 'tags.items' field.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Tags tags = 3552281;</code>
+   * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
    *
    * @return The tags.
    */
@@ -1405,7 +1388,7 @@ public interface InstanceOrBuilder
    * Tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple tags can be specified via the 'tags.items' field.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Tags tags = 3552281;</code>
+   * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
    */
   com.google.cloud.compute.v1.TagsOrBuilder getTagsOrBuilder();
 
@@ -1416,7 +1399,7 @@ public interface InstanceOrBuilder
    * [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return Whether the zone field is set.
    */
@@ -1428,7 +1411,7 @@ public interface InstanceOrBuilder
    * [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The zone.
    */
@@ -1440,7 +1423,7 @@ public interface InstanceOrBuilder
    * [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The bytes for zone.
    */

@@ -170,7 +170,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Type of the resource. Always compute#guestAttributes for guest attributes entry.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -185,7 +185,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Type of the resource. Always compute#guestAttributes for guest attributes entry.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -208,7 +208,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Type of the resource. Always compute#guestAttributes for guest attributes entry.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -231,10 +231,10 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
+   * The path to be queried. This can be the default namespace ('') or a nested namespace ('&#92;/') or a specified key ('&#92;/&#92;').
    * </pre>
    *
-   * <code>string query_path = 368591164;</code>
+   * <code>optional string query_path = 368591164;</code>
    *
    * @return Whether the queryPath field is set.
    */
@@ -246,10 +246,10 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
+   * The path to be queried. This can be the default namespace ('') or a nested namespace ('&#92;/') or a specified key ('&#92;/&#92;').
    * </pre>
    *
-   * <code>string query_path = 368591164;</code>
+   * <code>optional string query_path = 368591164;</code>
    *
    * @return The queryPath.
    */
@@ -269,10 +269,10 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
+   * The path to be queried. This can be the default namespace ('') or a nested namespace ('&#92;/') or a specified key ('&#92;/&#92;').
    * </pre>
    *
-   * <code>string query_path = 368591164;</code>
+   * <code>optional string query_path = 368591164;</code>
    *
    * @return The bytes for queryPath.
    */
@@ -298,7 +298,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    * [Output Only] The value of the requested queried path.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
+   * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
    *
    * @return Whether the queryValue field is set.
    */
@@ -313,7 +313,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    * [Output Only] The value of the requested queried path.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
+   * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
    *
    * @return The queryValue.
    */
@@ -330,7 +330,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    * [Output Only] The value of the requested queried path.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
+   * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.GuestAttributesValueOrBuilder getQueryValueOrBuilder() {
@@ -348,7 +348,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -363,7 +363,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -386,7 +386,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -412,7 +412,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    * The key to search for.
    * </pre>
    *
-   * <code>string variable_key = 164364828;</code>
+   * <code>optional string variable_key = 164364828;</code>
    *
    * @return Whether the variableKey field is set.
    */
@@ -427,7 +427,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    * The key to search for.
    * </pre>
    *
-   * <code>string variable_key = 164364828;</code>
+   * <code>optional string variable_key = 164364828;</code>
    *
    * @return The variableKey.
    */
@@ -450,7 +450,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    * The key to search for.
    * </pre>
    *
-   * <code>string variable_key = 164364828;</code>
+   * <code>optional string variable_key = 164364828;</code>
    *
    * @return The bytes for variableKey.
    */
@@ -476,7 +476,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    * [Output Only] The value found for the requested key.
    * </pre>
    *
-   * <code>string variable_value = 124582382;</code>
+   * <code>optional string variable_value = 124582382;</code>
    *
    * @return Whether the variableValue field is set.
    */
@@ -491,7 +491,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    * [Output Only] The value found for the requested key.
    * </pre>
    *
-   * <code>string variable_value = 124582382;</code>
+   * <code>optional string variable_value = 124582382;</code>
    *
    * @return The variableValue.
    */
@@ -514,7 +514,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    * [Output Only] The value found for the requested key.
    * </pre>
    *
-   * <code>string variable_value = 124582382;</code>
+   * <code>optional string variable_value = 124582382;</code>
    *
    * @return The bytes for variableValue.
    */
@@ -1002,7 +1002,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Type of the resource. Always compute#guestAttributes for guest attributes entry.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -1016,7 +1016,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Type of the resource. Always compute#guestAttributes for guest attributes entry.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -1038,7 +1038,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Type of the resource. Always compute#guestAttributes for guest attributes entry.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -1060,7 +1060,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Type of the resource. Always compute#guestAttributes for guest attributes entry.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -1081,7 +1081,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Type of the resource. Always compute#guestAttributes for guest attributes entry.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -1098,7 +1098,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Type of the resource. Always compute#guestAttributes for guest attributes entry.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -1119,10 +1119,10 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
+     * The path to be queried. This can be the default namespace ('') or a nested namespace ('&#92;/') or a specified key ('&#92;/&#92;').
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>optional string query_path = 368591164;</code>
      *
      * @return Whether the queryPath field is set.
      */
@@ -1133,10 +1133,10 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
+     * The path to be queried. This can be the default namespace ('') or a nested namespace ('&#92;/') or a specified key ('&#92;/&#92;').
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>optional string query_path = 368591164;</code>
      *
      * @return The queryPath.
      */
@@ -1155,10 +1155,10 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
+     * The path to be queried. This can be the default namespace ('') or a nested namespace ('&#92;/') or a specified key ('&#92;/&#92;').
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>optional string query_path = 368591164;</code>
      *
      * @return The bytes for queryPath.
      */
@@ -1177,10 +1177,10 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
+     * The path to be queried. This can be the default namespace ('') or a nested namespace ('&#92;/') or a specified key ('&#92;/&#92;').
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>optional string query_path = 368591164;</code>
      *
      * @param value The queryPath to set.
      * @return This builder for chaining.
@@ -1198,10 +1198,10 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
+     * The path to be queried. This can be the default namespace ('') or a nested namespace ('&#92;/') or a specified key ('&#92;/&#92;').
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>optional string query_path = 368591164;</code>
      *
      * @return This builder for chaining.
      */
@@ -1215,10 +1215,10 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
+     * The path to be queried. This can be the default namespace ('') or a nested namespace ('&#92;/') or a specified key ('&#92;/&#92;').
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>optional string query_path = 368591164;</code>
      *
      * @param value The bytes for queryPath to set.
      * @return This builder for chaining.
@@ -1247,7 +1247,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The value of the requested queried path.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
+     * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
      *
      * @return Whether the queryValue field is set.
      */
@@ -1261,7 +1261,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The value of the requested queried path.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
+     * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
      *
      * @return The queryValue.
      */
@@ -1281,7 +1281,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The value of the requested queried path.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
+     * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
      */
     public Builder setQueryValue(com.google.cloud.compute.v1.GuestAttributesValue value) {
       if (queryValueBuilder_ == null) {
@@ -1303,7 +1303,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The value of the requested queried path.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
+     * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
      */
     public Builder setQueryValue(
         com.google.cloud.compute.v1.GuestAttributesValue.Builder builderForValue) {
@@ -1323,7 +1323,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The value of the requested queried path.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
+     * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
      */
     public Builder mergeQueryValue(com.google.cloud.compute.v1.GuestAttributesValue value) {
       if (queryValueBuilder_ == null) {
@@ -1352,7 +1352,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The value of the requested queried path.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
+     * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
      */
     public Builder clearQueryValue() {
       if (queryValueBuilder_ == null) {
@@ -1371,7 +1371,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The value of the requested queried path.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
+     * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
      */
     public com.google.cloud.compute.v1.GuestAttributesValue.Builder getQueryValueBuilder() {
       bitField0_ |= 0x00000004;
@@ -1385,7 +1385,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The value of the requested queried path.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
+     * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
      */
     public com.google.cloud.compute.v1.GuestAttributesValueOrBuilder getQueryValueOrBuilder() {
       if (queryValueBuilder_ != null) {
@@ -1403,7 +1403,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The value of the requested queried path.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
+     * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.GuestAttributesValue,
@@ -1430,7 +1430,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -1444,7 +1444,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -1466,7 +1466,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -1488,7 +1488,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -1509,7 +1509,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -1526,7 +1526,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -1550,7 +1550,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * The key to search for.
      * </pre>
      *
-     * <code>string variable_key = 164364828;</code>
+     * <code>optional string variable_key = 164364828;</code>
      *
      * @return Whether the variableKey field is set.
      */
@@ -1564,7 +1564,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * The key to search for.
      * </pre>
      *
-     * <code>string variable_key = 164364828;</code>
+     * <code>optional string variable_key = 164364828;</code>
      *
      * @return The variableKey.
      */
@@ -1586,7 +1586,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * The key to search for.
      * </pre>
      *
-     * <code>string variable_key = 164364828;</code>
+     * <code>optional string variable_key = 164364828;</code>
      *
      * @return The bytes for variableKey.
      */
@@ -1608,7 +1608,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * The key to search for.
      * </pre>
      *
-     * <code>string variable_key = 164364828;</code>
+     * <code>optional string variable_key = 164364828;</code>
      *
      * @param value The variableKey to set.
      * @return This builder for chaining.
@@ -1629,7 +1629,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * The key to search for.
      * </pre>
      *
-     * <code>string variable_key = 164364828;</code>
+     * <code>optional string variable_key = 164364828;</code>
      *
      * @return This builder for chaining.
      */
@@ -1646,7 +1646,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * The key to search for.
      * </pre>
      *
-     * <code>string variable_key = 164364828;</code>
+     * <code>optional string variable_key = 164364828;</code>
      *
      * @param value The bytes for variableKey to set.
      * @return This builder for chaining.
@@ -1670,7 +1670,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The value found for the requested key.
      * </pre>
      *
-     * <code>string variable_value = 124582382;</code>
+     * <code>optional string variable_value = 124582382;</code>
      *
      * @return Whether the variableValue field is set.
      */
@@ -1684,7 +1684,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The value found for the requested key.
      * </pre>
      *
-     * <code>string variable_value = 124582382;</code>
+     * <code>optional string variable_value = 124582382;</code>
      *
      * @return The variableValue.
      */
@@ -1706,7 +1706,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The value found for the requested key.
      * </pre>
      *
-     * <code>string variable_value = 124582382;</code>
+     * <code>optional string variable_value = 124582382;</code>
      *
      * @return The bytes for variableValue.
      */
@@ -1728,7 +1728,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The value found for the requested key.
      * </pre>
      *
-     * <code>string variable_value = 124582382;</code>
+     * <code>optional string variable_value = 124582382;</code>
      *
      * @param value The variableValue to set.
      * @return This builder for chaining.
@@ -1749,7 +1749,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The value found for the requested key.
      * </pre>
      *
-     * <code>string variable_value = 124582382;</code>
+     * <code>optional string variable_value = 124582382;</code>
      *
      * @return This builder for chaining.
      */
@@ -1766,7 +1766,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The value found for the requested key.
      * </pre>
      *
-     * <code>string variable_value = 124582382;</code>
+     * <code>optional string variable_value = 124582382;</code>
      *
      * @param value The bytes for variableValue to set.
      * @return This builder for chaining.

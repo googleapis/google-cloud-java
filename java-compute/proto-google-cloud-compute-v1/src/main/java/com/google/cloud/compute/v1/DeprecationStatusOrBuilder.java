@@ -30,7 +30,7 @@ public interface DeprecationStatusOrBuilder
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DELETED. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string deleted = 476721177;</code>
+   * <code>optional string deleted = 476721177;</code>
    *
    * @return Whether the deleted field is set.
    */
@@ -42,7 +42,7 @@ public interface DeprecationStatusOrBuilder
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DELETED. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string deleted = 476721177;</code>
+   * <code>optional string deleted = 476721177;</code>
    *
    * @return The deleted.
    */
@@ -54,7 +54,7 @@ public interface DeprecationStatusOrBuilder
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DELETED. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string deleted = 476721177;</code>
+   * <code>optional string deleted = 476721177;</code>
    *
    * @return The bytes for deleted.
    */
@@ -67,7 +67,7 @@ public interface DeprecationStatusOrBuilder
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DEPRECATED. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string deprecated = 515138995;</code>
+   * <code>optional string deprecated = 515138995;</code>
    *
    * @return Whether the deprecated field is set.
    */
@@ -79,7 +79,7 @@ public interface DeprecationStatusOrBuilder
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DEPRECATED. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string deprecated = 515138995;</code>
+   * <code>optional string deprecated = 515138995;</code>
    *
    * @return The deprecated.
    */
@@ -91,7 +91,7 @@ public interface DeprecationStatusOrBuilder
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DEPRECATED. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string deprecated = 515138995;</code>
+   * <code>optional string deprecated = 515138995;</code>
    *
    * @return The bytes for deprecated.
    */
@@ -104,7 +104,7 @@ public interface DeprecationStatusOrBuilder
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to OBSOLETE. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string obsolete = 357647769;</code>
+   * <code>optional string obsolete = 357647769;</code>
    *
    * @return Whether the obsolete field is set.
    */
@@ -116,7 +116,7 @@ public interface DeprecationStatusOrBuilder
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to OBSOLETE. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string obsolete = 357647769;</code>
+   * <code>optional string obsolete = 357647769;</code>
    *
    * @return The obsolete.
    */
@@ -128,7 +128,7 @@ public interface DeprecationStatusOrBuilder
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to OBSOLETE. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string obsolete = 357647769;</code>
+   * <code>optional string obsolete = 357647769;</code>
    *
    * @return The bytes for obsolete.
    */
@@ -141,7 +141,7 @@ public interface DeprecationStatusOrBuilder
    * The URL of the suggested replacement for a deprecated resource. The suggested replacement resource must be the same kind of resource as the deprecated resource.
    * </pre>
    *
-   * <code>string replacement = 430919186;</code>
+   * <code>optional string replacement = 430919186;</code>
    *
    * @return Whether the replacement field is set.
    */
@@ -153,7 +153,7 @@ public interface DeprecationStatusOrBuilder
    * The URL of the suggested replacement for a deprecated resource. The suggested replacement resource must be the same kind of resource as the deprecated resource.
    * </pre>
    *
-   * <code>string replacement = 430919186;</code>
+   * <code>optional string replacement = 430919186;</code>
    *
    * @return The replacement.
    */
@@ -165,7 +165,7 @@ public interface DeprecationStatusOrBuilder
    * The URL of the suggested replacement for a deprecated resource. The suggested replacement resource must be the same kind of resource as the deprecated resource.
    * </pre>
    *
-   * <code>string replacement = 430919186;</code>
+   * <code>optional string replacement = 430919186;</code>
    *
    * @return The bytes for replacement.
    */
@@ -176,9 +176,10 @@ public interface DeprecationStatusOrBuilder
    *
    * <pre>
    * The deprecation state of this resource. This can be ACTIVE, DEPRECATED, OBSOLETE, or DELETED. Operations which communicate the end of life date for an image, can use ACTIVE. Operations which create a new resource using a DEPRECATED resource will return successfully, but with a warning indicating the deprecated resource and recommending its replacement. Operations which use OBSOLETE or DELETED resources will be rejected and result in an error.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
    * @return Whether the state field is set.
    */
@@ -188,23 +189,25 @@ public interface DeprecationStatusOrBuilder
    *
    * <pre>
    * The deprecation state of this resource. This can be ACTIVE, DEPRECATED, OBSOLETE, or DELETED. Operations which communicate the end of life date for an image, can use ACTIVE. Operations which create a new resource using a DEPRECATED resource will return successfully, but with a warning indicating the deprecated resource and recommending its replacement. Operations which use OBSOLETE or DELETED resources will be rejected and result in an error.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The enum numeric value on the wire for state.
+   * @return The state.
    */
-  int getStateValue();
+  java.lang.String getState();
   /**
    *
    *
    * <pre>
    * The deprecation state of this resource. This can be ACTIVE, DEPRECATED, OBSOLETE, or DELETED. Operations which communicate the end of life date for an image, can use ACTIVE. Operations which create a new resource using a DEPRECATED resource will return successfully, but with a warning indicating the deprecated resource and recommending its replacement. Operations which use OBSOLETE or DELETED resources will be rejected and result in an error.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The state.
+   * @return The bytes for state.
    */
-  com.google.cloud.compute.v1.DeprecationStatus.State getState();
+  com.google.protobuf.ByteString getStateBytes();
 }

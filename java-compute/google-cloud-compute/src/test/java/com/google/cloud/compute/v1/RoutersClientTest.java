@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonRoutersStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -37,6 +38,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -141,7 +143,7 @@ public class RoutersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -152,6 +154,7 @@ public class RoutersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -165,7 +168,7 @@ public class RoutersClientTest {
     String region = "region-934795532";
     String router = "router-925132983";
 
-    Operation actualResponse = client.delete(project, region, router);
+    Operation actualResponse = client.deleteAsync(project, region, router).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -194,10 +197,9 @@ public class RoutersClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       String router = "router-925132983";
-      client.delete(project, region, router);
+      client.deleteAsync(project, region, router).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -375,7 +377,7 @@ public class RoutersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -386,6 +388,7 @@ public class RoutersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -399,7 +402,7 @@ public class RoutersClientTest {
     String region = "region-934795532";
     Router routerResource = Router.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, region, routerResource);
+    Operation actualResponse = client.insertAsync(project, region, routerResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -428,10 +431,9 @@ public class RoutersClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       Router routerResource = Router.newBuilder().build();
-      client.insert(project, region, routerResource);
+      client.insertAsync(project, region, routerResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -497,7 +499,7 @@ public class RoutersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -508,6 +510,7 @@ public class RoutersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -522,7 +525,7 @@ public class RoutersClientTest {
     String router = "router-925132983";
     Router routerResource = Router.newBuilder().build();
 
-    Operation actualResponse = client.patch(project, region, router, routerResource);
+    Operation actualResponse = client.patchAsync(project, region, router, routerResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -552,10 +555,9 @@ public class RoutersClientTest {
       String region = "region-934795532";
       String router = "router-925132983";
       Router routerResource = Router.newBuilder().build();
-      client.patch(project, region, router, routerResource);
+      client.patchAsync(project, region, router, routerResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -617,7 +619,7 @@ public class RoutersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -628,6 +630,7 @@ public class RoutersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -642,7 +645,7 @@ public class RoutersClientTest {
     String router = "router-925132983";
     Router routerResource = Router.newBuilder().build();
 
-    Operation actualResponse = client.update(project, region, router, routerResource);
+    Operation actualResponse = client.updateAsync(project, region, router, routerResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -672,10 +675,9 @@ public class RoutersClientTest {
       String region = "region-934795532";
       String router = "router-925132983";
       Router routerResource = Router.newBuilder().build();
-      client.update(project, region, router, routerResource);
+      client.updateAsync(project, region, router, routerResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 }

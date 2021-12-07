@@ -30,7 +30,7 @@ public interface NetworkOrBuilder
    * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
    * </pre>
    *
-   * <code>string I_pv4_range = 59234358;</code>
+   * <code>optional string I_pv4_range = 59234358;</code>
    *
    * @return Whether the iPv4Range field is set.
    */
@@ -42,7 +42,7 @@ public interface NetworkOrBuilder
    * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
    * </pre>
    *
-   * <code>string I_pv4_range = 59234358;</code>
+   * <code>optional string I_pv4_range = 59234358;</code>
    *
    * @return The iPv4Range.
    */
@@ -54,7 +54,7 @@ public interface NetworkOrBuilder
    * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
    * </pre>
    *
-   * <code>string I_pv4_range = 59234358;</code>
+   * <code>optional string I_pv4_range = 59234358;</code>
    *
    * @return The bytes for iPv4Range.
    */
@@ -64,13 +64,10 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * Must be set to create a VPC network. If not set, a legacy network is created.
-   * When set to true, the VPC network is created in auto mode. When set to false, the VPC network is created in custom mode.
-   * An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined range as described in Auto mode VPC network IP ranges.
-   * For custom mode VPC networks, you can add subnets using the subnetworks insert method.
+   * Must be set to create a VPC network. If not set, a legacy network is created. When set to true, the VPC network is created in auto mode. When set to false, the VPC network is created in custom mode. An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined range as described in Auto mode VPC network IP ranges. For custom mode VPC networks, you can add subnets using the subnetworks insert method.
    * </pre>
    *
-   * <code>bool auto_create_subnetworks = 256156690;</code>
+   * <code>optional bool auto_create_subnetworks = 256156690;</code>
    *
    * @return Whether the autoCreateSubnetworks field is set.
    */
@@ -79,13 +76,10 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * Must be set to create a VPC network. If not set, a legacy network is created.
-   * When set to true, the VPC network is created in auto mode. When set to false, the VPC network is created in custom mode.
-   * An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined range as described in Auto mode VPC network IP ranges.
-   * For custom mode VPC networks, you can add subnets using the subnetworks insert method.
+   * Must be set to create a VPC network. If not set, a legacy network is created. When set to true, the VPC network is created in auto mode. When set to false, the VPC network is created in custom mode. An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined range as described in Auto mode VPC network IP ranges. For custom mode VPC networks, you can add subnets using the subnetworks insert method.
    * </pre>
    *
-   * <code>bool auto_create_subnetworks = 256156690;</code>
+   * <code>optional bool auto_create_subnetworks = 256156690;</code>
    *
    * @return The autoCreateSubnetworks.
    */
@@ -98,7 +92,7 @@ public interface NetworkOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -110,7 +104,7 @@ public interface NetworkOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -122,7 +116,7 @@ public interface NetworkOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -135,7 +129,7 @@ public interface NetworkOrBuilder
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -147,7 +141,7 @@ public interface NetworkOrBuilder
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -159,7 +153,7 @@ public interface NetworkOrBuilder
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -172,7 +166,7 @@ public interface NetworkOrBuilder
    * [Output Only] The gateway address for default routing out of the network, selected by GCP.
    * </pre>
    *
-   * <code>string gateway_i_pv4 = 178678877;</code>
+   * <code>optional string gateway_i_pv4 = 178678877;</code>
    *
    * @return Whether the gatewayIPv4 field is set.
    */
@@ -184,7 +178,7 @@ public interface NetworkOrBuilder
    * [Output Only] The gateway address for default routing out of the network, selected by GCP.
    * </pre>
    *
-   * <code>string gateway_i_pv4 = 178678877;</code>
+   * <code>optional string gateway_i_pv4 = 178678877;</code>
    *
    * @return The gatewayIPv4.
    */
@@ -196,7 +190,7 @@ public interface NetworkOrBuilder
    * [Output Only] The gateway address for default routing out of the network, selected by GCP.
    * </pre>
    *
-   * <code>string gateway_i_pv4 = 178678877;</code>
+   * <code>optional string gateway_i_pv4 = 178678877;</code>
    *
    * @return The bytes for gatewayIPv4.
    */
@@ -209,7 +203,7 @@ public interface NetworkOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -221,7 +215,7 @@ public interface NetworkOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -234,7 +228,7 @@ public interface NetworkOrBuilder
    * [Output Only] Type of the resource. Always compute#network for networks.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -246,7 +240,7 @@ public interface NetworkOrBuilder
    * [Output Only] Type of the resource. Always compute#network for networks.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -258,7 +252,7 @@ public interface NetworkOrBuilder
    * [Output Only] Type of the resource. Always compute#network for networks.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -268,10 +262,10 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * Maximum Transmission Unit in bytes. The minimum value for this field is 1460 and the maximum value is 1500 bytes.
+   * Maximum Transmission Unit in bytes. The minimum value for this field is 1460 and the maximum value is 1500 bytes. If unspecified, defaults to 1460.
    * </pre>
    *
-   * <code>int32 mtu = 108462;</code>
+   * <code>optional int32 mtu = 108462;</code>
    *
    * @return Whether the mtu field is set.
    */
@@ -280,10 +274,10 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * Maximum Transmission Unit in bytes. The minimum value for this field is 1460 and the maximum value is 1500 bytes.
+   * Maximum Transmission Unit in bytes. The minimum value for this field is 1460 and the maximum value is 1500 bytes. If unspecified, defaults to 1460.
    * </pre>
    *
-   * <code>int32 mtu = 108462;</code>
+   * <code>optional int32 mtu = 108462;</code>
    *
    * @return The mtu.
    */
@@ -296,7 +290,7 @@ public interface NetworkOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -308,7 +302,7 @@ public interface NetworkOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -320,7 +314,7 @@ public interface NetworkOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -385,7 +379,7 @@ public interface NetworkOrBuilder
    * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+   * <code>optional .google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
    *
    * @return Whether the routingConfig field is set.
    */
@@ -397,7 +391,7 @@ public interface NetworkOrBuilder
    * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+   * <code>optional .google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
    *
    * @return The routingConfig.
    */
@@ -409,7 +403,7 @@ public interface NetworkOrBuilder
    * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+   * <code>optional .google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
    */
   com.google.cloud.compute.v1.NetworkRoutingConfigOrBuilder getRoutingConfigOrBuilder();
 
@@ -420,7 +414,7 @@ public interface NetworkOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -432,7 +426,7 @@ public interface NetworkOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -444,7 +438,7 @@ public interface NetworkOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */

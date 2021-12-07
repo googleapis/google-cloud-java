@@ -28,10 +28,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.httpjson.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -77,16 +81,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of attachNetworkEndpoints to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * GlobalNetworkEndpointGroupsStubSettings.Builder globalNetworkEndpointGroupsSettingsBuilder =
  *     GlobalNetworkEndpointGroupsStubSettings.newBuilder();
  * globalNetworkEndpointGroupsSettingsBuilder
- *     .attachNetworkEndpointsSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         globalNetworkEndpointGroupsSettingsBuilder
- *             .attachNetworkEndpointsSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -108,15 +112,25 @@ public class GlobalNetworkEndpointGroupsStubSettings
   private final UnaryCallSettings<
           AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
       attachNetworkEndpointsSettings;
+  private final OperationCallSettings<
+          AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      attachNetworkEndpointsOperationSettings;
   private final UnaryCallSettings<DeleteGlobalNetworkEndpointGroupRequest, Operation>
       deleteSettings;
+  private final OperationCallSettings<DeleteGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      deleteOperationSettings;
   private final UnaryCallSettings<
           DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
       detachNetworkEndpointsSettings;
+  private final OperationCallSettings<
+          DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      detachNetworkEndpointsOperationSettings;
   private final UnaryCallSettings<GetGlobalNetworkEndpointGroupRequest, NetworkEndpointGroup>
       getSettings;
   private final UnaryCallSettings<InsertGlobalNetworkEndpointGroupRequest, Operation>
       insertSettings;
+  private final OperationCallSettings<InsertGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      insertOperationSettings;
   private final PagedCallSettings<
           ListGlobalNetworkEndpointGroupsRequest, NetworkEndpointGroupList, ListPagedResponse>
       listSettings;
@@ -281,15 +295,35 @@ public class GlobalNetworkEndpointGroupsStubSettings
     return attachNetworkEndpointsSettings;
   }
 
+  /** Returns the object with the settings used for calls to attachNetworkEndpoints. */
+  public OperationCallSettings<
+          AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      attachNetworkEndpointsOperationSettings() {
+    return attachNetworkEndpointsOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteGlobalNetworkEndpointGroupRequest, Operation> deleteSettings() {
     return deleteSettings;
+  }
+
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return deleteOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to detachNetworkEndpoints. */
   public UnaryCallSettings<DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
       detachNetworkEndpointsSettings() {
     return detachNetworkEndpointsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to detachNetworkEndpoints. */
+  public OperationCallSettings<
+          DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      detachNetworkEndpointsOperationSettings() {
+    return detachNetworkEndpointsOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -301,6 +335,12 @@ public class GlobalNetworkEndpointGroupsStubSettings
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertGlobalNetworkEndpointGroupRequest, Operation> insertSettings() {
     return insertSettings;
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      insertOperationSettings() {
+    return insertOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -353,7 +393,9 @@ public class GlobalNetworkEndpointGroupsStubSettings
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return GoogleCredentialsProvider.newBuilder()
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        .setUseJwtAccessWithScope(true);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -395,10 +437,16 @@ public class GlobalNetworkEndpointGroupsStubSettings
     super(settingsBuilder);
 
     attachNetworkEndpointsSettings = settingsBuilder.attachNetworkEndpointsSettings().build();
+    attachNetworkEndpointsOperationSettings =
+        settingsBuilder.attachNetworkEndpointsOperationSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
+    deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     detachNetworkEndpointsSettings = settingsBuilder.detachNetworkEndpointsSettings().build();
+    detachNetworkEndpointsOperationSettings =
+        settingsBuilder.detachNetworkEndpointsOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
+    insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     listNetworkEndpointsSettings = settingsBuilder.listNetworkEndpointsSettings().build();
   }
@@ -410,16 +458,28 @@ public class GlobalNetworkEndpointGroupsStubSettings
     private final UnaryCallSettings.Builder<
             AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
         attachNetworkEndpointsSettings;
+    private final OperationCallSettings.Builder<
+            AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation, Operation>
+        attachNetworkEndpointsOperationSettings;
     private final UnaryCallSettings.Builder<DeleteGlobalNetworkEndpointGroupRequest, Operation>
         deleteSettings;
+    private final OperationCallSettings.Builder<
+            DeleteGlobalNetworkEndpointGroupRequest, Operation, Operation>
+        deleteOperationSettings;
     private final UnaryCallSettings.Builder<
             DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
         detachNetworkEndpointsSettings;
+    private final OperationCallSettings.Builder<
+            DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation, Operation>
+        detachNetworkEndpointsOperationSettings;
     private final UnaryCallSettings.Builder<
             GetGlobalNetworkEndpointGroupRequest, NetworkEndpointGroup>
         getSettings;
     private final UnaryCallSettings.Builder<InsertGlobalNetworkEndpointGroupRequest, Operation>
         insertSettings;
+    private final OperationCallSettings.Builder<
+            InsertGlobalNetworkEndpointGroupRequest, Operation, Operation>
+        insertOperationSettings;
     private final PagedCallSettings.Builder<
             ListGlobalNetworkEndpointGroupsRequest, NetworkEndpointGroupList, ListPagedResponse>
         listSettings;
@@ -479,10 +539,14 @@ public class GlobalNetworkEndpointGroupsStubSettings
       super(clientContext);
 
       attachNetworkEndpointsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      attachNetworkEndpointsOperationSettings = OperationCallSettings.newBuilder();
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteOperationSettings = OperationCallSettings.newBuilder();
       detachNetworkEndpointsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      detachNetworkEndpointsOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       listNetworkEndpointsSettings =
           PagedCallSettings.newBuilder(LIST_NETWORK_ENDPOINTS_PAGE_STR_FACT);
@@ -503,10 +567,16 @@ public class GlobalNetworkEndpointGroupsStubSettings
       super(settings);
 
       attachNetworkEndpointsSettings = settings.attachNetworkEndpointsSettings.toBuilder();
+      attachNetworkEndpointsOperationSettings =
+          settings.attachNetworkEndpointsOperationSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
+      deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       detachNetworkEndpointsSettings = settings.detachNetworkEndpointsSettings.toBuilder();
+      detachNetworkEndpointsOperationSettings =
+          settings.detachNetworkEndpointsOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
+      insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       listNetworkEndpointsSettings = settings.listNetworkEndpointsSettings.toBuilder();
 
@@ -570,6 +640,106 @@ public class GlobalNetworkEndpointGroupsStubSettings
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .attachNetworkEndpointsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .deleteOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteGlobalNetworkEndpointGroupRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .detachNetworkEndpointsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .insertOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<InsertGlobalNetworkEndpointGroupRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -595,10 +765,28 @@ public class GlobalNetworkEndpointGroupsStubSettings
       return attachNetworkEndpointsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to attachNetworkEndpoints. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation, Operation>
+        attachNetworkEndpointsOperationSettings() {
+      return attachNetworkEndpointsOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteGlobalNetworkEndpointGroupRequest, Operation>
         deleteSettings() {
       return deleteSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to delete. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            DeleteGlobalNetworkEndpointGroupRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return deleteOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to detachNetworkEndpoints. */
@@ -606,6 +794,15 @@ public class GlobalNetworkEndpointGroupsStubSettings
             DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
         detachNetworkEndpointsSettings() {
       return detachNetworkEndpointsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to detachNetworkEndpoints. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation, Operation>
+        detachNetworkEndpointsOperationSettings() {
+      return detachNetworkEndpointsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -618,6 +815,15 @@ public class GlobalNetworkEndpointGroupsStubSettings
     public UnaryCallSettings.Builder<InsertGlobalNetworkEndpointGroupRequest, Operation>
         insertSettings() {
       return insertSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            InsertGlobalNetworkEndpointGroupRequest, Operation, Operation>
+        insertOperationSettings() {
+      return insertOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to list. */

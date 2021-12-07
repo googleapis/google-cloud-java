@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonRegionDisksStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -34,6 +35,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -87,7 +89,7 @@ public class RegionDisksClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -98,6 +100,7 @@ public class RegionDisksClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -114,8 +117,10 @@ public class RegionDisksClientTest {
         RegionDisksAddResourcePoliciesRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.addResourcePolicies(
-            project, region, disk, regionDisksAddResourcePoliciesRequestResource);
+        client
+            .addResourcePoliciesAsync(
+                project, region, disk, regionDisksAddResourcePoliciesRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -146,11 +151,12 @@ public class RegionDisksClientTest {
       String disk = "disk3083677";
       RegionDisksAddResourcePoliciesRequest regionDisksAddResourcePoliciesRequestResource =
           RegionDisksAddResourcePoliciesRequest.newBuilder().build();
-      client.addResourcePolicies(
-          project, region, disk, regionDisksAddResourcePoliciesRequestResource);
+      client
+          .addResourcePoliciesAsync(
+              project, region, disk, regionDisksAddResourcePoliciesRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -164,7 +170,7 @@ public class RegionDisksClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -175,6 +181,7 @@ public class RegionDisksClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -189,7 +196,8 @@ public class RegionDisksClientTest {
     String disk = "disk3083677";
     Snapshot snapshotResource = Snapshot.newBuilder().build();
 
-    Operation actualResponse = client.createSnapshot(project, region, disk, snapshotResource);
+    Operation actualResponse =
+        client.createSnapshotAsync(project, region, disk, snapshotResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -219,10 +227,9 @@ public class RegionDisksClientTest {
       String region = "region-934795532";
       String disk = "disk3083677";
       Snapshot snapshotResource = Snapshot.newBuilder().build();
-      client.createSnapshot(project, region, disk, snapshotResource);
+      client.createSnapshotAsync(project, region, disk, snapshotResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -236,7 +243,7 @@ public class RegionDisksClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -247,6 +254,7 @@ public class RegionDisksClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -260,7 +268,7 @@ public class RegionDisksClientTest {
     String region = "region-934795532";
     String disk = "disk3083677";
 
-    Operation actualResponse = client.delete(project, region, disk);
+    Operation actualResponse = client.deleteAsync(project, region, disk).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -289,10 +297,9 @@ public class RegionDisksClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       String disk = "disk3083677";
-      client.delete(project, region, disk);
+      client.deleteAsync(project, region, disk).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -332,6 +339,7 @@ public class RegionDisksClientTest {
             .setSourceSnapshotEncryptionKey(CustomerEncryptionKey.newBuilder().build())
             .setSourceSnapshotId("sourceSnapshotId-1480876934")
             .setSourceStorageObject("sourceStorageObject1498862911")
+            .setStatus("status-892481550")
             .setType("type3575610")
             .addAllUsers(new ArrayList<String>())
             .setZone("zone3744684")
@@ -441,7 +449,7 @@ public class RegionDisksClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -452,6 +460,7 @@ public class RegionDisksClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -465,7 +474,7 @@ public class RegionDisksClientTest {
     String region = "region-934795532";
     Disk diskResource = Disk.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, region, diskResource);
+    Operation actualResponse = client.insertAsync(project, region, diskResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -494,10 +503,9 @@ public class RegionDisksClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       Disk diskResource = Disk.newBuilder().build();
-      client.insert(project, region, diskResource);
+      client.insertAsync(project, region, diskResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -563,7 +571,7 @@ public class RegionDisksClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -574,6 +582,7 @@ public class RegionDisksClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -590,8 +599,10 @@ public class RegionDisksClientTest {
         RegionDisksRemoveResourcePoliciesRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.removeResourcePolicies(
-            project, region, disk, regionDisksRemoveResourcePoliciesRequestResource);
+        client
+            .removeResourcePoliciesAsync(
+                project, region, disk, regionDisksRemoveResourcePoliciesRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -622,11 +633,12 @@ public class RegionDisksClientTest {
       String disk = "disk3083677";
       RegionDisksRemoveResourcePoliciesRequest regionDisksRemoveResourcePoliciesRequestResource =
           RegionDisksRemoveResourcePoliciesRequest.newBuilder().build();
-      client.removeResourcePolicies(
-          project, region, disk, regionDisksRemoveResourcePoliciesRequestResource);
+      client
+          .removeResourcePoliciesAsync(
+              project, region, disk, regionDisksRemoveResourcePoliciesRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -640,7 +652,7 @@ public class RegionDisksClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -651,6 +663,7 @@ public class RegionDisksClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -667,7 +680,7 @@ public class RegionDisksClientTest {
         RegionDisksResizeRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.resize(project, region, disk, regionDisksResizeRequestResource);
+        client.resizeAsync(project, region, disk, regionDisksResizeRequestResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -698,10 +711,9 @@ public class RegionDisksClientTest {
       String disk = "disk3083677";
       RegionDisksResizeRequest regionDisksResizeRequestResource =
           RegionDisksResizeRequest.newBuilder().build();
-      client.resize(project, region, disk, regionDisksResizeRequestResource);
+      client.resizeAsync(project, region, disk, regionDisksResizeRequestResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -773,7 +785,7 @@ public class RegionDisksClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -784,6 +796,7 @@ public class RegionDisksClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -800,7 +813,7 @@ public class RegionDisksClientTest {
         RegionSetLabelsRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.setLabels(project, region, resource, regionSetLabelsRequestResource);
+        client.setLabelsAsync(project, region, resource, regionSetLabelsRequestResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -831,10 +844,9 @@ public class RegionDisksClientTest {
       String resource = "resource-341064690";
       RegionSetLabelsRequest regionSetLabelsRequestResource =
           RegionSetLabelsRequest.newBuilder().build();
-      client.setLabels(project, region, resource, regionSetLabelsRequestResource);
+      client.setLabelsAsync(project, region, resource, regionSetLabelsRequestResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 

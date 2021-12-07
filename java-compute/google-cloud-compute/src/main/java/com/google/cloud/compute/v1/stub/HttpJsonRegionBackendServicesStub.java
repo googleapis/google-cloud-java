@@ -25,11 +25,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.BackendService;
 import com.google.cloud.compute.v1.BackendServiceGroupHealth;
@@ -40,8 +42,10 @@ import com.google.cloud.compute.v1.GetRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.InsertRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.ListRegionBackendServicesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.UpdateRegionBackendServiceRequest;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -59,6 +63,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<DeleteRegionBackendServiceRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionBackendServiceRequest, Operation>newBuilder()
@@ -93,7 +100,21 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteRegionBackendServiceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetRegionBackendServiceRequest, BackendService>
@@ -127,6 +148,7 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
               .setResponseParser(
                   ProtoMessageResponseParser.<BackendService>newBuilder()
                       .setDefaultInstance(BackendService.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -168,6 +190,7 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
               .setResponseParser(
                   ProtoMessageResponseParser.<BackendServiceGroupHealth>newBuilder()
                       .setDefaultInstance(BackendServiceGroupHealth.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -208,7 +231,21 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertRegionBackendServiceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListRegionBackendServicesRequest, BackendServiceList>
@@ -259,6 +296,7 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
               .setResponseParser(
                   ProtoMessageResponseParser.<BackendServiceList>newBuilder()
                       .setDefaultInstance(BackendServiceList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -301,7 +339,21 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchRegionBackendServiceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<UpdateRegionBackendServiceRequest, Operation>
@@ -343,21 +395,44 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (UpdateRegionBackendServiceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<DeleteRegionBackendServiceRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteRegionBackendServiceRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetRegionBackendServiceRequest, BackendService> getCallable;
   private final UnaryCallable<GetHealthRegionBackendServiceRequest, BackendServiceGroupHealth>
       getHealthCallable;
   private final UnaryCallable<InsertRegionBackendServiceRequest, Operation> insertCallable;
+  private final OperationCallable<InsertRegionBackendServiceRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListRegionBackendServicesRequest, BackendServiceList> listCallable;
   private final UnaryCallable<ListRegionBackendServicesRequest, ListPagedResponse>
       listPagedCallable;
   private final UnaryCallable<PatchRegionBackendServiceRequest, Operation> patchCallable;
+  private final OperationCallable<PatchRegionBackendServiceRequest, Operation, Operation>
+      patchOperationCallable;
   private final UnaryCallable<UpdateRegionBackendServiceRequest, Operation> updateCallable;
+  private final OperationCallable<UpdateRegionBackendServiceRequest, Operation, Operation>
+      updateOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionBackendServicesStub create(
@@ -398,42 +473,57 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<DeleteRegionBackendServiceRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteRegionBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetRegionBackendServiceRequest, BackendService> getTransportSettings =
         HttpJsonCallSettings.<GetRegionBackendServiceRequest, BackendService>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetHealthRegionBackendServiceRequest, BackendServiceGroupHealth>
         getHealthTransportSettings =
             HttpJsonCallSettings
                 .<GetHealthRegionBackendServiceRequest, BackendServiceGroupHealth>newBuilder()
                 .setMethodDescriptor(getHealthMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<InsertRegionBackendServiceRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListRegionBackendServicesRequest, BackendServiceList>
         listTransportSettings =
             HttpJsonCallSettings.<ListRegionBackendServicesRequest, BackendServiceList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<PatchRegionBackendServiceRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchRegionBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<UpdateRegionBackendServiceRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateRegionBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
@@ -443,6 +533,12 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -452,9 +548,21 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
+    this.updateOperationCallable =
+        callableFactory.createOperationCallable(
+            updateTransportSettings,
+            settings.updateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -479,6 +587,12 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
   }
 
   @Override
+  public OperationCallable<DeleteRegionBackendServiceRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetRegionBackendServiceRequest, BackendService> getCallable() {
     return getCallable;
   }
@@ -492,6 +606,12 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
   @Override
   public UnaryCallable<InsertRegionBackendServiceRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertRegionBackendServiceRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -510,8 +630,20 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
   }
 
   @Override
+  public OperationCallable<PatchRegionBackendServiceRequest, Operation, Operation>
+      patchOperationCallable() {
+    return patchOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateRegionBackendServiceRequest, Operation> updateCallable() {
     return updateCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateRegionBackendServiceRequest, Operation, Operation>
+      updateOperationCallable() {
+    return updateOperationCallable;
   }
 
   @Override

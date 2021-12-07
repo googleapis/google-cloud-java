@@ -22,15 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an Operation resource.
- * Google Compute Engine has three Operation resources:
- * * [Global](/compute/docs/reference/rest/{$api_version}/globalOperations) * [Regional](/compute/docs/reference/rest/{$api_version}/regionOperations) * [Zonal](/compute/docs/reference/rest/{$api_version}/zoneOperations)
- * You can use an operation resource to manage asynchronous API requests. For more information, read Handling API responses.
- * Operations can be global, regional or zonal.
- * - For global operations, use the `globalOperations` resource.
- * - For regional operations, use the `regionOperations` resource.
- * - For zonal operations, use the `zonalOperations` resource.
- * For more information, read  Global, Regional, and Zonal Resources. (== resource_for {$api_version}.globalOperations ==) (== resource_for {$api_version}.regionOperations ==) (== resource_for {$api_version}.zoneOperations ==)
+ * Represents an Operation resource. Google Compute Engine has three Operation resources: * [Global](/compute/docs/reference/rest/v1/globalOperations) * [Regional](/compute/docs/reference/rest/v1/regionOperations) * [Zonal](/compute/docs/reference/rest/v1/zoneOperations) You can use an operation resource to manage asynchronous API requests. For more information, read Handling API responses. Operations can be global, regional or zonal. - For global operations, use the `globalOperations` resource. - For regional operations, use the `regionOperations` resource. - For zonal operations, use the `zonalOperations` resource. For more information, read Global, Regional, and Zonal Resources.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Operation}
@@ -451,7 +443,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
    * </pre>
    *
-   * <code>string client_operation_id = 297240295;</code>
+   * <code>optional string client_operation_id = 297240295;</code>
    *
    * @return Whether the clientOperationId field is set.
    */
@@ -466,7 +458,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
    * </pre>
    *
-   * <code>string client_operation_id = 297240295;</code>
+   * <code>optional string client_operation_id = 297240295;</code>
    *
    * @return The clientOperationId.
    */
@@ -489,7 +481,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
    * </pre>
    *
-   * <code>string client_operation_id = 297240295;</code>
+   * <code>optional string client_operation_id = 297240295;</code>
    *
    * @return The bytes for clientOperationId.
    */
@@ -515,7 +507,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Deprecated] This field is deprecated.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -530,7 +522,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Deprecated] This field is deprecated.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -553,7 +545,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Deprecated] This field is deprecated.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -579,7 +571,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] A textual description of the operation, which is set when the operation is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -594,7 +586,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] A textual description of the operation, which is set when the operation is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -617,7 +609,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] A textual description of the operation, which is set when the operation is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -643,7 +635,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string end_time = 114938801;</code>
+   * <code>optional string end_time = 114938801;</code>
    *
    * @return Whether the endTime field is set.
    */
@@ -658,7 +650,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string end_time = 114938801;</code>
+   * <code>optional string end_time = 114938801;</code>
    *
    * @return The endTime.
    */
@@ -681,7 +673,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string end_time = 114938801;</code>
+   * <code>optional string end_time = 114938801;</code>
    *
    * @return The bytes for endTime.
    */
@@ -707,7 +699,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If errors are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Error error = 96784904;</code>
+   * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
    *
    * @return Whether the error field is set.
    */
@@ -722,7 +714,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If errors are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Error error = 96784904;</code>
+   * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
    *
    * @return The error.
    */
@@ -737,7 +729,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If errors are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Error error = 96784904;</code>
+   * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ErrorOrBuilder getErrorOrBuilder() {
@@ -753,7 +745,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
    * </pre>
    *
-   * <code>string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+   * <code>
+   * optional string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
    * </code>
    *
    * @return Whether the httpErrorMessage field is set.
@@ -769,7 +762,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
    * </pre>
    *
-   * <code>string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+   * <code>
+   * optional string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
    * </code>
    *
    * @return The httpErrorMessage.
@@ -793,7 +787,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
    * </pre>
    *
-   * <code>string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+   * <code>
+   * optional string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
    * </code>
    *
    * @return The bytes for httpErrorMessage.
@@ -820,7 +815,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
    * </pre>
    *
-   * <code>int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
+   * <code>
+   * optional int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
    * </code>
    *
    * @return Whether the httpErrorStatusCode field is set.
@@ -836,7 +832,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
    * </pre>
    *
-   * <code>int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
+   * <code>
+   * optional int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
    * </code>
    *
    * @return The httpErrorStatusCode.
@@ -855,7 +852,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the operation. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -870,7 +867,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the operation. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -888,7 +885,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string insert_time = 433722515;</code>
+   * <code>optional string insert_time = 433722515;</code>
    *
    * @return Whether the insertTime field is set.
    */
@@ -903,7 +900,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string insert_time = 433722515;</code>
+   * <code>optional string insert_time = 433722515;</code>
    *
    * @return The insertTime.
    */
@@ -926,7 +923,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string insert_time = 433722515;</code>
+   * <code>optional string insert_time = 433722515;</code>
    *
    * @return The bytes for insertTime.
    */
@@ -952,7 +949,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -967,7 +964,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -990,7 +987,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -1016,7 +1013,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Name of the operation.
    * </pre>
    *
-   * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
+   * <code>optional string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
    *
    * @return Whether the name field is set.
    */
@@ -1031,7 +1028,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Name of the operation.
    * </pre>
    *
-   * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
+   * <code>optional string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
    *
    * @return The name.
    */
@@ -1054,7 +1051,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Name of the operation.
    * </pre>
    *
-   * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
+   * <code>optional string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
    *
    * @return The bytes for name.
    */
@@ -1080,7 +1077,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
    * </pre>
    *
-   * <code>string operation_group_id = 40171187;</code>
+   * <code>optional string operation_group_id = 40171187;</code>
    *
    * @return Whether the operationGroupId field is set.
    */
@@ -1095,7 +1092,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
    * </pre>
    *
-   * <code>string operation_group_id = 40171187;</code>
+   * <code>optional string operation_group_id = 40171187;</code>
    *
    * @return The operationGroupId.
    */
@@ -1118,7 +1115,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
    * </pre>
    *
-   * <code>string operation_group_id = 40171187;</code>
+   * <code>optional string operation_group_id = 40171187;</code>
    *
    * @return The bytes for operationGroupId.
    */
@@ -1144,7 +1141,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
    * </pre>
    *
-   * <code>string operation_type = 177650450;</code>
+   * <code>optional string operation_type = 177650450;</code>
    *
    * @return Whether the operationType field is set.
    */
@@ -1159,7 +1156,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
    * </pre>
    *
-   * <code>string operation_type = 177650450;</code>
+   * <code>optional string operation_type = 177650450;</code>
    *
    * @return The operationType.
    */
@@ -1182,7 +1179,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
    * </pre>
    *
-   * <code>string operation_type = 177650450;</code>
+   * <code>optional string operation_type = 177650450;</code>
    *
    * @return The bytes for operationType.
    */
@@ -1208,7 +1205,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses.
    * </pre>
    *
-   * <code>int32 progress = 72663597;</code>
+   * <code>optional int32 progress = 72663597;</code>
    *
    * @return Whether the progress field is set.
    */
@@ -1223,7 +1220,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses.
    * </pre>
    *
-   * <code>int32 progress = 72663597;</code>
+   * <code>optional int32 progress = 72663597;</code>
    *
    * @return The progress.
    */
@@ -1241,7 +1238,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -1256,7 +1253,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -1279,7 +1276,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -1305,7 +1302,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -1320,7 +1317,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1343,7 +1340,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1369,7 +1366,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return Whether the startTime field is set.
    */
@@ -1384,7 +1381,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return The startTime.
    */
@@ -1407,7 +1404,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return The bytes for startTime.
    */
@@ -1434,7 +1431,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+   * optional .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
    * </code>
    *
    * @return Whether the status field is set.
@@ -1451,7 +1448,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+   * optional .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
    * </code>
    *
    * @return The enum numeric value on the wire for status.
@@ -1468,7 +1465,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+   * optional .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
    * </code>
    *
    * @return The status.
@@ -1490,7 +1487,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional textual description of the current status of the operation.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return Whether the statusMessage field is set.
    */
@@ -1505,7 +1502,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional textual description of the current status of the operation.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return The statusMessage.
    */
@@ -1528,7 +1525,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional textual description of the current status of the operation.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return The bytes for statusMessage.
    */
@@ -1554,7 +1551,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
    * </pre>
    *
-   * <code>uint64 target_id = 258165385;</code>
+   * <code>optional uint64 target_id = 258165385;</code>
    *
    * @return Whether the targetId field is set.
    */
@@ -1569,7 +1566,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
    * </pre>
    *
-   * <code>uint64 target_id = 258165385;</code>
+   * <code>optional uint64 target_id = 258165385;</code>
    *
    * @return The targetId.
    */
@@ -1587,7 +1584,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from.
    * </pre>
    *
-   * <code>string target_link = 62671336;</code>
+   * <code>optional string target_link = 62671336;</code>
    *
    * @return Whether the targetLink field is set.
    */
@@ -1602,7 +1599,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from.
    * </pre>
    *
-   * <code>string target_link = 62671336;</code>
+   * <code>optional string target_link = 62671336;</code>
    *
    * @return The targetLink.
    */
@@ -1625,7 +1622,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from.
    * </pre>
    *
-   * <code>string target_link = 62671336;</code>
+   * <code>optional string target_link = 62671336;</code>
    *
    * @return The bytes for targetLink.
    */
@@ -1651,7 +1648,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
    * </pre>
    *
-   * <code>string user = 3599307;</code>
+   * <code>optional string user = 3599307;</code>
    *
    * @return Whether the user field is set.
    */
@@ -1666,7 +1663,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
    * </pre>
    *
-   * <code>string user = 3599307;</code>
+   * <code>optional string user = 3599307;</code>
    *
    * @return The user.
    */
@@ -1689,7 +1686,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
    * </pre>
    *
-   * <code>string user = 3599307;</code>
+   * <code>optional string user = 3599307;</code>
    *
    * @return The bytes for user.
    */
@@ -1784,7 +1781,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return Whether the zone field is set.
    */
@@ -1799,7 +1796,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The zone.
    */
@@ -1822,7 +1819,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The bytes for zone.
    */
@@ -2328,15 +2325,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents an Operation resource.
-   * Google Compute Engine has three Operation resources:
-   * * [Global](/compute/docs/reference/rest/{$api_version}/globalOperations) * [Regional](/compute/docs/reference/rest/{$api_version}/regionOperations) * [Zonal](/compute/docs/reference/rest/{$api_version}/zoneOperations)
-   * You can use an operation resource to manage asynchronous API requests. For more information, read Handling API responses.
-   * Operations can be global, regional or zonal.
-   * - For global operations, use the `globalOperations` resource.
-   * - For regional operations, use the `regionOperations` resource.
-   * - For zonal operations, use the `zonalOperations` resource.
-   * For more information, read  Global, Regional, and Zonal Resources. (== resource_for {$api_version}.globalOperations ==) (== resource_for {$api_version}.regionOperations ==) (== resource_for {$api_version}.zoneOperations ==)
+   * Represents an Operation resource. Google Compute Engine has three Operation resources: * [Global](/compute/docs/reference/rest/v1/globalOperations) * [Regional](/compute/docs/reference/rest/v1/regionOperations) * [Zonal](/compute/docs/reference/rest/v1/zoneOperations) You can use an operation resource to manage asynchronous API requests. For more information, read Handling API responses. Operations can be global, regional or zonal. - For global operations, use the `globalOperations` resource. - For regional operations, use the `regionOperations` resource. - For zonal operations, use the `zonalOperations` resource. For more information, read Global, Regional, and Zonal Resources.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Operation}
@@ -2789,7 +2778,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
      * </pre>
      *
-     * <code>string client_operation_id = 297240295;</code>
+     * <code>optional string client_operation_id = 297240295;</code>
      *
      * @return Whether the clientOperationId field is set.
      */
@@ -2803,7 +2792,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
      * </pre>
      *
-     * <code>string client_operation_id = 297240295;</code>
+     * <code>optional string client_operation_id = 297240295;</code>
      *
      * @return The clientOperationId.
      */
@@ -2825,7 +2814,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
      * </pre>
      *
-     * <code>string client_operation_id = 297240295;</code>
+     * <code>optional string client_operation_id = 297240295;</code>
      *
      * @return The bytes for clientOperationId.
      */
@@ -2847,7 +2836,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
      * </pre>
      *
-     * <code>string client_operation_id = 297240295;</code>
+     * <code>optional string client_operation_id = 297240295;</code>
      *
      * @param value The clientOperationId to set.
      * @return This builder for chaining.
@@ -2868,7 +2857,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
      * </pre>
      *
-     * <code>string client_operation_id = 297240295;</code>
+     * <code>optional string client_operation_id = 297240295;</code>
      *
      * @return This builder for chaining.
      */
@@ -2885,7 +2874,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
      * </pre>
      *
-     * <code>string client_operation_id = 297240295;</code>
+     * <code>optional string client_operation_id = 297240295;</code>
      *
      * @param value The bytes for clientOperationId to set.
      * @return This builder for chaining.
@@ -2909,7 +2898,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Deprecated] This field is deprecated.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -2923,7 +2912,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Deprecated] This field is deprecated.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -2945,7 +2934,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Deprecated] This field is deprecated.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -2967,7 +2956,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Deprecated] This field is deprecated.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -2988,7 +2977,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Deprecated] This field is deprecated.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -3005,7 +2994,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Deprecated] This field is deprecated.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -3029,7 +3018,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A textual description of the operation, which is set when the operation is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -3043,7 +3032,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A textual description of the operation, which is set when the operation is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -3065,7 +3054,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A textual description of the operation, which is set when the operation is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -3087,7 +3076,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A textual description of the operation, which is set when the operation is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -3108,7 +3097,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A textual description of the operation, which is set when the operation is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -3125,7 +3114,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A textual description of the operation, which is set when the operation is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -3149,7 +3138,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string end_time = 114938801;</code>
+     * <code>optional string end_time = 114938801;</code>
      *
      * @return Whether the endTime field is set.
      */
@@ -3163,7 +3152,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string end_time = 114938801;</code>
+     * <code>optional string end_time = 114938801;</code>
      *
      * @return The endTime.
      */
@@ -3185,7 +3174,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string end_time = 114938801;</code>
+     * <code>optional string end_time = 114938801;</code>
      *
      * @return The bytes for endTime.
      */
@@ -3207,7 +3196,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string end_time = 114938801;</code>
+     * <code>optional string end_time = 114938801;</code>
      *
      * @param value The endTime to set.
      * @return This builder for chaining.
@@ -3228,7 +3217,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string end_time = 114938801;</code>
+     * <code>optional string end_time = 114938801;</code>
      *
      * @return This builder for chaining.
      */
@@ -3245,7 +3234,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string end_time = 114938801;</code>
+     * <code>optional string end_time = 114938801;</code>
      *
      * @param value The bytes for endTime to set.
      * @return This builder for chaining.
@@ -3274,7 +3263,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If errors are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Error error = 96784904;</code>
+     * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
      *
      * @return Whether the error field is set.
      */
@@ -3288,7 +3277,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If errors are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Error error = 96784904;</code>
+     * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
      *
      * @return The error.
      */
@@ -3306,7 +3295,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If errors are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Error error = 96784904;</code>
+     * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
      */
     public Builder setError(com.google.cloud.compute.v1.Error value) {
       if (errorBuilder_ == null) {
@@ -3328,7 +3317,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If errors are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Error error = 96784904;</code>
+     * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
      */
     public Builder setError(com.google.cloud.compute.v1.Error.Builder builderForValue) {
       if (errorBuilder_ == null) {
@@ -3347,7 +3336,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If errors are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Error error = 96784904;</code>
+     * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
      */
     public Builder mergeError(com.google.cloud.compute.v1.Error value) {
       if (errorBuilder_ == null) {
@@ -3373,7 +3362,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If errors are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Error error = 96784904;</code>
+     * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
      */
     public Builder clearError() {
       if (errorBuilder_ == null) {
@@ -3392,7 +3381,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If errors are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Error error = 96784904;</code>
+     * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
      */
     public com.google.cloud.compute.v1.Error.Builder getErrorBuilder() {
       bitField0_ |= 0x00000010;
@@ -3406,7 +3395,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If errors are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Error error = 96784904;</code>
+     * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
      */
     public com.google.cloud.compute.v1.ErrorOrBuilder getErrorOrBuilder() {
       if (errorBuilder_ != null) {
@@ -3422,7 +3411,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If errors are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Error error = 96784904;</code>
+     * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Error,
@@ -3450,7 +3439,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+     * optional string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
      * </code>
      *
      * @return Whether the httpErrorMessage field is set.
@@ -3466,7 +3455,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+     * optional string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
      * </code>
      *
      * @return The httpErrorMessage.
@@ -3490,7 +3479,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+     * optional string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
      * </code>
      *
      * @return The bytes for httpErrorMessage.
@@ -3514,7 +3503,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+     * optional string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
      * </code>
      *
      * @param value The httpErrorMessage to set.
@@ -3537,7 +3526,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+     * optional string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
      * </code>
      *
      * @return This builder for chaining.
@@ -3556,7 +3545,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+     * optional string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
      * </code>
      *
      * @param value The bytes for httpErrorMessage to set.
@@ -3582,7 +3571,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
+     * optional int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
      * </code>
      *
      * @return Whether the httpErrorStatusCode field is set.
@@ -3599,7 +3588,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
+     * optional int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
      * </code>
      *
      * @return The httpErrorStatusCode.
@@ -3616,7 +3605,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
+     * optional int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
      * </code>
      *
      * @param value The httpErrorStatusCode to set.
@@ -3636,7 +3625,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
+     * optional int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
      * </code>
      *
      * @return This builder for chaining.
@@ -3656,7 +3645,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the operation. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -3671,7 +3660,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the operation. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -3686,7 +3675,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the operation. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -3704,7 +3693,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the operation. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -3723,7 +3712,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string insert_time = 433722515;</code>
+     * <code>optional string insert_time = 433722515;</code>
      *
      * @return Whether the insertTime field is set.
      */
@@ -3737,7 +3726,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string insert_time = 433722515;</code>
+     * <code>optional string insert_time = 433722515;</code>
      *
      * @return The insertTime.
      */
@@ -3759,7 +3748,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string insert_time = 433722515;</code>
+     * <code>optional string insert_time = 433722515;</code>
      *
      * @return The bytes for insertTime.
      */
@@ -3781,7 +3770,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string insert_time = 433722515;</code>
+     * <code>optional string insert_time = 433722515;</code>
      *
      * @param value The insertTime to set.
      * @return This builder for chaining.
@@ -3802,7 +3791,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string insert_time = 433722515;</code>
+     * <code>optional string insert_time = 433722515;</code>
      *
      * @return This builder for chaining.
      */
@@ -3819,7 +3808,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string insert_time = 433722515;</code>
+     * <code>optional string insert_time = 433722515;</code>
      *
      * @param value The bytes for insertTime to set.
      * @return This builder for chaining.
@@ -3843,7 +3832,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -3857,7 +3846,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -3879,7 +3868,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -3901,7 +3890,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -3922,7 +3911,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -3939,7 +3928,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -3963,7 +3952,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the operation.
      * </pre>
      *
-     * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
+     * <code>optional string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
      *
      * @return Whether the name field is set.
      */
@@ -3977,7 +3966,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the operation.
      * </pre>
      *
-     * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
+     * <code>optional string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
      *
      * @return The name.
      */
@@ -3999,7 +3988,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the operation.
      * </pre>
      *
-     * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
+     * <code>optional string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
      *
      * @return The bytes for name.
      */
@@ -4021,7 +4010,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the operation.
      * </pre>
      *
-     * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
+     * <code>optional string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -4042,7 +4031,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the operation.
      * </pre>
      *
-     * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
+     * <code>optional string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
      *
      * @return This builder for chaining.
      */
@@ -4059,7 +4048,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the operation.
      * </pre>
      *
-     * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
+     * <code>optional string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -4083,7 +4072,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
      * </pre>
      *
-     * <code>string operation_group_id = 40171187;</code>
+     * <code>optional string operation_group_id = 40171187;</code>
      *
      * @return Whether the operationGroupId field is set.
      */
@@ -4097,7 +4086,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
      * </pre>
      *
-     * <code>string operation_group_id = 40171187;</code>
+     * <code>optional string operation_group_id = 40171187;</code>
      *
      * @return The operationGroupId.
      */
@@ -4119,7 +4108,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
      * </pre>
      *
-     * <code>string operation_group_id = 40171187;</code>
+     * <code>optional string operation_group_id = 40171187;</code>
      *
      * @return The bytes for operationGroupId.
      */
@@ -4141,7 +4130,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
      * </pre>
      *
-     * <code>string operation_group_id = 40171187;</code>
+     * <code>optional string operation_group_id = 40171187;</code>
      *
      * @param value The operationGroupId to set.
      * @return This builder for chaining.
@@ -4162,7 +4151,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
      * </pre>
      *
-     * <code>string operation_group_id = 40171187;</code>
+     * <code>optional string operation_group_id = 40171187;</code>
      *
      * @return This builder for chaining.
      */
@@ -4179,7 +4168,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
      * </pre>
      *
-     * <code>string operation_group_id = 40171187;</code>
+     * <code>optional string operation_group_id = 40171187;</code>
      *
      * @param value The bytes for operationGroupId to set.
      * @return This builder for chaining.
@@ -4203,7 +4192,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
      * </pre>
      *
-     * <code>string operation_type = 177650450;</code>
+     * <code>optional string operation_type = 177650450;</code>
      *
      * @return Whether the operationType field is set.
      */
@@ -4217,7 +4206,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
      * </pre>
      *
-     * <code>string operation_type = 177650450;</code>
+     * <code>optional string operation_type = 177650450;</code>
      *
      * @return The operationType.
      */
@@ -4239,7 +4228,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
      * </pre>
      *
-     * <code>string operation_type = 177650450;</code>
+     * <code>optional string operation_type = 177650450;</code>
      *
      * @return The bytes for operationType.
      */
@@ -4261,7 +4250,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
      * </pre>
      *
-     * <code>string operation_type = 177650450;</code>
+     * <code>optional string operation_type = 177650450;</code>
      *
      * @param value The operationType to set.
      * @return This builder for chaining.
@@ -4282,7 +4271,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
      * </pre>
      *
-     * <code>string operation_type = 177650450;</code>
+     * <code>optional string operation_type = 177650450;</code>
      *
      * @return This builder for chaining.
      */
@@ -4299,7 +4288,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
      * </pre>
      *
-     * <code>string operation_type = 177650450;</code>
+     * <code>optional string operation_type = 177650450;</code>
      *
      * @param value The bytes for operationType to set.
      * @return This builder for chaining.
@@ -4323,7 +4312,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses.
      * </pre>
      *
-     * <code>int32 progress = 72663597;</code>
+     * <code>optional int32 progress = 72663597;</code>
      *
      * @return Whether the progress field is set.
      */
@@ -4338,7 +4327,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses.
      * </pre>
      *
-     * <code>int32 progress = 72663597;</code>
+     * <code>optional int32 progress = 72663597;</code>
      *
      * @return The progress.
      */
@@ -4353,7 +4342,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses.
      * </pre>
      *
-     * <code>int32 progress = 72663597;</code>
+     * <code>optional int32 progress = 72663597;</code>
      *
      * @param value The progress to set.
      * @return This builder for chaining.
@@ -4371,7 +4360,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses.
      * </pre>
      *
-     * <code>int32 progress = 72663597;</code>
+     * <code>optional int32 progress = 72663597;</code>
      *
      * @return This builder for chaining.
      */
@@ -4390,7 +4379,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return Whether the region field is set.
      */
@@ -4404,7 +4393,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The region.
      */
@@ -4426,7 +4415,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The bytes for region.
      */
@@ -4448,7 +4437,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -4469,7 +4458,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return This builder for chaining.
      */
@@ -4486,7 +4475,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.
@@ -4510,7 +4499,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -4524,7 +4513,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -4546,7 +4535,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -4568,7 +4557,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -4589,7 +4578,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -4606,7 +4595,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -4630,7 +4619,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>optional string start_time = 37467274;</code>
      *
      * @return Whether the startTime field is set.
      */
@@ -4644,7 +4633,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>optional string start_time = 37467274;</code>
      *
      * @return The startTime.
      */
@@ -4666,7 +4655,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>optional string start_time = 37467274;</code>
      *
      * @return The bytes for startTime.
      */
@@ -4688,7 +4677,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>optional string start_time = 37467274;</code>
      *
      * @param value The startTime to set.
      * @return This builder for chaining.
@@ -4709,7 +4698,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>optional string start_time = 37467274;</code>
      *
      * @return This builder for chaining.
      */
@@ -4726,7 +4715,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>optional string start_time = 37467274;</code>
      *
      * @param value The bytes for startTime to set.
      * @return This builder for chaining.
@@ -4751,7 +4740,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+     * optional .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
      * </code>
      *
      * @return Whether the status field is set.
@@ -4768,7 +4757,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+     * optional .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
      * </code>
      *
      * @return The enum numeric value on the wire for status.
@@ -4785,7 +4774,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+     * optional .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
      * </code>
      *
      * @param value The enum numeric value on the wire for status to set.
@@ -4805,7 +4794,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+     * optional .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
      * </code>
      *
      * @return The status.
@@ -4825,7 +4814,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+     * optional .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
      * </code>
      *
      * @param value The status to set.
@@ -4848,7 +4837,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+     * optional .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
      * </code>
      *
      * @return This builder for chaining.
@@ -4868,7 +4857,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the current status of the operation.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>optional string status_message = 297428154;</code>
      *
      * @return Whether the statusMessage field is set.
      */
@@ -4882,7 +4871,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the current status of the operation.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>optional string status_message = 297428154;</code>
      *
      * @return The statusMessage.
      */
@@ -4904,7 +4893,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the current status of the operation.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>optional string status_message = 297428154;</code>
      *
      * @return The bytes for statusMessage.
      */
@@ -4926,7 +4915,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the current status of the operation.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>optional string status_message = 297428154;</code>
      *
      * @param value The statusMessage to set.
      * @return This builder for chaining.
@@ -4947,7 +4936,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the current status of the operation.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>optional string status_message = 297428154;</code>
      *
      * @return This builder for chaining.
      */
@@ -4964,7 +4953,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the current status of the operation.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>optional string status_message = 297428154;</code>
      *
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
@@ -4988,7 +4977,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
      * </pre>
      *
-     * <code>uint64 target_id = 258165385;</code>
+     * <code>optional uint64 target_id = 258165385;</code>
      *
      * @return Whether the targetId field is set.
      */
@@ -5003,7 +4992,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
      * </pre>
      *
-     * <code>uint64 target_id = 258165385;</code>
+     * <code>optional uint64 target_id = 258165385;</code>
      *
      * @return The targetId.
      */
@@ -5018,7 +5007,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
      * </pre>
      *
-     * <code>uint64 target_id = 258165385;</code>
+     * <code>optional uint64 target_id = 258165385;</code>
      *
      * @param value The targetId to set.
      * @return This builder for chaining.
@@ -5036,7 +5025,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
      * </pre>
      *
-     * <code>uint64 target_id = 258165385;</code>
+     * <code>optional uint64 target_id = 258165385;</code>
      *
      * @return This builder for chaining.
      */
@@ -5055,7 +5044,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from.
      * </pre>
      *
-     * <code>string target_link = 62671336;</code>
+     * <code>optional string target_link = 62671336;</code>
      *
      * @return Whether the targetLink field is set.
      */
@@ -5069,7 +5058,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from.
      * </pre>
      *
-     * <code>string target_link = 62671336;</code>
+     * <code>optional string target_link = 62671336;</code>
      *
      * @return The targetLink.
      */
@@ -5091,7 +5080,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from.
      * </pre>
      *
-     * <code>string target_link = 62671336;</code>
+     * <code>optional string target_link = 62671336;</code>
      *
      * @return The bytes for targetLink.
      */
@@ -5113,7 +5102,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from.
      * </pre>
      *
-     * <code>string target_link = 62671336;</code>
+     * <code>optional string target_link = 62671336;</code>
      *
      * @param value The targetLink to set.
      * @return This builder for chaining.
@@ -5134,7 +5123,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from.
      * </pre>
      *
-     * <code>string target_link = 62671336;</code>
+     * <code>optional string target_link = 62671336;</code>
      *
      * @return This builder for chaining.
      */
@@ -5151,7 +5140,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from.
      * </pre>
      *
-     * <code>string target_link = 62671336;</code>
+     * <code>optional string target_link = 62671336;</code>
      *
      * @param value The bytes for targetLink to set.
      * @return This builder for chaining.
@@ -5175,7 +5164,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
      * </pre>
      *
-     * <code>string user = 3599307;</code>
+     * <code>optional string user = 3599307;</code>
      *
      * @return Whether the user field is set.
      */
@@ -5189,7 +5178,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
      * </pre>
      *
-     * <code>string user = 3599307;</code>
+     * <code>optional string user = 3599307;</code>
      *
      * @return The user.
      */
@@ -5211,7 +5200,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
      * </pre>
      *
-     * <code>string user = 3599307;</code>
+     * <code>optional string user = 3599307;</code>
      *
      * @return The bytes for user.
      */
@@ -5233,7 +5222,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
      * </pre>
      *
-     * <code>string user = 3599307;</code>
+     * <code>optional string user = 3599307;</code>
      *
      * @param value The user to set.
      * @return This builder for chaining.
@@ -5254,7 +5243,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
      * </pre>
      *
-     * <code>string user = 3599307;</code>
+     * <code>optional string user = 3599307;</code>
      *
      * @return This builder for chaining.
      */
@@ -5271,7 +5260,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
      * </pre>
      *
-     * <code>string user = 3599307;</code>
+     * <code>optional string user = 3599307;</code>
      *
      * @param value The bytes for user to set.
      * @return This builder for chaining.
@@ -5643,7 +5632,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return Whether the zone field is set.
      */
@@ -5657,7 +5646,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return The zone.
      */
@@ -5679,7 +5668,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return The bytes for zone.
      */
@@ -5701,7 +5690,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @param value The zone to set.
      * @return This builder for chaining.
@@ -5722,7 +5711,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return This builder for chaining.
      */
@@ -5739,7 +5728,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @param value The bytes for zone to set.
      * @return This builder for chaining.

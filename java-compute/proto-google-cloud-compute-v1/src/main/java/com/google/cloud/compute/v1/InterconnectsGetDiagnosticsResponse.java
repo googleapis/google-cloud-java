@@ -126,7 +126,7 @@ public final class InterconnectsGetDiagnosticsResponse
   public static final int RESULT_FIELD_NUMBER = 139315229;
   private com.google.cloud.compute.v1.InterconnectDiagnostics result_;
   /**
-   * <code>.google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code>
+   * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code>
    *
    * @return Whether the result field is set.
    */
@@ -135,7 +135,7 @@ public final class InterconnectsGetDiagnosticsResponse
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code>
+   * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code>
    *
    * @return The result.
    */
@@ -145,7 +145,7 @@ public final class InterconnectsGetDiagnosticsResponse
         ? com.google.cloud.compute.v1.InterconnectDiagnostics.getDefaultInstance()
         : result_;
   }
-  /** <code>.google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code> */
+  /** <code>optional .google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.InterconnectDiagnosticsOrBuilder getResultOrBuilder() {
     return result_ == null
@@ -505,7 +505,7 @@ public final class InterconnectsGetDiagnosticsResponse
             com.google.cloud.compute.v1.InterconnectDiagnosticsOrBuilder>
         resultBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code>
+     * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code>
      *
      * @return Whether the result field is set.
      */
@@ -513,7 +513,7 @@ public final class InterconnectsGetDiagnosticsResponse
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code>
+     * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code>
      *
      * @return The result.
      */
@@ -526,7 +526,9 @@ public final class InterconnectsGetDiagnosticsResponse
         return resultBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code>
+     */
     public Builder setResult(com.google.cloud.compute.v1.InterconnectDiagnostics value) {
       if (resultBuilder_ == null) {
         if (value == null) {
@@ -540,7 +542,9 @@ public final class InterconnectsGetDiagnosticsResponse
       bitField0_ |= 0x00000001;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code>
+     */
     public Builder setResult(
         com.google.cloud.compute.v1.InterconnectDiagnostics.Builder builderForValue) {
       if (resultBuilder_ == null) {
@@ -552,7 +556,9 @@ public final class InterconnectsGetDiagnosticsResponse
       bitField0_ |= 0x00000001;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code>
+     */
     public Builder mergeResult(com.google.cloud.compute.v1.InterconnectDiagnostics value) {
       if (resultBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)
@@ -573,7 +579,9 @@ public final class InterconnectsGetDiagnosticsResponse
       bitField0_ |= 0x00000001;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code>
+     */
     public Builder clearResult() {
       if (resultBuilder_ == null) {
         result_ = null;
@@ -584,13 +592,17 @@ public final class InterconnectsGetDiagnosticsResponse
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
-    /** <code>.google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code>
+     */
     public com.google.cloud.compute.v1.InterconnectDiagnostics.Builder getResultBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code>
+     */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsOrBuilder getResultOrBuilder() {
       if (resultBuilder_ != null) {
         return resultBuilder_.getMessageOrBuilder();
@@ -600,7 +612,9 @@ public final class InterconnectsGetDiagnosticsResponse
             : result_;
       }
     }
-    /** <code>.google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.InterconnectDiagnostics,
             com.google.cloud.compute.v1.InterconnectDiagnostics.Builder,

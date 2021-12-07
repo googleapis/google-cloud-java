@@ -30,7 +30,7 @@ public interface ScreenshotOrBuilder
    * [Output Only] The Base64-encoded screenshot data.
    * </pre>
    *
-   * <code>string contents = 506419994;</code>
+   * <code>optional string contents = 506419994;</code>
    *
    * @return Whether the contents field is set.
    */
@@ -42,7 +42,7 @@ public interface ScreenshotOrBuilder
    * [Output Only] The Base64-encoded screenshot data.
    * </pre>
    *
-   * <code>string contents = 506419994;</code>
+   * <code>optional string contents = 506419994;</code>
    *
    * @return The contents.
    */
@@ -54,7 +54,7 @@ public interface ScreenshotOrBuilder
    * [Output Only] The Base64-encoded screenshot data.
    * </pre>
    *
-   * <code>string contents = 506419994;</code>
+   * <code>optional string contents = 506419994;</code>
    *
    * @return The bytes for contents.
    */
@@ -67,7 +67,7 @@ public interface ScreenshotOrBuilder
    * [Output Only] Type of the resource. Always compute#screenshot for the screenshots.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -79,7 +79,7 @@ public interface ScreenshotOrBuilder
    * [Output Only] Type of the resource. Always compute#screenshot for the screenshots.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -91,7 +91,7 @@ public interface ScreenshotOrBuilder
    * [Output Only] Type of the resource. Always compute#screenshot for the screenshots.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */

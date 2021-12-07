@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonImagesStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -34,6 +35,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -86,7 +88,7 @@ public class ImagesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -97,6 +99,7 @@ public class ImagesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -109,7 +112,7 @@ public class ImagesClientTest {
     String project = "project-309310695";
     String image = "image100313435";
 
-    Operation actualResponse = client.delete(project, image);
+    Operation actualResponse = client.deleteAsync(project, image).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -137,10 +140,9 @@ public class ImagesClientTest {
     try {
       String project = "project-309310695";
       String image = "image100313435";
-      client.delete(project, image);
+      client.deleteAsync(project, image).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -154,7 +156,7 @@ public class ImagesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -165,6 +167,7 @@ public class ImagesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -178,7 +181,8 @@ public class ImagesClientTest {
     String image = "image100313435";
     DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
 
-    Operation actualResponse = client.deprecate(project, image, deprecationStatusResource);
+    Operation actualResponse =
+        client.deprecateAsync(project, image, deprecationStatusResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -207,10 +211,9 @@ public class ImagesClientTest {
       String project = "project-309310695";
       String image = "image100313435";
       DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
-      client.deprecate(project, image, deprecationStatusResource);
+      client.deprecateAsync(project, image, deprecationStatusResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -246,6 +249,8 @@ public class ImagesClientTest {
             .setSourceSnapshot("sourceSnapshot-1078634753")
             .setSourceSnapshotEncryptionKey(CustomerEncryptionKey.newBuilder().build())
             .setSourceSnapshotId("sourceSnapshotId-1480876934")
+            .setSourceType("sourceType-1111431691")
+            .setStatus("status-892481550")
             .addAllStorageLocations(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -320,6 +325,8 @@ public class ImagesClientTest {
             .setSourceSnapshot("sourceSnapshot-1078634753")
             .setSourceSnapshotEncryptionKey(CustomerEncryptionKey.newBuilder().build())
             .setSourceSnapshotId("sourceSnapshotId-1480876934")
+            .setSourceType("sourceType-1111431691")
+            .setStatus("status-892481550")
             .addAllStorageLocations(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -423,7 +430,7 @@ public class ImagesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -434,6 +441,7 @@ public class ImagesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -446,7 +454,7 @@ public class ImagesClientTest {
     String project = "project-309310695";
     Image imageResource = Image.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, imageResource);
+    Operation actualResponse = client.insertAsync(project, imageResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -474,10 +482,9 @@ public class ImagesClientTest {
     try {
       String project = "project-309310695";
       Image imageResource = Image.newBuilder().build();
-      client.insert(project, imageResource);
+      client.insertAsync(project, imageResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -541,7 +548,7 @@ public class ImagesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -552,6 +559,7 @@ public class ImagesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -565,7 +573,7 @@ public class ImagesClientTest {
     String image = "image100313435";
     Image imageResource = Image.newBuilder().build();
 
-    Operation actualResponse = client.patch(project, image, imageResource);
+    Operation actualResponse = client.patchAsync(project, image, imageResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -594,10 +602,9 @@ public class ImagesClientTest {
       String project = "project-309310695";
       String image = "image100313435";
       Image imageResource = Image.newBuilder().build();
-      client.patch(project, image, imageResource);
+      client.patchAsync(project, image, imageResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -666,7 +673,7 @@ public class ImagesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -677,6 +684,7 @@ public class ImagesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -691,7 +699,8 @@ public class ImagesClientTest {
     GlobalSetLabelsRequest globalSetLabelsRequestResource =
         GlobalSetLabelsRequest.newBuilder().build();
 
-    Operation actualResponse = client.setLabels(project, resource, globalSetLabelsRequestResource);
+    Operation actualResponse =
+        client.setLabelsAsync(project, resource, globalSetLabelsRequestResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -721,10 +730,9 @@ public class ImagesClientTest {
       String resource = "resource-341064690";
       GlobalSetLabelsRequest globalSetLabelsRequestResource =
           GlobalSetLabelsRequest.newBuilder().build();
-      client.setLabels(project, resource, globalSetLabelsRequestResource);
+      client.setLabelsAsync(project, resource, globalSetLabelsRequestResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 

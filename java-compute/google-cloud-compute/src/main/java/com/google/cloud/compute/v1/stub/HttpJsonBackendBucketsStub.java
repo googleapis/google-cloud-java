@@ -25,11 +25,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddSignedUrlKeyBackendBucketRequest;
 import com.google.cloud.compute.v1.BackendBucket;
@@ -40,8 +42,10 @@ import com.google.cloud.compute.v1.GetBackendBucketRequest;
 import com.google.cloud.compute.v1.InsertBackendBucketRequest;
 import com.google.cloud.compute.v1.ListBackendBucketsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchBackendBucketRequest;
 import com.google.cloud.compute.v1.UpdateBackendBucketRequest;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -59,6 +63,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<AddSignedUrlKeyBackendBucketRequest, Operation>
       addSignedUrlKeyMethodDescriptor =
           ApiMethodDescriptor.<AddSignedUrlKeyBackendBucketRequest, Operation>newBuilder()
@@ -96,7 +103,20 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (AddSignedUrlKeyBackendBucketRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<DeleteBackendBucketRequest, Operation>
@@ -132,7 +152,20 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteBackendBucketRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<DeleteSignedUrlKeyBackendBucketRequest, Operation>
@@ -169,7 +202,20 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteSignedUrlKeyBackendBucketRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetBackendBucketRequest, BackendBucket>
@@ -202,6 +248,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<BackendBucket>newBuilder()
                       .setDefaultInstance(BackendBucket.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -240,7 +287,20 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertBackendBucketRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListBackendBucketsRequest, BackendBucketList>
@@ -290,6 +350,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<BackendBucketList>newBuilder()
                       .setDefaultInstance(BackendBucketList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -330,7 +391,20 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchBackendBucketRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<UpdateBackendBucketRequest, Operation>
@@ -370,22 +444,48 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (UpdateBackendBucketRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<AddSignedUrlKeyBackendBucketRequest, Operation>
       addSignedUrlKeyCallable;
+  private final OperationCallable<AddSignedUrlKeyBackendBucketRequest, Operation, Operation>
+      addSignedUrlKeyOperationCallable;
   private final UnaryCallable<DeleteBackendBucketRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteBackendBucketRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<DeleteSignedUrlKeyBackendBucketRequest, Operation>
       deleteSignedUrlKeyCallable;
+  private final OperationCallable<DeleteSignedUrlKeyBackendBucketRequest, Operation, Operation>
+      deleteSignedUrlKeyOperationCallable;
   private final UnaryCallable<GetBackendBucketRequest, BackendBucket> getCallable;
   private final UnaryCallable<InsertBackendBucketRequest, Operation> insertCallable;
+  private final OperationCallable<InsertBackendBucketRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListBackendBucketsRequest, BackendBucketList> listCallable;
   private final UnaryCallable<ListBackendBucketsRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<PatchBackendBucketRequest, Operation> patchCallable;
+  private final OperationCallable<PatchBackendBucketRequest, Operation, Operation>
+      patchOperationCallable;
   private final UnaryCallable<UpdateBackendBucketRequest, Operation> updateCallable;
+  private final OperationCallable<UpdateBackendBucketRequest, Operation, Operation>
+      updateOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonBackendBucketsStub create(BackendBucketsStubSettings settings)
@@ -426,59 +526,93 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AddSignedUrlKeyBackendBucketRequest, Operation>
         addSignedUrlKeyTransportSettings =
             HttpJsonCallSettings.<AddSignedUrlKeyBackendBucketRequest, Operation>newBuilder()
                 .setMethodDescriptor(addSignedUrlKeyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeleteBackendBucketRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteBackendBucketRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<DeleteSignedUrlKeyBackendBucketRequest, Operation>
         deleteSignedUrlKeyTransportSettings =
             HttpJsonCallSettings.<DeleteSignedUrlKeyBackendBucketRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteSignedUrlKeyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<GetBackendBucketRequest, BackendBucket> getTransportSettings =
         HttpJsonCallSettings.<GetBackendBucketRequest, BackendBucket>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertBackendBucketRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertBackendBucketRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListBackendBucketsRequest, BackendBucketList> listTransportSettings =
         HttpJsonCallSettings.<ListBackendBucketsRequest, BackendBucketList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<PatchBackendBucketRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchBackendBucketRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<UpdateBackendBucketRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateBackendBucketRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.addSignedUrlKeyCallable =
         callableFactory.createUnaryCallable(
             addSignedUrlKeyTransportSettings, settings.addSignedUrlKeySettings(), clientContext);
+    this.addSignedUrlKeyOperationCallable =
+        callableFactory.createOperationCallable(
+            addSignedUrlKeyTransportSettings,
+            settings.addSignedUrlKeyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteSignedUrlKeyCallable =
         callableFactory.createUnaryCallable(
             deleteSignedUrlKeyTransportSettings,
             settings.deleteSignedUrlKeySettings(),
             clientContext);
+    this.deleteSignedUrlKeyOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteSignedUrlKeyTransportSettings,
+            settings.deleteSignedUrlKeyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -488,9 +622,21 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
+    this.updateOperationCallable =
+        callableFactory.createOperationCallable(
+            updateTransportSettings,
+            settings.updateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -516,14 +662,32 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
   }
 
   @Override
+  public OperationCallable<AddSignedUrlKeyBackendBucketRequest, Operation, Operation>
+      addSignedUrlKeyOperationCallable() {
+    return addSignedUrlKeyOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteBackendBucketRequest, Operation> deleteCallable() {
     return deleteCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteBackendBucketRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
   }
 
   @Override
   public UnaryCallable<DeleteSignedUrlKeyBackendBucketRequest, Operation>
       deleteSignedUrlKeyCallable() {
     return deleteSignedUrlKeyCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteSignedUrlKeyBackendBucketRequest, Operation, Operation>
+      deleteSignedUrlKeyOperationCallable() {
+    return deleteSignedUrlKeyOperationCallable;
   }
 
   @Override
@@ -534,6 +698,12 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
   @Override
   public UnaryCallable<InsertBackendBucketRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertBackendBucketRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -552,8 +722,20 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
   }
 
   @Override
+  public OperationCallable<PatchBackendBucketRequest, Operation, Operation>
+      patchOperationCallable() {
+    return patchOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateBackendBucketRequest, Operation> updateCallable() {
     return updateCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateBackendBucketRequest, Operation, Operation>
+      updateOperationCallable() {
+    return updateOperationCallable;
   }
 
   @Override

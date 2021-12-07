@@ -28,9 +28,10 @@ public interface CommitmentOrBuilder
    *
    * <pre>
    * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+   * Check the Category enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
+   * <code>optional string category = 50511102;</code>
    *
    * @return Whether the category field is set.
    */
@@ -40,25 +41,27 @@ public interface CommitmentOrBuilder
    *
    * <pre>
    * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+   * Check the Category enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
+   * <code>optional string category = 50511102;</code>
    *
-   * @return The enum numeric value on the wire for category.
+   * @return The category.
    */
-  int getCategoryValue();
+  java.lang.String getCategory();
   /**
    *
    *
    * <pre>
    * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+   * Check the Category enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
+   * <code>optional string category = 50511102;</code>
    *
-   * @return The category.
+   * @return The bytes for category.
    */
-  com.google.cloud.compute.v1.Commitment.Category getCategory();
+  com.google.protobuf.ByteString getCategoryBytes();
 
   /**
    *
@@ -67,7 +70,7 @@ public interface CommitmentOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -79,7 +82,7 @@ public interface CommitmentOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -91,7 +94,7 @@ public interface CommitmentOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -104,7 +107,7 @@ public interface CommitmentOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -116,7 +119,7 @@ public interface CommitmentOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -128,7 +131,7 @@ public interface CommitmentOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -141,7 +144,7 @@ public interface CommitmentOrBuilder
    * [Output Only] Commitment end time in RFC3339 text format.
    * </pre>
    *
-   * <code>string end_timestamp = 468096690;</code>
+   * <code>optional string end_timestamp = 468096690;</code>
    *
    * @return Whether the endTimestamp field is set.
    */
@@ -153,7 +156,7 @@ public interface CommitmentOrBuilder
    * [Output Only] Commitment end time in RFC3339 text format.
    * </pre>
    *
-   * <code>string end_timestamp = 468096690;</code>
+   * <code>optional string end_timestamp = 468096690;</code>
    *
    * @return The endTimestamp.
    */
@@ -165,7 +168,7 @@ public interface CommitmentOrBuilder
    * [Output Only] Commitment end time in RFC3339 text format.
    * </pre>
    *
-   * <code>string end_timestamp = 468096690;</code>
+   * <code>optional string end_timestamp = 468096690;</code>
    *
    * @return The bytes for endTimestamp.
    */
@@ -178,7 +181,7 @@ public interface CommitmentOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -190,7 +193,7 @@ public interface CommitmentOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -203,7 +206,7 @@ public interface CommitmentOrBuilder
    * [Output Only] Type of the resource. Always compute#commitment for commitments.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -215,7 +218,7 @@ public interface CommitmentOrBuilder
    * [Output Only] Type of the resource. Always compute#commitment for commitments.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -227,7 +230,7 @@ public interface CommitmentOrBuilder
    * [Output Only] Type of the resource. Always compute#commitment for commitments.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -240,7 +243,8 @@ public interface CommitmentOrBuilder
    * The license specification required as part of a license commitment.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+   * <code>optional .google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;
+   * </code>
    *
    * @return Whether the licenseResource field is set.
    */
@@ -252,7 +256,8 @@ public interface CommitmentOrBuilder
    * The license specification required as part of a license commitment.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+   * <code>optional .google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;
+   * </code>
    *
    * @return The licenseResource.
    */
@@ -264,7 +269,8 @@ public interface CommitmentOrBuilder
    * The license specification required as part of a license commitment.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+   * <code>optional .google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;
+   * </code>
    */
   com.google.cloud.compute.v1.LicenseResourceCommitmentOrBuilder getLicenseResourceOrBuilder();
 
@@ -275,7 +281,7 @@ public interface CommitmentOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -287,7 +293,7 @@ public interface CommitmentOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -299,7 +305,7 @@ public interface CommitmentOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -310,9 +316,10 @@ public interface CommitmentOrBuilder
    *
    * <pre>
    * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+   * Check the Plan enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
+   * <code>optional string plan = 3443497;</code>
    *
    * @return Whether the plan field is set.
    */
@@ -322,25 +329,27 @@ public interface CommitmentOrBuilder
    *
    * <pre>
    * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+   * Check the Plan enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
+   * <code>optional string plan = 3443497;</code>
    *
-   * @return The enum numeric value on the wire for plan.
+   * @return The plan.
    */
-  int getPlanValue();
+  java.lang.String getPlan();
   /**
    *
    *
    * <pre>
    * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+   * Check the Plan enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
+   * <code>optional string plan = 3443497;</code>
    *
-   * @return The plan.
+   * @return The bytes for plan.
    */
-  com.google.cloud.compute.v1.Commitment.Plan getPlan();
+  com.google.protobuf.ByteString getPlanBytes();
 
   /**
    *
@@ -349,7 +358,7 @@ public interface CommitmentOrBuilder
    * [Output Only] URL of the region where this commitment may be used.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -361,7 +370,7 @@ public interface CommitmentOrBuilder
    * [Output Only] URL of the region where this commitment may be used.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -373,7 +382,7 @@ public interface CommitmentOrBuilder
    * [Output Only] URL of the region where this commitment may be used.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -490,7 +499,7 @@ public interface CommitmentOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -502,7 +511,7 @@ public interface CommitmentOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -514,7 +523,7 @@ public interface CommitmentOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -527,7 +536,7 @@ public interface CommitmentOrBuilder
    * [Output Only] Commitment start time in RFC3339 text format.
    * </pre>
    *
-   * <code>string start_timestamp = 83645817;</code>
+   * <code>optional string start_timestamp = 83645817;</code>
    *
    * @return Whether the startTimestamp field is set.
    */
@@ -539,7 +548,7 @@ public interface CommitmentOrBuilder
    * [Output Only] Commitment start time in RFC3339 text format.
    * </pre>
    *
-   * <code>string start_timestamp = 83645817;</code>
+   * <code>optional string start_timestamp = 83645817;</code>
    *
    * @return The startTimestamp.
    */
@@ -551,7 +560,7 @@ public interface CommitmentOrBuilder
    * [Output Only] Commitment start time in RFC3339 text format.
    * </pre>
    *
-   * <code>string start_timestamp = 83645817;</code>
+   * <code>optional string start_timestamp = 83645817;</code>
    *
    * @return The bytes for startTimestamp.
    */
@@ -562,9 +571,10 @@ public interface CommitmentOrBuilder
    *
    * <pre>
    * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -574,25 +584,27 @@ public interface CommitmentOrBuilder
    *
    * <pre>
    * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    *
    *
    * <pre>
    * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1.Commitment.Status getStatus();
+  com.google.protobuf.ByteString getStatusBytes();
 
   /**
    *
@@ -601,7 +613,7 @@ public interface CommitmentOrBuilder
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return Whether the statusMessage field is set.
    */
@@ -613,7 +625,7 @@ public interface CommitmentOrBuilder
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return The statusMessage.
    */
@@ -625,9 +637,49 @@ public interface CommitmentOrBuilder
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return The bytes for statusMessage.
    */
   com.google.protobuf.ByteString getStatusMessageBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+   * Check the Type enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string type = 3575610;</code>
+   *
+   * @return Whether the type field is set.
+   */
+  boolean hasType();
+  /**
+   *
+   *
+   * <pre>
+   * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+   * Check the Type enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string type = 3575610;</code>
+   *
+   * @return The type.
+   */
+  java.lang.String getType();
+  /**
+   *
+   *
+   * <pre>
+   * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+   * Check the Type enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string type = 3575610;</code>
+   *
+   * @return The bytes for type.
+   */
+  com.google.protobuf.ByteString getTypeBytes();
 }

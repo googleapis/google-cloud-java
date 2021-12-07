@@ -127,11 +127,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Prior to forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite.
-   * The value must be between 1 and 255 characters.
+   * Prior to forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite. The value must be between 1 and 255 characters.
    * </pre>
    *
-   * <code>string host_rewrite = 159819253;</code>
+   * <code>optional string host_rewrite = 159819253;</code>
    *
    * @return Whether the hostRewrite field is set.
    */
@@ -143,11 +142,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Prior to forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite.
-   * The value must be between 1 and 255 characters.
+   * Prior to forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite. The value must be between 1 and 255 characters.
    * </pre>
    *
-   * <code>string host_rewrite = 159819253;</code>
+   * <code>optional string host_rewrite = 159819253;</code>
    *
    * @return The hostRewrite.
    */
@@ -167,11 +165,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Prior to forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite.
-   * The value must be between 1 and 255 characters.
+   * Prior to forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite. The value must be between 1 and 255 characters.
    * </pre>
    *
-   * <code>string host_rewrite = 159819253;</code>
+   * <code>optional string host_rewrite = 159819253;</code>
    *
    * @return The bytes for hostRewrite.
    */
@@ -194,11 +191,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Prior to forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite.
-   * The value must be between 1 and 1024 characters.
+   * Prior to forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite. The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string path_prefix_rewrite = 41186361;</code>
+   * <code>optional string path_prefix_rewrite = 41186361;</code>
    *
    * @return Whether the pathPrefixRewrite field is set.
    */
@@ -210,11 +206,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Prior to forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite.
-   * The value must be between 1 and 1024 characters.
+   * Prior to forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite. The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string path_prefix_rewrite = 41186361;</code>
+   * <code>optional string path_prefix_rewrite = 41186361;</code>
    *
    * @return The pathPrefixRewrite.
    */
@@ -234,11 +229,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Prior to forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite.
-   * The value must be between 1 and 1024 characters.
+   * Prior to forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite. The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string path_prefix_rewrite = 41186361;</code>
+   * <code>optional string path_prefix_rewrite = 41186361;</code>
    *
    * @return The bytes for pathPrefixRewrite.
    */
@@ -615,11 +609,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Prior to forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite.
-     * The value must be between 1 and 255 characters.
+     * Prior to forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite. The value must be between 1 and 255 characters.
      * </pre>
      *
-     * <code>string host_rewrite = 159819253;</code>
+     * <code>optional string host_rewrite = 159819253;</code>
      *
      * @return Whether the hostRewrite field is set.
      */
@@ -630,11 +623,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Prior to forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite.
-     * The value must be between 1 and 255 characters.
+     * Prior to forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite. The value must be between 1 and 255 characters.
      * </pre>
      *
-     * <code>string host_rewrite = 159819253;</code>
+     * <code>optional string host_rewrite = 159819253;</code>
      *
      * @return The hostRewrite.
      */
@@ -653,11 +645,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Prior to forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite.
-     * The value must be between 1 and 255 characters.
+     * Prior to forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite. The value must be between 1 and 255 characters.
      * </pre>
      *
-     * <code>string host_rewrite = 159819253;</code>
+     * <code>optional string host_rewrite = 159819253;</code>
      *
      * @return The bytes for hostRewrite.
      */
@@ -676,11 +667,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Prior to forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite.
-     * The value must be between 1 and 255 characters.
+     * Prior to forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite. The value must be between 1 and 255 characters.
      * </pre>
      *
-     * <code>string host_rewrite = 159819253;</code>
+     * <code>optional string host_rewrite = 159819253;</code>
      *
      * @param value The hostRewrite to set.
      * @return This builder for chaining.
@@ -698,11 +688,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Prior to forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite.
-     * The value must be between 1 and 255 characters.
+     * Prior to forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite. The value must be between 1 and 255 characters.
      * </pre>
      *
-     * <code>string host_rewrite = 159819253;</code>
+     * <code>optional string host_rewrite = 159819253;</code>
      *
      * @return This builder for chaining.
      */
@@ -716,11 +705,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Prior to forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite.
-     * The value must be between 1 and 255 characters.
+     * Prior to forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite. The value must be between 1 and 255 characters.
      * </pre>
      *
-     * <code>string host_rewrite = 159819253;</code>
+     * <code>optional string host_rewrite = 159819253;</code>
      *
      * @param value The bytes for hostRewrite to set.
      * @return This builder for chaining.
@@ -741,11 +729,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Prior to forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite.
-     * The value must be between 1 and 1024 characters.
+     * Prior to forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite. The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string path_prefix_rewrite = 41186361;</code>
+     * <code>optional string path_prefix_rewrite = 41186361;</code>
      *
      * @return Whether the pathPrefixRewrite field is set.
      */
@@ -756,11 +743,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Prior to forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite.
-     * The value must be between 1 and 1024 characters.
+     * Prior to forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite. The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string path_prefix_rewrite = 41186361;</code>
+     * <code>optional string path_prefix_rewrite = 41186361;</code>
      *
      * @return The pathPrefixRewrite.
      */
@@ -779,11 +765,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Prior to forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite.
-     * The value must be between 1 and 1024 characters.
+     * Prior to forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite. The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string path_prefix_rewrite = 41186361;</code>
+     * <code>optional string path_prefix_rewrite = 41186361;</code>
      *
      * @return The bytes for pathPrefixRewrite.
      */
@@ -802,11 +787,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Prior to forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite.
-     * The value must be between 1 and 1024 characters.
+     * Prior to forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite. The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string path_prefix_rewrite = 41186361;</code>
+     * <code>optional string path_prefix_rewrite = 41186361;</code>
      *
      * @param value The pathPrefixRewrite to set.
      * @return This builder for chaining.
@@ -824,11 +808,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Prior to forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite.
-     * The value must be between 1 and 1024 characters.
+     * Prior to forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite. The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string path_prefix_rewrite = 41186361;</code>
+     * <code>optional string path_prefix_rewrite = 41186361;</code>
      *
      * @return This builder for chaining.
      */
@@ -842,11 +825,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Prior to forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite.
-     * The value must be between 1 and 1024 characters.
+     * Prior to forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite. The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string path_prefix_rewrite = 41186361;</code>
+     * <code>optional string path_prefix_rewrite = 41186361;</code>
      *
      * @param value The bytes for pathPrefixRewrite to set.
      * @return This builder for chaining.

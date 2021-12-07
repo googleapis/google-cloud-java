@@ -291,13 +291,13 @@ public final class GetInterconnectAttachmentRequest extends com.google.protobuf.
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRegionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (!getInterconnectAttachmentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(interconnectAttachment_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 308135284, interconnectAttachment_);
     }
@@ -310,13 +310,13 @@ public final class GetInterconnectAttachmentRequest extends com.google.protobuf.
     if (size != -1) return size;
 
     size = 0;
-    if (!getRegionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
-    if (!getInterconnectAttachmentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(interconnectAttachment_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               308135284, interconnectAttachment_);

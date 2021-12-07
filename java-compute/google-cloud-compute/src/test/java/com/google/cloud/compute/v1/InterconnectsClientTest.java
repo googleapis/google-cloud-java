@@ -27,12 +27,14 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonInterconnectsStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -86,7 +88,7 @@ public class InterconnectsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -97,6 +99,7 @@ public class InterconnectsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -109,7 +112,7 @@ public class InterconnectsClientTest {
     String project = "project-309310695";
     String interconnect = "interconnect-849140594";
 
-    Operation actualResponse = client.delete(project, interconnect);
+    Operation actualResponse = client.deleteAsync(project, interconnect).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -137,10 +140,9 @@ public class InterconnectsClientTest {
     try {
       String project = "project-309310695";
       String interconnect = "interconnect-849140594";
-      client.delete(project, interconnect);
+      client.deleteAsync(project, interconnect).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -158,14 +160,19 @@ public class InterconnectsClientTest {
             .setGoogleReferenceId("googleReferenceId600178125")
             .setId(3355)
             .addAllInterconnectAttachments(new ArrayList<String>())
+            .setInterconnectType("interconnectType1730818280")
             .setKind("kind3292052")
+            .setLinkType("linkType1194206804")
             .setLocation("location1901043637")
             .setName("name3373707")
             .setNocContactEmail("nocContactEmail480425790")
+            .setOperationalStatus("operationalStatus-2103166364")
             .setPeerIpAddress("peerIpAddress-1037076085")
             .setProvisionedLinkCount(-1199724171)
             .setRequestedLinkCount(1118793211)
+            .setSatisfiesPzs(true)
             .setSelfLink("selfLink1191800166")
+            .setState("state109757585")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -264,7 +271,7 @@ public class InterconnectsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -275,6 +282,7 @@ public class InterconnectsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -287,7 +295,7 @@ public class InterconnectsClientTest {
     String project = "project-309310695";
     Interconnect interconnectResource = Interconnect.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, interconnectResource);
+    Operation actualResponse = client.insertAsync(project, interconnectResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -315,10 +323,9 @@ public class InterconnectsClientTest {
     try {
       String project = "project-309310695";
       Interconnect interconnectResource = Interconnect.newBuilder().build();
-      client.insert(project, interconnectResource);
+      client.insertAsync(project, interconnectResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -382,7 +389,7 @@ public class InterconnectsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -393,6 +400,7 @@ public class InterconnectsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -406,7 +414,7 @@ public class InterconnectsClientTest {
     String interconnect = "interconnect-849140594";
     Interconnect interconnectResource = Interconnect.newBuilder().build();
 
-    Operation actualResponse = client.patch(project, interconnect, interconnectResource);
+    Operation actualResponse = client.patchAsync(project, interconnect, interconnectResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -435,10 +443,9 @@ public class InterconnectsClientTest {
       String project = "project-309310695";
       String interconnect = "interconnect-849140594";
       Interconnect interconnectResource = Interconnect.newBuilder().build();
-      client.patch(project, interconnect, interconnectResource);
+      client.patchAsync(project, interconnect, interconnectResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 }

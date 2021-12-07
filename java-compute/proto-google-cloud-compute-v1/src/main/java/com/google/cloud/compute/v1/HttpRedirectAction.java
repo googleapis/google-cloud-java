@@ -41,7 +41,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     hostRedirect_ = "";
     pathRedirect_ = "";
     prefixRedirect_ = "";
-    redirectResponseCode_ = 0;
+    redirectResponseCode_ = "";
   }
 
   @java.lang.Override
@@ -100,11 +100,11 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
               pathRedirect_ = s;
               break;
             }
-          case -801284032:
+          case -801284030:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
-              redirectResponseCode_ = rawValue;
+              redirectResponseCode_ = s;
               break;
             }
           case -725493942:
@@ -152,13 +152,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The HTTP Status code to use for this RedirectAction.
-   * Supported values are:
-   * - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301.
-   * - FOUND, which corresponds to 302.
-   * - SEE_OTHER which corresponds to 303.
-   * - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained.
-   * - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+   * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode}
@@ -174,15 +168,55 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_REDIRECT_RESPONSE_CODE = 0;</code>
      */
     UNDEFINED_REDIRECT_RESPONSE_CODE(0),
-    /** <code>FOUND = 67084130;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Http Status Code 302 - Found.
+     * </pre>
+     *
+     * <code>FOUND = 67084130;</code>
+     */
     FOUND(67084130),
-    /** <code>MOVED_PERMANENTLY_DEFAULT = 386698449;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Http Status Code 301 - Moved Permanently.
+     * </pre>
+     *
+     * <code>MOVED_PERMANENTLY_DEFAULT = 386698449;</code>
+     */
     MOVED_PERMANENTLY_DEFAULT(386698449),
-    /** <code>PERMANENT_REDIRECT = 382006381;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Http Status Code 308 - Permanent Redirect maintaining HTTP method.
+     * </pre>
+     *
+     * <code>PERMANENT_REDIRECT = 382006381;</code>
+     */
     PERMANENT_REDIRECT(382006381),
-    /** <code>SEE_OTHER = 445380580;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Http Status Code 303 - See Other.
+     * </pre>
+     *
+     * <code>SEE_OTHER = 445380580;</code>
+     */
     SEE_OTHER(445380580),
-    /** <code>TEMPORARY_REDIRECT = 489550378;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Http Status Code 307 - Temporary Redirect maintaining HTTP method.
+     * </pre>
+     *
+     * <code>TEMPORARY_REDIRECT = 489550378;</code>
+     */
     TEMPORARY_REDIRECT(489550378),
     UNRECOGNIZED(-1),
     ;
@@ -197,15 +231,55 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_REDIRECT_RESPONSE_CODE = 0;</code>
      */
     public static final int UNDEFINED_REDIRECT_RESPONSE_CODE_VALUE = 0;
-    /** <code>FOUND = 67084130;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Http Status Code 302 - Found.
+     * </pre>
+     *
+     * <code>FOUND = 67084130;</code>
+     */
     public static final int FOUND_VALUE = 67084130;
-    /** <code>MOVED_PERMANENTLY_DEFAULT = 386698449;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Http Status Code 301 - Moved Permanently.
+     * </pre>
+     *
+     * <code>MOVED_PERMANENTLY_DEFAULT = 386698449;</code>
+     */
     public static final int MOVED_PERMANENTLY_DEFAULT_VALUE = 386698449;
-    /** <code>PERMANENT_REDIRECT = 382006381;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Http Status Code 308 - Permanent Redirect maintaining HTTP method.
+     * </pre>
+     *
+     * <code>PERMANENT_REDIRECT = 382006381;</code>
+     */
     public static final int PERMANENT_REDIRECT_VALUE = 382006381;
-    /** <code>SEE_OTHER = 445380580;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Http Status Code 303 - See Other.
+     * </pre>
+     *
+     * <code>SEE_OTHER = 445380580;</code>
+     */
     public static final int SEE_OTHER_VALUE = 445380580;
-    /** <code>TEMPORARY_REDIRECT = 489550378;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Http Status Code 307 - Temporary Redirect maintaining HTTP method.
+     * </pre>
+     *
+     * <code>TEMPORARY_REDIRECT = 489550378;</code>
+     */
     public static final int TEMPORARY_REDIRECT_VALUE = 489550378;
 
     public final int getNumber() {
@@ -307,11 +381,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The host that will be used in the redirect response instead of the one that was supplied in the request.
-   * The value must be between 1 and 255 characters.
+   * The host that will be used in the redirect response instead of the one that was supplied in the request. The value must be between 1 and 255 characters.
    * </pre>
    *
-   * <code>string host_redirect = 107417747;</code>
+   * <code>optional string host_redirect = 107417747;</code>
    *
    * @return Whether the hostRedirect field is set.
    */
@@ -323,11 +396,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The host that will be used in the redirect response instead of the one that was supplied in the request.
-   * The value must be between 1 and 255 characters.
+   * The host that will be used in the redirect response instead of the one that was supplied in the request. The value must be between 1 and 255 characters.
    * </pre>
    *
-   * <code>string host_redirect = 107417747;</code>
+   * <code>optional string host_redirect = 107417747;</code>
    *
    * @return The hostRedirect.
    */
@@ -347,11 +419,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The host that will be used in the redirect response instead of the one that was supplied in the request.
-   * The value must be between 1 and 255 characters.
+   * The host that will be used in the redirect response instead of the one that was supplied in the request. The value must be between 1 and 255 characters.
    * </pre>
    *
-   * <code>string host_redirect = 107417747;</code>
+   * <code>optional string host_redirect = 107417747;</code>
    *
    * @return The bytes for hostRedirect.
    */
@@ -374,12 +445,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * If set to true, the URL scheme in the redirected request is set to https. If set to false, the URL scheme of the redirected request will remain the same as that of the request.
-   * This must only be set for UrlMaps used in TargetHttpProxys. Setting this true for TargetHttpsProxy is not permitted.
-   * The default is set to false.
+   * If set to true, the URL scheme in the redirected request is set to https. If set to false, the URL scheme of the redirected request will remain the same as that of the request. This must only be set for UrlMaps used in TargetHttpProxys. Setting this true for TargetHttpsProxy is not permitted. The default is set to false.
    * </pre>
    *
-   * <code>bool https_redirect = 170260656;</code>
+   * <code>optional bool https_redirect = 170260656;</code>
    *
    * @return Whether the httpsRedirect field is set.
    */
@@ -391,12 +460,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * If set to true, the URL scheme in the redirected request is set to https. If set to false, the URL scheme of the redirected request will remain the same as that of the request.
-   * This must only be set for UrlMaps used in TargetHttpProxys. Setting this true for TargetHttpsProxy is not permitted.
-   * The default is set to false.
+   * If set to true, the URL scheme in the redirected request is set to https. If set to false, the URL scheme of the redirected request will remain the same as that of the request. This must only be set for UrlMaps used in TargetHttpProxys. Setting this true for TargetHttpsProxy is not permitted. The default is set to false.
    * </pre>
    *
-   * <code>bool https_redirect = 170260656;</code>
+   * <code>optional bool https_redirect = 170260656;</code>
    *
    * @return The httpsRedirect.
    */
@@ -411,12 +478,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The path that will be used in the redirect response instead of the one that was supplied in the request.
-   * pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
-   * The value must be between 1 and 1024 characters.
+   * The path that will be used in the redirect response instead of the one that was supplied in the request. pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string path_redirect = 272342710;</code>
+   * <code>optional string path_redirect = 272342710;</code>
    *
    * @return Whether the pathRedirect field is set.
    */
@@ -428,12 +493,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The path that will be used in the redirect response instead of the one that was supplied in the request.
-   * pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
-   * The value must be between 1 and 1024 characters.
+   * The path that will be used in the redirect response instead of the one that was supplied in the request. pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string path_redirect = 272342710;</code>
+   * <code>optional string path_redirect = 272342710;</code>
    *
    * @return The pathRedirect.
    */
@@ -453,12 +516,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The path that will be used in the redirect response instead of the one that was supplied in the request.
-   * pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
-   * The value must be between 1 and 1024 characters.
+   * The path that will be used in the redirect response instead of the one that was supplied in the request. pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string path_redirect = 272342710;</code>
+   * <code>optional string path_redirect = 272342710;</code>
    *
    * @return The bytes for pathRedirect.
    */
@@ -481,12 +542,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request.
-   * prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
-   * The value must be between 1 and 1024 characters.
+   * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request. prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string prefix_redirect = 446184169;</code>
+   * <code>optional string prefix_redirect = 446184169;</code>
    *
    * @return Whether the prefixRedirect field is set.
    */
@@ -498,12 +557,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request.
-   * prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
-   * The value must be between 1 and 1024 characters.
+   * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request. prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string prefix_redirect = 446184169;</code>
+   * <code>optional string prefix_redirect = 446184169;</code>
    *
    * @return The prefixRedirect.
    */
@@ -523,12 +580,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request.
-   * prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
-   * The value must be between 1 and 1024 characters.
+   * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request. prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string prefix_redirect = 446184169;</code>
+   * <code>optional string prefix_redirect = 446184169;</code>
    *
    * @return The bytes for prefixRedirect.
    */
@@ -546,23 +601,16 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int REDIRECT_RESPONSE_CODE_FIELD_NUMBER = 436710408;
-  private int redirectResponseCode_;
+  private volatile java.lang.Object redirectResponseCode_;
   /**
    *
    *
    * <pre>
-   * The HTTP Status code to use for this RedirectAction.
-   * Supported values are:
-   * - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301.
-   * - FOUND, which corresponds to 302.
-   * - SEE_OTHER which corresponds to 303.
-   * - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained.
-   * - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+   * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+   * Check the RedirectResponseCode enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
-   * </code>
+   * <code>optional string redirect_response_code = 436710408;</code>
    *
    * @return Whether the redirectResponseCode field is set.
    */
@@ -574,54 +622,49 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The HTTP Status code to use for this RedirectAction.
-   * Supported values are:
-   * - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301.
-   * - FOUND, which corresponds to 302.
-   * - SEE_OTHER which corresponds to 303.
-   * - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained.
-   * - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+   * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+   * Check the RedirectResponseCode enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
-   * </code>
+   * <code>optional string redirect_response_code = 436710408;</code>
    *
-   * @return The enum numeric value on the wire for redirectResponseCode.
+   * @return The redirectResponseCode.
    */
   @java.lang.Override
-  public int getRedirectResponseCodeValue() {
-    return redirectResponseCode_;
+  public java.lang.String getRedirectResponseCode() {
+    java.lang.Object ref = redirectResponseCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      redirectResponseCode_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * The HTTP Status code to use for this RedirectAction.
-   * Supported values are:
-   * - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301.
-   * - FOUND, which corresponds to 302.
-   * - SEE_OTHER which corresponds to 303.
-   * - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained.
-   * - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+   * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+   * Check the RedirectResponseCode enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
-   * </code>
+   * <code>optional string redirect_response_code = 436710408;</code>
    *
-   * @return The redirectResponseCode.
+   * @return The bytes for redirectResponseCode.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode
-      getRedirectResponseCode() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode result =
-        com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode.valueOf(
-            redirectResponseCode_);
-    return result == null
-        ? com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getRedirectResponseCodeBytes() {
+    java.lang.Object ref = redirectResponseCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      redirectResponseCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int STRIP_QUERY_FIELD_NUMBER = 52284641;
@@ -630,11 +673,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * If set to true, any accompanying query portion of the original URL is removed prior to redirecting the request. If set to false, the query portion of the original URL is retained.
-   * The default is set to false.
+   * If set to true, any accompanying query portion of the original URL is removed prior to redirecting the request. If set to false, the query portion of the original URL is retained. The default is set to false.
    * </pre>
    *
-   * <code>bool strip_query = 52284641;</code>
+   * <code>optional bool strip_query = 52284641;</code>
    *
    * @return Whether the stripQuery field is set.
    */
@@ -646,11 +688,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * If set to true, any accompanying query portion of the original URL is removed prior to redirecting the request. If set to false, the query portion of the original URL is retained.
-   * The default is set to false.
+   * If set to true, any accompanying query portion of the original URL is removed prior to redirecting the request. If set to false, the query portion of the original URL is retained. The default is set to false.
    * </pre>
    *
-   * <code>bool strip_query = 52284641;</code>
+   * <code>optional bool strip_query = 52284641;</code>
    *
    * @return The stripQuery.
    */
@@ -686,7 +727,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       com.google.protobuf.GeneratedMessageV3.writeString(output, 272342710, pathRedirect_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeEnum(436710408, redirectResponseCode_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 436710408, redirectResponseCode_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 446184169, prefixRedirect_);
@@ -714,7 +755,8 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeEnumSize(436710408, redirectResponseCode_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              436710408, redirectResponseCode_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(446184169, prefixRedirect_);
@@ -753,7 +795,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     }
     if (hasRedirectResponseCode() != other.hasRedirectResponseCode()) return false;
     if (hasRedirectResponseCode()) {
-      if (redirectResponseCode_ != other.redirectResponseCode_) return false;
+      if (!getRedirectResponseCode().equals(other.getRedirectResponseCode())) return false;
     }
     if (hasStripQuery() != other.hasStripQuery()) return false;
     if (hasStripQuery()) {
@@ -788,7 +830,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     }
     if (hasRedirectResponseCode()) {
       hash = (37 * hash) + REDIRECT_RESPONSE_CODE_FIELD_NUMBER;
-      hash = (53 * hash) + redirectResponseCode_;
+      hash = (53 * hash) + getRedirectResponseCode().hashCode();
     }
     if (hasStripQuery()) {
       hash = (37 * hash) + STRIP_QUERY_FIELD_NUMBER;
@@ -947,7 +989,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       bitField0_ = (bitField0_ & ~0x00000004);
       prefixRedirect_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
-      redirectResponseCode_ = 0;
+      redirectResponseCode_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
       stripQuery_ = false;
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -1073,7 +1115,9 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
         onChanged();
       }
       if (other.hasRedirectResponseCode()) {
-        setRedirectResponseCode(other.getRedirectResponseCode());
+        bitField0_ |= 0x00000010;
+        redirectResponseCode_ = other.redirectResponseCode_;
+        onChanged();
       }
       if (other.hasStripQuery()) {
         setStripQuery(other.getStripQuery());
@@ -1114,11 +1158,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The host that will be used in the redirect response instead of the one that was supplied in the request.
-     * The value must be between 1 and 255 characters.
+     * The host that will be used in the redirect response instead of the one that was supplied in the request. The value must be between 1 and 255 characters.
      * </pre>
      *
-     * <code>string host_redirect = 107417747;</code>
+     * <code>optional string host_redirect = 107417747;</code>
      *
      * @return Whether the hostRedirect field is set.
      */
@@ -1129,11 +1172,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The host that will be used in the redirect response instead of the one that was supplied in the request.
-     * The value must be between 1 and 255 characters.
+     * The host that will be used in the redirect response instead of the one that was supplied in the request. The value must be between 1 and 255 characters.
      * </pre>
      *
-     * <code>string host_redirect = 107417747;</code>
+     * <code>optional string host_redirect = 107417747;</code>
      *
      * @return The hostRedirect.
      */
@@ -1152,11 +1194,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The host that will be used in the redirect response instead of the one that was supplied in the request.
-     * The value must be between 1 and 255 characters.
+     * The host that will be used in the redirect response instead of the one that was supplied in the request. The value must be between 1 and 255 characters.
      * </pre>
      *
-     * <code>string host_redirect = 107417747;</code>
+     * <code>optional string host_redirect = 107417747;</code>
      *
      * @return The bytes for hostRedirect.
      */
@@ -1175,11 +1216,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The host that will be used in the redirect response instead of the one that was supplied in the request.
-     * The value must be between 1 and 255 characters.
+     * The host that will be used in the redirect response instead of the one that was supplied in the request. The value must be between 1 and 255 characters.
      * </pre>
      *
-     * <code>string host_redirect = 107417747;</code>
+     * <code>optional string host_redirect = 107417747;</code>
      *
      * @param value The hostRedirect to set.
      * @return This builder for chaining.
@@ -1197,11 +1237,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The host that will be used in the redirect response instead of the one that was supplied in the request.
-     * The value must be between 1 and 255 characters.
+     * The host that will be used in the redirect response instead of the one that was supplied in the request. The value must be between 1 and 255 characters.
      * </pre>
      *
-     * <code>string host_redirect = 107417747;</code>
+     * <code>optional string host_redirect = 107417747;</code>
      *
      * @return This builder for chaining.
      */
@@ -1215,11 +1254,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The host that will be used in the redirect response instead of the one that was supplied in the request.
-     * The value must be between 1 and 255 characters.
+     * The host that will be used in the redirect response instead of the one that was supplied in the request. The value must be between 1 and 255 characters.
      * </pre>
      *
-     * <code>string host_redirect = 107417747;</code>
+     * <code>optional string host_redirect = 107417747;</code>
      *
      * @param value The bytes for hostRedirect to set.
      * @return This builder for chaining.
@@ -1240,12 +1278,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set to true, the URL scheme in the redirected request is set to https. If set to false, the URL scheme of the redirected request will remain the same as that of the request.
-     * This must only be set for UrlMaps used in TargetHttpProxys. Setting this true for TargetHttpsProxy is not permitted.
-     * The default is set to false.
+     * If set to true, the URL scheme in the redirected request is set to https. If set to false, the URL scheme of the redirected request will remain the same as that of the request. This must only be set for UrlMaps used in TargetHttpProxys. Setting this true for TargetHttpsProxy is not permitted. The default is set to false.
      * </pre>
      *
-     * <code>bool https_redirect = 170260656;</code>
+     * <code>optional bool https_redirect = 170260656;</code>
      *
      * @return Whether the httpsRedirect field is set.
      */
@@ -1257,12 +1293,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set to true, the URL scheme in the redirected request is set to https. If set to false, the URL scheme of the redirected request will remain the same as that of the request.
-     * This must only be set for UrlMaps used in TargetHttpProxys. Setting this true for TargetHttpsProxy is not permitted.
-     * The default is set to false.
+     * If set to true, the URL scheme in the redirected request is set to https. If set to false, the URL scheme of the redirected request will remain the same as that of the request. This must only be set for UrlMaps used in TargetHttpProxys. Setting this true for TargetHttpsProxy is not permitted. The default is set to false.
      * </pre>
      *
-     * <code>bool https_redirect = 170260656;</code>
+     * <code>optional bool https_redirect = 170260656;</code>
      *
      * @return The httpsRedirect.
      */
@@ -1274,12 +1308,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set to true, the URL scheme in the redirected request is set to https. If set to false, the URL scheme of the redirected request will remain the same as that of the request.
-     * This must only be set for UrlMaps used in TargetHttpProxys. Setting this true for TargetHttpsProxy is not permitted.
-     * The default is set to false.
+     * If set to true, the URL scheme in the redirected request is set to https. If set to false, the URL scheme of the redirected request will remain the same as that of the request. This must only be set for UrlMaps used in TargetHttpProxys. Setting this true for TargetHttpsProxy is not permitted. The default is set to false.
      * </pre>
      *
-     * <code>bool https_redirect = 170260656;</code>
+     * <code>optional bool https_redirect = 170260656;</code>
      *
      * @param value The httpsRedirect to set.
      * @return This builder for chaining.
@@ -1294,12 +1326,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set to true, the URL scheme in the redirected request is set to https. If set to false, the URL scheme of the redirected request will remain the same as that of the request.
-     * This must only be set for UrlMaps used in TargetHttpProxys. Setting this true for TargetHttpsProxy is not permitted.
-     * The default is set to false.
+     * If set to true, the URL scheme in the redirected request is set to https. If set to false, the URL scheme of the redirected request will remain the same as that of the request. This must only be set for UrlMaps used in TargetHttpProxys. Setting this true for TargetHttpsProxy is not permitted. The default is set to false.
      * </pre>
      *
-     * <code>bool https_redirect = 170260656;</code>
+     * <code>optional bool https_redirect = 170260656;</code>
      *
      * @return This builder for chaining.
      */
@@ -1315,12 +1345,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The path that will be used in the redirect response instead of the one that was supplied in the request.
-     * pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
-     * The value must be between 1 and 1024 characters.
+     * The path that will be used in the redirect response instead of the one that was supplied in the request. pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string path_redirect = 272342710;</code>
+     * <code>optional string path_redirect = 272342710;</code>
      *
      * @return Whether the pathRedirect field is set.
      */
@@ -1331,12 +1359,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The path that will be used in the redirect response instead of the one that was supplied in the request.
-     * pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
-     * The value must be between 1 and 1024 characters.
+     * The path that will be used in the redirect response instead of the one that was supplied in the request. pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string path_redirect = 272342710;</code>
+     * <code>optional string path_redirect = 272342710;</code>
      *
      * @return The pathRedirect.
      */
@@ -1355,12 +1381,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The path that will be used in the redirect response instead of the one that was supplied in the request.
-     * pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
-     * The value must be between 1 and 1024 characters.
+     * The path that will be used in the redirect response instead of the one that was supplied in the request. pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string path_redirect = 272342710;</code>
+     * <code>optional string path_redirect = 272342710;</code>
      *
      * @return The bytes for pathRedirect.
      */
@@ -1379,12 +1403,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The path that will be used in the redirect response instead of the one that was supplied in the request.
-     * pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
-     * The value must be between 1 and 1024 characters.
+     * The path that will be used in the redirect response instead of the one that was supplied in the request. pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string path_redirect = 272342710;</code>
+     * <code>optional string path_redirect = 272342710;</code>
      *
      * @param value The pathRedirect to set.
      * @return This builder for chaining.
@@ -1402,12 +1424,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The path that will be used in the redirect response instead of the one that was supplied in the request.
-     * pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
-     * The value must be between 1 and 1024 characters.
+     * The path that will be used in the redirect response instead of the one that was supplied in the request. pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string path_redirect = 272342710;</code>
+     * <code>optional string path_redirect = 272342710;</code>
      *
      * @return This builder for chaining.
      */
@@ -1421,12 +1441,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The path that will be used in the redirect response instead of the one that was supplied in the request.
-     * pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
-     * The value must be between 1 and 1024 characters.
+     * The path that will be used in the redirect response instead of the one that was supplied in the request. pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string path_redirect = 272342710;</code>
+     * <code>optional string path_redirect = 272342710;</code>
      *
      * @param value The bytes for pathRedirect to set.
      * @return This builder for chaining.
@@ -1447,12 +1465,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request.
-     * prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
-     * The value must be between 1 and 1024 characters.
+     * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request. prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string prefix_redirect = 446184169;</code>
+     * <code>optional string prefix_redirect = 446184169;</code>
      *
      * @return Whether the prefixRedirect field is set.
      */
@@ -1463,12 +1479,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request.
-     * prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
-     * The value must be between 1 and 1024 characters.
+     * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request. prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string prefix_redirect = 446184169;</code>
+     * <code>optional string prefix_redirect = 446184169;</code>
      *
      * @return The prefixRedirect.
      */
@@ -1487,12 +1501,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request.
-     * prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
-     * The value must be between 1 and 1024 characters.
+     * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request. prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string prefix_redirect = 446184169;</code>
+     * <code>optional string prefix_redirect = 446184169;</code>
      *
      * @return The bytes for prefixRedirect.
      */
@@ -1511,12 +1523,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request.
-     * prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
-     * The value must be between 1 and 1024 characters.
+     * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request. prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string prefix_redirect = 446184169;</code>
+     * <code>optional string prefix_redirect = 446184169;</code>
      *
      * @param value The prefixRedirect to set.
      * @return This builder for chaining.
@@ -1534,12 +1544,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request.
-     * prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
-     * The value must be between 1 and 1024 characters.
+     * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request. prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string prefix_redirect = 446184169;</code>
+     * <code>optional string prefix_redirect = 446184169;</code>
      *
      * @return This builder for chaining.
      */
@@ -1553,12 +1561,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request.
-     * prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
-     * The value must be between 1 and 1024 characters.
+     * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request. prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string prefix_redirect = 446184169;</code>
+     * <code>optional string prefix_redirect = 446184169;</code>
      *
      * @param value The bytes for prefixRedirect to set.
      * @return This builder for chaining.
@@ -1574,27 +1580,19 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private int redirectResponseCode_ = 0;
+    private java.lang.Object redirectResponseCode_ = "";
     /**
      *
      *
      * <pre>
-     * The HTTP Status code to use for this RedirectAction.
-     * Supported values are:
-     * - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301.
-     * - FOUND, which corresponds to 302.
-     * - SEE_OTHER which corresponds to 303.
-     * - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained.
-     * - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     * Check the RedirectResponseCode enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
-     * </code>
+     * <code>optional string redirect_response_code = 436710408;</code>
      *
      * @return Whether the redirectResponseCode field is set.
      */
-    @java.lang.Override
     public boolean hasRedirectResponseCode() {
       return ((bitField0_ & 0x00000010) != 0);
     }
@@ -1602,46 +1600,65 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The HTTP Status code to use for this RedirectAction.
-     * Supported values are:
-     * - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301.
-     * - FOUND, which corresponds to 302.
-     * - SEE_OTHER which corresponds to 303.
-     * - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained.
-     * - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     * Check the RedirectResponseCode enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
-     * </code>
+     * <code>optional string redirect_response_code = 436710408;</code>
      *
-     * @return The enum numeric value on the wire for redirectResponseCode.
+     * @return The redirectResponseCode.
      */
-    @java.lang.Override
-    public int getRedirectResponseCodeValue() {
-      return redirectResponseCode_;
+    public java.lang.String getRedirectResponseCode() {
+      java.lang.Object ref = redirectResponseCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        redirectResponseCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * The HTTP Status code to use for this RedirectAction.
-     * Supported values are:
-     * - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301.
-     * - FOUND, which corresponds to 302.
-     * - SEE_OTHER which corresponds to 303.
-     * - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained.
-     * - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     * Check the RedirectResponseCode enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
-     * </code>
+     * <code>optional string redirect_response_code = 436710408;</code>
      *
-     * @param value The enum numeric value on the wire for redirectResponseCode to set.
+     * @return The bytes for redirectResponseCode.
+     */
+    public com.google.protobuf.ByteString getRedirectResponseCodeBytes() {
+      java.lang.Object ref = redirectResponseCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        redirectResponseCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     * Check the RedirectResponseCode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string redirect_response_code = 436710408;</code>
+     *
+     * @param value The redirectResponseCode to set.
      * @return This builder for chaining.
      */
-    public Builder setRedirectResponseCodeValue(int value) {
+    public Builder setRedirectResponseCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000010;
       redirectResponseCode_ = value;
       onChanged();
@@ -1651,59 +1668,17 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The HTTP Status code to use for this RedirectAction.
-     * Supported values are:
-     * - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301.
-     * - FOUND, which corresponds to 302.
-     * - SEE_OTHER which corresponds to 303.
-     * - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained.
-     * - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     * Check the RedirectResponseCode enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
-     * </code>
+     * <code>optional string redirect_response_code = 436710408;</code>
      *
-     * @return The redirectResponseCode.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode
-        getRedirectResponseCode() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode result =
-          com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode.valueOf(
-              redirectResponseCode_);
-      return result == null
-          ? com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The HTTP Status code to use for this RedirectAction.
-     * Supported values are:
-     * - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301.
-     * - FOUND, which corresponds to 302.
-     * - SEE_OTHER which corresponds to 303.
-     * - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained.
-     * - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
-     * </code>
-     *
-     * @param value The redirectResponseCode to set.
      * @return This builder for chaining.
      */
-    public Builder setRedirectResponseCode(
-        com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000010;
-      redirectResponseCode_ = value.getNumber();
+    public Builder clearRedirectResponseCode() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      redirectResponseCode_ = getDefaultInstance().getRedirectResponseCode();
       onChanged();
       return this;
     }
@@ -1711,24 +1686,22 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The HTTP Status code to use for this RedirectAction.
-     * Supported values are:
-     * - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301.
-     * - FOUND, which corresponds to 302.
-     * - SEE_OTHER which corresponds to 303.
-     * - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained.
-     * - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     * Check the RedirectResponseCode enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
-     * </code>
+     * <code>optional string redirect_response_code = 436710408;</code>
      *
+     * @param value The bytes for redirectResponseCode to set.
      * @return This builder for chaining.
      */
-    public Builder clearRedirectResponseCode() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      redirectResponseCode_ = 0;
+    public Builder setRedirectResponseCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000010;
+      redirectResponseCode_ = value;
       onChanged();
       return this;
     }
@@ -1738,11 +1711,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set to true, any accompanying query portion of the original URL is removed prior to redirecting the request. If set to false, the query portion of the original URL is retained.
-     * The default is set to false.
+     * If set to true, any accompanying query portion of the original URL is removed prior to redirecting the request. If set to false, the query portion of the original URL is retained. The default is set to false.
      * </pre>
      *
-     * <code>bool strip_query = 52284641;</code>
+     * <code>optional bool strip_query = 52284641;</code>
      *
      * @return Whether the stripQuery field is set.
      */
@@ -1754,11 +1726,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set to true, any accompanying query portion of the original URL is removed prior to redirecting the request. If set to false, the query portion of the original URL is retained.
-     * The default is set to false.
+     * If set to true, any accompanying query portion of the original URL is removed prior to redirecting the request. If set to false, the query portion of the original URL is retained. The default is set to false.
      * </pre>
      *
-     * <code>bool strip_query = 52284641;</code>
+     * <code>optional bool strip_query = 52284641;</code>
      *
      * @return The stripQuery.
      */
@@ -1770,11 +1741,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set to true, any accompanying query portion of the original URL is removed prior to redirecting the request. If set to false, the query portion of the original URL is retained.
-     * The default is set to false.
+     * If set to true, any accompanying query portion of the original URL is removed prior to redirecting the request. If set to false, the query portion of the original URL is retained. The default is set to false.
      * </pre>
      *
-     * <code>bool strip_query = 52284641;</code>
+     * <code>optional bool strip_query = 52284641;</code>
      *
      * @param value The stripQuery to set.
      * @return This builder for chaining.
@@ -1789,11 +1759,10 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set to true, any accompanying query portion of the original URL is removed prior to redirecting the request. If set to false, the query portion of the original URL is retained.
-     * The default is set to false.
+     * If set to true, any accompanying query portion of the original URL is removed prior to redirecting the request. If set to false, the query portion of the original URL is retained. The default is set to false.
      * </pre>
      *
-     * <code>bool strip_query = 52284641;</code>
+     * <code>optional bool strip_query = 52284641;</code>
      *
      * @return This builder for chaining.
      */

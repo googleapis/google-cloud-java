@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -50,15 +51,15 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * ReservationsSettings.Builder reservationsSettingsBuilder = ReservationsSettings.newBuilder();
  * reservationsSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         reservationsSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -81,6 +82,12 @@ public class ReservationsSettings extends ClientSettings<ReservationsSettings> {
     return ((ReservationsStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteReservationRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((ReservationsStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetReservationRequest, Reservation> getSettings() {
     return ((ReservationsStubSettings) getStubSettings()).getSettings();
@@ -96,6 +103,12 @@ public class ReservationsSettings extends ClientSettings<ReservationsSettings> {
     return ((ReservationsStubSettings) getStubSettings()).insertSettings();
   }
 
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertReservationRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((ReservationsStubSettings) getStubSettings()).insertOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<ListReservationsRequest, ReservationList, ListPagedResponse>
       listSettings() {
@@ -105,6 +118,12 @@ public class ReservationsSettings extends ClientSettings<ReservationsSettings> {
   /** Returns the object with the settings used for calls to resize. */
   public UnaryCallSettings<ResizeReservationRequest, Operation> resizeSettings() {
     return ((ReservationsStubSettings) getStubSettings()).resizeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resize. */
+  public OperationCallSettings<ResizeReservationRequest, Operation, Operation>
+      resizeOperationSettings() {
+    return ((ReservationsStubSettings) getStubSettings()).resizeOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
@@ -230,6 +249,12 @@ public class ReservationsSettings extends ClientSettings<ReservationsSettings> {
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteReservationRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetReservationRequest, Reservation> getSettings() {
       return getStubSettingsBuilder().getSettings();
@@ -246,6 +271,12 @@ public class ReservationsSettings extends ClientSettings<ReservationsSettings> {
       return getStubSettingsBuilder().insertSettings();
     }
 
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertReservationRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to list. */
     public PagedCallSettings.Builder<ListReservationsRequest, ReservationList, ListPagedResponse>
         listSettings() {
@@ -255,6 +286,12 @@ public class ReservationsSettings extends ClientSettings<ReservationsSettings> {
     /** Returns the builder for the settings used for calls to resize. */
     public UnaryCallSettings.Builder<ResizeReservationRequest, Operation> resizeSettings() {
       return getStubSettingsBuilder().resizeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resize. */
+    public OperationCallSettings.Builder<ResizeReservationRequest, Operation, Operation>
+        resizeOperationSettings() {
+      return getStubSettingsBuilder().resizeOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

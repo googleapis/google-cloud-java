@@ -23,14 +23,18 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.BulkInsertRegionInstanceRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,6 +52,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionInstancesStub extends RegionInstancesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<BulkInsertRegionInstanceRequest, Operation>
       bulkInsertMethodDescriptor =
           ApiMethodDescriptor.<BulkInsertRegionInstanceRequest, Operation>newBuilder()
@@ -85,12 +92,29 @@ public class HttpJsonRegionInstancesStub extends RegionInstancesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (BulkInsertRegionInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<BulkInsertRegionInstanceRequest, Operation> bulkInsertCallable;
+  private final OperationCallable<BulkInsertRegionInstanceRequest, Operation, Operation>
+      bulkInsertOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionInstancesStub create(RegionInstancesStubSettings settings)
@@ -131,15 +155,24 @@ public class HttpJsonRegionInstancesStub extends RegionInstancesStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<BulkInsertRegionInstanceRequest, Operation> bulkInsertTransportSettings =
         HttpJsonCallSettings.<BulkInsertRegionInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(bulkInsertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.bulkInsertCallable =
         callableFactory.createUnaryCallable(
             bulkInsertTransportSettings, settings.bulkInsertSettings(), clientContext);
+    this.bulkInsertOperationCallable =
+        callableFactory.createOperationCallable(
+            bulkInsertTransportSettings,
+            settings.bulkInsertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -155,6 +188,12 @@ public class HttpJsonRegionInstancesStub extends RegionInstancesStub {
   @Override
   public UnaryCallable<BulkInsertRegionInstanceRequest, Operation> bulkInsertCallable() {
     return bulkInsertCallable;
+  }
+
+  @Override
+  public OperationCallable<BulkInsertRegionInstanceRequest, Operation, Operation>
+      bulkInsertOperationCallable() {
+    return bulkInsertOperationCallable;
   }
 
   @Override

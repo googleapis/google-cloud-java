@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.RegionUrlMapsClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteRegionUrlMapRequest;
 import com.google.cloud.compute.v1.GetRegionUrlMapRequest;
@@ -42,12 +43,22 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class RegionUrlMapsStub implements BackgroundResource {
 
+  public OperationCallable<DeleteRegionUrlMapRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteRegionUrlMapRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetRegionUrlMapRequest, UrlMap> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertRegionUrlMapRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertRegionUrlMapRequest, Operation> insertCallable() {
@@ -62,8 +73,18 @@ public abstract class RegionUrlMapsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
   }
 
+  public OperationCallable<PatchRegionUrlMapRequest, Operation, Operation>
+      patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
+  }
+
   public UnaryCallable<PatchRegionUrlMapRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public OperationCallable<UpdateRegionUrlMapRequest, Operation, Operation>
+      updateOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOperationCallable()");
   }
 
   public UnaryCallable<UpdateRegionUrlMapRequest, Operation> updateCallable() {

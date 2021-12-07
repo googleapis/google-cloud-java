@@ -33,6 +33,7 @@ import com.google.cloud.compute.v1.GetLicenseCodeRequest;
 import com.google.cloud.compute.v1.LicenseCode;
 import com.google.cloud.compute.v1.TestIamPermissionsLicenseCodeRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,6 +51,8 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
   private static final ApiMethodDescriptor<GetLicenseCodeRequest, LicenseCode> getMethodDescriptor =
       ApiMethodDescriptor.<GetLicenseCodeRequest, LicenseCode>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.LicenseCodes/Get")
@@ -78,6 +81,7 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<LicenseCode>newBuilder()
                   .setDefaultInstance(LicenseCode.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -117,6 +121,7 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
                       .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -169,12 +174,14 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
     HttpJsonCallSettings<GetLicenseCodeRequest, LicenseCode> getTransportSettings =
         HttpJsonCallSettings.<GetLicenseCodeRequest, LicenseCode>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<TestIamPermissionsLicenseCodeRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings
                 .<TestIamPermissionsLicenseCodeRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.getCallable =

@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.ProjectsStub;
@@ -43,7 +45,7 @@ import javax.annotation.Generated;
  * <pre>{@code
  * try (ProjectsClient projectsClient = ProjectsClient.create()) {
  *   String project = "project-309310695";
- *   Operation response = projectsClient.disableXpnHost(project);
+ *   Project response = projectsClient.get(project);
  * }
  * }</pre>
  *
@@ -153,17 +155,17 @@ public class ProjectsClient implements BackgroundResource {
    * <pre>{@code
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   String project = "project-309310695";
-   *   Operation response = projectsClient.disableXpnHost(project);
+   *   Operation response = projectsClient.disableXpnHostAsync(project).get();
    * }
    * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation disableXpnHost(String project) {
+  public final OperationFuture<Operation, Operation> disableXpnHostAsync(String project) {
     DisableXpnHostProjectRequest request =
         DisableXpnHostProjectRequest.newBuilder().setProject(project).build();
-    return disableXpnHost(request);
+    return disableXpnHostAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -179,15 +181,43 @@ public class ProjectsClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = projectsClient.disableXpnHost(request);
+   *   Operation response = projectsClient.disableXpnHostAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation disableXpnHost(DisableXpnHostProjectRequest request) {
-    return disableXpnHostCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> disableXpnHostAsync(
+      DisableXpnHostProjectRequest request) {
+    return disableXpnHostOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disable this project as a shared VPC host project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   DisableXpnHostProjectRequest request =
+   *       DisableXpnHostProjectRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       projectsClient.disableXpnHostOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DisableXpnHostProjectRequest, Operation, Operation>
+      disableXpnHostOperationCallable() {
+    return stub.disableXpnHostOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -225,7 +255,9 @@ public class ProjectsClient implements BackgroundResource {
    *   ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource =
    *       ProjectsDisableXpnResourceRequest.newBuilder().build();
    *   Operation response =
-   *       projectsClient.disableXpnResource(project, projectsDisableXpnResourceRequestResource);
+   *       projectsClient
+   *           .disableXpnResourceAsync(project, projectsDisableXpnResourceRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -233,14 +265,14 @@ public class ProjectsClient implements BackgroundResource {
    * @param projectsDisableXpnResourceRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation disableXpnResource(
+  public final OperationFuture<Operation, Operation> disableXpnResourceAsync(
       String project, ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource) {
     DisableXpnResourceProjectRequest request =
         DisableXpnResourceProjectRequest.newBuilder()
             .setProject(project)
             .setProjectsDisableXpnResourceRequestResource(projectsDisableXpnResourceRequestResource)
             .build();
-    return disableXpnResource(request);
+    return disableXpnResourceAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -258,15 +290,45 @@ public class ProjectsClient implements BackgroundResource {
    *               ProjectsDisableXpnResourceRequest.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = projectsClient.disableXpnResource(request);
+   *   Operation response = projectsClient.disableXpnResourceAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation disableXpnResource(DisableXpnResourceProjectRequest request) {
-    return disableXpnResourceCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> disableXpnResourceAsync(
+      DisableXpnResourceProjectRequest request) {
+    return disableXpnResourceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disable a service resource (also known as service project) associated with this host project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   DisableXpnResourceProjectRequest request =
+   *       DisableXpnResourceProjectRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setProjectsDisableXpnResourceRequestResource(
+   *               ProjectsDisableXpnResourceRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       projectsClient.disableXpnResourceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DisableXpnResourceProjectRequest, Operation, Operation>
+      disableXpnResourceOperationCallable() {
+    return stub.disableXpnResourceOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -304,17 +366,17 @@ public class ProjectsClient implements BackgroundResource {
    * <pre>{@code
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   String project = "project-309310695";
-   *   Operation response = projectsClient.enableXpnHost(project);
+   *   Operation response = projectsClient.enableXpnHostAsync(project).get();
    * }
    * }</pre>
    *
    * @param project Project ID for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation enableXpnHost(String project) {
+  public final OperationFuture<Operation, Operation> enableXpnHostAsync(String project) {
     EnableXpnHostProjectRequest request =
         EnableXpnHostProjectRequest.newBuilder().setProject(project).build();
-    return enableXpnHost(request);
+    return enableXpnHostAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -330,15 +392,43 @@ public class ProjectsClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = projectsClient.enableXpnHost(request);
+   *   Operation response = projectsClient.enableXpnHostAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation enableXpnHost(EnableXpnHostProjectRequest request) {
-    return enableXpnHostCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> enableXpnHostAsync(
+      EnableXpnHostProjectRequest request) {
+    return enableXpnHostOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enable this project as a shared VPC host project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   EnableXpnHostProjectRequest request =
+   *       EnableXpnHostProjectRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       projectsClient.enableXpnHostOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<EnableXpnHostProjectRequest, Operation, Operation>
+      enableXpnHostOperationCallable() {
+    return stub.enableXpnHostOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -377,7 +467,9 @@ public class ProjectsClient implements BackgroundResource {
    *   ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource =
    *       ProjectsEnableXpnResourceRequest.newBuilder().build();
    *   Operation response =
-   *       projectsClient.enableXpnResource(project, projectsEnableXpnResourceRequestResource);
+   *       projectsClient
+   *           .enableXpnResourceAsync(project, projectsEnableXpnResourceRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -385,14 +477,14 @@ public class ProjectsClient implements BackgroundResource {
    * @param projectsEnableXpnResourceRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation enableXpnResource(
+  public final OperationFuture<Operation, Operation> enableXpnResourceAsync(
       String project, ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource) {
     EnableXpnResourceProjectRequest request =
         EnableXpnResourceProjectRequest.newBuilder()
             .setProject(project)
             .setProjectsEnableXpnResourceRequestResource(projectsEnableXpnResourceRequestResource)
             .build();
-    return enableXpnResource(request);
+    return enableXpnResourceAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -411,15 +503,46 @@ public class ProjectsClient implements BackgroundResource {
    *               ProjectsEnableXpnResourceRequest.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = projectsClient.enableXpnResource(request);
+   *   Operation response = projectsClient.enableXpnResourceAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation enableXpnResource(EnableXpnResourceProjectRequest request) {
-    return enableXpnResourceCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> enableXpnResourceAsync(
+      EnableXpnResourceProjectRequest request) {
+    return enableXpnResourceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enable service resource (a.k.a service project) for a host project, so that subnets in the host
+   * project can be used by instances in the service project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   EnableXpnResourceProjectRequest request =
+   *       EnableXpnResourceProjectRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setProjectsEnableXpnResourceRequestResource(
+   *               ProjectsEnableXpnResourceRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       projectsClient.enableXpnResourceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<EnableXpnResourceProjectRequest, Operation, Operation>
+      enableXpnResourceOperationCallable() {
+    return stub.enableXpnResourceOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -841,7 +964,7 @@ public class ProjectsClient implements BackgroundResource {
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   String project = "project-309310695";
    *   DiskMoveRequest diskMoveRequestResource = DiskMoveRequest.newBuilder().build();
-   *   Operation response = projectsClient.moveDisk(project, diskMoveRequestResource);
+   *   Operation response = projectsClient.moveDiskAsync(project, diskMoveRequestResource).get();
    * }
    * }</pre>
    *
@@ -849,13 +972,14 @@ public class ProjectsClient implements BackgroundResource {
    * @param diskMoveRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation moveDisk(String project, DiskMoveRequest diskMoveRequestResource) {
+  public final OperationFuture<Operation, Operation> moveDiskAsync(
+      String project, DiskMoveRequest diskMoveRequestResource) {
     MoveDiskProjectRequest request =
         MoveDiskProjectRequest.newBuilder()
             .setProject(project)
             .setDiskMoveRequestResource(diskMoveRequestResource)
             .build();
-    return moveDisk(request);
+    return moveDiskAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -872,15 +996,43 @@ public class ProjectsClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = projectsClient.moveDisk(request);
+   *   Operation response = projectsClient.moveDiskAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation moveDisk(MoveDiskProjectRequest request) {
-    return moveDiskCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> moveDiskAsync(MoveDiskProjectRequest request) {
+    return moveDiskOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves a persistent disk from one zone to another.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   MoveDiskProjectRequest request =
+   *       MoveDiskProjectRequest.newBuilder()
+   *           .setDiskMoveRequestResource(DiskMoveRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       projectsClient.moveDiskOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<MoveDiskProjectRequest, Operation, Operation>
+      moveDiskOperationCallable() {
+    return stub.moveDiskOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -917,7 +1069,8 @@ public class ProjectsClient implements BackgroundResource {
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   String project = "project-309310695";
    *   InstanceMoveRequest instanceMoveRequestResource = InstanceMoveRequest.newBuilder().build();
-   *   Operation response = projectsClient.moveInstance(project, instanceMoveRequestResource);
+   *   Operation response =
+   *       projectsClient.moveInstanceAsync(project, instanceMoveRequestResource).get();
    * }
    * }</pre>
    *
@@ -925,14 +1078,14 @@ public class ProjectsClient implements BackgroundResource {
    * @param instanceMoveRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation moveInstance(
+  public final OperationFuture<Operation, Operation> moveInstanceAsync(
       String project, InstanceMoveRequest instanceMoveRequestResource) {
     MoveInstanceProjectRequest request =
         MoveInstanceProjectRequest.newBuilder()
             .setProject(project)
             .setInstanceMoveRequestResource(instanceMoveRequestResource)
             .build();
-    return moveInstance(request);
+    return moveInstanceAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -949,15 +1102,44 @@ public class ProjectsClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = projectsClient.moveInstance(request);
+   *   Operation response = projectsClient.moveInstanceAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation moveInstance(MoveInstanceProjectRequest request) {
-    return moveInstanceCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> moveInstanceAsync(
+      MoveInstanceProjectRequest request) {
+    return moveInstanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves an instance and its attached persistent disks from one zone to another.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   MoveInstanceProjectRequest request =
+   *       MoveInstanceProjectRequest.newBuilder()
+   *           .setInstanceMoveRequestResource(InstanceMoveRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       projectsClient.moveInstanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<MoveInstanceProjectRequest, Operation, Operation>
+      moveInstanceOperationCallable() {
+    return stub.moveInstanceOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -995,7 +1177,8 @@ public class ProjectsClient implements BackgroundResource {
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   String project = "project-309310695";
    *   Metadata metadataResource = Metadata.newBuilder().build();
-   *   Operation response = projectsClient.setCommonInstanceMetadata(project, metadataResource);
+   *   Operation response =
+   *       projectsClient.setCommonInstanceMetadataAsync(project, metadataResource).get();
    * }
    * }</pre>
    *
@@ -1003,13 +1186,14 @@ public class ProjectsClient implements BackgroundResource {
    * @param metadataResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setCommonInstanceMetadata(String project, Metadata metadataResource) {
+  public final OperationFuture<Operation, Operation> setCommonInstanceMetadataAsync(
+      String project, Metadata metadataResource) {
     SetCommonInstanceMetadataProjectRequest request =
         SetCommonInstanceMetadataProjectRequest.newBuilder()
             .setProject(project)
             .setMetadataResource(metadataResource)
             .build();
-    return setCommonInstanceMetadata(request);
+    return setCommonInstanceMetadataAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1027,16 +1211,45 @@ public class ProjectsClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = projectsClient.setCommonInstanceMetadata(request);
+   *   Operation response = projectsClient.setCommonInstanceMetadataAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setCommonInstanceMetadata(
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setCommonInstanceMetadataAsync(
       SetCommonInstanceMetadataProjectRequest request) {
-    return setCommonInstanceMetadataCallable().call(request);
+    return setCommonInstanceMetadataOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets metadata common to all instances within the specified project using the data included in
+   * the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   SetCommonInstanceMetadataProjectRequest request =
+   *       SetCommonInstanceMetadataProjectRequest.newBuilder()
+   *           .setMetadataResource(Metadata.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       projectsClient.setCommonInstanceMetadataOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetCommonInstanceMetadataProjectRequest, Operation, Operation>
+      setCommonInstanceMetadataOperationCallable() {
+    return stub.setCommonInstanceMetadataOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1079,8 +1292,9 @@ public class ProjectsClient implements BackgroundResource {
    *   ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource =
    *       ProjectsSetDefaultNetworkTierRequest.newBuilder().build();
    *   Operation response =
-   *       projectsClient.setDefaultNetworkTier(
-   *           project, projectsSetDefaultNetworkTierRequestResource);
+   *       projectsClient
+   *           .setDefaultNetworkTierAsync(project, projectsSetDefaultNetworkTierRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -1088,7 +1302,7 @@ public class ProjectsClient implements BackgroundResource {
    * @param projectsSetDefaultNetworkTierRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setDefaultNetworkTier(
+  public final OperationFuture<Operation, Operation> setDefaultNetworkTierAsync(
       String project,
       ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource) {
     SetDefaultNetworkTierProjectRequest request =
@@ -1097,7 +1311,7 @@ public class ProjectsClient implements BackgroundResource {
             .setProjectsSetDefaultNetworkTierRequestResource(
                 projectsSetDefaultNetworkTierRequestResource)
             .build();
-    return setDefaultNetworkTier(request);
+    return setDefaultNetworkTierAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1116,15 +1330,46 @@ public class ProjectsClient implements BackgroundResource {
    *               ProjectsSetDefaultNetworkTierRequest.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = projectsClient.setDefaultNetworkTier(request);
+   *   Operation response = projectsClient.setDefaultNetworkTierAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setDefaultNetworkTier(SetDefaultNetworkTierProjectRequest request) {
-    return setDefaultNetworkTierCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setDefaultNetworkTierAsync(
+      SetDefaultNetworkTierProjectRequest request) {
+    return setDefaultNetworkTierOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the default network tier of the project. The default network tier is used when an
+   * address/forwardingRule/instance is created without specifying the network tier field.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   SetDefaultNetworkTierProjectRequest request =
+   *       SetDefaultNetworkTierProjectRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setProjectsSetDefaultNetworkTierRequestResource(
+   *               ProjectsSetDefaultNetworkTierRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       projectsClient.setDefaultNetworkTierOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetDefaultNetworkTierProjectRequest, Operation, Operation>
+      setDefaultNetworkTierOperationCallable() {
+    return stub.setDefaultNetworkTierOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1167,7 +1412,7 @@ public class ProjectsClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   UsageExportLocation usageExportLocationResource = UsageExportLocation.newBuilder().build();
    *   Operation response =
-   *       projectsClient.setUsageExportBucket(project, usageExportLocationResource);
+   *       projectsClient.setUsageExportBucketAsync(project, usageExportLocationResource).get();
    * }
    * }</pre>
    *
@@ -1175,14 +1420,14 @@ public class ProjectsClient implements BackgroundResource {
    * @param usageExportLocationResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setUsageExportBucket(
+  public final OperationFuture<Operation, Operation> setUsageExportBucketAsync(
       String project, UsageExportLocation usageExportLocationResource) {
     SetUsageExportBucketProjectRequest request =
         SetUsageExportBucketProjectRequest.newBuilder()
             .setProject(project)
             .setUsageExportLocationResource(usageExportLocationResource)
             .build();
-    return setUsageExportBucket(request);
+    return setUsageExportBucketAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1200,15 +1445,45 @@ public class ProjectsClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setUsageExportLocationResource(UsageExportLocation.newBuilder().build())
    *           .build();
-   *   Operation response = projectsClient.setUsageExportBucket(request);
+   *   Operation response = projectsClient.setUsageExportBucketAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setUsageExportBucket(SetUsageExportBucketProjectRequest request) {
-    return setUsageExportBucketCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setUsageExportBucketAsync(
+      SetUsageExportBucketProjectRequest request) {
+    return setUsageExportBucketOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables the usage export feature and sets the usage export bucket where reports are stored. If
+   * you provide an empty request body using this method, the usage export feature will be disabled.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   SetUsageExportBucketProjectRequest request =
+   *       SetUsageExportBucketProjectRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setUsageExportLocationResource(UsageExportLocation.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       projectsClient.setUsageExportBucketOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetUsageExportBucketProjectRequest, Operation, Operation>
+      setUsageExportBucketOperationCallable() {
+    return stub.setUsageExportBucketOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

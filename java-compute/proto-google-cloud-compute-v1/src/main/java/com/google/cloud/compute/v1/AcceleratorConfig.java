@@ -22,7 +22,6 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Messages
  * A specification of the type and number of accelerator cards attached to the instance.
  * </pre>
  *
@@ -129,7 +128,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    * The number of the guest accelerator cards exposed to this instance.
    * </pre>
    *
-   * <code>int32 accelerator_count = 504879675;</code>
+   * <code>optional int32 accelerator_count = 504879675;</code>
    *
    * @return Whether the acceleratorCount field is set.
    */
@@ -144,7 +143,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    * The number of the guest accelerator cards exposed to this instance.
    * </pre>
    *
-   * <code>int32 accelerator_count = 504879675;</code>
+   * <code>optional int32 accelerator_count = 504879675;</code>
    *
    * @return The acceleratorCount.
    */
@@ -162,7 +161,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    * Full or partial URL of the accelerator type resource to attach to this instance. For example: projects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100 If you are creating an instance template, specify only the accelerator name. See GPUs on Compute Engine for a full list of accelerator types.
    * </pre>
    *
-   * <code>string accelerator_type = 138031246;</code>
+   * <code>optional string accelerator_type = 138031246;</code>
    *
    * @return Whether the acceleratorType field is set.
    */
@@ -177,7 +176,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    * Full or partial URL of the accelerator type resource to attach to this instance. For example: projects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100 If you are creating an instance template, specify only the accelerator name. See GPUs on Compute Engine for a full list of accelerator types.
    * </pre>
    *
-   * <code>string accelerator_type = 138031246;</code>
+   * <code>optional string accelerator_type = 138031246;</code>
    *
    * @return The acceleratorType.
    */
@@ -200,7 +199,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    * Full or partial URL of the accelerator type resource to attach to this instance. For example: projects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100 If you are creating an instance template, specify only the accelerator name. See GPUs on Compute Engine for a full list of accelerator types.
    * </pre>
    *
-   * <code>string accelerator_type = 138031246;</code>
+   * <code>optional string accelerator_type = 138031246;</code>
    *
    * @return The bytes for acceleratorType.
    */
@@ -399,7 +398,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Messages
    * A specification of the type and number of accelerator cards attached to the instance.
    * </pre>
    *
@@ -579,7 +577,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * The number of the guest accelerator cards exposed to this instance.
      * </pre>
      *
-     * <code>int32 accelerator_count = 504879675;</code>
+     * <code>optional int32 accelerator_count = 504879675;</code>
      *
      * @return Whether the acceleratorCount field is set.
      */
@@ -594,7 +592,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * The number of the guest accelerator cards exposed to this instance.
      * </pre>
      *
-     * <code>int32 accelerator_count = 504879675;</code>
+     * <code>optional int32 accelerator_count = 504879675;</code>
      *
      * @return The acceleratorCount.
      */
@@ -609,7 +607,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * The number of the guest accelerator cards exposed to this instance.
      * </pre>
      *
-     * <code>int32 accelerator_count = 504879675;</code>
+     * <code>optional int32 accelerator_count = 504879675;</code>
      *
      * @param value The acceleratorCount to set.
      * @return This builder for chaining.
@@ -627,7 +625,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * The number of the guest accelerator cards exposed to this instance.
      * </pre>
      *
-     * <code>int32 accelerator_count = 504879675;</code>
+     * <code>optional int32 accelerator_count = 504879675;</code>
      *
      * @return This builder for chaining.
      */
@@ -646,7 +644,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * Full or partial URL of the accelerator type resource to attach to this instance. For example: projects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100 If you are creating an instance template, specify only the accelerator name. See GPUs on Compute Engine for a full list of accelerator types.
      * </pre>
      *
-     * <code>string accelerator_type = 138031246;</code>
+     * <code>optional string accelerator_type = 138031246;</code>
      *
      * @return Whether the acceleratorType field is set.
      */
@@ -660,7 +658,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * Full or partial URL of the accelerator type resource to attach to this instance. For example: projects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100 If you are creating an instance template, specify only the accelerator name. See GPUs on Compute Engine for a full list of accelerator types.
      * </pre>
      *
-     * <code>string accelerator_type = 138031246;</code>
+     * <code>optional string accelerator_type = 138031246;</code>
      *
      * @return The acceleratorType.
      */
@@ -682,7 +680,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * Full or partial URL of the accelerator type resource to attach to this instance. For example: projects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100 If you are creating an instance template, specify only the accelerator name. See GPUs on Compute Engine for a full list of accelerator types.
      * </pre>
      *
-     * <code>string accelerator_type = 138031246;</code>
+     * <code>optional string accelerator_type = 138031246;</code>
      *
      * @return The bytes for acceleratorType.
      */
@@ -704,7 +702,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * Full or partial URL of the accelerator type resource to attach to this instance. For example: projects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100 If you are creating an instance template, specify only the accelerator name. See GPUs on Compute Engine for a full list of accelerator types.
      * </pre>
      *
-     * <code>string accelerator_type = 138031246;</code>
+     * <code>optional string accelerator_type = 138031246;</code>
      *
      * @param value The acceleratorType to set.
      * @return This builder for chaining.
@@ -725,7 +723,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * Full or partial URL of the accelerator type resource to attach to this instance. For example: projects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100 If you are creating an instance template, specify only the accelerator name. See GPUs on Compute Engine for a full list of accelerator types.
      * </pre>
      *
-     * <code>string accelerator_type = 138031246;</code>
+     * <code>optional string accelerator_type = 138031246;</code>
      *
      * @return This builder for chaining.
      */
@@ -742,7 +740,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * Full or partial URL of the accelerator type resource to attach to this instance. For example: projects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100 If you are creating an instance template, specify only the accelerator name. See GPUs on Compute Engine for a full list of accelerator types.
      * </pre>
      *
-     * <code>string accelerator_type = 138031246;</code>
+     * <code>optional string accelerator_type = 138031246;</code>
      *
      * @param value The bytes for acceleratorType to set.
      * @return This builder for chaining.

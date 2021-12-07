@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.SslPoliciesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteSslPolicyRequest;
 import com.google.cloud.compute.v1.GetSslPolicyRequest;
@@ -41,12 +42,20 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class SslPoliciesStub implements BackgroundResource {
 
+  public OperationCallable<DeleteSslPolicyRequest, Operation, Operation> deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteSslPolicyRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetSslPolicyRequest, SslPolicy> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertSslPolicyRequest, Operation, Operation> insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertSslPolicyRequest, Operation> insertCallable() {
@@ -65,6 +74,10 @@ public abstract class SslPoliciesStub implements BackgroundResource {
           ListAvailableFeaturesSslPoliciesRequest, SslPoliciesListAvailableFeaturesResponse>
       listAvailableFeaturesCallable() {
     throw new UnsupportedOperationException("Not implemented: listAvailableFeaturesCallable()");
+  }
+
+  public OperationCallable<PatchSslPolicyRequest, Operation, Operation> patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
   }
 
   public UnaryCallable<PatchSslPolicyRequest, Operation> patchCallable() {

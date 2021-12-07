@@ -30,7 +30,7 @@ public interface HTTPSHealthCheckOrBuilder
    * The value of the host header in the HTTPS health check request. If left empty (default value), the IP on behalf of which this health check is performed will be used.
    * </pre>
    *
-   * <code>string host = 3208616;</code>
+   * <code>optional string host = 3208616;</code>
    *
    * @return Whether the host field is set.
    */
@@ -42,7 +42,7 @@ public interface HTTPSHealthCheckOrBuilder
    * The value of the host header in the HTTPS health check request. If left empty (default value), the IP on behalf of which this health check is performed will be used.
    * </pre>
    *
-   * <code>string host = 3208616;</code>
+   * <code>optional string host = 3208616;</code>
    *
    * @return The host.
    */
@@ -54,7 +54,7 @@ public interface HTTPSHealthCheckOrBuilder
    * The value of the host header in the HTTPS health check request. If left empty (default value), the IP on behalf of which this health check is performed will be used.
    * </pre>
    *
-   * <code>string host = 3208616;</code>
+   * <code>optional string host = 3208616;</code>
    *
    * @return The bytes for host.
    */
@@ -67,7 +67,7 @@ public interface HTTPSHealthCheckOrBuilder
    * The TCP port number for the health check request. The default value is 443. Valid values are 1 through 65535.
    * </pre>
    *
-   * <code>int32 port = 3446913;</code>
+   * <code>optional int32 port = 3446913;</code>
    *
    * @return Whether the port field is set.
    */
@@ -79,7 +79,7 @@ public interface HTTPSHealthCheckOrBuilder
    * The TCP port number for the health check request. The default value is 443. Valid values are 1 through 65535.
    * </pre>
    *
-   * <code>int32 port = 3446913;</code>
+   * <code>optional int32 port = 3446913;</code>
    *
    * @return The port.
    */
@@ -92,7 +92,7 @@ public interface HTTPSHealthCheckOrBuilder
    * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return Whether the portName field is set.
    */
@@ -104,7 +104,7 @@ public interface HTTPSHealthCheckOrBuilder
    * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return The portName.
    */
@@ -116,7 +116,7 @@ public interface HTTPSHealthCheckOrBuilder
    * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return The bytes for portName.
    */
@@ -126,16 +126,11 @@ public interface HTTPSHealthCheckOrBuilder
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, HTTPS health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, HTTPS health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.HTTPSHealthCheck.PortSpecification port_specification = 51590597;
-   * </code>
+   * <code>optional string port_specification = 51590597;</code>
    *
    * @return Whether the portSpecification field is set.
    */
@@ -144,47 +139,38 @@ public interface HTTPSHealthCheckOrBuilder
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, HTTPS health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, HTTPS health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.HTTPSHealthCheck.PortSpecification port_specification = 51590597;
-   * </code>
+   * <code>optional string port_specification = 51590597;</code>
    *
-   * @return The enum numeric value on the wire for portSpecification.
+   * @return The portSpecification.
    */
-  int getPortSpecificationValue();
+  java.lang.String getPortSpecification();
   /**
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, HTTPS health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, HTTPS health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.HTTPSHealthCheck.PortSpecification port_specification = 51590597;
-   * </code>
+   * <code>optional string port_specification = 51590597;</code>
    *
-   * @return The portSpecification.
+   * @return The bytes for portSpecification.
    */
-  com.google.cloud.compute.v1.HTTPSHealthCheck.PortSpecification getPortSpecification();
+  com.google.protobuf.ByteString getPortSpecificationBytes();
 
   /**
    *
    *
    * <pre>
    * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HTTPSHealthCheck.ProxyHeader proxy_header = 160374142;</code>
+   * <code>optional string proxy_header = 160374142;</code>
    *
    * @return Whether the proxyHeader field is set.
    */
@@ -194,25 +180,27 @@ public interface HTTPSHealthCheckOrBuilder
    *
    * <pre>
    * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HTTPSHealthCheck.ProxyHeader proxy_header = 160374142;</code>
+   * <code>optional string proxy_header = 160374142;</code>
    *
-   * @return The enum numeric value on the wire for proxyHeader.
+   * @return The proxyHeader.
    */
-  int getProxyHeaderValue();
+  java.lang.String getProxyHeader();
   /**
    *
    *
    * <pre>
    * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HTTPSHealthCheck.ProxyHeader proxy_header = 160374142;</code>
+   * <code>optional string proxy_header = 160374142;</code>
    *
-   * @return The proxyHeader.
+   * @return The bytes for proxyHeader.
    */
-  com.google.cloud.compute.v1.HTTPSHealthCheck.ProxyHeader getProxyHeader();
+  com.google.protobuf.ByteString getProxyHeaderBytes();
 
   /**
    *
@@ -221,7 +209,7 @@ public interface HTTPSHealthCheckOrBuilder
    * The request path of the HTTPS health check request. The default value is /.
    * </pre>
    *
-   * <code>string request_path = 229403605;</code>
+   * <code>optional string request_path = 229403605;</code>
    *
    * @return Whether the requestPath field is set.
    */
@@ -233,7 +221,7 @@ public interface HTTPSHealthCheckOrBuilder
    * The request path of the HTTPS health check request. The default value is /.
    * </pre>
    *
-   * <code>string request_path = 229403605;</code>
+   * <code>optional string request_path = 229403605;</code>
    *
    * @return The requestPath.
    */
@@ -245,7 +233,7 @@ public interface HTTPSHealthCheckOrBuilder
    * The request path of the HTTPS health check request. The default value is /.
    * </pre>
    *
-   * <code>string request_path = 229403605;</code>
+   * <code>optional string request_path = 229403605;</code>
    *
    * @return The bytes for requestPath.
    */
@@ -258,7 +246,7 @@ public interface HTTPSHealthCheckOrBuilder
    * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the default value), the status code determines health. The response data can only be ASCII.
    * </pre>
    *
-   * <code>string response = 196547649;</code>
+   * <code>optional string response = 196547649;</code>
    *
    * @return Whether the response field is set.
    */
@@ -270,7 +258,7 @@ public interface HTTPSHealthCheckOrBuilder
    * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the default value), the status code determines health. The response data can only be ASCII.
    * </pre>
    *
-   * <code>string response = 196547649;</code>
+   * <code>optional string response = 196547649;</code>
    *
    * @return The response.
    */
@@ -282,7 +270,7 @@ public interface HTTPSHealthCheckOrBuilder
    * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the default value), the status code determines health. The response data can only be ASCII.
    * </pre>
    *
-   * <code>string response = 196547649;</code>
+   * <code>optional string response = 196547649;</code>
    *
    * @return The bytes for response.
    */

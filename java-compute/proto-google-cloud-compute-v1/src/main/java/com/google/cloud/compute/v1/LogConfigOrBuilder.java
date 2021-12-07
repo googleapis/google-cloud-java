@@ -27,10 +27,11 @@ public interface LogConfigOrBuilder
    *
    *
    * <pre>
-   * Cloud audit options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+   * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;
+   * </code>
    *
    * @return Whether the cloudAudit field is set.
    */
@@ -39,10 +40,11 @@ public interface LogConfigOrBuilder
    *
    *
    * <pre>
-   * Cloud audit options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+   * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;
+   * </code>
    *
    * @return The cloudAudit.
    */
@@ -51,10 +53,11 @@ public interface LogConfigOrBuilder
    *
    *
    * <pre>
-   * Cloud audit options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+   * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;
+   * </code>
    */
   com.google.cloud.compute.v1.LogConfigCloudAuditOptionsOrBuilder getCloudAuditOrBuilder();
 
@@ -62,10 +65,10 @@ public interface LogConfigOrBuilder
    *
    *
    * <pre>
-   * Counter options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+   * <code>optional .google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
    *
    * @return Whether the counter field is set.
    */
@@ -74,10 +77,10 @@ public interface LogConfigOrBuilder
    *
    *
    * <pre>
-   * Counter options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+   * <code>optional .google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
    *
    * @return The counter.
    */
@@ -86,10 +89,10 @@ public interface LogConfigOrBuilder
    *
    *
    * <pre>
-   * Counter options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+   * <code>optional .google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
    */
   com.google.cloud.compute.v1.LogConfigCounterOptionsOrBuilder getCounterOrBuilder();
 
@@ -97,10 +100,11 @@ public interface LogConfigOrBuilder
    *
    *
    * <pre>
-   * Data access options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+   * <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;
+   * </code>
    *
    * @return Whether the dataAccess field is set.
    */
@@ -109,10 +113,11 @@ public interface LogConfigOrBuilder
    *
    *
    * <pre>
-   * Data access options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+   * <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;
+   * </code>
    *
    * @return The dataAccess.
    */
@@ -121,10 +126,11 @@ public interface LogConfigOrBuilder
    *
    *
    * <pre>
-   * Data access options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+   * <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;
+   * </code>
    */
   com.google.cloud.compute.v1.LogConfigDataAccessOptionsOrBuilder getDataAccessOrBuilder();
 }

@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonTargetPoolsStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -36,6 +37,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -89,7 +91,7 @@ public class TargetPoolsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -100,6 +102,7 @@ public class TargetPoolsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -116,8 +119,10 @@ public class TargetPoolsClientTest {
         TargetPoolsAddHealthCheckRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.addHealthCheck(
-            project, region, targetPool, targetPoolsAddHealthCheckRequestResource);
+        client
+            .addHealthCheckAsync(
+                project, region, targetPool, targetPoolsAddHealthCheckRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -148,10 +153,12 @@ public class TargetPoolsClientTest {
       String targetPool = "targetPool486493517";
       TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource =
           TargetPoolsAddHealthCheckRequest.newBuilder().build();
-      client.addHealthCheck(project, region, targetPool, targetPoolsAddHealthCheckRequestResource);
+      client
+          .addHealthCheckAsync(
+              project, region, targetPool, targetPoolsAddHealthCheckRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -165,7 +172,7 @@ public class TargetPoolsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -176,6 +183,7 @@ public class TargetPoolsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -192,7 +200,9 @@ public class TargetPoolsClientTest {
         TargetPoolsAddInstanceRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.addInstance(project, region, targetPool, targetPoolsAddInstanceRequestResource);
+        client
+            .addInstanceAsync(project, region, targetPool, targetPoolsAddInstanceRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -223,10 +233,11 @@ public class TargetPoolsClientTest {
       String targetPool = "targetPool486493517";
       TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource =
           TargetPoolsAddInstanceRequest.newBuilder().build();
-      client.addInstance(project, region, targetPool, targetPoolsAddInstanceRequestResource);
+      client
+          .addInstanceAsync(project, region, targetPool, targetPoolsAddInstanceRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -292,7 +303,7 @@ public class TargetPoolsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -303,6 +314,7 @@ public class TargetPoolsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -316,7 +328,7 @@ public class TargetPoolsClientTest {
     String region = "region-934795532";
     String targetPool = "targetPool486493517";
 
-    Operation actualResponse = client.delete(project, region, targetPool);
+    Operation actualResponse = client.deleteAsync(project, region, targetPool).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -345,10 +357,9 @@ public class TargetPoolsClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       String targetPool = "targetPool486493517";
-      client.delete(project, region, targetPool);
+      client.deleteAsync(project, region, targetPool).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -367,6 +378,7 @@ public class TargetPoolsClientTest {
             .setName("name3373707")
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSessionAffinity("sessionAffinity-289859106")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -472,7 +484,7 @@ public class TargetPoolsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -483,6 +495,7 @@ public class TargetPoolsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -496,7 +509,7 @@ public class TargetPoolsClientTest {
     String region = "region-934795532";
     TargetPool targetPoolResource = TargetPool.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, region, targetPoolResource);
+    Operation actualResponse = client.insertAsync(project, region, targetPoolResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -525,10 +538,9 @@ public class TargetPoolsClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       TargetPool targetPoolResource = TargetPool.newBuilder().build();
-      client.insert(project, region, targetPoolResource);
+      client.insertAsync(project, region, targetPoolResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -594,7 +606,7 @@ public class TargetPoolsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -605,6 +617,7 @@ public class TargetPoolsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -621,8 +634,10 @@ public class TargetPoolsClientTest {
         TargetPoolsRemoveHealthCheckRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.removeHealthCheck(
-            project, region, targetPool, targetPoolsRemoveHealthCheckRequestResource);
+        client
+            .removeHealthCheckAsync(
+                project, region, targetPool, targetPoolsRemoveHealthCheckRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -653,11 +668,12 @@ public class TargetPoolsClientTest {
       String targetPool = "targetPool486493517";
       TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource =
           TargetPoolsRemoveHealthCheckRequest.newBuilder().build();
-      client.removeHealthCheck(
-          project, region, targetPool, targetPoolsRemoveHealthCheckRequestResource);
+      client
+          .removeHealthCheckAsync(
+              project, region, targetPool, targetPoolsRemoveHealthCheckRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -671,7 +687,7 @@ public class TargetPoolsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -682,6 +698,7 @@ public class TargetPoolsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -698,8 +715,10 @@ public class TargetPoolsClientTest {
         TargetPoolsRemoveInstanceRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.removeInstance(
-            project, region, targetPool, targetPoolsRemoveInstanceRequestResource);
+        client
+            .removeInstanceAsync(
+                project, region, targetPool, targetPoolsRemoveInstanceRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -730,10 +749,12 @@ public class TargetPoolsClientTest {
       String targetPool = "targetPool486493517";
       TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource =
           TargetPoolsRemoveInstanceRequest.newBuilder().build();
-      client.removeInstance(project, region, targetPool, targetPoolsRemoveInstanceRequestResource);
+      client
+          .removeInstanceAsync(
+              project, region, targetPool, targetPoolsRemoveInstanceRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -747,7 +768,7 @@ public class TargetPoolsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -758,6 +779,7 @@ public class TargetPoolsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -773,7 +795,7 @@ public class TargetPoolsClientTest {
     TargetReference targetReferenceResource = TargetReference.newBuilder().build();
 
     Operation actualResponse =
-        client.setBackup(project, region, targetPool, targetReferenceResource);
+        client.setBackupAsync(project, region, targetPool, targetReferenceResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -803,10 +825,9 @@ public class TargetPoolsClientTest {
       String region = "region-934795532";
       String targetPool = "targetPool486493517";
       TargetReference targetReferenceResource = TargetReference.newBuilder().build();
-      client.setBackup(project, region, targetPool, targetReferenceResource);
+      client.setBackupAsync(project, region, targetPool, targetReferenceResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 }

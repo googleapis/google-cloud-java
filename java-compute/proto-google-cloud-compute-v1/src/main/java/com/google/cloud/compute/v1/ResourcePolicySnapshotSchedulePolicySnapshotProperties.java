@@ -171,7 +171,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    * Chain name that the snapshot is created in.
    * </pre>
    *
-   * <code>string chain_name = 68644169;</code>
+   * <code>optional string chain_name = 68644169;</code>
    *
    * @return Whether the chainName field is set.
    */
@@ -186,7 +186,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    * Chain name that the snapshot is created in.
    * </pre>
    *
-   * <code>string chain_name = 68644169;</code>
+   * <code>optional string chain_name = 68644169;</code>
    *
    * @return The chainName.
    */
@@ -209,7 +209,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    * Chain name that the snapshot is created in.
    * </pre>
    *
-   * <code>string chain_name = 68644169;</code>
+   * <code>optional string chain_name = 68644169;</code>
    *
    * @return The bytes for chainName.
    */
@@ -235,7 +235,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    * Indication to perform a 'guest aware' snapshot.
    * </pre>
    *
-   * <code>bool guest_flush = 385550813;</code>
+   * <code>optional bool guest_flush = 385550813;</code>
    *
    * @return Whether the guestFlush field is set.
    */
@@ -250,7 +250,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    * Indication to perform a 'guest aware' snapshot.
    * </pre>
    *
-   * <code>bool guest_flush = 385550813;</code>
+   * <code>optional bool guest_flush = 385550813;</code>
    *
    * @return The guestFlush.
    */
@@ -884,7 +884,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Chain name that the snapshot is created in.
      * </pre>
      *
-     * <code>string chain_name = 68644169;</code>
+     * <code>optional string chain_name = 68644169;</code>
      *
      * @return Whether the chainName field is set.
      */
@@ -898,7 +898,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Chain name that the snapshot is created in.
      * </pre>
      *
-     * <code>string chain_name = 68644169;</code>
+     * <code>optional string chain_name = 68644169;</code>
      *
      * @return The chainName.
      */
@@ -920,7 +920,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Chain name that the snapshot is created in.
      * </pre>
      *
-     * <code>string chain_name = 68644169;</code>
+     * <code>optional string chain_name = 68644169;</code>
      *
      * @return The bytes for chainName.
      */
@@ -942,7 +942,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Chain name that the snapshot is created in.
      * </pre>
      *
-     * <code>string chain_name = 68644169;</code>
+     * <code>optional string chain_name = 68644169;</code>
      *
      * @param value The chainName to set.
      * @return This builder for chaining.
@@ -963,7 +963,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Chain name that the snapshot is created in.
      * </pre>
      *
-     * <code>string chain_name = 68644169;</code>
+     * <code>optional string chain_name = 68644169;</code>
      *
      * @return This builder for chaining.
      */
@@ -980,7 +980,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Chain name that the snapshot is created in.
      * </pre>
      *
-     * <code>string chain_name = 68644169;</code>
+     * <code>optional string chain_name = 68644169;</code>
      *
      * @param value The bytes for chainName to set.
      * @return This builder for chaining.
@@ -1004,7 +1004,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Indication to perform a 'guest aware' snapshot.
      * </pre>
      *
-     * <code>bool guest_flush = 385550813;</code>
+     * <code>optional bool guest_flush = 385550813;</code>
      *
      * @return Whether the guestFlush field is set.
      */
@@ -1019,7 +1019,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Indication to perform a 'guest aware' snapshot.
      * </pre>
      *
-     * <code>bool guest_flush = 385550813;</code>
+     * <code>optional bool guest_flush = 385550813;</code>
      *
      * @return The guestFlush.
      */
@@ -1034,7 +1034,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Indication to perform a 'guest aware' snapshot.
      * </pre>
      *
-     * <code>bool guest_flush = 385550813;</code>
+     * <code>optional bool guest_flush = 385550813;</code>
      *
      * @param value The guestFlush to set.
      * @return This builder for chaining.
@@ -1052,7 +1052,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Indication to perform a 'guest aware' snapshot.
      * </pre>
      *
-     * <code>bool guest_flush = 385550813;</code>
+     * <code>optional bool guest_flush = 385550813;</code>
      *
      * @return This builder for chaining.
      */

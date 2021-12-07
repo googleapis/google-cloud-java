@@ -75,13 +75,13 @@ public interface RouterNatOrBuilder
   com.google.protobuf.ByteString getDrainNatIpsBytes(int index);
 
   /**
-   * <code>bool enable_endpoint_independent_mapping = 259441819;</code>
+   * <code>optional bool enable_endpoint_independent_mapping = 259441819;</code>
    *
    * @return Whether the enableEndpointIndependentMapping field is set.
    */
   boolean hasEnableEndpointIndependentMapping();
   /**
-   * <code>bool enable_endpoint_independent_mapping = 259441819;</code>
+   * <code>optional bool enable_endpoint_independent_mapping = 259441819;</code>
    *
    * @return The enableEndpointIndependentMapping.
    */
@@ -94,7 +94,7 @@ public interface RouterNatOrBuilder
    * Timeout (in seconds) for ICMP connections. Defaults to 30s if not set.
    * </pre>
    *
-   * <code>int32 icmp_idle_timeout_sec = 3647562;</code>
+   * <code>optional int32 icmp_idle_timeout_sec = 3647562;</code>
    *
    * @return Whether the icmpIdleTimeoutSec field is set.
    */
@@ -106,7 +106,7 @@ public interface RouterNatOrBuilder
    * Timeout (in seconds) for ICMP connections. Defaults to 30s if not set.
    * </pre>
    *
-   * <code>int32 icmp_idle_timeout_sec = 3647562;</code>
+   * <code>optional int32 icmp_idle_timeout_sec = 3647562;</code>
    *
    * @return The icmpIdleTimeoutSec.
    */
@@ -119,7 +119,7 @@ public interface RouterNatOrBuilder
    * Configure logging on this NAT.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+   * <code>optional .google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
    *
    * @return Whether the logConfig field is set.
    */
@@ -131,7 +131,7 @@ public interface RouterNatOrBuilder
    * Configure logging on this NAT.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+   * <code>optional .google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
    *
    * @return The logConfig.
    */
@@ -143,7 +143,7 @@ public interface RouterNatOrBuilder
    * Configure logging on this NAT.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+   * <code>optional .google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
    */
   com.google.cloud.compute.v1.RouterNatLogConfigOrBuilder getLogConfigOrBuilder();
 
@@ -154,7 +154,7 @@ public interface RouterNatOrBuilder
    * Minimum number of ports allocated to a VM from this NAT config. If not set, a default number of ports is allocated to a VM. This is rounded up to the nearest power of 2. For example, if the value of this field is 50, at least 64 ports are allocated to a VM.
    * </pre>
    *
-   * <code>int32 min_ports_per_vm = 186193587;</code>
+   * <code>optional int32 min_ports_per_vm = 186193587;</code>
    *
    * @return Whether the minPortsPerVm field is set.
    */
@@ -166,7 +166,7 @@ public interface RouterNatOrBuilder
    * Minimum number of ports allocated to a VM from this NAT config. If not set, a default number of ports is allocated to a VM. This is rounded up to the nearest power of 2. For example, if the value of this field is 50, at least 64 ports are allocated to a VM.
    * </pre>
    *
-   * <code>int32 min_ports_per_vm = 186193587;</code>
+   * <code>optional int32 min_ports_per_vm = 186193587;</code>
    *
    * @return The minPortsPerVm.
    */
@@ -179,7 +179,7 @@ public interface RouterNatOrBuilder
    * Unique name of this Nat service. The name must be 1-63 characters long and comply with RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -191,7 +191,7 @@ public interface RouterNatOrBuilder
    * Unique name of this Nat service. The name must be 1-63 characters long and comply with RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -203,7 +203,7 @@ public interface RouterNatOrBuilder
    * Unique name of this Nat service. The name must be 1-63 characters long and comply with RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -213,14 +213,11 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
-   * Specify the NatIpAllocateOption, which can take one of the following values:
-   * - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs.
-   * - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+   * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+   * Check the NatIpAllocateOption enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;
-   * </code>
+   * <code>optional string nat_ip_allocate_option = 429726845;</code>
    *
    * @return Whether the natIpAllocateOption field is set.
    */
@@ -229,34 +226,28 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
-   * Specify the NatIpAllocateOption, which can take one of the following values:
-   * - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs.
-   * - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+   * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+   * Check the NatIpAllocateOption enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;
-   * </code>
+   * <code>optional string nat_ip_allocate_option = 429726845;</code>
    *
-   * @return The enum numeric value on the wire for natIpAllocateOption.
+   * @return The natIpAllocateOption.
    */
-  int getNatIpAllocateOptionValue();
+  java.lang.String getNatIpAllocateOption();
   /**
    *
    *
    * <pre>
-   * Specify the NatIpAllocateOption, which can take one of the following values:
-   * - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs.
-   * - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+   * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+   * Check the NatIpAllocateOption enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;
-   * </code>
+   * <code>optional string nat_ip_allocate_option = 429726845;</code>
    *
-   * @return The natIpAllocateOption.
+   * @return The bytes for natIpAllocateOption.
    */
-  com.google.cloud.compute.v1.RouterNat.NatIpAllocateOption getNatIpAllocateOption();
+  com.google.protobuf.ByteString getNatIpAllocateOptionBytes();
 
   /**
    *
@@ -313,15 +304,63 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
-   * Specify the Nat option, which can take one of the following values:
-   * - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat.
-   * - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat.
-   * - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+   * A list of rules associated with this NAT.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat source_subnetwork_ip_ranges_to_nat = 252213211;
-   * </code>
+   * <code>repeated .google.cloud.compute.v1.RouterNatRule rules = 108873975;</code>
+   */
+  java.util.List<com.google.cloud.compute.v1.RouterNatRule> getRulesList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of rules associated with this NAT.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.RouterNatRule rules = 108873975;</code>
+   */
+  com.google.cloud.compute.v1.RouterNatRule getRules(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of rules associated with this NAT.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.RouterNatRule rules = 108873975;</code>
+   */
+  int getRulesCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of rules associated with this NAT.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.RouterNatRule rules = 108873975;</code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.RouterNatRuleOrBuilder>
+      getRulesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of rules associated with this NAT.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.RouterNatRule rules = 108873975;</code>
+   */
+  com.google.cloud.compute.v1.RouterNatRuleOrBuilder getRulesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+   * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string source_subnetwork_ip_ranges_to_nat = 252213211;</code>
    *
    * @return Whether the sourceSubnetworkIpRangesToNat field is set.
    */
@@ -330,37 +369,28 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
-   * Specify the Nat option, which can take one of the following values:
-   * - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat.
-   * - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat.
-   * - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+   * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+   * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat source_subnetwork_ip_ranges_to_nat = 252213211;
-   * </code>
+   * <code>optional string source_subnetwork_ip_ranges_to_nat = 252213211;</code>
    *
-   * @return The enum numeric value on the wire for sourceSubnetworkIpRangesToNat.
+   * @return The sourceSubnetworkIpRangesToNat.
    */
-  int getSourceSubnetworkIpRangesToNatValue();
+  java.lang.String getSourceSubnetworkIpRangesToNat();
   /**
    *
    *
    * <pre>
-   * Specify the Nat option, which can take one of the following values:
-   * - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat.
-   * - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat.
-   * - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+   * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+   * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat source_subnetwork_ip_ranges_to_nat = 252213211;
-   * </code>
+   * <code>optional string source_subnetwork_ip_ranges_to_nat = 252213211;</code>
    *
-   * @return The sourceSubnetworkIpRangesToNat.
+   * @return The bytes for sourceSubnetworkIpRangesToNat.
    */
-  com.google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat
-      getSourceSubnetworkIpRangesToNat();
+  com.google.protobuf.ByteString getSourceSubnetworkIpRangesToNatBytes();
 
   /**
    *
@@ -426,7 +456,7 @@ public interface RouterNatOrBuilder
    * Timeout (in seconds) for TCP established connections. Defaults to 1200s if not set.
    * </pre>
    *
-   * <code>int32 tcp_established_idle_timeout_sec = 223098349;</code>
+   * <code>optional int32 tcp_established_idle_timeout_sec = 223098349;</code>
    *
    * @return Whether the tcpEstablishedIdleTimeoutSec field is set.
    */
@@ -438,7 +468,7 @@ public interface RouterNatOrBuilder
    * Timeout (in seconds) for TCP established connections. Defaults to 1200s if not set.
    * </pre>
    *
-   * <code>int32 tcp_established_idle_timeout_sec = 223098349;</code>
+   * <code>optional int32 tcp_established_idle_timeout_sec = 223098349;</code>
    *
    * @return The tcpEstablishedIdleTimeoutSec.
    */
@@ -448,10 +478,35 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
+   * Timeout (in seconds) for TCP connections that are in TIME_WAIT state. Defaults to 120s if not set.
+   * </pre>
+   *
+   * <code>optional int32 tcp_time_wait_timeout_sec = 513596925;</code>
+   *
+   * @return Whether the tcpTimeWaitTimeoutSec field is set.
+   */
+  boolean hasTcpTimeWaitTimeoutSec();
+  /**
+   *
+   *
+   * <pre>
+   * Timeout (in seconds) for TCP connections that are in TIME_WAIT state. Defaults to 120s if not set.
+   * </pre>
+   *
+   * <code>optional int32 tcp_time_wait_timeout_sec = 513596925;</code>
+   *
+   * @return The tcpTimeWaitTimeoutSec.
+   */
+  int getTcpTimeWaitTimeoutSec();
+
+  /**
+   *
+   *
+   * <pre>
    * Timeout (in seconds) for TCP transitory connections. Defaults to 30s if not set.
    * </pre>
    *
-   * <code>int32 tcp_transitory_idle_timeout_sec = 205028774;</code>
+   * <code>optional int32 tcp_transitory_idle_timeout_sec = 205028774;</code>
    *
    * @return Whether the tcpTransitoryIdleTimeoutSec field is set.
    */
@@ -463,7 +518,7 @@ public interface RouterNatOrBuilder
    * Timeout (in seconds) for TCP transitory connections. Defaults to 30s if not set.
    * </pre>
    *
-   * <code>int32 tcp_transitory_idle_timeout_sec = 205028774;</code>
+   * <code>optional int32 tcp_transitory_idle_timeout_sec = 205028774;</code>
    *
    * @return The tcpTransitoryIdleTimeoutSec.
    */
@@ -476,7 +531,7 @@ public interface RouterNatOrBuilder
    * Timeout (in seconds) for UDP connections. Defaults to 30s if not set.
    * </pre>
    *
-   * <code>int32 udp_idle_timeout_sec = 64919878;</code>
+   * <code>optional int32 udp_idle_timeout_sec = 64919878;</code>
    *
    * @return Whether the udpIdleTimeoutSec field is set.
    */
@@ -488,7 +543,7 @@ public interface RouterNatOrBuilder
    * Timeout (in seconds) for UDP connections. Defaults to 30s if not set.
    * </pre>
    *
-   * <code>int32 udp_idle_timeout_sec = 64919878;</code>
+   * <code>optional int32 udp_idle_timeout_sec = 64919878;</code>
    *
    * @return The udpIdleTimeoutSec.
    */

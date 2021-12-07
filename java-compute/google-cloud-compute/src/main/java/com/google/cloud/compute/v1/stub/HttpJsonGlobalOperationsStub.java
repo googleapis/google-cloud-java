@@ -26,11 +26,14 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonLongRunningClient;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LongRunningClient;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListGlobalOperationsRequest;
 import com.google.cloud.compute.v1.DeleteGlobalOperationRequest;
@@ -38,11 +41,14 @@ import com.google.cloud.compute.v1.DeleteGlobalOperationResponse;
 import com.google.cloud.compute.v1.GetGlobalOperationRequest;
 import com.google.cloud.compute.v1.ListGlobalOperationsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.OperationAggregatedList;
 import com.google.cloud.compute.v1.OperationList;
 import com.google.cloud.compute.v1.WaitGlobalOperationRequest;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -58,6 +64,8 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
   private static final ApiMethodDescriptor<
           AggregatedListGlobalOperationsRequest, OperationAggregatedList>
       aggregatedListMethodDescriptor =
@@ -111,6 +119,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<OperationAggregatedList>newBuilder()
                       .setDefaultInstance(OperationAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -145,6 +154,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<DeleteGlobalOperationResponse>newBuilder()
                       .setDefaultInstance(DeleteGlobalOperationResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -177,7 +187,27 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (GetGlobalOperationRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .setPollingRequestFactory(
+                  compoundOperationId -> {
+                    List<String> idComponents = Arrays.asList(compoundOperationId.split(":"));
+                    return GetGlobalOperationRequest.newBuilder()
+                        .setOperation(idComponents.get(0))
+                        .setProject(idComponents.get(1))
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListGlobalOperationsRequest, OperationList>
@@ -227,6 +257,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<OperationList>newBuilder()
                       .setDefaultInstance(OperationList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -259,6 +290,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -274,6 +306,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
   private final UnaryCallable<WaitGlobalOperationRequest, Operation> waitCallable;
 
   private final BackgroundResource backgroundResources;
+  private final LongRunningClient longRunningClient;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonGlobalOperationsStub create(GlobalOperationsStubSettings settings)
@@ -320,24 +353,29 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
             HttpJsonCallSettings
                 .<AggregatedListGlobalOperationsRequest, OperationAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeleteGlobalOperationRequest, DeleteGlobalOperationResponse>
         deleteTransportSettings =
             HttpJsonCallSettings
                 .<DeleteGlobalOperationRequest, DeleteGlobalOperationResponse>newBuilder()
                 .setMethodDescriptor(deleteMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<GetGlobalOperationRequest, Operation> getTransportSettings =
         HttpJsonCallSettings.<GetGlobalOperationRequest, Operation>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListGlobalOperationsRequest, OperationList> listTransportSettings =
         HttpJsonCallSettings.<ListGlobalOperationsRequest, OperationList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<WaitGlobalOperationRequest, Operation> waitTransportSettings =
         HttpJsonCallSettings.<WaitGlobalOperationRequest, Operation>newBuilder()
             .setMethodDescriptor(waitMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.aggregatedListCallable =
@@ -362,6 +400,11 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
         callableFactory.createUnaryCallable(
             waitTransportSettings, settings.waitSettings(), clientContext);
 
+    this.longRunningClient =
+        new HttpJsonLongRunningClient<GetGlobalOperationRequest, Operation>(
+            getCallable,
+            getMethodDescriptor.getOperationSnapshotFactory(),
+            getMethodDescriptor.getPollingRequestFactory());
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -413,6 +456,11 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
   @Override
   public UnaryCallable<WaitGlobalOperationRequest, Operation> waitCallable() {
     return waitCallable;
+  }
+
+  @Override
+  public LongRunningClient longRunningClient() {
+    return longRunningClient;
   }
 
   @Override

@@ -166,7 +166,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
-   * <code>string peer_external_gateway = 384956173;</code>
+   * <code>optional string peer_external_gateway = 384956173;</code>
    *
    * @return Whether the peerExternalGateway field is set.
    */
@@ -181,7 +181,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
-   * <code>string peer_external_gateway = 384956173;</code>
+   * <code>optional string peer_external_gateway = 384956173;</code>
    *
    * @return The peerExternalGateway.
    */
@@ -204,7 +204,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
-   * <code>string peer_external_gateway = 384956173;</code>
+   * <code>optional string peer_external_gateway = 384956173;</code>
    *
    * @return The bytes for peerExternalGateway.
    */
@@ -230,7 +230,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
-   * <code>string peer_gcp_gateway = 281867452;</code>
+   * <code>optional string peer_gcp_gateway = 281867452;</code>
    *
    * @return Whether the peerGcpGateway field is set.
    */
@@ -245,7 +245,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
-   * <code>string peer_gcp_gateway = 281867452;</code>
+   * <code>optional string peer_gcp_gateway = 281867452;</code>
    *
    * @return The peerGcpGateway.
    */
@@ -268,7 +268,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
-   * <code>string peer_gcp_gateway = 281867452;</code>
+   * <code>optional string peer_gcp_gateway = 281867452;</code>
    *
    * @return The bytes for peerGcpGateway.
    */
@@ -295,7 +295,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
+   * optional .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
    * </code>
    *
    * @return Whether the state field is set.
@@ -312,7 +312,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
+   * optional .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
    * </code>
    *
    * @return The state.
@@ -332,7 +332,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
+   * optional .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
    * </code>
    */
   @java.lang.Override
@@ -868,7 +868,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
-     * <code>string peer_external_gateway = 384956173;</code>
+     * <code>optional string peer_external_gateway = 384956173;</code>
      *
      * @return Whether the peerExternalGateway field is set.
      */
@@ -882,7 +882,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
-     * <code>string peer_external_gateway = 384956173;</code>
+     * <code>optional string peer_external_gateway = 384956173;</code>
      *
      * @return The peerExternalGateway.
      */
@@ -904,7 +904,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
-     * <code>string peer_external_gateway = 384956173;</code>
+     * <code>optional string peer_external_gateway = 384956173;</code>
      *
      * @return The bytes for peerExternalGateway.
      */
@@ -926,7 +926,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
-     * <code>string peer_external_gateway = 384956173;</code>
+     * <code>optional string peer_external_gateway = 384956173;</code>
      *
      * @param value The peerExternalGateway to set.
      * @return This builder for chaining.
@@ -947,7 +947,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
-     * <code>string peer_external_gateway = 384956173;</code>
+     * <code>optional string peer_external_gateway = 384956173;</code>
      *
      * @return This builder for chaining.
      */
@@ -964,7 +964,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
-     * <code>string peer_external_gateway = 384956173;</code>
+     * <code>optional string peer_external_gateway = 384956173;</code>
      *
      * @param value The bytes for peerExternalGateway to set.
      * @return This builder for chaining.
@@ -988,7 +988,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
-     * <code>string peer_gcp_gateway = 281867452;</code>
+     * <code>optional string peer_gcp_gateway = 281867452;</code>
      *
      * @return Whether the peerGcpGateway field is set.
      */
@@ -1002,7 +1002,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
-     * <code>string peer_gcp_gateway = 281867452;</code>
+     * <code>optional string peer_gcp_gateway = 281867452;</code>
      *
      * @return The peerGcpGateway.
      */
@@ -1024,7 +1024,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
-     * <code>string peer_gcp_gateway = 281867452;</code>
+     * <code>optional string peer_gcp_gateway = 281867452;</code>
      *
      * @return The bytes for peerGcpGateway.
      */
@@ -1046,7 +1046,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
-     * <code>string peer_gcp_gateway = 281867452;</code>
+     * <code>optional string peer_gcp_gateway = 281867452;</code>
      *
      * @param value The peerGcpGateway to set.
      * @return This builder for chaining.
@@ -1067,7 +1067,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
-     * <code>string peer_gcp_gateway = 281867452;</code>
+     * <code>optional string peer_gcp_gateway = 281867452;</code>
      *
      * @return This builder for chaining.
      */
@@ -1084,7 +1084,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
-     * <code>string peer_gcp_gateway = 281867452;</code>
+     * <code>optional string peer_gcp_gateway = 281867452;</code>
      *
      * @param value The bytes for peerGcpGateway to set.
      * @return This builder for chaining.
@@ -1114,7 +1114,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
+     * optional .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
      * </code>
      *
      * @return Whether the state field is set.
@@ -1130,7 +1130,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
+     * optional .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
      * </code>
      *
      * @return The state.
@@ -1153,7 +1153,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
+     * optional .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
      * </code>
      */
     public Builder setState(
@@ -1178,7 +1178,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
+     * optional .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
      * </code>
      */
     public Builder setState(
@@ -1201,7 +1201,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
+     * optional .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
      * </code>
      */
     public Builder mergeState(
@@ -1235,7 +1235,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
+     * optional .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
      * </code>
      */
     public Builder clearState() {
@@ -1256,7 +1256,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
+     * optional .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
      * </code>
      */
     public com.google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState.Builder
@@ -1273,7 +1273,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
+     * optional .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
      * </code>
      */
     public com.google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementStateOrBuilder
@@ -1295,7 +1295,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
+     * optional .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

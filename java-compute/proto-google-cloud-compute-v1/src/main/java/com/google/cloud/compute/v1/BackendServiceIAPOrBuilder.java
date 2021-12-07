@@ -30,7 +30,7 @@ public interface BackendServiceIAPOrBuilder
    * Whether the serving infrastructure will authenticate and authorize all incoming requests. If true, the oauth2ClientId and oauth2ClientSecret fields must be non-empty.
    * </pre>
    *
-   * <code>bool enabled = 1018689;</code>
+   * <code>optional bool enabled = 1018689;</code>
    *
    * @return Whether the enabled field is set.
    */
@@ -42,7 +42,7 @@ public interface BackendServiceIAPOrBuilder
    * Whether the serving infrastructure will authenticate and authorize all incoming requests. If true, the oauth2ClientId and oauth2ClientSecret fields must be non-empty.
    * </pre>
    *
-   * <code>bool enabled = 1018689;</code>
+   * <code>optional bool enabled = 1018689;</code>
    *
    * @return The enabled.
    */
@@ -55,7 +55,7 @@ public interface BackendServiceIAPOrBuilder
    * OAuth2 client ID to use for the authentication flow.
    * </pre>
    *
-   * <code>string oauth2_client_id = 314017611;</code>
+   * <code>optional string oauth2_client_id = 314017611;</code>
    *
    * @return Whether the oauth2ClientId field is set.
    */
@@ -67,7 +67,7 @@ public interface BackendServiceIAPOrBuilder
    * OAuth2 client ID to use for the authentication flow.
    * </pre>
    *
-   * <code>string oauth2_client_id = 314017611;</code>
+   * <code>optional string oauth2_client_id = 314017611;</code>
    *
    * @return The oauth2ClientId.
    */
@@ -79,7 +79,7 @@ public interface BackendServiceIAPOrBuilder
    * OAuth2 client ID to use for the authentication flow.
    * </pre>
    *
-   * <code>string oauth2_client_id = 314017611;</code>
+   * <code>optional string oauth2_client_id = 314017611;</code>
    *
    * @return The bytes for oauth2ClientId.
    */
@@ -89,10 +89,10 @@ public interface BackendServiceIAPOrBuilder
    *
    *
    * <pre>
-   * OAuth2 client secret to use for the authentication flow. For security reasons, this value cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field.
+   * OAuth2 client secret to use for the authentication flow. For security reasons, this value cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field. &#64;InputOnly
    * </pre>
    *
-   * <code>string oauth2_client_secret = 50999520;</code>
+   * <code>optional string oauth2_client_secret = 50999520;</code>
    *
    * @return Whether the oauth2ClientSecret field is set.
    */
@@ -101,10 +101,10 @@ public interface BackendServiceIAPOrBuilder
    *
    *
    * <pre>
-   * OAuth2 client secret to use for the authentication flow. For security reasons, this value cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field.
+   * OAuth2 client secret to use for the authentication flow. For security reasons, this value cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field. &#64;InputOnly
    * </pre>
    *
-   * <code>string oauth2_client_secret = 50999520;</code>
+   * <code>optional string oauth2_client_secret = 50999520;</code>
    *
    * @return The oauth2ClientSecret.
    */
@@ -113,10 +113,10 @@ public interface BackendServiceIAPOrBuilder
    *
    *
    * <pre>
-   * OAuth2 client secret to use for the authentication flow. For security reasons, this value cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field.
+   * OAuth2 client secret to use for the authentication flow. For security reasons, this value cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field. &#64;InputOnly
    * </pre>
    *
-   * <code>string oauth2_client_secret = 50999520;</code>
+   * <code>optional string oauth2_client_secret = 50999520;</code>
    *
    * @return The bytes for oauth2ClientSecret.
    */
@@ -129,7 +129,7 @@ public interface BackendServiceIAPOrBuilder
    * [Output Only] SHA256 hash value for the field oauth2_client_secret above.
    * </pre>
    *
-   * <code>string oauth2_client_secret_sha256 = 112903782;</code>
+   * <code>optional string oauth2_client_secret_sha256 = 112903782;</code>
    *
    * @return Whether the oauth2ClientSecretSha256 field is set.
    */
@@ -141,7 +141,7 @@ public interface BackendServiceIAPOrBuilder
    * [Output Only] SHA256 hash value for the field oauth2_client_secret above.
    * </pre>
    *
-   * <code>string oauth2_client_secret_sha256 = 112903782;</code>
+   * <code>optional string oauth2_client_secret_sha256 = 112903782;</code>
    *
    * @return The oauth2ClientSecretSha256.
    */
@@ -153,7 +153,7 @@ public interface BackendServiceIAPOrBuilder
    * [Output Only] SHA256 hash value for the field oauth2_client_secret above.
    * </pre>
    *
-   * <code>string oauth2_client_secret_sha256 = 112903782;</code>
+   * <code>optional string oauth2_client_secret_sha256 = 112903782;</code>
    *
    * @return The bytes for oauth2ClientSecretSha256.
    */

@@ -43,7 +43,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     machineType_ = "";
     minCpuPlatform_ = "";
     networkInterfaces_ = java.util.Collections.emptyList();
-    privateIpv6GoogleAccess_ = 0;
+    privateIpv6GoogleAccess_ = "";
     resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     serviceAccounts_ = java.util.Collections.emptyList();
   }
@@ -120,11 +120,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
               resourcePolicies_.add(s);
               break;
             }
-          case 386216048:
+          case 386216050:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000080;
-              privateIpv6GoogleAccess_ = rawValue;
+              privateIpv6GoogleAccess_ = s;
               break;
             }
           case 421881946:
@@ -360,7 +360,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess}
@@ -376,11 +376,35 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS = 0;</code>
      */
     UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS(0),
-    /** <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Bidirectional private IPv6 access to/from Google services. If specified, the subnetwork who is attached to the instance's default network interface will be assigned an internal IPv6 prefix if it doesn't have before.
+     * </pre>
+     *
+     * <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code>
+     */
     ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE(427975994),
-    /** <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Outbound private IPv6 access from VMs in this subnet to Google services. If specified, the subnetwork who is attached to the instance's default network interface will be assigned an internal IPv6 prefix if it doesn't have before.
+     * </pre>
+     *
+     * <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code>
+     */
     ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE(288210263),
-    /** <code>INHERIT_FROM_SUBNETWORK = 530256959;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Each network interface inherits PrivateIpv6GoogleAccess from its subnetwork.
+     * </pre>
+     *
+     * <code>INHERIT_FROM_SUBNETWORK = 530256959;</code>
+     */
     INHERIT_FROM_SUBNETWORK(530256959),
     UNRECOGNIZED(-1),
     ;
@@ -395,11 +419,35 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS = 0;</code>
      */
     public static final int UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS_VALUE = 0;
-    /** <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Bidirectional private IPv6 access to/from Google services. If specified, the subnetwork who is attached to the instance's default network interface will be assigned an internal IPv6 prefix if it doesn't have before.
+     * </pre>
+     *
+     * <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code>
+     */
     public static final int ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE_VALUE = 427975994;
-    /** <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Outbound private IPv6 access from VMs in this subnet to Google services. If specified, the subnetwork who is attached to the instance's default network interface will be assigned an internal IPv6 prefix if it doesn't have before.
+     * </pre>
+     *
+     * <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code>
+     */
     public static final int ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE_VALUE = 288210263;
-    /** <code>INHERIT_FROM_SUBNETWORK = 530256959;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Each network interface inherits PrivateIpv6GoogleAccess from its subnetwork.
+     * </pre>
+     *
+     * <code>INHERIT_FROM_SUBNETWORK = 530256959;</code>
+     */
     public static final int INHERIT_FROM_SUBNETWORK_VALUE = 530256959;
 
     public final int getNumber() {
@@ -500,7 +548,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Controls for advanced machine-related behavior features.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+   * <code>
+   * optional .google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
    * </code>
    *
    * @return Whether the advancedMachineFeatures field is set.
@@ -516,7 +565,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Controls for advanced machine-related behavior features.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+   * <code>
+   * optional .google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
    * </code>
    *
    * @return The advancedMachineFeatures.
@@ -534,7 +584,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Controls for advanced machine-related behavior features.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+   * <code>
+   * optional .google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
    * </code>
    */
   @java.lang.Override
@@ -554,7 +605,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
    * </pre>
    *
-   * <code>bool can_ip_forward = 467731324;</code>
+   * <code>optional bool can_ip_forward = 467731324;</code>
    *
    * @return Whether the canIpForward field is set.
    */
@@ -569,7 +620,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
    * </pre>
    *
-   * <code>bool can_ip_forward = 467731324;</code>
+   * <code>optional bool can_ip_forward = 467731324;</code>
    *
    * @return The canIpForward.
    */
@@ -588,7 +639,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+   * optional .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
    * </code>
    *
    * @return Whether the confidentialInstanceConfig field is set.
@@ -605,7 +656,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+   * optional .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
    * </code>
    *
    * @return The confidentialInstanceConfig.
@@ -624,7 +675,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+   * optional .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
    * </code>
    */
   @java.lang.Override
@@ -644,7 +695,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * An optional text description for the instances that are created from these properties.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -659,7 +710,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * An optional text description for the instances that are created from these properties.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -682,7 +733,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * An optional text description for the instances that are created from these properties.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -950,7 +1001,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * The machine type to use for instances that are created from these properties.
    * </pre>
    *
-   * <code>string machine_type = 227711026;</code>
+   * <code>optional string machine_type = 227711026;</code>
    *
    * @return Whether the machineType field is set.
    */
@@ -965,7 +1016,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * The machine type to use for instances that are created from these properties.
    * </pre>
    *
-   * <code>string machine_type = 227711026;</code>
+   * <code>optional string machine_type = 227711026;</code>
    *
    * @return The machineType.
    */
@@ -988,7 +1039,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * The machine type to use for instances that are created from these properties.
    * </pre>
    *
-   * <code>string machine_type = 227711026;</code>
+   * <code>optional string machine_type = 227711026;</code>
    *
    * @return The bytes for machineType.
    */
@@ -1014,7 +1065,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Metadata metadata = 86866735;</code>
+   * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
    *
    * @return Whether the metadata field is set.
    */
@@ -1029,7 +1080,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Metadata metadata = 86866735;</code>
+   * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
    *
    * @return The metadata.
    */
@@ -1046,7 +1097,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Metadata metadata = 86866735;</code>
+   * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.MetadataOrBuilder getMetadataOrBuilder() {
@@ -1064,7 +1115,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return Whether the minCpuPlatform field is set.
    */
@@ -1079,7 +1130,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return The minCpuPlatform.
    */
@@ -1102,7 +1153,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return The bytes for minCpuPlatform.
    */
@@ -1190,17 +1241,16 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PRIVATE_IPV6_GOOGLE_ACCESS_FIELD_NUMBER = 48277006;
-  private int privateIpv6GoogleAccess_;
+  private volatile java.lang.Object privateIpv6GoogleAccess_;
   /**
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
-   * </code>
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
    *
    * @return Whether the privateIpv6GoogleAccess field is set.
    */
@@ -1212,42 +1262,49 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
-   * </code>
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
    *
-   * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
+   * @return The privateIpv6GoogleAccess.
    */
   @java.lang.Override
-  public int getPrivateIpv6GoogleAccessValue() {
-    return privateIpv6GoogleAccess_;
+  public java.lang.String getPrivateIpv6GoogleAccess() {
+    java.lang.Object ref = privateIpv6GoogleAccess_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      privateIpv6GoogleAccess_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
-   * </code>
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
    *
-   * @return The privateIpv6GoogleAccess.
+   * @return The bytes for privateIpv6GoogleAccess.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess
-      getPrivateIpv6GoogleAccess() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess result =
-        com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess.valueOf(
-            privateIpv6GoogleAccess_);
-    return result == null
-        ? com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getPrivateIpv6GoogleAccessBytes() {
+    java.lang.Object ref = privateIpv6GoogleAccess_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      privateIpv6GoogleAccess_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int RESERVATION_AFFINITY_FIELD_NUMBER = 157850683;
@@ -1259,7 +1316,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Specifies the reservations that instances can consume from.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;</code>
+   * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
+   * </code>
    *
    * @return Whether the reservationAffinity field is set.
    */
@@ -1274,7 +1332,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Specifies the reservations that instances can consume from.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;</code>
+   * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
+   * </code>
    *
    * @return The reservationAffinity.
    */
@@ -1291,7 +1350,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Specifies the reservations that instances can consume from.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;</code>
+   * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ReservationAffinityOrBuilder
@@ -1371,7 +1431,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Specifies the scheduling options for the instances that are created from these properties.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+   * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
    *
    * @return Whether the scheduling field is set.
    */
@@ -1386,7 +1446,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Specifies the scheduling options for the instances that are created from these properties.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+   * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
    *
    * @return The scheduling.
    */
@@ -1403,7 +1463,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Specifies the scheduling options for the instances that are created from these properties.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+   * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.SchedulingOrBuilder getSchedulingOrBuilder() {
@@ -1485,7 +1545,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
   public static final int SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER = 12862901;
   private com.google.cloud.compute.v1.ShieldedInstanceConfig shieldedInstanceConfig_;
   /**
-   * <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
    * </code>
    *
    * @return Whether the shieldedInstanceConfig field is set.
@@ -1495,7 +1556,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     return ((bitField0_ & 0x00000400) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
    * </code>
    *
    * @return The shieldedInstanceConfig.
@@ -1507,7 +1569,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         : shieldedInstanceConfig_;
   }
   /**
-   * <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
    * </code>
    */
   @java.lang.Override
@@ -1527,7 +1590,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Tags tags = 3552281;</code>
+   * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
    *
    * @return Whether the tags field is set.
    */
@@ -1542,7 +1605,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Tags tags = 3552281;</code>
+   * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
    *
    * @return The tags.
    */
@@ -1557,7 +1620,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Tags tags = 3552281;</code>
+   * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.TagsOrBuilder getTagsOrBuilder() {
@@ -1589,7 +1652,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
           output, 22220385, resourcePolicies_.getRaw(i));
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      output.writeEnum(48277006, privateIpv6GoogleAccess_);
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 48277006, privateIpv6GoogleAccess_);
     }
     for (int i = 0; i < networkInterfaces_.size(); i++) {
       output.writeMessage(52735243, networkInterfaces_.get(i));
@@ -1659,7 +1723,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeEnumSize(48277006, privateIpv6GoogleAccess_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              48277006, privateIpv6GoogleAccess_);
     }
     for (int i = 0; i < networkInterfaces_.size(); i++) {
       size +=
@@ -1773,7 +1838,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     if (!getNetworkInterfacesList().equals(other.getNetworkInterfacesList())) return false;
     if (hasPrivateIpv6GoogleAccess() != other.hasPrivateIpv6GoogleAccess()) return false;
     if (hasPrivateIpv6GoogleAccess()) {
-      if (privateIpv6GoogleAccess_ != other.privateIpv6GoogleAccess_) return false;
+      if (!getPrivateIpv6GoogleAccess().equals(other.getPrivateIpv6GoogleAccess())) return false;
     }
     if (hasReservationAffinity() != other.hasReservationAffinity()) return false;
     if (hasReservationAffinity()) {
@@ -1850,7 +1915,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     }
     if (hasPrivateIpv6GoogleAccess()) {
       hash = (37 * hash) + PRIVATE_IPV6_GOOGLE_ACCESS_FIELD_NUMBER;
-      hash = (53 * hash) + privateIpv6GoogleAccess_;
+      hash = (53 * hash) + getPrivateIpv6GoogleAccess().hashCode();
     }
     if (hasReservationAffinity()) {
       hash = (37 * hash) + RESERVATION_AFFINITY_FIELD_NUMBER;
@@ -2097,7 +2162,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         networkInterfacesBuilder_.clear();
       }
-      privateIpv6GoogleAccess_ = 0;
+      privateIpv6GoogleAccess_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
       if (reservationAffinityBuilder_ == null) {
         reservationAffinity_ = null;
@@ -2439,7 +2504,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         }
       }
       if (other.hasPrivateIpv6GoogleAccess()) {
-        setPrivateIpv6GoogleAccess(other.getPrivateIpv6GoogleAccess());
+        bitField0_ |= 0x00000800;
+        privateIpv6GoogleAccess_ = other.privateIpv6GoogleAccess_;
+        onChanged();
       }
       if (other.hasReservationAffinity()) {
         mergeReservationAffinity(other.getReservationAffinity());
@@ -2534,7 +2601,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Controls for advanced machine-related behavior features.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+     * <code>
+     * optional .google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
      * </code>
      *
      * @return Whether the advancedMachineFeatures field is set.
@@ -2549,7 +2617,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Controls for advanced machine-related behavior features.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+     * <code>
+     * optional .google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
      * </code>
      *
      * @return The advancedMachineFeatures.
@@ -2570,7 +2639,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Controls for advanced machine-related behavior features.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+     * <code>
+     * optional .google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
      * </code>
      */
     public Builder setAdvancedMachineFeatures(
@@ -2594,7 +2664,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Controls for advanced machine-related behavior features.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+     * <code>
+     * optional .google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
      * </code>
      */
     public Builder setAdvancedMachineFeatures(
@@ -2615,7 +2686,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Controls for advanced machine-related behavior features.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+     * <code>
+     * optional .google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
      * </code>
      */
     public Builder mergeAdvancedMachineFeatures(
@@ -2647,7 +2719,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Controls for advanced machine-related behavior features.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+     * <code>
+     * optional .google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
      * </code>
      */
     public Builder clearAdvancedMachineFeatures() {
@@ -2667,7 +2740,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Controls for advanced machine-related behavior features.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+     * <code>
+     * optional .google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
      * </code>
      */
     public com.google.cloud.compute.v1.AdvancedMachineFeatures.Builder
@@ -2683,7 +2757,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Controls for advanced machine-related behavior features.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+     * <code>
+     * optional .google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
      * </code>
      */
     public com.google.cloud.compute.v1.AdvancedMachineFeaturesOrBuilder
@@ -2703,7 +2778,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Controls for advanced machine-related behavior features.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+     * <code>
+     * optional .google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2731,7 +2807,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
      * </pre>
      *
-     * <code>bool can_ip_forward = 467731324;</code>
+     * <code>optional bool can_ip_forward = 467731324;</code>
      *
      * @return Whether the canIpForward field is set.
      */
@@ -2746,7 +2822,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
      * </pre>
      *
-     * <code>bool can_ip_forward = 467731324;</code>
+     * <code>optional bool can_ip_forward = 467731324;</code>
      *
      * @return The canIpForward.
      */
@@ -2761,7 +2837,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
      * </pre>
      *
-     * <code>bool can_ip_forward = 467731324;</code>
+     * <code>optional bool can_ip_forward = 467731324;</code>
      *
      * @param value The canIpForward to set.
      * @return This builder for chaining.
@@ -2779,7 +2855,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
      * </pre>
      *
-     * <code>bool can_ip_forward = 467731324;</code>
+     * <code>optional bool can_ip_forward = 467731324;</code>
      *
      * @return This builder for chaining.
      */
@@ -2804,7 +2880,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+     * optional .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
      * </code>
      *
      * @return Whether the confidentialInstanceConfig field is set.
@@ -2820,7 +2896,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+     * optional .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
      * </code>
      *
      * @return The confidentialInstanceConfig.
@@ -2842,7 +2918,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+     * optional .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
      * </code>
      */
     public Builder setConfidentialInstanceConfig(
@@ -2867,7 +2943,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+     * optional .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
      * </code>
      */
     public Builder setConfidentialInstanceConfig(
@@ -2889,7 +2965,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+     * optional .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
      * </code>
      */
     public Builder mergeConfidentialInstanceConfig(
@@ -2922,7 +2998,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+     * optional .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
      * </code>
      */
     public Builder clearConfidentialInstanceConfig() {
@@ -2943,7 +3019,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+     * optional .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
      * </code>
      */
     public com.google.cloud.compute.v1.ConfidentialInstanceConfig.Builder
@@ -2960,7 +3036,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+     * optional .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
      * </code>
      */
     public com.google.cloud.compute.v1.ConfidentialInstanceConfigOrBuilder
@@ -2981,7 +3057,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+     * optional .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3009,7 +3085,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * An optional text description for the instances that are created from these properties.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -3023,7 +3099,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * An optional text description for the instances that are created from these properties.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -3045,7 +3121,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * An optional text description for the instances that are created from these properties.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -3067,7 +3143,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * An optional text description for the instances that are created from these properties.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -3088,7 +3164,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * An optional text description for the instances that are created from these properties.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -3105,7 +3181,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * An optional text description for the instances that are created from these properties.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -4013,7 +4089,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * The machine type to use for instances that are created from these properties.
      * </pre>
      *
-     * <code>string machine_type = 227711026;</code>
+     * <code>optional string machine_type = 227711026;</code>
      *
      * @return Whether the machineType field is set.
      */
@@ -4027,7 +4103,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * The machine type to use for instances that are created from these properties.
      * </pre>
      *
-     * <code>string machine_type = 227711026;</code>
+     * <code>optional string machine_type = 227711026;</code>
      *
      * @return The machineType.
      */
@@ -4049,7 +4125,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * The machine type to use for instances that are created from these properties.
      * </pre>
      *
-     * <code>string machine_type = 227711026;</code>
+     * <code>optional string machine_type = 227711026;</code>
      *
      * @return The bytes for machineType.
      */
@@ -4071,7 +4147,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * The machine type to use for instances that are created from these properties.
      * </pre>
      *
-     * <code>string machine_type = 227711026;</code>
+     * <code>optional string machine_type = 227711026;</code>
      *
      * @param value The machineType to set.
      * @return This builder for chaining.
@@ -4092,7 +4168,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * The machine type to use for instances that are created from these properties.
      * </pre>
      *
-     * <code>string machine_type = 227711026;</code>
+     * <code>optional string machine_type = 227711026;</code>
      *
      * @return This builder for chaining.
      */
@@ -4109,7 +4185,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * The machine type to use for instances that are created from these properties.
      * </pre>
      *
-     * <code>string machine_type = 227711026;</code>
+     * <code>optional string machine_type = 227711026;</code>
      *
      * @param value The bytes for machineType to set.
      * @return This builder for chaining.
@@ -4138,7 +4214,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Metadata metadata = 86866735;</code>
+     * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
      *
      * @return Whether the metadata field is set.
      */
@@ -4152,7 +4228,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Metadata metadata = 86866735;</code>
+     * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
      *
      * @return The metadata.
      */
@@ -4172,7 +4248,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Metadata metadata = 86866735;</code>
+     * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
      */
     public Builder setMetadata(com.google.cloud.compute.v1.Metadata value) {
       if (metadataBuilder_ == null) {
@@ -4194,7 +4270,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Metadata metadata = 86866735;</code>
+     * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
      */
     public Builder setMetadata(com.google.cloud.compute.v1.Metadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
@@ -4213,7 +4289,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Metadata metadata = 86866735;</code>
+     * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
      */
     public Builder mergeMetadata(com.google.cloud.compute.v1.Metadata value) {
       if (metadataBuilder_ == null) {
@@ -4241,7 +4317,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Metadata metadata = 86866735;</code>
+     * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
      */
     public Builder clearMetadata() {
       if (metadataBuilder_ == null) {
@@ -4260,7 +4336,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Metadata metadata = 86866735;</code>
+     * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
      */
     public com.google.cloud.compute.v1.Metadata.Builder getMetadataBuilder() {
       bitField0_ |= 0x00000100;
@@ -4274,7 +4350,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Metadata metadata = 86866735;</code>
+     * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
      */
     public com.google.cloud.compute.v1.MetadataOrBuilder getMetadataOrBuilder() {
       if (metadataBuilder_ != null) {
@@ -4292,7 +4368,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Metadata metadata = 86866735;</code>
+     * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Metadata,
@@ -4319,7 +4395,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
      * </pre>
      *
-     * <code>string min_cpu_platform = 242912759;</code>
+     * <code>optional string min_cpu_platform = 242912759;</code>
      *
      * @return Whether the minCpuPlatform field is set.
      */
@@ -4333,7 +4409,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
      * </pre>
      *
-     * <code>string min_cpu_platform = 242912759;</code>
+     * <code>optional string min_cpu_platform = 242912759;</code>
      *
      * @return The minCpuPlatform.
      */
@@ -4355,7 +4431,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
      * </pre>
      *
-     * <code>string min_cpu_platform = 242912759;</code>
+     * <code>optional string min_cpu_platform = 242912759;</code>
      *
      * @return The bytes for minCpuPlatform.
      */
@@ -4377,7 +4453,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
      * </pre>
      *
-     * <code>string min_cpu_platform = 242912759;</code>
+     * <code>optional string min_cpu_platform = 242912759;</code>
      *
      * @param value The minCpuPlatform to set.
      * @return This builder for chaining.
@@ -4398,7 +4474,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
      * </pre>
      *
-     * <code>string min_cpu_platform = 242912759;</code>
+     * <code>optional string min_cpu_platform = 242912759;</code>
      *
      * @return This builder for chaining.
      */
@@ -4415,7 +4491,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
      * </pre>
      *
-     * <code>string min_cpu_platform = 242912759;</code>
+     * <code>optional string min_cpu_platform = 242912759;</code>
      *
      * @param value The bytes for minCpuPlatform to set.
      * @return This builder for chaining.
@@ -4809,21 +4885,19 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       return networkInterfacesBuilder_;
     }
 
-    private int privateIpv6GoogleAccess_ = 0;
+    private java.lang.Object privateIpv6GoogleAccess_ = "";
     /**
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
-     * </code>
+     * <code>optional string private_ipv6_google_access = 48277006;</code>
      *
      * @return Whether the privateIpv6GoogleAccess field is set.
      */
-    @java.lang.Override
     public boolean hasPrivateIpv6GoogleAccess() {
       return ((bitField0_ & 0x00000800) != 0);
     }
@@ -4831,34 +4905,65 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
-     * </code>
+     * <code>optional string private_ipv6_google_access = 48277006;</code>
      *
-     * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
+     * @return The privateIpv6GoogleAccess.
      */
-    @java.lang.Override
-    public int getPrivateIpv6GoogleAccessValue() {
-      return privateIpv6GoogleAccess_;
+    public java.lang.String getPrivateIpv6GoogleAccess() {
+      java.lang.Object ref = privateIpv6GoogleAccess_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        privateIpv6GoogleAccess_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
-     * </code>
+     * <code>optional string private_ipv6_google_access = 48277006;</code>
      *
-     * @param value The enum numeric value on the wire for privateIpv6GoogleAccess to set.
+     * @return The bytes for privateIpv6GoogleAccess.
+     */
+    public com.google.protobuf.ByteString getPrivateIpv6GoogleAccessBytes() {
+      java.lang.Object ref = privateIpv6GoogleAccess_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        privateIpv6GoogleAccess_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string private_ipv6_google_access = 48277006;</code>
+     *
+     * @param value The privateIpv6GoogleAccess to set.
      * @return This builder for chaining.
      */
-    public Builder setPrivateIpv6GoogleAccessValue(int value) {
+    public Builder setPrivateIpv6GoogleAccess(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000800;
       privateIpv6GoogleAccess_ = value;
       onChanged();
@@ -4868,47 +4973,17 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
-     * </code>
+     * <code>optional string private_ipv6_google_access = 48277006;</code>
      *
-     * @return The privateIpv6GoogleAccess.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess
-        getPrivateIpv6GoogleAccess() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess result =
-          com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess.valueOf(
-              privateIpv6GoogleAccess_);
-      return result == null
-          ? com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
-     * </code>
-     *
-     * @param value The privateIpv6GoogleAccess to set.
      * @return This builder for chaining.
      */
-    public Builder setPrivateIpv6GoogleAccess(
-        com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000800;
-      privateIpv6GoogleAccess_ = value.getNumber();
+    public Builder clearPrivateIpv6GoogleAccess() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      privateIpv6GoogleAccess_ = getDefaultInstance().getPrivateIpv6GoogleAccess();
       onChanged();
       return this;
     }
@@ -4916,18 +4991,22 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
-     * </code>
+     * <code>optional string private_ipv6_google_access = 48277006;</code>
      *
+     * @param value The bytes for privateIpv6GoogleAccess to set.
      * @return This builder for chaining.
      */
-    public Builder clearPrivateIpv6GoogleAccess() {
-      bitField0_ = (bitField0_ & ~0x00000800);
-      privateIpv6GoogleAccess_ = 0;
+    public Builder setPrivateIpv6GoogleAccessBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000800;
+      privateIpv6GoogleAccess_ = value;
       onChanged();
       return this;
     }
@@ -4945,7 +5024,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the reservations that instances can consume from.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;</code>
+     * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
+     * </code>
      *
      * @return Whether the reservationAffinity field is set.
      */
@@ -4959,7 +5039,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the reservations that instances can consume from.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;</code>
+     * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
+     * </code>
      *
      * @return The reservationAffinity.
      */
@@ -4979,7 +5060,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the reservations that instances can consume from.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;</code>
+     * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
+     * </code>
      */
     public Builder setReservationAffinity(com.google.cloud.compute.v1.ReservationAffinity value) {
       if (reservationAffinityBuilder_ == null) {
@@ -5001,7 +5083,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the reservations that instances can consume from.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;</code>
+     * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
+     * </code>
      */
     public Builder setReservationAffinity(
         com.google.cloud.compute.v1.ReservationAffinity.Builder builderForValue) {
@@ -5021,7 +5104,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the reservations that instances can consume from.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;</code>
+     * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
+     * </code>
      */
     public Builder mergeReservationAffinity(com.google.cloud.compute.v1.ReservationAffinity value) {
       if (reservationAffinityBuilder_ == null) {
@@ -5050,7 +5134,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the reservations that instances can consume from.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;</code>
+     * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
+     * </code>
      */
     public Builder clearReservationAffinity() {
       if (reservationAffinityBuilder_ == null) {
@@ -5069,7 +5154,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the reservations that instances can consume from.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;</code>
+     * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
+     * </code>
      */
     public com.google.cloud.compute.v1.ReservationAffinity.Builder getReservationAffinityBuilder() {
       bitField0_ |= 0x00001000;
@@ -5083,7 +5169,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the reservations that instances can consume from.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;</code>
+     * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
+     * </code>
      */
     public com.google.cloud.compute.v1.ReservationAffinityOrBuilder
         getReservationAffinityOrBuilder() {
@@ -5102,7 +5189,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the reservations that instances can consume from.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;</code>
+     * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ReservationAffinity,
@@ -5302,7 +5390,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      *
      * @return Whether the scheduling field is set.
      */
@@ -5316,7 +5404,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      *
      * @return The scheduling.
      */
@@ -5336,7 +5424,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      */
     public Builder setScheduling(com.google.cloud.compute.v1.Scheduling value) {
       if (schedulingBuilder_ == null) {
@@ -5358,7 +5446,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      */
     public Builder setScheduling(com.google.cloud.compute.v1.Scheduling.Builder builderForValue) {
       if (schedulingBuilder_ == null) {
@@ -5377,7 +5465,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      */
     public Builder mergeScheduling(com.google.cloud.compute.v1.Scheduling value) {
       if (schedulingBuilder_ == null) {
@@ -5405,7 +5493,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      */
     public Builder clearScheduling() {
       if (schedulingBuilder_ == null) {
@@ -5424,7 +5512,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      */
     public com.google.cloud.compute.v1.Scheduling.Builder getSchedulingBuilder() {
       bitField0_ |= 0x00004000;
@@ -5438,7 +5526,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      */
     public com.google.cloud.compute.v1.SchedulingOrBuilder getSchedulingOrBuilder() {
       if (schedulingBuilder_ != null) {
@@ -5456,7 +5544,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Scheduling,
@@ -5837,7 +5925,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.ShieldedInstanceConfigOrBuilder>
         shieldedInstanceConfigBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
      * </code>
      *
      * @return Whether the shieldedInstanceConfig field is set.
@@ -5846,7 +5935,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       return ((bitField0_ & 0x00010000) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
      * </code>
      *
      * @return The shieldedInstanceConfig.
@@ -5861,7 +5951,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
      * </code>
      */
     public Builder setShieldedInstanceConfig(
@@ -5879,7 +5970,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
      * </code>
      */
     public Builder setShieldedInstanceConfig(
@@ -5894,7 +5986,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
      * </code>
      */
     public Builder mergeShieldedInstanceConfig(
@@ -5919,7 +6012,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
      * </code>
      */
     public Builder clearShieldedInstanceConfig() {
@@ -5933,7 +6027,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
      * </code>
      */
     public com.google.cloud.compute.v1.ShieldedInstanceConfig.Builder
@@ -5943,7 +6038,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       return getShieldedInstanceConfigFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
      * </code>
      */
     public com.google.cloud.compute.v1.ShieldedInstanceConfigOrBuilder
@@ -5957,7 +6053,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -5990,7 +6087,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Tags tags = 3552281;</code>
+     * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
      *
      * @return Whether the tags field is set.
      */
@@ -6004,7 +6101,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Tags tags = 3552281;</code>
+     * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
      *
      * @return The tags.
      */
@@ -6022,7 +6119,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Tags tags = 3552281;</code>
+     * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
      */
     public Builder setTags(com.google.cloud.compute.v1.Tags value) {
       if (tagsBuilder_ == null) {
@@ -6044,7 +6141,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Tags tags = 3552281;</code>
+     * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
      */
     public Builder setTags(com.google.cloud.compute.v1.Tags.Builder builderForValue) {
       if (tagsBuilder_ == null) {
@@ -6063,7 +6160,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Tags tags = 3552281;</code>
+     * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
      */
     public Builder mergeTags(com.google.cloud.compute.v1.Tags value) {
       if (tagsBuilder_ == null) {
@@ -6089,7 +6186,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Tags tags = 3552281;</code>
+     * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
      */
     public Builder clearTags() {
       if (tagsBuilder_ == null) {
@@ -6108,7 +6205,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Tags tags = 3552281;</code>
+     * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
      */
     public com.google.cloud.compute.v1.Tags.Builder getTagsBuilder() {
       bitField0_ |= 0x00020000;
@@ -6122,7 +6219,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Tags tags = 3552281;</code>
+     * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
      */
     public com.google.cloud.compute.v1.TagsOrBuilder getTagsOrBuilder() {
       if (tagsBuilder_ != null) {
@@ -6138,7 +6235,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Tags tags = 3552281;</code>
+     * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Tags,

@@ -39,7 +39,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
   }
 
   private ListPeeringRoutesNetworksRequest() {
-    direction_ = 0;
+    direction_ = "";
     filter_ = "";
     network_ = "";
     orderBy_ = "";
@@ -92,11 +92,11 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
               maxResults_ = input.readUInt32();
               break;
             }
-          case 889207800:
+          case 889207802:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              direction_ = rawValue;
+              direction_ = s;
               break;
             }
           case 1111570338:
@@ -201,9 +201,25 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * <code>UNDEFINED_DIRECTION = 0;</code>
      */
     UNDEFINED_DIRECTION(0),
-    /** <code>INCOMING = 338552870;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * For routes exported from peer network.
+     * </pre>
+     *
+     * <code>INCOMING = 338552870;</code>
+     */
     INCOMING(338552870),
-    /** <code>OUTGOING = 307438444;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * For routes exported from local network.
+     * </pre>
+     *
+     * <code>OUTGOING = 307438444;</code>
+     */
     OUTGOING(307438444),
     UNRECOGNIZED(-1),
     ;
@@ -218,9 +234,25 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * <code>UNDEFINED_DIRECTION = 0;</code>
      */
     public static final int UNDEFINED_DIRECTION_VALUE = 0;
-    /** <code>INCOMING = 338552870;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * For routes exported from peer network.
+     * </pre>
+     *
+     * <code>INCOMING = 338552870;</code>
+     */
     public static final int INCOMING_VALUE = 338552870;
-    /** <code>OUTGOING = 307438444;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * For routes exported from local network.
+     * </pre>
+     *
+     * <code>OUTGOING = 307438444;</code>
+     */
     public static final int OUTGOING_VALUE = 307438444;
 
     public final int getNumber() {
@@ -310,17 +342,16 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
 
   private int bitField0_;
   public static final int DIRECTION_FIELD_NUMBER = 111150975;
-  private int direction_;
+  private volatile java.lang.Object direction_;
   /**
    *
    *
    * <pre>
    * The direction of the exchanged routes.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;
-   * </code>
+   * <code>optional string direction = 111150975;</code>
    *
    * @return Whether the direction field is set.
    */
@@ -333,39 +364,48 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
    *
    * <pre>
    * The direction of the exchanged routes.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;
-   * </code>
+   * <code>optional string direction = 111150975;</code>
    *
-   * @return The enum numeric value on the wire for direction.
+   * @return The direction.
    */
   @java.lang.Override
-  public int getDirectionValue() {
-    return direction_;
+  public java.lang.String getDirection() {
+    java.lang.Object ref = direction_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      direction_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * The direction of the exchanged routes.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;
-   * </code>
+   * <code>optional string direction = 111150975;</code>
    *
-   * @return The direction.
+   * @return The bytes for direction.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction getDirection() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction result =
-        com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction.valueOf(direction_);
-    return result == null
-        ? com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getDirectionBytes() {
+    java.lang.Object ref = direction_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      direction_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int FILTER_FIELD_NUMBER = 336120696;
@@ -374,13 +414,10 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
-   * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
-   * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
-   * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+   * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    * </pre>
    *
-   * <code>string filter = 336120696;</code>
+   * <code>optional string filter = 336120696;</code>
    *
    * @return Whether the filter field is set.
    */
@@ -392,13 +429,10 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
-   * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
-   * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
-   * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+   * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    * </pre>
    *
-   * <code>string filter = 336120696;</code>
+   * <code>optional string filter = 336120696;</code>
    *
    * @return The filter.
    */
@@ -418,13 +452,10 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
-   * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
-   * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
-   * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+   * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    * </pre>
    *
-   * <code>string filter = 336120696;</code>
+   * <code>optional string filter = 336120696;</code>
    *
    * @return The bytes for filter.
    */
@@ -450,7 +481,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
    * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
    * </pre>
    *
-   * <code>uint32 max_results = 54715419;</code>
+   * <code>optional uint32 max_results = 54715419;</code>
    *
    * @return Whether the maxResults field is set.
    */
@@ -465,7 +496,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
    * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
    * </pre>
    *
-   * <code>uint32 max_results = 54715419;</code>
+   * <code>optional uint32 max_results = 54715419;</code>
    *
    * @return The maxResults.
    */
@@ -529,12 +560,10 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
-   * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
-   * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+   * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
    * </pre>
    *
-   * <code>string order_by = 160562920;</code>
+   * <code>optional string order_by = 160562920;</code>
    *
    * @return Whether the orderBy field is set.
    */
@@ -546,12 +575,10 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
-   * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
-   * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+   * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
    * </pre>
    *
-   * <code>string order_by = 160562920;</code>
+   * <code>optional string order_by = 160562920;</code>
    *
    * @return The orderBy.
    */
@@ -571,12 +598,10 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
-   * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
-   * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+   * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
    * </pre>
    *
-   * <code>string order_by = 160562920;</code>
+   * <code>optional string order_by = 160562920;</code>
    *
    * @return The bytes for orderBy.
    */
@@ -602,7 +627,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
    * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
    * </pre>
    *
-   * <code>string page_token = 19994697;</code>
+   * <code>optional string page_token = 19994697;</code>
    *
    * @return Whether the pageToken field is set.
    */
@@ -617,7 +642,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
    * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
    * </pre>
    *
-   * <code>string page_token = 19994697;</code>
+   * <code>optional string page_token = 19994697;</code>
    *
    * @return The pageToken.
    */
@@ -640,7 +665,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
    * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
    * </pre>
    *
-   * <code>string page_token = 19994697;</code>
+   * <code>optional string page_token = 19994697;</code>
    *
    * @return The bytes for pageToken.
    */
@@ -666,7 +691,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
    * The response will show routes exchanged over the given peering connection.
    * </pre>
    *
-   * <code>string peering_name = 249571370;</code>
+   * <code>optional string peering_name = 249571370;</code>
    *
    * @return Whether the peeringName field is set.
    */
@@ -681,7 +706,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
    * The response will show routes exchanged over the given peering connection.
    * </pre>
    *
-   * <code>string peering_name = 249571370;</code>
+   * <code>optional string peering_name = 249571370;</code>
    *
    * @return The peeringName.
    */
@@ -704,7 +729,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
    * The response will show routes exchanged over the given peering connection.
    * </pre>
    *
-   * <code>string peering_name = 249571370;</code>
+   * <code>optional string peering_name = 249571370;</code>
    *
    * @return The bytes for peeringName.
    */
@@ -779,7 +804,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
    * The region of the request. The response will include all subnet routes, static routes and dynamic routes in the region.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -794,7 +819,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
    * The region of the request. The response will include all subnet routes, static routes and dynamic routes in the region.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -817,7 +842,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
    * The region of the request. The response will include all subnet routes, static routes and dynamic routes in the region.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -843,7 +868,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
    * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
    * </pre>
    *
-   * <code>bool return_partial_success = 517198390;</code>
+   * <code>optional bool return_partial_success = 517198390;</code>
    *
    * @return Whether the returnPartialSuccess field is set.
    */
@@ -858,7 +883,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
    * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
    * </pre>
    *
-   * <code>bool return_partial_success = 517198390;</code>
+   * <code>optional bool return_partial_success = 517198390;</code>
    *
    * @return The returnPartialSuccess.
    */
@@ -888,7 +913,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
       output.writeUInt32(54715419, maxResults_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(111150975, direction_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 111150975, direction_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
@@ -896,10 +921,10 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 160562920, orderBy_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
@@ -927,7 +952,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(54715419, maxResults_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(111150975, direction_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(111150975, direction_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
@@ -935,10 +960,10 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(160562920, orderBy_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
@@ -969,7 +994,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
 
     if (hasDirection() != other.hasDirection()) return false;
     if (hasDirection()) {
-      if (direction_ != other.direction_) return false;
+      if (!getDirection().equals(other.getDirection())) return false;
     }
     if (hasFilter() != other.hasFilter()) return false;
     if (hasFilter()) {
@@ -1014,7 +1039,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasDirection()) {
       hash = (37 * hash) + DIRECTION_FIELD_NUMBER;
-      hash = (53 * hash) + direction_;
+      hash = (53 * hash) + getDirection().hashCode();
     }
     if (hasFilter()) {
       hash = (37 * hash) + FILTER_FIELD_NUMBER;
@@ -1194,7 +1219,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      direction_ = 0;
+      direction_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       filter_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -1331,7 +1356,9 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
           == com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.getDefaultInstance())
         return this;
       if (other.hasDirection()) {
-        setDirection(other.getDirection());
+        bitField0_ |= 0x00000001;
+        direction_ = other.direction_;
+        onChanged();
       }
       if (other.hasFilter()) {
         bitField0_ |= 0x00000002;
@@ -1404,21 +1431,19 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
 
     private int bitField0_;
 
-    private int direction_ = 0;
+    private java.lang.Object direction_ = "";
     /**
      *
      *
      * <pre>
      * The direction of the exchanged routes.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;
-     * </code>
+     * <code>optional string direction = 111150975;</code>
      *
      * @return Whether the direction field is set.
      */
-    @java.lang.Override
     public boolean hasDirection() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -1427,33 +1452,64 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      *
      * <pre>
      * The direction of the exchanged routes.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;
-     * </code>
+     * <code>optional string direction = 111150975;</code>
      *
-     * @return The enum numeric value on the wire for direction.
+     * @return The direction.
      */
-    @java.lang.Override
-    public int getDirectionValue() {
-      return direction_;
+    public java.lang.String getDirection() {
+      java.lang.Object ref = direction_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        direction_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * The direction of the exchanged routes.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;
-     * </code>
+     * <code>optional string direction = 111150975;</code>
      *
-     * @param value The enum numeric value on the wire for direction to set.
+     * @return The bytes for direction.
+     */
+    public com.google.protobuf.ByteString getDirectionBytes() {
+      java.lang.Object ref = direction_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        direction_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The direction of the exchanged routes.
+     * Check the Direction enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string direction = 111150975;</code>
+     *
+     * @param value The direction to set.
      * @return This builder for chaining.
      */
-    public Builder setDirectionValue(int value) {
+    public Builder setDirection(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000001;
       direction_ = value;
       onChanged();
@@ -1464,45 +1520,16 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      *
      * <pre>
      * The direction of the exchanged routes.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;
-     * </code>
+     * <code>optional string direction = 111150975;</code>
      *
-     * @return The direction.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction getDirection() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction result =
-          com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction.valueOf(
-              direction_);
-      return result == null
-          ? com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The direction of the exchanged routes.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;
-     * </code>
-     *
-     * @param value The direction to set.
      * @return This builder for chaining.
      */
-    public Builder setDirection(
-        com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      direction_ = value.getNumber();
+    public Builder clearDirection() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      direction_ = getDefaultInstance().getDirection();
       onChanged();
       return this;
     }
@@ -1511,17 +1538,21 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      *
      * <pre>
      * The direction of the exchanged routes.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;
-     * </code>
+     * <code>optional string direction = 111150975;</code>
      *
+     * @param value The bytes for direction to set.
      * @return This builder for chaining.
      */
-    public Builder clearDirection() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      direction_ = 0;
+    public Builder setDirectionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      direction_ = value;
       onChanged();
       return this;
     }
@@ -1531,13 +1562,10 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
-     * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
-     * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
-     * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
      * @return Whether the filter field is set.
      */
@@ -1548,13 +1576,10 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
-     * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
-     * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
-     * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
      * @return The filter.
      */
@@ -1573,13 +1598,10 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
-     * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
-     * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
-     * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
      * @return The bytes for filter.
      */
@@ -1598,13 +1620,10 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
-     * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
-     * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
-     * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -1622,13 +1641,10 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
-     * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
-     * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
-     * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
      * @return This builder for chaining.
      */
@@ -1642,13 +1658,10 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
-     * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
-     * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
-     * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -1672,7 +1685,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
      * </pre>
      *
-     * <code>uint32 max_results = 54715419;</code>
+     * <code>optional uint32 max_results = 54715419;</code>
      *
      * @return Whether the maxResults field is set.
      */
@@ -1687,7 +1700,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
      * </pre>
      *
-     * <code>uint32 max_results = 54715419;</code>
+     * <code>optional uint32 max_results = 54715419;</code>
      *
      * @return The maxResults.
      */
@@ -1702,7 +1715,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
      * </pre>
      *
-     * <code>uint32 max_results = 54715419;</code>
+     * <code>optional uint32 max_results = 54715419;</code>
      *
      * @param value The maxResults to set.
      * @return This builder for chaining.
@@ -1720,7 +1733,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
      * </pre>
      *
-     * <code>uint32 max_results = 54715419;</code>
+     * <code>optional uint32 max_results = 54715419;</code>
      *
      * @return This builder for chaining.
      */
@@ -1842,12 +1855,10 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
-     * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
-     * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      * </pre>
      *
-     * <code>string order_by = 160562920;</code>
+     * <code>optional string order_by = 160562920;</code>
      *
      * @return Whether the orderBy field is set.
      */
@@ -1858,12 +1869,10 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
-     * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
-     * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      * </pre>
      *
-     * <code>string order_by = 160562920;</code>
+     * <code>optional string order_by = 160562920;</code>
      *
      * @return The orderBy.
      */
@@ -1882,12 +1891,10 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
-     * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
-     * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      * </pre>
      *
-     * <code>string order_by = 160562920;</code>
+     * <code>optional string order_by = 160562920;</code>
      *
      * @return The bytes for orderBy.
      */
@@ -1906,12 +1913,10 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
-     * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
-     * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      * </pre>
      *
-     * <code>string order_by = 160562920;</code>
+     * <code>optional string order_by = 160562920;</code>
      *
      * @param value The orderBy to set.
      * @return This builder for chaining.
@@ -1929,12 +1934,10 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
-     * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
-     * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      * </pre>
      *
-     * <code>string order_by = 160562920;</code>
+     * <code>optional string order_by = 160562920;</code>
      *
      * @return This builder for chaining.
      */
@@ -1948,12 +1951,10 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
-     * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
-     * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      * </pre>
      *
-     * <code>string order_by = 160562920;</code>
+     * <code>optional string order_by = 160562920;</code>
      *
      * @param value The bytes for orderBy to set.
      * @return This builder for chaining.
@@ -1977,7 +1978,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
      * </pre>
      *
-     * <code>string page_token = 19994697;</code>
+     * <code>optional string page_token = 19994697;</code>
      *
      * @return Whether the pageToken field is set.
      */
@@ -1991,7 +1992,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
      * </pre>
      *
-     * <code>string page_token = 19994697;</code>
+     * <code>optional string page_token = 19994697;</code>
      *
      * @return The pageToken.
      */
@@ -2013,7 +2014,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
      * </pre>
      *
-     * <code>string page_token = 19994697;</code>
+     * <code>optional string page_token = 19994697;</code>
      *
      * @return The bytes for pageToken.
      */
@@ -2035,7 +2036,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
      * </pre>
      *
-     * <code>string page_token = 19994697;</code>
+     * <code>optional string page_token = 19994697;</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -2056,7 +2057,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
      * </pre>
      *
-     * <code>string page_token = 19994697;</code>
+     * <code>optional string page_token = 19994697;</code>
      *
      * @return This builder for chaining.
      */
@@ -2073,7 +2074,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
      * </pre>
      *
-     * <code>string page_token = 19994697;</code>
+     * <code>optional string page_token = 19994697;</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
@@ -2097,7 +2098,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * The response will show routes exchanged over the given peering connection.
      * </pre>
      *
-     * <code>string peering_name = 249571370;</code>
+     * <code>optional string peering_name = 249571370;</code>
      *
      * @return Whether the peeringName field is set.
      */
@@ -2111,7 +2112,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * The response will show routes exchanged over the given peering connection.
      * </pre>
      *
-     * <code>string peering_name = 249571370;</code>
+     * <code>optional string peering_name = 249571370;</code>
      *
      * @return The peeringName.
      */
@@ -2133,7 +2134,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * The response will show routes exchanged over the given peering connection.
      * </pre>
      *
-     * <code>string peering_name = 249571370;</code>
+     * <code>optional string peering_name = 249571370;</code>
      *
      * @return The bytes for peeringName.
      */
@@ -2155,7 +2156,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * The response will show routes exchanged over the given peering connection.
      * </pre>
      *
-     * <code>string peering_name = 249571370;</code>
+     * <code>optional string peering_name = 249571370;</code>
      *
      * @param value The peeringName to set.
      * @return This builder for chaining.
@@ -2176,7 +2177,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * The response will show routes exchanged over the given peering connection.
      * </pre>
      *
-     * <code>string peering_name = 249571370;</code>
+     * <code>optional string peering_name = 249571370;</code>
      *
      * @return This builder for chaining.
      */
@@ -2193,7 +2194,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * The response will show routes exchanged over the given peering connection.
      * </pre>
      *
-     * <code>string peering_name = 249571370;</code>
+     * <code>optional string peering_name = 249571370;</code>
      *
      * @param value The bytes for peeringName to set.
      * @return This builder for chaining.
@@ -2323,7 +2324,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * The region of the request. The response will include all subnet routes, static routes and dynamic routes in the region.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return Whether the region field is set.
      */
@@ -2337,7 +2338,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * The region of the request. The response will include all subnet routes, static routes and dynamic routes in the region.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The region.
      */
@@ -2359,7 +2360,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * The region of the request. The response will include all subnet routes, static routes and dynamic routes in the region.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The bytes for region.
      */
@@ -2381,7 +2382,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * The region of the request. The response will include all subnet routes, static routes and dynamic routes in the region.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -2402,7 +2403,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * The region of the request. The response will include all subnet routes, static routes and dynamic routes in the region.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return This builder for chaining.
      */
@@ -2419,7 +2420,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * The region of the request. The response will include all subnet routes, static routes and dynamic routes in the region.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.
@@ -2443,7 +2444,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
      * </pre>
      *
-     * <code>bool return_partial_success = 517198390;</code>
+     * <code>optional bool return_partial_success = 517198390;</code>
      *
      * @return Whether the returnPartialSuccess field is set.
      */
@@ -2458,7 +2459,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
      * </pre>
      *
-     * <code>bool return_partial_success = 517198390;</code>
+     * <code>optional bool return_partial_success = 517198390;</code>
      *
      * @return The returnPartialSuccess.
      */
@@ -2473,7 +2474,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
      * </pre>
      *
-     * <code>bool return_partial_success = 517198390;</code>
+     * <code>optional bool return_partial_success = 517198390;</code>
      *
      * @param value The returnPartialSuccess to set.
      * @return This builder for chaining.
@@ -2491,7 +2492,7 @@ public final class ListPeeringRoutesNetworksRequest extends com.google.protobuf.
      * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
      * </pre>
      *
-     * <code>bool return_partial_success = 517198390;</code>
+     * <code>optional bool return_partial_success = 517198390;</code>
      *
      * @return This builder for chaining.
      */

@@ -22,15 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a URL Map resource.
- * Google Compute Engine has two URL Map resources:
- * * [Global](/compute/docs/reference/rest/{$api_version}/urlMaps) * [Regional](/compute/docs/reference/rest/{$api_version}/regionUrlMaps)
- * A URL map resource is a component of certain types of GCP load balancers and Traffic Director.
- * * urlMaps are used by external HTTP(S) load balancers and Traffic Director. * regionUrlMaps are used by internal HTTP(S) load balancers.
- * For a list of supported URL map features by load balancer type, see the  Load balancing features: Routing and traffic management table.
- * For a list of supported URL map features for Traffic Director, see the  Traffic Director features: Routing and traffic management table.
- * This resource defines mappings from host names and URL paths to either a backend service or a backend bucket.
- * To use the global urlMaps resource, the backend service must have a loadBalancingScheme of either EXTERNAL or INTERNAL_SELF_MANAGED. To use the regionUrlMaps resource, the backend service must have a loadBalancingScheme of INTERNAL_MANAGED. For more information, read URL Map Concepts.
+ * Represents a URL Map resource. Google Compute Engine has two URL Map resources: * [Global](/compute/docs/reference/rest/v1/urlMaps) * [Regional](/compute/docs/reference/rest/v1/regionUrlMaps) A URL map resource is a component of certain types of GCP load balancers and Traffic Director. * urlMaps are used by external HTTP(S) load balancers and Traffic Director. * regionUrlMaps are used by internal HTTP(S) load balancers. For a list of supported URL map features by load balancer type, see the Load balancing features: Routing and traffic management table. For a list of supported URL map features for Traffic Director, see the Traffic Director features: Routing and traffic management table. This resource defines mappings from host names and URL paths to either a backend service or a backend bucket. To use the global urlMaps resource, the backend service must have a loadBalancingScheme of either EXTERNAL or INTERNAL_SELF_MANAGED. To use the regionUrlMaps resource, the backend service must have a loadBalancingScheme of INTERNAL_MANAGED. For more information, read URL Map Concepts.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.UrlMap}
@@ -285,7 +277,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -300,7 +292,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -323,7 +315,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -346,13 +338,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
-   * Only one of defaultRouteAction or defaultUrlRedirect must be set.
-   * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction.
-   * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * defaultRouteAction takes effect when none of the hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction. defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+   * <code>optional .google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;
+   * </code>
    *
    * @return Whether the defaultRouteAction field is set.
    */
@@ -364,13 +354,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
-   * Only one of defaultRouteAction or defaultUrlRedirect must be set.
-   * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction.
-   * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * defaultRouteAction takes effect when none of the hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction. defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+   * <code>optional .google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;
+   * </code>
    *
    * @return The defaultRouteAction.
    */
@@ -384,13 +372,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
-   * Only one of defaultRouteAction or defaultUrlRedirect must be set.
-   * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction.
-   * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * defaultRouteAction takes effect when none of the hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction. defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+   * <code>optional .google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.HttpRouteActionOrBuilder getDefaultRouteActionOrBuilder() {
@@ -405,12 +391,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified.
-   * Only one of defaultService, defaultUrlRedirect  or defaultRouteAction.weightedBackendService must be set.
-   * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of defaultService, defaultUrlRedirect or defaultRouteAction.weightedBackendService must be set. defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>string default_service = 370242231;</code>
+   * <code>optional string default_service = 370242231;</code>
    *
    * @return Whether the defaultService field is set.
    */
@@ -422,12 +406,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified.
-   * Only one of defaultService, defaultUrlRedirect  or defaultRouteAction.weightedBackendService must be set.
-   * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of defaultService, defaultUrlRedirect or defaultRouteAction.weightedBackendService must be set. defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>string default_service = 370242231;</code>
+   * <code>optional string default_service = 370242231;</code>
    *
    * @return The defaultService.
    */
@@ -447,12 +429,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified.
-   * Only one of defaultService, defaultUrlRedirect  or defaultRouteAction.weightedBackendService must be set.
-   * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of defaultService, defaultUrlRedirect or defaultRouteAction.weightedBackendService must be set. defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>string default_service = 370242231;</code>
+   * <code>optional string default_service = 370242231;</code>
    *
    * @return The bytes for defaultService.
    */
@@ -475,12 +455,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
-   * If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
-   * Not supported when the URL map is bound to target gRPC proxy.
+   * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+   * <code>optional .google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;
+   * </code>
    *
    * @return Whether the defaultUrlRedirect field is set.
    */
@@ -492,12 +471,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
-   * If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
-   * Not supported when the URL map is bound to target gRPC proxy.
+   * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+   * <code>optional .google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;
+   * </code>
    *
    * @return The defaultUrlRedirect.
    */
@@ -511,12 +489,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
-   * If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
-   * Not supported when the URL map is bound to target gRPC proxy.
+   * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+   * <code>optional .google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.HttpRedirectActionOrBuilder getDefaultUrlRedirectOrBuilder() {
@@ -534,7 +511,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -549,7 +526,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -572,7 +549,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -595,11 +572,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a UrlMap.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a UrlMap.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return Whether the fingerprint field is set.
    */
@@ -611,11 +587,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a UrlMap.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a UrlMap.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The fingerprint.
    */
@@ -635,11 +610,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a UrlMap.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a UrlMap.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The bytes for fingerprint.
    */
@@ -662,13 +636,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies changes to request and response headers that need to take effect for the selected backendService.
-   * The headerAction specified here take effect after headerAction specified under pathMatcher.
-   * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-   * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Specifies changes to request and response headers that need to take effect for the selected backendService. The headerAction specified here take effect after headerAction specified under pathMatcher. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
    *
    * @return Whether the headerAction field is set.
    */
@@ -680,13 +651,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies changes to request and response headers that need to take effect for the selected backendService.
-   * The headerAction specified here take effect after headerAction specified under pathMatcher.
-   * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-   * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Specifies changes to request and response headers that need to take effect for the selected backendService. The headerAction specified here take effect after headerAction specified under pathMatcher. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
    *
    * @return The headerAction.
    */
@@ -700,13 +668,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies changes to request and response headers that need to take effect for the selected backendService.
-   * The headerAction specified here take effect after headerAction specified under pathMatcher.
-   * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-   * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Specifies changes to request and response headers that need to take effect for the selected backendService. The headerAction specified here take effect after headerAction specified under pathMatcher. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.HttpHeaderActionOrBuilder getHeaderActionOrBuilder() {
@@ -793,7 +758,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -808,7 +773,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -826,7 +791,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#urlMaps for url maps.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -841,7 +806,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#urlMaps for url maps.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -864,7 +829,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#urlMaps for url maps.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -890,7 +855,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -905,7 +870,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -928,7 +893,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -1023,7 +988,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -1038,7 +1003,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -1061,7 +1026,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -1087,7 +1052,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -1102,7 +1067,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1125,7 +1090,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1148,8 +1113,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-   * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -1162,8 +1126,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-   * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -1177,8 +1140,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-   * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -1191,8 +1153,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-   * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -1205,8 +1166,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-   * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -1577,15 +1537,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a URL Map resource.
-   * Google Compute Engine has two URL Map resources:
-   * * [Global](/compute/docs/reference/rest/{$api_version}/urlMaps) * [Regional](/compute/docs/reference/rest/{$api_version}/regionUrlMaps)
-   * A URL map resource is a component of certain types of GCP load balancers and Traffic Director.
-   * * urlMaps are used by external HTTP(S) load balancers and Traffic Director. * regionUrlMaps are used by internal HTTP(S) load balancers.
-   * For a list of supported URL map features by load balancer type, see the  Load balancing features: Routing and traffic management table.
-   * For a list of supported URL map features for Traffic Director, see the  Traffic Director features: Routing and traffic management table.
-   * This resource defines mappings from host names and URL paths to either a backend service or a backend bucket.
-   * To use the global urlMaps resource, the backend service must have a loadBalancingScheme of either EXTERNAL or INTERNAL_SELF_MANAGED. To use the regionUrlMaps resource, the backend service must have a loadBalancingScheme of INTERNAL_MANAGED. For more information, read URL Map Concepts.
+   * Represents a URL Map resource. Google Compute Engine has two URL Map resources: * [Global](/compute/docs/reference/rest/v1/urlMaps) * [Regional](/compute/docs/reference/rest/v1/regionUrlMaps) A URL map resource is a component of certain types of GCP load balancers and Traffic Director. * urlMaps are used by external HTTP(S) load balancers and Traffic Director. * regionUrlMaps are used by internal HTTP(S) load balancers. For a list of supported URL map features by load balancer type, see the Load balancing features: Routing and traffic management table. For a list of supported URL map features for Traffic Director, see the Traffic Director features: Routing and traffic management table. This resource defines mappings from host names and URL paths to either a backend service or a backend bucket. To use the global urlMaps resource, the backend service must have a loadBalancingScheme of either EXTERNAL or INTERNAL_SELF_MANAGED. To use the regionUrlMaps resource, the backend service must have a loadBalancingScheme of INTERNAL_MANAGED. For more information, read URL Map Concepts.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.UrlMap}
@@ -2024,7 +1976,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -2038,7 +1990,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -2060,7 +2012,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -2082,7 +2034,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -2103,7 +2055,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -2120,7 +2072,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -2146,13 +2098,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
-     * Only one of defaultRouteAction or defaultUrlRedirect must be set.
-     * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction.
-     * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * defaultRouteAction takes effect when none of the hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction. defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;
+     * </code>
      *
      * @return Whether the defaultRouteAction field is set.
      */
@@ -2163,13 +2113,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
-     * Only one of defaultRouteAction or defaultUrlRedirect must be set.
-     * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction.
-     * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * defaultRouteAction takes effect when none of the hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction. defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;
+     * </code>
      *
      * @return The defaultRouteAction.
      */
@@ -2186,13 +2134,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
-     * Only one of defaultRouteAction or defaultUrlRedirect must be set.
-     * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction.
-     * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * defaultRouteAction takes effect when none of the hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction. defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;
+     * </code>
      */
     public Builder setDefaultRouteAction(com.google.cloud.compute.v1.HttpRouteAction value) {
       if (defaultRouteActionBuilder_ == null) {
@@ -2211,13 +2157,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
-     * Only one of defaultRouteAction or defaultUrlRedirect must be set.
-     * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction.
-     * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * defaultRouteAction takes effect when none of the hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction. defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;
+     * </code>
      */
     public Builder setDefaultRouteAction(
         com.google.cloud.compute.v1.HttpRouteAction.Builder builderForValue) {
@@ -2234,13 +2178,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
-     * Only one of defaultRouteAction or defaultUrlRedirect must be set.
-     * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction.
-     * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * defaultRouteAction takes effect when none of the hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction. defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;
+     * </code>
      */
     public Builder mergeDefaultRouteAction(com.google.cloud.compute.v1.HttpRouteAction value) {
       if (defaultRouteActionBuilder_ == null) {
@@ -2266,13 +2208,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
-     * Only one of defaultRouteAction or defaultUrlRedirect must be set.
-     * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction.
-     * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * defaultRouteAction takes effect when none of the hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction. defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;
+     * </code>
      */
     public Builder clearDefaultRouteAction() {
       if (defaultRouteActionBuilder_ == null) {
@@ -2288,13 +2228,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
-     * Only one of defaultRouteAction or defaultUrlRedirect must be set.
-     * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction.
-     * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * defaultRouteAction takes effect when none of the hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction. defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;
+     * </code>
      */
     public com.google.cloud.compute.v1.HttpRouteAction.Builder getDefaultRouteActionBuilder() {
       bitField0_ |= 0x00000002;
@@ -2305,13 +2243,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
-     * Only one of defaultRouteAction or defaultUrlRedirect must be set.
-     * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction.
-     * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * defaultRouteAction takes effect when none of the hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction. defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;
+     * </code>
      */
     public com.google.cloud.compute.v1.HttpRouteActionOrBuilder getDefaultRouteActionOrBuilder() {
       if (defaultRouteActionBuilder_ != null) {
@@ -2326,13 +2262,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
-     * Only one of defaultRouteAction or defaultUrlRedirect must be set.
-     * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction.
-     * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * defaultRouteAction takes effect when none of the hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction. defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.HttpRouteAction,
@@ -2356,12 +2290,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified.
-     * Only one of defaultService, defaultUrlRedirect  or defaultRouteAction.weightedBackendService must be set.
-     * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of defaultService, defaultUrlRedirect or defaultRouteAction.weightedBackendService must be set. defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>string default_service = 370242231;</code>
+     * <code>optional string default_service = 370242231;</code>
      *
      * @return Whether the defaultService field is set.
      */
@@ -2372,12 +2304,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified.
-     * Only one of defaultService, defaultUrlRedirect  or defaultRouteAction.weightedBackendService must be set.
-     * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of defaultService, defaultUrlRedirect or defaultRouteAction.weightedBackendService must be set. defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>string default_service = 370242231;</code>
+     * <code>optional string default_service = 370242231;</code>
      *
      * @return The defaultService.
      */
@@ -2396,12 +2326,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified.
-     * Only one of defaultService, defaultUrlRedirect  or defaultRouteAction.weightedBackendService must be set.
-     * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of defaultService, defaultUrlRedirect or defaultRouteAction.weightedBackendService must be set. defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>string default_service = 370242231;</code>
+     * <code>optional string default_service = 370242231;</code>
      *
      * @return The bytes for defaultService.
      */
@@ -2420,12 +2348,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified.
-     * Only one of defaultService, defaultUrlRedirect  or defaultRouteAction.weightedBackendService must be set.
-     * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of defaultService, defaultUrlRedirect or defaultRouteAction.weightedBackendService must be set. defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>string default_service = 370242231;</code>
+     * <code>optional string default_service = 370242231;</code>
      *
      * @param value The defaultService to set.
      * @return This builder for chaining.
@@ -2443,12 +2369,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified.
-     * Only one of defaultService, defaultUrlRedirect  or defaultRouteAction.weightedBackendService must be set.
-     * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of defaultService, defaultUrlRedirect or defaultRouteAction.weightedBackendService must be set. defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>string default_service = 370242231;</code>
+     * <code>optional string default_service = 370242231;</code>
      *
      * @return This builder for chaining.
      */
@@ -2462,12 +2386,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified.
-     * Only one of defaultService, defaultUrlRedirect  or defaultRouteAction.weightedBackendService must be set.
-     * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of defaultService, defaultUrlRedirect or defaultRouteAction.weightedBackendService must be set. defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>string default_service = 370242231;</code>
+     * <code>optional string default_service = 370242231;</code>
      *
      * @param value The bytes for defaultService to set.
      * @return This builder for chaining.
@@ -2493,12 +2415,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
-     * If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
+     * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;
+     * </code>
      *
      * @return Whether the defaultUrlRedirect field is set.
      */
@@ -2509,12 +2430,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
-     * If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
+     * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;
+     * </code>
      *
      * @return The defaultUrlRedirect.
      */
@@ -2531,12 +2451,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
-     * If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
+     * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;
+     * </code>
      */
     public Builder setDefaultUrlRedirect(com.google.cloud.compute.v1.HttpRedirectAction value) {
       if (defaultUrlRedirectBuilder_ == null) {
@@ -2555,12 +2474,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
-     * If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
+     * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;
+     * </code>
      */
     public Builder setDefaultUrlRedirect(
         com.google.cloud.compute.v1.HttpRedirectAction.Builder builderForValue) {
@@ -2577,12 +2495,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
-     * If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
+     * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;
+     * </code>
      */
     public Builder mergeDefaultUrlRedirect(com.google.cloud.compute.v1.HttpRedirectAction value) {
       if (defaultUrlRedirectBuilder_ == null) {
@@ -2608,12 +2525,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
-     * If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
+     * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;
+     * </code>
      */
     public Builder clearDefaultUrlRedirect() {
       if (defaultUrlRedirectBuilder_ == null) {
@@ -2629,12 +2545,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
-     * If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
+     * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;
+     * </code>
      */
     public com.google.cloud.compute.v1.HttpRedirectAction.Builder getDefaultUrlRedirectBuilder() {
       bitField0_ |= 0x00000008;
@@ -2645,12 +2560,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
-     * If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
+     * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;
+     * </code>
      */
     public com.google.cloud.compute.v1.HttpRedirectActionOrBuilder
         getDefaultUrlRedirectOrBuilder() {
@@ -2666,12 +2580,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
-     * If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
+     * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.HttpRedirectAction,
@@ -2698,7 +2611,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -2712,7 +2625,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -2734,7 +2647,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -2756,7 +2669,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2777,7 +2690,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -2794,7 +2707,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2815,11 +2728,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a UrlMap.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a UrlMap.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return Whether the fingerprint field is set.
      */
@@ -2830,11 +2742,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a UrlMap.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a UrlMap.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The fingerprint.
      */
@@ -2853,11 +2764,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a UrlMap.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a UrlMap.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The bytes for fingerprint.
      */
@@ -2876,11 +2786,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a UrlMap.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a UrlMap.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The fingerprint to set.
      * @return This builder for chaining.
@@ -2898,11 +2807,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a UrlMap.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a UrlMap.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return This builder for chaining.
      */
@@ -2916,11 +2824,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a UrlMap.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a UrlMap.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The bytes for fingerprint to set.
      * @return This builder for chaining.
@@ -2946,13 +2853,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies changes to request and response headers that need to take effect for the selected backendService.
-     * The headerAction specified here take effect after headerAction specified under pathMatcher.
-     * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Specifies changes to request and response headers that need to take effect for the selected backendService. The headerAction specified here take effect after headerAction specified under pathMatcher. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      *
      * @return Whether the headerAction field is set.
      */
@@ -2963,13 +2867,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies changes to request and response headers that need to take effect for the selected backendService.
-     * The headerAction specified here take effect after headerAction specified under pathMatcher.
-     * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Specifies changes to request and response headers that need to take effect for the selected backendService. The headerAction specified here take effect after headerAction specified under pathMatcher. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      *
      * @return The headerAction.
      */
@@ -2986,13 +2887,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies changes to request and response headers that need to take effect for the selected backendService.
-     * The headerAction specified here take effect after headerAction specified under pathMatcher.
-     * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Specifies changes to request and response headers that need to take effect for the selected backendService. The headerAction specified here take effect after headerAction specified under pathMatcher. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     public Builder setHeaderAction(com.google.cloud.compute.v1.HttpHeaderAction value) {
       if (headerActionBuilder_ == null) {
@@ -3011,13 +2909,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies changes to request and response headers that need to take effect for the selected backendService.
-     * The headerAction specified here take effect after headerAction specified under pathMatcher.
-     * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Specifies changes to request and response headers that need to take effect for the selected backendService. The headerAction specified here take effect after headerAction specified under pathMatcher. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     public Builder setHeaderAction(
         com.google.cloud.compute.v1.HttpHeaderAction.Builder builderForValue) {
@@ -3034,13 +2929,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies changes to request and response headers that need to take effect for the selected backendService.
-     * The headerAction specified here take effect after headerAction specified under pathMatcher.
-     * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Specifies changes to request and response headers that need to take effect for the selected backendService. The headerAction specified here take effect after headerAction specified under pathMatcher. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     public Builder mergeHeaderAction(com.google.cloud.compute.v1.HttpHeaderAction value) {
       if (headerActionBuilder_ == null) {
@@ -3065,13 +2957,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies changes to request and response headers that need to take effect for the selected backendService.
-     * The headerAction specified here take effect after headerAction specified under pathMatcher.
-     * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Specifies changes to request and response headers that need to take effect for the selected backendService. The headerAction specified here take effect after headerAction specified under pathMatcher. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     public Builder clearHeaderAction() {
       if (headerActionBuilder_ == null) {
@@ -3087,13 +2976,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies changes to request and response headers that need to take effect for the selected backendService.
-     * The headerAction specified here take effect after headerAction specified under pathMatcher.
-     * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Specifies changes to request and response headers that need to take effect for the selected backendService. The headerAction specified here take effect after headerAction specified under pathMatcher. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     public com.google.cloud.compute.v1.HttpHeaderAction.Builder getHeaderActionBuilder() {
       bitField0_ |= 0x00000040;
@@ -3104,13 +2990,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies changes to request and response headers that need to take effect for the selected backendService.
-     * The headerAction specified here take effect after headerAction specified under pathMatcher.
-     * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Specifies changes to request and response headers that need to take effect for the selected backendService. The headerAction specified here take effect after headerAction specified under pathMatcher. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     public com.google.cloud.compute.v1.HttpHeaderActionOrBuilder getHeaderActionOrBuilder() {
       if (headerActionBuilder_ != null) {
@@ -3125,13 +3008,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies changes to request and response headers that need to take effect for the selected backendService.
-     * The headerAction specified here take effect after headerAction specified under pathMatcher.
-     * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Specifies changes to request and response headers that need to take effect for the selected backendService. The headerAction specified here take effect after headerAction specified under pathMatcher. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.HttpHeaderAction,
@@ -3506,7 +3386,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -3521,7 +3401,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -3536,7 +3416,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -3554,7 +3434,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -3573,7 +3453,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#urlMaps for url maps.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -3587,7 +3467,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#urlMaps for url maps.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -3609,7 +3489,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#urlMaps for url maps.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -3631,7 +3511,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#urlMaps for url maps.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -3652,7 +3532,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#urlMaps for url maps.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -3669,7 +3549,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#urlMaps for url maps.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -3693,7 +3573,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -3707,7 +3587,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -3729,7 +3609,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -3751,7 +3631,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -3772,7 +3652,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -3789,7 +3669,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -4164,7 +4044,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return Whether the region field is set.
      */
@@ -4178,7 +4058,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The region.
      */
@@ -4200,7 +4080,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The bytes for region.
      */
@@ -4222,7 +4102,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -4243,7 +4123,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return This builder for chaining.
      */
@@ -4260,7 +4140,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.
@@ -4284,7 +4164,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -4298,7 +4178,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -4320,7 +4200,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -4342,7 +4222,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -4363,7 +4243,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -4380,7 +4260,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -4416,8 +4296,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -4433,8 +4312,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -4450,8 +4328,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -4467,8 +4344,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -4490,8 +4366,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -4511,8 +4386,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -4534,8 +4408,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -4557,8 +4430,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -4577,8 +4449,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -4598,8 +4469,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -4619,8 +4489,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -4639,8 +4508,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -4659,8 +4527,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -4672,8 +4539,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -4689,8 +4555,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -4707,8 +4572,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -4721,8 +4585,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -4735,8 +4598,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>

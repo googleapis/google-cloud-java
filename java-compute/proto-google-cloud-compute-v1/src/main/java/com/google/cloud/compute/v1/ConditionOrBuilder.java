@@ -27,10 +27,10 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * Trusted attributes supplied by the IAM system.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string iam = 104021;</code>
+   * <code>optional string iam = 104021;</code>
    *
    * @return Whether the iam field is set.
    */
@@ -39,10 +39,10 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * Trusted attributes supplied by the IAM system.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string iam = 104021;</code>
+   * <code>optional string iam = 104021;</code>
    *
    * @return The iam.
    */
@@ -51,10 +51,10 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * Trusted attributes supplied by the IAM system.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string iam = 104021;</code>
+   * <code>optional string iam = 104021;</code>
    *
    * @return The bytes for iam.
    */
@@ -64,10 +64,10 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * An operator to apply the subject with.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string op = 3553;</code>
+   * <code>optional string op = 3553;</code>
    *
    * @return Whether the op field is set.
    */
@@ -76,10 +76,10 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * An operator to apply the subject with.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string op = 3553;</code>
+   * <code>optional string op = 3553;</code>
    *
    * @return The op.
    */
@@ -88,10 +88,10 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * An operator to apply the subject with.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string op = 3553;</code>
+   * <code>optional string op = 3553;</code>
    *
    * @return The bytes for op.
    */
@@ -101,10 +101,10 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * Trusted attributes discharged by the service.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string svc = 114272;</code>
+   * <code>optional string svc = 114272;</code>
    *
    * @return Whether the svc field is set.
    */
@@ -113,10 +113,10 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * Trusted attributes discharged by the service.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string svc = 114272;</code>
+   * <code>optional string svc = 114272;</code>
    *
    * @return The svc.
    */
@@ -125,10 +125,10 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * Trusted attributes discharged by the service.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string svc = 114272;</code>
+   * <code>optional string svc = 114272;</code>
    *
    * @return The bytes for svc.
    */
@@ -138,10 +138,10 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * Trusted attributes supplied by any service that owns resources and uses the IAM system for access control.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string sys = 114381;</code>
+   * <code>optional string sys = 114381;</code>
    *
    * @return Whether the sys field is set.
    */
@@ -150,10 +150,10 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * Trusted attributes supplied by any service that owns resources and uses the IAM system for access control.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string sys = 114381;</code>
+   * <code>optional string sys = 114381;</code>
    *
    * @return The sys.
    */
@@ -162,10 +162,10 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * Trusted attributes supplied by any service that owns resources and uses the IAM system for access control.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string sys = 114381;</code>
+   * <code>optional string sys = 114381;</code>
    *
    * @return The bytes for sys.
    */
@@ -175,7 +175,7 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * The objects of the condition.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string values = 249928994;</code>
@@ -187,7 +187,7 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * The objects of the condition.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string values = 249928994;</code>
@@ -199,7 +199,7 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * The objects of the condition.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string values = 249928994;</code>
@@ -212,7 +212,7 @@ public interface ConditionOrBuilder
    *
    *
    * <pre>
-   * The objects of the condition.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string values = 249928994;</code>

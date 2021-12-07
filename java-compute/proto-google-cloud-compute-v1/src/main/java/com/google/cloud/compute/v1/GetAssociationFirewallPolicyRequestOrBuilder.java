@@ -55,7 +55,7 @@ public interface GetAssociationFirewallPolicyRequestOrBuilder
    * The name of the association to get from the firewall policy.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -67,7 +67,7 @@ public interface GetAssociationFirewallPolicyRequestOrBuilder
    * The name of the association to get from the firewall policy.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -79,7 +79,7 @@ public interface GetAssociationFirewallPolicyRequestOrBuilder
    * The name of the association to get from the firewall policy.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */

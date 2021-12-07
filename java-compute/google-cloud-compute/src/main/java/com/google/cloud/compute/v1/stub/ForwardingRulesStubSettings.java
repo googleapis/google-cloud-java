@@ -28,10 +28,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.httpjson.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -80,16 +84,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * ForwardingRulesStubSettings.Builder forwardingRulesSettingsBuilder =
  *     ForwardingRulesStubSettings.newBuilder();
  * forwardingRulesSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         forwardingRulesSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -112,13 +116,23 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
           AggregatedListPagedResponse>
       aggregatedListSettings;
   private final UnaryCallSettings<DeleteForwardingRuleRequest, Operation> deleteSettings;
+  private final OperationCallSettings<DeleteForwardingRuleRequest, Operation, Operation>
+      deleteOperationSettings;
   private final UnaryCallSettings<GetForwardingRuleRequest, ForwardingRule> getSettings;
   private final UnaryCallSettings<InsertForwardingRuleRequest, Operation> insertSettings;
+  private final OperationCallSettings<InsertForwardingRuleRequest, Operation, Operation>
+      insertOperationSettings;
   private final PagedCallSettings<ListForwardingRulesRequest, ForwardingRuleList, ListPagedResponse>
       listSettings;
   private final UnaryCallSettings<PatchForwardingRuleRequest, Operation> patchSettings;
+  private final OperationCallSettings<PatchForwardingRuleRequest, Operation, Operation>
+      patchOperationSettings;
   private final UnaryCallSettings<SetLabelsForwardingRuleRequest, Operation> setLabelsSettings;
+  private final OperationCallSettings<SetLabelsForwardingRuleRequest, Operation, Operation>
+      setLabelsOperationSettings;
   private final UnaryCallSettings<SetTargetForwardingRuleRequest, Operation> setTargetSettings;
+  private final OperationCallSettings<SetTargetForwardingRuleRequest, Operation, Operation>
+      setTargetOperationSettings;
 
   private static final PagedListDescriptor<
           AggregatedListForwardingRulesRequest,
@@ -266,6 +280,12 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
     return deleteSettings;
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteForwardingRuleRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return deleteOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetForwardingRuleRequest, ForwardingRule> getSettings() {
     return getSettings;
@@ -274,6 +294,12 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertForwardingRuleRequest, Operation> insertSettings() {
     return insertSettings;
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertForwardingRuleRequest, Operation, Operation>
+      insertOperationSettings() {
+    return insertOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -287,14 +313,32 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
     return patchSettings;
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchForwardingRuleRequest, Operation, Operation>
+      patchOperationSettings() {
+    return patchOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setLabels. */
   public UnaryCallSettings<SetLabelsForwardingRuleRequest, Operation> setLabelsSettings() {
     return setLabelsSettings;
   }
 
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsForwardingRuleRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return setLabelsOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setTarget. */
   public UnaryCallSettings<SetTargetForwardingRuleRequest, Operation> setTargetSettings() {
     return setTargetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setTarget. */
+  public OperationCallSettings<SetTargetForwardingRuleRequest, Operation, Operation>
+      setTargetOperationSettings() {
+    return setTargetOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -331,7 +375,9 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return GoogleCredentialsProvider.newBuilder()
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        .setUseJwtAccessWithScope(true);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -374,12 +420,17 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
 
     aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
+    deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
+    insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
+    patchOperationSettings = settingsBuilder.patchOperationSettings().build();
     setLabelsSettings = settingsBuilder.setLabelsSettings().build();
+    setLabelsOperationSettings = settingsBuilder.setLabelsOperationSettings().build();
     setTargetSettings = settingsBuilder.setTargetSettings().build();
+    setTargetOperationSettings = settingsBuilder.setTargetOperationSettings().build();
   }
 
   /** Builder for ForwardingRulesStubSettings. */
@@ -391,16 +442,28 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
             AggregatedListPagedResponse>
         aggregatedListSettings;
     private final UnaryCallSettings.Builder<DeleteForwardingRuleRequest, Operation> deleteSettings;
+    private final OperationCallSettings.Builder<DeleteForwardingRuleRequest, Operation, Operation>
+        deleteOperationSettings;
     private final UnaryCallSettings.Builder<GetForwardingRuleRequest, ForwardingRule> getSettings;
     private final UnaryCallSettings.Builder<InsertForwardingRuleRequest, Operation> insertSettings;
+    private final OperationCallSettings.Builder<InsertForwardingRuleRequest, Operation, Operation>
+        insertOperationSettings;
     private final PagedCallSettings.Builder<
             ListForwardingRulesRequest, ForwardingRuleList, ListPagedResponse>
         listSettings;
     private final UnaryCallSettings.Builder<PatchForwardingRuleRequest, Operation> patchSettings;
+    private final OperationCallSettings.Builder<PatchForwardingRuleRequest, Operation, Operation>
+        patchOperationSettings;
     private final UnaryCallSettings.Builder<SetLabelsForwardingRuleRequest, Operation>
         setLabelsSettings;
+    private final OperationCallSettings.Builder<
+            SetLabelsForwardingRuleRequest, Operation, Operation>
+        setLabelsOperationSettings;
     private final UnaryCallSettings.Builder<SetTargetForwardingRuleRequest, Operation>
         setTargetSettings;
+    private final OperationCallSettings.Builder<
+            SetTargetForwardingRuleRequest, Operation, Operation>
+        setTargetOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -453,12 +516,17 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
 
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      patchOperationSettings = OperationCallSettings.newBuilder();
       setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setLabelsOperationSettings = OperationCallSettings.newBuilder();
       setTargetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setTargetOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -478,12 +546,17 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
 
       aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
+      deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
+      insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
+      patchOperationSettings = settings.patchOperationSettings.toBuilder();
       setLabelsSettings = settings.setLabelsSettings.toBuilder();
+      setLabelsOperationSettings = settings.setLabelsOperationSettings.toBuilder();
       setTargetSettings = settings.setTargetSettings.toBuilder();
+      setTargetOperationSettings = settings.setTargetOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -551,6 +624,126 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .deleteOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteForwardingRuleRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .insertOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<InsertForwardingRuleRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .patchOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PatchForwardingRuleRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setLabelsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetLabelsForwardingRuleRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setTargetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetTargetForwardingRuleRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -583,6 +776,14 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
       return deleteSettings;
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteForwardingRuleRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return deleteOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetForwardingRuleRequest, ForwardingRule> getSettings() {
       return getSettings;
@@ -591,6 +792,14 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertForwardingRuleRequest, Operation> insertSettings() {
       return insertSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<InsertForwardingRuleRequest, Operation, Operation>
+        insertOperationSettings() {
+      return insertOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -605,16 +814,40 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
       return patchSettings;
     }
 
+    /** Returns the builder for the settings used for calls to patch. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<PatchForwardingRuleRequest, Operation, Operation>
+        patchOperationSettings() {
+      return patchOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setLabels. */
     public UnaryCallSettings.Builder<SetLabelsForwardingRuleRequest, Operation>
         setLabelsSettings() {
       return setLabelsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to setLabels. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetLabelsForwardingRuleRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return setLabelsOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setTarget. */
     public UnaryCallSettings.Builder<SetTargetForwardingRuleRequest, Operation>
         setTargetSettings() {
       return setTargetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setTarget. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetTargetForwardingRuleRequest, Operation, Operation>
+        setTargetOperationSettings() {
+      return setTargetOperationSettings;
     }
 
     @Override

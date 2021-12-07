@@ -28,6 +28,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -51,15 +52,15 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of addNodes to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * NodeGroupsSettings.Builder nodeGroupsSettingsBuilder = NodeGroupsSettings.newBuilder();
  * nodeGroupsSettingsBuilder
- *     .addNodesSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         nodeGroupsSettingsBuilder
- *             .addNodesSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -75,6 +76,12 @@ public class NodeGroupsSettings extends ClientSettings<NodeGroupsSettings> {
     return ((NodeGroupsStubSettings) getStubSettings()).addNodesSettings();
   }
 
+  /** Returns the object with the settings used for calls to addNodes. */
+  public OperationCallSettings<AddNodesNodeGroupRequest, Operation, Operation>
+      addNodesOperationSettings() {
+    return ((NodeGroupsStubSettings) getStubSettings()).addNodesOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to aggregatedList. */
   public PagedCallSettings<
           AggregatedListNodeGroupsRequest, NodeGroupAggregatedList, AggregatedListPagedResponse>
@@ -87,9 +94,21 @@ public class NodeGroupsSettings extends ClientSettings<NodeGroupsSettings> {
     return ((NodeGroupsStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteNodeGroupRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((NodeGroupsStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteNodes. */
   public UnaryCallSettings<DeleteNodesNodeGroupRequest, Operation> deleteNodesSettings() {
     return ((NodeGroupsStubSettings) getStubSettings()).deleteNodesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteNodes. */
+  public OperationCallSettings<DeleteNodesNodeGroupRequest, Operation, Operation>
+      deleteNodesOperationSettings() {
+    return ((NodeGroupsStubSettings) getStubSettings()).deleteNodesOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -105,6 +124,12 @@ public class NodeGroupsSettings extends ClientSettings<NodeGroupsSettings> {
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertNodeGroupRequest, Operation> insertSettings() {
     return ((NodeGroupsStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertNodeGroupRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((NodeGroupsStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -123,6 +148,12 @@ public class NodeGroupsSettings extends ClientSettings<NodeGroupsSettings> {
     return ((NodeGroupsStubSettings) getStubSettings()).patchSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchNodeGroupRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((NodeGroupsStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyNodeGroupRequest, Policy> setIamPolicySettings() {
     return ((NodeGroupsStubSettings) getStubSettings()).setIamPolicySettings();
@@ -131,6 +162,12 @@ public class NodeGroupsSettings extends ClientSettings<NodeGroupsSettings> {
   /** Returns the object with the settings used for calls to setNodeTemplate. */
   public UnaryCallSettings<SetNodeTemplateNodeGroupRequest, Operation> setNodeTemplateSettings() {
     return ((NodeGroupsStubSettings) getStubSettings()).setNodeTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setNodeTemplate. */
+  public OperationCallSettings<SetNodeTemplateNodeGroupRequest, Operation, Operation>
+      setNodeTemplateOperationSettings() {
+    return ((NodeGroupsStubSettings) getStubSettings()).setNodeTemplateOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to testIamPermissions. */
@@ -241,6 +278,12 @@ public class NodeGroupsSettings extends ClientSettings<NodeGroupsSettings> {
       return getStubSettingsBuilder().addNodesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to addNodes. */
+    public OperationCallSettings.Builder<AddNodesNodeGroupRequest, Operation, Operation>
+        addNodesOperationSettings() {
+      return getStubSettingsBuilder().addNodesOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to aggregatedList. */
     public PagedCallSettings.Builder<
             AggregatedListNodeGroupsRequest, NodeGroupAggregatedList, AggregatedListPagedResponse>
@@ -253,9 +296,21 @@ public class NodeGroupsSettings extends ClientSettings<NodeGroupsSettings> {
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteNodeGroupRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteNodes. */
     public UnaryCallSettings.Builder<DeleteNodesNodeGroupRequest, Operation> deleteNodesSettings() {
       return getStubSettingsBuilder().deleteNodesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNodes. */
+    public OperationCallSettings.Builder<DeleteNodesNodeGroupRequest, Operation, Operation>
+        deleteNodesOperationSettings() {
+      return getStubSettingsBuilder().deleteNodesOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -271,6 +326,12 @@ public class NodeGroupsSettings extends ClientSettings<NodeGroupsSettings> {
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertNodeGroupRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertNodeGroupRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -291,6 +352,12 @@ public class NodeGroupsSettings extends ClientSettings<NodeGroupsSettings> {
       return getStubSettingsBuilder().patchSettings();
     }
 
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchNodeGroupRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setIamPolicy. */
     public UnaryCallSettings.Builder<SetIamPolicyNodeGroupRequest, Policy> setIamPolicySettings() {
       return getStubSettingsBuilder().setIamPolicySettings();
@@ -300,6 +367,12 @@ public class NodeGroupsSettings extends ClientSettings<NodeGroupsSettings> {
     public UnaryCallSettings.Builder<SetNodeTemplateNodeGroupRequest, Operation>
         setNodeTemplateSettings() {
       return getStubSettingsBuilder().setNodeTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setNodeTemplate. */
+    public OperationCallSettings.Builder<SetNodeTemplateNodeGroupRequest, Operation, Operation>
+        setNodeTemplateOperationSettings() {
+      return getStubSettingsBuilder().setNodeTemplateOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */

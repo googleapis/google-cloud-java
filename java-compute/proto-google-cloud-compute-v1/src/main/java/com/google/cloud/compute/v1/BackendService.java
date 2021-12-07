@@ -22,12 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Backend Service resource.
- * A backend service defines how Google Cloud load balancers distribute traffic. The backend service configuration contains a set of values, such as the protocol used to connect to backends, various distribution and session settings, health checks, and timeouts. These settings provide fine-grained control over how your load balancer behaves. Most of the settings have default values that allow for easy configuration if you need to get started quickly.
- * Backend services in Google Compute Engine can be either regionally or globally scoped.
- * * [Global](/compute/docs/reference/rest/{$api_version}/backendServices) * [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
- * For more information, see Backend Services.
- * (== resource_for {$api_version}.backendService ==)
+ * Represents a Backend Service resource. A backend service defines how Google Cloud load balancers distribute traffic. The backend service configuration contains a set of values, such as the protocol used to connect to backends, various distribution and session settings, health checks, and timeouts. These settings provide fine-grained control over how your load balancer behaves. Most of the settings have default values that allow for easy configuration if you need to get started quickly. Backend services in Google Compute Engine can be either regionally or globally scoped. * [Global](https://cloud.google.com/compute/docs/reference/rest/v1/backendServices) * [Regional](https://cloud.google.com/compute/docs/reference/rest/v1/regionBackendServices) For more information, see Backend Services.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.BackendService}
@@ -51,16 +46,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     fingerprint_ = "";
     healthChecks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     kind_ = "";
-    loadBalancingScheme_ = 0;
-    localityLbPolicy_ = 0;
+    loadBalancingScheme_ = "";
+    localityLbPolicy_ = "";
     name_ = "";
     network_ = "";
     portName_ = "";
-    protocol_ = 0;
+    protocol_ = "";
     region_ = "";
     securityPolicy_ = "";
     selfLink_ = "";
-    sessionAffinity_ = 0;
+    sessionAffinity_ = "";
   }
 
   @java.lang.Override
@@ -196,15 +191,15 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             }
           case 639959960:
             {
-              bitField0_ |= 0x10000000;
+              bitField0_ |= 0x20000000;
               timeoutSec_ = input.readInt32();
               break;
             }
-          case 676623552:
+          case 676623554:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00400000;
-              protocol_ = rawValue;
+              protocol_ = s;
               break;
             }
           case 845269242:
@@ -224,11 +219,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
               bitField0_ |= 0x00000100;
               break;
             }
-          case 1051451896:
+          case 1051451898:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00004000;
-              localityLbPolicy_ = rawValue;
+              localityLbPolicy_ = s;
               break;
             }
           case 1111570338:
@@ -315,11 +310,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
               bitField0_ |= 0x00080000;
               break;
             }
-          case -1383845344:
+          case -1383845342:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00002000;
-              loadBalancingScheme_ = rawValue;
+              loadBalancingScheme_ = s;
               break;
             }
           case -1334991664:
@@ -371,6 +366,22 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
               healthChecks_.add(s);
               break;
             }
+          case -692699006:
+            {
+              com.google.cloud.compute.v1.Subsetting.Builder subBuilder = null;
+              if (((bitField0_ & 0x10000000) != 0)) {
+                subBuilder = subsetting_.toBuilder();
+              }
+              subsetting_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.Subsetting.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(subsetting_);
+                subsetting_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x10000000;
+              break;
+            }
           case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -394,11 +405,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
               bitField0_ |= 0x00000008;
               break;
             }
-          case -583858808:
+          case -583858806:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x08000000;
-              sessionAffinity_ = rawValue;
+              sessionAffinity_ = s;
               break;
             }
           case -465767918:
@@ -478,7 +489,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the load balancer type. Choose EXTERNAL for external HTTP(S), SSL Proxy, TCP Proxy and Network Load Balancing. Choose  INTERNAL for Internal TCP/UDP Load Balancing. Choose  INTERNAL_MANAGED for Internal HTTP(S) Load Balancing.  INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+   * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.BackendService.LoadBalancingScheme}
@@ -494,13 +505,45 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_LOAD_BALANCING_SCHEME = 0;</code>
      */
     UNDEFINED_LOAD_BALANCING_SCHEME(0),
-    /** <code>EXTERNAL = 35607499;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Signifies that this will be used for external HTTP(S), SSL Proxy, TCP Proxy, or Network Load Balancing
+     * </pre>
+     *
+     * <code>EXTERNAL = 35607499;</code>
+     */
     EXTERNAL(35607499),
-    /** <code>INTERNAL = 279295677;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Signifies that this will be used for Internal TCP/UDP Load Balancing.
+     * </pre>
+     *
+     * <code>INTERNAL = 279295677;</code>
+     */
     INTERNAL(279295677),
-    /** <code>INTERNAL_MANAGED = 37350397;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Signifies that this will be used for Internal HTTP(S) Load Balancing.
+     * </pre>
+     *
+     * <code>INTERNAL_MANAGED = 37350397;</code>
+     */
     INTERNAL_MANAGED(37350397),
-    /** <code>INTERNAL_SELF_MANAGED = 236211150;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Signifies that this will be used by Traffic Director.
+     * </pre>
+     *
+     * <code>INTERNAL_SELF_MANAGED = 236211150;</code>
+     */
     INTERNAL_SELF_MANAGED(236211150),
     /** <code>INVALID_LOAD_BALANCING_SCHEME = 275352060;</code> */
     INVALID_LOAD_BALANCING_SCHEME(275352060),
@@ -517,13 +560,45 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_LOAD_BALANCING_SCHEME = 0;</code>
      */
     public static final int UNDEFINED_LOAD_BALANCING_SCHEME_VALUE = 0;
-    /** <code>EXTERNAL = 35607499;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Signifies that this will be used for external HTTP(S), SSL Proxy, TCP Proxy, or Network Load Balancing
+     * </pre>
+     *
+     * <code>EXTERNAL = 35607499;</code>
+     */
     public static final int EXTERNAL_VALUE = 35607499;
-    /** <code>INTERNAL = 279295677;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Signifies that this will be used for Internal TCP/UDP Load Balancing.
+     * </pre>
+     *
+     * <code>INTERNAL = 279295677;</code>
+     */
     public static final int INTERNAL_VALUE = 279295677;
-    /** <code>INTERNAL_MANAGED = 37350397;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Signifies that this will be used for Internal HTTP(S) Load Balancing.
+     * </pre>
+     *
+     * <code>INTERNAL_MANAGED = 37350397;</code>
+     */
     public static final int INTERNAL_MANAGED_VALUE = 37350397;
-    /** <code>INTERNAL_SELF_MANAGED = 236211150;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Signifies that this will be used by Traffic Director.
+     * </pre>
+     *
+     * <code>INTERNAL_SELF_MANAGED = 236211150;</code>
+     */
     public static final int INTERNAL_SELF_MANAGED_VALUE = 236211150;
     /** <code>INVALID_LOAD_BALANCING_SCHEME = 275352060;</code> */
     public static final int INVALID_LOAD_BALANCING_SCHEME_VALUE = 275352060;
@@ -624,18 +699,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The load balancing algorithm used within the scope of the locality. The possible values are:
-   * - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default.
-   * - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests.
-   * - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests.
-   * - RANDOM: The load balancer selects a random healthy host.
-   * - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
-   * - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824
-   * This field is applicable to either:
-   * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-   * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-   * If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect.
-   * Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.BackendService.LocalityLbPolicy}
@@ -653,17 +717,65 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_LOCALITY_LB_POLICY(0),
     /** <code>INVALID_LB_POLICY = 323318707;</code> */
     INVALID_LB_POLICY(323318707),
-    /** <code>LEAST_REQUEST = 46604921;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests.
+     * </pre>
+     *
+     * <code>LEAST_REQUEST = 46604921;</code>
+     */
     LEAST_REQUEST(46604921),
-    /** <code>MAGLEV = 119180266;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This algorithm implements consistent hashing to backends. Maglev can be used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824
+     * </pre>
+     *
+     * <code>MAGLEV = 119180266;</code>
+     */
     MAGLEV(119180266),
-    /** <code>ORIGINAL_DESTINATION = 166297216;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
+     * </pre>
+     *
+     * <code>ORIGINAL_DESTINATION = 166297216;</code>
+     */
     ORIGINAL_DESTINATION(166297216),
-    /** <code>RANDOM = 262527171;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The load balancer selects a random healthy host.
+     * </pre>
+     *
+     * <code>RANDOM = 262527171;</code>
+     */
     RANDOM(262527171),
-    /** <code>RING_HASH = 432795069;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests.
+     * </pre>
+     *
+     * <code>RING_HASH = 432795069;</code>
+     */
     RING_HASH(432795069),
-    /** <code>ROUND_ROBIN = 153895801;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is a simple policy in which each healthy backend is selected in round robin order. This is the default.
+     * </pre>
+     *
+     * <code>ROUND_ROBIN = 153895801;</code>
+     */
     ROUND_ROBIN(153895801),
     UNRECOGNIZED(-1),
     ;
@@ -680,17 +792,65 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_LOCALITY_LB_POLICY_VALUE = 0;
     /** <code>INVALID_LB_POLICY = 323318707;</code> */
     public static final int INVALID_LB_POLICY_VALUE = 323318707;
-    /** <code>LEAST_REQUEST = 46604921;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests.
+     * </pre>
+     *
+     * <code>LEAST_REQUEST = 46604921;</code>
+     */
     public static final int LEAST_REQUEST_VALUE = 46604921;
-    /** <code>MAGLEV = 119180266;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This algorithm implements consistent hashing to backends. Maglev can be used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824
+     * </pre>
+     *
+     * <code>MAGLEV = 119180266;</code>
+     */
     public static final int MAGLEV_VALUE = 119180266;
-    /** <code>ORIGINAL_DESTINATION = 166297216;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
+     * </pre>
+     *
+     * <code>ORIGINAL_DESTINATION = 166297216;</code>
+     */
     public static final int ORIGINAL_DESTINATION_VALUE = 166297216;
-    /** <code>RANDOM = 262527171;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The load balancer selects a random healthy host.
+     * </pre>
+     *
+     * <code>RANDOM = 262527171;</code>
+     */
     public static final int RANDOM_VALUE = 262527171;
-    /** <code>RING_HASH = 432795069;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests.
+     * </pre>
+     *
+     * <code>RING_HASH = 432795069;</code>
+     */
     public static final int RING_HASH_VALUE = 432795069;
-    /** <code>ROUND_ROBIN = 153895801;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is a simple policy in which each healthy backend is selected in round robin order. This is the default.
+     * </pre>
+     *
+     * <code>ROUND_ROBIN = 153895801;</code>
+     */
     public static final int ROUND_ROBIN_VALUE = 153895801;
 
     public final int getNumber() {
@@ -792,9 +952,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The protocol this BackendService uses to communicate with backends.
-   * Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
-   * Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+   * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.BackendService.Protocol}
@@ -810,19 +968,59 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PROTOCOL = 0;</code>
      */
     UNDEFINED_PROTOCOL(0),
-    /** <code>GRPC = 2196510;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * gRPC (available for Traffic Director).
+     * </pre>
+     *
+     * <code>GRPC = 2196510;</code>
+     */
     GRPC(2196510),
     /** <code>HTTP = 2228360;</code> */
     HTTP(2228360),
-    /** <code>HTTP2 = 69079210;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * HTTP/2 with SSL.
+     * </pre>
+     *
+     * <code>HTTP2 = 69079210;</code>
+     */
     HTTP2(69079210),
     /** <code>HTTPS = 69079243;</code> */
     HTTPS(69079243),
-    /** <code>SSL = 82412;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * TCP proxying with SSL.
+     * </pre>
+     *
+     * <code>SSL = 82412;</code>
+     */
     SSL(82412),
-    /** <code>TCP = 82881;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * TCP proxying or TCP pass-through.
+     * </pre>
+     *
+     * <code>TCP = 82881;</code>
+     */
     TCP(82881),
-    /** <code>UDP = 83873;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * UDP.
+     * </pre>
+     *
+     * <code>UDP = 83873;</code>
+     */
     UDP(83873),
     UNRECOGNIZED(-1),
     ;
@@ -837,19 +1035,59 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PROTOCOL = 0;</code>
      */
     public static final int UNDEFINED_PROTOCOL_VALUE = 0;
-    /** <code>GRPC = 2196510;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * gRPC (available for Traffic Director).
+     * </pre>
+     *
+     * <code>GRPC = 2196510;</code>
+     */
     public static final int GRPC_VALUE = 2196510;
     /** <code>HTTP = 2228360;</code> */
     public static final int HTTP_VALUE = 2228360;
-    /** <code>HTTP2 = 69079210;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * HTTP/2 with SSL.
+     * </pre>
+     *
+     * <code>HTTP2 = 69079210;</code>
+     */
     public static final int HTTP2_VALUE = 69079210;
     /** <code>HTTPS = 69079243;</code> */
     public static final int HTTPS_VALUE = 69079243;
-    /** <code>SSL = 82412;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * TCP proxying with SSL.
+     * </pre>
+     *
+     * <code>SSL = 82412;</code>
+     */
     public static final int SSL_VALUE = 82412;
-    /** <code>TCP = 82881;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * TCP proxying or TCP pass-through.
+     * </pre>
+     *
+     * <code>TCP = 82881;</code>
+     */
     public static final int TCP_VALUE = 82881;
-    /** <code>UDP = 83873;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * UDP.
+     * </pre>
+     *
+     * <code>UDP = 83873;</code>
+     */
     public static final int UDP_VALUE = 83873;
 
     public final int getNumber() {
@@ -949,11 +1187,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of session affinity to use. The default is NONE.
-   * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
-   * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
-   * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
-   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.BackendService.SessionAffinity}
@@ -969,21 +1203,85 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_SESSION_AFFINITY = 0;</code>
      */
     UNDEFINED_SESSION_AFFINITY(0),
-    /** <code>CLIENT_IP = 345665051;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 2-tuple hash on packet's source and destination IP addresses. Connections from the same source IP address to the same destination IP address will be served by the same backend VM while that VM remains healthy.
+     * </pre>
+     *
+     * <code>CLIENT_IP = 345665051;</code>
+     */
     CLIENT_IP(345665051),
-    /** <code>CLIENT_IP_NO_DESTINATION = 106122516;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 1-tuple hash only on packet's source IP address. Connections from the same source IP address will be served by the same backend VM while that VM remains healthy. This option can only be used for Internal TCP/UDP Load Balancing.
+     * </pre>
+     *
+     * <code>CLIENT_IP_NO_DESTINATION = 106122516;</code>
+     */
     CLIENT_IP_NO_DESTINATION(106122516),
-    /** <code>CLIENT_IP_PORT_PROTO = 221722926;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 5-tuple hash on packet's source and destination IP addresses, IP protocol, and source and destination ports. Connections for the same IP protocol from the same source IP address and port to the same destination IP address and port will be served by the same backend VM while that VM remains healthy. This option cannot be used for HTTP(S) load balancing.
+     * </pre>
+     *
+     * <code>CLIENT_IP_PORT_PROTO = 221722926;</code>
+     */
     CLIENT_IP_PORT_PROTO(221722926),
-    /** <code>CLIENT_IP_PROTO = 25322148;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 3-tuple hash on packet's source and destination IP addresses, and IP protocol. Connections for the same IP protocol from the same source IP address to the same destination IP address will be served by the same backend VM while that VM remains healthy. This option cannot be used for HTTP(S) load balancing.
+     * </pre>
+     *
+     * <code>CLIENT_IP_PROTO = 25322148;</code>
+     */
     CLIENT_IP_PROTO(25322148),
-    /** <code>GENERATED_COOKIE = 370321204;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Hash based on a cookie generated by the L7 loadbalancer. Only valid for HTTP(S) load balancing.
+     * </pre>
+     *
+     * <code>GENERATED_COOKIE = 370321204;</code>
+     */
     GENERATED_COOKIE(370321204),
-    /** <code>HEADER_FIELD = 200737960;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The hash is based on a user specified header field.
+     * </pre>
+     *
+     * <code>HEADER_FIELD = 200737960;</code>
+     */
     HEADER_FIELD(200737960),
-    /** <code>HTTP_COOKIE = 494981627;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The hash is based on a user provided cookie.
+     * </pre>
+     *
+     * <code>HTTP_COOKIE = 494981627;</code>
+     */
     HTTP_COOKIE(494981627),
-    /** <code>NONE = 2402104;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * No session affinity. Connections from the same client IP may go to any instance in the pool.
+     * </pre>
+     *
+     * <code>NONE = 2402104;</code>
+     */
     NONE(2402104),
     UNRECOGNIZED(-1),
     ;
@@ -998,21 +1296,85 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_SESSION_AFFINITY = 0;</code>
      */
     public static final int UNDEFINED_SESSION_AFFINITY_VALUE = 0;
-    /** <code>CLIENT_IP = 345665051;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 2-tuple hash on packet's source and destination IP addresses. Connections from the same source IP address to the same destination IP address will be served by the same backend VM while that VM remains healthy.
+     * </pre>
+     *
+     * <code>CLIENT_IP = 345665051;</code>
+     */
     public static final int CLIENT_IP_VALUE = 345665051;
-    /** <code>CLIENT_IP_NO_DESTINATION = 106122516;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 1-tuple hash only on packet's source IP address. Connections from the same source IP address will be served by the same backend VM while that VM remains healthy. This option can only be used for Internal TCP/UDP Load Balancing.
+     * </pre>
+     *
+     * <code>CLIENT_IP_NO_DESTINATION = 106122516;</code>
+     */
     public static final int CLIENT_IP_NO_DESTINATION_VALUE = 106122516;
-    /** <code>CLIENT_IP_PORT_PROTO = 221722926;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 5-tuple hash on packet's source and destination IP addresses, IP protocol, and source and destination ports. Connections for the same IP protocol from the same source IP address and port to the same destination IP address and port will be served by the same backend VM while that VM remains healthy. This option cannot be used for HTTP(S) load balancing.
+     * </pre>
+     *
+     * <code>CLIENT_IP_PORT_PROTO = 221722926;</code>
+     */
     public static final int CLIENT_IP_PORT_PROTO_VALUE = 221722926;
-    /** <code>CLIENT_IP_PROTO = 25322148;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 3-tuple hash on packet's source and destination IP addresses, and IP protocol. Connections for the same IP protocol from the same source IP address to the same destination IP address will be served by the same backend VM while that VM remains healthy. This option cannot be used for HTTP(S) load balancing.
+     * </pre>
+     *
+     * <code>CLIENT_IP_PROTO = 25322148;</code>
+     */
     public static final int CLIENT_IP_PROTO_VALUE = 25322148;
-    /** <code>GENERATED_COOKIE = 370321204;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Hash based on a cookie generated by the L7 loadbalancer. Only valid for HTTP(S) load balancing.
+     * </pre>
+     *
+     * <code>GENERATED_COOKIE = 370321204;</code>
+     */
     public static final int GENERATED_COOKIE_VALUE = 370321204;
-    /** <code>HEADER_FIELD = 200737960;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The hash is based on a user specified header field.
+     * </pre>
+     *
+     * <code>HEADER_FIELD = 200737960;</code>
+     */
     public static final int HEADER_FIELD_VALUE = 200737960;
-    /** <code>HTTP_COOKIE = 494981627;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The hash is based on a user provided cookie.
+     * </pre>
+     *
+     * <code>HTTP_COOKIE = 494981627;</code>
+     */
     public static final int HTTP_COOKIE_VALUE = 494981627;
-    /** <code>NONE = 2402104;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * No session affinity. Connections from the same client IP may go to any instance in the pool.
+     * </pre>
+     *
+     * <code>NONE = 2402104;</code>
+     */
     public static final int NONE_VALUE = 2402104;
 
     public final int getNumber() {
@@ -1119,12 +1481,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Lifetime of cookies in seconds. Only applicable if the loadBalancingScheme is EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, the protocol is HTTP or HTTPS, and the sessionAffinity is GENERATED_COOKIE, or HTTP_COOKIE.
-   * If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400).
-   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>int32 affinity_cookie_ttl_sec = 369996954;</code>
+   * <code>optional int32 affinity_cookie_ttl_sec = 369996954;</code>
    *
    * @return Whether the affinityCookieTtlSec field is set.
    */
@@ -1136,12 +1496,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Lifetime of cookies in seconds. Only applicable if the loadBalancingScheme is EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, the protocol is HTTP or HTTPS, and the sessionAffinity is GENERATED_COOKIE, or HTTP_COOKIE.
-   * If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400).
-   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>int32 affinity_cookie_ttl_sec = 369996954;</code>
+   * <code>optional int32 affinity_cookie_ttl_sec = 369996954;</code>
    *
    * @return The affinityCookieTtlSec.
    */
@@ -1225,10 +1583,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
+   * Cloud CDN configuration for this BackendService. Only available for specified load balancer types.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
+   * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
    *
    * @return Whether the cdnPolicy field is set.
    */
@@ -1240,10 +1598,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
+   * Cloud CDN configuration for this BackendService. Only available for specified load balancer types.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
+   * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
    *
    * @return The cdnPolicy.
    */
@@ -1257,10 +1615,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
+   * Cloud CDN configuration for this BackendService. Only available for specified load balancer types.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
+   * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.BackendServiceCdnPolicyOrBuilder getCdnPolicyOrBuilder() {
@@ -1272,17 +1630,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
   public static final int CIRCUIT_BREAKERS_FIELD_NUMBER = 421340061;
   private com.google.cloud.compute.v1.CircuitBreakers circuitBreakers_;
   /**
-   *
-   *
-   * <pre>
-   * Settings controlling the volume of connections to a backend service. If not set, this feature is considered disabled.
-   * This field is applicable to either:
-   * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-   * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-   * </pre>
-   *
-   * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
+   * <code>optional .google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
    *
    * @return Whether the circuitBreakers field is set.
    */
@@ -1291,17 +1639,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   *
-   *
-   * <pre>
-   * Settings controlling the volume of connections to a backend service. If not set, this feature is considered disabled.
-   * This field is applicable to either:
-   * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-   * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-   * </pre>
-   *
-   * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
+   * <code>optional .google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
    *
    * @return The circuitBreakers.
    */
@@ -1312,17 +1650,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         : circuitBreakers_;
   }
   /**
-   *
-   *
-   * <pre>
-   * Settings controlling the volume of connections to a backend service. If not set, this feature is considered disabled.
-   * This field is applicable to either:
-   * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-   * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-   * </pre>
-   *
-   * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
+   * <code>optional .google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.CircuitBreakersOrBuilder getCircuitBreakersOrBuilder() {
@@ -1334,7 +1662,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
   public static final int CONNECTION_DRAINING_FIELD_NUMBER = 461096747;
   private com.google.cloud.compute.v1.ConnectionDraining connectionDraining_;
   /**
-   * <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code>
+   * <code>optional .google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;
+   * </code>
    *
    * @return Whether the connectionDraining field is set.
    */
@@ -1343,7 +1672,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code>
+   * <code>optional .google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;
+   * </code>
    *
    * @return The connectionDraining.
    */
@@ -1353,7 +1683,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.ConnectionDraining.getDefaultInstance()
         : connectionDraining_;
   }
-  /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code> */
+  /**
+   * <code>optional .google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.ConnectionDrainingOrBuilder getConnectionDrainingOrBuilder() {
     return connectionDraining_ == null
@@ -1367,14 +1700,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH.
-   * This field is applicable to either:
-   * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-   * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
+   * <code>
+   * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
    * </code>
    *
    * @return Whether the consistentHash field is set.
@@ -1387,14 +1717,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH.
-   * This field is applicable to either:
-   * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-   * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
+   * <code>
+   * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
    * </code>
    *
    * @return The consistentHash.
@@ -1409,14 +1736,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH.
-   * This field is applicable to either:
-   * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-   * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
+   * <code>
+   * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
    * </code>
    */
   @java.lang.Override
@@ -1436,7 +1760,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -1451,7 +1775,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -1474,7 +1798,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -1497,7 +1821,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Headers that the HTTP/S load balancer should add to proxied requests.
+   * Headers that the load balancer adds to proxied requests. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
    * </pre>
    *
    * <code>repeated string custom_request_headers = 27977992;</code>
@@ -1511,7 +1835,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Headers that the HTTP/S load balancer should add to proxied requests.
+   * Headers that the load balancer adds to proxied requests. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
    * </pre>
    *
    * <code>repeated string custom_request_headers = 27977992;</code>
@@ -1525,7 +1849,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Headers that the HTTP/S load balancer should add to proxied requests.
+   * Headers that the load balancer adds to proxied requests. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
    * </pre>
    *
    * <code>repeated string custom_request_headers = 27977992;</code>
@@ -1540,7 +1864,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Headers that the HTTP/S load balancer should add to proxied requests.
+   * Headers that the load balancer adds to proxied requests. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
    * </pre>
    *
    * <code>repeated string custom_request_headers = 27977992;</code>
@@ -1558,7 +1882,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Headers that the HTTP/S load balancer should add to proxied responses.
+   * Headers that the load balancer adds to proxied responses. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
    * </pre>
    *
    * <code>repeated string custom_response_headers = 387539094;</code>
@@ -1572,7 +1896,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Headers that the HTTP/S load balancer should add to proxied responses.
+   * Headers that the load balancer adds to proxied responses. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
    * </pre>
    *
    * <code>repeated string custom_response_headers = 387539094;</code>
@@ -1586,7 +1910,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Headers that the HTTP/S load balancer should add to proxied responses.
+   * Headers that the load balancer adds to proxied responses. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
    * </pre>
    *
    * <code>repeated string custom_response_headers = 387539094;</code>
@@ -1601,7 +1925,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Headers that the HTTP/S load balancer should add to proxied responses.
+   * Headers that the load balancer adds to proxied responses. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
    * </pre>
    *
    * <code>repeated string custom_response_headers = 387539094;</code>
@@ -1622,7 +1946,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -1637,7 +1961,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -1660,7 +1984,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -1683,10 +2007,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If true, enables Cloud CDN for the backend service. Only applicable if the loadBalancingScheme is EXTERNAL and the protocol is HTTP or HTTPS.
+   * If true, enables Cloud CDN for the backend service of an external HTTP(S) load balancer.
    * </pre>
    *
-   * <code>bool enable_c_d_n = 250733499;</code>
+   * <code>optional bool enable_c_d_n = 250733499;</code>
    *
    * @return Whether the enableCDN field is set.
    */
@@ -1698,10 +2022,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If true, enables Cloud CDN for the backend service. Only applicable if the loadBalancingScheme is EXTERNAL and the protocol is HTTP or HTTPS.
+   * If true, enables Cloud CDN for the backend service of an external HTTP(S) load balancer.
    * </pre>
    *
-   * <code>bool enable_c_d_n = 250733499;</code>
+   * <code>optional bool enable_c_d_n = 250733499;</code>
    *
    * @return The enableCDN.
    */
@@ -1716,10 +2040,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
+   * Requires at least one backend instance group to be defined as a backup (failover) backend. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview).
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
+   * </code>
    *
    * @return Whether the failoverPolicy field is set.
    */
@@ -1731,10 +2057,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
+   * Requires at least one backend instance group to be defined as a backup (failover) backend. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview).
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
+   * </code>
    *
    * @return The failoverPolicy.
    */
@@ -1748,10 +2076,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
+   * Requires at least one backend instance group to be defined as a backup (failover) backend. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview).
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.BackendServiceFailoverPolicyOrBuilder
@@ -1767,11 +2097,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a BackendService.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a BackendService.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return Whether the fingerprint field is set.
    */
@@ -1783,11 +2112,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a BackendService.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a BackendService.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The fingerprint.
    */
@@ -1807,11 +2135,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a BackendService.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a BackendService.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The bytes for fingerprint.
    */
@@ -1834,7 +2161,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
+   * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
    * </pre>
    *
    * <code>repeated string health_checks = 448370606;</code>
@@ -1848,7 +2175,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
+   * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
    * </pre>
    *
    * <code>repeated string health_checks = 448370606;</code>
@@ -1862,7 +2189,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
+   * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
    * </pre>
    *
    * <code>repeated string health_checks = 448370606;</code>
@@ -1877,7 +2204,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
+   * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
    * </pre>
    *
    * <code>repeated string health_checks = 448370606;</code>
@@ -1898,7 +2225,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
+   * <code>optional .google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
    *
    * @return Whether the iap field is set.
    */
@@ -1913,7 +2240,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
+   * <code>optional .google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
    *
    * @return The iap.
    */
@@ -1928,7 +2255,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
+   * <code>optional .google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.BackendServiceIAPOrBuilder getIapOrBuilder() {
@@ -1944,7 +2271,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -1959,7 +2286,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -1977,7 +2304,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of resource. Always compute#backendService for backend services.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -1992,7 +2319,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of resource. Always compute#backendService for backend services.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -2015,7 +2342,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of resource. Always compute#backendService for backend services.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -2033,17 +2360,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOAD_BALANCING_SCHEME_FIELD_NUMBER = 363890244;
-  private int loadBalancingScheme_;
+  private volatile java.lang.Object loadBalancingScheme_;
   /**
    *
    *
    * <pre>
-   * Specifies the load balancer type. Choose EXTERNAL for external HTTP(S), SSL Proxy, TCP Proxy and Network Load Balancing. Choose  INTERNAL for Internal TCP/UDP Load Balancing. Choose  INTERNAL_MANAGED for Internal HTTP(S) Load Balancing.  INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+   * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+   * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
-   * </code>
+   * <code>optional string load_balancing_scheme = 363890244;</code>
    *
    * @return Whether the loadBalancingScheme field is set.
    */
@@ -2055,65 +2381,62 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the load balancer type. Choose EXTERNAL for external HTTP(S), SSL Proxy, TCP Proxy and Network Load Balancing. Choose  INTERNAL for Internal TCP/UDP Load Balancing. Choose  INTERNAL_MANAGED for Internal HTTP(S) Load Balancing.  INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+   * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+   * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
-   * </code>
-   *
-   * @return The enum numeric value on the wire for loadBalancingScheme.
-   */
-  @java.lang.Override
-  public int getLoadBalancingSchemeValue() {
-    return loadBalancingScheme_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Specifies the load balancer type. Choose EXTERNAL for external HTTP(S), SSL Proxy, TCP Proxy and Network Load Balancing. Choose  INTERNAL for Internal TCP/UDP Load Balancing. Choose  INTERNAL_MANAGED for Internal HTTP(S) Load Balancing.  INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
-   * </code>
+   * <code>optional string load_balancing_scheme = 363890244;</code>
    *
    * @return The loadBalancingScheme.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.BackendService.LoadBalancingScheme getLoadBalancingScheme() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.BackendService.LoadBalancingScheme result =
-        com.google.cloud.compute.v1.BackendService.LoadBalancingScheme.valueOf(
-            loadBalancingScheme_);
-    return result == null
-        ? com.google.cloud.compute.v1.BackendService.LoadBalancingScheme.UNRECOGNIZED
-        : result;
+  public java.lang.String getLoadBalancingScheme() {
+    java.lang.Object ref = loadBalancingScheme_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      loadBalancingScheme_ = s;
+      return s;
+    }
   }
-
-  public static final int LOCALITY_LB_POLICY_FIELD_NUMBER = 131431487;
-  private int localityLbPolicy_;
   /**
    *
    *
    * <pre>
-   * The load balancing algorithm used within the scope of the locality. The possible values are:
-   * - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default.
-   * - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests.
-   * - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests.
-   * - RANDOM: The load balancer selects a random healthy host.
-   * - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
-   * - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824
-   * This field is applicable to either:
-   * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-   * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-   * If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect.
-   * Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+   * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;
-   * </code>
+   * <code>optional string load_balancing_scheme = 363890244;</code>
+   *
+   * @return The bytes for loadBalancingScheme.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLoadBalancingSchemeBytes() {
+    java.lang.Object ref = loadBalancingScheme_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      loadBalancingScheme_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LOCALITY_LB_POLICY_FIELD_NUMBER = 131431487;
+  private volatile java.lang.Object localityLbPolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Check the LocalityLbPolicy enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string locality_lb_policy = 131431487;</code>
    *
    * @return Whether the localityLbPolicy field is set.
    */
@@ -2125,60 +2448,49 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The load balancing algorithm used within the scope of the locality. The possible values are:
-   * - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default.
-   * - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests.
-   * - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests.
-   * - RANDOM: The load balancer selects a random healthy host.
-   * - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
-   * - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824
-   * This field is applicable to either:
-   * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-   * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-   * If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect.
-   * Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Check the LocalityLbPolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;
-   * </code>
+   * <code>optional string locality_lb_policy = 131431487;</code>
    *
-   * @return The enum numeric value on the wire for localityLbPolicy.
+   * @return The localityLbPolicy.
    */
   @java.lang.Override
-  public int getLocalityLbPolicyValue() {
-    return localityLbPolicy_;
+  public java.lang.String getLocalityLbPolicy() {
+    java.lang.Object ref = localityLbPolicy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      localityLbPolicy_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * The load balancing algorithm used within the scope of the locality. The possible values are:
-   * - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default.
-   * - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests.
-   * - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests.
-   * - RANDOM: The load balancer selects a random healthy host.
-   * - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
-   * - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824
-   * This field is applicable to either:
-   * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-   * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-   * If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect.
-   * Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Check the LocalityLbPolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;
-   * </code>
+   * <code>optional string locality_lb_policy = 131431487;</code>
    *
-   * @return The localityLbPolicy.
+   * @return The bytes for localityLbPolicy.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.BackendService.LocalityLbPolicy getLocalityLbPolicy() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.BackendService.LocalityLbPolicy result =
-        com.google.cloud.compute.v1.BackendService.LocalityLbPolicy.valueOf(localityLbPolicy_);
-    return result == null
-        ? com.google.cloud.compute.v1.BackendService.LocalityLbPolicy.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getLocalityLbPolicyBytes() {
+    java.lang.Object ref = localityLbPolicy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      localityLbPolicy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int LOG_CONFIG_FIELD_NUMBER = 351299741;
@@ -2190,7 +2502,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
+   * <code>optional .google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
    *
    * @return Whether the logConfig field is set.
    */
@@ -2205,7 +2517,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
+   * <code>optional .google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
    *
    * @return The logConfig.
    */
@@ -2222,7 +2534,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
+   * <code>optional .google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.BackendServiceLogConfigOrBuilder getLogConfigOrBuilder() {
@@ -2237,12 +2549,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
-   * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
-   * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+   * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed. If not specified, there will be no timeout limit, i.e. the maximum duration is infinite. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+   * <code>optional .google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
    *
    * @return Whether the maxStreamDuration field is set.
    */
@@ -2254,12 +2564,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
-   * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
-   * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+   * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed. If not specified, there will be no timeout limit, i.e. the maximum duration is infinite. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+   * <code>optional .google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
    *
    * @return The maxStreamDuration.
    */
@@ -2273,12 +2581,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
-   * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
-   * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+   * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed. If not specified, there will be no timeout limit, i.e. the maximum duration is infinite. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+   * <code>optional .google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DurationOrBuilder getMaxStreamDurationOrBuilder() {
@@ -2296,7 +2602,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -2311,7 +2617,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -2334,7 +2640,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -2360,7 +2666,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * The URL of the network to which this backend service belongs. This field can only be specified when the load balancing scheme is set to INTERNAL.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return Whether the network field is set.
    */
@@ -2375,7 +2681,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * The URL of the network to which this backend service belongs. This field can only be specified when the load balancing scheme is set to INTERNAL.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The network.
    */
@@ -2398,7 +2704,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * The URL of the network to which this backend service belongs. This field can only be specified when the load balancing scheme is set to INTERNAL.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The bytes for network.
    */
@@ -2421,14 +2727,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled.
-   * This field is applicable to either:
-   * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-   * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
+   * <code>optional .google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
    *
    * @return Whether the outlierDetection field is set.
    */
@@ -2440,14 +2742,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled.
-   * This field is applicable to either:
-   * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-   * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
+   * <code>optional .google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
    *
    * @return The outlierDetection.
    */
@@ -2461,14 +2759,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled.
-   * This field is applicable to either:
-   * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-   * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
+   * <code>optional .google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.OutlierDetectionOrBuilder getOutlierDetectionOrBuilder() {
@@ -2483,11 +2777,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
-   * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port.
+   * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port.
    * </pre>
    *
-   * <code>int32 port = 3446913;</code>
+   * <code>optional int32 port = 3446913;</code>
    *
    * @return Whether the port field is set.
    */
@@ -2499,11 +2792,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
-   * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port.
+   * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port.
    * </pre>
    *
-   * <code>int32 port = 3446913;</code>
+   * <code>optional int32 port = 3446913;</code>
    *
    * @return The port.
    */
@@ -2518,11 +2810,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL (except Network Load Balancing), INTERNAL_MANAGED, or  INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
-   * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port_name.
+   * A named port on a backend instance group representing the port for communication to the backend VMs in that group. The named port must be [defined on each backend instance group](https://cloud.google.com/load-balancing/docs/backend-service#named_ports). This parameter has no meaning if the backends are NEGs. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port_name.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return Whether the portName field is set.
    */
@@ -2534,11 +2825,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL (except Network Load Balancing), INTERNAL_MANAGED, or  INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
-   * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port_name.
+   * A named port on a backend instance group representing the port for communication to the backend VMs in that group. The named port must be [defined on each backend instance group](https://cloud.google.com/load-balancing/docs/backend-service#named_ports). This parameter has no meaning if the backends are NEGs. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port_name.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return The portName.
    */
@@ -2558,11 +2848,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL (except Network Load Balancing), INTERNAL_MANAGED, or  INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
-   * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port_name.
+   * A named port on a backend instance group representing the port for communication to the backend VMs in that group. The named port must be [defined on each backend instance group](https://cloud.google.com/load-balancing/docs/backend-service#named_ports). This parameter has no meaning if the backends are NEGs. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port_name.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return The bytes for portName.
    */
@@ -2580,17 +2869,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROTOCOL_FIELD_NUMBER = 84577944;
-  private int protocol_;
+  private volatile java.lang.Object protocol_;
   /**
    *
    *
    * <pre>
-   * The protocol this BackendService uses to communicate with backends.
-   * Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
-   * Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+   * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+   * Check the Protocol enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
+   * <code>optional string protocol = 84577944;</code>
    *
    * @return Whether the protocol field is set.
    */
@@ -2602,40 +2890,49 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The protocol this BackendService uses to communicate with backends.
-   * Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
-   * Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+   * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+   * Check the Protocol enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
+   * <code>optional string protocol = 84577944;</code>
    *
-   * @return The enum numeric value on the wire for protocol.
+   * @return The protocol.
    */
   @java.lang.Override
-  public int getProtocolValue() {
-    return protocol_;
+  public java.lang.String getProtocol() {
+    java.lang.Object ref = protocol_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      protocol_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * The protocol this BackendService uses to communicate with backends.
-   * Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
-   * Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+   * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+   * Check the Protocol enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
+   * <code>optional string protocol = 84577944;</code>
    *
-   * @return The protocol.
+   * @return The bytes for protocol.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.BackendService.Protocol getProtocol() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.BackendService.Protocol result =
-        com.google.cloud.compute.v1.BackendService.Protocol.valueOf(protocol_);
-    return result == null
-        ? com.google.cloud.compute.v1.BackendService.Protocol.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getProtocolBytes() {
+    java.lang.Object ref = protocol_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      protocol_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
@@ -2647,7 +2944,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -2662,7 +2959,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -2685,7 +2982,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -2711,7 +3008,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The resource URL for the security policy associated with this backend service.
    * </pre>
    *
-   * <code>string security_policy = 171082513;</code>
+   * <code>optional string security_policy = 171082513;</code>
    *
    * @return Whether the securityPolicy field is set.
    */
@@ -2726,7 +3023,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The resource URL for the security policy associated with this backend service.
    * </pre>
    *
-   * <code>string security_policy = 171082513;</code>
+   * <code>optional string security_policy = 171082513;</code>
    *
    * @return The securityPolicy.
    */
@@ -2749,7 +3046,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The resource URL for the security policy associated with this backend service.
    * </pre>
    *
-   * <code>string security_policy = 171082513;</code>
+   * <code>optional string security_policy = 171082513;</code>
    *
    * @return The bytes for securityPolicy.
    */
@@ -2772,12 +3069,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field specifies the security policy that applies to this backend service. This field is applicable to either:
-   * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-   * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+   * This field specifies the security policy that applies to this backend service. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
+   * <code>optional .google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
    *
    * @return Whether the securitySettings field is set.
    */
@@ -2789,12 +3084,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field specifies the security policy that applies to this backend service. This field is applicable to either:
-   * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-   * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+   * This field specifies the security policy that applies to this backend service. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
+   * <code>optional .google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
    *
    * @return The securitySettings.
    */
@@ -2808,12 +3101,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field specifies the security policy that applies to this backend service. This field is applicable to either:
-   * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-   * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+   * This field specifies the security policy that applies to this backend service. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
+   * <code>optional .google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.SecuritySettingsOrBuilder getSecuritySettingsOrBuilder() {
@@ -2831,7 +3122,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -2846,7 +3137,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -2869,7 +3160,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -2887,20 +3178,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SESSION_AFFINITY_FIELD_NUMBER = 463888561;
-  private int sessionAffinity_;
+  private volatile java.lang.Object sessionAffinity_;
   /**
    *
    *
    * <pre>
-   * Type of session affinity to use. The default is NONE.
-   * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
-   * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
-   * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
-   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Check the SessionAffinity enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
-   * </code>
+   * <code>optional string session_affinity = 463888561;</code>
    *
    * @return Whether the sessionAffinity field is set.
    */
@@ -2912,46 +3199,79 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of session affinity to use. The default is NONE.
-   * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
-   * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
-   * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
-   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Check the SessionAffinity enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
-   * </code>
+   * <code>optional string session_affinity = 463888561;</code>
    *
-   * @return The enum numeric value on the wire for sessionAffinity.
+   * @return The sessionAffinity.
    */
   @java.lang.Override
-  public int getSessionAffinityValue() {
-    return sessionAffinity_;
+  public java.lang.String getSessionAffinity() {
+    java.lang.Object ref = sessionAffinity_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sessionAffinity_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * Type of session affinity to use. The default is NONE.
-   * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
-   * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
-   * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
-   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Check the SessionAffinity enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
-   * </code>
+   * <code>optional string session_affinity = 463888561;</code>
    *
-   * @return The sessionAffinity.
+   * @return The bytes for sessionAffinity.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.BackendService.SessionAffinity getSessionAffinity() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.BackendService.SessionAffinity result =
-        com.google.cloud.compute.v1.BackendService.SessionAffinity.valueOf(sessionAffinity_);
-    return result == null
-        ? com.google.cloud.compute.v1.BackendService.SessionAffinity.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getSessionAffinityBytes() {
+    java.lang.Object ref = sessionAffinity_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sessionAffinity_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SUBSETTING_FIELD_NUMBER = 450283536;
+  private com.google.cloud.compute.v1.Subsetting subsetting_;
+  /**
+   * <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code>
+   *
+   * @return Whether the subsetting field is set.
+   */
+  @java.lang.Override
+  public boolean hasSubsetting() {
+    return ((bitField0_ & 0x10000000) != 0);
+  }
+  /**
+   * <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code>
+   *
+   * @return The subsetting.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.Subsetting getSubsetting() {
+    return subsetting_ == null
+        ? com.google.cloud.compute.v1.Subsetting.getDefaultInstance()
+        : subsetting_;
+  }
+  /** <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code> */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SubsettingOrBuilder getSubsettingOrBuilder() {
+    return subsetting_ == null
+        ? com.google.cloud.compute.v1.Subsetting.getDefaultInstance()
+        : subsetting_;
   }
 
   public static final int TIMEOUT_SEC_FIELD_NUMBER = 79994995;
@@ -2960,25 +3280,25 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds. The full range of timeout values allowed is 1 - 2,147,483,647 seconds.
+   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
    * </pre>
    *
-   * <code>int32 timeout_sec = 79994995;</code>
+   * <code>optional int32 timeout_sec = 79994995;</code>
    *
    * @return Whether the timeoutSec field is set.
    */
   @java.lang.Override
   public boolean hasTimeoutSec() {
-    return ((bitField0_ & 0x10000000) != 0);
+    return ((bitField0_ & 0x20000000) != 0);
   }
   /**
    *
    *
    * <pre>
-   * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds. The full range of timeout values allowed is 1 - 2,147,483,647 seconds.
+   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
    * </pre>
    *
-   * <code>int32 timeout_sec = 79994995;</code>
+   * <code>optional int32 timeout_sec = 79994995;</code>
    *
    * @return The timeoutSec.
    */
@@ -3032,17 +3352,17 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00010000) != 0)) {
       output.writeMessage(61428376, getMaxStreamDuration());
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       output.writeInt32(79994995, timeoutSec_);
     }
     if (((bitField0_ & 0x00400000) != 0)) {
-      output.writeEnum(84577944, protocol_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 84577944, protocol_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(105658655, getFailoverPolicy());
     }
     if (((bitField0_ & 0x00004000) != 0)) {
-      output.writeEnum(131431487, localityLbPolicy_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 131431487, localityLbPolicy_);
     }
     if (((bitField0_ & 0x00800000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
@@ -3069,7 +3389,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(354625086, getOutlierDetection());
     }
     if (((bitField0_ & 0x00002000) != 0)) {
-      output.writeEnum(363890244, loadBalancingScheme_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 363890244, loadBalancingScheme_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(369996954, affinityCookieTtlSec_);
@@ -3088,6 +3408,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 448370606, healthChecks_.getRaw(i));
     }
+    if (((bitField0_ & 0x10000000) != 0)) {
+      output.writeMessage(450283536, getSubsetting());
+    }
     if (((bitField0_ & 0x04000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
@@ -3095,7 +3418,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(461096747, getConnectionDraining());
     }
     if (((bitField0_ & 0x08000000) != 0)) {
-      output.writeEnum(463888561, sessionAffinity_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 463888561, sessionAffinity_);
     }
     if (((bitField0_ & 0x02000000) != 0)) {
       output.writeMessage(478649922, getSecuritySettings());
@@ -3150,18 +3473,19 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               61428376, getMaxStreamDuration());
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(79994995, timeoutSec_);
     }
     if (((bitField0_ & 0x00400000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(84577944, protocol_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(84577944, protocol_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(105658655, getFailoverPolicy());
     }
     if (((bitField0_ & 0x00004000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(131431487, localityLbPolicy_);
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(131431487, localityLbPolicy_);
     }
     if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
@@ -3191,7 +3515,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeEnumSize(363890244, loadBalancingScheme_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(363890244, loadBalancingScheme_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
@@ -3220,6 +3544,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getHealthChecksList().size();
     }
+    if (((bitField0_ & 0x10000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(450283536, getSubsetting());
+    }
     if (((bitField0_ & 0x04000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
@@ -3229,7 +3556,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
               461096747, getConnectionDraining());
     }
     if (((bitField0_ & 0x08000000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(463888561, sessionAffinity_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(463888561, sessionAffinity_);
     }
     if (((bitField0_ & 0x02000000) != 0)) {
       size +=
@@ -3313,11 +3640,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasLoadBalancingScheme() != other.hasLoadBalancingScheme()) return false;
     if (hasLoadBalancingScheme()) {
-      if (loadBalancingScheme_ != other.loadBalancingScheme_) return false;
+      if (!getLoadBalancingScheme().equals(other.getLoadBalancingScheme())) return false;
     }
     if (hasLocalityLbPolicy() != other.hasLocalityLbPolicy()) return false;
     if (hasLocalityLbPolicy()) {
-      if (localityLbPolicy_ != other.localityLbPolicy_) return false;
+      if (!getLocalityLbPolicy().equals(other.getLocalityLbPolicy())) return false;
     }
     if (hasLogConfig() != other.hasLogConfig()) return false;
     if (hasLogConfig()) {
@@ -3349,7 +3676,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasProtocol() != other.hasProtocol()) return false;
     if (hasProtocol()) {
-      if (protocol_ != other.protocol_) return false;
+      if (!getProtocol().equals(other.getProtocol())) return false;
     }
     if (hasRegion() != other.hasRegion()) return false;
     if (hasRegion()) {
@@ -3369,7 +3696,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasSessionAffinity() != other.hasSessionAffinity()) return false;
     if (hasSessionAffinity()) {
-      if (sessionAffinity_ != other.sessionAffinity_) return false;
+      if (!getSessionAffinity().equals(other.getSessionAffinity())) return false;
+    }
+    if (hasSubsetting() != other.hasSubsetting()) return false;
+    if (hasSubsetting()) {
+      if (!getSubsetting().equals(other.getSubsetting())) return false;
     }
     if (hasTimeoutSec() != other.hasTimeoutSec()) return false;
     if (hasTimeoutSec()) {
@@ -3456,11 +3787,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasLoadBalancingScheme()) {
       hash = (37 * hash) + LOAD_BALANCING_SCHEME_FIELD_NUMBER;
-      hash = (53 * hash) + loadBalancingScheme_;
+      hash = (53 * hash) + getLoadBalancingScheme().hashCode();
     }
     if (hasLocalityLbPolicy()) {
       hash = (37 * hash) + LOCALITY_LB_POLICY_FIELD_NUMBER;
-      hash = (53 * hash) + localityLbPolicy_;
+      hash = (53 * hash) + getLocalityLbPolicy().hashCode();
     }
     if (hasLogConfig()) {
       hash = (37 * hash) + LOG_CONFIG_FIELD_NUMBER;
@@ -3492,7 +3823,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasProtocol()) {
       hash = (37 * hash) + PROTOCOL_FIELD_NUMBER;
-      hash = (53 * hash) + protocol_;
+      hash = (53 * hash) + getProtocol().hashCode();
     }
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -3512,7 +3843,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasSessionAffinity()) {
       hash = (37 * hash) + SESSION_AFFINITY_FIELD_NUMBER;
-      hash = (53 * hash) + sessionAffinity_;
+      hash = (53 * hash) + getSessionAffinity().hashCode();
+    }
+    if (hasSubsetting()) {
+      hash = (37 * hash) + SUBSETTING_FIELD_NUMBER;
+      hash = (53 * hash) + getSubsetting().hashCode();
     }
     if (hasTimeoutSec()) {
       hash = (37 * hash) + TIMEOUT_SEC_FIELD_NUMBER;
@@ -3622,12 +3957,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Backend Service resource.
-   * A backend service defines how Google Cloud load balancers distribute traffic. The backend service configuration contains a set of values, such as the protocol used to connect to backends, various distribution and session settings, health checks, and timeouts. These settings provide fine-grained control over how your load balancer behaves. Most of the settings have default values that allow for easy configuration if you need to get started quickly.
-   * Backend services in Google Compute Engine can be either regionally or globally scoped.
-   * * [Global](/compute/docs/reference/rest/{$api_version}/backendServices) * [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
-   * For more information, see Backend Services.
-   * (== resource_for {$api_version}.backendService ==)
+   * Represents a Backend Service resource. A backend service defines how Google Cloud load balancers distribute traffic. The backend service configuration contains a set of values, such as the protocol used to connect to backends, various distribution and session settings, health checks, and timeouts. These settings provide fine-grained control over how your load balancer behaves. Most of the settings have default values that allow for easy configuration if you need to get started quickly. Backend services in Google Compute Engine can be either regionally or globally scoped. * [Global](https://cloud.google.com/compute/docs/reference/rest/v1/backendServices) * [Regional](https://cloud.google.com/compute/docs/reference/rest/v1/regionBackendServices) For more information, see Backend Services.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.BackendService}
@@ -3674,6 +4004,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         getMaxStreamDurationFieldBuilder();
         getOutlierDetectionFieldBuilder();
         getSecuritySettingsFieldBuilder();
+        getSubsettingFieldBuilder();
       }
     }
 
@@ -3742,9 +4073,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00008000);
       kind_ = "";
       bitField0_ = (bitField0_ & ~0x00010000);
-      loadBalancingScheme_ = 0;
+      loadBalancingScheme_ = "";
       bitField0_ = (bitField0_ & ~0x00020000);
-      localityLbPolicy_ = 0;
+      localityLbPolicy_ = "";
       bitField0_ = (bitField0_ & ~0x00040000);
       if (logConfigBuilder_ == null) {
         logConfig_ = null;
@@ -3772,7 +4103,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x01000000);
       portName_ = "";
       bitField0_ = (bitField0_ & ~0x02000000);
-      protocol_ = 0;
+      protocol_ = "";
       bitField0_ = (bitField0_ & ~0x04000000);
       region_ = "";
       bitField0_ = (bitField0_ & ~0x08000000);
@@ -3786,10 +4117,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x20000000);
       selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x40000000);
-      sessionAffinity_ = 0;
+      sessionAffinity_ = "";
       bitField0_ = (bitField0_ & ~0x80000000);
-      timeoutSec_ = 0;
+      if (subsettingBuilder_ == null) {
+        subsetting_ = null;
+      } else {
+        subsettingBuilder_.clear();
+      }
       bitField1_ = (bitField1_ & ~0x00000001);
+      timeoutSec_ = 0;
+      bitField1_ = (bitField1_ & ~0x00000002);
       return this;
     }
 
@@ -3997,8 +4334,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       result.sessionAffinity_ = sessionAffinity_;
       if (((from_bitField1_ & 0x00000001) != 0)) {
-        result.timeoutSec_ = timeoutSec_;
+        if (subsettingBuilder_ == null) {
+          result.subsetting_ = subsetting_;
+        } else {
+          result.subsetting_ = subsettingBuilder_.build();
+        }
         to_bitField0_ |= 0x10000000;
+      }
+      if (((from_bitField1_ & 0x00000002) != 0)) {
+        result.timeoutSec_ = timeoutSec_;
+        to_bitField0_ |= 0x20000000;
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -4155,10 +4500,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasLoadBalancingScheme()) {
-        setLoadBalancingScheme(other.getLoadBalancingScheme());
+        bitField0_ |= 0x00020000;
+        loadBalancingScheme_ = other.loadBalancingScheme_;
+        onChanged();
       }
       if (other.hasLocalityLbPolicy()) {
-        setLocalityLbPolicy(other.getLocalityLbPolicy());
+        bitField0_ |= 0x00040000;
+        localityLbPolicy_ = other.localityLbPolicy_;
+        onChanged();
       }
       if (other.hasLogConfig()) {
         mergeLogConfig(other.getLogConfig());
@@ -4188,7 +4537,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasProtocol()) {
-        setProtocol(other.getProtocol());
+        bitField0_ |= 0x04000000;
+        protocol_ = other.protocol_;
+        onChanged();
       }
       if (other.hasRegion()) {
         bitField0_ |= 0x08000000;
@@ -4209,7 +4560,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasSessionAffinity()) {
-        setSessionAffinity(other.getSessionAffinity());
+        bitField0_ |= 0x80000000;
+        sessionAffinity_ = other.sessionAffinity_;
+        onChanged();
+      }
+      if (other.hasSubsetting()) {
+        mergeSubsetting(other.getSubsetting());
       }
       if (other.hasTimeoutSec()) {
         setTimeoutSec(other.getTimeoutSec());
@@ -4251,12 +4607,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Lifetime of cookies in seconds. Only applicable if the loadBalancingScheme is EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, the protocol is HTTP or HTTPS, and the sessionAffinity is GENERATED_COOKIE, or HTTP_COOKIE.
-     * If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400).
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>int32 affinity_cookie_ttl_sec = 369996954;</code>
+     * <code>optional int32 affinity_cookie_ttl_sec = 369996954;</code>
      *
      * @return Whether the affinityCookieTtlSec field is set.
      */
@@ -4268,12 +4622,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Lifetime of cookies in seconds. Only applicable if the loadBalancingScheme is EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, the protocol is HTTP or HTTPS, and the sessionAffinity is GENERATED_COOKIE, or HTTP_COOKIE.
-     * If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400).
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>int32 affinity_cookie_ttl_sec = 369996954;</code>
+     * <code>optional int32 affinity_cookie_ttl_sec = 369996954;</code>
      *
      * @return The affinityCookieTtlSec.
      */
@@ -4285,12 +4637,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Lifetime of cookies in seconds. Only applicable if the loadBalancingScheme is EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, the protocol is HTTP or HTTPS, and the sessionAffinity is GENERATED_COOKIE, or HTTP_COOKIE.
-     * If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400).
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>int32 affinity_cookie_ttl_sec = 369996954;</code>
+     * <code>optional int32 affinity_cookie_ttl_sec = 369996954;</code>
      *
      * @param value The affinityCookieTtlSec to set.
      * @return This builder for chaining.
@@ -4305,12 +4655,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Lifetime of cookies in seconds. Only applicable if the loadBalancingScheme is EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, the protocol is HTTP or HTTPS, and the sessionAffinity is GENERATED_COOKIE, or HTTP_COOKIE.
-     * If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400).
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>int32 affinity_cookie_ttl_sec = 369996954;</code>
+     * <code>optional int32 affinity_cookie_ttl_sec = 369996954;</code>
      *
      * @return This builder for chaining.
      */
@@ -4679,10 +5027,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
+     * Cloud CDN configuration for this BackendService. Only available for specified load balancer types.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;
+     * </code>
      *
      * @return Whether the cdnPolicy field is set.
      */
@@ -4693,10 +5042,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
+     * Cloud CDN configuration for this BackendService. Only available for specified load balancer types.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;
+     * </code>
      *
      * @return The cdnPolicy.
      */
@@ -4713,10 +5063,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
+     * Cloud CDN configuration for this BackendService. Only available for specified load balancer types.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;
+     * </code>
      */
     public Builder setCdnPolicy(com.google.cloud.compute.v1.BackendServiceCdnPolicy value) {
       if (cdnPolicyBuilder_ == null) {
@@ -4735,10 +5086,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
+     * Cloud CDN configuration for this BackendService. Only available for specified load balancer types.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;
+     * </code>
      */
     public Builder setCdnPolicy(
         com.google.cloud.compute.v1.BackendServiceCdnPolicy.Builder builderForValue) {
@@ -4755,10 +5107,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
+     * Cloud CDN configuration for this BackendService. Only available for specified load balancer types.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;
+     * </code>
      */
     public Builder mergeCdnPolicy(com.google.cloud.compute.v1.BackendServiceCdnPolicy value) {
       if (cdnPolicyBuilder_ == null) {
@@ -4784,10 +5137,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
+     * Cloud CDN configuration for this BackendService. Only available for specified load balancer types.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;
+     * </code>
      */
     public Builder clearCdnPolicy() {
       if (cdnPolicyBuilder_ == null) {
@@ -4803,10 +5157,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
+     * Cloud CDN configuration for this BackendService. Only available for specified load balancer types.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;
+     * </code>
      */
     public com.google.cloud.compute.v1.BackendServiceCdnPolicy.Builder getCdnPolicyBuilder() {
       bitField0_ |= 0x00000004;
@@ -4817,10 +5172,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
+     * Cloud CDN configuration for this BackendService. Only available for specified load balancer types.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;
+     * </code>
      */
     public com.google.cloud.compute.v1.BackendServiceCdnPolicyOrBuilder getCdnPolicyOrBuilder() {
       if (cdnPolicyBuilder_ != null) {
@@ -4835,10 +5191,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
+     * Cloud CDN configuration for this BackendService. Only available for specified load balancer types.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.BackendServiceCdnPolicy,
@@ -4864,17 +5221,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.CircuitBreakersOrBuilder>
         circuitBreakersBuilder_;
     /**
-     *
-     *
-     * <pre>
-     * Settings controlling the volume of connections to a backend service. If not set, this feature is considered disabled.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
+     * <code>optional .google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
      *
      * @return Whether the circuitBreakers field is set.
      */
@@ -4882,17 +5229,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     *
-     *
-     * <pre>
-     * Settings controlling the volume of connections to a backend service. If not set, this feature is considered disabled.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
+     * <code>optional .google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
      *
      * @return The circuitBreakers.
      */
@@ -4906,17 +5243,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
-     * <pre>
-     * Settings controlling the volume of connections to a backend service. If not set, this feature is considered disabled.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
+     * <code>optional .google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
      */
     public Builder setCircuitBreakers(com.google.cloud.compute.v1.CircuitBreakers value) {
       if (circuitBreakersBuilder_ == null) {
@@ -4932,17 +5259,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * Settings controlling the volume of connections to a backend service. If not set, this feature is considered disabled.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
+     * <code>optional .google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
      */
     public Builder setCircuitBreakers(
         com.google.cloud.compute.v1.CircuitBreakers.Builder builderForValue) {
@@ -4956,17 +5273,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * Settings controlling the volume of connections to a backend service. If not set, this feature is considered disabled.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
+     * <code>optional .google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
      */
     public Builder mergeCircuitBreakers(com.google.cloud.compute.v1.CircuitBreakers value) {
       if (circuitBreakersBuilder_ == null) {
@@ -4989,17 +5296,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * Settings controlling the volume of connections to a backend service. If not set, this feature is considered disabled.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
+     * <code>optional .google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
      */
     public Builder clearCircuitBreakers() {
       if (circuitBreakersBuilder_ == null) {
@@ -5012,17 +5309,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * Settings controlling the volume of connections to a backend service. If not set, this feature is considered disabled.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
+     * <code>optional .google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
      */
     public com.google.cloud.compute.v1.CircuitBreakers.Builder getCircuitBreakersBuilder() {
       bitField0_ |= 0x00000008;
@@ -5030,17 +5317,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       return getCircuitBreakersFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
-     * <pre>
-     * Settings controlling the volume of connections to a backend service. If not set, this feature is considered disabled.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
+     * <code>optional .google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
      */
     public com.google.cloud.compute.v1.CircuitBreakersOrBuilder getCircuitBreakersOrBuilder() {
       if (circuitBreakersBuilder_ != null) {
@@ -5052,17 +5329,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
-     * <pre>
-     * Settings controlling the volume of connections to a backend service. If not set, this feature is considered disabled.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
+     * <code>optional .google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.CircuitBreakers,
@@ -5088,7 +5355,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.ConnectionDrainingOrBuilder>
         connectionDrainingBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code>
+     * <code>optional .google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;
+     * </code>
      *
      * @return Whether the connectionDraining field is set.
      */
@@ -5096,7 +5364,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code>
+     * <code>optional .google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;
+     * </code>
      *
      * @return The connectionDraining.
      */
@@ -5109,7 +5378,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         return connectionDrainingBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;
+     * </code>
+     */
     public Builder setConnectionDraining(com.google.cloud.compute.v1.ConnectionDraining value) {
       if (connectionDrainingBuilder_ == null) {
         if (value == null) {
@@ -5123,7 +5395,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;
+     * </code>
+     */
     public Builder setConnectionDraining(
         com.google.cloud.compute.v1.ConnectionDraining.Builder builderForValue) {
       if (connectionDrainingBuilder_ == null) {
@@ -5135,7 +5410,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;
+     * </code>
+     */
     public Builder mergeConnectionDraining(com.google.cloud.compute.v1.ConnectionDraining value) {
       if (connectionDrainingBuilder_ == null) {
         if (((bitField0_ & 0x00000010) != 0)
@@ -5156,7 +5434,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;
+     * </code>
+     */
     public Builder clearConnectionDraining() {
       if (connectionDrainingBuilder_ == null) {
         connectionDraining_ = null;
@@ -5167,13 +5448,19 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
-    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;
+     * </code>
+     */
     public com.google.cloud.compute.v1.ConnectionDraining.Builder getConnectionDrainingBuilder() {
       bitField0_ |= 0x00000010;
       onChanged();
       return getConnectionDrainingFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;
+     * </code>
+     */
     public com.google.cloud.compute.v1.ConnectionDrainingOrBuilder
         getConnectionDrainingOrBuilder() {
       if (connectionDrainingBuilder_ != null) {
@@ -5184,7 +5471,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             : connectionDraining_;
       }
     }
-    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code> */
+    /**
+     * <code>optional .google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ConnectionDraining,
             com.google.cloud.compute.v1.ConnectionDraining.Builder,
@@ -5212,14 +5502,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
+     * <code>
+     * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
      * </code>
      *
      * @return Whether the consistentHash field is set.
@@ -5231,14 +5518,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
+     * <code>
+     * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
      * </code>
      *
      * @return The consistentHash.
@@ -5256,14 +5540,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
+     * <code>
+     * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
      * </code>
      */
     public Builder setConsistentHash(
@@ -5284,14 +5565,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
+     * <code>
+     * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
      * </code>
      */
     public Builder setConsistentHash(
@@ -5309,14 +5587,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
+     * <code>
+     * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
      * </code>
      */
     public Builder mergeConsistentHash(
@@ -5346,14 +5621,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
+     * <code>
+     * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
      * </code>
      */
     public Builder clearConsistentHash() {
@@ -5370,14 +5642,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
+     * <code>
+     * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
      * </code>
      */
     public com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings.Builder
@@ -5390,14 +5659,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
+     * <code>
+     * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
      * </code>
      */
     public com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsOrBuilder
@@ -5414,14 +5680,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
+     * <code>
+     * optional .google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -5449,7 +5712,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -5463,7 +5726,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -5485,7 +5748,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -5507,7 +5770,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -5528,7 +5791,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -5545,7 +5808,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -5574,7 +5837,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied requests.
+     * Headers that the load balancer adds to proxied requests. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
      * </pre>
      *
      * <code>repeated string custom_request_headers = 27977992;</code>
@@ -5588,7 +5851,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied requests.
+     * Headers that the load balancer adds to proxied requests. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
      * </pre>
      *
      * <code>repeated string custom_request_headers = 27977992;</code>
@@ -5602,7 +5865,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied requests.
+     * Headers that the load balancer adds to proxied requests. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
      * </pre>
      *
      * <code>repeated string custom_request_headers = 27977992;</code>
@@ -5617,7 +5880,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied requests.
+     * Headers that the load balancer adds to proxied requests. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
      * </pre>
      *
      * <code>repeated string custom_request_headers = 27977992;</code>
@@ -5632,7 +5895,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied requests.
+     * Headers that the load balancer adds to proxied requests. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
      * </pre>
      *
      * <code>repeated string custom_request_headers = 27977992;</code>
@@ -5654,7 +5917,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied requests.
+     * Headers that the load balancer adds to proxied requests. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
      * </pre>
      *
      * <code>repeated string custom_request_headers = 27977992;</code>
@@ -5675,7 +5938,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied requests.
+     * Headers that the load balancer adds to proxied requests. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
      * </pre>
      *
      * <code>repeated string custom_request_headers = 27977992;</code>
@@ -5693,7 +5956,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied requests.
+     * Headers that the load balancer adds to proxied requests. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
      * </pre>
      *
      * <code>repeated string custom_request_headers = 27977992;</code>
@@ -5710,7 +5973,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied requests.
+     * Headers that the load balancer adds to proxied requests. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
      * </pre>
      *
      * <code>repeated string custom_request_headers = 27977992;</code>
@@ -5743,7 +6006,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * Headers that the load balancer adds to proxied responses. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
      * </pre>
      *
      * <code>repeated string custom_response_headers = 387539094;</code>
@@ -5757,7 +6020,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * Headers that the load balancer adds to proxied responses. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
      * </pre>
      *
      * <code>repeated string custom_response_headers = 387539094;</code>
@@ -5771,7 +6034,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * Headers that the load balancer adds to proxied responses. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
      * </pre>
      *
      * <code>repeated string custom_response_headers = 387539094;</code>
@@ -5786,7 +6049,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * Headers that the load balancer adds to proxied responses. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
      * </pre>
      *
      * <code>repeated string custom_response_headers = 387539094;</code>
@@ -5801,7 +6064,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * Headers that the load balancer adds to proxied responses. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
      * </pre>
      *
      * <code>repeated string custom_response_headers = 387539094;</code>
@@ -5823,7 +6086,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * Headers that the load balancer adds to proxied responses. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
      * </pre>
      *
      * <code>repeated string custom_response_headers = 387539094;</code>
@@ -5844,7 +6107,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * Headers that the load balancer adds to proxied responses. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
      * </pre>
      *
      * <code>repeated string custom_response_headers = 387539094;</code>
@@ -5862,7 +6125,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * Headers that the load balancer adds to proxied responses. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
      * </pre>
      *
      * <code>repeated string custom_response_headers = 387539094;</code>
@@ -5879,7 +6142,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * Headers that the load balancer adds to proxied responses. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
      * </pre>
      *
      * <code>repeated string custom_response_headers = 387539094;</code>
@@ -5906,7 +6169,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -5920,7 +6183,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -5942,7 +6205,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -5964,7 +6227,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -5985,7 +6248,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -6002,7 +6265,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -6023,10 +6286,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, enables Cloud CDN for the backend service. Only applicable if the loadBalancingScheme is EXTERNAL and the protocol is HTTP or HTTPS.
+     * If true, enables Cloud CDN for the backend service of an external HTTP(S) load balancer.
      * </pre>
      *
-     * <code>bool enable_c_d_n = 250733499;</code>
+     * <code>optional bool enable_c_d_n = 250733499;</code>
      *
      * @return Whether the enableCDN field is set.
      */
@@ -6038,10 +6301,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, enables Cloud CDN for the backend service. Only applicable if the loadBalancingScheme is EXTERNAL and the protocol is HTTP or HTTPS.
+     * If true, enables Cloud CDN for the backend service of an external HTTP(S) load balancer.
      * </pre>
      *
-     * <code>bool enable_c_d_n = 250733499;</code>
+     * <code>optional bool enable_c_d_n = 250733499;</code>
      *
      * @return The enableCDN.
      */
@@ -6053,10 +6316,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, enables Cloud CDN for the backend service. Only applicable if the loadBalancingScheme is EXTERNAL and the protocol is HTTP or HTTPS.
+     * If true, enables Cloud CDN for the backend service of an external HTTP(S) load balancer.
      * </pre>
      *
-     * <code>bool enable_c_d_n = 250733499;</code>
+     * <code>optional bool enable_c_d_n = 250733499;</code>
      *
      * @param value The enableCDN to set.
      * @return This builder for chaining.
@@ -6071,10 +6334,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, enables Cloud CDN for the backend service. Only applicable if the loadBalancingScheme is EXTERNAL and the protocol is HTTP or HTTPS.
+     * If true, enables Cloud CDN for the backend service of an external HTTP(S) load balancer.
      * </pre>
      *
-     * <code>bool enable_c_d_n = 250733499;</code>
+     * <code>optional bool enable_c_d_n = 250733499;</code>
      *
      * @return This builder for chaining.
      */
@@ -6095,10 +6358,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
+     * Requires at least one backend instance group to be defined as a backup (failover) backend. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview).
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
+     * <code>
+     * optional .google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
      * </code>
      *
      * @return Whether the failoverPolicy field is set.
@@ -6110,10 +6374,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
+     * Requires at least one backend instance group to be defined as a backup (failover) backend. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview).
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
+     * <code>
+     * optional .google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
      * </code>
      *
      * @return The failoverPolicy.
@@ -6131,10 +6396,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
+     * Requires at least one backend instance group to be defined as a backup (failover) backend. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview).
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
+     * <code>
+     * optional .google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
      * </code>
      */
     public Builder setFailoverPolicy(
@@ -6155,10 +6421,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
+     * Requires at least one backend instance group to be defined as a backup (failover) backend. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview).
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
+     * <code>
+     * optional .google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
      * </code>
      */
     public Builder setFailoverPolicy(
@@ -6176,10 +6443,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
+     * Requires at least one backend instance group to be defined as a backup (failover) backend. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview).
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
+     * <code>
+     * optional .google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
      * </code>
      */
     public Builder mergeFailoverPolicy(
@@ -6207,10 +6475,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
+     * Requires at least one backend instance group to be defined as a backup (failover) backend. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview).
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
+     * <code>
+     * optional .google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
      * </code>
      */
     public Builder clearFailoverPolicy() {
@@ -6227,10 +6496,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
+     * Requires at least one backend instance group to be defined as a backup (failover) backend. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview).
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
+     * <code>
+     * optional .google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
      * </code>
      */
     public com.google.cloud.compute.v1.BackendServiceFailoverPolicy.Builder
@@ -6243,10 +6513,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
+     * Requires at least one backend instance group to be defined as a backup (failover) backend. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview).
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
+     * <code>
+     * optional .google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
      * </code>
      */
     public com.google.cloud.compute.v1.BackendServiceFailoverPolicyOrBuilder
@@ -6263,10 +6534,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
+     * Requires at least one backend instance group to be defined as a backup (failover) backend. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview).
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
+     * <code>
+     * optional .google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -6291,11 +6563,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a BackendService.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a BackendService.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return Whether the fingerprint field is set.
      */
@@ -6306,11 +6577,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a BackendService.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a BackendService.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The fingerprint.
      */
@@ -6329,11 +6599,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a BackendService.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a BackendService.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The bytes for fingerprint.
      */
@@ -6352,11 +6621,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a BackendService.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a BackendService.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The fingerprint to set.
      * @return This builder for chaining.
@@ -6374,11 +6642,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a BackendService.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a BackendService.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return This builder for chaining.
      */
@@ -6392,11 +6659,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a BackendService.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a BackendService.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The bytes for fingerprint to set.
      * @return This builder for chaining.
@@ -6425,7 +6691,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
+     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -6439,7 +6705,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
+     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -6453,7 +6719,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
+     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -6468,7 +6734,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
+     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -6483,7 +6749,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
+     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -6505,7 +6771,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
+     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -6526,7 +6792,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
+     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -6544,7 +6810,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
+     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -6561,7 +6827,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
+     * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -6593,7 +6859,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
      *
      * @return Whether the iap field is set.
      */
@@ -6607,7 +6873,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
      *
      * @return The iap.
      */
@@ -6627,7 +6893,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
      */
     public Builder setIap(com.google.cloud.compute.v1.BackendServiceIAP value) {
       if (iapBuilder_ == null) {
@@ -6649,7 +6915,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
      */
     public Builder setIap(com.google.cloud.compute.v1.BackendServiceIAP.Builder builderForValue) {
       if (iapBuilder_ == null) {
@@ -6668,7 +6934,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
      */
     public Builder mergeIap(com.google.cloud.compute.v1.BackendServiceIAP value) {
       if (iapBuilder_ == null) {
@@ -6696,7 +6962,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
      */
     public Builder clearIap() {
       if (iapBuilder_ == null) {
@@ -6715,7 +6981,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
      */
     public com.google.cloud.compute.v1.BackendServiceIAP.Builder getIapBuilder() {
       bitField0_ |= 0x00004000;
@@ -6729,7 +6995,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
      */
     public com.google.cloud.compute.v1.BackendServiceIAPOrBuilder getIapOrBuilder() {
       if (iapBuilder_ != null) {
@@ -6747,7 +7013,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.BackendServiceIAP,
@@ -6774,7 +7040,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -6789,7 +7055,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -6804,7 +7070,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -6822,7 +7088,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -6841,7 +7107,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of resource. Always compute#backendService for backend services.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -6855,7 +7121,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of resource. Always compute#backendService for backend services.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -6877,7 +7143,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of resource. Always compute#backendService for backend services.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -6899,7 +7165,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of resource. Always compute#backendService for backend services.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -6920,7 +7186,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of resource. Always compute#backendService for backend services.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -6937,7 +7203,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of resource. Always compute#backendService for backend services.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -6953,21 +7219,19 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int loadBalancingScheme_ = 0;
+    private java.lang.Object loadBalancingScheme_ = "";
     /**
      *
      *
      * <pre>
-     * Specifies the load balancer type. Choose EXTERNAL for external HTTP(S), SSL Proxy, TCP Proxy and Network Load Balancing. Choose  INTERNAL for Internal TCP/UDP Load Balancing. Choose  INTERNAL_MANAGED for Internal HTTP(S) Load Balancing.  INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Check the LoadBalancingScheme enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
-     * </code>
+     * <code>optional string load_balancing_scheme = 363890244;</code>
      *
      * @return Whether the loadBalancingScheme field is set.
      */
-    @java.lang.Override
     public boolean hasLoadBalancingScheme() {
       return ((bitField0_ & 0x00020000) != 0);
     }
@@ -6975,34 +7239,65 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the load balancer type. Choose EXTERNAL for external HTTP(S), SSL Proxy, TCP Proxy and Network Load Balancing. Choose  INTERNAL for Internal TCP/UDP Load Balancing. Choose  INTERNAL_MANAGED for Internal HTTP(S) Load Balancing.  INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Check the LoadBalancingScheme enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
-     * </code>
+     * <code>optional string load_balancing_scheme = 363890244;</code>
      *
-     * @return The enum numeric value on the wire for loadBalancingScheme.
+     * @return The loadBalancingScheme.
      */
-    @java.lang.Override
-    public int getLoadBalancingSchemeValue() {
-      return loadBalancingScheme_;
+    public java.lang.String getLoadBalancingScheme() {
+      java.lang.Object ref = loadBalancingScheme_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        loadBalancingScheme_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * Specifies the load balancer type. Choose EXTERNAL for external HTTP(S), SSL Proxy, TCP Proxy and Network Load Balancing. Choose  INTERNAL for Internal TCP/UDP Load Balancing. Choose  INTERNAL_MANAGED for Internal HTTP(S) Load Balancing.  INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Check the LoadBalancingScheme enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
-     * </code>
+     * <code>optional string load_balancing_scheme = 363890244;</code>
      *
-     * @param value The enum numeric value on the wire for loadBalancingScheme to set.
+     * @return The bytes for loadBalancingScheme.
+     */
+    public com.google.protobuf.ByteString getLoadBalancingSchemeBytes() {
+      java.lang.Object ref = loadBalancingScheme_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        loadBalancingScheme_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Check the LoadBalancingScheme enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string load_balancing_scheme = 363890244;</code>
+     *
+     * @param value The loadBalancingScheme to set.
      * @return This builder for chaining.
      */
-    public Builder setLoadBalancingSchemeValue(int value) {
+    public Builder setLoadBalancingScheme(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00020000;
       loadBalancingScheme_ = value;
       onChanged();
@@ -7012,95 +7307,57 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the load balancer type. Choose EXTERNAL for external HTTP(S), SSL Proxy, TCP Proxy and Network Load Balancing. Choose  INTERNAL for Internal TCP/UDP Load Balancing. Choose  INTERNAL_MANAGED for Internal HTTP(S) Load Balancing.  INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Check the LoadBalancingScheme enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
-     * </code>
-     *
-     * @return The loadBalancingScheme.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.BackendService.LoadBalancingScheme getLoadBalancingScheme() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.BackendService.LoadBalancingScheme result =
-          com.google.cloud.compute.v1.BackendService.LoadBalancingScheme.valueOf(
-              loadBalancingScheme_);
-      return result == null
-          ? com.google.cloud.compute.v1.BackendService.LoadBalancingScheme.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the load balancer type. Choose EXTERNAL for external HTTP(S), SSL Proxy, TCP Proxy and Network Load Balancing. Choose  INTERNAL for Internal TCP/UDP Load Balancing. Choose  INTERNAL_MANAGED for Internal HTTP(S) Load Balancing.  INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
-     * </code>
-     *
-     * @param value The loadBalancingScheme to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLoadBalancingScheme(
-        com.google.cloud.compute.v1.BackendService.LoadBalancingScheme value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00020000;
-      loadBalancingScheme_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the load balancer type. Choose EXTERNAL for external HTTP(S), SSL Proxy, TCP Proxy and Network Load Balancing. Choose  INTERNAL for Internal TCP/UDP Load Balancing. Choose  INTERNAL_MANAGED for Internal HTTP(S) Load Balancing.  INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
-     * </code>
+     * <code>optional string load_balancing_scheme = 363890244;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearLoadBalancingScheme() {
       bitField0_ = (bitField0_ & ~0x00020000);
-      loadBalancingScheme_ = 0;
+      loadBalancingScheme_ = getDefaultInstance().getLoadBalancingScheme();
       onChanged();
       return this;
     }
-
-    private int localityLbPolicy_ = 0;
     /**
      *
      *
      * <pre>
-     * The load balancing algorithm used within the scope of the locality. The possible values are:
-     * - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default.
-     * - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests.
-     * - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests.
-     * - RANDOM: The load balancer selects a random healthy host.
-     * - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
-     * - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect.
-     * Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Check the LoadBalancingScheme enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;
-     * </code>
+     * <code>optional string load_balancing_scheme = 363890244;</code>
+     *
+     * @param value The bytes for loadBalancingScheme to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoadBalancingSchemeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00020000;
+      loadBalancingScheme_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object localityLbPolicy_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the LocalityLbPolicy enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string locality_lb_policy = 131431487;</code>
      *
      * @return Whether the localityLbPolicy field is set.
      */
-    @java.lang.Override
     public boolean hasLocalityLbPolicy() {
       return ((bitField0_ & 0x00040000) != 0);
     }
@@ -7108,56 +7365,65 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The load balancing algorithm used within the scope of the locality. The possible values are:
-     * - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default.
-     * - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests.
-     * - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests.
-     * - RANDOM: The load balancer selects a random healthy host.
-     * - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
-     * - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect.
-     * Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the LocalityLbPolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;
-     * </code>
+     * <code>optional string locality_lb_policy = 131431487;</code>
      *
-     * @return The enum numeric value on the wire for localityLbPolicy.
+     * @return The localityLbPolicy.
      */
-    @java.lang.Override
-    public int getLocalityLbPolicyValue() {
-      return localityLbPolicy_;
+    public java.lang.String getLocalityLbPolicy() {
+      java.lang.Object ref = localityLbPolicy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        localityLbPolicy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * The load balancing algorithm used within the scope of the locality. The possible values are:
-     * - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default.
-     * - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests.
-     * - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests.
-     * - RANDOM: The load balancer selects a random healthy host.
-     * - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
-     * - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect.
-     * Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the LocalityLbPolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;
-     * </code>
+     * <code>optional string locality_lb_policy = 131431487;</code>
      *
-     * @param value The enum numeric value on the wire for localityLbPolicy to set.
+     * @return The bytes for localityLbPolicy.
+     */
+    public com.google.protobuf.ByteString getLocalityLbPolicyBytes() {
+      java.lang.Object ref = localityLbPolicy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        localityLbPolicy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the LocalityLbPolicy enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string locality_lb_policy = 131431487;</code>
+     *
+     * @param value The localityLbPolicy to set.
      * @return This builder for chaining.
      */
-    public Builder setLocalityLbPolicyValue(int value) {
+    public Builder setLocalityLbPolicy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00040000;
       localityLbPolicy_ = value;
       onChanged();
@@ -7167,67 +7433,17 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The load balancing algorithm used within the scope of the locality. The possible values are:
-     * - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default.
-     * - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests.
-     * - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests.
-     * - RANDOM: The load balancer selects a random healthy host.
-     * - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
-     * - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect.
-     * Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the LocalityLbPolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;
-     * </code>
+     * <code>optional string locality_lb_policy = 131431487;</code>
      *
-     * @return The localityLbPolicy.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.BackendService.LocalityLbPolicy getLocalityLbPolicy() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.BackendService.LocalityLbPolicy result =
-          com.google.cloud.compute.v1.BackendService.LocalityLbPolicy.valueOf(localityLbPolicy_);
-      return result == null
-          ? com.google.cloud.compute.v1.BackendService.LocalityLbPolicy.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The load balancing algorithm used within the scope of the locality. The possible values are:
-     * - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default.
-     * - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests.
-     * - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests.
-     * - RANDOM: The load balancer selects a random healthy host.
-     * - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
-     * - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect.
-     * Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;
-     * </code>
-     *
-     * @param value The localityLbPolicy to set.
      * @return This builder for chaining.
      */
-    public Builder setLocalityLbPolicy(
-        com.google.cloud.compute.v1.BackendService.LocalityLbPolicy value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00040000;
-      localityLbPolicy_ = value.getNumber();
+    public Builder clearLocalityLbPolicy() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      localityLbPolicy_ = getDefaultInstance().getLocalityLbPolicy();
       onChanged();
       return this;
     }
@@ -7235,29 +7451,22 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The load balancing algorithm used within the scope of the locality. The possible values are:
-     * - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default.
-     * - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests.
-     * - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests.
-     * - RANDOM: The load balancer selects a random healthy host.
-     * - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
-     * - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect.
-     * Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the LocalityLbPolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;
-     * </code>
+     * <code>optional string locality_lb_policy = 131431487;</code>
      *
+     * @param value The bytes for localityLbPolicy to set.
      * @return This builder for chaining.
      */
-    public Builder clearLocalityLbPolicy() {
-      bitField0_ = (bitField0_ & ~0x00040000);
-      localityLbPolicy_ = 0;
+    public Builder setLocalityLbPolicyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00040000;
+      localityLbPolicy_ = value;
       onChanged();
       return this;
     }
@@ -7275,7 +7484,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;
+     * </code>
      *
      * @return Whether the logConfig field is set.
      */
@@ -7289,7 +7499,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;
+     * </code>
      *
      * @return The logConfig.
      */
@@ -7309,7 +7520,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;
+     * </code>
      */
     public Builder setLogConfig(com.google.cloud.compute.v1.BackendServiceLogConfig value) {
       if (logConfigBuilder_ == null) {
@@ -7331,7 +7543,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;
+     * </code>
      */
     public Builder setLogConfig(
         com.google.cloud.compute.v1.BackendServiceLogConfig.Builder builderForValue) {
@@ -7351,7 +7564,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;
+     * </code>
      */
     public Builder mergeLogConfig(com.google.cloud.compute.v1.BackendServiceLogConfig value) {
       if (logConfigBuilder_ == null) {
@@ -7380,7 +7594,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;
+     * </code>
      */
     public Builder clearLogConfig() {
       if (logConfigBuilder_ == null) {
@@ -7399,7 +7614,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;
+     * </code>
      */
     public com.google.cloud.compute.v1.BackendServiceLogConfig.Builder getLogConfigBuilder() {
       bitField0_ |= 0x00080000;
@@ -7413,7 +7629,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;
+     * </code>
      */
     public com.google.cloud.compute.v1.BackendServiceLogConfigOrBuilder getLogConfigOrBuilder() {
       if (logConfigBuilder_ != null) {
@@ -7431,7 +7648,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
+     * <code>optional .google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.BackendServiceLogConfig,
@@ -7460,12 +7678,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
-     * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
-     * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed. If not specified, there will be no timeout limit, i.e. the maximum duration is infinite. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     * <code>optional .google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
      *
      * @return Whether the maxStreamDuration field is set.
      */
@@ -7476,12 +7692,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
-     * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
-     * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed. If not specified, there will be no timeout limit, i.e. the maximum duration is infinite. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     * <code>optional .google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
      *
      * @return The maxStreamDuration.
      */
@@ -7498,12 +7712,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
-     * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
-     * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed. If not specified, there will be no timeout limit, i.e. the maximum duration is infinite. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     * <code>optional .google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
      */
     public Builder setMaxStreamDuration(com.google.cloud.compute.v1.Duration value) {
       if (maxStreamDurationBuilder_ == null) {
@@ -7522,12 +7734,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
-     * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
-     * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed. If not specified, there will be no timeout limit, i.e. the maximum duration is infinite. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     * <code>optional .google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
      */
     public Builder setMaxStreamDuration(
         com.google.cloud.compute.v1.Duration.Builder builderForValue) {
@@ -7544,12 +7754,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
-     * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
-     * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed. If not specified, there will be no timeout limit, i.e. the maximum duration is infinite. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     * <code>optional .google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
      */
     public Builder mergeMaxStreamDuration(com.google.cloud.compute.v1.Duration value) {
       if (maxStreamDurationBuilder_ == null) {
@@ -7574,12 +7782,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
-     * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
-     * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed. If not specified, there will be no timeout limit, i.e. the maximum duration is infinite. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     * <code>optional .google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
      */
     public Builder clearMaxStreamDuration() {
       if (maxStreamDurationBuilder_ == null) {
@@ -7595,12 +7801,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
-     * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
-     * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed. If not specified, there will be no timeout limit, i.e. the maximum duration is infinite. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     * <code>optional .google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getMaxStreamDurationBuilder() {
       bitField0_ |= 0x00100000;
@@ -7611,12 +7815,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
-     * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
-     * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed. If not specified, there will be no timeout limit, i.e. the maximum duration is infinite. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     * <code>optional .google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
      */
     public com.google.cloud.compute.v1.DurationOrBuilder getMaxStreamDurationOrBuilder() {
       if (maxStreamDurationBuilder_ != null) {
@@ -7631,12 +7833,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
-     * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
-     * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed. If not specified, there will be no timeout limit, i.e. the maximum duration is infinite. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     * <code>optional .google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Duration,
@@ -7663,7 +7863,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -7677,7 +7877,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -7699,7 +7899,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -7721,7 +7921,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -7742,7 +7942,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -7759,7 +7959,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -7783,7 +7983,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The URL of the network to which this backend service belongs. This field can only be specified when the load balancing scheme is set to INTERNAL.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @return Whether the network field is set.
      */
@@ -7797,7 +7997,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The URL of the network to which this backend service belongs. This field can only be specified when the load balancing scheme is set to INTERNAL.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @return The network.
      */
@@ -7819,7 +8019,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The URL of the network to which this backend service belongs. This field can only be specified when the load balancing scheme is set to INTERNAL.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @return The bytes for network.
      */
@@ -7841,7 +8041,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The URL of the network to which this backend service belongs. This field can only be specified when the load balancing scheme is set to INTERNAL.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @param value The network to set.
      * @return This builder for chaining.
@@ -7862,7 +8062,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The URL of the network to which this backend service belongs. This field can only be specified when the load balancing scheme is set to INTERNAL.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @return This builder for chaining.
      */
@@ -7879,7 +8079,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The URL of the network to which this backend service belongs. This field can only be specified when the load balancing scheme is set to INTERNAL.
      * </pre>
      *
-     * <code>string network = 232872494;</code>
+     * <code>optional string network = 232872494;</code>
      *
      * @param value The bytes for network to set.
      * @return This builder for chaining.
@@ -7905,14 +8105,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
+     * <code>optional .google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;
+     * </code>
      *
      * @return Whether the outlierDetection field is set.
      */
@@ -7923,14 +8120,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
+     * <code>optional .google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;
+     * </code>
      *
      * @return The outlierDetection.
      */
@@ -7947,14 +8141,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
+     * <code>optional .google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;
+     * </code>
      */
     public Builder setOutlierDetection(com.google.cloud.compute.v1.OutlierDetection value) {
       if (outlierDetectionBuilder_ == null) {
@@ -7973,14 +8164,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
+     * <code>optional .google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;
+     * </code>
      */
     public Builder setOutlierDetection(
         com.google.cloud.compute.v1.OutlierDetection.Builder builderForValue) {
@@ -7997,14 +8185,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
+     * <code>optional .google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;
+     * </code>
      */
     public Builder mergeOutlierDetection(com.google.cloud.compute.v1.OutlierDetection value) {
       if (outlierDetectionBuilder_ == null) {
@@ -8030,14 +8215,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
+     * <code>optional .google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;
+     * </code>
      */
     public Builder clearOutlierDetection() {
       if (outlierDetectionBuilder_ == null) {
@@ -8053,14 +8235,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
+     * <code>optional .google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;
+     * </code>
      */
     public com.google.cloud.compute.v1.OutlierDetection.Builder getOutlierDetectionBuilder() {
       bitField0_ |= 0x00800000;
@@ -8071,14 +8250,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
+     * <code>optional .google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;
+     * </code>
      */
     public com.google.cloud.compute.v1.OutlierDetectionOrBuilder getOutlierDetectionOrBuilder() {
       if (outlierDetectionBuilder_ != null) {
@@ -8093,14 +8269,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled.
-     * This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
+     * <code>optional .google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.OutlierDetection,
@@ -8124,11 +8297,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
-     * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port.
+     * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @return Whether the port field is set.
      */
@@ -8140,11 +8312,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
-     * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port.
+     * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @return The port.
      */
@@ -8156,11 +8327,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
-     * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port.
+     * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @param value The port to set.
      * @return This builder for chaining.
@@ -8175,11 +8345,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
-     * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port.
+     * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @return This builder for chaining.
      */
@@ -8195,11 +8364,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL (except Network Load Balancing), INTERNAL_MANAGED, or  INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
-     * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port_name.
+     * A named port on a backend instance group representing the port for communication to the backend VMs in that group. The named port must be [defined on each backend instance group](https://cloud.google.com/load-balancing/docs/backend-service#named_ports). This parameter has no meaning if the backends are NEGs. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port_name.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @return Whether the portName field is set.
      */
@@ -8210,11 +8378,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL (except Network Load Balancing), INTERNAL_MANAGED, or  INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
-     * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port_name.
+     * A named port on a backend instance group representing the port for communication to the backend VMs in that group. The named port must be [defined on each backend instance group](https://cloud.google.com/load-balancing/docs/backend-service#named_ports). This parameter has no meaning if the backends are NEGs. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port_name.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @return The portName.
      */
@@ -8233,11 +8400,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL (except Network Load Balancing), INTERNAL_MANAGED, or  INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
-     * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port_name.
+     * A named port on a backend instance group representing the port for communication to the backend VMs in that group. The named port must be [defined on each backend instance group](https://cloud.google.com/load-balancing/docs/backend-service#named_ports). This parameter has no meaning if the backends are NEGs. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port_name.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @return The bytes for portName.
      */
@@ -8256,11 +8422,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL (except Network Load Balancing), INTERNAL_MANAGED, or  INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
-     * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port_name.
+     * A named port on a backend instance group representing the port for communication to the backend VMs in that group. The named port must be [defined on each backend instance group](https://cloud.google.com/load-balancing/docs/backend-service#named_ports). This parameter has no meaning if the backends are NEGs. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port_name.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @param value The portName to set.
      * @return This builder for chaining.
@@ -8278,11 +8443,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL (except Network Load Balancing), INTERNAL_MANAGED, or  INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
-     * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port_name.
+     * A named port on a backend instance group representing the port for communication to the backend VMs in that group. The named port must be [defined on each backend instance group](https://cloud.google.com/load-balancing/docs/backend-service#named_ports). This parameter has no meaning if the backends are NEGs. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port_name.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @return This builder for chaining.
      */
@@ -8296,11 +8460,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL (except Network Load Balancing), INTERNAL_MANAGED, or  INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
-     * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port_name.
+     * A named port on a backend instance group representing the port for communication to the backend VMs in that group. The named port must be [defined on each backend instance group](https://cloud.google.com/load-balancing/docs/backend-service#named_ports). This parameter has no meaning if the backends are NEGs. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port_name.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @param value The bytes for portName to set.
      * @return This builder for chaining.
@@ -8316,21 +8479,19 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int protocol_ = 0;
+    private java.lang.Object protocol_ = "";
     /**
      *
      *
      * <pre>
-     * The protocol this BackendService uses to communicate with backends.
-     * Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
-     * Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * Check the Protocol enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
+     * <code>optional string protocol = 84577944;</code>
      *
      * @return Whether the protocol field is set.
      */
-    @java.lang.Override
     public boolean hasProtocol() {
       return ((bitField0_ & 0x04000000) != 0);
     }
@@ -8338,34 +8499,65 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The protocol this BackendService uses to communicate with backends.
-     * Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
-     * Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * Check the Protocol enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
+     * <code>optional string protocol = 84577944;</code>
      *
-     * @return The enum numeric value on the wire for protocol.
+     * @return The protocol.
      */
-    @java.lang.Override
-    public int getProtocolValue() {
-      return protocol_;
+    public java.lang.String getProtocol() {
+      java.lang.Object ref = protocol_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        protocol_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * The protocol this BackendService uses to communicate with backends.
-     * Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
-     * Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * Check the Protocol enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
+     * <code>optional string protocol = 84577944;</code>
      *
-     * @param value The enum numeric value on the wire for protocol to set.
+     * @return The bytes for protocol.
+     */
+    public com.google.protobuf.ByteString getProtocolBytes() {
+      java.lang.Object ref = protocol_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        protocol_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * Check the Protocol enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string protocol = 84577944;</code>
+     *
+     * @param value The protocol to set.
      * @return This builder for chaining.
      */
-    public Builder setProtocolValue(int value) {
+    public Builder setProtocol(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x04000000;
       protocol_ = value;
       onChanged();
@@ -8375,44 +8567,17 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The protocol this BackendService uses to communicate with backends.
-     * Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
-     * Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * Check the Protocol enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
+     * <code>optional string protocol = 84577944;</code>
      *
-     * @return The protocol.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.BackendService.Protocol getProtocol() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.BackendService.Protocol result =
-          com.google.cloud.compute.v1.BackendService.Protocol.valueOf(protocol_);
-      return result == null
-          ? com.google.cloud.compute.v1.BackendService.Protocol.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The protocol this BackendService uses to communicate with backends.
-     * Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
-     * Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
-     *
-     * @param value The protocol to set.
      * @return This builder for chaining.
      */
-    public Builder setProtocol(com.google.cloud.compute.v1.BackendService.Protocol value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x04000000;
-      protocol_ = value.getNumber();
+    public Builder clearProtocol() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      protocol_ = getDefaultInstance().getProtocol();
       onChanged();
       return this;
     }
@@ -8420,18 +8585,22 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The protocol this BackendService uses to communicate with backends.
-     * Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
-     * Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * Check the Protocol enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
+     * <code>optional string protocol = 84577944;</code>
      *
+     * @param value The bytes for protocol to set.
      * @return This builder for chaining.
      */
-    public Builder clearProtocol() {
-      bitField0_ = (bitField0_ & ~0x04000000);
-      protocol_ = 0;
+    public Builder setProtocolBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x04000000;
+      protocol_ = value;
       onChanged();
       return this;
     }
@@ -8444,7 +8613,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return Whether the region field is set.
      */
@@ -8458,7 +8627,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The region.
      */
@@ -8480,7 +8649,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The bytes for region.
      */
@@ -8502,7 +8671,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -8523,7 +8692,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return This builder for chaining.
      */
@@ -8540,7 +8709,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.
@@ -8564,7 +8733,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The resource URL for the security policy associated with this backend service.
      * </pre>
      *
-     * <code>string security_policy = 171082513;</code>
+     * <code>optional string security_policy = 171082513;</code>
      *
      * @return Whether the securityPolicy field is set.
      */
@@ -8578,7 +8747,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The resource URL for the security policy associated with this backend service.
      * </pre>
      *
-     * <code>string security_policy = 171082513;</code>
+     * <code>optional string security_policy = 171082513;</code>
      *
      * @return The securityPolicy.
      */
@@ -8600,7 +8769,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The resource URL for the security policy associated with this backend service.
      * </pre>
      *
-     * <code>string security_policy = 171082513;</code>
+     * <code>optional string security_policy = 171082513;</code>
      *
      * @return The bytes for securityPolicy.
      */
@@ -8622,7 +8791,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The resource URL for the security policy associated with this backend service.
      * </pre>
      *
-     * <code>string security_policy = 171082513;</code>
+     * <code>optional string security_policy = 171082513;</code>
      *
      * @param value The securityPolicy to set.
      * @return This builder for chaining.
@@ -8643,7 +8812,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The resource URL for the security policy associated with this backend service.
      * </pre>
      *
-     * <code>string security_policy = 171082513;</code>
+     * <code>optional string security_policy = 171082513;</code>
      *
      * @return This builder for chaining.
      */
@@ -8660,7 +8829,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The resource URL for the security policy associated with this backend service.
      * </pre>
      *
-     * <code>string security_policy = 171082513;</code>
+     * <code>optional string security_policy = 171082513;</code>
      *
      * @param value The bytes for securityPolicy to set.
      * @return This builder for chaining.
@@ -8686,12 +8855,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field specifies the security policy that applies to this backend service. This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     * This field specifies the security policy that applies to this backend service. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
+     * <code>optional .google.cloud.compute.v1.SecuritySettings security_settings = 478649922;
+     * </code>
      *
      * @return Whether the securitySettings field is set.
      */
@@ -8702,12 +8870,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field specifies the security policy that applies to this backend service. This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     * This field specifies the security policy that applies to this backend service. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
+     * <code>optional .google.cloud.compute.v1.SecuritySettings security_settings = 478649922;
+     * </code>
      *
      * @return The securitySettings.
      */
@@ -8724,12 +8891,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field specifies the security policy that applies to this backend service. This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     * This field specifies the security policy that applies to this backend service. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
+     * <code>optional .google.cloud.compute.v1.SecuritySettings security_settings = 478649922;
+     * </code>
      */
     public Builder setSecuritySettings(com.google.cloud.compute.v1.SecuritySettings value) {
       if (securitySettingsBuilder_ == null) {
@@ -8748,12 +8914,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field specifies the security policy that applies to this backend service. This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     * This field specifies the security policy that applies to this backend service. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
+     * <code>optional .google.cloud.compute.v1.SecuritySettings security_settings = 478649922;
+     * </code>
      */
     public Builder setSecuritySettings(
         com.google.cloud.compute.v1.SecuritySettings.Builder builderForValue) {
@@ -8770,12 +8935,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field specifies the security policy that applies to this backend service. This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     * This field specifies the security policy that applies to this backend service. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
+     * <code>optional .google.cloud.compute.v1.SecuritySettings security_settings = 478649922;
+     * </code>
      */
     public Builder mergeSecuritySettings(com.google.cloud.compute.v1.SecuritySettings value) {
       if (securitySettingsBuilder_ == null) {
@@ -8801,12 +8965,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field specifies the security policy that applies to this backend service. This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     * This field specifies the security policy that applies to this backend service. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
+     * <code>optional .google.cloud.compute.v1.SecuritySettings security_settings = 478649922;
+     * </code>
      */
     public Builder clearSecuritySettings() {
       if (securitySettingsBuilder_ == null) {
@@ -8822,12 +8985,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field specifies the security policy that applies to this backend service. This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     * This field specifies the security policy that applies to this backend service. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
+     * <code>optional .google.cloud.compute.v1.SecuritySettings security_settings = 478649922;
+     * </code>
      */
     public com.google.cloud.compute.v1.SecuritySettings.Builder getSecuritySettingsBuilder() {
       bitField0_ |= 0x20000000;
@@ -8838,12 +9000,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field specifies the security policy that applies to this backend service. This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     * This field specifies the security policy that applies to this backend service. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
+     * <code>optional .google.cloud.compute.v1.SecuritySettings security_settings = 478649922;
+     * </code>
      */
     public com.google.cloud.compute.v1.SecuritySettingsOrBuilder getSecuritySettingsOrBuilder() {
       if (securitySettingsBuilder_ != null) {
@@ -8858,12 +9019,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field specifies the security policy that applies to this backend service. This field is applicable to either:
-     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
-     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     * This field specifies the security policy that applies to this backend service. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
+     * <code>optional .google.cloud.compute.v1.SecuritySettings security_settings = 478649922;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.SecuritySettings,
@@ -8890,7 +9050,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -8904,7 +9064,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -8926,7 +9086,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -8948,7 +9108,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -8969,7 +9129,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -8986,7 +9146,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -9002,24 +9162,19 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int sessionAffinity_ = 0;
+    private java.lang.Object sessionAffinity_ = "";
     /**
      *
      *
      * <pre>
-     * Type of session affinity to use. The default is NONE.
-     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
-     * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
-     * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the SessionAffinity enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
-     * </code>
+     * <code>optional string session_affinity = 463888561;</code>
      *
      * @return Whether the sessionAffinity field is set.
      */
-    @java.lang.Override
     public boolean hasSessionAffinity() {
       return ((bitField0_ & 0x80000000) != 0);
     }
@@ -9027,40 +9182,65 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of session affinity to use. The default is NONE.
-     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
-     * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
-     * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the SessionAffinity enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
-     * </code>
+     * <code>optional string session_affinity = 463888561;</code>
      *
-     * @return The enum numeric value on the wire for sessionAffinity.
+     * @return The sessionAffinity.
      */
-    @java.lang.Override
-    public int getSessionAffinityValue() {
-      return sessionAffinity_;
+    public java.lang.String getSessionAffinity() {
+      java.lang.Object ref = sessionAffinity_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sessionAffinity_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * Type of session affinity to use. The default is NONE.
-     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
-     * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
-     * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the SessionAffinity enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
-     * </code>
+     * <code>optional string session_affinity = 463888561;</code>
      *
-     * @param value The enum numeric value on the wire for sessionAffinity to set.
+     * @return The bytes for sessionAffinity.
+     */
+    public com.google.protobuf.ByteString getSessionAffinityBytes() {
+      java.lang.Object ref = sessionAffinity_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sessionAffinity_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the SessionAffinity enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string session_affinity = 463888561;</code>
+     *
+     * @param value The sessionAffinity to set.
      * @return This builder for chaining.
      */
-    public Builder setSessionAffinityValue(int value) {
+    public Builder setSessionAffinity(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x80000000;
       sessionAffinity_ = value;
       onChanged();
@@ -9070,75 +9250,160 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of session affinity to use. The default is NONE.
-     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
-     * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
-     * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the SessionAffinity enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
-     * </code>
-     *
-     * @return The sessionAffinity.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.BackendService.SessionAffinity getSessionAffinity() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.BackendService.SessionAffinity result =
-          com.google.cloud.compute.v1.BackendService.SessionAffinity.valueOf(sessionAffinity_);
-      return result == null
-          ? com.google.cloud.compute.v1.BackendService.SessionAffinity.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Type of session affinity to use. The default is NONE.
-     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
-     * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
-     * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
-     * </code>
-     *
-     * @param value The sessionAffinity to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSessionAffinity(
-        com.google.cloud.compute.v1.BackendService.SessionAffinity value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x80000000;
-      sessionAffinity_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Type of session affinity to use. The default is NONE.
-     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
-     * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
-     * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
-     * </code>
+     * <code>optional string session_affinity = 463888561;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSessionAffinity() {
       bitField0_ = (bitField0_ & ~0x80000000);
-      sessionAffinity_ = 0;
+      sessionAffinity_ = getDefaultInstance().getSessionAffinity();
       onChanged();
       return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the SessionAffinity enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string session_affinity = 463888561;</code>
+     *
+     * @param value The bytes for sessionAffinity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSessionAffinityBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x80000000;
+      sessionAffinity_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.compute.v1.Subsetting subsetting_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.Subsetting,
+            com.google.cloud.compute.v1.Subsetting.Builder,
+            com.google.cloud.compute.v1.SubsettingOrBuilder>
+        subsettingBuilder_;
+    /**
+     * <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code>
+     *
+     * @return Whether the subsetting field is set.
+     */
+    public boolean hasSubsetting() {
+      return ((bitField1_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code>
+     *
+     * @return The subsetting.
+     */
+    public com.google.cloud.compute.v1.Subsetting getSubsetting() {
+      if (subsettingBuilder_ == null) {
+        return subsetting_ == null
+            ? com.google.cloud.compute.v1.Subsetting.getDefaultInstance()
+            : subsetting_;
+      } else {
+        return subsettingBuilder_.getMessage();
+      }
+    }
+    /** <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code> */
+    public Builder setSubsetting(com.google.cloud.compute.v1.Subsetting value) {
+      if (subsettingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        subsetting_ = value;
+        onChanged();
+      } else {
+        subsettingBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000001;
+      return this;
+    }
+    /** <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code> */
+    public Builder setSubsetting(com.google.cloud.compute.v1.Subsetting.Builder builderForValue) {
+      if (subsettingBuilder_ == null) {
+        subsetting_ = builderForValue.build();
+        onChanged();
+      } else {
+        subsettingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000001;
+      return this;
+    }
+    /** <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code> */
+    public Builder mergeSubsetting(com.google.cloud.compute.v1.Subsetting value) {
+      if (subsettingBuilder_ == null) {
+        if (((bitField1_ & 0x00000001) != 0)
+            && subsetting_ != null
+            && subsetting_ != com.google.cloud.compute.v1.Subsetting.getDefaultInstance()) {
+          subsetting_ =
+              com.google.cloud.compute.v1.Subsetting.newBuilder(subsetting_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          subsetting_ = value;
+        }
+        onChanged();
+      } else {
+        subsettingBuilder_.mergeFrom(value);
+      }
+      bitField1_ |= 0x00000001;
+      return this;
+    }
+    /** <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code> */
+    public Builder clearSubsetting() {
+      if (subsettingBuilder_ == null) {
+        subsetting_ = null;
+        onChanged();
+      } else {
+        subsettingBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00000001);
+      return this;
+    }
+    /** <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code> */
+    public com.google.cloud.compute.v1.Subsetting.Builder getSubsettingBuilder() {
+      bitField1_ |= 0x00000001;
+      onChanged();
+      return getSubsettingFieldBuilder().getBuilder();
+    }
+    /** <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code> */
+    public com.google.cloud.compute.v1.SubsettingOrBuilder getSubsettingOrBuilder() {
+      if (subsettingBuilder_ != null) {
+        return subsettingBuilder_.getMessageOrBuilder();
+      } else {
+        return subsetting_ == null
+            ? com.google.cloud.compute.v1.Subsetting.getDefaultInstance()
+            : subsetting_;
+      }
+    }
+    /** <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code> */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.Subsetting,
+            com.google.cloud.compute.v1.Subsetting.Builder,
+            com.google.cloud.compute.v1.SubsettingOrBuilder>
+        getSubsettingFieldBuilder() {
+      if (subsettingBuilder_ == null) {
+        subsettingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.Subsetting,
+                com.google.cloud.compute.v1.Subsetting.Builder,
+                com.google.cloud.compute.v1.SubsettingOrBuilder>(
+                getSubsetting(), getParentForChildren(), isClean());
+        subsetting_ = null;
+      }
+      return subsettingBuilder_;
     }
 
     private int timeoutSec_;
@@ -9146,25 +9411,25 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds. The full range of timeout values allowed is 1 - 2,147,483,647 seconds.
+     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
      * </pre>
      *
-     * <code>int32 timeout_sec = 79994995;</code>
+     * <code>optional int32 timeout_sec = 79994995;</code>
      *
      * @return Whether the timeoutSec field is set.
      */
     @java.lang.Override
     public boolean hasTimeoutSec() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
     /**
      *
      *
      * <pre>
-     * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds. The full range of timeout values allowed is 1 - 2,147,483,647 seconds.
+     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
      * </pre>
      *
-     * <code>int32 timeout_sec = 79994995;</code>
+     * <code>optional int32 timeout_sec = 79994995;</code>
      *
      * @return The timeoutSec.
      */
@@ -9176,16 +9441,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds. The full range of timeout values allowed is 1 - 2,147,483,647 seconds.
+     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
      * </pre>
      *
-     * <code>int32 timeout_sec = 79994995;</code>
+     * <code>optional int32 timeout_sec = 79994995;</code>
      *
      * @param value The timeoutSec to set.
      * @return This builder for chaining.
      */
     public Builder setTimeoutSec(int value) {
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       timeoutSec_ = value;
       onChanged();
       return this;
@@ -9194,15 +9459,15 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds. The full range of timeout values allowed is 1 - 2,147,483,647 seconds.
+     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
      * </pre>
      *
-     * <code>int32 timeout_sec = 79994995;</code>
+     * <code>optional int32 timeout_sec = 79994995;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearTimeoutSec() {
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000002);
       timeoutSec_ = 0;
       onChanged();
       return this;

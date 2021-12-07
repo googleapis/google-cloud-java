@@ -27,11 +27,10 @@ public interface SchedulingOrBuilder
    *
    *
    * <pre>
-   * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
-   * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+   * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
    * </pre>
    *
-   * <code>bool automatic_restart = 350821371;</code>
+   * <code>optional bool automatic_restart = 350821371;</code>
    *
    * @return Whether the automaticRestart field is set.
    */
@@ -40,11 +39,10 @@ public interface SchedulingOrBuilder
    *
    *
    * <pre>
-   * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
-   * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+   * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
    * </pre>
    *
-   * <code>bool automatic_restart = 350821371;</code>
+   * <code>optional bool automatic_restart = 350821371;</code>
    *
    * @return The automaticRestart.
    */
@@ -57,7 +55,7 @@ public interface SchedulingOrBuilder
    * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return Whether the locationHint field is set.
    */
@@ -69,7 +67,7 @@ public interface SchedulingOrBuilder
    * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return The locationHint.
    */
@@ -81,7 +79,7 @@ public interface SchedulingOrBuilder
    * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return The bytes for locationHint.
    */
@@ -94,7 +92,7 @@ public interface SchedulingOrBuilder
    * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
    * </pre>
    *
-   * <code>int32 min_node_cpus = 317231675;</code>
+   * <code>optional int32 min_node_cpus = 317231675;</code>
    *
    * @return Whether the minNodeCpus field is set.
    */
@@ -106,7 +104,7 @@ public interface SchedulingOrBuilder
    * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
    * </pre>
    *
-   * <code>int32 min_node_cpus = 317231675;</code>
+   * <code>optional int32 min_node_cpus = 317231675;</code>
    *
    * @return The minNodeCpus.
    */
@@ -174,10 +172,10 @@ public interface SchedulingOrBuilder
    *
    * <pre>
    * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;
-   * </code>
+   * <code>optional string on_host_maintenance = 64616796;</code>
    *
    * @return Whether the onHostMaintenance field is set.
    */
@@ -187,27 +185,27 @@ public interface SchedulingOrBuilder
    *
    * <pre>
    * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;
-   * </code>
+   * <code>optional string on_host_maintenance = 64616796;</code>
    *
-   * @return The enum numeric value on the wire for onHostMaintenance.
+   * @return The onHostMaintenance.
    */
-  int getOnHostMaintenanceValue();
+  java.lang.String getOnHostMaintenance();
   /**
    *
    *
    * <pre>
    * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;
-   * </code>
+   * <code>optional string on_host_maintenance = 64616796;</code>
    *
-   * @return The onHostMaintenance.
+   * @return The bytes for onHostMaintenance.
    */
-  com.google.cloud.compute.v1.Scheduling.OnHostMaintenance getOnHostMaintenance();
+  com.google.protobuf.ByteString getOnHostMaintenanceBytes();
 
   /**
    *
@@ -216,7 +214,7 @@ public interface SchedulingOrBuilder
    * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
    * </pre>
    *
-   * <code>bool preemptible = 324203169;</code>
+   * <code>optional bool preemptible = 324203169;</code>
    *
    * @return Whether the preemptible field is set.
    */
@@ -228,7 +226,7 @@ public interface SchedulingOrBuilder
    * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
    * </pre>
    *
-   * <code>bool preemptible = 324203169;</code>
+   * <code>optional bool preemptible = 324203169;</code>
    *
    * @return The preemptible.
    */

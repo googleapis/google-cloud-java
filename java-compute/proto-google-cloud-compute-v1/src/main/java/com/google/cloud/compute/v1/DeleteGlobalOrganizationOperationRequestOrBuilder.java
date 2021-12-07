@@ -55,7 +55,7 @@ public interface DeleteGlobalOrganizationOperationRequestOrBuilder
    * Parent ID for this request.
    * </pre>
    *
-   * <code>string parent_id = 459714768;</code>
+   * <code>optional string parent_id = 459714768;</code>
    *
    * @return Whether the parentId field is set.
    */
@@ -67,7 +67,7 @@ public interface DeleteGlobalOrganizationOperationRequestOrBuilder
    * Parent ID for this request.
    * </pre>
    *
-   * <code>string parent_id = 459714768;</code>
+   * <code>optional string parent_id = 459714768;</code>
    *
    * @return The parentId.
    */
@@ -79,7 +79,7 @@ public interface DeleteGlobalOrganizationOperationRequestOrBuilder
    * Parent ID for this request.
    * </pre>
    *
-   * <code>string parent_id = 459714768;</code>
+   * <code>optional string parent_id = 459714768;</code>
    *
    * @return The bytes for parentId.
    */

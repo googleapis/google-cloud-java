@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.RegionAutoscalersClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.Autoscaler;
 import com.google.cloud.compute.v1.DeleteRegionAutoscalerRequest;
@@ -40,12 +41,22 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class RegionAutoscalersStub implements BackgroundResource {
 
+  public OperationCallable<DeleteRegionAutoscalerRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteRegionAutoscalerRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetRegionAutoscalerRequest, Autoscaler> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertRegionAutoscalerRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertRegionAutoscalerRequest, Operation> insertCallable() {
@@ -60,8 +71,18 @@ public abstract class RegionAutoscalersStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
   }
 
+  public OperationCallable<PatchRegionAutoscalerRequest, Operation, Operation>
+      patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
+  }
+
   public UnaryCallable<PatchRegionAutoscalerRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public OperationCallable<UpdateRegionAutoscalerRequest, Operation, Operation>
+      updateOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOperationCallable()");
   }
 
   public UnaryCallable<UpdateRegionAutoscalerRequest, Operation> updateCallable() {

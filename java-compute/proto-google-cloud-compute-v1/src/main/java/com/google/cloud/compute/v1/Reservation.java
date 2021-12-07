@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a reservation resource. A reservation ensures that capacity is held in a specific zone even if the reserved VMs are not running. For more information, read  Reserving zonal resources. (== resource_for {$api_version}.reservations ==)
+ * Represents a reservation resource. A reservation ensures that capacity is held in a specific zone even if the reserved VMs are not running. For more information, read Reserving zonal resources.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Reservation}
@@ -44,7 +44,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     kind_ = "";
     name_ = "";
     selfLink_ = "";
-    status_ = 0;
+    status_ = "";
     zone_ = "";
   }
 
@@ -112,11 +112,11 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
               creationTimestamp_ = s;
               break;
             }
-          case 1450082192:
+          case 1450082194:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000400;
-              status_ = rawValue;
+              status_ = s;
               break;
             }
           case 1812405496:
@@ -224,15 +224,47 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>CREATING = 455564985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resources are being allocated for the reservation.
+     * </pre>
+     *
+     * <code>CREATING = 455564985;</code>
+     */
     CREATING(455564985),
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reservation is currently being deleted.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     DELETING(528602024),
     /** <code>INVALID = 530283991;</code> */
     INVALID(530283991),
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reservation has allocated all its resources.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     READY(77848963),
-    /** <code>UPDATING = 494614342;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reservation is currently being resized.
+     * </pre>
+     *
+     * <code>UPDATING = 494614342;</code>
+     */
     UPDATING(494614342),
     UNRECOGNIZED(-1),
     ;
@@ -247,15 +279,47 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>CREATING = 455564985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resources are being allocated for the reservation.
+     * </pre>
+     *
+     * <code>CREATING = 455564985;</code>
+     */
     public static final int CREATING_VALUE = 455564985;
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reservation is currently being deleted.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     public static final int DELETING_VALUE = 528602024;
     /** <code>INVALID = 530283991;</code> */
     public static final int INVALID_VALUE = 530283991;
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reservation has allocated all its resources.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     public static final int READY_VALUE = 77848963;
-    /** <code>UPDATING = 494614342;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reservation is currently being resized.
+     * </pre>
+     *
+     * <code>UPDATING = 494614342;</code>
+     */
     public static final int UPDATING_VALUE = 494614342;
 
     public final int getNumber() {
@@ -357,7 +421,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
    * </pre>
    *
-   * <code>string commitment = 482134805;</code>
+   * <code>optional string commitment = 482134805;</code>
    *
    * @return Whether the commitment field is set.
    */
@@ -372,7 +436,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
    * </pre>
    *
-   * <code>string commitment = 482134805;</code>
+   * <code>optional string commitment = 482134805;</code>
    *
    * @return The commitment.
    */
@@ -395,7 +459,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
    * </pre>
    *
-   * <code>string commitment = 482134805;</code>
+   * <code>optional string commitment = 482134805;</code>
    *
    * @return The bytes for commitment.
    */
@@ -421,7 +485,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -436,7 +500,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -459,7 +523,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -485,7 +549,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -500,7 +564,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -523,7 +587,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -549,7 +613,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -564,7 +628,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -582,7 +646,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#reservations for reservations.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -597,7 +661,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#reservations for reservations.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -620,7 +684,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#reservations for reservations.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -646,7 +710,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -661,7 +725,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -684,7 +748,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -710,7 +774,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Reserved for future use.
    * </pre>
    *
-   * <code>bool satisfies_pzs = 480964267;</code>
+   * <code>optional bool satisfies_pzs = 480964267;</code>
    *
    * @return Whether the satisfiesPzs field is set.
    */
@@ -725,7 +789,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Reserved for future use.
    * </pre>
    *
-   * <code>bool satisfies_pzs = 480964267;</code>
+   * <code>optional bool satisfies_pzs = 480964267;</code>
    *
    * @return The satisfiesPzs.
    */
@@ -743,7 +807,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -758,7 +822,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -781,7 +845,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -808,7 +872,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
+   * optional .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
    * </code>
    *
    * @return Whether the specificReservation field is set.
@@ -825,7 +889,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
+   * optional .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
    * </code>
    *
    * @return The specificReservation.
@@ -844,7 +908,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
+   * optional .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
    * </code>
    */
   @java.lang.Override
@@ -864,7 +928,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
    * </pre>
    *
-   * <code>bool specific_reservation_required = 226550687;</code>
+   * <code>optional bool specific_reservation_required = 226550687;</code>
    *
    * @return Whether the specificReservationRequired field is set.
    */
@@ -879,7 +943,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
    * </pre>
    *
-   * <code>bool specific_reservation_required = 226550687;</code>
+   * <code>optional bool specific_reservation_required = 226550687;</code>
    *
    * @return The specificReservationRequired.
    */
@@ -889,15 +953,16 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    *
    *
    * <pre>
    * [Output Only] The status of the reservation.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -910,33 +975,48 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * [Output Only] The status of the reservation.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
   @java.lang.Override
-  public int getStatusValue() {
-    return status_;
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * [Output Only] The status of the reservation.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.Reservation.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Reservation.Status result =
-        com.google.cloud.compute.v1.Reservation.Status.valueOf(status_);
-    return result == null ? com.google.cloud.compute.v1.Reservation.Status.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
@@ -948,7 +1028,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return Whether the zone field is set.
    */
@@ -963,7 +1043,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The zone.
    */
@@ -986,7 +1066,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The bytes for zone.
    */
@@ -1033,7 +1113,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       output.writeBool(226550687, specificReservationRequired_);
@@ -1079,7 +1159,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       size +=
@@ -1160,7 +1240,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus().equals(other.getStatus())) return false;
     }
     if (hasZone() != other.hasZone()) return false;
     if (hasZone()) {
@@ -1220,7 +1300,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     if (hasZone()) {
       hash = (37 * hash) + ZONE_FIELD_NUMBER;
@@ -1330,7 +1410,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a reservation resource. A reservation ensures that capacity is held in a specific zone even if the reserved VMs are not running. For more information, read  Reserving zonal resources. (== resource_for {$api_version}.reservations ==)
+   * Represents a reservation resource. A reservation ensures that capacity is held in a specific zone even if the reserved VMs are not running. For more information, read Reserving zonal resources.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Reservation}
@@ -1397,7 +1477,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000100);
       specificReservationRequired_ = false;
       bitField0_ = (bitField0_ & ~0x00000200);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
       zone_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
@@ -1575,7 +1655,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         setSpecificReservationRequired(other.getSpecificReservationRequired());
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00000400;
+        status_ = other.status_;
+        onChanged();
       }
       if (other.hasZone()) {
         bitField0_ |= 0x00000800;
@@ -1621,7 +1703,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
      * </pre>
      *
-     * <code>string commitment = 482134805;</code>
+     * <code>optional string commitment = 482134805;</code>
      *
      * @return Whether the commitment field is set.
      */
@@ -1635,7 +1717,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
      * </pre>
      *
-     * <code>string commitment = 482134805;</code>
+     * <code>optional string commitment = 482134805;</code>
      *
      * @return The commitment.
      */
@@ -1657,7 +1739,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
      * </pre>
      *
-     * <code>string commitment = 482134805;</code>
+     * <code>optional string commitment = 482134805;</code>
      *
      * @return The bytes for commitment.
      */
@@ -1679,7 +1761,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
      * </pre>
      *
-     * <code>string commitment = 482134805;</code>
+     * <code>optional string commitment = 482134805;</code>
      *
      * @param value The commitment to set.
      * @return This builder for chaining.
@@ -1700,7 +1782,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
      * </pre>
      *
-     * <code>string commitment = 482134805;</code>
+     * <code>optional string commitment = 482134805;</code>
      *
      * @return This builder for chaining.
      */
@@ -1717,7 +1799,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
      * </pre>
      *
-     * <code>string commitment = 482134805;</code>
+     * <code>optional string commitment = 482134805;</code>
      *
      * @param value The bytes for commitment to set.
      * @return This builder for chaining.
@@ -1741,7 +1823,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -1755,7 +1837,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -1777,7 +1859,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -1799,7 +1881,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -1820,7 +1902,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -1837,7 +1919,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -1861,7 +1943,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -1875,7 +1957,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1897,7 +1979,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1919,7 +2001,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1940,7 +2022,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -1957,7 +2039,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1981,7 +2063,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -1996,7 +2078,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -2011,7 +2093,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -2029,7 +2111,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -2048,7 +2130,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#reservations for reservations.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -2062,7 +2144,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#reservations for reservations.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -2084,7 +2166,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#reservations for reservations.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -2106,7 +2188,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#reservations for reservations.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -2127,7 +2209,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#reservations for reservations.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -2144,7 +2226,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#reservations for reservations.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -2168,7 +2250,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -2182,7 +2264,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -2204,7 +2286,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -2226,7 +2308,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2247,7 +2329,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -2264,7 +2346,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2288,7 +2370,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Reserved for future use.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 480964267;</code>
+     * <code>optional bool satisfies_pzs = 480964267;</code>
      *
      * @return Whether the satisfiesPzs field is set.
      */
@@ -2303,7 +2385,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Reserved for future use.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 480964267;</code>
+     * <code>optional bool satisfies_pzs = 480964267;</code>
      *
      * @return The satisfiesPzs.
      */
@@ -2318,7 +2400,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Reserved for future use.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 480964267;</code>
+     * <code>optional bool satisfies_pzs = 480964267;</code>
      *
      * @param value The satisfiesPzs to set.
      * @return This builder for chaining.
@@ -2336,7 +2418,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Reserved for future use.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 480964267;</code>
+     * <code>optional bool satisfies_pzs = 480964267;</code>
      *
      * @return This builder for chaining.
      */
@@ -2355,7 +2437,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -2369,7 +2451,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -2391,7 +2473,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2413,7 +2495,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2434,7 +2516,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -2451,7 +2533,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2481,7 +2563,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
+     * optional .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
      * </code>
      *
      * @return Whether the specificReservation field is set.
@@ -2497,7 +2579,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
+     * optional .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
      * </code>
      *
      * @return The specificReservation.
@@ -2519,7 +2601,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
+     * optional .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
      * </code>
      */
     public Builder setSpecificReservation(
@@ -2544,7 +2626,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
+     * optional .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
      * </code>
      */
     public Builder setSpecificReservation(
@@ -2566,7 +2648,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
+     * optional .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
      * </code>
      */
     public Builder mergeSpecificReservation(
@@ -2600,7 +2682,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
+     * optional .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
      * </code>
      */
     public Builder clearSpecificReservation() {
@@ -2621,7 +2703,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
+     * optional .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
      * </code>
      */
     public com.google.cloud.compute.v1.AllocationSpecificSKUReservation.Builder
@@ -2638,7 +2720,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
+     * optional .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
      * </code>
      */
     public com.google.cloud.compute.v1.AllocationSpecificSKUReservationOrBuilder
@@ -2659,7 +2741,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
+     * optional .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2687,7 +2769,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
      * </pre>
      *
-     * <code>bool specific_reservation_required = 226550687;</code>
+     * <code>optional bool specific_reservation_required = 226550687;</code>
      *
      * @return Whether the specificReservationRequired field is set.
      */
@@ -2702,7 +2784,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
      * </pre>
      *
-     * <code>bool specific_reservation_required = 226550687;</code>
+     * <code>optional bool specific_reservation_required = 226550687;</code>
      *
      * @return The specificReservationRequired.
      */
@@ -2717,7 +2799,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
      * </pre>
      *
-     * <code>bool specific_reservation_required = 226550687;</code>
+     * <code>optional bool specific_reservation_required = 226550687;</code>
      *
      * @param value The specificReservationRequired to set.
      * @return This builder for chaining.
@@ -2735,7 +2817,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
      * </pre>
      *
-     * <code>bool specific_reservation_required = 226550687;</code>
+     * <code>optional bool specific_reservation_required = 226550687;</code>
      *
      * @return This builder for chaining.
      */
@@ -2746,19 +2828,19 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      *
      *
      * <pre>
      * [Output Only] The status of the reservation.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
      * @return Whether the status field is set.
      */
-    @java.lang.Override
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000400) != 0);
     }
@@ -2767,29 +2849,64 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] The status of the reservation.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The enum numeric value on the wire for status.
+     * @return The status.
      */
-    @java.lang.Override
-    public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * [Output Only] The status of the reservation.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @param value The enum numeric value on the wire for status to set.
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The status of the reservation.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     *
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
+    public Builder setStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000400;
       status_ = value;
       onChanged();
@@ -2800,37 +2917,16 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] The status of the reservation.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Reservation.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Reservation.Status result =
-          com.google.cloud.compute.v1.Reservation.Status.valueOf(status_);
-      return result == null ? com.google.cloud.compute.v1.Reservation.Status.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The status of the reservation.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
-     *
-     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloud.compute.v1.Reservation.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000400;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
@@ -2839,15 +2935,21 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] The status of the reservation.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000400);
-      status_ = 0;
+    public Builder setStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000400;
+      status_ = value;
       onChanged();
       return this;
     }
@@ -2860,7 +2962,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return Whether the zone field is set.
      */
@@ -2874,7 +2976,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return The zone.
      */
@@ -2896,7 +2998,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return The bytes for zone.
      */
@@ -2918,7 +3020,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @param value The zone to set.
      * @return This builder for chaining.
@@ -2939,7 +3041,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return This builder for chaining.
      */
@@ -2956,7 +3058,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @param value The bytes for zone to set.
      * @return This builder for chaining.

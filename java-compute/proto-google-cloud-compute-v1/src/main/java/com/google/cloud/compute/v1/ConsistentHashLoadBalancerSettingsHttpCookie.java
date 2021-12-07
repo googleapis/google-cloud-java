@@ -148,7 +148,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
    * Name of the cookie.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -163,7 +163,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
    * Name of the cookie.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -186,7 +186,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
    * Name of the cookie.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -212,7 +212,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
    * Path to set for the cookie.
    * </pre>
    *
-   * <code>string path = 3433509;</code>
+   * <code>optional string path = 3433509;</code>
    *
    * @return Whether the path field is set.
    */
@@ -227,7 +227,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
    * Path to set for the cookie.
    * </pre>
    *
-   * <code>string path = 3433509;</code>
+   * <code>optional string path = 3433509;</code>
    *
    * @return The path.
    */
@@ -250,7 +250,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
    * Path to set for the cookie.
    * </pre>
    *
-   * <code>string path = 3433509;</code>
+   * <code>optional string path = 3433509;</code>
    *
    * @return The bytes for path.
    */
@@ -276,7 +276,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
    * Lifetime of the cookie.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration ttl = 115180;</code>
+   * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
    *
    * @return Whether the ttl field is set.
    */
@@ -291,7 +291,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
    * Lifetime of the cookie.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration ttl = 115180;</code>
+   * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
    *
    * @return The ttl.
    */
@@ -306,7 +306,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
    * Lifetime of the cookie.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration ttl = 115180;</code>
+   * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DurationOrBuilder getTtlOrBuilder() {
@@ -724,7 +724,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Name of the cookie.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -738,7 +738,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Name of the cookie.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -760,7 +760,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Name of the cookie.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -782,7 +782,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Name of the cookie.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -803,7 +803,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Name of the cookie.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -820,7 +820,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Name of the cookie.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -844,7 +844,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Path to set for the cookie.
      * </pre>
      *
-     * <code>string path = 3433509;</code>
+     * <code>optional string path = 3433509;</code>
      *
      * @return Whether the path field is set.
      */
@@ -858,7 +858,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Path to set for the cookie.
      * </pre>
      *
-     * <code>string path = 3433509;</code>
+     * <code>optional string path = 3433509;</code>
      *
      * @return The path.
      */
@@ -880,7 +880,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Path to set for the cookie.
      * </pre>
      *
-     * <code>string path = 3433509;</code>
+     * <code>optional string path = 3433509;</code>
      *
      * @return The bytes for path.
      */
@@ -902,7 +902,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Path to set for the cookie.
      * </pre>
      *
-     * <code>string path = 3433509;</code>
+     * <code>optional string path = 3433509;</code>
      *
      * @param value The path to set.
      * @return This builder for chaining.
@@ -923,7 +923,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Path to set for the cookie.
      * </pre>
      *
-     * <code>string path = 3433509;</code>
+     * <code>optional string path = 3433509;</code>
      *
      * @return This builder for chaining.
      */
@@ -940,7 +940,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Path to set for the cookie.
      * </pre>
      *
-     * <code>string path = 3433509;</code>
+     * <code>optional string path = 3433509;</code>
      *
      * @param value The bytes for path to set.
      * @return This builder for chaining.
@@ -969,7 +969,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Lifetime of the cookie.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration ttl = 115180;</code>
+     * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
      *
      * @return Whether the ttl field is set.
      */
@@ -983,7 +983,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Lifetime of the cookie.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration ttl = 115180;</code>
+     * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
      *
      * @return The ttl.
      */
@@ -1001,7 +1001,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Lifetime of the cookie.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration ttl = 115180;</code>
+     * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
      */
     public Builder setTtl(com.google.cloud.compute.v1.Duration value) {
       if (ttlBuilder_ == null) {
@@ -1023,7 +1023,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Lifetime of the cookie.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration ttl = 115180;</code>
+     * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
      */
     public Builder setTtl(com.google.cloud.compute.v1.Duration.Builder builderForValue) {
       if (ttlBuilder_ == null) {
@@ -1042,7 +1042,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Lifetime of the cookie.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration ttl = 115180;</code>
+     * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
      */
     public Builder mergeTtl(com.google.cloud.compute.v1.Duration value) {
       if (ttlBuilder_ == null) {
@@ -1068,7 +1068,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Lifetime of the cookie.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration ttl = 115180;</code>
+     * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
      */
     public Builder clearTtl() {
       if (ttlBuilder_ == null) {
@@ -1087,7 +1087,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Lifetime of the cookie.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration ttl = 115180;</code>
+     * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getTtlBuilder() {
       bitField0_ |= 0x00000004;
@@ -1101,7 +1101,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Lifetime of the cookie.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration ttl = 115180;</code>
+     * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
      */
     public com.google.cloud.compute.v1.DurationOrBuilder getTtlOrBuilder() {
       if (ttlBuilder_ != null) {
@@ -1117,7 +1117,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * Lifetime of the cookie.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration ttl = 115180;</code>
+     * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Duration,

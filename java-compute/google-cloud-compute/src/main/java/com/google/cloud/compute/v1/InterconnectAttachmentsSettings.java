@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -50,16 +51,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * InterconnectAttachmentsSettings.Builder interconnectAttachmentsSettingsBuilder =
  *     InterconnectAttachmentsSettings.newBuilder();
  * interconnectAttachmentsSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         interconnectAttachmentsSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -86,6 +87,12 @@ public class InterconnectAttachmentsSettings
     return ((InterconnectAttachmentsStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteInterconnectAttachmentRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((InterconnectAttachmentsStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetInterconnectAttachmentRequest, InterconnectAttachment> getSettings() {
     return ((InterconnectAttachmentsStubSettings) getStubSettings()).getSettings();
@@ -94,6 +101,12 @@ public class InterconnectAttachmentsSettings
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertInterconnectAttachmentRequest, Operation> insertSettings() {
     return ((InterconnectAttachmentsStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertInterconnectAttachmentRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((InterconnectAttachmentsStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -106,6 +119,12 @@ public class InterconnectAttachmentsSettings
   /** Returns the object with the settings used for calls to patch. */
   public UnaryCallSettings<PatchInterconnectAttachmentRequest, Operation> patchSettings() {
     return ((InterconnectAttachmentsStubSettings) getStubSettings()).patchSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchInterconnectAttachmentRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((InterconnectAttachmentsStubSettings) getStubSettings()).patchOperationSettings();
   }
 
   public static final InterconnectAttachmentsSettings create(
@@ -222,6 +241,12 @@ public class InterconnectAttachmentsSettings
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteInterconnectAttachmentRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetInterconnectAttachmentRequest, InterconnectAttachment>
         getSettings() {
@@ -232,6 +257,12 @@ public class InterconnectAttachmentsSettings
     public UnaryCallSettings.Builder<InsertInterconnectAttachmentRequest, Operation>
         insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertInterconnectAttachmentRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -245,6 +276,12 @@ public class InterconnectAttachmentsSettings
     public UnaryCallSettings.Builder<PatchInterconnectAttachmentRequest, Operation>
         patchSettings() {
       return getStubSettingsBuilder().patchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchInterconnectAttachmentRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
     }
 
     @Override

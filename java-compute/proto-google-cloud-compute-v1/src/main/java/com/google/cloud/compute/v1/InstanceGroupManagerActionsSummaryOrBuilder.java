@@ -30,7 +30,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The total number of instances in the managed instance group that are scheduled to be abandoned. Abandoning an instance removes it from the managed instance group without deleting it.
    * </pre>
    *
-   * <code>int32 abandoning = 440023373;</code>
+   * <code>optional int32 abandoning = 440023373;</code>
    *
    * @return Whether the abandoning field is set.
    */
@@ -42,7 +42,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The total number of instances in the managed instance group that are scheduled to be abandoned. Abandoning an instance removes it from the managed instance group without deleting it.
    * </pre>
    *
-   * <code>int32 abandoning = 440023373;</code>
+   * <code>optional int32 abandoning = 440023373;</code>
    *
    * @return The abandoning.
    */
@@ -52,11 +52,10 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are scheduled to be created or are currently being created. If the group fails to create any of these instances, it tries again until it creates the instance successfully.
-   * If you have disabled creation retries, this field will not be populated; instead, the creatingWithoutRetries field will be populated.
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be created or are currently being created. If the group fails to create any of these instances, it tries again until it creates the instance successfully. If you have disabled creation retries, this field will not be populated; instead, the creatingWithoutRetries field will be populated.
    * </pre>
    *
-   * <code>int32 creating = 209809081;</code>
+   * <code>optional int32 creating = 209809081;</code>
    *
    * @return Whether the creating field is set.
    */
@@ -65,11 +64,10 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are scheduled to be created or are currently being created. If the group fails to create any of these instances, it tries again until it creates the instance successfully.
-   * If you have disabled creation retries, this field will not be populated; instead, the creatingWithoutRetries field will be populated.
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be created or are currently being created. If the group fails to create any of these instances, it tries again until it creates the instance successfully. If you have disabled creation retries, this field will not be populated; instead, the creatingWithoutRetries field will be populated.
    * </pre>
    *
-   * <code>int32 creating = 209809081;</code>
+   * <code>optional int32 creating = 209809081;</code>
    *
    * @return The creating.
    */
@@ -82,7 +80,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The number of instances that the managed instance group will attempt to create. The group attempts to create each instance only once. If the group fails to create any of these instances, it decreases the group's targetSize value accordingly.
    * </pre>
    *
-   * <code>int32 creating_without_retries = 369916745;</code>
+   * <code>optional int32 creating_without_retries = 369916745;</code>
    *
    * @return Whether the creatingWithoutRetries field is set.
    */
@@ -94,7 +92,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The number of instances that the managed instance group will attempt to create. The group attempts to create each instance only once. If the group fails to create any of these instances, it decreases the group's targetSize value accordingly.
    * </pre>
    *
-   * <code>int32 creating_without_retries = 369916745;</code>
+   * <code>optional int32 creating_without_retries = 369916745;</code>
    *
    * @return The creatingWithoutRetries.
    */
@@ -107,7 +105,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The number of instances in the managed instance group that are scheduled to be deleted or are currently being deleted.
    * </pre>
    *
-   * <code>int32 deleting = 282846120;</code>
+   * <code>optional int32 deleting = 282846120;</code>
    *
    * @return Whether the deleting field is set.
    */
@@ -119,7 +117,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The number of instances in the managed instance group that are scheduled to be deleted or are currently being deleted.
    * </pre>
    *
-   * <code>int32 deleting = 282846120;</code>
+   * <code>optional int32 deleting = 282846120;</code>
    *
    * @return The deleting.
    */
@@ -132,7 +130,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The number of instances in the managed instance group that are running and have no scheduled actions.
    * </pre>
    *
-   * <code>int32 none = 3387192;</code>
+   * <code>optional int32 none = 3387192;</code>
    *
    * @return Whether the none field is set.
    */
@@ -144,7 +142,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The number of instances in the managed instance group that are running and have no scheduled actions.
    * </pre>
    *
-   * <code>int32 none = 3387192;</code>
+   * <code>optional int32 none = 3387192;</code>
    *
    * @return The none.
    */
@@ -157,7 +155,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The number of instances in the managed instance group that are scheduled to be recreated or are currently being being recreated. Recreating an instance deletes the existing root persistent disk and creates a new disk from the image that is defined in the instance template.
    * </pre>
    *
-   * <code>int32 recreating = 339057132;</code>
+   * <code>optional int32 recreating = 339057132;</code>
    *
    * @return Whether the recreating field is set.
    */
@@ -169,7 +167,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The number of instances in the managed instance group that are scheduled to be recreated or are currently being being recreated. Recreating an instance deletes the existing root persistent disk and creates a new disk from the image that is defined in the instance template.
    * </pre>
    *
-   * <code>int32 recreating = 339057132;</code>
+   * <code>optional int32 recreating = 339057132;</code>
    *
    * @return The recreating.
    */
@@ -182,7 +180,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The number of instances in the managed instance group that are being reconfigured with properties that do not require a restart or a recreate action. For example, setting or removing target pools for the instance.
    * </pre>
    *
-   * <code>int32 refreshing = 215044903;</code>
+   * <code>optional int32 refreshing = 215044903;</code>
    *
    * @return Whether the refreshing field is set.
    */
@@ -194,7 +192,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The number of instances in the managed instance group that are being reconfigured with properties that do not require a restart or a recreate action. For example, setting or removing target pools for the instance.
    * </pre>
    *
-   * <code>int32 refreshing = 215044903;</code>
+   * <code>optional int32 refreshing = 215044903;</code>
    *
    * @return The refreshing.
    */
@@ -207,7 +205,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The number of instances in the managed instance group that are scheduled to be restarted or are currently being restarted.
    * </pre>
    *
-   * <code>int32 restarting = 372312947;</code>
+   * <code>optional int32 restarting = 372312947;</code>
    *
    * @return Whether the restarting field is set.
    */
@@ -219,7 +217,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The number of instances in the managed instance group that are scheduled to be restarted or are currently being restarted.
    * </pre>
    *
-   * <code>int32 restarting = 372312947;</code>
+   * <code>optional int32 restarting = 372312947;</code>
    *
    * @return The restarting.
    */
@@ -232,7 +230,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The number of instances in the managed instance group that are being verified. See the managedInstances[].currentAction property in the listManagedInstances method documentation.
    * </pre>
    *
-   * <code>int32 verifying = 451612873;</code>
+   * <code>optional int32 verifying = 451612873;</code>
    *
    * @return Whether the verifying field is set.
    */
@@ -244,7 +242,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The number of instances in the managed instance group that are being verified. See the managedInstances[].currentAction property in the listManagedInstances method documentation.
    * </pre>
    *
-   * <code>int32 verifying = 451612873;</code>
+   * <code>optional int32 verifying = 451612873;</code>
    *
    * @return The verifying.
    */

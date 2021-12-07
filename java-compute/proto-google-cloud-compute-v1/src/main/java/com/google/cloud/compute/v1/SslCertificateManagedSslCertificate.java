@@ -41,7 +41,7 @@ public final class SslCertificateManagedSslCertificate
 
   private SslCertificateManagedSslCertificate() {
     domains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    status_ = 0;
+    status_ = "";
   }
 
   @java.lang.Override
@@ -74,11 +74,11 @@ public final class SslCertificateManagedSslCertificate
           case 0:
             done = true;
             break;
-          case 1450082192:
+          case 1450082194:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              status_ = rawValue;
+              status_ = s;
               break;
             }
           case 1815486842:
@@ -174,17 +174,57 @@ public final class SslCertificateManagedSslCertificate
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The certificate management is working, and a certificate has been provisioned.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     ACTIVE(314733318),
     /** <code>MANAGED_CERTIFICATE_STATUS_UNSPECIFIED = 474800850;</code> */
     MANAGED_CERTIFICATE_STATUS_UNSPECIFIED(474800850),
-    /** <code>PROVISIONING = 290896621;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The certificate management is working. GCP will attempt to provision the first certificate.
+     * </pre>
+     *
+     * <code>PROVISIONING = 290896621;</code>
+     */
     PROVISIONING(290896621),
-    /** <code>PROVISIONING_FAILED = 76813775;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Certificate provisioning failed due to an issue with the DNS or load balancing configuration. For details of which domain failed, consult domain_status field.
+     * </pre>
+     *
+     * <code>PROVISIONING_FAILED = 76813775;</code>
+     */
     PROVISIONING_FAILED(76813775),
-    /** <code>PROVISIONING_FAILED_PERMANENTLY = 275036203;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Certificate provisioning failed due to an issue with the DNS or load balancing configuration. It won't be retried. To try again delete and create a new managed SslCertificate resource. For details of which domain failed, consult domain_status field.
+     * </pre>
+     *
+     * <code>PROVISIONING_FAILED_PERMANENTLY = 275036203;</code>
+     */
     PROVISIONING_FAILED_PERMANENTLY(275036203),
-    /** <code>RENEWAL_FAILED = 434659076;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Renewal of the certificate has failed due to an issue with the DNS or load balancing configuration. The existing cert is still serving; however, it will expire shortly. To provision a renewed certificate, delete and create a new managed SslCertificate resource. For details on which domain failed, consult domain_status field.
+     * </pre>
+     *
+     * <code>RENEWAL_FAILED = 434659076;</code>
+     */
     RENEWAL_FAILED(434659076),
     UNRECOGNIZED(-1),
     ;
@@ -199,17 +239,57 @@ public final class SslCertificateManagedSslCertificate
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The certificate management is working, and a certificate has been provisioned.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     public static final int ACTIVE_VALUE = 314733318;
     /** <code>MANAGED_CERTIFICATE_STATUS_UNSPECIFIED = 474800850;</code> */
     public static final int MANAGED_CERTIFICATE_STATUS_UNSPECIFIED_VALUE = 474800850;
-    /** <code>PROVISIONING = 290896621;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The certificate management is working. GCP will attempt to provision the first certificate.
+     * </pre>
+     *
+     * <code>PROVISIONING = 290896621;</code>
+     */
     public static final int PROVISIONING_VALUE = 290896621;
-    /** <code>PROVISIONING_FAILED = 76813775;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Certificate provisioning failed due to an issue with the DNS or load balancing configuration. For details of which domain failed, consult domain_status field.
+     * </pre>
+     *
+     * <code>PROVISIONING_FAILED = 76813775;</code>
+     */
     public static final int PROVISIONING_FAILED_VALUE = 76813775;
-    /** <code>PROVISIONING_FAILED_PERMANENTLY = 275036203;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Certificate provisioning failed due to an issue with the DNS or load balancing configuration. It won't be retried. To try again delete and create a new managed SslCertificate resource. For details of which domain failed, consult domain_status field.
+     * </pre>
+     *
+     * <code>PROVISIONING_FAILED_PERMANENTLY = 275036203;</code>
+     */
     public static final int PROVISIONING_FAILED_PERMANENTLY_VALUE = 275036203;
-    /** <code>RENEWAL_FAILED = 434659076;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Renewal of the certificate has failed due to an issue with the DNS or load balancing configuration. The existing cert is still serving; however, it will expire shortly. To provision a renewed certificate, delete and create a new managed SslCertificate resource. For details on which domain failed, consult domain_status field.
+     * </pre>
+     *
+     * <code>RENEWAL_FAILED = 434659076;</code>
+     */
     public static final int RENEWAL_FAILED_VALUE = 434659076;
 
     public final int getNumber() {
@@ -469,16 +549,16 @@ public final class SslCertificateManagedSslCertificate
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    *
    *
    * <pre>
    * [Output only] Status of the managed certificate resource.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status status = 181260274;
-   * </code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -491,37 +571,48 @@ public final class SslCertificateManagedSslCertificate
    *
    * <pre>
    * [Output only] Status of the managed certificate resource.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status status = 181260274;
-   * </code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
   @java.lang.Override
-  public int getStatusValue() {
-    return status_;
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * [Output only] Status of the managed certificate resource.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status status = 181260274;
-   * </code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status result =
-        com.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status.valueOf(status_);
-    return result == null
-        ? com.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -539,7 +630,7 @@ public final class SslCertificateManagedSslCertificate
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     for (int i = 0; i < domains_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 226935855, domains_.getRaw(i));
@@ -556,7 +647,7 @@ public final class SslCertificateManagedSslCertificate
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     {
       int dataSize = 0;
@@ -596,7 +687,7 @@ public final class SslCertificateManagedSslCertificate
     if (!getDomainsList().equals(other.getDomainsList())) return false;
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus().equals(other.getStatus())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -619,7 +710,7 @@ public final class SslCertificateManagedSslCertificate
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -790,7 +881,7 @@ public final class SslCertificateManagedSslCertificate
       internalGetMutableDomainStatus().clear();
       domains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
@@ -898,7 +989,9 @@ public final class SslCertificateManagedSslCertificate
         onChanged();
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00000004;
+        status_ = other.status_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1261,20 +1354,19 @@ public final class SslCertificateManagedSslCertificate
       return this;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      *
      *
      * <pre>
      * [Output only] Status of the managed certificate resource.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status status = 181260274;
-     * </code>
+     * <code>optional string status = 181260274;</code>
      *
      * @return Whether the status field is set.
      */
-    @java.lang.Override
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -1283,31 +1375,64 @@ public final class SslCertificateManagedSslCertificate
      *
      * <pre>
      * [Output only] Status of the managed certificate resource.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status status = 181260274;
-     * </code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The enum numeric value on the wire for status.
+     * @return The status.
      */
-    @java.lang.Override
-    public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * [Output only] Status of the managed certificate resource.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status status = 181260274;
-     * </code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @param value The enum numeric value on the wire for status to set.
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Status of the managed certificate resource.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     *
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
+    public Builder setStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000004;
       status_ = value;
       onChanged();
@@ -1318,42 +1443,16 @@ public final class SslCertificateManagedSslCertificate
      *
      * <pre>
      * [Output only] Status of the managed certificate resource.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status status = 181260274;
-     * </code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status result =
-          com.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status.valueOf(status_);
-      return result == null
-          ? com.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output only] Status of the managed certificate resource.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status status = 181260274;
-     * </code>
-     *
-     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(
-        com.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000004;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
@@ -1362,16 +1461,21 @@ public final class SslCertificateManagedSslCertificate
      *
      * <pre>
      * [Output only] Status of the managed certificate resource.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status status = 181260274;
-     * </code>
+     * <code>optional string status = 181260274;</code>
      *
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      status_ = 0;
+    public Builder setStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000004;
+      status_ = value;
       onChanged();
       return this;
     }

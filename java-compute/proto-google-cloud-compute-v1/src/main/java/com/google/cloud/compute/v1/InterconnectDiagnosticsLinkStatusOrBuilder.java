@@ -88,7 +88,7 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * The unique ID for this link assigned during turn up by Google.
    * </pre>
    *
-   * <code>string circuit_id = 225180977;</code>
+   * <code>optional string circuit_id = 225180977;</code>
    *
    * @return Whether the circuitId field is set.
    */
@@ -100,7 +100,7 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * The unique ID for this link assigned during turn up by Google.
    * </pre>
    *
-   * <code>string circuit_id = 225180977;</code>
+   * <code>optional string circuit_id = 225180977;</code>
    *
    * @return The circuitId.
    */
@@ -112,7 +112,7 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * The unique ID for this link assigned during turn up by Google.
    * </pre>
    *
-   * <code>string circuit_id = 225180977;</code>
+   * <code>optional string circuit_id = 225180977;</code>
    *
    * @return The bytes for circuitId.
    */
@@ -125,7 +125,7 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * The Demarc address assigned by Google and provided in the LoA.
    * </pre>
    *
-   * <code>string google_demarc = 51084;</code>
+   * <code>optional string google_demarc = 51084;</code>
    *
    * @return Whether the googleDemarc field is set.
    */
@@ -137,7 +137,7 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * The Demarc address assigned by Google and provided in the LoA.
    * </pre>
    *
-   * <code>string google_demarc = 51084;</code>
+   * <code>optional string google_demarc = 51084;</code>
    *
    * @return The googleDemarc.
    */
@@ -149,28 +149,31 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * The Demarc address assigned by Google and provided in the LoA.
    * </pre>
    *
-   * <code>string google_demarc = 51084;</code>
+   * <code>optional string google_demarc = 51084;</code>
    *
    * @return The bytes for googleDemarc.
    */
   com.google.protobuf.ByteString getGoogleDemarcBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
+   * <code>
+   * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
    * </code>
    *
    * @return Whether the lacpStatus field is set.
    */
   boolean hasLacpStatus();
   /**
-   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
+   * <code>
+   * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
    * </code>
    *
    * @return The lacpStatus.
    */
   com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus getLacpStatus();
   /**
-   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
+   * <code>
+   * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatusOrBuilder
@@ -184,7 +187,7 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
+   * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
    * </code>
    *
    * @return Whether the receivingOpticalPower field is set.
@@ -198,7 +201,7 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
+   * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
    * </code>
    *
    * @return The receivingOpticalPower.
@@ -212,7 +215,7 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
+   * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPowerOrBuilder
@@ -226,7 +229,7 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
+   * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
    * </code>
    *
    * @return Whether the transmittingOpticalPower field is set.
@@ -240,7 +243,7 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
+   * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
    * </code>
    *
    * @return The transmittingOpticalPower.
@@ -254,7 +257,7 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
+   * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPowerOrBuilder

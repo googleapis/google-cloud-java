@@ -124,7 +124,7 @@ public final class ListAssociationsFirewallPolicyRequest
    * The target resource to list associations. It is an organization, or a folder.
    * </pre>
    *
-   * <code>string target_resource = 467318524;</code>
+   * <code>optional string target_resource = 467318524;</code>
    *
    * @return Whether the targetResource field is set.
    */
@@ -139,7 +139,7 @@ public final class ListAssociationsFirewallPolicyRequest
    * The target resource to list associations. It is an organization, or a folder.
    * </pre>
    *
-   * <code>string target_resource = 467318524;</code>
+   * <code>optional string target_resource = 467318524;</code>
    *
    * @return The targetResource.
    */
@@ -162,7 +162,7 @@ public final class ListAssociationsFirewallPolicyRequest
    * The target resource to list associations. It is an organization, or a folder.
    * </pre>
    *
-   * <code>string target_resource = 467318524;</code>
+   * <code>optional string target_resource = 467318524;</code>
    *
    * @return The bytes for targetResource.
    */
@@ -526,7 +526,7 @@ public final class ListAssociationsFirewallPolicyRequest
      * The target resource to list associations. It is an organization, or a folder.
      * </pre>
      *
-     * <code>string target_resource = 467318524;</code>
+     * <code>optional string target_resource = 467318524;</code>
      *
      * @return Whether the targetResource field is set.
      */
@@ -540,7 +540,7 @@ public final class ListAssociationsFirewallPolicyRequest
      * The target resource to list associations. It is an organization, or a folder.
      * </pre>
      *
-     * <code>string target_resource = 467318524;</code>
+     * <code>optional string target_resource = 467318524;</code>
      *
      * @return The targetResource.
      */
@@ -562,7 +562,7 @@ public final class ListAssociationsFirewallPolicyRequest
      * The target resource to list associations. It is an organization, or a folder.
      * </pre>
      *
-     * <code>string target_resource = 467318524;</code>
+     * <code>optional string target_resource = 467318524;</code>
      *
      * @return The bytes for targetResource.
      */
@@ -584,7 +584,7 @@ public final class ListAssociationsFirewallPolicyRequest
      * The target resource to list associations. It is an organization, or a folder.
      * </pre>
      *
-     * <code>string target_resource = 467318524;</code>
+     * <code>optional string target_resource = 467318524;</code>
      *
      * @param value The targetResource to set.
      * @return This builder for chaining.
@@ -605,7 +605,7 @@ public final class ListAssociationsFirewallPolicyRequest
      * The target resource to list associations. It is an organization, or a folder.
      * </pre>
      *
-     * <code>string target_resource = 467318524;</code>
+     * <code>optional string target_resource = 467318524;</code>
      *
      * @return This builder for chaining.
      */
@@ -622,7 +622,7 @@ public final class ListAssociationsFirewallPolicyRequest
      * The target resource to list associations. It is an organization, or a folder.
      * </pre>
      *
-     * <code>string target_resource = 467318524;</code>
+     * <code>optional string target_resource = 467318524;</code>
      *
      * @param value The bytes for targetResource to set.
      * @return This builder for chaining.

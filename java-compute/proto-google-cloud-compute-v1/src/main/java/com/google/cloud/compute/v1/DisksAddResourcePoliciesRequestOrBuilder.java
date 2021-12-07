@@ -27,7 +27,7 @@ public interface DisksAddResourcePoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * Resource policies to be added to this disk. Currently you can only specify one policy here.
+   * Full or relative path to the resource policy to be added to this disk. You can only specify one resource policy.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -39,7 +39,7 @@ public interface DisksAddResourcePoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * Resource policies to be added to this disk. Currently you can only specify one policy here.
+   * Full or relative path to the resource policy to be added to this disk. You can only specify one resource policy.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -51,7 +51,7 @@ public interface DisksAddResourcePoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * Resource policies to be added to this disk. Currently you can only specify one policy here.
+   * Full or relative path to the resource policy to be added to this disk. You can only specify one resource policy.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -64,7 +64,7 @@ public interface DisksAddResourcePoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * Resource policies to be added to this disk. Currently you can only specify one policy here.
+   * Full or relative path to the resource policy to be added to this disk. You can only specify one resource policy.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>

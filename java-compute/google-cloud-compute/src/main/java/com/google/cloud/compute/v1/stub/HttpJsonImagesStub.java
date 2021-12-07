@@ -25,11 +25,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteImageRequest;
 import com.google.cloud.compute.v1.DeprecateImageRequest;
@@ -41,12 +43,14 @@ import com.google.cloud.compute.v1.ImageList;
 import com.google.cloud.compute.v1.InsertImageRequest;
 import com.google.cloud.compute.v1.ListImagesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchImageRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyImageRequest;
 import com.google.cloud.compute.v1.SetLabelsImageRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsImageRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -64,6 +68,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonImagesStub extends ImagesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<DeleteImageRequest, Operation> deleteMethodDescriptor =
       ApiMethodDescriptor.<DeleteImageRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Images/Delete")
@@ -95,7 +102,20 @@ public class HttpJsonImagesStub extends ImagesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (DeleteImageRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<DeprecateImageRequest, Operation>
@@ -135,7 +155,20 @@ public class HttpJsonImagesStub extends ImagesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeprecateImageRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetImageRequest, Image> getMethodDescriptor =
@@ -166,6 +199,7 @@ public class HttpJsonImagesStub extends ImagesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Image>newBuilder()
                   .setDefaultInstance(Image.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -198,6 +232,7 @@ public class HttpJsonImagesStub extends ImagesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Image>newBuilder()
                       .setDefaultInstance(Image.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -236,6 +271,7 @@ public class HttpJsonImagesStub extends ImagesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -275,7 +311,20 @@ public class HttpJsonImagesStub extends ImagesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (InsertImageRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<ListImagesRequest, ImageList> listMethodDescriptor =
@@ -321,6 +370,7 @@ public class HttpJsonImagesStub extends ImagesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<ImageList>newBuilder()
                   .setDefaultInstance(ImageList.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -358,7 +408,20 @@ public class HttpJsonImagesStub extends ImagesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (PatchImageRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<SetIamPolicyImageRequest, Policy>
@@ -395,6 +458,7 @@ public class HttpJsonImagesStub extends ImagesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -432,7 +496,20 @@ public class HttpJsonImagesStub extends ImagesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetLabelsImageRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<TestIamPermissionsImageRequest, TestPermissionsResponse>
@@ -469,24 +546,33 @@ public class HttpJsonImagesStub extends ImagesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
                       .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
   private final UnaryCallable<DeleteImageRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteImageRequest, Operation, Operation> deleteOperationCallable;
   private final UnaryCallable<DeprecateImageRequest, Operation> deprecateCallable;
+  private final OperationCallable<DeprecateImageRequest, Operation, Operation>
+      deprecateOperationCallable;
   private final UnaryCallable<GetImageRequest, Image> getCallable;
   private final UnaryCallable<GetFromFamilyImageRequest, Image> getFromFamilyCallable;
   private final UnaryCallable<GetIamPolicyImageRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<InsertImageRequest, Operation> insertCallable;
+  private final OperationCallable<InsertImageRequest, Operation, Operation> insertOperationCallable;
   private final UnaryCallable<ListImagesRequest, ImageList> listCallable;
   private final UnaryCallable<ListImagesRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<PatchImageRequest, Operation> patchCallable;
+  private final OperationCallable<PatchImageRequest, Operation, Operation> patchOperationCallable;
   private final UnaryCallable<SetIamPolicyImageRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<SetLabelsImageRequest, Operation> setLabelsCallable;
+  private final OperationCallable<SetLabelsImageRequest, Operation, Operation>
+      setLabelsOperationCallable;
   private final UnaryCallable<TestIamPermissionsImageRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonImagesStub create(ImagesStubSettings settings) throws IOException {
@@ -524,60 +610,85 @@ public class HttpJsonImagesStub extends ImagesStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<DeleteImageRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteImageRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<DeprecateImageRequest, Operation> deprecateTransportSettings =
         HttpJsonCallSettings.<DeprecateImageRequest, Operation>newBuilder()
             .setMethodDescriptor(deprecateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetImageRequest, Image> getTransportSettings =
         HttpJsonCallSettings.<GetImageRequest, Image>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetFromFamilyImageRequest, Image> getFromFamilyTransportSettings =
         HttpJsonCallSettings.<GetFromFamilyImageRequest, Image>newBuilder()
             .setMethodDescriptor(getFromFamilyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetIamPolicyImageRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyImageRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertImageRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertImageRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListImagesRequest, ImageList> listTransportSettings =
         HttpJsonCallSettings.<ListImagesRequest, ImageList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<PatchImageRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchImageRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetIamPolicyImageRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyImageRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetLabelsImageRequest, Operation> setLabelsTransportSettings =
         HttpJsonCallSettings.<SetLabelsImageRequest, Operation>newBuilder()
             .setMethodDescriptor(setLabelsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<TestIamPermissionsImageRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings
                 .<TestIamPermissionsImageRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deprecateCallable =
         callableFactory.createUnaryCallable(
             deprecateTransportSettings, settings.deprecateSettings(), clientContext);
+    this.deprecateOperationCallable =
+        callableFactory.createOperationCallable(
+            deprecateTransportSettings,
+            settings.deprecateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
@@ -590,6 +701,12 @@ public class HttpJsonImagesStub extends ImagesStub {
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -599,12 +716,24 @@ public class HttpJsonImagesStub extends ImagesStub {
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
     this.setLabelsCallable =
         callableFactory.createUnaryCallable(
             setLabelsTransportSettings, settings.setLabelsSettings(), clientContext);
+    this.setLabelsOperationCallable =
+        callableFactory.createOperationCallable(
+            setLabelsTransportSettings,
+            settings.setLabelsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.testIamPermissionsCallable =
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
@@ -638,8 +767,19 @@ public class HttpJsonImagesStub extends ImagesStub {
   }
 
   @Override
+  public OperationCallable<DeleteImageRequest, Operation, Operation> deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeprecateImageRequest, Operation> deprecateCallable() {
     return deprecateCallable;
+  }
+
+  @Override
+  public OperationCallable<DeprecateImageRequest, Operation, Operation>
+      deprecateOperationCallable() {
+    return deprecateOperationCallable;
   }
 
   @Override
@@ -663,6 +803,11 @@ public class HttpJsonImagesStub extends ImagesStub {
   }
 
   @Override
+  public OperationCallable<InsertImageRequest, Operation, Operation> insertOperationCallable() {
+    return insertOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<ListImagesRequest, ImageList> listCallable() {
     return listCallable;
   }
@@ -678,6 +823,11 @@ public class HttpJsonImagesStub extends ImagesStub {
   }
 
   @Override
+  public OperationCallable<PatchImageRequest, Operation, Operation> patchOperationCallable() {
+    return patchOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetIamPolicyImageRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
@@ -685,6 +835,12 @@ public class HttpJsonImagesStub extends ImagesStub {
   @Override
   public UnaryCallable<SetLabelsImageRequest, Operation> setLabelsCallable() {
     return setLabelsCallable;
+  }
+
+  @Override
+  public OperationCallable<SetLabelsImageRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return setLabelsOperationCallable;
   }
 
   @Override

@@ -30,7 +30,7 @@ public interface GetRuleSecurityPolicyRequestOrBuilder
    * The priority of the rule to get from the security policy.
    * </pre>
    *
-   * <code>int32 priority = 445151652;</code>
+   * <code>optional int32 priority = 445151652;</code>
    *
    * @return Whether the priority field is set.
    */
@@ -42,7 +42,7 @@ public interface GetRuleSecurityPolicyRequestOrBuilder
    * The priority of the rule to get from the security policy.
    * </pre>
    *
-   * <code>int32 priority = 445151652;</code>
+   * <code>optional int32 priority = 445151652;</code>
    *
    * @return The priority.
    */

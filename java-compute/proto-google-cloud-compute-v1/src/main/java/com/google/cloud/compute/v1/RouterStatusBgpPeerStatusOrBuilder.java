@@ -82,7 +82,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * IP address of the local BGP interface.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return Whether the ipAddress field is set.
    */
@@ -94,7 +94,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * IP address of the local BGP interface.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return The ipAddress.
    */
@@ -106,7 +106,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * IP address of the local BGP interface.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return The bytes for ipAddress.
    */
@@ -119,7 +119,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * URL of the VPN tunnel that this BGP peer controls.
    * </pre>
    *
-   * <code>string linked_vpn_tunnel = 352296953;</code>
+   * <code>optional string linked_vpn_tunnel = 352296953;</code>
    *
    * @return Whether the linkedVpnTunnel field is set.
    */
@@ -131,7 +131,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * URL of the VPN tunnel that this BGP peer controls.
    * </pre>
    *
-   * <code>string linked_vpn_tunnel = 352296953;</code>
+   * <code>optional string linked_vpn_tunnel = 352296953;</code>
    *
    * @return The linkedVpnTunnel.
    */
@@ -143,7 +143,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * URL of the VPN tunnel that this BGP peer controls.
    * </pre>
    *
-   * <code>string linked_vpn_tunnel = 352296953;</code>
+   * <code>optional string linked_vpn_tunnel = 352296953;</code>
    *
    * @return The bytes for linkedVpnTunnel.
    */
@@ -156,7 +156,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Name of this BGP peer. Unique within the Routers resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -168,7 +168,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Name of this BGP peer. Unique within the Routers resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -180,7 +180,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Name of this BGP peer. Unique within the Routers resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -193,7 +193,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Number of routes learned from the remote BGP Peer.
    * </pre>
    *
-   * <code>uint32 num_learned_routes = 135457535;</code>
+   * <code>optional uint32 num_learned_routes = 135457535;</code>
    *
    * @return Whether the numLearnedRoutes field is set.
    */
@@ -205,7 +205,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Number of routes learned from the remote BGP Peer.
    * </pre>
    *
-   * <code>uint32 num_learned_routes = 135457535;</code>
+   * <code>optional uint32 num_learned_routes = 135457535;</code>
    *
    * @return The numLearnedRoutes.
    */
@@ -218,7 +218,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * IP address of the remote BGP interface.
    * </pre>
    *
-   * <code>string peer_ip_address = 207735769;</code>
+   * <code>optional string peer_ip_address = 207735769;</code>
    *
    * @return Whether the peerIpAddress field is set.
    */
@@ -230,7 +230,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * IP address of the remote BGP interface.
    * </pre>
    *
-   * <code>string peer_ip_address = 207735769;</code>
+   * <code>optional string peer_ip_address = 207735769;</code>
    *
    * @return The peerIpAddress.
    */
@@ -242,7 +242,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * IP address of the remote BGP interface.
    * </pre>
    *
-   * <code>string peer_ip_address = 207735769;</code>
+   * <code>optional string peer_ip_address = 207735769;</code>
    *
    * @return The bytes for peerIpAddress.
    */
@@ -252,10 +252,47 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
+   * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+   * </pre>
+   *
+   * <code>optional string router_appliance_instance = 468312989;</code>
+   *
+   * @return Whether the routerApplianceInstance field is set.
+   */
+  boolean hasRouterApplianceInstance();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+   * </pre>
+   *
+   * <code>optional string router_appliance_instance = 468312989;</code>
+   *
+   * @return The routerApplianceInstance.
+   */
+  java.lang.String getRouterApplianceInstance();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+   * </pre>
+   *
+   * <code>optional string router_appliance_instance = 468312989;</code>
+   *
+   * @return The bytes for routerApplianceInstance.
+   */
+  com.google.protobuf.ByteString getRouterApplianceInstanceBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * BGP state as specified in RFC1771.
    * </pre>
    *
-   * <code>string state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
    * @return Whether the state field is set.
    */
@@ -267,7 +304,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * BGP state as specified in RFC1771.
    * </pre>
    *
-   * <code>string state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
    * @return The state.
    */
@@ -279,7 +316,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * BGP state as specified in RFC1771.
    * </pre>
    *
-   * <code>string state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
    * @return The bytes for state.
    */
@@ -290,9 +327,10 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    * <pre>
    * Status of the BGP peer: {UP, DOWN}
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -302,25 +340,27 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    * <pre>
    * Status of the BGP peer: {UP, DOWN}
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    *
    *
    * <pre>
    * Status of the BGP peer: {UP, DOWN}
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status getStatus();
+  com.google.protobuf.ByteString getStatusBytes();
 
   /**
    *
@@ -329,7 +369,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
    * </pre>
    *
-   * <code>string uptime = 235379688;</code>
+   * <code>optional string uptime = 235379688;</code>
    *
    * @return Whether the uptime field is set.
    */
@@ -341,7 +381,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
    * </pre>
    *
-   * <code>string uptime = 235379688;</code>
+   * <code>optional string uptime = 235379688;</code>
    *
    * @return The uptime.
    */
@@ -353,7 +393,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
    * </pre>
    *
-   * <code>string uptime = 235379688;</code>
+   * <code>optional string uptime = 235379688;</code>
    *
    * @return The bytes for uptime.
    */
@@ -366,7 +406,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Time this session has been up, in seconds. Format: 145
    * </pre>
    *
-   * <code>string uptime_seconds = 104736040;</code>
+   * <code>optional string uptime_seconds = 104736040;</code>
    *
    * @return Whether the uptimeSeconds field is set.
    */
@@ -378,7 +418,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Time this session has been up, in seconds. Format: 145
    * </pre>
    *
-   * <code>string uptime_seconds = 104736040;</code>
+   * <code>optional string uptime_seconds = 104736040;</code>
    *
    * @return The uptimeSeconds.
    */
@@ -390,7 +430,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Time this session has been up, in seconds. Format: 145
    * </pre>
    *
-   * <code>string uptime_seconds = 104736040;</code>
+   * <code>optional string uptime_seconds = 104736040;</code>
    *
    * @return The bytes for uptimeSeconds.
    */

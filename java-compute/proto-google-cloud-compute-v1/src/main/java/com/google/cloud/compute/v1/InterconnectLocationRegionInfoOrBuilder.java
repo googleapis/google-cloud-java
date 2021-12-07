@@ -30,7 +30,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
    * </pre>
    *
-   * <code>int64 expected_rtt_ms = 422543866;</code>
+   * <code>optional int64 expected_rtt_ms = 422543866;</code>
    *
    * @return Whether the expectedRttMs field is set.
    */
@@ -42,7 +42,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
    * </pre>
    *
-   * <code>int64 expected_rtt_ms = 422543866;</code>
+   * <code>optional int64 expected_rtt_ms = 422543866;</code>
    *
    * @return The expectedRttMs.
    */
@@ -53,11 +53,10 @@ public interface InterconnectLocationRegionInfoOrBuilder
    *
    * <pre>
    * Identifies the network presence of this location.
+   * Check the LocationPresence enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence location_presence = 101517893;
-   * </code>
+   * <code>optional string location_presence = 101517893;</code>
    *
    * @return Whether the locationPresence field is set.
    */
@@ -67,29 +66,27 @@ public interface InterconnectLocationRegionInfoOrBuilder
    *
    * <pre>
    * Identifies the network presence of this location.
+   * Check the LocationPresence enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence location_presence = 101517893;
-   * </code>
+   * <code>optional string location_presence = 101517893;</code>
    *
-   * @return The enum numeric value on the wire for locationPresence.
+   * @return The locationPresence.
    */
-  int getLocationPresenceValue();
+  java.lang.String getLocationPresence();
   /**
    *
    *
    * <pre>
    * Identifies the network presence of this location.
+   * Check the LocationPresence enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence location_presence = 101517893;
-   * </code>
+   * <code>optional string location_presence = 101517893;</code>
    *
-   * @return The locationPresence.
+   * @return The bytes for locationPresence.
    */
-  com.google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence getLocationPresence();
+  com.google.protobuf.ByteString getLocationPresenceBytes();
 
   /**
    *
@@ -98,7 +95,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    * URL for the region of this location.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -110,7 +107,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    * URL for the region of this location.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -122,7 +119,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    * URL for the region of this location.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */

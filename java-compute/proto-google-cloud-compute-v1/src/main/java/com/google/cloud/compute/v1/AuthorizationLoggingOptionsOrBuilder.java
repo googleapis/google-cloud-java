@@ -27,12 +27,11 @@ public interface AuthorizationLoggingOptionsOrBuilder
    *
    *
    * <pre>
-   * The type of the permission that was checked.
+   * This is deprecated and has no effect. Do not use.
+   * Check the PermissionType enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;
-   * </code>
+   * <code>optional string permission_type = 525978538;</code>
    *
    * @return Whether the permissionType field is set.
    */
@@ -41,28 +40,26 @@ public interface AuthorizationLoggingOptionsOrBuilder
    *
    *
    * <pre>
-   * The type of the permission that was checked.
+   * This is deprecated and has no effect. Do not use.
+   * Check the PermissionType enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;
-   * </code>
+   * <code>optional string permission_type = 525978538;</code>
    *
-   * @return The enum numeric value on the wire for permissionType.
+   * @return The permissionType.
    */
-  int getPermissionTypeValue();
+  java.lang.String getPermissionType();
   /**
    *
    *
    * <pre>
-   * The type of the permission that was checked.
+   * This is deprecated and has no effect. Do not use.
+   * Check the PermissionType enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;
-   * </code>
+   * <code>optional string permission_type = 525978538;</code>
    *
-   * @return The permissionType.
+   * @return The bytes for permissionType.
    */
-  com.google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType getPermissionType();
+  com.google.protobuf.ByteString getPermissionTypeBytes();
 }

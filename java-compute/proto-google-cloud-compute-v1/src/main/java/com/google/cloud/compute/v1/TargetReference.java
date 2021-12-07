@@ -115,7 +115,7 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
   public static final int TARGET_FIELD_NUMBER = 192835985;
   private volatile java.lang.Object target_;
   /**
-   * <code>string target = 192835985;</code>
+   * <code>optional string target = 192835985;</code>
    *
    * @return Whether the target field is set.
    */
@@ -124,7 +124,7 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>string target = 192835985;</code>
+   * <code>optional string target = 192835985;</code>
    *
    * @return The target.
    */
@@ -141,7 +141,7 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
     }
   }
   /**
-   * <code>string target = 192835985;</code>
+   * <code>optional string target = 192835985;</code>
    *
    * @return The bytes for target.
    */
@@ -489,7 +489,7 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
 
     private java.lang.Object target_ = "";
     /**
-     * <code>string target = 192835985;</code>
+     * <code>optional string target = 192835985;</code>
      *
      * @return Whether the target field is set.
      */
@@ -497,7 +497,7 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>string target = 192835985;</code>
+     * <code>optional string target = 192835985;</code>
      *
      * @return The target.
      */
@@ -513,7 +513,7 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
       }
     }
     /**
-     * <code>string target = 192835985;</code>
+     * <code>optional string target = 192835985;</code>
      *
      * @return The bytes for target.
      */
@@ -529,7 +529,7 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
       }
     }
     /**
-     * <code>string target = 192835985;</code>
+     * <code>optional string target = 192835985;</code>
      *
      * @param value The target to set.
      * @return This builder for chaining.
@@ -544,7 +544,7 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     * <code>string target = 192835985;</code>
+     * <code>optional string target = 192835985;</code>
      *
      * @return This builder for chaining.
      */
@@ -555,7 +555,7 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     * <code>string target = 192835985;</code>
+     * <code>optional string target = 192835985;</code>
      *
      * @param value The bytes for target to set.
      * @return This builder for chaining.

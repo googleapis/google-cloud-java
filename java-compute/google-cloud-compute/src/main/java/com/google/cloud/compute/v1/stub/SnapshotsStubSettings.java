@@ -27,10 +27,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.httpjson.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -76,15 +80,15 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * SnapshotsStubSettings.Builder snapshotsSettingsBuilder = SnapshotsStubSettings.newBuilder();
  * snapshotsSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         snapshotsSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -102,12 +106,16 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
           .build();
 
   private final UnaryCallSettings<DeleteSnapshotRequest, Operation> deleteSettings;
+  private final OperationCallSettings<DeleteSnapshotRequest, Operation, Operation>
+      deleteOperationSettings;
   private final UnaryCallSettings<GetSnapshotRequest, Snapshot> getSettings;
   private final UnaryCallSettings<GetIamPolicySnapshotRequest, Policy> getIamPolicySettings;
   private final PagedCallSettings<ListSnapshotsRequest, SnapshotList, ListPagedResponse>
       listSettings;
   private final UnaryCallSettings<SetIamPolicySnapshotRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<SetLabelsSnapshotRequest, Operation> setLabelsSettings;
+  private final OperationCallSettings<SetLabelsSnapshotRequest, Operation, Operation>
+      setLabelsOperationSettings;
   private final UnaryCallSettings<TestIamPermissionsSnapshotRequest, TestPermissionsResponse>
       testIamPermissionsSettings;
 
@@ -168,6 +176,12 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
     return deleteSettings;
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteSnapshotRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return deleteOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetSnapshotRequest, Snapshot> getSettings() {
     return getSettings;
@@ -191,6 +205,12 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
   /** Returns the object with the settings used for calls to setLabels. */
   public UnaryCallSettings<SetLabelsSnapshotRequest, Operation> setLabelsSettings() {
     return setLabelsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsSnapshotRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return setLabelsOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to testIamPermissions. */
@@ -233,7 +253,9 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return GoogleCredentialsProvider.newBuilder()
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        .setUseJwtAccessWithScope(true);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -274,11 +296,13 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
     super(settingsBuilder);
 
     deleteSettings = settingsBuilder.deleteSettings().build();
+    deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     listSettings = settingsBuilder.listSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     setLabelsSettings = settingsBuilder.setLabelsSettings().build();
+    setLabelsOperationSettings = settingsBuilder.setLabelsOperationSettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
@@ -286,6 +310,8 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
   public static class Builder extends StubSettings.Builder<SnapshotsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<DeleteSnapshotRequest, Operation> deleteSettings;
+    private final OperationCallSettings.Builder<DeleteSnapshotRequest, Operation, Operation>
+        deleteOperationSettings;
     private final UnaryCallSettings.Builder<GetSnapshotRequest, Snapshot> getSettings;
     private final UnaryCallSettings.Builder<GetIamPolicySnapshotRequest, Policy>
         getIamPolicySettings;
@@ -294,6 +320,8 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
     private final UnaryCallSettings.Builder<SetIamPolicySnapshotRequest, Policy>
         setIamPolicySettings;
     private final UnaryCallSettings.Builder<SetLabelsSnapshotRequest, Operation> setLabelsSettings;
+    private final OperationCallSettings.Builder<SetLabelsSnapshotRequest, Operation, Operation>
+        setLabelsOperationSettings;
     private final UnaryCallSettings.Builder<
             TestIamPermissionsSnapshotRequest, TestPermissionsResponse>
         testIamPermissionsSettings;
@@ -348,11 +376,13 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
       super(clientContext);
 
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setLabelsOperationSettings = OperationCallSettings.newBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -371,11 +401,13 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
       super(settings);
 
       deleteSettings = settings.deleteSettings.toBuilder();
+      deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       setLabelsSettings = settings.setLabelsSettings.toBuilder();
+      setLabelsOperationSettings = settings.setLabelsOperationSettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -438,6 +470,54 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .deleteOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteSnapshotRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setLabelsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetLabelsSnapshotRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -459,6 +539,14 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteSnapshotRequest, Operation> deleteSettings() {
       return deleteSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to delete. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteSnapshotRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return deleteOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -485,6 +573,14 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
     /** Returns the builder for the settings used for calls to setLabels. */
     public UnaryCallSettings.Builder<SetLabelsSnapshotRequest, Operation> setLabelsSettings() {
       return setLabelsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetLabelsSnapshotRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return setLabelsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */

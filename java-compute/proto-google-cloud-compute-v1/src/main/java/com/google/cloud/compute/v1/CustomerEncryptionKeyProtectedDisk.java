@@ -139,7 +139,8 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
    * Decrypts data associated with the disk with a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+   * </code>
    *
    * @return Whether the diskEncryptionKey field is set.
    */
@@ -154,7 +155,8 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
    * Decrypts data associated with the disk with a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+   * </code>
    *
    * @return The diskEncryptionKey.
    */
@@ -171,7 +173,8 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
    * Decrypts data associated with the disk with a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
@@ -187,10 +190,10 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
    *
    *
    * <pre>
-   * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks.
+   * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks. For example: "source": "/compute/v1/projects/project_id/zones/zone/disks/ disk_name
    * </pre>
    *
-   * <code>string source = 177235995;</code>
+   * <code>optional string source = 177235995;</code>
    *
    * @return Whether the source field is set.
    */
@@ -202,10 +205,10 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
    *
    *
    * <pre>
-   * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks.
+   * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks. For example: "source": "/compute/v1/projects/project_id/zones/zone/disks/ disk_name
    * </pre>
    *
-   * <code>string source = 177235995;</code>
+   * <code>optional string source = 177235995;</code>
    *
    * @return The source.
    */
@@ -225,10 +228,10 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
    *
    *
    * <pre>
-   * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks.
+   * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks. For example: "source": "/compute/v1/projects/project_id/zones/zone/disks/ disk_name
    * </pre>
    *
-   * <code>string source = 177235995;</code>
+   * <code>optional string source = 177235995;</code>
    *
    * @return The bytes for source.
    */
@@ -628,7 +631,9 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      *
      * @return Whether the diskEncryptionKey field is set.
      */
@@ -642,7 +647,9 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      *
      * @return The diskEncryptionKey.
      */
@@ -662,7 +669,9 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     public Builder setDiskEncryptionKey(com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (diskEncryptionKeyBuilder_ == null) {
@@ -684,7 +693,9 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     public Builder setDiskEncryptionKey(
         com.google.cloud.compute.v1.CustomerEncryptionKey.Builder builderForValue) {
@@ -704,7 +715,9 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     public Builder mergeDiskEncryptionKey(com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (diskEncryptionKeyBuilder_ == null) {
@@ -733,7 +746,9 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     public Builder clearDiskEncryptionKey() {
       if (diskEncryptionKeyBuilder_ == null) {
@@ -752,7 +767,9 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder getDiskEncryptionKeyBuilder() {
       bitField0_ |= 0x00000001;
@@ -766,7 +783,9 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
         getDiskEncryptionKeyOrBuilder() {
@@ -785,7 +804,9 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.CustomerEncryptionKey,
@@ -809,10 +830,10 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      *
      *
      * <pre>
-     * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks.
+     * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks. For example: "source": "/compute/v1/projects/project_id/zones/zone/disks/ disk_name
      * </pre>
      *
-     * <code>string source = 177235995;</code>
+     * <code>optional string source = 177235995;</code>
      *
      * @return Whether the source field is set.
      */
@@ -823,10 +844,10 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      *
      *
      * <pre>
-     * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks.
+     * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks. For example: "source": "/compute/v1/projects/project_id/zones/zone/disks/ disk_name
      * </pre>
      *
-     * <code>string source = 177235995;</code>
+     * <code>optional string source = 177235995;</code>
      *
      * @return The source.
      */
@@ -845,10 +866,10 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      *
      *
      * <pre>
-     * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks.
+     * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks. For example: "source": "/compute/v1/projects/project_id/zones/zone/disks/ disk_name
      * </pre>
      *
-     * <code>string source = 177235995;</code>
+     * <code>optional string source = 177235995;</code>
      *
      * @return The bytes for source.
      */
@@ -867,10 +888,10 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      *
      *
      * <pre>
-     * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks.
+     * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks. For example: "source": "/compute/v1/projects/project_id/zones/zone/disks/ disk_name
      * </pre>
      *
-     * <code>string source = 177235995;</code>
+     * <code>optional string source = 177235995;</code>
      *
      * @param value The source to set.
      * @return This builder for chaining.
@@ -888,10 +909,10 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      *
      *
      * <pre>
-     * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks.
+     * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks. For example: "source": "/compute/v1/projects/project_id/zones/zone/disks/ disk_name
      * </pre>
      *
-     * <code>string source = 177235995;</code>
+     * <code>optional string source = 177235995;</code>
      *
      * @return This builder for chaining.
      */
@@ -905,10 +926,10 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      *
      *
      * <pre>
-     * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks.
+     * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks. For example: "source": "/compute/v1/projects/project_id/zones/zone/disks/ disk_name
      * </pre>
      *
-     * <code>string source = 177235995;</code>
+     * <code>optional string source = 177235995;</code>
      *
      * @param value The bytes for source to set.
      * @return This builder for chaining.

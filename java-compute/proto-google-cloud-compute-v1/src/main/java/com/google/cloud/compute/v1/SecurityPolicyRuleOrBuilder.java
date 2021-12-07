@@ -30,7 +30,7 @@ public interface SecurityPolicyRuleOrBuilder
    * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
    * </pre>
    *
-   * <code>string action = 187661878;</code>
+   * <code>optional string action = 187661878;</code>
    *
    * @return Whether the action field is set.
    */
@@ -42,7 +42,7 @@ public interface SecurityPolicyRuleOrBuilder
    * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
    * </pre>
    *
-   * <code>string action = 187661878;</code>
+   * <code>optional string action = 187661878;</code>
    *
    * @return The action.
    */
@@ -54,7 +54,7 @@ public interface SecurityPolicyRuleOrBuilder
    * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
    * </pre>
    *
-   * <code>string action = 187661878;</code>
+   * <code>optional string action = 187661878;</code>
    *
    * @return The bytes for action.
    */
@@ -67,7 +67,7 @@ public interface SecurityPolicyRuleOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -79,7 +79,7 @@ public interface SecurityPolicyRuleOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -91,7 +91,7 @@ public interface SecurityPolicyRuleOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -104,7 +104,7 @@ public interface SecurityPolicyRuleOrBuilder
    * [Output only] Type of the resource. Always compute#securityPolicyRule for security policy rules
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -116,7 +116,7 @@ public interface SecurityPolicyRuleOrBuilder
    * [Output only] Type of the resource. Always compute#securityPolicyRule for security policy rules
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -128,7 +128,7 @@ public interface SecurityPolicyRuleOrBuilder
    * [Output only] Type of the resource. Always compute#securityPolicyRule for security policy rules
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -141,7 +141,7 @@ public interface SecurityPolicyRuleOrBuilder
    * A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SecurityPolicyRuleMatcher match = 103668165;</code>
+   * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcher match = 103668165;</code>
    *
    * @return Whether the match field is set.
    */
@@ -153,7 +153,7 @@ public interface SecurityPolicyRuleOrBuilder
    * A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SecurityPolicyRuleMatcher match = 103668165;</code>
+   * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcher match = 103668165;</code>
    *
    * @return The match.
    */
@@ -165,7 +165,7 @@ public interface SecurityPolicyRuleOrBuilder
    * A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SecurityPolicyRuleMatcher match = 103668165;</code>
+   * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcher match = 103668165;</code>
    */
   com.google.cloud.compute.v1.SecurityPolicyRuleMatcherOrBuilder getMatchOrBuilder();
 
@@ -176,7 +176,7 @@ public interface SecurityPolicyRuleOrBuilder
    * If set to true, the specified action is not enforced.
    * </pre>
    *
-   * <code>bool preview = 218686408;</code>
+   * <code>optional bool preview = 218686408;</code>
    *
    * @return Whether the preview field is set.
    */
@@ -188,7 +188,7 @@ public interface SecurityPolicyRuleOrBuilder
    * If set to true, the specified action is not enforced.
    * </pre>
    *
-   * <code>bool preview = 218686408;</code>
+   * <code>optional bool preview = 218686408;</code>
    *
    * @return The preview.
    */
@@ -201,7 +201,7 @@ public interface SecurityPolicyRuleOrBuilder
    * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.
    * </pre>
    *
-   * <code>int32 priority = 445151652;</code>
+   * <code>optional int32 priority = 445151652;</code>
    *
    * @return Whether the priority field is set.
    */
@@ -213,7 +213,7 @@ public interface SecurityPolicyRuleOrBuilder
    * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.
    * </pre>
    *
-   * <code>int32 priority = 445151652;</code>
+   * <code>optional int32 priority = 445151652;</code>
    *
    * @return The priority.
    */

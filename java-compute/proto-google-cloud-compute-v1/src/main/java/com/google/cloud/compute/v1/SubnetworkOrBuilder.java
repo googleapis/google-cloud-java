@@ -30,7 +30,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -42,7 +42,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -54,7 +54,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -67,7 +67,7 @@ public interface SubnetworkOrBuilder
    * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -79,7 +79,7 @@ public interface SubnetworkOrBuilder
    * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -91,7 +91,7 @@ public interface SubnetworkOrBuilder
    * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -104,7 +104,7 @@ public interface SubnetworkOrBuilder
    * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
    * </pre>
    *
-   * <code>bool enable_flow_logs = 151544420;</code>
+   * <code>optional bool enable_flow_logs = 151544420;</code>
    *
    * @return Whether the enableFlowLogs field is set.
    */
@@ -116,7 +116,7 @@ public interface SubnetworkOrBuilder
    * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
    * </pre>
    *
-   * <code>bool enable_flow_logs = 151544420;</code>
+   * <code>optional bool enable_flow_logs = 151544420;</code>
    *
    * @return The enableFlowLogs.
    */
@@ -126,11 +126,47 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+   * [Output Only] The range of external IPv6 addresses that are owned by this subnetwork.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string external_ipv6_prefix = 139299190;</code>
+   *
+   * @return Whether the externalIpv6Prefix field is set.
+   */
+  boolean hasExternalIpv6Prefix();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The range of external IPv6 addresses that are owned by this subnetwork.
+   * </pre>
+   *
+   * <code>optional string external_ipv6_prefix = 139299190;</code>
+   *
+   * @return The externalIpv6Prefix.
+   */
+  java.lang.String getExternalIpv6Prefix();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The range of external IPv6 addresses that are owned by this subnetwork.
+   * </pre>
+   *
+   * <code>optional string external_ipv6_prefix = 139299190;</code>
+   *
+   * @return The bytes for externalIpv6Prefix.
+   */
+  com.google.protobuf.ByteString getExternalIpv6PrefixBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+   * </pre>
+   *
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return Whether the fingerprint field is set.
    */
@@ -139,11 +175,10 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The fingerprint.
    */
@@ -152,11 +187,10 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The bytes for fingerprint.
    */
@@ -169,7 +203,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
    * </pre>
    *
-   * <code>string gateway_address = 459867385;</code>
+   * <code>optional string gateway_address = 459867385;</code>
    *
    * @return Whether the gatewayAddress field is set.
    */
@@ -181,7 +215,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
    * </pre>
    *
-   * <code>string gateway_address = 459867385;</code>
+   * <code>optional string gateway_address = 459867385;</code>
    *
    * @return The gatewayAddress.
    */
@@ -193,7 +227,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
    * </pre>
    *
-   * <code>string gateway_address = 459867385;</code>
+   * <code>optional string gateway_address = 459867385;</code>
    *
    * @return The bytes for gatewayAddress.
    */
@@ -206,7 +240,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -218,7 +252,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -231,7 +265,7 @@ public interface SubnetworkOrBuilder
    * The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field is set at resource creation time. The range can be any range listed in the Valid ranges list. The range can be expanded after creation using expandIpCidrRange.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return Whether the ipCidrRange field is set.
    */
@@ -243,7 +277,7 @@ public interface SubnetworkOrBuilder
    * The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field is set at resource creation time. The range can be any range listed in the Valid ranges list. The range can be expanded after creation using expandIpCidrRange.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return The ipCidrRange.
    */
@@ -255,7 +289,7 @@ public interface SubnetworkOrBuilder
    * The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field is set at resource creation time. The range can be any range listed in the Valid ranges list. The range can be expanded after creation using expandIpCidrRange.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return The bytes for ipCidrRange.
    */
@@ -265,10 +299,50 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
+   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+   * Check the Ipv6AccessType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   *
+   * @return Whether the ipv6AccessType field is set.
+   */
+  boolean hasIpv6AccessType();
+  /**
+   *
+   *
+   * <pre>
+   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+   * Check the Ipv6AccessType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   *
+   * @return The ipv6AccessType.
+   */
+  java.lang.String getIpv6AccessType();
+  /**
+   *
+   *
+   * <pre>
+   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+   * Check the Ipv6AccessType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   *
+   * @return The bytes for ipv6AccessType.
+   */
+  com.google.protobuf.ByteString getIpv6AccessTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
    * </pre>
    *
-   * <code>string ipv6_cidr_range = 273141258;</code>
+   * <code>optional string ipv6_cidr_range = 273141258;</code>
    *
    * @return Whether the ipv6CidrRange field is set.
    */
@@ -280,7 +354,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
    * </pre>
    *
-   * <code>string ipv6_cidr_range = 273141258;</code>
+   * <code>optional string ipv6_cidr_range = 273141258;</code>
    *
    * @return The ipv6CidrRange.
    */
@@ -292,7 +366,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
    * </pre>
    *
-   * <code>string ipv6_cidr_range = 273141258;</code>
+   * <code>optional string ipv6_cidr_range = 273141258;</code>
    *
    * @return The bytes for ipv6CidrRange.
    */
@@ -305,7 +379,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -317,7 +391,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -329,7 +403,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -342,7 +416,7 @@ public interface SubnetworkOrBuilder
    * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+   * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
    *
    * @return Whether the logConfig field is set.
    */
@@ -354,7 +428,7 @@ public interface SubnetworkOrBuilder
    * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+   * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
    *
    * @return The logConfig.
    */
@@ -366,7 +440,7 @@ public interface SubnetworkOrBuilder
    * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+   * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
    */
   com.google.cloud.compute.v1.SubnetworkLogConfigOrBuilder getLogConfigOrBuilder();
 
@@ -377,7 +451,7 @@ public interface SubnetworkOrBuilder
    * The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -389,7 +463,7 @@ public interface SubnetworkOrBuilder
    * The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -401,7 +475,7 @@ public interface SubnetworkOrBuilder
    * The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -411,10 +485,10 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. Only networks that are in the distributed mode can have subnetworks. This field can be set only at resource creation time.
+   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return Whether the network field is set.
    */
@@ -423,10 +497,10 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. Only networks that are in the distributed mode can have subnetworks. This field can be set only at resource creation time.
+   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The network.
    */
@@ -435,10 +509,10 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. Only networks that are in the distributed mode can have subnetworks. This field can be set only at resource creation time.
+   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The bytes for network.
    */
@@ -451,7 +525,7 @@ public interface SubnetworkOrBuilder
    * Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
    * </pre>
    *
-   * <code>bool private_ip_google_access = 421491790;</code>
+   * <code>optional bool private_ip_google_access = 421491790;</code>
    *
    * @return Whether the privateIpGoogleAccess field is set.
    */
@@ -463,7 +537,7 @@ public interface SubnetworkOrBuilder
    * Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
    * </pre>
    *
-   * <code>bool private_ip_google_access = 421491790;</code>
+   * <code>optional bool private_ip_google_access = 421491790;</code>
    *
    * @return The privateIpGoogleAccess.
    */
@@ -473,13 +547,11 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority.
-   * This field can be both set at resource creation time and updated using patch.
+   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
-   * </code>
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
    *
    * @return Whether the privateIpv6GoogleAccess field is set.
    */
@@ -488,41 +560,38 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority.
-   * This field can be both set at resource creation time and updated using patch.
+   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
-   * </code>
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
    *
-   * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
+   * @return The privateIpv6GoogleAccess.
    */
-  int getPrivateIpv6GoogleAccessValue();
+  java.lang.String getPrivateIpv6GoogleAccess();
   /**
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority.
-   * This field can be both set at resource creation time and updated using patch.
+   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
-   * </code>
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
    *
-   * @return The privateIpv6GoogleAccess.
+   * @return The bytes for privateIpv6GoogleAccess.
    */
-  com.google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess getPrivateIpv6GoogleAccess();
+  com.google.protobuf.ByteString getPrivateIpv6GoogleAccessBytes();
 
   /**
    *
    *
    * <pre>
    * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+   * Check the Purpose enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
+   * <code>optional string purpose = 316407070;</code>
    *
    * @return Whether the purpose field is set.
    */
@@ -532,25 +601,27 @@ public interface SubnetworkOrBuilder
    *
    * <pre>
    * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+   * Check the Purpose enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
+   * <code>optional string purpose = 316407070;</code>
    *
-   * @return The enum numeric value on the wire for purpose.
+   * @return The purpose.
    */
-  int getPurposeValue();
+  java.lang.String getPurpose();
   /**
    *
    *
    * <pre>
    * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+   * Check the Purpose enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
+   * <code>optional string purpose = 316407070;</code>
    *
-   * @return The purpose.
+   * @return The bytes for purpose.
    */
-  com.google.cloud.compute.v1.Subnetwork.Purpose getPurpose();
+  com.google.protobuf.ByteString getPurposeBytes();
 
   /**
    *
@@ -559,7 +630,7 @@ public interface SubnetworkOrBuilder
    * URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -571,7 +642,7 @@ public interface SubnetworkOrBuilder
    * URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -583,7 +654,7 @@ public interface SubnetworkOrBuilder
    * URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -594,9 +665,10 @@ public interface SubnetworkOrBuilder
    *
    * <pre>
    * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * Check the Role enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Subnetwork.Role role = 3506294;</code>
+   * <code>optional string role = 3506294;</code>
    *
    * @return Whether the role field is set.
    */
@@ -606,25 +678,27 @@ public interface SubnetworkOrBuilder
    *
    * <pre>
    * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * Check the Role enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Subnetwork.Role role = 3506294;</code>
+   * <code>optional string role = 3506294;</code>
    *
-   * @return The enum numeric value on the wire for role.
+   * @return The role.
    */
-  int getRoleValue();
+  java.lang.String getRole();
   /**
    *
    *
    * <pre>
    * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * Check the Role enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Subnetwork.Role role = 3506294;</code>
+   * <code>optional string role = 3506294;</code>
    *
-   * @return The role.
+   * @return The bytes for role.
    */
-  com.google.cloud.compute.v1.Subnetwork.Role getRole();
+  com.google.protobuf.ByteString getRoleBytes();
 
   /**
    *
@@ -696,7 +770,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -708,7 +782,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -720,7 +794,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -730,10 +804,51 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+   * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+   * Check the StackType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
+   * <code>optional string stack_type = 425908881;</code>
+   *
+   * @return Whether the stackType field is set.
+   */
+  boolean hasStackType();
+  /**
+   *
+   *
+   * <pre>
+   * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+   * Check the StackType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string stack_type = 425908881;</code>
+   *
+   * @return The stackType.
+   */
+  java.lang.String getStackType();
+  /**
+   *
+   *
+   * <pre>
+   * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+   * Check the StackType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string stack_type = 425908881;</code>
+   *
+   * @return The bytes for stackType.
+   */
+  com.google.protobuf.ByteString getStackTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+   * Check the State enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string state = 109757585;</code>
    *
    * @return Whether the state field is set.
    */
@@ -743,23 +858,25 @@ public interface SubnetworkOrBuilder
    *
    * <pre>
    * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The enum numeric value on the wire for state.
+   * @return The state.
    */
-  int getStateValue();
+  java.lang.String getState();
   /**
    *
    *
    * <pre>
    * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The state.
+   * @return The bytes for state.
    */
-  com.google.cloud.compute.v1.Subnetwork.State getState();
+  com.google.protobuf.ByteString getStateBytes();
 }

@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Packet Mirroring resource.
- * Packet Mirroring clones the traffic of specified instances in your Virtual Private Cloud (VPC) network and forwards it to a collector destination, such as an instance group of an internal TCP/UDP load balancer, for analysis or examination. For more information about setting up Packet Mirroring, see Using Packet Mirroring. (== resource_for {$api_version}.packetMirrorings ==)
+ * Represents a Packet Mirroring resource. Packet Mirroring clones the traffic of specified instances in your Virtual Private Cloud (VPC) network and forwards it to a collector destination, such as an instance group of an internal TCP/UDP load balancer, for analysis or examination. For more information about setting up Packet Mirroring, see Using Packet Mirroring.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.PacketMirroring}
@@ -41,7 +40,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
   private PacketMirroring() {
     creationTimestamp_ = "";
     description_ = "";
-    enable_ = 0;
+    enable_ = "";
     kind_ = "";
     name_ = "";
     region_ = "";
@@ -147,11 +146,11 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
               bitField0_ |= 0x00000200;
               break;
             }
-          case -1800852456:
+          case -1800852454:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
-              enable_ = rawValue;
+              enable_ = s;
               break;
             }
           case -1606001726:
@@ -247,8 +246,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-   * The default is TRUE.
+   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.PacketMirroring.Enable}
@@ -379,7 +377,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
+   * <code>
+   * optional .google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
    * </code>
    *
    * @return Whether the collectorIlb field is set.
@@ -395,7 +394,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
+   * <code>
+   * optional .google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
    * </code>
    *
    * @return The collectorIlb.
@@ -413,7 +413,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
+   * <code>
+   * optional .google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
    * </code>
    */
   @java.lang.Override
@@ -433,7 +434,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -448,7 +449,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -471,7 +472,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -497,7 +498,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -512,7 +513,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -535,7 +536,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -553,16 +554,16 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ENABLE_FIELD_NUMBER = 311764355;
-  private int enable_;
+  private volatile java.lang.Object enable_;
   /**
    *
    *
    * <pre>
-   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-   * The default is TRUE.
+   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+   * Check the Enable enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+   * <code>optional string enable = 311764355;</code>
    *
    * @return Whether the enable field is set.
    */
@@ -574,38 +575,49 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-   * The default is TRUE.
+   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+   * Check the Enable enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+   * <code>optional string enable = 311764355;</code>
    *
-   * @return The enum numeric value on the wire for enable.
+   * @return The enable.
    */
   @java.lang.Override
-  public int getEnableValue() {
-    return enable_;
+  public java.lang.String getEnable() {
+    java.lang.Object ref = enable_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      enable_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-   * The default is TRUE.
+   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+   * Check the Enable enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+   * <code>optional string enable = 311764355;</code>
    *
-   * @return The enable.
+   * @return The bytes for enable.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.PacketMirroring.Enable getEnable() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.PacketMirroring.Enable result =
-        com.google.cloud.compute.v1.PacketMirroring.Enable.valueOf(enable_);
-    return result == null
-        ? com.google.cloud.compute.v1.PacketMirroring.Enable.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getEnableBytes() {
+    java.lang.Object ref = enable_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      enable_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int FILTER_FIELD_NUMBER = 336120696;
@@ -617,7 +629,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+   * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
    *
    * @return Whether the filter field is set.
    */
@@ -632,7 +644,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+   * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
    *
    * @return The filter.
    */
@@ -649,7 +661,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+   * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.PacketMirroringFilterOrBuilder getFilterOrBuilder() {
@@ -667,7 +679,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -682,7 +694,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -700,7 +712,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -715,7 +727,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -738,7 +750,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -765,7 +777,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
+   * optional .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
    * </code>
    *
    * @return Whether the mirroredResources field is set.
@@ -782,7 +794,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
+   * optional .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
    * </code>
    *
    * @return The mirroredResources.
@@ -801,7 +813,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
+   * optional .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
    * </code>
    */
   @java.lang.Override
@@ -821,7 +833,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -836,7 +848,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -859,7 +871,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -885,7 +897,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
+   * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
    *
    * @return Whether the network field is set.
    */
@@ -900,7 +912,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
+   * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
    *
    * @return The network.
    */
@@ -917,7 +929,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
+   * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.PacketMirroringNetworkInfoOrBuilder getNetworkOrBuilder() {
@@ -932,11 +944,10 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
-   * Default value is 1000. Valid range is 0 through 65535.
+   * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
    * </pre>
    *
-   * <code>uint32 priority = 445151652;</code>
+   * <code>optional uint32 priority = 445151652;</code>
    *
    * @return Whether the priority field is set.
    */
@@ -948,11 +959,10 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
-   * Default value is 1000. Valid range is 0 through 65535.
+   * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
    * </pre>
    *
-   * <code>uint32 priority = 445151652;</code>
+   * <code>optional uint32 priority = 445151652;</code>
    *
    * @return The priority.
    */
@@ -970,7 +980,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * [Output Only] URI of the region where the packetMirroring resides.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -985,7 +995,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * [Output Only] URI of the region where the packetMirroring resides.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -1008,7 +1018,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * [Output Only] URI of the region where the packetMirroring resides.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -1034,7 +1044,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -1049,7 +1059,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1072,7 +1082,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1125,7 +1135,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       output.writeMessage(232872494, getNetwork());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeEnum(311764355, enable_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 311764355, enable_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(336120696, getFilter());
@@ -1176,7 +1186,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(232872494, getNetwork());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(311764355, enable_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(311764355, enable_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(336120696, getFilter());
@@ -1224,7 +1234,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
     }
     if (hasEnable() != other.hasEnable()) return false;
     if (hasEnable()) {
-      if (enable_ != other.enable_) return false;
+      if (!getEnable().equals(other.getEnable())) return false;
     }
     if (hasFilter() != other.hasFilter()) return false;
     if (hasFilter()) {
@@ -1287,7 +1297,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
     }
     if (hasEnable()) {
       hash = (37 * hash) + ENABLE_FIELD_NUMBER;
-      hash = (53 * hash) + enable_;
+      hash = (53 * hash) + getEnable().hashCode();
     }
     if (hasFilter()) {
       hash = (37 * hash) + FILTER_FIELD_NUMBER;
@@ -1429,8 +1439,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Represents a Packet Mirroring resource.
-   * Packet Mirroring clones the traffic of specified instances in your Virtual Private Cloud (VPC) network and forwards it to a collector destination, such as an instance group of an internal TCP/UDP load balancer, for analysis or examination. For more information about setting up Packet Mirroring, see Using Packet Mirroring. (== resource_for {$api_version}.packetMirrorings ==)
+   * Represents a Packet Mirroring resource. Packet Mirroring clones the traffic of specified instances in your Virtual Private Cloud (VPC) network and forwards it to a collector destination, such as an instance group of an internal TCP/UDP load balancer, for analysis or examination. For more information about setting up Packet Mirroring, see Using Packet Mirroring.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.PacketMirroring}
@@ -1486,7 +1495,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       bitField0_ = (bitField0_ & ~0x00000002);
       description_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
-      enable_ = 0;
+      enable_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
       if (filterBuilder_ == null) {
         filter_ = null;
@@ -1679,7 +1688,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
         onChanged();
       }
       if (other.hasEnable()) {
-        setEnable(other.getEnable());
+        bitField0_ |= 0x00000008;
+        enable_ = other.enable_;
+        onChanged();
       }
       if (other.hasFilter()) {
         mergeFilter(other.getFilter());
@@ -1760,7 +1771,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
+     * <code>
+     * optional .google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
      * </code>
      *
      * @return Whether the collectorIlb field is set.
@@ -1775,7 +1787,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
+     * <code>
+     * optional .google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
      * </code>
      *
      * @return The collectorIlb.
@@ -1796,7 +1809,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
+     * <code>
+     * optional .google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
      * </code>
      */
     public Builder setCollectorIlb(
@@ -1820,7 +1834,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
+     * <code>
+     * optional .google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
      * </code>
      */
     public Builder setCollectorIlb(
@@ -1841,7 +1856,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
+     * <code>
+     * optional .google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
      * </code>
      */
     public Builder mergeCollectorIlb(
@@ -1874,7 +1890,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
+     * <code>
+     * optional .google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
      * </code>
      */
     public Builder clearCollectorIlb() {
@@ -1894,7 +1911,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
+     * <code>
+     * optional .google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
      * </code>
      */
     public com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo.Builder
@@ -1910,7 +1928,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
+     * <code>
+     * optional .google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
      * </code>
      */
     public com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfoOrBuilder
@@ -1930,7 +1949,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
+     * <code>
+     * optional .google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1958,7 +1978,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -1972,7 +1992,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -1994,7 +2014,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -2016,7 +2036,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -2037,7 +2057,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -2054,7 +2074,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -2078,7 +2098,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -2092,7 +2112,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -2114,7 +2134,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -2136,7 +2156,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2157,7 +2177,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -2174,7 +2194,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2190,20 +2210,19 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private int enable_ = 0;
+    private java.lang.Object enable_ = "";
     /**
      *
      *
      * <pre>
-     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-     * The default is TRUE.
+     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+     * <code>optional string enable = 311764355;</code>
      *
      * @return Whether the enable field is set.
      */
-    @java.lang.Override
     public boolean hasEnable() {
       return ((bitField0_ & 0x00000008) != 0);
     }
@@ -2211,32 +2230,65 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-     * The default is TRUE.
+     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+     * <code>optional string enable = 311764355;</code>
      *
-     * @return The enum numeric value on the wire for enable.
+     * @return The enable.
      */
-    @java.lang.Override
-    public int getEnableValue() {
-      return enable_;
+    public java.lang.String getEnable() {
+      java.lang.Object ref = enable_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        enable_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-     * The default is TRUE.
+     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+     * <code>optional string enable = 311764355;</code>
      *
-     * @param value The enum numeric value on the wire for enable to set.
+     * @return The bytes for enable.
+     */
+    public com.google.protobuf.ByteString getEnableBytes() {
+      java.lang.Object ref = enable_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        enable_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string enable = 311764355;</code>
+     *
+     * @param value The enable to set.
      * @return This builder for chaining.
      */
-    public Builder setEnableValue(int value) {
+    public Builder setEnable(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000008;
       enable_ = value;
       onChanged();
@@ -2246,42 +2298,17 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-     * The default is TRUE.
+     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+     * <code>optional string enable = 311764355;</code>
      *
-     * @return The enable.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.PacketMirroring.Enable getEnable() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.PacketMirroring.Enable result =
-          com.google.cloud.compute.v1.PacketMirroring.Enable.valueOf(enable_);
-      return result == null
-          ? com.google.cloud.compute.v1.PacketMirroring.Enable.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-     * The default is TRUE.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
-     *
-     * @param value The enable to set.
      * @return This builder for chaining.
      */
-    public Builder setEnable(com.google.cloud.compute.v1.PacketMirroring.Enable value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000008;
-      enable_ = value.getNumber();
+    public Builder clearEnable() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      enable_ = getDefaultInstance().getEnable();
       onChanged();
       return this;
     }
@@ -2289,17 +2316,22 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-     * The default is TRUE.
+     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+     * <code>optional string enable = 311764355;</code>
      *
+     * @param value The bytes for enable to set.
      * @return This builder for chaining.
      */
-    public Builder clearEnable() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      enable_ = 0;
+    public Builder setEnableBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000008;
+      enable_ = value;
       onChanged();
       return this;
     }
@@ -2317,7 +2349,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+     * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
      *
      * @return Whether the filter field is set.
      */
@@ -2331,7 +2363,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+     * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
      *
      * @return The filter.
      */
@@ -2351,7 +2383,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+     * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
      */
     public Builder setFilter(com.google.cloud.compute.v1.PacketMirroringFilter value) {
       if (filterBuilder_ == null) {
@@ -2373,7 +2405,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+     * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
      */
     public Builder setFilter(
         com.google.cloud.compute.v1.PacketMirroringFilter.Builder builderForValue) {
@@ -2393,7 +2425,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+     * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
      */
     public Builder mergeFilter(com.google.cloud.compute.v1.PacketMirroringFilter value) {
       if (filterBuilder_ == null) {
@@ -2421,7 +2453,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+     * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
      */
     public Builder clearFilter() {
       if (filterBuilder_ == null) {
@@ -2440,7 +2472,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+     * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
      */
     public com.google.cloud.compute.v1.PacketMirroringFilter.Builder getFilterBuilder() {
       bitField0_ |= 0x00000010;
@@ -2454,7 +2486,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+     * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
      */
     public com.google.cloud.compute.v1.PacketMirroringFilterOrBuilder getFilterOrBuilder() {
       if (filterBuilder_ != null) {
@@ -2472,7 +2504,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+     * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.PacketMirroringFilter,
@@ -2499,7 +2531,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -2514,7 +2546,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -2529,7 +2561,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -2547,7 +2579,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -2566,7 +2598,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -2580,7 +2612,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -2602,7 +2634,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -2624,7 +2656,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -2645,7 +2677,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -2662,7 +2694,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -2692,7 +2724,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
+     * optional .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
      * </code>
      *
      * @return Whether the mirroredResources field is set.
@@ -2708,7 +2740,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
+     * optional .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
      * </code>
      *
      * @return The mirroredResources.
@@ -2730,7 +2762,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
+     * optional .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
      * </code>
      */
     public Builder setMirroredResources(
@@ -2755,7 +2787,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
+     * optional .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
      * </code>
      */
     public Builder setMirroredResources(
@@ -2777,7 +2809,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
+     * optional .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
      * </code>
      */
     public Builder mergeMirroredResources(
@@ -2811,7 +2843,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
+     * optional .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
      * </code>
      */
     public Builder clearMirroredResources() {
@@ -2832,7 +2864,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
+     * optional .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
      * </code>
      */
     public com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfo.Builder
@@ -2849,7 +2881,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
+     * optional .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
      * </code>
      */
     public com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoOrBuilder
@@ -2870,7 +2902,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
+     * optional .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2898,7 +2930,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -2912,7 +2944,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -2934,7 +2966,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -2956,7 +2988,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2977,7 +3009,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -2994,7 +3026,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -3023,7 +3055,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
+     * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;
+     * </code>
      *
      * @return Whether the network field is set.
      */
@@ -3037,7 +3070,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
+     * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;
+     * </code>
      *
      * @return The network.
      */
@@ -3057,7 +3091,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
+     * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;
+     * </code>
      */
     public Builder setNetwork(com.google.cloud.compute.v1.PacketMirroringNetworkInfo value) {
       if (networkBuilder_ == null) {
@@ -3079,7 +3114,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
+     * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;
+     * </code>
      */
     public Builder setNetwork(
         com.google.cloud.compute.v1.PacketMirroringNetworkInfo.Builder builderForValue) {
@@ -3099,7 +3135,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
+     * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;
+     * </code>
      */
     public Builder mergeNetwork(com.google.cloud.compute.v1.PacketMirroringNetworkInfo value) {
       if (networkBuilder_ == null) {
@@ -3128,7 +3165,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
+     * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;
+     * </code>
      */
     public Builder clearNetwork() {
       if (networkBuilder_ == null) {
@@ -3147,7 +3185,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
+     * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;
+     * </code>
      */
     public com.google.cloud.compute.v1.PacketMirroringNetworkInfo.Builder getNetworkBuilder() {
       bitField0_ |= 0x00000200;
@@ -3161,7 +3200,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
+     * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;
+     * </code>
      */
     public com.google.cloud.compute.v1.PacketMirroringNetworkInfoOrBuilder getNetworkOrBuilder() {
       if (networkBuilder_ != null) {
@@ -3179,7 +3219,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
+     * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.PacketMirroringNetworkInfo,
@@ -3203,11 +3244,10 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
-     * Default value is 1000. Valid range is 0 through 65535.
+     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
      * </pre>
      *
-     * <code>uint32 priority = 445151652;</code>
+     * <code>optional uint32 priority = 445151652;</code>
      *
      * @return Whether the priority field is set.
      */
@@ -3219,11 +3259,10 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
-     * Default value is 1000. Valid range is 0 through 65535.
+     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
      * </pre>
      *
-     * <code>uint32 priority = 445151652;</code>
+     * <code>optional uint32 priority = 445151652;</code>
      *
      * @return The priority.
      */
@@ -3235,11 +3274,10 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
-     * Default value is 1000. Valid range is 0 through 65535.
+     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
      * </pre>
      *
-     * <code>uint32 priority = 445151652;</code>
+     * <code>optional uint32 priority = 445151652;</code>
      *
      * @param value The priority to set.
      * @return This builder for chaining.
@@ -3254,11 +3292,10 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
-     * Default value is 1000. Valid range is 0 through 65535.
+     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
      * </pre>
      *
-     * <code>uint32 priority = 445151652;</code>
+     * <code>optional uint32 priority = 445151652;</code>
      *
      * @return This builder for chaining.
      */
@@ -3277,7 +3314,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] URI of the region where the packetMirroring resides.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return Whether the region field is set.
      */
@@ -3291,7 +3328,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] URI of the region where the packetMirroring resides.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The region.
      */
@@ -3313,7 +3350,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] URI of the region where the packetMirroring resides.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The bytes for region.
      */
@@ -3335,7 +3372,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] URI of the region where the packetMirroring resides.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -3356,7 +3393,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] URI of the region where the packetMirroring resides.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return This builder for chaining.
      */
@@ -3373,7 +3410,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] URI of the region where the packetMirroring resides.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.
@@ -3397,7 +3434,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -3411,7 +3448,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -3433,7 +3470,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3455,7 +3492,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3476,7 +3513,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -3493,7 +3530,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.

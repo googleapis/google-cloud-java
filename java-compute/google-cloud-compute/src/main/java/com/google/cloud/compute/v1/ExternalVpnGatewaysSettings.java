@@ -26,6 +26,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -49,16 +50,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * ExternalVpnGatewaysSettings.Builder externalVpnGatewaysSettingsBuilder =
  *     ExternalVpnGatewaysSettings.newBuilder();
  * externalVpnGatewaysSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         externalVpnGatewaysSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -75,6 +76,12 @@ public class ExternalVpnGatewaysSettings extends ClientSettings<ExternalVpnGatew
     return ((ExternalVpnGatewaysStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteExternalVpnGatewayRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((ExternalVpnGatewaysStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetExternalVpnGatewayRequest, ExternalVpnGateway> getSettings() {
     return ((ExternalVpnGatewaysStubSettings) getStubSettings()).getSettings();
@@ -83,6 +90,12 @@ public class ExternalVpnGatewaysSettings extends ClientSettings<ExternalVpnGatew
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertExternalVpnGatewayRequest, Operation> insertSettings() {
     return ((ExternalVpnGatewaysStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertExternalVpnGatewayRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((ExternalVpnGatewaysStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -95,6 +108,12 @@ public class ExternalVpnGatewaysSettings extends ClientSettings<ExternalVpnGatew
   /** Returns the object with the settings used for calls to setLabels. */
   public UnaryCallSettings<SetLabelsExternalVpnGatewayRequest, Operation> setLabelsSettings() {
     return ((ExternalVpnGatewaysStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsExternalVpnGatewayRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((ExternalVpnGatewaysStubSettings) getStubSettings()).setLabelsOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to testIamPermissions. */
@@ -206,6 +225,12 @@ public class ExternalVpnGatewaysSettings extends ClientSettings<ExternalVpnGatew
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteExternalVpnGatewayRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetExternalVpnGatewayRequest, ExternalVpnGateway>
         getSettings() {
@@ -215,6 +240,12 @@ public class ExternalVpnGatewaysSettings extends ClientSettings<ExternalVpnGatew
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertExternalVpnGatewayRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertExternalVpnGatewayRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -228,6 +259,12 @@ public class ExternalVpnGatewaysSettings extends ClientSettings<ExternalVpnGatew
     public UnaryCallSettings.Builder<SetLabelsExternalVpnGatewayRequest, Operation>
         setLabelsSettings() {
       return getStubSettingsBuilder().setLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsExternalVpnGatewayRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */

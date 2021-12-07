@@ -115,7 +115,7 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
   public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
   private volatile java.lang.Object backendService_;
   /**
-   * <code>string backend_service = 306946058;</code>
+   * <code>optional string backend_service = 306946058;</code>
    *
    * @return Whether the backendService field is set.
    */
@@ -124,7 +124,7 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>string backend_service = 306946058;</code>
+   * <code>optional string backend_service = 306946058;</code>
    *
    * @return The backendService.
    */
@@ -141,7 +141,7 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
     }
   }
   /**
-   * <code>string backend_service = 306946058;</code>
+   * <code>optional string backend_service = 306946058;</code>
    *
    * @return The bytes for backendService.
    */
@@ -491,7 +491,7 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
 
     private java.lang.Object backendService_ = "";
     /**
-     * <code>string backend_service = 306946058;</code>
+     * <code>optional string backend_service = 306946058;</code>
      *
      * @return Whether the backendService field is set.
      */
@@ -499,7 +499,7 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>string backend_service = 306946058;</code>
+     * <code>optional string backend_service = 306946058;</code>
      *
      * @return The backendService.
      */
@@ -515,7 +515,7 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
       }
     }
     /**
-     * <code>string backend_service = 306946058;</code>
+     * <code>optional string backend_service = 306946058;</code>
      *
      * @return The bytes for backendService.
      */
@@ -531,7 +531,7 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
       }
     }
     /**
-     * <code>string backend_service = 306946058;</code>
+     * <code>optional string backend_service = 306946058;</code>
      *
      * @param value The backendService to set.
      * @return This builder for chaining.
@@ -546,7 +546,7 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
       return this;
     }
     /**
-     * <code>string backend_service = 306946058;</code>
+     * <code>optional string backend_service = 306946058;</code>
      *
      * @return This builder for chaining.
      */
@@ -557,7 +557,7 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
       return this;
     }
     /**
-     * <code>string backend_service = 306946058;</code>
+     * <code>optional string backend_service = 306946058;</code>
      *
      * @param value The bytes for backendService to set.
      * @return This builder for chaining.

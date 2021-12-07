@@ -125,7 +125,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
    * The end of the range (exclusive) in signed long integer format.
    * </pre>
    *
-   * <code>int64 range_end = 322439897;</code>
+   * <code>optional int64 range_end = 322439897;</code>
    *
    * @return Whether the rangeEnd field is set.
    */
@@ -140,7 +140,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
    * The end of the range (exclusive) in signed long integer format.
    * </pre>
    *
-   * <code>int64 range_end = 322439897;</code>
+   * <code>optional int64 range_end = 322439897;</code>
    *
    * @return The rangeEnd.
    */
@@ -158,7 +158,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
    * The start of the range (inclusive) in signed long integer format.
    * </pre>
    *
-   * <code>int64 range_start = 103333600;</code>
+   * <code>optional int64 range_start = 103333600;</code>
    *
    * @return Whether the rangeStart field is set.
    */
@@ -173,7 +173,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
    * The start of the range (inclusive) in signed long integer format.
    * </pre>
    *
-   * <code>int64 range_start = 103333600;</code>
+   * <code>optional int64 range_start = 103333600;</code>
    *
    * @return The rangeStart.
    */
@@ -541,7 +541,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
      * The end of the range (exclusive) in signed long integer format.
      * </pre>
      *
-     * <code>int64 range_end = 322439897;</code>
+     * <code>optional int64 range_end = 322439897;</code>
      *
      * @return Whether the rangeEnd field is set.
      */
@@ -556,7 +556,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
      * The end of the range (exclusive) in signed long integer format.
      * </pre>
      *
-     * <code>int64 range_end = 322439897;</code>
+     * <code>optional int64 range_end = 322439897;</code>
      *
      * @return The rangeEnd.
      */
@@ -571,7 +571,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
      * The end of the range (exclusive) in signed long integer format.
      * </pre>
      *
-     * <code>int64 range_end = 322439897;</code>
+     * <code>optional int64 range_end = 322439897;</code>
      *
      * @param value The rangeEnd to set.
      * @return This builder for chaining.
@@ -589,7 +589,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
      * The end of the range (exclusive) in signed long integer format.
      * </pre>
      *
-     * <code>int64 range_end = 322439897;</code>
+     * <code>optional int64 range_end = 322439897;</code>
      *
      * @return This builder for chaining.
      */
@@ -608,7 +608,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
      * The start of the range (inclusive) in signed long integer format.
      * </pre>
      *
-     * <code>int64 range_start = 103333600;</code>
+     * <code>optional int64 range_start = 103333600;</code>
      *
      * @return Whether the rangeStart field is set.
      */
@@ -623,7 +623,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
      * The start of the range (inclusive) in signed long integer format.
      * </pre>
      *
-     * <code>int64 range_start = 103333600;</code>
+     * <code>optional int64 range_start = 103333600;</code>
      *
      * @return The rangeStart.
      */
@@ -638,7 +638,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
      * The start of the range (inclusive) in signed long integer format.
      * </pre>
      *
-     * <code>int64 range_start = 103333600;</code>
+     * <code>optional int64 range_start = 103333600;</code>
      *
      * @param value The rangeStart to set.
      * @return This builder for chaining.
@@ -656,7 +656,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
      * The start of the range (inclusive) in signed long integer format.
      * </pre>
      *
-     * <code>int64 range_start = 103333600;</code>
+     * <code>optional int64 range_start = 103333600;</code>
      *
      * @return This builder for chaining.
      */

@@ -28,10 +28,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.httpjson.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -79,16 +83,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * AutoscalersStubSettings.Builder autoscalersSettingsBuilder =
  *     AutoscalersStubSettings.newBuilder();
  * autoscalersSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         autoscalersSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -109,12 +113,20 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
           AggregatedListAutoscalersRequest, AutoscalerAggregatedList, AggregatedListPagedResponse>
       aggregatedListSettings;
   private final UnaryCallSettings<DeleteAutoscalerRequest, Operation> deleteSettings;
+  private final OperationCallSettings<DeleteAutoscalerRequest, Operation, Operation>
+      deleteOperationSettings;
   private final UnaryCallSettings<GetAutoscalerRequest, Autoscaler> getSettings;
   private final UnaryCallSettings<InsertAutoscalerRequest, Operation> insertSettings;
+  private final OperationCallSettings<InsertAutoscalerRequest, Operation, Operation>
+      insertOperationSettings;
   private final PagedCallSettings<ListAutoscalersRequest, AutoscalerList, ListPagedResponse>
       listSettings;
   private final UnaryCallSettings<PatchAutoscalerRequest, Operation> patchSettings;
+  private final OperationCallSettings<PatchAutoscalerRequest, Operation, Operation>
+      patchOperationSettings;
   private final UnaryCallSettings<UpdateAutoscalerRequest, Operation> updateSettings;
+  private final OperationCallSettings<UpdateAutoscalerRequest, Operation, Operation>
+      updateOperationSettings;
 
   private static final PagedListDescriptor<
           AggregatedListAutoscalersRequest,
@@ -255,6 +267,12 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
     return deleteSettings;
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteAutoscalerRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return deleteOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetAutoscalerRequest, Autoscaler> getSettings() {
     return getSettings;
@@ -263,6 +281,12 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertAutoscalerRequest, Operation> insertSettings() {
     return insertSettings;
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertAutoscalerRequest, Operation, Operation>
+      insertOperationSettings() {
+    return insertOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -276,9 +300,21 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
     return patchSettings;
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchAutoscalerRequest, Operation, Operation>
+      patchOperationSettings() {
+    return patchOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateAutoscalerRequest, Operation> updateSettings() {
     return updateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateAutoscalerRequest, Operation, Operation>
+      updateOperationSettings() {
+    return updateOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -315,7 +351,9 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return GoogleCredentialsProvider.newBuilder()
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        .setUseJwtAccessWithScope(true);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -358,11 +396,15 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
 
     aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
+    deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
+    insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
+    patchOperationSettings = settingsBuilder.patchOperationSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
+    updateOperationSettings = settingsBuilder.updateOperationSettings().build();
   }
 
   /** Builder for AutoscalersStubSettings. */
@@ -372,13 +414,21 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
             AggregatedListAutoscalersRequest, AutoscalerAggregatedList, AggregatedListPagedResponse>
         aggregatedListSettings;
     private final UnaryCallSettings.Builder<DeleteAutoscalerRequest, Operation> deleteSettings;
+    private final OperationCallSettings.Builder<DeleteAutoscalerRequest, Operation, Operation>
+        deleteOperationSettings;
     private final UnaryCallSettings.Builder<GetAutoscalerRequest, Autoscaler> getSettings;
     private final UnaryCallSettings.Builder<InsertAutoscalerRequest, Operation> insertSettings;
+    private final OperationCallSettings.Builder<InsertAutoscalerRequest, Operation, Operation>
+        insertOperationSettings;
     private final PagedCallSettings.Builder<
             ListAutoscalersRequest, AutoscalerList, ListPagedResponse>
         listSettings;
     private final UnaryCallSettings.Builder<PatchAutoscalerRequest, Operation> patchSettings;
+    private final OperationCallSettings.Builder<PatchAutoscalerRequest, Operation, Operation>
+        patchOperationSettings;
     private final UnaryCallSettings.Builder<UpdateAutoscalerRequest, Operation> updateSettings;
+    private final OperationCallSettings.Builder<UpdateAutoscalerRequest, Operation, Operation>
+        updateOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -431,11 +481,15 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
 
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      patchOperationSettings = OperationCallSettings.newBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -454,11 +508,15 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
 
       aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
+      deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
+      insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
+      patchOperationSettings = settings.patchOperationSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
+      updateOperationSettings = settings.updateOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -520,6 +578,102 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .deleteOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteAutoscalerRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .insertOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<InsertAutoscalerRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .patchOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PatchAutoscalerRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .updateOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateAutoscalerRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -550,6 +704,14 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
       return deleteSettings;
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteAutoscalerRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return deleteOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetAutoscalerRequest, Autoscaler> getSettings() {
       return getSettings;
@@ -558,6 +720,14 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertAutoscalerRequest, Operation> insertSettings() {
       return insertSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<InsertAutoscalerRequest, Operation, Operation>
+        insertOperationSettings() {
+      return insertOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -571,9 +741,25 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
       return patchSettings;
     }
 
+    /** Returns the builder for the settings used for calls to patch. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<PatchAutoscalerRequest, Operation, Operation>
+        patchOperationSettings() {
+      return patchOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to update. */
     public UnaryCallSettings.Builder<UpdateAutoscalerRequest, Operation> updateSettings() {
       return updateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdateAutoscalerRequest, Operation, Operation>
+        updateOperationSettings() {
+      return updateOperationSettings;
     }
 
     @Override

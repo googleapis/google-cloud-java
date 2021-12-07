@@ -127,7 +127,7 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
    * [Output Only] Encountered errors during the last attempt to create or delete the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Errors errors = 315977579;</code>
+   * <code>optional .google.cloud.compute.v1.Errors errors = 315977579;</code>
    *
    * @return Whether the errors field is set.
    */
@@ -142,7 +142,7 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
    * [Output Only] Encountered errors during the last attempt to create or delete the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Errors errors = 315977579;</code>
+   * <code>optional .google.cloud.compute.v1.Errors errors = 315977579;</code>
    *
    * @return The errors.
    */
@@ -157,7 +157,7 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
    * [Output Only] Encountered errors during the last attempt to create or delete the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Errors errors = 315977579;</code>
+   * <code>optional .google.cloud.compute.v1.Errors errors = 315977579;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ErrorsOrBuilder getErrorsOrBuilder() {
@@ -517,7 +517,7 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
      * [Output Only] Encountered errors during the last attempt to create or delete the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Errors errors = 315977579;</code>
+     * <code>optional .google.cloud.compute.v1.Errors errors = 315977579;</code>
      *
      * @return Whether the errors field is set.
      */
@@ -531,7 +531,7 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
      * [Output Only] Encountered errors during the last attempt to create or delete the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Errors errors = 315977579;</code>
+     * <code>optional .google.cloud.compute.v1.Errors errors = 315977579;</code>
      *
      * @return The errors.
      */
@@ -549,7 +549,7 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
      * [Output Only] Encountered errors during the last attempt to create or delete the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Errors errors = 315977579;</code>
+     * <code>optional .google.cloud.compute.v1.Errors errors = 315977579;</code>
      */
     public Builder setErrors(com.google.cloud.compute.v1.Errors value) {
       if (errorsBuilder_ == null) {
@@ -571,7 +571,7 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
      * [Output Only] Encountered errors during the last attempt to create or delete the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Errors errors = 315977579;</code>
+     * <code>optional .google.cloud.compute.v1.Errors errors = 315977579;</code>
      */
     public Builder setErrors(com.google.cloud.compute.v1.Errors.Builder builderForValue) {
       if (errorsBuilder_ == null) {
@@ -590,7 +590,7 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
      * [Output Only] Encountered errors during the last attempt to create or delete the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Errors errors = 315977579;</code>
+     * <code>optional .google.cloud.compute.v1.Errors errors = 315977579;</code>
      */
     public Builder mergeErrors(com.google.cloud.compute.v1.Errors value) {
       if (errorsBuilder_ == null) {
@@ -618,7 +618,7 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
      * [Output Only] Encountered errors during the last attempt to create or delete the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Errors errors = 315977579;</code>
+     * <code>optional .google.cloud.compute.v1.Errors errors = 315977579;</code>
      */
     public Builder clearErrors() {
       if (errorsBuilder_ == null) {
@@ -637,7 +637,7 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
      * [Output Only] Encountered errors during the last attempt to create or delete the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Errors errors = 315977579;</code>
+     * <code>optional .google.cloud.compute.v1.Errors errors = 315977579;</code>
      */
     public com.google.cloud.compute.v1.Errors.Builder getErrorsBuilder() {
       bitField0_ |= 0x00000001;
@@ -651,7 +651,7 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
      * [Output Only] Encountered errors during the last attempt to create or delete the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Errors errors = 315977579;</code>
+     * <code>optional .google.cloud.compute.v1.Errors errors = 315977579;</code>
      */
     public com.google.cloud.compute.v1.ErrorsOrBuilder getErrorsOrBuilder() {
       if (errorsBuilder_ != null) {
@@ -667,7 +667,7 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
      * [Output Only] Encountered errors during the last attempt to create or delete the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Errors errors = 315977579;</code>
+     * <code>optional .google.cloud.compute.v1.Errors errors = 315977579;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Errors,

@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.GlobalPublicDelegatedPrefixesStub;
@@ -45,8 +47,8 @@ import javax.annotation.Generated;
  *     GlobalPublicDelegatedPrefixesClient.create()) {
  *   String project = "project-309310695";
  *   String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
- *   Operation response =
- *       globalPublicDelegatedPrefixesClient.delete(project, publicDelegatedPrefix);
+ *   PublicDelegatedPrefix response =
+ *       globalPublicDelegatedPrefixesClient.get(project, publicDelegatedPrefix);
  * }
  * }</pre>
  *
@@ -168,7 +170,7 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
    *   Operation response =
-   *       globalPublicDelegatedPrefixesClient.delete(project, publicDelegatedPrefix);
+   *       globalPublicDelegatedPrefixesClient.deleteAsync(project, publicDelegatedPrefix).get();
    * }
    * }</pre>
    *
@@ -176,13 +178,14 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * @param publicDelegatedPrefix Name of the PublicDelegatedPrefix resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String publicDelegatedPrefix) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String publicDelegatedPrefix) {
     DeleteGlobalPublicDelegatedPrefixeRequest request =
         DeleteGlobalPublicDelegatedPrefixeRequest.newBuilder()
             .setProject(project)
             .setPublicDelegatedPrefix(publicDelegatedPrefix)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -200,15 +203,45 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    *           .setPublicDelegatedPrefix("publicDelegatedPrefix-663003832")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = globalPublicDelegatedPrefixesClient.delete(request);
+   *   Operation response = globalPublicDelegatedPrefixesClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteGlobalPublicDelegatedPrefixeRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      DeleteGlobalPublicDelegatedPrefixeRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified global PublicDelegatedPrefix.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
+   *     GlobalPublicDelegatedPrefixesClient.create()) {
+   *   DeleteGlobalPublicDelegatedPrefixeRequest request =
+   *       DeleteGlobalPublicDelegatedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicDelegatedPrefix("publicDelegatedPrefix-663003832")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       globalPublicDelegatedPrefixesClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteGlobalPublicDelegatedPrefixeRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -332,7 +365,9 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    *   PublicDelegatedPrefix publicDelegatedPrefixResource =
    *       PublicDelegatedPrefix.newBuilder().build();
    *   Operation response =
-   *       globalPublicDelegatedPrefixesClient.insert(project, publicDelegatedPrefixResource);
+   *       globalPublicDelegatedPrefixesClient
+   *           .insertAsync(project, publicDelegatedPrefixResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -340,14 +375,14 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * @param publicDelegatedPrefixResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(
+  public final OperationFuture<Operation, Operation> insertAsync(
       String project, PublicDelegatedPrefix publicDelegatedPrefixResource) {
     InsertGlobalPublicDelegatedPrefixeRequest request =
         InsertGlobalPublicDelegatedPrefixeRequest.newBuilder()
             .setProject(project)
             .setPublicDelegatedPrefixResource(publicDelegatedPrefixResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -366,15 +401,46 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    *           .setPublicDelegatedPrefixResource(PublicDelegatedPrefix.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = globalPublicDelegatedPrefixesClient.insert(request);
+   *   Operation response = globalPublicDelegatedPrefixesClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertGlobalPublicDelegatedPrefixeRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(
+      InsertGlobalPublicDelegatedPrefixeRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a global PublicDelegatedPrefix in the specified project using the parameters that are
+   * included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
+   *     GlobalPublicDelegatedPrefixesClient.create()) {
+   *   InsertGlobalPublicDelegatedPrefixeRequest request =
+   *       InsertGlobalPublicDelegatedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicDelegatedPrefixResource(PublicDelegatedPrefix.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       globalPublicDelegatedPrefixesClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertGlobalPublicDelegatedPrefixeRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -550,8 +616,9 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    *   PublicDelegatedPrefix publicDelegatedPrefixResource =
    *       PublicDelegatedPrefix.newBuilder().build();
    *   Operation response =
-   *       globalPublicDelegatedPrefixesClient.patch(
-   *           project, publicDelegatedPrefix, publicDelegatedPrefixResource);
+   *       globalPublicDelegatedPrefixesClient
+   *           .patchAsync(project, publicDelegatedPrefix, publicDelegatedPrefixResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -560,7 +627,7 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * @param publicDelegatedPrefixResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(
+  public final OperationFuture<Operation, Operation> patchAsync(
       String project,
       String publicDelegatedPrefix,
       PublicDelegatedPrefix publicDelegatedPrefixResource) {
@@ -570,7 +637,7 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
             .setPublicDelegatedPrefix(publicDelegatedPrefix)
             .setPublicDelegatedPrefixResource(publicDelegatedPrefixResource)
             .build();
-    return patch(request);
+    return patchAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -591,15 +658,48 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    *           .setPublicDelegatedPrefixResource(PublicDelegatedPrefix.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = globalPublicDelegatedPrefixesClient.patch(request);
+   *   Operation response = globalPublicDelegatedPrefixesClient.patchAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(PatchGlobalPublicDelegatedPrefixeRequest request) {
-    return patchCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> patchAsync(
+      PatchGlobalPublicDelegatedPrefixeRequest request) {
+    return patchOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches the specified global PublicDelegatedPrefix resource with the data included in the
+   * request. This method supports PATCH semantics and uses JSON merge patch format and processing
+   * rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
+   *     GlobalPublicDelegatedPrefixesClient.create()) {
+   *   PatchGlobalPublicDelegatedPrefixeRequest request =
+   *       PatchGlobalPublicDelegatedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicDelegatedPrefix("publicDelegatedPrefix-663003832")
+   *           .setPublicDelegatedPrefixResource(PublicDelegatedPrefix.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       globalPublicDelegatedPrefixesClient.patchOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PatchGlobalPublicDelegatedPrefixeRequest, Operation, Operation>
+      patchOperationCallable() {
+    return stub.patchOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

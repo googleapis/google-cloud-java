@@ -26,11 +26,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListResourcePoliciesRequest;
 import com.google.cloud.compute.v1.DeleteResourcePolicyRequest;
@@ -39,6 +41,7 @@ import com.google.cloud.compute.v1.GetResourcePolicyRequest;
 import com.google.cloud.compute.v1.InsertResourcePolicyRequest;
 import com.google.cloud.compute.v1.ListResourcePoliciesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.ResourcePolicy;
 import com.google.cloud.compute.v1.ResourcePolicyAggregatedList;
@@ -46,6 +49,7 @@ import com.google.cloud.compute.v1.ResourcePolicyList;
 import com.google.cloud.compute.v1.SetIamPolicyResourcePolicyRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsResourcePolicyRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -63,6 +67,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<
           AggregatedListResourcePoliciesRequest, ResourcePolicyAggregatedList>
       aggregatedListMethodDescriptor =
@@ -116,6 +123,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ResourcePolicyAggregatedList>newBuilder()
                       .setDefaultInstance(ResourcePolicyAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -153,7 +161,21 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteResourcePolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetResourcePolicyRequest, ResourcePolicy>
@@ -187,6 +209,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ResourcePolicy>newBuilder()
                       .setDefaultInstance(ResourcePolicy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -226,6 +249,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -266,7 +290,21 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertResourcePolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListResourcePoliciesRequest, ResourcePolicyList>
@@ -317,6 +355,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ResourcePolicyList>newBuilder()
                       .setDefaultInstance(ResourcePolicyList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -355,6 +394,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -395,6 +435,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
                       .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -403,9 +444,13 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
   private final UnaryCallable<AggregatedListResourcePoliciesRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
   private final UnaryCallable<DeleteResourcePolicyRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteResourcePolicyRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetResourcePolicyRequest, ResourcePolicy> getCallable;
   private final UnaryCallable<GetIamPolicyResourcePolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<InsertResourcePolicyRequest, Operation> insertCallable;
+  private final OperationCallable<InsertResourcePolicyRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListResourcePoliciesRequest, ResourcePolicyList> listCallable;
   private final UnaryCallable<ListResourcePoliciesRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<SetIamPolicyResourcePolicyRequest, Policy> setIamPolicyCallable;
@@ -413,6 +458,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
       testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonResourcePoliciesStub create(ResourcePoliciesStubSettings settings)
@@ -453,42 +499,52 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AggregatedListResourcePoliciesRequest, ResourcePolicyAggregatedList>
         aggregatedListTransportSettings =
             HttpJsonCallSettings
                 .<AggregatedListResourcePoliciesRequest, ResourcePolicyAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeleteResourcePolicyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteResourcePolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetResourcePolicyRequest, ResourcePolicy> getTransportSettings =
         HttpJsonCallSettings.<GetResourcePolicyRequest, ResourcePolicy>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetIamPolicyResourcePolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyResourcePolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertResourcePolicyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertResourcePolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListResourcePoliciesRequest, ResourcePolicyList> listTransportSettings =
         HttpJsonCallSettings.<ListResourcePoliciesRequest, ResourcePolicyList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetIamPolicyResourcePolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyResourcePolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<TestIamPermissionsResourcePolicyRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings
                 .<TestIamPermissionsResourcePolicyRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.aggregatedListCallable =
@@ -500,6 +556,12 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
@@ -509,6 +571,12 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -560,6 +628,12 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
   }
 
   @Override
+  public OperationCallable<DeleteResourcePolicyRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetResourcePolicyRequest, ResourcePolicy> getCallable() {
     return getCallable;
   }
@@ -572,6 +646,12 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
   @Override
   public UnaryCallable<InsertResourcePolicyRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertResourcePolicyRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override

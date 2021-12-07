@@ -30,7 +30,7 @@ public interface ProjectsListXpnHostsRequestOrBuilder
    * Optional organization ID managed by Cloud Resource Manager, for which to list shared VPC host projects. If not specified, the organization will be inferred from the project.
    * </pre>
    *
-   * <code>string organization = 105180467;</code>
+   * <code>optional string organization = 105180467;</code>
    *
    * @return Whether the organization field is set.
    */
@@ -42,7 +42,7 @@ public interface ProjectsListXpnHostsRequestOrBuilder
    * Optional organization ID managed by Cloud Resource Manager, for which to list shared VPC host projects. If not specified, the organization will be inferred from the project.
    * </pre>
    *
-   * <code>string organization = 105180467;</code>
+   * <code>optional string organization = 105180467;</code>
    *
    * @return The organization.
    */
@@ -54,7 +54,7 @@ public interface ProjectsListXpnHostsRequestOrBuilder
    * Optional organization ID managed by Cloud Resource Manager, for which to list shared VPC host projects. If not specified, the organization will be inferred from the project.
    * </pre>
    *
-   * <code>string organization = 105180467;</code>
+   * <code>optional string organization = 105180467;</code>
    *
    * @return The bytes for organization.
    */

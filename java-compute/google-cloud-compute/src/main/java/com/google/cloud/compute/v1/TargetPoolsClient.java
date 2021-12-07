@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.TargetPoolsStub;
@@ -46,11 +48,7 @@ import javax.annotation.Generated;
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String targetPool = "targetPool486493517";
- *   TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource =
- *       TargetPoolsAddHealthCheckRequest.newBuilder().build();
- *   Operation response =
- *       targetPoolsClient.addHealthCheck(
- *           project, region, targetPool, targetPoolsAddHealthCheckRequestResource);
+ *   TargetPool response = targetPoolsClient.get(project, region, targetPool);
  * }
  * }</pre>
  *
@@ -166,8 +164,10 @@ public class TargetPoolsClient implements BackgroundResource {
    *   TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource =
    *       TargetPoolsAddHealthCheckRequest.newBuilder().build();
    *   Operation response =
-   *       targetPoolsClient.addHealthCheck(
-   *           project, region, targetPool, targetPoolsAddHealthCheckRequestResource);
+   *       targetPoolsClient
+   *           .addHealthCheckAsync(
+   *               project, region, targetPool, targetPoolsAddHealthCheckRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -177,7 +177,7 @@ public class TargetPoolsClient implements BackgroundResource {
    * @param targetPoolsAddHealthCheckRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation addHealthCheck(
+  public final OperationFuture<Operation, Operation> addHealthCheckAsync(
       String project,
       String region,
       String targetPool,
@@ -189,7 +189,7 @@ public class TargetPoolsClient implements BackgroundResource {
             .setTargetPool(targetPool)
             .setTargetPoolsAddHealthCheckRequestResource(targetPoolsAddHealthCheckRequestResource)
             .build();
-    return addHealthCheck(request);
+    return addHealthCheckAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -209,15 +209,47 @@ public class TargetPoolsClient implements BackgroundResource {
    *           .setTargetPoolsAddHealthCheckRequestResource(
    *               TargetPoolsAddHealthCheckRequest.newBuilder().build())
    *           .build();
-   *   Operation response = targetPoolsClient.addHealthCheck(request);
+   *   Operation response = targetPoolsClient.addHealthCheckAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation addHealthCheck(AddHealthCheckTargetPoolRequest request) {
-    return addHealthCheckCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> addHealthCheckAsync(
+      AddHealthCheckTargetPoolRequest request) {
+    return addHealthCheckOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds health check URLs to a target pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
+   *   AddHealthCheckTargetPoolRequest request =
+   *       AddHealthCheckTargetPoolRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPool("targetPool486493517")
+   *           .setTargetPoolsAddHealthCheckRequestResource(
+   *               TargetPoolsAddHealthCheckRequest.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       targetPoolsClient.addHealthCheckOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<AddHealthCheckTargetPoolRequest, Operation, Operation>
+      addHealthCheckOperationCallable() {
+    return stub.addHealthCheckOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -261,8 +293,9 @@ public class TargetPoolsClient implements BackgroundResource {
    *   TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource =
    *       TargetPoolsAddInstanceRequest.newBuilder().build();
    *   Operation response =
-   *       targetPoolsClient.addInstance(
-   *           project, region, targetPool, targetPoolsAddInstanceRequestResource);
+   *       targetPoolsClient
+   *           .addInstanceAsync(project, region, targetPool, targetPoolsAddInstanceRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -272,7 +305,7 @@ public class TargetPoolsClient implements BackgroundResource {
    * @param targetPoolsAddInstanceRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation addInstance(
+  public final OperationFuture<Operation, Operation> addInstanceAsync(
       String project,
       String region,
       String targetPool,
@@ -284,7 +317,7 @@ public class TargetPoolsClient implements BackgroundResource {
             .setTargetPool(targetPool)
             .setTargetPoolsAddInstanceRequestResource(targetPoolsAddInstanceRequestResource)
             .build();
-    return addInstance(request);
+    return addInstanceAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -304,15 +337,47 @@ public class TargetPoolsClient implements BackgroundResource {
    *           .setTargetPoolsAddInstanceRequestResource(
    *               TargetPoolsAddInstanceRequest.newBuilder().build())
    *           .build();
-   *   Operation response = targetPoolsClient.addInstance(request);
+   *   Operation response = targetPoolsClient.addInstanceAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation addInstance(AddInstanceTargetPoolRequest request) {
-    return addInstanceCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> addInstanceAsync(
+      AddInstanceTargetPoolRequest request) {
+    return addInstanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds an instance to a target pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
+   *   AddInstanceTargetPoolRequest request =
+   *       AddInstanceTargetPoolRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPool("targetPool486493517")
+   *           .setTargetPoolsAddInstanceRequestResource(
+   *               TargetPoolsAddInstanceRequest.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       targetPoolsClient.addInstanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<AddInstanceTargetPoolRequest, Operation, Operation>
+      addInstanceOperationCallable() {
+    return stub.addInstanceOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -482,7 +547,7 @@ public class TargetPoolsClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   String targetPool = "targetPool486493517";
-   *   Operation response = targetPoolsClient.delete(project, region, targetPool);
+   *   Operation response = targetPoolsClient.deleteAsync(project, region, targetPool).get();
    * }
    * }</pre>
    *
@@ -491,14 +556,15 @@ public class TargetPoolsClient implements BackgroundResource {
    * @param targetPool Name of the TargetPool resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String region, String targetPool) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String region, String targetPool) {
     DeleteTargetPoolRequest request =
         DeleteTargetPoolRequest.newBuilder()
             .setProject(project)
             .setRegion(region)
             .setTargetPool(targetPool)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -516,15 +582,44 @@ public class TargetPoolsClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setTargetPool("targetPool486493517")
    *           .build();
-   *   Operation response = targetPoolsClient.delete(request);
+   *   Operation response = targetPoolsClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteTargetPoolRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(DeleteTargetPoolRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified target pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
+   *   DeleteTargetPoolRequest request =
+   *       DeleteTargetPoolRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPool("targetPool486493517")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       targetPoolsClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteTargetPoolRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -740,7 +835,7 @@ public class TargetPoolsClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   TargetPool targetPoolResource = TargetPool.newBuilder().build();
-   *   Operation response = targetPoolsClient.insert(project, region, targetPoolResource);
+   *   Operation response = targetPoolsClient.insertAsync(project, region, targetPoolResource).get();
    * }
    * }</pre>
    *
@@ -749,14 +844,15 @@ public class TargetPoolsClient implements BackgroundResource {
    * @param targetPoolResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(String project, String region, TargetPool targetPoolResource) {
+  public final OperationFuture<Operation, Operation> insertAsync(
+      String project, String region, TargetPool targetPoolResource) {
     InsertTargetPoolRequest request =
         InsertTargetPoolRequest.newBuilder()
             .setProject(project)
             .setRegion(region)
             .setTargetPoolResource(targetPoolResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -775,15 +871,45 @@ public class TargetPoolsClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setTargetPoolResource(TargetPool.newBuilder().build())
    *           .build();
-   *   Operation response = targetPoolsClient.insert(request);
+   *   Operation response = targetPoolsClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertTargetPoolRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(InsertTargetPoolRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a target pool in the specified project and region using the data included in the
+   * request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
+   *   InsertTargetPoolRequest request =
+   *       InsertTargetPoolRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPoolResource(TargetPool.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       targetPoolsClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertTargetPoolRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -950,8 +1076,10 @@ public class TargetPoolsClient implements BackgroundResource {
    *   TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource =
    *       TargetPoolsRemoveHealthCheckRequest.newBuilder().build();
    *   Operation response =
-   *       targetPoolsClient.removeHealthCheck(
-   *           project, region, targetPool, targetPoolsRemoveHealthCheckRequestResource);
+   *       targetPoolsClient
+   *           .removeHealthCheckAsync(
+   *               project, region, targetPool, targetPoolsRemoveHealthCheckRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -961,7 +1089,7 @@ public class TargetPoolsClient implements BackgroundResource {
    * @param targetPoolsRemoveHealthCheckRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation removeHealthCheck(
+  public final OperationFuture<Operation, Operation> removeHealthCheckAsync(
       String project,
       String region,
       String targetPool,
@@ -974,7 +1102,7 @@ public class TargetPoolsClient implements BackgroundResource {
             .setTargetPoolsRemoveHealthCheckRequestResource(
                 targetPoolsRemoveHealthCheckRequestResource)
             .build();
-    return removeHealthCheck(request);
+    return removeHealthCheckAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -994,15 +1122,47 @@ public class TargetPoolsClient implements BackgroundResource {
    *           .setTargetPoolsRemoveHealthCheckRequestResource(
    *               TargetPoolsRemoveHealthCheckRequest.newBuilder().build())
    *           .build();
-   *   Operation response = targetPoolsClient.removeHealthCheck(request);
+   *   Operation response = targetPoolsClient.removeHealthCheckAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation removeHealthCheck(RemoveHealthCheckTargetPoolRequest request) {
-    return removeHealthCheckCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> removeHealthCheckAsync(
+      RemoveHealthCheckTargetPoolRequest request) {
+    return removeHealthCheckOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes health check URL from a target pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
+   *   RemoveHealthCheckTargetPoolRequest request =
+   *       RemoveHealthCheckTargetPoolRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPool("targetPool486493517")
+   *           .setTargetPoolsRemoveHealthCheckRequestResource(
+   *               TargetPoolsRemoveHealthCheckRequest.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       targetPoolsClient.removeHealthCheckOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<RemoveHealthCheckTargetPoolRequest, Operation, Operation>
+      removeHealthCheckOperationCallable() {
+    return stub.removeHealthCheckOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1048,8 +1208,10 @@ public class TargetPoolsClient implements BackgroundResource {
    *   TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource =
    *       TargetPoolsRemoveInstanceRequest.newBuilder().build();
    *   Operation response =
-   *       targetPoolsClient.removeInstance(
-   *           project, region, targetPool, targetPoolsRemoveInstanceRequestResource);
+   *       targetPoolsClient
+   *           .removeInstanceAsync(
+   *               project, region, targetPool, targetPoolsRemoveInstanceRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -1059,7 +1221,7 @@ public class TargetPoolsClient implements BackgroundResource {
    * @param targetPoolsRemoveInstanceRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation removeInstance(
+  public final OperationFuture<Operation, Operation> removeInstanceAsync(
       String project,
       String region,
       String targetPool,
@@ -1071,7 +1233,7 @@ public class TargetPoolsClient implements BackgroundResource {
             .setTargetPool(targetPool)
             .setTargetPoolsRemoveInstanceRequestResource(targetPoolsRemoveInstanceRequestResource)
             .build();
-    return removeInstance(request);
+    return removeInstanceAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1091,15 +1253,47 @@ public class TargetPoolsClient implements BackgroundResource {
    *           .setTargetPoolsRemoveInstanceRequestResource(
    *               TargetPoolsRemoveInstanceRequest.newBuilder().build())
    *           .build();
-   *   Operation response = targetPoolsClient.removeInstance(request);
+   *   Operation response = targetPoolsClient.removeInstanceAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation removeInstance(RemoveInstanceTargetPoolRequest request) {
-    return removeInstanceCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> removeInstanceAsync(
+      RemoveInstanceTargetPoolRequest request) {
+    return removeInstanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes instance URL from a target pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
+   *   RemoveInstanceTargetPoolRequest request =
+   *       RemoveInstanceTargetPoolRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPool("targetPool486493517")
+   *           .setTargetPoolsRemoveInstanceRequestResource(
+   *               TargetPoolsRemoveInstanceRequest.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       targetPoolsClient.removeInstanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<RemoveInstanceTargetPoolRequest, Operation, Operation>
+      removeInstanceOperationCallable() {
+    return stub.removeInstanceOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1142,7 +1336,9 @@ public class TargetPoolsClient implements BackgroundResource {
    *   String targetPool = "targetPool486493517";
    *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
    *   Operation response =
-   *       targetPoolsClient.setBackup(project, region, targetPool, targetReferenceResource);
+   *       targetPoolsClient
+   *           .setBackupAsync(project, region, targetPool, targetReferenceResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -1152,7 +1348,7 @@ public class TargetPoolsClient implements BackgroundResource {
    * @param targetReferenceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setBackup(
+  public final OperationFuture<Operation, Operation> setBackupAsync(
       String project, String region, String targetPool, TargetReference targetReferenceResource) {
     SetBackupTargetPoolRequest request =
         SetBackupTargetPoolRequest.newBuilder()
@@ -1161,7 +1357,7 @@ public class TargetPoolsClient implements BackgroundResource {
             .setTargetPool(targetPool)
             .setTargetReferenceResource(targetReferenceResource)
             .build();
-    return setBackup(request);
+    return setBackupAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1181,15 +1377,47 @@ public class TargetPoolsClient implements BackgroundResource {
    *           .setTargetPool("targetPool486493517")
    *           .setTargetReferenceResource(TargetReference.newBuilder().build())
    *           .build();
-   *   Operation response = targetPoolsClient.setBackup(request);
+   *   Operation response = targetPoolsClient.setBackupAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setBackup(SetBackupTargetPoolRequest request) {
-    return setBackupCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setBackupAsync(
+      SetBackupTargetPoolRequest request) {
+    return setBackupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Changes a backup target pool's configurations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
+   *   SetBackupTargetPoolRequest request =
+   *       SetBackupTargetPoolRequest.newBuilder()
+   *           .setFailoverRatio(-861074818)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetPool("targetPool486493517")
+   *           .setTargetReferenceResource(TargetReference.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       targetPoolsClient.setBackupOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetBackupTargetPoolRequest, Operation, Operation>
+      setBackupOperationCallable() {
+    return stub.setBackupOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

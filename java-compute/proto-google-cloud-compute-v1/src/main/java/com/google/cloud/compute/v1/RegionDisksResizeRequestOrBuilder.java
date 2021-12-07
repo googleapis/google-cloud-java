@@ -30,7 +30,7 @@ public interface RegionDisksResizeRequestOrBuilder
    * The new size of the regional persistent disk, which is specified in GB.
    * </pre>
    *
-   * <code>int64 size_gb = 494929369;</code>
+   * <code>optional int64 size_gb = 494929369;</code>
    *
    * @return Whether the sizeGb field is set.
    */
@@ -42,7 +42,7 @@ public interface RegionDisksResizeRequestOrBuilder
    * The new size of the regional persistent disk, which is specified in GB.
    * </pre>
    *
-   * <code>int64 size_gb = 494929369;</code>
+   * <code>optional int64 size_gb = 494929369;</code>
    *
    * @return The sizeGb.
    */

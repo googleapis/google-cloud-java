@@ -38,6 +38,7 @@ import com.google.cloud.compute.v1.AcceleratorTypeList;
 import com.google.cloud.compute.v1.AggregatedListAcceleratorTypesRequest;
 import com.google.cloud.compute.v1.GetAcceleratorTypeRequest;
 import com.google.cloud.compute.v1.ListAcceleratorTypesRequest;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,6 +56,8 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
   private static final ApiMethodDescriptor<
           AggregatedListAcceleratorTypesRequest, AcceleratorTypeAggregatedList>
       aggregatedListMethodDescriptor =
@@ -108,6 +111,7 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<AcceleratorTypeAggregatedList>newBuilder()
                       .setDefaultInstance(AcceleratorTypeAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -142,6 +146,7 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<AcceleratorType>newBuilder()
                       .setDefaultInstance(AcceleratorType.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -193,6 +198,7 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<AcceleratorTypeList>newBuilder()
                       .setDefaultInstance(AcceleratorTypeList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -251,14 +257,17 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
             HttpJsonCallSettings
                 .<AggregatedListAcceleratorTypesRequest, AcceleratorTypeAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<GetAcceleratorTypeRequest, AcceleratorType> getTransportSettings =
         HttpJsonCallSettings.<GetAcceleratorTypeRequest, AcceleratorType>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListAcceleratorTypesRequest, AcceleratorTypeList> listTransportSettings =
         HttpJsonCallSettings.<ListAcceleratorTypesRequest, AcceleratorTypeList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.aggregatedListCallable =

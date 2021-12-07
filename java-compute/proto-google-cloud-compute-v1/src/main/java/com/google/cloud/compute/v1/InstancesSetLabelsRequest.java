@@ -145,7 +145,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
    * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return Whether the labelFingerprint field is set.
    */
@@ -160,7 +160,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
    * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return The labelFingerprint.
    */
@@ -183,7 +183,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
    * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return The bytes for labelFingerprint.
    */
@@ -648,7 +648,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
      * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
      * </pre>
      *
-     * <code>string label_fingerprint = 178124825;</code>
+     * <code>optional string label_fingerprint = 178124825;</code>
      *
      * @return Whether the labelFingerprint field is set.
      */
@@ -662,7 +662,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
      * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
      * </pre>
      *
-     * <code>string label_fingerprint = 178124825;</code>
+     * <code>optional string label_fingerprint = 178124825;</code>
      *
      * @return The labelFingerprint.
      */
@@ -684,7 +684,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
      * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
      * </pre>
      *
-     * <code>string label_fingerprint = 178124825;</code>
+     * <code>optional string label_fingerprint = 178124825;</code>
      *
      * @return The bytes for labelFingerprint.
      */
@@ -706,7 +706,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
      * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
      * </pre>
      *
-     * <code>string label_fingerprint = 178124825;</code>
+     * <code>optional string label_fingerprint = 178124825;</code>
      *
      * @param value The labelFingerprint to set.
      * @return This builder for chaining.
@@ -727,7 +727,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
      * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
      * </pre>
      *
-     * <code>string label_fingerprint = 178124825;</code>
+     * <code>optional string label_fingerprint = 178124825;</code>
      *
      * @return This builder for chaining.
      */
@@ -744,7 +744,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
      * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
      * </pre>
      *
-     * <code>string label_fingerprint = 178124825;</code>
+     * <code>optional string label_fingerprint = 178124825;</code>
      *
      * @param value The bytes for labelFingerprint to set.
      * @return This builder for chaining.

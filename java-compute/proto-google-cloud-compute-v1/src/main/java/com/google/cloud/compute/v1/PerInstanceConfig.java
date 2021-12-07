@@ -39,7 +39,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
   private PerInstanceConfig() {
     fingerprint_ = "";
     name_ = "";
-    status_ = 0;
+    status_ = "";
   }
 
   @java.lang.Override
@@ -95,11 +95,11 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
               name_ = s;
               break;
             }
-          case 1450082192:
+          case 1450082194:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
-              status_ = rawValue;
+              status_ = s;
               break;
             }
           case 1877428002:
@@ -163,17 +163,65 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>APPLYING = 352003508;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The per-instance config is being applied to the instance, but is not yet effective, possibly waiting for the instance to, for example, REFRESH.
+     * </pre>
+     *
+     * <code>APPLYING = 352003508;</code>
+     */
     APPLYING(352003508),
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The per-instance config deletion is being applied on the instance, possibly waiting for the instance to, for example, REFRESH.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     DELETING(528602024),
-    /** <code>EFFECTIVE = 244201863;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The per-instance config is effective on the instance, meaning that all disks, ips and metadata specified in this config are attached or set on the instance.
+     * </pre>
+     *
+     * <code>EFFECTIVE = 244201863;</code>
+     */
     EFFECTIVE(244201863),
-    /** <code>NONE = 2402104;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * *[Default]* The default status, when no per-instance config exists.
+     * </pre>
+     *
+     * <code>NONE = 2402104;</code>
+     */
     NONE(2402104),
-    /** <code>UNAPPLIED = 483935140;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The per-instance config is set on an instance but not been applied yet.
+     * </pre>
+     *
+     * <code>UNAPPLIED = 483935140;</code>
+     */
     UNAPPLIED(483935140),
-    /** <code>UNAPPLIED_DELETION = 313956873;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The per-instance config has been deleted, but the deletion is not yet applied.
+     * </pre>
+     *
+     * <code>UNAPPLIED_DELETION = 313956873;</code>
+     */
     UNAPPLIED_DELETION(313956873),
     UNRECOGNIZED(-1),
     ;
@@ -188,17 +236,65 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>APPLYING = 352003508;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The per-instance config is being applied to the instance, but is not yet effective, possibly waiting for the instance to, for example, REFRESH.
+     * </pre>
+     *
+     * <code>APPLYING = 352003508;</code>
+     */
     public static final int APPLYING_VALUE = 352003508;
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The per-instance config deletion is being applied on the instance, possibly waiting for the instance to, for example, REFRESH.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     public static final int DELETING_VALUE = 528602024;
-    /** <code>EFFECTIVE = 244201863;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The per-instance config is effective on the instance, meaning that all disks, ips and metadata specified in this config are attached or set on the instance.
+     * </pre>
+     *
+     * <code>EFFECTIVE = 244201863;</code>
+     */
     public static final int EFFECTIVE_VALUE = 244201863;
-    /** <code>NONE = 2402104;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * *[Default]* The default status, when no per-instance config exists.
+     * </pre>
+     *
+     * <code>NONE = 2402104;</code>
+     */
     public static final int NONE_VALUE = 2402104;
-    /** <code>UNAPPLIED = 483935140;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The per-instance config is set on an instance but not been applied yet.
+     * </pre>
+     *
+     * <code>UNAPPLIED = 483935140;</code>
+     */
     public static final int UNAPPLIED_VALUE = 483935140;
-    /** <code>UNAPPLIED_DELETION = 313956873;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The per-instance config has been deleted, but the deletion is not yet applied.
+     * </pre>
+     *
+     * <code>UNAPPLIED_DELETION = 313956873;</code>
+     */
     public static final int UNAPPLIED_DELETION_VALUE = 313956873;
 
     public final int getNumber() {
@@ -302,7 +398,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return Whether the fingerprint field is set.
    */
@@ -317,7 +413,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The fingerprint.
    */
@@ -340,7 +436,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The bytes for fingerprint.
    */
@@ -366,7 +462,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    * The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -381,7 +477,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    * The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -404,7 +500,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    * The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -430,7 +526,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    * The intended preserved state for the given instance. Does not contain preserved state generated from a stateful policy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
+   * <code>optional .google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
    *
    * @return Whether the preservedState field is set.
    */
@@ -445,7 +541,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    * The intended preserved state for the given instance. Does not contain preserved state generated from a stateful policy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
+   * <code>optional .google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
    *
    * @return The preservedState.
    */
@@ -462,7 +558,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    * The intended preserved state for the given instance. Does not contain preserved state generated from a stateful policy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
+   * <code>optional .google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.PreservedStateOrBuilder getPreservedStateOrBuilder() {
@@ -472,15 +568,16 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    *
    *
    * <pre>
    * The status of applying this per-instance config on the corresponding managed instance.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PerInstanceConfig.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -493,35 +590,48 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The status of applying this per-instance config on the corresponding managed instance.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PerInstanceConfig.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
   @java.lang.Override
-  public int getStatusValue() {
-    return status_;
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * The status of applying this per-instance config on the corresponding managed instance.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PerInstanceConfig.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.PerInstanceConfig.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.PerInstanceConfig.Status result =
-        com.google.cloud.compute.v1.PerInstanceConfig.Status.valueOf(status_);
-    return result == null
-        ? com.google.cloud.compute.v1.PerInstanceConfig.Status.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -545,7 +655,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
@@ -567,7 +677,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
@@ -602,7 +712,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus().equals(other.getStatus())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -629,7 +739,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -787,7 +897,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
         preservedStateBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
@@ -902,7 +1012,9 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
         mergePreservedState(other.getPreservedState());
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00000008;
+        status_ = other.status_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -943,7 +1055,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return Whether the fingerprint field is set.
      */
@@ -957,7 +1069,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The fingerprint.
      */
@@ -979,7 +1091,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The bytes for fingerprint.
      */
@@ -1001,7 +1113,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The fingerprint to set.
      * @return This builder for chaining.
@@ -1022,7 +1134,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return This builder for chaining.
      */
@@ -1039,7 +1151,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The bytes for fingerprint to set.
      * @return This builder for chaining.
@@ -1063,7 +1175,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -1077,7 +1189,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -1099,7 +1211,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -1121,7 +1233,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1142,7 +1254,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -1159,7 +1271,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1188,7 +1300,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * The intended preserved state for the given instance. Does not contain preserved state generated from a stateful policy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
+     * <code>optional .google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
      *
      * @return Whether the preservedState field is set.
      */
@@ -1202,7 +1314,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * The intended preserved state for the given instance. Does not contain preserved state generated from a stateful policy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
+     * <code>optional .google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
      *
      * @return The preservedState.
      */
@@ -1222,7 +1334,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * The intended preserved state for the given instance. Does not contain preserved state generated from a stateful policy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
+     * <code>optional .google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
      */
     public Builder setPreservedState(com.google.cloud.compute.v1.PreservedState value) {
       if (preservedStateBuilder_ == null) {
@@ -1244,7 +1356,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * The intended preserved state for the given instance. Does not contain preserved state generated from a stateful policy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
+     * <code>optional .google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
      */
     public Builder setPreservedState(
         com.google.cloud.compute.v1.PreservedState.Builder builderForValue) {
@@ -1264,7 +1376,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * The intended preserved state for the given instance. Does not contain preserved state generated from a stateful policy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
+     * <code>optional .google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
      */
     public Builder mergePreservedState(com.google.cloud.compute.v1.PreservedState value) {
       if (preservedStateBuilder_ == null) {
@@ -1292,7 +1404,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * The intended preserved state for the given instance. Does not contain preserved state generated from a stateful policy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
+     * <code>optional .google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
      */
     public Builder clearPreservedState() {
       if (preservedStateBuilder_ == null) {
@@ -1311,7 +1423,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * The intended preserved state for the given instance. Does not contain preserved state generated from a stateful policy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
+     * <code>optional .google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
      */
     public com.google.cloud.compute.v1.PreservedState.Builder getPreservedStateBuilder() {
       bitField0_ |= 0x00000004;
@@ -1325,7 +1437,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * The intended preserved state for the given instance. Does not contain preserved state generated from a stateful policy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
+     * <code>optional .google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
      */
     public com.google.cloud.compute.v1.PreservedStateOrBuilder getPreservedStateOrBuilder() {
       if (preservedStateBuilder_ != null) {
@@ -1343,7 +1455,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * The intended preserved state for the given instance. Does not contain preserved state generated from a stateful policy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
+     * <code>optional .google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.PreservedState,
@@ -1362,19 +1474,19 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       return preservedStateBuilder_;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      *
      *
      * <pre>
      * The status of applying this per-instance config on the corresponding managed instance.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PerInstanceConfig.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
      * @return Whether the status field is set.
      */
-    @java.lang.Override
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000008) != 0);
     }
@@ -1383,29 +1495,64 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The status of applying this per-instance config on the corresponding managed instance.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PerInstanceConfig.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The enum numeric value on the wire for status.
+     * @return The status.
      */
-    @java.lang.Override
-    public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * The status of applying this per-instance config on the corresponding managed instance.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PerInstanceConfig.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @param value The enum numeric value on the wire for status to set.
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status of applying this per-instance config on the corresponding managed instance.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     *
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
+    public Builder setStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000008;
       status_ = value;
       onChanged();
@@ -1416,39 +1563,16 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The status of applying this per-instance config on the corresponding managed instance.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PerInstanceConfig.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.PerInstanceConfig.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.PerInstanceConfig.Status result =
-          com.google.cloud.compute.v1.PerInstanceConfig.Status.valueOf(status_);
-      return result == null
-          ? com.google.cloud.compute.v1.PerInstanceConfig.Status.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The status of applying this per-instance config on the corresponding managed instance.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.PerInstanceConfig.Status status = 181260274;</code>
-     *
-     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloud.compute.v1.PerInstanceConfig.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000008;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
@@ -1457,15 +1581,21 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The status of applying this per-instance config on the corresponding managed instance.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PerInstanceConfig.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      status_ = 0;
+    public Builder setStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000008;
+      status_ = value;
       onChanged();
       return this;
     }

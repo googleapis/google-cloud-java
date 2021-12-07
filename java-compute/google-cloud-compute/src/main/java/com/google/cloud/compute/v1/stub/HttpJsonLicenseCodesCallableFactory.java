@@ -17,11 +17,11 @@
 package com.google.cloud.compute.v1.stub;
 
 import com.google.api.core.BetaApi;
-import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.httpjson.ApiMessage;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonCallableFactory;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshotCallable;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
+import com.google.api.gax.httpjson.longrunning.stub.OperationsStub;
 import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallSettings;
@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.longrunning.Operation;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -40,7 +41,7 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi
 public class HttpJsonLicenseCodesCallableFactory
-    implements HttpJsonStubCallableFactory<ApiMessage, BackgroundResource> {
+    implements HttpJsonStubCallableFactory<Operation, OperationsStub> {
 
   @Override
   public <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> createUnaryCallable(
@@ -75,10 +76,18 @@ public class HttpJsonLicenseCodesCallableFactory
   @Override
   public <RequestT, ResponseT, MetadataT>
       OperationCallable<RequestT, ResponseT, MetadataT> createOperationCallable(
-          HttpJsonCallSettings<RequestT, ApiMessage> httpJsonCallSettings,
+          HttpJsonCallSettings<RequestT, Operation> httpJsonCallSettings,
           OperationCallSettings<RequestT, ResponseT, MetadataT> callSettings,
           ClientContext clientContext,
-          BackgroundResource operationsStub) {
-    return null;
+          OperationsStub operationsStub) {
+    UnaryCallable<RequestT, Operation> innerCallable =
+        HttpJsonCallableFactory.createBaseUnaryCallable(
+            httpJsonCallSettings, callSettings.getInitialCallSettings(), clientContext);
+    HttpJsonOperationSnapshotCallable<RequestT, Operation> initialCallable =
+        new HttpJsonOperationSnapshotCallable<RequestT, Operation>(
+            innerCallable,
+            httpJsonCallSettings.getMethodDescriptor().getOperationSnapshotFactory());
+    return HttpJsonCallableFactory.createOperationCallable(
+        callSettings, clientContext, operationsStub.longRunningClient(), initialCallable);
   }
 }

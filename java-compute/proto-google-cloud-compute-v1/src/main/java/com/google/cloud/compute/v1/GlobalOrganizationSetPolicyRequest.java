@@ -221,7 +221,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
    * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
    * </pre>
    *
-   * <code>string etag = 3123477;</code>
+   * <code>optional string etag = 3123477;</code>
    *
    * @return Whether the etag field is set.
    */
@@ -236,7 +236,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
    * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
    * </pre>
    *
-   * <code>string etag = 3123477;</code>
+   * <code>optional string etag = 3123477;</code>
    *
    * @return The etag.
    */
@@ -259,7 +259,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
    * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
    * </pre>
    *
-   * <code>string etag = 3123477;</code>
+   * <code>optional string etag = 3123477;</code>
    *
    * @return The bytes for etag.
    */
@@ -285,7 +285,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
    * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Policy policy = 91071794;</code>
+   * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
    *
    * @return Whether the policy field is set.
    */
@@ -300,7 +300,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
    * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Policy policy = 91071794;</code>
+   * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
    *
    * @return The policy.
    */
@@ -315,7 +315,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
    * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Policy policy = 91071794;</code>
+   * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.PolicyOrBuilder getPolicyOrBuilder() {
@@ -1100,7 +1100,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
      * </pre>
      *
-     * <code>string etag = 3123477;</code>
+     * <code>optional string etag = 3123477;</code>
      *
      * @return Whether the etag field is set.
      */
@@ -1114,7 +1114,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
      * </pre>
      *
-     * <code>string etag = 3123477;</code>
+     * <code>optional string etag = 3123477;</code>
      *
      * @return The etag.
      */
@@ -1136,7 +1136,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
      * </pre>
      *
-     * <code>string etag = 3123477;</code>
+     * <code>optional string etag = 3123477;</code>
      *
      * @return The bytes for etag.
      */
@@ -1158,7 +1158,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
      * </pre>
      *
-     * <code>string etag = 3123477;</code>
+     * <code>optional string etag = 3123477;</code>
      *
      * @param value The etag to set.
      * @return This builder for chaining.
@@ -1179,7 +1179,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
      * </pre>
      *
-     * <code>string etag = 3123477;</code>
+     * <code>optional string etag = 3123477;</code>
      *
      * @return This builder for chaining.
      */
@@ -1196,7 +1196,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
      * </pre>
      *
-     * <code>string etag = 3123477;</code>
+     * <code>optional string etag = 3123477;</code>
      *
      * @param value The bytes for etag to set.
      * @return This builder for chaining.
@@ -1225,7 +1225,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
      * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Policy policy = 91071794;</code>
+     * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
      *
      * @return Whether the policy field is set.
      */
@@ -1239,7 +1239,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
      * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Policy policy = 91071794;</code>
+     * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
      *
      * @return The policy.
      */
@@ -1257,7 +1257,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
      * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Policy policy = 91071794;</code>
+     * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
      */
     public Builder setPolicy(com.google.cloud.compute.v1.Policy value) {
       if (policyBuilder_ == null) {
@@ -1279,7 +1279,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
      * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Policy policy = 91071794;</code>
+     * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
      */
     public Builder setPolicy(com.google.cloud.compute.v1.Policy.Builder builderForValue) {
       if (policyBuilder_ == null) {
@@ -1298,7 +1298,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
      * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Policy policy = 91071794;</code>
+     * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
      */
     public Builder mergePolicy(com.google.cloud.compute.v1.Policy value) {
       if (policyBuilder_ == null) {
@@ -1326,7 +1326,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
      * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Policy policy = 91071794;</code>
+     * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
      */
     public Builder clearPolicy() {
       if (policyBuilder_ == null) {
@@ -1345,7 +1345,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
      * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Policy policy = 91071794;</code>
+     * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
      */
     public com.google.cloud.compute.v1.Policy.Builder getPolicyBuilder() {
       bitField0_ |= 0x00000004;
@@ -1359,7 +1359,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
      * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Policy policy = 91071794;</code>
+     * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
      */
     public com.google.cloud.compute.v1.PolicyOrBuilder getPolicyOrBuilder() {
       if (policyBuilder_ != null) {
@@ -1375,7 +1375,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
      * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Policy policy = 91071794;</code>
+     * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Policy,

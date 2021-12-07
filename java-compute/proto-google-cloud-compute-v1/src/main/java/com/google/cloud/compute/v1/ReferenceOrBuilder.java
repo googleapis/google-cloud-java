@@ -30,7 +30,7 @@ public interface ReferenceOrBuilder
    * [Output Only] Type of the resource. Always compute#reference for references.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -42,7 +42,7 @@ public interface ReferenceOrBuilder
    * [Output Only] Type of the resource. Always compute#reference for references.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -54,7 +54,7 @@ public interface ReferenceOrBuilder
    * [Output Only] Type of the resource. Always compute#reference for references.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -64,11 +64,10 @@ public interface ReferenceOrBuilder
    *
    *
    * <pre>
-   * A description of the reference type with no implied semantics. Possible values include:
-   * - MEMBER_OF
+   * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
    * </pre>
    *
-   * <code>string reference_type = 247521198;</code>
+   * <code>optional string reference_type = 247521198;</code>
    *
    * @return Whether the referenceType field is set.
    */
@@ -77,11 +76,10 @@ public interface ReferenceOrBuilder
    *
    *
    * <pre>
-   * A description of the reference type with no implied semantics. Possible values include:
-   * - MEMBER_OF
+   * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
    * </pre>
    *
-   * <code>string reference_type = 247521198;</code>
+   * <code>optional string reference_type = 247521198;</code>
    *
    * @return The referenceType.
    */
@@ -90,11 +88,10 @@ public interface ReferenceOrBuilder
    *
    *
    * <pre>
-   * A description of the reference type with no implied semantics. Possible values include:
-   * - MEMBER_OF
+   * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
    * </pre>
    *
-   * <code>string reference_type = 247521198;</code>
+   * <code>optional string reference_type = 247521198;</code>
    *
    * @return The bytes for referenceType.
    */
@@ -107,7 +104,7 @@ public interface ReferenceOrBuilder
    * URL of the resource which refers to the target.
    * </pre>
    *
-   * <code>string referrer = 351173663;</code>
+   * <code>optional string referrer = 351173663;</code>
    *
    * @return Whether the referrer field is set.
    */
@@ -119,7 +116,7 @@ public interface ReferenceOrBuilder
    * URL of the resource which refers to the target.
    * </pre>
    *
-   * <code>string referrer = 351173663;</code>
+   * <code>optional string referrer = 351173663;</code>
    *
    * @return The referrer.
    */
@@ -131,7 +128,7 @@ public interface ReferenceOrBuilder
    * URL of the resource which refers to the target.
    * </pre>
    *
-   * <code>string referrer = 351173663;</code>
+   * <code>optional string referrer = 351173663;</code>
    *
    * @return The bytes for referrer.
    */
@@ -144,7 +141,7 @@ public interface ReferenceOrBuilder
    * URL of the resource to which this reference points.
    * </pre>
    *
-   * <code>string target = 192835985;</code>
+   * <code>optional string target = 192835985;</code>
    *
    * @return Whether the target field is set.
    */
@@ -156,7 +153,7 @@ public interface ReferenceOrBuilder
    * URL of the resource to which this reference points.
    * </pre>
    *
-   * <code>string target = 192835985;</code>
+   * <code>optional string target = 192835985;</code>
    *
    * @return The target.
    */
@@ -168,7 +165,7 @@ public interface ReferenceOrBuilder
    * URL of the resource to which this reference points.
    * </pre>
    *
-   * <code>string target = 192835985;</code>
+   * <code>optional string target = 192835985;</code>
    *
    * @return The bytes for target.
    */

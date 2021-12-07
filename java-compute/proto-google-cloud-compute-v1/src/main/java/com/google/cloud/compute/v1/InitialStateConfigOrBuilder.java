@@ -186,7 +186,7 @@ public interface InitialStateConfigOrBuilder
    * The Platform Key (PK).
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
+   * <code>optional .google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
    *
    * @return Whether the pk field is set.
    */
@@ -198,7 +198,7 @@ public interface InitialStateConfigOrBuilder
    * The Platform Key (PK).
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
+   * <code>optional .google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
    *
    * @return The pk.
    */
@@ -210,7 +210,7 @@ public interface InitialStateConfigOrBuilder
    * The Platform Key (PK).
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
+   * <code>optional .google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
    */
   com.google.cloud.compute.v1.FileContentBufferOrBuilder getPkOrBuilder();
 }

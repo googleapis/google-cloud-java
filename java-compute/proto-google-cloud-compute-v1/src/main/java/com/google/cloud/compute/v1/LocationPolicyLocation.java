@@ -37,7 +37,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
   }
 
   private LocationPolicyLocation() {
-    preference_ = 0;
+    preference_ = "";
   }
 
   @java.lang.Override
@@ -70,11 +70,11 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
           case 0:
             done = true;
             break;
-          case 1206249176:
+          case 1206249178:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              preference_ = rawValue;
+              preference_ = s;
               break;
             }
           default:
@@ -115,7 +115,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Preference for a given locaction: ALLOW or DENY.
+   * Preference for a given location: ALLOW or DENY.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.LocationPolicyLocation.Preference}
@@ -131,11 +131,35 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_PREFERENCE = 0;</code>
      */
     UNDEFINED_PREFERENCE(0),
-    /** <code>ALLOW = 62368553;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Location is allowed for use.
+     * </pre>
+     *
+     * <code>ALLOW = 62368553;</code>
+     */
     ALLOW(62368553),
-    /** <code>DENY = 2094604;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Location is prohibited.
+     * </pre>
+     *
+     * <code>DENY = 2094604;</code>
+     */
     DENY(2094604),
-    /** <code>PREFERENCE_UNSPECIFIED = 496219571;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Default value, unused.
+     * </pre>
+     *
+     * <code>PREFERENCE_UNSPECIFIED = 496219571;</code>
+     */
     PREFERENCE_UNSPECIFIED(496219571),
     UNRECOGNIZED(-1),
     ;
@@ -150,11 +174,35 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_PREFERENCE = 0;</code>
      */
     public static final int UNDEFINED_PREFERENCE_VALUE = 0;
-    /** <code>ALLOW = 62368553;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Location is allowed for use.
+     * </pre>
+     *
+     * <code>ALLOW = 62368553;</code>
+     */
     public static final int ALLOW_VALUE = 62368553;
-    /** <code>DENY = 2094604;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Location is prohibited.
+     * </pre>
+     *
+     * <code>DENY = 2094604;</code>
+     */
     public static final int DENY_VALUE = 2094604;
-    /** <code>PREFERENCE_UNSPECIFIED = 496219571;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Default value, unused.
+     * </pre>
+     *
+     * <code>PREFERENCE_UNSPECIFIED = 496219571;</code>
+     */
     public static final int PREFERENCE_UNSPECIFIED_VALUE = 496219571;
 
     public final int getNumber() {
@@ -246,15 +294,16 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
 
   private int bitField0_;
   public static final int PREFERENCE_FIELD_NUMBER = 150781147;
-  private int preference_;
+  private volatile java.lang.Object preference_;
   /**
    *
    *
    * <pre>
-   * Preference for a given locaction: ALLOW or DENY.
+   * Preference for a given location: ALLOW or DENY.
+   * Check the Preference enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;</code>
+   * <code>optional string preference = 150781147;</code>
    *
    * @return Whether the preference field is set.
    */
@@ -266,36 +315,49 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Preference for a given locaction: ALLOW or DENY.
+   * Preference for a given location: ALLOW or DENY.
+   * Check the Preference enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;</code>
+   * <code>optional string preference = 150781147;</code>
    *
-   * @return The enum numeric value on the wire for preference.
+   * @return The preference.
    */
   @java.lang.Override
-  public int getPreferenceValue() {
-    return preference_;
+  public java.lang.String getPreference() {
+    java.lang.Object ref = preference_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      preference_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * Preference for a given locaction: ALLOW or DENY.
+   * Preference for a given location: ALLOW or DENY.
+   * Check the Preference enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;</code>
+   * <code>optional string preference = 150781147;</code>
    *
-   * @return The preference.
+   * @return The bytes for preference.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.LocationPolicyLocation.Preference getPreference() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.LocationPolicyLocation.Preference result =
-        com.google.cloud.compute.v1.LocationPolicyLocation.Preference.valueOf(preference_);
-    return result == null
-        ? com.google.cloud.compute.v1.LocationPolicyLocation.Preference.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getPreferenceBytes() {
+    java.lang.Object ref = preference_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      preference_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -313,7 +375,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(150781147, preference_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 150781147, preference_);
     }
     unknownFields.writeTo(output);
   }
@@ -325,7 +387,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(150781147, preference_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(150781147, preference_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -345,7 +407,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
 
     if (hasPreference() != other.hasPreference()) return false;
     if (hasPreference()) {
-      if (preference_ != other.preference_) return false;
+      if (!getPreference().equals(other.getPreference())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -360,7 +422,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasPreference()) {
       hash = (37 * hash) + PREFERENCE_FIELD_NUMBER;
-      hash = (53 * hash) + preference_;
+      hash = (53 * hash) + getPreference().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -506,7 +568,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      preference_ = 0;
+      preference_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
@@ -593,7 +655,9 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
       if (other == com.google.cloud.compute.v1.LocationPolicyLocation.getDefaultInstance())
         return this;
       if (other.hasPreference()) {
-        setPreference(other.getPreference());
+        bitField0_ |= 0x00000001;
+        preference_ = other.preference_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -627,20 +691,19 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
 
     private int bitField0_;
 
-    private int preference_ = 0;
+    private java.lang.Object preference_ = "";
     /**
      *
      *
      * <pre>
-     * Preference for a given locaction: ALLOW or DENY.
+     * Preference for a given location: ALLOW or DENY.
+     * Check the Preference enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;
-     * </code>
+     * <code>optional string preference = 150781147;</code>
      *
      * @return Whether the preference field is set.
      */
-    @java.lang.Override
     public boolean hasPreference() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -648,32 +711,65 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Preference for a given locaction: ALLOW or DENY.
+     * Preference for a given location: ALLOW or DENY.
+     * Check the Preference enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;
-     * </code>
+     * <code>optional string preference = 150781147;</code>
      *
-     * @return The enum numeric value on the wire for preference.
+     * @return The preference.
      */
-    @java.lang.Override
-    public int getPreferenceValue() {
-      return preference_;
+    public java.lang.String getPreference() {
+      java.lang.Object ref = preference_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        preference_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * Preference for a given locaction: ALLOW or DENY.
+     * Preference for a given location: ALLOW or DENY.
+     * Check the Preference enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;
-     * </code>
+     * <code>optional string preference = 150781147;</code>
      *
-     * @param value The enum numeric value on the wire for preference to set.
+     * @return The bytes for preference.
+     */
+    public com.google.protobuf.ByteString getPreferenceBytes() {
+      java.lang.Object ref = preference_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        preference_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preference for a given location: ALLOW or DENY.
+     * Check the Preference enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string preference = 150781147;</code>
+     *
+     * @param value The preference to set.
      * @return This builder for chaining.
      */
-    public Builder setPreferenceValue(int value) {
+    public Builder setPreference(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000001;
       preference_ = value;
       onChanged();
@@ -683,43 +779,17 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Preference for a given locaction: ALLOW or DENY.
+     * Preference for a given location: ALLOW or DENY.
+     * Check the Preference enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;
-     * </code>
+     * <code>optional string preference = 150781147;</code>
      *
-     * @return The preference.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.LocationPolicyLocation.Preference getPreference() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.LocationPolicyLocation.Preference result =
-          com.google.cloud.compute.v1.LocationPolicyLocation.Preference.valueOf(preference_);
-      return result == null
-          ? com.google.cloud.compute.v1.LocationPolicyLocation.Preference.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Preference for a given locaction: ALLOW or DENY.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;
-     * </code>
-     *
-     * @param value The preference to set.
      * @return This builder for chaining.
      */
-    public Builder setPreference(
-        com.google.cloud.compute.v1.LocationPolicyLocation.Preference value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      preference_ = value.getNumber();
+    public Builder clearPreference() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      preference_ = getDefaultInstance().getPreference();
       onChanged();
       return this;
     }
@@ -727,17 +797,22 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Preference for a given locaction: ALLOW or DENY.
+     * Preference for a given location: ALLOW or DENY.
+     * Check the Preference enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;
-     * </code>
+     * <code>optional string preference = 150781147;</code>
      *
+     * @param value The bytes for preference to set.
      * @return This builder for chaining.
      */
-    public Builder clearPreference() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      preference_ = 0;
+    public Builder setPreferenceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      preference_ = value;
       onChanged();
       return this;
     }

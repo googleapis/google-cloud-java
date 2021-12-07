@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.TargetHttpProxiesClient.AggregatedList
 import static com.google.cloud.compute.v1.TargetHttpProxiesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListTargetHttpProxiesRequest;
 import com.google.cloud.compute.v1.DeleteTargetHttpProxyRequest;
@@ -53,12 +54,22 @@ public abstract class TargetHttpProxiesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<DeleteTargetHttpProxyRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteTargetHttpProxyRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetTargetHttpProxyRequest, TargetHttpProxy> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertTargetHttpProxyRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertTargetHttpProxyRequest, Operation> insertCallable() {
@@ -73,8 +84,18 @@ public abstract class TargetHttpProxiesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
   }
 
+  public OperationCallable<PatchTargetHttpProxyRequest, Operation, Operation>
+      patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
+  }
+
   public UnaryCallable<PatchTargetHttpProxyRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public OperationCallable<SetUrlMapTargetHttpProxyRequest, Operation, Operation>
+      setUrlMapOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setUrlMapOperationCallable()");
   }
 
   public UnaryCallable<SetUrlMapTargetHttpProxyRequest, Operation> setUrlMapCallable() {

@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonVpnGatewaysStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -37,6 +38,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -142,7 +144,7 @@ public class VpnGatewaysClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -153,6 +155,7 @@ public class VpnGatewaysClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -166,7 +169,7 @@ public class VpnGatewaysClientTest {
     String region = "region-934795532";
     String vpnGateway = "vpnGateway1920916144";
 
-    Operation actualResponse = client.delete(project, region, vpnGateway);
+    Operation actualResponse = client.deleteAsync(project, region, vpnGateway).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -195,10 +198,9 @@ public class VpnGatewaysClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       String vpnGateway = "vpnGateway1920916144";
-      client.delete(project, region, vpnGateway);
+      client.deleteAsync(project, region, vpnGateway).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -318,7 +320,7 @@ public class VpnGatewaysClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -329,6 +331,7 @@ public class VpnGatewaysClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -342,7 +345,7 @@ public class VpnGatewaysClientTest {
     String region = "region-934795532";
     VpnGateway vpnGatewayResource = VpnGateway.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, region, vpnGatewayResource);
+    Operation actualResponse = client.insertAsync(project, region, vpnGatewayResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -371,10 +374,9 @@ public class VpnGatewaysClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       VpnGateway vpnGatewayResource = VpnGateway.newBuilder().build();
-      client.insert(project, region, vpnGatewayResource);
+      client.insertAsync(project, region, vpnGatewayResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -440,7 +442,7 @@ public class VpnGatewaysClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -451,6 +453,7 @@ public class VpnGatewaysClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -467,7 +470,7 @@ public class VpnGatewaysClientTest {
         RegionSetLabelsRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.setLabels(project, region, resource, regionSetLabelsRequestResource);
+        client.setLabelsAsync(project, region, resource, regionSetLabelsRequestResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -498,10 +501,9 @@ public class VpnGatewaysClientTest {
       String resource = "resource-341064690";
       RegionSetLabelsRequest regionSetLabelsRequestResource =
           RegionSetLabelsRequest.newBuilder().build();
-      client.setLabels(project, region, resource, regionSetLabelsRequestResource);
+      client.setLabelsAsync(project, region, resource, regionSetLabelsRequestResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 

@@ -118,7 +118,7 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
    * Size of the scratch disk, defined in GB.
    * </pre>
    *
-   * <code>int32 disk_gb = 60990141;</code>
+   * <code>optional int32 disk_gb = 60990141;</code>
    *
    * @return Whether the diskGb field is set.
    */
@@ -133,7 +133,7 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
    * Size of the scratch disk, defined in GB.
    * </pre>
    *
-   * <code>int32 disk_gb = 60990141;</code>
+   * <code>optional int32 disk_gb = 60990141;</code>
    *
    * @return The diskGb.
    */
@@ -476,7 +476,7 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
      * Size of the scratch disk, defined in GB.
      * </pre>
      *
-     * <code>int32 disk_gb = 60990141;</code>
+     * <code>optional int32 disk_gb = 60990141;</code>
      *
      * @return Whether the diskGb field is set.
      */
@@ -491,7 +491,7 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
      * Size of the scratch disk, defined in GB.
      * </pre>
      *
-     * <code>int32 disk_gb = 60990141;</code>
+     * <code>optional int32 disk_gb = 60990141;</code>
      *
      * @return The diskGb.
      */
@@ -506,7 +506,7 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
      * Size of the scratch disk, defined in GB.
      * </pre>
      *
-     * <code>int32 disk_gb = 60990141;</code>
+     * <code>optional int32 disk_gb = 60990141;</code>
      *
      * @param value The diskGb to set.
      * @return This builder for chaining.
@@ -524,7 +524,7 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
      * Size of the scratch disk, defined in GB.
      * </pre>
      *
-     * <code>int32 disk_gb = 60990141;</code>
+     * <code>optional int32 disk_gb = 60990141;</code>
      *
      * @return This builder for chaining.
      */

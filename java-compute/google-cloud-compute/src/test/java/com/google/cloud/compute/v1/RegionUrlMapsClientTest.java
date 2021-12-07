@@ -27,12 +27,14 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonRegionUrlMapsStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -86,7 +88,7 @@ public class RegionUrlMapsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -97,6 +99,7 @@ public class RegionUrlMapsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -110,7 +113,7 @@ public class RegionUrlMapsClientTest {
     String region = "region-934795532";
     String urlMap = "urlMap-836780691";
 
-    Operation actualResponse = client.delete(project, region, urlMap);
+    Operation actualResponse = client.deleteAsync(project, region, urlMap).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -139,10 +142,9 @@ public class RegionUrlMapsClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       String urlMap = "urlMap-836780691";
-      client.delete(project, region, urlMap);
+      client.deleteAsync(project, region, urlMap).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -218,7 +220,7 @@ public class RegionUrlMapsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -229,6 +231,7 @@ public class RegionUrlMapsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -242,7 +245,7 @@ public class RegionUrlMapsClientTest {
     String region = "region-934795532";
     UrlMap urlMapResource = UrlMap.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, region, urlMapResource);
+    Operation actualResponse = client.insertAsync(project, region, urlMapResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -271,10 +274,9 @@ public class RegionUrlMapsClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       UrlMap urlMapResource = UrlMap.newBuilder().build();
-      client.insert(project, region, urlMapResource);
+      client.insertAsync(project, region, urlMapResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -340,7 +342,7 @@ public class RegionUrlMapsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -351,6 +353,7 @@ public class RegionUrlMapsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -365,7 +368,7 @@ public class RegionUrlMapsClientTest {
     String urlMap = "urlMap-836780691";
     UrlMap urlMapResource = UrlMap.newBuilder().build();
 
-    Operation actualResponse = client.patch(project, region, urlMap, urlMapResource);
+    Operation actualResponse = client.patchAsync(project, region, urlMap, urlMapResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -395,10 +398,9 @@ public class RegionUrlMapsClientTest {
       String region = "region-934795532";
       String urlMap = "urlMap-836780691";
       UrlMap urlMapResource = UrlMap.newBuilder().build();
-      client.patch(project, region, urlMap, urlMapResource);
+      client.patchAsync(project, region, urlMap, urlMapResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -412,7 +414,7 @@ public class RegionUrlMapsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -423,6 +425,7 @@ public class RegionUrlMapsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -437,7 +440,7 @@ public class RegionUrlMapsClientTest {
     String urlMap = "urlMap-836780691";
     UrlMap urlMapResource = UrlMap.newBuilder().build();
 
-    Operation actualResponse = client.update(project, region, urlMap, urlMapResource);
+    Operation actualResponse = client.updateAsync(project, region, urlMap, urlMapResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -467,10 +470,9 @@ public class RegionUrlMapsClientTest {
       String region = "region-934795532";
       String urlMap = "urlMap-836780691";
       UrlMap urlMapResource = UrlMap.newBuilder().build();
-      client.update(project, region, urlMap, urlMapResource);
+      client.updateAsync(project, region, urlMap, urlMapResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 

@@ -30,7 +30,7 @@ public interface ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder
    * Name of the cookie.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -42,7 +42,7 @@ public interface ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder
    * Name of the cookie.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -54,7 +54,7 @@ public interface ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder
    * Name of the cookie.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -67,7 +67,7 @@ public interface ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder
    * Path to set for the cookie.
    * </pre>
    *
-   * <code>string path = 3433509;</code>
+   * <code>optional string path = 3433509;</code>
    *
    * @return Whether the path field is set.
    */
@@ -79,7 +79,7 @@ public interface ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder
    * Path to set for the cookie.
    * </pre>
    *
-   * <code>string path = 3433509;</code>
+   * <code>optional string path = 3433509;</code>
    *
    * @return The path.
    */
@@ -91,7 +91,7 @@ public interface ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder
    * Path to set for the cookie.
    * </pre>
    *
-   * <code>string path = 3433509;</code>
+   * <code>optional string path = 3433509;</code>
    *
    * @return The bytes for path.
    */
@@ -104,7 +104,7 @@ public interface ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder
    * Lifetime of the cookie.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration ttl = 115180;</code>
+   * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
    *
    * @return Whether the ttl field is set.
    */
@@ -116,7 +116,7 @@ public interface ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder
    * Lifetime of the cookie.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration ttl = 115180;</code>
+   * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
    *
    * @return The ttl.
    */
@@ -128,7 +128,7 @@ public interface ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder
    * Lifetime of the cookie.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration ttl = 115180;</code>
+   * <code>optional .google.cloud.compute.v1.Duration ttl = 115180;</code>
    */
   com.google.cloud.compute.v1.DurationOrBuilder getTtlOrBuilder();
 }

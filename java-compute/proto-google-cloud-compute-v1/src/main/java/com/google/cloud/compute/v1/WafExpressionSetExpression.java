@@ -118,10 +118,10 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive.
+   * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive. required
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>optional string id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -133,10 +133,10 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive.
+   * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive. required
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>optional string id = 3355;</code>
    *
    * @return The id.
    */
@@ -156,10 +156,10 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive.
+   * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive. required
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>optional string id = 3355;</code>
    *
    * @return The bytes for id.
    */
@@ -513,10 +513,10 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive.
+     * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive. required
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>optional string id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -527,10 +527,10 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive.
+     * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive. required
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>optional string id = 3355;</code>
      *
      * @return The id.
      */
@@ -549,10 +549,10 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive.
+     * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive. required
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>optional string id = 3355;</code>
      *
      * @return The bytes for id.
      */
@@ -571,10 +571,10 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive.
+     * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive. required
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>optional string id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -592,10 +592,10 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive.
+     * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive. required
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>optional string id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -609,10 +609,10 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive.
+     * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive. required
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>optional string id = 3355;</code>
      *
      * @param value The bytes for id to set.
      * @return This builder for chaining.

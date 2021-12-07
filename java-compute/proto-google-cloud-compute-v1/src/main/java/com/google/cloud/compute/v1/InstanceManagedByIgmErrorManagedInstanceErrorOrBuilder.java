@@ -30,7 +30,7 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    * [Output Only] Error code.
    * </pre>
    *
-   * <code>string code = 3059181;</code>
+   * <code>optional string code = 3059181;</code>
    *
    * @return Whether the code field is set.
    */
@@ -42,7 +42,7 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    * [Output Only] Error code.
    * </pre>
    *
-   * <code>string code = 3059181;</code>
+   * <code>optional string code = 3059181;</code>
    *
    * @return The code.
    */
@@ -54,7 +54,7 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    * [Output Only] Error code.
    * </pre>
    *
-   * <code>string code = 3059181;</code>
+   * <code>optional string code = 3059181;</code>
    *
    * @return The bytes for code.
    */
@@ -67,7 +67,7 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    * [Output Only] Error message.
    * </pre>
    *
-   * <code>string message = 418054151;</code>
+   * <code>optional string message = 418054151;</code>
    *
    * @return Whether the message field is set.
    */
@@ -79,7 +79,7 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    * [Output Only] Error message.
    * </pre>
    *
-   * <code>string message = 418054151;</code>
+   * <code>optional string message = 418054151;</code>
    *
    * @return The message.
    */
@@ -91,7 +91,7 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    * [Output Only] Error message.
    * </pre>
    *
-   * <code>string message = 418054151;</code>
+   * <code>optional string message = 418054151;</code>
    *
    * @return The bytes for message.
    */

@@ -30,7 +30,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * Chain name that the snapshot is created in.
    * </pre>
    *
-   * <code>string chain_name = 68644169;</code>
+   * <code>optional string chain_name = 68644169;</code>
    *
    * @return Whether the chainName field is set.
    */
@@ -42,7 +42,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * Chain name that the snapshot is created in.
    * </pre>
    *
-   * <code>string chain_name = 68644169;</code>
+   * <code>optional string chain_name = 68644169;</code>
    *
    * @return The chainName.
    */
@@ -54,7 +54,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * Chain name that the snapshot is created in.
    * </pre>
    *
-   * <code>string chain_name = 68644169;</code>
+   * <code>optional string chain_name = 68644169;</code>
    *
    * @return The bytes for chainName.
    */
@@ -67,7 +67,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * Indication to perform a 'guest aware' snapshot.
    * </pre>
    *
-   * <code>bool guest_flush = 385550813;</code>
+   * <code>optional bool guest_flush = 385550813;</code>
    *
    * @return Whether the guestFlush field is set.
    */
@@ -79,7 +79,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * Indication to perform a 'guest aware' snapshot.
    * </pre>
    *
-   * <code>bool guest_flush = 385550813;</code>
+   * <code>optional bool guest_flush = 385550813;</code>
    *
    * @return The guestFlush.
    */

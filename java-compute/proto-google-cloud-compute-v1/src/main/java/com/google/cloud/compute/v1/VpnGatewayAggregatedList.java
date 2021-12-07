@@ -202,7 +202,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
    * [Output Only] Unique identifier for the resource; defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>optional string id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -217,7 +217,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
    * [Output Only] Unique identifier for the resource; defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>optional string id = 3355;</code>
    *
    * @return The id.
    */
@@ -240,7 +240,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
    * [Output Only] Unique identifier for the resource; defined by the server.
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>optional string id = 3355;</code>
    *
    * @return The bytes for id.
    */
@@ -381,7 +381,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
    * [Output Only] Type of resource. Always compute#vpnGateway for VPN gateways.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -396,7 +396,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
    * [Output Only] Type of resource. Always compute#vpnGateway for VPN gateways.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -419,7 +419,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
    * [Output Only] Type of resource. Always compute#vpnGateway for VPN gateways.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -445,7 +445,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
    * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
    * </pre>
    *
-   * <code>string next_page_token = 79797525;</code>
+   * <code>optional string next_page_token = 79797525;</code>
    *
    * @return Whether the nextPageToken field is set.
    */
@@ -460,7 +460,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
    * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
    * </pre>
    *
-   * <code>string next_page_token = 79797525;</code>
+   * <code>optional string next_page_token = 79797525;</code>
    *
    * @return The nextPageToken.
    */
@@ -483,7 +483,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
    * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
    * </pre>
    *
-   * <code>string next_page_token = 79797525;</code>
+   * <code>optional string next_page_token = 79797525;</code>
    *
    * @return The bytes for nextPageToken.
    */
@@ -509,7 +509,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -524,7 +524,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -547,7 +547,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -634,7 +634,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
    * [Output Only] Informational warning message.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+   * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
    *
    * @return Whether the warning field is set.
    */
@@ -649,7 +649,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
    * [Output Only] Informational warning message.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+   * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
    *
    * @return The warning.
    */
@@ -664,7 +664,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
    * [Output Only] Informational warning message.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+   * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
@@ -1195,7 +1195,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>optional string id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -1209,7 +1209,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>optional string id = 3355;</code>
      *
      * @return The id.
      */
@@ -1231,7 +1231,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>optional string id = 3355;</code>
      *
      * @return The bytes for id.
      */
@@ -1253,7 +1253,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>optional string id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -1274,7 +1274,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>optional string id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -1291,7 +1291,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>optional string id = 3355;</code>
      *
      * @param value The bytes for id to set.
      * @return This builder for chaining.
@@ -1491,7 +1491,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Type of resource. Always compute#vpnGateway for VPN gateways.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -1505,7 +1505,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Type of resource. Always compute#vpnGateway for VPN gateways.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -1527,7 +1527,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Type of resource. Always compute#vpnGateway for VPN gateways.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -1549,7 +1549,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Type of resource. Always compute#vpnGateway for VPN gateways.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -1570,7 +1570,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Type of resource. Always compute#vpnGateway for VPN gateways.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -1587,7 +1587,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Type of resource. Always compute#vpnGateway for VPN gateways.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -1611,7 +1611,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
      * </pre>
      *
-     * <code>string next_page_token = 79797525;</code>
+     * <code>optional string next_page_token = 79797525;</code>
      *
      * @return Whether the nextPageToken field is set.
      */
@@ -1625,7 +1625,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
      * </pre>
      *
-     * <code>string next_page_token = 79797525;</code>
+     * <code>optional string next_page_token = 79797525;</code>
      *
      * @return The nextPageToken.
      */
@@ -1647,7 +1647,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
      * </pre>
      *
-     * <code>string next_page_token = 79797525;</code>
+     * <code>optional string next_page_token = 79797525;</code>
      *
      * @return The bytes for nextPageToken.
      */
@@ -1669,7 +1669,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
      * </pre>
      *
-     * <code>string next_page_token = 79797525;</code>
+     * <code>optional string next_page_token = 79797525;</code>
      *
      * @param value The nextPageToken to set.
      * @return This builder for chaining.
@@ -1690,7 +1690,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
      * </pre>
      *
-     * <code>string next_page_token = 79797525;</code>
+     * <code>optional string next_page_token = 79797525;</code>
      *
      * @return This builder for chaining.
      */
@@ -1707,7 +1707,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
      * </pre>
      *
-     * <code>string next_page_token = 79797525;</code>
+     * <code>optional string next_page_token = 79797525;</code>
      *
      * @param value The bytes for nextPageToken to set.
      * @return This builder for chaining.
@@ -1731,7 +1731,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -1745,7 +1745,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -1767,7 +1767,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -1789,7 +1789,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -1810,7 +1810,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -1827,7 +1827,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2024,7 +2024,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Informational warning message.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      *
      * @return Whether the warning field is set.
      */
@@ -2038,7 +2038,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Informational warning message.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      *
      * @return The warning.
      */
@@ -2058,7 +2058,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Informational warning message.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public Builder setWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
@@ -2080,7 +2080,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Informational warning message.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public Builder setWarning(com.google.cloud.compute.v1.Warning.Builder builderForValue) {
       if (warningBuilder_ == null) {
@@ -2099,7 +2099,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Informational warning message.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public Builder mergeWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
@@ -2127,7 +2127,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Informational warning message.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public Builder clearWarning() {
       if (warningBuilder_ == null) {
@@ -2146,7 +2146,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Informational warning message.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.Warning.Builder getWarningBuilder() {
       bitField0_ |= 0x00000040;
@@ -2160,7 +2160,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Informational warning message.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
       if (warningBuilder_ != null) {
@@ -2178,7 +2178,7 @@ public final class VpnGatewayAggregatedList extends com.google.protobuf.Generate
      * [Output Only] Informational warning message.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Warning,

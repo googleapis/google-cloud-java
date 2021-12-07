@@ -26,6 +26,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -49,15 +50,15 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * FirewallsSettings.Builder firewallsSettingsBuilder = FirewallsSettings.newBuilder();
  * firewallsSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         firewallsSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -73,6 +74,12 @@ public class FirewallsSettings extends ClientSettings<FirewallsSettings> {
     return ((FirewallsStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteFirewallRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((FirewallsStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetFirewallRequest, Firewall> getSettings() {
     return ((FirewallsStubSettings) getStubSettings()).getSettings();
@@ -81,6 +88,12 @@ public class FirewallsSettings extends ClientSettings<FirewallsSettings> {
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertFirewallRequest, Operation> insertSettings() {
     return ((FirewallsStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertFirewallRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((FirewallsStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -93,9 +106,21 @@ public class FirewallsSettings extends ClientSettings<FirewallsSettings> {
     return ((FirewallsStubSettings) getStubSettings()).patchSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchFirewallRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((FirewallsStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateFirewallRequest, Operation> updateSettings() {
     return ((FirewallsStubSettings) getStubSettings()).updateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateFirewallRequest, Operation, Operation>
+      updateOperationSettings() {
+    return ((FirewallsStubSettings) getStubSettings()).updateOperationSettings();
   }
 
   public static final FirewallsSettings create(FirewallsStubSettings stub) throws IOException {
@@ -200,6 +225,12 @@ public class FirewallsSettings extends ClientSettings<FirewallsSettings> {
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteFirewallRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetFirewallRequest, Firewall> getSettings() {
       return getStubSettingsBuilder().getSettings();
@@ -208,6 +239,12 @@ public class FirewallsSettings extends ClientSettings<FirewallsSettings> {
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertFirewallRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertFirewallRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -221,9 +258,21 @@ public class FirewallsSettings extends ClientSettings<FirewallsSettings> {
       return getStubSettingsBuilder().patchSettings();
     }
 
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchFirewallRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to update. */
     public UnaryCallSettings.Builder<UpdateFirewallRequest, Operation> updateSettings() {
       return getStubSettingsBuilder().updateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public OperationCallSettings.Builder<UpdateFirewallRequest, Operation, Operation>
+        updateOperationSettings() {
+      return getStubSettingsBuilder().updateOperationSettings();
     }
 
     @Override

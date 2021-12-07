@@ -27,7 +27,7 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 256.
+   * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -39,7 +39,7 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 256.
+   * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -51,7 +51,7 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 256.
+   * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -64,7 +64,7 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 256.
+   * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -143,7 +143,7 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 256.
+   * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -155,7 +155,7 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 256.
+   * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -167,7 +167,7 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 256.
+   * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -180,7 +180,7 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 256.
+   * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string src_ip_ranges = 432128083;</code>

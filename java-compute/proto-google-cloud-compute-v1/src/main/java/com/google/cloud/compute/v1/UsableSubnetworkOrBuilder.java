@@ -30,7 +30,7 @@ public interface UsableSubnetworkOrBuilder
    * The range of internal addresses that are owned by this subnetwork.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return Whether the ipCidrRange field is set.
    */
@@ -42,7 +42,7 @@ public interface UsableSubnetworkOrBuilder
    * The range of internal addresses that are owned by this subnetwork.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return The ipCidrRange.
    */
@@ -54,7 +54,7 @@ public interface UsableSubnetworkOrBuilder
    * The range of internal addresses that are owned by this subnetwork.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return The bytes for ipCidrRange.
    */
@@ -67,7 +67,7 @@ public interface UsableSubnetworkOrBuilder
    * Network URL.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return Whether the network field is set.
    */
@@ -79,7 +79,7 @@ public interface UsableSubnetworkOrBuilder
    * Network URL.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The network.
    */
@@ -91,7 +91,7 @@ public interface UsableSubnetworkOrBuilder
    * Network URL.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The bytes for network.
    */
@@ -168,7 +168,7 @@ public interface UsableSubnetworkOrBuilder
    * Subnetwork URL.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>optional string subnetwork = 307827694;</code>
    *
    * @return Whether the subnetwork field is set.
    */
@@ -180,7 +180,7 @@ public interface UsableSubnetworkOrBuilder
    * Subnetwork URL.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>optional string subnetwork = 307827694;</code>
    *
    * @return The subnetwork.
    */
@@ -192,7 +192,7 @@ public interface UsableSubnetworkOrBuilder
    * Subnetwork URL.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>optional string subnetwork = 307827694;</code>
    *
    * @return The bytes for subnetwork.
    */

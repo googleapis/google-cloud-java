@@ -38,7 +38,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
   }
 
   private RouterNatLogConfig() {
-    filter_ = 0;
+    filter_ = "";
   }
 
   @java.lang.Override
@@ -77,11 +77,11 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
               enable_ = input.readBool();
               break;
             }
-          case -1606001728:
+          case -1606001726:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
-              filter_ = rawValue;
+              filter_ = s;
               break;
             }
           default:
@@ -122,10 +122,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
-   * - ERRORS_ONLY: Export logs only for connection failures.
-   * - TRANSLATIONS_ONLY: Export logs only for successful connections.
-   * - ALL: Export logs for all connections, successful and unsuccessful.
+   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.RouterNatLogConfig.Filter}
@@ -141,11 +138,35 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_FILTER = 0;</code>
      */
     UNDEFINED_FILTER(0),
-    /** <code>ALL = 64897;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Export logs for all (successful and unsuccessful) connections.
+     * </pre>
+     *
+     * <code>ALL = 64897;</code>
+     */
     ALL(64897),
-    /** <code>ERRORS_ONLY = 307484672;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Export logs for connection failures only.
+     * </pre>
+     *
+     * <code>ERRORS_ONLY = 307484672;</code>
+     */
     ERRORS_ONLY(307484672),
-    /** <code>TRANSLATIONS_ONLY = 357212649;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Export logs for successful connections only.
+     * </pre>
+     *
+     * <code>TRANSLATIONS_ONLY = 357212649;</code>
+     */
     TRANSLATIONS_ONLY(357212649),
     UNRECOGNIZED(-1),
     ;
@@ -160,11 +181,35 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_FILTER = 0;</code>
      */
     public static final int UNDEFINED_FILTER_VALUE = 0;
-    /** <code>ALL = 64897;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Export logs for all (successful and unsuccessful) connections.
+     * </pre>
+     *
+     * <code>ALL = 64897;</code>
+     */
     public static final int ALL_VALUE = 64897;
-    /** <code>ERRORS_ONLY = 307484672;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Export logs for connection failures only.
+     * </pre>
+     *
+     * <code>ERRORS_ONLY = 307484672;</code>
+     */
     public static final int ERRORS_ONLY_VALUE = 307484672;
-    /** <code>TRANSLATIONS_ONLY = 357212649;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Export logs for successful connections only.
+     * </pre>
+     *
+     * <code>TRANSLATIONS_ONLY = 357212649;</code>
+     */
     public static final int TRANSLATIONS_ONLY_VALUE = 357212649;
 
     public final int getNumber() {
@@ -262,7 +307,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
    * Indicates whether or not to export logs. This is false by default.
    * </pre>
    *
-   * <code>bool enable = 311764355;</code>
+   * <code>optional bool enable = 311764355;</code>
    *
    * @return Whether the enable field is set.
    */
@@ -277,7 +322,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
    * Indicates whether or not to export logs. This is false by default.
    * </pre>
    *
-   * <code>bool enable = 311764355;</code>
+   * <code>optional bool enable = 311764355;</code>
    *
    * @return The enable.
    */
@@ -287,18 +332,16 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int FILTER_FIELD_NUMBER = 336120696;
-  private int filter_;
+  private volatile java.lang.Object filter_;
   /**
    *
    *
    * <pre>
-   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
-   * - ERRORS_ONLY: Export logs only for connection failures.
-   * - TRANSLATIONS_ONLY: Export logs only for successful connections.
-   * - ALL: Export logs for all connections, successful and unsuccessful.
+   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
+   * Check the Filter enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+   * <code>optional string filter = 336120696;</code>
    *
    * @return Whether the filter field is set.
    */
@@ -310,42 +353,49 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
-   * - ERRORS_ONLY: Export logs only for connection failures.
-   * - TRANSLATIONS_ONLY: Export logs only for successful connections.
-   * - ALL: Export logs for all connections, successful and unsuccessful.
+   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
+   * Check the Filter enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+   * <code>optional string filter = 336120696;</code>
    *
-   * @return The enum numeric value on the wire for filter.
+   * @return The filter.
    */
   @java.lang.Override
-  public int getFilterValue() {
-    return filter_;
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
-   * - ERRORS_ONLY: Export logs only for connection failures.
-   * - TRANSLATIONS_ONLY: Export logs only for successful connections.
-   * - ALL: Export logs for all connections, successful and unsuccessful.
+   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
+   * Check the Filter enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+   * <code>optional string filter = 336120696;</code>
    *
-   * @return The filter.
+   * @return The bytes for filter.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.RouterNatLogConfig.Filter getFilter() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.RouterNatLogConfig.Filter result =
-        com.google.cloud.compute.v1.RouterNatLogConfig.Filter.valueOf(filter_);
-    return result == null
-        ? com.google.cloud.compute.v1.RouterNatLogConfig.Filter.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -366,7 +416,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
       output.writeBool(311764355, enable_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(336120696, filter_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 336120696, filter_);
     }
     unknownFields.writeTo(output);
   }
@@ -381,7 +431,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(311764355, enable_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(336120696, filter_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(336120696, filter_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -405,7 +455,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     }
     if (hasFilter() != other.hasFilter()) return false;
     if (hasFilter()) {
-      if (filter_ != other.filter_) return false;
+      if (!getFilter().equals(other.getFilter())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -424,7 +474,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     }
     if (hasFilter()) {
       hash = (37 * hash) + FILTER_FIELD_NUMBER;
-      hash = (53 * hash) + filter_;
+      hash = (53 * hash) + getFilter().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -573,7 +623,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
       super.clear();
       enable_ = false;
       bitField0_ = (bitField0_ & ~0x00000001);
-      filter_ = 0;
+      filter_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
@@ -666,7 +716,9 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
         setEnable(other.getEnable());
       }
       if (other.hasFilter()) {
-        setFilter(other.getFilter());
+        bitField0_ |= 0x00000002;
+        filter_ = other.filter_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -707,7 +759,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * Indicates whether or not to export logs. This is false by default.
      * </pre>
      *
-     * <code>bool enable = 311764355;</code>
+     * <code>optional bool enable = 311764355;</code>
      *
      * @return Whether the enable field is set.
      */
@@ -722,7 +774,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * Indicates whether or not to export logs. This is false by default.
      * </pre>
      *
-     * <code>bool enable = 311764355;</code>
+     * <code>optional bool enable = 311764355;</code>
      *
      * @return The enable.
      */
@@ -737,7 +789,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * Indicates whether or not to export logs. This is false by default.
      * </pre>
      *
-     * <code>bool enable = 311764355;</code>
+     * <code>optional bool enable = 311764355;</code>
      *
      * @param value The enable to set.
      * @return This builder for chaining.
@@ -755,7 +807,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * Indicates whether or not to export logs. This is false by default.
      * </pre>
      *
-     * <code>bool enable = 311764355;</code>
+     * <code>optional bool enable = 311764355;</code>
      *
      * @return This builder for chaining.
      */
@@ -766,22 +818,19 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private int filter_ = 0;
+    private java.lang.Object filter_ = "";
     /**
      *
      *
      * <pre>
-     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
-     * - ERRORS_ONLY: Export logs only for connection failures.
-     * - TRANSLATIONS_ONLY: Export logs only for successful connections.
-     * - ALL: Export logs for all connections, successful and unsuccessful.
+     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
+     * Check the Filter enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
      * @return Whether the filter field is set.
      */
-    @java.lang.Override
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -789,36 +838,65 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
-     * - ERRORS_ONLY: Export logs only for connection failures.
-     * - TRANSLATIONS_ONLY: Export logs only for successful connections.
-     * - ALL: Export logs for all connections, successful and unsuccessful.
+     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
+     * Check the Filter enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
-     * @return The enum numeric value on the wire for filter.
+     * @return The filter.
      */
-    @java.lang.Override
-    public int getFilterValue() {
-      return filter_;
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
-     * - ERRORS_ONLY: Export logs only for connection failures.
-     * - TRANSLATIONS_ONLY: Export logs only for successful connections.
-     * - ALL: Export logs for all connections, successful and unsuccessful.
+     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
+     * Check the Filter enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
-     * @param value The enum numeric value on the wire for filter to set.
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
+     * Check the Filter enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string filter = 336120696;</code>
+     *
+     * @param value The filter to set.
      * @return This builder for chaining.
      */
-    public Builder setFilterValue(int value) {
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000002;
       filter_ = value;
       onChanged();
@@ -828,46 +906,17 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
-     * - ERRORS_ONLY: Export logs only for connection failures.
-     * - TRANSLATIONS_ONLY: Export logs only for successful connections.
-     * - ALL: Export logs for all connections, successful and unsuccessful.
+     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
+     * Check the Filter enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
-     * @return The filter.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.RouterNatLogConfig.Filter getFilter() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.RouterNatLogConfig.Filter result =
-          com.google.cloud.compute.v1.RouterNatLogConfig.Filter.valueOf(filter_);
-      return result == null
-          ? com.google.cloud.compute.v1.RouterNatLogConfig.Filter.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
-     * - ERRORS_ONLY: Export logs only for connection failures.
-     * - TRANSLATIONS_ONLY: Export logs only for successful connections.
-     * - ALL: Export logs for all connections, successful and unsuccessful.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
-     *
-     * @param value The filter to set.
      * @return This builder for chaining.
      */
-    public Builder setFilter(com.google.cloud.compute.v1.RouterNatLogConfig.Filter value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      filter_ = value.getNumber();
+    public Builder clearFilter() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      filter_ = getDefaultInstance().getFilter();
       onChanged();
       return this;
     }
@@ -875,19 +924,22 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
-     * - ERRORS_ONLY: Export logs only for connection failures.
-     * - TRANSLATIONS_ONLY: Export logs only for successful connections.
-     * - ALL: Export logs for all connections, successful and unsuccessful.
+     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
+     * Check the Filter enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
+     * @param value The bytes for filter to set.
      * @return This builder for chaining.
      */
-    public Builder clearFilter() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      filter_ = 0;
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      filter_ = value;
       onChanged();
       return this;
     }

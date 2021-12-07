@@ -30,7 +30,7 @@ public interface NetworkPeeringOrBuilder
    * This field will be deprecated soon. Use the exchange_subnet_routes field instead. Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
    * </pre>
    *
-   * <code>bool auto_create_routes = 57454941;</code>
+   * <code>optional bool auto_create_routes = 57454941;</code>
    *
    * @return Whether the autoCreateRoutes field is set.
    */
@@ -42,7 +42,7 @@ public interface NetworkPeeringOrBuilder
    * This field will be deprecated soon. Use the exchange_subnet_routes field instead. Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
    * </pre>
    *
-   * <code>bool auto_create_routes = 57454941;</code>
+   * <code>optional bool auto_create_routes = 57454941;</code>
    *
    * @return The autoCreateRoutes.
    */
@@ -55,7 +55,7 @@ public interface NetworkPeeringOrBuilder
    * Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
    * </pre>
    *
-   * <code>bool exchange_subnet_routes = 26322256;</code>
+   * <code>optional bool exchange_subnet_routes = 26322256;</code>
    *
    * @return Whether the exchangeSubnetRoutes field is set.
    */
@@ -67,7 +67,7 @@ public interface NetworkPeeringOrBuilder
    * Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
    * </pre>
    *
-   * <code>bool exchange_subnet_routes = 26322256;</code>
+   * <code>optional bool exchange_subnet_routes = 26322256;</code>
    *
    * @return The exchangeSubnetRoutes.
    */
@@ -80,7 +80,7 @@ public interface NetworkPeeringOrBuilder
    * Whether to export the custom routes to peer network.
    * </pre>
    *
-   * <code>bool export_custom_routes = 60281485;</code>
+   * <code>optional bool export_custom_routes = 60281485;</code>
    *
    * @return Whether the exportCustomRoutes field is set.
    */
@@ -92,7 +92,7 @@ public interface NetworkPeeringOrBuilder
    * Whether to export the custom routes to peer network.
    * </pre>
    *
-   * <code>bool export_custom_routes = 60281485;</code>
+   * <code>optional bool export_custom_routes = 60281485;</code>
    *
    * @return The exportCustomRoutes.
    */
@@ -102,10 +102,10 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
+   * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. IPv4 special-use ranges are always exported to peers and are not controlled by this field.
    * </pre>
    *
-   * <code>bool export_subnet_routes_with_public_ip = 97940834;</code>
+   * <code>optional bool export_subnet_routes_with_public_ip = 97940834;</code>
    *
    * @return Whether the exportSubnetRoutesWithPublicIp field is set.
    */
@@ -114,10 +114,10 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
+   * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. IPv4 special-use ranges are always exported to peers and are not controlled by this field.
    * </pre>
    *
-   * <code>bool export_subnet_routes_with_public_ip = 97940834;</code>
+   * <code>optional bool export_subnet_routes_with_public_ip = 97940834;</code>
    *
    * @return The exportSubnetRoutesWithPublicIp.
    */
@@ -130,7 +130,7 @@ public interface NetworkPeeringOrBuilder
    * Whether to import the custom routes from peer network.
    * </pre>
    *
-   * <code>bool import_custom_routes = 197982398;</code>
+   * <code>optional bool import_custom_routes = 197982398;</code>
    *
    * @return Whether the importCustomRoutes field is set.
    */
@@ -142,7 +142,7 @@ public interface NetworkPeeringOrBuilder
    * Whether to import the custom routes from peer network.
    * </pre>
    *
-   * <code>bool import_custom_routes = 197982398;</code>
+   * <code>optional bool import_custom_routes = 197982398;</code>
    *
    * @return The importCustomRoutes.
    */
@@ -152,10 +152,10 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Whether subnet routes with public IP range are imported. The default value is false. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported from peers and are not controlled by this field.
+   * Whether subnet routes with public IP range are imported. The default value is false. IPv4 special-use ranges are always imported from peers and are not controlled by this field.
    * </pre>
    *
-   * <code>bool import_subnet_routes_with_public_ip = 14419729;</code>
+   * <code>optional bool import_subnet_routes_with_public_ip = 14419729;</code>
    *
    * @return Whether the importSubnetRoutesWithPublicIp field is set.
    */
@@ -164,10 +164,10 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Whether subnet routes with public IP range are imported. The default value is false. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported from peers and are not controlled by this field.
+   * Whether subnet routes with public IP range are imported. The default value is false. IPv4 special-use ranges are always imported from peers and are not controlled by this field.
    * </pre>
    *
-   * <code>bool import_subnet_routes_with_public_ip = 14419729;</code>
+   * <code>optional bool import_subnet_routes_with_public_ip = 14419729;</code>
    *
    * @return The importSubnetRoutesWithPublicIp.
    */
@@ -180,7 +180,7 @@ public interface NetworkPeeringOrBuilder
    * Name of this peering. Provided by the client when the peering is created. The name must comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all the following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -192,7 +192,7 @@ public interface NetworkPeeringOrBuilder
    * Name of this peering. Provided by the client when the peering is created. The name must comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all the following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -204,7 +204,7 @@ public interface NetworkPeeringOrBuilder
    * Name of this peering. Provided by the client when the peering is created. The name must comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all the following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -217,7 +217,7 @@ public interface NetworkPeeringOrBuilder
    * The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return Whether the network field is set.
    */
@@ -229,7 +229,7 @@ public interface NetworkPeeringOrBuilder
    * The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The network.
    */
@@ -241,7 +241,7 @@ public interface NetworkPeeringOrBuilder
    * The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The bytes for network.
    */
@@ -254,7 +254,7 @@ public interface NetworkPeeringOrBuilder
    * Maximum Transmission Unit in bytes.
    * </pre>
    *
-   * <code>int32 peer_mtu = 69584721;</code>
+   * <code>optional int32 peer_mtu = 69584721;</code>
    *
    * @return Whether the peerMtu field is set.
    */
@@ -266,7 +266,7 @@ public interface NetworkPeeringOrBuilder
    * Maximum Transmission Unit in bytes.
    * </pre>
    *
-   * <code>int32 peer_mtu = 69584721;</code>
+   * <code>optional int32 peer_mtu = 69584721;</code>
    *
    * @return The peerMtu.
    */
@@ -277,9 +277,10 @@ public interface NetworkPeeringOrBuilder
    *
    * <pre>
    * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
    * @return Whether the state field is set.
    */
@@ -289,25 +290,27 @@ public interface NetworkPeeringOrBuilder
    *
    * <pre>
    * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The enum numeric value on the wire for state.
+   * @return The state.
    */
-  int getStateValue();
+  java.lang.String getState();
   /**
    *
    *
    * <pre>
    * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The state.
+   * @return The bytes for state.
    */
-  com.google.cloud.compute.v1.NetworkPeering.State getState();
+  com.google.protobuf.ByteString getStateBytes();
 
   /**
    *
@@ -316,7 +319,7 @@ public interface NetworkPeeringOrBuilder
    * [Output Only] Details about the current state of the peering.
    * </pre>
    *
-   * <code>string state_details = 95566996;</code>
+   * <code>optional string state_details = 95566996;</code>
    *
    * @return Whether the stateDetails field is set.
    */
@@ -328,7 +331,7 @@ public interface NetworkPeeringOrBuilder
    * [Output Only] Details about the current state of the peering.
    * </pre>
    *
-   * <code>string state_details = 95566996;</code>
+   * <code>optional string state_details = 95566996;</code>
    *
    * @return The stateDetails.
    */
@@ -340,7 +343,7 @@ public interface NetworkPeeringOrBuilder
    * [Output Only] Details about the current state of the peering.
    * </pre>
    *
-   * <code>string state_details = 95566996;</code>
+   * <code>optional string state_details = 95566996;</code>
    *
    * @return The bytes for stateDetails.
    */

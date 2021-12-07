@@ -30,7 +30,7 @@ public interface ScratchDisksOrBuilder
    * Size of the scratch disk, defined in GB.
    * </pre>
    *
-   * <code>int32 disk_gb = 60990141;</code>
+   * <code>optional int32 disk_gb = 60990141;</code>
    *
    * @return Whether the diskGb field is set.
    */
@@ -42,7 +42,7 @@ public interface ScratchDisksOrBuilder
    * Size of the scratch disk, defined in GB.
    * </pre>
    *
-   * <code>int32 disk_gb = 60990141;</code>
+   * <code>optional int32 disk_gb = 60990141;</code>
    *
    * @return The diskGb.
    */

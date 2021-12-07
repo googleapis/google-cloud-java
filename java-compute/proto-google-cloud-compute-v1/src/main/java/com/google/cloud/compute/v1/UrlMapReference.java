@@ -115,7 +115,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
   public static final int URL_MAP_FIELD_NUMBER = 367020684;
   private volatile java.lang.Object urlMap_;
   /**
-   * <code>string url_map = 367020684;</code>
+   * <code>optional string url_map = 367020684;</code>
    *
    * @return Whether the urlMap field is set.
    */
@@ -124,7 +124,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>string url_map = 367020684;</code>
+   * <code>optional string url_map = 367020684;</code>
    *
    * @return The urlMap.
    */
@@ -141,7 +141,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
     }
   }
   /**
-   * <code>string url_map = 367020684;</code>
+   * <code>optional string url_map = 367020684;</code>
    *
    * @return The bytes for urlMap.
    */
@@ -489,7 +489,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
 
     private java.lang.Object urlMap_ = "";
     /**
-     * <code>string url_map = 367020684;</code>
+     * <code>optional string url_map = 367020684;</code>
      *
      * @return Whether the urlMap field is set.
      */
@@ -497,7 +497,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>string url_map = 367020684;</code>
+     * <code>optional string url_map = 367020684;</code>
      *
      * @return The urlMap.
      */
@@ -513,7 +513,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
       }
     }
     /**
-     * <code>string url_map = 367020684;</code>
+     * <code>optional string url_map = 367020684;</code>
      *
      * @return The bytes for urlMap.
      */
@@ -529,7 +529,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
       }
     }
     /**
-     * <code>string url_map = 367020684;</code>
+     * <code>optional string url_map = 367020684;</code>
      *
      * @param value The urlMap to set.
      * @return This builder for chaining.
@@ -544,7 +544,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     * <code>string url_map = 367020684;</code>
+     * <code>optional string url_map = 367020684;</code>
      *
      * @return This builder for chaining.
      */
@@ -555,7 +555,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     * <code>string url_map = 367020684;</code>
+     * <code>optional string url_map = 367020684;</code>
      *
      * @param value The bytes for urlMap to set.
      * @return This builder for chaining.

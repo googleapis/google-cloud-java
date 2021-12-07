@@ -141,7 +141,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
    * Name of the VM instance which the endpoint belongs to
    * </pre>
    *
-   * <code>string instance_name = 227947509;</code>
+   * <code>optional string instance_name = 227947509;</code>
    *
    * @return Whether the instanceName field is set.
    */
@@ -156,7 +156,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
    * Name of the VM instance which the endpoint belongs to
    * </pre>
    *
-   * <code>string instance_name = 227947509;</code>
+   * <code>optional string instance_name = 227947509;</code>
    *
    * @return The instanceName.
    */
@@ -179,7 +179,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
    * Name of the VM instance which the endpoint belongs to
    * </pre>
    *
-   * <code>string instance_name = 227947509;</code>
+   * <code>optional string instance_name = 227947509;</code>
    *
    * @return The bytes for instanceName.
    */
@@ -647,7 +647,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
      * Name of the VM instance which the endpoint belongs to
      * </pre>
      *
-     * <code>string instance_name = 227947509;</code>
+     * <code>optional string instance_name = 227947509;</code>
      *
      * @return Whether the instanceName field is set.
      */
@@ -661,7 +661,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
      * Name of the VM instance which the endpoint belongs to
      * </pre>
      *
-     * <code>string instance_name = 227947509;</code>
+     * <code>optional string instance_name = 227947509;</code>
      *
      * @return The instanceName.
      */
@@ -683,7 +683,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
      * Name of the VM instance which the endpoint belongs to
      * </pre>
      *
-     * <code>string instance_name = 227947509;</code>
+     * <code>optional string instance_name = 227947509;</code>
      *
      * @return The bytes for instanceName.
      */
@@ -705,7 +705,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
      * Name of the VM instance which the endpoint belongs to
      * </pre>
      *
-     * <code>string instance_name = 227947509;</code>
+     * <code>optional string instance_name = 227947509;</code>
      *
      * @param value The instanceName to set.
      * @return This builder for chaining.
@@ -726,7 +726,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
      * Name of the VM instance which the endpoint belongs to
      * </pre>
      *
-     * <code>string instance_name = 227947509;</code>
+     * <code>optional string instance_name = 227947509;</code>
      *
      * @return This builder for chaining.
      */
@@ -743,7 +743,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
      * Name of the VM instance which the endpoint belongs to
      * </pre>
      *
-     * <code>string instance_name = 227947509;</code>
+     * <code>optional string instance_name = 227947509;</code>
      *
      * @param value The bytes for instanceName to set.
      * @return This builder for chaining.

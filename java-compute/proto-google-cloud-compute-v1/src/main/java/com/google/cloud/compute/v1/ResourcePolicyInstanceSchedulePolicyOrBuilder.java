@@ -30,7 +30,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * The expiration time of the schedule. The timestamp is an RFC3339 string.
    * </pre>
    *
-   * <code>string expiration_time = 230299229;</code>
+   * <code>optional string expiration_time = 230299229;</code>
    *
    * @return Whether the expirationTime field is set.
    */
@@ -42,7 +42,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * The expiration time of the schedule. The timestamp is an RFC3339 string.
    * </pre>
    *
-   * <code>string expiration_time = 230299229;</code>
+   * <code>optional string expiration_time = 230299229;</code>
    *
    * @return The expirationTime.
    */
@@ -54,7 +54,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * The expiration time of the schedule. The timestamp is an RFC3339 string.
    * </pre>
    *
-   * <code>string expiration_time = 230299229;</code>
+   * <code>optional string expiration_time = 230299229;</code>
    *
    * @return The bytes for expirationTime.
    */
@@ -67,7 +67,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * The start time of the schedule. The timestamp is an RFC3339 string.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return Whether the startTime field is set.
    */
@@ -79,7 +79,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * The start time of the schedule. The timestamp is an RFC3339 string.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return The startTime.
    */
@@ -91,7 +91,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * The start time of the schedule. The timestamp is an RFC3339 string.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return The bytes for startTime.
    */
@@ -104,7 +104,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * Specifies the time zone to be used in interpreting Schedule.schedule. The value of this field must be a time zone name from the tz database: http://en.wikipedia.org/wiki/Tz_database.
    * </pre>
    *
-   * <code>string time_zone = 36848094;</code>
+   * <code>optional string time_zone = 36848094;</code>
    *
    * @return Whether the timeZone field is set.
    */
@@ -116,7 +116,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * Specifies the time zone to be used in interpreting Schedule.schedule. The value of this field must be a time zone name from the tz database: http://en.wikipedia.org/wiki/Tz_database.
    * </pre>
    *
-   * <code>string time_zone = 36848094;</code>
+   * <code>optional string time_zone = 36848094;</code>
    *
    * @return The timeZone.
    */
@@ -128,7 +128,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * Specifies the time zone to be used in interpreting Schedule.schedule. The value of this field must be a time zone name from the tz database: http://en.wikipedia.org/wiki/Tz_database.
    * </pre>
    *
-   * <code>string time_zone = 36848094;</code>
+   * <code>optional string time_zone = 36848094;</code>
    *
    * @return The bytes for timeZone.
    */
@@ -142,7 +142,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule vm_start_schedule = 17762396;
+   * optional .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule vm_start_schedule = 17762396;
    * </code>
    *
    * @return Whether the vmStartSchedule field is set.
@@ -156,7 +156,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule vm_start_schedule = 17762396;
+   * optional .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule vm_start_schedule = 17762396;
    * </code>
    *
    * @return The vmStartSchedule.
@@ -170,7 +170,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule vm_start_schedule = 17762396;
+   * optional .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule vm_start_schedule = 17762396;
    * </code>
    */
   com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicyScheduleOrBuilder
@@ -184,7 +184,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule vm_stop_schedule = 426242732;
+   * optional .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule vm_stop_schedule = 426242732;
    * </code>
    *
    * @return Whether the vmStopSchedule field is set.
@@ -198,7 +198,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule vm_stop_schedule = 426242732;
+   * optional .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule vm_stop_schedule = 426242732;
    * </code>
    *
    * @return The vmStopSchedule.
@@ -212,7 +212,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule vm_stop_schedule = 426242732;
+   * optional .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicySchedule vm_stop_schedule = 426242732;
    * </code>
    */
   com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicyScheduleOrBuilder

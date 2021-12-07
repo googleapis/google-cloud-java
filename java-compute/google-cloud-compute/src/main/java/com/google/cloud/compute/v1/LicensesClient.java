@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.LicensesStub;
@@ -44,7 +46,7 @@ import javax.annotation.Generated;
  * try (LicensesClient licensesClient = LicensesClient.create()) {
  *   String project = "project-309310695";
  *   String license = "license166757441";
- *   Operation response = licensesClient.delete(project, license);
+ *   License response = licensesClient.get(project, license);
  * }
  * }</pre>
  *
@@ -147,8 +149,8 @@ public class LicensesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the specified license. Caution This resource is intended for use only by third-party
-   * partners who are creating Cloud Marketplace images.
+   * Deletes the specified license. &#42;Caution&#42; This resource is intended for use only by
+   * third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -156,7 +158,7 @@ public class LicensesClient implements BackgroundResource {
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   String project = "project-309310695";
    *   String license = "license166757441";
-   *   Operation response = licensesClient.delete(project, license);
+   *   Operation response = licensesClient.deleteAsync(project, license).get();
    * }
    * }</pre>
    *
@@ -164,16 +166,16 @@ public class LicensesClient implements BackgroundResource {
    * @param license Name of the license resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String license) {
+  public final OperationFuture<Operation, Operation> deleteAsync(String project, String license) {
     DeleteLicenseRequest request =
         DeleteLicenseRequest.newBuilder().setProject(project).setLicense(license).build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the specified license. Caution This resource is intended for use only by third-party
-   * partners who are creating Cloud Marketplace images.
+   * Deletes the specified license. &#42;Caution&#42; This resource is intended for use only by
+   * third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -185,21 +187,50 @@ public class LicensesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = licensesClient.delete(request);
+   *   Operation response = licensesClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteLicenseRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(DeleteLicenseRequest request) {
+    return deleteOperationCallable().futureCall(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the specified license. Caution This resource is intended for use only by third-party
-   * partners who are creating Cloud Marketplace images.
+   * Deletes the specified license. &#42;Caution&#42; This resource is intended for use only by
+   * third-party partners who are creating Cloud Marketplace images.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (LicensesClient licensesClient = LicensesClient.create()) {
+   *   DeleteLicenseRequest request =
+   *       DeleteLicenseRequest.newBuilder()
+   *           .setLicense("license166757441")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       licensesClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteLicenseRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified license. &#42;Caution&#42; This resource is intended for use only by
+   * third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -223,8 +254,8 @@ public class LicensesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified License resource. Caution This resource is intended for use only by
-   * third-party partners who are creating Cloud Marketplace images.
+   * Returns the specified License resource. &#42;Caution&#42; This resource is intended for use
+   * only by third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -248,8 +279,8 @@ public class LicensesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified License resource. Caution This resource is intended for use only by
-   * third-party partners who are creating Cloud Marketplace images.
+   * Returns the specified License resource. &#42;Caution&#42; This resource is intended for use
+   * only by third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -273,8 +304,8 @@ public class LicensesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified License resource. Caution This resource is intended for use only by
-   * third-party partners who are creating Cloud Marketplace images.
+   * Returns the specified License resource. &#42;Caution&#42; This resource is intended for use
+   * only by third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -298,8 +329,8 @@ public class LicensesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. Caution This resource is intended for use only by third-party partners who are creating
-   * Cloud Marketplace images.
+   * exists. &#42;Caution&#42; This resource is intended for use only by third-party partners who
+   * are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -324,8 +355,8 @@ public class LicensesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. Caution This resource is intended for use only by third-party partners who are creating
-   * Cloud Marketplace images.
+   * exists. &#42;Caution&#42; This resource is intended for use only by third-party partners who
+   * are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -351,8 +382,8 @@ public class LicensesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists. Caution This resource is intended for use only by third-party partners who are creating
-   * Cloud Marketplace images.
+   * exists. &#42;Caution&#42; This resource is intended for use only by third-party partners who
+   * are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -376,8 +407,8 @@ public class LicensesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a License resource in the specified project. Caution This resource is intended for use
-   * only by third-party partners who are creating Cloud Marketplace images.
+   * Create a License resource in the specified project. &#42;Caution&#42; This resource is intended
+   * for use only by third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -385,7 +416,7 @@ public class LicensesClient implements BackgroundResource {
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   String project = "project-309310695";
    *   License licenseResource = License.newBuilder().build();
-   *   Operation response = licensesClient.insert(project, licenseResource);
+   *   Operation response = licensesClient.insertAsync(project, licenseResource).get();
    * }
    * }</pre>
    *
@@ -393,19 +424,20 @@ public class LicensesClient implements BackgroundResource {
    * @param licenseResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(String project, License licenseResource) {
+  public final OperationFuture<Operation, Operation> insertAsync(
+      String project, License licenseResource) {
     InsertLicenseRequest request =
         InsertLicenseRequest.newBuilder()
             .setProject(project)
             .setLicenseResource(licenseResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a License resource in the specified project. Caution This resource is intended for use
-   * only by third-party partners who are creating Cloud Marketplace images.
+   * Create a License resource in the specified project. &#42;Caution&#42; This resource is intended
+   * for use only by third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -417,21 +449,50 @@ public class LicensesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = licensesClient.insert(request);
+   *   Operation response = licensesClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertLicenseRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(InsertLicenseRequest request) {
+    return insertOperationCallable().futureCall(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a License resource in the specified project. Caution This resource is intended for use
-   * only by third-party partners who are creating Cloud Marketplace images.
+   * Create a License resource in the specified project. &#42;Caution&#42; This resource is intended
+   * for use only by third-party partners who are creating Cloud Marketplace images.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (LicensesClient licensesClient = LicensesClient.create()) {
+   *   InsertLicenseRequest request =
+   *       InsertLicenseRequest.newBuilder()
+   *           .setLicenseResource(License.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       licensesClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertLicenseRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a License resource in the specified project. &#42;Caution&#42; This resource is intended
+   * for use only by third-party partners who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -459,8 +520,8 @@ public class LicensesClient implements BackgroundResource {
    * licenses that belong to other projects, including licenses attached to publicly-available
    * images, like Debian 9. If you want to get a list of publicly-available licenses, use this
    * method to make a request to the respective image project, such as debian-cloud or
-   * windows-cloud. Caution This resource is intended for use only by third-party partners who are
-   * creating Cloud Marketplace images.
+   * windows-cloud. &#42;Caution&#42; This resource is intended for use only by third-party partners
+   * who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -487,8 +548,8 @@ public class LicensesClient implements BackgroundResource {
    * licenses that belong to other projects, including licenses attached to publicly-available
    * images, like Debian 9. If you want to get a list of publicly-available licenses, use this
    * method to make a request to the respective image project, such as debian-cloud or
-   * windows-cloud. Caution This resource is intended for use only by third-party partners who are
-   * creating Cloud Marketplace images.
+   * windows-cloud. &#42;Caution&#42; This resource is intended for use only by third-party partners
+   * who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -522,8 +583,8 @@ public class LicensesClient implements BackgroundResource {
    * licenses that belong to other projects, including licenses attached to publicly-available
    * images, like Debian 9. If you want to get a list of publicly-available licenses, use this
    * method to make a request to the respective image project, such as debian-cloud or
-   * windows-cloud. Caution This resource is intended for use only by third-party partners who are
-   * creating Cloud Marketplace images.
+   * windows-cloud. &#42;Caution&#42; This resource is intended for use only by third-party partners
+   * who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -556,8 +617,8 @@ public class LicensesClient implements BackgroundResource {
    * licenses that belong to other projects, including licenses attached to publicly-available
    * images, like Debian 9. If you want to get a list of publicly-available licenses, use this
    * method to make a request to the respective image project, such as debian-cloud or
-   * windows-cloud. Caution This resource is intended for use only by third-party partners who are
-   * creating Cloud Marketplace images.
+   * windows-cloud. &#42;Caution&#42; This resource is intended for use only by third-party partners
+   * who are creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -593,9 +654,9 @@ public class LicensesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. Caution
-   * This resource is intended for use only by third-party partners who are creating Cloud
-   * Marketplace images.
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * &#42;Caution&#42; This resource is intended for use only by third-party partners who are
+   * creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -628,9 +689,9 @@ public class LicensesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. Caution
-   * This resource is intended for use only by third-party partners who are creating Cloud
-   * Marketplace images.
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * &#42;Caution&#42; This resource is intended for use only by third-party partners who are
+   * creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -655,9 +716,9 @@ public class LicensesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy. Caution
-   * This resource is intended for use only by third-party partners who are creating Cloud
-   * Marketplace images.
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * &#42;Caution&#42; This resource is intended for use only by third-party partners who are
+   * creating Cloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -681,8 +742,9 @@ public class LicensesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns permissions that a caller has on the specified resource. Caution This resource is
-   * intended for use only by third-party partners who are creating Cloud Marketplace images.
+   * Returns permissions that a caller has on the specified resource. &#42;Caution&#42; This
+   * resource is intended for use only by third-party partners who are creating Cloud Marketplace
+   * images.
    *
    * <p>Sample code:
    *
@@ -715,8 +777,9 @@ public class LicensesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns permissions that a caller has on the specified resource. Caution This resource is
-   * intended for use only by third-party partners who are creating Cloud Marketplace images.
+   * Returns permissions that a caller has on the specified resource. &#42;Caution&#42; This
+   * resource is intended for use only by third-party partners who are creating Cloud Marketplace
+   * images.
    *
    * <p>Sample code:
    *
@@ -742,8 +805,9 @@ public class LicensesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns permissions that a caller has on the specified resource. Caution This resource is
-   * intended for use only by third-party partners who are creating Cloud Marketplace images.
+   * Returns permissions that a caller has on the specified resource. &#42;Caution&#42; This
+   * resource is intended for use only by third-party partners who are creating Cloud Marketplace
+   * images.
    *
    * <p>Sample code:
    *

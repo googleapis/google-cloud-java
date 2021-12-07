@@ -40,6 +40,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     kmsKeyName_ = "";
     kmsKeyServiceAccount_ = "";
     rawKey_ = "";
+    rsaEncryptedKey_ = "";
     sha256_ = "";
   }
 
@@ -76,7 +77,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
           case 1360900410:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
               sha256_ = s;
               break;
             }
@@ -85,6 +86,13 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
               java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               kmsKeyServiceAccount_ = s;
+              break;
+            }
+          case -1611068118:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              rsaEncryptedKey_ = s;
               break;
             }
           case -701395390:
@@ -142,10 +150,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The name of the encryption key that is stored in Google Cloud KMS.
+   * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key
    * </pre>
    *
-   * <code>string kms_key_name = 484373913;</code>
+   * <code>optional string kms_key_name = 484373913;</code>
    *
    * @return Whether the kmsKeyName field is set.
    */
@@ -157,10 +165,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The name of the encryption key that is stored in Google Cloud KMS.
+   * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key
    * </pre>
    *
-   * <code>string kms_key_name = 484373913;</code>
+   * <code>optional string kms_key_name = 484373913;</code>
    *
    * @return The kmsKeyName.
    */
@@ -180,10 +188,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The name of the encryption key that is stored in Google Cloud KMS.
+   * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key
    * </pre>
    *
-   * <code>string kms_key_name = 484373913;</code>
+   * <code>optional string kms_key_name = 484373913;</code>
    *
    * @return The bytes for kmsKeyName.
    */
@@ -206,10 +214,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used.
+   * The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used. For example: "kmsKeyServiceAccount": "name&#64;project_id.iam.gserviceaccount.com/
    * </pre>
    *
-   * <code>string kms_key_service_account = 209986261;</code>
+   * <code>optional string kms_key_service_account = 209986261;</code>
    *
    * @return Whether the kmsKeyServiceAccount field is set.
    */
@@ -221,10 +229,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used.
+   * The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used. For example: "kmsKeyServiceAccount": "name&#64;project_id.iam.gserviceaccount.com/
    * </pre>
    *
-   * <code>string kms_key_service_account = 209986261;</code>
+   * <code>optional string kms_key_service_account = 209986261;</code>
    *
    * @return The kmsKeyServiceAccount.
    */
@@ -244,10 +252,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used.
+   * The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used. For example: "kmsKeyServiceAccount": "name&#64;project_id.iam.gserviceaccount.com/
    * </pre>
    *
-   * <code>string kms_key_service_account = 209986261;</code>
+   * <code>optional string kms_key_service_account = 209986261;</code>
    *
    * @return The bytes for kmsKeyServiceAccount.
    */
@@ -270,10 +278,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
+   * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource. You can provide either the rawKey or the rsaEncryptedKey. For example: "rawKey": "SGVsbG8gZnJvbSBHb29nbGUgQ2xvdWQgUGxhdGZvcm0="
    * </pre>
    *
-   * <code>string raw_key = 449196488;</code>
+   * <code>optional string raw_key = 449196488;</code>
    *
    * @return Whether the rawKey field is set.
    */
@@ -285,10 +293,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
+   * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource. You can provide either the rawKey or the rsaEncryptedKey. For example: "rawKey": "SGVsbG8gZnJvbSBHb29nbGUgQ2xvdWQgUGxhdGZvcm0="
    * </pre>
    *
-   * <code>string raw_key = 449196488;</code>
+   * <code>optional string raw_key = 449196488;</code>
    *
    * @return The rawKey.
    */
@@ -308,10 +316,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
+   * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource. You can provide either the rawKey or the rsaEncryptedKey. For example: "rawKey": "SGVsbG8gZnJvbSBHb29nbGUgQ2xvdWQgUGxhdGZvcm0="
    * </pre>
    *
-   * <code>string raw_key = 449196488;</code>
+   * <code>optional string raw_key = 449196488;</code>
    *
    * @return The bytes for rawKey.
    */
@@ -328,6 +336,70 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int RSA_ENCRYPTED_KEY_FIELD_NUMBER = 335487397;
+  private volatile java.lang.Object rsaEncryptedKey_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies an RFC 4648 base64 encoded, RSA-wrapped 2048-bit customer-supplied encryption key to either encrypt or decrypt this resource. You can provide either the rawKey or the rsaEncryptedKey. For example: "rsaEncryptedKey": "ieCx/NcW06PcT7Ep1X6LUTc/hLvUDYyzSZPPVCVPTVEohpeHASqC8uw5TzyO9U+Fka9JFH z0mBibXUInrC/jEk014kCK/NPjYgEMOyssZ4ZINPKxlUh2zn1bV+MCaTICrdmuSBTWlUUiFoD D6PYznLwh8ZNdaheCeZ8ewEXgFQ8V+sDroLaN3Xs3MDTXQEMMoNUXMCZEIpg9Vtp9x2oe==" The key must meet the following requirements before you can provide it to Compute Engine: 1. The key is wrapped using a RSA public key certificate provided by Google. 2. After being wrapped, the key must be encoded in RFC 4648 base64 encoding. Gets the RSA public key certificate provided by Google at: https://cloud-certs.storage.googleapis.com/google-cloud-csek-ingress.pem
+   * </pre>
+   *
+   * <code>optional string rsa_encrypted_key = 335487397;</code>
+   *
+   * @return Whether the rsaEncryptedKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasRsaEncryptedKey() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies an RFC 4648 base64 encoded, RSA-wrapped 2048-bit customer-supplied encryption key to either encrypt or decrypt this resource. You can provide either the rawKey or the rsaEncryptedKey. For example: "rsaEncryptedKey": "ieCx/NcW06PcT7Ep1X6LUTc/hLvUDYyzSZPPVCVPTVEohpeHASqC8uw5TzyO9U+Fka9JFH z0mBibXUInrC/jEk014kCK/NPjYgEMOyssZ4ZINPKxlUh2zn1bV+MCaTICrdmuSBTWlUUiFoD D6PYznLwh8ZNdaheCeZ8ewEXgFQ8V+sDroLaN3Xs3MDTXQEMMoNUXMCZEIpg9Vtp9x2oe==" The key must meet the following requirements before you can provide it to Compute Engine: 1. The key is wrapped using a RSA public key certificate provided by Google. 2. After being wrapped, the key must be encoded in RFC 4648 base64 encoding. Gets the RSA public key certificate provided by Google at: https://cloud-certs.storage.googleapis.com/google-cloud-csek-ingress.pem
+   * </pre>
+   *
+   * <code>optional string rsa_encrypted_key = 335487397;</code>
+   *
+   * @return The rsaEncryptedKey.
+   */
+  @java.lang.Override
+  public java.lang.String getRsaEncryptedKey() {
+    java.lang.Object ref = rsaEncryptedKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      rsaEncryptedKey_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies an RFC 4648 base64 encoded, RSA-wrapped 2048-bit customer-supplied encryption key to either encrypt or decrypt this resource. You can provide either the rawKey or the rsaEncryptedKey. For example: "rsaEncryptedKey": "ieCx/NcW06PcT7Ep1X6LUTc/hLvUDYyzSZPPVCVPTVEohpeHASqC8uw5TzyO9U+Fka9JFH z0mBibXUInrC/jEk014kCK/NPjYgEMOyssZ4ZINPKxlUh2zn1bV+MCaTICrdmuSBTWlUUiFoD D6PYznLwh8ZNdaheCeZ8ewEXgFQ8V+sDroLaN3Xs3MDTXQEMMoNUXMCZEIpg9Vtp9x2oe==" The key must meet the following requirements before you can provide it to Compute Engine: 1. The key is wrapped using a RSA public key certificate provided by Google. 2. After being wrapped, the key must be encoded in RFC 4648 base64 encoding. Gets the RSA public key certificate provided by Google at: https://cloud-certs.storage.googleapis.com/google-cloud-csek-ingress.pem
+   * </pre>
+   *
+   * <code>optional string rsa_encrypted_key = 335487397;</code>
+   *
+   * @return The bytes for rsaEncryptedKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRsaEncryptedKeyBytes() {
+    java.lang.Object ref = rsaEncryptedKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      rsaEncryptedKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SHA256_FIELD_NUMBER = 170112551;
   private volatile java.lang.Object sha256_;
   /**
@@ -337,13 +409,13 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
    * [Output only] The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption key that protects this resource.
    * </pre>
    *
-   * <code>string sha256 = 170112551;</code>
+   * <code>optional string sha256 = 170112551;</code>
    *
    * @return Whether the sha256 field is set.
    */
   @java.lang.Override
   public boolean hasSha256() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -352,7 +424,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
    * [Output only] The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption key that protects this resource.
    * </pre>
    *
-   * <code>string sha256 = 170112551;</code>
+   * <code>optional string sha256 = 170112551;</code>
    *
    * @return The sha256.
    */
@@ -375,7 +447,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
    * [Output only] The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption key that protects this resource.
    * </pre>
    *
-   * <code>string sha256 = 170112551;</code>
+   * <code>optional string sha256 = 170112551;</code>
    *
    * @return The bytes for sha256.
    */
@@ -406,11 +478,14 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 170112551, sha256_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 209986261, kmsKeyServiceAccount_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 335487397, rsaEncryptedKey_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 449196488, rawKey_);
@@ -427,13 +502,16 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(170112551, sha256_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               209986261, kmsKeyServiceAccount_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(335487397, rsaEncryptedKey_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(449196488, rawKey_);
@@ -469,6 +547,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     if (hasRawKey()) {
       if (!getRawKey().equals(other.getRawKey())) return false;
     }
+    if (hasRsaEncryptedKey() != other.hasRsaEncryptedKey()) return false;
+    if (hasRsaEncryptedKey()) {
+      if (!getRsaEncryptedKey().equals(other.getRsaEncryptedKey())) return false;
+    }
     if (hasSha256() != other.hasSha256()) return false;
     if (hasSha256()) {
       if (!getSha256().equals(other.getSha256())) return false;
@@ -495,6 +577,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     if (hasRawKey()) {
       hash = (37 * hash) + RAW_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getRawKey().hashCode();
+    }
+    if (hasRsaEncryptedKey()) {
+      hash = (37 * hash) + RSA_ENCRYPTED_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getRsaEncryptedKey().hashCode();
     }
     if (hasSha256()) {
       hash = (37 * hash) + SHA256_FIELD_NUMBER;
@@ -650,8 +736,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       bitField0_ = (bitField0_ & ~0x00000002);
       rawKey_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
-      sha256_ = "";
+      rsaEncryptedKey_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
+      sha256_ = "";
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -695,6 +783,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       result.rawKey_ = rawKey_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         to_bitField0_ |= 0x00000008;
+      }
+      result.rsaEncryptedKey_ = rsaEncryptedKey_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000010;
       }
       result.sha256_ = sha256_;
       result.bitField0_ = to_bitField0_;
@@ -763,8 +855,13 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
         rawKey_ = other.rawKey_;
         onChanged();
       }
-      if (other.hasSha256()) {
+      if (other.hasRsaEncryptedKey()) {
         bitField0_ |= 0x00000008;
+        rsaEncryptedKey_ = other.rsaEncryptedKey_;
+        onChanged();
+      }
+      if (other.hasSha256()) {
+        bitField0_ |= 0x00000010;
         sha256_ = other.sha256_;
         onChanged();
       }
@@ -805,10 +902,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the encryption key that is stored in Google Cloud KMS.
+     * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key
      * </pre>
      *
-     * <code>string kms_key_name = 484373913;</code>
+     * <code>optional string kms_key_name = 484373913;</code>
      *
      * @return Whether the kmsKeyName field is set.
      */
@@ -819,10 +916,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the encryption key that is stored in Google Cloud KMS.
+     * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key
      * </pre>
      *
-     * <code>string kms_key_name = 484373913;</code>
+     * <code>optional string kms_key_name = 484373913;</code>
      *
      * @return The kmsKeyName.
      */
@@ -841,10 +938,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the encryption key that is stored in Google Cloud KMS.
+     * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key
      * </pre>
      *
-     * <code>string kms_key_name = 484373913;</code>
+     * <code>optional string kms_key_name = 484373913;</code>
      *
      * @return The bytes for kmsKeyName.
      */
@@ -863,10 +960,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the encryption key that is stored in Google Cloud KMS.
+     * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key
      * </pre>
      *
-     * <code>string kms_key_name = 484373913;</code>
+     * <code>optional string kms_key_name = 484373913;</code>
      *
      * @param value The kmsKeyName to set.
      * @return This builder for chaining.
@@ -884,10 +981,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the encryption key that is stored in Google Cloud KMS.
+     * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key
      * </pre>
      *
-     * <code>string kms_key_name = 484373913;</code>
+     * <code>optional string kms_key_name = 484373913;</code>
      *
      * @return This builder for chaining.
      */
@@ -901,10 +998,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the encryption key that is stored in Google Cloud KMS.
+     * The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key
      * </pre>
      *
-     * <code>string kms_key_name = 484373913;</code>
+     * <code>optional string kms_key_name = 484373913;</code>
      *
      * @param value The bytes for kmsKeyName to set.
      * @return This builder for chaining.
@@ -925,10 +1022,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used.
+     * The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used. For example: "kmsKeyServiceAccount": "name&#64;project_id.iam.gserviceaccount.com/
      * </pre>
      *
-     * <code>string kms_key_service_account = 209986261;</code>
+     * <code>optional string kms_key_service_account = 209986261;</code>
      *
      * @return Whether the kmsKeyServiceAccount field is set.
      */
@@ -939,10 +1036,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used.
+     * The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used. For example: "kmsKeyServiceAccount": "name&#64;project_id.iam.gserviceaccount.com/
      * </pre>
      *
-     * <code>string kms_key_service_account = 209986261;</code>
+     * <code>optional string kms_key_service_account = 209986261;</code>
      *
      * @return The kmsKeyServiceAccount.
      */
@@ -961,10 +1058,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used.
+     * The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used. For example: "kmsKeyServiceAccount": "name&#64;project_id.iam.gserviceaccount.com/
      * </pre>
      *
-     * <code>string kms_key_service_account = 209986261;</code>
+     * <code>optional string kms_key_service_account = 209986261;</code>
      *
      * @return The bytes for kmsKeyServiceAccount.
      */
@@ -983,10 +1080,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used.
+     * The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used. For example: "kmsKeyServiceAccount": "name&#64;project_id.iam.gserviceaccount.com/
      * </pre>
      *
-     * <code>string kms_key_service_account = 209986261;</code>
+     * <code>optional string kms_key_service_account = 209986261;</code>
      *
      * @param value The kmsKeyServiceAccount to set.
      * @return This builder for chaining.
@@ -1004,10 +1101,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used.
+     * The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used. For example: "kmsKeyServiceAccount": "name&#64;project_id.iam.gserviceaccount.com/
      * </pre>
      *
-     * <code>string kms_key_service_account = 209986261;</code>
+     * <code>optional string kms_key_service_account = 209986261;</code>
      *
      * @return This builder for chaining.
      */
@@ -1021,10 +1118,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used.
+     * The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used. For example: "kmsKeyServiceAccount": "name&#64;project_id.iam.gserviceaccount.com/
      * </pre>
      *
-     * <code>string kms_key_service_account = 209986261;</code>
+     * <code>optional string kms_key_service_account = 209986261;</code>
      *
      * @param value The bytes for kmsKeyServiceAccount to set.
      * @return This builder for chaining.
@@ -1045,10 +1142,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
+     * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource. You can provide either the rawKey or the rsaEncryptedKey. For example: "rawKey": "SGVsbG8gZnJvbSBHb29nbGUgQ2xvdWQgUGxhdGZvcm0="
      * </pre>
      *
-     * <code>string raw_key = 449196488;</code>
+     * <code>optional string raw_key = 449196488;</code>
      *
      * @return Whether the rawKey field is set.
      */
@@ -1059,10 +1156,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
+     * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource. You can provide either the rawKey or the rsaEncryptedKey. For example: "rawKey": "SGVsbG8gZnJvbSBHb29nbGUgQ2xvdWQgUGxhdGZvcm0="
      * </pre>
      *
-     * <code>string raw_key = 449196488;</code>
+     * <code>optional string raw_key = 449196488;</code>
      *
      * @return The rawKey.
      */
@@ -1081,10 +1178,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
+     * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource. You can provide either the rawKey or the rsaEncryptedKey. For example: "rawKey": "SGVsbG8gZnJvbSBHb29nbGUgQ2xvdWQgUGxhdGZvcm0="
      * </pre>
      *
-     * <code>string raw_key = 449196488;</code>
+     * <code>optional string raw_key = 449196488;</code>
      *
      * @return The bytes for rawKey.
      */
@@ -1103,10 +1200,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
+     * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource. You can provide either the rawKey or the rsaEncryptedKey. For example: "rawKey": "SGVsbG8gZnJvbSBHb29nbGUgQ2xvdWQgUGxhdGZvcm0="
      * </pre>
      *
-     * <code>string raw_key = 449196488;</code>
+     * <code>optional string raw_key = 449196488;</code>
      *
      * @param value The rawKey to set.
      * @return This builder for chaining.
@@ -1124,10 +1221,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
+     * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource. You can provide either the rawKey or the rsaEncryptedKey. For example: "rawKey": "SGVsbG8gZnJvbSBHb29nbGUgQ2xvdWQgUGxhdGZvcm0="
      * </pre>
      *
-     * <code>string raw_key = 449196488;</code>
+     * <code>optional string raw_key = 449196488;</code>
      *
      * @return This builder for chaining.
      */
@@ -1141,10 +1238,10 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
+     * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource. You can provide either the rawKey or the rsaEncryptedKey. For example: "rawKey": "SGVsbG8gZnJvbSBHb29nbGUgQ2xvdWQgUGxhdGZvcm0="
      * </pre>
      *
-     * <code>string raw_key = 449196488;</code>
+     * <code>optional string raw_key = 449196488;</code>
      *
      * @param value The bytes for rawKey to set.
      * @return This builder for chaining.
@@ -1160,6 +1257,126 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       return this;
     }
 
+    private java.lang.Object rsaEncryptedKey_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Specifies an RFC 4648 base64 encoded, RSA-wrapped 2048-bit customer-supplied encryption key to either encrypt or decrypt this resource. You can provide either the rawKey or the rsaEncryptedKey. For example: "rsaEncryptedKey": "ieCx/NcW06PcT7Ep1X6LUTc/hLvUDYyzSZPPVCVPTVEohpeHASqC8uw5TzyO9U+Fka9JFH z0mBibXUInrC/jEk014kCK/NPjYgEMOyssZ4ZINPKxlUh2zn1bV+MCaTICrdmuSBTWlUUiFoD D6PYznLwh8ZNdaheCeZ8ewEXgFQ8V+sDroLaN3Xs3MDTXQEMMoNUXMCZEIpg9Vtp9x2oe==" The key must meet the following requirements before you can provide it to Compute Engine: 1. The key is wrapped using a RSA public key certificate provided by Google. 2. After being wrapped, the key must be encoded in RFC 4648 base64 encoding. Gets the RSA public key certificate provided by Google at: https://cloud-certs.storage.googleapis.com/google-cloud-csek-ingress.pem
+     * </pre>
+     *
+     * <code>optional string rsa_encrypted_key = 335487397;</code>
+     *
+     * @return Whether the rsaEncryptedKey field is set.
+     */
+    public boolean hasRsaEncryptedKey() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies an RFC 4648 base64 encoded, RSA-wrapped 2048-bit customer-supplied encryption key to either encrypt or decrypt this resource. You can provide either the rawKey or the rsaEncryptedKey. For example: "rsaEncryptedKey": "ieCx/NcW06PcT7Ep1X6LUTc/hLvUDYyzSZPPVCVPTVEohpeHASqC8uw5TzyO9U+Fka9JFH z0mBibXUInrC/jEk014kCK/NPjYgEMOyssZ4ZINPKxlUh2zn1bV+MCaTICrdmuSBTWlUUiFoD D6PYznLwh8ZNdaheCeZ8ewEXgFQ8V+sDroLaN3Xs3MDTXQEMMoNUXMCZEIpg9Vtp9x2oe==" The key must meet the following requirements before you can provide it to Compute Engine: 1. The key is wrapped using a RSA public key certificate provided by Google. 2. After being wrapped, the key must be encoded in RFC 4648 base64 encoding. Gets the RSA public key certificate provided by Google at: https://cloud-certs.storage.googleapis.com/google-cloud-csek-ingress.pem
+     * </pre>
+     *
+     * <code>optional string rsa_encrypted_key = 335487397;</code>
+     *
+     * @return The rsaEncryptedKey.
+     */
+    public java.lang.String getRsaEncryptedKey() {
+      java.lang.Object ref = rsaEncryptedKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rsaEncryptedKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies an RFC 4648 base64 encoded, RSA-wrapped 2048-bit customer-supplied encryption key to either encrypt or decrypt this resource. You can provide either the rawKey or the rsaEncryptedKey. For example: "rsaEncryptedKey": "ieCx/NcW06PcT7Ep1X6LUTc/hLvUDYyzSZPPVCVPTVEohpeHASqC8uw5TzyO9U+Fka9JFH z0mBibXUInrC/jEk014kCK/NPjYgEMOyssZ4ZINPKxlUh2zn1bV+MCaTICrdmuSBTWlUUiFoD D6PYznLwh8ZNdaheCeZ8ewEXgFQ8V+sDroLaN3Xs3MDTXQEMMoNUXMCZEIpg9Vtp9x2oe==" The key must meet the following requirements before you can provide it to Compute Engine: 1. The key is wrapped using a RSA public key certificate provided by Google. 2. After being wrapped, the key must be encoded in RFC 4648 base64 encoding. Gets the RSA public key certificate provided by Google at: https://cloud-certs.storage.googleapis.com/google-cloud-csek-ingress.pem
+     * </pre>
+     *
+     * <code>optional string rsa_encrypted_key = 335487397;</code>
+     *
+     * @return The bytes for rsaEncryptedKey.
+     */
+    public com.google.protobuf.ByteString getRsaEncryptedKeyBytes() {
+      java.lang.Object ref = rsaEncryptedKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        rsaEncryptedKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies an RFC 4648 base64 encoded, RSA-wrapped 2048-bit customer-supplied encryption key to either encrypt or decrypt this resource. You can provide either the rawKey or the rsaEncryptedKey. For example: "rsaEncryptedKey": "ieCx/NcW06PcT7Ep1X6LUTc/hLvUDYyzSZPPVCVPTVEohpeHASqC8uw5TzyO9U+Fka9JFH z0mBibXUInrC/jEk014kCK/NPjYgEMOyssZ4ZINPKxlUh2zn1bV+MCaTICrdmuSBTWlUUiFoD D6PYznLwh8ZNdaheCeZ8ewEXgFQ8V+sDroLaN3Xs3MDTXQEMMoNUXMCZEIpg9Vtp9x2oe==" The key must meet the following requirements before you can provide it to Compute Engine: 1. The key is wrapped using a RSA public key certificate provided by Google. 2. After being wrapped, the key must be encoded in RFC 4648 base64 encoding. Gets the RSA public key certificate provided by Google at: https://cloud-certs.storage.googleapis.com/google-cloud-csek-ingress.pem
+     * </pre>
+     *
+     * <code>optional string rsa_encrypted_key = 335487397;</code>
+     *
+     * @param value The rsaEncryptedKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRsaEncryptedKey(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      rsaEncryptedKey_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies an RFC 4648 base64 encoded, RSA-wrapped 2048-bit customer-supplied encryption key to either encrypt or decrypt this resource. You can provide either the rawKey or the rsaEncryptedKey. For example: "rsaEncryptedKey": "ieCx/NcW06PcT7Ep1X6LUTc/hLvUDYyzSZPPVCVPTVEohpeHASqC8uw5TzyO9U+Fka9JFH z0mBibXUInrC/jEk014kCK/NPjYgEMOyssZ4ZINPKxlUh2zn1bV+MCaTICrdmuSBTWlUUiFoD D6PYznLwh8ZNdaheCeZ8ewEXgFQ8V+sDroLaN3Xs3MDTXQEMMoNUXMCZEIpg9Vtp9x2oe==" The key must meet the following requirements before you can provide it to Compute Engine: 1. The key is wrapped using a RSA public key certificate provided by Google. 2. After being wrapped, the key must be encoded in RFC 4648 base64 encoding. Gets the RSA public key certificate provided by Google at: https://cloud-certs.storage.googleapis.com/google-cloud-csek-ingress.pem
+     * </pre>
+     *
+     * <code>optional string rsa_encrypted_key = 335487397;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRsaEncryptedKey() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      rsaEncryptedKey_ = getDefaultInstance().getRsaEncryptedKey();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies an RFC 4648 base64 encoded, RSA-wrapped 2048-bit customer-supplied encryption key to either encrypt or decrypt this resource. You can provide either the rawKey or the rsaEncryptedKey. For example: "rsaEncryptedKey": "ieCx/NcW06PcT7Ep1X6LUTc/hLvUDYyzSZPPVCVPTVEohpeHASqC8uw5TzyO9U+Fka9JFH z0mBibXUInrC/jEk014kCK/NPjYgEMOyssZ4ZINPKxlUh2zn1bV+MCaTICrdmuSBTWlUUiFoD D6PYznLwh8ZNdaheCeZ8ewEXgFQ8V+sDroLaN3Xs3MDTXQEMMoNUXMCZEIpg9Vtp9x2oe==" The key must meet the following requirements before you can provide it to Compute Engine: 1. The key is wrapped using a RSA public key certificate provided by Google. 2. After being wrapped, the key must be encoded in RFC 4648 base64 encoding. Gets the RSA public key certificate provided by Google at: https://cloud-certs.storage.googleapis.com/google-cloud-csek-ingress.pem
+     * </pre>
+     *
+     * <code>optional string rsa_encrypted_key = 335487397;</code>
+     *
+     * @param value The bytes for rsaEncryptedKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRsaEncryptedKeyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000008;
+      rsaEncryptedKey_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object sha256_ = "";
     /**
      *
@@ -1168,12 +1385,12 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * [Output only] The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption key that protects this resource.
      * </pre>
      *
-     * <code>string sha256 = 170112551;</code>
+     * <code>optional string sha256 = 170112551;</code>
      *
      * @return Whether the sha256 field is set.
      */
     public boolean hasSha256() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1182,7 +1399,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * [Output only] The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption key that protects this resource.
      * </pre>
      *
-     * <code>string sha256 = 170112551;</code>
+     * <code>optional string sha256 = 170112551;</code>
      *
      * @return The sha256.
      */
@@ -1204,7 +1421,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * [Output only] The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption key that protects this resource.
      * </pre>
      *
-     * <code>string sha256 = 170112551;</code>
+     * <code>optional string sha256 = 170112551;</code>
      *
      * @return The bytes for sha256.
      */
@@ -1226,7 +1443,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * [Output only] The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption key that protects this resource.
      * </pre>
      *
-     * <code>string sha256 = 170112551;</code>
+     * <code>optional string sha256 = 170112551;</code>
      *
      * @param value The sha256 to set.
      * @return This builder for chaining.
@@ -1235,7 +1452,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       sha256_ = value;
       onChanged();
       return this;
@@ -1247,12 +1464,12 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * [Output only] The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption key that protects this resource.
      * </pre>
      *
-     * <code>string sha256 = 170112551;</code>
+     * <code>optional string sha256 = 170112551;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSha256() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       sha256_ = getDefaultInstance().getSha256();
       onChanged();
       return this;
@@ -1264,7 +1481,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * [Output only] The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption key that protects this resource.
      * </pre>
      *
-     * <code>string sha256 = 170112551;</code>
+     * <code>optional string sha256 = 170112551;</code>
      *
      * @param value The bytes for sha256 to set.
      * @return This builder for chaining.
@@ -1274,7 +1491,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       sha256_ = value;
       onChanged();
       return this;

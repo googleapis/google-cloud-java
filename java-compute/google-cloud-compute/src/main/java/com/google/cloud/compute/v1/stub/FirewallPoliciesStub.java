@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.FirewallPoliciesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddAssociationFirewallPolicyRequest;
 import com.google.cloud.compute.v1.AddRuleFirewallPolicyRequest;
@@ -57,16 +58,36 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class FirewallPoliciesStub implements BackgroundResource {
 
+  public OperationCallable<AddAssociationFirewallPolicyRequest, Operation, Operation>
+      addAssociationOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: addAssociationOperationCallable()");
+  }
+
   public UnaryCallable<AddAssociationFirewallPolicyRequest, Operation> addAssociationCallable() {
     throw new UnsupportedOperationException("Not implemented: addAssociationCallable()");
+  }
+
+  public OperationCallable<AddRuleFirewallPolicyRequest, Operation, Operation>
+      addRuleOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: addRuleOperationCallable()");
   }
 
   public UnaryCallable<AddRuleFirewallPolicyRequest, Operation> addRuleCallable() {
     throw new UnsupportedOperationException("Not implemented: addRuleCallable()");
   }
 
+  public OperationCallable<CloneRulesFirewallPolicyRequest, Operation, Operation>
+      cloneRulesOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: cloneRulesOperationCallable()");
+  }
+
   public UnaryCallable<CloneRulesFirewallPolicyRequest, Operation> cloneRulesCallable() {
     throw new UnsupportedOperationException("Not implemented: cloneRulesCallable()");
+  }
+
+  public OperationCallable<DeleteFirewallPolicyRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
   }
 
   public UnaryCallable<DeleteFirewallPolicyRequest, Operation> deleteCallable() {
@@ -90,6 +111,11 @@ public abstract class FirewallPoliciesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getRuleCallable()");
   }
 
+  public OperationCallable<InsertFirewallPolicyRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
+  }
+
   public UnaryCallable<InsertFirewallPolicyRequest, Operation> insertCallable() {
     throw new UnsupportedOperationException("Not implemented: insertCallable()");
   }
@@ -108,21 +134,47 @@ public abstract class FirewallPoliciesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listAssociationsCallable()");
   }
 
+  public OperationCallable<MoveFirewallPolicyRequest, Operation, Operation>
+      moveOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: moveOperationCallable()");
+  }
+
   public UnaryCallable<MoveFirewallPolicyRequest, Operation> moveCallable() {
     throw new UnsupportedOperationException("Not implemented: moveCallable()");
+  }
+
+  public OperationCallable<PatchFirewallPolicyRequest, Operation, Operation>
+      patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
   }
 
   public UnaryCallable<PatchFirewallPolicyRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
   }
 
+  public OperationCallable<PatchRuleFirewallPolicyRequest, Operation, Operation>
+      patchRuleOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchRuleOperationCallable()");
+  }
+
   public UnaryCallable<PatchRuleFirewallPolicyRequest, Operation> patchRuleCallable() {
     throw new UnsupportedOperationException("Not implemented: patchRuleCallable()");
+  }
+
+  public OperationCallable<RemoveAssociationFirewallPolicyRequest, Operation, Operation>
+      removeAssociationOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: removeAssociationOperationCallable()");
   }
 
   public UnaryCallable<RemoveAssociationFirewallPolicyRequest, Operation>
       removeAssociationCallable() {
     throw new UnsupportedOperationException("Not implemented: removeAssociationCallable()");
+  }
+
+  public OperationCallable<RemoveRuleFirewallPolicyRequest, Operation, Operation>
+      removeRuleOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: removeRuleOperationCallable()");
   }
 
   public UnaryCallable<RemoveRuleFirewallPolicyRequest, Operation> removeRuleCallable() {

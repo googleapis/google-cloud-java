@@ -30,7 +30,7 @@ public interface AdvancedMachineFeaturesOrBuilder
    * Whether to enable nested virtualization or not (default is false).
    * </pre>
    *
-   * <code>bool enable_nested_virtualization = 16639365;</code>
+   * <code>optional bool enable_nested_virtualization = 16639365;</code>
    *
    * @return Whether the enableNestedVirtualization field is set.
    */
@@ -42,7 +42,7 @@ public interface AdvancedMachineFeaturesOrBuilder
    * Whether to enable nested virtualization or not (default is false).
    * </pre>
    *
-   * <code>bool enable_nested_virtualization = 16639365;</code>
+   * <code>optional bool enable_nested_virtualization = 16639365;</code>
    *
    * @return The enableNestedVirtualization.
    */
@@ -55,7 +55,7 @@ public interface AdvancedMachineFeaturesOrBuilder
    * The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.
    * </pre>
    *
-   * <code>int32 threads_per_core = 352611671;</code>
+   * <code>optional int32 threads_per_core = 352611671;</code>
    *
    * @return Whether the threadsPerCore field is set.
    */
@@ -67,7 +67,7 @@ public interface AdvancedMachineFeaturesOrBuilder
    * The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.
    * </pre>
    *
-   * <code>int32 threads_per_core = 352611671;</code>
+   * <code>optional int32 threads_per_core = 352611671;</code>
    *
    * @return The threadsPerCore.
    */

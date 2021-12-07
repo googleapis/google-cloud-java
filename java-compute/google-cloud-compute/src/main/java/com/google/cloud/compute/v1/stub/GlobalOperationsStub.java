@@ -19,7 +19,9 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.GlobalOperationsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.GlobalOperationsClient.ListPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.LongRunningClient;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListGlobalOperationsRequest;
 import com.google.cloud.compute.v1.DeleteGlobalOperationRequest;
@@ -40,6 +42,11 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class GlobalOperationsStub implements BackgroundResource {
+
+  @BetaApi
+  public LongRunningClient longRunningClient() {
+    throw new UnsupportedOperationException("Not implemented: longRunningClient()");
+  }
 
   public UnaryCallable<AggregatedListGlobalOperationsRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {

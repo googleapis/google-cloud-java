@@ -119,7 +119,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
    * Defines whether the instance should have confidential compute enabled.
    * </pre>
    *
-   * <code>bool enable_confidential_compute = 102135228;</code>
+   * <code>optional bool enable_confidential_compute = 102135228;</code>
    *
    * @return Whether the enableConfidentialCompute field is set.
    */
@@ -134,7 +134,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
    * Defines whether the instance should have confidential compute enabled.
    * </pre>
    *
-   * <code>bool enable_confidential_compute = 102135228;</code>
+   * <code>optional bool enable_confidential_compute = 102135228;</code>
    *
    * @return The enableConfidentialCompute.
    */
@@ -484,7 +484,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      * Defines whether the instance should have confidential compute enabled.
      * </pre>
      *
-     * <code>bool enable_confidential_compute = 102135228;</code>
+     * <code>optional bool enable_confidential_compute = 102135228;</code>
      *
      * @return Whether the enableConfidentialCompute field is set.
      */
@@ -499,7 +499,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      * Defines whether the instance should have confidential compute enabled.
      * </pre>
      *
-     * <code>bool enable_confidential_compute = 102135228;</code>
+     * <code>optional bool enable_confidential_compute = 102135228;</code>
      *
      * @return The enableConfidentialCompute.
      */
@@ -514,7 +514,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      * Defines whether the instance should have confidential compute enabled.
      * </pre>
      *
-     * <code>bool enable_confidential_compute = 102135228;</code>
+     * <code>optional bool enable_confidential_compute = 102135228;</code>
      *
      * @param value The enableConfidentialCompute to set.
      * @return This builder for chaining.
@@ -532,7 +532,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      * Defines whether the instance should have confidential compute enabled.
      * </pre>
      *
-     * <code>bool enable_confidential_compute = 102135228;</code>
+     * <code>optional bool enable_confidential_compute = 102135228;</code>
      *
      * @return This builder for chaining.
      */

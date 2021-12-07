@@ -30,7 +30,7 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * URL for the subnetwork resource that will use NAT.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -42,7 +42,7 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * URL for the subnetwork resource that will use NAT.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -54,7 +54,7 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * URL for the subnetwork resource that will use NAT.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -116,26 +116,23 @@ public interface RouterNatSubnetworkToNatOrBuilder
    *
    * <pre>
    * Specify the options for NAT ranges in the Subnetwork. All options of a single value are valid except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is: ["PRIMARY_IP_RANGE", "LIST_OF_SECONDARY_IP_RANGES"] Default: [ALL_IP_RANGES]
+   * Check the SourceIpRangesToNat enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
-   * </code>
+   * <code>repeated string source_ip_ranges_to_nat = 388310386;</code>
    *
    * @return A list containing the sourceIpRangesToNat.
    */
-  java.util.List<com.google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat>
-      getSourceIpRangesToNatList();
+  java.util.List<java.lang.String> getSourceIpRangesToNatList();
   /**
    *
    *
    * <pre>
    * Specify the options for NAT ranges in the Subnetwork. All options of a single value are valid except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is: ["PRIMARY_IP_RANGE", "LIST_OF_SECONDARY_IP_RANGES"] Default: [ALL_IP_RANGES]
+   * Check the SourceIpRangesToNat enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
-   * </code>
+   * <code>repeated string source_ip_ranges_to_nat = 388310386;</code>
    *
    * @return The count of sourceIpRangesToNat.
    */
@@ -145,44 +142,27 @@ public interface RouterNatSubnetworkToNatOrBuilder
    *
    * <pre>
    * Specify the options for NAT ranges in the Subnetwork. All options of a single value are valid except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is: ["PRIMARY_IP_RANGE", "LIST_OF_SECONDARY_IP_RANGES"] Default: [ALL_IP_RANGES]
+   * Check the SourceIpRangesToNat enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
-   * </code>
+   * <code>repeated string source_ip_ranges_to_nat = 388310386;</code>
    *
    * @param index The index of the element to return.
    * @return The sourceIpRangesToNat at the given index.
    */
-  com.google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat getSourceIpRangesToNat(
-      int index);
+  java.lang.String getSourceIpRangesToNat(int index);
   /**
    *
    *
    * <pre>
    * Specify the options for NAT ranges in the Subnetwork. All options of a single value are valid except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is: ["PRIMARY_IP_RANGE", "LIST_OF_SECONDARY_IP_RANGES"] Default: [ALL_IP_RANGES]
+   * Check the SourceIpRangesToNat enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
-   * </code>
-   *
-   * @return A list containing the enum numeric values on the wire for sourceIpRangesToNat.
-   */
-  java.util.List<java.lang.Integer> getSourceIpRangesToNatValueList();
-  /**
-   *
-   *
-   * <pre>
-   * Specify the options for NAT ranges in the Subnetwork. All options of a single value are valid except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is: ["PRIMARY_IP_RANGE", "LIST_OF_SECONDARY_IP_RANGES"] Default: [ALL_IP_RANGES]
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
-   * </code>
+   * <code>repeated string source_ip_ranges_to_nat = 388310386;</code>
    *
    * @param index The index of the value to return.
-   * @return The enum numeric value on the wire of sourceIpRangesToNat at the given index.
+   * @return The bytes of the sourceIpRangesToNat at the given index.
    */
-  int getSourceIpRangesToNatValue(int index);
+  com.google.protobuf.ByteString getSourceIpRangesToNatBytes(int index);
 }

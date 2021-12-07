@@ -30,7 +30,7 @@ public interface InstancesSetMinCpuPlatformRequestOrBuilder
    * Minimum cpu/platform this instance should be started at.
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return Whether the minCpuPlatform field is set.
    */
@@ -42,7 +42,7 @@ public interface InstancesSetMinCpuPlatformRequestOrBuilder
    * Minimum cpu/platform this instance should be started at.
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return The minCpuPlatform.
    */
@@ -54,7 +54,7 @@ public interface InstancesSetMinCpuPlatformRequestOrBuilder
    * Minimum cpu/platform this instance should be started at.
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return The bytes for minCpuPlatform.
    */

@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.VpnTunnelsClient.AggregatedListPagedRe
 import static com.google.cloud.compute.v1.VpnTunnelsClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListVpnTunnelsRequest;
 import com.google.cloud.compute.v1.DeleteVpnTunnelRequest;
@@ -51,12 +52,20 @@ public abstract class VpnTunnelsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<DeleteVpnTunnelRequest, Operation, Operation> deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteVpnTunnelRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetVpnTunnelRequest, VpnTunnel> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertVpnTunnelRequest, Operation, Operation> insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertVpnTunnelRequest, Operation> insertCallable() {

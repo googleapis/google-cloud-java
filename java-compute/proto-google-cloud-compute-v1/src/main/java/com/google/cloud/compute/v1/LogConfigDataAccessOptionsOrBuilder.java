@@ -24,21 +24,42 @@ public interface LogConfigDataAccessOptionsOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
+   *
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * Check the LogMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string log_mode = 402897342;</code>
    *
    * @return Whether the logMode field is set.
    */
   boolean hasLogMode();
   /**
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
    *
-   * @return The enum numeric value on the wire for logMode.
-   */
-  int getLogModeValue();
-  /**
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * Check the LogMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string log_mode = 402897342;</code>
    *
    * @return The logMode.
    */
-  com.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode getLogMode();
+  java.lang.String getLogMode();
+  /**
+   *
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * Check the LogMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string log_mode = 402897342;</code>
+   *
+   * @return The bytes for logMode.
+   */
+  com.google.protobuf.ByteString getLogModeBytes();
 }

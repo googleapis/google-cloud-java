@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.NodeTemplatesClient.AggregatedListPage
 import static com.google.cloud.compute.v1.NodeTemplatesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListNodeTemplatesRequest;
 import com.google.cloud.compute.v1.DeleteNodeTemplateRequest;
@@ -56,6 +57,11 @@ public abstract class NodeTemplatesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<DeleteNodeTemplateRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteNodeTemplateRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
@@ -66,6 +72,11 @@ public abstract class NodeTemplatesStub implements BackgroundResource {
 
   public UnaryCallable<GetIamPolicyNodeTemplateRequest, Policy> getIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public OperationCallable<InsertNodeTemplateRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertNodeTemplateRequest, Operation> insertCallable() {

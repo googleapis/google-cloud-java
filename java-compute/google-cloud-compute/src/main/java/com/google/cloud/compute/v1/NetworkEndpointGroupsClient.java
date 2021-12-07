@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.NetworkEndpointGroupsStub;
@@ -47,15 +49,8 @@ import javax.annotation.Generated;
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
  *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
- *   NetworkEndpointGroupsAttachEndpointsRequest
- *       networkEndpointGroupsAttachEndpointsRequestResource =
- *           NetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
- *   Operation response =
- *       networkEndpointGroupsClient.attachNetworkEndpoints(
- *           project,
- *           zone,
- *           networkEndpointGroup,
- *           networkEndpointGroupsAttachEndpointsRequestResource);
+ *   NetworkEndpointGroup response =
+ *       networkEndpointGroupsClient.get(project, zone, networkEndpointGroup);
  * }
  * }</pre>
  *
@@ -313,11 +308,13 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *       networkEndpointGroupsAttachEndpointsRequestResource =
    *           NetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
    *   Operation response =
-   *       networkEndpointGroupsClient.attachNetworkEndpoints(
-   *           project,
-   *           zone,
-   *           networkEndpointGroup,
-   *           networkEndpointGroupsAttachEndpointsRequestResource);
+   *       networkEndpointGroupsClient
+   *           .attachNetworkEndpointsAsync(
+   *               project,
+   *               zone,
+   *               networkEndpointGroup,
+   *               networkEndpointGroupsAttachEndpointsRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -329,7 +326,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * @param networkEndpointGroupsAttachEndpointsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation attachNetworkEndpoints(
+  public final OperationFuture<Operation, Operation> attachNetworkEndpointsAsync(
       String project,
       String zone,
       String networkEndpointGroup,
@@ -343,7 +340,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
             .setNetworkEndpointGroupsAttachEndpointsRequestResource(
                 networkEndpointGroupsAttachEndpointsRequestResource)
             .build();
-    return attachNetworkEndpoints(request);
+    return attachNetworkEndpointsAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -364,16 +361,49 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = networkEndpointGroupsClient.attachNetworkEndpoints(request);
+   *   Operation response = networkEndpointGroupsClient.attachNetworkEndpointsAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation attachNetworkEndpoints(
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> attachNetworkEndpointsAsync(
       AttachNetworkEndpointsNetworkEndpointGroupRequest request) {
-    return attachNetworkEndpointsCallable().call(request);
+    return attachNetworkEndpointsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Attach a list of network endpoints to the specified network endpoint group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   AttachNetworkEndpointsNetworkEndpointGroupRequest request =
+   *       AttachNetworkEndpointsNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setNetworkEndpointGroupsAttachEndpointsRequestResource(
+   *               NetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       networkEndpointGroupsClient.attachNetworkEndpointsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          AttachNetworkEndpointsNetworkEndpointGroupRequest, Operation, Operation>
+      attachNetworkEndpointsOperationCallable() {
+    return stub.attachNetworkEndpointsOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -420,7 +450,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
    *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
-   *   Operation response = networkEndpointGroupsClient.delete(project, zone, networkEndpointGroup);
+   *   Operation response =
+   *       networkEndpointGroupsClient.deleteAsync(project, zone, networkEndpointGroup).get();
    * }
    * }</pre>
    *
@@ -431,14 +462,15 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *     with RFC1035.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String zone, String networkEndpointGroup) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String zone, String networkEndpointGroup) {
     DeleteNetworkEndpointGroupRequest request =
         DeleteNetworkEndpointGroupRequest.newBuilder()
             .setProject(project)
             .setZone(zone)
             .setNetworkEndpointGroup(networkEndpointGroup)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -459,15 +491,48 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = networkEndpointGroupsClient.delete(request);
+   *   Operation response = networkEndpointGroupsClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteNetworkEndpointGroupRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      DeleteNetworkEndpointGroupRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified network endpoint group. The network endpoints in the NEG and the VM
+   * instances they belong to are not terminated when the NEG is deleted. Note that the NEG cannot
+   * be deleted if there are backend services referencing it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   DeleteNetworkEndpointGroupRequest request =
+   *       DeleteNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       networkEndpointGroupsClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteNetworkEndpointGroupRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -515,11 +580,13 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *       networkEndpointGroupsDetachEndpointsRequestResource =
    *           NetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
    *   Operation response =
-   *       networkEndpointGroupsClient.detachNetworkEndpoints(
-   *           project,
-   *           zone,
-   *           networkEndpointGroup,
-   *           networkEndpointGroupsDetachEndpointsRequestResource);
+   *       networkEndpointGroupsClient
+   *           .detachNetworkEndpointsAsync(
+   *               project,
+   *               zone,
+   *               networkEndpointGroup,
+   *               networkEndpointGroupsDetachEndpointsRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -531,7 +598,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * @param networkEndpointGroupsDetachEndpointsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation detachNetworkEndpoints(
+  public final OperationFuture<Operation, Operation> detachNetworkEndpointsAsync(
       String project,
       String zone,
       String networkEndpointGroup,
@@ -545,7 +612,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
             .setNetworkEndpointGroupsDetachEndpointsRequestResource(
                 networkEndpointGroupsDetachEndpointsRequestResource)
             .build();
-    return detachNetworkEndpoints(request);
+    return detachNetworkEndpointsAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -566,16 +633,49 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = networkEndpointGroupsClient.detachNetworkEndpoints(request);
+   *   Operation response = networkEndpointGroupsClient.detachNetworkEndpointsAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation detachNetworkEndpoints(
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> detachNetworkEndpointsAsync(
       DetachNetworkEndpointsNetworkEndpointGroupRequest request) {
-    return detachNetworkEndpointsCallable().call(request);
+    return detachNetworkEndpointsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Detach a list of network endpoints from the specified network endpoint group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   DetachNetworkEndpointsNetworkEndpointGroupRequest request =
+   *       DetachNetworkEndpointsNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroup("networkEndpointGroup-2120389028")
+   *           .setNetworkEndpointGroupsDetachEndpointsRequestResource(
+   *               NetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       networkEndpointGroupsClient.detachNetworkEndpointsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          DetachNetworkEndpointsNetworkEndpointGroupRequest, Operation, Operation>
+      detachNetworkEndpointsOperationCallable() {
+    return stub.detachNetworkEndpointsOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -711,7 +811,9 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *   String zone = "zone3744684";
    *   NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
    *   Operation response =
-   *       networkEndpointGroupsClient.insert(project, zone, networkEndpointGroupResource);
+   *       networkEndpointGroupsClient
+   *           .insertAsync(project, zone, networkEndpointGroupResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -721,7 +823,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * @param networkEndpointGroupResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(
+  public final OperationFuture<Operation, Operation> insertAsync(
       String project, String zone, NetworkEndpointGroup networkEndpointGroupResource) {
     InsertNetworkEndpointGroupRequest request =
         InsertNetworkEndpointGroupRequest.newBuilder()
@@ -729,7 +831,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
             .setZone(zone)
             .setNetworkEndpointGroupResource(networkEndpointGroupResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -749,15 +851,47 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = networkEndpointGroupsClient.insert(request);
+   *   Operation response = networkEndpointGroupsClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertNetworkEndpointGroupRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(
+      InsertNetworkEndpointGroupRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a network endpoint group in the specified project using the parameters that are
+   * included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
+   *     NetworkEndpointGroupsClient.create()) {
+   *   InsertNetworkEndpointGroupRequest request =
+   *       InsertNetworkEndpointGroupRequest.newBuilder()
+   *           .setNetworkEndpointGroupResource(NetworkEndpointGroup.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       networkEndpointGroupsClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertNetworkEndpointGroupRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

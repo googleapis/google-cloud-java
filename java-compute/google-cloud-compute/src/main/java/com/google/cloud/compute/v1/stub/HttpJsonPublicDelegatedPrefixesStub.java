@@ -26,11 +26,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListPublicDelegatedPrefixesRequest;
 import com.google.cloud.compute.v1.DeletePublicDelegatedPrefixeRequest;
@@ -38,10 +40,12 @@ import com.google.cloud.compute.v1.GetPublicDelegatedPrefixeRequest;
 import com.google.cloud.compute.v1.InsertPublicDelegatedPrefixeRequest;
 import com.google.cloud.compute.v1.ListPublicDelegatedPrefixesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchPublicDelegatedPrefixeRequest;
 import com.google.cloud.compute.v1.PublicDelegatedPrefix;
 import com.google.cloud.compute.v1.PublicDelegatedPrefixAggregatedList;
 import com.google.cloud.compute.v1.PublicDelegatedPrefixList;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -59,6 +63,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<
           AggregatedListPublicDelegatedPrefixesRequest, PublicDelegatedPrefixAggregatedList>
       aggregatedListMethodDescriptor =
@@ -114,6 +121,7 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
               .setResponseParser(
                   ProtoMessageResponseParser.<PublicDelegatedPrefixAggregatedList>newBuilder()
                       .setDefaultInstance(PublicDelegatedPrefixAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -153,7 +161,21 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeletePublicDelegatedPrefixeRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetPublicDelegatedPrefixeRequest, PublicDelegatedPrefix>
@@ -189,6 +211,7 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
               .setResponseParser(
                   ProtoMessageResponseParser.<PublicDelegatedPrefix>newBuilder()
                       .setDefaultInstance(PublicDelegatedPrefix.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -229,7 +252,21 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertPublicDelegatedPrefixeRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -282,6 +319,7 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
               .setResponseParser(
                   ProtoMessageResponseParser.<PublicDelegatedPrefixList>newBuilder()
                       .setDefaultInstance(PublicDelegatedPrefixList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -326,7 +364,21 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchPublicDelegatedPrefixeRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<
@@ -336,15 +388,22 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
           AggregatedListPublicDelegatedPrefixesRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
   private final UnaryCallable<DeletePublicDelegatedPrefixeRequest, Operation> deleteCallable;
+  private final OperationCallable<DeletePublicDelegatedPrefixeRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetPublicDelegatedPrefixeRequest, PublicDelegatedPrefix> getCallable;
   private final UnaryCallable<InsertPublicDelegatedPrefixeRequest, Operation> insertCallable;
+  private final OperationCallable<InsertPublicDelegatedPrefixeRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListPublicDelegatedPrefixesRequest, PublicDelegatedPrefixList>
       listCallable;
   private final UnaryCallable<ListPublicDelegatedPrefixesRequest, ListPagedResponse>
       listPagedCallable;
   private final UnaryCallable<PatchPublicDelegatedPrefixeRequest, Operation> patchCallable;
+  private final OperationCallable<PatchPublicDelegatedPrefixeRequest, Operation, Operation>
+      patchOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonPublicDelegatedPrefixesStub create(
@@ -386,6 +445,8 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<
             AggregatedListPublicDelegatedPrefixesRequest, PublicDelegatedPrefixAggregatedList>
@@ -394,30 +455,36 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
                 .<AggregatedListPublicDelegatedPrefixesRequest, PublicDelegatedPrefixAggregatedList>
                     newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeletePublicDelegatedPrefixeRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeletePublicDelegatedPrefixeRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetPublicDelegatedPrefixeRequest, PublicDelegatedPrefix>
         getTransportSettings =
             HttpJsonCallSettings
                 .<GetPublicDelegatedPrefixeRequest, PublicDelegatedPrefix>newBuilder()
                 .setMethodDescriptor(getMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<InsertPublicDelegatedPrefixeRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertPublicDelegatedPrefixeRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListPublicDelegatedPrefixesRequest, PublicDelegatedPrefixList>
         listTransportSettings =
             HttpJsonCallSettings
                 .<ListPublicDelegatedPrefixesRequest, PublicDelegatedPrefixList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<PatchPublicDelegatedPrefixeRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchPublicDelegatedPrefixeRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.aggregatedListCallable =
@@ -429,12 +496,24 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -444,6 +523,12 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -480,6 +565,12 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
   }
 
   @Override
+  public OperationCallable<DeletePublicDelegatedPrefixeRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetPublicDelegatedPrefixeRequest, PublicDelegatedPrefix> getCallable() {
     return getCallable;
   }
@@ -487,6 +578,12 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
   @Override
   public UnaryCallable<InsertPublicDelegatedPrefixeRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertPublicDelegatedPrefixeRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -503,6 +600,12 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
   @Override
   public UnaryCallable<PatchPublicDelegatedPrefixeRequest, Operation> patchCallable() {
     return patchCallable;
+  }
+
+  @Override
+  public OperationCallable<PatchPublicDelegatedPrefixeRequest, Operation, Operation>
+      patchOperationCallable() {
+    return patchOperationCallable;
   }
 
   @Override

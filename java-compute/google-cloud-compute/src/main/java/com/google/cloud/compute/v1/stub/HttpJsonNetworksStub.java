@@ -26,11 +26,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddPeeringNetworkRequest;
 import com.google.cloud.compute.v1.DeleteNetworkRequest;
@@ -44,10 +46,12 @@ import com.google.cloud.compute.v1.Network;
 import com.google.cloud.compute.v1.NetworkList;
 import com.google.cloud.compute.v1.NetworksGetEffectiveFirewallsResponse;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchNetworkRequest;
 import com.google.cloud.compute.v1.RemovePeeringNetworkRequest;
 import com.google.cloud.compute.v1.SwitchToCustomModeNetworkRequest;
 import com.google.cloud.compute.v1.UpdatePeeringNetworkRequest;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -65,6 +69,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonNetworksStub extends NetworksStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<AddPeeringNetworkRequest, Operation>
       addPeeringMethodDescriptor =
           ApiMethodDescriptor.<AddPeeringNetworkRequest, Operation>newBuilder()
@@ -102,7 +109,20 @@ public class HttpJsonNetworksStub extends NetworksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (AddPeeringNetworkRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<DeleteNetworkRequest, Operation> deleteMethodDescriptor =
@@ -136,7 +156,20 @@ public class HttpJsonNetworksStub extends NetworksStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (DeleteNetworkRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<GetNetworkRequest, Network> getMethodDescriptor =
@@ -167,6 +200,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Network>newBuilder()
                   .setDefaultInstance(Network.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -203,6 +237,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   ProtoMessageResponseParser.<NetworksGetEffectiveFirewallsResponse>newBuilder()
                       .setDefaultInstance(
                           NetworksGetEffectiveFirewallsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -239,7 +274,20 @@ public class HttpJsonNetworksStub extends NetworksStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (InsertNetworkRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<ListNetworksRequest, NetworkList> listMethodDescriptor =
@@ -285,6 +333,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
           .setResponseParser(
               ProtoMessageResponseParser.<NetworkList>newBuilder()
                   .setDefaultInstance(NetworkList.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -348,6 +397,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ExchangedPeeringRoutesList>newBuilder()
                       .setDefaultInstance(ExchangedPeeringRoutesList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -385,7 +435,20 @@ public class HttpJsonNetworksStub extends NetworksStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (PatchNetworkRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<RemovePeeringNetworkRequest, Operation>
@@ -425,7 +488,20 @@ public class HttpJsonNetworksStub extends NetworksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (RemovePeeringNetworkRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SwitchToCustomModeNetworkRequest, Operation>
@@ -460,7 +536,20 @@ public class HttpJsonNetworksStub extends NetworksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SwitchToCustomModeNetworkRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<UpdatePeeringNetworkRequest, Operation>
@@ -500,16 +589,35 @@ public class HttpJsonNetworksStub extends NetworksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (UpdatePeeringNetworkRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<AddPeeringNetworkRequest, Operation> addPeeringCallable;
+  private final OperationCallable<AddPeeringNetworkRequest, Operation, Operation>
+      addPeeringOperationCallable;
   private final UnaryCallable<DeleteNetworkRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteNetworkRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetNetworkRequest, Network> getCallable;
   private final UnaryCallable<
           GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
       getEffectiveFirewallsCallable;
   private final UnaryCallable<InsertNetworkRequest, Operation> insertCallable;
+  private final OperationCallable<InsertNetworkRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListNetworksRequest, NetworkList> listCallable;
   private final UnaryCallable<ListNetworksRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<ListPeeringRoutesNetworksRequest, ExchangedPeeringRoutesList>
@@ -517,12 +625,20 @@ public class HttpJsonNetworksStub extends NetworksStub {
   private final UnaryCallable<ListPeeringRoutesNetworksRequest, ListPeeringRoutesPagedResponse>
       listPeeringRoutesPagedCallable;
   private final UnaryCallable<PatchNetworkRequest, Operation> patchCallable;
+  private final OperationCallable<PatchNetworkRequest, Operation, Operation> patchOperationCallable;
   private final UnaryCallable<RemovePeeringNetworkRequest, Operation> removePeeringCallable;
+  private final OperationCallable<RemovePeeringNetworkRequest, Operation, Operation>
+      removePeeringOperationCallable;
   private final UnaryCallable<SwitchToCustomModeNetworkRequest, Operation>
       switchToCustomModeCallable;
+  private final OperationCallable<SwitchToCustomModeNetworkRequest, Operation, Operation>
+      switchToCustomModeOperationCallable;
   private final UnaryCallable<UpdatePeeringNetworkRequest, Operation> updatePeeringCallable;
+  private final OperationCallable<UpdatePeeringNetworkRequest, Operation, Operation>
+      updatePeeringOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonNetworksStub create(NetworksStubSettings settings)
@@ -561,18 +677,23 @@ public class HttpJsonNetworksStub extends NetworksStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AddPeeringNetworkRequest, Operation> addPeeringTransportSettings =
         HttpJsonCallSettings.<AddPeeringNetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(addPeeringMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<DeleteNetworkRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteNetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetNetworkRequest, Network> getTransportSettings =
         HttpJsonCallSettings.<GetNetworkRequest, Network>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
         getEffectiveFirewallsTransportSettings =
@@ -580,45 +701,65 @@ public class HttpJsonNetworksStub extends NetworksStub {
                 .<GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
                     newBuilder()
                 .setMethodDescriptor(getEffectiveFirewallsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<InsertNetworkRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertNetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListNetworksRequest, NetworkList> listTransportSettings =
         HttpJsonCallSettings.<ListNetworksRequest, NetworkList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListPeeringRoutesNetworksRequest, ExchangedPeeringRoutesList>
         listPeeringRoutesTransportSettings =
             HttpJsonCallSettings
                 .<ListPeeringRoutesNetworksRequest, ExchangedPeeringRoutesList>newBuilder()
                 .setMethodDescriptor(listPeeringRoutesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<PatchNetworkRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchNetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<RemovePeeringNetworkRequest, Operation> removePeeringTransportSettings =
         HttpJsonCallSettings.<RemovePeeringNetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(removePeeringMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SwitchToCustomModeNetworkRequest, Operation>
         switchToCustomModeTransportSettings =
             HttpJsonCallSettings.<SwitchToCustomModeNetworkRequest, Operation>newBuilder()
                 .setMethodDescriptor(switchToCustomModeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<UpdatePeeringNetworkRequest, Operation> updatePeeringTransportSettings =
         HttpJsonCallSettings.<UpdatePeeringNetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(updatePeeringMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.addPeeringCallable =
         callableFactory.createUnaryCallable(
             addPeeringTransportSettings, settings.addPeeringSettings(), clientContext);
+    this.addPeeringOperationCallable =
+        callableFactory.createOperationCallable(
+            addPeeringTransportSettings,
+            settings.addPeeringOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
@@ -630,6 +771,12 @@ public class HttpJsonNetworksStub extends NetworksStub {
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -649,17 +796,41 @@ public class HttpJsonNetworksStub extends NetworksStub {
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.removePeeringCallable =
         callableFactory.createUnaryCallable(
             removePeeringTransportSettings, settings.removePeeringSettings(), clientContext);
+    this.removePeeringOperationCallable =
+        callableFactory.createOperationCallable(
+            removePeeringTransportSettings,
+            settings.removePeeringOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.switchToCustomModeCallable =
         callableFactory.createUnaryCallable(
             switchToCustomModeTransportSettings,
             settings.switchToCustomModeSettings(),
             clientContext);
+    this.switchToCustomModeOperationCallable =
+        callableFactory.createOperationCallable(
+            switchToCustomModeTransportSettings,
+            settings.switchToCustomModeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.updatePeeringCallable =
         callableFactory.createUnaryCallable(
             updatePeeringTransportSettings, settings.updatePeeringSettings(), clientContext);
+    this.updatePeeringOperationCallable =
+        callableFactory.createOperationCallable(
+            updatePeeringTransportSettings,
+            settings.updatePeeringOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -688,8 +859,19 @@ public class HttpJsonNetworksStub extends NetworksStub {
   }
 
   @Override
+  public OperationCallable<AddPeeringNetworkRequest, Operation, Operation>
+      addPeeringOperationCallable() {
+    return addPeeringOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteNetworkRequest, Operation> deleteCallable() {
     return deleteCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteNetworkRequest, Operation, Operation> deleteOperationCallable() {
+    return deleteOperationCallable;
   }
 
   @Override
@@ -706,6 +888,11 @@ public class HttpJsonNetworksStub extends NetworksStub {
   @Override
   public UnaryCallable<InsertNetworkRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertNetworkRequest, Operation, Operation> insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -736,8 +923,19 @@ public class HttpJsonNetworksStub extends NetworksStub {
   }
 
   @Override
+  public OperationCallable<PatchNetworkRequest, Operation, Operation> patchOperationCallable() {
+    return patchOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<RemovePeeringNetworkRequest, Operation> removePeeringCallable() {
     return removePeeringCallable;
+  }
+
+  @Override
+  public OperationCallable<RemovePeeringNetworkRequest, Operation, Operation>
+      removePeeringOperationCallable() {
+    return removePeeringOperationCallable;
   }
 
   @Override
@@ -746,8 +944,20 @@ public class HttpJsonNetworksStub extends NetworksStub {
   }
 
   @Override
+  public OperationCallable<SwitchToCustomModeNetworkRequest, Operation, Operation>
+      switchToCustomModeOperationCallable() {
+    return switchToCustomModeOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdatePeeringNetworkRequest, Operation> updatePeeringCallable() {
     return updatePeeringCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdatePeeringNetworkRequest, Operation, Operation>
+      updatePeeringOperationCallable() {
+    return updatePeeringOperationCallable;
   }
 
   @Override

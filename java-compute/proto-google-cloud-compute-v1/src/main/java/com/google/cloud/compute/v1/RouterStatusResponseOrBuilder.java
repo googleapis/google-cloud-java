@@ -30,7 +30,7 @@ public interface RouterStatusResponseOrBuilder
    * Type of resource.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -42,7 +42,7 @@ public interface RouterStatusResponseOrBuilder
    * Type of resource.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -54,24 +54,24 @@ public interface RouterStatusResponseOrBuilder
    * Type of resource.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
   com.google.protobuf.ByteString getKindBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.RouterStatus result = 139315229;</code>
+   * <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code>
    *
    * @return Whether the result field is set.
    */
   boolean hasResult();
   /**
-   * <code>.google.cloud.compute.v1.RouterStatus result = 139315229;</code>
+   * <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code>
    *
    * @return The result.
    */
   com.google.cloud.compute.v1.RouterStatus getResult();
-  /** <code>.google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
+  /** <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
   com.google.cloud.compute.v1.RouterStatusOrBuilder getResultOrBuilder();
 }

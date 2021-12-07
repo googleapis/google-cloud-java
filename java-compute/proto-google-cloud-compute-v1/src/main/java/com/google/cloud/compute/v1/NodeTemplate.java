@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represent a sole-tenant Node Template resource.
- * You can use a template to define properties for nodes in a node group. For more information, read Creating node groups and instances. (== resource_for {$api_version}.nodeTemplates ==)
+ * Represent a sole-tenant Node Template resource. You can use a template to define properties for nodes in a node group. For more information, read Creating node groups and instances.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.NodeTemplate}
@@ -40,7 +39,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
 
   private NodeTemplate() {
     accelerators_ = java.util.Collections.emptyList();
-    cpuOvercommitType_ = 0;
+    cpuOvercommitType_ = "";
     creationTimestamp_ = "";
     description_ = "";
     disks_ = java.util.Collections.emptyList();
@@ -49,7 +48,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     nodeType_ = "";
     region_ = "";
     selfLink_ = "";
-    status_ = 0;
+    status_ = "";
     statusMessage_ = "";
   }
 
@@ -128,11 +127,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
               region_ = s;
               break;
             }
-          case 1450082192:
+          case 1450082194:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000800;
-              status_ = rawValue;
+              status_ = s;
               break;
             }
           case 1665436746:
@@ -151,11 +150,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
               bitField0_ |= 0x00000400;
               break;
             }
-          case 1981823672:
+          case 1981823674:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              cpuOvercommitType_ = rawValue;
+              cpuOvercommitType_ = s;
               break;
             }
           case -2138350782:
@@ -438,13 +437,45 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>CREATING = 455564985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resources are being allocated.
+     * </pre>
+     *
+     * <code>CREATING = 455564985;</code>
+     */
     CREATING(455564985),
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The node template is currently being deleted.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     DELETING(528602024),
-    /** <code>INVALID = 530283991;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Invalid status.
+     * </pre>
+     *
+     * <code>INVALID = 530283991;</code>
+     */
     INVALID(530283991),
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The node template is ready.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     READY(77848963),
     UNRECOGNIZED(-1),
     ;
@@ -459,13 +490,45 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>CREATING = 455564985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resources are being allocated.
+     * </pre>
+     *
+     * <code>CREATING = 455564985;</code>
+     */
     public static final int CREATING_VALUE = 455564985;
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The node template is currently being deleted.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     public static final int DELETING_VALUE = 528602024;
-    /** <code>INVALID = 530283991;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Invalid status.
+     * </pre>
+     *
+     * <code>INVALID = 530283991;</code>
+     */
     public static final int INVALID_VALUE = 530283991;
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The node template is ready.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     public static final int READY_VALUE = 77848963;
 
     public final int getNumber() {
@@ -587,16 +650,16 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CPU_OVERCOMMIT_TYPE_FIELD_NUMBER = 247727959;
-  private int cpuOvercommitType_;
+  private volatile java.lang.Object cpuOvercommitType_;
   /**
    *
    *
    * <pre>
    * CPU overcommit.
+   * Check the CpuOvercommitType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;
-   * </code>
+   * <code>optional string cpu_overcommit_type = 247727959;</code>
    *
    * @return Whether the cpuOvercommitType field is set.
    */
@@ -609,37 +672,48 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * CPU overcommit.
+   * Check the CpuOvercommitType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;
-   * </code>
+   * <code>optional string cpu_overcommit_type = 247727959;</code>
    *
-   * @return The enum numeric value on the wire for cpuOvercommitType.
+   * @return The cpuOvercommitType.
    */
   @java.lang.Override
-  public int getCpuOvercommitTypeValue() {
-    return cpuOvercommitType_;
+  public java.lang.String getCpuOvercommitType() {
+    java.lang.Object ref = cpuOvercommitType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cpuOvercommitType_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * CPU overcommit.
+   * Check the CpuOvercommitType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;
-   * </code>
+   * <code>optional string cpu_overcommit_type = 247727959;</code>
    *
-   * @return The cpuOvercommitType.
+   * @return The bytes for cpuOvercommitType.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType getCpuOvercommitType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType result =
-        com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType.valueOf(cpuOvercommitType_);
-    return result == null
-        ? com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getCpuOvercommitTypeBytes() {
+    java.lang.Object ref = cpuOvercommitType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      cpuOvercommitType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
@@ -651,7 +725,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -666,7 +740,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -689,7 +763,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -715,7 +789,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -730,7 +804,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -753,7 +827,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -808,7 +882,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -823,7 +897,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -841,7 +915,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The type of the resource. Always compute#nodeTemplate for node templates.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -856,7 +930,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The type of the resource. Always compute#nodeTemplate for node templates.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -879,7 +953,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The type of the resource. Always compute#nodeTemplate for node templates.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -905,7 +979,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -920,7 +994,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -943,7 +1017,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -1072,7 +1146,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * The node type to use for nodes group that are created from this template.
    * </pre>
    *
-   * <code>string node_type = 465832791;</code>
+   * <code>optional string node_type = 465832791;</code>
    *
    * @return Whether the nodeType field is set.
    */
@@ -1087,7 +1161,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * The node type to use for nodes group that are created from this template.
    * </pre>
    *
-   * <code>string node_type = 465832791;</code>
+   * <code>optional string node_type = 465832791;</code>
    *
    * @return The nodeType.
    */
@@ -1110,7 +1184,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * The node type to use for nodes group that are created from this template.
    * </pre>
    *
-   * <code>string node_type = 465832791;</code>
+   * <code>optional string node_type = 465832791;</code>
    *
    * @return The bytes for nodeType.
    */
@@ -1133,12 +1207,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-   * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+   * optional .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
    * </code>
    *
    * @return Whether the nodeTypeFlexibility field is set.
@@ -1151,12 +1224,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-   * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+   * optional .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
    * </code>
    *
    * @return The nodeTypeFlexibility.
@@ -1171,12 +1243,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-   * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+   * optional .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
    * </code>
    */
   @java.lang.Override
@@ -1196,7 +1267,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The name of the region where the node template resides, such as us-central1.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -1211,7 +1282,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The name of the region where the node template resides, such as us-central1.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -1234,7 +1305,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The name of the region where the node template resides, such as us-central1.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -1260,7 +1331,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -1275,7 +1346,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1298,7 +1369,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1321,13 +1392,10 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Sets the binding properties for the physical server. Valid values include:
-   * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-   * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-   * See Sole-tenant node options for more information.
+   * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
+   * <code>optional .google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
    *
    * @return Whether the serverBinding field is set.
    */
@@ -1339,13 +1407,10 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Sets the binding properties for the physical server. Valid values include:
-   * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-   * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-   * See Sole-tenant node options for more information.
+   * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
+   * <code>optional .google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
    *
    * @return The serverBinding.
    */
@@ -1359,13 +1424,10 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Sets the binding properties for the physical server. Valid values include:
-   * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-   * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-   * See Sole-tenant node options for more information.
+   * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
+   * <code>optional .google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ServerBindingOrBuilder getServerBindingOrBuilder() {
@@ -1375,15 +1437,16 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    *
    *
    * <pre>
    * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -1396,33 +1459,48 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
   @java.lang.Override
-  public int getStatusValue() {
-    return status_;
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.NodeTemplate.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.NodeTemplate.Status result =
-        com.google.cloud.compute.v1.NodeTemplate.Status.valueOf(status_);
-    return result == null ? com.google.cloud.compute.v1.NodeTemplate.Status.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int STATUS_MESSAGE_FIELD_NUMBER = 297428154;
@@ -1434,7 +1512,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return Whether the statusMessage field is set.
    */
@@ -1449,7 +1527,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return The statusMessage.
    */
@@ -1472,7 +1550,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return The bytes for statusMessage.
    */
@@ -1522,13 +1600,13 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(208179593, getServerBinding());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(247727959, cpuOvercommitType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 247727959, cpuOvercommitType_);
     }
     for (int i = 0; i < accelerators_.size(); i++) {
       output.writeMessage(269577064, accelerators_.get(i));
@@ -1582,14 +1660,15 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(208179593, getServerBinding());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(247727959, cpuOvercommitType_);
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(247727959, cpuOvercommitType_);
     }
     for (int i = 0; i < accelerators_.size(); i++) {
       size +=
@@ -1641,7 +1720,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     if (!getAcceleratorsList().equals(other.getAcceleratorsList())) return false;
     if (hasCpuOvercommitType() != other.hasCpuOvercommitType()) return false;
     if (hasCpuOvercommitType()) {
-      if (cpuOvercommitType_ != other.cpuOvercommitType_) return false;
+      if (!getCpuOvercommitType().equals(other.getCpuOvercommitType())) return false;
     }
     if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
     if (hasCreationTimestamp()) {
@@ -1688,7 +1767,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus().equals(other.getStatus())) return false;
     }
     if (hasStatusMessage() != other.hasStatusMessage()) return false;
     if (hasStatusMessage()) {
@@ -1711,7 +1790,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasCpuOvercommitType()) {
       hash = (37 * hash) + CPU_OVERCOMMIT_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + cpuOvercommitType_;
+      hash = (53 * hash) + getCpuOvercommitType().hashCode();
     }
     if (hasCreationTimestamp()) {
       hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
@@ -1763,7 +1842,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     if (hasStatusMessage()) {
       hash = (37 * hash) + STATUS_MESSAGE_FIELD_NUMBER;
@@ -1873,8 +1952,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represent a sole-tenant Node Template resource.
-   * You can use a template to define properties for nodes in a node group. For more information, read Creating node groups and instances. (== resource_for {$api_version}.nodeTemplates ==)
+   * Represent a sole-tenant Node Template resource. You can use a template to define properties for nodes in a node group. For more information, read Creating node groups and instances.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.NodeTemplate}
@@ -1946,7 +2024,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       } else {
         acceleratorsBuilder_.clear();
       }
-      cpuOvercommitType_ = 0;
+      cpuOvercommitType_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1983,7 +2061,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
         serverBindingBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00002000);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00004000);
       statusMessage_ = "";
       bitField0_ = (bitField0_ & ~0x00008000);
@@ -2174,7 +2252,9 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasCpuOvercommitType()) {
-        setCpuOvercommitType(other.getCpuOvercommitType());
+        bitField0_ |= 0x00000002;
+        cpuOvercommitType_ = other.cpuOvercommitType_;
+        onChanged();
       }
       if (other.hasCreationTimestamp()) {
         bitField0_ |= 0x00000004;
@@ -2249,7 +2329,9 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
         mergeServerBinding(other.getServerBinding());
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00004000;
+        status_ = other.status_;
+        onChanged();
       }
       if (other.hasStatusMessage()) {
         bitField0_ |= 0x00008000;
@@ -2531,21 +2613,19 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       return acceleratorsBuilder_;
     }
 
-    private int cpuOvercommitType_ = 0;
+    private java.lang.Object cpuOvercommitType_ = "";
     /**
      *
      *
      * <pre>
      * CPU overcommit.
+     * Check the CpuOvercommitType enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;
-     * </code>
+     * <code>optional string cpu_overcommit_type = 247727959;</code>
      *
      * @return Whether the cpuOvercommitType field is set.
      */
-    @java.lang.Override
     public boolean hasCpuOvercommitType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -2554,33 +2634,64 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * CPU overcommit.
+     * Check the CpuOvercommitType enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;
-     * </code>
+     * <code>optional string cpu_overcommit_type = 247727959;</code>
      *
-     * @return The enum numeric value on the wire for cpuOvercommitType.
+     * @return The cpuOvercommitType.
      */
-    @java.lang.Override
-    public int getCpuOvercommitTypeValue() {
-      return cpuOvercommitType_;
+    public java.lang.String getCpuOvercommitType() {
+      java.lang.Object ref = cpuOvercommitType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cpuOvercommitType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * CPU overcommit.
+     * Check the CpuOvercommitType enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;
-     * </code>
+     * <code>optional string cpu_overcommit_type = 247727959;</code>
      *
-     * @param value The enum numeric value on the wire for cpuOvercommitType to set.
+     * @return The bytes for cpuOvercommitType.
+     */
+    public com.google.protobuf.ByteString getCpuOvercommitTypeBytes() {
+      java.lang.Object ref = cpuOvercommitType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        cpuOvercommitType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * CPU overcommit.
+     * Check the CpuOvercommitType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string cpu_overcommit_type = 247727959;</code>
+     *
+     * @param value The cpuOvercommitType to set.
      * @return This builder for chaining.
      */
-    public Builder setCpuOvercommitTypeValue(int value) {
+    public Builder setCpuOvercommitType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000002;
       cpuOvercommitType_ = value;
       onChanged();
@@ -2591,44 +2702,16 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * CPU overcommit.
+     * Check the CpuOvercommitType enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;
-     * </code>
+     * <code>optional string cpu_overcommit_type = 247727959;</code>
      *
-     * @return The cpuOvercommitType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType getCpuOvercommitType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType result =
-          com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType.valueOf(cpuOvercommitType_);
-      return result == null
-          ? com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * CPU overcommit.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;
-     * </code>
-     *
-     * @param value The cpuOvercommitType to set.
      * @return This builder for chaining.
      */
-    public Builder setCpuOvercommitType(
-        com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      cpuOvercommitType_ = value.getNumber();
+    public Builder clearCpuOvercommitType() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      cpuOvercommitType_ = getDefaultInstance().getCpuOvercommitType();
       onChanged();
       return this;
     }
@@ -2637,17 +2720,21 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * CPU overcommit.
+     * Check the CpuOvercommitType enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;
-     * </code>
+     * <code>optional string cpu_overcommit_type = 247727959;</code>
      *
+     * @param value The bytes for cpuOvercommitType to set.
      * @return This builder for chaining.
      */
-    public Builder clearCpuOvercommitType() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      cpuOvercommitType_ = 0;
+    public Builder setCpuOvercommitTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      cpuOvercommitType_ = value;
       onChanged();
       return this;
     }
@@ -2660,7 +2747,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -2674,7 +2761,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -2696,7 +2783,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -2718,7 +2805,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -2739,7 +2826,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -2756,7 +2843,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -2780,7 +2867,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -2794,7 +2881,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -2816,7 +2903,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -2838,7 +2925,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2859,7 +2946,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -2876,7 +2963,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -3104,7 +3191,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -3119,7 +3206,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -3134,7 +3221,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -3152,7 +3239,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -3171,7 +3258,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of the resource. Always compute#nodeTemplate for node templates.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -3185,7 +3272,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of the resource. Always compute#nodeTemplate for node templates.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -3207,7 +3294,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of the resource. Always compute#nodeTemplate for node templates.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -3229,7 +3316,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of the resource. Always compute#nodeTemplate for node templates.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -3250,7 +3337,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of the resource. Always compute#nodeTemplate for node templates.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -3267,7 +3354,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of the resource. Always compute#nodeTemplate for node templates.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -3291,7 +3378,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -3305,7 +3392,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -3327,7 +3414,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -3349,7 +3436,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -3370,7 +3457,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -3387,7 +3474,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -3575,7 +3662,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * The node type to use for nodes group that are created from this template.
      * </pre>
      *
-     * <code>string node_type = 465832791;</code>
+     * <code>optional string node_type = 465832791;</code>
      *
      * @return Whether the nodeType field is set.
      */
@@ -3589,7 +3676,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * The node type to use for nodes group that are created from this template.
      * </pre>
      *
-     * <code>string node_type = 465832791;</code>
+     * <code>optional string node_type = 465832791;</code>
      *
      * @return The nodeType.
      */
@@ -3611,7 +3698,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * The node type to use for nodes group that are created from this template.
      * </pre>
      *
-     * <code>string node_type = 465832791;</code>
+     * <code>optional string node_type = 465832791;</code>
      *
      * @return The bytes for nodeType.
      */
@@ -3633,7 +3720,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * The node type to use for nodes group that are created from this template.
      * </pre>
      *
-     * <code>string node_type = 465832791;</code>
+     * <code>optional string node_type = 465832791;</code>
      *
      * @param value The nodeType to set.
      * @return This builder for chaining.
@@ -3654,7 +3741,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * The node type to use for nodes group that are created from this template.
      * </pre>
      *
-     * <code>string node_type = 465832791;</code>
+     * <code>optional string node_type = 465832791;</code>
      *
      * @return This builder for chaining.
      */
@@ -3671,7 +3758,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * The node type to use for nodes group that are created from this template.
      * </pre>
      *
-     * <code>string node_type = 465832791;</code>
+     * <code>optional string node_type = 465832791;</code>
      *
      * @param value The bytes for nodeType to set.
      * @return This builder for chaining.
@@ -3697,12 +3784,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-     * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+     * optional .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
      * </code>
      *
      * @return Whether the nodeTypeFlexibility field is set.
@@ -3714,12 +3800,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-     * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+     * optional .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
      * </code>
      *
      * @return The nodeTypeFlexibility.
@@ -3737,12 +3822,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-     * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+     * optional .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
      * </code>
      */
     public Builder setNodeTypeFlexibility(
@@ -3763,12 +3847,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-     * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+     * optional .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
      * </code>
      */
     public Builder setNodeTypeFlexibility(
@@ -3786,12 +3869,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-     * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+     * optional .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
      * </code>
      */
     public Builder mergeNodeTypeFlexibility(
@@ -3821,12 +3903,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-     * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+     * optional .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
      * </code>
      */
     public Builder clearNodeTypeFlexibility() {
@@ -3843,12 +3924,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-     * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+     * optional .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
      * </code>
      */
     public com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility.Builder
@@ -3861,12 +3941,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-     * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+     * optional .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
      * </code>
      */
     public com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibilityOrBuilder
@@ -3883,12 +3962,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-     * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+     * optional .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3916,7 +3994,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The name of the region where the node template resides, such as us-central1.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return Whether the region field is set.
      */
@@ -3930,7 +4008,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The name of the region where the node template resides, such as us-central1.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The region.
      */
@@ -3952,7 +4030,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The name of the region where the node template resides, such as us-central1.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The bytes for region.
      */
@@ -3974,7 +4052,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The name of the region where the node template resides, such as us-central1.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -3995,7 +4073,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The name of the region where the node template resides, such as us-central1.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return This builder for chaining.
      */
@@ -4012,7 +4090,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The name of the region where the node template resides, such as us-central1.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.
@@ -4036,7 +4114,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -4050,7 +4128,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -4072,7 +4150,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -4094,7 +4172,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -4115,7 +4193,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -4132,7 +4210,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -4158,13 +4236,10 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the binding properties for the physical server. Valid values include:
-     * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-     * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-     * See Sole-tenant node options for more information.
+     * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
+     * <code>optional .google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
      *
      * @return Whether the serverBinding field is set.
      */
@@ -4175,13 +4250,10 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the binding properties for the physical server. Valid values include:
-     * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-     * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-     * See Sole-tenant node options for more information.
+     * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
+     * <code>optional .google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
      *
      * @return The serverBinding.
      */
@@ -4198,13 +4270,10 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the binding properties for the physical server. Valid values include:
-     * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-     * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-     * See Sole-tenant node options for more information.
+     * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
+     * <code>optional .google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
      */
     public Builder setServerBinding(com.google.cloud.compute.v1.ServerBinding value) {
       if (serverBindingBuilder_ == null) {
@@ -4223,13 +4292,10 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the binding properties for the physical server. Valid values include:
-     * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-     * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-     * See Sole-tenant node options for more information.
+     * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
+     * <code>optional .google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
      */
     public Builder setServerBinding(
         com.google.cloud.compute.v1.ServerBinding.Builder builderForValue) {
@@ -4246,13 +4312,10 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the binding properties for the physical server. Valid values include:
-     * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-     * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-     * See Sole-tenant node options for more information.
+     * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
+     * <code>optional .google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
      */
     public Builder mergeServerBinding(com.google.cloud.compute.v1.ServerBinding value) {
       if (serverBindingBuilder_ == null) {
@@ -4277,13 +4340,10 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the binding properties for the physical server. Valid values include:
-     * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-     * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-     * See Sole-tenant node options for more information.
+     * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
+     * <code>optional .google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
      */
     public Builder clearServerBinding() {
       if (serverBindingBuilder_ == null) {
@@ -4299,13 +4359,10 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the binding properties for the physical server. Valid values include:
-     * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-     * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-     * See Sole-tenant node options for more information.
+     * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
+     * <code>optional .google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
      */
     public com.google.cloud.compute.v1.ServerBinding.Builder getServerBindingBuilder() {
       bitField0_ |= 0x00002000;
@@ -4316,13 +4373,10 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the binding properties for the physical server. Valid values include:
-     * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-     * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-     * See Sole-tenant node options for more information.
+     * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
+     * <code>optional .google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
      */
     public com.google.cloud.compute.v1.ServerBindingOrBuilder getServerBindingOrBuilder() {
       if (serverBindingBuilder_ != null) {
@@ -4337,13 +4391,10 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the binding properties for the physical server. Valid values include:
-     * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-     * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-     * See Sole-tenant node options for more information.
+     * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
+     * <code>optional .google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ServerBinding,
@@ -4362,19 +4413,19 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       return serverBindingBuilder_;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      *
      *
      * <pre>
      * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
      * @return Whether the status field is set.
      */
-    @java.lang.Override
     public boolean hasStatus() {
       return ((bitField0_ & 0x00004000) != 0);
     }
@@ -4383,29 +4434,64 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The enum numeric value on the wire for status.
+     * @return The status.
      */
-    @java.lang.Override
-    public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @param value The enum numeric value on the wire for status to set.
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     *
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
+    public Builder setStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00004000;
       status_ = value;
       onChanged();
@@ -4416,37 +4502,16 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.NodeTemplate.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.NodeTemplate.Status result =
-          com.google.cloud.compute.v1.NodeTemplate.Status.valueOf(status_);
-      return result == null ? com.google.cloud.compute.v1.NodeTemplate.Status.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
-     *
-     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloud.compute.v1.NodeTemplate.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00004000;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
@@ -4455,15 +4520,21 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00004000);
-      status_ = 0;
+    public Builder setStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00004000;
+      status_ = value;
       onChanged();
       return this;
     }
@@ -4476,7 +4547,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>optional string status_message = 297428154;</code>
      *
      * @return Whether the statusMessage field is set.
      */
@@ -4490,7 +4561,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>optional string status_message = 297428154;</code>
      *
      * @return The statusMessage.
      */
@@ -4512,7 +4583,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>optional string status_message = 297428154;</code>
      *
      * @return The bytes for statusMessage.
      */
@@ -4534,7 +4605,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>optional string status_message = 297428154;</code>
      *
      * @param value The statusMessage to set.
      * @return This builder for chaining.
@@ -4555,7 +4626,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>optional string status_message = 297428154;</code>
      *
      * @return This builder for chaining.
      */
@@ -4572,7 +4643,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>optional string status_message = 297428154;</code>
      *
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.

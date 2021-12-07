@@ -30,7 +30,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
    * </pre>
    *
-   * <code>string address = 462920692;</code>
+   * <code>optional string address = 462920692;</code>
    *
    * @return Whether the address field is set.
    */
@@ -42,7 +42,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
    * </pre>
    *
-   * <code>string address = 462920692;</code>
+   * <code>optional string address = 462920692;</code>
    *
    * @return The address.
    */
@@ -54,7 +54,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
    * </pre>
    *
-   * <code>string address = 462920692;</code>
+   * <code>optional string address = 462920692;</code>
    *
    * @return The bytes for address.
    */
@@ -67,7 +67,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Availability zone for this InterconnectLocation. Within a metropolitan area (metro), maintenance will not be simultaneously scheduled in more than one availability zone. Example: "zone1" or "zone2".
    * </pre>
    *
-   * <code>string availability_zone = 158459920;</code>
+   * <code>optional string availability_zone = 158459920;</code>
    *
    * @return Whether the availabilityZone field is set.
    */
@@ -79,7 +79,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Availability zone for this InterconnectLocation. Within a metropolitan area (metro), maintenance will not be simultaneously scheduled in more than one availability zone. Example: "zone1" or "zone2".
    * </pre>
    *
-   * <code>string availability_zone = 158459920;</code>
+   * <code>optional string availability_zone = 158459920;</code>
    *
    * @return The availabilityZone.
    */
@@ -91,7 +91,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Availability zone for this InterconnectLocation. Within a metropolitan area (metro), maintenance will not be simultaneously scheduled in more than one availability zone. Example: "zone1" or "zone2".
    * </pre>
    *
-   * <code>string availability_zone = 158459920;</code>
+   * <code>optional string availability_zone = 158459920;</code>
    *
    * @return The bytes for availabilityZone.
    */
@@ -104,7 +104,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Metropolitan area designator that indicates which city an interconnect is located. For example: "Chicago, IL", "Amsterdam, Netherlands".
    * </pre>
    *
-   * <code>string city = 3053931;</code>
+   * <code>optional string city = 3053931;</code>
    *
    * @return Whether the city field is set.
    */
@@ -116,7 +116,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Metropolitan area designator that indicates which city an interconnect is located. For example: "Chicago, IL", "Amsterdam, Netherlands".
    * </pre>
    *
-   * <code>string city = 3053931;</code>
+   * <code>optional string city = 3053931;</code>
    *
    * @return The city.
    */
@@ -128,7 +128,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Metropolitan area designator that indicates which city an interconnect is located. For example: "Chicago, IL", "Amsterdam, Netherlands".
    * </pre>
    *
-   * <code>string city = 3053931;</code>
+   * <code>optional string city = 3053931;</code>
    *
    * @return The bytes for city.
    */
@@ -138,15 +138,11 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Continent for this location, which can take one of the following values:
-   * - AFRICA
-   * - ASIA_PAC
-   * - EUROPE
-   * - NORTH_AMERICA
-   * - SOUTH_AMERICA
+   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
+   * Check the Continent enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
+   * <code>optional string continent = 133442996;</code>
    *
    * @return Whether the continent field is set.
    */
@@ -155,36 +151,28 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Continent for this location, which can take one of the following values:
-   * - AFRICA
-   * - ASIA_PAC
-   * - EUROPE
-   * - NORTH_AMERICA
-   * - SOUTH_AMERICA
+   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
+   * Check the Continent enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
+   * <code>optional string continent = 133442996;</code>
    *
-   * @return The enum numeric value on the wire for continent.
+   * @return The continent.
    */
-  int getContinentValue();
+  java.lang.String getContinent();
   /**
    *
    *
    * <pre>
-   * [Output Only] Continent for this location, which can take one of the following values:
-   * - AFRICA
-   * - ASIA_PAC
-   * - EUROPE
-   * - NORTH_AMERICA
-   * - SOUTH_AMERICA
+   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
+   * Check the Continent enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
+   * <code>optional string continent = 133442996;</code>
    *
-   * @return The continent.
+   * @return The bytes for continent.
    */
-  com.google.cloud.compute.v1.InterconnectLocation.Continent getContinent();
+  com.google.protobuf.ByteString getContinentBytes();
 
   /**
    *
@@ -193,7 +181,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -205,7 +193,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -217,7 +205,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -230,7 +218,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] An optional description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -242,7 +230,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] An optional description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -254,7 +242,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] An optional description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -267,7 +255,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
    * </pre>
    *
-   * <code>string facility_provider = 533303309;</code>
+   * <code>optional string facility_provider = 533303309;</code>
    *
    * @return Whether the facilityProvider field is set.
    */
@@ -279,7 +267,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
    * </pre>
    *
-   * <code>string facility_provider = 533303309;</code>
+   * <code>optional string facility_provider = 533303309;</code>
    *
    * @return The facilityProvider.
    */
@@ -291,7 +279,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
    * </pre>
    *
-   * <code>string facility_provider = 533303309;</code>
+   * <code>optional string facility_provider = 533303309;</code>
    *
    * @return The bytes for facilityProvider.
    */
@@ -304,7 +292,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] A provider-assigned Identifier for this facility (e.g., Ashburn-DC1).
    * </pre>
    *
-   * <code>string facility_provider_facility_id = 87269125;</code>
+   * <code>optional string facility_provider_facility_id = 87269125;</code>
    *
    * @return Whether the facilityProviderFacilityId field is set.
    */
@@ -316,7 +304,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] A provider-assigned Identifier for this facility (e.g., Ashburn-DC1).
    * </pre>
    *
-   * <code>string facility_provider_facility_id = 87269125;</code>
+   * <code>optional string facility_provider_facility_id = 87269125;</code>
    *
    * @return The facilityProviderFacilityId.
    */
@@ -328,7 +316,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] A provider-assigned Identifier for this facility (e.g., Ashburn-DC1).
    * </pre>
    *
-   * <code>string facility_provider_facility_id = 87269125;</code>
+   * <code>optional string facility_provider_facility_id = 87269125;</code>
    *
    * @return The bytes for facilityProviderFacilityId.
    */
@@ -341,7 +329,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -353,7 +341,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -366,7 +354,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Type of the resource. Always compute#interconnectLocation for interconnect locations.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -378,7 +366,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Type of the resource. Always compute#interconnectLocation for interconnect locations.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -390,7 +378,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Type of the resource. Always compute#interconnectLocation for interconnect locations.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -403,7 +391,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Name of the resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -415,7 +403,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Name of the resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -427,7 +415,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Name of the resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -440,7 +428,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
    * </pre>
    *
-   * <code>string peeringdb_facility_id = 536567094;</code>
+   * <code>optional string peeringdb_facility_id = 536567094;</code>
    *
    * @return Whether the peeringdbFacilityId field is set.
    */
@@ -452,7 +440,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
    * </pre>
    *
-   * <code>string peeringdb_facility_id = 536567094;</code>
+   * <code>optional string peeringdb_facility_id = 536567094;</code>
    *
    * @return The peeringdbFacilityId.
    */
@@ -464,7 +452,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
    * </pre>
    *
-   * <code>string peeringdb_facility_id = 536567094;</code>
+   * <code>optional string peeringdb_facility_id = 536567094;</code>
    *
    * @return The bytes for peeringdbFacilityId.
    */
@@ -540,7 +528,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -552,7 +540,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -564,7 +552,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -574,12 +562,11 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of this InterconnectLocation, which can take one of the following values:
-   * - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects.
-   * - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+   * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -588,28 +575,51 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of this InterconnectLocation, which can take one of the following values:
-   * - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects.
-   * - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+   * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    *
    *
    * <pre>
-   * [Output Only] The status of this InterconnectLocation, which can take one of the following values:
-   * - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects.
-   * - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+   * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1.InterconnectLocation.Status getStatus();
+  com.google.protobuf.ByteString getStatusBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Set to true for locations that support physical zone separation. Defaults to false if the field is not present.
+   * </pre>
+   *
+   * <code>optional bool supports_pzs = 83983214;</code>
+   *
+   * @return Whether the supportsPzs field is set.
+   */
+  boolean hasSupportsPzs();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Set to true for locations that support physical zone separation. Defaults to false if the field is not present.
+   * </pre>
+   *
+   * <code>optional bool supports_pzs = 83983214;</code>
+   *
+   * @return The supportsPzs.
+   */
+  boolean getSupportsPzs();
 }

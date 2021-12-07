@@ -28,9 +28,10 @@ public interface RouterBgpOrBuilder
    *
    * <pre>
    * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
+   * Check the AdvertiseMode enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+   * <code>optional string advertise_mode = 312134331;</code>
    *
    * @return Whether the advertiseMode field is set.
    */
@@ -40,50 +41,50 @@ public interface RouterBgpOrBuilder
    *
    * <pre>
    * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
+   * Check the AdvertiseMode enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+   * <code>optional string advertise_mode = 312134331;</code>
    *
-   * @return The enum numeric value on the wire for advertiseMode.
+   * @return The advertiseMode.
    */
-  int getAdvertiseModeValue();
+  java.lang.String getAdvertiseMode();
   /**
    *
    *
    * <pre>
    * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
+   * Check the AdvertiseMode enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+   * <code>optional string advertise_mode = 312134331;</code>
    *
-   * @return The advertiseMode.
+   * @return The bytes for advertiseMode.
    */
-  com.google.cloud.compute.v1.RouterBgp.AdvertiseMode getAdvertiseMode();
+  com.google.protobuf.ByteString getAdvertiseModeBytes();
 
   /**
    *
    *
    * <pre>
    * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+   * Check the AdvertisedGroups enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-   * </code>
+   * <code>repeated string advertised_groups = 21065526;</code>
    *
    * @return A list containing the advertisedGroups.
    */
-  java.util.List<com.google.cloud.compute.v1.RouterBgp.AdvertisedGroups> getAdvertisedGroupsList();
+  java.util.List<java.lang.String> getAdvertisedGroupsList();
   /**
    *
    *
    * <pre>
    * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+   * Check the AdvertisedGroups enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-   * </code>
+   * <code>repeated string advertised_groups = 21065526;</code>
    *
    * @return The count of advertisedGroups.
    */
@@ -93,45 +94,29 @@ public interface RouterBgpOrBuilder
    *
    * <pre>
    * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+   * Check the AdvertisedGroups enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-   * </code>
+   * <code>repeated string advertised_groups = 21065526;</code>
    *
    * @param index The index of the element to return.
    * @return The advertisedGroups at the given index.
    */
-  com.google.cloud.compute.v1.RouterBgp.AdvertisedGroups getAdvertisedGroups(int index);
+  java.lang.String getAdvertisedGroups(int index);
   /**
    *
    *
    * <pre>
    * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+   * Check the AdvertisedGroups enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-   * </code>
-   *
-   * @return A list containing the enum numeric values on the wire for advertisedGroups.
-   */
-  java.util.List<java.lang.Integer> getAdvertisedGroupsValueList();
-  /**
-   *
-   *
-   * <pre>
-   * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-   * </code>
+   * <code>repeated string advertised_groups = 21065526;</code>
    *
    * @param index The index of the value to return.
-   * @return The enum numeric value on the wire of advertisedGroups at the given index.
+   * @return The bytes of the advertisedGroups at the given index.
    */
-  int getAdvertisedGroupsValue(int index);
+  com.google.protobuf.ByteString getAdvertisedGroupsBytes(int index);
 
   /**
    *
@@ -203,7 +188,7 @@ public interface RouterBgpOrBuilder
    * Local BGP Autonomous System Number (ASN). Must be an RFC6996 private ASN, either 16-bit or 32-bit. The value will be fixed for this router resource. All VPN tunnels that link to this router will have the same local ASN.
    * </pre>
    *
-   * <code>uint32 asn = 96892;</code>
+   * <code>optional uint32 asn = 96892;</code>
    *
    * @return Whether the asn field is set.
    */
@@ -215,9 +200,34 @@ public interface RouterBgpOrBuilder
    * Local BGP Autonomous System Number (ASN). Must be an RFC6996 private ASN, either 16-bit or 32-bit. The value will be fixed for this router resource. All VPN tunnels that link to this router will have the same local ASN.
    * </pre>
    *
-   * <code>uint32 asn = 96892;</code>
+   * <code>optional uint32 asn = 96892;</code>
    *
    * @return The asn.
    */
   int getAsn();
+
+  /**
+   *
+   *
+   * <pre>
+   * The interval in seconds between BGP keepalive messages that are sent to the peer. Hold time is three times the interval at which keepalive messages are sent, and the hold time is the maximum number of seconds allowed to elapse between successive keepalive messages that BGP receives from a peer. BGP will use the smaller of either the local hold time value or the peer's hold time value as the hold time for the BGP connection between the two peers. If set, this value must be between 20 and 60. The default is 20.
+   * </pre>
+   *
+   * <code>optional uint32 keepalive_interval = 276771516;</code>
+   *
+   * @return Whether the keepaliveInterval field is set.
+   */
+  boolean hasKeepaliveInterval();
+  /**
+   *
+   *
+   * <pre>
+   * The interval in seconds between BGP keepalive messages that are sent to the peer. Hold time is three times the interval at which keepalive messages are sent, and the hold time is the maximum number of seconds allowed to elapse between successive keepalive messages that BGP receives from a peer. BGP will use the smaller of either the local hold time value or the peer's hold time value as the hold time for the BGP connection between the two peers. If set, this value must be between 20 and 60. The default is 20.
+   * </pre>
+   *
+   * <code>optional uint32 keepalive_interval = 276771516;</code>
+   *
+   * @return The keepaliveInterval.
+   */
+  int getKeepaliveInterval();
 }

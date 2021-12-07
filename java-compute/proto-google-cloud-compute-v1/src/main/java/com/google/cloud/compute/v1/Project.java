@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Project resource.
- * A project is used to organize resources in a Google Cloud Platform environment. For more information, read about the  Resource Hierarchy. (== resource_for {$api_version}.projects ==)
+ * Represents a Project resource. A project is used to organize resources in a Google Cloud Platform environment. For more information, read about the Resource Hierarchy.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Project}
@@ -40,7 +39,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
 
   private Project() {
     creationTimestamp_ = "";
-    defaultNetworkTier_ = 0;
+    defaultNetworkTier_ = "";
     defaultServiceAccount_ = "";
     description_ = "";
     enabledFeatures_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -48,7 +47,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     quotas_ = java.util.Collections.emptyList();
     selfLink_ = "";
-    xpnProjectStatus_ = 0;
+    xpnProjectStatus_ = "";
   }
 
   @java.lang.Override
@@ -134,11 +133,11 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
               bitField0_ |= 0x00000001;
               break;
             }
-          case 1827354120:
+          case 1827354122:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000400;
-              xpnProjectStatus_ = rawValue;
+              xpnProjectStatus_ = s;
               break;
             }
           case -1905269462:
@@ -188,11 +187,11 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
               enabledFeatures_.add(s);
               break;
             }
-          case -520940408:
+          case -520940406:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
-              defaultNetworkTier_ = rawValue;
+              defaultNetworkTier_ = s;
               break;
             }
           default:
@@ -255,9 +254,25 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_DEFAULT_NETWORK_TIER = 0;</code>
      */
     UNDEFINED_DEFAULT_NETWORK_TIER(0),
-    /** <code>PREMIUM = 399530551;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * High quality, Google-grade network tier, support for all networking products.
+     * </pre>
+     *
+     * <code>PREMIUM = 399530551;</code>
+     */
     PREMIUM(399530551),
-    /** <code>STANDARD = 484642493;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Public internet quality, only limited support for other networking products.
+     * </pre>
+     *
+     * <code>STANDARD = 484642493;</code>
+     */
     STANDARD(484642493),
     UNRECOGNIZED(-1),
     ;
@@ -272,9 +287,25 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_DEFAULT_NETWORK_TIER = 0;</code>
      */
     public static final int UNDEFINED_DEFAULT_NETWORK_TIER_VALUE = 0;
-    /** <code>PREMIUM = 399530551;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * High quality, Google-grade network tier, support for all networking products.
+     * </pre>
+     *
+     * <code>PREMIUM = 399530551;</code>
+     */
     public static final int PREMIUM_VALUE = 399530551;
-    /** <code>STANDARD = 484642493;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Public internet quality, only limited support for other networking products.
+     * </pre>
+     *
+     * <code>STANDARD = 484642493;</code>
+     */
     public static final int STANDARD_VALUE = 484642493;
 
     public final int getNumber() {
@@ -500,7 +531,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
+   * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
    *
    * @return Whether the commonInstanceMetadata field is set.
    */
@@ -515,7 +546,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
+   * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
    *
    * @return The commonInstanceMetadata.
    */
@@ -532,7 +563,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
+   * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.MetadataOrBuilder getCommonInstanceMetadataOrBuilder() {
@@ -550,7 +581,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -565,7 +596,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -588,7 +619,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -606,16 +637,16 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEFAULT_NETWORK_TIER_FIELD_NUMBER = 471753361;
-  private int defaultNetworkTier_;
+  private volatile java.lang.Object defaultNetworkTier_;
   /**
    *
    *
    * <pre>
    * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+   * Check the DefaultNetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
-   * </code>
+   * <code>optional string default_network_tier = 471753361;</code>
    *
    * @return Whether the defaultNetworkTier field is set.
    */
@@ -628,37 +659,48 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+   * Check the DefaultNetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
-   * </code>
+   * <code>optional string default_network_tier = 471753361;</code>
    *
-   * @return The enum numeric value on the wire for defaultNetworkTier.
+   * @return The defaultNetworkTier.
    */
   @java.lang.Override
-  public int getDefaultNetworkTierValue() {
-    return defaultNetworkTier_;
+  public java.lang.String getDefaultNetworkTier() {
+    java.lang.Object ref = defaultNetworkTier_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      defaultNetworkTier_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+   * Check the DefaultNetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
-   * </code>
+   * <code>optional string default_network_tier = 471753361;</code>
    *
-   * @return The defaultNetworkTier.
+   * @return The bytes for defaultNetworkTier.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.Project.DefaultNetworkTier getDefaultNetworkTier() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Project.DefaultNetworkTier result =
-        com.google.cloud.compute.v1.Project.DefaultNetworkTier.valueOf(defaultNetworkTier_);
-    return result == null
-        ? com.google.cloud.compute.v1.Project.DefaultNetworkTier.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getDefaultNetworkTierBytes() {
+    java.lang.Object ref = defaultNetworkTier_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      defaultNetworkTier_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int DEFAULT_SERVICE_ACCOUNT_FIELD_NUMBER = 298712229;
@@ -670,7 +712,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Default service account used by VMs running in this project.
    * </pre>
    *
-   * <code>string default_service_account = 298712229;</code>
+   * <code>optional string default_service_account = 298712229;</code>
    *
    * @return Whether the defaultServiceAccount field is set.
    */
@@ -685,7 +727,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Default service account used by VMs running in this project.
    * </pre>
    *
-   * <code>string default_service_account = 298712229;</code>
+   * <code>optional string default_service_account = 298712229;</code>
    *
    * @return The defaultServiceAccount.
    */
@@ -708,7 +750,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Default service account used by VMs running in this project.
    * </pre>
    *
-   * <code>string default_service_account = 298712229;</code>
+   * <code>optional string default_service_account = 298712229;</code>
    *
    * @return The bytes for defaultServiceAccount.
    */
@@ -734,7 +776,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -749,7 +791,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -772,7 +814,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -856,10 +898,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is not the project ID, and is just a unique ID used by Compute Engine to identify resources.
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -871,10 +913,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is not the project ID, and is just a unique ID used by Compute Engine to identify resources.
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -892,7 +934,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#project for projects.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -907,7 +949,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#project for projects.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -930,7 +972,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#project for projects.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -956,7 +998,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -971,7 +1013,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -994,7 +1036,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -1089,7 +1131,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -1104,7 +1146,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1127,7 +1169,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1153,7 +1195,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+   * <code>optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;
+   * </code>
    *
    * @return Whether the usageExportLocation field is set.
    */
@@ -1168,7 +1211,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+   * <code>optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;
+   * </code>
    *
    * @return The usageExportLocation.
    */
@@ -1185,7 +1229,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+   * <code>optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.UsageExportLocationOrBuilder
@@ -1196,15 +1241,16 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int XPN_PROJECT_STATUS_FIELD_NUMBER = 228419265;
-  private int xpnProjectStatus_;
+  private volatile java.lang.Object xpnProjectStatus_;
   /**
    *
    *
    * <pre>
    * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+   * Check the XpnProjectStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;</code>
+   * <code>optional string xpn_project_status = 228419265;</code>
    *
    * @return Whether the xpnProjectStatus field is set.
    */
@@ -1217,35 +1263,48 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+   * Check the XpnProjectStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;</code>
+   * <code>optional string xpn_project_status = 228419265;</code>
    *
-   * @return The enum numeric value on the wire for xpnProjectStatus.
+   * @return The xpnProjectStatus.
    */
   @java.lang.Override
-  public int getXpnProjectStatusValue() {
-    return xpnProjectStatus_;
+  public java.lang.String getXpnProjectStatus() {
+    java.lang.Object ref = xpnProjectStatus_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      xpnProjectStatus_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+   * Check the XpnProjectStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;</code>
+   * <code>optional string xpn_project_status = 228419265;</code>
    *
-   * @return The xpnProjectStatus.
+   * @return The bytes for xpnProjectStatus.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.Project.XpnProjectStatus getXpnProjectStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Project.XpnProjectStatus result =
-        com.google.cloud.compute.v1.Project.XpnProjectStatus.valueOf(xpnProjectStatus_);
-    return result == null
-        ? com.google.cloud.compute.v1.Project.XpnProjectStatus.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getXpnProjectStatusBytes() {
+    java.lang.Object ref = xpnProjectStatus_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      xpnProjectStatus_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1281,7 +1340,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(185794117, getCommonInstanceMetadata());
     }
     if (((bitField0_ & 0x00000400) != 0)) {
-      output.writeEnum(228419265, xpnProjectStatus_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 228419265, xpnProjectStatus_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 298712229, defaultServiceAccount_);
@@ -1300,7 +1359,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
           output, 469017467, enabledFeatures_.getRaw(i));
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeEnum(471753361, defaultNetworkTier_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 471753361, defaultNetworkTier_);
     }
     unknownFields.writeTo(output);
   }
@@ -1333,7 +1392,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
               185794117, getCommonInstanceMetadata());
     }
     if (((bitField0_ & 0x00000400) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(228419265, xpnProjectStatus_);
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(228419265, xpnProjectStatus_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size +=
@@ -1360,7 +1420,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       size += 5 * getEnabledFeaturesList().size();
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(471753361, defaultNetworkTier_);
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(471753361, defaultNetworkTier_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1387,7 +1448,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasDefaultNetworkTier() != other.hasDefaultNetworkTier()) return false;
     if (hasDefaultNetworkTier()) {
-      if (defaultNetworkTier_ != other.defaultNetworkTier_) return false;
+      if (!getDefaultNetworkTier().equals(other.getDefaultNetworkTier())) return false;
     }
     if (hasDefaultServiceAccount() != other.hasDefaultServiceAccount()) return false;
     if (hasDefaultServiceAccount()) {
@@ -1421,7 +1482,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasXpnProjectStatus() != other.hasXpnProjectStatus()) return false;
     if (hasXpnProjectStatus()) {
-      if (xpnProjectStatus_ != other.xpnProjectStatus_) return false;
+      if (!getXpnProjectStatus().equals(other.getXpnProjectStatus())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1444,7 +1505,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasDefaultNetworkTier()) {
       hash = (37 * hash) + DEFAULT_NETWORK_TIER_FIELD_NUMBER;
-      hash = (53 * hash) + defaultNetworkTier_;
+      hash = (53 * hash) + getDefaultNetworkTier().hashCode();
     }
     if (hasDefaultServiceAccount()) {
       hash = (37 * hash) + DEFAULT_SERVICE_ACCOUNT_FIELD_NUMBER;
@@ -1484,7 +1545,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasXpnProjectStatus()) {
       hash = (37 * hash) + XPN_PROJECT_STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + xpnProjectStatus_;
+      hash = (53 * hash) + getXpnProjectStatus().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1589,8 +1650,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Project resource.
-   * A project is used to organize resources in a Google Cloud Platform environment. For more information, read about the  Resource Hierarchy. (== resource_for {$api_version}.projects ==)
+   * Represents a Project resource. A project is used to organize resources in a Google Cloud Platform environment. For more information, read about the Resource Hierarchy.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Project}
@@ -1643,7 +1703,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
-      defaultNetworkTier_ = 0;
+      defaultNetworkTier_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
       defaultServiceAccount_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1671,7 +1731,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
         usageExportLocationBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000800);
-      xpnProjectStatus_ = 0;
+      xpnProjectStatus_ = "";
       bitField0_ = (bitField0_ & ~0x00001000);
       return this;
     }
@@ -1826,7 +1886,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasDefaultNetworkTier()) {
-        setDefaultNetworkTier(other.getDefaultNetworkTier());
+        bitField0_ |= 0x00000004;
+        defaultNetworkTier_ = other.defaultNetworkTier_;
+        onChanged();
       }
       if (other.hasDefaultServiceAccount()) {
         bitField0_ |= 0x00000008;
@@ -1897,7 +1959,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
         mergeUsageExportLocation(other.getUsageExportLocation());
       }
       if (other.hasXpnProjectStatus()) {
-        setXpnProjectStatus(other.getXpnProjectStatus());
+        bitField0_ |= 0x00001000;
+        xpnProjectStatus_ = other.xpnProjectStatus_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1943,7 +2007,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
+     * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
      *
      * @return Whether the commonInstanceMetadata field is set.
      */
@@ -1957,7 +2021,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
+     * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
      *
      * @return The commonInstanceMetadata.
      */
@@ -1977,7 +2041,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
+     * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
      */
     public Builder setCommonInstanceMetadata(com.google.cloud.compute.v1.Metadata value) {
       if (commonInstanceMetadataBuilder_ == null) {
@@ -1999,7 +2063,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
+     * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
      */
     public Builder setCommonInstanceMetadata(
         com.google.cloud.compute.v1.Metadata.Builder builderForValue) {
@@ -2019,7 +2083,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
+     * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
      */
     public Builder mergeCommonInstanceMetadata(com.google.cloud.compute.v1.Metadata value) {
       if (commonInstanceMetadataBuilder_ == null) {
@@ -2048,7 +2112,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
+     * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
      */
     public Builder clearCommonInstanceMetadata() {
       if (commonInstanceMetadataBuilder_ == null) {
@@ -2067,7 +2131,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
+     * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
      */
     public com.google.cloud.compute.v1.Metadata.Builder getCommonInstanceMetadataBuilder() {
       bitField0_ |= 0x00000001;
@@ -2081,7 +2145,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
+     * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
      */
     public com.google.cloud.compute.v1.MetadataOrBuilder getCommonInstanceMetadataOrBuilder() {
       if (commonInstanceMetadataBuilder_ != null) {
@@ -2099,7 +2163,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
+     * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Metadata,
@@ -2126,7 +2190,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -2140,7 +2204,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -2162,7 +2226,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -2184,7 +2248,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -2205,7 +2269,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -2222,7 +2286,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -2238,20 +2302,19 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int defaultNetworkTier_ = 0;
+    private java.lang.Object defaultNetworkTier_ = "";
     /**
      *
      *
      * <pre>
      * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+     * Check the DefaultNetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
-     * </code>
+     * <code>optional string default_network_tier = 471753361;</code>
      *
      * @return Whether the defaultNetworkTier field is set.
      */
-    @java.lang.Override
     public boolean hasDefaultNetworkTier() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -2260,31 +2323,64 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+     * Check the DefaultNetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
-     * </code>
+     * <code>optional string default_network_tier = 471753361;</code>
      *
-     * @return The enum numeric value on the wire for defaultNetworkTier.
+     * @return The defaultNetworkTier.
      */
-    @java.lang.Override
-    public int getDefaultNetworkTierValue() {
-      return defaultNetworkTier_;
+    public java.lang.String getDefaultNetworkTier() {
+      java.lang.Object ref = defaultNetworkTier_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        defaultNetworkTier_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+     * Check the DefaultNetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
-     * </code>
+     * <code>optional string default_network_tier = 471753361;</code>
      *
-     * @param value The enum numeric value on the wire for defaultNetworkTier to set.
+     * @return The bytes for defaultNetworkTier.
+     */
+    public com.google.protobuf.ByteString getDefaultNetworkTierBytes() {
+      java.lang.Object ref = defaultNetworkTier_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        defaultNetworkTier_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+     * Check the DefaultNetworkTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string default_network_tier = 471753361;</code>
+     *
+     * @param value The defaultNetworkTier to set.
      * @return This builder for chaining.
      */
-    public Builder setDefaultNetworkTierValue(int value) {
+    public Builder setDefaultNetworkTier(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000004;
       defaultNetworkTier_ = value;
       onChanged();
@@ -2295,42 +2391,16 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+     * Check the DefaultNetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
-     * </code>
+     * <code>optional string default_network_tier = 471753361;</code>
      *
-     * @return The defaultNetworkTier.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Project.DefaultNetworkTier getDefaultNetworkTier() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Project.DefaultNetworkTier result =
-          com.google.cloud.compute.v1.Project.DefaultNetworkTier.valueOf(defaultNetworkTier_);
-      return result == null
-          ? com.google.cloud.compute.v1.Project.DefaultNetworkTier.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
-     * </code>
-     *
-     * @param value The defaultNetworkTier to set.
      * @return This builder for chaining.
      */
-    public Builder setDefaultNetworkTier(
-        com.google.cloud.compute.v1.Project.DefaultNetworkTier value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000004;
-      defaultNetworkTier_ = value.getNumber();
+    public Builder clearDefaultNetworkTier() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      defaultNetworkTier_ = getDefaultInstance().getDefaultNetworkTier();
       onChanged();
       return this;
     }
@@ -2339,16 +2409,21 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+     * Check the DefaultNetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
-     * </code>
+     * <code>optional string default_network_tier = 471753361;</code>
      *
+     * @param value The bytes for defaultNetworkTier to set.
      * @return This builder for chaining.
      */
-    public Builder clearDefaultNetworkTier() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      defaultNetworkTier_ = 0;
+    public Builder setDefaultNetworkTierBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000004;
+      defaultNetworkTier_ = value;
       onChanged();
       return this;
     }
@@ -2361,7 +2436,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Default service account used by VMs running in this project.
      * </pre>
      *
-     * <code>string default_service_account = 298712229;</code>
+     * <code>optional string default_service_account = 298712229;</code>
      *
      * @return Whether the defaultServiceAccount field is set.
      */
@@ -2375,7 +2450,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Default service account used by VMs running in this project.
      * </pre>
      *
-     * <code>string default_service_account = 298712229;</code>
+     * <code>optional string default_service_account = 298712229;</code>
      *
      * @return The defaultServiceAccount.
      */
@@ -2397,7 +2472,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Default service account used by VMs running in this project.
      * </pre>
      *
-     * <code>string default_service_account = 298712229;</code>
+     * <code>optional string default_service_account = 298712229;</code>
      *
      * @return The bytes for defaultServiceAccount.
      */
@@ -2419,7 +2494,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Default service account used by VMs running in this project.
      * </pre>
      *
-     * <code>string default_service_account = 298712229;</code>
+     * <code>optional string default_service_account = 298712229;</code>
      *
      * @param value The defaultServiceAccount to set.
      * @return This builder for chaining.
@@ -2440,7 +2515,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Default service account used by VMs running in this project.
      * </pre>
      *
-     * <code>string default_service_account = 298712229;</code>
+     * <code>optional string default_service_account = 298712229;</code>
      *
      * @return This builder for chaining.
      */
@@ -2457,7 +2532,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Default service account used by VMs running in this project.
      * </pre>
      *
-     * <code>string default_service_account = 298712229;</code>
+     * <code>optional string default_service_account = 298712229;</code>
      *
      * @param value The bytes for defaultServiceAccount to set.
      * @return This builder for chaining.
@@ -2481,7 +2556,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -2495,7 +2570,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -2517,7 +2592,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -2539,7 +2614,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2560,7 +2635,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -2577,7 +2652,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2766,10 +2841,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is not the project ID, and is just a unique ID used by Compute Engine to identify resources.
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -2781,10 +2856,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is not the project ID, and is just a unique ID used by Compute Engine to identify resources.
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -2796,10 +2871,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is not the project ID, and is just a unique ID used by Compute Engine to identify resources.
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -2814,10 +2889,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is not the project ID, and is just a unique ID used by Compute Engine to identify resources.
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -2836,7 +2911,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#project for projects.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -2850,7 +2925,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#project for projects.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -2872,7 +2947,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#project for projects.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -2894,7 +2969,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#project for projects.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -2915,7 +2990,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#project for projects.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -2932,7 +3007,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#project for projects.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -2956,7 +3031,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -2970,7 +3045,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -2992,7 +3067,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -3014,7 +3089,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -3035,7 +3110,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -3052,7 +3127,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -3422,7 +3497,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -3436,7 +3511,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -3458,7 +3533,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3480,7 +3555,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3501,7 +3576,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -3518,7 +3593,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -3547,7 +3622,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;
+     * </code>
      *
      * @return Whether the usageExportLocation field is set.
      */
@@ -3561,7 +3638,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;
+     * </code>
      *
      * @return The usageExportLocation.
      */
@@ -3581,7 +3660,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;
+     * </code>
      */
     public Builder setUsageExportLocation(com.google.cloud.compute.v1.UsageExportLocation value) {
       if (usageExportLocationBuilder_ == null) {
@@ -3603,7 +3684,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;
+     * </code>
      */
     public Builder setUsageExportLocation(
         com.google.cloud.compute.v1.UsageExportLocation.Builder builderForValue) {
@@ -3623,7 +3706,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;
+     * </code>
      */
     public Builder mergeUsageExportLocation(com.google.cloud.compute.v1.UsageExportLocation value) {
       if (usageExportLocationBuilder_ == null) {
@@ -3652,7 +3737,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;
+     * </code>
      */
     public Builder clearUsageExportLocation() {
       if (usageExportLocationBuilder_ == null) {
@@ -3671,7 +3758,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;
+     * </code>
      */
     public com.google.cloud.compute.v1.UsageExportLocation.Builder getUsageExportLocationBuilder() {
       bitField0_ |= 0x00000800;
@@ -3685,7 +3774,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;
+     * </code>
      */
     public com.google.cloud.compute.v1.UsageExportLocationOrBuilder
         getUsageExportLocationOrBuilder() {
@@ -3704,7 +3795,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.UsageExportLocation,
@@ -3723,20 +3816,19 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       return usageExportLocationBuilder_;
     }
 
-    private int xpnProjectStatus_ = 0;
+    private java.lang.Object xpnProjectStatus_ = "";
     /**
      *
      *
      * <pre>
      * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+     * Check the XpnProjectStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;
-     * </code>
+     * <code>optional string xpn_project_status = 228419265;</code>
      *
      * @return Whether the xpnProjectStatus field is set.
      */
-    @java.lang.Override
     public boolean hasXpnProjectStatus() {
       return ((bitField0_ & 0x00001000) != 0);
     }
@@ -3745,31 +3837,64 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+     * Check the XpnProjectStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;
-     * </code>
+     * <code>optional string xpn_project_status = 228419265;</code>
      *
-     * @return The enum numeric value on the wire for xpnProjectStatus.
+     * @return The xpnProjectStatus.
      */
-    @java.lang.Override
-    public int getXpnProjectStatusValue() {
-      return xpnProjectStatus_;
+    public java.lang.String getXpnProjectStatus() {
+      java.lang.Object ref = xpnProjectStatus_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        xpnProjectStatus_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+     * Check the XpnProjectStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;
-     * </code>
+     * <code>optional string xpn_project_status = 228419265;</code>
      *
-     * @param value The enum numeric value on the wire for xpnProjectStatus to set.
+     * @return The bytes for xpnProjectStatus.
+     */
+    public com.google.protobuf.ByteString getXpnProjectStatusBytes() {
+      java.lang.Object ref = xpnProjectStatus_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        xpnProjectStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+     * Check the XpnProjectStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string xpn_project_status = 228419265;</code>
+     *
+     * @param value The xpnProjectStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setXpnProjectStatusValue(int value) {
+    public Builder setXpnProjectStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00001000;
       xpnProjectStatus_ = value;
       onChanged();
@@ -3780,41 +3905,16 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+     * Check the XpnProjectStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;
-     * </code>
+     * <code>optional string xpn_project_status = 228419265;</code>
      *
-     * @return The xpnProjectStatus.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Project.XpnProjectStatus getXpnProjectStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Project.XpnProjectStatus result =
-          com.google.cloud.compute.v1.Project.XpnProjectStatus.valueOf(xpnProjectStatus_);
-      return result == null
-          ? com.google.cloud.compute.v1.Project.XpnProjectStatus.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;
-     * </code>
-     *
-     * @param value The xpnProjectStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setXpnProjectStatus(com.google.cloud.compute.v1.Project.XpnProjectStatus value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00001000;
-      xpnProjectStatus_ = value.getNumber();
+    public Builder clearXpnProjectStatus() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      xpnProjectStatus_ = getDefaultInstance().getXpnProjectStatus();
       onChanged();
       return this;
     }
@@ -3823,16 +3923,21 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+     * Check the XpnProjectStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;
-     * </code>
+     * <code>optional string xpn_project_status = 228419265;</code>
      *
+     * @param value The bytes for xpnProjectStatus to set.
      * @return This builder for chaining.
      */
-    public Builder clearXpnProjectStatus() {
-      bitField0_ = (bitField0_ & ~0x00001000);
-      xpnProjectStatus_ = 0;
+    public Builder setXpnProjectStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00001000;
+      xpnProjectStatus_ = value;
       onChanged();
       return this;
     }

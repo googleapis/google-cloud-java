@@ -28,10 +28,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.httpjson.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -84,16 +88,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of addHealthCheck to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * TargetPoolsStubSettings.Builder targetPoolsSettingsBuilder =
  *     TargetPoolsStubSettings.newBuilder();
  * targetPoolsSettingsBuilder
- *     .addHealthCheckSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         targetPoolsSettingsBuilder
- *             .addHealthCheckSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -112,22 +116,36 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
 
   private final UnaryCallSettings<AddHealthCheckTargetPoolRequest, Operation>
       addHealthCheckSettings;
+  private final OperationCallSettings<AddHealthCheckTargetPoolRequest, Operation, Operation>
+      addHealthCheckOperationSettings;
   private final UnaryCallSettings<AddInstanceTargetPoolRequest, Operation> addInstanceSettings;
+  private final OperationCallSettings<AddInstanceTargetPoolRequest, Operation, Operation>
+      addInstanceOperationSettings;
   private final PagedCallSettings<
           AggregatedListTargetPoolsRequest, TargetPoolAggregatedList, AggregatedListPagedResponse>
       aggregatedListSettings;
   private final UnaryCallSettings<DeleteTargetPoolRequest, Operation> deleteSettings;
+  private final OperationCallSettings<DeleteTargetPoolRequest, Operation, Operation>
+      deleteOperationSettings;
   private final UnaryCallSettings<GetTargetPoolRequest, TargetPool> getSettings;
   private final UnaryCallSettings<GetHealthTargetPoolRequest, TargetPoolInstanceHealth>
       getHealthSettings;
   private final UnaryCallSettings<InsertTargetPoolRequest, Operation> insertSettings;
+  private final OperationCallSettings<InsertTargetPoolRequest, Operation, Operation>
+      insertOperationSettings;
   private final PagedCallSettings<ListTargetPoolsRequest, TargetPoolList, ListPagedResponse>
       listSettings;
   private final UnaryCallSettings<RemoveHealthCheckTargetPoolRequest, Operation>
       removeHealthCheckSettings;
+  private final OperationCallSettings<RemoveHealthCheckTargetPoolRequest, Operation, Operation>
+      removeHealthCheckOperationSettings;
   private final UnaryCallSettings<RemoveInstanceTargetPoolRequest, Operation>
       removeInstanceSettings;
+  private final OperationCallSettings<RemoveInstanceTargetPoolRequest, Operation, Operation>
+      removeInstanceOperationSettings;
   private final UnaryCallSettings<SetBackupTargetPoolRequest, Operation> setBackupSettings;
+  private final OperationCallSettings<SetBackupTargetPoolRequest, Operation, Operation>
+      setBackupOperationSettings;
 
   private static final PagedListDescriptor<
           AggregatedListTargetPoolsRequest,
@@ -261,9 +279,21 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     return addHealthCheckSettings;
   }
 
+  /** Returns the object with the settings used for calls to addHealthCheck. */
+  public OperationCallSettings<AddHealthCheckTargetPoolRequest, Operation, Operation>
+      addHealthCheckOperationSettings() {
+    return addHealthCheckOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to addInstance. */
   public UnaryCallSettings<AddInstanceTargetPoolRequest, Operation> addInstanceSettings() {
     return addInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to addInstance. */
+  public OperationCallSettings<AddInstanceTargetPoolRequest, Operation, Operation>
+      addInstanceOperationSettings() {
+    return addInstanceOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to aggregatedList. */
@@ -276,6 +306,12 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteTargetPoolRequest, Operation> deleteSettings() {
     return deleteSettings;
+  }
+
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteTargetPoolRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return deleteOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -294,6 +330,12 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     return insertSettings;
   }
 
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertTargetPoolRequest, Operation, Operation>
+      insertOperationSettings() {
+    return insertOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<ListTargetPoolsRequest, TargetPoolList, ListPagedResponse>
       listSettings() {
@@ -306,14 +348,32 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     return removeHealthCheckSettings;
   }
 
+  /** Returns the object with the settings used for calls to removeHealthCheck. */
+  public OperationCallSettings<RemoveHealthCheckTargetPoolRequest, Operation, Operation>
+      removeHealthCheckOperationSettings() {
+    return removeHealthCheckOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to removeInstance. */
   public UnaryCallSettings<RemoveInstanceTargetPoolRequest, Operation> removeInstanceSettings() {
     return removeInstanceSettings;
   }
 
+  /** Returns the object with the settings used for calls to removeInstance. */
+  public OperationCallSettings<RemoveInstanceTargetPoolRequest, Operation, Operation>
+      removeInstanceOperationSettings() {
+    return removeInstanceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setBackup. */
   public UnaryCallSettings<SetBackupTargetPoolRequest, Operation> setBackupSettings() {
     return setBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setBackup. */
+  public OperationCallSettings<SetBackupTargetPoolRequest, Operation, Operation>
+      setBackupOperationSettings() {
+    return setBackupOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -350,7 +410,9 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return GoogleCredentialsProvider.newBuilder()
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        .setUseJwtAccessWithScope(true);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -392,16 +454,24 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     super(settingsBuilder);
 
     addHealthCheckSettings = settingsBuilder.addHealthCheckSettings().build();
+    addHealthCheckOperationSettings = settingsBuilder.addHealthCheckOperationSettings().build();
     addInstanceSettings = settingsBuilder.addInstanceSettings().build();
+    addInstanceOperationSettings = settingsBuilder.addInstanceOperationSettings().build();
     aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
+    deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     getHealthSettings = settingsBuilder.getHealthSettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
+    insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     removeHealthCheckSettings = settingsBuilder.removeHealthCheckSettings().build();
+    removeHealthCheckOperationSettings =
+        settingsBuilder.removeHealthCheckOperationSettings().build();
     removeInstanceSettings = settingsBuilder.removeInstanceSettings().build();
+    removeInstanceOperationSettings = settingsBuilder.removeInstanceOperationSettings().build();
     setBackupSettings = settingsBuilder.setBackupSettings().build();
+    setBackupOperationSettings = settingsBuilder.setBackupOperationSettings().build();
   }
 
   /** Builder for TargetPoolsStubSettings. */
@@ -409,25 +479,42 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<AddHealthCheckTargetPoolRequest, Operation>
         addHealthCheckSettings;
+    private final OperationCallSettings.Builder<
+            AddHealthCheckTargetPoolRequest, Operation, Operation>
+        addHealthCheckOperationSettings;
     private final UnaryCallSettings.Builder<AddInstanceTargetPoolRequest, Operation>
         addInstanceSettings;
+    private final OperationCallSettings.Builder<AddInstanceTargetPoolRequest, Operation, Operation>
+        addInstanceOperationSettings;
     private final PagedCallSettings.Builder<
             AggregatedListTargetPoolsRequest, TargetPoolAggregatedList, AggregatedListPagedResponse>
         aggregatedListSettings;
     private final UnaryCallSettings.Builder<DeleteTargetPoolRequest, Operation> deleteSettings;
+    private final OperationCallSettings.Builder<DeleteTargetPoolRequest, Operation, Operation>
+        deleteOperationSettings;
     private final UnaryCallSettings.Builder<GetTargetPoolRequest, TargetPool> getSettings;
     private final UnaryCallSettings.Builder<GetHealthTargetPoolRequest, TargetPoolInstanceHealth>
         getHealthSettings;
     private final UnaryCallSettings.Builder<InsertTargetPoolRequest, Operation> insertSettings;
+    private final OperationCallSettings.Builder<InsertTargetPoolRequest, Operation, Operation>
+        insertOperationSettings;
     private final PagedCallSettings.Builder<
             ListTargetPoolsRequest, TargetPoolList, ListPagedResponse>
         listSettings;
     private final UnaryCallSettings.Builder<RemoveHealthCheckTargetPoolRequest, Operation>
         removeHealthCheckSettings;
+    private final OperationCallSettings.Builder<
+            RemoveHealthCheckTargetPoolRequest, Operation, Operation>
+        removeHealthCheckOperationSettings;
     private final UnaryCallSettings.Builder<RemoveInstanceTargetPoolRequest, Operation>
         removeInstanceSettings;
+    private final OperationCallSettings.Builder<
+            RemoveInstanceTargetPoolRequest, Operation, Operation>
+        removeInstanceOperationSettings;
     private final UnaryCallSettings.Builder<SetBackupTargetPoolRequest, Operation>
         setBackupSettings;
+    private final OperationCallSettings.Builder<SetBackupTargetPoolRequest, Operation, Operation>
+        setBackupOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -479,16 +566,23 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
       super(clientContext);
 
       addHealthCheckSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addHealthCheckOperationSettings = OperationCallSettings.newBuilder();
       addInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addInstanceOperationSettings = OperationCallSettings.newBuilder();
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getHealthSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       removeHealthCheckSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      removeHealthCheckOperationSettings = OperationCallSettings.newBuilder();
       removeInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      removeInstanceOperationSettings = OperationCallSettings.newBuilder();
       setBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setBackupOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -510,16 +604,23 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
       super(settings);
 
       addHealthCheckSettings = settings.addHealthCheckSettings.toBuilder();
+      addHealthCheckOperationSettings = settings.addHealthCheckOperationSettings.toBuilder();
       addInstanceSettings = settings.addInstanceSettings.toBuilder();
+      addInstanceOperationSettings = settings.addInstanceOperationSettings.toBuilder();
       aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
+      deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       getHealthSettings = settings.getHealthSettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
+      insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       removeHealthCheckSettings = settings.removeHealthCheckSettings.toBuilder();
+      removeHealthCheckOperationSettings = settings.removeHealthCheckOperationSettings.toBuilder();
       removeInstanceSettings = settings.removeInstanceSettings.toBuilder();
+      removeInstanceOperationSettings = settings.removeInstanceOperationSettings.toBuilder();
       setBackupSettings = settings.setBackupSettings.toBuilder();
+      setBackupOperationSettings = settings.setBackupOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -605,6 +706,175 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .addHealthCheckOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AddHealthCheckTargetPoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .addInstanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AddInstanceTargetPoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .deleteOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteTargetPoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .insertOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<InsertTargetPoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .removeHealthCheckOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RemoveHealthCheckTargetPoolRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .removeInstanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RemoveInstanceTargetPoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetBackupTargetPoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -629,10 +899,26 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
       return addHealthCheckSettings;
     }
 
+    /** Returns the builder for the settings used for calls to addHealthCheck. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<AddHealthCheckTargetPoolRequest, Operation, Operation>
+        addHealthCheckOperationSettings() {
+      return addHealthCheckOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to addInstance. */
     public UnaryCallSettings.Builder<AddInstanceTargetPoolRequest, Operation>
         addInstanceSettings() {
       return addInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addInstance. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<AddInstanceTargetPoolRequest, Operation, Operation>
+        addInstanceOperationSettings() {
+      return addInstanceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to aggregatedList. */
@@ -645,6 +931,14 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteTargetPoolRequest, Operation> deleteSettings() {
       return deleteSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to delete. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteTargetPoolRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return deleteOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -663,6 +957,14 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
       return insertSettings;
     }
 
+    /** Returns the builder for the settings used for calls to insert. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<InsertTargetPoolRequest, Operation, Operation>
+        insertOperationSettings() {
+      return insertOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to list. */
     public PagedCallSettings.Builder<ListTargetPoolsRequest, TargetPoolList, ListPagedResponse>
         listSettings() {
@@ -675,15 +977,39 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
       return removeHealthCheckSettings;
     }
 
+    /** Returns the builder for the settings used for calls to removeHealthCheck. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<RemoveHealthCheckTargetPoolRequest, Operation, Operation>
+        removeHealthCheckOperationSettings() {
+      return removeHealthCheckOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to removeInstance. */
     public UnaryCallSettings.Builder<RemoveInstanceTargetPoolRequest, Operation>
         removeInstanceSettings() {
       return removeInstanceSettings;
     }
 
+    /** Returns the builder for the settings used for calls to removeInstance. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<RemoveInstanceTargetPoolRequest, Operation, Operation>
+        removeInstanceOperationSettings() {
+      return removeInstanceOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setBackup. */
     public UnaryCallSettings.Builder<SetBackupTargetPoolRequest, Operation> setBackupSettings() {
       return setBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setBackup. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetBackupTargetPoolRequest, Operation, Operation>
+        setBackupOperationSettings() {
+      return setBackupOperationSettings;
     }
 
     @Override

@@ -30,7 +30,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -42,7 +42,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -54,7 +54,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -67,7 +67,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -79,7 +79,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -91,7 +91,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -104,7 +104,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * The IPv4 address to be used for reverse DNS verification.
    * </pre>
    *
-   * <code>string dns_verification_ip = 241011381;</code>
+   * <code>optional string dns_verification_ip = 241011381;</code>
    *
    * @return Whether the dnsVerificationIp field is set.
    */
@@ -116,7 +116,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * The IPv4 address to be used for reverse DNS verification.
    * </pre>
    *
-   * <code>string dns_verification_ip = 241011381;</code>
+   * <code>optional string dns_verification_ip = 241011381;</code>
    *
    * @return The dnsVerificationIp.
    */
@@ -128,7 +128,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * The IPv4 address to be used for reverse DNS verification.
    * </pre>
    *
-   * <code>string dns_verification_ip = 241011381;</code>
+   * <code>optional string dns_verification_ip = 241011381;</code>
    *
    * @return The bytes for dnsVerificationIp.
    */
@@ -138,11 +138,10 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return Whether the fingerprint field is set.
    */
@@ -151,11 +150,10 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The fingerprint.
    */
@@ -164,11 +162,10 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The bytes for fingerprint.
    */
@@ -181,7 +178,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * [Output Only] The unique identifier for the resource type. The server generates this identifier.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -193,7 +190,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * [Output Only] The unique identifier for the resource type. The server generates this identifier.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -206,7 +203,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return Whether the ipCidrRange field is set.
    */
@@ -218,7 +215,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return The ipCidrRange.
    */
@@ -230,7 +227,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return The bytes for ipCidrRange.
    */
@@ -243,7 +240,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -255,7 +252,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -267,7 +264,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -280,7 +277,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -292,7 +289,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -304,7 +301,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -384,7 +381,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -396,7 +393,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -408,7 +405,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -421,7 +418,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * [Output Only] The shared secret to be used for reverse DNS verification.
    * </pre>
    *
-   * <code>string shared_secret = 381932490;</code>
+   * <code>optional string shared_secret = 381932490;</code>
    *
    * @return Whether the sharedSecret field is set.
    */
@@ -433,7 +430,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * [Output Only] The shared secret to be used for reverse DNS verification.
    * </pre>
    *
-   * <code>string shared_secret = 381932490;</code>
+   * <code>optional string shared_secret = 381932490;</code>
    *
    * @return The sharedSecret.
    */
@@ -445,7 +442,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    * [Output Only] The shared secret to be used for reverse DNS verification.
    * </pre>
    *
-   * <code>string shared_secret = 381932490;</code>
+   * <code>optional string shared_secret = 381932490;</code>
    *
    * @return The bytes for sharedSecret.
    */
@@ -456,9 +453,10 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    * <pre>
    * The status of the public advertised prefix.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PublicAdvertisedPrefix.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -468,23 +466,25 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    * <pre>
    * The status of the public advertised prefix.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PublicAdvertisedPrefix.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    *
    *
    * <pre>
    * The status of the public advertised prefix.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PublicAdvertisedPrefix.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1.PublicAdvertisedPrefix.Status getStatus();
+  com.google.protobuf.ByteString getStatusBytes();
 }

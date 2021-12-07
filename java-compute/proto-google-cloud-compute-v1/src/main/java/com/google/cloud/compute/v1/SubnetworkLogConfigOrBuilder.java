@@ -28,11 +28,10 @@ public interface SubnetworkLogConfigOrBuilder
    *
    * <pre>
    * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+   * Check the AggregationInterval enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;
-   * </code>
+   * <code>optional string aggregation_interval = 174919042;</code>
    *
    * @return Whether the aggregationInterval field is set.
    */
@@ -42,29 +41,27 @@ public interface SubnetworkLogConfigOrBuilder
    *
    * <pre>
    * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+   * Check the AggregationInterval enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;
-   * </code>
+   * <code>optional string aggregation_interval = 174919042;</code>
    *
-   * @return The enum numeric value on the wire for aggregationInterval.
+   * @return The aggregationInterval.
    */
-  int getAggregationIntervalValue();
+  java.lang.String getAggregationInterval();
   /**
    *
    *
    * <pre>
    * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+   * Check the AggregationInterval enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;
-   * </code>
+   * <code>optional string aggregation_interval = 174919042;</code>
    *
-   * @return The aggregationInterval.
+   * @return The bytes for aggregationInterval.
    */
-  com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval getAggregationInterval();
+  com.google.protobuf.ByteString getAggregationIntervalBytes();
 
   /**
    *
@@ -73,7 +70,7 @@ public interface SubnetworkLogConfigOrBuilder
    * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
    * </pre>
    *
-   * <code>bool enable = 311764355;</code>
+   * <code>optional bool enable = 311764355;</code>
    *
    * @return Whether the enable field is set.
    */
@@ -85,7 +82,7 @@ public interface SubnetworkLogConfigOrBuilder
    * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
    * </pre>
    *
-   * <code>bool enable = 311764355;</code>
+   * <code>optional bool enable = 311764355;</code>
    *
    * @return The enable.
    */
@@ -98,7 +95,7 @@ public interface SubnetworkLogConfigOrBuilder
    * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
    * </pre>
    *
-   * <code>string filter_expr = 183374428;</code>
+   * <code>optional string filter_expr = 183374428;</code>
    *
    * @return Whether the filterExpr field is set.
    */
@@ -110,7 +107,7 @@ public interface SubnetworkLogConfigOrBuilder
    * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
    * </pre>
    *
-   * <code>string filter_expr = 183374428;</code>
+   * <code>optional string filter_expr = 183374428;</code>
    *
    * @return The filterExpr.
    */
@@ -122,7 +119,7 @@ public interface SubnetworkLogConfigOrBuilder
    * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
    * </pre>
    *
-   * <code>string filter_expr = 183374428;</code>
+   * <code>optional string filter_expr = 183374428;</code>
    *
    * @return The bytes for filterExpr.
    */
@@ -135,7 +132,7 @@ public interface SubnetworkLogConfigOrBuilder
    * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
    * </pre>
    *
-   * <code>float flow_sampling = 530150360;</code>
+   * <code>optional float flow_sampling = 530150360;</code>
    *
    * @return Whether the flowSampling field is set.
    */
@@ -147,7 +144,7 @@ public interface SubnetworkLogConfigOrBuilder
    * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
    * </pre>
    *
-   * <code>float flow_sampling = 530150360;</code>
+   * <code>optional float flow_sampling = 530150360;</code>
    *
    * @return The flowSampling.
    */
@@ -158,9 +155,10 @@ public interface SubnetworkLogConfigOrBuilder
    *
    * <pre>
    * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+   * Check the Metadata enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
+   * <code>optional string metadata = 86866735;</code>
    *
    * @return Whether the metadata field is set.
    */
@@ -170,25 +168,27 @@ public interface SubnetworkLogConfigOrBuilder
    *
    * <pre>
    * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+   * Check the Metadata enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
+   * <code>optional string metadata = 86866735;</code>
    *
-   * @return The enum numeric value on the wire for metadata.
+   * @return The metadata.
    */
-  int getMetadataValue();
+  java.lang.String getMetadata();
   /**
    *
    *
    * <pre>
    * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+   * Check the Metadata enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
+   * <code>optional string metadata = 86866735;</code>
    *
-   * @return The metadata.
+   * @return The bytes for metadata.
    */
-  com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata getMetadata();
+  com.google.protobuf.ByteString getMetadataBytes();
 
   /**
    *

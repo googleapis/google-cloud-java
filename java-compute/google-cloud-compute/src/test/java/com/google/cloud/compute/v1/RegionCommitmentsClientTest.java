@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonRegionCommitmentsStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -36,6 +37,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -135,6 +137,7 @@ public class RegionCommitmentsClientTest {
   public void getTest() throws Exception {
     Commitment expectedResponse =
         Commitment.newBuilder()
+            .setCategory("category50511102")
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setEndTimestamp("endTimestamp-356088197")
@@ -142,12 +145,15 @@ public class RegionCommitmentsClientTest {
             .setKind("kind3292052")
             .setLicenseResource(LicenseResourceCommitment.newBuilder().build())
             .setName("name3373707")
+            .setPlan("plan3443497")
             .setRegion("region-934795532")
             .addAllReservations(new ArrayList<Reservation>())
             .addAllResources(new ArrayList<ResourceCommitment>())
             .setSelfLink("selfLink1191800166")
             .setStartTimestamp("startTimestamp-299216172")
+            .setStatus("status-892481550")
             .setStatusMessage("statusMessage-958704715")
+            .setType("type3575610")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -201,7 +207,7 @@ public class RegionCommitmentsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -212,6 +218,7 @@ public class RegionCommitmentsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -225,7 +232,7 @@ public class RegionCommitmentsClientTest {
     String region = "region-934795532";
     Commitment commitmentResource = Commitment.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, region, commitmentResource);
+    Operation actualResponse = client.insertAsync(project, region, commitmentResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -254,10 +261,9 @@ public class RegionCommitmentsClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       Commitment commitmentResource = Commitment.newBuilder().build();
-      client.insert(project, region, commitmentResource);
+      client.insertAsync(project, region, commitmentResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 

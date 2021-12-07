@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.InstanceGroupsStub;
@@ -46,11 +48,7 @@ import javax.annotation.Generated;
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
  *   String instanceGroup = "instanceGroup-1404696854";
- *   InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource =
- *       InstanceGroupsAddInstancesRequest.newBuilder().build();
- *   Operation response =
- *       instanceGroupsClient.addInstances(
- *           project, zone, instanceGroup, instanceGroupsAddInstancesRequestResource);
+ *   InstanceGroup response = instanceGroupsClient.get(project, zone, instanceGroup);
  * }
  * }</pre>
  *
@@ -168,8 +166,10 @@ public class InstanceGroupsClient implements BackgroundResource {
    *   InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource =
    *       InstanceGroupsAddInstancesRequest.newBuilder().build();
    *   Operation response =
-   *       instanceGroupsClient.addInstances(
-   *           project, zone, instanceGroup, instanceGroupsAddInstancesRequestResource);
+   *       instanceGroupsClient
+   *           .addInstancesAsync(
+   *               project, zone, instanceGroup, instanceGroupsAddInstancesRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -179,7 +179,7 @@ public class InstanceGroupsClient implements BackgroundResource {
    * @param instanceGroupsAddInstancesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation addInstances(
+  public final OperationFuture<Operation, Operation> addInstancesAsync(
       String project,
       String zone,
       String instanceGroup,
@@ -191,7 +191,7 @@ public class InstanceGroupsClient implements BackgroundResource {
             .setInstanceGroup(instanceGroup)
             .setInstanceGroupsAddInstancesRequestResource(instanceGroupsAddInstancesRequestResource)
             .build();
-    return addInstances(request);
+    return addInstancesAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -212,15 +212,48 @@ public class InstanceGroupsClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instanceGroupsClient.addInstances(request);
+   *   Operation response = instanceGroupsClient.addInstancesAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation addInstances(AddInstancesInstanceGroupRequest request) {
-    return addInstancesCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> addInstancesAsync(
+      AddInstancesInstanceGroupRequest request) {
+    return addInstancesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds a list of instances to the specified instance group. All of the instances in the instance
+   * group must be in the same network/subnetwork. Read Adding instances for more information.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
+   *   AddInstancesInstanceGroupRequest request =
+   *       AddInstancesInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setInstanceGroupsAddInstancesRequestResource(
+   *               InstanceGroupsAddInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupsClient.addInstancesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<AddInstancesInstanceGroupRequest, Operation, Operation>
+      addInstancesOperationCallable() {
+    return stub.addInstancesOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -393,7 +426,7 @@ public class InstanceGroupsClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
    *   String instanceGroup = "instanceGroup-1404696854";
-   *   Operation response = instanceGroupsClient.delete(project, zone, instanceGroup);
+   *   Operation response = instanceGroupsClient.deleteAsync(project, zone, instanceGroup).get();
    * }
    * }</pre>
    *
@@ -402,14 +435,15 @@ public class InstanceGroupsClient implements BackgroundResource {
    * @param instanceGroup The name of the instance group to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String zone, String instanceGroup) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String zone, String instanceGroup) {
     DeleteInstanceGroupRequest request =
         DeleteInstanceGroupRequest.newBuilder()
             .setProject(project)
             .setZone(zone)
             .setInstanceGroup(instanceGroup)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -429,15 +463,47 @@ public class InstanceGroupsClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instanceGroupsClient.delete(request);
+   *   Operation response = instanceGroupsClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteInstanceGroupRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      DeleteInstanceGroupRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified instance group. The instances in the group are not deleted. Note that
+   * instance group must not belong to a backend service. Read Deleting an instance group for more
+   * information.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
+   *   DeleteInstanceGroupRequest request =
+   *       DeleteInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupsClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteInstanceGroupRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -470,10 +536,8 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified zonal instance group. Get a list of available zonal instance groups by
-   * making a list() request.
-   *
-   * <p>For managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers
-   * methods instead.
+   * making a list() request. For managed instance groups, use the instanceGroupManagers or
+   * regionInstanceGroupManagers methods instead.
    *
    * <p>Sample code:
    *
@@ -504,10 +568,8 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified zonal instance group. Get a list of available zonal instance groups by
-   * making a list() request.
-   *
-   * <p>For managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers
-   * methods instead.
+   * making a list() request. For managed instance groups, use the instanceGroupManagers or
+   * regionInstanceGroupManagers methods instead.
    *
    * <p>Sample code:
    *
@@ -533,10 +595,8 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified zonal instance group. Get a list of available zonal instance groups by
-   * making a list() request.
-   *
-   * <p>For managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers
-   * methods instead.
+   * making a list() request. For managed instance groups, use the instanceGroupManagers or
+   * regionInstanceGroupManagers methods instead.
    *
    * <p>Sample code:
    *
@@ -570,7 +630,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
    *   InstanceGroup instanceGroupResource = InstanceGroup.newBuilder().build();
-   *   Operation response = instanceGroupsClient.insert(project, zone, instanceGroupResource);
+   *   Operation response =
+   *       instanceGroupsClient.insertAsync(project, zone, instanceGroupResource).get();
    * }
    * }</pre>
    *
@@ -579,14 +640,15 @@ public class InstanceGroupsClient implements BackgroundResource {
    * @param instanceGroupResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(String project, String zone, InstanceGroup instanceGroupResource) {
+  public final OperationFuture<Operation, Operation> insertAsync(
+      String project, String zone, InstanceGroup instanceGroupResource) {
     InsertInstanceGroupRequest request =
         InsertInstanceGroupRequest.newBuilder()
             .setProject(project)
             .setZone(zone)
             .setInstanceGroupResource(instanceGroupResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -605,15 +667,46 @@ public class InstanceGroupsClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instanceGroupsClient.insert(request);
+   *   Operation response = instanceGroupsClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertInstanceGroupRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(
+      InsertInstanceGroupRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an instance group in the specified project using the parameters that are included in
+   * the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
+   *   InsertInstanceGroupRequest request =
+   *       InsertInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroupResource(InstanceGroup.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupsClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertInstanceGroupRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -644,10 +737,9 @@ public class InstanceGroupsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of zonal instance group resources contained within the specified zone.
-   *
-   * <p>For managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers
-   * methods instead.
+   * Retrieves the list of zonal instance group resources contained within the specified zone. For
+   * managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers methods
+   * instead.
    *
    * <p>Sample code:
    *
@@ -673,10 +765,9 @@ public class InstanceGroupsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of zonal instance group resources contained within the specified zone.
-   *
-   * <p>For managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers
-   * methods instead.
+   * Retrieves the list of zonal instance group resources contained within the specified zone. For
+   * managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers methods
+   * instead.
    *
    * <p>Sample code:
    *
@@ -707,10 +798,9 @@ public class InstanceGroupsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of zonal instance group resources contained within the specified zone.
-   *
-   * <p>For managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers
-   * methods instead.
+   * Retrieves the list of zonal instance group resources contained within the specified zone. For
+   * managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers methods
+   * instead.
    *
    * <p>Sample code:
    *
@@ -741,10 +831,9 @@ public class InstanceGroupsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of zonal instance group resources contained within the specified zone.
-   *
-   * <p>For managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers
-   * methods instead.
+   * Retrieves the list of zonal instance group resources contained within the specified zone. For
+   * managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers methods
+   * instead.
    *
    * <p>Sample code:
    *
@@ -945,11 +1034,9 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes one or more instances from the specified instance group, but does not delete those
-   * instances.
-   *
-   * <p>If the group is part of a backend service that has enabled connection draining, it can take
-   * up to 60 seconds after the connection draining duration before the VM instance is removed or
-   * deleted.
+   * instances. If the group is part of a backend service that has enabled connection draining, it
+   * can take up to 60 seconds after the connection draining duration before the VM instance is
+   * removed or deleted.
    *
    * <p>Sample code:
    *
@@ -961,8 +1048,10 @@ public class InstanceGroupsClient implements BackgroundResource {
    *   InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource =
    *       InstanceGroupsRemoveInstancesRequest.newBuilder().build();
    *   Operation response =
-   *       instanceGroupsClient.removeInstances(
-   *           project, zone, instanceGroup, instanceGroupsRemoveInstancesRequestResource);
+   *       instanceGroupsClient
+   *           .removeInstancesAsync(
+   *               project, zone, instanceGroup, instanceGroupsRemoveInstancesRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -973,7 +1062,7 @@ public class InstanceGroupsClient implements BackgroundResource {
    * @param instanceGroupsRemoveInstancesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation removeInstances(
+  public final OperationFuture<Operation, Operation> removeInstancesAsync(
       String project,
       String zone,
       String instanceGroup,
@@ -986,17 +1075,15 @@ public class InstanceGroupsClient implements BackgroundResource {
             .setInstanceGroupsRemoveInstancesRequestResource(
                 instanceGroupsRemoveInstancesRequestResource)
             .build();
-    return removeInstances(request);
+    return removeInstancesAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes one or more instances from the specified instance group, but does not delete those
-   * instances.
-   *
-   * <p>If the group is part of a backend service that has enabled connection draining, it can take
-   * up to 60 seconds after the connection draining duration before the VM instance is removed or
-   * deleted.
+   * instances. If the group is part of a backend service that has enabled connection draining, it
+   * can take up to 60 seconds after the connection draining duration before the VM instance is
+   * removed or deleted.
    *
    * <p>Sample code:
    *
@@ -1011,25 +1098,58 @@ public class InstanceGroupsClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instanceGroupsClient.removeInstances(request);
+   *   Operation response = instanceGroupsClient.removeInstancesAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation removeInstances(RemoveInstancesInstanceGroupRequest request) {
-    return removeInstancesCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> removeInstancesAsync(
+      RemoveInstancesInstanceGroupRequest request) {
+    return removeInstancesOperationCallable().futureCall(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes one or more instances from the specified instance group, but does not delete those
-   * instances.
+   * instances. If the group is part of a backend service that has enabled connection draining, it
+   * can take up to 60 seconds after the connection draining duration before the VM instance is
+   * removed or deleted.
    *
-   * <p>If the group is part of a backend service that has enabled connection draining, it can take
-   * up to 60 seconds after the connection draining duration before the VM instance is removed or
-   * deleted.
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
+   *   RemoveInstancesInstanceGroupRequest request =
+   *       RemoveInstancesInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setInstanceGroupsRemoveInstancesRequestResource(
+   *               InstanceGroupsRemoveInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupsClient.removeInstancesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<RemoveInstancesInstanceGroupRequest, Operation, Operation>
+      removeInstancesOperationCallable() {
+    return stub.removeInstancesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes one or more instances from the specified instance group, but does not delete those
+   * instances. If the group is part of a backend service that has enabled connection draining, it
+   * can take up to 60 seconds after the connection draining duration before the VM instance is
+   * removed or deleted.
    *
    * <p>Sample code:
    *
@@ -1070,8 +1190,10 @@ public class InstanceGroupsClient implements BackgroundResource {
    *   InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource =
    *       InstanceGroupsSetNamedPortsRequest.newBuilder().build();
    *   Operation response =
-   *       instanceGroupsClient.setNamedPorts(
-   *           project, zone, instanceGroup, instanceGroupsSetNamedPortsRequestResource);
+   *       instanceGroupsClient
+   *           .setNamedPortsAsync(
+   *               project, zone, instanceGroup, instanceGroupsSetNamedPortsRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -1081,7 +1203,7 @@ public class InstanceGroupsClient implements BackgroundResource {
    * @param instanceGroupsSetNamedPortsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setNamedPorts(
+  public final OperationFuture<Operation, Operation> setNamedPortsAsync(
       String project,
       String zone,
       String instanceGroup,
@@ -1094,7 +1216,7 @@ public class InstanceGroupsClient implements BackgroundResource {
             .setInstanceGroupsSetNamedPortsRequestResource(
                 instanceGroupsSetNamedPortsRequestResource)
             .build();
-    return setNamedPorts(request);
+    return setNamedPortsAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1114,15 +1236,47 @@ public class InstanceGroupsClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instanceGroupsClient.setNamedPorts(request);
+   *   Operation response = instanceGroupsClient.setNamedPortsAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setNamedPorts(SetNamedPortsInstanceGroupRequest request) {
-    return setNamedPortsCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setNamedPortsAsync(
+      SetNamedPortsInstanceGroupRequest request) {
+    return setNamedPortsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the named ports for the specified instance group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
+   *   SetNamedPortsInstanceGroupRequest request =
+   *       SetNamedPortsInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setInstanceGroupsSetNamedPortsRequestResource(
+   *               InstanceGroupsSetNamedPortsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupsClient.setNamedPortsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetNamedPortsInstanceGroupRequest, Operation, Operation>
+      setNamedPortsOperationCallable() {
+    return stub.setNamedPortsOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

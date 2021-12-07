@@ -183,7 +183,7 @@ public interface RouterStatusNatStatusOrBuilder
    * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when auto-allocation of NAT IPs is *not* used.
    * </pre>
    *
-   * <code>int32 min_extra_nat_ips_needed = 365786338;</code>
+   * <code>optional int32 min_extra_nat_ips_needed = 365786338;</code>
    *
    * @return Whether the minExtraNatIpsNeeded field is set.
    */
@@ -195,7 +195,7 @@ public interface RouterStatusNatStatusOrBuilder
    * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when auto-allocation of NAT IPs is *not* used.
    * </pre>
    *
-   * <code>int32 min_extra_nat_ips_needed = 365786338;</code>
+   * <code>optional int32 min_extra_nat_ips_needed = 365786338;</code>
    *
    * @return The minExtraNatIpsNeeded.
    */
@@ -208,7 +208,7 @@ public interface RouterStatusNatStatusOrBuilder
    * Unique name of this NAT.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -220,7 +220,7 @@ public interface RouterStatusNatStatusOrBuilder
    * Unique name of this NAT.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -232,7 +232,7 @@ public interface RouterStatusNatStatusOrBuilder
    * Unique name of this NAT.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -245,7 +245,7 @@ public interface RouterStatusNatStatusOrBuilder
    * Number of VM endpoints (i.e., Nics) that can use NAT.
    * </pre>
    *
-   * <code>int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
+   * <code>optional int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
    *
    * @return Whether the numVmEndpointsWithNatMappings field is set.
    */
@@ -257,11 +257,75 @@ public interface RouterStatusNatStatusOrBuilder
    * Number of VM endpoints (i.e., Nics) that can use NAT.
    * </pre>
    *
-   * <code>int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
+   * <code>optional int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
    *
    * @return The numVmEndpointsWithNatMappings.
    */
   int getNumVmEndpointsWithNatMappings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Status of rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus>
+      getRuleStatusList();
+  /**
+   *
+   *
+   * <pre>
+   * Status of rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+   * </code>
+   */
+  com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus getRuleStatus(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Status of rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+   * </code>
+   */
+  int getRuleStatusCount();
+  /**
+   *
+   *
+   * <pre>
+   * Status of rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatusOrBuilder>
+      getRuleStatusOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Status of rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+   * </code>
+   */
+  com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatusOrBuilder getRuleStatusOrBuilder(
+      int index);
 
   /**
    *

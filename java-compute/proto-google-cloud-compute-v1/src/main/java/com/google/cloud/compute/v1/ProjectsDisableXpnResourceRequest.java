@@ -129,7 +129,7 @@ public final class ProjectsDisableXpnResourceRequest extends com.google.protobuf
    * Service resource (a.k.a service project) ID.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
+   * <code>optional .google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
    *
    * @return Whether the xpnResource field is set.
    */
@@ -144,7 +144,7 @@ public final class ProjectsDisableXpnResourceRequest extends com.google.protobuf
    * Service resource (a.k.a service project) ID.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
+   * <code>optional .google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
    *
    * @return The xpnResource.
    */
@@ -161,7 +161,7 @@ public final class ProjectsDisableXpnResourceRequest extends com.google.protobuf
    * Service resource (a.k.a service project) ID.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
+   * <code>optional .google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.XpnResourceIdOrBuilder getXpnResourceOrBuilder() {
@@ -526,7 +526,7 @@ public final class ProjectsDisableXpnResourceRequest extends com.google.protobuf
      * Service resource (a.k.a service project) ID.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
+     * <code>optional .google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
      *
      * @return Whether the xpnResource field is set.
      */
@@ -540,7 +540,7 @@ public final class ProjectsDisableXpnResourceRequest extends com.google.protobuf
      * Service resource (a.k.a service project) ID.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
+     * <code>optional .google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
      *
      * @return The xpnResource.
      */
@@ -560,7 +560,7 @@ public final class ProjectsDisableXpnResourceRequest extends com.google.protobuf
      * Service resource (a.k.a service project) ID.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
+     * <code>optional .google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
      */
     public Builder setXpnResource(com.google.cloud.compute.v1.XpnResourceId value) {
       if (xpnResourceBuilder_ == null) {
@@ -582,7 +582,7 @@ public final class ProjectsDisableXpnResourceRequest extends com.google.protobuf
      * Service resource (a.k.a service project) ID.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
+     * <code>optional .google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
      */
     public Builder setXpnResource(
         com.google.cloud.compute.v1.XpnResourceId.Builder builderForValue) {
@@ -602,7 +602,7 @@ public final class ProjectsDisableXpnResourceRequest extends com.google.protobuf
      * Service resource (a.k.a service project) ID.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
+     * <code>optional .google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
      */
     public Builder mergeXpnResource(com.google.cloud.compute.v1.XpnResourceId value) {
       if (xpnResourceBuilder_ == null) {
@@ -630,7 +630,7 @@ public final class ProjectsDisableXpnResourceRequest extends com.google.protobuf
      * Service resource (a.k.a service project) ID.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
+     * <code>optional .google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
      */
     public Builder clearXpnResource() {
       if (xpnResourceBuilder_ == null) {
@@ -649,7 +649,7 @@ public final class ProjectsDisableXpnResourceRequest extends com.google.protobuf
      * Service resource (a.k.a service project) ID.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
+     * <code>optional .google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
      */
     public com.google.cloud.compute.v1.XpnResourceId.Builder getXpnResourceBuilder() {
       bitField0_ |= 0x00000001;
@@ -663,7 +663,7 @@ public final class ProjectsDisableXpnResourceRequest extends com.google.protobuf
      * Service resource (a.k.a service project) ID.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
+     * <code>optional .google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
      */
     public com.google.cloud.compute.v1.XpnResourceIdOrBuilder getXpnResourceOrBuilder() {
       if (xpnResourceBuilder_ != null) {
@@ -681,7 +681,7 @@ public final class ProjectsDisableXpnResourceRequest extends com.google.protobuf
      * Service resource (a.k.a service project) ID.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
+     * <code>optional .google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.XpnResourceId,

@@ -119,7 +119,7 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
    * Configures a duration timeout for existing requests on a removed backend instance. For supported load balancers and protocols, as described in Enabling connection draining.
    * </pre>
    *
-   * <code>int32 draining_timeout_sec = 225127070;</code>
+   * <code>optional int32 draining_timeout_sec = 225127070;</code>
    *
    * @return Whether the drainingTimeoutSec field is set.
    */
@@ -134,7 +134,7 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
    * Configures a duration timeout for existing requests on a removed backend instance. For supported load balancers and protocols, as described in Enabling connection draining.
    * </pre>
    *
-   * <code>int32 draining_timeout_sec = 225127070;</code>
+   * <code>optional int32 draining_timeout_sec = 225127070;</code>
    *
    * @return The drainingTimeoutSec.
    */
@@ -480,7 +480,7 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
      * Configures a duration timeout for existing requests on a removed backend instance. For supported load balancers and protocols, as described in Enabling connection draining.
      * </pre>
      *
-     * <code>int32 draining_timeout_sec = 225127070;</code>
+     * <code>optional int32 draining_timeout_sec = 225127070;</code>
      *
      * @return Whether the drainingTimeoutSec field is set.
      */
@@ -495,7 +495,7 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
      * Configures a duration timeout for existing requests on a removed backend instance. For supported load balancers and protocols, as described in Enabling connection draining.
      * </pre>
      *
-     * <code>int32 draining_timeout_sec = 225127070;</code>
+     * <code>optional int32 draining_timeout_sec = 225127070;</code>
      *
      * @return The drainingTimeoutSec.
      */
@@ -510,7 +510,7 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
      * Configures a duration timeout for existing requests on a removed backend instance. For supported load balancers and protocols, as described in Enabling connection draining.
      * </pre>
      *
-     * <code>int32 draining_timeout_sec = 225127070;</code>
+     * <code>optional int32 draining_timeout_sec = 225127070;</code>
      *
      * @param value The drainingTimeoutSec to set.
      * @return This builder for chaining.
@@ -528,7 +528,7 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
      * Configures a duration timeout for existing requests on a removed backend instance. For supported load balancers and protocols, as described in Enabling connection draining.
      * </pre>
      *
-     * <code>int32 draining_timeout_sec = 225127070;</code>
+     * <code>optional int32 draining_timeout_sec = 225127070;</code>
      *
      * @return This builder for chaining.
      */

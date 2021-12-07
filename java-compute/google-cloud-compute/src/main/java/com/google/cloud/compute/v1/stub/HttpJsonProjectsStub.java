@@ -26,11 +26,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DisableXpnHostProjectRequest;
 import com.google.cloud.compute.v1.DisableXpnResourceProjectRequest;
@@ -43,12 +45,14 @@ import com.google.cloud.compute.v1.ListXpnHostsProjectsRequest;
 import com.google.cloud.compute.v1.MoveDiskProjectRequest;
 import com.google.cloud.compute.v1.MoveInstanceProjectRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.Project;
 import com.google.cloud.compute.v1.ProjectsGetXpnResources;
 import com.google.cloud.compute.v1.SetCommonInstanceMetadataProjectRequest;
 import com.google.cloud.compute.v1.SetDefaultNetworkTierProjectRequest;
 import com.google.cloud.compute.v1.SetUsageExportBucketProjectRequest;
 import com.google.cloud.compute.v1.XpnHostList;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -66,6 +70,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonProjectsStub extends ProjectsStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<DisableXpnHostProjectRequest, Operation>
       disableXpnHostMethodDescriptor =
           ApiMethodDescriptor.<DisableXpnHostProjectRequest, Operation>newBuilder()
@@ -97,7 +104,20 @@ public class HttpJsonProjectsStub extends ProjectsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DisableXpnHostProjectRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<DisableXpnResourceProjectRequest, Operation>
@@ -136,7 +156,20 @@ public class HttpJsonProjectsStub extends ProjectsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DisableXpnResourceProjectRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<EnableXpnHostProjectRequest, Operation>
@@ -170,7 +203,20 @@ public class HttpJsonProjectsStub extends ProjectsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (EnableXpnHostProjectRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<EnableXpnResourceProjectRequest, Operation>
@@ -209,7 +255,20 @@ public class HttpJsonProjectsStub extends ProjectsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (EnableXpnResourceProjectRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetProjectRequest, Project> getMethodDescriptor =
@@ -239,6 +298,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Project>newBuilder()
                   .setDefaultInstance(Project.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -270,6 +330,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Project>newBuilder()
                       .setDefaultInstance(Project.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -320,6 +381,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ProjectsGetXpnResources>newBuilder()
                       .setDefaultInstance(ProjectsGetXpnResources.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -375,6 +437,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<XpnHostList>newBuilder()
                       .setDefaultInstance(XpnHostList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -414,7 +477,20 @@ public class HttpJsonProjectsStub extends ProjectsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (MoveDiskProjectRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<MoveInstanceProjectRequest, Operation>
@@ -453,7 +529,20 @@ public class HttpJsonProjectsStub extends ProjectsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (MoveInstanceProjectRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetCommonInstanceMetadataProjectRequest, Operation>
@@ -490,7 +579,20 @@ public class HttpJsonProjectsStub extends ProjectsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetCommonInstanceMetadataProjectRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetDefaultNetworkTierProjectRequest, Operation>
@@ -529,7 +631,20 @@ public class HttpJsonProjectsStub extends ProjectsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetDefaultNetworkTierProjectRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetUsageExportBucketProjectRequest, Operation>
@@ -568,14 +683,35 @@ public class HttpJsonProjectsStub extends ProjectsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetUsageExportBucketProjectRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<DisableXpnHostProjectRequest, Operation> disableXpnHostCallable;
+  private final OperationCallable<DisableXpnHostProjectRequest, Operation, Operation>
+      disableXpnHostOperationCallable;
   private final UnaryCallable<DisableXpnResourceProjectRequest, Operation>
       disableXpnResourceCallable;
+  private final OperationCallable<DisableXpnResourceProjectRequest, Operation, Operation>
+      disableXpnResourceOperationCallable;
   private final UnaryCallable<EnableXpnHostProjectRequest, Operation> enableXpnHostCallable;
+  private final OperationCallable<EnableXpnHostProjectRequest, Operation, Operation>
+      enableXpnHostOperationCallable;
   private final UnaryCallable<EnableXpnResourceProjectRequest, Operation> enableXpnResourceCallable;
+  private final OperationCallable<EnableXpnResourceProjectRequest, Operation, Operation>
+      enableXpnResourceOperationCallable;
   private final UnaryCallable<GetProjectRequest, Project> getCallable;
   private final UnaryCallable<GetXpnHostProjectRequest, Project> getXpnHostCallable;
   private final UnaryCallable<GetXpnResourcesProjectsRequest, ProjectsGetXpnResources>
@@ -586,15 +722,26 @@ public class HttpJsonProjectsStub extends ProjectsStub {
   private final UnaryCallable<ListXpnHostsProjectsRequest, ListXpnHostsPagedResponse>
       listXpnHostsPagedCallable;
   private final UnaryCallable<MoveDiskProjectRequest, Operation> moveDiskCallable;
+  private final OperationCallable<MoveDiskProjectRequest, Operation, Operation>
+      moveDiskOperationCallable;
   private final UnaryCallable<MoveInstanceProjectRequest, Operation> moveInstanceCallable;
+  private final OperationCallable<MoveInstanceProjectRequest, Operation, Operation>
+      moveInstanceOperationCallable;
   private final UnaryCallable<SetCommonInstanceMetadataProjectRequest, Operation>
       setCommonInstanceMetadataCallable;
+  private final OperationCallable<SetCommonInstanceMetadataProjectRequest, Operation, Operation>
+      setCommonInstanceMetadataOperationCallable;
   private final UnaryCallable<SetDefaultNetworkTierProjectRequest, Operation>
       setDefaultNetworkTierCallable;
+  private final OperationCallable<SetDefaultNetworkTierProjectRequest, Operation, Operation>
+      setDefaultNetworkTierOperationCallable;
   private final UnaryCallable<SetUsageExportBucketProjectRequest, Operation>
       setUsageExportBucketCallable;
+  private final OperationCallable<SetUsageExportBucketProjectRequest, Operation, Operation>
+      setUsageExportBucketOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonProjectsStub create(ProjectsStubSettings settings)
@@ -633,83 +780,122 @@ public class HttpJsonProjectsStub extends ProjectsStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<DisableXpnHostProjectRequest, Operation> disableXpnHostTransportSettings =
         HttpJsonCallSettings.<DisableXpnHostProjectRequest, Operation>newBuilder()
             .setMethodDescriptor(disableXpnHostMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<DisableXpnResourceProjectRequest, Operation>
         disableXpnResourceTransportSettings =
             HttpJsonCallSettings.<DisableXpnResourceProjectRequest, Operation>newBuilder()
                 .setMethodDescriptor(disableXpnResourceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<EnableXpnHostProjectRequest, Operation> enableXpnHostTransportSettings =
         HttpJsonCallSettings.<EnableXpnHostProjectRequest, Operation>newBuilder()
             .setMethodDescriptor(enableXpnHostMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<EnableXpnResourceProjectRequest, Operation>
         enableXpnResourceTransportSettings =
             HttpJsonCallSettings.<EnableXpnResourceProjectRequest, Operation>newBuilder()
                 .setMethodDescriptor(enableXpnResourceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<GetProjectRequest, Project> getTransportSettings =
         HttpJsonCallSettings.<GetProjectRequest, Project>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetXpnHostProjectRequest, Project> getXpnHostTransportSettings =
         HttpJsonCallSettings.<GetXpnHostProjectRequest, Project>newBuilder()
             .setMethodDescriptor(getXpnHostMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetXpnResourcesProjectsRequest, ProjectsGetXpnResources>
         getXpnResourcesTransportSettings =
             HttpJsonCallSettings
                 .<GetXpnResourcesProjectsRequest, ProjectsGetXpnResources>newBuilder()
                 .setMethodDescriptor(getXpnResourcesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<ListXpnHostsProjectsRequest, XpnHostList> listXpnHostsTransportSettings =
         HttpJsonCallSettings.<ListXpnHostsProjectsRequest, XpnHostList>newBuilder()
             .setMethodDescriptor(listXpnHostsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<MoveDiskProjectRequest, Operation> moveDiskTransportSettings =
         HttpJsonCallSettings.<MoveDiskProjectRequest, Operation>newBuilder()
             .setMethodDescriptor(moveDiskMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<MoveInstanceProjectRequest, Operation> moveInstanceTransportSettings =
         HttpJsonCallSettings.<MoveInstanceProjectRequest, Operation>newBuilder()
             .setMethodDescriptor(moveInstanceMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetCommonInstanceMetadataProjectRequest, Operation>
         setCommonInstanceMetadataTransportSettings =
             HttpJsonCallSettings.<SetCommonInstanceMetadataProjectRequest, Operation>newBuilder()
                 .setMethodDescriptor(setCommonInstanceMetadataMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<SetDefaultNetworkTierProjectRequest, Operation>
         setDefaultNetworkTierTransportSettings =
             HttpJsonCallSettings.<SetDefaultNetworkTierProjectRequest, Operation>newBuilder()
                 .setMethodDescriptor(setDefaultNetworkTierMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<SetUsageExportBucketProjectRequest, Operation>
         setUsageExportBucketTransportSettings =
             HttpJsonCallSettings.<SetUsageExportBucketProjectRequest, Operation>newBuilder()
                 .setMethodDescriptor(setUsageExportBucketMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.disableXpnHostCallable =
         callableFactory.createUnaryCallable(
             disableXpnHostTransportSettings, settings.disableXpnHostSettings(), clientContext);
+    this.disableXpnHostOperationCallable =
+        callableFactory.createOperationCallable(
+            disableXpnHostTransportSettings,
+            settings.disableXpnHostOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.disableXpnResourceCallable =
         callableFactory.createUnaryCallable(
             disableXpnResourceTransportSettings,
             settings.disableXpnResourceSettings(),
             clientContext);
+    this.disableXpnResourceOperationCallable =
+        callableFactory.createOperationCallable(
+            disableXpnResourceTransportSettings,
+            settings.disableXpnResourceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.enableXpnHostCallable =
         callableFactory.createUnaryCallable(
             enableXpnHostTransportSettings, settings.enableXpnHostSettings(), clientContext);
+    this.enableXpnHostOperationCallable =
+        callableFactory.createOperationCallable(
+            enableXpnHostTransportSettings,
+            settings.enableXpnHostOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.enableXpnResourceCallable =
         callableFactory.createUnaryCallable(
             enableXpnResourceTransportSettings,
             settings.enableXpnResourceSettings(),
             clientContext);
+    this.enableXpnResourceOperationCallable =
+        callableFactory.createOperationCallable(
+            enableXpnResourceTransportSettings,
+            settings.enableXpnResourceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
@@ -731,24 +917,54 @@ public class HttpJsonProjectsStub extends ProjectsStub {
     this.moveDiskCallable =
         callableFactory.createUnaryCallable(
             moveDiskTransportSettings, settings.moveDiskSettings(), clientContext);
+    this.moveDiskOperationCallable =
+        callableFactory.createOperationCallable(
+            moveDiskTransportSettings,
+            settings.moveDiskOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.moveInstanceCallable =
         callableFactory.createUnaryCallable(
             moveInstanceTransportSettings, settings.moveInstanceSettings(), clientContext);
+    this.moveInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            moveInstanceTransportSettings,
+            settings.moveInstanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setCommonInstanceMetadataCallable =
         callableFactory.createUnaryCallable(
             setCommonInstanceMetadataTransportSettings,
             settings.setCommonInstanceMetadataSettings(),
             clientContext);
+    this.setCommonInstanceMetadataOperationCallable =
+        callableFactory.createOperationCallable(
+            setCommonInstanceMetadataTransportSettings,
+            settings.setCommonInstanceMetadataOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setDefaultNetworkTierCallable =
         callableFactory.createUnaryCallable(
             setDefaultNetworkTierTransportSettings,
             settings.setDefaultNetworkTierSettings(),
             clientContext);
+    this.setDefaultNetworkTierOperationCallable =
+        callableFactory.createOperationCallable(
+            setDefaultNetworkTierTransportSettings,
+            settings.setDefaultNetworkTierOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setUsageExportBucketCallable =
         callableFactory.createUnaryCallable(
             setUsageExportBucketTransportSettings,
             settings.setUsageExportBucketSettings(),
             clientContext);
+    this.setUsageExportBucketOperationCallable =
+        callableFactory.createOperationCallable(
+            setUsageExportBucketTransportSettings,
+            settings.setUsageExportBucketOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -779,8 +995,20 @@ public class HttpJsonProjectsStub extends ProjectsStub {
   }
 
   @Override
+  public OperationCallable<DisableXpnHostProjectRequest, Operation, Operation>
+      disableXpnHostOperationCallable() {
+    return disableXpnHostOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DisableXpnResourceProjectRequest, Operation> disableXpnResourceCallable() {
     return disableXpnResourceCallable;
+  }
+
+  @Override
+  public OperationCallable<DisableXpnResourceProjectRequest, Operation, Operation>
+      disableXpnResourceOperationCallable() {
+    return disableXpnResourceOperationCallable;
   }
 
   @Override
@@ -789,8 +1017,20 @@ public class HttpJsonProjectsStub extends ProjectsStub {
   }
 
   @Override
+  public OperationCallable<EnableXpnHostProjectRequest, Operation, Operation>
+      enableXpnHostOperationCallable() {
+    return enableXpnHostOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<EnableXpnResourceProjectRequest, Operation> enableXpnResourceCallable() {
     return enableXpnResourceCallable;
+  }
+
+  @Override
+  public OperationCallable<EnableXpnResourceProjectRequest, Operation, Operation>
+      enableXpnResourceOperationCallable() {
+    return enableXpnResourceOperationCallable;
   }
 
   @Override
@@ -832,8 +1072,20 @@ public class HttpJsonProjectsStub extends ProjectsStub {
   }
 
   @Override
+  public OperationCallable<MoveDiskProjectRequest, Operation, Operation>
+      moveDiskOperationCallable() {
+    return moveDiskOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<MoveInstanceProjectRequest, Operation> moveInstanceCallable() {
     return moveInstanceCallable;
+  }
+
+  @Override
+  public OperationCallable<MoveInstanceProjectRequest, Operation, Operation>
+      moveInstanceOperationCallable() {
+    return moveInstanceOperationCallable;
   }
 
   @Override
@@ -843,15 +1095,33 @@ public class HttpJsonProjectsStub extends ProjectsStub {
   }
 
   @Override
+  public OperationCallable<SetCommonInstanceMetadataProjectRequest, Operation, Operation>
+      setCommonInstanceMetadataOperationCallable() {
+    return setCommonInstanceMetadataOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetDefaultNetworkTierProjectRequest, Operation>
       setDefaultNetworkTierCallable() {
     return setDefaultNetworkTierCallable;
   }
 
   @Override
+  public OperationCallable<SetDefaultNetworkTierProjectRequest, Operation, Operation>
+      setDefaultNetworkTierOperationCallable() {
+    return setDefaultNetworkTierOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetUsageExportBucketProjectRequest, Operation>
       setUsageExportBucketCallable() {
     return setUsageExportBucketCallable;
+  }
+
+  @Override
+  public OperationCallable<SetUsageExportBucketProjectRequest, Operation, Operation>
+      setUsageExportBucketOperationCallable() {
+    return setUsageExportBucketOperationCallable;
   }
 
   @Override

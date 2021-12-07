@@ -24,19 +24,19 @@ public interface BackendServiceReferenceOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string backend_service = 306946058;</code>
+   * <code>optional string backend_service = 306946058;</code>
    *
    * @return Whether the backendService field is set.
    */
   boolean hasBackendService();
   /**
-   * <code>string backend_service = 306946058;</code>
+   * <code>optional string backend_service = 306946058;</code>
    *
    * @return The backendService.
    */
   java.lang.String getBackendService();
   /**
-   * <code>string backend_service = 306946058;</code>
+   * <code>optional string backend_service = 306946058;</code>
    *
    * @return The bytes for backendService.
    */

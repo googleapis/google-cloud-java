@@ -27,12 +27,14 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonRegionTargetHttpProxiesStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -86,7 +88,7 @@ public class RegionTargetHttpProxiesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -97,6 +99,7 @@ public class RegionTargetHttpProxiesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -110,7 +113,7 @@ public class RegionTargetHttpProxiesClientTest {
     String region = "region-934795532";
     String targetHttpProxy = "targetHttpProxy-1944074187";
 
-    Operation actualResponse = client.delete(project, region, targetHttpProxy);
+    Operation actualResponse = client.deleteAsync(project, region, targetHttpProxy).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -139,10 +142,9 @@ public class RegionTargetHttpProxiesClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       String targetHttpProxy = "targetHttpProxy-1944074187";
-      client.delete(project, region, targetHttpProxy);
+      client.deleteAsync(project, region, targetHttpProxy).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -213,7 +215,7 @@ public class RegionTargetHttpProxiesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -224,6 +226,7 @@ public class RegionTargetHttpProxiesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -237,7 +240,7 @@ public class RegionTargetHttpProxiesClientTest {
     String region = "region-934795532";
     TargetHttpProxy targetHttpProxyResource = TargetHttpProxy.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, region, targetHttpProxyResource);
+    Operation actualResponse = client.insertAsync(project, region, targetHttpProxyResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -266,10 +269,9 @@ public class RegionTargetHttpProxiesClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       TargetHttpProxy targetHttpProxyResource = TargetHttpProxy.newBuilder().build();
-      client.insert(project, region, targetHttpProxyResource);
+      client.insertAsync(project, region, targetHttpProxyResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -335,7 +337,7 @@ public class RegionTargetHttpProxiesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -346,6 +348,7 @@ public class RegionTargetHttpProxiesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -361,7 +364,7 @@ public class RegionTargetHttpProxiesClientTest {
     UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
 
     Operation actualResponse =
-        client.setUrlMap(project, region, targetHttpProxy, urlMapReferenceResource);
+        client.setUrlMapAsync(project, region, targetHttpProxy, urlMapReferenceResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -391,10 +394,9 @@ public class RegionTargetHttpProxiesClientTest {
       String region = "region-934795532";
       String targetHttpProxy = "targetHttpProxy-1944074187";
       UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
-      client.setUrlMap(project, region, targetHttpProxy, urlMapReferenceResource);
+      client.setUrlMapAsync(project, region, targetHttpProxy, urlMapReferenceResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 }

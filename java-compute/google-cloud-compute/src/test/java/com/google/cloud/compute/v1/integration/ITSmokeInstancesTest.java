@@ -17,7 +17,6 @@ package com.google.cloud.compute.v1.integration;
 
 import static junit.framework.TestCase.fail;
 
-import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.compute.v1.Allowed;
 import com.google.cloud.compute.v1.AttachedDisk;
@@ -38,13 +37,12 @@ import com.google.cloud.compute.v1.InstancesSettings;
 import com.google.cloud.compute.v1.NetworkInterface;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ShieldedInstanceConfig;
-import com.google.cloud.compute.v1.ZoneOperationsClient;
-import com.google.cloud.compute.v1.ZoneOperationsSettings;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
@@ -53,7 +51,6 @@ import org.junit.Test;
 
 public class ITSmokeInstancesTest extends BaseTest {
   private static InstancesClient instancesClient;
-  private static ZoneOperationsClient operationsClient;
   private static List<Instance> instances;
   private static final String DEFAULT_IMAGE =
       "projects/debian-cloud/global/images/family/debian-10";
@@ -61,7 +58,7 @@ public class ITSmokeInstancesTest extends BaseTest {
       AttachedDisk.newBuilder()
           .setBoot(true)
           .setAutoDelete(true)
-          .setType(AttachedDisk.Type.PERSISTENT)
+          .setType(AttachedDisk.Type.PERSISTENT.toString())
           .setInitializeParams(
               AttachedDiskInitializeParams.newBuilder().setSourceImage(DEFAULT_IMAGE).build())
           .build();
@@ -78,8 +75,6 @@ public class ITSmokeInstancesTest extends BaseTest {
     instances = new ArrayList<>();
     InstancesSettings instanceSettings = InstancesSettings.newBuilder().build();
     instancesClient = InstancesClient.create(instanceSettings);
-    ZoneOperationsSettings zoneOperationsSettings = ZoneOperationsSettings.newBuilder().build();
-    operationsClient = ZoneOperationsClient.create(zoneOperationsSettings);
   }
 
   @Before
@@ -88,30 +83,28 @@ public class ITSmokeInstancesTest extends BaseTest {
   }
 
   @AfterClass
-  public static void tearDown() {
+  public static void tearDown() throws ExecutionException, InterruptedException {
     for (Instance instance : instances) {
-      instancesClient.delete(DEFAULT_PROJECT, DEFAULT_ZONE, instance.getName());
+      instancesClient.deleteAsync(DEFAULT_PROJECT, DEFAULT_ZONE, instance.getName()).get();
     }
     instancesClient.close();
   }
 
   @Test
-  public void testInsertInstance() {
+  public void testInsertInstance() throws ExecutionException, InterruptedException {
     Instance resultInstance = insertInstance();
     assertInstanceDetails(resultInstance);
   }
 
   @Test
-  public void testUpdateInstanceDescToEmpty() {
+  public void testUpdateInstanceDescToEmpty() throws ExecutionException, InterruptedException {
     // We test here: 1)set body field to an empty string
     //               2)unset body field
     Instance resultInstance = insertInstance();
     Assert.assertEquals("test", resultInstance.getDescription());
     Assert.assertEquals(0, resultInstance.getScheduling().getMinNodeCpus());
     Instance descInstance = resultInstance.toBuilder().setDescription("").build();
-    Operation updateOp =
-        instancesClient.update(DEFAULT_PROJECT, DEFAULT_ZONE, INSTANCE, descInstance);
-    waitUntilStatusChangeTo(updateOp);
+    instancesClient.updateAsync(DEFAULT_PROJECT, DEFAULT_ZONE, INSTANCE, descInstance).get();
     Instance updated = getInstance();
     assertInstanceDetails(updated);
     Assert.assertEquals("", updated.getDescription());
@@ -119,7 +112,7 @@ public class ITSmokeInstancesTest extends BaseTest {
   }
 
   @Test
-  public void testResizeGroupToZero() throws IOException {
+  public void testResizeGroupToZero() throws IOException, ExecutionException, InterruptedException {
     // We test here: 1)set body field to zero
     //               2)set query param to zero
     List<String> instanceGroupManagersToClean = new ArrayList<>();
@@ -134,8 +127,8 @@ public class ITSmokeInstancesTest extends BaseTest {
             .setSourceInstance(instance.getSelfLink())
             .setName(templateName)
             .build();
-    Operation insertOperation = instanceTemplatesClient.insert(DEFAULT_PROJECT, instanceTemplate);
-    waitGlobalOperation(insertOperation);
+    Operation insertOperation =
+        instanceTemplatesClient.insertAsync(DEFAULT_PROJECT, instanceTemplate).get();
     instanceTemplatesToClean.add(templateName);
     try {
       InstanceGroupManager instanceGroupManager =
@@ -145,27 +138,25 @@ public class ITSmokeInstancesTest extends BaseTest {
               .setInstanceTemplate(insertOperation.getTargetLink())
               .setTargetSize(0)
               .build();
-      Operation igmOperation =
-          instanceGroupManagersClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManager);
-      waitUntilStatusChangeTo(igmOperation);
+      instanceGroupManagersClient
+          .insertAsync(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManager)
+          .get();
       instanceGroupManagersToClean.add(instanceGroupManagerName);
       InstanceGroupManager fetched =
           instanceGroupManagersClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName);
       Assert.assertEquals(0, fetched.getTargetSize());
 
-      Operation resize =
-          instanceGroupManagersClient.resize(
-              DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName, 1);
-      waitUntilStatusChangeTo(resize);
+      instanceGroupManagersClient
+          .resizeAsync(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName, 1)
+          .get();
 
       InstanceGroupManager resizedIGM =
           instanceGroupManagersClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName);
       Assert.assertEquals(1, resizedIGM.getTargetSize());
 
-      Operation resizeOp =
-          instanceGroupManagersClient.resize(
-              DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName, 0);
-      waitUntilStatusChangeTo(resizeOp);
+      instanceGroupManagersClient
+          .resizeAsync(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName, 0)
+          .get();
 
       InstanceGroupManager instanceGroupManagerResized =
           instanceGroupManagersClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName);
@@ -173,19 +164,16 @@ public class ITSmokeInstancesTest extends BaseTest {
 
     } finally {
       for (String name : instanceGroupManagersToClean) {
-        Operation deleteOperation =
-            instanceGroupManagersClient.delete(DEFAULT_PROJECT, DEFAULT_ZONE, name);
-        waitUntilStatusChangeTo(deleteOperation);
+        instanceGroupManagersClient.deleteAsync(DEFAULT_PROJECT, DEFAULT_ZONE, name).get();
       }
       for (String name : instanceTemplatesToClean) {
-        Operation deleteOperation = instanceTemplatesClient.delete(DEFAULT_PROJECT, name);
-        waitGlobalOperation(deleteOperation);
+        instanceTemplatesClient.deleteAsync(DEFAULT_PROJECT, name).get();
       }
     }
   }
 
   @Test
-  public void testAggregatedList() {
+  public void testAggregatedList() throws ExecutionException, InterruptedException {
     insertInstance();
     boolean presented = false;
     InstancesClient.AggregatedListPagedResponse response =
@@ -204,7 +192,7 @@ public class ITSmokeInstancesTest extends BaseTest {
   }
 
   @Test
-  public void testDefaultClient() throws IOException {
+  public void testDefaultClient() throws IOException, ExecutionException, InterruptedException {
     InstancesClient defaultClient = InstancesClient.create();
     Instance instanceResource =
         Instance.newBuilder()
@@ -213,20 +201,19 @@ public class ITSmokeInstancesTest extends BaseTest {
             .addDisks(DISK)
             .addNetworkInterfaces(NETWORK_INTERFACE)
             .build();
-    Operation operation = defaultClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
-    waitUntilStatusChangeTo(operation);
+    defaultClient.insertAsync(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource).get();
     instances.add(instanceResource);
     assertInstanceDetails(getInstance());
   }
 
   @Test
-  public void testDefaultResource() {
+  public void testDefaultResource() throws InterruptedException {
     Instance instanceResource = Instance.newBuilder().build();
     try {
-      instancesClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
+      instancesClient.insertAsync(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource).get();
       fail("Did not catch the exception");
-    } catch (InvalidArgumentException ex) {
-      String message = "Bad Request";
+    } catch (ExecutionException ex) {
+      String message = "com.google.api.gax.rpc.InvalidArgumentException: Bad Request";
       Assert.assertEquals(message, ex.getMessage());
     }
   }
@@ -243,7 +230,7 @@ public class ITSmokeInstancesTest extends BaseTest {
   }
 
   @Test
-  public void testInt64() throws IOException {
+  public void testInt64() throws IOException, ExecutionException, InterruptedException {
     // we want to test a field with format:int64
     String name = generateRandomName("image");
     List<Long> licenseCodes = Collections.singletonList(5543610867827062957L);
@@ -256,18 +243,17 @@ public class ITSmokeInstancesTest extends BaseTest {
             .setSourceImage(sourceImage)
             .build();
     try {
-      Operation op = imagesClient.insert(DEFAULT_PROJECT, image);
-      waitGlobalOperation(op);
-
+      imagesClient.insertAsync(DEFAULT_PROJECT, image).get();
       Image fetched = imagesClient.get(DEFAULT_PROJECT, name);
       Assert.assertEquals(licenseCodes, fetched.getLicenseCodesList());
     } finally {
-      imagesClient.delete(DEFAULT_PROJECT, name);
+      imagesClient.deleteAsync(DEFAULT_PROJECT, name).get();
     }
   }
 
   @Test
-  public void testCapitalLetterField() throws IOException {
+  public void testCapitalLetterField()
+      throws IOException, ExecutionException, InterruptedException {
     // we want to test a field like "IPProtocol"
     String name = generateRandomName("fw-rule");
     FirewallsClient firewallsClient = FirewallsClient.create();
@@ -278,34 +264,31 @@ public class ITSmokeInstancesTest extends BaseTest {
             .addSourceRanges("0.0.0.0/0")
             .build();
     try {
-      Operation op = firewallsClient.insert(DEFAULT_PROJECT, firewall);
-      waitGlobalOperation(op);
-
+      firewallsClient.insertAsync(DEFAULT_PROJECT, firewall).get();
       Firewall fetched = firewallsClient.get(DEFAULT_PROJECT, name);
       Assert.assertEquals(name, fetched.getName());
       Assert.assertEquals("tcp", fetched.getAllowed(0).getIPProtocol());
     } finally {
-      firewallsClient.delete(DEFAULT_PROJECT, name);
+      firewallsClient.deleteAsync(DEFAULT_PROJECT, name).get();
     }
   }
 
   @Test
-  public void testPatch() {
+  public void testPatch() throws ExecutionException, InterruptedException {
     Instance resultInstance = insertInstance();
     Assert.assertFalse(resultInstance.getShieldedInstanceConfig().getEnableSecureBoot());
-    Operation op = instancesClient.stop(DEFAULT_PROJECT, DEFAULT_ZONE, INSTANCE);
-    waitUntilStatusChangeTo(op);
+    instancesClient.stopAsync(DEFAULT_PROJECT, DEFAULT_ZONE, INSTANCE).get();
     ShieldedInstanceConfig shieldedInstanceConfigResource =
         ShieldedInstanceConfig.newBuilder().setEnableSecureBoot(true).build();
-    Operation opPatch =
-        instancesClient.updateShieldedInstanceConfig(
-            DEFAULT_PROJECT, DEFAULT_ZONE, INSTANCE, shieldedInstanceConfigResource);
-    waitUntilStatusChangeTo(opPatch);
+    instancesClient
+        .updateShieldedInstanceConfigAsync(
+            DEFAULT_PROJECT, DEFAULT_ZONE, INSTANCE, shieldedInstanceConfigResource)
+        .get();
     Instance updInstance = getInstance();
     Assert.assertTrue(updInstance.getShieldedInstanceConfig().getEnableSecureBoot());
   }
 
-  private Instance insertInstance() {
+  private Instance insertInstance() throws ExecutionException, InterruptedException {
     Instance instanceResource =
         Instance.newBuilder()
             .setName(INSTANCE)
@@ -314,9 +297,7 @@ public class ITSmokeInstancesTest extends BaseTest {
             .addNetworkInterfaces(NETWORK_INTERFACE)
             .setDescription("test")
             .build();
-    Operation insertResponse =
-        instancesClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
-    waitUntilStatusChangeTo(insertResponse);
+    instancesClient.insertAsync(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource).get();
     instances.add(instanceResource);
     return getInstance();
   }
@@ -337,34 +318,8 @@ public class ITSmokeInstancesTest extends BaseTest {
     Assert.assertNotNull(instance.getFingerprint());
     Assert.assertEquals(instance.getMachineType(), MACHINE_TYPE);
     Assert.assertEquals(instance.getDisksCount(), 1);
-    Assert.assertEquals(instance.getDisksList().get(0).getType(), AttachedDisk.Type.PERSISTENT);
+    Assert.assertEquals(
+        instance.getDisksList().get(0).getType(), AttachedDisk.Type.PERSISTENT.toString());
     Assert.assertEquals(instance.getNetworkInterfacesCount(), 1);
-  }
-
-  private void waitUntilStatusChangeTo(Operation operation) {
-    long startTime = System.currentTimeMillis();
-    while (true) {
-      if ((System.currentTimeMillis() - startTime) > 200000) {
-        fail("Operation " + operation.getName() + " took more than 200 sec to finish");
-      }
-      Operation tempOperation =
-          operationsClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, operation.getName());
-      if (tempOperation.getStatus().equals(Operation.Status.UNRECOGNIZED)) {
-        fail("Unexpected operation status: UNRECOGNIZED");
-        break;
-      }
-      if (tempOperation.getStatus().equals(Operation.Status.UNDEFINED_STATUS)) {
-        fail("Unexpected operation status: UNDEFINED_STATUS");
-        break;
-      }
-      if (tempOperation.getStatus().equals(Operation.Status.DONE)) {
-        break;
-      }
-      try {
-        Thread.sleep(2000);
-      } catch (InterruptedException e) {
-        fail("Interrupted");
-      }
-    }
   }
 }

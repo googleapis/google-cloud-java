@@ -38,6 +38,7 @@ import com.google.cloud.compute.v1.DiskTypeAggregatedList;
 import com.google.cloud.compute.v1.DiskTypeList;
 import com.google.cloud.compute.v1.GetDiskTypeRequest;
 import com.google.cloud.compute.v1.ListDiskTypesRequest;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,6 +56,8 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonDiskTypesStub extends DiskTypesStub {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
   private static final ApiMethodDescriptor<AggregatedListDiskTypesRequest, DiskTypeAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor.<AggregatedListDiskTypesRequest, DiskTypeAggregatedList>newBuilder()
@@ -106,6 +109,7 @@ public class HttpJsonDiskTypesStub extends DiskTypesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<DiskTypeAggregatedList>newBuilder()
                       .setDefaultInstance(DiskTypeAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -138,6 +142,7 @@ public class HttpJsonDiskTypesStub extends DiskTypesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<DiskType>newBuilder()
                   .setDefaultInstance(DiskType.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -189,6 +194,7 @@ public class HttpJsonDiskTypesStub extends DiskTypesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<DiskTypeList>newBuilder()
                       .setDefaultInstance(DiskTypeList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -245,14 +251,17 @@ public class HttpJsonDiskTypesStub extends DiskTypesStub {
             HttpJsonCallSettings
                 .<AggregatedListDiskTypesRequest, DiskTypeAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<GetDiskTypeRequest, DiskType> getTransportSettings =
         HttpJsonCallSettings.<GetDiskTypeRequest, DiskType>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListDiskTypesRequest, DiskTypeList> listTransportSettings =
         HttpJsonCallSettings.<ListDiskTypesRequest, DiskTypeList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.aggregatedListCallable =

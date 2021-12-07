@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.ReservationsClient.AggregatedListPaged
 import static com.google.cloud.compute.v1.ReservationsClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListReservationsRequest;
 import com.google.cloud.compute.v1.DeleteReservationRequest;
@@ -57,6 +58,11 @@ public abstract class ReservationsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<DeleteReservationRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteReservationRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
@@ -69,6 +75,11 @@ public abstract class ReservationsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
   }
 
+  public OperationCallable<InsertReservationRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
+  }
+
   public UnaryCallable<InsertReservationRequest, Operation> insertCallable() {
     throw new UnsupportedOperationException("Not implemented: insertCallable()");
   }
@@ -79,6 +90,11 @@ public abstract class ReservationsStub implements BackgroundResource {
 
   public UnaryCallable<ListReservationsRequest, ReservationList> listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<ResizeReservationRequest, Operation, Operation>
+      resizeOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: resizeOperationCallable()");
   }
 
   public UnaryCallable<ResizeReservationRequest, Operation> resizeCallable() {

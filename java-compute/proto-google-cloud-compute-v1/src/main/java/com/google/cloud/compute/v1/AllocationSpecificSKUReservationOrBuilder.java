@@ -30,7 +30,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * Specifies the number of resources that are allocated.
    * </pre>
    *
-   * <code>int64 count = 94851343;</code>
+   * <code>optional int64 count = 94851343;</code>
    *
    * @return Whether the count field is set.
    */
@@ -42,7 +42,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * Specifies the number of resources that are allocated.
    * </pre>
    *
-   * <code>int64 count = 94851343;</code>
+   * <code>optional int64 count = 94851343;</code>
    *
    * @return The count.
    */
@@ -55,7 +55,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * [Output Only] Indicates how many instances are in use.
    * </pre>
    *
-   * <code>int64 in_use_count = 493458877;</code>
+   * <code>optional int64 in_use_count = 493458877;</code>
    *
    * @return Whether the inUseCount field is set.
    */
@@ -67,7 +67,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * [Output Only] Indicates how many instances are in use.
    * </pre>
    *
-   * <code>int64 in_use_count = 493458877;</code>
+   * <code>optional int64 in_use_count = 493458877;</code>
    *
    * @return The inUseCount.
    */
@@ -81,7 +81,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
+   * optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
    * </code>
    *
    * @return Whether the instanceProperties field is set.
@@ -95,7 +95,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
+   * optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
    * </code>
    *
    * @return The instanceProperties.
@@ -110,7 +110,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
+   * optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties instance_properties = 215355165;
    * </code>
    */
   com.google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuilder

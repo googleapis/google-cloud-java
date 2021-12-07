@@ -138,7 +138,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
    * Customer-side demarc ID for this circuit.
    * </pre>
    *
-   * <code>string customer_demarc_id = 28771859;</code>
+   * <code>optional string customer_demarc_id = 28771859;</code>
    *
    * @return Whether the customerDemarcId field is set.
    */
@@ -153,7 +153,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
    * Customer-side demarc ID for this circuit.
    * </pre>
    *
-   * <code>string customer_demarc_id = 28771859;</code>
+   * <code>optional string customer_demarc_id = 28771859;</code>
    *
    * @return The customerDemarcId.
    */
@@ -176,7 +176,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
    * Customer-side demarc ID for this circuit.
    * </pre>
    *
-   * <code>string customer_demarc_id = 28771859;</code>
+   * <code>optional string customer_demarc_id = 28771859;</code>
    *
    * @return The bytes for customerDemarcId.
    */
@@ -202,7 +202,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
    * Google-assigned unique ID for this circuit. Assigned at circuit turn-up.
    * </pre>
    *
-   * <code>string google_circuit_id = 262014711;</code>
+   * <code>optional string google_circuit_id = 262014711;</code>
    *
    * @return Whether the googleCircuitId field is set.
    */
@@ -217,7 +217,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
    * Google-assigned unique ID for this circuit. Assigned at circuit turn-up.
    * </pre>
    *
-   * <code>string google_circuit_id = 262014711;</code>
+   * <code>optional string google_circuit_id = 262014711;</code>
    *
    * @return The googleCircuitId.
    */
@@ -240,7 +240,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
    * Google-assigned unique ID for this circuit. Assigned at circuit turn-up.
    * </pre>
    *
-   * <code>string google_circuit_id = 262014711;</code>
+   * <code>optional string google_circuit_id = 262014711;</code>
    *
    * @return The bytes for googleCircuitId.
    */
@@ -266,7 +266,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
    * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
    * </pre>
    *
-   * <code>string google_demarc_id = 448196270;</code>
+   * <code>optional string google_demarc_id = 448196270;</code>
    *
    * @return Whether the googleDemarcId field is set.
    */
@@ -281,7 +281,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
    * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
    * </pre>
    *
-   * <code>string google_demarc_id = 448196270;</code>
+   * <code>optional string google_demarc_id = 448196270;</code>
    *
    * @return The googleDemarcId.
    */
@@ -304,7 +304,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
    * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
    * </pre>
    *
-   * <code>string google_demarc_id = 448196270;</code>
+   * <code>optional string google_demarc_id = 448196270;</code>
    *
    * @return The bytes for googleDemarcId.
    */
@@ -711,7 +711,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Customer-side demarc ID for this circuit.
      * </pre>
      *
-     * <code>string customer_demarc_id = 28771859;</code>
+     * <code>optional string customer_demarc_id = 28771859;</code>
      *
      * @return Whether the customerDemarcId field is set.
      */
@@ -725,7 +725,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Customer-side demarc ID for this circuit.
      * </pre>
      *
-     * <code>string customer_demarc_id = 28771859;</code>
+     * <code>optional string customer_demarc_id = 28771859;</code>
      *
      * @return The customerDemarcId.
      */
@@ -747,7 +747,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Customer-side demarc ID for this circuit.
      * </pre>
      *
-     * <code>string customer_demarc_id = 28771859;</code>
+     * <code>optional string customer_demarc_id = 28771859;</code>
      *
      * @return The bytes for customerDemarcId.
      */
@@ -769,7 +769,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Customer-side demarc ID for this circuit.
      * </pre>
      *
-     * <code>string customer_demarc_id = 28771859;</code>
+     * <code>optional string customer_demarc_id = 28771859;</code>
      *
      * @param value The customerDemarcId to set.
      * @return This builder for chaining.
@@ -790,7 +790,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Customer-side demarc ID for this circuit.
      * </pre>
      *
-     * <code>string customer_demarc_id = 28771859;</code>
+     * <code>optional string customer_demarc_id = 28771859;</code>
      *
      * @return This builder for chaining.
      */
@@ -807,7 +807,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Customer-side demarc ID for this circuit.
      * </pre>
      *
-     * <code>string customer_demarc_id = 28771859;</code>
+     * <code>optional string customer_demarc_id = 28771859;</code>
      *
      * @param value The bytes for customerDemarcId to set.
      * @return This builder for chaining.
@@ -831,7 +831,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Google-assigned unique ID for this circuit. Assigned at circuit turn-up.
      * </pre>
      *
-     * <code>string google_circuit_id = 262014711;</code>
+     * <code>optional string google_circuit_id = 262014711;</code>
      *
      * @return Whether the googleCircuitId field is set.
      */
@@ -845,7 +845,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Google-assigned unique ID for this circuit. Assigned at circuit turn-up.
      * </pre>
      *
-     * <code>string google_circuit_id = 262014711;</code>
+     * <code>optional string google_circuit_id = 262014711;</code>
      *
      * @return The googleCircuitId.
      */
@@ -867,7 +867,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Google-assigned unique ID for this circuit. Assigned at circuit turn-up.
      * </pre>
      *
-     * <code>string google_circuit_id = 262014711;</code>
+     * <code>optional string google_circuit_id = 262014711;</code>
      *
      * @return The bytes for googleCircuitId.
      */
@@ -889,7 +889,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Google-assigned unique ID for this circuit. Assigned at circuit turn-up.
      * </pre>
      *
-     * <code>string google_circuit_id = 262014711;</code>
+     * <code>optional string google_circuit_id = 262014711;</code>
      *
      * @param value The googleCircuitId to set.
      * @return This builder for chaining.
@@ -910,7 +910,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Google-assigned unique ID for this circuit. Assigned at circuit turn-up.
      * </pre>
      *
-     * <code>string google_circuit_id = 262014711;</code>
+     * <code>optional string google_circuit_id = 262014711;</code>
      *
      * @return This builder for chaining.
      */
@@ -927,7 +927,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Google-assigned unique ID for this circuit. Assigned at circuit turn-up.
      * </pre>
      *
-     * <code>string google_circuit_id = 262014711;</code>
+     * <code>optional string google_circuit_id = 262014711;</code>
      *
      * @param value The bytes for googleCircuitId to set.
      * @return This builder for chaining.
@@ -951,7 +951,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
      * </pre>
      *
-     * <code>string google_demarc_id = 448196270;</code>
+     * <code>optional string google_demarc_id = 448196270;</code>
      *
      * @return Whether the googleDemarcId field is set.
      */
@@ -965,7 +965,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
      * </pre>
      *
-     * <code>string google_demarc_id = 448196270;</code>
+     * <code>optional string google_demarc_id = 448196270;</code>
      *
      * @return The googleDemarcId.
      */
@@ -987,7 +987,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
      * </pre>
      *
-     * <code>string google_demarc_id = 448196270;</code>
+     * <code>optional string google_demarc_id = 448196270;</code>
      *
      * @return The bytes for googleDemarcId.
      */
@@ -1009,7 +1009,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
      * </pre>
      *
-     * <code>string google_demarc_id = 448196270;</code>
+     * <code>optional string google_demarc_id = 448196270;</code>
      *
      * @param value The googleDemarcId to set.
      * @return This builder for chaining.
@@ -1030,7 +1030,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
      * </pre>
      *
-     * <code>string google_demarc_id = 448196270;</code>
+     * <code>optional string google_demarc_id = 448196270;</code>
      *
      * @return This builder for chaining.
      */
@@ -1047,7 +1047,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
      * </pre>
      *
-     * <code>string google_demarc_id = 448196270;</code>
+     * <code>optional string google_demarc_id = 448196270;</code>
      *
      * @param value The bytes for googleDemarcId to set.
      * @return This builder for chaining.

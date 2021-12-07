@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.GlobalAddressesStub;
@@ -44,7 +46,7 @@ import javax.annotation.Generated;
  * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
  *   String project = "project-309310695";
  *   String address = "address-1147692044";
- *   Operation response = globalAddressesClient.delete(project, address);
+ *   Address response = globalAddressesClient.get(project, address);
  * }
  * }</pre>
  *
@@ -160,7 +162,7 @@ public class GlobalAddressesClient implements BackgroundResource {
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   String project = "project-309310695";
    *   String address = "address-1147692044";
-   *   Operation response = globalAddressesClient.delete(project, address);
+   *   Operation response = globalAddressesClient.deleteAsync(project, address).get();
    * }
    * }</pre>
    *
@@ -168,10 +170,10 @@ public class GlobalAddressesClient implements BackgroundResource {
    * @param address Name of the address resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String address) {
+  public final OperationFuture<Operation, Operation> deleteAsync(String project, String address) {
     DeleteGlobalAddressRequest request =
         DeleteGlobalAddressRequest.newBuilder().setProject(project).setAddress(address).build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -188,15 +190,44 @@ public class GlobalAddressesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = globalAddressesClient.delete(request);
+   *   Operation response = globalAddressesClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteGlobalAddressRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      DeleteGlobalAddressRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified address resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
+   *   DeleteGlobalAddressRequest request =
+   *       DeleteGlobalAddressRequest.newBuilder()
+   *           .setAddress("address-1147692044")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       globalAddressesClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteGlobalAddressRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -307,7 +338,7 @@ public class GlobalAddressesClient implements BackgroundResource {
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   String project = "project-309310695";
    *   Address addressResource = Address.newBuilder().build();
-   *   Operation response = globalAddressesClient.insert(project, addressResource);
+   *   Operation response = globalAddressesClient.insertAsync(project, addressResource).get();
    * }
    * }</pre>
    *
@@ -315,13 +346,14 @@ public class GlobalAddressesClient implements BackgroundResource {
    * @param addressResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(String project, Address addressResource) {
+  public final OperationFuture<Operation, Operation> insertAsync(
+      String project, Address addressResource) {
     InsertGlobalAddressRequest request =
         InsertGlobalAddressRequest.newBuilder()
             .setProject(project)
             .setAddressResource(addressResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -338,15 +370,44 @@ public class GlobalAddressesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = globalAddressesClient.insert(request);
+   *   Operation response = globalAddressesClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertGlobalAddressRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(
+      InsertGlobalAddressRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an address resource in the specified project by using the data included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
+   *   InsertGlobalAddressRequest request =
+   *       InsertGlobalAddressRequest.newBuilder()
+   *           .setAddressResource(Address.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       globalAddressesClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertGlobalAddressRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -146,7 +146,7 @@ public interface InterconnectDiagnosticsOrBuilder
    * The MAC address of the Interconnect's bundle interface.
    * </pre>
    *
-   * <code>string mac_address = 332540164;</code>
+   * <code>optional string mac_address = 332540164;</code>
    *
    * @return Whether the macAddress field is set.
    */
@@ -158,7 +158,7 @@ public interface InterconnectDiagnosticsOrBuilder
    * The MAC address of the Interconnect's bundle interface.
    * </pre>
    *
-   * <code>string mac_address = 332540164;</code>
+   * <code>optional string mac_address = 332540164;</code>
    *
    * @return The macAddress.
    */
@@ -170,7 +170,7 @@ public interface InterconnectDiagnosticsOrBuilder
    * The MAC address of the Interconnect's bundle interface.
    * </pre>
    *
-   * <code>string mac_address = 332540164;</code>
+   * <code>optional string mac_address = 332540164;</code>
    *
    * @return The bytes for macAddress.
    */

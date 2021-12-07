@@ -122,7 +122,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
    * Minimum cpu/platform this instance should be started at.
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return Whether the minCpuPlatform field is set.
    */
@@ -137,7 +137,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
    * Minimum cpu/platform this instance should be started at.
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return The minCpuPlatform.
    */
@@ -160,7 +160,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
    * Minimum cpu/platform this instance should be started at.
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return The bytes for minCpuPlatform.
    */
@@ -520,7 +520,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
      * Minimum cpu/platform this instance should be started at.
      * </pre>
      *
-     * <code>string min_cpu_platform = 242912759;</code>
+     * <code>optional string min_cpu_platform = 242912759;</code>
      *
      * @return Whether the minCpuPlatform field is set.
      */
@@ -534,7 +534,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
      * Minimum cpu/platform this instance should be started at.
      * </pre>
      *
-     * <code>string min_cpu_platform = 242912759;</code>
+     * <code>optional string min_cpu_platform = 242912759;</code>
      *
      * @return The minCpuPlatform.
      */
@@ -556,7 +556,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
      * Minimum cpu/platform this instance should be started at.
      * </pre>
      *
-     * <code>string min_cpu_platform = 242912759;</code>
+     * <code>optional string min_cpu_platform = 242912759;</code>
      *
      * @return The bytes for minCpuPlatform.
      */
@@ -578,7 +578,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
      * Minimum cpu/platform this instance should be started at.
      * </pre>
      *
-     * <code>string min_cpu_platform = 242912759;</code>
+     * <code>optional string min_cpu_platform = 242912759;</code>
      *
      * @param value The minCpuPlatform to set.
      * @return This builder for chaining.
@@ -599,7 +599,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
      * Minimum cpu/platform this instance should be started at.
      * </pre>
      *
-     * <code>string min_cpu_platform = 242912759;</code>
+     * <code>optional string min_cpu_platform = 242912759;</code>
      *
      * @return This builder for chaining.
      */
@@ -616,7 +616,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
      * Minimum cpu/platform this instance should be started at.
      * </pre>
      *
-     * <code>string min_cpu_platform = 242912759;</code>
+     * <code>optional string min_cpu_platform = 242912759;</code>
      *
      * @param value The bytes for minCpuPlatform to set.
      * @return This builder for chaining.

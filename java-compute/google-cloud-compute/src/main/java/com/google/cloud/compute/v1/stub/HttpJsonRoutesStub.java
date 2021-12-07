@@ -25,19 +25,23 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteRouteRequest;
 import com.google.cloud.compute.v1.GetRouteRequest;
 import com.google.cloud.compute.v1.InsertRouteRequest;
 import com.google.cloud.compute.v1.ListRoutesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.Route;
 import com.google.cloud.compute.v1.RouteList;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,6 +59,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRoutesStub extends RoutesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<DeleteRouteRequest, Operation> deleteMethodDescriptor =
       ApiMethodDescriptor.<DeleteRouteRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Routes/Delete")
@@ -86,7 +93,20 @@ public class HttpJsonRoutesStub extends RoutesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (DeleteRouteRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<GetRouteRequest, Route> getMethodDescriptor =
@@ -117,6 +137,7 @@ public class HttpJsonRoutesStub extends RoutesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Route>newBuilder()
                   .setDefaultInstance(Route.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -153,7 +174,20 @@ public class HttpJsonRoutesStub extends RoutesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (InsertRouteRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<ListRoutesRequest, RouteList> listMethodDescriptor =
@@ -199,16 +233,20 @@ public class HttpJsonRoutesStub extends RoutesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<RouteList>newBuilder()
                   .setDefaultInstance(RouteList.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
   private final UnaryCallable<DeleteRouteRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteRouteRequest, Operation, Operation> deleteOperationCallable;
   private final UnaryCallable<GetRouteRequest, Route> getCallable;
   private final UnaryCallable<InsertRouteRequest, Operation> insertCallable;
+  private final OperationCallable<InsertRouteRequest, Operation, Operation> insertOperationCallable;
   private final UnaryCallable<ListRoutesRequest, RouteList> listCallable;
   private final UnaryCallable<ListRoutesRequest, ListPagedResponse> listPagedCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRoutesStub create(RoutesStubSettings settings) throws IOException {
@@ -246,33 +284,51 @@ public class HttpJsonRoutesStub extends RoutesStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<DeleteRouteRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteRouteRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetRouteRequest, Route> getTransportSettings =
         HttpJsonCallSettings.<GetRouteRequest, Route>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertRouteRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRouteRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListRoutesRequest, RouteList> listTransportSettings =
         HttpJsonCallSettings.<ListRoutesRequest, RouteList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -300,6 +356,11 @@ public class HttpJsonRoutesStub extends RoutesStub {
   }
 
   @Override
+  public OperationCallable<DeleteRouteRequest, Operation, Operation> deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetRouteRequest, Route> getCallable() {
     return getCallable;
   }
@@ -307,6 +368,11 @@ public class HttpJsonRoutesStub extends RoutesStub {
   @Override
   public UnaryCallable<InsertRouteRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertRouteRequest, Operation, Operation> insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override

@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Write a Data Access (Gin) log
+ * This is deprecated and has no effect. Do not use.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.LogConfigDataAccessOptions}
@@ -38,7 +38,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
   }
 
   private LogConfigDataAccessOptions() {
-    logMode_ = 0;
+    logMode_ = "";
   }
 
   @java.lang.Override
@@ -71,11 +71,11 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
           case 0:
             done = true;
             break;
-          case -1071788560:
+          case -1071788558:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              logMode_ = rawValue;
+              logMode_ = s;
               break;
             }
           default:
@@ -116,6 +116,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
    *
    *
    * <pre>
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode}
@@ -131,9 +132,25 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
      * <code>UNDEFINED_LOG_MODE = 0;</code>
      */
     UNDEFINED_LOG_MODE(0),
-    /** <code>LOG_FAIL_CLOSED = 360469778;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>LOG_FAIL_CLOSED = 360469778;</code>
+     */
     LOG_FAIL_CLOSED(360469778),
-    /** <code>LOG_MODE_UNSPECIFIED = 88160822;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>LOG_MODE_UNSPECIFIED = 88160822;</code>
+     */
     LOG_MODE_UNSPECIFIED(88160822),
     UNRECOGNIZED(-1),
     ;
@@ -148,9 +165,25 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
      * <code>UNDEFINED_LOG_MODE = 0;</code>
      */
     public static final int UNDEFINED_LOG_MODE_VALUE = 0;
-    /** <code>LOG_FAIL_CLOSED = 360469778;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>LOG_FAIL_CLOSED = 360469778;</code>
+     */
     public static final int LOG_FAIL_CLOSED_VALUE = 360469778;
-    /** <code>LOG_MODE_UNSPECIFIED = 88160822;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>LOG_MODE_UNSPECIFIED = 88160822;</code>
+     */
     public static final int LOG_MODE_UNSPECIFIED_VALUE = 88160822;
 
     public final int getNumber() {
@@ -240,9 +273,16 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
 
   private int bitField0_;
   public static final int LOG_MODE_FIELD_NUMBER = 402897342;
-  private int logMode_;
+  private volatile java.lang.Object logMode_;
   /**
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
+   *
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * Check the LogMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string log_mode = 402897342;</code>
    *
    * @return Whether the logMode field is set.
    */
@@ -251,27 +291,52 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
    *
-   * @return The enum numeric value on the wire for logMode.
-   */
-  @java.lang.Override
-  public int getLogModeValue() {
-    return logMode_;
-  }
-  /**
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * Check the LogMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string log_mode = 402897342;</code>
    *
    * @return The logMode.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode getLogMode() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode result =
-        com.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode.valueOf(logMode_);
-    return result == null
-        ? com.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode.UNRECOGNIZED
-        : result;
+  public java.lang.String getLogMode() {
+    java.lang.Object ref = logMode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      logMode_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * Check the LogMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string log_mode = 402897342;</code>
+   *
+   * @return The bytes for logMode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLogModeBytes() {
+    java.lang.Object ref = logMode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      logMode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -289,7 +354,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(402897342, logMode_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 402897342, logMode_);
     }
     unknownFields.writeTo(output);
   }
@@ -301,7 +366,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(402897342, logMode_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(402897342, logMode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -321,7 +386,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
 
     if (hasLogMode() != other.hasLogMode()) return false;
     if (hasLogMode()) {
-      if (logMode_ != other.logMode_) return false;
+      if (!getLogMode().equals(other.getLogMode())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -336,7 +401,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasLogMode()) {
       hash = (37 * hash) + LOG_MODE_FIELD_NUMBER;
-      hash = (53 * hash) + logMode_;
+      hash = (53 * hash) + getLogMode().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -443,7 +508,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Write a Data Access (Gin) log
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.LogConfigDataAccessOptions}
@@ -484,7 +549,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      logMode_ = 0;
+      logMode_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
@@ -571,7 +636,9 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
       if (other == com.google.cloud.compute.v1.LogConfigDataAccessOptions.getDefaultInstance())
         return this;
       if (other.hasLogMode()) {
-        setLogMode(other.getLogMode());
+        bitField0_ |= 0x00000001;
+        logMode_ = other.logMode_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -605,81 +672,128 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
 
     private int bitField0_;
 
-    private int logMode_ = 0;
+    private java.lang.Object logMode_ = "";
     /**
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
-     * </code>
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * Check the LogMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string log_mode = 402897342;</code>
      *
      * @return Whether the logMode field is set.
      */
-    @java.lang.Override
     public boolean hasLogMode() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
-     * </code>
      *
-     * @return The enum numeric value on the wire for logMode.
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * Check the LogMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string log_mode = 402897342;</code>
+     *
+     * @return The logMode.
      */
-    @java.lang.Override
-    public int getLogModeValue() {
-      return logMode_;
+    public java.lang.String getLogMode() {
+      java.lang.Object ref = logMode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        logMode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
-     * </code>
      *
-     * @param value The enum numeric value on the wire for logMode to set.
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * Check the LogMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string log_mode = 402897342;</code>
+     *
+     * @return The bytes for logMode.
+     */
+    public com.google.protobuf.ByteString getLogModeBytes() {
+      java.lang.Object ref = logMode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        logMode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * Check the LogMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string log_mode = 402897342;</code>
+     *
+     * @param value The logMode to set.
      * @return This builder for chaining.
      */
-    public Builder setLogModeValue(int value) {
+    public Builder setLogMode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000001;
       logMode_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
-     * </code>
      *
-     * @return The logMode.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode getLogMode() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode result =
-          com.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode.valueOf(logMode_);
-      return result == null
-          ? com.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode.UNRECOGNIZED
-          : result;
-    }
-    /**
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
-     * </code>
      *
-     * @param value The logMode to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLogMode(
-        com.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      logMode_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
-     * </code>
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * Check the LogMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string log_mode = 402897342;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearLogMode() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      logMode_ = 0;
+      logMode_ = getDefaultInstance().getLogMode();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * Check the LogMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string log_mode = 402897342;</code>
+     *
+     * @param value The bytes for logMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLogModeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      logMode_ = value;
       onChanged();
       return this;
     }

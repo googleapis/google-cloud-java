@@ -25,20 +25,26 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonLongRunningClient;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LongRunningClient;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteGlobalOrganizationOperationRequest;
 import com.google.cloud.compute.v1.DeleteGlobalOrganizationOperationResponse;
 import com.google.cloud.compute.v1.GetGlobalOrganizationOperationRequest;
 import com.google.cloud.compute.v1.ListGlobalOrganizationOperationsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.OperationList;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -54,6 +60,8 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonGlobalOrganizationOperationsStub extends GlobalOrganizationOperationsStub {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
   private static final ApiMethodDescriptor<
           DeleteGlobalOrganizationOperationRequest, DeleteGlobalOrganizationOperationResponse>
       deleteMethodDescriptor =
@@ -90,6 +98,7 @@ public class HttpJsonGlobalOrganizationOperationsStub extends GlobalOrganization
                   ProtoMessageResponseParser.<DeleteGlobalOrganizationOperationResponse>newBuilder()
                       .setDefaultInstance(
                           DeleteGlobalOrganizationOperationResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -124,7 +133,27 @@ public class HttpJsonGlobalOrganizationOperationsStub extends GlobalOrganization
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (GetGlobalOrganizationOperationRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .setPollingRequestFactory(
+                  compoundOperationId -> {
+                    List<String> idComponents = Arrays.asList(compoundOperationId.split(":"));
+                    return GetGlobalOrganizationOperationRequest.newBuilder()
+                        .setOperation(idComponents.get(0))
+                        .setParentId(idComponents.get(1))
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListGlobalOrganizationOperationsRequest, OperationList>
@@ -176,6 +205,7 @@ public class HttpJsonGlobalOrganizationOperationsStub extends GlobalOrganization
               .setResponseParser(
                   ProtoMessageResponseParser.<OperationList>newBuilder()
                       .setDefaultInstance(OperationList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -188,6 +218,7 @@ public class HttpJsonGlobalOrganizationOperationsStub extends GlobalOrganization
       listPagedCallable;
 
   private final BackgroundResource backgroundResources;
+  private final LongRunningClient longRunningClient;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonGlobalOrganizationOperationsStub create(
@@ -240,16 +271,19 @@ public class HttpJsonGlobalOrganizationOperationsStub extends GlobalOrganization
                     DeleteGlobalOrganizationOperationResponse>
                     newBuilder()
                 .setMethodDescriptor(deleteMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<GetGlobalOrganizationOperationRequest, Operation> getTransportSettings =
         HttpJsonCallSettings.<GetGlobalOrganizationOperationRequest, Operation>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListGlobalOrganizationOperationsRequest, OperationList>
         listTransportSettings =
             HttpJsonCallSettings
                 .<ListGlobalOrganizationOperationsRequest, OperationList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.deleteCallable =
@@ -265,6 +299,11 @@ public class HttpJsonGlobalOrganizationOperationsStub extends GlobalOrganization
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
 
+    this.longRunningClient =
+        new HttpJsonLongRunningClient<GetGlobalOrganizationOperationRequest, Operation>(
+            getCallable,
+            getMethodDescriptor.getOperationSnapshotFactory(),
+            getMethodDescriptor.getPollingRequestFactory());
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -299,6 +338,11 @@ public class HttpJsonGlobalOrganizationOperationsStub extends GlobalOrganization
   public UnaryCallable<ListGlobalOrganizationOperationsRequest, ListPagedResponse>
       listPagedCallable() {
     return listPagedCallable;
+  }
+
+  @Override
+  public LongRunningClient longRunningClient() {
+    return longRunningClient;
   }
 
   @Override

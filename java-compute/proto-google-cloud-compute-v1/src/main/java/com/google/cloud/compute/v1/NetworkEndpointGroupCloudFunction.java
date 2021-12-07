@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Configuration for a Cloud Function network endpoint group (NEG). The function must be provided explicitly or in the URL mask.
- * Note: Cloud Function must be in the same project and located in the same region as the Serverless NEG.
+ * Configuration for a Cloud Function network endpoint group (NEG). The function must be provided explicitly or in the URL mask. Note: Cloud Function must be in the same project and located in the same region as the Serverless NEG.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.NetworkEndpointGroupCloudFunction}
@@ -129,12 +128,10 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
    *
    *
    * <pre>
-   * A user-defined name of the Cloud Function.
-   * The function name is case-sensitive and must be 1-63 characters long.
-   * Example value: "func1".
+   * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
    * </pre>
    *
-   * <code>string function = 307196888;</code>
+   * <code>optional string function = 307196888;</code>
    *
    * @return Whether the function field is set.
    */
@@ -146,12 +143,10 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
    *
    *
    * <pre>
-   * A user-defined name of the Cloud Function.
-   * The function name is case-sensitive and must be 1-63 characters long.
-   * Example value: "func1".
+   * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
    * </pre>
    *
-   * <code>string function = 307196888;</code>
+   * <code>optional string function = 307196888;</code>
    *
    * @return The function.
    */
@@ -171,12 +166,10 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
    *
    *
    * <pre>
-   * A user-defined name of the Cloud Function.
-   * The function name is case-sensitive and must be 1-63 characters long.
-   * Example value: "func1".
+   * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
    * </pre>
    *
-   * <code>string function = 307196888;</code>
+   * <code>optional string function = 307196888;</code>
    *
    * @return The bytes for function.
    */
@@ -199,11 +192,10 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
    *
    *
    * <pre>
-   * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services.
-   * For example, request URLs "mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+   * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
    * </pre>
    *
-   * <code>string url_mask = 103352252;</code>
+   * <code>optional string url_mask = 103352252;</code>
    *
    * @return Whether the urlMask field is set.
    */
@@ -215,11 +207,10 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
    *
    *
    * <pre>
-   * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services.
-   * For example, request URLs "mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+   * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
    * </pre>
    *
-   * <code>string url_mask = 103352252;</code>
+   * <code>optional string url_mask = 103352252;</code>
    *
    * @return The urlMask.
    */
@@ -239,11 +230,10 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
    *
    *
    * <pre>
-   * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services.
-   * For example, request URLs "mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+   * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
    * </pre>
    *
-   * <code>string url_mask = 103352252;</code>
+   * <code>optional string url_mask = 103352252;</code>
    *
    * @return The bytes for urlMask.
    */
@@ -443,8 +433,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
    *
    *
    * <pre>
-   * Configuration for a Cloud Function network endpoint group (NEG). The function must be provided explicitly or in the URL mask.
-   * Note: Cloud Function must be in the same project and located in the same region as the Serverless NEG.
+   * Configuration for a Cloud Function network endpoint group (NEG). The function must be provided explicitly or in the URL mask. Note: Cloud Function must be in the same project and located in the same region as the Serverless NEG.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.NetworkEndpointGroupCloudFunction}
@@ -627,12 +616,10 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      *
      *
      * <pre>
-     * A user-defined name of the Cloud Function.
-     * The function name is case-sensitive and must be 1-63 characters long.
-     * Example value: "func1".
+     * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
      * </pre>
      *
-     * <code>string function = 307196888;</code>
+     * <code>optional string function = 307196888;</code>
      *
      * @return Whether the function field is set.
      */
@@ -643,12 +630,10 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      *
      *
      * <pre>
-     * A user-defined name of the Cloud Function.
-     * The function name is case-sensitive and must be 1-63 characters long.
-     * Example value: "func1".
+     * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
      * </pre>
      *
-     * <code>string function = 307196888;</code>
+     * <code>optional string function = 307196888;</code>
      *
      * @return The function.
      */
@@ -667,12 +652,10 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      *
      *
      * <pre>
-     * A user-defined name of the Cloud Function.
-     * The function name is case-sensitive and must be 1-63 characters long.
-     * Example value: "func1".
+     * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
      * </pre>
      *
-     * <code>string function = 307196888;</code>
+     * <code>optional string function = 307196888;</code>
      *
      * @return The bytes for function.
      */
@@ -691,12 +674,10 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      *
      *
      * <pre>
-     * A user-defined name of the Cloud Function.
-     * The function name is case-sensitive and must be 1-63 characters long.
-     * Example value: "func1".
+     * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
      * </pre>
      *
-     * <code>string function = 307196888;</code>
+     * <code>optional string function = 307196888;</code>
      *
      * @param value The function to set.
      * @return This builder for chaining.
@@ -714,12 +695,10 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      *
      *
      * <pre>
-     * A user-defined name of the Cloud Function.
-     * The function name is case-sensitive and must be 1-63 characters long.
-     * Example value: "func1".
+     * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
      * </pre>
      *
-     * <code>string function = 307196888;</code>
+     * <code>optional string function = 307196888;</code>
      *
      * @return This builder for chaining.
      */
@@ -733,12 +712,10 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      *
      *
      * <pre>
-     * A user-defined name of the Cloud Function.
-     * The function name is case-sensitive and must be 1-63 characters long.
-     * Example value: "func1".
+     * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
      * </pre>
      *
-     * <code>string function = 307196888;</code>
+     * <code>optional string function = 307196888;</code>
      *
      * @param value The bytes for function to set.
      * @return This builder for chaining.
@@ -759,11 +736,10 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      *
      *
      * <pre>
-     * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services.
-     * For example, request URLs "mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+     * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
      * </pre>
      *
-     * <code>string url_mask = 103352252;</code>
+     * <code>optional string url_mask = 103352252;</code>
      *
      * @return Whether the urlMask field is set.
      */
@@ -774,11 +750,10 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      *
      *
      * <pre>
-     * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services.
-     * For example, request URLs "mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+     * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
      * </pre>
      *
-     * <code>string url_mask = 103352252;</code>
+     * <code>optional string url_mask = 103352252;</code>
      *
      * @return The urlMask.
      */
@@ -797,11 +772,10 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      *
      *
      * <pre>
-     * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services.
-     * For example, request URLs "mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+     * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
      * </pre>
      *
-     * <code>string url_mask = 103352252;</code>
+     * <code>optional string url_mask = 103352252;</code>
      *
      * @return The bytes for urlMask.
      */
@@ -820,11 +794,10 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      *
      *
      * <pre>
-     * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services.
-     * For example, request URLs "mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+     * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
      * </pre>
      *
-     * <code>string url_mask = 103352252;</code>
+     * <code>optional string url_mask = 103352252;</code>
      *
      * @param value The urlMask to set.
      * @return This builder for chaining.
@@ -842,11 +815,10 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      *
      *
      * <pre>
-     * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services.
-     * For example, request URLs "mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+     * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
      * </pre>
      *
-     * <code>string url_mask = 103352252;</code>
+     * <code>optional string url_mask = 103352252;</code>
      *
      * @return This builder for chaining.
      */
@@ -860,11 +832,10 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      *
      *
      * <pre>
-     * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services.
-     * For example, request URLs "mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+     * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
      * </pre>
      *
-     * <code>string url_mask = 103352252;</code>
+     * <code>optional string url_mask = 103352252;</code>
      *
      * @param value The bytes for urlMask to set.
      * @return This builder for chaining.

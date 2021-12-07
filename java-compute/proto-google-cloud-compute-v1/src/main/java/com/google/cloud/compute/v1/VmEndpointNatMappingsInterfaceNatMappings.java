@@ -294,7 +294,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * Total number of drain ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field drain_nat_ip_port_ranges.
    * </pre>
    *
-   * <code>int32 num_total_drain_nat_ports = 335532793;</code>
+   * <code>optional int32 num_total_drain_nat_ports = 335532793;</code>
    *
    * @return Whether the numTotalDrainNatPorts field is set.
    */
@@ -309,7 +309,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * Total number of drain ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field drain_nat_ip_port_ranges.
    * </pre>
    *
-   * <code>int32 num_total_drain_nat_ports = 335532793;</code>
+   * <code>optional int32 num_total_drain_nat_ports = 335532793;</code>
    *
    * @return The numTotalDrainNatPorts.
    */
@@ -327,7 +327,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * Total number of ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field nat_ip_port_ranges.
    * </pre>
    *
-   * <code>int32 num_total_nat_ports = 299904384;</code>
+   * <code>optional int32 num_total_nat_ports = 299904384;</code>
    *
    * @return Whether the numTotalNatPorts field is set.
    */
@@ -342,7 +342,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * Total number of ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field nat_ip_port_ranges.
    * </pre>
    *
-   * <code>int32 num_total_nat_ports = 299904384;</code>
+   * <code>optional int32 num_total_nat_ports = 299904384;</code>
    *
    * @return The numTotalNatPorts.
    */
@@ -360,7 +360,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
    * </pre>
    *
-   * <code>string source_alias_ip_range = 440340952;</code>
+   * <code>optional string source_alias_ip_range = 440340952;</code>
    *
    * @return Whether the sourceAliasIpRange field is set.
    */
@@ -375,7 +375,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
    * </pre>
    *
-   * <code>string source_alias_ip_range = 440340952;</code>
+   * <code>optional string source_alias_ip_range = 440340952;</code>
    *
    * @return The sourceAliasIpRange.
    */
@@ -398,7 +398,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
    * </pre>
    *
-   * <code>string source_alias_ip_range = 440340952;</code>
+   * <code>optional string source_alias_ip_range = 440340952;</code>
    *
    * @return The bytes for sourceAliasIpRange.
    */
@@ -424,7 +424,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * Primary IP of the VM for this NIC.
    * </pre>
    *
-   * <code>string source_virtual_ip = 149836159;</code>
+   * <code>optional string source_virtual_ip = 149836159;</code>
    *
    * @return Whether the sourceVirtualIp field is set.
    */
@@ -439,7 +439,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * Primary IP of the VM for this NIC.
    * </pre>
    *
-   * <code>string source_virtual_ip = 149836159;</code>
+   * <code>optional string source_virtual_ip = 149836159;</code>
    *
    * @return The sourceVirtualIp.
    */
@@ -462,7 +462,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * Primary IP of the VM for this NIC.
    * </pre>
    *
-   * <code>string source_virtual_ip = 149836159;</code>
+   * <code>optional string source_virtual_ip = 149836159;</code>
    *
    * @return The bytes for sourceVirtualIp.
    */
@@ -1305,7 +1305,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Total number of drain ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field drain_nat_ip_port_ranges.
      * </pre>
      *
-     * <code>int32 num_total_drain_nat_ports = 335532793;</code>
+     * <code>optional int32 num_total_drain_nat_ports = 335532793;</code>
      *
      * @return Whether the numTotalDrainNatPorts field is set.
      */
@@ -1320,7 +1320,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Total number of drain ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field drain_nat_ip_port_ranges.
      * </pre>
      *
-     * <code>int32 num_total_drain_nat_ports = 335532793;</code>
+     * <code>optional int32 num_total_drain_nat_ports = 335532793;</code>
      *
      * @return The numTotalDrainNatPorts.
      */
@@ -1335,7 +1335,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Total number of drain ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field drain_nat_ip_port_ranges.
      * </pre>
      *
-     * <code>int32 num_total_drain_nat_ports = 335532793;</code>
+     * <code>optional int32 num_total_drain_nat_ports = 335532793;</code>
      *
      * @param value The numTotalDrainNatPorts to set.
      * @return This builder for chaining.
@@ -1353,7 +1353,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Total number of drain ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field drain_nat_ip_port_ranges.
      * </pre>
      *
-     * <code>int32 num_total_drain_nat_ports = 335532793;</code>
+     * <code>optional int32 num_total_drain_nat_ports = 335532793;</code>
      *
      * @return This builder for chaining.
      */
@@ -1372,7 +1372,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Total number of ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field nat_ip_port_ranges.
      * </pre>
      *
-     * <code>int32 num_total_nat_ports = 299904384;</code>
+     * <code>optional int32 num_total_nat_ports = 299904384;</code>
      *
      * @return Whether the numTotalNatPorts field is set.
      */
@@ -1387,7 +1387,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Total number of ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field nat_ip_port_ranges.
      * </pre>
      *
-     * <code>int32 num_total_nat_ports = 299904384;</code>
+     * <code>optional int32 num_total_nat_ports = 299904384;</code>
      *
      * @return The numTotalNatPorts.
      */
@@ -1402,7 +1402,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Total number of ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field nat_ip_port_ranges.
      * </pre>
      *
-     * <code>int32 num_total_nat_ports = 299904384;</code>
+     * <code>optional int32 num_total_nat_ports = 299904384;</code>
      *
      * @param value The numTotalNatPorts to set.
      * @return This builder for chaining.
@@ -1420,7 +1420,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Total number of ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field nat_ip_port_ranges.
      * </pre>
      *
-     * <code>int32 num_total_nat_ports = 299904384;</code>
+     * <code>optional int32 num_total_nat_ports = 299904384;</code>
      *
      * @return This builder for chaining.
      */
@@ -1439,7 +1439,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
      * </pre>
      *
-     * <code>string source_alias_ip_range = 440340952;</code>
+     * <code>optional string source_alias_ip_range = 440340952;</code>
      *
      * @return Whether the sourceAliasIpRange field is set.
      */
@@ -1453,7 +1453,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
      * </pre>
      *
-     * <code>string source_alias_ip_range = 440340952;</code>
+     * <code>optional string source_alias_ip_range = 440340952;</code>
      *
      * @return The sourceAliasIpRange.
      */
@@ -1475,7 +1475,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
      * </pre>
      *
-     * <code>string source_alias_ip_range = 440340952;</code>
+     * <code>optional string source_alias_ip_range = 440340952;</code>
      *
      * @return The bytes for sourceAliasIpRange.
      */
@@ -1497,7 +1497,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
      * </pre>
      *
-     * <code>string source_alias_ip_range = 440340952;</code>
+     * <code>optional string source_alias_ip_range = 440340952;</code>
      *
      * @param value The sourceAliasIpRange to set.
      * @return This builder for chaining.
@@ -1518,7 +1518,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
      * </pre>
      *
-     * <code>string source_alias_ip_range = 440340952;</code>
+     * <code>optional string source_alias_ip_range = 440340952;</code>
      *
      * @return This builder for chaining.
      */
@@ -1535,7 +1535,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
      * </pre>
      *
-     * <code>string source_alias_ip_range = 440340952;</code>
+     * <code>optional string source_alias_ip_range = 440340952;</code>
      *
      * @param value The bytes for sourceAliasIpRange to set.
      * @return This builder for chaining.
@@ -1559,7 +1559,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Primary IP of the VM for this NIC.
      * </pre>
      *
-     * <code>string source_virtual_ip = 149836159;</code>
+     * <code>optional string source_virtual_ip = 149836159;</code>
      *
      * @return Whether the sourceVirtualIp field is set.
      */
@@ -1573,7 +1573,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Primary IP of the VM for this NIC.
      * </pre>
      *
-     * <code>string source_virtual_ip = 149836159;</code>
+     * <code>optional string source_virtual_ip = 149836159;</code>
      *
      * @return The sourceVirtualIp.
      */
@@ -1595,7 +1595,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Primary IP of the VM for this NIC.
      * </pre>
      *
-     * <code>string source_virtual_ip = 149836159;</code>
+     * <code>optional string source_virtual_ip = 149836159;</code>
      *
      * @return The bytes for sourceVirtualIp.
      */
@@ -1617,7 +1617,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Primary IP of the VM for this NIC.
      * </pre>
      *
-     * <code>string source_virtual_ip = 149836159;</code>
+     * <code>optional string source_virtual_ip = 149836159;</code>
      *
      * @param value The sourceVirtualIp to set.
      * @return This builder for chaining.
@@ -1638,7 +1638,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Primary IP of the VM for this NIC.
      * </pre>
      *
-     * <code>string source_virtual_ip = 149836159;</code>
+     * <code>optional string source_virtual_ip = 149836159;</code>
      *
      * @return This builder for chaining.
      */
@@ -1655,7 +1655,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Primary IP of the VM for this NIC.
      * </pre>
      *
-     * <code>string source_virtual_ip = 149836159;</code>
+     * <code>optional string source_virtual_ip = 149836159;</code>
      *
      * @param value The bytes for sourceVirtualIp to set.
      * @return This builder for chaining.

@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.TargetTcpProxiesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteTargetTcpProxyRequest;
 import com.google.cloud.compute.v1.GetTargetTcpProxyRequest;
@@ -40,12 +41,22 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class TargetTcpProxiesStub implements BackgroundResource {
 
+  public OperationCallable<DeleteTargetTcpProxyRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteTargetTcpProxyRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetTargetTcpProxyRequest, TargetTcpProxy> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertTargetTcpProxyRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertTargetTcpProxyRequest, Operation> insertCallable() {
@@ -60,9 +71,20 @@ public abstract class TargetTcpProxiesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
   }
 
+  public OperationCallable<SetBackendServiceTargetTcpProxyRequest, Operation, Operation>
+      setBackendServiceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setBackendServiceOperationCallable()");
+  }
+
   public UnaryCallable<SetBackendServiceTargetTcpProxyRequest, Operation>
       setBackendServiceCallable() {
     throw new UnsupportedOperationException("Not implemented: setBackendServiceCallable()");
+  }
+
+  public OperationCallable<SetProxyHeaderTargetTcpProxyRequest, Operation, Operation>
+      setProxyHeaderOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setProxyHeaderOperationCallable()");
   }
 
   public UnaryCallable<SetProxyHeaderTargetTcpProxyRequest, Operation> setProxyHeaderCallable() {

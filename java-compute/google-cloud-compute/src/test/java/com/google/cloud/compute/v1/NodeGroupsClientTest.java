@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonNodeGroupsStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -37,6 +38,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -89,7 +91,7 @@ public class NodeGroupsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -100,6 +102,7 @@ public class NodeGroupsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -116,7 +119,7 @@ public class NodeGroupsClientTest {
         NodeGroupsAddNodesRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.addNodes(project, zone, nodeGroup, nodeGroupsAddNodesRequestResource);
+        client.addNodesAsync(project, zone, nodeGroup, nodeGroupsAddNodesRequestResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -147,10 +150,9 @@ public class NodeGroupsClientTest {
       String nodeGroup = "nodeGroup443599261";
       NodeGroupsAddNodesRequest nodeGroupsAddNodesRequestResource =
           NodeGroupsAddNodesRequest.newBuilder().build();
-      client.addNodes(project, zone, nodeGroup, nodeGroupsAddNodesRequestResource);
+      client.addNodesAsync(project, zone, nodeGroup, nodeGroupsAddNodesRequestResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -216,7 +218,7 @@ public class NodeGroupsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -227,6 +229,7 @@ public class NodeGroupsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -240,7 +243,7 @@ public class NodeGroupsClientTest {
     String zone = "zone3744684";
     String nodeGroup = "nodeGroup443599261";
 
-    Operation actualResponse = client.delete(project, zone, nodeGroup);
+    Operation actualResponse = client.deleteAsync(project, zone, nodeGroup).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -269,10 +272,9 @@ public class NodeGroupsClientTest {
       String project = "project-309310695";
       String zone = "zone3744684";
       String nodeGroup = "nodeGroup443599261";
-      client.delete(project, zone, nodeGroup);
+      client.deleteAsync(project, zone, nodeGroup).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -286,7 +288,7 @@ public class NodeGroupsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -297,6 +299,7 @@ public class NodeGroupsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -313,7 +316,9 @@ public class NodeGroupsClientTest {
         NodeGroupsDeleteNodesRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.deleteNodes(project, zone, nodeGroup, nodeGroupsDeleteNodesRequestResource);
+        client
+            .deleteNodesAsync(project, zone, nodeGroup, nodeGroupsDeleteNodesRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -344,10 +349,9 @@ public class NodeGroupsClientTest {
       String nodeGroup = "nodeGroup443599261";
       NodeGroupsDeleteNodesRequest nodeGroupsDeleteNodesRequestResource =
           NodeGroupsDeleteNodesRequest.newBuilder().build();
-      client.deleteNodes(project, zone, nodeGroup, nodeGroupsDeleteNodesRequestResource);
+      client.deleteNodesAsync(project, zone, nodeGroup, nodeGroupsDeleteNodesRequestResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -362,11 +366,13 @@ public class NodeGroupsClientTest {
             .setId(3355)
             .setKind("kind3292052")
             .setLocationHint("locationHint-58650660")
+            .setMaintenancePolicy("maintenancePolicy-1365923291")
             .setMaintenanceWindow(NodeGroupMaintenanceWindow.newBuilder().build())
             .setName("name3373707")
             .setNodeTemplate("nodeTemplate2118368412")
             .setSelfLink("selfLink1191800166")
             .setSize(3530753)
+            .setStatus("status-892481550")
             .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
@@ -474,7 +480,7 @@ public class NodeGroupsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -485,6 +491,7 @@ public class NodeGroupsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -499,7 +506,8 @@ public class NodeGroupsClientTest {
     int initialNodeCount = 1682564205;
     NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, zone, initialNodeCount, nodeGroupResource);
+    Operation actualResponse =
+        client.insertAsync(project, zone, initialNodeCount, nodeGroupResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -529,10 +537,9 @@ public class NodeGroupsClientTest {
       String zone = "zone3744684";
       int initialNodeCount = 1682564205;
       NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
-      client.insert(project, zone, initialNodeCount, nodeGroupResource);
+      client.insertAsync(project, zone, initialNodeCount, nodeGroupResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -652,7 +659,7 @@ public class NodeGroupsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -663,6 +670,7 @@ public class NodeGroupsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -677,7 +685,7 @@ public class NodeGroupsClientTest {
     String nodeGroup = "nodeGroup443599261";
     NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
 
-    Operation actualResponse = client.patch(project, zone, nodeGroup, nodeGroupResource);
+    Operation actualResponse = client.patchAsync(project, zone, nodeGroup, nodeGroupResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -707,10 +715,9 @@ public class NodeGroupsClientTest {
       String zone = "zone3744684";
       String nodeGroup = "nodeGroup443599261";
       NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
-      client.patch(project, zone, nodeGroup, nodeGroupResource);
+      client.patchAsync(project, zone, nodeGroup, nodeGroupResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -780,7 +787,7 @@ public class NodeGroupsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -791,6 +798,7 @@ public class NodeGroupsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -807,7 +815,10 @@ public class NodeGroupsClientTest {
         NodeGroupsSetNodeTemplateRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.setNodeTemplate(project, zone, nodeGroup, nodeGroupsSetNodeTemplateRequestResource);
+        client
+            .setNodeTemplateAsync(
+                project, zone, nodeGroup, nodeGroupsSetNodeTemplateRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -838,10 +849,11 @@ public class NodeGroupsClientTest {
       String nodeGroup = "nodeGroup443599261";
       NodeGroupsSetNodeTemplateRequest nodeGroupsSetNodeTemplateRequestResource =
           NodeGroupsSetNodeTemplateRequest.newBuilder().build();
-      client.setNodeTemplate(project, zone, nodeGroup, nodeGroupsSetNodeTemplateRequestResource);
+      client
+          .setNodeTemplateAsync(project, zone, nodeGroup, nodeGroupsSetNodeTemplateRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 

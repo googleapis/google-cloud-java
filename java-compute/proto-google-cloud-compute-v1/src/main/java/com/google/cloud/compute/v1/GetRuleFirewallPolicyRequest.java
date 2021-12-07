@@ -177,7 +177,7 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
    * The priority of the rule to get from the firewall policy.
    * </pre>
    *
-   * <code>int32 priority = 445151652;</code>
+   * <code>optional int32 priority = 445151652;</code>
    *
    * @return Whether the priority field is set.
    */
@@ -192,7 +192,7 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
    * The priority of the rule to get from the firewall policy.
    * </pre>
    *
-   * <code>int32 priority = 445151652;</code>
+   * <code>optional int32 priority = 445151652;</code>
    *
    * @return The priority.
    */
@@ -218,7 +218,7 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(445151652, priority_);
     }
-    if (!getFirewallPolicyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firewallPolicy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 498173265, firewallPolicy_);
     }
     unknownFields.writeTo(output);
@@ -233,7 +233,7 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(445151652, priority_);
     }
-    if (!getFirewallPolicyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firewallPolicy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(498173265, firewallPolicy_);
     }
     size += unknownFields.getSerializedSize();
@@ -662,7 +662,7 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
      * The priority of the rule to get from the firewall policy.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>optional int32 priority = 445151652;</code>
      *
      * @return Whether the priority field is set.
      */
@@ -677,7 +677,7 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
      * The priority of the rule to get from the firewall policy.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>optional int32 priority = 445151652;</code>
      *
      * @return The priority.
      */
@@ -692,7 +692,7 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
      * The priority of the rule to get from the firewall policy.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>optional int32 priority = 445151652;</code>
      *
      * @param value The priority to set.
      * @return This builder for chaining.
@@ -710,7 +710,7 @@ public final class GetRuleFirewallPolicyRequest extends com.google.protobuf.Gene
      * The priority of the rule to get from the firewall policy.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>optional int32 priority = 445151652;</code>
      *
      * @return This builder for chaining.
      */

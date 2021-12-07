@@ -25,11 +25,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.Address;
 import com.google.cloud.compute.v1.AddressList;
@@ -38,6 +40,8 @@ import com.google.cloud.compute.v1.GetGlobalAddressRequest;
 import com.google.cloud.compute.v1.InsertGlobalAddressRequest;
 import com.google.cloud.compute.v1.ListGlobalAddressesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,6 +59,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<DeleteGlobalAddressRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteGlobalAddressRequest, Operation>newBuilder()
@@ -87,7 +94,20 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteGlobalAddressRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetGlobalAddressRequest, Address> getMethodDescriptor =
@@ -118,6 +138,7 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Address>newBuilder()
                   .setDefaultInstance(Address.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -155,7 +176,20 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertGlobalAddressRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListGlobalAddressesRequest, AddressList>
@@ -205,16 +239,22 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<AddressList>newBuilder()
                       .setDefaultInstance(AddressList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
   private final UnaryCallable<DeleteGlobalAddressRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteGlobalAddressRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetGlobalAddressRequest, Address> getCallable;
   private final UnaryCallable<InsertGlobalAddressRequest, Operation> insertCallable;
+  private final OperationCallable<InsertGlobalAddressRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListGlobalAddressesRequest, AddressList> listCallable;
   private final UnaryCallable<ListGlobalAddressesRequest, ListPagedResponse> listPagedCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonGlobalAddressesStub create(GlobalAddressesStubSettings settings)
@@ -255,33 +295,51 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<DeleteGlobalAddressRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteGlobalAddressRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetGlobalAddressRequest, Address> getTransportSettings =
         HttpJsonCallSettings.<GetGlobalAddressRequest, Address>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertGlobalAddressRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertGlobalAddressRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListGlobalAddressesRequest, AddressList> listTransportSettings =
         HttpJsonCallSettings.<ListGlobalAddressesRequest, AddressList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -309,6 +367,12 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
   }
 
   @Override
+  public OperationCallable<DeleteGlobalAddressRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetGlobalAddressRequest, Address> getCallable() {
     return getCallable;
   }
@@ -316,6 +380,12 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
   @Override
   public UnaryCallable<InsertGlobalAddressRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertGlobalAddressRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override

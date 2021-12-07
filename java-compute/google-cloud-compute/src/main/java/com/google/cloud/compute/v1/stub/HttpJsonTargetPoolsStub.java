@@ -26,11 +26,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddHealthCheckTargetPoolRequest;
 import com.google.cloud.compute.v1.AddInstanceTargetPoolRequest;
@@ -41,6 +43,7 @@ import com.google.cloud.compute.v1.GetTargetPoolRequest;
 import com.google.cloud.compute.v1.InsertTargetPoolRequest;
 import com.google.cloud.compute.v1.ListTargetPoolsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.RemoveHealthCheckTargetPoolRequest;
 import com.google.cloud.compute.v1.RemoveInstanceTargetPoolRequest;
 import com.google.cloud.compute.v1.SetBackupTargetPoolRequest;
@@ -48,6 +51,7 @@ import com.google.cloud.compute.v1.TargetPool;
 import com.google.cloud.compute.v1.TargetPoolAggregatedList;
 import com.google.cloud.compute.v1.TargetPoolInstanceHealth;
 import com.google.cloud.compute.v1.TargetPoolList;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -65,6 +69,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<AddHealthCheckTargetPoolRequest, Operation>
       addHealthCheckMethodDescriptor =
           ApiMethodDescriptor.<AddHealthCheckTargetPoolRequest, Operation>newBuilder()
@@ -103,7 +110,21 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (AddHealthCheckTargetPoolRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<AddInstanceTargetPoolRequest, Operation>
@@ -144,7 +165,21 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (AddInstanceTargetPoolRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -200,6 +235,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetPoolAggregatedList>newBuilder()
                       .setDefaultInstance(TargetPoolAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -236,7 +272,21 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteTargetPoolRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetTargetPoolRequest, TargetPool> getMethodDescriptor =
@@ -268,6 +318,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
           .setResponseParser(
               ProtoMessageResponseParser.<TargetPool>newBuilder()
                   .setDefaultInstance(TargetPool.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -306,6 +357,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetPoolInstanceHealth>newBuilder()
                       .setDefaultInstance(TargetPoolInstanceHealth.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -344,7 +396,21 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertTargetPoolRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListTargetPoolsRequest, TargetPoolList>
@@ -395,6 +461,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetPoolList>newBuilder()
                       .setDefaultInstance(TargetPoolList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -436,7 +503,21 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (RemoveHealthCheckTargetPoolRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<RemoveInstanceTargetPoolRequest, Operation>
@@ -477,7 +558,21 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (RemoveInstanceTargetPoolRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetBackupTargetPoolRequest, Operation>
@@ -522,28 +617,57 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetBackupTargetPoolRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<AddHealthCheckTargetPoolRequest, Operation> addHealthCheckCallable;
+  private final OperationCallable<AddHealthCheckTargetPoolRequest, Operation, Operation>
+      addHealthCheckOperationCallable;
   private final UnaryCallable<AddInstanceTargetPoolRequest, Operation> addInstanceCallable;
+  private final OperationCallable<AddInstanceTargetPoolRequest, Operation, Operation>
+      addInstanceOperationCallable;
   private final UnaryCallable<AggregatedListTargetPoolsRequest, TargetPoolAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListTargetPoolsRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
   private final UnaryCallable<DeleteTargetPoolRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteTargetPoolRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetTargetPoolRequest, TargetPool> getCallable;
   private final UnaryCallable<GetHealthTargetPoolRequest, TargetPoolInstanceHealth>
       getHealthCallable;
   private final UnaryCallable<InsertTargetPoolRequest, Operation> insertCallable;
+  private final OperationCallable<InsertTargetPoolRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListTargetPoolsRequest, TargetPoolList> listCallable;
   private final UnaryCallable<ListTargetPoolsRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<RemoveHealthCheckTargetPoolRequest, Operation>
       removeHealthCheckCallable;
+  private final OperationCallable<RemoveHealthCheckTargetPoolRequest, Operation, Operation>
+      removeHealthCheckOperationCallable;
   private final UnaryCallable<RemoveInstanceTargetPoolRequest, Operation> removeInstanceCallable;
+  private final OperationCallable<RemoveInstanceTargetPoolRequest, Operation, Operation>
+      removeInstanceOperationCallable;
   private final UnaryCallable<SetBackupTargetPoolRequest, Operation> setBackupCallable;
+  private final OperationCallable<SetBackupTargetPoolRequest, Operation, Operation>
+      setBackupOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonTargetPoolsStub create(TargetPoolsStubSettings settings)
@@ -583,64 +707,89 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AddHealthCheckTargetPoolRequest, Operation>
         addHealthCheckTransportSettings =
             HttpJsonCallSettings.<AddHealthCheckTargetPoolRequest, Operation>newBuilder()
                 .setMethodDescriptor(addHealthCheckMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<AddInstanceTargetPoolRequest, Operation> addInstanceTransportSettings =
         HttpJsonCallSettings.<AddInstanceTargetPoolRequest, Operation>newBuilder()
             .setMethodDescriptor(addInstanceMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<AggregatedListTargetPoolsRequest, TargetPoolAggregatedList>
         aggregatedListTransportSettings =
             HttpJsonCallSettings
                 .<AggregatedListTargetPoolsRequest, TargetPoolAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeleteTargetPoolRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteTargetPoolRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetTargetPoolRequest, TargetPool> getTransportSettings =
         HttpJsonCallSettings.<GetTargetPoolRequest, TargetPool>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetHealthTargetPoolRequest, TargetPoolInstanceHealth>
         getHealthTransportSettings =
             HttpJsonCallSettings.<GetHealthTargetPoolRequest, TargetPoolInstanceHealth>newBuilder()
                 .setMethodDescriptor(getHealthMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<InsertTargetPoolRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertTargetPoolRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListTargetPoolsRequest, TargetPoolList> listTransportSettings =
         HttpJsonCallSettings.<ListTargetPoolsRequest, TargetPoolList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<RemoveHealthCheckTargetPoolRequest, Operation>
         removeHealthCheckTransportSettings =
             HttpJsonCallSettings.<RemoveHealthCheckTargetPoolRequest, Operation>newBuilder()
                 .setMethodDescriptor(removeHealthCheckMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<RemoveInstanceTargetPoolRequest, Operation>
         removeInstanceTransportSettings =
             HttpJsonCallSettings.<RemoveInstanceTargetPoolRequest, Operation>newBuilder()
                 .setMethodDescriptor(removeInstanceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<SetBackupTargetPoolRequest, Operation> setBackupTransportSettings =
         HttpJsonCallSettings.<SetBackupTargetPoolRequest, Operation>newBuilder()
             .setMethodDescriptor(setBackupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.addHealthCheckCallable =
         callableFactory.createUnaryCallable(
             addHealthCheckTransportSettings, settings.addHealthCheckSettings(), clientContext);
+    this.addHealthCheckOperationCallable =
+        callableFactory.createOperationCallable(
+            addHealthCheckTransportSettings,
+            settings.addHealthCheckOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.addInstanceCallable =
         callableFactory.createUnaryCallable(
             addInstanceTransportSettings, settings.addInstanceSettings(), clientContext);
+    this.addInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            addInstanceTransportSettings,
+            settings.addInstanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.aggregatedListCallable =
         callableFactory.createUnaryCallable(
             aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
@@ -650,6 +799,12 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
@@ -659,6 +814,12 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -670,12 +831,30 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
             removeHealthCheckTransportSettings,
             settings.removeHealthCheckSettings(),
             clientContext);
+    this.removeHealthCheckOperationCallable =
+        callableFactory.createOperationCallable(
+            removeHealthCheckTransportSettings,
+            settings.removeHealthCheckOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.removeInstanceCallable =
         callableFactory.createUnaryCallable(
             removeInstanceTransportSettings, settings.removeInstanceSettings(), clientContext);
+    this.removeInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            removeInstanceTransportSettings,
+            settings.removeInstanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setBackupCallable =
         callableFactory.createUnaryCallable(
             setBackupTransportSettings, settings.setBackupSettings(), clientContext);
+    this.setBackupOperationCallable =
+        callableFactory.createOperationCallable(
+            setBackupTransportSettings,
+            settings.setBackupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -704,8 +883,20 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
   }
 
   @Override
+  public OperationCallable<AddHealthCheckTargetPoolRequest, Operation, Operation>
+      addHealthCheckOperationCallable() {
+    return addHealthCheckOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<AddInstanceTargetPoolRequest, Operation> addInstanceCallable() {
     return addInstanceCallable;
+  }
+
+  @Override
+  public OperationCallable<AddInstanceTargetPoolRequest, Operation, Operation>
+      addInstanceOperationCallable() {
+    return addInstanceOperationCallable;
   }
 
   @Override
@@ -726,6 +917,12 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
   }
 
   @Override
+  public OperationCallable<DeleteTargetPoolRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetTargetPoolRequest, TargetPool> getCallable() {
     return getCallable;
   }
@@ -738,6 +935,12 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
   @Override
   public UnaryCallable<InsertTargetPoolRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertTargetPoolRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -756,13 +959,31 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
   }
 
   @Override
+  public OperationCallable<RemoveHealthCheckTargetPoolRequest, Operation, Operation>
+      removeHealthCheckOperationCallable() {
+    return removeHealthCheckOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<RemoveInstanceTargetPoolRequest, Operation> removeInstanceCallable() {
     return removeInstanceCallable;
   }
 
   @Override
+  public OperationCallable<RemoveInstanceTargetPoolRequest, Operation, Operation>
+      removeInstanceOperationCallable() {
+    return removeInstanceOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetBackupTargetPoolRequest, Operation> setBackupCallable() {
     return setBackupCallable;
+  }
+
+  @Override
+  public OperationCallable<SetBackupTargetPoolRequest, Operation, Operation>
+      setBackupOperationCallable() {
+    return setBackupOperationCallable;
   }
 
   @Override

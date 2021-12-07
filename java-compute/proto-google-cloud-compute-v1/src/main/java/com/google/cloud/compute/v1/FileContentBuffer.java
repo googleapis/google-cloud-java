@@ -38,7 +38,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
 
   private FileContentBuffer() {
     content_ = "";
-    fileType_ = 0;
+    fileType_ = "";
   }
 
   @java.lang.Override
@@ -71,11 +71,11 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
           case 0:
             done = true;
             break;
-          case -1940193048:
+          case -1940193046:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
-              fileType_ = rawValue;
+              fileType_ = s;
               break;
             }
           case -977689654:
@@ -260,7 +260,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
    * The raw content in the secure keys file.
    * </pre>
    *
-   * <code>string content = 414659705;</code>
+   * <code>optional string content = 414659705;</code>
    *
    * @return Whether the content field is set.
    */
@@ -275,7 +275,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
    * The raw content in the secure keys file.
    * </pre>
    *
-   * <code>string content = 414659705;</code>
+   * <code>optional string content = 414659705;</code>
    *
    * @return The content.
    */
@@ -298,7 +298,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
    * The raw content in the secure keys file.
    * </pre>
    *
-   * <code>string content = 414659705;</code>
+   * <code>optional string content = 414659705;</code>
    *
    * @return The bytes for content.
    */
@@ -316,15 +316,16 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FILE_TYPE_FIELD_NUMBER = 294346781;
-  private int fileType_;
+  private volatile java.lang.Object fileType_;
   /**
    *
    *
    * <pre>
    * The file type of source file.
+   * Check the FileType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+   * <code>optional string file_type = 294346781;</code>
    *
    * @return Whether the fileType field is set.
    */
@@ -337,35 +338,48 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The file type of source file.
+   * Check the FileType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+   * <code>optional string file_type = 294346781;</code>
    *
-   * @return The enum numeric value on the wire for fileType.
+   * @return The fileType.
    */
   @java.lang.Override
-  public int getFileTypeValue() {
-    return fileType_;
+  public java.lang.String getFileType() {
+    java.lang.Object ref = fileType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      fileType_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * The file type of source file.
+   * Check the FileType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+   * <code>optional string file_type = 294346781;</code>
    *
-   * @return The fileType.
+   * @return The bytes for fileType.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.FileContentBuffer.FileType getFileType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.FileContentBuffer.FileType result =
-        com.google.cloud.compute.v1.FileContentBuffer.FileType.valueOf(fileType_);
-    return result == null
-        ? com.google.cloud.compute.v1.FileContentBuffer.FileType.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getFileTypeBytes() {
+    java.lang.Object ref = fileType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      fileType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -383,7 +397,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(294346781, fileType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 294346781, fileType_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 414659705, content_);
@@ -398,7 +412,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
 
     size = 0;
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(294346781, fileType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(294346781, fileType_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(414659705, content_);
@@ -425,7 +439,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     }
     if (hasFileType() != other.hasFileType()) return false;
     if (hasFileType()) {
-      if (fileType_ != other.fileType_) return false;
+      if (!getFileType().equals(other.getFileType())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -444,7 +458,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     }
     if (hasFileType()) {
       hash = (37 * hash) + FILE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + fileType_;
+      hash = (53 * hash) + getFileType().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -592,7 +606,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
       super.clear();
       content_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
-      fileType_ = 0;
+      fileType_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
@@ -687,7 +701,9 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
         onChanged();
       }
       if (other.hasFileType()) {
-        setFileType(other.getFileType());
+        bitField0_ |= 0x00000002;
+        fileType_ = other.fileType_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -728,7 +744,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The raw content in the secure keys file.
      * </pre>
      *
-     * <code>string content = 414659705;</code>
+     * <code>optional string content = 414659705;</code>
      *
      * @return Whether the content field is set.
      */
@@ -742,7 +758,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The raw content in the secure keys file.
      * </pre>
      *
-     * <code>string content = 414659705;</code>
+     * <code>optional string content = 414659705;</code>
      *
      * @return The content.
      */
@@ -764,7 +780,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The raw content in the secure keys file.
      * </pre>
      *
-     * <code>string content = 414659705;</code>
+     * <code>optional string content = 414659705;</code>
      *
      * @return The bytes for content.
      */
@@ -786,7 +802,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The raw content in the secure keys file.
      * </pre>
      *
-     * <code>string content = 414659705;</code>
+     * <code>optional string content = 414659705;</code>
      *
      * @param value The content to set.
      * @return This builder for chaining.
@@ -807,7 +823,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The raw content in the secure keys file.
      * </pre>
      *
-     * <code>string content = 414659705;</code>
+     * <code>optional string content = 414659705;</code>
      *
      * @return This builder for chaining.
      */
@@ -824,7 +840,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The raw content in the secure keys file.
      * </pre>
      *
-     * <code>string content = 414659705;</code>
+     * <code>optional string content = 414659705;</code>
      *
      * @param value The bytes for content to set.
      * @return This builder for chaining.
@@ -840,19 +856,19 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private int fileType_ = 0;
+    private java.lang.Object fileType_ = "";
     /**
      *
      *
      * <pre>
      * The file type of source file.
+     * Check the FileType enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+     * <code>optional string file_type = 294346781;</code>
      *
      * @return Whether the fileType field is set.
      */
-    @java.lang.Override
     public boolean hasFileType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -861,29 +877,64 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The file type of source file.
+     * Check the FileType enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+     * <code>optional string file_type = 294346781;</code>
      *
-     * @return The enum numeric value on the wire for fileType.
+     * @return The fileType.
      */
-    @java.lang.Override
-    public int getFileTypeValue() {
-      return fileType_;
+    public java.lang.String getFileType() {
+      java.lang.Object ref = fileType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fileType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * The file type of source file.
+     * Check the FileType enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+     * <code>optional string file_type = 294346781;</code>
      *
-     * @param value The enum numeric value on the wire for fileType to set.
+     * @return The bytes for fileType.
+     */
+    public com.google.protobuf.ByteString getFileTypeBytes() {
+      java.lang.Object ref = fileType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        fileType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The file type of source file.
+     * Check the FileType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string file_type = 294346781;</code>
+     *
+     * @param value The fileType to set.
      * @return This builder for chaining.
      */
-    public Builder setFileTypeValue(int value) {
+    public Builder setFileType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000002;
       fileType_ = value;
       onChanged();
@@ -894,39 +945,16 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The file type of source file.
+     * Check the FileType enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+     * <code>optional string file_type = 294346781;</code>
      *
-     * @return The fileType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.FileContentBuffer.FileType getFileType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.FileContentBuffer.FileType result =
-          com.google.cloud.compute.v1.FileContentBuffer.FileType.valueOf(fileType_);
-      return result == null
-          ? com.google.cloud.compute.v1.FileContentBuffer.FileType.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The file type of source file.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
-     *
-     * @param value The fileType to set.
      * @return This builder for chaining.
      */
-    public Builder setFileType(com.google.cloud.compute.v1.FileContentBuffer.FileType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      fileType_ = value.getNumber();
+    public Builder clearFileType() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      fileType_ = getDefaultInstance().getFileType();
       onChanged();
       return this;
     }
@@ -935,15 +963,21 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The file type of source file.
+     * Check the FileType enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+     * <code>optional string file_type = 294346781;</code>
      *
+     * @param value The bytes for fileType to set.
      * @return This builder for chaining.
      */
-    public Builder clearFileType() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      fileType_ = 0;
+    public Builder setFileTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      fileType_ = value;
       onChanged();
       return this;
     }

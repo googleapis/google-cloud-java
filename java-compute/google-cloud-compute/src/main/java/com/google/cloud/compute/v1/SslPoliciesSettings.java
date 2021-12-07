@@ -26,6 +26,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -49,15 +50,15 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * SslPoliciesSettings.Builder sslPoliciesSettingsBuilder = SslPoliciesSettings.newBuilder();
  * sslPoliciesSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         sslPoliciesSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -73,6 +74,12 @@ public class SslPoliciesSettings extends ClientSettings<SslPoliciesSettings> {
     return ((SslPoliciesStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteSslPolicyRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((SslPoliciesStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetSslPolicyRequest, SslPolicy> getSettings() {
     return ((SslPoliciesStubSettings) getStubSettings()).getSettings();
@@ -81,6 +88,12 @@ public class SslPoliciesSettings extends ClientSettings<SslPoliciesSettings> {
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertSslPolicyRequest, Operation> insertSettings() {
     return ((SslPoliciesStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertSslPolicyRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((SslPoliciesStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -99,6 +112,12 @@ public class SslPoliciesSettings extends ClientSettings<SslPoliciesSettings> {
   /** Returns the object with the settings used for calls to patch. */
   public UnaryCallSettings<PatchSslPolicyRequest, Operation> patchSettings() {
     return ((SslPoliciesStubSettings) getStubSettings()).patchSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchSslPolicyRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((SslPoliciesStubSettings) getStubSettings()).patchOperationSettings();
   }
 
   public static final SslPoliciesSettings create(SslPoliciesStubSettings stub) throws IOException {
@@ -203,6 +222,12 @@ public class SslPoliciesSettings extends ClientSettings<SslPoliciesSettings> {
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteSslPolicyRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetSslPolicyRequest, SslPolicy> getSettings() {
       return getStubSettingsBuilder().getSettings();
@@ -211,6 +236,12 @@ public class SslPoliciesSettings extends ClientSettings<SslPoliciesSettings> {
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertSslPolicyRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertSslPolicyRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -229,6 +260,12 @@ public class SslPoliciesSettings extends ClientSettings<SslPoliciesSettings> {
     /** Returns the builder for the settings used for calls to patch. */
     public UnaryCallSettings.Builder<PatchSslPolicyRequest, Operation> patchSettings() {
       return getStubSettingsBuilder().patchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchSslPolicyRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
     }
 
     @Override

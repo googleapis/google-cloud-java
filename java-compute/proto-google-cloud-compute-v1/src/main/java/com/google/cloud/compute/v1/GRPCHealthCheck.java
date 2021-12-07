@@ -39,7 +39,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
   private GRPCHealthCheck() {
     grpcServiceName_ = "";
     portName_ = "";
-    portSpecification_ = 0;
+    portSpecification_ = "";
   }
 
   @java.lang.Override
@@ -85,11 +85,11 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
               portName_ = s;
               break;
             }
-          case 412724776:
+          case 412724778:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
-              portSpecification_ = rawValue;
+              portSpecification_ = s;
               break;
             }
           case 1092264626:
@@ -137,11 +137,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.GRPCHealthCheck.PortSpecification}
@@ -157,11 +153,35 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_PORT_SPECIFICATION = 0;</code>
      */
     UNDEFINED_PORT_SPECIFICATION(0),
-    /** <code>USE_FIXED_PORT = 190235748;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The port number in port is used for health checking.
+     * </pre>
+     *
+     * <code>USE_FIXED_PORT = 190235748;</code>
+     */
     USE_FIXED_PORT(190235748),
-    /** <code>USE_NAMED_PORT = 349300671;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The portName is used for health checking.
+     * </pre>
+     *
+     * <code>USE_NAMED_PORT = 349300671;</code>
+     */
     USE_NAMED_PORT(349300671),
-    /** <code>USE_SERVING_PORT = 362637516;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
+     * </pre>
+     *
+     * <code>USE_SERVING_PORT = 362637516;</code>
+     */
     USE_SERVING_PORT(362637516),
     UNRECOGNIZED(-1),
     ;
@@ -176,11 +196,35 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_PORT_SPECIFICATION = 0;</code>
      */
     public static final int UNDEFINED_PORT_SPECIFICATION_VALUE = 0;
-    /** <code>USE_FIXED_PORT = 190235748;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The port number in port is used for health checking.
+     * </pre>
+     *
+     * <code>USE_FIXED_PORT = 190235748;</code>
+     */
     public static final int USE_FIXED_PORT_VALUE = 190235748;
-    /** <code>USE_NAMED_PORT = 349300671;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The portName is used for health checking.
+     * </pre>
+     *
+     * <code>USE_NAMED_PORT = 349300671;</code>
+     */
     public static final int USE_NAMED_PORT_VALUE = 349300671;
-    /** <code>USE_SERVING_PORT = 362637516;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
+     * </pre>
+     *
+     * <code>USE_SERVING_PORT = 362637516;</code>
+     */
     public static final int USE_SERVING_PORT_VALUE = 362637516;
 
     public final int getNumber() {
@@ -278,13 +322,10 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-   * - Empty service_name means the overall status of all services at the backend.
-   * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-   * The grpc_service_name can only be ASCII.
+   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
    * </pre>
    *
-   * <code>string grpc_service_name = 136533078;</code>
+   * <code>optional string grpc_service_name = 136533078;</code>
    *
    * @return Whether the grpcServiceName field is set.
    */
@@ -296,13 +337,10 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-   * - Empty service_name means the overall status of all services at the backend.
-   * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-   * The grpc_service_name can only be ASCII.
+   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
    * </pre>
    *
-   * <code>string grpc_service_name = 136533078;</code>
+   * <code>optional string grpc_service_name = 136533078;</code>
    *
    * @return The grpcServiceName.
    */
@@ -322,13 +360,10 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-   * - Empty service_name means the overall status of all services at the backend.
-   * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-   * The grpc_service_name can only be ASCII.
+   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
    * </pre>
    *
-   * <code>string grpc_service_name = 136533078;</code>
+   * <code>optional string grpc_service_name = 136533078;</code>
    *
    * @return The bytes for grpcServiceName.
    */
@@ -354,7 +389,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    * The port number for the health check request. Must be specified if port_name and port_specification are not set or if port_specification is USE_FIXED_PORT. Valid values are 1 through 65535.
    * </pre>
    *
-   * <code>int32 port = 3446913;</code>
+   * <code>optional int32 port = 3446913;</code>
    *
    * @return Whether the port field is set.
    */
@@ -369,7 +404,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    * The port number for the health check request. Must be specified if port_name and port_specification are not set or if port_specification is USE_FIXED_PORT. Valid values are 1 through 65535.
    * </pre>
    *
-   * <code>int32 port = 3446913;</code>
+   * <code>optional int32 port = 3446913;</code>
    *
    * @return The port.
    */
@@ -387,7 +422,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence. The port_name should conform to RFC1035.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return Whether the portName field is set.
    */
@@ -402,7 +437,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence. The port_name should conform to RFC1035.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return The portName.
    */
@@ -425,7 +460,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence. The port_name should conform to RFC1035.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return The bytes for portName.
    */
@@ -443,20 +478,16 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PORT_SPECIFICATION_FIELD_NUMBER = 51590597;
-  private int portSpecification_;
+  private volatile java.lang.Object portSpecification_;
   /**
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;
-   * </code>
+   * <code>optional string port_specification = 51590597;</code>
    *
    * @return Whether the portSpecification field is set.
    */
@@ -468,46 +499,49 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;
-   * </code>
+   * <code>optional string port_specification = 51590597;</code>
    *
-   * @return The enum numeric value on the wire for portSpecification.
+   * @return The portSpecification.
    */
   @java.lang.Override
-  public int getPortSpecificationValue() {
-    return portSpecification_;
+  public java.lang.String getPortSpecification() {
+    java.lang.Object ref = portSpecification_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      portSpecification_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;
-   * </code>
+   * <code>optional string port_specification = 51590597;</code>
    *
-   * @return The portSpecification.
+   * @return The bytes for portSpecification.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification getPortSpecification() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification result =
-        com.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification.valueOf(portSpecification_);
-    return result == null
-        ? com.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getPortSpecificationBytes() {
+    java.lang.Object ref = portSpecification_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      portSpecification_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -531,7 +565,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
       com.google.protobuf.GeneratedMessageV3.writeString(output, 41534345, portName_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeEnum(51590597, portSpecification_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 51590597, portSpecification_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 136533078, grpcServiceName_);
@@ -552,7 +586,8 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(41534345, portName_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(51590597, portSpecification_);
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(51590597, portSpecification_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(136533078, grpcServiceName_);
@@ -587,7 +622,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
     }
     if (hasPortSpecification() != other.hasPortSpecification()) return false;
     if (hasPortSpecification()) {
-      if (portSpecification_ != other.portSpecification_) return false;
+      if (!getPortSpecification().equals(other.getPortSpecification())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -614,7 +649,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
     }
     if (hasPortSpecification()) {
       hash = (37 * hash) + PORT_SPECIFICATION_FIELD_NUMBER;
-      hash = (53 * hash) + portSpecification_;
+      hash = (53 * hash) + getPortSpecification().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -766,7 +801,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
       bitField0_ = (bitField0_ & ~0x00000002);
       portName_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
-      portSpecification_ = 0;
+      portSpecification_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
@@ -877,7 +912,9 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
         onChanged();
       }
       if (other.hasPortSpecification()) {
-        setPortSpecification(other.getPortSpecification());
+        bitField0_ |= 0x00000008;
+        portSpecification_ = other.portSpecification_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -915,13 +952,10 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-     * - Empty service_name means the overall status of all services at the backend.
-     * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-     * The grpc_service_name can only be ASCII.
+     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
      * </pre>
      *
-     * <code>string grpc_service_name = 136533078;</code>
+     * <code>optional string grpc_service_name = 136533078;</code>
      *
      * @return Whether the grpcServiceName field is set.
      */
@@ -932,13 +966,10 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-     * - Empty service_name means the overall status of all services at the backend.
-     * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-     * The grpc_service_name can only be ASCII.
+     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
      * </pre>
      *
-     * <code>string grpc_service_name = 136533078;</code>
+     * <code>optional string grpc_service_name = 136533078;</code>
      *
      * @return The grpcServiceName.
      */
@@ -957,13 +988,10 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-     * - Empty service_name means the overall status of all services at the backend.
-     * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-     * The grpc_service_name can only be ASCII.
+     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
      * </pre>
      *
-     * <code>string grpc_service_name = 136533078;</code>
+     * <code>optional string grpc_service_name = 136533078;</code>
      *
      * @return The bytes for grpcServiceName.
      */
@@ -982,13 +1010,10 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-     * - Empty service_name means the overall status of all services at the backend.
-     * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-     * The grpc_service_name can only be ASCII.
+     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
      * </pre>
      *
-     * <code>string grpc_service_name = 136533078;</code>
+     * <code>optional string grpc_service_name = 136533078;</code>
      *
      * @param value The grpcServiceName to set.
      * @return This builder for chaining.
@@ -1006,13 +1031,10 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-     * - Empty service_name means the overall status of all services at the backend.
-     * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-     * The grpc_service_name can only be ASCII.
+     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
      * </pre>
      *
-     * <code>string grpc_service_name = 136533078;</code>
+     * <code>optional string grpc_service_name = 136533078;</code>
      *
      * @return This builder for chaining.
      */
@@ -1026,13 +1048,10 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-     * - Empty service_name means the overall status of all services at the backend.
-     * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-     * The grpc_service_name can only be ASCII.
+     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
      * </pre>
      *
-     * <code>string grpc_service_name = 136533078;</code>
+     * <code>optional string grpc_service_name = 136533078;</code>
      *
      * @param value The bytes for grpcServiceName to set.
      * @return This builder for chaining.
@@ -1056,7 +1075,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * The port number for the health check request. Must be specified if port_name and port_specification are not set or if port_specification is USE_FIXED_PORT. Valid values are 1 through 65535.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @return Whether the port field is set.
      */
@@ -1071,7 +1090,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * The port number for the health check request. Must be specified if port_name and port_specification are not set or if port_specification is USE_FIXED_PORT. Valid values are 1 through 65535.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @return The port.
      */
@@ -1086,7 +1105,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * The port number for the health check request. Must be specified if port_name and port_specification are not set or if port_specification is USE_FIXED_PORT. Valid values are 1 through 65535.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @param value The port to set.
      * @return This builder for chaining.
@@ -1104,7 +1123,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * The port number for the health check request. Must be specified if port_name and port_specification are not set or if port_specification is USE_FIXED_PORT. Valid values are 1 through 65535.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @return This builder for chaining.
      */
@@ -1123,7 +1142,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence. The port_name should conform to RFC1035.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @return Whether the portName field is set.
      */
@@ -1137,7 +1156,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence. The port_name should conform to RFC1035.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @return The portName.
      */
@@ -1159,7 +1178,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence. The port_name should conform to RFC1035.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @return The bytes for portName.
      */
@@ -1181,7 +1200,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence. The port_name should conform to RFC1035.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @param value The portName to set.
      * @return This builder for chaining.
@@ -1202,7 +1221,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence. The port_name should conform to RFC1035.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @return This builder for chaining.
      */
@@ -1219,7 +1238,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence. The port_name should conform to RFC1035.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @param value The bytes for portName to set.
      * @return This builder for chaining.
@@ -1235,25 +1254,19 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private int portSpecification_ = 0;
+    private java.lang.Object portSpecification_ = "";
     /**
      *
      *
      * <pre>
-     * Specifies how port is selected for health checking, can be one of following values:
-     * USE_FIXED_PORT: The port number in port is used for health checking.
-     * USE_NAMED_PORT: The portName is used for health checking.
-     * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-     * If not specified, gRPC health check follows behavior specified in port and portName fields.
+     * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
+     * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;
-     * </code>
+     * <code>optional string port_specification = 51590597;</code>
      *
      * @return Whether the portSpecification field is set.
      */
-    @java.lang.Override
     public boolean hasPortSpecification() {
       return ((bitField0_ & 0x00000008) != 0);
     }
@@ -1261,42 +1274,65 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how port is selected for health checking, can be one of following values:
-     * USE_FIXED_PORT: The port number in port is used for health checking.
-     * USE_NAMED_PORT: The portName is used for health checking.
-     * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-     * If not specified, gRPC health check follows behavior specified in port and portName fields.
+     * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
+     * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;
-     * </code>
+     * <code>optional string port_specification = 51590597;</code>
      *
-     * @return The enum numeric value on the wire for portSpecification.
+     * @return The portSpecification.
      */
-    @java.lang.Override
-    public int getPortSpecificationValue() {
-      return portSpecification_;
+    public java.lang.String getPortSpecification() {
+      java.lang.Object ref = portSpecification_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        portSpecification_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * Specifies how port is selected for health checking, can be one of following values:
-     * USE_FIXED_PORT: The port number in port is used for health checking.
-     * USE_NAMED_PORT: The portName is used for health checking.
-     * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-     * If not specified, gRPC health check follows behavior specified in port and portName fields.
+     * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
+     * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;
-     * </code>
+     * <code>optional string port_specification = 51590597;</code>
      *
-     * @param value The enum numeric value on the wire for portSpecification to set.
+     * @return The bytes for portSpecification.
+     */
+    public com.google.protobuf.ByteString getPortSpecificationBytes() {
+      java.lang.Object ref = portSpecification_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        portSpecification_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
+     * Check the PortSpecification enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string port_specification = 51590597;</code>
+     *
+     * @param value The portSpecification to set.
      * @return This builder for chaining.
      */
-    public Builder setPortSpecificationValue(int value) {
+    public Builder setPortSpecification(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000008;
       portSpecification_ = value;
       onChanged();
@@ -1306,53 +1342,17 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how port is selected for health checking, can be one of following values:
-     * USE_FIXED_PORT: The port number in port is used for health checking.
-     * USE_NAMED_PORT: The portName is used for health checking.
-     * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-     * If not specified, gRPC health check follows behavior specified in port and portName fields.
+     * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
+     * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;
-     * </code>
+     * <code>optional string port_specification = 51590597;</code>
      *
-     * @return The portSpecification.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification getPortSpecification() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification result =
-          com.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification.valueOf(portSpecification_);
-      return result == null
-          ? com.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies how port is selected for health checking, can be one of following values:
-     * USE_FIXED_PORT: The port number in port is used for health checking.
-     * USE_NAMED_PORT: The portName is used for health checking.
-     * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-     * If not specified, gRPC health check follows behavior specified in port and portName fields.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;
-     * </code>
-     *
-     * @param value The portSpecification to set.
      * @return This builder for chaining.
      */
-    public Builder setPortSpecification(
-        com.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000008;
-      portSpecification_ = value.getNumber();
+    public Builder clearPortSpecification() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      portSpecification_ = getDefaultInstance().getPortSpecification();
       onChanged();
       return this;
     }
@@ -1360,22 +1360,22 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how port is selected for health checking, can be one of following values:
-     * USE_FIXED_PORT: The port number in port is used for health checking.
-     * USE_NAMED_PORT: The portName is used for health checking.
-     * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-     * If not specified, gRPC health check follows behavior specified in port and portName fields.
+     * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
+     * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;
-     * </code>
+     * <code>optional string port_specification = 51590597;</code>
      *
+     * @param value The bytes for portSpecification to set.
      * @return This builder for chaining.
      */
-    public Builder clearPortSpecification() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      portSpecification_ = 0;
+    public Builder setPortSpecificationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000008;
+      portSpecification_ = value;
       onChanged();
       return this;
     }

@@ -26,6 +26,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -49,16 +50,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of addSignedUrlKey to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * BackendBucketsSettings.Builder backendBucketsSettingsBuilder =
  *     BackendBucketsSettings.newBuilder();
  * backendBucketsSettingsBuilder
- *     .addSignedUrlKeySettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         backendBucketsSettingsBuilder
- *             .addSignedUrlKeySettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -75,15 +76,33 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
     return ((BackendBucketsStubSettings) getStubSettings()).addSignedUrlKeySettings();
   }
 
+  /** Returns the object with the settings used for calls to addSignedUrlKey. */
+  public OperationCallSettings<AddSignedUrlKeyBackendBucketRequest, Operation, Operation>
+      addSignedUrlKeyOperationSettings() {
+    return ((BackendBucketsStubSettings) getStubSettings()).addSignedUrlKeyOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteBackendBucketRequest, Operation> deleteSettings() {
     return ((BackendBucketsStubSettings) getStubSettings()).deleteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteBackendBucketRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((BackendBucketsStubSettings) getStubSettings()).deleteOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteSignedUrlKey. */
   public UnaryCallSettings<DeleteSignedUrlKeyBackendBucketRequest, Operation>
       deleteSignedUrlKeySettings() {
     return ((BackendBucketsStubSettings) getStubSettings()).deleteSignedUrlKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSignedUrlKey. */
+  public OperationCallSettings<DeleteSignedUrlKeyBackendBucketRequest, Operation, Operation>
+      deleteSignedUrlKeyOperationSettings() {
+    return ((BackendBucketsStubSettings) getStubSettings()).deleteSignedUrlKeyOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -94,6 +113,12 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertBackendBucketRequest, Operation> insertSettings() {
     return ((BackendBucketsStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertBackendBucketRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((BackendBucketsStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -107,9 +132,21 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
     return ((BackendBucketsStubSettings) getStubSettings()).patchSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchBackendBucketRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((BackendBucketsStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateBackendBucketRequest, Operation> updateSettings() {
     return ((BackendBucketsStubSettings) getStubSettings()).updateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateBackendBucketRequest, Operation, Operation>
+      updateOperationSettings() {
+    return ((BackendBucketsStubSettings) getStubSettings()).updateOperationSettings();
   }
 
   public static final BackendBucketsSettings create(BackendBucketsStubSettings stub)
@@ -216,15 +253,34 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
       return getStubSettingsBuilder().addSignedUrlKeySettings();
     }
 
+    /** Returns the builder for the settings used for calls to addSignedUrlKey. */
+    public OperationCallSettings.Builder<AddSignedUrlKeyBackendBucketRequest, Operation, Operation>
+        addSignedUrlKeyOperationSettings() {
+      return getStubSettingsBuilder().addSignedUrlKeyOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteBackendBucketRequest, Operation> deleteSettings() {
       return getStubSettingsBuilder().deleteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteBackendBucketRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteSignedUrlKey. */
     public UnaryCallSettings.Builder<DeleteSignedUrlKeyBackendBucketRequest, Operation>
         deleteSignedUrlKeySettings() {
       return getStubSettingsBuilder().deleteSignedUrlKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSignedUrlKey. */
+    public OperationCallSettings.Builder<
+            DeleteSignedUrlKeyBackendBucketRequest, Operation, Operation>
+        deleteSignedUrlKeyOperationSettings() {
+      return getStubSettingsBuilder().deleteSignedUrlKeyOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -235,6 +291,12 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertBackendBucketRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertBackendBucketRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -249,9 +311,21 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
       return getStubSettingsBuilder().patchSettings();
     }
 
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchBackendBucketRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to update. */
     public UnaryCallSettings.Builder<UpdateBackendBucketRequest, Operation> updateSettings() {
       return getStubSettingsBuilder().updateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public OperationCallSettings.Builder<UpdateBackendBucketRequest, Operation, Operation>
+        updateOperationSettings() {
+      return getStubSettingsBuilder().updateOperationSettings();
     }
 
     @Override

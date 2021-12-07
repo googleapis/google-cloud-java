@@ -30,7 +30,7 @@ public interface NodeGroupsAddNodesRequestOrBuilder
    * Count of additional nodes to be added to the node group.
    * </pre>
    *
-   * <code>int32 additional_node_count = 134997930;</code>
+   * <code>optional int32 additional_node_count = 134997930;</code>
    *
    * @return Whether the additionalNodeCount field is set.
    */
@@ -42,7 +42,7 @@ public interface NodeGroupsAddNodesRequestOrBuilder
    * Count of additional nodes to be added to the node group.
    * </pre>
    *
-   * <code>int32 additional_node_count = 134997930;</code>
+   * <code>optional int32 additional_node_count = 134997930;</code>
    *
    * @return The additionalNodeCount.
    */

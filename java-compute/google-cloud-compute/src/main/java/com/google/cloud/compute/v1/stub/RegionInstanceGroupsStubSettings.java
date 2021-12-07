@@ -28,10 +28,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.httpjson.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -113,6 +117,8 @@ public class RegionInstanceGroupsStubSettings
       listInstancesSettings;
   private final UnaryCallSettings<SetNamedPortsRegionInstanceGroupRequest, Operation>
       setNamedPortsSettings;
+  private final OperationCallSettings<SetNamedPortsRegionInstanceGroupRequest, Operation, Operation>
+      setNamedPortsOperationSettings;
 
   private static final PagedListDescriptor<
           ListRegionInstanceGroupsRequest, RegionInstanceGroupList, InstanceGroup>
@@ -278,6 +284,12 @@ public class RegionInstanceGroupsStubSettings
     return setNamedPortsSettings;
   }
 
+  /** Returns the object with the settings used for calls to setNamedPorts. */
+  public OperationCallSettings<SetNamedPortsRegionInstanceGroupRequest, Operation, Operation>
+      setNamedPortsOperationSettings() {
+    return setNamedPortsOperationSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RegionInstanceGroupsStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -312,7 +324,9 @@ public class RegionInstanceGroupsStubSettings
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return GoogleCredentialsProvider.newBuilder()
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        .setUseJwtAccessWithScope(true);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -357,6 +371,7 @@ public class RegionInstanceGroupsStubSettings
     listSettings = settingsBuilder.listSettings().build();
     listInstancesSettings = settingsBuilder.listInstancesSettings().build();
     setNamedPortsSettings = settingsBuilder.setNamedPortsSettings().build();
+    setNamedPortsOperationSettings = settingsBuilder.setNamedPortsOperationSettings().build();
   }
 
   /** Builder for RegionInstanceGroupsStubSettings. */
@@ -375,6 +390,9 @@ public class RegionInstanceGroupsStubSettings
         listInstancesSettings;
     private final UnaryCallSettings.Builder<SetNamedPortsRegionInstanceGroupRequest, Operation>
         setNamedPortsSettings;
+    private final OperationCallSettings.Builder<
+            SetNamedPortsRegionInstanceGroupRequest, Operation, Operation>
+        setNamedPortsOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -429,6 +447,7 @@ public class RegionInstanceGroupsStubSettings
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       listInstancesSettings = PagedCallSettings.newBuilder(LIST_INSTANCES_PAGE_STR_FACT);
       setNamedPortsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setNamedPortsOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -443,6 +462,7 @@ public class RegionInstanceGroupsStubSettings
       listSettings = settings.listSettings.toBuilder();
       listInstancesSettings = settings.listInstancesSettings.toBuilder();
       setNamedPortsSettings = settings.setNamedPortsSettings.toBuilder();
+      setNamedPortsOperationSettings = settings.setNamedPortsOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -482,6 +502,31 @@ public class RegionInstanceGroupsStubSettings
           .setNamedPortsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setNamedPortsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetNamedPortsRegionInstanceGroupRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
 
       return builder;
     }
@@ -526,6 +571,15 @@ public class RegionInstanceGroupsStubSettings
     public UnaryCallSettings.Builder<SetNamedPortsRegionInstanceGroupRequest, Operation>
         setNamedPortsSettings() {
       return setNamedPortsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setNamedPorts. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            SetNamedPortsRegionInstanceGroupRequest, Operation, Operation>
+        setNamedPortsOperationSettings() {
+      return setNamedPortsOperationSettings;
     }
 
     @Override

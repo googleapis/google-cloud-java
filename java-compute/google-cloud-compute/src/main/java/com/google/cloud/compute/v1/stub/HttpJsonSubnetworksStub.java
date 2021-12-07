@@ -27,11 +27,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListSubnetworksRequest;
 import com.google.cloud.compute.v1.DeleteSubnetworkRequest;
@@ -42,6 +44,7 @@ import com.google.cloud.compute.v1.InsertSubnetworkRequest;
 import com.google.cloud.compute.v1.ListSubnetworksRequest;
 import com.google.cloud.compute.v1.ListUsableSubnetworksRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchSubnetworkRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicySubnetworkRequest;
@@ -52,6 +55,7 @@ import com.google.cloud.compute.v1.SubnetworkList;
 import com.google.cloud.compute.v1.TestIamPermissionsSubnetworkRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UsableSubnetworksAggregatedList;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -69,6 +73,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonSubnetworksStub extends SubnetworksStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<
           AggregatedListSubnetworksRequest, SubnetworkAggregatedList>
       aggregatedListMethodDescriptor =
@@ -122,6 +129,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<SubnetworkAggregatedList>newBuilder()
                       .setDefaultInstance(SubnetworkAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -158,7 +166,21 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteSubnetworkRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ExpandIpCidrRangeSubnetworkRequest, Operation>
@@ -199,7 +221,21 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (ExpandIpCidrRangeSubnetworkRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetSubnetworkRequest, Subnetwork> getMethodDescriptor =
@@ -231,6 +267,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Subnetwork>newBuilder()
                   .setDefaultInstance(Subnetwork.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -270,6 +307,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -308,7 +346,21 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertSubnetworkRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListSubnetworksRequest, SubnetworkList>
@@ -359,6 +411,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<SubnetworkList>newBuilder()
                       .setDefaultInstance(SubnetworkList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -411,6 +464,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<UsableSubnetworksAggregatedList>newBuilder()
                       .setDefaultInstance(UsableSubnetworksAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -454,7 +508,21 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchSubnetworkRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetIamPolicySubnetworkRequest, Policy>
@@ -492,6 +560,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -535,7 +604,21 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetPrivateIpGoogleAccessSubnetworkRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -575,6 +658,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
                       .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -583,11 +667,17 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
   private final UnaryCallable<AggregatedListSubnetworksRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
   private final UnaryCallable<DeleteSubnetworkRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteSubnetworkRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<ExpandIpCidrRangeSubnetworkRequest, Operation>
       expandIpCidrRangeCallable;
+  private final OperationCallable<ExpandIpCidrRangeSubnetworkRequest, Operation, Operation>
+      expandIpCidrRangeOperationCallable;
   private final UnaryCallable<GetSubnetworkRequest, Subnetwork> getCallable;
   private final UnaryCallable<GetIamPolicySubnetworkRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<InsertSubnetworkRequest, Operation> insertCallable;
+  private final OperationCallable<InsertSubnetworkRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListSubnetworksRequest, SubnetworkList> listCallable;
   private final UnaryCallable<ListSubnetworksRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList>
@@ -595,13 +685,18 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
   private final UnaryCallable<ListUsableSubnetworksRequest, ListUsablePagedResponse>
       listUsablePagedCallable;
   private final UnaryCallable<PatchSubnetworkRequest, Operation> patchCallable;
+  private final OperationCallable<PatchSubnetworkRequest, Operation, Operation>
+      patchOperationCallable;
   private final UnaryCallable<SetIamPolicySubnetworkRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>
       setPrivateIpGoogleAccessCallable;
+  private final OperationCallable<SetPrivateIpGoogleAccessSubnetworkRequest, Operation, Operation>
+      setPrivateIpGoogleAccessOperationCallable;
   private final UnaryCallable<TestIamPermissionsSubnetworkRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonSubnetworksStub create(SubnetworksStubSettings settings)
@@ -641,62 +736,76 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AggregatedListSubnetworksRequest, SubnetworkAggregatedList>
         aggregatedListTransportSettings =
             HttpJsonCallSettings
                 .<AggregatedListSubnetworksRequest, SubnetworkAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeleteSubnetworkRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteSubnetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ExpandIpCidrRangeSubnetworkRequest, Operation>
         expandIpCidrRangeTransportSettings =
             HttpJsonCallSettings.<ExpandIpCidrRangeSubnetworkRequest, Operation>newBuilder()
                 .setMethodDescriptor(expandIpCidrRangeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<GetSubnetworkRequest, Subnetwork> getTransportSettings =
         HttpJsonCallSettings.<GetSubnetworkRequest, Subnetwork>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetIamPolicySubnetworkRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicySubnetworkRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertSubnetworkRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertSubnetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListSubnetworksRequest, SubnetworkList> listTransportSettings =
         HttpJsonCallSettings.<ListSubnetworksRequest, SubnetworkList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList>
         listUsableTransportSettings =
             HttpJsonCallSettings
                 .<ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList>newBuilder()
                 .setMethodDescriptor(listUsableMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<PatchSubnetworkRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchSubnetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetIamPolicySubnetworkRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicySubnetworkRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>
         setPrivateIpGoogleAccessTransportSettings =
             HttpJsonCallSettings.<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>newBuilder()
                 .setMethodDescriptor(setPrivateIpGoogleAccessMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<TestIamPermissionsSubnetworkRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings
                 .<TestIamPermissionsSubnetworkRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.aggregatedListCallable =
@@ -708,11 +817,23 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.expandIpCidrRangeCallable =
         callableFactory.createUnaryCallable(
             expandIpCidrRangeTransportSettings,
             settings.expandIpCidrRangeSettings(),
             clientContext);
+    this.expandIpCidrRangeOperationCallable =
+        callableFactory.createOperationCallable(
+            expandIpCidrRangeTransportSettings,
+            settings.expandIpCidrRangeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
@@ -722,6 +843,12 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -737,6 +864,12 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
@@ -745,6 +878,12 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
             setPrivateIpGoogleAccessTransportSettings,
             settings.setPrivateIpGoogleAccessSettings(),
             clientContext);
+    this.setPrivateIpGoogleAccessOperationCallable =
+        callableFactory.createOperationCallable(
+            setPrivateIpGoogleAccessTransportSettings,
+            settings.setPrivateIpGoogleAccessOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.testIamPermissionsCallable =
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
@@ -791,8 +930,20 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
   }
 
   @Override
+  public OperationCallable<DeleteSubnetworkRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<ExpandIpCidrRangeSubnetworkRequest, Operation> expandIpCidrRangeCallable() {
     return expandIpCidrRangeCallable;
+  }
+
+  @Override
+  public OperationCallable<ExpandIpCidrRangeSubnetworkRequest, Operation, Operation>
+      expandIpCidrRangeOperationCallable() {
+    return expandIpCidrRangeOperationCallable;
   }
 
   @Override
@@ -808,6 +959,12 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
   @Override
   public UnaryCallable<InsertSubnetworkRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertSubnetworkRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -838,6 +995,11 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
   }
 
   @Override
+  public OperationCallable<PatchSubnetworkRequest, Operation, Operation> patchOperationCallable() {
+    return patchOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetIamPolicySubnetworkRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
@@ -846,6 +1008,12 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
   public UnaryCallable<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>
       setPrivateIpGoogleAccessCallable() {
     return setPrivateIpGoogleAccessCallable;
+  }
+
+  @Override
+  public OperationCallable<SetPrivateIpGoogleAccessSubnetworkRequest, Operation, Operation>
+      setPrivateIpGoogleAccessOperationCallable() {
+    return setPrivateIpGoogleAccessOperationCallable;
   }
 
   @Override

@@ -27,11 +27,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The value should exactly match contents of exactMatch.
-   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
+   * The value should exactly match contents of exactMatch. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string exact_match = 457641093;</code>
+   * <code>optional string exact_match = 457641093;</code>
    *
    * @return Whether the exactMatch field is set.
    */
@@ -40,11 +39,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The value should exactly match contents of exactMatch.
-   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
+   * The value should exactly match contents of exactMatch. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string exact_match = 457641093;</code>
+   * <code>optional string exact_match = 457641093;</code>
    *
    * @return The exactMatch.
    */
@@ -53,11 +51,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The value should exactly match contents of exactMatch.
-   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
+   * The value should exactly match contents of exactMatch. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string exact_match = 457641093;</code>
+   * <code>optional string exact_match = 457641093;</code>
    *
    * @return The bytes for exactMatch.
    */
@@ -67,13 +64,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The name of the HTTP header to match.
-   * For matching against the HTTP request's authority, use a headerMatch with the header name ":authority".
-   * For matching a request's method, use the headerName ":method".
-   * When the URL map is bound to target gRPC proxy that has validateForProxyless field set to true, only non-binary user-specified custom metadata and the `content-type` header are supported. The following transport-level headers cannot be used in header matching rules: `:authority`, `:method`, `:path`, `:scheme`, `user-agent`, `accept-encoding`, `content-encoding`, `grpc-accept-encoding`, `grpc-encoding`, `grpc-previous-rpc-attempts`, `grpc-tags-bin`, `grpc-timeout` and `grpc-trace-bin.
+   * The name of the HTTP header to match. For matching against the HTTP request's authority, use a headerMatch with the header name ":authority". For matching a request's method, use the headerName ":method". When the URL map is bound to target gRPC proxy that has validateForProxyless field set to true, only non-binary user-specified custom metadata and the `content-type` header are supported. The following transport-level headers cannot be used in header matching rules: `:authority`, `:method`, `:path`, `:scheme`, `user-agent`, `accept-encoding`, `content-encoding`, `grpc-accept-encoding`, `grpc-encoding`, `grpc-previous-rpc-attempts`, `grpc-tags-bin`, `grpc-timeout` and `grpc-trace-bin.
    * </pre>
    *
-   * <code>string header_name = 110223613;</code>
+   * <code>optional string header_name = 110223613;</code>
    *
    * @return Whether the headerName field is set.
    */
@@ -82,13 +76,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The name of the HTTP header to match.
-   * For matching against the HTTP request's authority, use a headerMatch with the header name ":authority".
-   * For matching a request's method, use the headerName ":method".
-   * When the URL map is bound to target gRPC proxy that has validateForProxyless field set to true, only non-binary user-specified custom metadata and the `content-type` header are supported. The following transport-level headers cannot be used in header matching rules: `:authority`, `:method`, `:path`, `:scheme`, `user-agent`, `accept-encoding`, `content-encoding`, `grpc-accept-encoding`, `grpc-encoding`, `grpc-previous-rpc-attempts`, `grpc-tags-bin`, `grpc-timeout` and `grpc-trace-bin.
+   * The name of the HTTP header to match. For matching against the HTTP request's authority, use a headerMatch with the header name ":authority". For matching a request's method, use the headerName ":method". When the URL map is bound to target gRPC proxy that has validateForProxyless field set to true, only non-binary user-specified custom metadata and the `content-type` header are supported. The following transport-level headers cannot be used in header matching rules: `:authority`, `:method`, `:path`, `:scheme`, `user-agent`, `accept-encoding`, `content-encoding`, `grpc-accept-encoding`, `grpc-encoding`, `grpc-previous-rpc-attempts`, `grpc-tags-bin`, `grpc-timeout` and `grpc-trace-bin.
    * </pre>
    *
-   * <code>string header_name = 110223613;</code>
+   * <code>optional string header_name = 110223613;</code>
    *
    * @return The headerName.
    */
@@ -97,13 +88,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The name of the HTTP header to match.
-   * For matching against the HTTP request's authority, use a headerMatch with the header name ":authority".
-   * For matching a request's method, use the headerName ":method".
-   * When the URL map is bound to target gRPC proxy that has validateForProxyless field set to true, only non-binary user-specified custom metadata and the `content-type` header are supported. The following transport-level headers cannot be used in header matching rules: `:authority`, `:method`, `:path`, `:scheme`, `user-agent`, `accept-encoding`, `content-encoding`, `grpc-accept-encoding`, `grpc-encoding`, `grpc-previous-rpc-attempts`, `grpc-tags-bin`, `grpc-timeout` and `grpc-trace-bin.
+   * The name of the HTTP header to match. For matching against the HTTP request's authority, use a headerMatch with the header name ":authority". For matching a request's method, use the headerName ":method". When the URL map is bound to target gRPC proxy that has validateForProxyless field set to true, only non-binary user-specified custom metadata and the `content-type` header are supported. The following transport-level headers cannot be used in header matching rules: `:authority`, `:method`, `:path`, `:scheme`, `user-agent`, `accept-encoding`, `content-encoding`, `grpc-accept-encoding`, `grpc-encoding`, `grpc-previous-rpc-attempts`, `grpc-tags-bin`, `grpc-timeout` and `grpc-trace-bin.
    * </pre>
    *
-   * <code>string header_name = 110223613;</code>
+   * <code>optional string header_name = 110223613;</code>
    *
    * @return The bytes for headerName.
    */
@@ -113,11 +101,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * If set to false, the headerMatch is considered a match if the match criteria above are met. If set to true, the headerMatch is considered a match if the match criteria above are NOT met.
-   * The default setting is false.
+   * If set to false, the headerMatch is considered a match if the match criteria above are met. If set to true, the headerMatch is considered a match if the match criteria above are NOT met. The default setting is false.
    * </pre>
    *
-   * <code>bool invert_match = 501130268;</code>
+   * <code>optional bool invert_match = 501130268;</code>
    *
    * @return Whether the invertMatch field is set.
    */
@@ -126,11 +113,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * If set to false, the headerMatch is considered a match if the match criteria above are met. If set to true, the headerMatch is considered a match if the match criteria above are NOT met.
-   * The default setting is false.
+   * If set to false, the headerMatch is considered a match if the match criteria above are met. If set to true, the headerMatch is considered a match if the match criteria above are NOT met. The default setting is false.
    * </pre>
    *
-   * <code>bool invert_match = 501130268;</code>
+   * <code>optional bool invert_match = 501130268;</code>
    *
    * @return The invertMatch.
    */
@@ -140,11 +126,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The value of the header must start with the contents of prefixMatch.
-   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
+   * The value of the header must start with the contents of prefixMatch. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string prefix_match = 257898968;</code>
+   * <code>optional string prefix_match = 257898968;</code>
    *
    * @return Whether the prefixMatch field is set.
    */
@@ -153,11 +138,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The value of the header must start with the contents of prefixMatch.
-   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
+   * The value of the header must start with the contents of prefixMatch. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string prefix_match = 257898968;</code>
+   * <code>optional string prefix_match = 257898968;</code>
    *
    * @return The prefixMatch.
    */
@@ -166,11 +150,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The value of the header must start with the contents of prefixMatch.
-   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
+   * The value of the header must start with the contents of prefixMatch. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string prefix_match = 257898968;</code>
+   * <code>optional string prefix_match = 257898968;</code>
    *
    * @return The bytes for prefixMatch.
    */
@@ -180,11 +163,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * A header with the contents of headerName must exist. The match takes place whether or not the request's header has a value.
-   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
+   * A header with the contents of headerName must exist. The match takes place whether or not the request's header has a value. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>bool present_match = 67435841;</code>
+   * <code>optional bool present_match = 67435841;</code>
    *
    * @return Whether the presentMatch field is set.
    */
@@ -193,11 +175,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * A header with the contents of headerName must exist. The match takes place whether or not the request's header has a value.
-   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
+   * A header with the contents of headerName must exist. The match takes place whether or not the request's header has a value. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>bool present_match = 67435841;</code>
+   * <code>optional bool present_match = 67435841;</code>
    *
    * @return The presentMatch.
    */
@@ -207,17 +188,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The header value must be an integer and its value must be in the range specified in rangeMatch. If the header does not contain an integer, number or is empty, the match fails.
-   * For example for a range [-5, 0]
-   * - -3 will match.
-   * - 0 will not match.
-   * - 0.25 will not match.
-   * - -3someString will not match.
-   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
-   * Note that rangeMatch is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
+   * The header value must be an integer and its value must be in the range specified in rangeMatch. If the header does not contain an integer, number or is empty, the match fails. For example for a range [-5, 0] - -3 will match. - 0 will not match. - 0.25 will not match. - -3someString will not match. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set. Note that rangeMatch is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Int64RangeMatch range_match = 97244227;</code>
+   * <code>optional .google.cloud.compute.v1.Int64RangeMatch range_match = 97244227;</code>
    *
    * @return Whether the rangeMatch field is set.
    */
@@ -226,17 +200,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The header value must be an integer and its value must be in the range specified in rangeMatch. If the header does not contain an integer, number or is empty, the match fails.
-   * For example for a range [-5, 0]
-   * - -3 will match.
-   * - 0 will not match.
-   * - 0.25 will not match.
-   * - -3someString will not match.
-   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
-   * Note that rangeMatch is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
+   * The header value must be an integer and its value must be in the range specified in rangeMatch. If the header does not contain an integer, number or is empty, the match fails. For example for a range [-5, 0] - -3 will match. - 0 will not match. - 0.25 will not match. - -3someString will not match. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set. Note that rangeMatch is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Int64RangeMatch range_match = 97244227;</code>
+   * <code>optional .google.cloud.compute.v1.Int64RangeMatch range_match = 97244227;</code>
    *
    * @return The rangeMatch.
    */
@@ -245,17 +212,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The header value must be an integer and its value must be in the range specified in rangeMatch. If the header does not contain an integer, number or is empty, the match fails.
-   * For example for a range [-5, 0]
-   * - -3 will match.
-   * - 0 will not match.
-   * - 0.25 will not match.
-   * - -3someString will not match.
-   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
-   * Note that rangeMatch is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
+   * The header value must be an integer and its value must be in the range specified in rangeMatch. If the header does not contain an integer, number or is empty, the match fails. For example for a range [-5, 0] - -3 will match. - 0 will not match. - 0.25 will not match. - -3someString will not match. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set. Note that rangeMatch is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Int64RangeMatch range_match = 97244227;</code>
+   * <code>optional .google.cloud.compute.v1.Int64RangeMatch range_match = 97244227;</code>
    */
   com.google.cloud.compute.v1.Int64RangeMatchOrBuilder getRangeMatchOrBuilder();
 
@@ -263,13 +223,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The value of the header must match the regular expression specified in regexMatch. For regular expression grammar, please see:  github.com/google/re2/wiki/Syntax
-   * For matching against a port specified in the HTTP request, use a headerMatch with headerName set to PORT and a regular expression that satisfies the RFC2616 Host header's port specifier.
-   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
-   * Note that regexMatch only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * The value of the header must match the regular expression specified in regexMatch. For regular expression grammar, please see: github.com/google/re2/wiki/Syntax For matching against a port specified in the HTTP request, use a headerMatch with headerName set to PORT and a regular expression that satisfies the RFC2616 Host header's port specifier. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set. Note that regexMatch only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>string regex_match = 107387853;</code>
+   * <code>optional string regex_match = 107387853;</code>
    *
    * @return Whether the regexMatch field is set.
    */
@@ -278,13 +235,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The value of the header must match the regular expression specified in regexMatch. For regular expression grammar, please see:  github.com/google/re2/wiki/Syntax
-   * For matching against a port specified in the HTTP request, use a headerMatch with headerName set to PORT and a regular expression that satisfies the RFC2616 Host header's port specifier.
-   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
-   * Note that regexMatch only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * The value of the header must match the regular expression specified in regexMatch. For regular expression grammar, please see: github.com/google/re2/wiki/Syntax For matching against a port specified in the HTTP request, use a headerMatch with headerName set to PORT and a regular expression that satisfies the RFC2616 Host header's port specifier. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set. Note that regexMatch only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>string regex_match = 107387853;</code>
+   * <code>optional string regex_match = 107387853;</code>
    *
    * @return The regexMatch.
    */
@@ -293,13 +247,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The value of the header must match the regular expression specified in regexMatch. For regular expression grammar, please see:  github.com/google/re2/wiki/Syntax
-   * For matching against a port specified in the HTTP request, use a headerMatch with headerName set to PORT and a regular expression that satisfies the RFC2616 Host header's port specifier.
-   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
-   * Note that regexMatch only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * The value of the header must match the regular expression specified in regexMatch. For regular expression grammar, please see: github.com/google/re2/wiki/Syntax For matching against a port specified in the HTTP request, use a headerMatch with headerName set to PORT and a regular expression that satisfies the RFC2616 Host header's port specifier. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set. Note that regexMatch only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>string regex_match = 107387853;</code>
+   * <code>optional string regex_match = 107387853;</code>
    *
    * @return The bytes for regexMatch.
    */
@@ -309,11 +260,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The value of the header must end with the contents of suffixMatch.
-   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
+   * The value of the header must end with the contents of suffixMatch. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string suffix_match = 426488663;</code>
+   * <code>optional string suffix_match = 426488663;</code>
    *
    * @return Whether the suffixMatch field is set.
    */
@@ -322,11 +272,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The value of the header must end with the contents of suffixMatch.
-   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
+   * The value of the header must end with the contents of suffixMatch. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string suffix_match = 426488663;</code>
+   * <code>optional string suffix_match = 426488663;</code>
    *
    * @return The suffixMatch.
    */
@@ -335,11 +284,10 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The value of the header must end with the contents of suffixMatch.
-   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
+   * The value of the header must end with the contents of suffixMatch. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string suffix_match = 426488663;</code>
+   * <code>optional string suffix_match = 426488663;</code>
    *
    * @return The bytes for suffixMatch.
    */

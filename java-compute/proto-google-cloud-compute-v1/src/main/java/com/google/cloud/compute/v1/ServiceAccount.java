@@ -136,7 +136,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
    * Email address of the service account.
    * </pre>
    *
-   * <code>string email = 96619420;</code>
+   * <code>optional string email = 96619420;</code>
    *
    * @return Whether the email field is set.
    */
@@ -151,7 +151,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
    * Email address of the service account.
    * </pre>
    *
-   * <code>string email = 96619420;</code>
+   * <code>optional string email = 96619420;</code>
    *
    * @return The email.
    */
@@ -174,7 +174,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
    * Email address of the service account.
    * </pre>
    *
-   * <code>string email = 96619420;</code>
+   * <code>optional string email = 96619420;</code>
    *
    * @return The bytes for email.
    */
@@ -623,7 +623,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * Email address of the service account.
      * </pre>
      *
-     * <code>string email = 96619420;</code>
+     * <code>optional string email = 96619420;</code>
      *
      * @return Whether the email field is set.
      */
@@ -637,7 +637,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * Email address of the service account.
      * </pre>
      *
-     * <code>string email = 96619420;</code>
+     * <code>optional string email = 96619420;</code>
      *
      * @return The email.
      */
@@ -659,7 +659,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * Email address of the service account.
      * </pre>
      *
-     * <code>string email = 96619420;</code>
+     * <code>optional string email = 96619420;</code>
      *
      * @return The bytes for email.
      */
@@ -681,7 +681,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * Email address of the service account.
      * </pre>
      *
-     * <code>string email = 96619420;</code>
+     * <code>optional string email = 96619420;</code>
      *
      * @param value The email to set.
      * @return This builder for chaining.
@@ -702,7 +702,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * Email address of the service account.
      * </pre>
      *
-     * <code>string email = 96619420;</code>
+     * <code>optional string email = 96619420;</code>
      *
      * @return This builder for chaining.
      */
@@ -719,7 +719,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * Email address of the service account.
      * </pre>
      *
-     * <code>string email = 96619420;</code>
+     * <code>optional string email = 96619420;</code>
      *
      * @param value The bytes for email to set.
      * @return This builder for chaining.

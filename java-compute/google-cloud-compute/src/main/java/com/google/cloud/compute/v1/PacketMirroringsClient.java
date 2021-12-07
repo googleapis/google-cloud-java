@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.PacketMirroringsStub;
@@ -46,7 +48,7 @@ import javax.annotation.Generated;
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String packetMirroring = "packetMirroring1405520923";
- *   Operation response = packetMirroringsClient.delete(project, region, packetMirroring);
+ *   PacketMirroring response = packetMirroringsClient.get(project, region, packetMirroring);
  * }
  * }</pre>
  *
@@ -292,7 +294,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   String packetMirroring = "packetMirroring1405520923";
-   *   Operation response = packetMirroringsClient.delete(project, region, packetMirroring);
+   *   Operation response =
+   *       packetMirroringsClient.deleteAsync(project, region, packetMirroring).get();
    * }
    * }</pre>
    *
@@ -301,14 +304,15 @@ public class PacketMirroringsClient implements BackgroundResource {
    * @param packetMirroring Name of the PacketMirroring resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String region, String packetMirroring) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String region, String packetMirroring) {
     DeletePacketMirroringRequest request =
         DeletePacketMirroringRequest.newBuilder()
             .setProject(project)
             .setRegion(region)
             .setPacketMirroring(packetMirroring)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -326,15 +330,45 @@ public class PacketMirroringsClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = packetMirroringsClient.delete(request);
+   *   Operation response = packetMirroringsClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeletePacketMirroringRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      DeletePacketMirroringRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified PacketMirroring resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
+   *   DeletePacketMirroringRequest request =
+   *       DeletePacketMirroringRequest.newBuilder()
+   *           .setPacketMirroring("packetMirroring1405520923")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       packetMirroringsClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeletePacketMirroringRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -453,7 +487,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   PacketMirroring packetMirroringResource = PacketMirroring.newBuilder().build();
-   *   Operation response = packetMirroringsClient.insert(project, region, packetMirroringResource);
+   *   Operation response =
+   *       packetMirroringsClient.insertAsync(project, region, packetMirroringResource).get();
    * }
    * }</pre>
    *
@@ -462,7 +497,7 @@ public class PacketMirroringsClient implements BackgroundResource {
    * @param packetMirroringResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(
+  public final OperationFuture<Operation, Operation> insertAsync(
       String project, String region, PacketMirroring packetMirroringResource) {
     InsertPacketMirroringRequest request =
         InsertPacketMirroringRequest.newBuilder()
@@ -470,7 +505,7 @@ public class PacketMirroringsClient implements BackgroundResource {
             .setRegion(region)
             .setPacketMirroringResource(packetMirroringResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -489,15 +524,46 @@ public class PacketMirroringsClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = packetMirroringsClient.insert(request);
+   *   Operation response = packetMirroringsClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertPacketMirroringRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(
+      InsertPacketMirroringRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a PacketMirroring resource in the specified project and region using the data included
+   * in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
+   *   InsertPacketMirroringRequest request =
+   *       InsertPacketMirroringRequest.newBuilder()
+   *           .setPacketMirroringResource(PacketMirroring.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       packetMirroringsClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertPacketMirroringRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -665,7 +731,9 @@ public class PacketMirroringsClient implements BackgroundResource {
    *   String packetMirroring = "packetMirroring1405520923";
    *   PacketMirroring packetMirroringResource = PacketMirroring.newBuilder().build();
    *   Operation response =
-   *       packetMirroringsClient.patch(project, region, packetMirroring, packetMirroringResource);
+   *       packetMirroringsClient
+   *           .patchAsync(project, region, packetMirroring, packetMirroringResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -675,7 +743,7 @@ public class PacketMirroringsClient implements BackgroundResource {
    * @param packetMirroringResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(
+  public final OperationFuture<Operation, Operation> patchAsync(
       String project,
       String region,
       String packetMirroring,
@@ -687,7 +755,7 @@ public class PacketMirroringsClient implements BackgroundResource {
             .setPacketMirroring(packetMirroring)
             .setPacketMirroringResource(packetMirroringResource)
             .build();
-    return patch(request);
+    return patchAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -707,15 +775,47 @@ public class PacketMirroringsClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = packetMirroringsClient.patch(request);
+   *   Operation response = packetMirroringsClient.patchAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(PatchPacketMirroringRequest request) {
-    return patchCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> patchAsync(
+      PatchPacketMirroringRequest request) {
+    return patchOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches the specified PacketMirroring resource with the data included in the request. This
+   * method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
+   *   PatchPacketMirroringRequest request =
+   *       PatchPacketMirroringRequest.newBuilder()
+   *           .setPacketMirroring("packetMirroring1405520923")
+   *           .setPacketMirroringResource(PacketMirroring.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       packetMirroringsClient.patchOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PatchPacketMirroringRequest, Operation, Operation>
+      patchOperationCallable() {
+    return stub.patchOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

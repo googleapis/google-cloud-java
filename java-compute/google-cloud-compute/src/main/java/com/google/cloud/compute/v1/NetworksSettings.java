@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -50,15 +51,15 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of addPeering to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * NetworksSettings.Builder networksSettingsBuilder = NetworksSettings.newBuilder();
  * networksSettingsBuilder
- *     .addPeeringSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         networksSettingsBuilder
- *             .addPeeringSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -74,9 +75,21 @@ public class NetworksSettings extends ClientSettings<NetworksSettings> {
     return ((NetworksStubSettings) getStubSettings()).addPeeringSettings();
   }
 
+  /** Returns the object with the settings used for calls to addPeering. */
+  public OperationCallSettings<AddPeeringNetworkRequest, Operation, Operation>
+      addPeeringOperationSettings() {
+    return ((NetworksStubSettings) getStubSettings()).addPeeringOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteNetworkRequest, Operation> deleteSettings() {
     return ((NetworksStubSettings) getStubSettings()).deleteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteNetworkRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((NetworksStubSettings) getStubSettings()).deleteOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -94,6 +107,12 @@ public class NetworksSettings extends ClientSettings<NetworksSettings> {
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertNetworkRequest, Operation> insertSettings() {
     return ((NetworksStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertNetworkRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((NetworksStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -115,9 +134,20 @@ public class NetworksSettings extends ClientSettings<NetworksSettings> {
     return ((NetworksStubSettings) getStubSettings()).patchSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchNetworkRequest, Operation, Operation> patchOperationSettings() {
+    return ((NetworksStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to removePeering. */
   public UnaryCallSettings<RemovePeeringNetworkRequest, Operation> removePeeringSettings() {
     return ((NetworksStubSettings) getStubSettings()).removePeeringSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removePeering. */
+  public OperationCallSettings<RemovePeeringNetworkRequest, Operation, Operation>
+      removePeeringOperationSettings() {
+    return ((NetworksStubSettings) getStubSettings()).removePeeringOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to switchToCustomMode. */
@@ -126,9 +156,21 @@ public class NetworksSettings extends ClientSettings<NetworksSettings> {
     return ((NetworksStubSettings) getStubSettings()).switchToCustomModeSettings();
   }
 
+  /** Returns the object with the settings used for calls to switchToCustomMode. */
+  public OperationCallSettings<SwitchToCustomModeNetworkRequest, Operation, Operation>
+      switchToCustomModeOperationSettings() {
+    return ((NetworksStubSettings) getStubSettings()).switchToCustomModeOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to updatePeering. */
   public UnaryCallSettings<UpdatePeeringNetworkRequest, Operation> updatePeeringSettings() {
     return ((NetworksStubSettings) getStubSettings()).updatePeeringSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updatePeering. */
+  public OperationCallSettings<UpdatePeeringNetworkRequest, Operation, Operation>
+      updatePeeringOperationSettings() {
+    return ((NetworksStubSettings) getStubSettings()).updatePeeringOperationSettings();
   }
 
   public static final NetworksSettings create(NetworksStubSettings stub) throws IOException {
@@ -233,9 +275,21 @@ public class NetworksSettings extends ClientSettings<NetworksSettings> {
       return getStubSettingsBuilder().addPeeringSettings();
     }
 
+    /** Returns the builder for the settings used for calls to addPeering. */
+    public OperationCallSettings.Builder<AddPeeringNetworkRequest, Operation, Operation>
+        addPeeringOperationSettings() {
+      return getStubSettingsBuilder().addPeeringOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteNetworkRequest, Operation> deleteSettings() {
       return getStubSettingsBuilder().deleteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteNetworkRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -253,6 +307,12 @@ public class NetworksSettings extends ClientSettings<NetworksSettings> {
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertNetworkRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertNetworkRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -275,10 +335,22 @@ public class NetworksSettings extends ClientSettings<NetworksSettings> {
       return getStubSettingsBuilder().patchSettings();
     }
 
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchNetworkRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to removePeering. */
     public UnaryCallSettings.Builder<RemovePeeringNetworkRequest, Operation>
         removePeeringSettings() {
       return getStubSettingsBuilder().removePeeringSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removePeering. */
+    public OperationCallSettings.Builder<RemovePeeringNetworkRequest, Operation, Operation>
+        removePeeringOperationSettings() {
+      return getStubSettingsBuilder().removePeeringOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to switchToCustomMode. */
@@ -287,10 +359,22 @@ public class NetworksSettings extends ClientSettings<NetworksSettings> {
       return getStubSettingsBuilder().switchToCustomModeSettings();
     }
 
+    /** Returns the builder for the settings used for calls to switchToCustomMode. */
+    public OperationCallSettings.Builder<SwitchToCustomModeNetworkRequest, Operation, Operation>
+        switchToCustomModeOperationSettings() {
+      return getStubSettingsBuilder().switchToCustomModeOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to updatePeering. */
     public UnaryCallSettings.Builder<UpdatePeeringNetworkRequest, Operation>
         updatePeeringSettings() {
       return getStubSettingsBuilder().updatePeeringSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePeering. */
+    public OperationCallSettings.Builder<UpdatePeeringNetworkRequest, Operation, Operation>
+        updatePeeringOperationSettings() {
+      return getStubSettingsBuilder().updatePeeringOperationSettings();
     }
 
     @Override

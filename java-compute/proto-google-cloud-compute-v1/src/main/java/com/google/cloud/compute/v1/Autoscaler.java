@@ -22,12 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an Autoscaler resource.
- * Google Compute Engine has two Autoscaler resources:
- * * [Zonal](/compute/docs/reference/rest/{$api_version}/autoscalers) * [Regional](/compute/docs/reference/rest/{$api_version}/regionAutoscalers)
- * Use autoscalers to automatically add or delete instances from a managed instance group according to your defined autoscaling policy. For more information, read Autoscaling Groups of Instances.
- * For zonal managed instance groups resource, use the autoscaler resource.
- * For regional managed instance groups, use the regionAutoscalers resource. (== resource_for {$api_version}.autoscalers ==) (== resource_for {$api_version}.regionAutoscalers ==)
+ * Represents an Autoscaler resource. Google Compute Engine has two Autoscaler resources: * [Zonal](/compute/docs/reference/rest/v1/autoscalers) * [Regional](/compute/docs/reference/rest/v1/regionAutoscalers) Use autoscalers to automatically add or delete instances from a managed instance group according to your defined autoscaling policy. For more information, read Autoscaling Groups of Instances. For zonal managed instance groups resource, use the autoscaler resource. For regional managed instance groups, use the regionAutoscalers resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Autoscaler}
@@ -49,7 +44,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     region_ = "";
     selfLink_ = "";
-    status_ = 0;
+    status_ = "";
     statusDetails_ = java.util.Collections.emptyList();
     target_ = "";
     zone_ = "";
@@ -126,11 +121,11 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
               region_ = s;
               break;
             }
-          case 1450082192:
+          case 1450082194:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000200;
-              status_ = rawValue;
+              status_ = s;
               break;
             }
           case 1542687882:
@@ -260,11 +255,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-   * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-   * - DELETING: Configuration is being deleted.
-   * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-   * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+   * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Autoscaler.Status}
@@ -280,13 +271,45 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration is acknowledged to be effective
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     ACTIVE(314733318),
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration is being deleted
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     DELETING(528602024),
-    /** <code>ERROR = 66247144;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration has errors. Actionable for users.
+     * </pre>
+     *
+     * <code>ERROR = 66247144;</code>
+     */
     ERROR(66247144),
-    /** <code>PENDING = 35394935;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaler backend hasn't read new/updated configuration
+     * </pre>
+     *
+     * <code>PENDING = 35394935;</code>
+     */
     PENDING(35394935),
     UNRECOGNIZED(-1),
     ;
@@ -301,13 +324,45 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration is acknowledged to be effective
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     public static final int ACTIVE_VALUE = 314733318;
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration is being deleted
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     public static final int DELETING_VALUE = 528602024;
-    /** <code>ERROR = 66247144;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration has errors. Actionable for users.
+     * </pre>
+     *
+     * <code>ERROR = 66247144;</code>
+     */
     public static final int ERROR_VALUE = 66247144;
-    /** <code>PENDING = 35394935;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaler backend hasn't read new/updated configuration
+     * </pre>
+     *
+     * <code>PENDING = 35394935;</code>
+     */
     public static final int PENDING_VALUE = 35394935;
 
     public final int getNumber() {
@@ -404,11 +459,11 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-   * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
+   * <code>optional .google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;
+   * </code>
    *
    * @return Whether the autoscalingPolicy field is set.
    */
@@ -420,11 +475,11 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-   * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
+   * <code>optional .google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;
+   * </code>
    *
    * @return The autoscalingPolicy.
    */
@@ -438,11 +493,11 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-   * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
+   * <code>optional .google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.AutoscalingPolicyOrBuilder getAutoscalingPolicyOrBuilder() {
@@ -460,7 +515,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -475,7 +530,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -498,7 +553,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -524,7 +579,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -539,7 +594,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -562,7 +617,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -588,7 +643,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -603,7 +658,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -621,7 +676,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#autoscaler for autoscalers.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -636,7 +691,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#autoscaler for autoscalers.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -659,7 +714,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#autoscaler for autoscalers.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -685,7 +740,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -700,7 +755,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -723,7 +778,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -749,7 +804,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
    * </pre>
    *
-   * <code>int32 recommended_size = 257915749;</code>
+   * <code>optional int32 recommended_size = 257915749;</code>
    *
    * @return Whether the recommendedSize field is set.
    */
@@ -764,7 +819,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
    * </pre>
    *
-   * <code>int32 recommended_size = 257915749;</code>
+   * <code>optional int32 recommended_size = 257915749;</code>
    *
    * @return The recommendedSize.
    */
@@ -782,7 +837,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where the instance group resides (for autoscalers living in regional scope).
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -797,7 +852,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where the instance group resides (for autoscalers living in regional scope).
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -820,7 +875,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where the instance group resides (for autoscalers living in regional scope).
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -967,7 +1022,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -982,7 +1037,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1005,7 +1060,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1023,19 +1078,16 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    *
    *
    * <pre>
-   * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-   * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-   * - DELETING: Configuration is being deleted.
-   * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-   * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+   * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -1047,42 +1099,49 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-   * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-   * - DELETING: Configuration is being deleted.
-   * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-   * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+   * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
   @java.lang.Override
-  public int getStatusValue() {
-    return status_;
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-   * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-   * - DELETING: Configuration is being deleted.
-   * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-   * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+   * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.Autoscaler.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Autoscaler.Status result =
-        com.google.cloud.compute.v1.Autoscaler.Status.valueOf(status_);
-    return result == null ? com.google.cloud.compute.v1.Autoscaler.Status.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int STATUS_DETAILS_FIELD_NUMBER = 363353845;
@@ -1170,7 +1229,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
    * </pre>
    *
-   * <code>string target = 192835985;</code>
+   * <code>optional string target = 192835985;</code>
    *
    * @return Whether the target field is set.
    */
@@ -1185,7 +1244,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
    * </pre>
    *
-   * <code>string target = 192835985;</code>
+   * <code>optional string target = 192835985;</code>
    *
    * @return The target.
    */
@@ -1208,7 +1267,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
    * </pre>
    *
-   * <code>string target = 192835985;</code>
+   * <code>optional string target = 192835985;</code>
    *
    * @return The bytes for target.
    */
@@ -1234,7 +1293,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the zone where the instance group resides (for autoscalers living in zonal scope).
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return Whether the zone field is set.
    */
@@ -1249,7 +1308,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the zone where the instance group resides (for autoscalers living in zonal scope).
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The zone.
    */
@@ -1272,7 +1331,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the zone where the instance group resides (for autoscalers living in zonal scope).
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The bytes for zone.
    */
@@ -1322,7 +1381,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 192835985, target_);
@@ -1376,7 +1435,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(192835985, target_);
@@ -1469,7 +1528,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus().equals(other.getStatus())) return false;
     }
     if (!getStatusDetailsList().equals(other.getStatusDetailsList())) return false;
     if (hasTarget() != other.hasTarget()) return false;
@@ -1533,7 +1592,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     if (getStatusDetailsCount() > 0) {
       hash = (37 * hash) + STATUS_DETAILS_FIELD_NUMBER;
@@ -1651,12 +1710,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents an Autoscaler resource.
-   * Google Compute Engine has two Autoscaler resources:
-   * * [Zonal](/compute/docs/reference/rest/{$api_version}/autoscalers) * [Regional](/compute/docs/reference/rest/{$api_version}/regionAutoscalers)
-   * Use autoscalers to automatically add or delete instances from a managed instance group according to your defined autoscaling policy. For more information, read Autoscaling Groups of Instances.
-   * For zonal managed instance groups resource, use the autoscaler resource.
-   * For regional managed instance groups, use the regionAutoscalers resource. (== resource_for {$api_version}.autoscalers ==) (== resource_for {$api_version}.regionAutoscalers ==)
+   * Represents an Autoscaler resource. Google Compute Engine has two Autoscaler resources: * [Zonal](/compute/docs/reference/rest/v1/autoscalers) * [Regional](/compute/docs/reference/rest/v1/regionAutoscalers) Use autoscalers to automatically add or delete instances from a managed instance group according to your defined autoscaling policy. For more information, read Autoscaling Groups of Instances. For zonal managed instance groups resource, use the autoscaler resource. For regional managed instance groups, use the regionAutoscalers resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Autoscaler}
@@ -1743,7 +1797,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableScalingScheduleStatus().clear();
       selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
       if (statusDetailsBuilder_ == null) {
         statusDetails_ = java.util.Collections.emptyList();
@@ -1938,7 +1992,9 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00000400;
+        status_ = other.status_;
+        onChanged();
       }
       if (statusDetailsBuilder_ == null) {
         if (!other.statusDetails_.isEmpty()) {
@@ -2018,11 +2074,11 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-     * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
+     * <code>optional .google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;
+     * </code>
      *
      * @return Whether the autoscalingPolicy field is set.
      */
@@ -2033,11 +2089,11 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-     * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
+     * <code>optional .google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;
+     * </code>
      *
      * @return The autoscalingPolicy.
      */
@@ -2054,11 +2110,11 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-     * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
+     * <code>optional .google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;
+     * </code>
      */
     public Builder setAutoscalingPolicy(com.google.cloud.compute.v1.AutoscalingPolicy value) {
       if (autoscalingPolicyBuilder_ == null) {
@@ -2077,11 +2133,11 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-     * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
+     * <code>optional .google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;
+     * </code>
      */
     public Builder setAutoscalingPolicy(
         com.google.cloud.compute.v1.AutoscalingPolicy.Builder builderForValue) {
@@ -2098,11 +2154,11 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-     * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
+     * <code>optional .google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;
+     * </code>
      */
     public Builder mergeAutoscalingPolicy(com.google.cloud.compute.v1.AutoscalingPolicy value) {
       if (autoscalingPolicyBuilder_ == null) {
@@ -2128,11 +2184,11 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-     * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
+     * <code>optional .google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;
+     * </code>
      */
     public Builder clearAutoscalingPolicy() {
       if (autoscalingPolicyBuilder_ == null) {
@@ -2148,11 +2204,11 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-     * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
+     * <code>optional .google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;
+     * </code>
      */
     public com.google.cloud.compute.v1.AutoscalingPolicy.Builder getAutoscalingPolicyBuilder() {
       bitField0_ |= 0x00000001;
@@ -2163,11 +2219,11 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-     * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
+     * <code>optional .google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;
+     * </code>
      */
     public com.google.cloud.compute.v1.AutoscalingPolicyOrBuilder getAutoscalingPolicyOrBuilder() {
       if (autoscalingPolicyBuilder_ != null) {
@@ -2182,11 +2238,11 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-     * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
+     * <code>optional .google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.AutoscalingPolicy,
@@ -2213,7 +2269,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -2227,7 +2283,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -2249,7 +2305,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -2271,7 +2327,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -2292,7 +2348,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -2309,7 +2365,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -2333,7 +2389,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -2347,7 +2403,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -2369,7 +2425,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -2391,7 +2447,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2412,7 +2468,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -2429,7 +2485,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2453,7 +2509,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -2468,7 +2524,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -2483,7 +2539,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -2501,7 +2557,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -2520,7 +2576,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#autoscaler for autoscalers.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -2534,7 +2590,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#autoscaler for autoscalers.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -2556,7 +2612,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#autoscaler for autoscalers.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -2578,7 +2634,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#autoscaler for autoscalers.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -2599,7 +2655,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#autoscaler for autoscalers.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -2616,7 +2672,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#autoscaler for autoscalers.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -2640,7 +2696,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -2654,7 +2710,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -2676,7 +2732,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -2698,7 +2754,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2719,7 +2775,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -2736,7 +2792,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2760,7 +2816,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
      * </pre>
      *
-     * <code>int32 recommended_size = 257915749;</code>
+     * <code>optional int32 recommended_size = 257915749;</code>
      *
      * @return Whether the recommendedSize field is set.
      */
@@ -2775,7 +2831,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
      * </pre>
      *
-     * <code>int32 recommended_size = 257915749;</code>
+     * <code>optional int32 recommended_size = 257915749;</code>
      *
      * @return The recommendedSize.
      */
@@ -2790,7 +2846,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
      * </pre>
      *
-     * <code>int32 recommended_size = 257915749;</code>
+     * <code>optional int32 recommended_size = 257915749;</code>
      *
      * @param value The recommendedSize to set.
      * @return This builder for chaining.
@@ -2808,7 +2864,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
      * </pre>
      *
-     * <code>int32 recommended_size = 257915749;</code>
+     * <code>optional int32 recommended_size = 257915749;</code>
      *
      * @return This builder for chaining.
      */
@@ -2827,7 +2883,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the instance group resides (for autoscalers living in regional scope).
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return Whether the region field is set.
      */
@@ -2841,7 +2897,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the instance group resides (for autoscalers living in regional scope).
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The region.
      */
@@ -2863,7 +2919,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the instance group resides (for autoscalers living in regional scope).
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The bytes for region.
      */
@@ -2885,7 +2941,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the instance group resides (for autoscalers living in regional scope).
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -2906,7 +2962,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the instance group resides (for autoscalers living in regional scope).
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return This builder for chaining.
      */
@@ -2923,7 +2979,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the instance group resides (for autoscalers living in regional scope).
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.
@@ -3134,7 +3190,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -3148,7 +3204,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -3170,7 +3226,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3192,7 +3248,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3213,7 +3269,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -3230,7 +3286,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -3246,23 +3302,19 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      *
      *
      * <pre>
-     * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-     * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-     * - DELETING: Configuration is being deleted.
-     * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-     * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+     * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
      * @return Whether the status field is set.
      */
-    @java.lang.Override
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000400) != 0);
     }
@@ -3270,38 +3322,65 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-     * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-     * - DELETING: Configuration is being deleted.
-     * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-     * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+     * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The enum numeric value on the wire for status.
+     * @return The status.
      */
-    @java.lang.Override
-    public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-     * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-     * - DELETING: Configuration is being deleted.
-     * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-     * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+     * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @param value The enum numeric value on the wire for status to set.
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     *
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
+    public Builder setStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000400;
       status_ = value;
       onChanged();
@@ -3311,46 +3390,17 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-     * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-     * - DELETING: Configuration is being deleted.
-     * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-     * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+     * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Autoscaler.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Autoscaler.Status result =
-          com.google.cloud.compute.v1.Autoscaler.Status.valueOf(status_);
-      return result == null ? com.google.cloud.compute.v1.Autoscaler.Status.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-     * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-     * - DELETING: Configuration is being deleted.
-     * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-     * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
-     *
-     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloud.compute.v1.Autoscaler.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000400;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
@@ -3358,20 +3408,22 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-     * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-     * - DELETING: Configuration is being deleted.
-     * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-     * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+     * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000400);
-      status_ = 0;
+    public Builder setStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000400;
+      status_ = value;
       onChanged();
       return this;
     }
@@ -3764,7 +3816,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
      * </pre>
      *
-     * <code>string target = 192835985;</code>
+     * <code>optional string target = 192835985;</code>
      *
      * @return Whether the target field is set.
      */
@@ -3778,7 +3830,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
      * </pre>
      *
-     * <code>string target = 192835985;</code>
+     * <code>optional string target = 192835985;</code>
      *
      * @return The target.
      */
@@ -3800,7 +3852,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
      * </pre>
      *
-     * <code>string target = 192835985;</code>
+     * <code>optional string target = 192835985;</code>
      *
      * @return The bytes for target.
      */
@@ -3822,7 +3874,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
      * </pre>
      *
-     * <code>string target = 192835985;</code>
+     * <code>optional string target = 192835985;</code>
      *
      * @param value The target to set.
      * @return This builder for chaining.
@@ -3843,7 +3895,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
      * </pre>
      *
-     * <code>string target = 192835985;</code>
+     * <code>optional string target = 192835985;</code>
      *
      * @return This builder for chaining.
      */
@@ -3860,7 +3912,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
      * </pre>
      *
-     * <code>string target = 192835985;</code>
+     * <code>optional string target = 192835985;</code>
      *
      * @param value The bytes for target to set.
      * @return This builder for chaining.
@@ -3884,7 +3936,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the zone where the instance group resides (for autoscalers living in zonal scope).
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return Whether the zone field is set.
      */
@@ -3898,7 +3950,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the zone where the instance group resides (for autoscalers living in zonal scope).
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return The zone.
      */
@@ -3920,7 +3972,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the zone where the instance group resides (for autoscalers living in zonal scope).
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return The bytes for zone.
      */
@@ -3942,7 +3994,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the zone where the instance group resides (for autoscalers living in zonal scope).
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @param value The zone to set.
      * @return This builder for chaining.
@@ -3963,7 +4015,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the zone where the instance group resides (for autoscalers living in zonal scope).
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return This builder for chaining.
      */
@@ -3980,7 +4032,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the zone where the instance group resides (for autoscalers living in zonal scope).
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @param value The bytes for zone to set.
      * @return This builder for chaining.

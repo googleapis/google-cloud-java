@@ -25,23 +25,27 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteRegionUrlMapRequest;
 import com.google.cloud.compute.v1.GetRegionUrlMapRequest;
 import com.google.cloud.compute.v1.InsertRegionUrlMapRequest;
 import com.google.cloud.compute.v1.ListRegionUrlMapsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchRegionUrlMapRequest;
 import com.google.cloud.compute.v1.UpdateRegionUrlMapRequest;
 import com.google.cloud.compute.v1.UrlMap;
 import com.google.cloud.compute.v1.UrlMapList;
 import com.google.cloud.compute.v1.UrlMapsValidateResponse;
 import com.google.cloud.compute.v1.ValidateRegionUrlMapRequest;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -59,6 +63,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<DeleteRegionUrlMapRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionUrlMapRequest, Operation>newBuilder()
@@ -92,7 +99,21 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteRegionUrlMapRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetRegionUrlMapRequest, UrlMap> getMethodDescriptor =
@@ -124,6 +145,7 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
           .setResponseParser(
               ProtoMessageResponseParser.<UrlMap>newBuilder()
                   .setDefaultInstance(UrlMap.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -162,7 +184,21 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertRegionUrlMapRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListRegionUrlMapsRequest, UrlMapList>
@@ -213,6 +249,7 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<UrlMapList>newBuilder()
                       .setDefaultInstance(UrlMapList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -252,7 +289,21 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchRegionUrlMapRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<UpdateRegionUrlMapRequest, Operation>
@@ -291,7 +342,21 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (UpdateRegionUrlMapRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ValidateRegionUrlMapRequest, UrlMapsValidateResponse>
@@ -329,20 +394,30 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<UrlMapsValidateResponse>newBuilder()
                       .setDefaultInstance(UrlMapsValidateResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
   private final UnaryCallable<DeleteRegionUrlMapRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteRegionUrlMapRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetRegionUrlMapRequest, UrlMap> getCallable;
   private final UnaryCallable<InsertRegionUrlMapRequest, Operation> insertCallable;
+  private final OperationCallable<InsertRegionUrlMapRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListRegionUrlMapsRequest, UrlMapList> listCallable;
   private final UnaryCallable<ListRegionUrlMapsRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<PatchRegionUrlMapRequest, Operation> patchCallable;
+  private final OperationCallable<PatchRegionUrlMapRequest, Operation, Operation>
+      patchOperationCallable;
   private final UnaryCallable<UpdateRegionUrlMapRequest, Operation> updateCallable;
+  private final OperationCallable<UpdateRegionUrlMapRequest, Operation, Operation>
+      updateOperationCallable;
   private final UnaryCallable<ValidateRegionUrlMapRequest, UrlMapsValidateResponse>
       validateCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionUrlMapsStub create(RegionUrlMapsStubSettings settings)
@@ -383,46 +458,67 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<DeleteRegionUrlMapRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteRegionUrlMapRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetRegionUrlMapRequest, UrlMap> getTransportSettings =
         HttpJsonCallSettings.<GetRegionUrlMapRequest, UrlMap>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertRegionUrlMapRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionUrlMapRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListRegionUrlMapsRequest, UrlMapList> listTransportSettings =
         HttpJsonCallSettings.<ListRegionUrlMapsRequest, UrlMapList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<PatchRegionUrlMapRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchRegionUrlMapRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<UpdateRegionUrlMapRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateRegionUrlMapRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ValidateRegionUrlMapRequest, UrlMapsValidateResponse>
         validateTransportSettings =
             HttpJsonCallSettings.<ValidateRegionUrlMapRequest, UrlMapsValidateResponse>newBuilder()
                 .setMethodDescriptor(validateMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -432,9 +528,21 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
+    this.updateOperationCallable =
+        callableFactory.createOperationCallable(
+            updateTransportSettings,
+            settings.updateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.validateCallable =
         callableFactory.createUnaryCallable(
             validateTransportSettings, settings.validateSettings(), clientContext);
@@ -462,6 +570,12 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
   }
 
   @Override
+  public OperationCallable<DeleteRegionUrlMapRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetRegionUrlMapRequest, UrlMap> getCallable() {
     return getCallable;
   }
@@ -469,6 +583,12 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
   @Override
   public UnaryCallable<InsertRegionUrlMapRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertRegionUrlMapRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -487,8 +607,20 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
   }
 
   @Override
+  public OperationCallable<PatchRegionUrlMapRequest, Operation, Operation>
+      patchOperationCallable() {
+    return patchOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateRegionUrlMapRequest, Operation> updateCallable() {
     return updateCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateRegionUrlMapRequest, Operation, Operation>
+      updateOperationCallable() {
+    return updateOperationCallable;
   }
 
   @Override

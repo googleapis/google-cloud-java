@@ -137,7 +137,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
    * Type of resource.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -152,7 +152,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
    * Type of resource.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -175,7 +175,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
    * Type of resource.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -195,7 +195,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
   public static final int RESULT_FIELD_NUMBER = 139315229;
   private com.google.cloud.compute.v1.RouterStatus result_;
   /**
-   * <code>.google.cloud.compute.v1.RouterStatus result = 139315229;</code>
+   * <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code>
    *
    * @return Whether the result field is set.
    */
@@ -204,7 +204,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.RouterStatus result = 139315229;</code>
+   * <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code>
    *
    * @return The result.
    */
@@ -214,7 +214,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.compute.v1.RouterStatus.getDefaultInstance()
         : result_;
   }
-  /** <code>.google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
+  /** <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.RouterStatusOrBuilder getResultOrBuilder() {
     return result_ == null
@@ -593,7 +593,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
      * Type of resource.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -607,7 +607,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
      * Type of resource.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -629,7 +629,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
      * Type of resource.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -651,7 +651,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
      * Type of resource.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -672,7 +672,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
      * Type of resource.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -689,7 +689,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
      * Type of resource.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -712,7 +712,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.RouterStatusOrBuilder>
         resultBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.RouterStatus result = 139315229;</code>
+     * <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code>
      *
      * @return Whether the result field is set.
      */
@@ -720,7 +720,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.RouterStatus result = 139315229;</code>
+     * <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code>
      *
      * @return The result.
      */
@@ -733,7 +733,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
         return resultBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
+    /** <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
     public Builder setResult(com.google.cloud.compute.v1.RouterStatus value) {
       if (resultBuilder_ == null) {
         if (value == null) {
@@ -747,7 +747,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000002;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
+    /** <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
     public Builder setResult(com.google.cloud.compute.v1.RouterStatus.Builder builderForValue) {
       if (resultBuilder_ == null) {
         result_ = builderForValue.build();
@@ -758,7 +758,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000002;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
+    /** <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
     public Builder mergeResult(com.google.cloud.compute.v1.RouterStatus value) {
       if (resultBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)
@@ -778,7 +778,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000002;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
+    /** <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
     public Builder clearResult() {
       if (resultBuilder_ == null) {
         result_ = null;
@@ -789,13 +789,13 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
-    /** <code>.google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
+    /** <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
     public com.google.cloud.compute.v1.RouterStatus.Builder getResultBuilder() {
       bitField0_ |= 0x00000002;
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
+    /** <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
     public com.google.cloud.compute.v1.RouterStatusOrBuilder getResultOrBuilder() {
       if (resultBuilder_ != null) {
         return resultBuilder_.getMessageOrBuilder();
@@ -805,7 +805,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
             : result_;
       }
     }
-    /** <code>.google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
+    /** <code>optional .google.cloud.compute.v1.RouterStatus result = 139315229;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.RouterStatus,
             com.google.cloud.compute.v1.RouterStatus.Builder,

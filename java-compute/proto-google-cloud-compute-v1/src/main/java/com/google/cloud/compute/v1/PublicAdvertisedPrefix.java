@@ -48,7 +48,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     publicDelegatedPrefixs_ = java.util.Collections.emptyList();
     selfLink_ = "";
     sharedSecret_ = "";
-    status_ = 0;
+    status_ = "";
   }
 
   @java.lang.Override
@@ -115,11 +115,11 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
               ipCidrRange_ = s;
               break;
             }
-          case 1450082192:
+          case 1450082194:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000400;
-              status_ = rawValue;
+              status_ = s;
               break;
             }
           case 1877428002:
@@ -376,7 +376,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -391,7 +391,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -414,7 +414,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -440,7 +440,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -455,7 +455,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -478,7 +478,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -504,7 +504,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * The IPv4 address to be used for reverse DNS verification.
    * </pre>
    *
-   * <code>string dns_verification_ip = 241011381;</code>
+   * <code>optional string dns_verification_ip = 241011381;</code>
    *
    * @return Whether the dnsVerificationIp field is set.
    */
@@ -519,7 +519,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * The IPv4 address to be used for reverse DNS verification.
    * </pre>
    *
-   * <code>string dns_verification_ip = 241011381;</code>
+   * <code>optional string dns_verification_ip = 241011381;</code>
    *
    * @return The dnsVerificationIp.
    */
@@ -542,7 +542,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * The IPv4 address to be used for reverse DNS verification.
    * </pre>
    *
-   * <code>string dns_verification_ip = 241011381;</code>
+   * <code>optional string dns_verification_ip = 241011381;</code>
    *
    * @return The bytes for dnsVerificationIp.
    */
@@ -565,11 +565,10 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return Whether the fingerprint field is set.
    */
@@ -581,11 +580,10 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The fingerprint.
    */
@@ -605,11 +603,10 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The bytes for fingerprint.
    */
@@ -635,7 +632,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * [Output Only] The unique identifier for the resource type. The server generates this identifier.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -650,7 +647,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * [Output Only] The unique identifier for the resource type. The server generates this identifier.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -668,7 +665,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return Whether the ipCidrRange field is set.
    */
@@ -683,7 +680,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return The ipCidrRange.
    */
@@ -706,7 +703,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return The bytes for ipCidrRange.
    */
@@ -732,7 +729,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -747,7 +744,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -770,7 +767,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -796,7 +793,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -811,7 +808,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -834,7 +831,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -945,7 +942,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -960,7 +957,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -983,7 +980,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1009,7 +1006,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * [Output Only] The shared secret to be used for reverse DNS verification.
    * </pre>
    *
-   * <code>string shared_secret = 381932490;</code>
+   * <code>optional string shared_secret = 381932490;</code>
    *
    * @return Whether the sharedSecret field is set.
    */
@@ -1024,7 +1021,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * [Output Only] The shared secret to be used for reverse DNS verification.
    * </pre>
    *
-   * <code>string shared_secret = 381932490;</code>
+   * <code>optional string shared_secret = 381932490;</code>
    *
    * @return The sharedSecret.
    */
@@ -1047,7 +1044,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    * [Output Only] The shared secret to be used for reverse DNS verification.
    * </pre>
    *
-   * <code>string shared_secret = 381932490;</code>
+   * <code>optional string shared_secret = 381932490;</code>
    *
    * @return The bytes for sharedSecret.
    */
@@ -1065,15 +1062,16 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    *
    *
    * <pre>
    * The status of the public advertised prefix.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PublicAdvertisedPrefix.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -1086,35 +1084,48 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The status of the public advertised prefix.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PublicAdvertisedPrefix.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
   @java.lang.Override
-  public int getStatusValue() {
-    return status_;
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * The status of the public advertised prefix.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PublicAdvertisedPrefix.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.PublicAdvertisedPrefix.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.PublicAdvertisedPrefix.Status result =
-        com.google.cloud.compute.v1.PublicAdvertisedPrefix.Status.valueOf(status_);
-    return result == null
-        ? com.google.cloud.compute.v1.PublicAdvertisedPrefix.Status.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1147,7 +1158,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98117322, ipCidrRange_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
@@ -1193,7 +1204,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98117322, ipCidrRange_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
@@ -1276,7 +1287,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus().equals(other.getStatus())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1335,7 +1346,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1510,7 +1521,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       bitField0_ = (bitField0_ & ~0x00000200);
       sharedSecret_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
@@ -1721,7 +1732,9 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         onChanged();
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00000800;
+        status_ = other.status_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1763,7 +1776,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -1777,7 +1790,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -1799,7 +1812,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -1821,7 +1834,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -1842,7 +1855,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -1859,7 +1872,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -1883,7 +1896,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -1897,7 +1910,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1919,7 +1932,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1941,7 +1954,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1962,7 +1975,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -1979,7 +1992,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2003,7 +2016,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * The IPv4 address to be used for reverse DNS verification.
      * </pre>
      *
-     * <code>string dns_verification_ip = 241011381;</code>
+     * <code>optional string dns_verification_ip = 241011381;</code>
      *
      * @return Whether the dnsVerificationIp field is set.
      */
@@ -2017,7 +2030,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * The IPv4 address to be used for reverse DNS verification.
      * </pre>
      *
-     * <code>string dns_verification_ip = 241011381;</code>
+     * <code>optional string dns_verification_ip = 241011381;</code>
      *
      * @return The dnsVerificationIp.
      */
@@ -2039,7 +2052,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * The IPv4 address to be used for reverse DNS verification.
      * </pre>
      *
-     * <code>string dns_verification_ip = 241011381;</code>
+     * <code>optional string dns_verification_ip = 241011381;</code>
      *
      * @return The bytes for dnsVerificationIp.
      */
@@ -2061,7 +2074,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * The IPv4 address to be used for reverse DNS verification.
      * </pre>
      *
-     * <code>string dns_verification_ip = 241011381;</code>
+     * <code>optional string dns_verification_ip = 241011381;</code>
      *
      * @param value The dnsVerificationIp to set.
      * @return This builder for chaining.
@@ -2082,7 +2095,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * The IPv4 address to be used for reverse DNS verification.
      * </pre>
      *
-     * <code>string dns_verification_ip = 241011381;</code>
+     * <code>optional string dns_verification_ip = 241011381;</code>
      *
      * @return This builder for chaining.
      */
@@ -2099,7 +2112,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * The IPv4 address to be used for reverse DNS verification.
      * </pre>
      *
-     * <code>string dns_verification_ip = 241011381;</code>
+     * <code>optional string dns_verification_ip = 241011381;</code>
      *
      * @param value The bytes for dnsVerificationIp to set.
      * @return This builder for chaining.
@@ -2120,11 +2133,10 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return Whether the fingerprint field is set.
      */
@@ -2135,11 +2147,10 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The fingerprint.
      */
@@ -2158,11 +2169,10 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The bytes for fingerprint.
      */
@@ -2181,11 +2191,10 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The fingerprint to set.
      * @return This builder for chaining.
@@ -2203,11 +2212,10 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return This builder for chaining.
      */
@@ -2221,11 +2229,10 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The bytes for fingerprint to set.
      * @return This builder for chaining.
@@ -2249,7 +2256,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] The unique identifier for the resource type. The server generates this identifier.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -2264,7 +2271,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] The unique identifier for the resource type. The server generates this identifier.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -2279,7 +2286,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] The unique identifier for the resource type. The server generates this identifier.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -2297,7 +2304,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] The unique identifier for the resource type. The server generates this identifier.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -2316,7 +2323,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return Whether the ipCidrRange field is set.
      */
@@ -2330,7 +2337,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return The ipCidrRange.
      */
@@ -2352,7 +2359,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return The bytes for ipCidrRange.
      */
@@ -2374,7 +2381,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @param value The ipCidrRange to set.
      * @return This builder for chaining.
@@ -2395,7 +2402,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return This builder for chaining.
      */
@@ -2412,7 +2419,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @param value The bytes for ipCidrRange to set.
      * @return This builder for chaining.
@@ -2436,7 +2443,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -2450,7 +2457,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -2472,7 +2479,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -2494,7 +2501,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -2515,7 +2522,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -2532,7 +2539,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -2556,7 +2563,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -2570,7 +2577,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -2592,7 +2599,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -2614,7 +2621,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2635,7 +2642,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -2652,7 +2659,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -3092,7 +3099,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -3106,7 +3113,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -3128,7 +3135,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3150,7 +3157,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3171,7 +3178,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -3188,7 +3195,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -3212,7 +3219,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] The shared secret to be used for reverse DNS verification.
      * </pre>
      *
-     * <code>string shared_secret = 381932490;</code>
+     * <code>optional string shared_secret = 381932490;</code>
      *
      * @return Whether the sharedSecret field is set.
      */
@@ -3226,7 +3233,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] The shared secret to be used for reverse DNS verification.
      * </pre>
      *
-     * <code>string shared_secret = 381932490;</code>
+     * <code>optional string shared_secret = 381932490;</code>
      *
      * @return The sharedSecret.
      */
@@ -3248,7 +3255,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] The shared secret to be used for reverse DNS verification.
      * </pre>
      *
-     * <code>string shared_secret = 381932490;</code>
+     * <code>optional string shared_secret = 381932490;</code>
      *
      * @return The bytes for sharedSecret.
      */
@@ -3270,7 +3277,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] The shared secret to be used for reverse DNS verification.
      * </pre>
      *
-     * <code>string shared_secret = 381932490;</code>
+     * <code>optional string shared_secret = 381932490;</code>
      *
      * @param value The sharedSecret to set.
      * @return This builder for chaining.
@@ -3291,7 +3298,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] The shared secret to be used for reverse DNS verification.
      * </pre>
      *
-     * <code>string shared_secret = 381932490;</code>
+     * <code>optional string shared_secret = 381932490;</code>
      *
      * @return This builder for chaining.
      */
@@ -3308,7 +3315,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * [Output Only] The shared secret to be used for reverse DNS verification.
      * </pre>
      *
-     * <code>string shared_secret = 381932490;</code>
+     * <code>optional string shared_secret = 381932490;</code>
      *
      * @param value The bytes for sharedSecret to set.
      * @return This builder for chaining.
@@ -3324,19 +3331,19 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      *
      *
      * <pre>
      * The status of the public advertised prefix.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PublicAdvertisedPrefix.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
      * @return Whether the status field is set.
      */
-    @java.lang.Override
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000800) != 0);
     }
@@ -3345,29 +3352,64 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The status of the public advertised prefix.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PublicAdvertisedPrefix.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The enum numeric value on the wire for status.
+     * @return The status.
      */
-    @java.lang.Override
-    public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * The status of the public advertised prefix.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PublicAdvertisedPrefix.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @param value The enum numeric value on the wire for status to set.
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status of the public advertised prefix.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     *
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
+    public Builder setStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000800;
       status_ = value;
       onChanged();
@@ -3378,39 +3420,16 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The status of the public advertised prefix.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PublicAdvertisedPrefix.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.PublicAdvertisedPrefix.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.PublicAdvertisedPrefix.Status result =
-          com.google.cloud.compute.v1.PublicAdvertisedPrefix.Status.valueOf(status_);
-      return result == null
-          ? com.google.cloud.compute.v1.PublicAdvertisedPrefix.Status.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The status of the public advertised prefix.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.PublicAdvertisedPrefix.Status status = 181260274;</code>
-     *
-     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloud.compute.v1.PublicAdvertisedPrefix.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000800;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
@@ -3419,15 +3438,21 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The status of the public advertised prefix.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PublicAdvertisedPrefix.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000800);
-      status_ = 0;
+    public Builder setStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000800;
+      status_ = value;
       onChanged();
       return this;
     }

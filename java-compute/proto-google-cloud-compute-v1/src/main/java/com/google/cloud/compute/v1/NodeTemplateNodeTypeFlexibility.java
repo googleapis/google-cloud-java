@@ -132,7 +132,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
   public static final int CPUS_FIELD_NUMBER = 3060683;
   private volatile java.lang.Object cpus_;
   /**
-   * <code>string cpus = 3060683;</code>
+   * <code>optional string cpus = 3060683;</code>
    *
    * @return Whether the cpus field is set.
    */
@@ -141,7 +141,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>string cpus = 3060683;</code>
+   * <code>optional string cpus = 3060683;</code>
    *
    * @return The cpus.
    */
@@ -158,7 +158,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     }
   }
   /**
-   * <code>string cpus = 3060683;</code>
+   * <code>optional string cpus = 3060683;</code>
    *
    * @return The bytes for cpus.
    */
@@ -178,7 +178,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
   public static final int LOCAL_SSD_FIELD_NUMBER = 405741360;
   private volatile java.lang.Object localSsd_;
   /**
-   * <code>string local_ssd = 405741360;</code>
+   * <code>optional string local_ssd = 405741360;</code>
    *
    * @return Whether the localSsd field is set.
    */
@@ -187,7 +187,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>string local_ssd = 405741360;</code>
+   * <code>optional string local_ssd = 405741360;</code>
    *
    * @return The localSsd.
    */
@@ -204,7 +204,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     }
   }
   /**
-   * <code>string local_ssd = 405741360;</code>
+   * <code>optional string local_ssd = 405741360;</code>
    *
    * @return The bytes for localSsd.
    */
@@ -224,7 +224,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
   public static final int MEMORY_FIELD_NUMBER = 532856065;
   private volatile java.lang.Object memory_;
   /**
-   * <code>string memory = 532856065;</code>
+   * <code>optional string memory = 532856065;</code>
    *
    * @return Whether the memory field is set.
    */
@@ -233,7 +233,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>string memory = 532856065;</code>
+   * <code>optional string memory = 532856065;</code>
    *
    * @return The memory.
    */
@@ -250,7 +250,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     }
   }
   /**
-   * <code>string memory = 532856065;</code>
+   * <code>optional string memory = 532856065;</code>
    *
    * @return The bytes for memory.
    */
@@ -651,7 +651,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
 
     private java.lang.Object cpus_ = "";
     /**
-     * <code>string cpus = 3060683;</code>
+     * <code>optional string cpus = 3060683;</code>
      *
      * @return Whether the cpus field is set.
      */
@@ -659,7 +659,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>string cpus = 3060683;</code>
+     * <code>optional string cpus = 3060683;</code>
      *
      * @return The cpus.
      */
@@ -675,7 +675,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       }
     }
     /**
-     * <code>string cpus = 3060683;</code>
+     * <code>optional string cpus = 3060683;</code>
      *
      * @return The bytes for cpus.
      */
@@ -691,7 +691,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       }
     }
     /**
-     * <code>string cpus = 3060683;</code>
+     * <code>optional string cpus = 3060683;</code>
      *
      * @param value The cpus to set.
      * @return This builder for chaining.
@@ -706,7 +706,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       return this;
     }
     /**
-     * <code>string cpus = 3060683;</code>
+     * <code>optional string cpus = 3060683;</code>
      *
      * @return This builder for chaining.
      */
@@ -717,7 +717,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       return this;
     }
     /**
-     * <code>string cpus = 3060683;</code>
+     * <code>optional string cpus = 3060683;</code>
      *
      * @param value The bytes for cpus to set.
      * @return This builder for chaining.
@@ -735,7 +735,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
 
     private java.lang.Object localSsd_ = "";
     /**
-     * <code>string local_ssd = 405741360;</code>
+     * <code>optional string local_ssd = 405741360;</code>
      *
      * @return Whether the localSsd field is set.
      */
@@ -743,7 +743,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>string local_ssd = 405741360;</code>
+     * <code>optional string local_ssd = 405741360;</code>
      *
      * @return The localSsd.
      */
@@ -759,7 +759,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       }
     }
     /**
-     * <code>string local_ssd = 405741360;</code>
+     * <code>optional string local_ssd = 405741360;</code>
      *
      * @return The bytes for localSsd.
      */
@@ -775,7 +775,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       }
     }
     /**
-     * <code>string local_ssd = 405741360;</code>
+     * <code>optional string local_ssd = 405741360;</code>
      *
      * @param value The localSsd to set.
      * @return This builder for chaining.
@@ -790,7 +790,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       return this;
     }
     /**
-     * <code>string local_ssd = 405741360;</code>
+     * <code>optional string local_ssd = 405741360;</code>
      *
      * @return This builder for chaining.
      */
@@ -801,7 +801,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       return this;
     }
     /**
-     * <code>string local_ssd = 405741360;</code>
+     * <code>optional string local_ssd = 405741360;</code>
      *
      * @param value The bytes for localSsd to set.
      * @return This builder for chaining.
@@ -819,7 +819,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
 
     private java.lang.Object memory_ = "";
     /**
-     * <code>string memory = 532856065;</code>
+     * <code>optional string memory = 532856065;</code>
      *
      * @return Whether the memory field is set.
      */
@@ -827,7 +827,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>string memory = 532856065;</code>
+     * <code>optional string memory = 532856065;</code>
      *
      * @return The memory.
      */
@@ -843,7 +843,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       }
     }
     /**
-     * <code>string memory = 532856065;</code>
+     * <code>optional string memory = 532856065;</code>
      *
      * @return The bytes for memory.
      */
@@ -859,7 +859,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       }
     }
     /**
-     * <code>string memory = 532856065;</code>
+     * <code>optional string memory = 532856065;</code>
      *
      * @param value The memory to set.
      * @return This builder for chaining.
@@ -874,7 +874,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       return this;
     }
     /**
-     * <code>string memory = 532856065;</code>
+     * <code>optional string memory = 532856065;</code>
      *
      * @return This builder for chaining.
      */
@@ -885,7 +885,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       return this;
     }
     /**
-     * <code>string memory = 532856065;</code>
+     * <code>optional string memory = 532856065;</code>
      *
      * @param value The bytes for memory to set.
      * @return This builder for chaining.

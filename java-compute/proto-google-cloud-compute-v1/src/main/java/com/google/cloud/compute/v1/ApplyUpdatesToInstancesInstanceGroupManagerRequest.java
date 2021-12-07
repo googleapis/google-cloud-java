@@ -377,13 +377,13 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (!getInstanceGroupManagerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceGroupManager_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 249363395, instanceGroupManager_);
     }
     if (instanceGroupManagersApplyUpdatesRequestResource_ != null) {
@@ -398,13 +398,13 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
-    if (!getInstanceGroupManagerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceGroupManager_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               249363395, instanceGroupManager_);

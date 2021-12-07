@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.PublicAdvertisedPrefixesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeletePublicAdvertisedPrefixeRequest;
 import com.google.cloud.compute.v1.GetPublicAdvertisedPrefixeRequest;
@@ -39,12 +40,22 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class PublicAdvertisedPrefixesStub implements BackgroundResource {
 
+  public OperationCallable<DeletePublicAdvertisedPrefixeRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeletePublicAdvertisedPrefixeRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetPublicAdvertisedPrefixeRequest, PublicAdvertisedPrefix> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertPublicAdvertisedPrefixeRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertPublicAdvertisedPrefixeRequest, Operation> insertCallable() {
@@ -58,6 +69,11 @@ public abstract class PublicAdvertisedPrefixesStub implements BackgroundResource
   public UnaryCallable<ListPublicAdvertisedPrefixesRequest, PublicAdvertisedPrefixList>
       listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<PatchPublicAdvertisedPrefixeRequest, Operation, Operation>
+      patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
   }
 
   public UnaryCallable<PatchPublicAdvertisedPrefixeRequest, Operation> patchCallable() {

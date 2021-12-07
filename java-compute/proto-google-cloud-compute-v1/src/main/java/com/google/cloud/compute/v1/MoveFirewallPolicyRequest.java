@@ -76,14 +76,14 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
           case -617249150:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
+
               parentId_ = s;
               break;
             }
@@ -187,23 +187,8 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
    * The new parent of the firewall policy.
    * </pre>
    *
-   * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
-   * </code>
-   *
-   * @return Whether the parentId field is set.
-   */
-  @java.lang.Override
-  public boolean hasParentId() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The new parent of the firewall policy.
-   * </pre>
-   *
-   * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+   * <code>
+   * string parent_id = 459714768 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "parent_id"];
    * </code>
    *
    * @return The parentId.
@@ -227,7 +212,8 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
    * The new parent of the firewall policy.
    * </pre>
    *
-   * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+   * <code>
+   * string parent_id = 459714768 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "parent_id"];
    * </code>
    *
    * @return The bytes for parentId.
@@ -251,29 +237,25 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 37109963;</code>
+   * <code>optional string request_id = 37109963;</code>
    *
    * @return Whether the requestId field is set.
    */
   @java.lang.Override
   public boolean hasRequestId() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
    *
    * <pre>
-   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 37109963;</code>
+   * <code>optional string request_id = 37109963;</code>
    *
    * @return The requestId.
    */
@@ -293,12 +275,10 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 37109963;</code>
+   * <code>optional string request_id = 37109963;</code>
    *
    * @return The bytes for requestId.
    */
@@ -329,13 +309,13 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 459714768, parentId_);
     }
-    if (!getFirewallPolicyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firewallPolicy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 498173265, firewallPolicy_);
     }
     unknownFields.writeTo(output);
@@ -347,13 +327,13 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(459714768, parentId_);
     }
-    if (!getFirewallPolicyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firewallPolicy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(498173265, firewallPolicy_);
     }
     size += unknownFields.getSerializedSize();
@@ -373,10 +353,7 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
         (com.google.cloud.compute.v1.MoveFirewallPolicyRequest) obj;
 
     if (!getFirewallPolicy().equals(other.getFirewallPolicy())) return false;
-    if (hasParentId() != other.hasParentId()) return false;
-    if (hasParentId()) {
-      if (!getParentId().equals(other.getParentId())) return false;
-    }
+    if (!getParentId().equals(other.getParentId())) return false;
     if (hasRequestId() != other.hasRequestId()) return false;
     if (hasRequestId()) {
       if (!getRequestId().equals(other.getRequestId())) return false;
@@ -394,10 +371,8 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + FIREWALL_POLICY_FIELD_NUMBER;
     hash = (53 * hash) + getFirewallPolicy().hashCode();
-    if (hasParentId()) {
-      hash = (37 * hash) + PARENT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getParentId().hashCode();
-    }
+    hash = (37 * hash) + PARENT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getParentId().hashCode();
     if (hasRequestId()) {
       hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + getRequestId().hashCode();
@@ -551,9 +526,9 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
       firewallPolicy_ = "";
 
       parentId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
+
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -584,12 +559,9 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.firewallPolicy_ = firewallPolicy_;
+      result.parentId_ = parentId_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         to_bitField0_ |= 0x00000001;
-      }
-      result.parentId_ = parentId_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        to_bitField0_ |= 0x00000002;
       }
       result.requestId_ = requestId_;
       result.bitField0_ = to_bitField0_;
@@ -647,13 +619,12 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
         firewallPolicy_ = other.firewallPolicy_;
         onChanged();
       }
-      if (other.hasParentId()) {
-        bitField0_ |= 0x00000001;
+      if (!other.getParentId().isEmpty()) {
         parentId_ = other.parentId_;
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -803,22 +774,8 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      * The new parent of the firewall policy.
      * </pre>
      *
-     * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
-     * </code>
-     *
-     * @return Whether the parentId field is set.
-     */
-    public boolean hasParentId() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The new parent of the firewall policy.
-     * </pre>
-     *
-     * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+     * <code>
+     * string parent_id = 459714768 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "parent_id"];
      * </code>
      *
      * @return The parentId.
@@ -841,7 +798,8 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      * The new parent of the firewall policy.
      * </pre>
      *
-     * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+     * <code>
+     * string parent_id = 459714768 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "parent_id"];
      * </code>
      *
      * @return The bytes for parentId.
@@ -864,7 +822,8 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      * The new parent of the firewall policy.
      * </pre>
      *
-     * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+     * <code>
+     * string parent_id = 459714768 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "parent_id"];
      * </code>
      *
      * @param value The parentId to set.
@@ -874,7 +833,7 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
+
       parentId_ = value;
       onChanged();
       return this;
@@ -886,13 +845,14 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      * The new parent of the firewall policy.
      * </pre>
      *
-     * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+     * <code>
+     * string parent_id = 459714768 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "parent_id"];
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearParentId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+
       parentId_ = getDefaultInstance().getParentId();
       onChanged();
       return this;
@@ -904,7 +864,8 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      * The new parent of the firewall policy.
      * </pre>
      *
-     * <code>string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+     * <code>
+     * string parent_id = 459714768 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "parent_id"];
      * </code>
      *
      * @param value The bytes for parentId to set.
@@ -915,7 +876,7 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
+
       parentId_ = value;
       onChanged();
       return this;
@@ -926,28 +887,24 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
      *
      * <pre>
-     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @return The requestId.
      */
@@ -966,12 +923,10 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @return The bytes for requestId.
      */
@@ -990,12 +945,10 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @param value The requestId to set.
      * @return This builder for chaining.
@@ -1004,7 +957,7 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1013,17 +966,15 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1032,12 +983,10 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @param value The bytes for requestId to set.
      * @return This builder for chaining.
@@ -1047,7 +996,7 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;

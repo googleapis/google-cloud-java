@@ -17,6 +17,7 @@
 package com.google.cloud.compute.v1.stub;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.BulkInsertRegionInstanceRequest;
 import com.google.cloud.compute.v1.Operation;
@@ -30,6 +31,11 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class RegionInstancesStub implements BackgroundResource {
+
+  public OperationCallable<BulkInsertRegionInstanceRequest, Operation, Operation>
+      bulkInsertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: bulkInsertOperationCallable()");
+  }
 
   public UnaryCallable<BulkInsertRegionInstanceRequest, Operation> bulkInsertCallable() {
     throw new UnsupportedOperationException("Not implemented: bulkInsertCallable()");

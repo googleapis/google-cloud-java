@@ -158,7 +158,7 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return Whether the locationHint field is set.
    */
@@ -170,7 +170,7 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return The locationHint.
    */
@@ -182,7 +182,7 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return The bytes for locationHint.
    */
@@ -195,7 +195,7 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
    * </pre>
    *
-   * <code>string machine_type = 227711026;</code>
+   * <code>optional string machine_type = 227711026;</code>
    *
    * @return Whether the machineType field is set.
    */
@@ -207,7 +207,7 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
    * </pre>
    *
-   * <code>string machine_type = 227711026;</code>
+   * <code>optional string machine_type = 227711026;</code>
    *
    * @return The machineType.
    */
@@ -219,7 +219,7 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
    * </pre>
    *
-   * <code>string machine_type = 227711026;</code>
+   * <code>optional string machine_type = 227711026;</code>
    *
    * @return The bytes for machineType.
    */
@@ -232,7 +232,7 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * Minimum cpu platform the reservation.
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return Whether the minCpuPlatform field is set.
    */
@@ -244,7 +244,7 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * Minimum cpu platform the reservation.
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return The minCpuPlatform.
    */
@@ -256,7 +256,7 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * Minimum cpu platform the reservation.
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return The bytes for minCpuPlatform.
    */

@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.DisksClient.AggregatedListPagedRespons
 import static com.google.cloud.compute.v1.DisksClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddResourcePoliciesDiskRequest;
 import com.google.cloud.compute.v1.AggregatedListDisksRequest;
@@ -51,6 +52,12 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class DisksStub implements BackgroundResource {
 
+  public OperationCallable<AddResourcePoliciesDiskRequest, Operation, Operation>
+      addResourcePoliciesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: addResourcePoliciesOperationCallable()");
+  }
+
   public UnaryCallable<AddResourcePoliciesDiskRequest, Operation> addResourcePoliciesCallable() {
     throw new UnsupportedOperationException("Not implemented: addResourcePoliciesCallable()");
   }
@@ -64,8 +71,17 @@ public abstract class DisksStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<CreateSnapshotDiskRequest, Operation, Operation>
+      createSnapshotOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createSnapshotOperationCallable()");
+  }
+
   public UnaryCallable<CreateSnapshotDiskRequest, Operation> createSnapshotCallable() {
     throw new UnsupportedOperationException("Not implemented: createSnapshotCallable()");
+  }
+
+  public OperationCallable<DeleteDiskRequest, Operation, Operation> deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
   }
 
   public UnaryCallable<DeleteDiskRequest, Operation> deleteCallable() {
@@ -80,6 +96,10 @@ public abstract class DisksStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
   }
 
+  public OperationCallable<InsertDiskRequest, Operation, Operation> insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
+  }
+
   public UnaryCallable<InsertDiskRequest, Operation> insertCallable() {
     throw new UnsupportedOperationException("Not implemented: insertCallable()");
   }
@@ -92,9 +112,19 @@ public abstract class DisksStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
   }
 
+  public OperationCallable<RemoveResourcePoliciesDiskRequest, Operation, Operation>
+      removeResourcePoliciesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: removeResourcePoliciesOperationCallable()");
+  }
+
   public UnaryCallable<RemoveResourcePoliciesDiskRequest, Operation>
       removeResourcePoliciesCallable() {
     throw new UnsupportedOperationException("Not implemented: removeResourcePoliciesCallable()");
+  }
+
+  public OperationCallable<ResizeDiskRequest, Operation, Operation> resizeOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: resizeOperationCallable()");
   }
 
   public UnaryCallable<ResizeDiskRequest, Operation> resizeCallable() {
@@ -103,6 +133,11 @@ public abstract class DisksStub implements BackgroundResource {
 
   public UnaryCallable<SetIamPolicyDiskRequest, Policy> setIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public OperationCallable<SetLabelsDiskRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsOperationCallable()");
   }
 
   public UnaryCallable<SetLabelsDiskRequest, Operation> setLabelsCallable() {

@@ -27,12 +27,10 @@ public interface NetworkEndpointGroupCloudFunctionOrBuilder
    *
    *
    * <pre>
-   * A user-defined name of the Cloud Function.
-   * The function name is case-sensitive and must be 1-63 characters long.
-   * Example value: "func1".
+   * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
    * </pre>
    *
-   * <code>string function = 307196888;</code>
+   * <code>optional string function = 307196888;</code>
    *
    * @return Whether the function field is set.
    */
@@ -41,12 +39,10 @@ public interface NetworkEndpointGroupCloudFunctionOrBuilder
    *
    *
    * <pre>
-   * A user-defined name of the Cloud Function.
-   * The function name is case-sensitive and must be 1-63 characters long.
-   * Example value: "func1".
+   * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
    * </pre>
    *
-   * <code>string function = 307196888;</code>
+   * <code>optional string function = 307196888;</code>
    *
    * @return The function.
    */
@@ -55,12 +51,10 @@ public interface NetworkEndpointGroupCloudFunctionOrBuilder
    *
    *
    * <pre>
-   * A user-defined name of the Cloud Function.
-   * The function name is case-sensitive and must be 1-63 characters long.
-   * Example value: "func1".
+   * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
    * </pre>
    *
-   * <code>string function = 307196888;</code>
+   * <code>optional string function = 307196888;</code>
    *
    * @return The bytes for function.
    */
@@ -70,11 +64,10 @@ public interface NetworkEndpointGroupCloudFunctionOrBuilder
    *
    *
    * <pre>
-   * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services.
-   * For example, request URLs "mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+   * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
    * </pre>
    *
-   * <code>string url_mask = 103352252;</code>
+   * <code>optional string url_mask = 103352252;</code>
    *
    * @return Whether the urlMask field is set.
    */
@@ -83,11 +76,10 @@ public interface NetworkEndpointGroupCloudFunctionOrBuilder
    *
    *
    * <pre>
-   * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services.
-   * For example, request URLs "mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+   * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
    * </pre>
    *
-   * <code>string url_mask = 103352252;</code>
+   * <code>optional string url_mask = 103352252;</code>
    *
    * @return The urlMask.
    */
@@ -96,11 +88,10 @@ public interface NetworkEndpointGroupCloudFunctionOrBuilder
    *
    *
    * <pre>
-   * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services.
-   * For example, request URLs "mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+   * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
    * </pre>
    *
-   * <code>string url_mask = 103352252;</code>
+   * <code>optional string url_mask = 103352252;</code>
    *
    * @return The bytes for urlMask.
    */

@@ -25,11 +25,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddAssociationFirewallPolicyRequest;
 import com.google.cloud.compute.v1.AddRuleFirewallPolicyRequest;
@@ -49,6 +51,7 @@ import com.google.cloud.compute.v1.ListAssociationsFirewallPolicyRequest;
 import com.google.cloud.compute.v1.ListFirewallPoliciesRequest;
 import com.google.cloud.compute.v1.MoveFirewallPolicyRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchFirewallPolicyRequest;
 import com.google.cloud.compute.v1.PatchRuleFirewallPolicyRequest;
 import com.google.cloud.compute.v1.Policy;
@@ -57,6 +60,7 @@ import com.google.cloud.compute.v1.RemoveRuleFirewallPolicyRequest;
 import com.google.cloud.compute.v1.SetIamPolicyFirewallPolicyRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsFirewallPolicyRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -74,6 +78,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<AddAssociationFirewallPolicyRequest, Operation>
       addAssociationMethodDescriptor =
           ApiMethodDescriptor.<AddAssociationFirewallPolicyRequest, Operation>newBuilder()
@@ -117,7 +124,19 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (AddAssociationFirewallPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<AddRuleFirewallPolicyRequest, Operation>
@@ -157,7 +176,19 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (AddRuleFirewallPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<CloneRulesFirewallPolicyRequest, Operation>
@@ -198,7 +229,19 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (CloneRulesFirewallPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<DeleteFirewallPolicyRequest, Operation>
@@ -233,7 +276,19 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteFirewallPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetFirewallPolicyRequest, FirewallPolicy>
@@ -265,6 +320,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<FirewallPolicy>newBuilder()
                       .setDefaultInstance(FirewallPolicy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -302,6 +358,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<FirewallPolicyAssociation>newBuilder()
                       .setDefaultInstance(FirewallPolicyAssociation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -339,6 +396,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -374,6 +432,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<FirewallPolicyRule>newBuilder()
                       .setDefaultInstance(FirewallPolicyRule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -397,9 +456,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<InsertFirewallPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
-                            if (request.hasParentId()) {
-                              serializer.putQueryParam(fields, "parentId", request.getParentId());
-                            }
+                            serializer.putQueryParam(fields, "parentId", request.getParentId());
                             if (request.hasRequestId()) {
                               serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
@@ -415,7 +472,20 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertFirewallPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getParentId());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListFirewallPoliciesRequest, FirewallPolicyList>
@@ -467,6 +537,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<FirewallPolicyList>newBuilder()
                       .setDefaultInstance(FirewallPolicyList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -505,6 +576,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                   ProtoMessageResponseParser.<FirewallPoliciesListAssociationsResponse>newBuilder()
                       .setDefaultInstance(
                           FirewallPoliciesListAssociationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -530,9 +602,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<MoveFirewallPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
-                            if (request.hasParentId()) {
-                              serializer.putQueryParam(fields, "parentId", request.getParentId());
-                            }
+                            serializer.putQueryParam(fields, "parentId", request.getParentId());
                             if (request.hasRequestId()) {
                               serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
@@ -543,7 +613,20 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (MoveFirewallPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getParentId());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<PatchFirewallPolicyRequest, Operation>
@@ -583,7 +666,19 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchFirewallPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<PatchRuleFirewallPolicyRequest, Operation>
@@ -626,7 +721,19 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchRuleFirewallPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<RemoveAssociationFirewallPolicyRequest, Operation>
@@ -664,7 +771,19 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (RemoveAssociationFirewallPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<RemoveRuleFirewallPolicyRequest, Operation>
@@ -702,7 +821,19 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (RemoveRuleFirewallPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetIamPolicyFirewallPolicyRequest, Policy>
@@ -738,6 +869,7 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -776,36 +908,58 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
                       .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
   private final UnaryCallable<AddAssociationFirewallPolicyRequest, Operation>
       addAssociationCallable;
+  private final OperationCallable<AddAssociationFirewallPolicyRequest, Operation, Operation>
+      addAssociationOperationCallable;
   private final UnaryCallable<AddRuleFirewallPolicyRequest, Operation> addRuleCallable;
+  private final OperationCallable<AddRuleFirewallPolicyRequest, Operation, Operation>
+      addRuleOperationCallable;
   private final UnaryCallable<CloneRulesFirewallPolicyRequest, Operation> cloneRulesCallable;
+  private final OperationCallable<CloneRulesFirewallPolicyRequest, Operation, Operation>
+      cloneRulesOperationCallable;
   private final UnaryCallable<DeleteFirewallPolicyRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteFirewallPolicyRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetFirewallPolicyRequest, FirewallPolicy> getCallable;
   private final UnaryCallable<GetAssociationFirewallPolicyRequest, FirewallPolicyAssociation>
       getAssociationCallable;
   private final UnaryCallable<GetIamPolicyFirewallPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<GetRuleFirewallPolicyRequest, FirewallPolicyRule> getRuleCallable;
   private final UnaryCallable<InsertFirewallPolicyRequest, Operation> insertCallable;
+  private final OperationCallable<InsertFirewallPolicyRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListFirewallPoliciesRequest, FirewallPolicyList> listCallable;
   private final UnaryCallable<ListFirewallPoliciesRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<
           ListAssociationsFirewallPolicyRequest, FirewallPoliciesListAssociationsResponse>
       listAssociationsCallable;
   private final UnaryCallable<MoveFirewallPolicyRequest, Operation> moveCallable;
+  private final OperationCallable<MoveFirewallPolicyRequest, Operation, Operation>
+      moveOperationCallable;
   private final UnaryCallable<PatchFirewallPolicyRequest, Operation> patchCallable;
+  private final OperationCallable<PatchFirewallPolicyRequest, Operation, Operation>
+      patchOperationCallable;
   private final UnaryCallable<PatchRuleFirewallPolicyRequest, Operation> patchRuleCallable;
+  private final OperationCallable<PatchRuleFirewallPolicyRequest, Operation, Operation>
+      patchRuleOperationCallable;
   private final UnaryCallable<RemoveAssociationFirewallPolicyRequest, Operation>
       removeAssociationCallable;
+  private final OperationCallable<RemoveAssociationFirewallPolicyRequest, Operation, Operation>
+      removeAssociationOperationCallable;
   private final UnaryCallable<RemoveRuleFirewallPolicyRequest, Operation> removeRuleCallable;
+  private final OperationCallable<RemoveRuleFirewallPolicyRequest, Operation, Operation>
+      removeRuleOperationCallable;
   private final UnaryCallable<SetIamPolicyFirewallPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsFirewallPolicyRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOrganizationOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonFirewallPoliciesStub create(FirewallPoliciesStubSettings settings)
@@ -846,50 +1000,62 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOrganizationOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AddAssociationFirewallPolicyRequest, Operation>
         addAssociationTransportSettings =
             HttpJsonCallSettings.<AddAssociationFirewallPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(addAssociationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<AddRuleFirewallPolicyRequest, Operation> addRuleTransportSettings =
         HttpJsonCallSettings.<AddRuleFirewallPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(addRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<CloneRulesFirewallPolicyRequest, Operation> cloneRulesTransportSettings =
         HttpJsonCallSettings.<CloneRulesFirewallPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(cloneRulesMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<DeleteFirewallPolicyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteFirewallPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetFirewallPolicyRequest, FirewallPolicy> getTransportSettings =
         HttpJsonCallSettings.<GetFirewallPolicyRequest, FirewallPolicy>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetAssociationFirewallPolicyRequest, FirewallPolicyAssociation>
         getAssociationTransportSettings =
             HttpJsonCallSettings
                 .<GetAssociationFirewallPolicyRequest, FirewallPolicyAssociation>newBuilder()
                 .setMethodDescriptor(getAssociationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<GetIamPolicyFirewallPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyFirewallPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetRuleFirewallPolicyRequest, FirewallPolicyRule>
         getRuleTransportSettings =
             HttpJsonCallSettings.<GetRuleFirewallPolicyRequest, FirewallPolicyRule>newBuilder()
                 .setMethodDescriptor(getRuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<InsertFirewallPolicyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertFirewallPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListFirewallPoliciesRequest, FirewallPolicyList> listTransportSettings =
         HttpJsonCallSettings.<ListFirewallPoliciesRequest, FirewallPolicyList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<
             ListAssociationsFirewallPolicyRequest, FirewallPoliciesListAssociationsResponse>
@@ -898,51 +1064,83 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                 .<ListAssociationsFirewallPolicyRequest, FirewallPoliciesListAssociationsResponse>
                     newBuilder()
                 .setMethodDescriptor(listAssociationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<MoveFirewallPolicyRequest, Operation> moveTransportSettings =
         HttpJsonCallSettings.<MoveFirewallPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(moveMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<PatchFirewallPolicyRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchFirewallPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<PatchRuleFirewallPolicyRequest, Operation> patchRuleTransportSettings =
         HttpJsonCallSettings.<PatchRuleFirewallPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(patchRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<RemoveAssociationFirewallPolicyRequest, Operation>
         removeAssociationTransportSettings =
             HttpJsonCallSettings.<RemoveAssociationFirewallPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(removeAssociationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<RemoveRuleFirewallPolicyRequest, Operation> removeRuleTransportSettings =
         HttpJsonCallSettings.<RemoveRuleFirewallPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(removeRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetIamPolicyFirewallPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyFirewallPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<TestIamPermissionsFirewallPolicyRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings
                 .<TestIamPermissionsFirewallPolicyRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.addAssociationCallable =
         callableFactory.createUnaryCallable(
             addAssociationTransportSettings, settings.addAssociationSettings(), clientContext);
+    this.addAssociationOperationCallable =
+        callableFactory.createOperationCallable(
+            addAssociationTransportSettings,
+            settings.addAssociationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.addRuleCallable =
         callableFactory.createUnaryCallable(
             addRuleTransportSettings, settings.addRuleSettings(), clientContext);
+    this.addRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            addRuleTransportSettings,
+            settings.addRuleOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.cloneRulesCallable =
         callableFactory.createUnaryCallable(
             cloneRulesTransportSettings, settings.cloneRulesSettings(), clientContext);
+    this.cloneRulesOperationCallable =
+        callableFactory.createOperationCallable(
+            cloneRulesTransportSettings,
+            settings.cloneRulesOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
@@ -958,6 +1156,12 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -970,20 +1174,50 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
     this.moveCallable =
         callableFactory.createUnaryCallable(
             moveTransportSettings, settings.moveSettings(), clientContext);
+    this.moveOperationCallable =
+        callableFactory.createOperationCallable(
+            moveTransportSettings,
+            settings.moveOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.patchRuleCallable =
         callableFactory.createUnaryCallable(
             patchRuleTransportSettings, settings.patchRuleSettings(), clientContext);
+    this.patchRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            patchRuleTransportSettings,
+            settings.patchRuleOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.removeAssociationCallable =
         callableFactory.createUnaryCallable(
             removeAssociationTransportSettings,
             settings.removeAssociationSettings(),
             clientContext);
+    this.removeAssociationOperationCallable =
+        callableFactory.createOperationCallable(
+            removeAssociationTransportSettings,
+            settings.removeAssociationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.removeRuleCallable =
         callableFactory.createUnaryCallable(
             removeRuleTransportSettings, settings.removeRuleSettings(), clientContext);
+    this.removeRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            removeRuleTransportSettings,
+            settings.removeRuleOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
@@ -1027,8 +1261,20 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
   }
 
   @Override
+  public OperationCallable<AddAssociationFirewallPolicyRequest, Operation, Operation>
+      addAssociationOperationCallable() {
+    return addAssociationOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<AddRuleFirewallPolicyRequest, Operation> addRuleCallable() {
     return addRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<AddRuleFirewallPolicyRequest, Operation, Operation>
+      addRuleOperationCallable() {
+    return addRuleOperationCallable;
   }
 
   @Override
@@ -1037,8 +1283,20 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
   }
 
   @Override
+  public OperationCallable<CloneRulesFirewallPolicyRequest, Operation, Operation>
+      cloneRulesOperationCallable() {
+    return cloneRulesOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteFirewallPolicyRequest, Operation> deleteCallable() {
     return deleteCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteFirewallPolicyRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
   }
 
   @Override
@@ -1068,6 +1326,12 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
   }
 
   @Override
+  public OperationCallable<InsertFirewallPolicyRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<ListFirewallPoliciesRequest, FirewallPolicyList> listCallable() {
     return listCallable;
   }
@@ -1090,13 +1354,31 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
   }
 
   @Override
+  public OperationCallable<MoveFirewallPolicyRequest, Operation, Operation>
+      moveOperationCallable() {
+    return moveOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchFirewallPolicyRequest, Operation> patchCallable() {
     return patchCallable;
   }
 
   @Override
+  public OperationCallable<PatchFirewallPolicyRequest, Operation, Operation>
+      patchOperationCallable() {
+    return patchOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchRuleFirewallPolicyRequest, Operation> patchRuleCallable() {
     return patchRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<PatchRuleFirewallPolicyRequest, Operation, Operation>
+      patchRuleOperationCallable() {
+    return patchRuleOperationCallable;
   }
 
   @Override
@@ -1106,8 +1388,20 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
   }
 
   @Override
+  public OperationCallable<RemoveAssociationFirewallPolicyRequest, Operation, Operation>
+      removeAssociationOperationCallable() {
+    return removeAssociationOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<RemoveRuleFirewallPolicyRequest, Operation> removeRuleCallable() {
     return removeRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<RemoveRuleFirewallPolicyRequest, Operation, Operation>
+      removeRuleOperationCallable() {
+    return removeRuleOperationCallable;
   }
 
   @Override

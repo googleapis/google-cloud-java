@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a License resource.
- * A License represents billing and aggregate usage data for public and marketplace images.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images. (== resource_for {$api_version}.licenses ==)
+ * Represents a License resource. A License represents billing and aggregate usage data for public and marketplace images. *Caution* This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.License}
@@ -196,7 +195,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
    * </pre>
    *
-   * <code>bool charges_use_fee = 372412622;</code>
+   * <code>optional bool charges_use_fee = 372412622;</code>
    *
    * @return Whether the chargesUseFee field is set.
    */
@@ -211,7 +210,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
    * </pre>
    *
-   * <code>bool charges_use_fee = 372412622;</code>
+   * <code>optional bool charges_use_fee = 372412622;</code>
    *
    * @return The chargesUseFee.
    */
@@ -229,7 +228,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -244,7 +243,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -267,7 +266,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -293,7 +292,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -308,7 +307,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -331,7 +330,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -357,7 +356,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -372,7 +371,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -390,7 +389,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of resource. Always compute#license for licenses.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -405,7 +404,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of resource. Always compute#license for licenses.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -428,7 +427,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of resource. Always compute#license for licenses.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -454,7 +453,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique code used to attach this license to images, snapshots, and disks.
    * </pre>
    *
-   * <code>uint64 license_code = 1467179;</code>
+   * <code>optional uint64 license_code = 1467179;</code>
    *
    * @return Whether the licenseCode field is set.
    */
@@ -469,7 +468,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique code used to attach this license to images, snapshots, and disks.
    * </pre>
    *
-   * <code>uint64 license_code = 1467179;</code>
+   * <code>optional uint64 license_code = 1467179;</code>
    *
    * @return The licenseCode.
    */
@@ -487,7 +486,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -502,7 +501,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -525,7 +524,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -545,7 +544,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
   public static final int RESOURCE_REQUIREMENTS_FIELD_NUMBER = 214292769;
   private com.google.cloud.compute.v1.LicenseResourceRequirements resourceRequirements_;
   /**
-   * <code>.google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
+   * <code>
+   * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
    * </code>
    *
    * @return Whether the resourceRequirements field is set.
@@ -555,7 +555,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     return ((bitField0_ & 0x00000080) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
+   * <code>
+   * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
    * </code>
    *
    * @return The resourceRequirements.
@@ -567,7 +568,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
         : resourceRequirements_;
   }
   /**
-   * <code>.google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
+   * <code>
+   * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
    * </code>
    */
   @java.lang.Override
@@ -587,7 +589,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -602,7 +604,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -625,7 +627,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -651,7 +653,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk.
    * </pre>
    *
-   * <code>bool transferable = 4349893;</code>
+   * <code>optional bool transferable = 4349893;</code>
    *
    * @return Whether the transferable field is set.
    */
@@ -666,7 +668,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk.
    * </pre>
    *
-   * <code>bool transferable = 4349893;</code>
+   * <code>optional bool transferable = 4349893;</code>
    *
    * @return The transferable.
    */
@@ -970,8 +972,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a License resource.
-   * A License represents billing and aggregate usage data for public and marketplace images.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images. (== resource_for {$api_version}.licenses ==)
+   * Represents a License resource. A License represents billing and aggregate usage data for public and marketplace images. *Caution* This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.License}
@@ -1239,7 +1240,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
      * </pre>
      *
-     * <code>bool charges_use_fee = 372412622;</code>
+     * <code>optional bool charges_use_fee = 372412622;</code>
      *
      * @return Whether the chargesUseFee field is set.
      */
@@ -1254,7 +1255,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
      * </pre>
      *
-     * <code>bool charges_use_fee = 372412622;</code>
+     * <code>optional bool charges_use_fee = 372412622;</code>
      *
      * @return The chargesUseFee.
      */
@@ -1269,7 +1270,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
      * </pre>
      *
-     * <code>bool charges_use_fee = 372412622;</code>
+     * <code>optional bool charges_use_fee = 372412622;</code>
      *
      * @param value The chargesUseFee to set.
      * @return This builder for chaining.
@@ -1287,7 +1288,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
      * </pre>
      *
-     * <code>bool charges_use_fee = 372412622;</code>
+     * <code>optional bool charges_use_fee = 372412622;</code>
      *
      * @return This builder for chaining.
      */
@@ -1306,7 +1307,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -1320,7 +1321,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -1342,7 +1343,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -1364,7 +1365,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -1385,7 +1386,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -1402,7 +1403,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -1426,7 +1427,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -1440,7 +1441,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1462,7 +1463,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1484,7 +1485,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1505,7 +1506,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -1522,7 +1523,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1546,7 +1547,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -1561,7 +1562,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -1576,7 +1577,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -1594,7 +1595,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -1613,7 +1614,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of resource. Always compute#license for licenses.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -1627,7 +1628,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of resource. Always compute#license for licenses.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -1649,7 +1650,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of resource. Always compute#license for licenses.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -1671,7 +1672,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of resource. Always compute#license for licenses.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -1692,7 +1693,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of resource. Always compute#license for licenses.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -1709,7 +1710,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of resource. Always compute#license for licenses.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -1733,7 +1734,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique code used to attach this license to images, snapshots, and disks.
      * </pre>
      *
-     * <code>uint64 license_code = 1467179;</code>
+     * <code>optional uint64 license_code = 1467179;</code>
      *
      * @return Whether the licenseCode field is set.
      */
@@ -1748,7 +1749,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique code used to attach this license to images, snapshots, and disks.
      * </pre>
      *
-     * <code>uint64 license_code = 1467179;</code>
+     * <code>optional uint64 license_code = 1467179;</code>
      *
      * @return The licenseCode.
      */
@@ -1763,7 +1764,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique code used to attach this license to images, snapshots, and disks.
      * </pre>
      *
-     * <code>uint64 license_code = 1467179;</code>
+     * <code>optional uint64 license_code = 1467179;</code>
      *
      * @param value The licenseCode to set.
      * @return This builder for chaining.
@@ -1781,7 +1782,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique code used to attach this license to images, snapshots, and disks.
      * </pre>
      *
-     * <code>uint64 license_code = 1467179;</code>
+     * <code>optional uint64 license_code = 1467179;</code>
      *
      * @return This builder for chaining.
      */
@@ -1800,7 +1801,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -1814,7 +1815,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -1836,7 +1837,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -1858,7 +1859,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1879,7 +1880,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -1896,7 +1897,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1919,7 +1920,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.LicenseResourceRequirementsOrBuilder>
         resourceRequirementsBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
+     * <code>
+     * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
      * </code>
      *
      * @return Whether the resourceRequirements field is set.
@@ -1928,7 +1930,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
+     * <code>
+     * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
      * </code>
      *
      * @return The resourceRequirements.
@@ -1943,7 +1946,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
+     * <code>
+     * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
      * </code>
      */
     public Builder setResourceRequirements(
@@ -1961,7 +1965,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
+     * <code>
+     * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
      * </code>
      */
     public Builder setResourceRequirements(
@@ -1976,7 +1981,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
+     * <code>
+     * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
      * </code>
      */
     public Builder mergeResourceRequirements(
@@ -2002,7 +2008,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
+     * <code>
+     * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
      * </code>
      */
     public Builder clearResourceRequirements() {
@@ -2016,7 +2023,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
+     * <code>
+     * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
      * </code>
      */
     public com.google.cloud.compute.v1.LicenseResourceRequirements.Builder
@@ -2026,7 +2034,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       return getResourceRequirementsFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
+     * <code>
+     * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
      * </code>
      */
     public com.google.cloud.compute.v1.LicenseResourceRequirementsOrBuilder
@@ -2040,7 +2049,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
+     * <code>
+     * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2068,7 +2078,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -2082,7 +2092,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -2104,7 +2114,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2126,7 +2136,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2147,7 +2157,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -2164,7 +2174,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2188,7 +2198,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk.
      * </pre>
      *
-     * <code>bool transferable = 4349893;</code>
+     * <code>optional bool transferable = 4349893;</code>
      *
      * @return Whether the transferable field is set.
      */
@@ -2203,7 +2213,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk.
      * </pre>
      *
-     * <code>bool transferable = 4349893;</code>
+     * <code>optional bool transferable = 4349893;</code>
      *
      * @return The transferable.
      */
@@ -2218,7 +2228,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk.
      * </pre>
      *
-     * <code>bool transferable = 4349893;</code>
+     * <code>optional bool transferable = 4349893;</code>
      *
      * @param value The transferable to set.
      * @return This builder for chaining.
@@ -2236,7 +2246,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk.
      * </pre>
      *
-     * <code>bool transferable = 4349893;</code>
+     * <code>optional bool transferable = 4349893;</code>
      *
      * @return This builder for chaining.
      */

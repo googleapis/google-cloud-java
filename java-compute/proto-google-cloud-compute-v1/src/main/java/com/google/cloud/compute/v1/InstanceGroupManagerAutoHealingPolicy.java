@@ -129,7 +129,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
    * The URL for the health check that signals autohealing.
    * </pre>
    *
-   * <code>string health_check = 308876645;</code>
+   * <code>optional string health_check = 308876645;</code>
    *
    * @return Whether the healthCheck field is set.
    */
@@ -144,7 +144,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
    * The URL for the health check that signals autohealing.
    * </pre>
    *
-   * <code>string health_check = 308876645;</code>
+   * <code>optional string health_check = 308876645;</code>
    *
    * @return The healthCheck.
    */
@@ -167,7 +167,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
    * The URL for the health check that signals autohealing.
    * </pre>
    *
-   * <code>string health_check = 308876645;</code>
+   * <code>optional string health_check = 308876645;</code>
    *
    * @return The bytes for healthCheck.
    */
@@ -193,7 +193,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
    * The number of seconds that the managed instance group waits before it applies autohealing policies to new instances or recently recreated instances. This initial delay allows instances to initialize and run their startup scripts before the instance group determines that they are UNHEALTHY. This prevents the managed instance group from recreating its instances prematurely. This value must be from range [0, 3600].
    * </pre>
    *
-   * <code>int32 initial_delay_sec = 263207002;</code>
+   * <code>optional int32 initial_delay_sec = 263207002;</code>
    *
    * @return Whether the initialDelaySec field is set.
    */
@@ -208,7 +208,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
    * The number of seconds that the managed instance group waits before it applies autohealing policies to new instances or recently recreated instances. This initial delay allows instances to initialize and run their startup scripts before the instance group determines that they are UNHEALTHY. This prevents the managed instance group from recreating its instances prematurely. This value must be from range [0, 3600].
    * </pre>
    *
-   * <code>int32 initial_delay_sec = 263207002;</code>
+   * <code>optional int32 initial_delay_sec = 263207002;</code>
    *
    * @return The initialDelaySec.
    */
@@ -586,7 +586,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
      * The URL for the health check that signals autohealing.
      * </pre>
      *
-     * <code>string health_check = 308876645;</code>
+     * <code>optional string health_check = 308876645;</code>
      *
      * @return Whether the healthCheck field is set.
      */
@@ -600,7 +600,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
      * The URL for the health check that signals autohealing.
      * </pre>
      *
-     * <code>string health_check = 308876645;</code>
+     * <code>optional string health_check = 308876645;</code>
      *
      * @return The healthCheck.
      */
@@ -622,7 +622,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
      * The URL for the health check that signals autohealing.
      * </pre>
      *
-     * <code>string health_check = 308876645;</code>
+     * <code>optional string health_check = 308876645;</code>
      *
      * @return The bytes for healthCheck.
      */
@@ -644,7 +644,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
      * The URL for the health check that signals autohealing.
      * </pre>
      *
-     * <code>string health_check = 308876645;</code>
+     * <code>optional string health_check = 308876645;</code>
      *
      * @param value The healthCheck to set.
      * @return This builder for chaining.
@@ -665,7 +665,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
      * The URL for the health check that signals autohealing.
      * </pre>
      *
-     * <code>string health_check = 308876645;</code>
+     * <code>optional string health_check = 308876645;</code>
      *
      * @return This builder for chaining.
      */
@@ -682,7 +682,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
      * The URL for the health check that signals autohealing.
      * </pre>
      *
-     * <code>string health_check = 308876645;</code>
+     * <code>optional string health_check = 308876645;</code>
      *
      * @param value The bytes for healthCheck to set.
      * @return This builder for chaining.
@@ -706,7 +706,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
      * The number of seconds that the managed instance group waits before it applies autohealing policies to new instances or recently recreated instances. This initial delay allows instances to initialize and run their startup scripts before the instance group determines that they are UNHEALTHY. This prevents the managed instance group from recreating its instances prematurely. This value must be from range [0, 3600].
      * </pre>
      *
-     * <code>int32 initial_delay_sec = 263207002;</code>
+     * <code>optional int32 initial_delay_sec = 263207002;</code>
      *
      * @return Whether the initialDelaySec field is set.
      */
@@ -721,7 +721,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
      * The number of seconds that the managed instance group waits before it applies autohealing policies to new instances or recently recreated instances. This initial delay allows instances to initialize and run their startup scripts before the instance group determines that they are UNHEALTHY. This prevents the managed instance group from recreating its instances prematurely. This value must be from range [0, 3600].
      * </pre>
      *
-     * <code>int32 initial_delay_sec = 263207002;</code>
+     * <code>optional int32 initial_delay_sec = 263207002;</code>
      *
      * @return The initialDelaySec.
      */
@@ -736,7 +736,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
      * The number of seconds that the managed instance group waits before it applies autohealing policies to new instances or recently recreated instances. This initial delay allows instances to initialize and run their startup scripts before the instance group determines that they are UNHEALTHY. This prevents the managed instance group from recreating its instances prematurely. This value must be from range [0, 3600].
      * </pre>
      *
-     * <code>int32 initial_delay_sec = 263207002;</code>
+     * <code>optional int32 initial_delay_sec = 263207002;</code>
      *
      * @param value The initialDelaySec to set.
      * @return This builder for chaining.
@@ -754,7 +754,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
      * The number of seconds that the managed instance group waits before it applies autohealing policies to new instances or recently recreated instances. This initial delay allows instances to initialize and run their startup scripts before the instance group determines that they are UNHEALTHY. This prevents the managed instance group from recreating its instances prematurely. This value must be from range [0, 3600].
      * </pre>
      *
-     * <code>int32 initial_delay_sec = 263207002;</code>
+     * <code>optional int32 initial_delay_sec = 263207002;</code>
      *
      * @return This builder for chaining.
      */

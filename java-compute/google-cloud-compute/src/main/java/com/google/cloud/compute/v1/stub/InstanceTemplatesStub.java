@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.InstanceTemplatesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteInstanceTemplateRequest;
 import com.google.cloud.compute.v1.GetIamPolicyInstanceTemplateRequest;
@@ -43,6 +44,11 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class InstanceTemplatesStub implements BackgroundResource {
 
+  public OperationCallable<DeleteInstanceTemplateRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteInstanceTemplateRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
@@ -53,6 +59,11 @@ public abstract class InstanceTemplatesStub implements BackgroundResource {
 
   public UnaryCallable<GetIamPolicyInstanceTemplateRequest, Policy> getIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public OperationCallable<InsertInstanceTemplateRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertInstanceTemplateRequest, Operation> insertCallable() {

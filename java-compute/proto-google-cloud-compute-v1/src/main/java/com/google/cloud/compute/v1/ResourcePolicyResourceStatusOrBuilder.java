@@ -31,7 +31,7 @@ public interface ResourcePolicyResourceStatusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
+   * optional .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
    * </code>
    *
    * @return Whether the instanceSchedulePolicy field is set.
@@ -45,7 +45,7 @@ public interface ResourcePolicyResourceStatusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
+   * optional .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
    * </code>
    *
    * @return The instanceSchedulePolicy.
@@ -60,7 +60,7 @@ public interface ResourcePolicyResourceStatusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
+   * optional .google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus instance_schedule_policy = 344877104;
    * </code>
    */
   com.google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatusOrBuilder

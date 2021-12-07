@@ -40,7 +40,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
   private FirewallPolicyRule() {
     action_ = "";
     description_ = "";
-    direction_ = 0;
+    direction_ = "";
     kind_ = "";
     targetResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -100,11 +100,11 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
               bitField0_ |= 0x00000040;
               break;
             }
-          case 889207800:
+          case 889207802:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
-              direction_ = rawValue;
+              direction_ = s;
               break;
             }
           case 1501295026:
@@ -340,7 +340,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
    * </pre>
    *
-   * <code>string action = 187661878;</code>
+   * <code>optional string action = 187661878;</code>
    *
    * @return Whether the action field is set.
    */
@@ -355,7 +355,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
    * </pre>
    *
-   * <code>string action = 187661878;</code>
+   * <code>optional string action = 187661878;</code>
    *
    * @return The action.
    */
@@ -378,7 +378,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
    * </pre>
    *
-   * <code>string action = 187661878;</code>
+   * <code>optional string action = 187661878;</code>
    *
    * @return The bytes for action.
    */
@@ -404,7 +404,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * An optional description for this resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -419,7 +419,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * An optional description for this resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -442,7 +442,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * An optional description for this resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -460,15 +460,16 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DIRECTION_FIELD_NUMBER = 111150975;
-  private int direction_;
+  private volatile java.lang.Object direction_;
   /**
    *
    *
    * <pre>
    * The direction in which this rule applies.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallPolicyRule.Direction direction = 111150975;</code>
+   * <code>optional string direction = 111150975;</code>
    *
    * @return Whether the direction field is set.
    */
@@ -481,35 +482,48 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The direction in which this rule applies.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallPolicyRule.Direction direction = 111150975;</code>
+   * <code>optional string direction = 111150975;</code>
    *
-   * @return The enum numeric value on the wire for direction.
+   * @return The direction.
    */
   @java.lang.Override
-  public int getDirectionValue() {
-    return direction_;
+  public java.lang.String getDirection() {
+    java.lang.Object ref = direction_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      direction_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * The direction in which this rule applies.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallPolicyRule.Direction direction = 111150975;</code>
+   * <code>optional string direction = 111150975;</code>
    *
-   * @return The direction.
+   * @return The bytes for direction.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.FirewallPolicyRule.Direction getDirection() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.FirewallPolicyRule.Direction result =
-        com.google.cloud.compute.v1.FirewallPolicyRule.Direction.valueOf(direction_);
-    return result == null
-        ? com.google.cloud.compute.v1.FirewallPolicyRule.Direction.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getDirectionBytes() {
+    java.lang.Object ref = direction_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      direction_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int DISABLED_FIELD_NUMBER = 270940796;
@@ -521,7 +535,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * Denotes whether the firewall policy rule is disabled. When set to true, the firewall policy rule is not enforced and traffic behaves as if it did not exist. If this is unspecified, the firewall policy rule will be enabled.
    * </pre>
    *
-   * <code>bool disabled = 270940796;</code>
+   * <code>optional bool disabled = 270940796;</code>
    *
    * @return Whether the disabled field is set.
    */
@@ -536,7 +550,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * Denotes whether the firewall policy rule is disabled. When set to true, the firewall policy rule is not enforced and traffic behaves as if it did not exist. If this is unspecified, the firewall policy rule will be enabled.
    * </pre>
    *
-   * <code>bool disabled = 270940796;</code>
+   * <code>optional bool disabled = 270940796;</code>
    *
    * @return The disabled.
    */
@@ -554,7 +568,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * Denotes whether to enable logging for a particular rule. If logging is enabled, logs will be exported to the configured export destination in Stackdriver. Logs may be exported to BigQuery or Pub/Sub. Note: you cannot enable logging on "goto_next" rules.
    * </pre>
    *
-   * <code>bool enable_logging = 295396515;</code>
+   * <code>optional bool enable_logging = 295396515;</code>
    *
    * @return Whether the enableLogging field is set.
    */
@@ -569,7 +583,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * Denotes whether to enable logging for a particular rule. If logging is enabled, logs will be exported to the configured export destination in Stackdriver. Logs may be exported to BigQuery or Pub/Sub. Note: you cannot enable logging on "goto_next" rules.
    * </pre>
    *
-   * <code>bool enable_logging = 295396515;</code>
+   * <code>optional bool enable_logging = 295396515;</code>
    *
    * @return The enableLogging.
    */
@@ -587,7 +601,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * [Output only] Type of the resource. Always compute#firewallPolicyRule for firewall policy rules
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -602,7 +616,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * [Output only] Type of the resource. Always compute#firewallPolicyRule for firewall policy rules
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -625,7 +639,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * [Output only] Type of the resource. Always compute#firewallPolicyRule for firewall policy rules
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -651,7 +665,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
+   * <code>optional .google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
    *
    * @return Whether the match field is set.
    */
@@ -666,7 +680,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
+   * <code>optional .google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
    *
    * @return The match.
    */
@@ -683,7 +697,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
+   * <code>optional .google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.FirewallPolicyRuleMatcherOrBuilder getMatchOrBuilder() {
@@ -701,7 +715,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
    * </pre>
    *
-   * <code>int32 priority = 445151652;</code>
+   * <code>optional int32 priority = 445151652;</code>
    *
    * @return Whether the priority field is set.
    */
@@ -716,7 +730,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
    * </pre>
    *
-   * <code>int32 priority = 445151652;</code>
+   * <code>optional int32 priority = 445151652;</code>
    *
    * @return The priority.
    */
@@ -734,7 +748,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * [Output Only] Calculation of the complexity of a single firewall policy rule.
    * </pre>
    *
-   * <code>int32 rule_tuple_count = 388342037;</code>
+   * <code>optional int32 rule_tuple_count = 388342037;</code>
    *
    * @return Whether the ruleTupleCount field is set.
    */
@@ -749,7 +763,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * [Output Only] Calculation of the complexity of a single firewall policy rule.
    * </pre>
    *
-   * <code>int32 rule_tuple_count = 388342037;</code>
+   * <code>optional int32 rule_tuple_count = 388342037;</code>
    *
    * @return The ruleTupleCount.
    */
@@ -901,7 +915,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       output.writeMessage(103668165, getMatch());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeEnum(111150975, direction_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 111150975, direction_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 187661878, action_);
@@ -945,7 +959,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(103668165, getMatch());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(111150975, direction_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(111150975, direction_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187661878, action_);
@@ -1007,7 +1021,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     }
     if (hasDirection() != other.hasDirection()) return false;
     if (hasDirection()) {
-      if (direction_ != other.direction_) return false;
+      if (!getDirection().equals(other.getDirection())) return false;
     }
     if (hasDisabled() != other.hasDisabled()) return false;
     if (hasDisabled()) {
@@ -1056,7 +1070,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     }
     if (hasDirection()) {
       hash = (37 * hash) + DIRECTION_FIELD_NUMBER;
-      hash = (53 * hash) + direction_;
+      hash = (53 * hash) + getDirection().hashCode();
     }
     if (hasDisabled()) {
       hash = (37 * hash) + DISABLED_FIELD_NUMBER;
@@ -1241,7 +1255,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
-      direction_ = 0;
+      direction_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
       disabled_ = false;
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1403,7 +1417,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         onChanged();
       }
       if (other.hasDirection()) {
-        setDirection(other.getDirection());
+        bitField0_ |= 0x00000004;
+        direction_ = other.direction_;
+        onChanged();
       }
       if (other.hasDisabled()) {
         setDisabled(other.getDisabled());
@@ -1484,7 +1500,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
      * </pre>
      *
-     * <code>string action = 187661878;</code>
+     * <code>optional string action = 187661878;</code>
      *
      * @return Whether the action field is set.
      */
@@ -1498,7 +1514,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
      * </pre>
      *
-     * <code>string action = 187661878;</code>
+     * <code>optional string action = 187661878;</code>
      *
      * @return The action.
      */
@@ -1520,7 +1536,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
      * </pre>
      *
-     * <code>string action = 187661878;</code>
+     * <code>optional string action = 187661878;</code>
      *
      * @return The bytes for action.
      */
@@ -1542,7 +1558,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
      * </pre>
      *
-     * <code>string action = 187661878;</code>
+     * <code>optional string action = 187661878;</code>
      *
      * @param value The action to set.
      * @return This builder for chaining.
@@ -1563,7 +1579,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
      * </pre>
      *
-     * <code>string action = 187661878;</code>
+     * <code>optional string action = 187661878;</code>
      *
      * @return This builder for chaining.
      */
@@ -1580,7 +1596,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
      * </pre>
      *
-     * <code>string action = 187661878;</code>
+     * <code>optional string action = 187661878;</code>
      *
      * @param value The bytes for action to set.
      * @return This builder for chaining.
@@ -1604,7 +1620,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * An optional description for this resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -1618,7 +1634,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * An optional description for this resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1640,7 +1656,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * An optional description for this resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1662,7 +1678,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * An optional description for this resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1683,7 +1699,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * An optional description for this resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -1700,7 +1716,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * An optional description for this resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1716,19 +1732,19 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private int direction_ = 0;
+    private java.lang.Object direction_ = "";
     /**
      *
      *
      * <pre>
      * The direction in which this rule applies.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallPolicyRule.Direction direction = 111150975;</code>
+     * <code>optional string direction = 111150975;</code>
      *
      * @return Whether the direction field is set.
      */
-    @java.lang.Override
     public boolean hasDirection() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -1737,29 +1753,64 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The direction in which this rule applies.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallPolicyRule.Direction direction = 111150975;</code>
+     * <code>optional string direction = 111150975;</code>
      *
-     * @return The enum numeric value on the wire for direction.
+     * @return The direction.
      */
-    @java.lang.Override
-    public int getDirectionValue() {
-      return direction_;
+    public java.lang.String getDirection() {
+      java.lang.Object ref = direction_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        direction_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * The direction in which this rule applies.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallPolicyRule.Direction direction = 111150975;</code>
+     * <code>optional string direction = 111150975;</code>
      *
-     * @param value The enum numeric value on the wire for direction to set.
+     * @return The bytes for direction.
+     */
+    public com.google.protobuf.ByteString getDirectionBytes() {
+      java.lang.Object ref = direction_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        direction_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The direction in which this rule applies.
+     * Check the Direction enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string direction = 111150975;</code>
+     *
+     * @param value The direction to set.
      * @return This builder for chaining.
      */
-    public Builder setDirectionValue(int value) {
+    public Builder setDirection(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000004;
       direction_ = value;
       onChanged();
@@ -1770,39 +1821,16 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The direction in which this rule applies.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallPolicyRule.Direction direction = 111150975;</code>
+     * <code>optional string direction = 111150975;</code>
      *
-     * @return The direction.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.FirewallPolicyRule.Direction getDirection() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.FirewallPolicyRule.Direction result =
-          com.google.cloud.compute.v1.FirewallPolicyRule.Direction.valueOf(direction_);
-      return result == null
-          ? com.google.cloud.compute.v1.FirewallPolicyRule.Direction.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The direction in which this rule applies.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.FirewallPolicyRule.Direction direction = 111150975;</code>
-     *
-     * @param value The direction to set.
      * @return This builder for chaining.
      */
-    public Builder setDirection(com.google.cloud.compute.v1.FirewallPolicyRule.Direction value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000004;
-      direction_ = value.getNumber();
+    public Builder clearDirection() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      direction_ = getDefaultInstance().getDirection();
       onChanged();
       return this;
     }
@@ -1811,15 +1839,21 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The direction in which this rule applies.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallPolicyRule.Direction direction = 111150975;</code>
+     * <code>optional string direction = 111150975;</code>
      *
+     * @param value The bytes for direction to set.
      * @return This builder for chaining.
      */
-    public Builder clearDirection() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      direction_ = 0;
+    public Builder setDirectionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000004;
+      direction_ = value;
       onChanged();
       return this;
     }
@@ -1832,7 +1866,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * Denotes whether the firewall policy rule is disabled. When set to true, the firewall policy rule is not enforced and traffic behaves as if it did not exist. If this is unspecified, the firewall policy rule will be enabled.
      * </pre>
      *
-     * <code>bool disabled = 270940796;</code>
+     * <code>optional bool disabled = 270940796;</code>
      *
      * @return Whether the disabled field is set.
      */
@@ -1847,7 +1881,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * Denotes whether the firewall policy rule is disabled. When set to true, the firewall policy rule is not enforced and traffic behaves as if it did not exist. If this is unspecified, the firewall policy rule will be enabled.
      * </pre>
      *
-     * <code>bool disabled = 270940796;</code>
+     * <code>optional bool disabled = 270940796;</code>
      *
      * @return The disabled.
      */
@@ -1862,7 +1896,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * Denotes whether the firewall policy rule is disabled. When set to true, the firewall policy rule is not enforced and traffic behaves as if it did not exist. If this is unspecified, the firewall policy rule will be enabled.
      * </pre>
      *
-     * <code>bool disabled = 270940796;</code>
+     * <code>optional bool disabled = 270940796;</code>
      *
      * @param value The disabled to set.
      * @return This builder for chaining.
@@ -1880,7 +1914,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * Denotes whether the firewall policy rule is disabled. When set to true, the firewall policy rule is not enforced and traffic behaves as if it did not exist. If this is unspecified, the firewall policy rule will be enabled.
      * </pre>
      *
-     * <code>bool disabled = 270940796;</code>
+     * <code>optional bool disabled = 270940796;</code>
      *
      * @return This builder for chaining.
      */
@@ -1899,7 +1933,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * Denotes whether to enable logging for a particular rule. If logging is enabled, logs will be exported to the configured export destination in Stackdriver. Logs may be exported to BigQuery or Pub/Sub. Note: you cannot enable logging on "goto_next" rules.
      * </pre>
      *
-     * <code>bool enable_logging = 295396515;</code>
+     * <code>optional bool enable_logging = 295396515;</code>
      *
      * @return Whether the enableLogging field is set.
      */
@@ -1914,7 +1948,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * Denotes whether to enable logging for a particular rule. If logging is enabled, logs will be exported to the configured export destination in Stackdriver. Logs may be exported to BigQuery or Pub/Sub. Note: you cannot enable logging on "goto_next" rules.
      * </pre>
      *
-     * <code>bool enable_logging = 295396515;</code>
+     * <code>optional bool enable_logging = 295396515;</code>
      *
      * @return The enableLogging.
      */
@@ -1929,7 +1963,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * Denotes whether to enable logging for a particular rule. If logging is enabled, logs will be exported to the configured export destination in Stackdriver. Logs may be exported to BigQuery or Pub/Sub. Note: you cannot enable logging on "goto_next" rules.
      * </pre>
      *
-     * <code>bool enable_logging = 295396515;</code>
+     * <code>optional bool enable_logging = 295396515;</code>
      *
      * @param value The enableLogging to set.
      * @return This builder for chaining.
@@ -1947,7 +1981,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * Denotes whether to enable logging for a particular rule. If logging is enabled, logs will be exported to the configured export destination in Stackdriver. Logs may be exported to BigQuery or Pub/Sub. Note: you cannot enable logging on "goto_next" rules.
      * </pre>
      *
-     * <code>bool enable_logging = 295396515;</code>
+     * <code>optional bool enable_logging = 295396515;</code>
      *
      * @return This builder for chaining.
      */
@@ -1966,7 +2000,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * [Output only] Type of the resource. Always compute#firewallPolicyRule for firewall policy rules
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -1980,7 +2014,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * [Output only] Type of the resource. Always compute#firewallPolicyRule for firewall policy rules
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -2002,7 +2036,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * [Output only] Type of the resource. Always compute#firewallPolicyRule for firewall policy rules
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -2024,7 +2058,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * [Output only] Type of the resource. Always compute#firewallPolicyRule for firewall policy rules
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -2045,7 +2079,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * [Output only] Type of the resource. Always compute#firewallPolicyRule for firewall policy rules
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -2062,7 +2096,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * [Output only] Type of the resource. Always compute#firewallPolicyRule for firewall policy rules
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -2091,7 +2125,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
+     * <code>optional .google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
      *
      * @return Whether the match field is set.
      */
@@ -2105,7 +2139,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
+     * <code>optional .google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
      *
      * @return The match.
      */
@@ -2125,7 +2159,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
+     * <code>optional .google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
      */
     public Builder setMatch(com.google.cloud.compute.v1.FirewallPolicyRuleMatcher value) {
       if (matchBuilder_ == null) {
@@ -2147,7 +2181,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
+     * <code>optional .google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
      */
     public Builder setMatch(
         com.google.cloud.compute.v1.FirewallPolicyRuleMatcher.Builder builderForValue) {
@@ -2167,7 +2201,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
+     * <code>optional .google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
      */
     public Builder mergeMatch(com.google.cloud.compute.v1.FirewallPolicyRuleMatcher value) {
       if (matchBuilder_ == null) {
@@ -2196,7 +2230,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
+     * <code>optional .google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
      */
     public Builder clearMatch() {
       if (matchBuilder_ == null) {
@@ -2215,7 +2249,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
+     * <code>optional .google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
      */
     public com.google.cloud.compute.v1.FirewallPolicyRuleMatcher.Builder getMatchBuilder() {
       bitField0_ |= 0x00000040;
@@ -2229,7 +2263,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
+     * <code>optional .google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
      */
     public com.google.cloud.compute.v1.FirewallPolicyRuleMatcherOrBuilder getMatchOrBuilder() {
       if (matchBuilder_ != null) {
@@ -2247,7 +2281,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
+     * <code>optional .google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.FirewallPolicyRuleMatcher,
@@ -2274,7 +2308,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>optional int32 priority = 445151652;</code>
      *
      * @return Whether the priority field is set.
      */
@@ -2289,7 +2323,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>optional int32 priority = 445151652;</code>
      *
      * @return The priority.
      */
@@ -2304,7 +2338,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>optional int32 priority = 445151652;</code>
      *
      * @param value The priority to set.
      * @return This builder for chaining.
@@ -2322,7 +2356,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>optional int32 priority = 445151652;</code>
      *
      * @return This builder for chaining.
      */
@@ -2341,7 +2375,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * [Output Only] Calculation of the complexity of a single firewall policy rule.
      * </pre>
      *
-     * <code>int32 rule_tuple_count = 388342037;</code>
+     * <code>optional int32 rule_tuple_count = 388342037;</code>
      *
      * @return Whether the ruleTupleCount field is set.
      */
@@ -2356,7 +2390,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * [Output Only] Calculation of the complexity of a single firewall policy rule.
      * </pre>
      *
-     * <code>int32 rule_tuple_count = 388342037;</code>
+     * <code>optional int32 rule_tuple_count = 388342037;</code>
      *
      * @return The ruleTupleCount.
      */
@@ -2371,7 +2405,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * [Output Only] Calculation of the complexity of a single firewall policy rule.
      * </pre>
      *
-     * <code>int32 rule_tuple_count = 388342037;</code>
+     * <code>optional int32 rule_tuple_count = 388342037;</code>
      *
      * @param value The ruleTupleCount to set.
      * @return This builder for chaining.
@@ -2389,7 +2423,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * [Output Only] Calculation of the complexity of a single firewall policy rule.
      * </pre>
      *
-     * <code>int32 rule_tuple_count = 388342037;</code>
+     * <code>optional int32 rule_tuple_count = 388342037;</code>
      *
      * @return This builder for chaining.
      */

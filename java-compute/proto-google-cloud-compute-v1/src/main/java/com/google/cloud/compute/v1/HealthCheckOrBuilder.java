@@ -30,7 +30,7 @@ public interface HealthCheckOrBuilder
    * How often (in seconds) to send a health check. The default value is 5 seconds.
    * </pre>
    *
-   * <code>int32 check_interval_sec = 345561006;</code>
+   * <code>optional int32 check_interval_sec = 345561006;</code>
    *
    * @return Whether the checkIntervalSec field is set.
    */
@@ -42,7 +42,7 @@ public interface HealthCheckOrBuilder
    * How often (in seconds) to send a health check. The default value is 5 seconds.
    * </pre>
    *
-   * <code>int32 check_interval_sec = 345561006;</code>
+   * <code>optional int32 check_interval_sec = 345561006;</code>
    *
    * @return The checkIntervalSec.
    */
@@ -55,7 +55,7 @@ public interface HealthCheckOrBuilder
    * [Output Only] Creation timestamp in 3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -67,7 +67,7 @@ public interface HealthCheckOrBuilder
    * [Output Only] Creation timestamp in 3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -79,7 +79,7 @@ public interface HealthCheckOrBuilder
    * [Output Only] Creation timestamp in 3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -92,7 +92,7 @@ public interface HealthCheckOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -104,7 +104,7 @@ public interface HealthCheckOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -116,25 +116,27 @@ public interface HealthCheckOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.GRPCHealthCheck grpc_health_check = 85529574;</code>
+   * <code>optional .google.cloud.compute.v1.GRPCHealthCheck grpc_health_check = 85529574;</code>
    *
    * @return Whether the grpcHealthCheck field is set.
    */
   boolean hasGrpcHealthCheck();
   /**
-   * <code>.google.cloud.compute.v1.GRPCHealthCheck grpc_health_check = 85529574;</code>
+   * <code>optional .google.cloud.compute.v1.GRPCHealthCheck grpc_health_check = 85529574;</code>
    *
    * @return The grpcHealthCheck.
    */
   com.google.cloud.compute.v1.GRPCHealthCheck getGrpcHealthCheck();
-  /** <code>.google.cloud.compute.v1.GRPCHealthCheck grpc_health_check = 85529574;</code> */
+  /**
+   * <code>optional .google.cloud.compute.v1.GRPCHealthCheck grpc_health_check = 85529574;</code>
+   */
   com.google.cloud.compute.v1.GRPCHealthCheckOrBuilder getGrpcHealthCheckOrBuilder();
 
   /**
@@ -144,7 +146,7 @@ public interface HealthCheckOrBuilder
    * A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
    * </pre>
    *
-   * <code>int32 healthy_threshold = 403212361;</code>
+   * <code>optional int32 healthy_threshold = 403212361;</code>
    *
    * @return Whether the healthyThreshold field is set.
    */
@@ -156,55 +158,61 @@ public interface HealthCheckOrBuilder
    * A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
    * </pre>
    *
-   * <code>int32 healthy_threshold = 403212361;</code>
+   * <code>optional int32 healthy_threshold = 403212361;</code>
    *
    * @return The healthyThreshold.
    */
   int getHealthyThreshold();
 
   /**
-   * <code>.google.cloud.compute.v1.HTTP2HealthCheck http2_health_check = 11360986;</code>
+   * <code>optional .google.cloud.compute.v1.HTTP2HealthCheck http2_health_check = 11360986;</code>
    *
    * @return Whether the http2HealthCheck field is set.
    */
   boolean hasHttp2HealthCheck();
   /**
-   * <code>.google.cloud.compute.v1.HTTP2HealthCheck http2_health_check = 11360986;</code>
+   * <code>optional .google.cloud.compute.v1.HTTP2HealthCheck http2_health_check = 11360986;</code>
    *
    * @return The http2HealthCheck.
    */
   com.google.cloud.compute.v1.HTTP2HealthCheck getHttp2HealthCheck();
-  /** <code>.google.cloud.compute.v1.HTTP2HealthCheck http2_health_check = 11360986;</code> */
+  /**
+   * <code>optional .google.cloud.compute.v1.HTTP2HealthCheck http2_health_check = 11360986;</code>
+   */
   com.google.cloud.compute.v1.HTTP2HealthCheckOrBuilder getHttp2HealthCheckOrBuilder();
 
   /**
-   * <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code>
+   * <code>optional .google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code>
    *
    * @return Whether the httpHealthCheck field is set.
    */
   boolean hasHttpHealthCheck();
   /**
-   * <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code>
+   * <code>optional .google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code>
    *
    * @return The httpHealthCheck.
    */
   com.google.cloud.compute.v1.HTTPHealthCheck getHttpHealthCheck();
-  /** <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code> */
+  /**
+   * <code>optional .google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code>
+   */
   com.google.cloud.compute.v1.HTTPHealthCheckOrBuilder getHttpHealthCheckOrBuilder();
 
   /**
-   * <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code>
+   * <code>optional .google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code>
    *
    * @return Whether the httpsHealthCheck field is set.
    */
   boolean hasHttpsHealthCheck();
   /**
-   * <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code>
+   * <code>optional .google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code>
    *
    * @return The httpsHealthCheck.
    */
   com.google.cloud.compute.v1.HTTPSHealthCheck getHttpsHealthCheck();
-  /** <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code> */
+  /**
+   * <code>optional .google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code>
+   */
   com.google.cloud.compute.v1.HTTPSHealthCheckOrBuilder getHttpsHealthCheckOrBuilder();
 
   /**
@@ -214,7 +222,7 @@ public interface HealthCheckOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -226,7 +234,7 @@ public interface HealthCheckOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -239,7 +247,7 @@ public interface HealthCheckOrBuilder
    * Type of the resource.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -251,7 +259,7 @@ public interface HealthCheckOrBuilder
    * Type of the resource.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -263,7 +271,7 @@ public interface HealthCheckOrBuilder
    * Type of the resource.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -276,7 +284,7 @@ public interface HealthCheckOrBuilder
    * Configure logging on this health check.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 351299741;</code>
+   * <code>optional .google.cloud.compute.v1.HealthCheckLogConfig log_config = 351299741;</code>
    *
    * @return Whether the logConfig field is set.
    */
@@ -288,7 +296,7 @@ public interface HealthCheckOrBuilder
    * Configure logging on this health check.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 351299741;</code>
+   * <code>optional .google.cloud.compute.v1.HealthCheckLogConfig log_config = 351299741;</code>
    *
    * @return The logConfig.
    */
@@ -300,7 +308,7 @@ public interface HealthCheckOrBuilder
    * Configure logging on this health check.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 351299741;</code>
+   * <code>optional .google.cloud.compute.v1.HealthCheckLogConfig log_config = 351299741;</code>
    */
   com.google.cloud.compute.v1.HealthCheckLogConfigOrBuilder getLogConfigOrBuilder();
 
@@ -311,7 +319,7 @@ public interface HealthCheckOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. For example, a name that is 1-63 characters long, matches the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`, and otherwise complies with RFC1035. This regular expression describes a name where the first character is a lowercase letter, and all following characters are a dash, lowercase letter, or digit, except the last character, which isn't a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -323,7 +331,7 @@ public interface HealthCheckOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. For example, a name that is 1-63 characters long, matches the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`, and otherwise complies with RFC1035. This regular expression describes a name where the first character is a lowercase letter, and all following characters are a dash, lowercase letter, or digit, except the last character, which isn't a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -335,7 +343,7 @@ public interface HealthCheckOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. For example, a name that is 1-63 characters long, matches the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`, and otherwise complies with RFC1035. This regular expression describes a name where the first character is a lowercase letter, and all following characters are a dash, lowercase letter, or digit, except the last character, which isn't a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -348,7 +356,7 @@ public interface HealthCheckOrBuilder
    * [Output Only] Region where the health check resides. Not applicable to global health checks.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -360,7 +368,7 @@ public interface HealthCheckOrBuilder
    * [Output Only] Region where the health check resides. Not applicable to global health checks.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -372,7 +380,7 @@ public interface HealthCheckOrBuilder
    * [Output Only] Region where the health check resides. Not applicable to global health checks.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -385,7 +393,7 @@ public interface HealthCheckOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -397,7 +405,7 @@ public interface HealthCheckOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -409,40 +417,40 @@ public interface HealthCheckOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code>
+   * <code>optional .google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code>
    *
    * @return Whether the sslHealthCheck field is set.
    */
   boolean hasSslHealthCheck();
   /**
-   * <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code>
+   * <code>optional .google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code>
    *
    * @return The sslHealthCheck.
    */
   com.google.cloud.compute.v1.SSLHealthCheck getSslHealthCheck();
-  /** <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code> */
+  /** <code>optional .google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code> */
   com.google.cloud.compute.v1.SSLHealthCheckOrBuilder getSslHealthCheckOrBuilder();
 
   /**
-   * <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code>
+   * <code>optional .google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code>
    *
    * @return Whether the tcpHealthCheck field is set.
    */
   boolean hasTcpHealthCheck();
   /**
-   * <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code>
+   * <code>optional .google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code>
    *
    * @return The tcpHealthCheck.
    */
   com.google.cloud.compute.v1.TCPHealthCheck getTcpHealthCheck();
-  /** <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code> */
+  /** <code>optional .google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code> */
   com.google.cloud.compute.v1.TCPHealthCheckOrBuilder getTcpHealthCheckOrBuilder();
 
   /**
@@ -452,7 +460,7 @@ public interface HealthCheckOrBuilder
    * How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec.
    * </pre>
    *
-   * <code>int32 timeout_sec = 79994995;</code>
+   * <code>optional int32 timeout_sec = 79994995;</code>
    *
    * @return Whether the timeoutSec field is set.
    */
@@ -464,7 +472,7 @@ public interface HealthCheckOrBuilder
    * How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec.
    * </pre>
    *
-   * <code>int32 timeout_sec = 79994995;</code>
+   * <code>optional int32 timeout_sec = 79994995;</code>
    *
    * @return The timeoutSec.
    */
@@ -475,9 +483,10 @@ public interface HealthCheckOrBuilder
    *
    * <pre>
    * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. If not specified, the default is TCP. Exactly one of the protocol-specific health check field must be specified, which must match type field.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthCheck.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
    * @return Whether the type field is set.
    */
@@ -487,25 +496,27 @@ public interface HealthCheckOrBuilder
    *
    * <pre>
    * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. If not specified, the default is TCP. Exactly one of the protocol-specific health check field must be specified, which must match type field.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthCheck.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The enum numeric value on the wire for type.
+   * @return The type.
    */
-  int getTypeValue();
+  java.lang.String getType();
   /**
    *
    *
    * <pre>
    * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. If not specified, the default is TCP. Exactly one of the protocol-specific health check field must be specified, which must match type field.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthCheck.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The type.
+   * @return The bytes for type.
    */
-  com.google.cloud.compute.v1.HealthCheck.Type getType();
+  com.google.protobuf.ByteString getTypeBytes();
 
   /**
    *
@@ -514,7 +525,7 @@ public interface HealthCheckOrBuilder
    * A so-far healthy instance will be marked unhealthy after this many consecutive failures. The default value is 2.
    * </pre>
    *
-   * <code>int32 unhealthy_threshold = 227958480;</code>
+   * <code>optional int32 unhealthy_threshold = 227958480;</code>
    *
    * @return Whether the unhealthyThreshold field is set.
    */
@@ -526,7 +537,7 @@ public interface HealthCheckOrBuilder
    * A so-far healthy instance will be marked unhealthy after this many consecutive failures. The default value is 2.
    * </pre>
    *
-   * <code>int32 unhealthy_threshold = 227958480;</code>
+   * <code>optional int32 unhealthy_threshold = 227958480;</code>
    *
    * @return The unhealthyThreshold.
    */

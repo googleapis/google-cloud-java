@@ -26,6 +26,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -49,15 +50,15 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * ImagesSettings.Builder imagesSettingsBuilder = ImagesSettings.newBuilder();
  * imagesSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         imagesSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -73,9 +74,20 @@ public class ImagesSettings extends ClientSettings<ImagesSettings> {
     return ((ImagesStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteImageRequest, Operation, Operation> deleteOperationSettings() {
+    return ((ImagesStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deprecate. */
   public UnaryCallSettings<DeprecateImageRequest, Operation> deprecateSettings() {
     return ((ImagesStubSettings) getStubSettings()).deprecateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deprecate. */
+  public OperationCallSettings<DeprecateImageRequest, Operation, Operation>
+      deprecateOperationSettings() {
+    return ((ImagesStubSettings) getStubSettings()).deprecateOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -98,6 +110,11 @@ public class ImagesSettings extends ClientSettings<ImagesSettings> {
     return ((ImagesStubSettings) getStubSettings()).insertSettings();
   }
 
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertImageRequest, Operation, Operation> insertOperationSettings() {
+    return ((ImagesStubSettings) getStubSettings()).insertOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<ListImagesRequest, ImageList, ListPagedResponse> listSettings() {
     return ((ImagesStubSettings) getStubSettings()).listSettings();
@@ -108,6 +125,11 @@ public class ImagesSettings extends ClientSettings<ImagesSettings> {
     return ((ImagesStubSettings) getStubSettings()).patchSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchImageRequest, Operation, Operation> patchOperationSettings() {
+    return ((ImagesStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyImageRequest, Policy> setIamPolicySettings() {
     return ((ImagesStubSettings) getStubSettings()).setIamPolicySettings();
@@ -116,6 +138,12 @@ public class ImagesSettings extends ClientSettings<ImagesSettings> {
   /** Returns the object with the settings used for calls to setLabels. */
   public UnaryCallSettings<SetLabelsImageRequest, Operation> setLabelsSettings() {
     return ((ImagesStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsImageRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((ImagesStubSettings) getStubSettings()).setLabelsOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to testIamPermissions. */
@@ -226,9 +254,21 @@ public class ImagesSettings extends ClientSettings<ImagesSettings> {
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteImageRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deprecate. */
     public UnaryCallSettings.Builder<DeprecateImageRequest, Operation> deprecateSettings() {
       return getStubSettingsBuilder().deprecateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deprecate. */
+    public OperationCallSettings.Builder<DeprecateImageRequest, Operation, Operation>
+        deprecateOperationSettings() {
+      return getStubSettingsBuilder().deprecateOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -251,6 +291,12 @@ public class ImagesSettings extends ClientSettings<ImagesSettings> {
       return getStubSettingsBuilder().insertSettings();
     }
 
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertImageRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to list. */
     public PagedCallSettings.Builder<ListImagesRequest, ImageList, ListPagedResponse>
         listSettings() {
@@ -262,6 +308,12 @@ public class ImagesSettings extends ClientSettings<ImagesSettings> {
       return getStubSettingsBuilder().patchSettings();
     }
 
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchImageRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setIamPolicy. */
     public UnaryCallSettings.Builder<SetIamPolicyImageRequest, Policy> setIamPolicySettings() {
       return getStubSettingsBuilder().setIamPolicySettings();
@@ -270,6 +322,12 @@ public class ImagesSettings extends ClientSettings<ImagesSettings> {
     /** Returns the builder for the settings used for calls to setLabels. */
     public UnaryCallSettings.Builder<SetLabelsImageRequest, Operation> setLabelsSettings() {
       return getStubSettingsBuilder().setLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsImageRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */

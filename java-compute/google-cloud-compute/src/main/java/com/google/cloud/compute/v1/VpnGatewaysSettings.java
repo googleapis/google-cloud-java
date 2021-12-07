@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -50,15 +51,15 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * VpnGatewaysSettings.Builder vpnGatewaysSettingsBuilder = VpnGatewaysSettings.newBuilder();
  * vpnGatewaysSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         vpnGatewaysSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -81,6 +82,12 @@ public class VpnGatewaysSettings extends ClientSettings<VpnGatewaysSettings> {
     return ((VpnGatewaysStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteVpnGatewayRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((VpnGatewaysStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetVpnGatewayRequest, VpnGateway> getSettings() {
     return ((VpnGatewaysStubSettings) getStubSettings()).getSettings();
@@ -97,6 +104,12 @@ public class VpnGatewaysSettings extends ClientSettings<VpnGatewaysSettings> {
     return ((VpnGatewaysStubSettings) getStubSettings()).insertSettings();
   }
 
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertVpnGatewayRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((VpnGatewaysStubSettings) getStubSettings()).insertOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<ListVpnGatewaysRequest, VpnGatewayList, ListPagedResponse>
       listSettings() {
@@ -106,6 +119,12 @@ public class VpnGatewaysSettings extends ClientSettings<VpnGatewaysSettings> {
   /** Returns the object with the settings used for calls to setLabels. */
   public UnaryCallSettings<SetLabelsVpnGatewayRequest, Operation> setLabelsSettings() {
     return ((VpnGatewaysStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsVpnGatewayRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((VpnGatewaysStubSettings) getStubSettings()).setLabelsOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to testIamPermissions. */
@@ -223,6 +242,12 @@ public class VpnGatewaysSettings extends ClientSettings<VpnGatewaysSettings> {
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteVpnGatewayRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetVpnGatewayRequest, VpnGateway> getSettings() {
       return getStubSettingsBuilder().getSettings();
@@ -239,6 +264,12 @@ public class VpnGatewaysSettings extends ClientSettings<VpnGatewaysSettings> {
       return getStubSettingsBuilder().insertSettings();
     }
 
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertVpnGatewayRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to list. */
     public PagedCallSettings.Builder<ListVpnGatewaysRequest, VpnGatewayList, ListPagedResponse>
         listSettings() {
@@ -248,6 +279,12 @@ public class VpnGatewaysSettings extends ClientSettings<VpnGatewaysSettings> {
     /** Returns the builder for the settings used for calls to setLabels. */
     public UnaryCallSettings.Builder<SetLabelsVpnGatewayRequest, Operation> setLabelsSettings() {
       return getStubSettingsBuilder().setLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsVpnGatewayRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */

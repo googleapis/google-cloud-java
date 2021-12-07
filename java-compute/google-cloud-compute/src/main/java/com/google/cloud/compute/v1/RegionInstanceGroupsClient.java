@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RegionInstanceGroupsStub;
@@ -553,8 +555,10 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    *   RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource =
    *       RegionInstanceGroupsSetNamedPortsRequest.newBuilder().build();
    *   Operation response =
-   *       regionInstanceGroupsClient.setNamedPorts(
-   *           project, region, instanceGroup, regionInstanceGroupsSetNamedPortsRequestResource);
+   *       regionInstanceGroupsClient
+   *           .setNamedPortsAsync(
+   *               project, region, instanceGroup, regionInstanceGroupsSetNamedPortsRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -564,7 +568,7 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    * @param regionInstanceGroupsSetNamedPortsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setNamedPorts(
+  public final OperationFuture<Operation, Operation> setNamedPortsAsync(
       String project,
       String region,
       String instanceGroup,
@@ -577,7 +581,7 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
             .setRegionInstanceGroupsSetNamedPortsRequestResource(
                 regionInstanceGroupsSetNamedPortsRequestResource)
             .build();
-    return setNamedPorts(request);
+    return setNamedPortsAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -598,15 +602,48 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    *               RegionInstanceGroupsSetNamedPortsRequest.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = regionInstanceGroupsClient.setNamedPorts(request);
+   *   Operation response = regionInstanceGroupsClient.setNamedPortsAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setNamedPorts(SetNamedPortsRegionInstanceGroupRequest request) {
-    return setNamedPortsCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setNamedPortsAsync(
+      SetNamedPortsRegionInstanceGroupRequest request) {
+    return setNamedPortsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the named ports for the specified regional instance group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
+   *     RegionInstanceGroupsClient.create()) {
+   *   SetNamedPortsRegionInstanceGroupRequest request =
+   *       SetNamedPortsRegionInstanceGroupRequest.newBuilder()
+   *           .setInstanceGroup("instanceGroup-1404696854")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionInstanceGroupsSetNamedPortsRequestResource(
+   *               RegionInstanceGroupsSetNamedPortsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionInstanceGroupsClient.setNamedPortsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetNamedPortsRegionInstanceGroupRequest, Operation, Operation>
+      setNamedPortsOperationCallable() {
+    return stub.setNamedPortsOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

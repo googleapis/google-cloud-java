@@ -30,7 +30,8 @@ public interface SecurityPolicyRuleMatcherOrBuilder
    * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;</code>
+   * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
+   * </code>
    *
    * @return Whether the config field is set.
    */
@@ -42,7 +43,8 @@ public interface SecurityPolicyRuleMatcherOrBuilder
    * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;</code>
+   * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
+   * </code>
    *
    * @return The config.
    */
@@ -54,7 +56,8 @@ public interface SecurityPolicyRuleMatcherOrBuilder
    * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;</code>
+   * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
+   * </code>
    */
   com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfigOrBuilder getConfigOrBuilder();
 
@@ -65,7 +68,7 @@ public interface SecurityPolicyRuleMatcherOrBuilder
    * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Expr expr = 3127797;</code>
+   * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
    *
    * @return Whether the expr field is set.
    */
@@ -77,7 +80,7 @@ public interface SecurityPolicyRuleMatcherOrBuilder
    * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Expr expr = 3127797;</code>
+   * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
    *
    * @return The expr.
    */
@@ -89,7 +92,7 @@ public interface SecurityPolicyRuleMatcherOrBuilder
    * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Expr expr = 3127797;</code>
+   * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
    */
   com.google.cloud.compute.v1.ExprOrBuilder getExprOrBuilder();
 
@@ -98,11 +101,10 @@ public interface SecurityPolicyRuleMatcherOrBuilder
    *
    * <pre>
    * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+   * Check the VersionedExpr enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
-   * </code>
+   * <code>optional string versioned_expr = 322286013;</code>
    *
    * @return Whether the versionedExpr field is set.
    */
@@ -112,27 +114,25 @@ public interface SecurityPolicyRuleMatcherOrBuilder
    *
    * <pre>
    * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+   * Check the VersionedExpr enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
-   * </code>
+   * <code>optional string versioned_expr = 322286013;</code>
    *
-   * @return The enum numeric value on the wire for versionedExpr.
+   * @return The versionedExpr.
    */
-  int getVersionedExprValue();
+  java.lang.String getVersionedExpr();
   /**
    *
    *
    * <pre>
    * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+   * Check the VersionedExpr enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
-   * </code>
+   * <code>optional string versioned_expr = 322286013;</code>
    *
-   * @return The versionedExpr.
+   * @return The bytes for versionedExpr.
    */
-  com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr getVersionedExpr();
+  com.google.protobuf.ByteString getVersionedExprBytes();
 }

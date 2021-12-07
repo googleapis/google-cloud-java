@@ -38,7 +38,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
   }
 
   private ResourcePolicyWeeklyCycleDayOfWeek() {
-    day_ = 0;
+    day_ = "";
     duration_ = "";
     startTime_ = "";
   }
@@ -73,11 +73,11 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
           case 0:
             done = true;
             break;
-          case 793824:
+          case 793826:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              day_ = rawValue;
+              day_ = s;
               break;
             }
           case 299738194:
@@ -293,15 +293,16 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
 
   private int bitField0_;
   public static final int DAY_FIELD_NUMBER = 99228;
-  private int day_;
+  private volatile java.lang.Object day_;
   /**
    *
    *
    * <pre>
    * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+   * Check the Day enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
+   * <code>optional string day = 99228;</code>
    *
    * @return Whether the day field is set.
    */
@@ -314,35 +315,48 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
    *
    * <pre>
    * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+   * Check the Day enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
+   * <code>optional string day = 99228;</code>
    *
-   * @return The enum numeric value on the wire for day.
+   * @return The day.
    */
   @java.lang.Override
-  public int getDayValue() {
-    return day_;
+  public java.lang.String getDay() {
+    java.lang.Object ref = day_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      day_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+   * Check the Day enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
+   * <code>optional string day = 99228;</code>
    *
-   * @return The day.
+   * @return The bytes for day.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day getDay() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day result =
-        com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day.valueOf(day_);
-    return result == null
-        ? com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getDayBytes() {
+    java.lang.Object ref = day_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      day_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int DURATION_FIELD_NUMBER = 155471252;
@@ -354,7 +368,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
    * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
    * </pre>
    *
-   * <code>string duration = 155471252;</code>
+   * <code>optional string duration = 155471252;</code>
    *
    * @return Whether the duration field is set.
    */
@@ -369,7 +383,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
    * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
    * </pre>
    *
-   * <code>string duration = 155471252;</code>
+   * <code>optional string duration = 155471252;</code>
    *
    * @return The duration.
    */
@@ -392,7 +406,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
    * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
    * </pre>
    *
-   * <code>string duration = 155471252;</code>
+   * <code>optional string duration = 155471252;</code>
    *
    * @return The bytes for duration.
    */
@@ -418,7 +432,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
    * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return Whether the startTime field is set.
    */
@@ -433,7 +447,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
    * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return The startTime.
    */
@@ -456,7 +470,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
    * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return The bytes for startTime.
    */
@@ -488,7 +502,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(99228, day_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 99228, day_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37467274, startTime_);
@@ -506,7 +520,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(99228, day_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(99228, day_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37467274, startTime_);
@@ -532,7 +546,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
 
     if (hasDay() != other.hasDay()) return false;
     if (hasDay()) {
-      if (day_ != other.day_) return false;
+      if (!getDay().equals(other.getDay())) return false;
     }
     if (hasDuration() != other.hasDuration()) return false;
     if (hasDuration()) {
@@ -555,7 +569,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasDay()) {
       hash = (37 * hash) + DAY_FIELD_NUMBER;
-      hash = (53 * hash) + day_;
+      hash = (53 * hash) + getDay().hashCode();
     }
     if (hasDuration()) {
       hash = (37 * hash) + DURATION_FIELD_NUMBER;
@@ -710,7 +724,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      day_ = 0;
+      day_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       duration_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -811,7 +825,9 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
           == com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.getDefaultInstance())
         return this;
       if (other.hasDay()) {
-        setDay(other.getDay());
+        bitField0_ |= 0x00000001;
+        day_ = other.day_;
+        onChanged();
       }
       if (other.hasDuration()) {
         bitField0_ |= 0x00000002;
@@ -856,19 +872,19 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
 
     private int bitField0_;
 
-    private int day_ = 0;
+    private java.lang.Object day_ = "";
     /**
      *
      *
      * <pre>
      * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+     * Check the Day enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
+     * <code>optional string day = 99228;</code>
      *
      * @return Whether the day field is set.
      */
-    @java.lang.Override
     public boolean hasDay() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -877,29 +893,64 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      * <pre>
      * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+     * Check the Day enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
+     * <code>optional string day = 99228;</code>
      *
-     * @return The enum numeric value on the wire for day.
+     * @return The day.
      */
-    @java.lang.Override
-    public int getDayValue() {
-      return day_;
+    public java.lang.String getDay() {
+      java.lang.Object ref = day_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        day_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+     * Check the Day enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
+     * <code>optional string day = 99228;</code>
      *
-     * @param value The enum numeric value on the wire for day to set.
+     * @return The bytes for day.
+     */
+    public com.google.protobuf.ByteString getDayBytes() {
+      java.lang.Object ref = day_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        day_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+     * Check the Day enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string day = 99228;</code>
+     *
+     * @param value The day to set.
      * @return This builder for chaining.
      */
-    public Builder setDayValue(int value) {
+    public Builder setDay(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000001;
       day_ = value;
       onChanged();
@@ -910,40 +961,16 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      * <pre>
      * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+     * Check the Day enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
+     * <code>optional string day = 99228;</code>
      *
-     * @return The day.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day getDay() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day result =
-          com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day.valueOf(day_);
-      return result == null
-          ? com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
-     *
-     * @param value The day to set.
      * @return This builder for chaining.
      */
-    public Builder setDay(
-        com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      day_ = value.getNumber();
+    public Builder clearDay() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      day_ = getDefaultInstance().getDay();
       onChanged();
       return this;
     }
@@ -952,15 +979,21 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      * <pre>
      * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+     * Check the Day enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
+     * <code>optional string day = 99228;</code>
      *
+     * @param value The bytes for day to set.
      * @return This builder for chaining.
      */
-    public Builder clearDay() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      day_ = 0;
+    public Builder setDayBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      day_ = value;
       onChanged();
       return this;
     }
@@ -973,7 +1006,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
      * </pre>
      *
-     * <code>string duration = 155471252;</code>
+     * <code>optional string duration = 155471252;</code>
      *
      * @return Whether the duration field is set.
      */
@@ -987,7 +1020,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
      * </pre>
      *
-     * <code>string duration = 155471252;</code>
+     * <code>optional string duration = 155471252;</code>
      *
      * @return The duration.
      */
@@ -1009,7 +1042,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
      * </pre>
      *
-     * <code>string duration = 155471252;</code>
+     * <code>optional string duration = 155471252;</code>
      *
      * @return The bytes for duration.
      */
@@ -1031,7 +1064,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
      * </pre>
      *
-     * <code>string duration = 155471252;</code>
+     * <code>optional string duration = 155471252;</code>
      *
      * @param value The duration to set.
      * @return This builder for chaining.
@@ -1052,7 +1085,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
      * </pre>
      *
-     * <code>string duration = 155471252;</code>
+     * <code>optional string duration = 155471252;</code>
      *
      * @return This builder for chaining.
      */
@@ -1069,7 +1102,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
      * </pre>
      *
-     * <code>string duration = 155471252;</code>
+     * <code>optional string duration = 155471252;</code>
      *
      * @param value The bytes for duration to set.
      * @return This builder for chaining.
@@ -1093,7 +1126,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>optional string start_time = 37467274;</code>
      *
      * @return Whether the startTime field is set.
      */
@@ -1107,7 +1140,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>optional string start_time = 37467274;</code>
      *
      * @return The startTime.
      */
@@ -1129,7 +1162,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>optional string start_time = 37467274;</code>
      *
      * @return The bytes for startTime.
      */
@@ -1151,7 +1184,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>optional string start_time = 37467274;</code>
      *
      * @param value The startTime to set.
      * @return This builder for chaining.
@@ -1172,7 +1205,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>optional string start_time = 37467274;</code>
      *
      * @return This builder for chaining.
      */
@@ -1189,7 +1222,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>optional string start_time = 37467274;</code>
      *
      * @param value The bytes for startTime to set.
      * @return This builder for chaining.

@@ -234,11 +234,11 @@ public final class GetPublicAdvertisedPrefixeRequest extends com.google.protobuf
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getPublicAdvertisedPrefixBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicAdvertisedPrefix_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 101874590, publicAdvertisedPrefix_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     unknownFields.writeTo(output);
@@ -250,12 +250,12 @@ public final class GetPublicAdvertisedPrefixeRequest extends com.google.protobuf
     if (size != -1) return size;
 
     size = 0;
-    if (!getPublicAdvertisedPrefixBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicAdvertisedPrefix_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               101874590, publicAdvertisedPrefix_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();

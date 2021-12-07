@@ -30,7 +30,7 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    * The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
    * </pre>
    *
-   * <code>int32 max_nodes = 297762838;</code>
+   * <code>optional int32 max_nodes = 297762838;</code>
    *
    * @return Whether the maxNodes field is set.
    */
@@ -42,7 +42,7 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    * The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
    * </pre>
    *
-   * <code>int32 max_nodes = 297762838;</code>
+   * <code>optional int32 max_nodes = 297762838;</code>
    *
    * @return The maxNodes.
    */
@@ -55,7 +55,7 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    * The minimum number of nodes that the group should have.
    * </pre>
    *
-   * <code>int32 min_nodes = 533370500;</code>
+   * <code>optional int32 min_nodes = 533370500;</code>
    *
    * @return Whether the minNodes field is set.
    */
@@ -67,7 +67,7 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    * The minimum number of nodes that the group should have.
    * </pre>
    *
-   * <code>int32 min_nodes = 533370500;</code>
+   * <code>optional int32 min_nodes = 533370500;</code>
    *
    * @return The minNodes.
    */
@@ -77,10 +77,11 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    *
    *
    * <pre>
-   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
+   * <code>optional string mode = 3357091;</code>
    *
    * @return Whether the mode field is set.
    */
@@ -89,24 +90,26 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    *
    *
    * <pre>
-   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
+   * <code>optional string mode = 3357091;</code>
    *
-   * @return The enum numeric value on the wire for mode.
+   * @return The mode.
    */
-  int getModeValue();
+  java.lang.String getMode();
   /**
    *
    *
    * <pre>
-   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
+   * <code>optional string mode = 3357091;</code>
    *
-   * @return The mode.
+   * @return The bytes for mode.
    */
-  com.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode getMode();
+  com.google.protobuf.ByteString getModeBytes();
 }

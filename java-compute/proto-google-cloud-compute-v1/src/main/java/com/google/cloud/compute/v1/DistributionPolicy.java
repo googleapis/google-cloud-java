@@ -37,7 +37,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   private DistributionPolicy() {
-    targetShape_ = 0;
+    targetShape_ = "";
     zones_ = java.util.Collections.emptyList();
   }
 
@@ -85,11 +85,11 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
                       extensionRegistry));
               break;
             }
-          case -1585996904:
+          case -1585996902:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              targetShape_ = rawValue;
+              targetShape_ = s;
               break;
             }
           default:
@@ -149,11 +149,35 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_TARGET_SHAPE = 0;</code>
      */
     UNDEFINED_TARGET_SHAPE(0),
-    /** <code>ANY = 64972;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The group picks zones for creating VM instances to fulfill the requested number of VMs within present resource constraints and to maximize utilization of unused zonal reservations. Recommended for batch workloads that do not require high availability.
+     * </pre>
+     *
+     * <code>ANY = 64972;</code>
+     */
     ANY(64972),
-    /** <code>BALANCED = 468409608;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The group prioritizes acquisition of resources, scheduling VMs in zones where resources are available while distributing VMs as evenly as possible across selected zones to minimize the impact of zonal failure. Recommended for highly available serving workloads.
+     * </pre>
+     *
+     * <code>BALANCED = 468409608;</code>
+     */
     BALANCED(468409608),
-    /** <code>EVEN = 2140442;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The group schedules VM instance creation and deletion to achieve and maintain an even number of managed instances across the selected zones. The distribution is even when the number of managed instances does not differ by more than 1 between any two zones. Recommended for highly available serving workloads.
+     * </pre>
+     *
+     * <code>EVEN = 2140442;</code>
+     */
     EVEN(2140442),
     UNRECOGNIZED(-1),
     ;
@@ -168,11 +192,35 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_TARGET_SHAPE = 0;</code>
      */
     public static final int UNDEFINED_TARGET_SHAPE_VALUE = 0;
-    /** <code>ANY = 64972;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The group picks zones for creating VM instances to fulfill the requested number of VMs within present resource constraints and to maximize utilization of unused zonal reservations. Recommended for batch workloads that do not require high availability.
+     * </pre>
+     *
+     * <code>ANY = 64972;</code>
+     */
     public static final int ANY_VALUE = 64972;
-    /** <code>BALANCED = 468409608;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The group prioritizes acquisition of resources, scheduling VMs in zones where resources are available while distributing VMs as evenly as possible across selected zones to minimize the impact of zonal failure. Recommended for highly available serving workloads.
+     * </pre>
+     *
+     * <code>BALANCED = 468409608;</code>
+     */
     public static final int BALANCED_VALUE = 468409608;
-    /** <code>EVEN = 2140442;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The group schedules VM instance creation and deletion to achieve and maintain an even number of managed instances across the selected zones. The distribution is even when the number of managed instances does not differ by more than 1 between any two zones. Recommended for highly available serving workloads.
+     * </pre>
+     *
+     * <code>EVEN = 2140442;</code>
+     */
     public static final int EVEN_VALUE = 2140442;
 
     public final int getNumber() {
@@ -262,15 +310,16 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
 
   private int bitField0_;
   public static final int TARGET_SHAPE_FIELD_NUMBER = 338621299;
-  private int targetShape_;
+  private volatile java.lang.Object targetShape_;
   /**
    *
    *
    * <pre>
    * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+   * Check the TargetShape enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
+   * <code>optional string target_shape = 338621299;</code>
    *
    * @return Whether the targetShape field is set.
    */
@@ -283,35 +332,48 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+   * Check the TargetShape enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
+   * <code>optional string target_shape = 338621299;</code>
    *
-   * @return The enum numeric value on the wire for targetShape.
+   * @return The targetShape.
    */
   @java.lang.Override
-  public int getTargetShapeValue() {
-    return targetShape_;
+  public java.lang.String getTargetShape() {
+    java.lang.Object ref = targetShape_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      targetShape_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+   * Check the TargetShape enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
+   * <code>optional string target_shape = 338621299;</code>
    *
-   * @return The targetShape.
+   * @return The bytes for targetShape.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.DistributionPolicy.TargetShape getTargetShape() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.DistributionPolicy.TargetShape result =
-        com.google.cloud.compute.v1.DistributionPolicy.TargetShape.valueOf(targetShape_);
-    return result == null
-        ? com.google.cloud.compute.v1.DistributionPolicy.TargetShape.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getTargetShapeBytes() {
+    java.lang.Object ref = targetShape_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      targetShape_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ZONES_FIELD_NUMBER = 116085319;
@@ -409,7 +471,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
       output.writeMessage(116085319, zones_.get(i));
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(338621299, targetShape_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 338621299, targetShape_);
     }
     unknownFields.writeTo(output);
   }
@@ -424,7 +486,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(116085319, zones_.get(i));
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(338621299, targetShape_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(338621299, targetShape_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -444,7 +506,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
 
     if (hasTargetShape() != other.hasTargetShape()) return false;
     if (hasTargetShape()) {
-      if (targetShape_ != other.targetShape_) return false;
+      if (!getTargetShape().equals(other.getTargetShape())) return false;
     }
     if (!getZonesList().equals(other.getZonesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -460,7 +522,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasTargetShape()) {
       hash = (37 * hash) + TARGET_SHAPE_FIELD_NUMBER;
-      hash = (53 * hash) + targetShape_;
+      hash = (53 * hash) + getTargetShape().hashCode();
     }
     if (getZonesCount() > 0) {
       hash = (37 * hash) + ZONES_FIELD_NUMBER;
@@ -612,7 +674,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      targetShape_ = 0;
+      targetShape_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       if (zonesBuilder_ == null) {
         zones_ = java.util.Collections.emptyList();
@@ -713,7 +775,9 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
     public Builder mergeFrom(com.google.cloud.compute.v1.DistributionPolicy other) {
       if (other == com.google.cloud.compute.v1.DistributionPolicy.getDefaultInstance()) return this;
       if (other.hasTargetShape()) {
-        setTargetShape(other.getTargetShape());
+        bitField0_ |= 0x00000001;
+        targetShape_ = other.targetShape_;
+        onChanged();
       }
       if (zonesBuilder_ == null) {
         if (!other.zones_.isEmpty()) {
@@ -773,20 +837,19 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
 
     private int bitField0_;
 
-    private int targetShape_ = 0;
+    private java.lang.Object targetShape_ = "";
     /**
      *
      *
      * <pre>
      * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+     * Check the TargetShape enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;
-     * </code>
+     * <code>optional string target_shape = 338621299;</code>
      *
      * @return Whether the targetShape field is set.
      */
-    @java.lang.Override
     public boolean hasTargetShape() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -795,31 +858,64 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+     * Check the TargetShape enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;
-     * </code>
+     * <code>optional string target_shape = 338621299;</code>
      *
-     * @return The enum numeric value on the wire for targetShape.
+     * @return The targetShape.
      */
-    @java.lang.Override
-    public int getTargetShapeValue() {
-      return targetShape_;
+    public java.lang.String getTargetShape() {
+      java.lang.Object ref = targetShape_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        targetShape_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+     * Check the TargetShape enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;
-     * </code>
+     * <code>optional string target_shape = 338621299;</code>
      *
-     * @param value The enum numeric value on the wire for targetShape to set.
+     * @return The bytes for targetShape.
+     */
+    public com.google.protobuf.ByteString getTargetShapeBytes() {
+      java.lang.Object ref = targetShape_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        targetShape_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+     * Check the TargetShape enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string target_shape = 338621299;</code>
+     *
+     * @param value The targetShape to set.
      * @return This builder for chaining.
      */
-    public Builder setTargetShapeValue(int value) {
+    public Builder setTargetShape(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000001;
       targetShape_ = value;
       onChanged();
@@ -830,42 +926,16 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+     * Check the TargetShape enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;
-     * </code>
+     * <code>optional string target_shape = 338621299;</code>
      *
-     * @return The targetShape.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.DistributionPolicy.TargetShape getTargetShape() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.DistributionPolicy.TargetShape result =
-          com.google.cloud.compute.v1.DistributionPolicy.TargetShape.valueOf(targetShape_);
-      return result == null
-          ? com.google.cloud.compute.v1.DistributionPolicy.TargetShape.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;
-     * </code>
-     *
-     * @param value The targetShape to set.
      * @return This builder for chaining.
      */
-    public Builder setTargetShape(
-        com.google.cloud.compute.v1.DistributionPolicy.TargetShape value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      targetShape_ = value.getNumber();
+    public Builder clearTargetShape() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      targetShape_ = getDefaultInstance().getTargetShape();
       onChanged();
       return this;
     }
@@ -874,16 +944,21 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+     * Check the TargetShape enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;
-     * </code>
+     * <code>optional string target_shape = 338621299;</code>
      *
+     * @param value The bytes for targetShape to set.
      * @return This builder for chaining.
      */
-    public Builder clearTargetShape() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      targetShape_ = 0;
+    public Builder setTargetShapeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      targetShape_ = value;
       onChanged();
       return this;
     }

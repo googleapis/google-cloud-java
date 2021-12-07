@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.ExternalVpnGatewaysClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteExternalVpnGatewayRequest;
 import com.google.cloud.compute.v1.ExternalVpnGateway;
@@ -41,12 +42,22 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class ExternalVpnGatewaysStub implements BackgroundResource {
 
+  public OperationCallable<DeleteExternalVpnGatewayRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteExternalVpnGatewayRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetExternalVpnGatewayRequest, ExternalVpnGateway> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertExternalVpnGatewayRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertExternalVpnGatewayRequest, Operation> insertCallable() {
@@ -59,6 +70,11 @@ public abstract class ExternalVpnGatewaysStub implements BackgroundResource {
 
   public UnaryCallable<ListExternalVpnGatewaysRequest, ExternalVpnGatewayList> listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<SetLabelsExternalVpnGatewayRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsOperationCallable()");
   }
 
   public UnaryCallable<SetLabelsExternalVpnGatewayRequest, Operation> setLabelsCallable() {

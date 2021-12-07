@@ -30,7 +30,7 @@ public interface GetIamPolicyNodeTemplateRequestOrBuilder
    * Requested IAM Policy version.
    * </pre>
    *
-   * <code>int32 options_requested_policy_version = 499220029;</code>
+   * <code>optional int32 options_requested_policy_version = 499220029;</code>
    *
    * @return Whether the optionsRequestedPolicyVersion field is set.
    */
@@ -42,7 +42,7 @@ public interface GetIamPolicyNodeTemplateRequestOrBuilder
    * Requested IAM Policy version.
    * </pre>
    *
-   * <code>int32 options_requested_policy_version = 499220029;</code>
+   * <code>optional int32 options_requested_policy_version = 499220029;</code>
    *
    * @return The optionsRequestedPolicyVersion.
    */

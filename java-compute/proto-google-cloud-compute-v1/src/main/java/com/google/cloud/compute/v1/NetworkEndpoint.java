@@ -270,7 +270,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    * Optional fully qualified domain name of network endpoint. This can only be specified when NetworkEndpointGroup.network_endpoint_type is NON_GCP_FQDN_PORT.
    * </pre>
    *
-   * <code>string fqdn = 3150485;</code>
+   * <code>optional string fqdn = 3150485;</code>
    *
    * @return Whether the fqdn field is set.
    */
@@ -285,7 +285,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    * Optional fully qualified domain name of network endpoint. This can only be specified when NetworkEndpointGroup.network_endpoint_type is NON_GCP_FQDN_PORT.
    * </pre>
    *
-   * <code>string fqdn = 3150485;</code>
+   * <code>optional string fqdn = 3150485;</code>
    *
    * @return The fqdn.
    */
@@ -308,7 +308,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    * Optional fully qualified domain name of network endpoint. This can only be specified when NetworkEndpointGroup.network_endpoint_type is NON_GCP_FQDN_PORT.
    * </pre>
    *
-   * <code>string fqdn = 3150485;</code>
+   * <code>optional string fqdn = 3150485;</code>
    *
    * @return The bytes for fqdn.
    */
@@ -331,11 +331,10 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group.
-   * The name must be 1-63 characters long, and comply with RFC1035.
+   * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return Whether the instance field is set.
    */
@@ -347,11 +346,10 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group.
-   * The name must be 1-63 characters long, and comply with RFC1035.
+   * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return The instance.
    */
@@ -371,11 +369,10 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group.
-   * The name must be 1-63 characters long, and comply with RFC1035.
+   * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return The bytes for instance.
    */
@@ -401,7 +398,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return Whether the ipAddress field is set.
    */
@@ -416,7 +413,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return The ipAddress.
    */
@@ -439,7 +436,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return The bytes for ipAddress.
    */
@@ -465,7 +462,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used.
    * </pre>
    *
-   * <code>int32 port = 3446913;</code>
+   * <code>optional int32 port = 3446913;</code>
    *
    * @return Whether the port field is set.
    */
@@ -480,7 +477,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used.
    * </pre>
    *
-   * <code>int32 port = 3446913;</code>
+   * <code>optional int32 port = 3446913;</code>
    *
    * @return The port.
    */
@@ -1101,7 +1098,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional fully qualified domain name of network endpoint. This can only be specified when NetworkEndpointGroup.network_endpoint_type is NON_GCP_FQDN_PORT.
      * </pre>
      *
-     * <code>string fqdn = 3150485;</code>
+     * <code>optional string fqdn = 3150485;</code>
      *
      * @return Whether the fqdn field is set.
      */
@@ -1115,7 +1112,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional fully qualified domain name of network endpoint. This can only be specified when NetworkEndpointGroup.network_endpoint_type is NON_GCP_FQDN_PORT.
      * </pre>
      *
-     * <code>string fqdn = 3150485;</code>
+     * <code>optional string fqdn = 3150485;</code>
      *
      * @return The fqdn.
      */
@@ -1137,7 +1134,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional fully qualified domain name of network endpoint. This can only be specified when NetworkEndpointGroup.network_endpoint_type is NON_GCP_FQDN_PORT.
      * </pre>
      *
-     * <code>string fqdn = 3150485;</code>
+     * <code>optional string fqdn = 3150485;</code>
      *
      * @return The bytes for fqdn.
      */
@@ -1159,7 +1156,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional fully qualified domain name of network endpoint. This can only be specified when NetworkEndpointGroup.network_endpoint_type is NON_GCP_FQDN_PORT.
      * </pre>
      *
-     * <code>string fqdn = 3150485;</code>
+     * <code>optional string fqdn = 3150485;</code>
      *
      * @param value The fqdn to set.
      * @return This builder for chaining.
@@ -1180,7 +1177,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional fully qualified domain name of network endpoint. This can only be specified when NetworkEndpointGroup.network_endpoint_type is NON_GCP_FQDN_PORT.
      * </pre>
      *
-     * <code>string fqdn = 3150485;</code>
+     * <code>optional string fqdn = 3150485;</code>
      *
      * @return This builder for chaining.
      */
@@ -1197,7 +1194,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional fully qualified domain name of network endpoint. This can only be specified when NetworkEndpointGroup.network_endpoint_type is NON_GCP_FQDN_PORT.
      * </pre>
      *
-     * <code>string fqdn = 3150485;</code>
+     * <code>optional string fqdn = 3150485;</code>
      *
      * @param value The bytes for fqdn to set.
      * @return This builder for chaining.
@@ -1218,11 +1215,10 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group.
-     * The name must be 1-63 characters long, and comply with RFC1035.
+     * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @return Whether the instance field is set.
      */
@@ -1233,11 +1229,10 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group.
-     * The name must be 1-63 characters long, and comply with RFC1035.
+     * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @return The instance.
      */
@@ -1256,11 +1251,10 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group.
-     * The name must be 1-63 characters long, and comply with RFC1035.
+     * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @return The bytes for instance.
      */
@@ -1279,11 +1273,10 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group.
-     * The name must be 1-63 characters long, and comply with RFC1035.
+     * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @param value The instance to set.
      * @return This builder for chaining.
@@ -1301,11 +1294,10 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group.
-     * The name must be 1-63 characters long, and comply with RFC1035.
+     * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @return This builder for chaining.
      */
@@ -1319,11 +1311,10 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group.
-     * The name must be 1-63 characters long, and comply with RFC1035.
+     * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string instance = 18257045;</code>
+     * <code>optional string instance = 18257045;</code>
      *
      * @param value The bytes for instance to set.
      * @return This builder for chaining.
@@ -1347,7 +1338,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @return Whether the ipAddress field is set.
      */
@@ -1361,7 +1352,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @return The ipAddress.
      */
@@ -1383,7 +1374,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @return The bytes for ipAddress.
      */
@@ -1405,7 +1396,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @param value The ipAddress to set.
      * @return This builder for chaining.
@@ -1426,7 +1417,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @return This builder for chaining.
      */
@@ -1443,7 +1434,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>optional string ip_address = 406272220;</code>
      *
      * @param value The bytes for ipAddress to set.
      * @return This builder for chaining.
@@ -1467,7 +1458,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @return Whether the port field is set.
      */
@@ -1482,7 +1473,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @return The port.
      */
@@ -1497,7 +1488,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @param value The port to set.
      * @return This builder for chaining.
@@ -1515,7 +1506,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used.
      * </pre>
      *
-     * <code>int32 port = 3446913;</code>
+     * <code>optional int32 port = 3446913;</code>
      *
      * @return This builder for chaining.
      */

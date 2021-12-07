@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.RegionInstanceGroupsClient.ListInstanc
 import static com.google.cloud.compute.v1.RegionInstanceGroupsClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.GetRegionInstanceGroupRequest;
 import com.google.cloud.compute.v1.InstanceGroup;
@@ -60,6 +61,11 @@ public abstract class RegionInstanceGroupsStub implements BackgroundResource {
   public UnaryCallable<ListInstancesRegionInstanceGroupsRequest, RegionInstanceGroupsListInstances>
       listInstancesCallable() {
     throw new UnsupportedOperationException("Not implemented: listInstancesCallable()");
+  }
+
+  public OperationCallable<SetNamedPortsRegionInstanceGroupRequest, Operation, Operation>
+      setNamedPortsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setNamedPortsOperationCallable()");
   }
 
   public UnaryCallable<SetNamedPortsRegionInstanceGroupRequest, Operation> setNamedPortsCallable() {

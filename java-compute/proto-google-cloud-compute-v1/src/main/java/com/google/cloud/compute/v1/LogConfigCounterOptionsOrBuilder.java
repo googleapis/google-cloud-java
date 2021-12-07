@@ -27,7 +27,7 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * Custom fields.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -40,7 +40,7 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * Custom fields.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -52,7 +52,7 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * Custom fields.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -64,7 +64,7 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * Custom fields.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -77,7 +77,7 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * Custom fields.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -91,10 +91,10 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * The field value to attribute.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string field = 97427706;</code>
+   * <code>optional string field = 97427706;</code>
    *
    * @return Whether the field field is set.
    */
@@ -103,10 +103,10 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * The field value to attribute.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string field = 97427706;</code>
+   * <code>optional string field = 97427706;</code>
    *
    * @return The field.
    */
@@ -115,10 +115,10 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * The field value to attribute.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string field = 97427706;</code>
+   * <code>optional string field = 97427706;</code>
    *
    * @return The bytes for field.
    */
@@ -128,10 +128,10 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * The metric to update.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string metric = 533067184;</code>
+   * <code>optional string metric = 533067184;</code>
    *
    * @return Whether the metric field is set.
    */
@@ -140,10 +140,10 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * The metric to update.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string metric = 533067184;</code>
+   * <code>optional string metric = 533067184;</code>
    *
    * @return The metric.
    */
@@ -152,10 +152,10 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * The metric to update.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string metric = 533067184;</code>
+   * <code>optional string metric = 533067184;</code>
    *
    * @return The bytes for metric.
    */

@@ -28,10 +28,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.httpjson.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -110,6 +114,8 @@ public class RegionCommitmentsStubSettings extends StubSettings<RegionCommitment
       aggregatedListSettings;
   private final UnaryCallSettings<GetRegionCommitmentRequest, Commitment> getSettings;
   private final UnaryCallSettings<InsertRegionCommitmentRequest, Operation> insertSettings;
+  private final OperationCallSettings<InsertRegionCommitmentRequest, Operation, Operation>
+      insertOperationSettings;
   private final PagedCallSettings<ListRegionCommitmentsRequest, CommitmentList, ListPagedResponse>
       listSettings;
 
@@ -264,6 +270,12 @@ public class RegionCommitmentsStubSettings extends StubSettings<RegionCommitment
     return insertSettings;
   }
 
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertRegionCommitmentRequest, Operation, Operation>
+      insertOperationSettings() {
+    return insertOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<ListRegionCommitmentsRequest, CommitmentList, ListPagedResponse>
       listSettings() {
@@ -304,7 +316,9 @@ public class RegionCommitmentsStubSettings extends StubSettings<RegionCommitment
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return GoogleCredentialsProvider.newBuilder()
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        .setUseJwtAccessWithScope(true);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -348,6 +362,7 @@ public class RegionCommitmentsStubSettings extends StubSettings<RegionCommitment
     aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
+    insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
   }
 
@@ -362,6 +377,8 @@ public class RegionCommitmentsStubSettings extends StubSettings<RegionCommitment
     private final UnaryCallSettings.Builder<GetRegionCommitmentRequest, Commitment> getSettings;
     private final UnaryCallSettings.Builder<InsertRegionCommitmentRequest, Operation>
         insertSettings;
+    private final OperationCallSettings.Builder<InsertRegionCommitmentRequest, Operation, Operation>
+        insertOperationSettings;
     private final PagedCallSettings.Builder<
             ListRegionCommitmentsRequest, CommitmentList, ListPagedResponse>
         listSettings;
@@ -418,6 +435,7 @@ public class RegionCommitmentsStubSettings extends StubSettings<RegionCommitment
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
@@ -432,6 +450,7 @@ public class RegionCommitmentsStubSettings extends StubSettings<RegionCommitment
       aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
+      insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -473,6 +492,30 @@ public class RegionCommitmentsStubSettings extends StubSettings<RegionCommitment
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
+      builder
+          .insertOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<InsertRegionCommitmentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -508,6 +551,14 @@ public class RegionCommitmentsStubSettings extends StubSettings<RegionCommitment
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertRegionCommitmentRequest, Operation> insertSettings() {
       return insertSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<InsertRegionCommitmentRequest, Operation, Operation>
+        insertOperationSettings() {
+      return insertOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to list. */

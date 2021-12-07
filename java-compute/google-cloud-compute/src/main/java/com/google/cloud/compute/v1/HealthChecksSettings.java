@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -50,15 +51,15 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * HealthChecksSettings.Builder healthChecksSettingsBuilder = HealthChecksSettings.newBuilder();
  * healthChecksSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         healthChecksSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -83,6 +84,12 @@ public class HealthChecksSettings extends ClientSettings<HealthChecksSettings> {
     return ((HealthChecksStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteHealthCheckRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((HealthChecksStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetHealthCheckRequest, HealthCheck> getSettings() {
     return ((HealthChecksStubSettings) getStubSettings()).getSettings();
@@ -91,6 +98,12 @@ public class HealthChecksSettings extends ClientSettings<HealthChecksSettings> {
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertHealthCheckRequest, Operation> insertSettings() {
     return ((HealthChecksStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertHealthCheckRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((HealthChecksStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -104,9 +117,21 @@ public class HealthChecksSettings extends ClientSettings<HealthChecksSettings> {
     return ((HealthChecksStubSettings) getStubSettings()).patchSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchHealthCheckRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((HealthChecksStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateHealthCheckRequest, Operation> updateSettings() {
     return ((HealthChecksStubSettings) getStubSettings()).updateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateHealthCheckRequest, Operation, Operation>
+      updateOperationSettings() {
+    return ((HealthChecksStubSettings) getStubSettings()).updateOperationSettings();
   }
 
   public static final HealthChecksSettings create(HealthChecksStubSettings stub)
@@ -221,6 +246,12 @@ public class HealthChecksSettings extends ClientSettings<HealthChecksSettings> {
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteHealthCheckRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetHealthCheckRequest, HealthCheck> getSettings() {
       return getStubSettingsBuilder().getSettings();
@@ -229,6 +260,12 @@ public class HealthChecksSettings extends ClientSettings<HealthChecksSettings> {
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertHealthCheckRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertHealthCheckRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -242,9 +279,21 @@ public class HealthChecksSettings extends ClientSettings<HealthChecksSettings> {
       return getStubSettingsBuilder().patchSettings();
     }
 
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchHealthCheckRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to update. */
     public UnaryCallSettings.Builder<UpdateHealthCheckRequest, Operation> updateSettings() {
       return getStubSettingsBuilder().updateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public OperationCallSettings.Builder<UpdateHealthCheckRequest, Operation, Operation>
+        updateOperationSettings() {
+      return getStubSettingsBuilder().updateOperationSettings();
     }
 
     @Override

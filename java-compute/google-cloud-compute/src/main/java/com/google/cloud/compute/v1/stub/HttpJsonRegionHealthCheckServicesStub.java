@@ -25,11 +25,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteRegionHealthCheckServiceRequest;
 import com.google.cloud.compute.v1.GetRegionHealthCheckServiceRequest;
@@ -38,7 +40,9 @@ import com.google.cloud.compute.v1.HealthCheckServicesList;
 import com.google.cloud.compute.v1.InsertRegionHealthCheckServiceRequest;
 import com.google.cloud.compute.v1.ListRegionHealthCheckServicesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchRegionHealthCheckServiceRequest;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -56,6 +60,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServicesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<DeleteRegionHealthCheckServiceRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionHealthCheckServiceRequest, Operation>newBuilder()
@@ -90,7 +97,21 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteRegionHealthCheckServiceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetRegionHealthCheckServiceRequest, HealthCheckService>
@@ -124,6 +145,7 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
               .setResponseParser(
                   ProtoMessageResponseParser.<HealthCheckService>newBuilder()
                       .setDefaultInstance(HealthCheckService.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -164,7 +186,21 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertRegionHealthCheckServiceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -217,6 +253,7 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
               .setResponseParser(
                   ProtoMessageResponseParser.<HealthCheckServicesList>newBuilder()
                       .setDefaultInstance(HealthCheckServicesList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -259,19 +296,40 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchRegionHealthCheckServiceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<DeleteRegionHealthCheckServiceRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteRegionHealthCheckServiceRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetRegionHealthCheckServiceRequest, HealthCheckService> getCallable;
   private final UnaryCallable<InsertRegionHealthCheckServiceRequest, Operation> insertCallable;
+  private final OperationCallable<InsertRegionHealthCheckServiceRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListRegionHealthCheckServicesRequest, HealthCheckServicesList>
       listCallable;
   private final UnaryCallable<ListRegionHealthCheckServicesRequest, ListPagedResponse>
       listPagedCallable;
   private final UnaryCallable<PatchRegionHealthCheckServiceRequest, Operation> patchCallable;
+  private final OperationCallable<PatchRegionHealthCheckServiceRequest, Operation, Operation>
+      patchOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionHealthCheckServicesStub create(
@@ -313,41 +371,60 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<DeleteRegionHealthCheckServiceRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteRegionHealthCheckServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetRegionHealthCheckServiceRequest, HealthCheckService>
         getTransportSettings =
             HttpJsonCallSettings
                 .<GetRegionHealthCheckServiceRequest, HealthCheckService>newBuilder()
                 .setMethodDescriptor(getMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<InsertRegionHealthCheckServiceRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionHealthCheckServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListRegionHealthCheckServicesRequest, HealthCheckServicesList>
         listTransportSettings =
             HttpJsonCallSettings
                 .<ListRegionHealthCheckServicesRequest, HealthCheckServicesList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<PatchRegionHealthCheckServiceRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchRegionHealthCheckServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -357,6 +434,12 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -379,6 +462,12 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
   }
 
   @Override
+  public OperationCallable<DeleteRegionHealthCheckServiceRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetRegionHealthCheckServiceRequest, HealthCheckService> getCallable() {
     return getCallable;
   }
@@ -386,6 +475,12 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
   @Override
   public UnaryCallable<InsertRegionHealthCheckServiceRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertRegionHealthCheckServiceRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -403,6 +498,12 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
   @Override
   public UnaryCallable<PatchRegionHealthCheckServiceRequest, Operation> patchCallable() {
     return patchCallable;
+  }
+
+  @Override
+  public OperationCallable<PatchRegionHealthCheckServiceRequest, Operation, Operation>
+      patchOperationCallable() {
+    return patchOperationCallable;
   }
 
   @Override

@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. On failover or failback, this field indicates whether connection draining will be honored. GCP has a fixed connection draining timeout of 10 minutes. A setting of true terminates existing TCP connections to the active pool during failover and failback, immediately draining traffic. A setting of false allows existing TCP connections to persist, even on VMs no longer in the active pool, for up to the duration of the connection draining timeout (10 minutes).
+ * For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview). On failover or failback, this field indicates whether connection draining will be honored. Google Cloud has a fixed connection draining timeout of 10 minutes. A setting of true terminates existing TCP connections to the active pool during failover and failback, immediately draining traffic. A setting of false allows existing TCP connections to persist, even on VMs no longer in the active pool, for up to the duration of the connection draining timeout (10 minutes).
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.BackendServiceFailoverPolicy}
@@ -128,11 +128,10 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * This can be set to true only if the protocol is TCP.
-   * The default is false.
+   * This can be set to true only if the protocol is TCP. The default is false.
    * </pre>
    *
-   * <code>bool disable_connection_drain_on_failover = 182150753;</code>
+   * <code>optional bool disable_connection_drain_on_failover = 182150753;</code>
    *
    * @return Whether the disableConnectionDrainOnFailover field is set.
    */
@@ -144,11 +143,10 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * This can be set to true only if the protocol is TCP.
-   * The default is false.
+   * This can be set to true only if the protocol is TCP. The default is false.
    * </pre>
    *
-   * <code>bool disable_connection_drain_on_failover = 182150753;</code>
+   * <code>optional bool disable_connection_drain_on_failover = 182150753;</code>
    *
    * @return The disableConnectionDrainOnFailover.
    */
@@ -163,10 +161,10 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing, If set to true, connections to the load balancer are dropped when all primary and all backup backend VMs are unhealthy.If set to false, connections are distributed among all primary VMs when all primary and all backup backend VMs are unhealthy. The default is false.
+   * If set to true, connections to the load balancer are dropped when all primary and all backup backend VMs are unhealthy.If set to false, connections are distributed among all primary VMs when all primary and all backup backend VMs are unhealthy. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview). The default is false.
    * </pre>
    *
-   * <code>bool drop_traffic_if_unhealthy = 112289428;</code>
+   * <code>optional bool drop_traffic_if_unhealthy = 112289428;</code>
    *
    * @return Whether the dropTrafficIfUnhealthy field is set.
    */
@@ -178,10 +176,10 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing, If set to true, connections to the load balancer are dropped when all primary and all backup backend VMs are unhealthy.If set to false, connections are distributed among all primary VMs when all primary and all backup backend VMs are unhealthy. The default is false.
+   * If set to true, connections to the load balancer are dropped when all primary and all backup backend VMs are unhealthy.If set to false, connections are distributed among all primary VMs when all primary and all backup backend VMs are unhealthy. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview). The default is false.
    * </pre>
    *
-   * <code>bool drop_traffic_if_unhealthy = 112289428;</code>
+   * <code>optional bool drop_traffic_if_unhealthy = 112289428;</code>
    *
    * @return The dropTrafficIfUnhealthy.
    */
@@ -196,10 +194,10 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. The value of the field must be in the range [0, 1]. If the value is 0, the load balancer performs a failover when the number of healthy primary VMs equals zero. For all other values, the load balancer performs a failover when the total number of healthy primary VMs is less than this ratio.
+   * The value of the field must be in the range [0, 1]. If the value is 0, the load balancer performs a failover when the number of healthy primary VMs equals zero. For all other values, the load balancer performs a failover when the total number of healthy primary VMs is less than this ratio. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview).
    * </pre>
    *
-   * <code>float failover_ratio = 212667006;</code>
+   * <code>optional float failover_ratio = 212667006;</code>
    *
    * @return Whether the failoverRatio field is set.
    */
@@ -211,10 +209,10 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. The value of the field must be in the range [0, 1]. If the value is 0, the load balancer performs a failover when the number of healthy primary VMs equals zero. For all other values, the load balancer performs a failover when the total number of healthy primary VMs is less than this ratio.
+   * The value of the field must be in the range [0, 1]. If the value is 0, the load balancer performs a failover when the number of healthy primary VMs equals zero. For all other values, the load balancer performs a failover when the total number of healthy primary VMs is less than this ratio. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview).
    * </pre>
    *
-   * <code>float failover_ratio = 212667006;</code>
+   * <code>optional float failover_ratio = 212667006;</code>
    *
    * @return The failoverRatio.
    */
@@ -428,7 +426,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. On failover or failback, this field indicates whether connection draining will be honored. GCP has a fixed connection draining timeout of 10 minutes. A setting of true terminates existing TCP connections to the active pool during failover and failback, immediately draining traffic. A setting of false allows existing TCP connections to persist, even on VMs no longer in the active pool, for up to the duration of the connection draining timeout (10 minutes).
+   * For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview). On failover or failback, this field indicates whether connection draining will be honored. Google Cloud has a fixed connection draining timeout of 10 minutes. A setting of true terminates existing TCP connections to the active pool during failover and failback, immediately draining traffic. A setting of false allows existing TCP connections to persist, even on VMs no longer in the active pool, for up to the duration of the connection draining timeout (10 minutes).
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.BackendServiceFailoverPolicy}
@@ -613,11 +611,10 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * This can be set to true only if the protocol is TCP.
-     * The default is false.
+     * This can be set to true only if the protocol is TCP. The default is false.
      * </pre>
      *
-     * <code>bool disable_connection_drain_on_failover = 182150753;</code>
+     * <code>optional bool disable_connection_drain_on_failover = 182150753;</code>
      *
      * @return Whether the disableConnectionDrainOnFailover field is set.
      */
@@ -629,11 +626,10 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * This can be set to true only if the protocol is TCP.
-     * The default is false.
+     * This can be set to true only if the protocol is TCP. The default is false.
      * </pre>
      *
-     * <code>bool disable_connection_drain_on_failover = 182150753;</code>
+     * <code>optional bool disable_connection_drain_on_failover = 182150753;</code>
      *
      * @return The disableConnectionDrainOnFailover.
      */
@@ -645,11 +641,10 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * This can be set to true only if the protocol is TCP.
-     * The default is false.
+     * This can be set to true only if the protocol is TCP. The default is false.
      * </pre>
      *
-     * <code>bool disable_connection_drain_on_failover = 182150753;</code>
+     * <code>optional bool disable_connection_drain_on_failover = 182150753;</code>
      *
      * @param value The disableConnectionDrainOnFailover to set.
      * @return This builder for chaining.
@@ -664,11 +659,10 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * This can be set to true only if the protocol is TCP.
-     * The default is false.
+     * This can be set to true only if the protocol is TCP. The default is false.
      * </pre>
      *
-     * <code>bool disable_connection_drain_on_failover = 182150753;</code>
+     * <code>optional bool disable_connection_drain_on_failover = 182150753;</code>
      *
      * @return This builder for chaining.
      */
@@ -684,10 +678,10 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing, If set to true, connections to the load balancer are dropped when all primary and all backup backend VMs are unhealthy.If set to false, connections are distributed among all primary VMs when all primary and all backup backend VMs are unhealthy. The default is false.
+     * If set to true, connections to the load balancer are dropped when all primary and all backup backend VMs are unhealthy.If set to false, connections are distributed among all primary VMs when all primary and all backup backend VMs are unhealthy. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview). The default is false.
      * </pre>
      *
-     * <code>bool drop_traffic_if_unhealthy = 112289428;</code>
+     * <code>optional bool drop_traffic_if_unhealthy = 112289428;</code>
      *
      * @return Whether the dropTrafficIfUnhealthy field is set.
      */
@@ -699,10 +693,10 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing, If set to true, connections to the load balancer are dropped when all primary and all backup backend VMs are unhealthy.If set to false, connections are distributed among all primary VMs when all primary and all backup backend VMs are unhealthy. The default is false.
+     * If set to true, connections to the load balancer are dropped when all primary and all backup backend VMs are unhealthy.If set to false, connections are distributed among all primary VMs when all primary and all backup backend VMs are unhealthy. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview). The default is false.
      * </pre>
      *
-     * <code>bool drop_traffic_if_unhealthy = 112289428;</code>
+     * <code>optional bool drop_traffic_if_unhealthy = 112289428;</code>
      *
      * @return The dropTrafficIfUnhealthy.
      */
@@ -714,10 +708,10 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing, If set to true, connections to the load balancer are dropped when all primary and all backup backend VMs are unhealthy.If set to false, connections are distributed among all primary VMs when all primary and all backup backend VMs are unhealthy. The default is false.
+     * If set to true, connections to the load balancer are dropped when all primary and all backup backend VMs are unhealthy.If set to false, connections are distributed among all primary VMs when all primary and all backup backend VMs are unhealthy. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview). The default is false.
      * </pre>
      *
-     * <code>bool drop_traffic_if_unhealthy = 112289428;</code>
+     * <code>optional bool drop_traffic_if_unhealthy = 112289428;</code>
      *
      * @param value The dropTrafficIfUnhealthy to set.
      * @return This builder for chaining.
@@ -732,10 +726,10 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing, If set to true, connections to the load balancer are dropped when all primary and all backup backend VMs are unhealthy.If set to false, connections are distributed among all primary VMs when all primary and all backup backend VMs are unhealthy. The default is false.
+     * If set to true, connections to the load balancer are dropped when all primary and all backup backend VMs are unhealthy.If set to false, connections are distributed among all primary VMs when all primary and all backup backend VMs are unhealthy. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview). The default is false.
      * </pre>
      *
-     * <code>bool drop_traffic_if_unhealthy = 112289428;</code>
+     * <code>optional bool drop_traffic_if_unhealthy = 112289428;</code>
      *
      * @return This builder for chaining.
      */
@@ -751,10 +745,10 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. The value of the field must be in the range [0, 1]. If the value is 0, the load balancer performs a failover when the number of healthy primary VMs equals zero. For all other values, the load balancer performs a failover when the total number of healthy primary VMs is less than this ratio.
+     * The value of the field must be in the range [0, 1]. If the value is 0, the load balancer performs a failover when the number of healthy primary VMs equals zero. For all other values, the load balancer performs a failover when the total number of healthy primary VMs is less than this ratio. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview).
      * </pre>
      *
-     * <code>float failover_ratio = 212667006;</code>
+     * <code>optional float failover_ratio = 212667006;</code>
      *
      * @return Whether the failoverRatio field is set.
      */
@@ -766,10 +760,10 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. The value of the field must be in the range [0, 1]. If the value is 0, the load balancer performs a failover when the number of healthy primary VMs equals zero. For all other values, the load balancer performs a failover when the total number of healthy primary VMs is less than this ratio.
+     * The value of the field must be in the range [0, 1]. If the value is 0, the load balancer performs a failover when the number of healthy primary VMs equals zero. For all other values, the load balancer performs a failover when the total number of healthy primary VMs is less than this ratio. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview).
      * </pre>
      *
-     * <code>float failover_ratio = 212667006;</code>
+     * <code>optional float failover_ratio = 212667006;</code>
      *
      * @return The failoverRatio.
      */
@@ -781,10 +775,10 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. The value of the field must be in the range [0, 1]. If the value is 0, the load balancer performs a failover when the number of healthy primary VMs equals zero. For all other values, the load balancer performs a failover when the total number of healthy primary VMs is less than this ratio.
+     * The value of the field must be in the range [0, 1]. If the value is 0, the load balancer performs a failover when the number of healthy primary VMs equals zero. For all other values, the load balancer performs a failover when the total number of healthy primary VMs is less than this ratio. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview).
      * </pre>
      *
-     * <code>float failover_ratio = 212667006;</code>
+     * <code>optional float failover_ratio = 212667006;</code>
      *
      * @param value The failoverRatio to set.
      * @return This builder for chaining.
@@ -799,10 +793,10 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. The value of the field must be in the range [0, 1]. If the value is 0, the load balancer performs a failover when the number of healthy primary VMs equals zero. For all other values, the load balancer performs a failover when the total number of healthy primary VMs is less than this ratio.
+     * The value of the field must be in the range [0, 1]. If the value is 0, the load balancer performs a failover when the number of healthy primary VMs equals zero. For all other values, the load balancer performs a failover when the total number of healthy primary VMs is less than this ratio. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](/network/networklb-failover-overview).
      * </pre>
      *
-     * <code>float failover_ratio = 212667006;</code>
+     * <code>optional float failover_ratio = 212667006;</code>
      *
      * @return This builder for chaining.
      */

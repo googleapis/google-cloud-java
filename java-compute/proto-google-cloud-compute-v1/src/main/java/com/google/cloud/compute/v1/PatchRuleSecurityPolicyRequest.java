@@ -153,7 +153,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
    * The priority of the rule to patch.
    * </pre>
    *
-   * <code>int32 priority = 445151652;</code>
+   * <code>optional int32 priority = 445151652;</code>
    *
    * @return Whether the priority field is set.
    */
@@ -168,7 +168,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
    * The priority of the rule to patch.
    * </pre>
    *
-   * <code>int32 priority = 445151652;</code>
+   * <code>optional int32 priority = 445151652;</code>
    *
    * @return The priority.
    */
@@ -348,10 +348,10 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getSecurityPolicyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(securityPolicy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 171082513, securityPolicy_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (securityPolicyRuleResource_ != null) {
@@ -369,10 +369,10 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
-    if (!getSecurityPolicyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(securityPolicy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(171082513, securityPolicy_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     if (securityPolicyRuleResource_ != null) {
@@ -736,7 +736,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
      * The priority of the rule to patch.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>optional int32 priority = 445151652;</code>
      *
      * @return Whether the priority field is set.
      */
@@ -751,7 +751,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
      * The priority of the rule to patch.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>optional int32 priority = 445151652;</code>
      *
      * @return The priority.
      */
@@ -766,7 +766,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
      * The priority of the rule to patch.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>optional int32 priority = 445151652;</code>
      *
      * @param value The priority to set.
      * @return This builder for chaining.
@@ -784,7 +784,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
      * The priority of the rule to patch.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>optional int32 priority = 445151652;</code>
      *
      * @return This builder for chaining.
      */

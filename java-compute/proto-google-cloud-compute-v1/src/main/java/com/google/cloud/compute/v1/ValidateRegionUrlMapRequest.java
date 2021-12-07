@@ -365,13 +365,13 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
     if (regionUrlMapsValidateRequestResource_ != null) {
       output.writeMessage(56632858, getRegionUrlMapsValidateRequestResource());
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (!getUrlMapBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(urlMap_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 367020684, urlMap_);
     }
     unknownFields.writeTo(output);
@@ -388,13 +388,13 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               56632858, getRegionUrlMapsValidateRequestResource());
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
-    if (!getUrlMapBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(urlMap_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(367020684, urlMap_);
     }
     size += unknownFields.getSerializedSize();

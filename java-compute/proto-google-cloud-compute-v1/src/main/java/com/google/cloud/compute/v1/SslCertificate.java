@@ -22,14 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an SSL Certificate resource.
- * Google Compute Engine has two SSL Certificate resources:
- * * [Global](/compute/docs/reference/rest/{$api_version}/sslCertificates) * [Regional](/compute/docs/reference/rest/{$api_version}/regionSslCertificates)
- * The sslCertificates are used by:
- * - external HTTPS load balancers
- * - SSL proxy load balancers
- * The regionSslCertificates are used by internal HTTPS load balancers.
- * Optionally, certificate file contents that you upload can contain a set of up to five PEM-encoded certificates. The API call creates an object (sslCertificate) that holds this data. You can use SSL keys and certificates to secure connections to a load balancer. For more information, read  Creating and using SSL certificates, SSL certificates quotas and limits, and  Troubleshooting SSL certificates. (== resource_for {$api_version}.sslCertificates ==) (== resource_for {$api_version}.regionSslCertificates ==)
+ * Represents an SSL Certificate resource. Google Compute Engine has two SSL Certificate resources: * [Global](/compute/docs/reference/rest/v1/sslCertificates) * [Regional](/compute/docs/reference/rest/v1/regionSslCertificates) The sslCertificates are used by: - external HTTPS load balancers - SSL proxy load balancers The regionSslCertificates are used by internal HTTPS load balancers. Optionally, certificate file contents that you upload can contain a set of up to five PEM-encoded certificates. The API call creates an object (sslCertificate) that holds this data. You can use SSL keys and certificates to secure connections to a load balancer. For more information, read Creating and using SSL certificates, SSL certificates quotas and limits, and Troubleshooting SSL certificates.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.SslCertificate}
@@ -55,7 +48,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     region_ = "";
     selfLink_ = "";
     subjectAlternativeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    type_ = 0;
+    type_ = "";
   }
 
   @java.lang.Override
@@ -108,11 +101,11 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
               name_ = s;
               break;
             }
-          case 28604880:
+          case 28604882:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00001000;
-              type_ = rawValue;
+              type_ = s;
               break;
             }
           case 244202930:
@@ -267,9 +260,25 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     UNDEFINED_TYPE(0),
-    /** <code>MANAGED = 479501183;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Google-managed SSLCertificate.
+     * </pre>
+     *
+     * <code>MANAGED = 479501183;</code>
+     */
     MANAGED(479501183),
-    /** <code>SELF_MANAGED = 434437516;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Certificate uploaded by user.
+     * </pre>
+     *
+     * <code>SELF_MANAGED = 434437516;</code>
+     */
     SELF_MANAGED(434437516),
     /** <code>TYPE_UNSPECIFIED = 437714322;</code> */
     TYPE_UNSPECIFIED(437714322),
@@ -286,9 +295,25 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-    /** <code>MANAGED = 479501183;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Google-managed SSLCertificate.
+     * </pre>
+     *
+     * <code>MANAGED = 479501183;</code>
+     */
     public static final int MANAGED_VALUE = 479501183;
-    /** <code>SELF_MANAGED = 434437516;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Certificate uploaded by user.
+     * </pre>
+     *
+     * <code>SELF_MANAGED = 434437516;</code>
+     */
     public static final int SELF_MANAGED_VALUE = 434437516;
     /** <code>TYPE_UNSPECIFIED = 437714322;</code> */
     public static final int TYPE_UNSPECIFIED_VALUE = 437714322;
@@ -388,7 +413,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
    * </pre>
    *
-   * <code>string certificate = 341787031;</code>
+   * <code>optional string certificate = 341787031;</code>
    *
    * @return Whether the certificate field is set.
    */
@@ -403,7 +428,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
    * </pre>
    *
-   * <code>string certificate = 341787031;</code>
+   * <code>optional string certificate = 341787031;</code>
    *
    * @return The certificate.
    */
@@ -426,7 +451,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
    * </pre>
    *
-   * <code>string certificate = 341787031;</code>
+   * <code>optional string certificate = 341787031;</code>
    *
    * @return The bytes for certificate.
    */
@@ -452,7 +477,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -467,7 +492,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -490,7 +515,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -516,7 +541,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -531,7 +556,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -554,7 +579,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -580,7 +605,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Expire time of the certificate. RFC3339
    * </pre>
    *
-   * <code>string expire_time = 440691181;</code>
+   * <code>optional string expire_time = 440691181;</code>
    *
    * @return Whether the expireTime field is set.
    */
@@ -595,7 +620,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Expire time of the certificate. RFC3339
    * </pre>
    *
-   * <code>string expire_time = 440691181;</code>
+   * <code>optional string expire_time = 440691181;</code>
    *
    * @return The expireTime.
    */
@@ -618,7 +643,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Expire time of the certificate. RFC3339
    * </pre>
    *
-   * <code>string expire_time = 440691181;</code>
+   * <code>optional string expire_time = 440691181;</code>
    *
    * @return The bytes for expireTime.
    */
@@ -644,7 +669,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -659,7 +684,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -677,7 +702,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#sslCertificate for SSL certificates.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -692,7 +717,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#sslCertificate for SSL certificates.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -715,7 +740,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#sslCertificate for SSL certificates.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -741,7 +766,9 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * Configuration and status of a managed SSL certificate.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
+   * </code>
    *
    * @return Whether the managed field is set.
    */
@@ -756,7 +783,9 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * Configuration and status of a managed SSL certificate.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
+   * </code>
    *
    * @return The managed.
    */
@@ -773,7 +802,9 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * Configuration and status of a managed SSL certificate.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.SslCertificateManagedSslCertificateOrBuilder
@@ -792,7 +823,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -807,7 +838,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -830,7 +861,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -856,7 +887,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
    * </pre>
    *
-   * <code>string private_key = 361331107;</code>
+   * <code>optional string private_key = 361331107;</code>
    *
    * @return Whether the privateKey field is set.
    */
@@ -871,7 +902,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
    * </pre>
    *
-   * <code>string private_key = 361331107;</code>
+   * <code>optional string private_key = 361331107;</code>
    *
    * @return The privateKey.
    */
@@ -894,7 +925,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
    * </pre>
    *
-   * <code>string private_key = 361331107;</code>
+   * <code>optional string private_key = 361331107;</code>
    *
    * @return The bytes for privateKey.
    */
@@ -920,7 +951,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -935,7 +966,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -958,7 +989,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -984,7 +1015,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * [Output only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -999,7 +1030,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * [Output only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1022,7 +1053,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * [Output only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1049,7 +1080,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
+   * optional .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
    * </code>
    *
    * @return Whether the selfManaged field is set.
@@ -1066,7 +1097,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
+   * optional .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
    * </code>
    *
    * @return The selfManaged.
@@ -1085,7 +1116,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
+   * optional .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
    * </code>
    */
   @java.lang.Override
@@ -1158,15 +1189,16 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private int type_;
+  private volatile java.lang.Object type_;
   /**
    *
    *
    * <pre>
    * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
    * @return Whether the type field is set.
    */
@@ -1179,33 +1211,48 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The enum numeric value on the wire for type.
+   * @return The type.
    */
   @java.lang.Override
-  public int getTypeValue() {
-    return type_;
+  public java.lang.String getType() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      type_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The type.
+   * @return The bytes for type.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.SslCertificate.Type getType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.SslCertificate.Type result =
-        com.google.cloud.compute.v1.SslCertificate.Type.valueOf(type_);
-    return result == null ? com.google.cloud.compute.v1.SslCertificate.Type.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getTypeBytes() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      type_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1232,7 +1279,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00001000) != 0)) {
-      output.writeEnum(3575610, type_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
@@ -1284,7 +1331,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00001000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3575610, type_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
@@ -1390,7 +1437,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       return false;
     if (hasType() != other.hasType()) return false;
     if (hasType()) {
-      if (type_ != other.type_) return false;
+      if (!getType().equals(other.getType())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1457,7 +1504,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasType()) {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
+      hash = (53 * hash) + getType().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1563,14 +1610,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents an SSL Certificate resource.
-   * Google Compute Engine has two SSL Certificate resources:
-   * * [Global](/compute/docs/reference/rest/{$api_version}/sslCertificates) * [Regional](/compute/docs/reference/rest/{$api_version}/regionSslCertificates)
-   * The sslCertificates are used by:
-   * - external HTTPS load balancers
-   * - SSL proxy load balancers
-   * The regionSslCertificates are used by internal HTTPS load balancers.
-   * Optionally, certificate file contents that you upload can contain a set of up to five PEM-encoded certificates. The API call creates an object (sslCertificate) that holds this data. You can use SSL keys and certificates to secure connections to a load balancer. For more information, read  Creating and using SSL certificates, SSL certificates quotas and limits, and  Troubleshooting SSL certificates. (== resource_for {$api_version}.sslCertificates ==) (== resource_for {$api_version}.regionSslCertificates ==)
+   * Represents an SSL Certificate resource. Google Compute Engine has two SSL Certificate resources: * [Global](/compute/docs/reference/rest/v1/sslCertificates) * [Regional](/compute/docs/reference/rest/v1/regionSslCertificates) The sslCertificates are used by: - external HTTPS load balancers - SSL proxy load balancers The regionSslCertificates are used by internal HTTPS load balancers. Optionally, certificate file contents that you upload can contain a set of up to five PEM-encoded certificates. The API call creates an object (sslCertificate) that holds this data. You can use SSL keys and certificates to secure connections to a load balancer. For more information, read Creating and using SSL certificates, SSL certificates quotas and limits, and Troubleshooting SSL certificates.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.SslCertificate}
@@ -1648,7 +1688,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000800);
       subjectAlternativeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00001000);
-      type_ = 0;
+      type_ = "";
       bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
@@ -1859,7 +1899,9 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasType()) {
-        setType(other.getType());
+        bitField0_ |= 0x00002000;
+        type_ = other.type_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1900,7 +1942,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 341787031;</code>
+     * <code>optional string certificate = 341787031;</code>
      *
      * @return Whether the certificate field is set.
      */
@@ -1914,7 +1956,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 341787031;</code>
+     * <code>optional string certificate = 341787031;</code>
      *
      * @return The certificate.
      */
@@ -1936,7 +1978,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 341787031;</code>
+     * <code>optional string certificate = 341787031;</code>
      *
      * @return The bytes for certificate.
      */
@@ -1958,7 +2000,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 341787031;</code>
+     * <code>optional string certificate = 341787031;</code>
      *
      * @param value The certificate to set.
      * @return This builder for chaining.
@@ -1979,7 +2021,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 341787031;</code>
+     * <code>optional string certificate = 341787031;</code>
      *
      * @return This builder for chaining.
      */
@@ -1996,7 +2038,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 341787031;</code>
+     * <code>optional string certificate = 341787031;</code>
      *
      * @param value The bytes for certificate to set.
      * @return This builder for chaining.
@@ -2020,7 +2062,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -2034,7 +2076,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -2056,7 +2098,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -2078,7 +2120,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -2099,7 +2141,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -2116,7 +2158,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -2140,7 +2182,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -2154,7 +2196,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -2176,7 +2218,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -2198,7 +2240,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2219,7 +2261,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -2236,7 +2278,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2260,7 +2302,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Expire time of the certificate. RFC3339
      * </pre>
      *
-     * <code>string expire_time = 440691181;</code>
+     * <code>optional string expire_time = 440691181;</code>
      *
      * @return Whether the expireTime field is set.
      */
@@ -2274,7 +2316,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Expire time of the certificate. RFC3339
      * </pre>
      *
-     * <code>string expire_time = 440691181;</code>
+     * <code>optional string expire_time = 440691181;</code>
      *
      * @return The expireTime.
      */
@@ -2296,7 +2338,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Expire time of the certificate. RFC3339
      * </pre>
      *
-     * <code>string expire_time = 440691181;</code>
+     * <code>optional string expire_time = 440691181;</code>
      *
      * @return The bytes for expireTime.
      */
@@ -2318,7 +2360,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Expire time of the certificate. RFC3339
      * </pre>
      *
-     * <code>string expire_time = 440691181;</code>
+     * <code>optional string expire_time = 440691181;</code>
      *
      * @param value The expireTime to set.
      * @return This builder for chaining.
@@ -2339,7 +2381,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Expire time of the certificate. RFC3339
      * </pre>
      *
-     * <code>string expire_time = 440691181;</code>
+     * <code>optional string expire_time = 440691181;</code>
      *
      * @return This builder for chaining.
      */
@@ -2356,7 +2398,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Expire time of the certificate. RFC3339
      * </pre>
      *
-     * <code>string expire_time = 440691181;</code>
+     * <code>optional string expire_time = 440691181;</code>
      *
      * @param value The bytes for expireTime to set.
      * @return This builder for chaining.
@@ -2380,7 +2422,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -2395,7 +2437,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -2410,7 +2452,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -2428,7 +2470,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -2447,7 +2489,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#sslCertificate for SSL certificates.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -2461,7 +2503,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#sslCertificate for SSL certificates.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -2483,7 +2525,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#sslCertificate for SSL certificates.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -2505,7 +2547,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#sslCertificate for SSL certificates.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -2526,7 +2568,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#sslCertificate for SSL certificates.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -2543,7 +2585,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#sslCertificate for SSL certificates.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -2572,7 +2614,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * Configuration and status of a managed SSL certificate.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
+     * <code>
+     * optional .google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
      * </code>
      *
      * @return Whether the managed field is set.
@@ -2587,7 +2630,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * Configuration and status of a managed SSL certificate.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
+     * <code>
+     * optional .google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
      * </code>
      *
      * @return The managed.
@@ -2608,7 +2652,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * Configuration and status of a managed SSL certificate.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
+     * <code>
+     * optional .google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
      * </code>
      */
     public Builder setManaged(
@@ -2632,7 +2677,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * Configuration and status of a managed SSL certificate.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
+     * <code>
+     * optional .google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
      * </code>
      */
     public Builder setManaged(
@@ -2653,7 +2699,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * Configuration and status of a managed SSL certificate.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
+     * <code>
+     * optional .google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
      * </code>
      */
     public Builder mergeManaged(
@@ -2685,7 +2732,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * Configuration and status of a managed SSL certificate.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
+     * <code>
+     * optional .google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
      * </code>
      */
     public Builder clearManaged() {
@@ -2705,7 +2753,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * Configuration and status of a managed SSL certificate.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
+     * <code>
+     * optional .google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
      * </code>
      */
     public com.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Builder
@@ -2721,7 +2770,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * Configuration and status of a managed SSL certificate.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
+     * <code>
+     * optional .google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
      * </code>
      */
     public com.google.cloud.compute.v1.SslCertificateManagedSslCertificateOrBuilder
@@ -2741,7 +2791,8 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * Configuration and status of a managed SSL certificate.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
+     * <code>
+     * optional .google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2769,7 +2820,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -2783,7 +2834,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -2805,7 +2856,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -2827,7 +2878,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2848,7 +2899,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -2865,7 +2916,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2889,7 +2940,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
      * </pre>
      *
-     * <code>string private_key = 361331107;</code>
+     * <code>optional string private_key = 361331107;</code>
      *
      * @return Whether the privateKey field is set.
      */
@@ -2903,7 +2954,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
      * </pre>
      *
-     * <code>string private_key = 361331107;</code>
+     * <code>optional string private_key = 361331107;</code>
      *
      * @return The privateKey.
      */
@@ -2925,7 +2976,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
      * </pre>
      *
-     * <code>string private_key = 361331107;</code>
+     * <code>optional string private_key = 361331107;</code>
      *
      * @return The bytes for privateKey.
      */
@@ -2947,7 +2998,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
      * </pre>
      *
-     * <code>string private_key = 361331107;</code>
+     * <code>optional string private_key = 361331107;</code>
      *
      * @param value The privateKey to set.
      * @return This builder for chaining.
@@ -2968,7 +3019,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
      * </pre>
      *
-     * <code>string private_key = 361331107;</code>
+     * <code>optional string private_key = 361331107;</code>
      *
      * @return This builder for chaining.
      */
@@ -2985,7 +3036,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
      * </pre>
      *
-     * <code>string private_key = 361331107;</code>
+     * <code>optional string private_key = 361331107;</code>
      *
      * @param value The bytes for privateKey to set.
      * @return This builder for chaining.
@@ -3009,7 +3060,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return Whether the region field is set.
      */
@@ -3023,7 +3074,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The region.
      */
@@ -3045,7 +3096,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The bytes for region.
      */
@@ -3067,7 +3118,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -3088,7 +3139,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return This builder for chaining.
      */
@@ -3105,7 +3156,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.
@@ -3129,7 +3180,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -3143,7 +3194,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -3165,7 +3216,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3187,7 +3238,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3208,7 +3259,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -3225,7 +3276,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -3255,7 +3306,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
+     * optional .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
      * </code>
      *
      * @return Whether the selfManaged field is set.
@@ -3271,7 +3322,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
+     * optional .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
      * </code>
      *
      * @return The selfManaged.
@@ -3294,7 +3345,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
+     * optional .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
      * </code>
      */
     public Builder setSelfManaged(
@@ -3319,7 +3370,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
+     * optional .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
      * </code>
      */
     public Builder setSelfManaged(
@@ -3342,7 +3393,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
+     * optional .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
      * </code>
      */
     public Builder mergeSelfManaged(
@@ -3376,7 +3427,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
+     * optional .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
      * </code>
      */
     public Builder clearSelfManaged() {
@@ -3397,7 +3448,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
+     * optional .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
      * </code>
      */
     public com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate.Builder
@@ -3414,7 +3465,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
+     * optional .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
      * </code>
      */
     public com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificateOrBuilder
@@ -3436,7 +3487,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
+     * optional .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3625,19 +3676,19 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int type_ = 0;
+    private java.lang.Object type_ = "";
     /**
      *
      *
      * <pre>
      * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
      * @return Whether the type field is set.
      */
-    @java.lang.Override
     public boolean hasType() {
       return ((bitField0_ & 0x00002000) != 0);
     }
@@ -3646,29 +3697,64 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
-     * @return The enum numeric value on the wire for type.
+     * @return The type.
      */
-    @java.lang.Override
-    public int getTypeValue() {
-      return type_;
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
-     * @param value The enum numeric value on the wire for type to set.
+     * @return The bytes for type.
+     */
+    public com.google.protobuf.ByteString getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     *
+     * @param value The type to set.
      * @return This builder for chaining.
      */
-    public Builder setTypeValue(int value) {
+    public Builder setType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00002000;
       type_ = value;
       onChanged();
@@ -3679,37 +3765,16 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
-     * @return The type.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.SslCertificate.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.SslCertificate.Type result =
-          com.google.cloud.compute.v1.SslCertificate.Type.valueOf(type_);
-      return result == null ? com.google.cloud.compute.v1.SslCertificate.Type.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
-     *
-     * @param value The type to set.
      * @return This builder for chaining.
      */
-    public Builder setType(com.google.cloud.compute.v1.SslCertificate.Type value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00002000;
-      type_ = value.getNumber();
+    public Builder clearType() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      type_ = getDefaultInstance().getType();
       onChanged();
       return this;
     }
@@ -3718,15 +3783,21 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
+     * @param value The bytes for type to set.
      * @return This builder for chaining.
      */
-    public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00002000);
-      type_ = 0;
+    public Builder setTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00002000;
+      type_ = value;
       onChanged();
       return this;
     }

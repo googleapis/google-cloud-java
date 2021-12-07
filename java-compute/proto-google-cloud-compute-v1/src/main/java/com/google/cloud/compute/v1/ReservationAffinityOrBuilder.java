@@ -27,12 +27,11 @@ public interface ReservationAffinityOrBuilder
    *
    *
    * <pre>
-   * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See  Consuming reserved instances for examples.
+   * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+   * Check the ConsumeReservationType enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;
-   * </code>
+   * <code>optional string consume_reservation_type = 300736944;</code>
    *
    * @return Whether the consumeReservationType field is set.
    */
@@ -41,31 +40,28 @@ public interface ReservationAffinityOrBuilder
    *
    *
    * <pre>
-   * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See  Consuming reserved instances for examples.
+   * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+   * Check the ConsumeReservationType enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;
-   * </code>
+   * <code>optional string consume_reservation_type = 300736944;</code>
    *
-   * @return The enum numeric value on the wire for consumeReservationType.
+   * @return The consumeReservationType.
    */
-  int getConsumeReservationTypeValue();
+  java.lang.String getConsumeReservationType();
   /**
    *
    *
    * <pre>
-   * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See  Consuming reserved instances for examples.
+   * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+   * Check the ConsumeReservationType enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;
-   * </code>
+   * <code>optional string consume_reservation_type = 300736944;</code>
    *
-   * @return The consumeReservationType.
+   * @return The bytes for consumeReservationType.
    */
-  com.google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType
-      getConsumeReservationType();
+  com.google.protobuf.ByteString getConsumeReservationTypeBytes();
 
   /**
    *
@@ -74,7 +70,7 @@ public interface ReservationAffinityOrBuilder
    * Corresponds to the label key of a reservation resource. To target a SPECIFIC_RESERVATION by name, specify googleapis.com/reservation-name as the key and specify the name of your reservation as its value.
    * </pre>
    *
-   * <code>string key = 106079;</code>
+   * <code>optional string key = 106079;</code>
    *
    * @return Whether the key field is set.
    */
@@ -86,7 +82,7 @@ public interface ReservationAffinityOrBuilder
    * Corresponds to the label key of a reservation resource. To target a SPECIFIC_RESERVATION by name, specify googleapis.com/reservation-name as the key and specify the name of your reservation as its value.
    * </pre>
    *
-   * <code>string key = 106079;</code>
+   * <code>optional string key = 106079;</code>
    *
    * @return The key.
    */
@@ -98,7 +94,7 @@ public interface ReservationAffinityOrBuilder
    * Corresponds to the label key of a reservation resource. To target a SPECIFIC_RESERVATION by name, specify googleapis.com/reservation-name as the key and specify the name of your reservation as its value.
    * </pre>
    *
-   * <code>string key = 106079;</code>
+   * <code>optional string key = 106079;</code>
    *
    * @return The bytes for key.
    */
@@ -108,7 +104,7 @@ public interface ReservationAffinityOrBuilder
    *
    *
    * <pre>
-   * Corresponds to the label values of a reservation resource.
+   * Corresponds to the label values of a reservation resource. This can be either a name to a reservation in the same project or "projects/different-project/reservations/some-reservation-name" to target a shared reservation in the same zone but in a different project.
    * </pre>
    *
    * <code>repeated string values = 249928994;</code>
@@ -120,7 +116,7 @@ public interface ReservationAffinityOrBuilder
    *
    *
    * <pre>
-   * Corresponds to the label values of a reservation resource.
+   * Corresponds to the label values of a reservation resource. This can be either a name to a reservation in the same project or "projects/different-project/reservations/some-reservation-name" to target a shared reservation in the same zone but in a different project.
    * </pre>
    *
    * <code>repeated string values = 249928994;</code>
@@ -132,7 +128,7 @@ public interface ReservationAffinityOrBuilder
    *
    *
    * <pre>
-   * Corresponds to the label values of a reservation resource.
+   * Corresponds to the label values of a reservation resource. This can be either a name to a reservation in the same project or "projects/different-project/reservations/some-reservation-name" to target a shared reservation in the same zone but in a different project.
    * </pre>
    *
    * <code>repeated string values = 249928994;</code>
@@ -145,7 +141,7 @@ public interface ReservationAffinityOrBuilder
    *
    *
    * <pre>
-   * Corresponds to the label values of a reservation resource.
+   * Corresponds to the label values of a reservation resource. This can be either a name to a reservation in the same project or "projects/different-project/reservations/some-reservation-name" to target a shared reservation in the same zone but in a different project.
    * </pre>
    *
    * <code>repeated string values = 249928994;</code>

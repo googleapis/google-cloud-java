@@ -21,6 +21,7 @@ import static com.google.cloud.compute.v1.NetworkEndpointGroupsClient.ListNetwor
 import static com.google.cloud.compute.v1.NetworkEndpointGroupsClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListNetworkEndpointGroupsRequest;
 import com.google.cloud.compute.v1.AttachNetworkEndpointsNetworkEndpointGroupRequest;
@@ -59,13 +60,30 @@ public abstract class NetworkEndpointGroupsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<AttachNetworkEndpointsNetworkEndpointGroupRequest, Operation, Operation>
+      attachNetworkEndpointsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: attachNetworkEndpointsOperationCallable()");
+  }
+
   public UnaryCallable<AttachNetworkEndpointsNetworkEndpointGroupRequest, Operation>
       attachNetworkEndpointsCallable() {
     throw new UnsupportedOperationException("Not implemented: attachNetworkEndpointsCallable()");
   }
 
+  public OperationCallable<DeleteNetworkEndpointGroupRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteNetworkEndpointGroupRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
+  }
+
+  public OperationCallable<DetachNetworkEndpointsNetworkEndpointGroupRequest, Operation, Operation>
+      detachNetworkEndpointsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: detachNetworkEndpointsOperationCallable()");
   }
 
   public UnaryCallable<DetachNetworkEndpointsNetworkEndpointGroupRequest, Operation>
@@ -75,6 +93,11 @@ public abstract class NetworkEndpointGroupsStub implements BackgroundResource {
 
   public UnaryCallable<GetNetworkEndpointGroupRequest, NetworkEndpointGroup> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertNetworkEndpointGroupRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertNetworkEndpointGroupRequest, Operation> insertCallable() {

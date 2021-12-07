@@ -30,7 +30,7 @@ public interface ListAssociationsFirewallPolicyRequestOrBuilder
    * The target resource to list associations. It is an organization, or a folder.
    * </pre>
    *
-   * <code>string target_resource = 467318524;</code>
+   * <code>optional string target_resource = 467318524;</code>
    *
    * @return Whether the targetResource field is set.
    */
@@ -42,7 +42,7 @@ public interface ListAssociationsFirewallPolicyRequestOrBuilder
    * The target resource to list associations. It is an organization, or a folder.
    * </pre>
    *
-   * <code>string target_resource = 467318524;</code>
+   * <code>optional string target_resource = 467318524;</code>
    *
    * @return The targetResource.
    */
@@ -54,7 +54,7 @@ public interface ListAssociationsFirewallPolicyRequestOrBuilder
    * The target resource to list associations. It is an organization, or a folder.
    * </pre>
    *
-   * <code>string target_resource = 467318524;</code>
+   * <code>optional string target_resource = 467318524;</code>
    *
    * @return The bytes for targetResource.
    */

@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.PacketMirroringsClient.AggregatedListP
 import static com.google.cloud.compute.v1.PacketMirroringsClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListPacketMirroringsRequest;
 import com.google.cloud.compute.v1.DeletePacketMirroringRequest;
@@ -54,12 +55,22 @@ public abstract class PacketMirroringsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<DeletePacketMirroringRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeletePacketMirroringRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetPacketMirroringRequest, PacketMirroring> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertPacketMirroringRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertPacketMirroringRequest, Operation> insertCallable() {
@@ -72,6 +83,11 @@ public abstract class PacketMirroringsStub implements BackgroundResource {
 
   public UnaryCallable<ListPacketMirroringsRequest, PacketMirroringList> listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<PatchPacketMirroringRequest, Operation, Operation>
+      patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
   }
 
   public UnaryCallable<PatchPacketMirroringRequest, Operation> patchCallable() {

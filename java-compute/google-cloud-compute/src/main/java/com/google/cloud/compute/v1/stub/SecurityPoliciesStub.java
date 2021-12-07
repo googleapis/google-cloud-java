@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.SecurityPoliciesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddRuleSecurityPolicyRequest;
 import com.google.cloud.compute.v1.DeleteSecurityPolicyRequest;
@@ -46,8 +47,18 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class SecurityPoliciesStub implements BackgroundResource {
 
+  public OperationCallable<AddRuleSecurityPolicyRequest, Operation, Operation>
+      addRuleOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: addRuleOperationCallable()");
+  }
+
   public UnaryCallable<AddRuleSecurityPolicyRequest, Operation> addRuleCallable() {
     throw new UnsupportedOperationException("Not implemented: addRuleCallable()");
+  }
+
+  public OperationCallable<DeleteSecurityPolicyRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
   }
 
   public UnaryCallable<DeleteSecurityPolicyRequest, Operation> deleteCallable() {
@@ -60,6 +71,11 @@ public abstract class SecurityPoliciesStub implements BackgroundResource {
 
   public UnaryCallable<GetRuleSecurityPolicyRequest, SecurityPolicyRule> getRuleCallable() {
     throw new UnsupportedOperationException("Not implemented: getRuleCallable()");
+  }
+
+  public OperationCallable<InsertSecurityPolicyRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertSecurityPolicyRequest, Operation> insertCallable() {
@@ -82,12 +98,27 @@ public abstract class SecurityPoliciesStub implements BackgroundResource {
         "Not implemented: listPreconfiguredExpressionSetsCallable()");
   }
 
+  public OperationCallable<PatchSecurityPolicyRequest, Operation, Operation>
+      patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
+  }
+
   public UnaryCallable<PatchSecurityPolicyRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
   }
 
+  public OperationCallable<PatchRuleSecurityPolicyRequest, Operation, Operation>
+      patchRuleOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchRuleOperationCallable()");
+  }
+
   public UnaryCallable<PatchRuleSecurityPolicyRequest, Operation> patchRuleCallable() {
     throw new UnsupportedOperationException("Not implemented: patchRuleCallable()");
+  }
+
+  public OperationCallable<RemoveRuleSecurityPolicyRequest, Operation, Operation>
+      removeRuleOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: removeRuleOperationCallable()");
   }
 
   public UnaryCallable<RemoveRuleSecurityPolicyRequest, Operation> removeRuleCallable() {

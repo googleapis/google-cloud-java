@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.TargetGrpcProxiesStub;
@@ -44,7 +46,7 @@ import javax.annotation.Generated;
  * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
  *   String project = "project-309310695";
  *   String targetGrpcProxy = "targetGrpcProxy1045500511";
- *   Operation response = targetGrpcProxiesClient.delete(project, targetGrpcProxy);
+ *   TargetGrpcProxy response = targetGrpcProxiesClient.get(project, targetGrpcProxy);
  * }
  * }</pre>
  *
@@ -160,7 +162,7 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   String project = "project-309310695";
    *   String targetGrpcProxy = "targetGrpcProxy1045500511";
-   *   Operation response = targetGrpcProxiesClient.delete(project, targetGrpcProxy);
+   *   Operation response = targetGrpcProxiesClient.deleteAsync(project, targetGrpcProxy).get();
    * }
    * }</pre>
    *
@@ -168,13 +170,14 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * @param targetGrpcProxy Name of the TargetGrpcProxy resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String targetGrpcProxy) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String targetGrpcProxy) {
     DeleteTargetGrpcProxyRequest request =
         DeleteTargetGrpcProxyRequest.newBuilder()
             .setProject(project)
             .setTargetGrpcProxy(targetGrpcProxy)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -191,15 +194,44 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setTargetGrpcProxy("targetGrpcProxy1045500511")
    *           .build();
-   *   Operation response = targetGrpcProxiesClient.delete(request);
+   *   Operation response = targetGrpcProxiesClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteTargetGrpcProxyRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      DeleteTargetGrpcProxyRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified TargetGrpcProxy in the given scope
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
+   *   DeleteTargetGrpcProxyRequest request =
+   *       DeleteTargetGrpcProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetGrpcProxy("targetGrpcProxy1045500511")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       targetGrpcProxiesClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteTargetGrpcProxyRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -311,7 +343,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   String project = "project-309310695";
    *   TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
-   *   Operation response = targetGrpcProxiesClient.insert(project, targetGrpcProxyResource);
+   *   Operation response =
+   *       targetGrpcProxiesClient.insertAsync(project, targetGrpcProxyResource).get();
    * }
    * }</pre>
    *
@@ -319,13 +352,14 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * @param targetGrpcProxyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(String project, TargetGrpcProxy targetGrpcProxyResource) {
+  public final OperationFuture<Operation, Operation> insertAsync(
+      String project, TargetGrpcProxy targetGrpcProxyResource) {
     InsertTargetGrpcProxyRequest request =
         InsertTargetGrpcProxyRequest.newBuilder()
             .setProject(project)
             .setTargetGrpcProxyResource(targetGrpcProxyResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -343,15 +377,45 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setTargetGrpcProxyResource(TargetGrpcProxy.newBuilder().build())
    *           .build();
-   *   Operation response = targetGrpcProxiesClient.insert(request);
+   *   Operation response = targetGrpcProxiesClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertTargetGrpcProxyRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(
+      InsertTargetGrpcProxyRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a TargetGrpcProxy in the specified project in the given scope using the parameters that
+   * are included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
+   *   InsertTargetGrpcProxyRequest request =
+   *       InsertTargetGrpcProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetGrpcProxyResource(TargetGrpcProxy.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       targetGrpcProxiesClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertTargetGrpcProxyRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -512,7 +576,9 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    *   String targetGrpcProxy = "targetGrpcProxy1045500511";
    *   TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
    *   Operation response =
-   *       targetGrpcProxiesClient.patch(project, targetGrpcProxy, targetGrpcProxyResource);
+   *       targetGrpcProxiesClient
+   *           .patchAsync(project, targetGrpcProxy, targetGrpcProxyResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -521,7 +587,7 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * @param targetGrpcProxyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(
+  public final OperationFuture<Operation, Operation> patchAsync(
       String project, String targetGrpcProxy, TargetGrpcProxy targetGrpcProxyResource) {
     PatchTargetGrpcProxyRequest request =
         PatchTargetGrpcProxyRequest.newBuilder()
@@ -529,7 +595,7 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
             .setTargetGrpcProxy(targetGrpcProxy)
             .setTargetGrpcProxyResource(targetGrpcProxyResource)
             .build();
-    return patch(request);
+    return patchAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -548,15 +614,46 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    *           .setTargetGrpcProxy("targetGrpcProxy1045500511")
    *           .setTargetGrpcProxyResource(TargetGrpcProxy.newBuilder().build())
    *           .build();
-   *   Operation response = targetGrpcProxiesClient.patch(request);
+   *   Operation response = targetGrpcProxiesClient.patchAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(PatchTargetGrpcProxyRequest request) {
-    return patchCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> patchAsync(
+      PatchTargetGrpcProxyRequest request) {
+    return patchOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches the specified TargetGrpcProxy resource with the data included in the request. This
+   * method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
+   *   PatchTargetGrpcProxyRequest request =
+   *       PatchTargetGrpcProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetGrpcProxy("targetGrpcProxy1045500511")
+   *           .setTargetGrpcProxyResource(TargetGrpcProxy.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       targetGrpcProxiesClient.patchOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PatchTargetGrpcProxyRequest, Operation, Operation>
+      patchOperationCallable() {
+    return stub.patchOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

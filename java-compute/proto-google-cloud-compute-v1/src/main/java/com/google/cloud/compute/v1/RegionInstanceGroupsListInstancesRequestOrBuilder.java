@@ -28,11 +28,10 @@ public interface RegionInstanceGroupsListInstancesRequestOrBuilder
    *
    * <pre>
    * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+   * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
-   * </code>
+   * <code>optional string instance_state = 92223591;</code>
    *
    * @return Whether the instanceState field is set.
    */
@@ -42,30 +41,27 @@ public interface RegionInstanceGroupsListInstancesRequestOrBuilder
    *
    * <pre>
    * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+   * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
-   * </code>
+   * <code>optional string instance_state = 92223591;</code>
    *
-   * @return The enum numeric value on the wire for instanceState.
+   * @return The instanceState.
    */
-  int getInstanceStateValue();
+  java.lang.String getInstanceState();
   /**
    *
    *
    * <pre>
    * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+   * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
-   * </code>
+   * <code>optional string instance_state = 92223591;</code>
    *
-   * @return The instanceState.
+   * @return The bytes for instanceState.
    */
-  com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState
-      getInstanceState();
+  com.google.protobuf.ByteString getInstanceStateBytes();
 
   /**
    *
@@ -74,7 +70,7 @@ public interface RegionInstanceGroupsListInstancesRequestOrBuilder
    * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return Whether the portName field is set.
    */
@@ -86,7 +82,7 @@ public interface RegionInstanceGroupsListInstancesRequestOrBuilder
    * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return The portName.
    */
@@ -98,7 +94,7 @@ public interface RegionInstanceGroupsListInstancesRequestOrBuilder
    * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return The bytes for portName.
    */

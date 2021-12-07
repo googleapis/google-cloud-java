@@ -30,7 +30,8 @@ public interface CustomerEncryptionKeyProtectedDiskOrBuilder
    * Decrypts data associated with the disk with a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+   * </code>
    *
    * @return Whether the diskEncryptionKey field is set.
    */
@@ -42,7 +43,8 @@ public interface CustomerEncryptionKeyProtectedDiskOrBuilder
    * Decrypts data associated with the disk with a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+   * </code>
    *
    * @return The diskEncryptionKey.
    */
@@ -54,7 +56,8 @@ public interface CustomerEncryptionKeyProtectedDiskOrBuilder
    * Decrypts data associated with the disk with a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+   * </code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder getDiskEncryptionKeyOrBuilder();
 
@@ -62,10 +65,10 @@ public interface CustomerEncryptionKeyProtectedDiskOrBuilder
    *
    *
    * <pre>
-   * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks.
+   * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks. For example: "source": "/compute/v1/projects/project_id/zones/zone/disks/ disk_name
    * </pre>
    *
-   * <code>string source = 177235995;</code>
+   * <code>optional string source = 177235995;</code>
    *
    * @return Whether the source field is set.
    */
@@ -74,10 +77,10 @@ public interface CustomerEncryptionKeyProtectedDiskOrBuilder
    *
    *
    * <pre>
-   * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks.
+   * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks. For example: "source": "/compute/v1/projects/project_id/zones/zone/disks/ disk_name
    * </pre>
    *
-   * <code>string source = 177235995;</code>
+   * <code>optional string source = 177235995;</code>
    *
    * @return The source.
    */
@@ -86,10 +89,10 @@ public interface CustomerEncryptionKeyProtectedDiskOrBuilder
    *
    *
    * <pre>
-   * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks.
+   * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks. For example: "source": "/compute/v1/projects/project_id/zones/zone/disks/ disk_name
    * </pre>
    *
-   * <code>string source = 177235995;</code>
+   * <code>optional string source = 177235995;</code>
    *
    * @return The bytes for source.
    */

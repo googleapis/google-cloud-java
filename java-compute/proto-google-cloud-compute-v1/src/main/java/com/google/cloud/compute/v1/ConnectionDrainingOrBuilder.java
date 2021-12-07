@@ -30,7 +30,7 @@ public interface ConnectionDrainingOrBuilder
    * Configures a duration timeout for existing requests on a removed backend instance. For supported load balancers and protocols, as described in Enabling connection draining.
    * </pre>
    *
-   * <code>int32 draining_timeout_sec = 225127070;</code>
+   * <code>optional int32 draining_timeout_sec = 225127070;</code>
    *
    * @return Whether the drainingTimeoutSec field is set.
    */
@@ -42,7 +42,7 @@ public interface ConnectionDrainingOrBuilder
    * Configures a duration timeout for existing requests on a removed backend instance. For supported load balancers and protocols, as described in Enabling connection draining.
    * </pre>
    *
-   * <code>int32 draining_timeout_sec = 225127070;</code>
+   * <code>optional int32 draining_timeout_sec = 225127070;</code>
    *
    * @return The drainingTimeoutSec.
    */

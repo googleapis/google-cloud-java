@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Custom fields. These can be used to create a counter with arbitrary field/value pairs. See: go/rpcsp-custom-fields.
+ * This is deprecated and has no effect. Do not use.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.LogConfigCounterOptionsCustomField}
@@ -128,10 +128,10 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
    *
    *
    * <pre>
-   * Name is the field name.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -143,10 +143,10 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
    *
    *
    * <pre>
-   * Name is the field name.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -166,10 +166,10 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
    *
    *
    * <pre>
-   * Name is the field name.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -192,10 +192,10 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
    *
    *
    * <pre>
-   * Value is the field value. It is important that in contrast to the CounterOptions.field, the value here is a constant that is not derived from the IAMContext.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return Whether the value field is set.
    */
@@ -207,10 +207,10 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
    *
    *
    * <pre>
-   * Value is the field value. It is important that in contrast to the CounterOptions.field, the value here is a constant that is not derived from the IAMContext.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return The value.
    */
@@ -230,10 +230,10 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
    *
    *
    * <pre>
-   * Value is the field value. It is important that in contrast to the CounterOptions.field, the value here is a constant that is not derived from the IAMContext.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return The bytes for value.
    */
@@ -433,7 +433,7 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
    *
    *
    * <pre>
-   * Custom fields. These can be used to create a counter with arbitrary field/value pairs. See: go/rpcsp-custom-fields.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.LogConfigCounterOptionsCustomField}
@@ -616,10 +616,10 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * Name is the field name.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -630,10 +630,10 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * Name is the field name.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -652,10 +652,10 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * Name is the field name.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -674,10 +674,10 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * Name is the field name.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -695,10 +695,10 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * Name is the field name.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -712,10 +712,10 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * Name is the field name.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -736,10 +736,10 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * Value is the field value. It is important that in contrast to the CounterOptions.field, the value here is a constant that is not derived from the IAMContext.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @return Whether the value field is set.
      */
@@ -750,10 +750,10 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * Value is the field value. It is important that in contrast to the CounterOptions.field, the value here is a constant that is not derived from the IAMContext.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @return The value.
      */
@@ -772,10 +772,10 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * Value is the field value. It is important that in contrast to the CounterOptions.field, the value here is a constant that is not derived from the IAMContext.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @return The bytes for value.
      */
@@ -794,10 +794,10 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * Value is the field value. It is important that in contrast to the CounterOptions.field, the value here is a constant that is not derived from the IAMContext.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @param value The value to set.
      * @return This builder for chaining.
@@ -815,10 +815,10 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * Value is the field value. It is important that in contrast to the CounterOptions.field, the value here is a constant that is not derived from the IAMContext.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @return This builder for chaining.
      */
@@ -832,10 +832,10 @@ public final class LogConfigCounterOptionsCustomField extends com.google.protobu
      *
      *
      * <pre>
-     * Value is the field value. It is important that in contrast to the CounterOptions.field, the value here is a constant that is not derived from the IAMContext.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @param value The bytes for value to set.
      * @return This builder for chaining.

@@ -26,11 +26,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest;
 import com.google.cloud.compute.v1.DeleteGlobalNetworkEndpointGroupRequest;
@@ -43,6 +45,8 @@ import com.google.cloud.compute.v1.NetworkEndpointGroup;
 import com.google.cloud.compute.v1.NetworkEndpointGroupList;
 import com.google.cloud.compute.v1.NetworkEndpointGroupsListNetworkEndpoints;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -60,6 +64,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpointGroupsStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<
           AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
       attachNetworkEndpointsMethodDescriptor =
@@ -105,7 +112,21 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest request,
+                      Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<DeleteGlobalNetworkEndpointGroupRequest, Operation>
@@ -141,7 +162,20 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteGlobalNetworkEndpointGroupRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -189,7 +223,21 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest request,
+                      Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -224,6 +272,7 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
               .setResponseParser(
                   ProtoMessageResponseParser.<NetworkEndpointGroup>newBuilder()
                       .setDefaultInstance(NetworkEndpointGroup.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -263,7 +312,20 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertGlobalNetworkEndpointGroupRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -315,6 +377,7 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
               .setResponseParser(
                   ProtoMessageResponseParser.<NetworkEndpointGroupList>newBuilder()
                       .setDefaultInstance(NetworkEndpointGroupList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -377,17 +440,28 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                   ProtoMessageResponseParser.<NetworkEndpointGroupsListNetworkEndpoints>newBuilder()
                       .setDefaultInstance(
                           NetworkEndpointGroupsListNetworkEndpoints.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
   private final UnaryCallable<AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
       attachNetworkEndpointsCallable;
+  private final OperationCallable<
+          AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      attachNetworkEndpointsOperationCallable;
   private final UnaryCallable<DeleteGlobalNetworkEndpointGroupRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
       detachNetworkEndpointsCallable;
+  private final OperationCallable<
+          DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      detachNetworkEndpointsOperationCallable;
   private final UnaryCallable<GetGlobalNetworkEndpointGroupRequest, NetworkEndpointGroup>
       getCallable;
   private final UnaryCallable<InsertGlobalNetworkEndpointGroupRequest, Operation> insertCallable;
+  private final OperationCallable<InsertGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListGlobalNetworkEndpointGroupsRequest, NetworkEndpointGroupList>
       listCallable;
   private final UnaryCallable<ListGlobalNetworkEndpointGroupsRequest, ListPagedResponse>
@@ -401,6 +475,7 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
       listNetworkEndpointsPagedCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonGlobalNetworkEndpointGroupsStub create(
@@ -444,40 +519,48 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
         attachNetworkEndpointsTransportSettings =
             HttpJsonCallSettings
                 .<AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>newBuilder()
                 .setMethodDescriptor(attachNetworkEndpointsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeleteGlobalNetworkEndpointGroupRequest, Operation>
         deleteTransportSettings =
             HttpJsonCallSettings.<DeleteGlobalNetworkEndpointGroupRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
         detachNetworkEndpointsTransportSettings =
             HttpJsonCallSettings
                 .<DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>newBuilder()
                 .setMethodDescriptor(detachNetworkEndpointsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<GetGlobalNetworkEndpointGroupRequest, NetworkEndpointGroup>
         getTransportSettings =
             HttpJsonCallSettings
                 .<GetGlobalNetworkEndpointGroupRequest, NetworkEndpointGroup>newBuilder()
                 .setMethodDescriptor(getMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<InsertGlobalNetworkEndpointGroupRequest, Operation>
         insertTransportSettings =
             HttpJsonCallSettings.<InsertGlobalNetworkEndpointGroupRequest, Operation>newBuilder()
                 .setMethodDescriptor(insertMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<ListGlobalNetworkEndpointGroupsRequest, NetworkEndpointGroupList>
         listTransportSettings =
             HttpJsonCallSettings
                 .<ListGlobalNetworkEndpointGroupsRequest, NetworkEndpointGroupList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<
             ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest,
@@ -488,6 +571,7 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                     NetworkEndpointGroupsListNetworkEndpoints>
                     newBuilder()
                 .setMethodDescriptor(listNetworkEndpointsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.attachNetworkEndpointsCallable =
@@ -495,20 +579,44 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
             attachNetworkEndpointsTransportSettings,
             settings.attachNetworkEndpointsSettings(),
             clientContext);
+    this.attachNetworkEndpointsOperationCallable =
+        callableFactory.createOperationCallable(
+            attachNetworkEndpointsTransportSettings,
+            settings.attachNetworkEndpointsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.detachNetworkEndpointsCallable =
         callableFactory.createUnaryCallable(
             detachNetworkEndpointsTransportSettings,
             settings.detachNetworkEndpointsSettings(),
             clientContext);
+    this.detachNetworkEndpointsOperationCallable =
+        callableFactory.createOperationCallable(
+            detachNetworkEndpointsTransportSettings,
+            settings.detachNetworkEndpointsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -550,14 +658,34 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
   }
 
   @Override
+  public OperationCallable<
+          AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      attachNetworkEndpointsOperationCallable() {
+    return attachNetworkEndpointsOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteGlobalNetworkEndpointGroupRequest, Operation> deleteCallable() {
     return deleteCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
   }
 
   @Override
   public UnaryCallable<DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
       detachNetworkEndpointsCallable() {
     return detachNetworkEndpointsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      detachNetworkEndpointsOperationCallable() {
+    return detachNetworkEndpointsOperationCallable;
   }
 
   @Override
@@ -568,6 +696,12 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
   @Override
   public UnaryCallable<InsertGlobalNetworkEndpointGroupRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override

@@ -168,13 +168,10 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
    *
    *
    * <pre>
-   * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
-   * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
-   * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
-   * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+   * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    * </pre>
    *
-   * <code>string filter = 336120696;</code>
+   * <code>optional string filter = 336120696;</code>
    *
    * @return Whether the filter field is set.
    */
@@ -186,13 +183,10 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
    *
    *
    * <pre>
-   * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
-   * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
-   * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
-   * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+   * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    * </pre>
    *
-   * <code>string filter = 336120696;</code>
+   * <code>optional string filter = 336120696;</code>
    *
    * @return The filter.
    */
@@ -212,13 +206,10 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
    *
    *
    * <pre>
-   * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
-   * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
-   * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
-   * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+   * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    * </pre>
    *
-   * <code>string filter = 336120696;</code>
+   * <code>optional string filter = 336120696;</code>
    *
    * @return The bytes for filter.
    */
@@ -244,7 +235,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
    * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
    * </pre>
    *
-   * <code>uint32 max_results = 54715419;</code>
+   * <code>optional uint32 max_results = 54715419;</code>
    *
    * @return Whether the maxResults field is set.
    */
@@ -259,7 +250,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
    * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
    * </pre>
    *
-   * <code>uint32 max_results = 54715419;</code>
+   * <code>optional uint32 max_results = 54715419;</code>
    *
    * @return The maxResults.
    */
@@ -325,12 +316,10 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
    *
    *
    * <pre>
-   * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
-   * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
-   * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+   * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
    * </pre>
    *
-   * <code>string order_by = 160562920;</code>
+   * <code>optional string order_by = 160562920;</code>
    *
    * @return Whether the orderBy field is set.
    */
@@ -342,12 +331,10 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
    *
    *
    * <pre>
-   * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
-   * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
-   * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+   * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
    * </pre>
    *
-   * <code>string order_by = 160562920;</code>
+   * <code>optional string order_by = 160562920;</code>
    *
    * @return The orderBy.
    */
@@ -367,12 +354,10 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
    *
    *
    * <pre>
-   * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
-   * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
-   * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+   * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
    * </pre>
    *
-   * <code>string order_by = 160562920;</code>
+   * <code>optional string order_by = 160562920;</code>
    *
    * @return The bytes for orderBy.
    */
@@ -398,7 +383,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
    * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
    * </pre>
    *
-   * <code>string page_token = 19994697;</code>
+   * <code>optional string page_token = 19994697;</code>
    *
    * @return Whether the pageToken field is set.
    */
@@ -413,7 +398,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
    * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
    * </pre>
    *
-   * <code>string page_token = 19994697;</code>
+   * <code>optional string page_token = 19994697;</code>
    *
    * @return The pageToken.
    */
@@ -436,7 +421,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
    * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
    * </pre>
    *
-   * <code>string page_token = 19994697;</code>
+   * <code>optional string page_token = 19994697;</code>
    *
    * @return The bytes for pageToken.
    */
@@ -511,7 +496,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
    * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
    * </pre>
    *
-   * <code>bool return_partial_success = 517198390;</code>
+   * <code>optional bool return_partial_success = 517198390;</code>
    *
    * @return Whether the returnPartialSuccess field is set.
    */
@@ -526,7 +511,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
    * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
    * </pre>
    *
-   * <code>bool return_partial_success = 517198390;</code>
+   * <code>optional bool return_partial_success = 517198390;</code>
    *
    * @return The returnPartialSuccess.
    */
@@ -558,13 +543,13 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 160562920, orderBy_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 336120696, filter_);
     }
-    if (!getNetworkEndpointGroupBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkEndpointGroup_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 433907078, networkEndpointGroup_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
@@ -588,13 +573,13 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(160562920, orderBy_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(336120696, filter_);
     }
-    if (!getNetworkEndpointGroupBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkEndpointGroup_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               433907078, networkEndpointGroup_);
@@ -1031,13 +1016,10 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      *
      *
      * <pre>
-     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
-     * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
-     * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
-     * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
      * @return Whether the filter field is set.
      */
@@ -1048,13 +1030,10 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      *
      *
      * <pre>
-     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
-     * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
-     * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
-     * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
      * @return The filter.
      */
@@ -1073,13 +1052,10 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      *
      *
      * <pre>
-     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
-     * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
-     * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
-     * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
      * @return The bytes for filter.
      */
@@ -1098,13 +1074,10 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      *
      *
      * <pre>
-     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
-     * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
-     * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
-     * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -1122,13 +1095,10 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      *
      *
      * <pre>
-     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
-     * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
-     * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
-     * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
      * @return This builder for chaining.
      */
@@ -1142,13 +1112,10 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      *
      *
      * <pre>
-     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
-     * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
-     * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
-     * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>optional string filter = 336120696;</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -1172,7 +1139,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
      * </pre>
      *
-     * <code>uint32 max_results = 54715419;</code>
+     * <code>optional uint32 max_results = 54715419;</code>
      *
      * @return Whether the maxResults field is set.
      */
@@ -1187,7 +1154,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
      * </pre>
      *
-     * <code>uint32 max_results = 54715419;</code>
+     * <code>optional uint32 max_results = 54715419;</code>
      *
      * @return The maxResults.
      */
@@ -1202,7 +1169,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
      * </pre>
      *
-     * <code>uint32 max_results = 54715419;</code>
+     * <code>optional uint32 max_results = 54715419;</code>
      *
      * @param value The maxResults to set.
      * @return This builder for chaining.
@@ -1220,7 +1187,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
      * </pre>
      *
-     * <code>uint32 max_results = 54715419;</code>
+     * <code>optional uint32 max_results = 54715419;</code>
      *
      * @return This builder for chaining.
      */
@@ -1347,12 +1314,10 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      *
      *
      * <pre>
-     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
-     * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
-     * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      * </pre>
      *
-     * <code>string order_by = 160562920;</code>
+     * <code>optional string order_by = 160562920;</code>
      *
      * @return Whether the orderBy field is set.
      */
@@ -1363,12 +1328,10 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      *
      *
      * <pre>
-     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
-     * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
-     * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      * </pre>
      *
-     * <code>string order_by = 160562920;</code>
+     * <code>optional string order_by = 160562920;</code>
      *
      * @return The orderBy.
      */
@@ -1387,12 +1350,10 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      *
      *
      * <pre>
-     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
-     * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
-     * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      * </pre>
      *
-     * <code>string order_by = 160562920;</code>
+     * <code>optional string order_by = 160562920;</code>
      *
      * @return The bytes for orderBy.
      */
@@ -1411,12 +1372,10 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      *
      *
      * <pre>
-     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
-     * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
-     * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      * </pre>
      *
-     * <code>string order_by = 160562920;</code>
+     * <code>optional string order_by = 160562920;</code>
      *
      * @param value The orderBy to set.
      * @return This builder for chaining.
@@ -1434,12 +1393,10 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      *
      *
      * <pre>
-     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
-     * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
-     * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      * </pre>
      *
-     * <code>string order_by = 160562920;</code>
+     * <code>optional string order_by = 160562920;</code>
      *
      * @return This builder for chaining.
      */
@@ -1453,12 +1410,10 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      *
      *
      * <pre>
-     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
-     * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
-     * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      * </pre>
      *
-     * <code>string order_by = 160562920;</code>
+     * <code>optional string order_by = 160562920;</code>
      *
      * @param value The bytes for orderBy to set.
      * @return This builder for chaining.
@@ -1482,7 +1437,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
      * </pre>
      *
-     * <code>string page_token = 19994697;</code>
+     * <code>optional string page_token = 19994697;</code>
      *
      * @return Whether the pageToken field is set.
      */
@@ -1496,7 +1451,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
      * </pre>
      *
-     * <code>string page_token = 19994697;</code>
+     * <code>optional string page_token = 19994697;</code>
      *
      * @return The pageToken.
      */
@@ -1518,7 +1473,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
      * </pre>
      *
-     * <code>string page_token = 19994697;</code>
+     * <code>optional string page_token = 19994697;</code>
      *
      * @return The bytes for pageToken.
      */
@@ -1540,7 +1495,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
      * </pre>
      *
-     * <code>string page_token = 19994697;</code>
+     * <code>optional string page_token = 19994697;</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -1561,7 +1516,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
      * </pre>
      *
-     * <code>string page_token = 19994697;</code>
+     * <code>optional string page_token = 19994697;</code>
      *
      * @return This builder for chaining.
      */
@@ -1578,7 +1533,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
      * </pre>
      *
-     * <code>string page_token = 19994697;</code>
+     * <code>optional string page_token = 19994697;</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
@@ -1708,7 +1663,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
      * </pre>
      *
-     * <code>bool return_partial_success = 517198390;</code>
+     * <code>optional bool return_partial_success = 517198390;</code>
      *
      * @return Whether the returnPartialSuccess field is set.
      */
@@ -1723,7 +1678,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
      * </pre>
      *
-     * <code>bool return_partial_success = 517198390;</code>
+     * <code>optional bool return_partial_success = 517198390;</code>
      *
      * @return The returnPartialSuccess.
      */
@@ -1738,7 +1693,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
      * </pre>
      *
-     * <code>bool return_partial_success = 517198390;</code>
+     * <code>optional bool return_partial_success = 517198390;</code>
      *
      * @param value The returnPartialSuccess to set.
      * @return This builder for chaining.
@@ -1756,7 +1711,7 @@ public final class ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest
      * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
      * </pre>
      *
-     * <code>bool return_partial_success = 517198390;</code>
+     * <code>optional bool return_partial_success = 517198390;</code>
      *
      * @return This builder for chaining.
      */

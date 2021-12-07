@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * A shielded Instance identity entry.
+ * A Shielded Instance Identity.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.ShieldedInstanceIdentity}
@@ -156,7 +156,9 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
+   * </code>
    *
    * @return Whether the encryptionKey field is set.
    */
@@ -171,7 +173,9 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
+   * </code>
    *
    * @return The encryptionKey.
    */
@@ -188,7 +192,9 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ShieldedInstanceIdentityEntryOrBuilder
@@ -207,7 +213,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -222,7 +228,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -245,7 +251,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -271,7 +277,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;</code>
+   * <code>optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;
+   * </code>
    *
    * @return Whether the signingKey field is set.
    */
@@ -286,7 +293,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;</code>
+   * <code>optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;
+   * </code>
    *
    * @return The signingKey.
    */
@@ -303,7 +311,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;</code>
+   * <code>optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ShieldedInstanceIdentityEntryOrBuilder
@@ -510,7 +519,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A shielded Instance identity entry.
+   * A Shielded Instance Identity.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.ShieldedInstanceIdentity}
@@ -724,7 +733,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
      * </code>
      *
      * @return Whether the encryptionKey field is set.
@@ -739,7 +749,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
      * </code>
      *
      * @return The encryptionKey.
@@ -760,7 +771,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
      * </code>
      */
     public Builder setEncryptionKey(
@@ -784,7 +796,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
      * </code>
      */
     public Builder setEncryptionKey(
@@ -805,7 +818,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
      * </code>
      */
     public Builder mergeEncryptionKey(
@@ -836,7 +850,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
      * </code>
      */
     public Builder clearEncryptionKey() {
@@ -856,7 +871,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
      * </code>
      */
     public com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder
@@ -872,7 +888,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
      * </code>
      */
     public com.google.cloud.compute.v1.ShieldedInstanceIdentityEntryOrBuilder
@@ -892,7 +909,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -920,7 +938,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -934,7 +952,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -956,7 +974,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -978,7 +996,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -999,7 +1017,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -1016,7 +1034,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -1045,7 +1063,9 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;
+     * </code>
      *
      * @return Whether the signingKey field is set.
      */
@@ -1059,7 +1079,9 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;
+     * </code>
      *
      * @return The signingKey.
      */
@@ -1079,7 +1101,9 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;
+     * </code>
      */
     public Builder setSigningKey(com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry value) {
       if (signingKeyBuilder_ == null) {
@@ -1101,7 +1125,9 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;
+     * </code>
      */
     public Builder setSigningKey(
         com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder builderForValue) {
@@ -1121,7 +1147,9 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;
+     * </code>
      */
     public Builder mergeSigningKey(
         com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry value) {
@@ -1151,7 +1179,9 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;
+     * </code>
      */
     public Builder clearSigningKey() {
       if (signingKeyBuilder_ == null) {
@@ -1170,7 +1200,9 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;
+     * </code>
      */
     public com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder
         getSigningKeyBuilder() {
@@ -1185,7 +1217,9 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;
+     * </code>
      */
     public com.google.cloud.compute.v1.ShieldedInstanceIdentityEntryOrBuilder
         getSigningKeyOrBuilder() {
@@ -1204,7 +1238,9 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry,

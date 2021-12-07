@@ -27,12 +27,14 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonBackendBucketsStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -86,7 +88,7 @@ public class BackendBucketsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -97,6 +99,7 @@ public class BackendBucketsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -110,7 +113,8 @@ public class BackendBucketsClientTest {
     String backendBucket = "backendBucket713751966";
     SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
 
-    Operation actualResponse = client.addSignedUrlKey(project, backendBucket, signedUrlKeyResource);
+    Operation actualResponse =
+        client.addSignedUrlKeyAsync(project, backendBucket, signedUrlKeyResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -139,10 +143,9 @@ public class BackendBucketsClientTest {
       String project = "project-309310695";
       String backendBucket = "backendBucket713751966";
       SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
-      client.addSignedUrlKey(project, backendBucket, signedUrlKeyResource);
+      client.addSignedUrlKeyAsync(project, backendBucket, signedUrlKeyResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -156,7 +159,7 @@ public class BackendBucketsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -167,6 +170,7 @@ public class BackendBucketsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -179,7 +183,7 @@ public class BackendBucketsClientTest {
     String project = "project-309310695";
     String backendBucket = "backendBucket713751966";
 
-    Operation actualResponse = client.delete(project, backendBucket);
+    Operation actualResponse = client.deleteAsync(project, backendBucket).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -207,10 +211,9 @@ public class BackendBucketsClientTest {
     try {
       String project = "project-309310695";
       String backendBucket = "backendBucket713751966";
-      client.delete(project, backendBucket);
+      client.deleteAsync(project, backendBucket).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -224,7 +227,7 @@ public class BackendBucketsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -235,6 +238,7 @@ public class BackendBucketsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -248,7 +252,8 @@ public class BackendBucketsClientTest {
     String backendBucket = "backendBucket713751966";
     String keyName = "keyName-815643254";
 
-    Operation actualResponse = client.deleteSignedUrlKey(project, backendBucket, keyName);
+    Operation actualResponse =
+        client.deleteSignedUrlKeyAsync(project, backendBucket, keyName).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -277,10 +282,9 @@ public class BackendBucketsClientTest {
       String project = "project-309310695";
       String backendBucket = "backendBucket713751966";
       String keyName = "keyName-815643254";
-      client.deleteSignedUrlKey(project, backendBucket, keyName);
+      client.deleteSignedUrlKeyAsync(project, backendBucket, keyName).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -349,7 +353,7 @@ public class BackendBucketsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -360,6 +364,7 @@ public class BackendBucketsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -372,7 +377,7 @@ public class BackendBucketsClientTest {
     String project = "project-309310695";
     BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, backendBucketResource);
+    Operation actualResponse = client.insertAsync(project, backendBucketResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -400,10 +405,9 @@ public class BackendBucketsClientTest {
     try {
       String project = "project-309310695";
       BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-      client.insert(project, backendBucketResource);
+      client.insertAsync(project, backendBucketResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -467,7 +471,7 @@ public class BackendBucketsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -478,6 +482,7 @@ public class BackendBucketsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -491,7 +496,8 @@ public class BackendBucketsClientTest {
     String backendBucket = "backendBucket713751966";
     BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
 
-    Operation actualResponse = client.patch(project, backendBucket, backendBucketResource);
+    Operation actualResponse =
+        client.patchAsync(project, backendBucket, backendBucketResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -520,10 +526,9 @@ public class BackendBucketsClientTest {
       String project = "project-309310695";
       String backendBucket = "backendBucket713751966";
       BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-      client.patch(project, backendBucket, backendBucketResource);
+      client.patchAsync(project, backendBucket, backendBucketResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -537,7 +542,7 @@ public class BackendBucketsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -548,6 +553,7 @@ public class BackendBucketsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -561,7 +567,8 @@ public class BackendBucketsClientTest {
     String backendBucket = "backendBucket713751966";
     BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
 
-    Operation actualResponse = client.update(project, backendBucket, backendBucketResource);
+    Operation actualResponse =
+        client.updateAsync(project, backendBucket, backendBucketResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -590,10 +597,9 @@ public class BackendBucketsClientTest {
       String project = "project-309310695";
       String backendBucket = "backendBucket713751966";
       BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
-      client.update(project, backendBucket, backendBucketResource);
+      client.updateAsync(project, backendBucket, backendBucketResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 }

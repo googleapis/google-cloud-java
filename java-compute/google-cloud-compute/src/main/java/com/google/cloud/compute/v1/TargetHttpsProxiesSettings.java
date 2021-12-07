@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -50,16 +51,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * TargetHttpsProxiesSettings.Builder targetHttpsProxiesSettingsBuilder =
  *     TargetHttpsProxiesSettings.newBuilder();
  * targetHttpsProxiesSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         targetHttpsProxiesSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -85,6 +86,12 @@ public class TargetHttpsProxiesSettings extends ClientSettings<TargetHttpsProxie
     return ((TargetHttpsProxiesStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteTargetHttpsProxyRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((TargetHttpsProxiesStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetTargetHttpsProxyRequest, TargetHttpsProxy> getSettings() {
     return ((TargetHttpsProxiesStubSettings) getStubSettings()).getSettings();
@@ -93,6 +100,12 @@ public class TargetHttpsProxiesSettings extends ClientSettings<TargetHttpsProxie
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertTargetHttpsProxyRequest, Operation> insertSettings() {
     return ((TargetHttpsProxiesStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertTargetHttpsProxyRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((TargetHttpsProxiesStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -106,10 +119,22 @@ public class TargetHttpsProxiesSettings extends ClientSettings<TargetHttpsProxie
     return ((TargetHttpsProxiesStubSettings) getStubSettings()).patchSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchTargetHttpsProxyRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((TargetHttpsProxiesStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setQuicOverride. */
   public UnaryCallSettings<SetQuicOverrideTargetHttpsProxyRequest, Operation>
       setQuicOverrideSettings() {
     return ((TargetHttpsProxiesStubSettings) getStubSettings()).setQuicOverrideSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setQuicOverride. */
+  public OperationCallSettings<SetQuicOverrideTargetHttpsProxyRequest, Operation, Operation>
+      setQuicOverrideOperationSettings() {
+    return ((TargetHttpsProxiesStubSettings) getStubSettings()).setQuicOverrideOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to setSslCertificates. */
@@ -118,14 +143,33 @@ public class TargetHttpsProxiesSettings extends ClientSettings<TargetHttpsProxie
     return ((TargetHttpsProxiesStubSettings) getStubSettings()).setSslCertificatesSettings();
   }
 
+  /** Returns the object with the settings used for calls to setSslCertificates. */
+  public OperationCallSettings<SetSslCertificatesTargetHttpsProxyRequest, Operation, Operation>
+      setSslCertificatesOperationSettings() {
+    return ((TargetHttpsProxiesStubSettings) getStubSettings())
+        .setSslCertificatesOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setSslPolicy. */
   public UnaryCallSettings<SetSslPolicyTargetHttpsProxyRequest, Operation> setSslPolicySettings() {
     return ((TargetHttpsProxiesStubSettings) getStubSettings()).setSslPolicySettings();
   }
 
+  /** Returns the object with the settings used for calls to setSslPolicy. */
+  public OperationCallSettings<SetSslPolicyTargetHttpsProxyRequest, Operation, Operation>
+      setSslPolicyOperationSettings() {
+    return ((TargetHttpsProxiesStubSettings) getStubSettings()).setSslPolicyOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setUrlMap. */
   public UnaryCallSettings<SetUrlMapTargetHttpsProxyRequest, Operation> setUrlMapSettings() {
     return ((TargetHttpsProxiesStubSettings) getStubSettings()).setUrlMapSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setUrlMap. */
+  public OperationCallSettings<SetUrlMapTargetHttpsProxyRequest, Operation, Operation>
+      setUrlMapOperationSettings() {
+    return ((TargetHttpsProxiesStubSettings) getStubSettings()).setUrlMapOperationSettings();
   }
 
   public static final TargetHttpsProxiesSettings create(TargetHttpsProxiesStubSettings stub)
@@ -240,6 +284,12 @@ public class TargetHttpsProxiesSettings extends ClientSettings<TargetHttpsProxie
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteTargetHttpsProxyRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetTargetHttpsProxyRequest, TargetHttpsProxy> getSettings() {
       return getStubSettingsBuilder().getSettings();
@@ -248,6 +298,12 @@ public class TargetHttpsProxiesSettings extends ClientSettings<TargetHttpsProxie
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertTargetHttpsProxyRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertTargetHttpsProxyRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -262,10 +318,23 @@ public class TargetHttpsProxiesSettings extends ClientSettings<TargetHttpsProxie
       return getStubSettingsBuilder().patchSettings();
     }
 
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchTargetHttpsProxyRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setQuicOverride. */
     public UnaryCallSettings.Builder<SetQuicOverrideTargetHttpsProxyRequest, Operation>
         setQuicOverrideSettings() {
       return getStubSettingsBuilder().setQuicOverrideSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setQuicOverride. */
+    public OperationCallSettings.Builder<
+            SetQuicOverrideTargetHttpsProxyRequest, Operation, Operation>
+        setQuicOverrideOperationSettings() {
+      return getStubSettingsBuilder().setQuicOverrideOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setSslCertificates. */
@@ -274,16 +343,35 @@ public class TargetHttpsProxiesSettings extends ClientSettings<TargetHttpsProxie
       return getStubSettingsBuilder().setSslCertificatesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to setSslCertificates. */
+    public OperationCallSettings.Builder<
+            SetSslCertificatesTargetHttpsProxyRequest, Operation, Operation>
+        setSslCertificatesOperationSettings() {
+      return getStubSettingsBuilder().setSslCertificatesOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setSslPolicy. */
     public UnaryCallSettings.Builder<SetSslPolicyTargetHttpsProxyRequest, Operation>
         setSslPolicySettings() {
       return getStubSettingsBuilder().setSslPolicySettings();
     }
 
+    /** Returns the builder for the settings used for calls to setSslPolicy. */
+    public OperationCallSettings.Builder<SetSslPolicyTargetHttpsProxyRequest, Operation, Operation>
+        setSslPolicyOperationSettings() {
+      return getStubSettingsBuilder().setSslPolicyOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setUrlMap. */
     public UnaryCallSettings.Builder<SetUrlMapTargetHttpsProxyRequest, Operation>
         setUrlMapSettings() {
       return getStubSettingsBuilder().setUrlMapSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setUrlMap. */
+    public OperationCallSettings.Builder<SetUrlMapTargetHttpsProxyRequest, Operation, Operation>
+        setUrlMapOperationSettings() {
+      return getStubSettingsBuilder().setUrlMapOperationSettings();
     }
 
     @Override

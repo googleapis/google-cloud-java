@@ -30,7 +30,7 @@ public interface VpnGatewayStatusTunnelOrBuilder
    * The VPN gateway interface this VPN tunnel is associated with.
    * </pre>
    *
-   * <code>uint32 local_gateway_interface = 158764330;</code>
+   * <code>optional uint32 local_gateway_interface = 158764330;</code>
    *
    * @return Whether the localGatewayInterface field is set.
    */
@@ -42,7 +42,7 @@ public interface VpnGatewayStatusTunnelOrBuilder
    * The VPN gateway interface this VPN tunnel is associated with.
    * </pre>
    *
-   * <code>uint32 local_gateway_interface = 158764330;</code>
+   * <code>optional uint32 local_gateway_interface = 158764330;</code>
    *
    * @return The localGatewayInterface.
    */
@@ -55,7 +55,7 @@ public interface VpnGatewayStatusTunnelOrBuilder
    * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or GCP VPN gateway.
    * </pre>
    *
-   * <code>uint32 peer_gateway_interface = 214380385;</code>
+   * <code>optional uint32 peer_gateway_interface = 214380385;</code>
    *
    * @return Whether the peerGatewayInterface field is set.
    */
@@ -67,7 +67,7 @@ public interface VpnGatewayStatusTunnelOrBuilder
    * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or GCP VPN gateway.
    * </pre>
    *
-   * <code>uint32 peer_gateway_interface = 214380385;</code>
+   * <code>optional uint32 peer_gateway_interface = 214380385;</code>
    *
    * @return The peerGatewayInterface.
    */
@@ -80,7 +80,7 @@ public interface VpnGatewayStatusTunnelOrBuilder
    * URL reference to the VPN tunnel.
    * </pre>
    *
-   * <code>string tunnel_url = 78975256;</code>
+   * <code>optional string tunnel_url = 78975256;</code>
    *
    * @return Whether the tunnelUrl field is set.
    */
@@ -92,7 +92,7 @@ public interface VpnGatewayStatusTunnelOrBuilder
    * URL reference to the VPN tunnel.
    * </pre>
    *
-   * <code>string tunnel_url = 78975256;</code>
+   * <code>optional string tunnel_url = 78975256;</code>
    *
    * @return The tunnelUrl.
    */
@@ -104,7 +104,7 @@ public interface VpnGatewayStatusTunnelOrBuilder
    * URL reference to the VPN tunnel.
    * </pre>
    *
-   * <code>string tunnel_url = 78975256;</code>
+   * <code>optional string tunnel_url = 78975256;</code>
    *
    * @return The bytes for tunnelUrl.
    */

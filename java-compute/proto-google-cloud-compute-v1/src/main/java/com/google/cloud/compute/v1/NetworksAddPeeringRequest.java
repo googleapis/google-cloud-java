@@ -151,7 +151,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
    * This field will be deprecated soon. Use exchange_subnet_routes in network_peering instead. Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
    * </pre>
    *
-   * <code>bool auto_create_routes = 57454941;</code>
+   * <code>optional bool auto_create_routes = 57454941;</code>
    *
    * @return Whether the autoCreateRoutes field is set.
    */
@@ -166,7 +166,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
    * This field will be deprecated soon. Use exchange_subnet_routes in network_peering instead. Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
    * </pre>
    *
-   * <code>bool auto_create_routes = 57454941;</code>
+   * <code>optional bool auto_create_routes = 57454941;</code>
    *
    * @return The autoCreateRoutes.
    */
@@ -184,7 +184,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
    * Name of the peering, which should conform to RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -199,7 +199,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
    * Name of the peering, which should conform to RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -222,7 +222,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
    * Name of the peering, which should conform to RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -248,7 +248,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
    * Network peering parameters. In order to specify route policies for peering using import and export custom routes, you must specify all peering related parameters (name, peer network, exchange_subnet_routes) in the network_peering field. The corresponding fields in NetworksAddPeeringRequest will be deprecated soon.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
+   * <code>optional .google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
    *
    * @return Whether the networkPeering field is set.
    */
@@ -263,7 +263,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
    * Network peering parameters. In order to specify route policies for peering using import and export custom routes, you must specify all peering related parameters (name, peer network, exchange_subnet_routes) in the network_peering field. The corresponding fields in NetworksAddPeeringRequest will be deprecated soon.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
+   * <code>optional .google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
    *
    * @return The networkPeering.
    */
@@ -280,7 +280,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
    * Network peering parameters. In order to specify route policies for peering using import and export custom routes, you must specify all peering related parameters (name, peer network, exchange_subnet_routes) in the network_peering field. The corresponding fields in NetworksAddPeeringRequest will be deprecated soon.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
+   * <code>optional .google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NetworkPeeringOrBuilder getNetworkPeeringOrBuilder() {
@@ -298,7 +298,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
    * URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
    * </pre>
    *
-   * <code>string peer_network = 500625489;</code>
+   * <code>optional string peer_network = 500625489;</code>
    *
    * @return Whether the peerNetwork field is set.
    */
@@ -313,7 +313,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
    * URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
    * </pre>
    *
-   * <code>string peer_network = 500625489;</code>
+   * <code>optional string peer_network = 500625489;</code>
    *
    * @return The peerNetwork.
    */
@@ -336,7 +336,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
    * URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
    * </pre>
    *
-   * <code>string peer_network = 500625489;</code>
+   * <code>optional string peer_network = 500625489;</code>
    *
    * @return The bytes for peerNetwork.
    */
@@ -775,7 +775,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * This field will be deprecated soon. Use exchange_subnet_routes in network_peering instead. Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
      * </pre>
      *
-     * <code>bool auto_create_routes = 57454941;</code>
+     * <code>optional bool auto_create_routes = 57454941;</code>
      *
      * @return Whether the autoCreateRoutes field is set.
      */
@@ -790,7 +790,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * This field will be deprecated soon. Use exchange_subnet_routes in network_peering instead. Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
      * </pre>
      *
-     * <code>bool auto_create_routes = 57454941;</code>
+     * <code>optional bool auto_create_routes = 57454941;</code>
      *
      * @return The autoCreateRoutes.
      */
@@ -805,7 +805,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * This field will be deprecated soon. Use exchange_subnet_routes in network_peering instead. Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
      * </pre>
      *
-     * <code>bool auto_create_routes = 57454941;</code>
+     * <code>optional bool auto_create_routes = 57454941;</code>
      *
      * @param value The autoCreateRoutes to set.
      * @return This builder for chaining.
@@ -823,7 +823,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * This field will be deprecated soon. Use exchange_subnet_routes in network_peering instead. Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
      * </pre>
      *
-     * <code>bool auto_create_routes = 57454941;</code>
+     * <code>optional bool auto_create_routes = 57454941;</code>
      *
      * @return This builder for chaining.
      */
@@ -842,7 +842,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * Name of the peering, which should conform to RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -856,7 +856,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * Name of the peering, which should conform to RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -878,7 +878,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * Name of the peering, which should conform to RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -900,7 +900,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * Name of the peering, which should conform to RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -921,7 +921,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * Name of the peering, which should conform to RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -938,7 +938,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * Name of the peering, which should conform to RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -967,7 +967,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * Network peering parameters. In order to specify route policies for peering using import and export custom routes, you must specify all peering related parameters (name, peer network, exchange_subnet_routes) in the network_peering field. The corresponding fields in NetworksAddPeeringRequest will be deprecated soon.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
+     * <code>optional .google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
      *
      * @return Whether the networkPeering field is set.
      */
@@ -981,7 +981,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * Network peering parameters. In order to specify route policies for peering using import and export custom routes, you must specify all peering related parameters (name, peer network, exchange_subnet_routes) in the network_peering field. The corresponding fields in NetworksAddPeeringRequest will be deprecated soon.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
+     * <code>optional .google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
      *
      * @return The networkPeering.
      */
@@ -1001,7 +1001,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * Network peering parameters. In order to specify route policies for peering using import and export custom routes, you must specify all peering related parameters (name, peer network, exchange_subnet_routes) in the network_peering field. The corresponding fields in NetworksAddPeeringRequest will be deprecated soon.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
+     * <code>optional .google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
      */
     public Builder setNetworkPeering(com.google.cloud.compute.v1.NetworkPeering value) {
       if (networkPeeringBuilder_ == null) {
@@ -1023,7 +1023,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * Network peering parameters. In order to specify route policies for peering using import and export custom routes, you must specify all peering related parameters (name, peer network, exchange_subnet_routes) in the network_peering field. The corresponding fields in NetworksAddPeeringRequest will be deprecated soon.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
+     * <code>optional .google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
      */
     public Builder setNetworkPeering(
         com.google.cloud.compute.v1.NetworkPeering.Builder builderForValue) {
@@ -1043,7 +1043,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * Network peering parameters. In order to specify route policies for peering using import and export custom routes, you must specify all peering related parameters (name, peer network, exchange_subnet_routes) in the network_peering field. The corresponding fields in NetworksAddPeeringRequest will be deprecated soon.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
+     * <code>optional .google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
      */
     public Builder mergeNetworkPeering(com.google.cloud.compute.v1.NetworkPeering value) {
       if (networkPeeringBuilder_ == null) {
@@ -1071,7 +1071,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * Network peering parameters. In order to specify route policies for peering using import and export custom routes, you must specify all peering related parameters (name, peer network, exchange_subnet_routes) in the network_peering field. The corresponding fields in NetworksAddPeeringRequest will be deprecated soon.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
+     * <code>optional .google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
      */
     public Builder clearNetworkPeering() {
       if (networkPeeringBuilder_ == null) {
@@ -1090,7 +1090,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * Network peering parameters. In order to specify route policies for peering using import and export custom routes, you must specify all peering related parameters (name, peer network, exchange_subnet_routes) in the network_peering field. The corresponding fields in NetworksAddPeeringRequest will be deprecated soon.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
+     * <code>optional .google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
      */
     public com.google.cloud.compute.v1.NetworkPeering.Builder getNetworkPeeringBuilder() {
       bitField0_ |= 0x00000004;
@@ -1104,7 +1104,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * Network peering parameters. In order to specify route policies for peering using import and export custom routes, you must specify all peering related parameters (name, peer network, exchange_subnet_routes) in the network_peering field. The corresponding fields in NetworksAddPeeringRequest will be deprecated soon.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
+     * <code>optional .google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
      */
     public com.google.cloud.compute.v1.NetworkPeeringOrBuilder getNetworkPeeringOrBuilder() {
       if (networkPeeringBuilder_ != null) {
@@ -1122,7 +1122,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * Network peering parameters. In order to specify route policies for peering using import and export custom routes, you must specify all peering related parameters (name, peer network, exchange_subnet_routes) in the network_peering field. The corresponding fields in NetworksAddPeeringRequest will be deprecated soon.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
+     * <code>optional .google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.NetworkPeering,
@@ -1149,7 +1149,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
      * </pre>
      *
-     * <code>string peer_network = 500625489;</code>
+     * <code>optional string peer_network = 500625489;</code>
      *
      * @return Whether the peerNetwork field is set.
      */
@@ -1163,7 +1163,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
      * </pre>
      *
-     * <code>string peer_network = 500625489;</code>
+     * <code>optional string peer_network = 500625489;</code>
      *
      * @return The peerNetwork.
      */
@@ -1185,7 +1185,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
      * </pre>
      *
-     * <code>string peer_network = 500625489;</code>
+     * <code>optional string peer_network = 500625489;</code>
      *
      * @return The bytes for peerNetwork.
      */
@@ -1207,7 +1207,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
      * </pre>
      *
-     * <code>string peer_network = 500625489;</code>
+     * <code>optional string peer_network = 500625489;</code>
      *
      * @param value The peerNetwork to set.
      * @return This builder for chaining.
@@ -1228,7 +1228,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
      * </pre>
      *
-     * <code>string peer_network = 500625489;</code>
+     * <code>optional string peer_network = 500625489;</code>
      *
      * @return This builder for chaining.
      */
@@ -1245,7 +1245,7 @@ public final class NetworksAddPeeringRequest extends com.google.protobuf.Generat
      * URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
      * </pre>
      *
-     * <code>string peer_network = 500625489;</code>
+     * <code>optional string peer_network = 500625489;</code>
      *
      * @param value The bytes for peerNetwork to set.
      * @return This builder for chaining.

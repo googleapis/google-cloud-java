@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonForwardingRulesStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -37,6 +38,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -142,7 +144,7 @@ public class ForwardingRulesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -153,6 +155,7 @@ public class ForwardingRulesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -166,7 +169,7 @@ public class ForwardingRulesClientTest {
     String region = "region-934795532";
     String forwardingRule = "forwardingRule-1429104743";
 
-    Operation actualResponse = client.delete(project, region, forwardingRule);
+    Operation actualResponse = client.deleteAsync(project, region, forwardingRule).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -195,10 +198,9 @@ public class ForwardingRulesClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       String forwardingRule = "forwardingRule-1429104743";
-      client.delete(project, region, forwardingRule);
+      client.deleteAsync(project, region, forwardingRule).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -207,6 +209,7 @@ public class ForwardingRulesClientTest {
     ForwardingRule expectedResponse =
         ForwardingRule.newBuilder()
             .setIPAddress("iPAddress1698676973")
+            .setIPProtocol("iPProtocol1348929727")
             .setAllPorts(true)
             .setAllowGlobalAccess(true)
             .setBackendService("backendService-1884714623")
@@ -214,16 +217,20 @@ public class ForwardingRulesClientTest {
             .setDescription("description-1724546052")
             .setFingerprint("fingerprint-1375934236")
             .setId(3355)
+            .setIpVersion("ipVersion-1161634383")
             .setIsMirroringCollector(true)
             .setKind("kind3292052")
             .setLabelFingerprint("labelFingerprint379449680")
             .putAllLabels(new HashMap<String, String>())
+            .setLoadBalancingScheme("loadBalancingScheme-1223583272")
             .addAllMetadataFilters(new ArrayList<MetadataFilter>())
             .setName("name3373707")
             .setNetwork("network1843485230")
+            .setNetworkTier("networkTier-1940629200")
             .setPortRange("portRange1102895420")
             .addAllPorts(new ArrayList<String>())
             .setPscConnectionId(292082397)
+            .setPscConnectionStatus("pscConnectionStatus2068878160")
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .addAllServiceDirectoryRegistrations(
@@ -285,7 +292,7 @@ public class ForwardingRulesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -296,6 +303,7 @@ public class ForwardingRulesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -309,7 +317,7 @@ public class ForwardingRulesClientTest {
     String region = "region-934795532";
     ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, region, forwardingRuleResource);
+    Operation actualResponse = client.insertAsync(project, region, forwardingRuleResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -338,10 +346,9 @@ public class ForwardingRulesClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
-      client.insert(project, region, forwardingRuleResource);
+      client.insertAsync(project, region, forwardingRuleResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -407,7 +414,7 @@ public class ForwardingRulesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -418,6 +425,7 @@ public class ForwardingRulesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -433,7 +441,7 @@ public class ForwardingRulesClientTest {
     ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
 
     Operation actualResponse =
-        client.patch(project, region, forwardingRule, forwardingRuleResource);
+        client.patchAsync(project, region, forwardingRule, forwardingRuleResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -463,10 +471,9 @@ public class ForwardingRulesClientTest {
       String region = "region-934795532";
       String forwardingRule = "forwardingRule-1429104743";
       ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
-      client.patch(project, region, forwardingRule, forwardingRuleResource);
+      client.patchAsync(project, region, forwardingRule, forwardingRuleResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -480,7 +487,7 @@ public class ForwardingRulesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -491,6 +498,7 @@ public class ForwardingRulesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -507,7 +515,7 @@ public class ForwardingRulesClientTest {
         RegionSetLabelsRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.setLabels(project, region, resource, regionSetLabelsRequestResource);
+        client.setLabelsAsync(project, region, resource, regionSetLabelsRequestResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -538,10 +546,9 @@ public class ForwardingRulesClientTest {
       String resource = "resource-341064690";
       RegionSetLabelsRequest regionSetLabelsRequestResource =
           RegionSetLabelsRequest.newBuilder().build();
-      client.setLabels(project, region, resource, regionSetLabelsRequestResource);
+      client.setLabelsAsync(project, region, resource, regionSetLabelsRequestResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -555,7 +562,7 @@ public class ForwardingRulesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -566,6 +573,7 @@ public class ForwardingRulesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -581,7 +589,7 @@ public class ForwardingRulesClientTest {
     TargetReference targetReferenceResource = TargetReference.newBuilder().build();
 
     Operation actualResponse =
-        client.setTarget(project, region, forwardingRule, targetReferenceResource);
+        client.setTargetAsync(project, region, forwardingRule, targetReferenceResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -611,10 +619,9 @@ public class ForwardingRulesClientTest {
       String region = "region-934795532";
       String forwardingRule = "forwardingRule-1429104743";
       TargetReference targetReferenceResource = TargetReference.newBuilder().build();
-      client.setTarget(project, region, forwardingRule, targetReferenceResource);
+      client.setTargetAsync(project, region, forwardingRule, targetReferenceResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 }

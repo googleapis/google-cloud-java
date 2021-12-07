@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Sets the scheduling options for an Instance. NextID: 20
+ * Sets the scheduling options for an Instance. NextID: 21
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Scheduling}
@@ -40,7 +40,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
   private Scheduling() {
     locationHint_ = "";
     nodeAffinities_ = java.util.Collections.emptyList();
-    onHostMaintenance_ = 0;
+    onHostMaintenance_ = "";
   }
 
   @java.lang.Override
@@ -73,11 +73,11 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 516934368:
+          case 516934370:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
-              onHostMaintenance_ = rawValue;
+              onHostMaintenance_ = s;
               break;
             }
           case -1757113896:
@@ -175,9 +175,25 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ON_HOST_MAINTENANCE = 0;</code>
      */
     UNDEFINED_ON_HOST_MAINTENANCE(0),
-    /** <code>MIGRATE = 165699979;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * *[Default]* Allows Compute Engine to automatically migrate instances out of the way of maintenance events.
+     * </pre>
+     *
+     * <code>MIGRATE = 165699979;</code>
+     */
     MIGRATE(165699979),
-    /** <code>TERMINATE = 527617601;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Tells Compute Engine to terminate and (optionally) restart the instance away from the maintenance activity. If you would like your instance to be restarted, set the automaticRestart flag to true. Your instance may be restarted more than once, and it may be restarted outside the window of maintenance events.
+     * </pre>
+     *
+     * <code>TERMINATE = 527617601;</code>
+     */
     TERMINATE(527617601),
     UNRECOGNIZED(-1),
     ;
@@ -192,9 +208,25 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ON_HOST_MAINTENANCE = 0;</code>
      */
     public static final int UNDEFINED_ON_HOST_MAINTENANCE_VALUE = 0;
-    /** <code>MIGRATE = 165699979;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * *[Default]* Allows Compute Engine to automatically migrate instances out of the way of maintenance events.
+     * </pre>
+     *
+     * <code>MIGRATE = 165699979;</code>
+     */
     public static final int MIGRATE_VALUE = 165699979;
-    /** <code>TERMINATE = 527617601;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Tells Compute Engine to terminate and (optionally) restart the instance away from the maintenance activity. If you would like your instance to be restarted, set the automaticRestart flag to true. Your instance may be restarted more than once, and it may be restarted outside the window of maintenance events.
+     * </pre>
+     *
+     * <code>TERMINATE = 527617601;</code>
+     */
     public static final int TERMINATE_VALUE = 527617601;
 
     public final int getNumber() {
@@ -290,11 +322,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
-   * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+   * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
    * </pre>
    *
-   * <code>bool automatic_restart = 350821371;</code>
+   * <code>optional bool automatic_restart = 350821371;</code>
    *
    * @return Whether the automaticRestart field is set.
    */
@@ -306,11 +337,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
-   * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+   * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
    * </pre>
    *
-   * <code>bool automatic_restart = 350821371;</code>
+   * <code>optional bool automatic_restart = 350821371;</code>
    *
    * @return The automaticRestart.
    */
@@ -328,7 +358,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return Whether the locationHint field is set.
    */
@@ -343,7 +373,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return The locationHint.
    */
@@ -366,7 +396,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return The bytes for locationHint.
    */
@@ -392,7 +422,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
    * </pre>
    *
-   * <code>int32 min_node_cpus = 317231675;</code>
+   * <code>optional int32 min_node_cpus = 317231675;</code>
    *
    * @return Whether the minNodeCpus field is set.
    */
@@ -407,7 +437,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
    * </pre>
    *
-   * <code>int32 min_node_cpus = 317231675;</code>
+   * <code>optional int32 min_node_cpus = 317231675;</code>
    *
    * @return The minNodeCpus.
    */
@@ -493,16 +523,16 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ON_HOST_MAINTENANCE_FIELD_NUMBER = 64616796;
-  private int onHostMaintenance_;
+  private volatile java.lang.Object onHostMaintenance_;
   /**
    *
    *
    * <pre>
    * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;
-   * </code>
+   * <code>optional string on_host_maintenance = 64616796;</code>
    *
    * @return Whether the onHostMaintenance field is set.
    */
@@ -515,37 +545,48 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;
-   * </code>
+   * <code>optional string on_host_maintenance = 64616796;</code>
    *
-   * @return The enum numeric value on the wire for onHostMaintenance.
+   * @return The onHostMaintenance.
    */
   @java.lang.Override
-  public int getOnHostMaintenanceValue() {
-    return onHostMaintenance_;
+  public java.lang.String getOnHostMaintenance() {
+    java.lang.Object ref = onHostMaintenance_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      onHostMaintenance_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;
-   * </code>
+   * <code>optional string on_host_maintenance = 64616796;</code>
    *
-   * @return The onHostMaintenance.
+   * @return The bytes for onHostMaintenance.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.Scheduling.OnHostMaintenance getOnHostMaintenance() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Scheduling.OnHostMaintenance result =
-        com.google.cloud.compute.v1.Scheduling.OnHostMaintenance.valueOf(onHostMaintenance_);
-    return result == null
-        ? com.google.cloud.compute.v1.Scheduling.OnHostMaintenance.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getOnHostMaintenanceBytes() {
+    java.lang.Object ref = onHostMaintenance_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      onHostMaintenance_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PREEMPTIBLE_FIELD_NUMBER = 324203169;
@@ -557,7 +598,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
    * </pre>
    *
-   * <code>bool preemptible = 324203169;</code>
+   * <code>optional bool preemptible = 324203169;</code>
    *
    * @return Whether the preemptible field is set.
    */
@@ -572,7 +613,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
    * </pre>
    *
-   * <code>bool preemptible = 324203169;</code>
+   * <code>optional bool preemptible = 324203169;</code>
    *
    * @return The preemptible.
    */
@@ -596,7 +637,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeEnum(64616796, onHostMaintenance_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 64616796, onHostMaintenance_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeInt32(317231675, minNodeCpus_);
@@ -623,7 +664,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
     size = 0;
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(64616796, onHostMaintenance_);
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(64616796, onHostMaintenance_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(317231675, minNodeCpus_);
@@ -672,7 +714,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (!getNodeAffinitiesList().equals(other.getNodeAffinitiesList())) return false;
     if (hasOnHostMaintenance() != other.hasOnHostMaintenance()) return false;
     if (hasOnHostMaintenance()) {
-      if (onHostMaintenance_ != other.onHostMaintenance_) return false;
+      if (!getOnHostMaintenance().equals(other.getOnHostMaintenance())) return false;
     }
     if (hasPreemptible() != other.hasPreemptible()) return false;
     if (hasPreemptible()) {
@@ -707,7 +749,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasOnHostMaintenance()) {
       hash = (37 * hash) + ON_HOST_MAINTENANCE_FIELD_NUMBER;
-      hash = (53 * hash) + onHostMaintenance_;
+      hash = (53 * hash) + getOnHostMaintenance().hashCode();
     }
     if (hasPreemptible()) {
       hash = (37 * hash) + PREEMPTIBLE_FIELD_NUMBER;
@@ -817,7 +859,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Sets the scheduling options for an Instance. NextID: 20
+   * Sets the scheduling options for an Instance. NextID: 21
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Scheduling}
@@ -872,7 +914,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       } else {
         nodeAffinitiesBuilder_.clear();
       }
-      onHostMaintenance_ = 0;
+      onHostMaintenance_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
       preemptible_ = false;
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -1023,7 +1065,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasOnHostMaintenance()) {
-        setOnHostMaintenance(other.getOnHostMaintenance());
+        bitField0_ |= 0x00000010;
+        onHostMaintenance_ = other.onHostMaintenance_;
+        onChanged();
       }
       if (other.hasPreemptible()) {
         setPreemptible(other.getPreemptible());
@@ -1064,11 +1108,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
-     * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
      * </pre>
      *
-     * <code>bool automatic_restart = 350821371;</code>
+     * <code>optional bool automatic_restart = 350821371;</code>
      *
      * @return Whether the automaticRestart field is set.
      */
@@ -1080,11 +1123,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
-     * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
      * </pre>
      *
-     * <code>bool automatic_restart = 350821371;</code>
+     * <code>optional bool automatic_restart = 350821371;</code>
      *
      * @return The automaticRestart.
      */
@@ -1096,11 +1138,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
-     * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
      * </pre>
      *
-     * <code>bool automatic_restart = 350821371;</code>
+     * <code>optional bool automatic_restart = 350821371;</code>
      *
      * @param value The automaticRestart to set.
      * @return This builder for chaining.
@@ -1115,11 +1156,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
-     * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
      * </pre>
      *
-     * <code>bool automatic_restart = 350821371;</code>
+     * <code>optional bool automatic_restart = 350821371;</code>
      *
      * @return This builder for chaining.
      */
@@ -1138,7 +1178,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @return Whether the locationHint field is set.
      */
@@ -1152,7 +1192,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @return The locationHint.
      */
@@ -1174,7 +1214,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @return The bytes for locationHint.
      */
@@ -1196,7 +1236,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @param value The locationHint to set.
      * @return This builder for chaining.
@@ -1217,7 +1257,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @return This builder for chaining.
      */
@@ -1234,7 +1274,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @param value The bytes for locationHint to set.
      * @return This builder for chaining.
@@ -1258,7 +1298,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
      * </pre>
      *
-     * <code>int32 min_node_cpus = 317231675;</code>
+     * <code>optional int32 min_node_cpus = 317231675;</code>
      *
      * @return Whether the minNodeCpus field is set.
      */
@@ -1273,7 +1313,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
      * </pre>
      *
-     * <code>int32 min_node_cpus = 317231675;</code>
+     * <code>optional int32 min_node_cpus = 317231675;</code>
      *
      * @return The minNodeCpus.
      */
@@ -1288,7 +1328,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
      * </pre>
      *
-     * <code>int32 min_node_cpus = 317231675;</code>
+     * <code>optional int32 min_node_cpus = 317231675;</code>
      *
      * @param value The minNodeCpus to set.
      * @return This builder for chaining.
@@ -1306,7 +1346,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
      * </pre>
      *
-     * <code>int32 min_node_cpus = 317231675;</code>
+     * <code>optional int32 min_node_cpus = 317231675;</code>
      *
      * @return This builder for chaining.
      */
@@ -1697,20 +1737,19 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       return nodeAffinitiesBuilder_;
     }
 
-    private int onHostMaintenance_ = 0;
+    private java.lang.Object onHostMaintenance_ = "";
     /**
      *
      *
      * <pre>
      * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;
-     * </code>
+     * <code>optional string on_host_maintenance = 64616796;</code>
      *
      * @return Whether the onHostMaintenance field is set.
      */
-    @java.lang.Override
     public boolean hasOnHostMaintenance() {
       return ((bitField0_ & 0x00000010) != 0);
     }
@@ -1719,31 +1758,64 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;
-     * </code>
+     * <code>optional string on_host_maintenance = 64616796;</code>
      *
-     * @return The enum numeric value on the wire for onHostMaintenance.
+     * @return The onHostMaintenance.
      */
-    @java.lang.Override
-    public int getOnHostMaintenanceValue() {
-      return onHostMaintenance_;
+    public java.lang.String getOnHostMaintenance() {
+      java.lang.Object ref = onHostMaintenance_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        onHostMaintenance_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;
-     * </code>
+     * <code>optional string on_host_maintenance = 64616796;</code>
      *
-     * @param value The enum numeric value on the wire for onHostMaintenance to set.
+     * @return The bytes for onHostMaintenance.
+     */
+    public com.google.protobuf.ByteString getOnHostMaintenanceBytes() {
+      java.lang.Object ref = onHostMaintenance_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        onHostMaintenance_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Check the OnHostMaintenance enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string on_host_maintenance = 64616796;</code>
+     *
+     * @param value The onHostMaintenance to set.
      * @return This builder for chaining.
      */
-    public Builder setOnHostMaintenanceValue(int value) {
+    public Builder setOnHostMaintenance(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000010;
       onHostMaintenance_ = value;
       onChanged();
@@ -1754,42 +1826,16 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;
-     * </code>
+     * <code>optional string on_host_maintenance = 64616796;</code>
      *
-     * @return The onHostMaintenance.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Scheduling.OnHostMaintenance getOnHostMaintenance() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Scheduling.OnHostMaintenance result =
-          com.google.cloud.compute.v1.Scheduling.OnHostMaintenance.valueOf(onHostMaintenance_);
-      return result == null
-          ? com.google.cloud.compute.v1.Scheduling.OnHostMaintenance.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;
-     * </code>
-     *
-     * @param value The onHostMaintenance to set.
      * @return This builder for chaining.
      */
-    public Builder setOnHostMaintenance(
-        com.google.cloud.compute.v1.Scheduling.OnHostMaintenance value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000010;
-      onHostMaintenance_ = value.getNumber();
+    public Builder clearOnHostMaintenance() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onHostMaintenance_ = getDefaultInstance().getOnHostMaintenance();
       onChanged();
       return this;
     }
@@ -1798,16 +1844,21 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;
-     * </code>
+     * <code>optional string on_host_maintenance = 64616796;</code>
      *
+     * @param value The bytes for onHostMaintenance to set.
      * @return This builder for chaining.
      */
-    public Builder clearOnHostMaintenance() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      onHostMaintenance_ = 0;
+    public Builder setOnHostMaintenanceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000010;
+      onHostMaintenance_ = value;
       onChanged();
       return this;
     }
@@ -1820,7 +1871,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
      * </pre>
      *
-     * <code>bool preemptible = 324203169;</code>
+     * <code>optional bool preemptible = 324203169;</code>
      *
      * @return Whether the preemptible field is set.
      */
@@ -1835,7 +1886,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
      * </pre>
      *
-     * <code>bool preemptible = 324203169;</code>
+     * <code>optional bool preemptible = 324203169;</code>
      *
      * @return The preemptible.
      */
@@ -1850,7 +1901,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
      * </pre>
      *
-     * <code>bool preemptible = 324203169;</code>
+     * <code>optional bool preemptible = 324203169;</code>
      *
      * @param value The preemptible to set.
      * @return This builder for chaining.
@@ -1868,7 +1919,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
      * </pre>
      *
-     * <code>bool preemptible = 324203169;</code>
+     * <code>optional bool preemptible = 324203169;</code>
      *
      * @return This builder for chaining.
      */

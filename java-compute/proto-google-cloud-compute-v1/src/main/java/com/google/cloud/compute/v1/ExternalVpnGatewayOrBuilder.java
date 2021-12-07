@@ -30,7 +30,7 @@ public interface ExternalVpnGatewayOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -42,7 +42,7 @@ public interface ExternalVpnGatewayOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -54,7 +54,7 @@ public interface ExternalVpnGatewayOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -67,7 +67,7 @@ public interface ExternalVpnGatewayOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -79,7 +79,7 @@ public interface ExternalVpnGatewayOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -91,7 +91,7 @@ public interface ExternalVpnGatewayOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -104,7 +104,7 @@ public interface ExternalVpnGatewayOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -116,7 +116,7 @@ public interface ExternalVpnGatewayOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -126,7 +126,7 @@ public interface ExternalVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * List of interfaces for this external VPN gateway.
+   * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -137,7 +137,7 @@ public interface ExternalVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * List of interfaces for this external VPN gateway.
+   * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -148,7 +148,7 @@ public interface ExternalVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * List of interfaces for this external VPN gateway.
+   * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -159,7 +159,7 @@ public interface ExternalVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * List of interfaces for this external VPN gateway.
+   * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -171,7 +171,7 @@ public interface ExternalVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * List of interfaces for this external VPN gateway.
+   * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -187,7 +187,7 @@ public interface ExternalVpnGatewayOrBuilder
    * [Output Only] Type of the resource. Always compute#externalVpnGateway for externalVpnGateways.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -199,7 +199,7 @@ public interface ExternalVpnGatewayOrBuilder
    * [Output Only] Type of the resource. Always compute#externalVpnGateway for externalVpnGateways.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -211,7 +211,7 @@ public interface ExternalVpnGatewayOrBuilder
    * [Output Only] Type of the resource. Always compute#externalVpnGateway for externalVpnGateways.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -221,11 +221,10 @@ public interface ExternalVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
+   * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return Whether the labelFingerprint field is set.
    */
@@ -234,11 +233,10 @@ public interface ExternalVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
+   * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return The labelFingerprint.
    */
@@ -247,11 +245,10 @@ public interface ExternalVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
+   * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return The bytes for labelFingerprint.
    */
@@ -318,7 +315,7 @@ public interface ExternalVpnGatewayOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -330,7 +327,7 @@ public interface ExternalVpnGatewayOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -342,7 +339,7 @@ public interface ExternalVpnGatewayOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -353,10 +350,10 @@ public interface ExternalVpnGatewayOrBuilder
    *
    * <pre>
    * Indicates the user-supplied redundancy type of this external VPN gateway.
+   * Check the RedundancyType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;
-   * </code>
+   * <code>optional string redundancy_type = 271443740;</code>
    *
    * @return Whether the redundancyType field is set.
    */
@@ -366,27 +363,27 @@ public interface ExternalVpnGatewayOrBuilder
    *
    * <pre>
    * Indicates the user-supplied redundancy type of this external VPN gateway.
+   * Check the RedundancyType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;
-   * </code>
+   * <code>optional string redundancy_type = 271443740;</code>
    *
-   * @return The enum numeric value on the wire for redundancyType.
+   * @return The redundancyType.
    */
-  int getRedundancyTypeValue();
+  java.lang.String getRedundancyType();
   /**
    *
    *
    * <pre>
    * Indicates the user-supplied redundancy type of this external VPN gateway.
+   * Check the RedundancyType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;
-   * </code>
+   * <code>optional string redundancy_type = 271443740;</code>
    *
-   * @return The redundancyType.
+   * @return The bytes for redundancyType.
    */
-  com.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType getRedundancyType();
+  com.google.protobuf.ByteString getRedundancyTypeBytes();
 
   /**
    *
@@ -395,7 +392,7 @@ public interface ExternalVpnGatewayOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -407,7 +404,7 @@ public interface ExternalVpnGatewayOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -419,7 +416,7 @@ public interface ExternalVpnGatewayOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */

@@ -30,7 +30,7 @@ public interface ErrorsOrBuilder
    * [Output Only] The error type identifier for this error.
    * </pre>
    *
-   * <code>string code = 3059181;</code>
+   * <code>optional string code = 3059181;</code>
    *
    * @return Whether the code field is set.
    */
@@ -42,7 +42,7 @@ public interface ErrorsOrBuilder
    * [Output Only] The error type identifier for this error.
    * </pre>
    *
-   * <code>string code = 3059181;</code>
+   * <code>optional string code = 3059181;</code>
    *
    * @return The code.
    */
@@ -54,7 +54,7 @@ public interface ErrorsOrBuilder
    * [Output Only] The error type identifier for this error.
    * </pre>
    *
-   * <code>string code = 3059181;</code>
+   * <code>optional string code = 3059181;</code>
    *
    * @return The bytes for code.
    */
@@ -67,7 +67,7 @@ public interface ErrorsOrBuilder
    * [Output Only] Indicates the field in the request that caused the error. This property is optional.
    * </pre>
    *
-   * <code>string location = 290430901;</code>
+   * <code>optional string location = 290430901;</code>
    *
    * @return Whether the location field is set.
    */
@@ -79,7 +79,7 @@ public interface ErrorsOrBuilder
    * [Output Only] Indicates the field in the request that caused the error. This property is optional.
    * </pre>
    *
-   * <code>string location = 290430901;</code>
+   * <code>optional string location = 290430901;</code>
    *
    * @return The location.
    */
@@ -91,7 +91,7 @@ public interface ErrorsOrBuilder
    * [Output Only] Indicates the field in the request that caused the error. This property is optional.
    * </pre>
    *
-   * <code>string location = 290430901;</code>
+   * <code>optional string location = 290430901;</code>
    *
    * @return The bytes for location.
    */
@@ -104,7 +104,7 @@ public interface ErrorsOrBuilder
    * [Output Only] An optional, human-readable error message.
    * </pre>
    *
-   * <code>string message = 418054151;</code>
+   * <code>optional string message = 418054151;</code>
    *
    * @return Whether the message field is set.
    */
@@ -116,7 +116,7 @@ public interface ErrorsOrBuilder
    * [Output Only] An optional, human-readable error message.
    * </pre>
    *
-   * <code>string message = 418054151;</code>
+   * <code>optional string message = 418054151;</code>
    *
    * @return The message.
    */
@@ -128,7 +128,7 @@ public interface ErrorsOrBuilder
    * [Output Only] An optional, human-readable error message.
    * </pre>
    *
-   * <code>string message = 418054151;</code>
+   * <code>optional string message = 418054151;</code>
    *
    * @return The bytes for message.
    */

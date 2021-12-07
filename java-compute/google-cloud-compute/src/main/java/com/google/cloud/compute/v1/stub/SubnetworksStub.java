@@ -21,6 +21,7 @@ import static com.google.cloud.compute.v1.SubnetworksClient.ListPagedResponse;
 import static com.google.cloud.compute.v1.SubnetworksClient.ListUsablePagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListSubnetworksRequest;
 import com.google.cloud.compute.v1.DeleteSubnetworkRequest;
@@ -62,8 +63,19 @@ public abstract class SubnetworksStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<DeleteSubnetworkRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteSubnetworkRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
+  }
+
+  public OperationCallable<ExpandIpCidrRangeSubnetworkRequest, Operation, Operation>
+      expandIpCidrRangeOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: expandIpCidrRangeOperationCallable()");
   }
 
   public UnaryCallable<ExpandIpCidrRangeSubnetworkRequest, Operation> expandIpCidrRangeCallable() {
@@ -76,6 +88,11 @@ public abstract class SubnetworksStub implements BackgroundResource {
 
   public UnaryCallable<GetIamPolicySubnetworkRequest, Policy> getIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public OperationCallable<InsertSubnetworkRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertSubnetworkRequest, Operation> insertCallable() {
@@ -100,12 +117,22 @@ public abstract class SubnetworksStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listUsableCallable()");
   }
 
+  public OperationCallable<PatchSubnetworkRequest, Operation, Operation> patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
+  }
+
   public UnaryCallable<PatchSubnetworkRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
   }
 
   public UnaryCallable<SetIamPolicySubnetworkRequest, Policy> setIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public OperationCallable<SetPrivateIpGoogleAccessSubnetworkRequest, Operation, Operation>
+      setPrivateIpGoogleAccessOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setPrivateIpGoogleAccessOperationCallable()");
   }
 
   public UnaryCallable<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>

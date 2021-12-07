@@ -120,7 +120,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
    * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.
    * </pre>
    *
-   * <code>uint32 tag8021q = 271820992;</code>
+   * <code>optional uint32 tag8021q = 271820992;</code>
    *
    * @return Whether the tag8021q field is set.
    */
@@ -135,7 +135,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
    * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.
    * </pre>
    *
-   * <code>uint32 tag8021q = 271820992;</code>
+   * <code>optional uint32 tag8021q = 271820992;</code>
    *
    * @return The tag8021q.
    */
@@ -486,7 +486,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
      * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.
      * </pre>
      *
-     * <code>uint32 tag8021q = 271820992;</code>
+     * <code>optional uint32 tag8021q = 271820992;</code>
      *
      * @return Whether the tag8021q field is set.
      */
@@ -501,7 +501,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
      * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.
      * </pre>
      *
-     * <code>uint32 tag8021q = 271820992;</code>
+     * <code>optional uint32 tag8021q = 271820992;</code>
      *
      * @return The tag8021q.
      */
@@ -516,7 +516,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
      * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.
      * </pre>
      *
-     * <code>uint32 tag8021q = 271820992;</code>
+     * <code>optional uint32 tag8021q = 271820992;</code>
      *
      * @param value The tag8021q to set.
      * @return This builder for chaining.
@@ -534,7 +534,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
      * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.
      * </pre>
      *
-     * <code>uint32 tag8021q = 271820992;</code>
+     * <code>optional uint32 tag8021q = 271820992;</code>
      *
      * @return This builder for chaining.
      */

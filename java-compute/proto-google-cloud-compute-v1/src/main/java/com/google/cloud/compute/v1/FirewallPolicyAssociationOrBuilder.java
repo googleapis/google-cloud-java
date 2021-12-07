@@ -30,7 +30,7 @@ public interface FirewallPolicyAssociationOrBuilder
    * The target that the firewall policy is attached to.
    * </pre>
    *
-   * <code>string attachment_target = 175773741;</code>
+   * <code>optional string attachment_target = 175773741;</code>
    *
    * @return Whether the attachmentTarget field is set.
    */
@@ -42,7 +42,7 @@ public interface FirewallPolicyAssociationOrBuilder
    * The target that the firewall policy is attached to.
    * </pre>
    *
-   * <code>string attachment_target = 175773741;</code>
+   * <code>optional string attachment_target = 175773741;</code>
    *
    * @return The attachmentTarget.
    */
@@ -54,7 +54,7 @@ public interface FirewallPolicyAssociationOrBuilder
    * The target that the firewall policy is attached to.
    * </pre>
    *
-   * <code>string attachment_target = 175773741;</code>
+   * <code>optional string attachment_target = 175773741;</code>
    *
    * @return The bytes for attachmentTarget.
    */
@@ -67,7 +67,7 @@ public interface FirewallPolicyAssociationOrBuilder
    * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy of the association.
    * </pre>
    *
-   * <code>string display_name = 4473832;</code>
+   * <code>optional string display_name = 4473832;</code>
    *
    * @return Whether the displayName field is set.
    */
@@ -79,7 +79,7 @@ public interface FirewallPolicyAssociationOrBuilder
    * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy of the association.
    * </pre>
    *
-   * <code>string display_name = 4473832;</code>
+   * <code>optional string display_name = 4473832;</code>
    *
    * @return The displayName.
    */
@@ -91,7 +91,7 @@ public interface FirewallPolicyAssociationOrBuilder
    * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy of the association.
    * </pre>
    *
-   * <code>string display_name = 4473832;</code>
+   * <code>optional string display_name = 4473832;</code>
    *
    * @return The bytes for displayName.
    */
@@ -104,7 +104,7 @@ public interface FirewallPolicyAssociationOrBuilder
    * [Output Only] The firewall policy ID of the association.
    * </pre>
    *
-   * <code>string firewall_policy_id = 357211849;</code>
+   * <code>optional string firewall_policy_id = 357211849;</code>
    *
    * @return Whether the firewallPolicyId field is set.
    */
@@ -116,7 +116,7 @@ public interface FirewallPolicyAssociationOrBuilder
    * [Output Only] The firewall policy ID of the association.
    * </pre>
    *
-   * <code>string firewall_policy_id = 357211849;</code>
+   * <code>optional string firewall_policy_id = 357211849;</code>
    *
    * @return The firewallPolicyId.
    */
@@ -128,7 +128,7 @@ public interface FirewallPolicyAssociationOrBuilder
    * [Output Only] The firewall policy ID of the association.
    * </pre>
    *
-   * <code>string firewall_policy_id = 357211849;</code>
+   * <code>optional string firewall_policy_id = 357211849;</code>
    *
    * @return The bytes for firewallPolicyId.
    */
@@ -141,7 +141,7 @@ public interface FirewallPolicyAssociationOrBuilder
    * The name for an association.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -153,7 +153,7 @@ public interface FirewallPolicyAssociationOrBuilder
    * The name for an association.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -165,7 +165,7 @@ public interface FirewallPolicyAssociationOrBuilder
    * The name for an association.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -178,7 +178,7 @@ public interface FirewallPolicyAssociationOrBuilder
    * [Output Only] The short name of the firewall policy of the association.
    * </pre>
    *
-   * <code>string short_name = 492051566;</code>
+   * <code>optional string short_name = 492051566;</code>
    *
    * @return Whether the shortName field is set.
    */
@@ -190,7 +190,7 @@ public interface FirewallPolicyAssociationOrBuilder
    * [Output Only] The short name of the firewall policy of the association.
    * </pre>
    *
-   * <code>string short_name = 492051566;</code>
+   * <code>optional string short_name = 492051566;</code>
    *
    * @return The shortName.
    */
@@ -202,7 +202,7 @@ public interface FirewallPolicyAssociationOrBuilder
    * [Output Only] The short name of the firewall policy of the association.
    * </pre>
    *
-   * <code>string short_name = 492051566;</code>
+   * <code>optional string short_name = 492051566;</code>
    *
    * @return The bytes for shortName.
    */

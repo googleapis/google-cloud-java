@@ -27,12 +27,14 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonFirewallsStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -85,7 +87,7 @@ public class FirewallsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -96,6 +98,7 @@ public class FirewallsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -108,7 +111,7 @@ public class FirewallsClientTest {
     String project = "project-309310695";
     String firewall = "firewall-562725632";
 
-    Operation actualResponse = client.delete(project, firewall);
+    Operation actualResponse = client.deleteAsync(project, firewall).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -136,10 +139,9 @@ public class FirewallsClientTest {
     try {
       String project = "project-309310695";
       String firewall = "firewall-562725632";
-      client.delete(project, firewall);
+      client.deleteAsync(project, firewall).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -152,6 +154,7 @@ public class FirewallsClientTest {
             .addAllDenied(new ArrayList<Denied>())
             .setDescription("description-1724546052")
             .addAllDestinationRanges(new ArrayList<String>())
+            .setDirection("direction-962590849")
             .setDisabled(true)
             .setId(3355)
             .setKind("kind3292052")
@@ -216,7 +219,7 @@ public class FirewallsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -227,6 +230,7 @@ public class FirewallsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -239,7 +243,7 @@ public class FirewallsClientTest {
     String project = "project-309310695";
     Firewall firewallResource = Firewall.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, firewallResource);
+    Operation actualResponse = client.insertAsync(project, firewallResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -267,10 +271,9 @@ public class FirewallsClientTest {
     try {
       String project = "project-309310695";
       Firewall firewallResource = Firewall.newBuilder().build();
-      client.insert(project, firewallResource);
+      client.insertAsync(project, firewallResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -334,7 +337,7 @@ public class FirewallsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -345,6 +348,7 @@ public class FirewallsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -358,7 +362,7 @@ public class FirewallsClientTest {
     String firewall = "firewall-562725632";
     Firewall firewallResource = Firewall.newBuilder().build();
 
-    Operation actualResponse = client.patch(project, firewall, firewallResource);
+    Operation actualResponse = client.patchAsync(project, firewall, firewallResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -387,10 +391,9 @@ public class FirewallsClientTest {
       String project = "project-309310695";
       String firewall = "firewall-562725632";
       Firewall firewallResource = Firewall.newBuilder().build();
-      client.patch(project, firewall, firewallResource);
+      client.patchAsync(project, firewall, firewallResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -404,7 +407,7 @@ public class FirewallsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -415,6 +418,7 @@ public class FirewallsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -428,7 +432,7 @@ public class FirewallsClientTest {
     String firewall = "firewall-562725632";
     Firewall firewallResource = Firewall.newBuilder().build();
 
-    Operation actualResponse = client.update(project, firewall, firewallResource);
+    Operation actualResponse = client.updateAsync(project, firewall, firewallResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -457,10 +461,9 @@ public class FirewallsClientTest {
       String project = "project-309310695";
       String firewall = "firewall-562725632";
       Firewall firewallResource = Firewall.newBuilder().build();
-      client.update(project, firewall, firewallResource);
+      client.updateAsync(project, firewall, firewallResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 }

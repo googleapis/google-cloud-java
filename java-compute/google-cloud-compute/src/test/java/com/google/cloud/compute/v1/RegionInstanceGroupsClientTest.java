@@ -28,12 +28,14 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonRegionInstanceGroupsStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -260,7 +262,7 @@ public class RegionInstanceGroupsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -271,6 +273,7 @@ public class RegionInstanceGroupsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -287,8 +290,10 @@ public class RegionInstanceGroupsClientTest {
         RegionInstanceGroupsSetNamedPortsRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.setNamedPorts(
-            project, region, instanceGroup, regionInstanceGroupsSetNamedPortsRequestResource);
+        client
+            .setNamedPortsAsync(
+                project, region, instanceGroup, regionInstanceGroupsSetNamedPortsRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -319,11 +324,12 @@ public class RegionInstanceGroupsClientTest {
       String instanceGroup = "instanceGroup-1404696854";
       RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource =
           RegionInstanceGroupsSetNamedPortsRequest.newBuilder().build();
-      client.setNamedPorts(
-          project, region, instanceGroup, regionInstanceGroupsSetNamedPortsRequestResource);
+      client
+          .setNamedPortsAsync(
+              project, region, instanceGroup, regionInstanceGroupsSetNamedPortsRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 }

@@ -35,6 +35,7 @@ import com.google.cloud.compute.v1.DiskType;
 import com.google.cloud.compute.v1.GetRegionDiskTypeRequest;
 import com.google.cloud.compute.v1.ListRegionDiskTypesRequest;
 import com.google.cloud.compute.v1.RegionDiskTypeList;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,6 +53,8 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionDiskTypesStub extends RegionDiskTypesStub {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
   private static final ApiMethodDescriptor<GetRegionDiskTypeRequest, DiskType> getMethodDescriptor =
       ApiMethodDescriptor.<GetRegionDiskTypeRequest, DiskType>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.RegionDiskTypes/Get")
@@ -81,6 +84,7 @@ public class HttpJsonRegionDiskTypesStub extends RegionDiskTypesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<DiskType>newBuilder()
                   .setDefaultInstance(DiskType.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -132,6 +136,7 @@ public class HttpJsonRegionDiskTypesStub extends RegionDiskTypesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<RegionDiskTypeList>newBuilder()
                       .setDefaultInstance(RegionDiskTypeList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -184,10 +189,12 @@ public class HttpJsonRegionDiskTypesStub extends RegionDiskTypesStub {
     HttpJsonCallSettings<GetRegionDiskTypeRequest, DiskType> getTransportSettings =
         HttpJsonCallSettings.<GetRegionDiskTypeRequest, DiskType>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListRegionDiskTypesRequest, RegionDiskTypeList> listTransportSettings =
         HttpJsonCallSettings.<ListRegionDiskTypesRequest, RegionDiskTypeList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.getCallable =

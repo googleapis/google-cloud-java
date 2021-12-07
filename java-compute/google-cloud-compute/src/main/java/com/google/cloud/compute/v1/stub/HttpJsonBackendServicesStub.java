@@ -26,11 +26,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddSignedUrlKeyBackendServiceRequest;
 import com.google.cloud.compute.v1.AggregatedListBackendServicesRequest;
@@ -45,9 +47,11 @@ import com.google.cloud.compute.v1.GetHealthBackendServiceRequest;
 import com.google.cloud.compute.v1.InsertBackendServiceRequest;
 import com.google.cloud.compute.v1.ListBackendServicesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchBackendServiceRequest;
 import com.google.cloud.compute.v1.SetSecurityPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.UpdateBackendServiceRequest;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -65,6 +69,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonBackendServicesStub extends BackendServicesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<AddSignedUrlKeyBackendServiceRequest, Operation>
       addSignedUrlKeyMethodDescriptor =
           ApiMethodDescriptor.<AddSignedUrlKeyBackendServiceRequest, Operation>newBuilder()
@@ -102,7 +109,20 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (AddSignedUrlKeyBackendServiceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -158,6 +178,7 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<BackendServiceAggregatedList>newBuilder()
                       .setDefaultInstance(BackendServiceAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -194,7 +215,20 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteBackendServiceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<DeleteSignedUrlKeyBackendServiceRequest, Operation>
@@ -231,7 +265,20 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteSignedUrlKeyBackendServiceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetBackendServiceRequest, BackendService>
@@ -264,6 +311,7 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<BackendService>newBuilder()
                       .setDefaultInstance(BackendService.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -304,6 +352,7 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<BackendServiceGroupHealth>newBuilder()
                       .setDefaultInstance(BackendServiceGroupHealth.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -343,7 +392,20 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertBackendServiceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListBackendServicesRequest, BackendServiceList>
@@ -393,6 +455,7 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<BackendServiceList>newBuilder()
                       .setDefaultInstance(BackendServiceList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -434,7 +497,20 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchBackendServiceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetSecurityPolicyBackendServiceRequest, Operation>
@@ -475,7 +551,20 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetSecurityPolicyBackendServiceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<UpdateBackendServiceRequest, Operation>
@@ -516,30 +605,58 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (UpdateBackendServiceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<AddSignedUrlKeyBackendServiceRequest, Operation>
       addSignedUrlKeyCallable;
+  private final OperationCallable<AddSignedUrlKeyBackendServiceRequest, Operation, Operation>
+      addSignedUrlKeyOperationCallable;
   private final UnaryCallable<AggregatedListBackendServicesRequest, BackendServiceAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListBackendServicesRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
   private final UnaryCallable<DeleteBackendServiceRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteBackendServiceRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<DeleteSignedUrlKeyBackendServiceRequest, Operation>
       deleteSignedUrlKeyCallable;
+  private final OperationCallable<DeleteSignedUrlKeyBackendServiceRequest, Operation, Operation>
+      deleteSignedUrlKeyOperationCallable;
   private final UnaryCallable<GetBackendServiceRequest, BackendService> getCallable;
   private final UnaryCallable<GetHealthBackendServiceRequest, BackendServiceGroupHealth>
       getHealthCallable;
   private final UnaryCallable<InsertBackendServiceRequest, Operation> insertCallable;
+  private final OperationCallable<InsertBackendServiceRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListBackendServicesRequest, BackendServiceList> listCallable;
   private final UnaryCallable<ListBackendServicesRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<PatchBackendServiceRequest, Operation> patchCallable;
+  private final OperationCallable<PatchBackendServiceRequest, Operation, Operation>
+      patchOperationCallable;
   private final UnaryCallable<SetSecurityPolicyBackendServiceRequest, Operation>
       setSecurityPolicyCallable;
+  private final OperationCallable<SetSecurityPolicyBackendServiceRequest, Operation, Operation>
+      setSecurityPolicyOperationCallable;
   private final UnaryCallable<UpdateBackendServiceRequest, Operation> updateCallable;
+  private final OperationCallable<UpdateBackendServiceRequest, Operation, Operation>
+      updateOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonBackendServicesStub create(BackendServicesStubSettings settings)
@@ -580,62 +697,81 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AddSignedUrlKeyBackendServiceRequest, Operation>
         addSignedUrlKeyTransportSettings =
             HttpJsonCallSettings.<AddSignedUrlKeyBackendServiceRequest, Operation>newBuilder()
                 .setMethodDescriptor(addSignedUrlKeyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<AggregatedListBackendServicesRequest, BackendServiceAggregatedList>
         aggregatedListTransportSettings =
             HttpJsonCallSettings
                 .<AggregatedListBackendServicesRequest, BackendServiceAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeleteBackendServiceRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<DeleteSignedUrlKeyBackendServiceRequest, Operation>
         deleteSignedUrlKeyTransportSettings =
             HttpJsonCallSettings.<DeleteSignedUrlKeyBackendServiceRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteSignedUrlKeyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<GetBackendServiceRequest, BackendService> getTransportSettings =
         HttpJsonCallSettings.<GetBackendServiceRequest, BackendService>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetHealthBackendServiceRequest, BackendServiceGroupHealth>
         getHealthTransportSettings =
             HttpJsonCallSettings
                 .<GetHealthBackendServiceRequest, BackendServiceGroupHealth>newBuilder()
                 .setMethodDescriptor(getHealthMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<InsertBackendServiceRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListBackendServicesRequest, BackendServiceList> listTransportSettings =
         HttpJsonCallSettings.<ListBackendServicesRequest, BackendServiceList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<PatchBackendServiceRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetSecurityPolicyBackendServiceRequest, Operation>
         setSecurityPolicyTransportSettings =
             HttpJsonCallSettings.<SetSecurityPolicyBackendServiceRequest, Operation>newBuilder()
                 .setMethodDescriptor(setSecurityPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<UpdateBackendServiceRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.addSignedUrlKeyCallable =
         callableFactory.createUnaryCallable(
             addSignedUrlKeyTransportSettings, settings.addSignedUrlKeySettings(), clientContext);
+    this.addSignedUrlKeyOperationCallable =
+        callableFactory.createOperationCallable(
+            addSignedUrlKeyTransportSettings,
+            settings.addSignedUrlKeyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.aggregatedListCallable =
         callableFactory.createUnaryCallable(
             aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
@@ -645,11 +781,23 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteSignedUrlKeyCallable =
         callableFactory.createUnaryCallable(
             deleteSignedUrlKeyTransportSettings,
             settings.deleteSignedUrlKeySettings(),
             clientContext);
+    this.deleteSignedUrlKeyOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteSignedUrlKeyTransportSettings,
+            settings.deleteSignedUrlKeyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
@@ -659,6 +807,12 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -668,14 +822,32 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setSecurityPolicyCallable =
         callableFactory.createUnaryCallable(
             setSecurityPolicyTransportSettings,
             settings.setSecurityPolicySettings(),
             clientContext);
+    this.setSecurityPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            setSecurityPolicyTransportSettings,
+            settings.setSecurityPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
+    this.updateOperationCallable =
+        callableFactory.createOperationCallable(
+            updateTransportSettings,
+            settings.updateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -704,6 +876,12 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
   }
 
   @Override
+  public OperationCallable<AddSignedUrlKeyBackendServiceRequest, Operation, Operation>
+      addSignedUrlKeyOperationCallable() {
+    return addSignedUrlKeyOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<AggregatedListBackendServicesRequest, BackendServiceAggregatedList>
       aggregatedListCallable() {
     return aggregatedListCallable;
@@ -721,9 +899,21 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
   }
 
   @Override
+  public OperationCallable<DeleteBackendServiceRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteSignedUrlKeyBackendServiceRequest, Operation>
       deleteSignedUrlKeyCallable() {
     return deleteSignedUrlKeyCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteSignedUrlKeyBackendServiceRequest, Operation, Operation>
+      deleteSignedUrlKeyOperationCallable() {
+    return deleteSignedUrlKeyOperationCallable;
   }
 
   @Override
@@ -743,6 +933,12 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
   }
 
   @Override
+  public OperationCallable<InsertBackendServiceRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<ListBackendServicesRequest, BackendServiceList> listCallable() {
     return listCallable;
   }
@@ -758,14 +954,32 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
   }
 
   @Override
+  public OperationCallable<PatchBackendServiceRequest, Operation, Operation>
+      patchOperationCallable() {
+    return patchOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetSecurityPolicyBackendServiceRequest, Operation>
       setSecurityPolicyCallable() {
     return setSecurityPolicyCallable;
   }
 
   @Override
+  public OperationCallable<SetSecurityPolicyBackendServiceRequest, Operation, Operation>
+      setSecurityPolicyOperationCallable() {
+    return setSecurityPolicyOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateBackendServiceRequest, Operation> updateCallable() {
     return updateCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateBackendServiceRequest, Operation, Operation>
+      updateOperationCallable() {
+    return updateOperationCallable;
   }
 
   @Override

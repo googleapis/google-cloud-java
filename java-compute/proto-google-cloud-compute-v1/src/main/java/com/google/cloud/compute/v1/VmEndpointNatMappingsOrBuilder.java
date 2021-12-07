@@ -30,7 +30,7 @@ public interface VmEndpointNatMappingsOrBuilder
    * Name of the VM instance which the endpoint belongs to
    * </pre>
    *
-   * <code>string instance_name = 227947509;</code>
+   * <code>optional string instance_name = 227947509;</code>
    *
    * @return Whether the instanceName field is set.
    */
@@ -42,7 +42,7 @@ public interface VmEndpointNatMappingsOrBuilder
    * Name of the VM instance which the endpoint belongs to
    * </pre>
    *
-   * <code>string instance_name = 227947509;</code>
+   * <code>optional string instance_name = 227947509;</code>
    *
    * @return The instanceName.
    */
@@ -54,7 +54,7 @@ public interface VmEndpointNatMappingsOrBuilder
    * Name of the VM instance which the endpoint belongs to
    * </pre>
    *
-   * <code>string instance_name = 227947509;</code>
+   * <code>optional string instance_name = 227947509;</code>
    *
    * @return The bytes for instanceName.
    */

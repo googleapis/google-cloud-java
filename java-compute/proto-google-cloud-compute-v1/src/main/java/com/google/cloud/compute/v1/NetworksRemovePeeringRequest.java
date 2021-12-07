@@ -121,7 +121,7 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
    * Name of the peering, which should conform to RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -136,7 +136,7 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
    * Name of the peering, which should conform to RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -159,7 +159,7 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
    * Name of the peering, which should conform to RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -516,7 +516,7 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
      * Name of the peering, which should conform to RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -530,7 +530,7 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
      * Name of the peering, which should conform to RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -552,7 +552,7 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
      * Name of the peering, which should conform to RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -574,7 +574,7 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
      * Name of the peering, which should conform to RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -595,7 +595,7 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
      * Name of the peering, which should conform to RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -612,7 +612,7 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
      * Name of the peering, which should conform to RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

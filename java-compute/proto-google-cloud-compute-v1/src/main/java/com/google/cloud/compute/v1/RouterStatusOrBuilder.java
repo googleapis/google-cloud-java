@@ -173,7 +173,7 @@ public interface RouterStatusOrBuilder
    * URI of the network to which this router belongs.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return Whether the network field is set.
    */
@@ -185,7 +185,7 @@ public interface RouterStatusOrBuilder
    * URI of the network to which this router belongs.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The network.
    */
@@ -197,7 +197,7 @@ public interface RouterStatusOrBuilder
    * URI of the network to which this router belongs.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The bytes for network.
    */

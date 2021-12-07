@@ -30,7 +30,7 @@ public interface NetworksRemovePeeringRequestOrBuilder
    * Name of the peering, which should conform to RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -42,7 +42,7 @@ public interface NetworksRemovePeeringRequestOrBuilder
    * Name of the peering, which should conform to RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -54,7 +54,7 @@ public interface NetworksRemovePeeringRequestOrBuilder
    * Name of the peering, which should conform to RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */

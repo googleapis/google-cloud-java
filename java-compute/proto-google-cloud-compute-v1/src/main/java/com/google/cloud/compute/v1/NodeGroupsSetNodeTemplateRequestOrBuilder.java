@@ -30,7 +30,7 @@ public interface NodeGroupsSetNodeTemplateRequestOrBuilder
    * Full or partial URL of the node template resource to be updated for this node group.
    * </pre>
    *
-   * <code>string node_template = 323154455;</code>
+   * <code>optional string node_template = 323154455;</code>
    *
    * @return Whether the nodeTemplate field is set.
    */
@@ -42,7 +42,7 @@ public interface NodeGroupsSetNodeTemplateRequestOrBuilder
    * Full or partial URL of the node template resource to be updated for this node group.
    * </pre>
    *
-   * <code>string node_template = 323154455;</code>
+   * <code>optional string node_template = 323154455;</code>
    *
    * @return The nodeTemplate.
    */
@@ -54,7 +54,7 @@ public interface NodeGroupsSetNodeTemplateRequestOrBuilder
    * Full or partial URL of the node template resource to be updated for this node group.
    * </pre>
    *
-   * <code>string node_template = 323154455;</code>
+   * <code>optional string node_template = 323154455;</code>
    *
    * @return The bytes for nodeTemplate.
    */

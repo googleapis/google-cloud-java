@@ -26,6 +26,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -49,15 +50,15 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * InterconnectsSettings.Builder interconnectsSettingsBuilder = InterconnectsSettings.newBuilder();
  * interconnectsSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         interconnectsSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -71,6 +72,12 @@ public class InterconnectsSettings extends ClientSettings<InterconnectsSettings>
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteInterconnectRequest, Operation> deleteSettings() {
     return ((InterconnectsStubSettings) getStubSettings()).deleteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteInterconnectRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((InterconnectsStubSettings) getStubSettings()).deleteOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -89,6 +96,12 @@ public class InterconnectsSettings extends ClientSettings<InterconnectsSettings>
     return ((InterconnectsStubSettings) getStubSettings()).insertSettings();
   }
 
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertInterconnectRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((InterconnectsStubSettings) getStubSettings()).insertOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<ListInterconnectsRequest, InterconnectList, ListPagedResponse>
       listSettings() {
@@ -98,6 +111,12 @@ public class InterconnectsSettings extends ClientSettings<InterconnectsSettings>
   /** Returns the object with the settings used for calls to patch. */
   public UnaryCallSettings<PatchInterconnectRequest, Operation> patchSettings() {
     return ((InterconnectsStubSettings) getStubSettings()).patchSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchInterconnectRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((InterconnectsStubSettings) getStubSettings()).patchOperationSettings();
   }
 
   public static final InterconnectsSettings create(InterconnectsStubSettings stub)
@@ -203,6 +222,12 @@ public class InterconnectsSettings extends ClientSettings<InterconnectsSettings>
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteInterconnectRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetInterconnectRequest, Interconnect> getSettings() {
       return getStubSettingsBuilder().getSettings();
@@ -220,6 +245,12 @@ public class InterconnectsSettings extends ClientSettings<InterconnectsSettings>
       return getStubSettingsBuilder().insertSettings();
     }
 
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertInterconnectRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to list. */
     public PagedCallSettings.Builder<ListInterconnectsRequest, InterconnectList, ListPagedResponse>
         listSettings() {
@@ -229,6 +260,12 @@ public class InterconnectsSettings extends ClientSettings<InterconnectsSettings>
     /** Returns the builder for the settings used for calls to patch. */
     public UnaryCallSettings.Builder<PatchInterconnectRequest, Operation> patchSettings() {
       return getStubSettingsBuilder().patchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchInterconnectRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
     }
 
     @Override

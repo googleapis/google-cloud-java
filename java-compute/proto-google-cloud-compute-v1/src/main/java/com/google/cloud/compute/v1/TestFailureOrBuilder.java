@@ -30,7 +30,7 @@ public interface TestFailureOrBuilder
    * The actual output URL evaluated by load balancer containing the scheme, host, path and query parameters.
    * </pre>
    *
-   * <code>string actual_output_url = 287075458;</code>
+   * <code>optional string actual_output_url = 287075458;</code>
    *
    * @return Whether the actualOutputUrl field is set.
    */
@@ -42,7 +42,7 @@ public interface TestFailureOrBuilder
    * The actual output URL evaluated by load balancer containing the scheme, host, path and query parameters.
    * </pre>
    *
-   * <code>string actual_output_url = 287075458;</code>
+   * <code>optional string actual_output_url = 287075458;</code>
    *
    * @return The actualOutputUrl.
    */
@@ -54,7 +54,7 @@ public interface TestFailureOrBuilder
    * The actual output URL evaluated by load balancer containing the scheme, host, path and query parameters.
    * </pre>
    *
-   * <code>string actual_output_url = 287075458;</code>
+   * <code>optional string actual_output_url = 287075458;</code>
    *
    * @return The bytes for actualOutputUrl.
    */
@@ -67,7 +67,7 @@ public interface TestFailureOrBuilder
    * Actual HTTP status code for rule with `urlRedirect` calculated by load balancer
    * </pre>
    *
-   * <code>int32 actual_redirect_response_code = 42926553;</code>
+   * <code>optional int32 actual_redirect_response_code = 42926553;</code>
    *
    * @return Whether the actualRedirectResponseCode field is set.
    */
@@ -79,7 +79,7 @@ public interface TestFailureOrBuilder
    * Actual HTTP status code for rule with `urlRedirect` calculated by load balancer
    * </pre>
    *
-   * <code>int32 actual_redirect_response_code = 42926553;</code>
+   * <code>optional int32 actual_redirect_response_code = 42926553;</code>
    *
    * @return The actualRedirectResponseCode.
    */
@@ -92,7 +92,7 @@ public interface TestFailureOrBuilder
    * BackendService or BackendBucket returned by load balancer.
    * </pre>
    *
-   * <code>string actual_service = 440379652;</code>
+   * <code>optional string actual_service = 440379652;</code>
    *
    * @return Whether the actualService field is set.
    */
@@ -104,7 +104,7 @@ public interface TestFailureOrBuilder
    * BackendService or BackendBucket returned by load balancer.
    * </pre>
    *
-   * <code>string actual_service = 440379652;</code>
+   * <code>optional string actual_service = 440379652;</code>
    *
    * @return The actualService.
    */
@@ -116,7 +116,7 @@ public interface TestFailureOrBuilder
    * BackendService or BackendBucket returned by load balancer.
    * </pre>
    *
-   * <code>string actual_service = 440379652;</code>
+   * <code>optional string actual_service = 440379652;</code>
    *
    * @return The bytes for actualService.
    */
@@ -129,7 +129,7 @@ public interface TestFailureOrBuilder
    * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
    * </pre>
    *
-   * <code>string expected_output_url = 433967384;</code>
+   * <code>optional string expected_output_url = 433967384;</code>
    *
    * @return Whether the expectedOutputUrl field is set.
    */
@@ -141,7 +141,7 @@ public interface TestFailureOrBuilder
    * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
    * </pre>
    *
-   * <code>string expected_output_url = 433967384;</code>
+   * <code>optional string expected_output_url = 433967384;</code>
    *
    * @return The expectedOutputUrl.
    */
@@ -153,7 +153,7 @@ public interface TestFailureOrBuilder
    * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
    * </pre>
    *
-   * <code>string expected_output_url = 433967384;</code>
+   * <code>optional string expected_output_url = 433967384;</code>
    *
    * @return The bytes for expectedOutputUrl.
    */
@@ -166,7 +166,7 @@ public interface TestFailureOrBuilder
    * Expected HTTP status code for rule with `urlRedirect` calculated by load balancer
    * </pre>
    *
-   * <code>int32 expected_redirect_response_code = 18888047;</code>
+   * <code>optional int32 expected_redirect_response_code = 18888047;</code>
    *
    * @return Whether the expectedRedirectResponseCode field is set.
    */
@@ -178,7 +178,7 @@ public interface TestFailureOrBuilder
    * Expected HTTP status code for rule with `urlRedirect` calculated by load balancer
    * </pre>
    *
-   * <code>int32 expected_redirect_response_code = 18888047;</code>
+   * <code>optional int32 expected_redirect_response_code = 18888047;</code>
    *
    * @return The expectedRedirectResponseCode.
    */
@@ -191,7 +191,7 @@ public interface TestFailureOrBuilder
    * Expected BackendService or BackendBucket resource the given URL should be mapped to.
    * </pre>
    *
-   * <code>string expected_service = 133987374;</code>
+   * <code>optional string expected_service = 133987374;</code>
    *
    * @return Whether the expectedService field is set.
    */
@@ -203,7 +203,7 @@ public interface TestFailureOrBuilder
    * Expected BackendService or BackendBucket resource the given URL should be mapped to.
    * </pre>
    *
-   * <code>string expected_service = 133987374;</code>
+   * <code>optional string expected_service = 133987374;</code>
    *
    * @return The expectedService.
    */
@@ -215,7 +215,7 @@ public interface TestFailureOrBuilder
    * Expected BackendService or BackendBucket resource the given URL should be mapped to.
    * </pre>
    *
-   * <code>string expected_service = 133987374;</code>
+   * <code>optional string expected_service = 133987374;</code>
    *
    * @return The bytes for expectedService.
    */
@@ -280,7 +280,7 @@ public interface TestFailureOrBuilder
    * Host portion of the URL.
    * </pre>
    *
-   * <code>string host = 3208616;</code>
+   * <code>optional string host = 3208616;</code>
    *
    * @return Whether the host field is set.
    */
@@ -292,7 +292,7 @@ public interface TestFailureOrBuilder
    * Host portion of the URL.
    * </pre>
    *
-   * <code>string host = 3208616;</code>
+   * <code>optional string host = 3208616;</code>
    *
    * @return The host.
    */
@@ -304,7 +304,7 @@ public interface TestFailureOrBuilder
    * Host portion of the URL.
    * </pre>
    *
-   * <code>string host = 3208616;</code>
+   * <code>optional string host = 3208616;</code>
    *
    * @return The bytes for host.
    */
@@ -317,7 +317,7 @@ public interface TestFailureOrBuilder
    * Path portion including query parameters in the URL.
    * </pre>
    *
-   * <code>string path = 3433509;</code>
+   * <code>optional string path = 3433509;</code>
    *
    * @return Whether the path field is set.
    */
@@ -329,7 +329,7 @@ public interface TestFailureOrBuilder
    * Path portion including query parameters in the URL.
    * </pre>
    *
-   * <code>string path = 3433509;</code>
+   * <code>optional string path = 3433509;</code>
    *
    * @return The path.
    */
@@ -341,7 +341,7 @@ public interface TestFailureOrBuilder
    * Path portion including query parameters in the URL.
    * </pre>
    *
-   * <code>string path = 3433509;</code>
+   * <code>optional string path = 3433509;</code>
    *
    * @return The bytes for path.
    */

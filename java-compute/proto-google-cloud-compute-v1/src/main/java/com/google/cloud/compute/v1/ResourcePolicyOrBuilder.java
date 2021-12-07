@@ -30,7 +30,7 @@ public interface ResourcePolicyOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -42,7 +42,7 @@ public interface ResourcePolicyOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -54,26 +54,26 @@ public interface ResourcePolicyOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
   com.google.protobuf.ByteString getCreationTimestampBytes();
 
   /**
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
   boolean hasDescription();
   /**
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
   java.lang.String getDescription();
   /**
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -87,7 +87,7 @@ public interface ResourcePolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy group_placement_policy = 10931596;
+   * optional .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy group_placement_policy = 10931596;
    * </code>
    *
    * @return Whether the groupPlacementPolicy field is set.
@@ -101,7 +101,7 @@ public interface ResourcePolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy group_placement_policy = 10931596;
+   * optional .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy group_placement_policy = 10931596;
    * </code>
    *
    * @return The groupPlacementPolicy.
@@ -115,7 +115,7 @@ public interface ResourcePolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy group_placement_policy = 10931596;
+   * optional .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy group_placement_policy = 10931596;
    * </code>
    */
   com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicyOrBuilder
@@ -128,7 +128,7 @@ public interface ResourcePolicyOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -140,7 +140,7 @@ public interface ResourcePolicyOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -154,7 +154,7 @@ public interface ResourcePolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicy instance_schedule_policy = 344877104;
+   * optional .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicy instance_schedule_policy = 344877104;
    * </code>
    *
    * @return Whether the instanceSchedulePolicy field is set.
@@ -168,7 +168,7 @@ public interface ResourcePolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicy instance_schedule_policy = 344877104;
+   * optional .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicy instance_schedule_policy = 344877104;
    * </code>
    *
    * @return The instanceSchedulePolicy.
@@ -182,7 +182,7 @@ public interface ResourcePolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicy instance_schedule_policy = 344877104;
+   * optional .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicy instance_schedule_policy = 344877104;
    * </code>
    */
   com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicyOrBuilder
@@ -195,7 +195,7 @@ public interface ResourcePolicyOrBuilder
    * [Output Only] Type of the resource. Always compute#resource_policies for resource policies.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -207,7 +207,7 @@ public interface ResourcePolicyOrBuilder
    * [Output Only] Type of the resource. Always compute#resource_policies for resource policies.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -219,7 +219,7 @@ public interface ResourcePolicyOrBuilder
    * [Output Only] Type of the resource. Always compute#resource_policies for resource policies.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -232,7 +232,7 @@ public interface ResourcePolicyOrBuilder
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -244,7 +244,7 @@ public interface ResourcePolicyOrBuilder
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -256,26 +256,26 @@ public interface ResourcePolicyOrBuilder
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
   /**
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
   boolean hasRegion();
   /**
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
   java.lang.String getRegion();
   /**
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -288,7 +288,9 @@ public interface ResourcePolicyOrBuilder
    * [Output Only] The system status of the resource policy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ResourcePolicyResourceStatus resource_status = 249429315;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.ResourcePolicyResourceStatus resource_status = 249429315;
+   * </code>
    *
    * @return Whether the resourceStatus field is set.
    */
@@ -300,7 +302,9 @@ public interface ResourcePolicyOrBuilder
    * [Output Only] The system status of the resource policy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ResourcePolicyResourceStatus resource_status = 249429315;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.ResourcePolicyResourceStatus resource_status = 249429315;
+   * </code>
    *
    * @return The resourceStatus.
    */
@@ -312,7 +316,9 @@ public interface ResourcePolicyOrBuilder
    * [Output Only] The system status of the resource policy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ResourcePolicyResourceStatus resource_status = 249429315;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.ResourcePolicyResourceStatus resource_status = 249429315;
+   * </code>
    */
   com.google.cloud.compute.v1.ResourcePolicyResourceStatusOrBuilder getResourceStatusOrBuilder();
 
@@ -323,7 +329,7 @@ public interface ResourcePolicyOrBuilder
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -335,7 +341,7 @@ public interface ResourcePolicyOrBuilder
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -347,7 +353,7 @@ public interface ResourcePolicyOrBuilder
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -361,7 +367,7 @@ public interface ResourcePolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicy snapshot_schedule_policy = 218131295;
+   * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicy snapshot_schedule_policy = 218131295;
    * </code>
    *
    * @return Whether the snapshotSchedulePolicy field is set.
@@ -375,7 +381,7 @@ public interface ResourcePolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicy snapshot_schedule_policy = 218131295;
+   * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicy snapshot_schedule_policy = 218131295;
    * </code>
    *
    * @return The snapshotSchedulePolicy.
@@ -389,7 +395,7 @@ public interface ResourcePolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicy snapshot_schedule_policy = 218131295;
+   * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicy snapshot_schedule_policy = 218131295;
    * </code>
    */
   com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyOrBuilder
@@ -400,9 +406,10 @@ public interface ResourcePolicyOrBuilder
    *
    * <pre>
    * [Output Only] The status of resource policy creation.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ResourcePolicy.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -412,23 +419,25 @@ public interface ResourcePolicyOrBuilder
    *
    * <pre>
    * [Output Only] The status of resource policy creation.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ResourcePolicy.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    *
    *
    * <pre>
    * [Output Only] The status of resource policy creation.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ResourcePolicy.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1.ResourcePolicy.Status getStatus();
+  com.google.protobuf.ByteString getStatusBytes();
 }

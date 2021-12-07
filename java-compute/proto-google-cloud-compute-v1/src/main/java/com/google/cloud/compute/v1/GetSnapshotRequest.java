@@ -231,10 +231,10 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (!getSnapshotBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(snapshot_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 284874180, snapshot_);
     }
     unknownFields.writeTo(output);
@@ -246,10 +246,10 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
-    if (!getSnapshotBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(snapshot_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(284874180, snapshot_);
     }
     size += unknownFields.getSerializedSize();

@@ -248,7 +248,7 @@ public final class TestIamPermissionsFirewallPolicyRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 195806222, resource_);
     }
     if (testPermissionsRequestResource_ != null) {
@@ -263,7 +263,7 @@ public final class TestIamPermissionsFirewallPolicyRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(195806222, resource_);
     }
     if (testPermissionsRequestResource_ != null) {

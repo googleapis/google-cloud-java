@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.FirewallsClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteFirewallRequest;
 import com.google.cloud.compute.v1.Firewall;
@@ -40,12 +41,20 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class FirewallsStub implements BackgroundResource {
 
+  public OperationCallable<DeleteFirewallRequest, Operation, Operation> deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteFirewallRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetFirewallRequest, Firewall> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertFirewallRequest, Operation, Operation> insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertFirewallRequest, Operation> insertCallable() {
@@ -60,8 +69,16 @@ public abstract class FirewallsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
   }
 
+  public OperationCallable<PatchFirewallRequest, Operation, Operation> patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
+  }
+
   public UnaryCallable<PatchFirewallRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public OperationCallable<UpdateFirewallRequest, Operation, Operation> updateOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOperationCallable()");
   }
 
   public UnaryCallable<UpdateFirewallRequest, Operation> updateCallable() {

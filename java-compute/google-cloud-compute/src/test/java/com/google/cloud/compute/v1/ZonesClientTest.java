@@ -88,6 +88,7 @@ public class ZonesClientTest {
             .setName("name3373707")
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setStatus("status-892481550")
             .setSupportsPzs(true)
             .build();
     mockService.addResponse(expectedResponse);

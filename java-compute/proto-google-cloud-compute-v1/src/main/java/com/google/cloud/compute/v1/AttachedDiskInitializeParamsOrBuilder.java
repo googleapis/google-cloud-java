@@ -30,7 +30,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * An optional description. Provide this property when creating the disk.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -42,7 +42,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * An optional description. Provide this property when creating the disk.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -54,7 +54,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * An optional description. Provide this property when creating the disk.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -67,7 +67,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * Specifies the disk name. If not specified, the default is to use the name of the instance. If a disk with the same name already exists in the given region, the existing disk is attached to the new instance and the new disk is not created.
    * </pre>
    *
-   * <code>string disk_name = 92807149;</code>
+   * <code>optional string disk_name = 92807149;</code>
    *
    * @return Whether the diskName field is set.
    */
@@ -79,7 +79,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * Specifies the disk name. If not specified, the default is to use the name of the instance. If a disk with the same name already exists in the given region, the existing disk is attached to the new instance and the new disk is not created.
    * </pre>
    *
-   * <code>string disk_name = 92807149;</code>
+   * <code>optional string disk_name = 92807149;</code>
    *
    * @return The diskName.
    */
@@ -91,7 +91,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * Specifies the disk name. If not specified, the default is to use the name of the instance. If a disk with the same name already exists in the given region, the existing disk is attached to the new instance and the new disk is not created.
    * </pre>
    *
-   * <code>string disk_name = 92807149;</code>
+   * <code>optional string disk_name = 92807149;</code>
    *
    * @return The bytes for diskName.
    */
@@ -104,7 +104,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
    * </pre>
    *
-   * <code>int64 disk_size_gb = 316263735;</code>
+   * <code>optional int64 disk_size_gb = 316263735;</code>
    *
    * @return Whether the diskSizeGb field is set.
    */
@@ -116,7 +116,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
    * </pre>
    *
-   * <code>int64 disk_size_gb = 316263735;</code>
+   * <code>optional int64 disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
@@ -126,15 +126,10 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
-   * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example:
-   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
-   * Other values include pd-ssd and local-ssd. If you define this field, you can provide either the full or partial URL. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/diskType
-   * - projects/project/zones/zone/diskTypes/diskType
-   * - zones/zone/diskTypes/diskType  Note that for InstanceTemplate, this is the name of the disk type, not URL.
+   * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/pd-standard For a full list of acceptable values, see Persistent disk types. If you define this field, you can provide either the full or partial URL. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/diskType - projects/project/zones/zone/diskTypes/diskType - zones/zone/diskTypes/diskType Note that for InstanceTemplate, this is the name of the disk type, not URL.
    * </pre>
    *
-   * <code>string disk_type = 93009052;</code>
+   * <code>optional string disk_type = 93009052;</code>
    *
    * @return Whether the diskType field is set.
    */
@@ -143,15 +138,10 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
-   * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example:
-   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
-   * Other values include pd-ssd and local-ssd. If you define this field, you can provide either the full or partial URL. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/diskType
-   * - projects/project/zones/zone/diskTypes/diskType
-   * - zones/zone/diskTypes/diskType  Note that for InstanceTemplate, this is the name of the disk type, not URL.
+   * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/pd-standard For a full list of acceptable values, see Persistent disk types. If you define this field, you can provide either the full or partial URL. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/diskType - projects/project/zones/zone/diskTypes/diskType - zones/zone/diskTypes/diskType Note that for InstanceTemplate, this is the name of the disk type, not URL.
    * </pre>
    *
-   * <code>string disk_type = 93009052;</code>
+   * <code>optional string disk_type = 93009052;</code>
    *
    * @return The diskType.
    */
@@ -160,15 +150,10 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
-   * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example:
-   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
-   * Other values include pd-ssd and local-ssd. If you define this field, you can provide either the full or partial URL. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/diskType
-   * - projects/project/zones/zone/diskTypes/diskType
-   * - zones/zone/diskTypes/diskType  Note that for InstanceTemplate, this is the name of the disk type, not URL.
+   * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/pd-standard For a full list of acceptable values, see Persistent disk types. If you define this field, you can provide either the full or partial URL. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/diskType - projects/project/zones/zone/diskTypes/diskType - zones/zone/diskTypes/diskType Note that for InstanceTemplate, this is the name of the disk type, not URL.
    * </pre>
    *
-   * <code>string disk_type = 93009052;</code>
+   * <code>optional string disk_type = 93009052;</code>
    *
    * @return The bytes for diskType.
    */
@@ -233,11 +218,10 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    * <pre>
    * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+   * Check the OnUpdateAction enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;
-   * </code>
+   * <code>optional string on_update_action = 202451980;</code>
    *
    * @return Whether the onUpdateAction field is set.
    */
@@ -247,38 +231,36 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    * <pre>
    * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+   * Check the OnUpdateAction enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;
-   * </code>
+   * <code>optional string on_update_action = 202451980;</code>
    *
-   * @return The enum numeric value on the wire for onUpdateAction.
+   * @return The onUpdateAction.
    */
-  int getOnUpdateActionValue();
+  java.lang.String getOnUpdateAction();
   /**
    *
    *
    * <pre>
    * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+   * Check the OnUpdateAction enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;
-   * </code>
+   * <code>optional string on_update_action = 202451980;</code>
    *
-   * @return The onUpdateAction.
+   * @return The bytes for onUpdateAction.
    */
-  com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction getOnUpdateAction();
+  com.google.protobuf.ByteString getOnUpdateActionBytes();
 
   /**
    *
    *
    * <pre>
-   * Indicates how many IOPS must be provisioned for the disk.
+   * Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see the Extreme persistent disk documentation.
    * </pre>
    *
-   * <code>int64 provisioned_iops = 186769108;</code>
+   * <code>optional int64 provisioned_iops = 186769108;</code>
    *
    * @return Whether the provisionedIops field is set.
    */
@@ -287,10 +269,10 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
-   * Indicates how many IOPS must be provisioned for the disk.
+   * Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see the Extreme persistent disk documentation.
    * </pre>
    *
-   * <code>int64 provisioned_iops = 186769108;</code>
+   * <code>optional int64 provisioned_iops = 186769108;</code>
    *
    * @return The provisionedIops.
    */
@@ -351,19 +333,10 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
-   * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-   * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-   * projects/debian-cloud/global/images/family/debian-9
-   * Alternatively, use a specific version of a public operating system image:
-   * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-   * To create a disk with a custom image that you created, specify the image name in the following format:
-   * global/images/my-custom-image
-   * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-   * global/images/family/my-image-family
-   * If the source image is deleted later, this field will not be set.
+   * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family If the source image is deleted later, this field will not be set.
    * </pre>
    *
-   * <code>string source_image = 50443319;</code>
+   * <code>optional string source_image = 50443319;</code>
    *
    * @return Whether the sourceImage field is set.
    */
@@ -372,19 +345,10 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
-   * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-   * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-   * projects/debian-cloud/global/images/family/debian-9
-   * Alternatively, use a specific version of a public operating system image:
-   * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-   * To create a disk with a custom image that you created, specify the image name in the following format:
-   * global/images/my-custom-image
-   * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-   * global/images/family/my-image-family
-   * If the source image is deleted later, this field will not be set.
+   * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family If the source image is deleted later, this field will not be set.
    * </pre>
    *
-   * <code>string source_image = 50443319;</code>
+   * <code>optional string source_image = 50443319;</code>
    *
    * @return The sourceImage.
    */
@@ -393,19 +357,10 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
-   * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-   * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-   * projects/debian-cloud/global/images/family/debian-9
-   * Alternatively, use a specific version of a public operating system image:
-   * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-   * To create a disk with a custom image that you created, specify the image name in the following format:
-   * global/images/my-custom-image
-   * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-   * global/images/family/my-image-family
-   * If the source image is deleted later, this field will not be set.
+   * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family If the source image is deleted later, this field will not be set.
    * </pre>
    *
-   * <code>string source_image = 50443319;</code>
+   * <code>optional string source_image = 50443319;</code>
    *
    * @return The bytes for sourceImage.
    */
@@ -415,11 +370,11 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
-   * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
+   * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key. Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    *
    * @return Whether the sourceImageEncryptionKey field is set.
@@ -429,11 +384,11 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
-   * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
+   * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key. Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    *
    * @return The sourceImageEncryptionKey.
@@ -443,11 +398,11 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
-   * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
+   * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key. Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder getSourceImageEncryptionKeyOrBuilder();
@@ -456,13 +411,10 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
-   * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD.
-   * To create a disk with a snapshot that you created, specify the snapshot name in the following format:
-   * global/snapshots/my-backup
-   * If the source snapshot is deleted later, this field will not be set.
+   * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD. To create a disk with a snapshot that you created, specify the snapshot name in the following format: global/snapshots/my-backup If the source snapshot is deleted later, this field will not be set.
    * </pre>
    *
-   * <code>string source_snapshot = 126061928;</code>
+   * <code>optional string source_snapshot = 126061928;</code>
    *
    * @return Whether the sourceSnapshot field is set.
    */
@@ -471,13 +423,10 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
-   * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD.
-   * To create a disk with a snapshot that you created, specify the snapshot name in the following format:
-   * global/snapshots/my-backup
-   * If the source snapshot is deleted later, this field will not be set.
+   * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD. To create a disk with a snapshot that you created, specify the snapshot name in the following format: global/snapshots/my-backup If the source snapshot is deleted later, this field will not be set.
    * </pre>
    *
-   * <code>string source_snapshot = 126061928;</code>
+   * <code>optional string source_snapshot = 126061928;</code>
    *
    * @return The sourceSnapshot.
    */
@@ -486,13 +435,10 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
-   * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD.
-   * To create a disk with a snapshot that you created, specify the snapshot name in the following format:
-   * global/snapshots/my-backup
-   * If the source snapshot is deleted later, this field will not be set.
+   * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD. To create a disk with a snapshot that you created, specify the snapshot name in the following format: global/snapshots/my-backup If the source snapshot is deleted later, this field will not be set.
    * </pre>
    *
-   * <code>string source_snapshot = 126061928;</code>
+   * <code>optional string source_snapshot = 126061928;</code>
    *
    * @return The bytes for sourceSnapshot.
    */
@@ -506,7 +452,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    *
    * @return Whether the sourceSnapshotEncryptionKey field is set.
@@ -520,7 +466,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    *
    * @return The sourceSnapshotEncryptionKey.
@@ -534,7 +480,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder

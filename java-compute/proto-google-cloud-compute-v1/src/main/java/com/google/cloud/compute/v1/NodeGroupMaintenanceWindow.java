@@ -138,7 +138,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
    * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
+   * <code>optional .google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
    *
    * @return Whether the maintenanceDuration field is set.
    */
@@ -153,7 +153,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
    * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
+   * <code>optional .google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
    *
    * @return The maintenanceDuration.
    */
@@ -170,7 +170,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
    * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
+   * <code>optional .google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DurationOrBuilder getMaintenanceDurationOrBuilder() {
@@ -188,7 +188,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
    * Start time of the window. This must be in UTC format that resolves to one of 00:00, 04:00, 08:00, 12:00, 16:00, or 20:00. For example, both 13:00-5 and 08:00 are valid.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return Whether the startTime field is set.
    */
@@ -203,7 +203,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
    * Start time of the window. This must be in UTC format that resolves to one of 00:00, 04:00, 08:00, 12:00, 16:00, or 20:00. For example, both 13:00-5 and 08:00 are valid.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return The startTime.
    */
@@ -226,7 +226,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
    * Start time of the window. This must be in UTC format that resolves to one of 00:00, 04:00, 08:00, 12:00, 16:00, or 20:00. For example, both 13:00-5 and 08:00 are valid.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return The bytes for startTime.
    */
@@ -624,7 +624,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
+     * <code>optional .google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
      *
      * @return Whether the maintenanceDuration field is set.
      */
@@ -638,7 +638,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
+     * <code>optional .google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
      *
      * @return The maintenanceDuration.
      */
@@ -658,7 +658,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
+     * <code>optional .google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
      */
     public Builder setMaintenanceDuration(com.google.cloud.compute.v1.Duration value) {
       if (maintenanceDurationBuilder_ == null) {
@@ -680,7 +680,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
+     * <code>optional .google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
      */
     public Builder setMaintenanceDuration(
         com.google.cloud.compute.v1.Duration.Builder builderForValue) {
@@ -700,7 +700,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
+     * <code>optional .google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
      */
     public Builder mergeMaintenanceDuration(com.google.cloud.compute.v1.Duration value) {
       if (maintenanceDurationBuilder_ == null) {
@@ -728,7 +728,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
+     * <code>optional .google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
      */
     public Builder clearMaintenanceDuration() {
       if (maintenanceDurationBuilder_ == null) {
@@ -747,7 +747,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
+     * <code>optional .google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getMaintenanceDurationBuilder() {
       bitField0_ |= 0x00000001;
@@ -761,7 +761,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
+     * <code>optional .google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
      */
     public com.google.cloud.compute.v1.DurationOrBuilder getMaintenanceDurationOrBuilder() {
       if (maintenanceDurationBuilder_ != null) {
@@ -779,7 +779,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
+     * <code>optional .google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Duration,
@@ -806,7 +806,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * Start time of the window. This must be in UTC format that resolves to one of 00:00, 04:00, 08:00, 12:00, 16:00, or 20:00. For example, both 13:00-5 and 08:00 are valid.
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>optional string start_time = 37467274;</code>
      *
      * @return Whether the startTime field is set.
      */
@@ -820,7 +820,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * Start time of the window. This must be in UTC format that resolves to one of 00:00, 04:00, 08:00, 12:00, 16:00, or 20:00. For example, both 13:00-5 and 08:00 are valid.
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>optional string start_time = 37467274;</code>
      *
      * @return The startTime.
      */
@@ -842,7 +842,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * Start time of the window. This must be in UTC format that resolves to one of 00:00, 04:00, 08:00, 12:00, 16:00, or 20:00. For example, both 13:00-5 and 08:00 are valid.
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>optional string start_time = 37467274;</code>
      *
      * @return The bytes for startTime.
      */
@@ -864,7 +864,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * Start time of the window. This must be in UTC format that resolves to one of 00:00, 04:00, 08:00, 12:00, 16:00, or 20:00. For example, both 13:00-5 and 08:00 are valid.
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>optional string start_time = 37467274;</code>
      *
      * @param value The startTime to set.
      * @return This builder for chaining.
@@ -885,7 +885,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * Start time of the window. This must be in UTC format that resolves to one of 00:00, 04:00, 08:00, 12:00, 16:00, or 20:00. For example, both 13:00-5 and 08:00 are valid.
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>optional string start_time = 37467274;</code>
      *
      * @return This builder for chaining.
      */
@@ -902,7 +902,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * Start time of the window. This must be in UTC format that resolves to one of 00:00, 04:00, 08:00, 12:00, 16:00, or 20:00. For example, both 13:00-5 and 08:00 are valid.
      * </pre>
      *
-     * <code>string start_time = 37467274;</code>
+     * <code>optional string start_time = 37467274;</code>
      *
      * @param value The bytes for startTime to set.
      * @return This builder for chaining.

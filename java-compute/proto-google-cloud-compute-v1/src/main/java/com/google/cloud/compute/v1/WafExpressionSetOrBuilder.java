@@ -136,10 +136,10 @@ public interface WafExpressionSetOrBuilder
    *
    *
    * <pre>
-   * Google specified expression set ID. The format should be: - E.g. XSS-20170329
+   * Google specified expression set ID. The format should be: - E.g. XSS-20170329 required
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>optional string id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -148,10 +148,10 @@ public interface WafExpressionSetOrBuilder
    *
    *
    * <pre>
-   * Google specified expression set ID. The format should be: - E.g. XSS-20170329
+   * Google specified expression set ID. The format should be: - E.g. XSS-20170329 required
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>optional string id = 3355;</code>
    *
    * @return The id.
    */
@@ -160,10 +160,10 @@ public interface WafExpressionSetOrBuilder
    *
    *
    * <pre>
-   * Google specified expression set ID. The format should be: - E.g. XSS-20170329
+   * Google specified expression set ID. The format should be: - E.g. XSS-20170329 required
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>optional string id = 3355;</code>
    *
    * @return The bytes for id.
    */

@@ -28,6 +28,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -51,15 +52,15 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * SubnetworksSettings.Builder subnetworksSettingsBuilder = SubnetworksSettings.newBuilder();
  * subnetworksSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         subnetworksSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -82,10 +83,22 @@ public class SubnetworksSettings extends ClientSettings<SubnetworksSettings> {
     return ((SubnetworksStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteSubnetworkRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((SubnetworksStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to expandIpCidrRange. */
   public UnaryCallSettings<ExpandIpCidrRangeSubnetworkRequest, Operation>
       expandIpCidrRangeSettings() {
     return ((SubnetworksStubSettings) getStubSettings()).expandIpCidrRangeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to expandIpCidrRange. */
+  public OperationCallSettings<ExpandIpCidrRangeSubnetworkRequest, Operation, Operation>
+      expandIpCidrRangeOperationSettings() {
+    return ((SubnetworksStubSettings) getStubSettings()).expandIpCidrRangeOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -101,6 +114,12 @@ public class SubnetworksSettings extends ClientSettings<SubnetworksSettings> {
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertSubnetworkRequest, Operation> insertSettings() {
     return ((SubnetworksStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertSubnetworkRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((SubnetworksStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -121,6 +140,12 @@ public class SubnetworksSettings extends ClientSettings<SubnetworksSettings> {
     return ((SubnetworksStubSettings) getStubSettings()).patchSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchSubnetworkRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((SubnetworksStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicySubnetworkRequest, Policy> setIamPolicySettings() {
     return ((SubnetworksStubSettings) getStubSettings()).setIamPolicySettings();
@@ -130,6 +155,13 @@ public class SubnetworksSettings extends ClientSettings<SubnetworksSettings> {
   public UnaryCallSettings<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>
       setPrivateIpGoogleAccessSettings() {
     return ((SubnetworksStubSettings) getStubSettings()).setPrivateIpGoogleAccessSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setPrivateIpGoogleAccess. */
+  public OperationCallSettings<SetPrivateIpGoogleAccessSubnetworkRequest, Operation, Operation>
+      setPrivateIpGoogleAccessOperationSettings() {
+    return ((SubnetworksStubSettings) getStubSettings())
+        .setPrivateIpGoogleAccessOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to testIamPermissions. */
@@ -247,10 +279,22 @@ public class SubnetworksSettings extends ClientSettings<SubnetworksSettings> {
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteSubnetworkRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to expandIpCidrRange. */
     public UnaryCallSettings.Builder<ExpandIpCidrRangeSubnetworkRequest, Operation>
         expandIpCidrRangeSettings() {
       return getStubSettingsBuilder().expandIpCidrRangeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to expandIpCidrRange. */
+    public OperationCallSettings.Builder<ExpandIpCidrRangeSubnetworkRequest, Operation, Operation>
+        expandIpCidrRangeOperationSettings() {
+      return getStubSettingsBuilder().expandIpCidrRangeOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -266,6 +310,12 @@ public class SubnetworksSettings extends ClientSettings<SubnetworksSettings> {
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertSubnetworkRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertSubnetworkRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -286,6 +336,12 @@ public class SubnetworksSettings extends ClientSettings<SubnetworksSettings> {
       return getStubSettingsBuilder().patchSettings();
     }
 
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchSubnetworkRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setIamPolicy. */
     public UnaryCallSettings.Builder<SetIamPolicySubnetworkRequest, Policy> setIamPolicySettings() {
       return getStubSettingsBuilder().setIamPolicySettings();
@@ -295,6 +351,13 @@ public class SubnetworksSettings extends ClientSettings<SubnetworksSettings> {
     public UnaryCallSettings.Builder<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>
         setPrivateIpGoogleAccessSettings() {
       return getStubSettingsBuilder().setPrivateIpGoogleAccessSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setPrivateIpGoogleAccess. */
+    public OperationCallSettings.Builder<
+            SetPrivateIpGoogleAccessSubnetworkRequest, Operation, Operation>
+        setPrivateIpGoogleAccessOperationSettings() {
+      return getStubSettingsBuilder().setPrivateIpGoogleAccessOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */

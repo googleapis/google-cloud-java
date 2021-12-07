@@ -22,12 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Target HTTP Proxy resource.
- * Google Compute Engine has two Target HTTP Proxy resources:
- * * [Global](/compute/docs/reference/rest/{$api_version}/targetHttpProxies) * [Regional](/compute/docs/reference/rest/{$api_version}/regionTargetHttpProxies)
- * A target HTTP proxy is a component of GCP HTTP load balancers.
- * * targetHttpProxies are used by external HTTP load balancers and Traffic Director. * regionTargetHttpProxies are used by internal HTTP load balancers.
- * Forwarding rules reference a target HTTP proxy, and the target proxy then references a URL map. For more information, read Using Target Proxies and  Forwarding rule concepts. (== resource_for {$api_version}.targetHttpProxies ==) (== resource_for {$api_version}.regionTargetHttpProxies ==)
+ * Represents a Target HTTP Proxy resource. Google Compute Engine has two Target HTTP Proxy resources: * [Global](/compute/docs/reference/rest/v1/targetHttpProxies) * [Regional](/compute/docs/reference/rest/v1/regionTargetHttpProxies) A target HTTP proxy is a component of GCP HTTP load balancers. * targetHttpProxies are used by external HTTP load balancers and Traffic Director. * regionTargetHttpProxies are used by internal HTTP load balancers. Forwarding rules reference a target HTTP proxy, and the target proxy then references a URL map. For more information, read Using Target Proxies and Forwarding rule concepts.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.TargetHttpProxy}
@@ -195,7 +190,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -210,7 +205,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -233,7 +228,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -259,7 +254,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -274,7 +269,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -297,7 +292,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -323,7 +318,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetHttpProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetHttpProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetHttpProxy.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return Whether the fingerprint field is set.
    */
@@ -338,7 +333,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetHttpProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetHttpProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetHttpProxy.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The fingerprint.
    */
@@ -361,7 +356,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetHttpProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetHttpProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetHttpProxy.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The bytes for fingerprint.
    */
@@ -387,7 +382,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -402,7 +397,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -420,7 +415,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Type of resource. Always compute#targetHttpProxy for target HTTP proxies.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -435,7 +430,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Type of resource. Always compute#targetHttpProxy for target HTTP proxies.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -458,7 +453,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Type of resource. Always compute#targetHttpProxy for target HTTP proxies.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -484,7 +479,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -499,7 +494,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -522,7 +517,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -545,12 +540,10 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
-   * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
-   * The default is false.
+   * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED. When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them. The default is false.
    * </pre>
    *
-   * <code>bool proxy_bind = 286025582;</code>
+   * <code>optional bool proxy_bind = 286025582;</code>
    *
    * @return Whether the proxyBind field is set.
    */
@@ -562,12 +555,10 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
-   * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
-   * The default is false.
+   * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED. When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them. The default is false.
    * </pre>
    *
-   * <code>bool proxy_bind = 286025582;</code>
+   * <code>optional bool proxy_bind = 286025582;</code>
    *
    * @return The proxyBind.
    */
@@ -585,7 +576,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * [Output Only] URL of the region where the regional Target HTTP Proxy resides. This field is not applicable to global Target HTTP Proxies.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -600,7 +591,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * [Output Only] URL of the region where the regional Target HTTP Proxy resides. This field is not applicable to global Target HTTP Proxies.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -623,7 +614,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * [Output Only] URL of the region where the regional Target HTTP Proxy resides. This field is not applicable to global Target HTTP Proxies.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -649,7 +640,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -664,7 +655,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -687,7 +678,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -713,7 +704,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
    * </pre>
    *
-   * <code>string url_map = 367020684;</code>
+   * <code>optional string url_map = 367020684;</code>
    *
    * @return Whether the urlMap field is set.
    */
@@ -728,7 +719,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
    * </pre>
    *
-   * <code>string url_map = 367020684;</code>
+   * <code>optional string url_map = 367020684;</code>
    *
    * @return The urlMap.
    */
@@ -751,7 +742,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
    * </pre>
    *
-   * <code>string url_map = 367020684;</code>
+   * <code>optional string url_map = 367020684;</code>
    *
    * @return The bytes for urlMap.
    */
@@ -1063,12 +1054,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Represents a Target HTTP Proxy resource.
-   * Google Compute Engine has two Target HTTP Proxy resources:
-   * * [Global](/compute/docs/reference/rest/{$api_version}/targetHttpProxies) * [Regional](/compute/docs/reference/rest/{$api_version}/regionTargetHttpProxies)
-   * A target HTTP proxy is a component of GCP HTTP load balancers.
-   * * targetHttpProxies are used by external HTTP load balancers and Traffic Director. * regionTargetHttpProxies are used by internal HTTP load balancers.
-   * Forwarding rules reference a target HTTP proxy, and the target proxy then references a URL map. For more information, read Using Target Proxies and  Forwarding rule concepts. (== resource_for {$api_version}.targetHttpProxies ==) (== resource_for {$api_version}.regionTargetHttpProxies ==)
+   * Represents a Target HTTP Proxy resource. Google Compute Engine has two Target HTTP Proxy resources: * [Global](/compute/docs/reference/rest/v1/targetHttpProxies) * [Regional](/compute/docs/reference/rest/v1/regionTargetHttpProxies) A target HTTP proxy is a component of GCP HTTP load balancers. * targetHttpProxies are used by external HTTP load balancers and Traffic Director. * regionTargetHttpProxies are used by internal HTTP load balancers. Forwarding rules reference a target HTTP proxy, and the target proxy then references a URL map. For more information, read Using Target Proxies and Forwarding rule concepts.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.TargetHttpProxy}
@@ -1333,7 +1319,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -1347,7 +1333,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -1369,7 +1355,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -1391,7 +1377,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -1412,7 +1398,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -1429,7 +1415,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -1453,7 +1439,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -1467,7 +1453,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1489,7 +1475,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1511,7 +1497,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1532,7 +1518,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -1549,7 +1535,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1573,7 +1559,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetHttpProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetHttpProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetHttpProxy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return Whether the fingerprint field is set.
      */
@@ -1587,7 +1573,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetHttpProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetHttpProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetHttpProxy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The fingerprint.
      */
@@ -1609,7 +1595,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetHttpProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetHttpProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetHttpProxy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The bytes for fingerprint.
      */
@@ -1631,7 +1617,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetHttpProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetHttpProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetHttpProxy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The fingerprint to set.
      * @return This builder for chaining.
@@ -1652,7 +1638,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetHttpProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetHttpProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetHttpProxy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return This builder for chaining.
      */
@@ -1669,7 +1655,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetHttpProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetHttpProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetHttpProxy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The bytes for fingerprint to set.
      * @return This builder for chaining.
@@ -1693,7 +1679,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -1708,7 +1694,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -1723,7 +1709,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -1741,7 +1727,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -1760,7 +1746,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Type of resource. Always compute#targetHttpProxy for target HTTP proxies.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -1774,7 +1760,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Type of resource. Always compute#targetHttpProxy for target HTTP proxies.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -1796,7 +1782,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Type of resource. Always compute#targetHttpProxy for target HTTP proxies.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -1818,7 +1804,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Type of resource. Always compute#targetHttpProxy for target HTTP proxies.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -1839,7 +1825,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Type of resource. Always compute#targetHttpProxy for target HTTP proxies.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -1856,7 +1842,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Type of resource. Always compute#targetHttpProxy for target HTTP proxies.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -1880,7 +1866,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -1894,7 +1880,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -1916,7 +1902,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -1938,7 +1924,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1959,7 +1945,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -1976,7 +1962,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1997,12 +1983,10 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
-     * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
-     * The default is false.
+     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED. When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them. The default is false.
      * </pre>
      *
-     * <code>bool proxy_bind = 286025582;</code>
+     * <code>optional bool proxy_bind = 286025582;</code>
      *
      * @return Whether the proxyBind field is set.
      */
@@ -2014,12 +1998,10 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
-     * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
-     * The default is false.
+     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED. When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them. The default is false.
      * </pre>
      *
-     * <code>bool proxy_bind = 286025582;</code>
+     * <code>optional bool proxy_bind = 286025582;</code>
      *
      * @return The proxyBind.
      */
@@ -2031,12 +2013,10 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
-     * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
-     * The default is false.
+     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED. When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them. The default is false.
      * </pre>
      *
-     * <code>bool proxy_bind = 286025582;</code>
+     * <code>optional bool proxy_bind = 286025582;</code>
      *
      * @param value The proxyBind to set.
      * @return This builder for chaining.
@@ -2051,12 +2031,10 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
-     * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
-     * The default is false.
+     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED. When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them. The default is false.
      * </pre>
      *
-     * <code>bool proxy_bind = 286025582;</code>
+     * <code>optional bool proxy_bind = 286025582;</code>
      *
      * @return This builder for chaining.
      */
@@ -2075,7 +2053,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] URL of the region where the regional Target HTTP Proxy resides. This field is not applicable to global Target HTTP Proxies.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return Whether the region field is set.
      */
@@ -2089,7 +2067,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] URL of the region where the regional Target HTTP Proxy resides. This field is not applicable to global Target HTTP Proxies.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The region.
      */
@@ -2111,7 +2089,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] URL of the region where the regional Target HTTP Proxy resides. This field is not applicable to global Target HTTP Proxies.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The bytes for region.
      */
@@ -2133,7 +2111,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] URL of the region where the regional Target HTTP Proxy resides. This field is not applicable to global Target HTTP Proxies.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -2154,7 +2132,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] URL of the region where the regional Target HTTP Proxy resides. This field is not applicable to global Target HTTP Proxies.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return This builder for chaining.
      */
@@ -2171,7 +2149,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] URL of the region where the regional Target HTTP Proxy resides. This field is not applicable to global Target HTTP Proxies.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.
@@ -2195,7 +2173,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -2209,7 +2187,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -2231,7 +2209,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2253,7 +2231,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2274,7 +2252,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -2291,7 +2269,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2315,7 +2293,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>optional string url_map = 367020684;</code>
      *
      * @return Whether the urlMap field is set.
      */
@@ -2329,7 +2307,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>optional string url_map = 367020684;</code>
      *
      * @return The urlMap.
      */
@@ -2351,7 +2329,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>optional string url_map = 367020684;</code>
      *
      * @return The bytes for urlMap.
      */
@@ -2373,7 +2351,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>optional string url_map = 367020684;</code>
      *
      * @param value The urlMap to set.
      * @return This builder for chaining.
@@ -2394,7 +2372,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>optional string url_map = 367020684;</code>
      *
      * @return This builder for chaining.
      */
@@ -2411,7 +2389,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>optional string url_map = 367020684;</code>
      *
      * @param value The bytes for urlMap to set.
      * @return This builder for chaining.

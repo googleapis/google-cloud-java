@@ -29,10 +29,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.httpjson.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -89,16 +93,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * SubnetworksStubSettings.Builder subnetworksSettingsBuilder =
  *     SubnetworksStubSettings.newBuilder();
  * subnetworksSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         subnetworksSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -119,20 +123,31 @@ public class SubnetworksStubSettings extends StubSettings<SubnetworksStubSetting
           AggregatedListSubnetworksRequest, SubnetworkAggregatedList, AggregatedListPagedResponse>
       aggregatedListSettings;
   private final UnaryCallSettings<DeleteSubnetworkRequest, Operation> deleteSettings;
+  private final OperationCallSettings<DeleteSubnetworkRequest, Operation, Operation>
+      deleteOperationSettings;
   private final UnaryCallSettings<ExpandIpCidrRangeSubnetworkRequest, Operation>
       expandIpCidrRangeSettings;
+  private final OperationCallSettings<ExpandIpCidrRangeSubnetworkRequest, Operation, Operation>
+      expandIpCidrRangeOperationSettings;
   private final UnaryCallSettings<GetSubnetworkRequest, Subnetwork> getSettings;
   private final UnaryCallSettings<GetIamPolicySubnetworkRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<InsertSubnetworkRequest, Operation> insertSettings;
+  private final OperationCallSettings<InsertSubnetworkRequest, Operation, Operation>
+      insertOperationSettings;
   private final PagedCallSettings<ListSubnetworksRequest, SubnetworkList, ListPagedResponse>
       listSettings;
   private final PagedCallSettings<
           ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList, ListUsablePagedResponse>
       listUsableSettings;
   private final UnaryCallSettings<PatchSubnetworkRequest, Operation> patchSettings;
+  private final OperationCallSettings<PatchSubnetworkRequest, Operation, Operation>
+      patchOperationSettings;
   private final UnaryCallSettings<SetIamPolicySubnetworkRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>
       setPrivateIpGoogleAccessSettings;
+  private final OperationCallSettings<
+          SetPrivateIpGoogleAccessSubnetworkRequest, Operation, Operation>
+      setPrivateIpGoogleAccessOperationSettings;
   private final UnaryCallSettings<TestIamPermissionsSubnetworkRequest, TestPermissionsResponse>
       testIamPermissionsSettings;
 
@@ -342,10 +357,22 @@ public class SubnetworksStubSettings extends StubSettings<SubnetworksStubSetting
     return deleteSettings;
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteSubnetworkRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return deleteOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to expandIpCidrRange. */
   public UnaryCallSettings<ExpandIpCidrRangeSubnetworkRequest, Operation>
       expandIpCidrRangeSettings() {
     return expandIpCidrRangeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to expandIpCidrRange. */
+  public OperationCallSettings<ExpandIpCidrRangeSubnetworkRequest, Operation, Operation>
+      expandIpCidrRangeOperationSettings() {
+    return expandIpCidrRangeOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -361,6 +388,12 @@ public class SubnetworksStubSettings extends StubSettings<SubnetworksStubSetting
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertSubnetworkRequest, Operation> insertSettings() {
     return insertSettings;
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertSubnetworkRequest, Operation, Operation>
+      insertOperationSettings() {
+    return insertOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -381,6 +414,12 @@ public class SubnetworksStubSettings extends StubSettings<SubnetworksStubSetting
     return patchSettings;
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchSubnetworkRequest, Operation, Operation>
+      patchOperationSettings() {
+    return patchOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicySubnetworkRequest, Policy> setIamPolicySettings() {
     return setIamPolicySettings;
@@ -390,6 +429,12 @@ public class SubnetworksStubSettings extends StubSettings<SubnetworksStubSetting
   public UnaryCallSettings<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>
       setPrivateIpGoogleAccessSettings() {
     return setPrivateIpGoogleAccessSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setPrivateIpGoogleAccess. */
+  public OperationCallSettings<SetPrivateIpGoogleAccessSubnetworkRequest, Operation, Operation>
+      setPrivateIpGoogleAccessOperationSettings() {
+    return setPrivateIpGoogleAccessOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to testIamPermissions. */
@@ -432,7 +477,9 @@ public class SubnetworksStubSettings extends StubSettings<SubnetworksStubSetting
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return GoogleCredentialsProvider.newBuilder()
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        .setUseJwtAccessWithScope(true);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -475,15 +522,22 @@ public class SubnetworksStubSettings extends StubSettings<SubnetworksStubSetting
 
     aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
+    deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     expandIpCidrRangeSettings = settingsBuilder.expandIpCidrRangeSettings().build();
+    expandIpCidrRangeOperationSettings =
+        settingsBuilder.expandIpCidrRangeOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
+    insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     listUsableSettings = settingsBuilder.listUsableSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
+    patchOperationSettings = settingsBuilder.patchOperationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     setPrivateIpGoogleAccessSettings = settingsBuilder.setPrivateIpGoogleAccessSettings().build();
+    setPrivateIpGoogleAccessOperationSettings =
+        settingsBuilder.setPrivateIpGoogleAccessOperationSettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
@@ -494,12 +548,19 @@ public class SubnetworksStubSettings extends StubSettings<SubnetworksStubSetting
             AggregatedListSubnetworksRequest, SubnetworkAggregatedList, AggregatedListPagedResponse>
         aggregatedListSettings;
     private final UnaryCallSettings.Builder<DeleteSubnetworkRequest, Operation> deleteSettings;
+    private final OperationCallSettings.Builder<DeleteSubnetworkRequest, Operation, Operation>
+        deleteOperationSettings;
     private final UnaryCallSettings.Builder<ExpandIpCidrRangeSubnetworkRequest, Operation>
         expandIpCidrRangeSettings;
+    private final OperationCallSettings.Builder<
+            ExpandIpCidrRangeSubnetworkRequest, Operation, Operation>
+        expandIpCidrRangeOperationSettings;
     private final UnaryCallSettings.Builder<GetSubnetworkRequest, Subnetwork> getSettings;
     private final UnaryCallSettings.Builder<GetIamPolicySubnetworkRequest, Policy>
         getIamPolicySettings;
     private final UnaryCallSettings.Builder<InsertSubnetworkRequest, Operation> insertSettings;
+    private final OperationCallSettings.Builder<InsertSubnetworkRequest, Operation, Operation>
+        insertOperationSettings;
     private final PagedCallSettings.Builder<
             ListSubnetworksRequest, SubnetworkList, ListPagedResponse>
         listSettings;
@@ -507,10 +568,15 @@ public class SubnetworksStubSettings extends StubSettings<SubnetworksStubSetting
             ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList, ListUsablePagedResponse>
         listUsableSettings;
     private final UnaryCallSettings.Builder<PatchSubnetworkRequest, Operation> patchSettings;
+    private final OperationCallSettings.Builder<PatchSubnetworkRequest, Operation, Operation>
+        patchOperationSettings;
     private final UnaryCallSettings.Builder<SetIamPolicySubnetworkRequest, Policy>
         setIamPolicySettings;
     private final UnaryCallSettings.Builder<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>
         setPrivateIpGoogleAccessSettings;
+    private final OperationCallSettings.Builder<
+            SetPrivateIpGoogleAccessSubnetworkRequest, Operation, Operation>
+        setPrivateIpGoogleAccessOperationSettings;
     private final UnaryCallSettings.Builder<
             TestIamPermissionsSubnetworkRequest, TestPermissionsResponse>
         testIamPermissionsSettings;
@@ -566,15 +632,20 @@ public class SubnetworksStubSettings extends StubSettings<SubnetworksStubSetting
 
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteOperationSettings = OperationCallSettings.newBuilder();
       expandIpCidrRangeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      expandIpCidrRangeOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       listUsableSettings = PagedCallSettings.newBuilder(LIST_USABLE_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      patchOperationSettings = OperationCallSettings.newBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setPrivateIpGoogleAccessSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setPrivateIpGoogleAccessOperationSettings = OperationCallSettings.newBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -599,15 +670,21 @@ public class SubnetworksStubSettings extends StubSettings<SubnetworksStubSetting
 
       aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
+      deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       expandIpCidrRangeSettings = settings.expandIpCidrRangeSettings.toBuilder();
+      expandIpCidrRangeOperationSettings = settings.expandIpCidrRangeOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
+      insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       listUsableSettings = settings.listUsableSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
+      patchOperationSettings = settings.patchOperationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       setPrivateIpGoogleAccessSettings = settings.setPrivateIpGoogleAccessSettings.toBuilder();
+      setPrivateIpGoogleAccessOperationSettings =
+          settings.setPrivateIpGoogleAccessOperationSettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -700,6 +777,128 @@ public class SubnetworksStubSettings extends StubSettings<SubnetworksStubSetting
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .deleteOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteSubnetworkRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .expandIpCidrRangeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ExpandIpCidrRangeSubnetworkRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .insertOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<InsertSubnetworkRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .patchOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PatchSubnetworkRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setPrivateIpGoogleAccessOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetPrivateIpGoogleAccessSubnetworkRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -730,10 +929,26 @@ public class SubnetworksStubSettings extends StubSettings<SubnetworksStubSetting
       return deleteSettings;
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteSubnetworkRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return deleteOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to expandIpCidrRange. */
     public UnaryCallSettings.Builder<ExpandIpCidrRangeSubnetworkRequest, Operation>
         expandIpCidrRangeSettings() {
       return expandIpCidrRangeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to expandIpCidrRange. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<ExpandIpCidrRangeSubnetworkRequest, Operation, Operation>
+        expandIpCidrRangeOperationSettings() {
+      return expandIpCidrRangeOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -749,6 +964,14 @@ public class SubnetworksStubSettings extends StubSettings<SubnetworksStubSetting
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertSubnetworkRequest, Operation> insertSettings() {
       return insertSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<InsertSubnetworkRequest, Operation, Operation>
+        insertOperationSettings() {
+      return insertOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -769,6 +992,14 @@ public class SubnetworksStubSettings extends StubSettings<SubnetworksStubSetting
       return patchSettings;
     }
 
+    /** Returns the builder for the settings used for calls to patch. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<PatchSubnetworkRequest, Operation, Operation>
+        patchOperationSettings() {
+      return patchOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setIamPolicy. */
     public UnaryCallSettings.Builder<SetIamPolicySubnetworkRequest, Policy> setIamPolicySettings() {
       return setIamPolicySettings;
@@ -778,6 +1009,15 @@ public class SubnetworksStubSettings extends StubSettings<SubnetworksStubSetting
     public UnaryCallSettings.Builder<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>
         setPrivateIpGoogleAccessSettings() {
       return setPrivateIpGoogleAccessSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setPrivateIpGoogleAccess. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            SetPrivateIpGoogleAccessSubnetworkRequest, Operation, Operation>
+        setPrivateIpGoogleAccessOperationSettings() {
+      return setPrivateIpGoogleAccessOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */

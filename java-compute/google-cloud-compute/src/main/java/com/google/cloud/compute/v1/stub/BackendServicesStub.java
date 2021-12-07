@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.BackendServicesClient.AggregatedListPa
 import static com.google.cloud.compute.v1.BackendServicesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddSignedUrlKeyBackendServiceRequest;
 import com.google.cloud.compute.v1.AggregatedListBackendServicesRequest;
@@ -48,6 +49,11 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class BackendServicesStub implements BackgroundResource {
 
+  public OperationCallable<AddSignedUrlKeyBackendServiceRequest, Operation, Operation>
+      addSignedUrlKeyOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: addSignedUrlKeyOperationCallable()");
+  }
+
   public UnaryCallable<AddSignedUrlKeyBackendServiceRequest, Operation> addSignedUrlKeyCallable() {
     throw new UnsupportedOperationException("Not implemented: addSignedUrlKeyCallable()");
   }
@@ -62,8 +68,19 @@ public abstract class BackendServicesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<DeleteBackendServiceRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteBackendServiceRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
+  }
+
+  public OperationCallable<DeleteSignedUrlKeyBackendServiceRequest, Operation, Operation>
+      deleteSignedUrlKeyOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteSignedUrlKeyOperationCallable()");
   }
 
   public UnaryCallable<DeleteSignedUrlKeyBackendServiceRequest, Operation>
@@ -80,6 +97,11 @@ public abstract class BackendServicesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getHealthCallable()");
   }
 
+  public OperationCallable<InsertBackendServiceRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
+  }
+
   public UnaryCallable<InsertBackendServiceRequest, Operation> insertCallable() {
     throw new UnsupportedOperationException("Not implemented: insertCallable()");
   }
@@ -92,13 +114,29 @@ public abstract class BackendServicesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
   }
 
+  public OperationCallable<PatchBackendServiceRequest, Operation, Operation>
+      patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
+  }
+
   public UnaryCallable<PatchBackendServiceRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public OperationCallable<SetSecurityPolicyBackendServiceRequest, Operation, Operation>
+      setSecurityPolicyOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setSecurityPolicyOperationCallable()");
   }
 
   public UnaryCallable<SetSecurityPolicyBackendServiceRequest, Operation>
       setSecurityPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setSecurityPolicyCallable()");
+  }
+
+  public OperationCallable<UpdateBackendServiceRequest, Operation, Operation>
+      updateOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOperationCallable()");
   }
 
   public UnaryCallable<UpdateBackendServiceRequest, Operation> updateCallable() {

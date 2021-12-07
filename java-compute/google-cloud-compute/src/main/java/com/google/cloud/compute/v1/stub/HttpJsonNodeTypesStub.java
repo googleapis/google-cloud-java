@@ -38,6 +38,7 @@ import com.google.cloud.compute.v1.ListNodeTypesRequest;
 import com.google.cloud.compute.v1.NodeType;
 import com.google.cloud.compute.v1.NodeTypeAggregatedList;
 import com.google.cloud.compute.v1.NodeTypeList;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,6 +56,8 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonNodeTypesStub extends NodeTypesStub {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
   private static final ApiMethodDescriptor<AggregatedListNodeTypesRequest, NodeTypeAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor.<AggregatedListNodeTypesRequest, NodeTypeAggregatedList>newBuilder()
@@ -106,6 +109,7 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<NodeTypeAggregatedList>newBuilder()
                       .setDefaultInstance(NodeTypeAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -138,6 +142,7 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<NodeType>newBuilder()
                   .setDefaultInstance(NodeType.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -189,6 +194,7 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<NodeTypeList>newBuilder()
                       .setDefaultInstance(NodeTypeList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -245,14 +251,17 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
             HttpJsonCallSettings
                 .<AggregatedListNodeTypesRequest, NodeTypeAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<GetNodeTypeRequest, NodeType> getTransportSettings =
         HttpJsonCallSettings.<GetNodeTypeRequest, NodeType>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListNodeTypesRequest, NodeTypeList> listTransportSettings =
         HttpJsonCallSettings.<ListNodeTypesRequest, NodeTypeList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.aggregatedListCallable =

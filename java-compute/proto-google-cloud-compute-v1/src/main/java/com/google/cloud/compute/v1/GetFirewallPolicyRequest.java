@@ -174,7 +174,7 @@ public final class GetFirewallPolicyRequest extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getFirewallPolicyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firewallPolicy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 498173265, firewallPolicy_);
     }
     unknownFields.writeTo(output);
@@ -186,7 +186,7 @@ public final class GetFirewallPolicyRequest extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (!getFirewallPolicyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firewallPolicy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(498173265, firewallPolicy_);
     }
     size += unknownFields.getSerializedSize();

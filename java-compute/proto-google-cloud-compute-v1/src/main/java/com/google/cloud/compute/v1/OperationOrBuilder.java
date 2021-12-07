@@ -30,7 +30,7 @@ public interface OperationOrBuilder
    * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
    * </pre>
    *
-   * <code>string client_operation_id = 297240295;</code>
+   * <code>optional string client_operation_id = 297240295;</code>
    *
    * @return Whether the clientOperationId field is set.
    */
@@ -42,7 +42,7 @@ public interface OperationOrBuilder
    * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
    * </pre>
    *
-   * <code>string client_operation_id = 297240295;</code>
+   * <code>optional string client_operation_id = 297240295;</code>
    *
    * @return The clientOperationId.
    */
@@ -54,7 +54,7 @@ public interface OperationOrBuilder
    * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
    * </pre>
    *
-   * <code>string client_operation_id = 297240295;</code>
+   * <code>optional string client_operation_id = 297240295;</code>
    *
    * @return The bytes for clientOperationId.
    */
@@ -67,7 +67,7 @@ public interface OperationOrBuilder
    * [Deprecated] This field is deprecated.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -79,7 +79,7 @@ public interface OperationOrBuilder
    * [Deprecated] This field is deprecated.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -91,7 +91,7 @@ public interface OperationOrBuilder
    * [Deprecated] This field is deprecated.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -104,7 +104,7 @@ public interface OperationOrBuilder
    * [Output Only] A textual description of the operation, which is set when the operation is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -116,7 +116,7 @@ public interface OperationOrBuilder
    * [Output Only] A textual description of the operation, which is set when the operation is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -128,7 +128,7 @@ public interface OperationOrBuilder
    * [Output Only] A textual description of the operation, which is set when the operation is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -141,7 +141,7 @@ public interface OperationOrBuilder
    * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string end_time = 114938801;</code>
+   * <code>optional string end_time = 114938801;</code>
    *
    * @return Whether the endTime field is set.
    */
@@ -153,7 +153,7 @@ public interface OperationOrBuilder
    * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string end_time = 114938801;</code>
+   * <code>optional string end_time = 114938801;</code>
    *
    * @return The endTime.
    */
@@ -165,7 +165,7 @@ public interface OperationOrBuilder
    * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string end_time = 114938801;</code>
+   * <code>optional string end_time = 114938801;</code>
    *
    * @return The bytes for endTime.
    */
@@ -178,7 +178,7 @@ public interface OperationOrBuilder
    * [Output Only] If errors are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Error error = 96784904;</code>
+   * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
    *
    * @return Whether the error field is set.
    */
@@ -190,7 +190,7 @@ public interface OperationOrBuilder
    * [Output Only] If errors are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Error error = 96784904;</code>
+   * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
    *
    * @return The error.
    */
@@ -202,7 +202,7 @@ public interface OperationOrBuilder
    * [Output Only] If errors are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Error error = 96784904;</code>
+   * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
    */
   com.google.cloud.compute.v1.ErrorOrBuilder getErrorOrBuilder();
 
@@ -213,7 +213,8 @@ public interface OperationOrBuilder
    * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
    * </pre>
    *
-   * <code>string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+   * <code>
+   * optional string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
    * </code>
    *
    * @return Whether the httpErrorMessage field is set.
@@ -226,7 +227,8 @@ public interface OperationOrBuilder
    * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
    * </pre>
    *
-   * <code>string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+   * <code>
+   * optional string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
    * </code>
    *
    * @return The httpErrorMessage.
@@ -239,7 +241,8 @@ public interface OperationOrBuilder
    * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
    * </pre>
    *
-   * <code>string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
+   * <code>
+   * optional string http_error_message = 202521945 [(.google.cloud.operation_field) = ERROR_MESSAGE];
    * </code>
    *
    * @return The bytes for httpErrorMessage.
@@ -253,7 +256,8 @@ public interface OperationOrBuilder
    * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
    * </pre>
    *
-   * <code>int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
+   * <code>
+   * optional int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
    * </code>
    *
    * @return Whether the httpErrorStatusCode field is set.
@@ -266,7 +270,8 @@ public interface OperationOrBuilder
    * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
    * </pre>
    *
-   * <code>int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
+   * <code>
+   * optional int32 http_error_status_code = 312345196 [(.google.cloud.operation_field) = ERROR_CODE];
    * </code>
    *
    * @return The httpErrorStatusCode.
@@ -280,7 +285,7 @@ public interface OperationOrBuilder
    * [Output Only] The unique identifier for the operation. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -292,7 +297,7 @@ public interface OperationOrBuilder
    * [Output Only] The unique identifier for the operation. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -305,7 +310,7 @@ public interface OperationOrBuilder
    * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string insert_time = 433722515;</code>
+   * <code>optional string insert_time = 433722515;</code>
    *
    * @return Whether the insertTime field is set.
    */
@@ -317,7 +322,7 @@ public interface OperationOrBuilder
    * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string insert_time = 433722515;</code>
+   * <code>optional string insert_time = 433722515;</code>
    *
    * @return The insertTime.
    */
@@ -329,7 +334,7 @@ public interface OperationOrBuilder
    * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string insert_time = 433722515;</code>
+   * <code>optional string insert_time = 433722515;</code>
    *
    * @return The bytes for insertTime.
    */
@@ -342,7 +347,7 @@ public interface OperationOrBuilder
    * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -354,7 +359,7 @@ public interface OperationOrBuilder
    * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -366,7 +371,7 @@ public interface OperationOrBuilder
    * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -379,7 +384,7 @@ public interface OperationOrBuilder
    * [Output Only] Name of the operation.
    * </pre>
    *
-   * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
+   * <code>optional string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
    *
    * @return Whether the name field is set.
    */
@@ -391,7 +396,7 @@ public interface OperationOrBuilder
    * [Output Only] Name of the operation.
    * </pre>
    *
-   * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
+   * <code>optional string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
    *
    * @return The name.
    */
@@ -403,7 +408,7 @@ public interface OperationOrBuilder
    * [Output Only] Name of the operation.
    * </pre>
    *
-   * <code>string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
+   * <code>optional string name = 3373707 [(.google.cloud.operation_field) = NAME];</code>
    *
    * @return The bytes for name.
    */
@@ -416,7 +421,7 @@ public interface OperationOrBuilder
    * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
    * </pre>
    *
-   * <code>string operation_group_id = 40171187;</code>
+   * <code>optional string operation_group_id = 40171187;</code>
    *
    * @return Whether the operationGroupId field is set.
    */
@@ -428,7 +433,7 @@ public interface OperationOrBuilder
    * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
    * </pre>
    *
-   * <code>string operation_group_id = 40171187;</code>
+   * <code>optional string operation_group_id = 40171187;</code>
    *
    * @return The operationGroupId.
    */
@@ -440,7 +445,7 @@ public interface OperationOrBuilder
    * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
    * </pre>
    *
-   * <code>string operation_group_id = 40171187;</code>
+   * <code>optional string operation_group_id = 40171187;</code>
    *
    * @return The bytes for operationGroupId.
    */
@@ -453,7 +458,7 @@ public interface OperationOrBuilder
    * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
    * </pre>
    *
-   * <code>string operation_type = 177650450;</code>
+   * <code>optional string operation_type = 177650450;</code>
    *
    * @return Whether the operationType field is set.
    */
@@ -465,7 +470,7 @@ public interface OperationOrBuilder
    * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
    * </pre>
    *
-   * <code>string operation_type = 177650450;</code>
+   * <code>optional string operation_type = 177650450;</code>
    *
    * @return The operationType.
    */
@@ -477,7 +482,7 @@ public interface OperationOrBuilder
    * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
    * </pre>
    *
-   * <code>string operation_type = 177650450;</code>
+   * <code>optional string operation_type = 177650450;</code>
    *
    * @return The bytes for operationType.
    */
@@ -490,7 +495,7 @@ public interface OperationOrBuilder
    * [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses.
    * </pre>
    *
-   * <code>int32 progress = 72663597;</code>
+   * <code>optional int32 progress = 72663597;</code>
    *
    * @return Whether the progress field is set.
    */
@@ -502,7 +507,7 @@ public interface OperationOrBuilder
    * [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses.
    * </pre>
    *
-   * <code>int32 progress = 72663597;</code>
+   * <code>optional int32 progress = 72663597;</code>
    *
    * @return The progress.
    */
@@ -515,7 +520,7 @@ public interface OperationOrBuilder
    * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -527,7 +532,7 @@ public interface OperationOrBuilder
    * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -539,7 +544,7 @@ public interface OperationOrBuilder
    * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -552,7 +557,7 @@ public interface OperationOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -564,7 +569,7 @@ public interface OperationOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -576,7 +581,7 @@ public interface OperationOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -589,7 +594,7 @@ public interface OperationOrBuilder
    * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return Whether the startTime field is set.
    */
@@ -601,7 +606,7 @@ public interface OperationOrBuilder
    * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return The startTime.
    */
@@ -613,7 +618,7 @@ public interface OperationOrBuilder
    * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return The bytes for startTime.
    */
@@ -627,7 +632,7 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+   * optional .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
    * </code>
    *
    * @return Whether the status field is set.
@@ -641,7 +646,7 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+   * optional .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
    * </code>
    *
    * @return The enum numeric value on the wire for status.
@@ -655,7 +660,7 @@ public interface OperationOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
+   * optional .google.cloud.compute.v1.Operation.Status status = 181260274 [(.google.cloud.operation_field) = STATUS];
    * </code>
    *
    * @return The status.
@@ -669,7 +674,7 @@ public interface OperationOrBuilder
    * [Output Only] An optional textual description of the current status of the operation.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return Whether the statusMessage field is set.
    */
@@ -681,7 +686,7 @@ public interface OperationOrBuilder
    * [Output Only] An optional textual description of the current status of the operation.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return The statusMessage.
    */
@@ -693,7 +698,7 @@ public interface OperationOrBuilder
    * [Output Only] An optional textual description of the current status of the operation.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return The bytes for statusMessage.
    */
@@ -706,7 +711,7 @@ public interface OperationOrBuilder
    * [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
    * </pre>
    *
-   * <code>uint64 target_id = 258165385;</code>
+   * <code>optional uint64 target_id = 258165385;</code>
    *
    * @return Whether the targetId field is set.
    */
@@ -718,7 +723,7 @@ public interface OperationOrBuilder
    * [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
    * </pre>
    *
-   * <code>uint64 target_id = 258165385;</code>
+   * <code>optional uint64 target_id = 258165385;</code>
    *
    * @return The targetId.
    */
@@ -731,7 +736,7 @@ public interface OperationOrBuilder
    * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from.
    * </pre>
    *
-   * <code>string target_link = 62671336;</code>
+   * <code>optional string target_link = 62671336;</code>
    *
    * @return Whether the targetLink field is set.
    */
@@ -743,7 +748,7 @@ public interface OperationOrBuilder
    * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from.
    * </pre>
    *
-   * <code>string target_link = 62671336;</code>
+   * <code>optional string target_link = 62671336;</code>
    *
    * @return The targetLink.
    */
@@ -755,7 +760,7 @@ public interface OperationOrBuilder
    * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from.
    * </pre>
    *
-   * <code>string target_link = 62671336;</code>
+   * <code>optional string target_link = 62671336;</code>
    *
    * @return The bytes for targetLink.
    */
@@ -768,7 +773,7 @@ public interface OperationOrBuilder
    * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
    * </pre>
    *
-   * <code>string user = 3599307;</code>
+   * <code>optional string user = 3599307;</code>
    *
    * @return Whether the user field is set.
    */
@@ -780,7 +785,7 @@ public interface OperationOrBuilder
    * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
    * </pre>
    *
-   * <code>string user = 3599307;</code>
+   * <code>optional string user = 3599307;</code>
    *
    * @return The user.
    */
@@ -792,7 +797,7 @@ public interface OperationOrBuilder
    * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
    * </pre>
    *
-   * <code>string user = 3599307;</code>
+   * <code>optional string user = 3599307;</code>
    *
    * @return The bytes for user.
    */
@@ -857,7 +862,7 @@ public interface OperationOrBuilder
    * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return Whether the zone field is set.
    */
@@ -869,7 +874,7 @@ public interface OperationOrBuilder
    * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The zone.
    */
@@ -881,7 +886,7 @@ public interface OperationOrBuilder
    * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The bytes for zone.
    */

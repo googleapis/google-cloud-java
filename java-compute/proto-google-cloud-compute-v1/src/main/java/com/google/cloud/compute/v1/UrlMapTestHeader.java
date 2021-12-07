@@ -130,7 +130,7 @@ public final class UrlMapTestHeader extends com.google.protobuf.GeneratedMessage
    * Header name.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -145,7 +145,7 @@ public final class UrlMapTestHeader extends com.google.protobuf.GeneratedMessage
    * Header name.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -168,7 +168,7 @@ public final class UrlMapTestHeader extends com.google.protobuf.GeneratedMessage
    * Header name.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -194,7 +194,7 @@ public final class UrlMapTestHeader extends com.google.protobuf.GeneratedMessage
    * Header value.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return Whether the value field is set.
    */
@@ -209,7 +209,7 @@ public final class UrlMapTestHeader extends com.google.protobuf.GeneratedMessage
    * Header value.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return The value.
    */
@@ -232,7 +232,7 @@ public final class UrlMapTestHeader extends com.google.protobuf.GeneratedMessage
    * Header value.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return The bytes for value.
    */
@@ -612,7 +612,7 @@ public final class UrlMapTestHeader extends com.google.protobuf.GeneratedMessage
      * Header name.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -626,7 +626,7 @@ public final class UrlMapTestHeader extends com.google.protobuf.GeneratedMessage
      * Header name.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -648,7 +648,7 @@ public final class UrlMapTestHeader extends com.google.protobuf.GeneratedMessage
      * Header name.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -670,7 +670,7 @@ public final class UrlMapTestHeader extends com.google.protobuf.GeneratedMessage
      * Header name.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -691,7 +691,7 @@ public final class UrlMapTestHeader extends com.google.protobuf.GeneratedMessage
      * Header name.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -708,7 +708,7 @@ public final class UrlMapTestHeader extends com.google.protobuf.GeneratedMessage
      * Header name.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -732,7 +732,7 @@ public final class UrlMapTestHeader extends com.google.protobuf.GeneratedMessage
      * Header value.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @return Whether the value field is set.
      */
@@ -746,7 +746,7 @@ public final class UrlMapTestHeader extends com.google.protobuf.GeneratedMessage
      * Header value.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @return The value.
      */
@@ -768,7 +768,7 @@ public final class UrlMapTestHeader extends com.google.protobuf.GeneratedMessage
      * Header value.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @return The bytes for value.
      */
@@ -790,7 +790,7 @@ public final class UrlMapTestHeader extends com.google.protobuf.GeneratedMessage
      * Header value.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @param value The value to set.
      * @return This builder for chaining.
@@ -811,7 +811,7 @@ public final class UrlMapTestHeader extends com.google.protobuf.GeneratedMessage
      * Header value.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @return This builder for chaining.
      */
@@ -828,7 +828,7 @@ public final class UrlMapTestHeader extends com.google.protobuf.GeneratedMessage
      * Header value.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @param value The bytes for value to set.
      * @return This builder for chaining.

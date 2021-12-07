@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Cloud VPN Tunnel resource.
- * For more information about VPN, read the  the Cloud VPN Overview. (== resource_for {$api_version}.vpnTunnels ==)
+ * Represents a Cloud VPN Tunnel resource. For more information about VPN, read the the Cloud VPN Overview.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.VpnTunnel}
@@ -54,7 +53,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     selfLink_ = "";
     sharedSecret_ = "";
     sharedSecretHash_ = "";
-    status_ = 0;
+    status_ = "";
     targetVpnGateway_ = "";
     vpnGateway_ = "";
   }
@@ -136,11 +135,11 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
               router_ = s;
               break;
             }
-          case 1450082192:
+          case 1450082194:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00010000;
-              status_ = rawValue;
+              status_ = s;
               break;
             }
           case 1747009760:
@@ -289,22 +288,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the VPN tunnel, which can be one of the following:
-   * - PROVISIONING: Resource is being allocated for the VPN tunnel.
-   * - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel.
-   * - FIRST_HANDSHAKE: Successful first handshake with the peer VPN.
-   * - ESTABLISHED: Secure session is successfully established with the peer VPN.
-   * - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS
-   * - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret).
-   * - NEGOTIATION_FAILURE: Handshake failed.
-   * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
-   * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
-   * - NO_INCOMING_PACKETS: No incoming packets from peer.
-   * - REJECTED: Tunnel configuration was rejected, can be result of being denied access.
-   * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
-   * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
-   * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.
-   * - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+   * [Output Only] The status of the VPN tunnel, which can be one of the following: - PROVISIONING: Resource is being allocated for the VPN tunnel. - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel. - FIRST_HANDSHAKE: Successful first handshake with the peer VPN. - ESTABLISHED: Secure session is successfully established with the peer VPN. - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret). - NEGOTIATION_FAILURE: Handshake failed. - DEPROVISIONING: Resources are being deallocated for the VPN tunnel. - FAILED: Tunnel creation has failed and the tunnel is not ready to be used. - NO_INCOMING_PACKETS: No incoming packets from peer. - REJECTED: Tunnel configuration was rejected, can be result of being denied access. - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources. - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state. - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT. - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.VpnTunnel.Status}
@@ -320,31 +304,135 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>ALLOCATING_RESOURCES = 320922816;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Cloud VPN is in the process of allocating all required resources (specifically, a borg task).
+     * </pre>
+     *
+     * <code>ALLOCATING_RESOURCES = 320922816;</code>
+     */
     ALLOCATING_RESOURCES(320922816),
-    /** <code>AUTHORIZATION_ERROR = 23580290;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Auth error (e.g. bad shared secret).
+     * </pre>
+     *
+     * <code>AUTHORIZATION_ERROR = 23580290;</code>
+     */
     AUTHORIZATION_ERROR(23580290),
-    /** <code>DEPROVISIONING = 428935662;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resources is being deallocated for the VPN tunnel.
+     * </pre>
+     *
+     * <code>DEPROVISIONING = 428935662;</code>
+     */
     DEPROVISIONING(428935662),
-    /** <code>ESTABLISHED = 88852344;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Secure session is successfully established with peer VPN.
+     * </pre>
+     *
+     * <code>ESTABLISHED = 88852344;</code>
+     */
     ESTABLISHED(88852344),
-    /** <code>FAILED = 455706685;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel creation has failed and the tunnel is not ready to be used.
+     * </pre>
+     *
+     * <code>FAILED = 455706685;</code>
+     */
     FAILED(455706685),
-    /** <code>FIRST_HANDSHAKE = 191393000;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Successful first handshake with peer VPN.
+     * </pre>
+     *
+     * <code>FIRST_HANDSHAKE = 191393000;</code>
+     */
     FIRST_HANDSHAKE(191393000),
-    /** <code>NEGOTIATION_FAILURE = 360325868;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Handshake failed.
+     * </pre>
+     *
+     * <code>NEGOTIATION_FAILURE = 360325868;</code>
+     */
     NEGOTIATION_FAILURE(360325868),
-    /** <code>NETWORK_ERROR = 193912951;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated, replaced by NO_INCOMING_PACKETS
+     * </pre>
+     *
+     * <code>NETWORK_ERROR = 193912951;</code>
+     */
     NETWORK_ERROR(193912951),
-    /** <code>NO_INCOMING_PACKETS = 119983216;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * No incoming packets from peer
+     * </pre>
+     *
+     * <code>NO_INCOMING_PACKETS = 119983216;</code>
+     */
     NO_INCOMING_PACKETS(119983216),
-    /** <code>PROVISIONING = 290896621;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource is being allocated for the VPN tunnel.
+     * </pre>
+     *
+     * <code>PROVISIONING = 290896621;</code>
+     */
     PROVISIONING(290896621),
-    /** <code>REJECTED = 174130302;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel configuration was rejected, can be result of being denylisted.
+     * </pre>
+     *
+     * <code>REJECTED = 174130302;</code>
+     */
     REJECTED(174130302),
-    /** <code>STOPPED = 444276141;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel is stopped due to its Forwarding Rules being deleted.
+     * </pre>
+     *
+     * <code>STOPPED = 444276141;</code>
+     */
     STOPPED(444276141),
-    /** <code>WAITING_FOR_FULL_CONFIG = 41640522;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Waiting to receive all VPN-related configs from user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule and Route resources are needed to setup VPN tunnel.
+     * </pre>
+     *
+     * <code>WAITING_FOR_FULL_CONFIG = 41640522;</code>
+     */
     WAITING_FOR_FULL_CONFIG(41640522),
     UNRECOGNIZED(-1),
     ;
@@ -359,31 +447,135 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>ALLOCATING_RESOURCES = 320922816;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Cloud VPN is in the process of allocating all required resources (specifically, a borg task).
+     * </pre>
+     *
+     * <code>ALLOCATING_RESOURCES = 320922816;</code>
+     */
     public static final int ALLOCATING_RESOURCES_VALUE = 320922816;
-    /** <code>AUTHORIZATION_ERROR = 23580290;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Auth error (e.g. bad shared secret).
+     * </pre>
+     *
+     * <code>AUTHORIZATION_ERROR = 23580290;</code>
+     */
     public static final int AUTHORIZATION_ERROR_VALUE = 23580290;
-    /** <code>DEPROVISIONING = 428935662;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resources is being deallocated for the VPN tunnel.
+     * </pre>
+     *
+     * <code>DEPROVISIONING = 428935662;</code>
+     */
     public static final int DEPROVISIONING_VALUE = 428935662;
-    /** <code>ESTABLISHED = 88852344;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Secure session is successfully established with peer VPN.
+     * </pre>
+     *
+     * <code>ESTABLISHED = 88852344;</code>
+     */
     public static final int ESTABLISHED_VALUE = 88852344;
-    /** <code>FAILED = 455706685;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel creation has failed and the tunnel is not ready to be used.
+     * </pre>
+     *
+     * <code>FAILED = 455706685;</code>
+     */
     public static final int FAILED_VALUE = 455706685;
-    /** <code>FIRST_HANDSHAKE = 191393000;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Successful first handshake with peer VPN.
+     * </pre>
+     *
+     * <code>FIRST_HANDSHAKE = 191393000;</code>
+     */
     public static final int FIRST_HANDSHAKE_VALUE = 191393000;
-    /** <code>NEGOTIATION_FAILURE = 360325868;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Handshake failed.
+     * </pre>
+     *
+     * <code>NEGOTIATION_FAILURE = 360325868;</code>
+     */
     public static final int NEGOTIATION_FAILURE_VALUE = 360325868;
-    /** <code>NETWORK_ERROR = 193912951;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated, replaced by NO_INCOMING_PACKETS
+     * </pre>
+     *
+     * <code>NETWORK_ERROR = 193912951;</code>
+     */
     public static final int NETWORK_ERROR_VALUE = 193912951;
-    /** <code>NO_INCOMING_PACKETS = 119983216;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * No incoming packets from peer
+     * </pre>
+     *
+     * <code>NO_INCOMING_PACKETS = 119983216;</code>
+     */
     public static final int NO_INCOMING_PACKETS_VALUE = 119983216;
-    /** <code>PROVISIONING = 290896621;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource is being allocated for the VPN tunnel.
+     * </pre>
+     *
+     * <code>PROVISIONING = 290896621;</code>
+     */
     public static final int PROVISIONING_VALUE = 290896621;
-    /** <code>REJECTED = 174130302;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel configuration was rejected, can be result of being denylisted.
+     * </pre>
+     *
+     * <code>REJECTED = 174130302;</code>
+     */
     public static final int REJECTED_VALUE = 174130302;
-    /** <code>STOPPED = 444276141;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel is stopped due to its Forwarding Rules being deleted.
+     * </pre>
+     *
+     * <code>STOPPED = 444276141;</code>
+     */
     public static final int STOPPED_VALUE = 444276141;
-    /** <code>WAITING_FOR_FULL_CONFIG = 41640522;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Waiting to receive all VPN-related configs from user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule and Route resources are needed to setup VPN tunnel.
+     * </pre>
+     *
+     * <code>WAITING_FOR_FULL_CONFIG = 41640522;</code>
+     */
     public static final int WAITING_FOR_FULL_CONFIG_VALUE = 41640522;
 
     public final int getNumber() {
@@ -501,7 +693,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -516,7 +708,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -539,7 +731,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -565,7 +757,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -580,7 +772,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -603,7 +795,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -629,7 +821,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Detailed status message for the VPN tunnel.
    * </pre>
    *
-   * <code>string detailed_status = 333501025;</code>
+   * <code>optional string detailed_status = 333501025;</code>
    *
    * @return Whether the detailedStatus field is set.
    */
@@ -644,7 +836,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Detailed status message for the VPN tunnel.
    * </pre>
    *
-   * <code>string detailed_status = 333501025;</code>
+   * <code>optional string detailed_status = 333501025;</code>
    *
    * @return The detailedStatus.
    */
@@ -667,7 +859,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Detailed status message for the VPN tunnel.
    * </pre>
    *
-   * <code>string detailed_status = 333501025;</code>
+   * <code>optional string detailed_status = 333501025;</code>
    *
    * @return The bytes for detailedStatus.
    */
@@ -693,7 +885,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -708,7 +900,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -726,7 +918,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * IKE protocol version to use when establishing the VPN tunnel with the peer VPN gateway. Acceptable IKE versions are 1 or 2. The default version is 2.
    * </pre>
    *
-   * <code>int32 ike_version = 218376220;</code>
+   * <code>optional int32 ike_version = 218376220;</code>
    *
    * @return Whether the ikeVersion field is set.
    */
@@ -741,7 +933,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * IKE protocol version to use when establishing the VPN tunnel with the peer VPN gateway. Acceptable IKE versions are 1 or 2. The default version is 2.
    * </pre>
    *
-   * <code>int32 ike_version = 218376220;</code>
+   * <code>optional int32 ike_version = 218376220;</code>
    *
    * @return The ikeVersion.
    */
@@ -759,7 +951,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -774,7 +966,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -797,7 +989,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -884,7 +1076,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -899,7 +1091,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -922,7 +1114,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -948,7 +1140,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
    * </pre>
    *
-   * <code>string peer_external_gateway = 384956173;</code>
+   * <code>optional string peer_external_gateway = 384956173;</code>
    *
    * @return Whether the peerExternalGateway field is set.
    */
@@ -963,7 +1155,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
    * </pre>
    *
-   * <code>string peer_external_gateway = 384956173;</code>
+   * <code>optional string peer_external_gateway = 384956173;</code>
    *
    * @return The peerExternalGateway.
    */
@@ -986,7 +1178,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
    * </pre>
    *
-   * <code>string peer_external_gateway = 384956173;</code>
+   * <code>optional string peer_external_gateway = 384956173;</code>
    *
    * @return The bytes for peerExternalGateway.
    */
@@ -1012,7 +1204,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
    * </pre>
    *
-   * <code>int32 peer_external_gateway_interface = 452768391;</code>
+   * <code>optional int32 peer_external_gateway_interface = 452768391;</code>
    *
    * @return Whether the peerExternalGatewayInterface field is set.
    */
@@ -1027,7 +1219,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
    * </pre>
    *
-   * <code>int32 peer_external_gateway_interface = 452768391;</code>
+   * <code>optional int32 peer_external_gateway_interface = 452768391;</code>
    *
    * @return The peerExternalGatewayInterface.
    */
@@ -1045,7 +1237,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
    * </pre>
    *
-   * <code>string peer_gcp_gateway = 281867452;</code>
+   * <code>optional string peer_gcp_gateway = 281867452;</code>
    *
    * @return Whether the peerGcpGateway field is set.
    */
@@ -1060,7 +1252,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
    * </pre>
    *
-   * <code>string peer_gcp_gateway = 281867452;</code>
+   * <code>optional string peer_gcp_gateway = 281867452;</code>
    *
    * @return The peerGcpGateway.
    */
@@ -1083,7 +1275,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
    * </pre>
    *
-   * <code>string peer_gcp_gateway = 281867452;</code>
+   * <code>optional string peer_gcp_gateway = 281867452;</code>
    *
    * @return The bytes for peerGcpGateway.
    */
@@ -1109,7 +1301,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * IP address of the peer VPN gateway. Only IPv4 is supported.
    * </pre>
    *
-   * <code>string peer_ip = 383249700;</code>
+   * <code>optional string peer_ip = 383249700;</code>
    *
    * @return Whether the peerIp field is set.
    */
@@ -1124,7 +1316,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * IP address of the peer VPN gateway. Only IPv4 is supported.
    * </pre>
    *
-   * <code>string peer_ip = 383249700;</code>
+   * <code>optional string peer_ip = 383249700;</code>
    *
    * @return The peerIp.
    */
@@ -1147,7 +1339,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * IP address of the peer VPN gateway. Only IPv4 is supported.
    * </pre>
    *
-   * <code>string peer_ip = 383249700;</code>
+   * <code>optional string peer_ip = 383249700;</code>
    *
    * @return The bytes for peerIp.
    */
@@ -1173,7 +1365,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -1188,7 +1380,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -1211,7 +1403,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -1298,7 +1490,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the router resource to be used for dynamic routing.
    * </pre>
    *
-   * <code>string router = 148608841;</code>
+   * <code>optional string router = 148608841;</code>
    *
    * @return Whether the router field is set.
    */
@@ -1313,7 +1505,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the router resource to be used for dynamic routing.
    * </pre>
    *
-   * <code>string router = 148608841;</code>
+   * <code>optional string router = 148608841;</code>
    *
    * @return The router.
    */
@@ -1336,7 +1528,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the router resource to be used for dynamic routing.
    * </pre>
    *
-   * <code>string router = 148608841;</code>
+   * <code>optional string router = 148608841;</code>
    *
    * @return The bytes for router.
    */
@@ -1362,7 +1554,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -1377,7 +1569,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1400,7 +1592,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1426,7 +1618,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
    * </pre>
    *
-   * <code>string shared_secret = 381932490;</code>
+   * <code>optional string shared_secret = 381932490;</code>
    *
    * @return Whether the sharedSecret field is set.
    */
@@ -1441,7 +1633,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
    * </pre>
    *
-   * <code>string shared_secret = 381932490;</code>
+   * <code>optional string shared_secret = 381932490;</code>
    *
    * @return The sharedSecret.
    */
@@ -1464,7 +1656,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
    * </pre>
    *
-   * <code>string shared_secret = 381932490;</code>
+   * <code>optional string shared_secret = 381932490;</code>
    *
    * @return The bytes for sharedSecret.
    */
@@ -1490,7 +1682,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Hash of the shared secret.
    * </pre>
    *
-   * <code>string shared_secret_hash = 398881891;</code>
+   * <code>optional string shared_secret_hash = 398881891;</code>
    *
    * @return Whether the sharedSecretHash field is set.
    */
@@ -1505,7 +1697,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Hash of the shared secret.
    * </pre>
    *
-   * <code>string shared_secret_hash = 398881891;</code>
+   * <code>optional string shared_secret_hash = 398881891;</code>
    *
    * @return The sharedSecretHash.
    */
@@ -1528,7 +1720,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Hash of the shared secret.
    * </pre>
    *
-   * <code>string shared_secret_hash = 398881891;</code>
+   * <code>optional string shared_secret_hash = 398881891;</code>
    *
    * @return The bytes for sharedSecretHash.
    */
@@ -1546,30 +1738,16 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    *
    *
    * <pre>
-   * [Output Only] The status of the VPN tunnel, which can be one of the following:
-   * - PROVISIONING: Resource is being allocated for the VPN tunnel.
-   * - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel.
-   * - FIRST_HANDSHAKE: Successful first handshake with the peer VPN.
-   * - ESTABLISHED: Secure session is successfully established with the peer VPN.
-   * - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS
-   * - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret).
-   * - NEGOTIATION_FAILURE: Handshake failed.
-   * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
-   * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
-   * - NO_INCOMING_PACKETS: No incoming packets from peer.
-   * - REJECTED: Tunnel configuration was rejected, can be result of being denied access.
-   * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
-   * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
-   * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.
-   * - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+   * [Output Only] The status of the VPN tunnel, which can be one of the following: - PROVISIONING: Resource is being allocated for the VPN tunnel. - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel. - FIRST_HANDSHAKE: Successful first handshake with the peer VPN. - ESTABLISHED: Secure session is successfully established with the peer VPN. - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret). - NEGOTIATION_FAILURE: Handshake failed. - DEPROVISIONING: Resources are being deallocated for the VPN tunnel. - FAILED: Tunnel creation has failed and the tunnel is not ready to be used. - NO_INCOMING_PACKETS: No incoming packets from peer. - REJECTED: Tunnel configuration was rejected, can be result of being denied access. - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources. - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state. - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT. - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.VpnTunnel.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -1581,64 +1759,49 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the VPN tunnel, which can be one of the following:
-   * - PROVISIONING: Resource is being allocated for the VPN tunnel.
-   * - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel.
-   * - FIRST_HANDSHAKE: Successful first handshake with the peer VPN.
-   * - ESTABLISHED: Secure session is successfully established with the peer VPN.
-   * - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS
-   * - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret).
-   * - NEGOTIATION_FAILURE: Handshake failed.
-   * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
-   * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
-   * - NO_INCOMING_PACKETS: No incoming packets from peer.
-   * - REJECTED: Tunnel configuration was rejected, can be result of being denied access.
-   * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
-   * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
-   * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.
-   * - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+   * [Output Only] The status of the VPN tunnel, which can be one of the following: - PROVISIONING: Resource is being allocated for the VPN tunnel. - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel. - FIRST_HANDSHAKE: Successful first handshake with the peer VPN. - ESTABLISHED: Secure session is successfully established with the peer VPN. - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret). - NEGOTIATION_FAILURE: Handshake failed. - DEPROVISIONING: Resources are being deallocated for the VPN tunnel. - FAILED: Tunnel creation has failed and the tunnel is not ready to be used. - NO_INCOMING_PACKETS: No incoming packets from peer. - REJECTED: Tunnel configuration was rejected, can be result of being denied access. - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources. - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state. - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT. - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.VpnTunnel.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
   @java.lang.Override
-  public int getStatusValue() {
-    return status_;
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * [Output Only] The status of the VPN tunnel, which can be one of the following:
-   * - PROVISIONING: Resource is being allocated for the VPN tunnel.
-   * - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel.
-   * - FIRST_HANDSHAKE: Successful first handshake with the peer VPN.
-   * - ESTABLISHED: Secure session is successfully established with the peer VPN.
-   * - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS
-   * - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret).
-   * - NEGOTIATION_FAILURE: Handshake failed.
-   * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
-   * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
-   * - NO_INCOMING_PACKETS: No incoming packets from peer.
-   * - REJECTED: Tunnel configuration was rejected, can be result of being denied access.
-   * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
-   * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
-   * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.
-   * - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+   * [Output Only] The status of the VPN tunnel, which can be one of the following: - PROVISIONING: Resource is being allocated for the VPN tunnel. - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel. - FIRST_HANDSHAKE: Successful first handshake with the peer VPN. - ESTABLISHED: Secure session is successfully established with the peer VPN. - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret). - NEGOTIATION_FAILURE: Handshake failed. - DEPROVISIONING: Resources are being deallocated for the VPN tunnel. - FAILED: Tunnel creation has failed and the tunnel is not ready to be used. - NO_INCOMING_PACKETS: No incoming packets from peer. - REJECTED: Tunnel configuration was rejected, can be result of being denied access. - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources. - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state. - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT. - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.VpnTunnel.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.VpnTunnel.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.VpnTunnel.Status result =
-        com.google.cloud.compute.v1.VpnTunnel.Status.valueOf(status_);
-    return result == null ? com.google.cloud.compute.v1.VpnTunnel.Status.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int TARGET_VPN_GATEWAY_FIELD_NUMBER = 532512843;
@@ -1650,7 +1813,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
    * </pre>
    *
-   * <code>string target_vpn_gateway = 532512843;</code>
+   * <code>optional string target_vpn_gateway = 532512843;</code>
    *
    * @return Whether the targetVpnGateway field is set.
    */
@@ -1665,7 +1828,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
    * </pre>
    *
-   * <code>string target_vpn_gateway = 532512843;</code>
+   * <code>optional string target_vpn_gateway = 532512843;</code>
    *
    * @return The targetVpnGateway.
    */
@@ -1688,7 +1851,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
    * </pre>
    *
-   * <code>string target_vpn_gateway = 532512843;</code>
+   * <code>optional string target_vpn_gateway = 532512843;</code>
    *
    * @return The bytes for targetVpnGateway.
    */
@@ -1714,7 +1877,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
    * </pre>
    *
-   * <code>string vpn_gateway = 406684153;</code>
+   * <code>optional string vpn_gateway = 406684153;</code>
    *
    * @return Whether the vpnGateway field is set.
    */
@@ -1729,7 +1892,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
    * </pre>
    *
-   * <code>string vpn_gateway = 406684153;</code>
+   * <code>optional string vpn_gateway = 406684153;</code>
    *
    * @return The vpnGateway.
    */
@@ -1752,7 +1915,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
    * </pre>
    *
-   * <code>string vpn_gateway = 406684153;</code>
+   * <code>optional string vpn_gateway = 406684153;</code>
    *
    * @return The bytes for vpnGateway.
    */
@@ -1778,7 +1941,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * The interface ID of the VPN gateway with which this VPN tunnel is associated.
    * </pre>
    *
-   * <code>int32 vpn_gateway_interface = 95979123;</code>
+   * <code>optional int32 vpn_gateway_interface = 95979123;</code>
    *
    * @return Whether the vpnGatewayInterface field is set.
    */
@@ -1793,7 +1956,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * The interface ID of the VPN gateway with which this VPN tunnel is associated.
    * </pre>
    *
-   * <code>int32 vpn_gateway_interface = 95979123;</code>
+   * <code>optional int32 vpn_gateway_interface = 95979123;</code>
    *
    * @return The vpnGatewayInterface.
    */
@@ -1838,7 +2001,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 148608841, router_);
     }
     if (((bitField0_ & 0x00010000) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeInt32(218376220, ikeVersion_);
@@ -1917,7 +2080,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(148608841, router_);
     }
     if (((bitField0_ & 0x00010000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(218376220, ikeVersion_);
@@ -2060,7 +2223,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus().equals(other.getStatus())) return false;
     }
     if (hasTargetVpnGateway() != other.hasTargetVpnGateway()) return false;
     if (hasTargetVpnGateway()) {
@@ -2159,7 +2322,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     if (hasTargetVpnGateway()) {
       hash = (37 * hash) + TARGET_VPN_GATEWAY_FIELD_NUMBER;
@@ -2276,8 +2439,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Cloud VPN Tunnel resource.
-   * For more information about VPN, read the  the Cloud VPN Overview. (== resource_for {$api_version}.vpnTunnels ==)
+   * Represents a Cloud VPN Tunnel resource. For more information about VPN, read the the Cloud VPN Overview.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.VpnTunnel}
@@ -2354,7 +2516,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00010000);
       sharedSecretHash_ = "";
       bitField0_ = (bitField0_ & ~0x00020000);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00040000);
       targetVpnGateway_ = "";
       bitField0_ = (bitField0_ & ~0x00080000);
@@ -2626,7 +2788,9 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00040000;
+        status_ = other.status_;
+        onChanged();
       }
       if (other.hasTargetVpnGateway()) {
         bitField0_ |= 0x00080000;
@@ -2680,7 +2844,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -2694,7 +2858,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -2716,7 +2880,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -2738,7 +2902,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -2759,7 +2923,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -2776,7 +2940,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -2800,7 +2964,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -2814,7 +2978,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -2836,7 +3000,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -2858,7 +3022,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2879,7 +3043,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -2896,7 +3060,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2920,7 +3084,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Detailed status message for the VPN tunnel.
      * </pre>
      *
-     * <code>string detailed_status = 333501025;</code>
+     * <code>optional string detailed_status = 333501025;</code>
      *
      * @return Whether the detailedStatus field is set.
      */
@@ -2934,7 +3098,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Detailed status message for the VPN tunnel.
      * </pre>
      *
-     * <code>string detailed_status = 333501025;</code>
+     * <code>optional string detailed_status = 333501025;</code>
      *
      * @return The detailedStatus.
      */
@@ -2956,7 +3120,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Detailed status message for the VPN tunnel.
      * </pre>
      *
-     * <code>string detailed_status = 333501025;</code>
+     * <code>optional string detailed_status = 333501025;</code>
      *
      * @return The bytes for detailedStatus.
      */
@@ -2978,7 +3142,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Detailed status message for the VPN tunnel.
      * </pre>
      *
-     * <code>string detailed_status = 333501025;</code>
+     * <code>optional string detailed_status = 333501025;</code>
      *
      * @param value The detailedStatus to set.
      * @return This builder for chaining.
@@ -2999,7 +3163,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Detailed status message for the VPN tunnel.
      * </pre>
      *
-     * <code>string detailed_status = 333501025;</code>
+     * <code>optional string detailed_status = 333501025;</code>
      *
      * @return This builder for chaining.
      */
@@ -3016,7 +3180,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Detailed status message for the VPN tunnel.
      * </pre>
      *
-     * <code>string detailed_status = 333501025;</code>
+     * <code>optional string detailed_status = 333501025;</code>
      *
      * @param value The bytes for detailedStatus to set.
      * @return This builder for chaining.
@@ -3040,7 +3204,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -3055,7 +3219,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -3070,7 +3234,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -3088,7 +3252,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -3107,7 +3271,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * IKE protocol version to use when establishing the VPN tunnel with the peer VPN gateway. Acceptable IKE versions are 1 or 2. The default version is 2.
      * </pre>
      *
-     * <code>int32 ike_version = 218376220;</code>
+     * <code>optional int32 ike_version = 218376220;</code>
      *
      * @return Whether the ikeVersion field is set.
      */
@@ -3122,7 +3286,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * IKE protocol version to use when establishing the VPN tunnel with the peer VPN gateway. Acceptable IKE versions are 1 or 2. The default version is 2.
      * </pre>
      *
-     * <code>int32 ike_version = 218376220;</code>
+     * <code>optional int32 ike_version = 218376220;</code>
      *
      * @return The ikeVersion.
      */
@@ -3137,7 +3301,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * IKE protocol version to use when establishing the VPN tunnel with the peer VPN gateway. Acceptable IKE versions are 1 or 2. The default version is 2.
      * </pre>
      *
-     * <code>int32 ike_version = 218376220;</code>
+     * <code>optional int32 ike_version = 218376220;</code>
      *
      * @param value The ikeVersion to set.
      * @return This builder for chaining.
@@ -3155,7 +3319,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * IKE protocol version to use when establishing the VPN tunnel with the peer VPN gateway. Acceptable IKE versions are 1 or 2. The default version is 2.
      * </pre>
      *
-     * <code>int32 ike_version = 218376220;</code>
+     * <code>optional int32 ike_version = 218376220;</code>
      *
      * @return This builder for chaining.
      */
@@ -3174,7 +3338,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -3188,7 +3352,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -3210,7 +3374,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -3232,7 +3396,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -3253,7 +3417,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -3270,7 +3434,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -3462,7 +3626,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -3476,7 +3640,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -3498,7 +3662,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -3520,7 +3684,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -3541,7 +3705,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -3558,7 +3722,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -3582,7 +3746,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
      * </pre>
      *
-     * <code>string peer_external_gateway = 384956173;</code>
+     * <code>optional string peer_external_gateway = 384956173;</code>
      *
      * @return Whether the peerExternalGateway field is set.
      */
@@ -3596,7 +3760,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
      * </pre>
      *
-     * <code>string peer_external_gateway = 384956173;</code>
+     * <code>optional string peer_external_gateway = 384956173;</code>
      *
      * @return The peerExternalGateway.
      */
@@ -3618,7 +3782,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
      * </pre>
      *
-     * <code>string peer_external_gateway = 384956173;</code>
+     * <code>optional string peer_external_gateway = 384956173;</code>
      *
      * @return The bytes for peerExternalGateway.
      */
@@ -3640,7 +3804,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
      * </pre>
      *
-     * <code>string peer_external_gateway = 384956173;</code>
+     * <code>optional string peer_external_gateway = 384956173;</code>
      *
      * @param value The peerExternalGateway to set.
      * @return This builder for chaining.
@@ -3661,7 +3825,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
      * </pre>
      *
-     * <code>string peer_external_gateway = 384956173;</code>
+     * <code>optional string peer_external_gateway = 384956173;</code>
      *
      * @return This builder for chaining.
      */
@@ -3678,7 +3842,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
      * </pre>
      *
-     * <code>string peer_external_gateway = 384956173;</code>
+     * <code>optional string peer_external_gateway = 384956173;</code>
      *
      * @param value The bytes for peerExternalGateway to set.
      * @return This builder for chaining.
@@ -3702,7 +3866,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
      * </pre>
      *
-     * <code>int32 peer_external_gateway_interface = 452768391;</code>
+     * <code>optional int32 peer_external_gateway_interface = 452768391;</code>
      *
      * @return Whether the peerExternalGatewayInterface field is set.
      */
@@ -3717,7 +3881,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
      * </pre>
      *
-     * <code>int32 peer_external_gateway_interface = 452768391;</code>
+     * <code>optional int32 peer_external_gateway_interface = 452768391;</code>
      *
      * @return The peerExternalGatewayInterface.
      */
@@ -3732,7 +3896,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
      * </pre>
      *
-     * <code>int32 peer_external_gateway_interface = 452768391;</code>
+     * <code>optional int32 peer_external_gateway_interface = 452768391;</code>
      *
      * @param value The peerExternalGatewayInterface to set.
      * @return This builder for chaining.
@@ -3750,7 +3914,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
      * </pre>
      *
-     * <code>int32 peer_external_gateway_interface = 452768391;</code>
+     * <code>optional int32 peer_external_gateway_interface = 452768391;</code>
      *
      * @return This builder for chaining.
      */
@@ -3769,7 +3933,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
      * </pre>
      *
-     * <code>string peer_gcp_gateway = 281867452;</code>
+     * <code>optional string peer_gcp_gateway = 281867452;</code>
      *
      * @return Whether the peerGcpGateway field is set.
      */
@@ -3783,7 +3947,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
      * </pre>
      *
-     * <code>string peer_gcp_gateway = 281867452;</code>
+     * <code>optional string peer_gcp_gateway = 281867452;</code>
      *
      * @return The peerGcpGateway.
      */
@@ -3805,7 +3969,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
      * </pre>
      *
-     * <code>string peer_gcp_gateway = 281867452;</code>
+     * <code>optional string peer_gcp_gateway = 281867452;</code>
      *
      * @return The bytes for peerGcpGateway.
      */
@@ -3827,7 +3991,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
      * </pre>
      *
-     * <code>string peer_gcp_gateway = 281867452;</code>
+     * <code>optional string peer_gcp_gateway = 281867452;</code>
      *
      * @param value The peerGcpGateway to set.
      * @return This builder for chaining.
@@ -3848,7 +4012,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
      * </pre>
      *
-     * <code>string peer_gcp_gateway = 281867452;</code>
+     * <code>optional string peer_gcp_gateway = 281867452;</code>
      *
      * @return This builder for chaining.
      */
@@ -3865,7 +4029,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
      * </pre>
      *
-     * <code>string peer_gcp_gateway = 281867452;</code>
+     * <code>optional string peer_gcp_gateway = 281867452;</code>
      *
      * @param value The bytes for peerGcpGateway to set.
      * @return This builder for chaining.
@@ -3889,7 +4053,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * IP address of the peer VPN gateway. Only IPv4 is supported.
      * </pre>
      *
-     * <code>string peer_ip = 383249700;</code>
+     * <code>optional string peer_ip = 383249700;</code>
      *
      * @return Whether the peerIp field is set.
      */
@@ -3903,7 +4067,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * IP address of the peer VPN gateway. Only IPv4 is supported.
      * </pre>
      *
-     * <code>string peer_ip = 383249700;</code>
+     * <code>optional string peer_ip = 383249700;</code>
      *
      * @return The peerIp.
      */
@@ -3925,7 +4089,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * IP address of the peer VPN gateway. Only IPv4 is supported.
      * </pre>
      *
-     * <code>string peer_ip = 383249700;</code>
+     * <code>optional string peer_ip = 383249700;</code>
      *
      * @return The bytes for peerIp.
      */
@@ -3947,7 +4111,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * IP address of the peer VPN gateway. Only IPv4 is supported.
      * </pre>
      *
-     * <code>string peer_ip = 383249700;</code>
+     * <code>optional string peer_ip = 383249700;</code>
      *
      * @param value The peerIp to set.
      * @return This builder for chaining.
@@ -3968,7 +4132,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * IP address of the peer VPN gateway. Only IPv4 is supported.
      * </pre>
      *
-     * <code>string peer_ip = 383249700;</code>
+     * <code>optional string peer_ip = 383249700;</code>
      *
      * @return This builder for chaining.
      */
@@ -3985,7 +4149,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * IP address of the peer VPN gateway. Only IPv4 is supported.
      * </pre>
      *
-     * <code>string peer_ip = 383249700;</code>
+     * <code>optional string peer_ip = 383249700;</code>
      *
      * @param value The bytes for peerIp to set.
      * @return This builder for chaining.
@@ -4009,7 +4173,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return Whether the region field is set.
      */
@@ -4023,7 +4187,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The region.
      */
@@ -4045,7 +4209,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The bytes for region.
      */
@@ -4067,7 +4231,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -4088,7 +4252,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return This builder for chaining.
      */
@@ -4105,7 +4269,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.
@@ -4298,7 +4462,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the router resource to be used for dynamic routing.
      * </pre>
      *
-     * <code>string router = 148608841;</code>
+     * <code>optional string router = 148608841;</code>
      *
      * @return Whether the router field is set.
      */
@@ -4312,7 +4476,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the router resource to be used for dynamic routing.
      * </pre>
      *
-     * <code>string router = 148608841;</code>
+     * <code>optional string router = 148608841;</code>
      *
      * @return The router.
      */
@@ -4334,7 +4498,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the router resource to be used for dynamic routing.
      * </pre>
      *
-     * <code>string router = 148608841;</code>
+     * <code>optional string router = 148608841;</code>
      *
      * @return The bytes for router.
      */
@@ -4356,7 +4520,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the router resource to be used for dynamic routing.
      * </pre>
      *
-     * <code>string router = 148608841;</code>
+     * <code>optional string router = 148608841;</code>
      *
      * @param value The router to set.
      * @return This builder for chaining.
@@ -4377,7 +4541,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the router resource to be used for dynamic routing.
      * </pre>
      *
-     * <code>string router = 148608841;</code>
+     * <code>optional string router = 148608841;</code>
      *
      * @return This builder for chaining.
      */
@@ -4394,7 +4558,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the router resource to be used for dynamic routing.
      * </pre>
      *
-     * <code>string router = 148608841;</code>
+     * <code>optional string router = 148608841;</code>
      *
      * @param value The bytes for router to set.
      * @return This builder for chaining.
@@ -4418,7 +4582,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -4432,7 +4596,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -4454,7 +4618,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -4476,7 +4640,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -4497,7 +4661,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -4514,7 +4678,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -4538,7 +4702,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
      * </pre>
      *
-     * <code>string shared_secret = 381932490;</code>
+     * <code>optional string shared_secret = 381932490;</code>
      *
      * @return Whether the sharedSecret field is set.
      */
@@ -4552,7 +4716,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
      * </pre>
      *
-     * <code>string shared_secret = 381932490;</code>
+     * <code>optional string shared_secret = 381932490;</code>
      *
      * @return The sharedSecret.
      */
@@ -4574,7 +4738,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
      * </pre>
      *
-     * <code>string shared_secret = 381932490;</code>
+     * <code>optional string shared_secret = 381932490;</code>
      *
      * @return The bytes for sharedSecret.
      */
@@ -4596,7 +4760,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
      * </pre>
      *
-     * <code>string shared_secret = 381932490;</code>
+     * <code>optional string shared_secret = 381932490;</code>
      *
      * @param value The sharedSecret to set.
      * @return This builder for chaining.
@@ -4617,7 +4781,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
      * </pre>
      *
-     * <code>string shared_secret = 381932490;</code>
+     * <code>optional string shared_secret = 381932490;</code>
      *
      * @return This builder for chaining.
      */
@@ -4634,7 +4798,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
      * </pre>
      *
-     * <code>string shared_secret = 381932490;</code>
+     * <code>optional string shared_secret = 381932490;</code>
      *
      * @param value The bytes for sharedSecret to set.
      * @return This builder for chaining.
@@ -4658,7 +4822,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Hash of the shared secret.
      * </pre>
      *
-     * <code>string shared_secret_hash = 398881891;</code>
+     * <code>optional string shared_secret_hash = 398881891;</code>
      *
      * @return Whether the sharedSecretHash field is set.
      */
@@ -4672,7 +4836,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Hash of the shared secret.
      * </pre>
      *
-     * <code>string shared_secret_hash = 398881891;</code>
+     * <code>optional string shared_secret_hash = 398881891;</code>
      *
      * @return The sharedSecretHash.
      */
@@ -4694,7 +4858,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Hash of the shared secret.
      * </pre>
      *
-     * <code>string shared_secret_hash = 398881891;</code>
+     * <code>optional string shared_secret_hash = 398881891;</code>
      *
      * @return The bytes for sharedSecretHash.
      */
@@ -4716,7 +4880,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Hash of the shared secret.
      * </pre>
      *
-     * <code>string shared_secret_hash = 398881891;</code>
+     * <code>optional string shared_secret_hash = 398881891;</code>
      *
      * @param value The sharedSecretHash to set.
      * @return This builder for chaining.
@@ -4737,7 +4901,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Hash of the shared secret.
      * </pre>
      *
-     * <code>string shared_secret_hash = 398881891;</code>
+     * <code>optional string shared_secret_hash = 398881891;</code>
      *
      * @return This builder for chaining.
      */
@@ -4754,7 +4918,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Hash of the shared secret.
      * </pre>
      *
-     * <code>string shared_secret_hash = 398881891;</code>
+     * <code>optional string shared_secret_hash = 398881891;</code>
      *
      * @param value The bytes for sharedSecretHash to set.
      * @return This builder for chaining.
@@ -4770,34 +4934,19 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      *
      *
      * <pre>
-     * [Output Only] The status of the VPN tunnel, which can be one of the following:
-     * - PROVISIONING: Resource is being allocated for the VPN tunnel.
-     * - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel.
-     * - FIRST_HANDSHAKE: Successful first handshake with the peer VPN.
-     * - ESTABLISHED: Secure session is successfully established with the peer VPN.
-     * - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS
-     * - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret).
-     * - NEGOTIATION_FAILURE: Handshake failed.
-     * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
-     * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
-     * - NO_INCOMING_PACKETS: No incoming packets from peer.
-     * - REJECTED: Tunnel configuration was rejected, can be result of being denied access.
-     * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
-     * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
-     * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.
-     * - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+     * [Output Only] The status of the VPN tunnel, which can be one of the following: - PROVISIONING: Resource is being allocated for the VPN tunnel. - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel. - FIRST_HANDSHAKE: Successful first handshake with the peer VPN. - ESTABLISHED: Secure session is successfully established with the peer VPN. - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret). - NEGOTIATION_FAILURE: Handshake failed. - DEPROVISIONING: Resources are being deallocated for the VPN tunnel. - FAILED: Tunnel creation has failed and the tunnel is not ready to be used. - NO_INCOMING_PACKETS: No incoming packets from peer. - REJECTED: Tunnel configuration was rejected, can be result of being denied access. - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources. - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state. - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT. - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.VpnTunnel.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
      * @return Whether the status field is set.
      */
-    @java.lang.Override
     public boolean hasStatus() {
       return ((bitField0_ & 0x00040000) != 0);
     }
@@ -4805,60 +4954,65 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the VPN tunnel, which can be one of the following:
-     * - PROVISIONING: Resource is being allocated for the VPN tunnel.
-     * - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel.
-     * - FIRST_HANDSHAKE: Successful first handshake with the peer VPN.
-     * - ESTABLISHED: Secure session is successfully established with the peer VPN.
-     * - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS
-     * - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret).
-     * - NEGOTIATION_FAILURE: Handshake failed.
-     * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
-     * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
-     * - NO_INCOMING_PACKETS: No incoming packets from peer.
-     * - REJECTED: Tunnel configuration was rejected, can be result of being denied access.
-     * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
-     * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
-     * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.
-     * - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+     * [Output Only] The status of the VPN tunnel, which can be one of the following: - PROVISIONING: Resource is being allocated for the VPN tunnel. - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel. - FIRST_HANDSHAKE: Successful first handshake with the peer VPN. - ESTABLISHED: Secure session is successfully established with the peer VPN. - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret). - NEGOTIATION_FAILURE: Handshake failed. - DEPROVISIONING: Resources are being deallocated for the VPN tunnel. - FAILED: Tunnel creation has failed and the tunnel is not ready to be used. - NO_INCOMING_PACKETS: No incoming packets from peer. - REJECTED: Tunnel configuration was rejected, can be result of being denied access. - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources. - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state. - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT. - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.VpnTunnel.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The enum numeric value on the wire for status.
+     * @return The status.
      */
-    @java.lang.Override
-    public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * [Output Only] The status of the VPN tunnel, which can be one of the following:
-     * - PROVISIONING: Resource is being allocated for the VPN tunnel.
-     * - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel.
-     * - FIRST_HANDSHAKE: Successful first handshake with the peer VPN.
-     * - ESTABLISHED: Secure session is successfully established with the peer VPN.
-     * - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS
-     * - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret).
-     * - NEGOTIATION_FAILURE: Handshake failed.
-     * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
-     * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
-     * - NO_INCOMING_PACKETS: No incoming packets from peer.
-     * - REJECTED: Tunnel configuration was rejected, can be result of being denied access.
-     * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
-     * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
-     * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.
-     * - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+     * [Output Only] The status of the VPN tunnel, which can be one of the following: - PROVISIONING: Resource is being allocated for the VPN tunnel. - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel. - FIRST_HANDSHAKE: Successful first handshake with the peer VPN. - ESTABLISHED: Secure session is successfully established with the peer VPN. - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret). - NEGOTIATION_FAILURE: Handshake failed. - DEPROVISIONING: Resources are being deallocated for the VPN tunnel. - FAILED: Tunnel creation has failed and the tunnel is not ready to be used. - NO_INCOMING_PACKETS: No incoming packets from peer. - REJECTED: Tunnel configuration was rejected, can be result of being denied access. - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources. - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state. - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT. - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.VpnTunnel.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @param value The enum numeric value on the wire for status to set.
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The status of the VPN tunnel, which can be one of the following: - PROVISIONING: Resource is being allocated for the VPN tunnel. - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel. - FIRST_HANDSHAKE: Successful first handshake with the peer VPN. - ESTABLISHED: Secure session is successfully established with the peer VPN. - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret). - NEGOTIATION_FAILURE: Handshake failed. - DEPROVISIONING: Resources are being deallocated for the VPN tunnel. - FAILED: Tunnel creation has failed and the tunnel is not ready to be used. - NO_INCOMING_PACKETS: No incoming packets from peer. - REJECTED: Tunnel configuration was rejected, can be result of being denied access. - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources. - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state. - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT. - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     *
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
+    public Builder setStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00040000;
       status_ = value;
       onChanged();
@@ -4868,68 +5022,17 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the VPN tunnel, which can be one of the following:
-     * - PROVISIONING: Resource is being allocated for the VPN tunnel.
-     * - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel.
-     * - FIRST_HANDSHAKE: Successful first handshake with the peer VPN.
-     * - ESTABLISHED: Secure session is successfully established with the peer VPN.
-     * - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS
-     * - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret).
-     * - NEGOTIATION_FAILURE: Handshake failed.
-     * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
-     * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
-     * - NO_INCOMING_PACKETS: No incoming packets from peer.
-     * - REJECTED: Tunnel configuration was rejected, can be result of being denied access.
-     * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
-     * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
-     * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.
-     * - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+     * [Output Only] The status of the VPN tunnel, which can be one of the following: - PROVISIONING: Resource is being allocated for the VPN tunnel. - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel. - FIRST_HANDSHAKE: Successful first handshake with the peer VPN. - ESTABLISHED: Secure session is successfully established with the peer VPN. - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret). - NEGOTIATION_FAILURE: Handshake failed. - DEPROVISIONING: Resources are being deallocated for the VPN tunnel. - FAILED: Tunnel creation has failed and the tunnel is not ready to be used. - NO_INCOMING_PACKETS: No incoming packets from peer. - REJECTED: Tunnel configuration was rejected, can be result of being denied access. - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources. - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state. - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT. - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.VpnTunnel.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.VpnTunnel.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.VpnTunnel.Status result =
-          com.google.cloud.compute.v1.VpnTunnel.Status.valueOf(status_);
-      return result == null ? com.google.cloud.compute.v1.VpnTunnel.Status.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The status of the VPN tunnel, which can be one of the following:
-     * - PROVISIONING: Resource is being allocated for the VPN tunnel.
-     * - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel.
-     * - FIRST_HANDSHAKE: Successful first handshake with the peer VPN.
-     * - ESTABLISHED: Secure session is successfully established with the peer VPN.
-     * - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS
-     * - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret).
-     * - NEGOTIATION_FAILURE: Handshake failed.
-     * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
-     * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
-     * - NO_INCOMING_PACKETS: No incoming packets from peer.
-     * - REJECTED: Tunnel configuration was rejected, can be result of being denied access.
-     * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
-     * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
-     * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.
-     * - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.VpnTunnel.Status status = 181260274;</code>
-     *
-     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloud.compute.v1.VpnTunnel.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00040000;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
@@ -4937,31 +5040,22 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the VPN tunnel, which can be one of the following:
-     * - PROVISIONING: Resource is being allocated for the VPN tunnel.
-     * - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel.
-     * - FIRST_HANDSHAKE: Successful first handshake with the peer VPN.
-     * - ESTABLISHED: Secure session is successfully established with the peer VPN.
-     * - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS
-     * - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret).
-     * - NEGOTIATION_FAILURE: Handshake failed.
-     * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
-     * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
-     * - NO_INCOMING_PACKETS: No incoming packets from peer.
-     * - REJECTED: Tunnel configuration was rejected, can be result of being denied access.
-     * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
-     * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
-     * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.
-     * - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+     * [Output Only] The status of the VPN tunnel, which can be one of the following: - PROVISIONING: Resource is being allocated for the VPN tunnel. - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel. - FIRST_HANDSHAKE: Successful first handshake with the peer VPN. - ESTABLISHED: Secure session is successfully established with the peer VPN. - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret). - NEGOTIATION_FAILURE: Handshake failed. - DEPROVISIONING: Resources are being deallocated for the VPN tunnel. - FAILED: Tunnel creation has failed and the tunnel is not ready to be used. - NO_INCOMING_PACKETS: No incoming packets from peer. - REJECTED: Tunnel configuration was rejected, can be result of being denied access. - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources. - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state. - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT. - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.VpnTunnel.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00040000);
-      status_ = 0;
+    public Builder setStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00040000;
+      status_ = value;
       onChanged();
       return this;
     }
@@ -4974,7 +5068,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
      * </pre>
      *
-     * <code>string target_vpn_gateway = 532512843;</code>
+     * <code>optional string target_vpn_gateway = 532512843;</code>
      *
      * @return Whether the targetVpnGateway field is set.
      */
@@ -4988,7 +5082,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
      * </pre>
      *
-     * <code>string target_vpn_gateway = 532512843;</code>
+     * <code>optional string target_vpn_gateway = 532512843;</code>
      *
      * @return The targetVpnGateway.
      */
@@ -5010,7 +5104,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
      * </pre>
      *
-     * <code>string target_vpn_gateway = 532512843;</code>
+     * <code>optional string target_vpn_gateway = 532512843;</code>
      *
      * @return The bytes for targetVpnGateway.
      */
@@ -5032,7 +5126,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
      * </pre>
      *
-     * <code>string target_vpn_gateway = 532512843;</code>
+     * <code>optional string target_vpn_gateway = 532512843;</code>
      *
      * @param value The targetVpnGateway to set.
      * @return This builder for chaining.
@@ -5053,7 +5147,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
      * </pre>
      *
-     * <code>string target_vpn_gateway = 532512843;</code>
+     * <code>optional string target_vpn_gateway = 532512843;</code>
      *
      * @return This builder for chaining.
      */
@@ -5070,7 +5164,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
      * </pre>
      *
-     * <code>string target_vpn_gateway = 532512843;</code>
+     * <code>optional string target_vpn_gateway = 532512843;</code>
      *
      * @param value The bytes for targetVpnGateway to set.
      * @return This builder for chaining.
@@ -5094,7 +5188,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
      * </pre>
      *
-     * <code>string vpn_gateway = 406684153;</code>
+     * <code>optional string vpn_gateway = 406684153;</code>
      *
      * @return Whether the vpnGateway field is set.
      */
@@ -5108,7 +5202,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
      * </pre>
      *
-     * <code>string vpn_gateway = 406684153;</code>
+     * <code>optional string vpn_gateway = 406684153;</code>
      *
      * @return The vpnGateway.
      */
@@ -5130,7 +5224,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
      * </pre>
      *
-     * <code>string vpn_gateway = 406684153;</code>
+     * <code>optional string vpn_gateway = 406684153;</code>
      *
      * @return The bytes for vpnGateway.
      */
@@ -5152,7 +5246,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
      * </pre>
      *
-     * <code>string vpn_gateway = 406684153;</code>
+     * <code>optional string vpn_gateway = 406684153;</code>
      *
      * @param value The vpnGateway to set.
      * @return This builder for chaining.
@@ -5173,7 +5267,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
      * </pre>
      *
-     * <code>string vpn_gateway = 406684153;</code>
+     * <code>optional string vpn_gateway = 406684153;</code>
      *
      * @return This builder for chaining.
      */
@@ -5190,7 +5284,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
      * </pre>
      *
-     * <code>string vpn_gateway = 406684153;</code>
+     * <code>optional string vpn_gateway = 406684153;</code>
      *
      * @param value The bytes for vpnGateway to set.
      * @return This builder for chaining.
@@ -5214,7 +5308,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * The interface ID of the VPN gateway with which this VPN tunnel is associated.
      * </pre>
      *
-     * <code>int32 vpn_gateway_interface = 95979123;</code>
+     * <code>optional int32 vpn_gateway_interface = 95979123;</code>
      *
      * @return Whether the vpnGatewayInterface field is set.
      */
@@ -5229,7 +5323,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * The interface ID of the VPN gateway with which this VPN tunnel is associated.
      * </pre>
      *
-     * <code>int32 vpn_gateway_interface = 95979123;</code>
+     * <code>optional int32 vpn_gateway_interface = 95979123;</code>
      *
      * @return The vpnGatewayInterface.
      */
@@ -5244,7 +5338,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * The interface ID of the VPN gateway with which this VPN tunnel is associated.
      * </pre>
      *
-     * <code>int32 vpn_gateway_interface = 95979123;</code>
+     * <code>optional int32 vpn_gateway_interface = 95979123;</code>
      *
      * @param value The vpnGatewayInterface to set.
      * @return This builder for chaining.
@@ -5262,7 +5356,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * The interface ID of the VPN gateway with which this VPN tunnel is associated.
      * </pre>
      *
-     * <code>int32 vpn_gateway_interface = 95979123;</code>
+     * <code>optional int32 vpn_gateway_interface = 95979123;</code>
      *
      * @return This builder for chaining.
      */

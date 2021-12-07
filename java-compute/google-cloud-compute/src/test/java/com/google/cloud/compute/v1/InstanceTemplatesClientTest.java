@@ -27,12 +27,14 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonInstanceTemplatesStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -86,7 +88,7 @@ public class InstanceTemplatesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -97,6 +99,7 @@ public class InstanceTemplatesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -109,7 +112,7 @@ public class InstanceTemplatesClientTest {
     String project = "project-309310695";
     String instanceTemplate = "instanceTemplate1009541167";
 
-    Operation actualResponse = client.delete(project, instanceTemplate);
+    Operation actualResponse = client.deleteAsync(project, instanceTemplate).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -137,10 +140,9 @@ public class InstanceTemplatesClientTest {
     try {
       String project = "project-309310695";
       String instanceTemplate = "instanceTemplate1009541167";
-      client.delete(project, instanceTemplate);
+      client.deleteAsync(project, instanceTemplate).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -259,7 +261,7 @@ public class InstanceTemplatesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -270,6 +272,7 @@ public class InstanceTemplatesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -282,7 +285,7 @@ public class InstanceTemplatesClientTest {
     String project = "project-309310695";
     InstanceTemplate instanceTemplateResource = InstanceTemplate.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, instanceTemplateResource);
+    Operation actualResponse = client.insertAsync(project, instanceTemplateResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -310,10 +313,9 @@ public class InstanceTemplatesClientTest {
     try {
       String project = "project-309310695";
       InstanceTemplate instanceTemplateResource = InstanceTemplate.newBuilder().build();
-      client.insert(project, instanceTemplateResource);
+      client.insertAsync(project, instanceTemplateResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 

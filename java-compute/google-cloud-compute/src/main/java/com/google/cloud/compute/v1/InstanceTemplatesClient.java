@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.InstanceTemplatesStub;
@@ -44,7 +46,7 @@ import javax.annotation.Generated;
  * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
  *   String project = "project-309310695";
  *   String instanceTemplate = "instanceTemplate1009541167";
- *   Operation response = instanceTemplatesClient.delete(project, instanceTemplate);
+ *   InstanceTemplate response = instanceTemplatesClient.get(project, instanceTemplate);
  * }
  * }</pre>
  *
@@ -162,7 +164,7 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   String instanceTemplate = "instanceTemplate1009541167";
-   *   Operation response = instanceTemplatesClient.delete(project, instanceTemplate);
+   *   Operation response = instanceTemplatesClient.deleteAsync(project, instanceTemplate).get();
    * }
    * }</pre>
    *
@@ -170,13 +172,14 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * @param instanceTemplate The name of the instance template to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String instanceTemplate) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String instanceTemplate) {
     DeleteInstanceTemplateRequest request =
         DeleteInstanceTemplateRequest.newBuilder()
             .setProject(project)
             .setInstanceTemplate(instanceTemplate)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -195,15 +198,46 @@ public class InstanceTemplatesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = instanceTemplatesClient.delete(request);
+   *   Operation response = instanceTemplatesClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteInstanceTemplateRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      DeleteInstanceTemplateRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified instance template. Deleting an instance template is permanent and cannot
+   * be undone. It is not possible to delete templates that are already in use by a managed instance
+   * group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
+   *   DeleteInstanceTemplateRequest request =
+   *       DeleteInstanceTemplateRequest.newBuilder()
+   *           .setInstanceTemplate("instanceTemplate1009541167")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceTemplatesClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteInstanceTemplateRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -402,7 +436,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   InstanceTemplate instanceTemplateResource = InstanceTemplate.newBuilder().build();
-   *   Operation response = instanceTemplatesClient.insert(project, instanceTemplateResource);
+   *   Operation response =
+   *       instanceTemplatesClient.insertAsync(project, instanceTemplateResource).get();
    * }
    * }</pre>
    *
@@ -410,13 +445,14 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * @param instanceTemplateResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(String project, InstanceTemplate instanceTemplateResource) {
+  public final OperationFuture<Operation, Operation> insertAsync(
+      String project, InstanceTemplate instanceTemplateResource) {
     InsertInstanceTemplateRequest request =
         InsertInstanceTemplateRequest.newBuilder()
             .setProject(project)
             .setInstanceTemplateResource(instanceTemplateResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -436,15 +472,47 @@ public class InstanceTemplatesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = instanceTemplatesClient.insert(request);
+   *   Operation response = instanceTemplatesClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertInstanceTemplateRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(
+      InsertInstanceTemplateRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an instance template in the specified project using the data that is included in the
+   * request. If you are creating a new template to update an existing instance group, your new
+   * instance template must use the same network or, if applicable, the same subnetwork as the
+   * original template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
+   *   InsertInstanceTemplateRequest request =
+   *       InsertInstanceTemplateRequest.newBuilder()
+   *           .setInstanceTemplateResource(InstanceTemplate.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceTemplatesClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertInstanceTemplateRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

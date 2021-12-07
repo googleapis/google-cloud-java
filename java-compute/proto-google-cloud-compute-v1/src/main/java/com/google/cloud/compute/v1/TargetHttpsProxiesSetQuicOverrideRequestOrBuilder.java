@@ -28,11 +28,10 @@ public interface TargetHttpsProxiesSetQuicOverrideRequestOrBuilder
    *
    * <pre>
    * QUIC policy for the TargetHttpsProxy resource.
+   * Check the QuicOverride enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 456577197;
-   * </code>
+   * <code>optional string quic_override = 456577197;</code>
    *
    * @return Whether the quicOverride field is set.
    */
@@ -42,28 +41,25 @@ public interface TargetHttpsProxiesSetQuicOverrideRequestOrBuilder
    *
    * <pre>
    * QUIC policy for the TargetHttpsProxy resource.
+   * Check the QuicOverride enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 456577197;
-   * </code>
+   * <code>optional string quic_override = 456577197;</code>
    *
-   * @return The enum numeric value on the wire for quicOverride.
+   * @return The quicOverride.
    */
-  int getQuicOverrideValue();
+  java.lang.String getQuicOverride();
   /**
    *
    *
    * <pre>
    * QUIC policy for the TargetHttpsProxy resource.
+   * Check the QuicOverride enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 456577197;
-   * </code>
+   * <code>optional string quic_override = 456577197;</code>
    *
-   * @return The quicOverride.
+   * @return The bytes for quicOverride.
    */
-  com.google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride
-      getQuicOverride();
+  com.google.protobuf.ByteString getQuicOverrideBytes();
 }

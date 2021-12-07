@@ -26,6 +26,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -49,16 +50,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * RegionHealthChecksSettings.Builder regionHealthChecksSettingsBuilder =
  *     RegionHealthChecksSettings.newBuilder();
  * regionHealthChecksSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         regionHealthChecksSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -75,6 +76,12 @@ public class RegionHealthChecksSettings extends ClientSettings<RegionHealthCheck
     return ((RegionHealthChecksStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteRegionHealthCheckRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((RegionHealthChecksStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetRegionHealthCheckRequest, HealthCheck> getSettings() {
     return ((RegionHealthChecksStubSettings) getStubSettings()).getSettings();
@@ -83,6 +90,12 @@ public class RegionHealthChecksSettings extends ClientSettings<RegionHealthCheck
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertRegionHealthCheckRequest, Operation> insertSettings() {
     return ((RegionHealthChecksStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertRegionHealthCheckRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((RegionHealthChecksStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -96,9 +109,21 @@ public class RegionHealthChecksSettings extends ClientSettings<RegionHealthCheck
     return ((RegionHealthChecksStubSettings) getStubSettings()).patchSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchRegionHealthCheckRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((RegionHealthChecksStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateRegionHealthCheckRequest, Operation> updateSettings() {
     return ((RegionHealthChecksStubSettings) getStubSettings()).updateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateRegionHealthCheckRequest, Operation, Operation>
+      updateOperationSettings() {
+    return ((RegionHealthChecksStubSettings) getStubSettings()).updateOperationSettings();
   }
 
   public static final RegionHealthChecksSettings create(RegionHealthChecksStubSettings stub)
@@ -204,6 +229,12 @@ public class RegionHealthChecksSettings extends ClientSettings<RegionHealthCheck
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteRegionHealthCheckRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetRegionHealthCheckRequest, HealthCheck> getSettings() {
       return getStubSettingsBuilder().getSettings();
@@ -212,6 +243,12 @@ public class RegionHealthChecksSettings extends ClientSettings<RegionHealthCheck
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertRegionHealthCheckRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertRegionHealthCheckRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -226,9 +263,21 @@ public class RegionHealthChecksSettings extends ClientSettings<RegionHealthCheck
       return getStubSettingsBuilder().patchSettings();
     }
 
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchRegionHealthCheckRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to update. */
     public UnaryCallSettings.Builder<UpdateRegionHealthCheckRequest, Operation> updateSettings() {
       return getStubSettingsBuilder().updateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public OperationCallSettings.Builder<UpdateRegionHealthCheckRequest, Operation, Operation>
+        updateOperationSettings() {
+      return getStubSettingsBuilder().updateOperationSettings();
     }
 
     @Override

@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.LicensesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteLicenseRequest;
 import com.google.cloud.compute.v1.GetIamPolicyLicenseRequest;
@@ -43,6 +44,10 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class LicensesStub implements BackgroundResource {
 
+  public OperationCallable<DeleteLicenseRequest, Operation, Operation> deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteLicenseRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
@@ -53,6 +58,10 @@ public abstract class LicensesStub implements BackgroundResource {
 
   public UnaryCallable<GetIamPolicyLicenseRequest, Policy> getIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public OperationCallable<InsertLicenseRequest, Operation, Operation> insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertLicenseRequest, Operation> insertCallable() {

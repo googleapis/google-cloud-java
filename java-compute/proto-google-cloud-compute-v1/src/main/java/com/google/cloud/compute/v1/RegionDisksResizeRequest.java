@@ -118,7 +118,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
    * The new size of the regional persistent disk, which is specified in GB.
    * </pre>
    *
-   * <code>int64 size_gb = 494929369;</code>
+   * <code>optional int64 size_gb = 494929369;</code>
    *
    * @return Whether the sizeGb field is set.
    */
@@ -133,7 +133,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
    * The new size of the regional persistent disk, which is specified in GB.
    * </pre>
    *
-   * <code>int64 size_gb = 494929369;</code>
+   * <code>optional int64 size_gb = 494929369;</code>
    *
    * @return The sizeGb.
    */
@@ -479,7 +479,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
      * The new size of the regional persistent disk, which is specified in GB.
      * </pre>
      *
-     * <code>int64 size_gb = 494929369;</code>
+     * <code>optional int64 size_gb = 494929369;</code>
      *
      * @return Whether the sizeGb field is set.
      */
@@ -494,7 +494,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
      * The new size of the regional persistent disk, which is specified in GB.
      * </pre>
      *
-     * <code>int64 size_gb = 494929369;</code>
+     * <code>optional int64 size_gb = 494929369;</code>
      *
      * @return The sizeGb.
      */
@@ -509,7 +509,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
      * The new size of the regional persistent disk, which is specified in GB.
      * </pre>
      *
-     * <code>int64 size_gb = 494929369;</code>
+     * <code>optional int64 size_gb = 494929369;</code>
      *
      * @param value The sizeGb to set.
      * @return This builder for chaining.
@@ -527,7 +527,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
      * The new size of the regional persistent disk, which is specified in GB.
      * </pre>
      *
-     * <code>int64 size_gb = 494929369;</code>
+     * <code>optional int64 size_gb = 494929369;</code>
      *
      * @return This builder for chaining.
      */

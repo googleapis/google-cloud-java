@@ -136,7 +136,8 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
    * Maximum allowed number (or %) of VMs that can be deducted from the peak recommendation during the window autoscaler looks at when computing recommendations. Possibly all these VMs can be deleted at once so user service needs to be prepared to lose that many VMs in one step.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;</code>
+   * <code>optional .google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;
+   * </code>
    *
    * @return Whether the maxScaledInReplicas field is set.
    */
@@ -151,7 +152,8 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
    * Maximum allowed number (or %) of VMs that can be deducted from the peak recommendation during the window autoscaler looks at when computing recommendations. Possibly all these VMs can be deleted at once so user service needs to be prepared to lose that many VMs in one step.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;</code>
+   * <code>optional .google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;
+   * </code>
    *
    * @return The maxScaledInReplicas.
    */
@@ -168,7 +170,8 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
    * Maximum allowed number (or %) of VMs that can be deducted from the peak recommendation during the window autoscaler looks at when computing recommendations. Possibly all these VMs can be deleted at once so user service needs to be prepared to lose that many VMs in one step.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;</code>
+   * <code>optional .google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.FixedOrPercentOrBuilder getMaxScaledInReplicasOrBuilder() {
@@ -186,7 +189,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
    * How far back autoscaling looks when computing recommendations to include directives regarding slower scale in, as described above.
    * </pre>
    *
-   * <code>int32 time_window_sec = 36405300;</code>
+   * <code>optional int32 time_window_sec = 36405300;</code>
    *
    * @return Whether the timeWindowSec field is set.
    */
@@ -201,7 +204,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
    * How far back autoscaling looks when computing recommendations to include directives regarding slower scale in, as described above.
    * </pre>
    *
-   * <code>int32 time_window_sec = 36405300;</code>
+   * <code>optional int32 time_window_sec = 36405300;</code>
    *
    * @return The timeWindowSec.
    */
@@ -589,7 +592,8 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      * Maximum allowed number (or %) of VMs that can be deducted from the peak recommendation during the window autoscaler looks at when computing recommendations. Possibly all these VMs can be deleted at once so user service needs to be prepared to lose that many VMs in one step.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;</code>
+     * <code>optional .google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;
+     * </code>
      *
      * @return Whether the maxScaledInReplicas field is set.
      */
@@ -603,7 +607,8 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      * Maximum allowed number (or %) of VMs that can be deducted from the peak recommendation during the window autoscaler looks at when computing recommendations. Possibly all these VMs can be deleted at once so user service needs to be prepared to lose that many VMs in one step.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;</code>
+     * <code>optional .google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;
+     * </code>
      *
      * @return The maxScaledInReplicas.
      */
@@ -623,7 +628,8 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      * Maximum allowed number (or %) of VMs that can be deducted from the peak recommendation during the window autoscaler looks at when computing recommendations. Possibly all these VMs can be deleted at once so user service needs to be prepared to lose that many VMs in one step.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;</code>
+     * <code>optional .google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;
+     * </code>
      */
     public Builder setMaxScaledInReplicas(com.google.cloud.compute.v1.FixedOrPercent value) {
       if (maxScaledInReplicasBuilder_ == null) {
@@ -645,7 +651,8 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      * Maximum allowed number (or %) of VMs that can be deducted from the peak recommendation during the window autoscaler looks at when computing recommendations. Possibly all these VMs can be deleted at once so user service needs to be prepared to lose that many VMs in one step.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;</code>
+     * <code>optional .google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;
+     * </code>
      */
     public Builder setMaxScaledInReplicas(
         com.google.cloud.compute.v1.FixedOrPercent.Builder builderForValue) {
@@ -665,7 +672,8 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      * Maximum allowed number (or %) of VMs that can be deducted from the peak recommendation during the window autoscaler looks at when computing recommendations. Possibly all these VMs can be deleted at once so user service needs to be prepared to lose that many VMs in one step.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;</code>
+     * <code>optional .google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;
+     * </code>
      */
     public Builder mergeMaxScaledInReplicas(com.google.cloud.compute.v1.FixedOrPercent value) {
       if (maxScaledInReplicasBuilder_ == null) {
@@ -694,7 +702,8 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      * Maximum allowed number (or %) of VMs that can be deducted from the peak recommendation during the window autoscaler looks at when computing recommendations. Possibly all these VMs can be deleted at once so user service needs to be prepared to lose that many VMs in one step.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;</code>
+     * <code>optional .google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;
+     * </code>
      */
     public Builder clearMaxScaledInReplicas() {
       if (maxScaledInReplicasBuilder_ == null) {
@@ -713,7 +722,8 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      * Maximum allowed number (or %) of VMs that can be deducted from the peak recommendation during the window autoscaler looks at when computing recommendations. Possibly all these VMs can be deleted at once so user service needs to be prepared to lose that many VMs in one step.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;</code>
+     * <code>optional .google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;
+     * </code>
      */
     public com.google.cloud.compute.v1.FixedOrPercent.Builder getMaxScaledInReplicasBuilder() {
       bitField0_ |= 0x00000001;
@@ -727,7 +737,8 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      * Maximum allowed number (or %) of VMs that can be deducted from the peak recommendation during the window autoscaler looks at when computing recommendations. Possibly all these VMs can be deleted at once so user service needs to be prepared to lose that many VMs in one step.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;</code>
+     * <code>optional .google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;
+     * </code>
      */
     public com.google.cloud.compute.v1.FixedOrPercentOrBuilder getMaxScaledInReplicasOrBuilder() {
       if (maxScaledInReplicasBuilder_ != null) {
@@ -745,7 +756,8 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      * Maximum allowed number (or %) of VMs that can be deducted from the peak recommendation during the window autoscaler looks at when computing recommendations. Possibly all these VMs can be deleted at once so user service needs to be prepared to lose that many VMs in one step.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;</code>
+     * <code>optional .google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.FixedOrPercent,
@@ -772,7 +784,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      * How far back autoscaling looks when computing recommendations to include directives regarding slower scale in, as described above.
      * </pre>
      *
-     * <code>int32 time_window_sec = 36405300;</code>
+     * <code>optional int32 time_window_sec = 36405300;</code>
      *
      * @return Whether the timeWindowSec field is set.
      */
@@ -787,7 +799,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      * How far back autoscaling looks when computing recommendations to include directives regarding slower scale in, as described above.
      * </pre>
      *
-     * <code>int32 time_window_sec = 36405300;</code>
+     * <code>optional int32 time_window_sec = 36405300;</code>
      *
      * @return The timeWindowSec.
      */
@@ -802,7 +814,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      * How far back autoscaling looks when computing recommendations to include directives regarding slower scale in, as described above.
      * </pre>
      *
-     * <code>int32 time_window_sec = 36405300;</code>
+     * <code>optional int32 time_window_sec = 36405300;</code>
      *
      * @param value The timeWindowSec to set.
      * @return This builder for chaining.
@@ -820,7 +832,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      * How far back autoscaling looks when computing recommendations to include directives regarding slower scale in, as described above.
      * </pre>
      *
-     * <code>int32 time_window_sec = 36405300;</code>
+     * <code>optional int32 time_window_sec = 36405300;</code>
      *
      * @return This builder for chaining.
      */

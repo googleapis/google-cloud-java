@@ -30,7 +30,8 @@ public interface PacketMirroringOrBuilder
    * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
+   * <code>
+   * optional .google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
    * </code>
    *
    * @return Whether the collectorIlb field is set.
@@ -43,7 +44,8 @@ public interface PacketMirroringOrBuilder
    * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
+   * <code>
+   * optional .google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
    * </code>
    *
    * @return The collectorIlb.
@@ -56,7 +58,8 @@ public interface PacketMirroringOrBuilder
    * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
+   * <code>
+   * optional .google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
    * </code>
    */
   com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfoOrBuilder getCollectorIlbOrBuilder();
@@ -68,7 +71,7 @@ public interface PacketMirroringOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -80,7 +83,7 @@ public interface PacketMirroringOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -92,7 +95,7 @@ public interface PacketMirroringOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -105,7 +108,7 @@ public interface PacketMirroringOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -117,7 +120,7 @@ public interface PacketMirroringOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -129,7 +132,7 @@ public interface PacketMirroringOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -139,11 +142,11 @@ public interface PacketMirroringOrBuilder
    *
    *
    * <pre>
-   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-   * The default is TRUE.
+   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+   * Check the Enable enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+   * <code>optional string enable = 311764355;</code>
    *
    * @return Whether the enable field is set.
    */
@@ -152,28 +155,28 @@ public interface PacketMirroringOrBuilder
    *
    *
    * <pre>
-   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-   * The default is TRUE.
+   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+   * Check the Enable enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+   * <code>optional string enable = 311764355;</code>
    *
-   * @return The enum numeric value on the wire for enable.
+   * @return The enable.
    */
-  int getEnableValue();
+  java.lang.String getEnable();
   /**
    *
    *
    * <pre>
-   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-   * The default is TRUE.
+   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+   * Check the Enable enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+   * <code>optional string enable = 311764355;</code>
    *
-   * @return The enable.
+   * @return The bytes for enable.
    */
-  com.google.cloud.compute.v1.PacketMirroring.Enable getEnable();
+  com.google.protobuf.ByteString getEnableBytes();
 
   /**
    *
@@ -182,7 +185,7 @@ public interface PacketMirroringOrBuilder
    * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+   * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
    *
    * @return Whether the filter field is set.
    */
@@ -194,7 +197,7 @@ public interface PacketMirroringOrBuilder
    * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+   * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
    *
    * @return The filter.
    */
@@ -206,7 +209,7 @@ public interface PacketMirroringOrBuilder
    * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+   * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
    */
   com.google.cloud.compute.v1.PacketMirroringFilterOrBuilder getFilterOrBuilder();
 
@@ -217,7 +220,7 @@ public interface PacketMirroringOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -229,7 +232,7 @@ public interface PacketMirroringOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -242,7 +245,7 @@ public interface PacketMirroringOrBuilder
    * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -254,7 +257,7 @@ public interface PacketMirroringOrBuilder
    * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -266,7 +269,7 @@ public interface PacketMirroringOrBuilder
    * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -280,7 +283,7 @@ public interface PacketMirroringOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
+   * optional .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
    * </code>
    *
    * @return Whether the mirroredResources field is set.
@@ -294,7 +297,7 @@ public interface PacketMirroringOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
+   * optional .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
    * </code>
    *
    * @return The mirroredResources.
@@ -308,7 +311,7 @@ public interface PacketMirroringOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
+   * optional .google.cloud.compute.v1.PacketMirroringMirroredResourceInfo mirrored_resources = 124817348;
    * </code>
    */
   com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoOrBuilder
@@ -321,7 +324,7 @@ public interface PacketMirroringOrBuilder
    * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -333,7 +336,7 @@ public interface PacketMirroringOrBuilder
    * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -345,7 +348,7 @@ public interface PacketMirroringOrBuilder
    * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -358,7 +361,7 @@ public interface PacketMirroringOrBuilder
    * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
+   * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
    *
    * @return Whether the network field is set.
    */
@@ -370,7 +373,7 @@ public interface PacketMirroringOrBuilder
    * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
+   * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
    *
    * @return The network.
    */
@@ -382,7 +385,7 @@ public interface PacketMirroringOrBuilder
    * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
+   * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
    */
   com.google.cloud.compute.v1.PacketMirroringNetworkInfoOrBuilder getNetworkOrBuilder();
 
@@ -390,11 +393,10 @@ public interface PacketMirroringOrBuilder
    *
    *
    * <pre>
-   * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
-   * Default value is 1000. Valid range is 0 through 65535.
+   * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
    * </pre>
    *
-   * <code>uint32 priority = 445151652;</code>
+   * <code>optional uint32 priority = 445151652;</code>
    *
    * @return Whether the priority field is set.
    */
@@ -403,11 +405,10 @@ public interface PacketMirroringOrBuilder
    *
    *
    * <pre>
-   * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
-   * Default value is 1000. Valid range is 0 through 65535.
+   * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
    * </pre>
    *
-   * <code>uint32 priority = 445151652;</code>
+   * <code>optional uint32 priority = 445151652;</code>
    *
    * @return The priority.
    */
@@ -420,7 +421,7 @@ public interface PacketMirroringOrBuilder
    * [Output Only] URI of the region where the packetMirroring resides.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -432,7 +433,7 @@ public interface PacketMirroringOrBuilder
    * [Output Only] URI of the region where the packetMirroring resides.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -444,7 +445,7 @@ public interface PacketMirroringOrBuilder
    * [Output Only] URI of the region where the packetMirroring resides.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -457,7 +458,7 @@ public interface PacketMirroringOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -469,7 +470,7 @@ public interface PacketMirroringOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -481,7 +482,7 @@ public interface PacketMirroringOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */

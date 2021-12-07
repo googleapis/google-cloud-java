@@ -83,6 +83,7 @@ public class InterconnectLocationsClientTest {
             .setAddress("address-1147692044")
             .setAvailabilityZone("availabilityZone-1674934361")
             .setCity("city3053931")
+            .setContinent("continent-403427916")
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setFacilityProvider("facilityProvider-132020812")
@@ -93,6 +94,8 @@ public class InterconnectLocationsClientTest {
             .setPeeringdbFacilityId("peeringdbFacilityId1154838908")
             .addAllRegionInfos(new ArrayList<InterconnectLocationRegionInfo>())
             .setSelfLink("selfLink1191800166")
+            .setStatus("status-892481550")
+            .setSupportsPzs(true)
             .build();
     mockService.addResponse(expectedResponse);
 

@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.RegionBackendServicesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.BackendService;
 import com.google.cloud.compute.v1.BackendServiceGroupHealth;
@@ -42,6 +43,11 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class RegionBackendServicesStub implements BackgroundResource {
 
+  public OperationCallable<DeleteRegionBackendServiceRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteRegionBackendServiceRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
@@ -53,6 +59,11 @@ public abstract class RegionBackendServicesStub implements BackgroundResource {
   public UnaryCallable<GetHealthRegionBackendServiceRequest, BackendServiceGroupHealth>
       getHealthCallable() {
     throw new UnsupportedOperationException("Not implemented: getHealthCallable()");
+  }
+
+  public OperationCallable<InsertRegionBackendServiceRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertRegionBackendServiceRequest, Operation> insertCallable() {
@@ -67,8 +78,18 @@ public abstract class RegionBackendServicesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
   }
 
+  public OperationCallable<PatchRegionBackendServiceRequest, Operation, Operation>
+      patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
+  }
+
   public UnaryCallable<PatchRegionBackendServiceRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public OperationCallable<UpdateRegionBackendServiceRequest, Operation, Operation>
+      updateOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOperationCallable()");
   }
 
   public UnaryCallable<UpdateRegionBackendServiceRequest, Operation> updateCallable() {

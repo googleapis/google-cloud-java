@@ -26,11 +26,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListVpnTunnelsRequest;
 import com.google.cloud.compute.v1.DeleteVpnTunnelRequest;
@@ -38,9 +40,11 @@ import com.google.cloud.compute.v1.GetVpnTunnelRequest;
 import com.google.cloud.compute.v1.InsertVpnTunnelRequest;
 import com.google.cloud.compute.v1.ListVpnTunnelsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.VpnTunnel;
 import com.google.cloud.compute.v1.VpnTunnelAggregatedList;
 import com.google.cloud.compute.v1.VpnTunnelList;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -58,6 +62,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<AggregatedListVpnTunnelsRequest, VpnTunnelAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor.<AggregatedListVpnTunnelsRequest, VpnTunnelAggregatedList>newBuilder()
@@ -109,6 +116,7 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<VpnTunnelAggregatedList>newBuilder()
                       .setDefaultInstance(VpnTunnelAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -145,7 +153,21 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteVpnTunnelRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetVpnTunnelRequest, VpnTunnel> getMethodDescriptor =
@@ -177,6 +199,7 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
           .setResponseParser(
               ProtoMessageResponseParser.<VpnTunnel>newBuilder()
                   .setDefaultInstance(VpnTunnel.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -215,7 +238,21 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertVpnTunnelRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListVpnTunnelsRequest, VpnTunnelList>
@@ -266,6 +303,7 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<VpnTunnelList>newBuilder()
                       .setDefaultInstance(VpnTunnelList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -274,12 +312,17 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
   private final UnaryCallable<AggregatedListVpnTunnelsRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
   private final UnaryCallable<DeleteVpnTunnelRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteVpnTunnelRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetVpnTunnelRequest, VpnTunnel> getCallable;
   private final UnaryCallable<InsertVpnTunnelRequest, Operation> insertCallable;
+  private final OperationCallable<InsertVpnTunnelRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListVpnTunnelsRequest, VpnTunnelList> listCallable;
   private final UnaryCallable<ListVpnTunnelsRequest, ListPagedResponse> listPagedCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonVpnTunnelsStub create(VpnTunnelsStubSettings settings)
@@ -319,28 +362,35 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AggregatedListVpnTunnelsRequest, VpnTunnelAggregatedList>
         aggregatedListTransportSettings =
             HttpJsonCallSettings
                 .<AggregatedListVpnTunnelsRequest, VpnTunnelAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeleteVpnTunnelRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteVpnTunnelRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetVpnTunnelRequest, VpnTunnel> getTransportSettings =
         HttpJsonCallSettings.<GetVpnTunnelRequest, VpnTunnel>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertVpnTunnelRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertVpnTunnelRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListVpnTunnelsRequest, VpnTunnelList> listTransportSettings =
         HttpJsonCallSettings.<ListVpnTunnelsRequest, VpnTunnelList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.aggregatedListCallable =
@@ -352,12 +402,24 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -398,6 +460,11 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
   }
 
   @Override
+  public OperationCallable<DeleteVpnTunnelRequest, Operation, Operation> deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetVpnTunnelRequest, VpnTunnel> getCallable() {
     return getCallable;
   }
@@ -405,6 +472,11 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
   @Override
   public UnaryCallable<InsertVpnTunnelRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertVpnTunnelRequest, Operation, Operation> insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override

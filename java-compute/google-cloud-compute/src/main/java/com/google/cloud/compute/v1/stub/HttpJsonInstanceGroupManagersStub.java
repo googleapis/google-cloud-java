@@ -29,11 +29,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AbandonInstancesInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.AggregatedListInstanceGroupManagersRequest;
@@ -55,6 +57,7 @@ import com.google.cloud.compute.v1.ListInstanceGroupManagersRequest;
 import com.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersRequest;
 import com.google.cloud.compute.v1.ListPerInstanceConfigsInstanceGroupManagersRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.PatchPerInstanceConfigsInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.RecreateInstancesInstanceGroupManagerRequest;
@@ -62,6 +65,7 @@ import com.google.cloud.compute.v1.ResizeInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.SetInstanceTemplateInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.SetTargetPoolsInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.UpdatePerInstanceConfigsInstanceGroupManagerRequest;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -79,6 +83,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<AbandonInstancesInstanceGroupManagerRequest, Operation>
       abandonInstancesMethodDescriptor =
           ApiMethodDescriptor.<AbandonInstancesInstanceGroupManagerRequest, Operation>newBuilder()
@@ -120,7 +127,21 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (AbandonInstancesInstanceGroupManagerRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -178,6 +199,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setResponseParser(
                   ProtoMessageResponseParser.<InstanceGroupManagerAggregatedList>newBuilder()
                       .setDefaultInstance(InstanceGroupManagerAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -222,7 +244,22 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (ApplyUpdatesToInstancesInstanceGroupManagerRequest request,
+                      Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<CreateInstancesInstanceGroupManagerRequest, Operation>
@@ -266,7 +303,21 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (CreateInstancesInstanceGroupManagerRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<DeleteInstanceGroupManagerRequest, Operation>
@@ -303,7 +354,21 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteInstanceGroupManagerRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<DeleteInstancesInstanceGroupManagerRequest, Operation>
@@ -347,7 +412,21 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteInstancesInstanceGroupManagerRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -391,7 +470,22 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeletePerInstanceConfigsInstanceGroupManagerRequest request,
+                      Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetInstanceGroupManagerRequest, InstanceGroupManager>
@@ -425,6 +519,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setResponseParser(
                   ProtoMessageResponseParser.<InstanceGroupManager>newBuilder()
                       .setDefaultInstance(InstanceGroupManager.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -465,7 +560,21 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertInstanceGroupManagerRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -518,6 +627,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setResponseParser(
                   ProtoMessageResponseParser.<InstanceGroupManagerList>newBuilder()
                       .setDefaultInstance(InstanceGroupManagerList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -575,6 +685,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                   ProtoMessageResponseParser.<InstanceGroupManagersListErrorsResponse>newBuilder()
                       .setDefaultInstance(
                           InstanceGroupManagersListErrorsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -637,6 +748,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .<InstanceGroupManagersListManagedInstancesResponse>newBuilder()
                       .setDefaultInstance(
                           InstanceGroupManagersListManagedInstancesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -699,6 +811,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                       .<InstanceGroupManagersListPerInstanceConfigsResp>newBuilder()
                       .setDefaultInstance(
                           InstanceGroupManagersListPerInstanceConfigsResp.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -741,7 +854,21 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchInstanceGroupManagerRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -788,7 +915,22 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchPerInstanceConfigsInstanceGroupManagerRequest request,
+                      Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<RecreateInstancesInstanceGroupManagerRequest, Operation>
@@ -832,7 +974,21 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (RecreateInstancesInstanceGroupManagerRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ResizeInstanceGroupManagerRequest, Operation>
@@ -870,7 +1026,21 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (ResizeInstanceGroupManagerRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -917,7 +1087,21 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetInstanceTemplateInstanceGroupManagerRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetTargetPoolsInstanceGroupManagerRequest, Operation>
@@ -961,7 +1145,21 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetTargetPoolsInstanceGroupManagerRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -1008,11 +1206,28 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (UpdatePerInstanceConfigsInstanceGroupManagerRequest request,
+                      Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<AbandonInstancesInstanceGroupManagerRequest, Operation>
       abandonInstancesCallable;
+  private final OperationCallable<AbandonInstancesInstanceGroupManagerRequest, Operation, Operation>
+      abandonInstancesOperationCallable;
   private final UnaryCallable<
           AggregatedListInstanceGroupManagersRequest, InstanceGroupManagerAggregatedList>
       aggregatedListCallable;
@@ -1021,15 +1236,29 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
       aggregatedListPagedCallable;
   private final UnaryCallable<ApplyUpdatesToInstancesInstanceGroupManagerRequest, Operation>
       applyUpdatesToInstancesCallable;
+  private final OperationCallable<
+          ApplyUpdatesToInstancesInstanceGroupManagerRequest, Operation, Operation>
+      applyUpdatesToInstancesOperationCallable;
   private final UnaryCallable<CreateInstancesInstanceGroupManagerRequest, Operation>
       createInstancesCallable;
+  private final OperationCallable<CreateInstancesInstanceGroupManagerRequest, Operation, Operation>
+      createInstancesOperationCallable;
   private final UnaryCallable<DeleteInstanceGroupManagerRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteInstanceGroupManagerRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<DeleteInstancesInstanceGroupManagerRequest, Operation>
       deleteInstancesCallable;
+  private final OperationCallable<DeleteInstancesInstanceGroupManagerRequest, Operation, Operation>
+      deleteInstancesOperationCallable;
   private final UnaryCallable<DeletePerInstanceConfigsInstanceGroupManagerRequest, Operation>
       deletePerInstanceConfigsCallable;
+  private final OperationCallable<
+          DeletePerInstanceConfigsInstanceGroupManagerRequest, Operation, Operation>
+      deletePerInstanceConfigsOperationCallable;
   private final UnaryCallable<GetInstanceGroupManagerRequest, InstanceGroupManager> getCallable;
   private final UnaryCallable<InsertInstanceGroupManagerRequest, Operation> insertCallable;
+  private final OperationCallable<InsertInstanceGroupManagerRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListInstanceGroupManagersRequest, InstanceGroupManagerList>
       listCallable;
   private final UnaryCallable<ListInstanceGroupManagersRequest, ListPagedResponse>
@@ -1054,19 +1283,38 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
           ListPerInstanceConfigsInstanceGroupManagersRequest, ListPerInstanceConfigsPagedResponse>
       listPerInstanceConfigsPagedCallable;
   private final UnaryCallable<PatchInstanceGroupManagerRequest, Operation> patchCallable;
+  private final OperationCallable<PatchInstanceGroupManagerRequest, Operation, Operation>
+      patchOperationCallable;
   private final UnaryCallable<PatchPerInstanceConfigsInstanceGroupManagerRequest, Operation>
       patchPerInstanceConfigsCallable;
+  private final OperationCallable<
+          PatchPerInstanceConfigsInstanceGroupManagerRequest, Operation, Operation>
+      patchPerInstanceConfigsOperationCallable;
   private final UnaryCallable<RecreateInstancesInstanceGroupManagerRequest, Operation>
       recreateInstancesCallable;
+  private final OperationCallable<
+          RecreateInstancesInstanceGroupManagerRequest, Operation, Operation>
+      recreateInstancesOperationCallable;
   private final UnaryCallable<ResizeInstanceGroupManagerRequest, Operation> resizeCallable;
+  private final OperationCallable<ResizeInstanceGroupManagerRequest, Operation, Operation>
+      resizeOperationCallable;
   private final UnaryCallable<SetInstanceTemplateInstanceGroupManagerRequest, Operation>
       setInstanceTemplateCallable;
+  private final OperationCallable<
+          SetInstanceTemplateInstanceGroupManagerRequest, Operation, Operation>
+      setInstanceTemplateOperationCallable;
   private final UnaryCallable<SetTargetPoolsInstanceGroupManagerRequest, Operation>
       setTargetPoolsCallable;
+  private final OperationCallable<SetTargetPoolsInstanceGroupManagerRequest, Operation, Operation>
+      setTargetPoolsOperationCallable;
   private final UnaryCallable<UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation>
       updatePerInstanceConfigsCallable;
+  private final OperationCallable<
+          UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation, Operation>
+      updatePerInstanceConfigsOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonInstanceGroupManagersStub create(
@@ -1107,12 +1355,14 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub = HttpJsonZoneOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AbandonInstancesInstanceGroupManagerRequest, Operation>
         abandonInstancesTransportSettings =
             HttpJsonCallSettings
                 .<AbandonInstancesInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(abandonInstancesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<
             AggregatedListInstanceGroupManagersRequest, InstanceGroupManagerAggregatedList>
@@ -1121,47 +1371,56 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                 .<AggregatedListInstanceGroupManagersRequest, InstanceGroupManagerAggregatedList>
                     newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<ApplyUpdatesToInstancesInstanceGroupManagerRequest, Operation>
         applyUpdatesToInstancesTransportSettings =
             HttpJsonCallSettings
                 .<ApplyUpdatesToInstancesInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(applyUpdatesToInstancesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<CreateInstancesInstanceGroupManagerRequest, Operation>
         createInstancesTransportSettings =
             HttpJsonCallSettings.<CreateInstancesInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(createInstancesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeleteInstanceGroupManagerRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteInstanceGroupManagerRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<DeleteInstancesInstanceGroupManagerRequest, Operation>
         deleteInstancesTransportSettings =
             HttpJsonCallSettings.<DeleteInstancesInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteInstancesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeletePerInstanceConfigsInstanceGroupManagerRequest, Operation>
         deletePerInstanceConfigsTransportSettings =
             HttpJsonCallSettings
                 .<DeletePerInstanceConfigsInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(deletePerInstanceConfigsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<GetInstanceGroupManagerRequest, InstanceGroupManager>
         getTransportSettings =
             HttpJsonCallSettings.<GetInstanceGroupManagerRequest, InstanceGroupManager>newBuilder()
                 .setMethodDescriptor(getMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<InsertInstanceGroupManagerRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertInstanceGroupManagerRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListInstanceGroupManagersRequest, InstanceGroupManagerList>
         listTransportSettings =
             HttpJsonCallSettings
                 .<ListInstanceGroupManagersRequest, InstanceGroupManagerList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<
             ListErrorsInstanceGroupManagersRequest, InstanceGroupManagersListErrorsResponse>
@@ -1170,6 +1429,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                 .<ListErrorsInstanceGroupManagersRequest, InstanceGroupManagersListErrorsResponse>
                     newBuilder()
                 .setMethodDescriptor(listErrorsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<
             ListManagedInstancesInstanceGroupManagersRequest,
@@ -1180,6 +1440,7 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                     InstanceGroupManagersListManagedInstancesResponse>
                     newBuilder()
                 .setMethodDescriptor(listManagedInstancesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<
             ListPerInstanceConfigsInstanceGroupManagersRequest,
@@ -1190,48 +1451,62 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                     InstanceGroupManagersListPerInstanceConfigsResp>
                     newBuilder()
                 .setMethodDescriptor(listPerInstanceConfigsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<PatchInstanceGroupManagerRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchInstanceGroupManagerRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<PatchPerInstanceConfigsInstanceGroupManagerRequest, Operation>
         patchPerInstanceConfigsTransportSettings =
             HttpJsonCallSettings
                 .<PatchPerInstanceConfigsInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(patchPerInstanceConfigsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<RecreateInstancesInstanceGroupManagerRequest, Operation>
         recreateInstancesTransportSettings =
             HttpJsonCallSettings
                 .<RecreateInstancesInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(recreateInstancesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<ResizeInstanceGroupManagerRequest, Operation> resizeTransportSettings =
         HttpJsonCallSettings.<ResizeInstanceGroupManagerRequest, Operation>newBuilder()
             .setMethodDescriptor(resizeMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetInstanceTemplateInstanceGroupManagerRequest, Operation>
         setInstanceTemplateTransportSettings =
             HttpJsonCallSettings
                 .<SetInstanceTemplateInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(setInstanceTemplateMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<SetTargetPoolsInstanceGroupManagerRequest, Operation>
         setTargetPoolsTransportSettings =
             HttpJsonCallSettings.<SetTargetPoolsInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(setTargetPoolsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation>
         updatePerInstanceConfigsTransportSettings =
             HttpJsonCallSettings
                 .<UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(updatePerInstanceConfigsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.abandonInstancesCallable =
         callableFactory.createUnaryCallable(
             abandonInstancesTransportSettings, settings.abandonInstancesSettings(), clientContext);
+    this.abandonInstancesOperationCallable =
+        callableFactory.createOperationCallable(
+            abandonInstancesTransportSettings,
+            settings.abandonInstancesOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.aggregatedListCallable =
         callableFactory.createUnaryCallable(
             aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
@@ -1243,26 +1518,62 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
             applyUpdatesToInstancesTransportSettings,
             settings.applyUpdatesToInstancesSettings(),
             clientContext);
+    this.applyUpdatesToInstancesOperationCallable =
+        callableFactory.createOperationCallable(
+            applyUpdatesToInstancesTransportSettings,
+            settings.applyUpdatesToInstancesOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.createInstancesCallable =
         callableFactory.createUnaryCallable(
             createInstancesTransportSettings, settings.createInstancesSettings(), clientContext);
+    this.createInstancesOperationCallable =
+        callableFactory.createOperationCallable(
+            createInstancesTransportSettings,
+            settings.createInstancesOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteInstancesCallable =
         callableFactory.createUnaryCallable(
             deleteInstancesTransportSettings, settings.deleteInstancesSettings(), clientContext);
+    this.deleteInstancesOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteInstancesTransportSettings,
+            settings.deleteInstancesOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deletePerInstanceConfigsCallable =
         callableFactory.createUnaryCallable(
             deletePerInstanceConfigsTransportSettings,
             settings.deletePerInstanceConfigsSettings(),
             clientContext);
+    this.deletePerInstanceConfigsOperationCallable =
+        callableFactory.createOperationCallable(
+            deletePerInstanceConfigsTransportSettings,
+            settings.deletePerInstanceConfigsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -1298,32 +1609,74 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.patchPerInstanceConfigsCallable =
         callableFactory.createUnaryCallable(
             patchPerInstanceConfigsTransportSettings,
             settings.patchPerInstanceConfigsSettings(),
             clientContext);
+    this.patchPerInstanceConfigsOperationCallable =
+        callableFactory.createOperationCallable(
+            patchPerInstanceConfigsTransportSettings,
+            settings.patchPerInstanceConfigsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.recreateInstancesCallable =
         callableFactory.createUnaryCallable(
             recreateInstancesTransportSettings,
             settings.recreateInstancesSettings(),
             clientContext);
+    this.recreateInstancesOperationCallable =
+        callableFactory.createOperationCallable(
+            recreateInstancesTransportSettings,
+            settings.recreateInstancesOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.resizeCallable =
         callableFactory.createUnaryCallable(
             resizeTransportSettings, settings.resizeSettings(), clientContext);
+    this.resizeOperationCallable =
+        callableFactory.createOperationCallable(
+            resizeTransportSettings,
+            settings.resizeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setInstanceTemplateCallable =
         callableFactory.createUnaryCallable(
             setInstanceTemplateTransportSettings,
             settings.setInstanceTemplateSettings(),
             clientContext);
+    this.setInstanceTemplateOperationCallable =
+        callableFactory.createOperationCallable(
+            setInstanceTemplateTransportSettings,
+            settings.setInstanceTemplateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setTargetPoolsCallable =
         callableFactory.createUnaryCallable(
             setTargetPoolsTransportSettings, settings.setTargetPoolsSettings(), clientContext);
+    this.setTargetPoolsOperationCallable =
+        callableFactory.createOperationCallable(
+            setTargetPoolsTransportSettings,
+            settings.setTargetPoolsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.updatePerInstanceConfigsCallable =
         callableFactory.createUnaryCallable(
             updatePerInstanceConfigsTransportSettings,
             settings.updatePerInstanceConfigsSettings(),
             clientContext);
+    this.updatePerInstanceConfigsOperationCallable =
+        callableFactory.createOperationCallable(
+            updatePerInstanceConfigsTransportSettings,
+            settings.updatePerInstanceConfigsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1362,6 +1715,12 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
   }
 
   @Override
+  public OperationCallable<AbandonInstancesInstanceGroupManagerRequest, Operation, Operation>
+      abandonInstancesOperationCallable() {
+    return abandonInstancesOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<
           AggregatedListInstanceGroupManagersRequest, InstanceGroupManagerAggregatedList>
       aggregatedListCallable() {
@@ -1381,14 +1740,32 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
   }
 
   @Override
+  public OperationCallable<ApplyUpdatesToInstancesInstanceGroupManagerRequest, Operation, Operation>
+      applyUpdatesToInstancesOperationCallable() {
+    return applyUpdatesToInstancesOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateInstancesInstanceGroupManagerRequest, Operation>
       createInstancesCallable() {
     return createInstancesCallable;
   }
 
   @Override
+  public OperationCallable<CreateInstancesInstanceGroupManagerRequest, Operation, Operation>
+      createInstancesOperationCallable() {
+    return createInstancesOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteInstanceGroupManagerRequest, Operation> deleteCallable() {
     return deleteCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteInstanceGroupManagerRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
   }
 
   @Override
@@ -1398,9 +1775,22 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
   }
 
   @Override
+  public OperationCallable<DeleteInstancesInstanceGroupManagerRequest, Operation, Operation>
+      deleteInstancesOperationCallable() {
+    return deleteInstancesOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeletePerInstanceConfigsInstanceGroupManagerRequest, Operation>
       deletePerInstanceConfigsCallable() {
     return deletePerInstanceConfigsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          DeletePerInstanceConfigsInstanceGroupManagerRequest, Operation, Operation>
+      deletePerInstanceConfigsOperationCallable() {
+    return deletePerInstanceConfigsOperationCallable;
   }
 
   @Override
@@ -1411,6 +1801,12 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
   @Override
   public UnaryCallable<InsertInstanceGroupManagerRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertInstanceGroupManagerRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -1472,9 +1868,21 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
   }
 
   @Override
+  public OperationCallable<PatchInstanceGroupManagerRequest, Operation, Operation>
+      patchOperationCallable() {
+    return patchOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchPerInstanceConfigsInstanceGroupManagerRequest, Operation>
       patchPerInstanceConfigsCallable() {
     return patchPerInstanceConfigsCallable;
+  }
+
+  @Override
+  public OperationCallable<PatchPerInstanceConfigsInstanceGroupManagerRequest, Operation, Operation>
+      patchPerInstanceConfigsOperationCallable() {
+    return patchPerInstanceConfigsOperationCallable;
   }
 
   @Override
@@ -1484,8 +1892,20 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
   }
 
   @Override
+  public OperationCallable<RecreateInstancesInstanceGroupManagerRequest, Operation, Operation>
+      recreateInstancesOperationCallable() {
+    return recreateInstancesOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<ResizeInstanceGroupManagerRequest, Operation> resizeCallable() {
     return resizeCallable;
+  }
+
+  @Override
+  public OperationCallable<ResizeInstanceGroupManagerRequest, Operation, Operation>
+      resizeOperationCallable() {
+    return resizeOperationCallable;
   }
 
   @Override
@@ -1495,15 +1915,34 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
   }
 
   @Override
+  public OperationCallable<SetInstanceTemplateInstanceGroupManagerRequest, Operation, Operation>
+      setInstanceTemplateOperationCallable() {
+    return setInstanceTemplateOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetTargetPoolsInstanceGroupManagerRequest, Operation>
       setTargetPoolsCallable() {
     return setTargetPoolsCallable;
   }
 
   @Override
+  public OperationCallable<SetTargetPoolsInstanceGroupManagerRequest, Operation, Operation>
+      setTargetPoolsOperationCallable() {
+    return setTargetPoolsOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation>
       updatePerInstanceConfigsCallable() {
     return updatePerInstanceConfigsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation, Operation>
+      updatePerInstanceConfigsOperationCallable() {
+    return updatePerInstanceConfigsOperationCallable;
   }
 
   @Override

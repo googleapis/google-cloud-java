@@ -18,6 +18,8 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RegionInstancesStub;
 import com.google.cloud.compute.v1.stub.RegionInstancesStubSettings;
@@ -39,7 +41,9 @@ import javax.annotation.Generated;
  *   BulkInsertInstanceResource bulkInsertInstanceResourceResource =
  *       BulkInsertInstanceResource.newBuilder().build();
  *   Operation response =
- *       regionInstancesClient.bulkInsert(project, region, bulkInsertInstanceResourceResource);
+ *       regionInstancesClient
+ *           .bulkInsertAsync(project, region, bulkInsertInstanceResourceResource)
+ *           .get();
  * }
  * }</pre>
  *
@@ -159,7 +163,9 @@ public class RegionInstancesClient implements BackgroundResource {
    *   BulkInsertInstanceResource bulkInsertInstanceResourceResource =
    *       BulkInsertInstanceResource.newBuilder().build();
    *   Operation response =
-   *       regionInstancesClient.bulkInsert(project, region, bulkInsertInstanceResourceResource);
+   *       regionInstancesClient
+   *           .bulkInsertAsync(project, region, bulkInsertInstanceResourceResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -168,7 +174,7 @@ public class RegionInstancesClient implements BackgroundResource {
    * @param bulkInsertInstanceResourceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation bulkInsert(
+  public final OperationFuture<Operation, Operation> bulkInsertAsync(
       String project,
       String region,
       BulkInsertInstanceResource bulkInsertInstanceResourceResource) {
@@ -178,7 +184,7 @@ public class RegionInstancesClient implements BackgroundResource {
             .setRegion(region)
             .setBulkInsertInstanceResourceResource(bulkInsertInstanceResourceResource)
             .build();
-    return bulkInsert(request);
+    return bulkInsertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -198,15 +204,47 @@ public class RegionInstancesClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = regionInstancesClient.bulkInsert(request);
+   *   Operation response = regionInstancesClient.bulkInsertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation bulkInsert(BulkInsertRegionInstanceRequest request) {
-    return bulkInsertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> bulkInsertAsync(
+      BulkInsertRegionInstanceRequest request) {
+    return bulkInsertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates multiple instances in a given region. Count specifies the number of instances to
+   * create.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionInstancesClient regionInstancesClient = RegionInstancesClient.create()) {
+   *   BulkInsertRegionInstanceRequest request =
+   *       BulkInsertRegionInstanceRequest.newBuilder()
+   *           .setBulkInsertInstanceResourceResource(
+   *               BulkInsertInstanceResource.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionInstancesClient.bulkInsertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<BulkInsertRegionInstanceRequest, Operation, Operation>
+      bulkInsertOperationCallable() {
+    return stub.bulkInsertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

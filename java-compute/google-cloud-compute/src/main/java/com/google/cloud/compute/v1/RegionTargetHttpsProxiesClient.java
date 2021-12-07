@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RegionTargetHttpsProxiesStub;
@@ -46,7 +48,8 @@ import javax.annotation.Generated;
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String targetHttpsProxy = "targetHttpsProxy833943732";
- *   Operation response = regionTargetHttpsProxiesClient.delete(project, region, targetHttpsProxy);
+ *   TargetHttpsProxy response =
+ *       regionTargetHttpsProxiesClient.get(project, region, targetHttpsProxy);
  * }
  * }</pre>
  *
@@ -166,7 +169,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   String targetHttpsProxy = "targetHttpsProxy833943732";
-   *   Operation response = regionTargetHttpsProxiesClient.delete(project, region, targetHttpsProxy);
+   *   Operation response =
+   *       regionTargetHttpsProxiesClient.deleteAsync(project, region, targetHttpsProxy).get();
    * }
    * }</pre>
    *
@@ -175,14 +179,15 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * @param targetHttpsProxy Name of the TargetHttpsProxy resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String region, String targetHttpsProxy) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String region, String targetHttpsProxy) {
     DeleteRegionTargetHttpsProxyRequest request =
         DeleteRegionTargetHttpsProxyRequest.newBuilder()
             .setProject(project)
             .setRegion(region)
             .setTargetHttpsProxy(targetHttpsProxy)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -201,15 +206,46 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setTargetHttpsProxy("targetHttpsProxy833943732")
    *           .build();
-   *   Operation response = regionTargetHttpsProxiesClient.delete(request);
+   *   Operation response = regionTargetHttpsProxiesClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteRegionTargetHttpsProxyRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      DeleteRegionTargetHttpsProxyRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified TargetHttpsProxy resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
+   *     RegionTargetHttpsProxiesClient.create()) {
+   *   DeleteRegionTargetHttpsProxyRequest request =
+   *       DeleteRegionTargetHttpsProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetHttpsProxy("targetHttpsProxy833943732")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionTargetHttpsProxiesClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteRegionTargetHttpsProxyRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -340,7 +376,9 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    *   String region = "region-934795532";
    *   TargetHttpsProxy targetHttpsProxyResource = TargetHttpsProxy.newBuilder().build();
    *   Operation response =
-   *       regionTargetHttpsProxiesClient.insert(project, region, targetHttpsProxyResource);
+   *       regionTargetHttpsProxiesClient
+   *           .insertAsync(project, region, targetHttpsProxyResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -349,7 +387,7 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * @param targetHttpsProxyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(
+  public final OperationFuture<Operation, Operation> insertAsync(
       String project, String region, TargetHttpsProxy targetHttpsProxyResource) {
     InsertRegionTargetHttpsProxyRequest request =
         InsertRegionTargetHttpsProxyRequest.newBuilder()
@@ -357,7 +395,7 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
             .setRegion(region)
             .setTargetHttpsProxyResource(targetHttpsProxyResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -377,15 +415,47 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setTargetHttpsProxyResource(TargetHttpsProxy.newBuilder().build())
    *           .build();
-   *   Operation response = regionTargetHttpsProxiesClient.insert(request);
+   *   Operation response = regionTargetHttpsProxiesClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertRegionTargetHttpsProxyRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(
+      InsertRegionTargetHttpsProxyRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a TargetHttpsProxy resource in the specified project and region using the data included
+   * in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
+   *     RegionTargetHttpsProxiesClient.create()) {
+   *   InsertRegionTargetHttpsProxyRequest request =
+   *       InsertRegionTargetHttpsProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetHttpsProxyResource(TargetHttpsProxy.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionTargetHttpsProxiesClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertRegionTargetHttpsProxyRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -571,11 +641,13 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    *       regionTargetHttpsProxiesSetSslCertificatesRequestResource =
    *           RegionTargetHttpsProxiesSetSslCertificatesRequest.newBuilder().build();
    *   Operation response =
-   *       regionTargetHttpsProxiesClient.setSslCertificates(
-   *           project,
-   *           region,
-   *           targetHttpsProxy,
-   *           regionTargetHttpsProxiesSetSslCertificatesRequestResource);
+   *       regionTargetHttpsProxiesClient
+   *           .setSslCertificatesAsync(
+   *               project,
+   *               region,
+   *               targetHttpsProxy,
+   *               regionTargetHttpsProxiesSetSslCertificatesRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -587,7 +659,7 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    *     request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setSslCertificates(
+  public final OperationFuture<Operation, Operation> setSslCertificatesAsync(
       String project,
       String region,
       String targetHttpsProxy,
@@ -601,7 +673,7 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
             .setRegionTargetHttpsProxiesSetSslCertificatesRequestResource(
                 regionTargetHttpsProxiesSetSslCertificatesRequestResource)
             .build();
-    return setSslCertificates(request);
+    return setSslCertificatesAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -622,16 +694,49 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setTargetHttpsProxy("targetHttpsProxy833943732")
    *           .build();
-   *   Operation response = regionTargetHttpsProxiesClient.setSslCertificates(request);
+   *   Operation response = regionTargetHttpsProxiesClient.setSslCertificatesAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setSslCertificates(
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setSslCertificatesAsync(
       SetSslCertificatesRegionTargetHttpsProxyRequest request) {
-    return setSslCertificatesCallable().call(request);
+    return setSslCertificatesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Replaces SslCertificates for TargetHttpsProxy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
+   *     RegionTargetHttpsProxiesClient.create()) {
+   *   SetSslCertificatesRegionTargetHttpsProxyRequest request =
+   *       SetSslCertificatesRegionTargetHttpsProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionTargetHttpsProxiesSetSslCertificatesRequestResource(
+   *               RegionTargetHttpsProxiesSetSslCertificatesRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setTargetHttpsProxy("targetHttpsProxy833943732")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionTargetHttpsProxiesClient.setSslCertificatesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          SetSslCertificatesRegionTargetHttpsProxyRequest, Operation, Operation>
+      setSslCertificatesOperationCallable() {
+    return stub.setSslCertificatesOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -678,8 +783,9 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    *   String targetHttpsProxy = "targetHttpsProxy833943732";
    *   UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
    *   Operation response =
-   *       regionTargetHttpsProxiesClient.setUrlMap(
-   *           project, region, targetHttpsProxy, urlMapReferenceResource);
+   *       regionTargetHttpsProxiesClient
+   *           .setUrlMapAsync(project, region, targetHttpsProxy, urlMapReferenceResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -689,7 +795,7 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * @param urlMapReferenceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setUrlMap(
+  public final OperationFuture<Operation, Operation> setUrlMapAsync(
       String project,
       String region,
       String targetHttpsProxy,
@@ -701,7 +807,7 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
             .setTargetHttpsProxy(targetHttpsProxy)
             .setUrlMapReferenceResource(urlMapReferenceResource)
             .build();
-    return setUrlMap(request);
+    return setUrlMapAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -721,15 +827,47 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    *           .setTargetHttpsProxy("targetHttpsProxy833943732")
    *           .setUrlMapReferenceResource(UrlMapReference.newBuilder().build())
    *           .build();
-   *   Operation response = regionTargetHttpsProxiesClient.setUrlMap(request);
+   *   Operation response = regionTargetHttpsProxiesClient.setUrlMapAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setUrlMap(SetUrlMapRegionTargetHttpsProxyRequest request) {
-    return setUrlMapCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setUrlMapAsync(
+      SetUrlMapRegionTargetHttpsProxyRequest request) {
+    return setUrlMapOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Changes the URL map for TargetHttpsProxy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
+   *     RegionTargetHttpsProxiesClient.create()) {
+   *   SetUrlMapRegionTargetHttpsProxyRequest request =
+   *       SetUrlMapRegionTargetHttpsProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetHttpsProxy("targetHttpsProxy833943732")
+   *           .setUrlMapReferenceResource(UrlMapReference.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionTargetHttpsProxiesClient.setUrlMapOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetUrlMapRegionTargetHttpsProxyRequest, Operation, Operation>
+      setUrlMapOperationCallable() {
+    return stub.setUrlMapOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

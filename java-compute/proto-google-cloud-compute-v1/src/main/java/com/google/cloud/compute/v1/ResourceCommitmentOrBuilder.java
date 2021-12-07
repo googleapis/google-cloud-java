@@ -30,7 +30,7 @@ public interface ResourceCommitmentOrBuilder
    * Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.
    * </pre>
    *
-   * <code>string accelerator_type = 138031246;</code>
+   * <code>optional string accelerator_type = 138031246;</code>
    *
    * @return Whether the acceleratorType field is set.
    */
@@ -42,7 +42,7 @@ public interface ResourceCommitmentOrBuilder
    * Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.
    * </pre>
    *
-   * <code>string accelerator_type = 138031246;</code>
+   * <code>optional string accelerator_type = 138031246;</code>
    *
    * @return The acceleratorType.
    */
@@ -54,7 +54,7 @@ public interface ResourceCommitmentOrBuilder
    * Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.
    * </pre>
    *
-   * <code>string accelerator_type = 138031246;</code>
+   * <code>optional string accelerator_type = 138031246;</code>
    *
    * @return The bytes for acceleratorType.
    */
@@ -67,7 +67,7 @@ public interface ResourceCommitmentOrBuilder
    * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
    * </pre>
    *
-   * <code>int64 amount = 196759640;</code>
+   * <code>optional int64 amount = 196759640;</code>
    *
    * @return Whether the amount field is set.
    */
@@ -79,7 +79,7 @@ public interface ResourceCommitmentOrBuilder
    * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
    * </pre>
    *
-   * <code>int64 amount = 196759640;</code>
+   * <code>optional int64 amount = 196759640;</code>
    *
    * @return The amount.
    */
@@ -90,9 +90,10 @@ public interface ResourceCommitmentOrBuilder
    *
    * <pre>
    * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ResourceCommitment.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
    * @return Whether the type field is set.
    */
@@ -102,23 +103,25 @@ public interface ResourceCommitmentOrBuilder
    *
    * <pre>
    * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ResourceCommitment.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The enum numeric value on the wire for type.
+   * @return The type.
    */
-  int getTypeValue();
+  java.lang.String getType();
   /**
    *
    *
    * <pre>
    * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ResourceCommitment.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The type.
+   * @return The bytes for type.
    */
-  com.google.cloud.compute.v1.ResourceCommitment.Type getType();
+  com.google.protobuf.ByteString getTypeBytes();
 }

@@ -122,11 +122,10 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The HTTP status code used to abort the request.
-   * The value must be between 200 and 599 inclusive.
+   * The HTTP status code used to abort the request. The value must be between 200 and 599 inclusive. For gRPC protocol, the gRPC status code is mapped to HTTP status code according to this mapping table. HTTP status 200 is mapped to gRPC status UNKNOWN. Injecting an OK status is currently not supported by Traffic Director.
    * </pre>
    *
-   * <code>uint32 http_status = 468949897;</code>
+   * <code>optional uint32 http_status = 468949897;</code>
    *
    * @return Whether the httpStatus field is set.
    */
@@ -138,11 +137,10 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The HTTP status code used to abort the request.
-   * The value must be between 200 and 599 inclusive.
+   * The HTTP status code used to abort the request. The value must be between 200 and 599 inclusive. For gRPC protocol, the gRPC status code is mapped to HTTP status code according to this mapping table. HTTP status 200 is mapped to gRPC status UNKNOWN. Injecting an OK status is currently not supported by Traffic Director.
    * </pre>
    *
-   * <code>uint32 http_status = 468949897;</code>
+   * <code>optional uint32 http_status = 468949897;</code>
    *
    * @return The httpStatus.
    */
@@ -157,11 +155,10 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection.
-   * The value must be between 0.0 and 100.0 inclusive.
+   * The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection. The value must be between 0.0 and 100.0 inclusive.
    * </pre>
    *
-   * <code>double percentage = 151909018;</code>
+   * <code>optional double percentage = 151909018;</code>
    *
    * @return Whether the percentage field is set.
    */
@@ -173,11 +170,10 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection.
-   * The value must be between 0.0 and 100.0 inclusive.
+   * The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection. The value must be between 0.0 and 100.0 inclusive.
    * </pre>
    *
-   * <code>double percentage = 151909018;</code>
+   * <code>optional double percentage = 151909018;</code>
    *
    * @return The percentage.
    */
@@ -546,11 +542,10 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The HTTP status code used to abort the request.
-     * The value must be between 200 and 599 inclusive.
+     * The HTTP status code used to abort the request. The value must be between 200 and 599 inclusive. For gRPC protocol, the gRPC status code is mapped to HTTP status code according to this mapping table. HTTP status 200 is mapped to gRPC status UNKNOWN. Injecting an OK status is currently not supported by Traffic Director.
      * </pre>
      *
-     * <code>uint32 http_status = 468949897;</code>
+     * <code>optional uint32 http_status = 468949897;</code>
      *
      * @return Whether the httpStatus field is set.
      */
@@ -562,11 +557,10 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The HTTP status code used to abort the request.
-     * The value must be between 200 and 599 inclusive.
+     * The HTTP status code used to abort the request. The value must be between 200 and 599 inclusive. For gRPC protocol, the gRPC status code is mapped to HTTP status code according to this mapping table. HTTP status 200 is mapped to gRPC status UNKNOWN. Injecting an OK status is currently not supported by Traffic Director.
      * </pre>
      *
-     * <code>uint32 http_status = 468949897;</code>
+     * <code>optional uint32 http_status = 468949897;</code>
      *
      * @return The httpStatus.
      */
@@ -578,11 +572,10 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The HTTP status code used to abort the request.
-     * The value must be between 200 and 599 inclusive.
+     * The HTTP status code used to abort the request. The value must be between 200 and 599 inclusive. For gRPC protocol, the gRPC status code is mapped to HTTP status code according to this mapping table. HTTP status 200 is mapped to gRPC status UNKNOWN. Injecting an OK status is currently not supported by Traffic Director.
      * </pre>
      *
-     * <code>uint32 http_status = 468949897;</code>
+     * <code>optional uint32 http_status = 468949897;</code>
      *
      * @param value The httpStatus to set.
      * @return This builder for chaining.
@@ -597,11 +590,10 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The HTTP status code used to abort the request.
-     * The value must be between 200 and 599 inclusive.
+     * The HTTP status code used to abort the request. The value must be between 200 and 599 inclusive. For gRPC protocol, the gRPC status code is mapped to HTTP status code according to this mapping table. HTTP status 200 is mapped to gRPC status UNKNOWN. Injecting an OK status is currently not supported by Traffic Director.
      * </pre>
      *
-     * <code>uint32 http_status = 468949897;</code>
+     * <code>optional uint32 http_status = 468949897;</code>
      *
      * @return This builder for chaining.
      */
@@ -617,11 +609,10 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection.
-     * The value must be between 0.0 and 100.0 inclusive.
+     * The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection. The value must be between 0.0 and 100.0 inclusive.
      * </pre>
      *
-     * <code>double percentage = 151909018;</code>
+     * <code>optional double percentage = 151909018;</code>
      *
      * @return Whether the percentage field is set.
      */
@@ -633,11 +624,10 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection.
-     * The value must be between 0.0 and 100.0 inclusive.
+     * The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection. The value must be between 0.0 and 100.0 inclusive.
      * </pre>
      *
-     * <code>double percentage = 151909018;</code>
+     * <code>optional double percentage = 151909018;</code>
      *
      * @return The percentage.
      */
@@ -649,11 +639,10 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection.
-     * The value must be between 0.0 and 100.0 inclusive.
+     * The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection. The value must be between 0.0 and 100.0 inclusive.
      * </pre>
      *
-     * <code>double percentage = 151909018;</code>
+     * <code>optional double percentage = 151909018;</code>
      *
      * @param value The percentage to set.
      * @return This builder for chaining.
@@ -668,11 +657,10 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection.
-     * The value must be between 0.0 and 100.0 inclusive.
+     * The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection. The value must be between 0.0 and 100.0 inclusive.
      * </pre>
      *
-     * <code>double percentage = 151909018;</code>
+     * <code>optional double percentage = 151909018;</code>
      *
      * @return This builder for chaining.
      */

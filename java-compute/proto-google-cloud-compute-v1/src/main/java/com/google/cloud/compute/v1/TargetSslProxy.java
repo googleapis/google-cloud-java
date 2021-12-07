@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Target SSL Proxy resource.
- * A target SSL proxy is a component of a SSL Proxy load balancer. Global forwarding rules reference a target SSL proxy, and the target proxy then references an external backend service. For more information, read Using Target Proxies. (== resource_for {$api_version}.targetSslProxies ==)
+ * Represents a Target SSL Proxy resource. A target SSL proxy is a component of a SSL Proxy load balancer. Global forwarding rules reference a target SSL proxy, and the target proxy then references an external backend service. For more information, read Using Target Proxies.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.TargetSslProxy}
@@ -43,7 +42,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     kind_ = "";
     name_ = "";
-    proxyHeader_ = 0;
+    proxyHeader_ = "";
     selfLink_ = "";
     service_ = "";
     sslCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -107,11 +106,11 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
               creationTimestamp_ = s;
               break;
             }
-          case 1282993136:
+          case 1282993138:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000020;
-              proxyHeader_ = rawValue;
+              proxyHeader_ = s;
               break;
             }
           case -1933445590:
@@ -324,7 +323,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -339,7 +338,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -362,7 +361,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -388,7 +387,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -403,7 +402,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -426,7 +425,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -452,7 +451,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -467,7 +466,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -485,7 +484,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#targetSslProxy for target SSL proxies.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -500,7 +499,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#targetSslProxy for target SSL proxies.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -523,7 +522,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#targetSslProxy for target SSL proxies.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -549,7 +548,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -564,7 +563,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -587,7 +586,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -605,15 +604,16 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROXY_HEADER_FIELD_NUMBER = 160374142;
-  private int proxyHeader_;
+  private volatile java.lang.Object proxyHeader_;
   /**
    *
    *
    * <pre>
    * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.TargetSslProxy.ProxyHeader proxy_header = 160374142;</code>
+   * <code>optional string proxy_header = 160374142;</code>
    *
    * @return Whether the proxyHeader field is set.
    */
@@ -626,35 +626,48 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.TargetSslProxy.ProxyHeader proxy_header = 160374142;</code>
+   * <code>optional string proxy_header = 160374142;</code>
    *
-   * @return The enum numeric value on the wire for proxyHeader.
+   * @return The proxyHeader.
    */
   @java.lang.Override
-  public int getProxyHeaderValue() {
-    return proxyHeader_;
+  public java.lang.String getProxyHeader() {
+    java.lang.Object ref = proxyHeader_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      proxyHeader_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.TargetSslProxy.ProxyHeader proxy_header = 160374142;</code>
+   * <code>optional string proxy_header = 160374142;</code>
    *
-   * @return The proxyHeader.
+   * @return The bytes for proxyHeader.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.TargetSslProxy.ProxyHeader getProxyHeader() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.TargetSslProxy.ProxyHeader result =
-        com.google.cloud.compute.v1.TargetSslProxy.ProxyHeader.valueOf(proxyHeader_);
-    return result == null
-        ? com.google.cloud.compute.v1.TargetSslProxy.ProxyHeader.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getProxyHeaderBytes() {
+    java.lang.Object ref = proxyHeader_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      proxyHeader_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
@@ -666,7 +679,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -681,7 +694,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -704,7 +717,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -730,7 +743,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * URL to the BackendService resource.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>optional string service = 373540533;</code>
    *
    * @return Whether the service field is set.
    */
@@ -745,7 +758,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * URL to the BackendService resource.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>optional string service = 373540533;</code>
    *
    * @return The service.
    */
@@ -768,7 +781,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * URL to the BackendService resource.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>optional string service = 373540533;</code>
    *
    * @return The bytes for service.
    */
@@ -791,7 +804,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+   * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -805,7 +818,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+   * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -819,7 +832,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+   * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -834,7 +847,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+   * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -855,7 +868,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * URL of SslPolicy resource that will be associated with the TargetSslProxy resource. If not set, the TargetSslProxy resource will not have any SSL policy configured.
    * </pre>
    *
-   * <code>string ssl_policy = 295190213;</code>
+   * <code>optional string ssl_policy = 295190213;</code>
    *
    * @return Whether the sslPolicy field is set.
    */
@@ -870,7 +883,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * URL of SslPolicy resource that will be associated with the TargetSslProxy resource. If not set, the TargetSslProxy resource will not have any SSL policy configured.
    * </pre>
    *
-   * <code>string ssl_policy = 295190213;</code>
+   * <code>optional string ssl_policy = 295190213;</code>
    *
    * @return The sslPolicy.
    */
@@ -893,7 +906,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    * URL of SslPolicy resource that will be associated with the TargetSslProxy resource. If not set, the TargetSslProxy resource will not have any SSL policy configured.
    * </pre>
    *
-   * <code>string ssl_policy = 295190213;</code>
+   * <code>optional string ssl_policy = 295190213;</code>
    *
    * @return The bytes for sslPolicy.
    */
@@ -937,7 +950,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
-      output.writeEnum(160374142, proxyHeader_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 160374142, proxyHeader_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 295190213, sslPolicy_);
@@ -978,7 +991,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(160374142, proxyHeader_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(160374142, proxyHeader_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(295190213, sslPolicy_);
@@ -1038,7 +1051,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasProxyHeader() != other.hasProxyHeader()) return false;
     if (hasProxyHeader()) {
-      if (proxyHeader_ != other.proxyHeader_) return false;
+      if (!getProxyHeader().equals(other.getProxyHeader())) return false;
     }
     if (hasSelfLink() != other.hasSelfLink()) return false;
     if (hasSelfLink()) {
@@ -1086,7 +1099,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasProxyHeader()) {
       hash = (37 * hash) + PROXY_HEADER_FIELD_NUMBER;
-      hash = (53 * hash) + proxyHeader_;
+      hash = (53 * hash) + getProxyHeader().hashCode();
     }
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
@@ -1208,8 +1221,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Target SSL Proxy resource.
-   * A target SSL proxy is a component of a SSL Proxy load balancer. Global forwarding rules reference a target SSL proxy, and the target proxy then references an external backend service. For more information, read Using Target Proxies. (== resource_for {$api_version}.targetSslProxies ==)
+   * Represents a Target SSL Proxy resource. A target SSL proxy is a component of a SSL Proxy load balancer. Global forwarding rules reference a target SSL proxy, and the target proxy then references an external backend service. For more information, read Using Target Proxies.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.TargetSslProxy}
@@ -1260,7 +1272,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000008);
       name_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
-      proxyHeader_ = 0;
+      proxyHeader_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
       selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00000040);
@@ -1414,7 +1426,9 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasProxyHeader()) {
-        setProxyHeader(other.getProxyHeader());
+        bitField0_ |= 0x00000020;
+        proxyHeader_ = other.proxyHeader_;
+        onChanged();
       }
       if (other.hasSelfLink()) {
         bitField0_ |= 0x00000040;
@@ -1480,7 +1494,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -1494,7 +1508,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -1516,7 +1530,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -1538,7 +1552,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -1559,7 +1573,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -1576,7 +1590,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -1600,7 +1614,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -1614,7 +1628,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1636,7 +1650,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1658,7 +1672,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1679,7 +1693,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -1696,7 +1710,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1720,7 +1734,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -1735,7 +1749,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -1750,7 +1764,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -1768,7 +1782,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -1787,7 +1801,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#targetSslProxy for target SSL proxies.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -1801,7 +1815,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#targetSslProxy for target SSL proxies.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -1823,7 +1837,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#targetSslProxy for target SSL proxies.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -1845,7 +1859,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#targetSslProxy for target SSL proxies.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -1866,7 +1880,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#targetSslProxy for target SSL proxies.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -1883,7 +1897,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#targetSslProxy for target SSL proxies.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -1907,7 +1921,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -1921,7 +1935,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -1943,7 +1957,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -1965,7 +1979,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1986,7 +2000,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -2003,7 +2017,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2019,19 +2033,19 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int proxyHeader_ = 0;
+    private java.lang.Object proxyHeader_ = "";
     /**
      *
      *
      * <pre>
      * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetSslProxy.ProxyHeader proxy_header = 160374142;</code>
+     * <code>optional string proxy_header = 160374142;</code>
      *
      * @return Whether the proxyHeader field is set.
      */
-    @java.lang.Override
     public boolean hasProxyHeader() {
       return ((bitField0_ & 0x00000020) != 0);
     }
@@ -2040,29 +2054,64 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetSslProxy.ProxyHeader proxy_header = 160374142;</code>
+     * <code>optional string proxy_header = 160374142;</code>
      *
-     * @return The enum numeric value on the wire for proxyHeader.
+     * @return The proxyHeader.
      */
-    @java.lang.Override
-    public int getProxyHeaderValue() {
-      return proxyHeader_;
+    public java.lang.String getProxyHeader() {
+      java.lang.Object ref = proxyHeader_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        proxyHeader_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetSslProxy.ProxyHeader proxy_header = 160374142;</code>
+     * <code>optional string proxy_header = 160374142;</code>
      *
-     * @param value The enum numeric value on the wire for proxyHeader to set.
+     * @return The bytes for proxyHeader.
+     */
+    public com.google.protobuf.ByteString getProxyHeaderBytes() {
+      java.lang.Object ref = proxyHeader_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        proxyHeader_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string proxy_header = 160374142;</code>
+     *
+     * @param value The proxyHeader to set.
      * @return This builder for chaining.
      */
-    public Builder setProxyHeaderValue(int value) {
+    public Builder setProxyHeader(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000020;
       proxyHeader_ = value;
       onChanged();
@@ -2073,39 +2122,16 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetSslProxy.ProxyHeader proxy_header = 160374142;</code>
+     * <code>optional string proxy_header = 160374142;</code>
      *
-     * @return The proxyHeader.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.TargetSslProxy.ProxyHeader getProxyHeader() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.TargetSslProxy.ProxyHeader result =
-          com.google.cloud.compute.v1.TargetSslProxy.ProxyHeader.valueOf(proxyHeader_);
-      return result == null
-          ? com.google.cloud.compute.v1.TargetSslProxy.ProxyHeader.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.TargetSslProxy.ProxyHeader proxy_header = 160374142;</code>
-     *
-     * @param value The proxyHeader to set.
      * @return This builder for chaining.
      */
-    public Builder setProxyHeader(com.google.cloud.compute.v1.TargetSslProxy.ProxyHeader value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000020;
-      proxyHeader_ = value.getNumber();
+    public Builder clearProxyHeader() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      proxyHeader_ = getDefaultInstance().getProxyHeader();
       onChanged();
       return this;
     }
@@ -2114,15 +2140,21 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetSslProxy.ProxyHeader proxy_header = 160374142;</code>
+     * <code>optional string proxy_header = 160374142;</code>
      *
+     * @param value The bytes for proxyHeader to set.
      * @return This builder for chaining.
      */
-    public Builder clearProxyHeader() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      proxyHeader_ = 0;
+    public Builder setProxyHeaderBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000020;
+      proxyHeader_ = value;
       onChanged();
       return this;
     }
@@ -2135,7 +2167,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -2149,7 +2181,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -2171,7 +2203,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2193,7 +2225,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2214,7 +2246,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -2231,7 +2263,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2255,7 +2287,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * URL to the BackendService resource.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @return Whether the service field is set.
      */
@@ -2269,7 +2301,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * URL to the BackendService resource.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @return The service.
      */
@@ -2291,7 +2323,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * URL to the BackendService resource.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @return The bytes for service.
      */
@@ -2313,7 +2345,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * URL to the BackendService resource.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @param value The service to set.
      * @return This builder for chaining.
@@ -2334,7 +2366,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * URL to the BackendService resource.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @return This builder for chaining.
      */
@@ -2351,7 +2383,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * URL to the BackendService resource.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @param value The bytes for service to set.
      * @return This builder for chaining.
@@ -2380,7 +2412,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -2394,7 +2426,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -2408,7 +2440,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -2423,7 +2455,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -2438,7 +2470,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -2460,7 +2492,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -2481,7 +2513,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -2499,7 +2531,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -2516,7 +2548,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -2543,7 +2575,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * URL of SslPolicy resource that will be associated with the TargetSslProxy resource. If not set, the TargetSslProxy resource will not have any SSL policy configured.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213;</code>
+     * <code>optional string ssl_policy = 295190213;</code>
      *
      * @return Whether the sslPolicy field is set.
      */
@@ -2557,7 +2589,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * URL of SslPolicy resource that will be associated with the TargetSslProxy resource. If not set, the TargetSslProxy resource will not have any SSL policy configured.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213;</code>
+     * <code>optional string ssl_policy = 295190213;</code>
      *
      * @return The sslPolicy.
      */
@@ -2579,7 +2611,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * URL of SslPolicy resource that will be associated with the TargetSslProxy resource. If not set, the TargetSslProxy resource will not have any SSL policy configured.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213;</code>
+     * <code>optional string ssl_policy = 295190213;</code>
      *
      * @return The bytes for sslPolicy.
      */
@@ -2601,7 +2633,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * URL of SslPolicy resource that will be associated with the TargetSslProxy resource. If not set, the TargetSslProxy resource will not have any SSL policy configured.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213;</code>
+     * <code>optional string ssl_policy = 295190213;</code>
      *
      * @param value The sslPolicy to set.
      * @return This builder for chaining.
@@ -2622,7 +2654,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * URL of SslPolicy resource that will be associated with the TargetSslProxy resource. If not set, the TargetSslProxy resource will not have any SSL policy configured.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213;</code>
+     * <code>optional string ssl_policy = 295190213;</code>
      *
      * @return This builder for chaining.
      */
@@ -2639,7 +2671,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * URL of SslPolicy resource that will be associated with the TargetSslProxy resource. If not set, the TargetSslProxy resource will not have any SSL policy configured.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213;</code>
+     * <code>optional string ssl_policy = 295190213;</code>
      *
      * @param value The bytes for sslPolicy to set.
      * @return This builder for chaining.

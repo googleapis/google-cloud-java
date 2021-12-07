@@ -22,10 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * A full or valid partial URL to a health check. For example, the following are valid URLs:
- * - https://www.googleapis.com/compute/beta/projects/project-id/global/httpHealthChecks/health-check
- * - projects/project-id/global/httpHealthChecks/health-check
- * - global/httpHealthChecks/health-check
+ * A full or valid partial URL to a health check. For example, the following are valid URLs: - https://www.googleapis.com/compute/beta/projects/project-id/global/httpHealthChecks/health-check - projects/project-id/global/httpHealthChecks/health-check - global/httpHealthChecks/health-check
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.HealthCheckReference}
@@ -119,7 +116,7 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
   public static final int HEALTH_CHECK_FIELD_NUMBER = 308876645;
   private volatile java.lang.Object healthCheck_;
   /**
-   * <code>string health_check = 308876645;</code>
+   * <code>optional string health_check = 308876645;</code>
    *
    * @return Whether the healthCheck field is set.
    */
@@ -128,7 +125,7 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>string health_check = 308876645;</code>
+   * <code>optional string health_check = 308876645;</code>
    *
    * @return The healthCheck.
    */
@@ -145,7 +142,7 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
     }
   }
   /**
-   * <code>string health_check = 308876645;</code>
+   * <code>optional string health_check = 308876645;</code>
    *
    * @return The bytes for healthCheck.
    */
@@ -330,10 +327,7 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A full or valid partial URL to a health check. For example, the following are valid URLs:
-   * - https://www.googleapis.com/compute/beta/projects/project-id/global/httpHealthChecks/health-check
-   * - projects/project-id/global/httpHealthChecks/health-check
-   * - global/httpHealthChecks/health-check
+   * A full or valid partial URL to a health check. For example, the following are valid URLs: - https://www.googleapis.com/compute/beta/projects/project-id/global/httpHealthChecks/health-check - projects/project-id/global/httpHealthChecks/health-check - global/httpHealthChecks/health-check
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.HealthCheckReference}
@@ -498,7 +492,7 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
 
     private java.lang.Object healthCheck_ = "";
     /**
-     * <code>string health_check = 308876645;</code>
+     * <code>optional string health_check = 308876645;</code>
      *
      * @return Whether the healthCheck field is set.
      */
@@ -506,7 +500,7 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>string health_check = 308876645;</code>
+     * <code>optional string health_check = 308876645;</code>
      *
      * @return The healthCheck.
      */
@@ -522,7 +516,7 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
       }
     }
     /**
-     * <code>string health_check = 308876645;</code>
+     * <code>optional string health_check = 308876645;</code>
      *
      * @return The bytes for healthCheck.
      */
@@ -538,7 +532,7 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
       }
     }
     /**
-     * <code>string health_check = 308876645;</code>
+     * <code>optional string health_check = 308876645;</code>
      *
      * @param value The healthCheck to set.
      * @return This builder for chaining.
@@ -553,7 +547,7 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
-     * <code>string health_check = 308876645;</code>
+     * <code>optional string health_check = 308876645;</code>
      *
      * @return This builder for chaining.
      */
@@ -564,7 +558,7 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
-     * <code>string health_check = 308876645;</code>
+     * <code>optional string health_check = 308876645;</code>
      *
      * @param value The bytes for healthCheck to set.
      * @return This builder for chaining.

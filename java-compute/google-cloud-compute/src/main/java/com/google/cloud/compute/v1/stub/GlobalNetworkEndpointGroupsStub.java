@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.GlobalNetworkEndpointGroupsClient.List
 import static com.google.cloud.compute.v1.GlobalNetworkEndpointGroupsClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest;
 import com.google.cloud.compute.v1.DeleteGlobalNetworkEndpointGroupRequest;
@@ -43,13 +44,32 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class GlobalNetworkEndpointGroupsStub implements BackgroundResource {
 
+  public OperationCallable<
+          AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      attachNetworkEndpointsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: attachNetworkEndpointsOperationCallable()");
+  }
+
   public UnaryCallable<AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
       attachNetworkEndpointsCallable() {
     throw new UnsupportedOperationException("Not implemented: attachNetworkEndpointsCallable()");
   }
 
+  public OperationCallable<DeleteGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteGlobalNetworkEndpointGroupRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
+  }
+
+  public OperationCallable<
+          DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      detachNetworkEndpointsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: detachNetworkEndpointsOperationCallable()");
   }
 
   public UnaryCallable<DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
@@ -59,6 +79,11 @@ public abstract class GlobalNetworkEndpointGroupsStub implements BackgroundResou
 
   public UnaryCallable<GetGlobalNetworkEndpointGroupRequest, NetworkEndpointGroup> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertGlobalNetworkEndpointGroupRequest, Operation> insertCallable() {

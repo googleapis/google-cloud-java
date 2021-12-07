@@ -136,7 +136,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
    * The number of licenses purchased.
    * </pre>
    *
-   * <code>int64 amount = 196759640;</code>
+   * <code>optional int64 amount = 196759640;</code>
    *
    * @return Whether the amount field is set.
    */
@@ -151,7 +151,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
    * The number of licenses purchased.
    * </pre>
    *
-   * <code>int64 amount = 196759640;</code>
+   * <code>optional int64 amount = 196759640;</code>
    *
    * @return The amount.
    */
@@ -169,7 +169,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
    * Specifies the core range of the instance for which this license applies.
    * </pre>
    *
-   * <code>string cores_per_license = 32482324;</code>
+   * <code>optional string cores_per_license = 32482324;</code>
    *
    * @return Whether the coresPerLicense field is set.
    */
@@ -184,7 +184,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
    * Specifies the core range of the instance for which this license applies.
    * </pre>
    *
-   * <code>string cores_per_license = 32482324;</code>
+   * <code>optional string cores_per_license = 32482324;</code>
    *
    * @return The coresPerLicense.
    */
@@ -207,7 +207,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
    * Specifies the core range of the instance for which this license applies.
    * </pre>
    *
-   * <code>string cores_per_license = 32482324;</code>
+   * <code>optional string cores_per_license = 32482324;</code>
    *
    * @return The bytes for coresPerLicense.
    */
@@ -233,7 +233,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
    * Any applicable license URI.
    * </pre>
    *
-   * <code>string license = 166757441;</code>
+   * <code>optional string license = 166757441;</code>
    *
    * @return Whether the license field is set.
    */
@@ -248,7 +248,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
    * Any applicable license URI.
    * </pre>
    *
-   * <code>string license = 166757441;</code>
+   * <code>optional string license = 166757441;</code>
    *
    * @return The license.
    */
@@ -271,7 +271,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
    * Any applicable license URI.
    * </pre>
    *
-   * <code>string license = 166757441;</code>
+   * <code>optional string license = 166757441;</code>
    *
    * @return The bytes for license.
    */
@@ -677,7 +677,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * The number of licenses purchased.
      * </pre>
      *
-     * <code>int64 amount = 196759640;</code>
+     * <code>optional int64 amount = 196759640;</code>
      *
      * @return Whether the amount field is set.
      */
@@ -692,7 +692,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * The number of licenses purchased.
      * </pre>
      *
-     * <code>int64 amount = 196759640;</code>
+     * <code>optional int64 amount = 196759640;</code>
      *
      * @return The amount.
      */
@@ -707,7 +707,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * The number of licenses purchased.
      * </pre>
      *
-     * <code>int64 amount = 196759640;</code>
+     * <code>optional int64 amount = 196759640;</code>
      *
      * @param value The amount to set.
      * @return This builder for chaining.
@@ -725,7 +725,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * The number of licenses purchased.
      * </pre>
      *
-     * <code>int64 amount = 196759640;</code>
+     * <code>optional int64 amount = 196759640;</code>
      *
      * @return This builder for chaining.
      */
@@ -744,7 +744,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * Specifies the core range of the instance for which this license applies.
      * </pre>
      *
-     * <code>string cores_per_license = 32482324;</code>
+     * <code>optional string cores_per_license = 32482324;</code>
      *
      * @return Whether the coresPerLicense field is set.
      */
@@ -758,7 +758,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * Specifies the core range of the instance for which this license applies.
      * </pre>
      *
-     * <code>string cores_per_license = 32482324;</code>
+     * <code>optional string cores_per_license = 32482324;</code>
      *
      * @return The coresPerLicense.
      */
@@ -780,7 +780,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * Specifies the core range of the instance for which this license applies.
      * </pre>
      *
-     * <code>string cores_per_license = 32482324;</code>
+     * <code>optional string cores_per_license = 32482324;</code>
      *
      * @return The bytes for coresPerLicense.
      */
@@ -802,7 +802,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * Specifies the core range of the instance for which this license applies.
      * </pre>
      *
-     * <code>string cores_per_license = 32482324;</code>
+     * <code>optional string cores_per_license = 32482324;</code>
      *
      * @param value The coresPerLicense to set.
      * @return This builder for chaining.
@@ -823,7 +823,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * Specifies the core range of the instance for which this license applies.
      * </pre>
      *
-     * <code>string cores_per_license = 32482324;</code>
+     * <code>optional string cores_per_license = 32482324;</code>
      *
      * @return This builder for chaining.
      */
@@ -840,7 +840,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * Specifies the core range of the instance for which this license applies.
      * </pre>
      *
-     * <code>string cores_per_license = 32482324;</code>
+     * <code>optional string cores_per_license = 32482324;</code>
      *
      * @param value The bytes for coresPerLicense to set.
      * @return This builder for chaining.
@@ -864,7 +864,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * Any applicable license URI.
      * </pre>
      *
-     * <code>string license = 166757441;</code>
+     * <code>optional string license = 166757441;</code>
      *
      * @return Whether the license field is set.
      */
@@ -878,7 +878,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * Any applicable license URI.
      * </pre>
      *
-     * <code>string license = 166757441;</code>
+     * <code>optional string license = 166757441;</code>
      *
      * @return The license.
      */
@@ -900,7 +900,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * Any applicable license URI.
      * </pre>
      *
-     * <code>string license = 166757441;</code>
+     * <code>optional string license = 166757441;</code>
      *
      * @return The bytes for license.
      */
@@ -922,7 +922,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * Any applicable license URI.
      * </pre>
      *
-     * <code>string license = 166757441;</code>
+     * <code>optional string license = 166757441;</code>
      *
      * @param value The license to set.
      * @return This builder for chaining.
@@ -943,7 +943,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * Any applicable license URI.
      * </pre>
      *
-     * <code>string license = 166757441;</code>
+     * <code>optional string license = 166757441;</code>
      *
      * @return This builder for chaining.
      */
@@ -960,7 +960,7 @@ public final class LicenseResourceCommitment extends com.google.protobuf.Generat
      * Any applicable license URI.
      * </pre>
      *
-     * <code>string license = 166757441;</code>
+     * <code>optional string license = 166757441;</code>
      *
      * @param value The bytes for license to set.
      * @return This builder for chaining.

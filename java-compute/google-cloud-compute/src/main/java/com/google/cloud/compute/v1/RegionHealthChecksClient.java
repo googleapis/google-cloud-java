@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RegionHealthChecksStub;
@@ -45,7 +47,7 @@ import javax.annotation.Generated;
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String healthCheck = "healthCheck-1938093044";
- *   Operation response = regionHealthChecksClient.delete(project, region, healthCheck);
+ *   HealthCheck response = regionHealthChecksClient.get(project, region, healthCheck);
  * }
  * }</pre>
  *
@@ -162,7 +164,7 @@ public class RegionHealthChecksClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   String healthCheck = "healthCheck-1938093044";
-   *   Operation response = regionHealthChecksClient.delete(project, region, healthCheck);
+   *   Operation response = regionHealthChecksClient.deleteAsync(project, region, healthCheck).get();
    * }
    * }</pre>
    *
@@ -171,14 +173,15 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * @param healthCheck Name of the HealthCheck resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String region, String healthCheck) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String region, String healthCheck) {
     DeleteRegionHealthCheckRequest request =
         DeleteRegionHealthCheckRequest.newBuilder()
             .setProject(project)
             .setRegion(region)
             .setHealthCheck(healthCheck)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -196,15 +199,45 @@ public class RegionHealthChecksClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = regionHealthChecksClient.delete(request);
+   *   Operation response = regionHealthChecksClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteRegionHealthCheckRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      DeleteRegionHealthCheckRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified HealthCheck resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
+   *   DeleteRegionHealthCheckRequest request =
+   *       DeleteRegionHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionHealthChecksClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteRegionHealthCheckRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -325,7 +358,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   Operation response = regionHealthChecksClient.insert(project, region, healthCheckResource);
+   *   Operation response =
+   *       regionHealthChecksClient.insertAsync(project, region, healthCheckResource).get();
    * }
    * }</pre>
    *
@@ -334,14 +368,15 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * @param healthCheckResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(String project, String region, HealthCheck healthCheckResource) {
+  public final OperationFuture<Operation, Operation> insertAsync(
+      String project, String region, HealthCheck healthCheckResource) {
     InsertRegionHealthCheckRequest request =
         InsertRegionHealthCheckRequest.newBuilder()
             .setProject(project)
             .setRegion(region)
             .setHealthCheckResource(healthCheckResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -359,15 +394,45 @@ public class RegionHealthChecksClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = regionHealthChecksClient.insert(request);
+   *   Operation response = regionHealthChecksClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertRegionHealthCheckRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(
+      InsertRegionHealthCheckRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a HealthCheck resource in the specified project using the data included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
+   *   InsertRegionHealthCheckRequest request =
+   *       InsertRegionHealthCheckRequest.newBuilder()
+   *           .setHealthCheckResource(HealthCheck.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionHealthChecksClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertRegionHealthCheckRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -534,7 +599,9 @@ public class RegionHealthChecksClient implements BackgroundResource {
    *   String healthCheck = "healthCheck-1938093044";
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   Operation response =
-   *       regionHealthChecksClient.patch(project, region, healthCheck, healthCheckResource);
+   *       regionHealthChecksClient
+   *           .patchAsync(project, region, healthCheck, healthCheckResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -544,7 +611,7 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * @param healthCheckResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(
+  public final OperationFuture<Operation, Operation> patchAsync(
       String project, String region, String healthCheck, HealthCheck healthCheckResource) {
     PatchRegionHealthCheckRequest request =
         PatchRegionHealthCheckRequest.newBuilder()
@@ -553,7 +620,7 @@ public class RegionHealthChecksClient implements BackgroundResource {
             .setHealthCheck(healthCheck)
             .setHealthCheckResource(healthCheckResource)
             .build();
-    return patch(request);
+    return patchAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -573,15 +640,47 @@ public class RegionHealthChecksClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = regionHealthChecksClient.patch(request);
+   *   Operation response = regionHealthChecksClient.patchAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(PatchRegionHealthCheckRequest request) {
-    return patchCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> patchAsync(
+      PatchRegionHealthCheckRequest request) {
+    return patchOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a HealthCheck resource in the specified project using the data included in the request.
+   * This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
+   *   PatchRegionHealthCheckRequest request =
+   *       PatchRegionHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setHealthCheckResource(HealthCheck.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionHealthChecksClient.patchOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PatchRegionHealthCheckRequest, Operation, Operation>
+      patchOperationCallable() {
+    return stub.patchOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -624,7 +723,9 @@ public class RegionHealthChecksClient implements BackgroundResource {
    *   String healthCheck = "healthCheck-1938093044";
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   Operation response =
-   *       regionHealthChecksClient.update(project, region, healthCheck, healthCheckResource);
+   *       regionHealthChecksClient
+   *           .updateAsync(project, region, healthCheck, healthCheckResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -634,7 +735,7 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * @param healthCheckResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation update(
+  public final OperationFuture<Operation, Operation> updateAsync(
       String project, String region, String healthCheck, HealthCheck healthCheckResource) {
     UpdateRegionHealthCheckRequest request =
         UpdateRegionHealthCheckRequest.newBuilder()
@@ -643,7 +744,7 @@ public class RegionHealthChecksClient implements BackgroundResource {
             .setHealthCheck(healthCheck)
             .setHealthCheckResource(healthCheckResource)
             .build();
-    return update(request);
+    return updateAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -662,15 +763,46 @@ public class RegionHealthChecksClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = regionHealthChecksClient.update(request);
+   *   Operation response = regionHealthChecksClient.updateAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation update(UpdateRegionHealthCheckRequest request) {
-    return updateCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> updateAsync(
+      UpdateRegionHealthCheckRequest request) {
+    return updateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a HealthCheck resource in the specified project using the data included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
+   *   UpdateRegionHealthCheckRequest request =
+   *       UpdateRegionHealthCheckRequest.newBuilder()
+   *           .setHealthCheck("healthCheck-1938093044")
+   *           .setHealthCheckResource(HealthCheck.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionHealthChecksClient.updateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateRegionHealthCheckRequest, Operation, Operation>
+      updateOperationCallable() {
+    return stub.updateOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

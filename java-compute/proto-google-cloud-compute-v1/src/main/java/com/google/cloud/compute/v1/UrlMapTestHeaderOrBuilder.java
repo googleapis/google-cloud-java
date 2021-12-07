@@ -30,7 +30,7 @@ public interface UrlMapTestHeaderOrBuilder
    * Header name.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -42,7 +42,7 @@ public interface UrlMapTestHeaderOrBuilder
    * Header name.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -54,7 +54,7 @@ public interface UrlMapTestHeaderOrBuilder
    * Header name.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -67,7 +67,7 @@ public interface UrlMapTestHeaderOrBuilder
    * Header value.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return Whether the value field is set.
    */
@@ -79,7 +79,7 @@ public interface UrlMapTestHeaderOrBuilder
    * Header value.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return The value.
    */
@@ -91,7 +91,7 @@ public interface UrlMapTestHeaderOrBuilder
    * Header value.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return The bytes for value.
    */

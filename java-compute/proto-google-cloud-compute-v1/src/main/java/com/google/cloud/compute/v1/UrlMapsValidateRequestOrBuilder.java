@@ -30,7 +30,7 @@ public interface UrlMapsValidateRequestOrBuilder
    * Content of the UrlMap to be validated.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UrlMap resource = 195806222;</code>
+   * <code>optional .google.cloud.compute.v1.UrlMap resource = 195806222;</code>
    *
    * @return Whether the resource field is set.
    */
@@ -42,7 +42,7 @@ public interface UrlMapsValidateRequestOrBuilder
    * Content of the UrlMap to be validated.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UrlMap resource = 195806222;</code>
+   * <code>optional .google.cloud.compute.v1.UrlMap resource = 195806222;</code>
    *
    * @return The resource.
    */
@@ -54,7 +54,7 @@ public interface UrlMapsValidateRequestOrBuilder
    * Content of the UrlMap to be validated.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UrlMap resource = 195806222;</code>
+   * <code>optional .google.cloud.compute.v1.UrlMap resource = 195806222;</code>
    */
   com.google.cloud.compute.v1.UrlMapOrBuilder getResourceOrBuilder();
 }

@@ -30,7 +30,7 @@ public interface LocalDiskOrBuilder
    * Specifies the number of such disks.
    * </pre>
    *
-   * <code>int32 disk_count = 182933485;</code>
+   * <code>optional int32 disk_count = 182933485;</code>
    *
    * @return Whether the diskCount field is set.
    */
@@ -42,7 +42,7 @@ public interface LocalDiskOrBuilder
    * Specifies the number of such disks.
    * </pre>
    *
-   * <code>int32 disk_count = 182933485;</code>
+   * <code>optional int32 disk_count = 182933485;</code>
    *
    * @return The diskCount.
    */
@@ -55,7 +55,7 @@ public interface LocalDiskOrBuilder
    * Specifies the size of the disk in base-2 GB.
    * </pre>
    *
-   * <code>int32 disk_size_gb = 316263735;</code>
+   * <code>optional int32 disk_size_gb = 316263735;</code>
    *
    * @return Whether the diskSizeGb field is set.
    */
@@ -67,7 +67,7 @@ public interface LocalDiskOrBuilder
    * Specifies the size of the disk in base-2 GB.
    * </pre>
    *
-   * <code>int32 disk_size_gb = 316263735;</code>
+   * <code>optional int32 disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
@@ -80,7 +80,7 @@ public interface LocalDiskOrBuilder
    * Specifies the desired disk type on the node. This disk type must be a local storage type (e.g.: local-ssd). Note that for nodeTemplates, this should be the name of the disk type and not its URL.
    * </pre>
    *
-   * <code>string disk_type = 93009052;</code>
+   * <code>optional string disk_type = 93009052;</code>
    *
    * @return Whether the diskType field is set.
    */
@@ -92,7 +92,7 @@ public interface LocalDiskOrBuilder
    * Specifies the desired disk type on the node. This disk type must be a local storage type (e.g.: local-ssd). Note that for nodeTemplates, this should be the name of the disk type and not its URL.
    * </pre>
    *
-   * <code>string disk_type = 93009052;</code>
+   * <code>optional string disk_type = 93009052;</code>
    *
    * @return The diskType.
    */
@@ -104,7 +104,7 @@ public interface LocalDiskOrBuilder
    * Specifies the desired disk type on the node. This disk type must be a local storage type (e.g.: local-ssd). Note that for nodeTemplates, this should be the name of the disk type and not its URL.
    * </pre>
    *
-   * <code>string disk_type = 93009052;</code>
+   * <code>optional string disk_type = 93009052;</code>
    *
    * @return The bytes for diskType.
    */

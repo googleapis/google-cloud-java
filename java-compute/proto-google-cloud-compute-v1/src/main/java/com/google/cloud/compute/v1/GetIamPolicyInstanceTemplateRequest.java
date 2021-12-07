@@ -138,7 +138,7 @@ public final class GetIamPolicyInstanceTemplateRequest
    * Requested IAM Policy version.
    * </pre>
    *
-   * <code>int32 options_requested_policy_version = 499220029;</code>
+   * <code>optional int32 options_requested_policy_version = 499220029;</code>
    *
    * @return Whether the optionsRequestedPolicyVersion field is set.
    */
@@ -153,7 +153,7 @@ public final class GetIamPolicyInstanceTemplateRequest
    * Requested IAM Policy version.
    * </pre>
    *
-   * <code>int32 options_requested_policy_version = 499220029;</code>
+   * <code>optional int32 options_requested_policy_version = 499220029;</code>
    *
    * @return The optionsRequestedPolicyVersion.
    */
@@ -274,10 +274,10 @@ public final class GetIamPolicyInstanceTemplateRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 195806222, resource_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -292,10 +292,10 @@ public final class GetIamPolicyInstanceTemplateRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(195806222, resource_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -639,7 +639,7 @@ public final class GetIamPolicyInstanceTemplateRequest
      * Requested IAM Policy version.
      * </pre>
      *
-     * <code>int32 options_requested_policy_version = 499220029;</code>
+     * <code>optional int32 options_requested_policy_version = 499220029;</code>
      *
      * @return Whether the optionsRequestedPolicyVersion field is set.
      */
@@ -654,7 +654,7 @@ public final class GetIamPolicyInstanceTemplateRequest
      * Requested IAM Policy version.
      * </pre>
      *
-     * <code>int32 options_requested_policy_version = 499220029;</code>
+     * <code>optional int32 options_requested_policy_version = 499220029;</code>
      *
      * @return The optionsRequestedPolicyVersion.
      */
@@ -669,7 +669,7 @@ public final class GetIamPolicyInstanceTemplateRequest
      * Requested IAM Policy version.
      * </pre>
      *
-     * <code>int32 options_requested_policy_version = 499220029;</code>
+     * <code>optional int32 options_requested_policy_version = 499220029;</code>
      *
      * @param value The optionsRequestedPolicyVersion to set.
      * @return This builder for chaining.
@@ -687,7 +687,7 @@ public final class GetIamPolicyInstanceTemplateRequest
      * Requested IAM Policy version.
      * </pre>
      *
-     * <code>int32 options_requested_policy_version = 499220029;</code>
+     * <code>optional int32 options_requested_policy_version = 499220029;</code>
      *
      * @return This builder for chaining.
      */

@@ -39,7 +39,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
 
   private ResourceCommitment() {
     acceleratorType_ = "";
-    type_ = 0;
+    type_ = "";
   }
 
   @java.lang.Override
@@ -72,11 +72,11 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
           case 0:
             done = true;
             break;
-          case 28604880:
+          case 28604882:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
-              type_ = rawValue;
+              type_ = s;
               break;
             }
           case 1104249970:
@@ -279,7 +279,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
    * Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.
    * </pre>
    *
-   * <code>string accelerator_type = 138031246;</code>
+   * <code>optional string accelerator_type = 138031246;</code>
    *
    * @return Whether the acceleratorType field is set.
    */
@@ -294,7 +294,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
    * Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.
    * </pre>
    *
-   * <code>string accelerator_type = 138031246;</code>
+   * <code>optional string accelerator_type = 138031246;</code>
    *
    * @return The acceleratorType.
    */
@@ -317,7 +317,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
    * Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.
    * </pre>
    *
-   * <code>string accelerator_type = 138031246;</code>
+   * <code>optional string accelerator_type = 138031246;</code>
    *
    * @return The bytes for acceleratorType.
    */
@@ -343,7 +343,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
    * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
    * </pre>
    *
-   * <code>int64 amount = 196759640;</code>
+   * <code>optional int64 amount = 196759640;</code>
    *
    * @return Whether the amount field is set.
    */
@@ -358,7 +358,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
    * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
    * </pre>
    *
-   * <code>int64 amount = 196759640;</code>
+   * <code>optional int64 amount = 196759640;</code>
    *
    * @return The amount.
    */
@@ -368,15 +368,16 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private int type_;
+  private volatile java.lang.Object type_;
   /**
    *
    *
    * <pre>
    * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ResourceCommitment.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
    * @return Whether the type field is set.
    */
@@ -389,35 +390,48 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ResourceCommitment.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The enum numeric value on the wire for type.
+   * @return The type.
    */
   @java.lang.Override
-  public int getTypeValue() {
-    return type_;
+  public java.lang.String getType() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      type_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ResourceCommitment.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The type.
+   * @return The bytes for type.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.ResourceCommitment.Type getType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ResourceCommitment.Type result =
-        com.google.cloud.compute.v1.ResourceCommitment.Type.valueOf(type_);
-    return result == null
-        ? com.google.cloud.compute.v1.ResourceCommitment.Type.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getTypeBytes() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      type_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -435,7 +449,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeEnum(3575610, type_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138031246, acceleratorType_);
@@ -453,7 +467,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
 
     size = 0;
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3575610, type_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138031246, acceleratorType_);
@@ -487,7 +501,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     }
     if (hasType() != other.hasType()) return false;
     if (hasType()) {
-      if (type_ != other.type_) return false;
+      if (!getType().equals(other.getType())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -510,7 +524,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     }
     if (hasType()) {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
+      hash = (53 * hash) + getType().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -661,7 +675,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       bitField0_ = (bitField0_ & ~0x00000001);
       amount_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
-      type_ = 0;
+      type_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
@@ -763,7 +777,9 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
         setAmount(other.getAmount());
       }
       if (other.hasType()) {
-        setType(other.getType());
+        bitField0_ |= 0x00000004;
+        type_ = other.type_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -804,7 +820,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.
      * </pre>
      *
-     * <code>string accelerator_type = 138031246;</code>
+     * <code>optional string accelerator_type = 138031246;</code>
      *
      * @return Whether the acceleratorType field is set.
      */
@@ -818,7 +834,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.
      * </pre>
      *
-     * <code>string accelerator_type = 138031246;</code>
+     * <code>optional string accelerator_type = 138031246;</code>
      *
      * @return The acceleratorType.
      */
@@ -840,7 +856,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.
      * </pre>
      *
-     * <code>string accelerator_type = 138031246;</code>
+     * <code>optional string accelerator_type = 138031246;</code>
      *
      * @return The bytes for acceleratorType.
      */
@@ -862,7 +878,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.
      * </pre>
      *
-     * <code>string accelerator_type = 138031246;</code>
+     * <code>optional string accelerator_type = 138031246;</code>
      *
      * @param value The acceleratorType to set.
      * @return This builder for chaining.
@@ -883,7 +899,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.
      * </pre>
      *
-     * <code>string accelerator_type = 138031246;</code>
+     * <code>optional string accelerator_type = 138031246;</code>
      *
      * @return This builder for chaining.
      */
@@ -900,7 +916,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.
      * </pre>
      *
-     * <code>string accelerator_type = 138031246;</code>
+     * <code>optional string accelerator_type = 138031246;</code>
      *
      * @param value The bytes for acceleratorType to set.
      * @return This builder for chaining.
@@ -924,7 +940,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
      * </pre>
      *
-     * <code>int64 amount = 196759640;</code>
+     * <code>optional int64 amount = 196759640;</code>
      *
      * @return Whether the amount field is set.
      */
@@ -939,7 +955,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
      * </pre>
      *
-     * <code>int64 amount = 196759640;</code>
+     * <code>optional int64 amount = 196759640;</code>
      *
      * @return The amount.
      */
@@ -954,7 +970,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
      * </pre>
      *
-     * <code>int64 amount = 196759640;</code>
+     * <code>optional int64 amount = 196759640;</code>
      *
      * @param value The amount to set.
      * @return This builder for chaining.
@@ -972,7 +988,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
      * </pre>
      *
-     * <code>int64 amount = 196759640;</code>
+     * <code>optional int64 amount = 196759640;</code>
      *
      * @return This builder for chaining.
      */
@@ -983,19 +999,19 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private int type_ = 0;
+    private java.lang.Object type_ = "";
     /**
      *
      *
      * <pre>
      * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ResourceCommitment.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
      * @return Whether the type field is set.
      */
-    @java.lang.Override
     public boolean hasType() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -1004,29 +1020,64 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ResourceCommitment.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
-     * @return The enum numeric value on the wire for type.
+     * @return The type.
      */
-    @java.lang.Override
-    public int getTypeValue() {
-      return type_;
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ResourceCommitment.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
-     * @param value The enum numeric value on the wire for type to set.
+     * @return The bytes for type.
+     */
+    public com.google.protobuf.ByteString getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     *
+     * @param value The type to set.
      * @return This builder for chaining.
      */
-    public Builder setTypeValue(int value) {
+    public Builder setType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000004;
       type_ = value;
       onChanged();
@@ -1037,39 +1088,16 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ResourceCommitment.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
-     * @return The type.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ResourceCommitment.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ResourceCommitment.Type result =
-          com.google.cloud.compute.v1.ResourceCommitment.Type.valueOf(type_);
-      return result == null
-          ? com.google.cloud.compute.v1.ResourceCommitment.Type.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.ResourceCommitment.Type type = 3575610;</code>
-     *
-     * @param value The type to set.
      * @return This builder for chaining.
      */
-    public Builder setType(com.google.cloud.compute.v1.ResourceCommitment.Type value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000004;
-      type_ = value.getNumber();
+    public Builder clearType() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      type_ = getDefaultInstance().getType();
       onChanged();
       return this;
     }
@@ -1078,15 +1106,21 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ResourceCommitment.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
+     * @param value The bytes for type to set.
      * @return This builder for chaining.
      */
-    public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      type_ = 0;
+    public Builder setTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000004;
+      type_ = value;
       onChanged();
       return this;
     }

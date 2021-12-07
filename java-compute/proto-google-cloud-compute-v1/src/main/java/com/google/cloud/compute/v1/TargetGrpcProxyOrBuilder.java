@@ -30,7 +30,7 @@ public interface TargetGrpcProxyOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -42,7 +42,7 @@ public interface TargetGrpcProxyOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -54,7 +54,7 @@ public interface TargetGrpcProxyOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -67,7 +67,7 @@ public interface TargetGrpcProxyOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -79,7 +79,7 @@ public interface TargetGrpcProxyOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -91,7 +91,7 @@ public interface TargetGrpcProxyOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -104,7 +104,7 @@ public interface TargetGrpcProxyOrBuilder
    * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetGrpcProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetGrpcProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetGrpcProxy.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return Whether the fingerprint field is set.
    */
@@ -116,7 +116,7 @@ public interface TargetGrpcProxyOrBuilder
    * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetGrpcProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetGrpcProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetGrpcProxy.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The fingerprint.
    */
@@ -128,7 +128,7 @@ public interface TargetGrpcProxyOrBuilder
    * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetGrpcProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetGrpcProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetGrpcProxy.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The bytes for fingerprint.
    */
@@ -141,7 +141,7 @@ public interface TargetGrpcProxyOrBuilder
    * [Output Only] The unique identifier for the resource type. The server generates this identifier.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -153,7 +153,7 @@ public interface TargetGrpcProxyOrBuilder
    * [Output Only] The unique identifier for the resource type. The server generates this identifier.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -166,7 +166,7 @@ public interface TargetGrpcProxyOrBuilder
    * [Output Only] Type of the resource. Always compute#targetGrpcProxy for target grpc proxies.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -178,7 +178,7 @@ public interface TargetGrpcProxyOrBuilder
    * [Output Only] Type of the resource. Always compute#targetGrpcProxy for target grpc proxies.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -190,7 +190,7 @@ public interface TargetGrpcProxyOrBuilder
    * [Output Only] Type of the resource. Always compute#targetGrpcProxy for target grpc proxies.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -203,7 +203,7 @@ public interface TargetGrpcProxyOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -215,7 +215,7 @@ public interface TargetGrpcProxyOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -227,7 +227,7 @@ public interface TargetGrpcProxyOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -240,7 +240,7 @@ public interface TargetGrpcProxyOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -252,7 +252,7 @@ public interface TargetGrpcProxyOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -264,7 +264,7 @@ public interface TargetGrpcProxyOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -277,7 +277,7 @@ public interface TargetGrpcProxyOrBuilder
    * [Output Only] Server-defined URL with id for the resource.
    * </pre>
    *
-   * <code>string self_link_with_id = 44520962;</code>
+   * <code>optional string self_link_with_id = 44520962;</code>
    *
    * @return Whether the selfLinkWithId field is set.
    */
@@ -289,7 +289,7 @@ public interface TargetGrpcProxyOrBuilder
    * [Output Only] Server-defined URL with id for the resource.
    * </pre>
    *
-   * <code>string self_link_with_id = 44520962;</code>
+   * <code>optional string self_link_with_id = 44520962;</code>
    *
    * @return The selfLinkWithId.
    */
@@ -301,7 +301,7 @@ public interface TargetGrpcProxyOrBuilder
    * [Output Only] Server-defined URL with id for the resource.
    * </pre>
    *
-   * <code>string self_link_with_id = 44520962;</code>
+   * <code>optional string self_link_with_id = 44520962;</code>
    *
    * @return The bytes for selfLinkWithId.
    */
@@ -314,7 +314,7 @@ public interface TargetGrpcProxyOrBuilder
    * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
    * </pre>
    *
-   * <code>string url_map = 367020684;</code>
+   * <code>optional string url_map = 367020684;</code>
    *
    * @return Whether the urlMap field is set.
    */
@@ -326,7 +326,7 @@ public interface TargetGrpcProxyOrBuilder
    * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
    * </pre>
    *
-   * <code>string url_map = 367020684;</code>
+   * <code>optional string url_map = 367020684;</code>
    *
    * @return The urlMap.
    */
@@ -338,7 +338,7 @@ public interface TargetGrpcProxyOrBuilder
    * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
    * </pre>
    *
-   * <code>string url_map = 367020684;</code>
+   * <code>optional string url_map = 367020684;</code>
    *
    * @return The bytes for urlMap.
    */
@@ -351,7 +351,7 @@ public interface TargetGrpcProxyOrBuilder
    * If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use "xds:///" scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use "xds:///" scheme in the target URI of the service it is connecting to
    * </pre>
    *
-   * <code>bool validate_for_proxyless = 101822888;</code>
+   * <code>optional bool validate_for_proxyless = 101822888;</code>
    *
    * @return Whether the validateForProxyless field is set.
    */
@@ -363,7 +363,7 @@ public interface TargetGrpcProxyOrBuilder
    * If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use "xds:///" scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use "xds:///" scheme in the target URI of the service it is connecting to
    * </pre>
    *
-   * <code>bool validate_for_proxyless = 101822888;</code>
+   * <code>optional bool validate_for_proxyless = 101822888;</code>
    *
    * @return The validateForProxyless.
    */

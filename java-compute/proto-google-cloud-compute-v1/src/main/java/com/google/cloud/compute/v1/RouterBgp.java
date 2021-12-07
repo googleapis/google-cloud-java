@@ -37,8 +37,8 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
   }
 
   private RouterBgp() {
-    advertiseMode_ = 0;
-    advertisedGroups_ = java.util.Collections.emptyList();
+    advertiseMode_ = "";
+    advertisedGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     advertisedIpRanges_ = java.util.Collections.emptyList();
   }
 
@@ -78,29 +78,14 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
               asn_ = input.readUInt32();
               break;
             }
-          case 168524208:
-            {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                advertisedGroups_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              advertisedGroups_.add(rawValue);
-              break;
-            }
           case 168524210:
             {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  advertisedGroups_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                advertisedGroups_.add(rawValue);
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                advertisedGroups_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
               }
-              input.popLimit(oldLimit);
+              advertisedGroups_.add(s);
               break;
             }
           case 283599458:
@@ -116,11 +101,17 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
                       extensionRegistry));
               break;
             }
-          case -1797892648:
+          case -2080795168:
             {
-              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000004;
+              keepaliveInterval_ = input.readUInt32();
+              break;
+            }
+          case -1797892646:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              advertiseMode_ = rawValue;
+              advertiseMode_ = s;
               break;
             }
           default:
@@ -138,7 +129,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        advertisedGroups_ = java.util.Collections.unmodifiableList(advertisedGroups_);
+        advertisedGroups_ = advertisedGroups_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         advertisedIpRanges_ = java.util.Collections.unmodifiableList(advertisedIpRanges_);
@@ -307,7 +298,15 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ADVERTISED_GROUPS = 0;</code>
      */
     UNDEFINED_ADVERTISED_GROUPS(0),
-    /** <code>ALL_SUBNETS = 3622872;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Advertise all available subnets (including peer VPC subnets).
+     * </pre>
+     *
+     * <code>ALL_SUBNETS = 3622872;</code>
+     */
     ALL_SUBNETS(3622872),
     UNRECOGNIZED(-1),
     ;
@@ -322,7 +321,15 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ADVERTISED_GROUPS = 0;</code>
      */
     public static final int UNDEFINED_ADVERTISED_GROUPS_VALUE = 0;
-    /** <code>ALL_SUBNETS = 3622872;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Advertise all available subnets (including peer VPC subnets).
+     * </pre>
+     *
+     * <code>ALL_SUBNETS = 3622872;</code>
+     */
     public static final int ALL_SUBNETS_VALUE = 3622872;
 
     public final int getNumber() {
@@ -410,15 +417,16 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int ADVERTISE_MODE_FIELD_NUMBER = 312134331;
-  private int advertiseMode_;
+  private volatile java.lang.Object advertiseMode_;
   /**
    *
    *
    * <pre>
    * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
+   * Check the AdvertiseMode enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+   * <code>optional string advertise_mode = 312134331;</code>
    *
    * @return Whether the advertiseMode field is set.
    */
@@ -431,88 +439,79 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
+   * Check the AdvertiseMode enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+   * <code>optional string advertise_mode = 312134331;</code>
    *
-   * @return The enum numeric value on the wire for advertiseMode.
+   * @return The advertiseMode.
    */
   @java.lang.Override
-  public int getAdvertiseModeValue() {
-    return advertiseMode_;
+  public java.lang.String getAdvertiseMode() {
+    java.lang.Object ref = advertiseMode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      advertiseMode_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
+   * Check the AdvertiseMode enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+   * <code>optional string advertise_mode = 312134331;</code>
    *
-   * @return The advertiseMode.
+   * @return The bytes for advertiseMode.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.RouterBgp.AdvertiseMode getAdvertiseMode() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.RouterBgp.AdvertiseMode result =
-        com.google.cloud.compute.v1.RouterBgp.AdvertiseMode.valueOf(advertiseMode_);
-    return result == null
-        ? com.google.cloud.compute.v1.RouterBgp.AdvertiseMode.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getAdvertiseModeBytes() {
+    java.lang.Object ref = advertiseMode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      advertiseMode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ADVERTISED_GROUPS_FIELD_NUMBER = 21065526;
-  private java.util.List<java.lang.Integer> advertisedGroups_;
-  private static final com.google.protobuf.Internal.ListAdapter.Converter<
-          java.lang.Integer, com.google.cloud.compute.v1.RouterBgp.AdvertisedGroups>
-      advertisedGroups_converter_ =
-          new com.google.protobuf.Internal.ListAdapter.Converter<
-              java.lang.Integer, com.google.cloud.compute.v1.RouterBgp.AdvertisedGroups>() {
-            public com.google.cloud.compute.v1.RouterBgp.AdvertisedGroups convert(
-                java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
-              com.google.cloud.compute.v1.RouterBgp.AdvertisedGroups result =
-                  com.google.cloud.compute.v1.RouterBgp.AdvertisedGroups.valueOf(from);
-              return result == null
-                  ? com.google.cloud.compute.v1.RouterBgp.AdvertisedGroups.UNRECOGNIZED
-                  : result;
-            }
-          };
+  private com.google.protobuf.LazyStringList advertisedGroups_;
   /**
    *
    *
    * <pre>
    * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+   * Check the AdvertisedGroups enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-   * </code>
+   * <code>repeated string advertised_groups = 21065526;</code>
    *
    * @return A list containing the advertisedGroups.
    */
-  @java.lang.Override
-  public java.util.List<com.google.cloud.compute.v1.RouterBgp.AdvertisedGroups>
-      getAdvertisedGroupsList() {
-    return new com.google.protobuf.Internal.ListAdapter<
-        java.lang.Integer, com.google.cloud.compute.v1.RouterBgp.AdvertisedGroups>(
-        advertisedGroups_, advertisedGroups_converter_);
+  public com.google.protobuf.ProtocolStringList getAdvertisedGroupsList() {
+    return advertisedGroups_;
   }
   /**
    *
    *
    * <pre>
    * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+   * Check the AdvertisedGroups enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-   * </code>
+   * <code>repeated string advertised_groups = 21065526;</code>
    *
    * @return The count of advertisedGroups.
    */
-  @java.lang.Override
   public int getAdvertisedGroupsCount() {
     return advertisedGroups_.size();
   }
@@ -521,56 +520,33 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+   * Check the AdvertisedGroups enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-   * </code>
+   * <code>repeated string advertised_groups = 21065526;</code>
    *
    * @param index The index of the element to return.
    * @return The advertisedGroups at the given index.
    */
-  @java.lang.Override
-  public com.google.cloud.compute.v1.RouterBgp.AdvertisedGroups getAdvertisedGroups(int index) {
-    return advertisedGroups_converter_.convert(advertisedGroups_.get(index));
-  }
-  /**
-   *
-   *
-   * <pre>
-   * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-   * </code>
-   *
-   * @return A list containing the enum numeric values on the wire for advertisedGroups.
-   */
-  @java.lang.Override
-  public java.util.List<java.lang.Integer> getAdvertisedGroupsValueList() {
-    return advertisedGroups_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-   * </code>
-   *
-   * @param index The index of the value to return.
-   * @return The enum numeric value on the wire of advertisedGroups at the given index.
-   */
-  @java.lang.Override
-  public int getAdvertisedGroupsValue(int index) {
+  public java.lang.String getAdvertisedGroups(int index) {
     return advertisedGroups_.get(index);
   }
-
-  private int advertisedGroupsMemoizedSerializedSize;
+  /**
+   *
+   *
+   * <pre>
+   * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+   * Check the AdvertisedGroups enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string advertised_groups = 21065526;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the advertisedGroups at the given index.
+   */
+  public com.google.protobuf.ByteString getAdvertisedGroupsBytes(int index) {
+    return advertisedGroups_.getByteString(index);
+  }
 
   public static final int ADVERTISED_IP_RANGES_FIELD_NUMBER = 35449932;
   private java.util.List<com.google.cloud.compute.v1.RouterAdvertisedIpRange> advertisedIpRanges_;
@@ -662,7 +638,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
    * Local BGP Autonomous System Number (ASN). Must be an RFC6996 private ASN, either 16-bit or 32-bit. The value will be fixed for this router resource. All VPN tunnels that link to this router will have the same local ASN.
    * </pre>
    *
-   * <code>uint32 asn = 96892;</code>
+   * <code>optional uint32 asn = 96892;</code>
    *
    * @return Whether the asn field is set.
    */
@@ -677,13 +653,46 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
    * Local BGP Autonomous System Number (ASN). Must be an RFC6996 private ASN, either 16-bit or 32-bit. The value will be fixed for this router resource. All VPN tunnels that link to this router will have the same local ASN.
    * </pre>
    *
-   * <code>uint32 asn = 96892;</code>
+   * <code>optional uint32 asn = 96892;</code>
    *
    * @return The asn.
    */
   @java.lang.Override
   public int getAsn() {
     return asn_;
+  }
+
+  public static final int KEEPALIVE_INTERVAL_FIELD_NUMBER = 276771516;
+  private int keepaliveInterval_;
+  /**
+   *
+   *
+   * <pre>
+   * The interval in seconds between BGP keepalive messages that are sent to the peer. Hold time is three times the interval at which keepalive messages are sent, and the hold time is the maximum number of seconds allowed to elapse between successive keepalive messages that BGP receives from a peer. BGP will use the smaller of either the local hold time value or the peer's hold time value as the hold time for the BGP connection between the two peers. If set, this value must be between 20 and 60. The default is 20.
+   * </pre>
+   *
+   * <code>optional uint32 keepalive_interval = 276771516;</code>
+   *
+   * @return Whether the keepaliveInterval field is set.
+   */
+  @java.lang.Override
+  public boolean hasKeepaliveInterval() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The interval in seconds between BGP keepalive messages that are sent to the peer. Hold time is three times the interval at which keepalive messages are sent, and the hold time is the maximum number of seconds allowed to elapse between successive keepalive messages that BGP receives from a peer. BGP will use the smaller of either the local hold time value or the peer's hold time value as the hold time for the BGP connection between the two peers. If set, this value must be between 20 and 60. The default is 20.
+   * </pre>
+   *
+   * <code>optional uint32 keepalive_interval = 276771516;</code>
+   *
+   * @return The keepaliveInterval.
+   */
+  @java.lang.Override
+  public int getKeepaliveInterval() {
+    return keepaliveInterval_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -700,22 +709,21 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    getSerializedSize();
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeUInt32(96892, asn_);
     }
-    if (getAdvertisedGroupsList().size() > 0) {
-      output.writeUInt32NoTag(168524210);
-      output.writeUInt32NoTag(advertisedGroupsMemoizedSerializedSize);
-    }
     for (int i = 0; i < advertisedGroups_.size(); i++) {
-      output.writeEnumNoTag(advertisedGroups_.get(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 21065526, advertisedGroups_.getRaw(i));
     }
     for (int i = 0; i < advertisedIpRanges_.size(); i++) {
       output.writeMessage(35449932, advertisedIpRanges_.get(i));
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeUInt32(276771516, keepaliveInterval_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(312134331, advertiseMode_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 312134331, advertiseMode_);
     }
     unknownFields.writeTo(output);
   }
@@ -732,23 +740,22 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     {
       int dataSize = 0;
       for (int i = 0; i < advertisedGroups_.size(); i++) {
-        dataSize +=
-            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(advertisedGroups_.get(i));
+        dataSize += computeStringSizeNoTag(advertisedGroups_.getRaw(i));
       }
       size += dataSize;
-      if (!getAdvertisedGroupsList().isEmpty()) {
-        size += 4;
-        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
-      }
-      advertisedGroupsMemoizedSerializedSize = dataSize;
+      size += 4 * getAdvertisedGroupsList().size();
     }
     for (int i = 0; i < advertisedIpRanges_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               35449932, advertisedIpRanges_.get(i));
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeUInt32Size(276771516, keepaliveInterval_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(312134331, advertiseMode_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(312134331, advertiseMode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -767,13 +774,17 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
 
     if (hasAdvertiseMode() != other.hasAdvertiseMode()) return false;
     if (hasAdvertiseMode()) {
-      if (advertiseMode_ != other.advertiseMode_) return false;
+      if (!getAdvertiseMode().equals(other.getAdvertiseMode())) return false;
     }
-    if (!advertisedGroups_.equals(other.advertisedGroups_)) return false;
+    if (!getAdvertisedGroupsList().equals(other.getAdvertisedGroupsList())) return false;
     if (!getAdvertisedIpRangesList().equals(other.getAdvertisedIpRangesList())) return false;
     if (hasAsn() != other.hasAsn()) return false;
     if (hasAsn()) {
       if (getAsn() != other.getAsn()) return false;
+    }
+    if (hasKeepaliveInterval() != other.hasKeepaliveInterval()) return false;
+    if (hasKeepaliveInterval()) {
+      if (getKeepaliveInterval() != other.getKeepaliveInterval()) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -788,11 +799,11 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasAdvertiseMode()) {
       hash = (37 * hash) + ADVERTISE_MODE_FIELD_NUMBER;
-      hash = (53 * hash) + advertiseMode_;
+      hash = (53 * hash) + getAdvertiseMode().hashCode();
     }
     if (getAdvertisedGroupsCount() > 0) {
       hash = (37 * hash) + ADVERTISED_GROUPS_FIELD_NUMBER;
-      hash = (53 * hash) + advertisedGroups_.hashCode();
+      hash = (53 * hash) + getAdvertisedGroupsList().hashCode();
     }
     if (getAdvertisedIpRangesCount() > 0) {
       hash = (37 * hash) + ADVERTISED_IP_RANGES_FIELD_NUMBER;
@@ -801,6 +812,10 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     if (hasAsn()) {
       hash = (37 * hash) + ASN_FIELD_NUMBER;
       hash = (53 * hash) + getAsn();
+    }
+    if (hasKeepaliveInterval()) {
+      hash = (37 * hash) + KEEPALIVE_INTERVAL_FIELD_NUMBER;
+      hash = (53 * hash) + getKeepaliveInterval();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -947,9 +962,9 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      advertiseMode_ = 0;
+      advertiseMode_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
-      advertisedGroups_ = java.util.Collections.emptyList();
+      advertisedGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       if (advertisedIpRangesBuilder_ == null) {
         advertisedIpRanges_ = java.util.Collections.emptyList();
@@ -959,6 +974,8 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       }
       asn_ = 0;
       bitField0_ = (bitField0_ & ~0x00000008);
+      keepaliveInterval_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -993,7 +1010,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       }
       result.advertiseMode_ = advertiseMode_;
       if (((bitField0_ & 0x00000002) != 0)) {
-        advertisedGroups_ = java.util.Collections.unmodifiableList(advertisedGroups_);
+        advertisedGroups_ = advertisedGroups_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.advertisedGroups_ = advertisedGroups_;
@@ -1009,6 +1026,10 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.asn_ = asn_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.keepaliveInterval_ = keepaliveInterval_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1061,7 +1082,9 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.RouterBgp other) {
       if (other == com.google.cloud.compute.v1.RouterBgp.getDefaultInstance()) return this;
       if (other.hasAdvertiseMode()) {
-        setAdvertiseMode(other.getAdvertiseMode());
+        bitField0_ |= 0x00000001;
+        advertiseMode_ = other.advertiseMode_;
+        onChanged();
       }
       if (!other.advertisedGroups_.isEmpty()) {
         if (advertisedGroups_.isEmpty()) {
@@ -1103,6 +1126,9 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       if (other.hasAsn()) {
         setAsn(other.getAsn());
       }
+      if (other.hasKeepaliveInterval()) {
+        setKeepaliveInterval(other.getKeepaliveInterval());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1134,19 +1160,19 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private int advertiseMode_ = 0;
+    private java.lang.Object advertiseMode_ = "";
     /**
      *
      *
      * <pre>
      * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
+     * Check the AdvertiseMode enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+     * <code>optional string advertise_mode = 312134331;</code>
      *
      * @return Whether the advertiseMode field is set.
      */
-    @java.lang.Override
     public boolean hasAdvertiseMode() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -1155,29 +1181,64 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
+     * Check the AdvertiseMode enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+     * <code>optional string advertise_mode = 312134331;</code>
      *
-     * @return The enum numeric value on the wire for advertiseMode.
+     * @return The advertiseMode.
      */
-    @java.lang.Override
-    public int getAdvertiseModeValue() {
-      return advertiseMode_;
+    public java.lang.String getAdvertiseMode() {
+      java.lang.Object ref = advertiseMode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        advertiseMode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
+     * Check the AdvertiseMode enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+     * <code>optional string advertise_mode = 312134331;</code>
      *
-     * @param value The enum numeric value on the wire for advertiseMode to set.
+     * @return The bytes for advertiseMode.
+     */
+    public com.google.protobuf.ByteString getAdvertiseModeBytes() {
+      java.lang.Object ref = advertiseMode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        advertiseMode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
+     * Check the AdvertiseMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string advertise_mode = 312134331;</code>
+     *
+     * @param value The advertiseMode to set.
      * @return This builder for chaining.
      */
-    public Builder setAdvertiseModeValue(int value) {
+    public Builder setAdvertiseMode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000001;
       advertiseMode_ = value;
       onChanged();
@@ -1188,65 +1249,49 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
+     * Check the AdvertiseMode enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
-     *
-     * @return The advertiseMode.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.RouterBgp.AdvertiseMode getAdvertiseMode() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.RouterBgp.AdvertiseMode result =
-          com.google.cloud.compute.v1.RouterBgp.AdvertiseMode.valueOf(advertiseMode_);
-      return result == null
-          ? com.google.cloud.compute.v1.RouterBgp.AdvertiseMode.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
-     *
-     * @param value The advertiseMode to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAdvertiseMode(com.google.cloud.compute.v1.RouterBgp.AdvertiseMode value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      advertiseMode_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+     * <code>optional string advertise_mode = 312134331;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAdvertiseMode() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      advertiseMode_ = 0;
+      advertiseMode_ = getDefaultInstance().getAdvertiseMode();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
+     * Check the AdvertiseMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string advertise_mode = 312134331;</code>
+     *
+     * @param value The bytes for advertiseMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdvertiseModeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      advertiseMode_ = value;
       onChanged();
       return this;
     }
 
-    private java.util.List<java.lang.Integer> advertisedGroups_ = java.util.Collections.emptyList();
+    private com.google.protobuf.LazyStringList advertisedGroups_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAdvertisedGroupsIsMutable() {
       if (!((bitField0_ & 0x00000002) != 0)) {
-        advertisedGroups_ = new java.util.ArrayList<java.lang.Integer>(advertisedGroups_);
+        advertisedGroups_ = new com.google.protobuf.LazyStringArrayList(advertisedGroups_);
         bitField0_ |= 0x00000002;
       }
     }
@@ -1255,30 +1300,25 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-     * </code>
+     * <code>repeated string advertised_groups = 21065526;</code>
      *
      * @return A list containing the advertisedGroups.
      */
-    public java.util.List<com.google.cloud.compute.v1.RouterBgp.AdvertisedGroups>
-        getAdvertisedGroupsList() {
-      return new com.google.protobuf.Internal.ListAdapter<
-          java.lang.Integer, com.google.cloud.compute.v1.RouterBgp.AdvertisedGroups>(
-          advertisedGroups_, advertisedGroups_converter_);
+    public com.google.protobuf.ProtocolStringList getAdvertisedGroupsList() {
+      return advertisedGroups_.getUnmodifiableView();
     }
     /**
      *
      *
      * <pre>
      * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-     * </code>
+     * <code>repeated string advertised_groups = 21065526;</code>
      *
      * @return The count of advertisedGroups.
      */
@@ -1290,141 +1330,15 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-     * </code>
+     * <code>repeated string advertised_groups = 21065526;</code>
      *
      * @param index The index of the element to return.
      * @return The advertisedGroups at the given index.
      */
-    public com.google.cloud.compute.v1.RouterBgp.AdvertisedGroups getAdvertisedGroups(int index) {
-      return advertisedGroups_converter_.convert(advertisedGroups_.get(index));
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-     * </code>
-     *
-     * @param index The index to set the value at.
-     * @param value The advertisedGroups to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAdvertisedGroups(
-        int index, com.google.cloud.compute.v1.RouterBgp.AdvertisedGroups value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureAdvertisedGroupsIsMutable();
-      advertisedGroups_.set(index, value.getNumber());
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-     * </code>
-     *
-     * @param value The advertisedGroups to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAdvertisedGroups(
-        com.google.cloud.compute.v1.RouterBgp.AdvertisedGroups value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureAdvertisedGroupsIsMutable();
-      advertisedGroups_.add(value.getNumber());
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-     * </code>
-     *
-     * @param values The advertisedGroups to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllAdvertisedGroups(
-        java.lang.Iterable<? extends com.google.cloud.compute.v1.RouterBgp.AdvertisedGroups>
-            values) {
-      ensureAdvertisedGroupsIsMutable();
-      for (com.google.cloud.compute.v1.RouterBgp.AdvertisedGroups value : values) {
-        advertisedGroups_.add(value.getNumber());
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-     * </code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearAdvertisedGroups() {
-      advertisedGroups_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-     * </code>
-     *
-     * @return A list containing the enum numeric values on the wire for advertisedGroups.
-     */
-    public java.util.List<java.lang.Integer> getAdvertisedGroupsValueList() {
-      return java.util.Collections.unmodifiableList(advertisedGroups_);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-     * </code>
-     *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of advertisedGroups at the given index.
-     */
-    public int getAdvertisedGroupsValue(int index) {
+    public java.lang.String getAdvertisedGroups(int index) {
       return advertisedGroups_.get(index);
     }
     /**
@@ -1432,17 +1346,35 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-     * </code>
+     * <code>repeated string advertised_groups = 21065526;</code>
      *
      * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of advertisedGroups at the given index.
+     * @return The bytes of the advertisedGroups at the given index.
+     */
+    public com.google.protobuf.ByteString getAdvertisedGroupsBytes(int index) {
+      return advertisedGroups_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * Check the AdvertisedGroups enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string advertised_groups = 21065526;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The advertisedGroups to set.
      * @return This builder for chaining.
      */
-    public Builder setAdvertisedGroupsValue(int index, int value) {
+    public Builder setAdvertisedGroups(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       ensureAdvertisedGroupsIsMutable();
       advertisedGroups_.set(index, value);
       onChanged();
@@ -1453,16 +1385,18 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-     * </code>
+     * <code>repeated string advertised_groups = 21065526;</code>
      *
-     * @param value The enum numeric value on the wire for advertisedGroups to add.
+     * @param value The advertisedGroups to add.
      * @return This builder for chaining.
      */
-    public Builder addAdvertisedGroupsValue(int value) {
+    public Builder addAdvertisedGroups(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       ensureAdvertisedGroupsIsMutable();
       advertisedGroups_.add(value);
       onChanged();
@@ -1473,20 +1407,58 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.compute.v1.RouterBgp.AdvertisedGroups advertised_groups = 21065526;
-     * </code>
+     * <code>repeated string advertised_groups = 21065526;</code>
      *
-     * @param values The enum numeric values on the wire for advertisedGroups to add.
+     * @param values The advertisedGroups to add.
      * @return This builder for chaining.
      */
-    public Builder addAllAdvertisedGroupsValue(java.lang.Iterable<java.lang.Integer> values) {
+    public Builder addAllAdvertisedGroups(java.lang.Iterable<java.lang.String> values) {
       ensureAdvertisedGroupsIsMutable();
-      for (int value : values) {
-        advertisedGroups_.add(value);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, advertisedGroups_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * Check the AdvertisedGroups enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string advertised_groups = 21065526;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdvertisedGroups() {
+      advertisedGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * Check the AdvertisedGroups enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string advertised_groups = 21065526;</code>
+     *
+     * @param value The bytes of the advertisedGroups to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdvertisedGroupsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
       }
+      checkByteStringIsUtf8(value);
+      ensureAdvertisedGroupsIsMutable();
+      advertisedGroups_.add(value);
       onChanged();
       return this;
     }
@@ -1899,7 +1871,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * Local BGP Autonomous System Number (ASN). Must be an RFC6996 private ASN, either 16-bit or 32-bit. The value will be fixed for this router resource. All VPN tunnels that link to this router will have the same local ASN.
      * </pre>
      *
-     * <code>uint32 asn = 96892;</code>
+     * <code>optional uint32 asn = 96892;</code>
      *
      * @return Whether the asn field is set.
      */
@@ -1914,7 +1886,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * Local BGP Autonomous System Number (ASN). Must be an RFC6996 private ASN, either 16-bit or 32-bit. The value will be fixed for this router resource. All VPN tunnels that link to this router will have the same local ASN.
      * </pre>
      *
-     * <code>uint32 asn = 96892;</code>
+     * <code>optional uint32 asn = 96892;</code>
      *
      * @return The asn.
      */
@@ -1929,7 +1901,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * Local BGP Autonomous System Number (ASN). Must be an RFC6996 private ASN, either 16-bit or 32-bit. The value will be fixed for this router resource. All VPN tunnels that link to this router will have the same local ASN.
      * </pre>
      *
-     * <code>uint32 asn = 96892;</code>
+     * <code>optional uint32 asn = 96892;</code>
      *
      * @param value The asn to set.
      * @return This builder for chaining.
@@ -1947,13 +1919,80 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * Local BGP Autonomous System Number (ASN). Must be an RFC6996 private ASN, either 16-bit or 32-bit. The value will be fixed for this router resource. All VPN tunnels that link to this router will have the same local ASN.
      * </pre>
      *
-     * <code>uint32 asn = 96892;</code>
+     * <code>optional uint32 asn = 96892;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAsn() {
       bitField0_ = (bitField0_ & ~0x00000008);
       asn_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int keepaliveInterval_;
+    /**
+     *
+     *
+     * <pre>
+     * The interval in seconds between BGP keepalive messages that are sent to the peer. Hold time is three times the interval at which keepalive messages are sent, and the hold time is the maximum number of seconds allowed to elapse between successive keepalive messages that BGP receives from a peer. BGP will use the smaller of either the local hold time value or the peer's hold time value as the hold time for the BGP connection between the two peers. If set, this value must be between 20 and 60. The default is 20.
+     * </pre>
+     *
+     * <code>optional uint32 keepalive_interval = 276771516;</code>
+     *
+     * @return Whether the keepaliveInterval field is set.
+     */
+    @java.lang.Override
+    public boolean hasKeepaliveInterval() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The interval in seconds between BGP keepalive messages that are sent to the peer. Hold time is three times the interval at which keepalive messages are sent, and the hold time is the maximum number of seconds allowed to elapse between successive keepalive messages that BGP receives from a peer. BGP will use the smaller of either the local hold time value or the peer's hold time value as the hold time for the BGP connection between the two peers. If set, this value must be between 20 and 60. The default is 20.
+     * </pre>
+     *
+     * <code>optional uint32 keepalive_interval = 276771516;</code>
+     *
+     * @return The keepaliveInterval.
+     */
+    @java.lang.Override
+    public int getKeepaliveInterval() {
+      return keepaliveInterval_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The interval in seconds between BGP keepalive messages that are sent to the peer. Hold time is three times the interval at which keepalive messages are sent, and the hold time is the maximum number of seconds allowed to elapse between successive keepalive messages that BGP receives from a peer. BGP will use the smaller of either the local hold time value or the peer's hold time value as the hold time for the BGP connection between the two peers. If set, this value must be between 20 and 60. The default is 20.
+     * </pre>
+     *
+     * <code>optional uint32 keepalive_interval = 276771516;</code>
+     *
+     * @param value The keepaliveInterval to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeepaliveInterval(int value) {
+      bitField0_ |= 0x00000010;
+      keepaliveInterval_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The interval in seconds between BGP keepalive messages that are sent to the peer. Hold time is three times the interval at which keepalive messages are sent, and the hold time is the maximum number of seconds allowed to elapse between successive keepalive messages that BGP receives from a peer. BGP will use the smaller of either the local hold time value or the peer's hold time value as the hold time for the BGP connection between the two peers. If set, this value must be between 20 and 60. The default is 20.
+     * </pre>
+     *
+     * <code>optional uint32 keepalive_interval = 276771516;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKeepaliveInterval() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      keepaliveInterval_ = 0;
       onChanged();
       return this;
     }

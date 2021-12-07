@@ -30,7 +30,7 @@ public interface WeightedBackendServiceOrBuilder
    * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
    * </pre>
    *
-   * <code>string backend_service = 306946058;</code>
+   * <code>optional string backend_service = 306946058;</code>
    *
    * @return Whether the backendService field is set.
    */
@@ -42,7 +42,7 @@ public interface WeightedBackendServiceOrBuilder
    * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
    * </pre>
    *
-   * <code>string backend_service = 306946058;</code>
+   * <code>optional string backend_service = 306946058;</code>
    *
    * @return The backendService.
    */
@@ -54,7 +54,7 @@ public interface WeightedBackendServiceOrBuilder
    * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
    * </pre>
    *
-   * <code>string backend_service = 306946058;</code>
+   * <code>optional string backend_service = 306946058;</code>
    *
    * @return The bytes for backendService.
    */
@@ -64,13 +64,10 @@ public interface WeightedBackendServiceOrBuilder
    *
    *
    * <pre>
-   * Specifies changes to request and response headers that need to take effect for the selected backendService.
-   * headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap.
-   * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-   * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
    *
    * @return Whether the headerAction field is set.
    */
@@ -79,13 +76,10 @@ public interface WeightedBackendServiceOrBuilder
    *
    *
    * <pre>
-   * Specifies changes to request and response headers that need to take effect for the selected backendService.
-   * headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap.
-   * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-   * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
    *
    * @return The headerAction.
    */
@@ -94,13 +88,10 @@ public interface WeightedBackendServiceOrBuilder
    *
    *
    * <pre>
-   * Specifies changes to request and response headers that need to take effect for the selected backendService.
-   * headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap.
-   * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-   * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Specifies changes to request and response headers that need to take effect for the selected backendService. headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
    */
   com.google.cloud.compute.v1.HttpHeaderActionOrBuilder getHeaderActionOrBuilder();
 
@@ -108,12 +99,10 @@ public interface WeightedBackendServiceOrBuilder
    *
    *
    * <pre>
-   * Specifies the fraction of traffic sent to backendService, computed as weight / (sum of all weightedBackendService weights in routeAction) .
-   * The selection of a backend service is determined only for new traffic. Once a user's request has been directed to a backendService, subsequent requests will be sent to the same backendService as determined by the BackendService's session affinity policy.
-   * The value must be between 0 and 1000
+   * Specifies the fraction of traffic sent to backendService, computed as weight / (sum of all weightedBackendService weights in routeAction) . The selection of a backend service is determined only for new traffic. Once a user's request has been directed to a backendService, subsequent requests will be sent to the same backendService as determined by the BackendService's session affinity policy. The value must be between 0 and 1000
    * </pre>
    *
-   * <code>uint32 weight = 282149496;</code>
+   * <code>optional uint32 weight = 282149496;</code>
    *
    * @return Whether the weight field is set.
    */
@@ -122,12 +111,10 @@ public interface WeightedBackendServiceOrBuilder
    *
    *
    * <pre>
-   * Specifies the fraction of traffic sent to backendService, computed as weight / (sum of all weightedBackendService weights in routeAction) .
-   * The selection of a backend service is determined only for new traffic. Once a user's request has been directed to a backendService, subsequent requests will be sent to the same backendService as determined by the BackendService's session affinity policy.
-   * The value must be between 0 and 1000
+   * Specifies the fraction of traffic sent to backendService, computed as weight / (sum of all weightedBackendService weights in routeAction) . The selection of a backend service is determined only for new traffic. Once a user's request has been directed to a backendService, subsequent requests will be sent to the same backendService as determined by the BackendService's session affinity policy. The value must be between 0 and 1000
    * </pre>
    *
-   * <code>uint32 weight = 282149496;</code>
+   * <code>optional uint32 weight = 282149496;</code>
    *
    * @return The weight.
    */

@@ -136,7 +136,7 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
    * The name of the header.
    * </pre>
    *
-   * <code>string header_name = 110223613;</code>
+   * <code>optional string header_name = 110223613;</code>
    *
    * @return Whether the headerName field is set.
    */
@@ -151,7 +151,7 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
    * The name of the header.
    * </pre>
    *
-   * <code>string header_name = 110223613;</code>
+   * <code>optional string header_name = 110223613;</code>
    *
    * @return The headerName.
    */
@@ -174,7 +174,7 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
    * The name of the header.
    * </pre>
    *
-   * <code>string header_name = 110223613;</code>
+   * <code>optional string header_name = 110223613;</code>
    *
    * @return The bytes for headerName.
    */
@@ -200,7 +200,7 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
    * The value of the header to add.
    * </pre>
    *
-   * <code>string header_value = 203094335;</code>
+   * <code>optional string header_value = 203094335;</code>
    *
    * @return Whether the headerValue field is set.
    */
@@ -215,7 +215,7 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
    * The value of the header to add.
    * </pre>
    *
-   * <code>string header_value = 203094335;</code>
+   * <code>optional string header_value = 203094335;</code>
    *
    * @return The headerValue.
    */
@@ -238,7 +238,7 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
    * The value of the header to add.
    * </pre>
    *
-   * <code>string header_value = 203094335;</code>
+   * <code>optional string header_value = 203094335;</code>
    *
    * @return The bytes for headerValue.
    */
@@ -261,11 +261,10 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header.
-   * The default value is false.
+   * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header. The default value is false.
    * </pre>
    *
-   * <code>bool replace = 20755124;</code>
+   * <code>optional bool replace = 20755124;</code>
    *
    * @return Whether the replace field is set.
    */
@@ -277,11 +276,10 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header.
-   * The default value is false.
+   * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header. The default value is false.
    * </pre>
    *
-   * <code>bool replace = 20755124;</code>
+   * <code>optional bool replace = 20755124;</code>
    *
    * @return The replace.
    */
@@ -676,7 +674,7 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
      * The name of the header.
      * </pre>
      *
-     * <code>string header_name = 110223613;</code>
+     * <code>optional string header_name = 110223613;</code>
      *
      * @return Whether the headerName field is set.
      */
@@ -690,7 +688,7 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
      * The name of the header.
      * </pre>
      *
-     * <code>string header_name = 110223613;</code>
+     * <code>optional string header_name = 110223613;</code>
      *
      * @return The headerName.
      */
@@ -712,7 +710,7 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
      * The name of the header.
      * </pre>
      *
-     * <code>string header_name = 110223613;</code>
+     * <code>optional string header_name = 110223613;</code>
      *
      * @return The bytes for headerName.
      */
@@ -734,7 +732,7 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
      * The name of the header.
      * </pre>
      *
-     * <code>string header_name = 110223613;</code>
+     * <code>optional string header_name = 110223613;</code>
      *
      * @param value The headerName to set.
      * @return This builder for chaining.
@@ -755,7 +753,7 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
      * The name of the header.
      * </pre>
      *
-     * <code>string header_name = 110223613;</code>
+     * <code>optional string header_name = 110223613;</code>
      *
      * @return This builder for chaining.
      */
@@ -772,7 +770,7 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
      * The name of the header.
      * </pre>
      *
-     * <code>string header_name = 110223613;</code>
+     * <code>optional string header_name = 110223613;</code>
      *
      * @param value The bytes for headerName to set.
      * @return This builder for chaining.
@@ -796,7 +794,7 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
      * The value of the header to add.
      * </pre>
      *
-     * <code>string header_value = 203094335;</code>
+     * <code>optional string header_value = 203094335;</code>
      *
      * @return Whether the headerValue field is set.
      */
@@ -810,7 +808,7 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
      * The value of the header to add.
      * </pre>
      *
-     * <code>string header_value = 203094335;</code>
+     * <code>optional string header_value = 203094335;</code>
      *
      * @return The headerValue.
      */
@@ -832,7 +830,7 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
      * The value of the header to add.
      * </pre>
      *
-     * <code>string header_value = 203094335;</code>
+     * <code>optional string header_value = 203094335;</code>
      *
      * @return The bytes for headerValue.
      */
@@ -854,7 +852,7 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
      * The value of the header to add.
      * </pre>
      *
-     * <code>string header_value = 203094335;</code>
+     * <code>optional string header_value = 203094335;</code>
      *
      * @param value The headerValue to set.
      * @return This builder for chaining.
@@ -875,7 +873,7 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
      * The value of the header to add.
      * </pre>
      *
-     * <code>string header_value = 203094335;</code>
+     * <code>optional string header_value = 203094335;</code>
      *
      * @return This builder for chaining.
      */
@@ -892,7 +890,7 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
      * The value of the header to add.
      * </pre>
      *
-     * <code>string header_value = 203094335;</code>
+     * <code>optional string header_value = 203094335;</code>
      *
      * @param value The bytes for headerValue to set.
      * @return This builder for chaining.
@@ -913,11 +911,10 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header.
-     * The default value is false.
+     * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header. The default value is false.
      * </pre>
      *
-     * <code>bool replace = 20755124;</code>
+     * <code>optional bool replace = 20755124;</code>
      *
      * @return Whether the replace field is set.
      */
@@ -929,11 +926,10 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header.
-     * The default value is false.
+     * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header. The default value is false.
      * </pre>
      *
-     * <code>bool replace = 20755124;</code>
+     * <code>optional bool replace = 20755124;</code>
      *
      * @return The replace.
      */
@@ -945,11 +941,10 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header.
-     * The default value is false.
+     * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header. The default value is false.
      * </pre>
      *
-     * <code>bool replace = 20755124;</code>
+     * <code>optional bool replace = 20755124;</code>
      *
      * @param value The replace to set.
      * @return This builder for chaining.
@@ -964,11 +959,10 @@ public final class HttpHeaderOption extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header.
-     * The default value is false.
+     * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header. The default value is false.
      * </pre>
      *
-     * <code>bool replace = 20755124;</code>
+     * <code>optional bool replace = 20755124;</code>
      *
      * @return This builder for chaining.
      */

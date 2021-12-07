@@ -382,7 +382,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
    * The Platform Key (PK).
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
+   * <code>optional .google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
    *
    * @return Whether the pk field is set.
    */
@@ -397,7 +397,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
    * The Platform Key (PK).
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
+   * <code>optional .google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
    *
    * @return The pk.
    */
@@ -412,7 +412,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
    * The Platform Key (PK).
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
+   * <code>optional .google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.FileContentBufferOrBuilder getPkOrBuilder() {
@@ -1979,7 +1979,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
      * The Platform Key (PK).
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
+     * <code>optional .google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
      *
      * @return Whether the pk field is set.
      */
@@ -1993,7 +1993,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
      * The Platform Key (PK).
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
+     * <code>optional .google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
      *
      * @return The pk.
      */
@@ -2013,7 +2013,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
      * The Platform Key (PK).
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
+     * <code>optional .google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
      */
     public Builder setPk(com.google.cloud.compute.v1.FileContentBuffer value) {
       if (pkBuilder_ == null) {
@@ -2035,7 +2035,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
      * The Platform Key (PK).
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
+     * <code>optional .google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
      */
     public Builder setPk(com.google.cloud.compute.v1.FileContentBuffer.Builder builderForValue) {
       if (pkBuilder_ == null) {
@@ -2054,7 +2054,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
      * The Platform Key (PK).
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
+     * <code>optional .google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
      */
     public Builder mergePk(com.google.cloud.compute.v1.FileContentBuffer value) {
       if (pkBuilder_ == null) {
@@ -2082,7 +2082,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
      * The Platform Key (PK).
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
+     * <code>optional .google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
      */
     public Builder clearPk() {
       if (pkBuilder_ == null) {
@@ -2101,7 +2101,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
      * The Platform Key (PK).
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
+     * <code>optional .google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
      */
     public com.google.cloud.compute.v1.FileContentBuffer.Builder getPkBuilder() {
       bitField0_ |= 0x00000008;
@@ -2115,7 +2115,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
      * The Platform Key (PK).
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
+     * <code>optional .google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
      */
     public com.google.cloud.compute.v1.FileContentBufferOrBuilder getPkOrBuilder() {
       if (pkBuilder_ != null) {
@@ -2133,7 +2133,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
      * The Platform Key (PK).
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
+     * <code>optional .google.cloud.compute.v1.FileContentBuffer pk = 3579;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.FileContentBuffer,

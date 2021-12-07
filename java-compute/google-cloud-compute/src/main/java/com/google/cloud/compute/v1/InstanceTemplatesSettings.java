@@ -26,6 +26,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -49,16 +50,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * InstanceTemplatesSettings.Builder instanceTemplatesSettingsBuilder =
  *     InstanceTemplatesSettings.newBuilder();
  * instanceTemplatesSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         instanceTemplatesSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -74,6 +75,12 @@ public class InstanceTemplatesSettings extends ClientSettings<InstanceTemplatesS
     return ((InstanceTemplatesStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteInstanceTemplateRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((InstanceTemplatesStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetInstanceTemplateRequest, InstanceTemplate> getSettings() {
     return ((InstanceTemplatesStubSettings) getStubSettings()).getSettings();
@@ -87,6 +94,12 @@ public class InstanceTemplatesSettings extends ClientSettings<InstanceTemplatesS
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertInstanceTemplateRequest, Operation> insertSettings() {
     return ((InstanceTemplatesStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertInstanceTemplateRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((InstanceTemplatesStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -209,6 +222,12 @@ public class InstanceTemplatesSettings extends ClientSettings<InstanceTemplatesS
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteInstanceTemplateRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetInstanceTemplateRequest, InstanceTemplate> getSettings() {
       return getStubSettingsBuilder().getSettings();
@@ -223,6 +242,12 @@ public class InstanceTemplatesSettings extends ClientSettings<InstanceTemplatesS
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertInstanceTemplateRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertInstanceTemplateRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */

@@ -266,12 +266,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 37109963;</code>
+   * <code>optional string request_id = 37109963;</code>
    *
    * @return Whether the requestId field is set.
    */
@@ -283,12 +281,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 37109963;</code>
+   * <code>optional string request_id = 37109963;</code>
    *
    * @return The requestId.
    */
@@ -308,12 +304,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 37109963;</code>
+   * <code>optional string request_id = 37109963;</code>
    *
    * @return The bytes for requestId.
    */
@@ -336,14 +330,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Specifies instance template to create the instance.
-   * This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-   * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-   * - projects/project/global/instanceTemplates/instanceTemplate
-   * - global/instanceTemplates/instanceTemplate
+   * Specifies instance template to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
    * </pre>
    *
-   * <code>string source_instance_template = 332423616;</code>
+   * <code>optional string source_instance_template = 332423616;</code>
    *
    * @return Whether the sourceInstanceTemplate field is set.
    */
@@ -355,14 +345,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Specifies instance template to create the instance.
-   * This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-   * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-   * - projects/project/global/instanceTemplates/instanceTemplate
-   * - global/instanceTemplates/instanceTemplate
+   * Specifies instance template to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
    * </pre>
    *
-   * <code>string source_instance_template = 332423616;</code>
+   * <code>optional string source_instance_template = 332423616;</code>
    *
    * @return The sourceInstanceTemplate.
    */
@@ -382,14 +368,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Specifies instance template to create the instance.
-   * This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-   * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-   * - projects/project/global/instanceTemplates/instanceTemplate
-   * - global/instanceTemplates/instanceTemplate
+   * Specifies instance template to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
    * </pre>
    *
-   * <code>string source_instance_template = 332423616;</code>
+   * <code>optional string source_instance_template = 332423616;</code>
    *
    * @return The bytes for sourceInstanceTemplate.
    */
@@ -473,7 +455,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -482,7 +464,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     if (instanceResource_ != null) {
       output.writeMessage(215988344, getInstanceResource());
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -498,7 +480,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -509,7 +491,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               215988344, getInstanceResource());
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -1206,12 +1188,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @return Whether the requestId field is set.
      */
@@ -1222,12 +1202,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @return The requestId.
      */
@@ -1246,12 +1224,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @return The bytes for requestId.
      */
@@ -1270,12 +1246,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @param value The requestId to set.
      * @return This builder for chaining.
@@ -1293,12 +1267,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @return This builder for chaining.
      */
@@ -1312,12 +1284,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @param value The bytes for requestId to set.
      * @return This builder for chaining.
@@ -1338,14 +1308,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Specifies instance template to create the instance.
-     * This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-     * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-     * - projects/project/global/instanceTemplates/instanceTemplate
-     * - global/instanceTemplates/instanceTemplate
+     * Specifies instance template to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
      * </pre>
      *
-     * <code>string source_instance_template = 332423616;</code>
+     * <code>optional string source_instance_template = 332423616;</code>
      *
      * @return Whether the sourceInstanceTemplate field is set.
      */
@@ -1356,14 +1322,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Specifies instance template to create the instance.
-     * This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-     * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-     * - projects/project/global/instanceTemplates/instanceTemplate
-     * - global/instanceTemplates/instanceTemplate
+     * Specifies instance template to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
      * </pre>
      *
-     * <code>string source_instance_template = 332423616;</code>
+     * <code>optional string source_instance_template = 332423616;</code>
      *
      * @return The sourceInstanceTemplate.
      */
@@ -1382,14 +1344,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Specifies instance template to create the instance.
-     * This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-     * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-     * - projects/project/global/instanceTemplates/instanceTemplate
-     * - global/instanceTemplates/instanceTemplate
+     * Specifies instance template to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
      * </pre>
      *
-     * <code>string source_instance_template = 332423616;</code>
+     * <code>optional string source_instance_template = 332423616;</code>
      *
      * @return The bytes for sourceInstanceTemplate.
      */
@@ -1408,14 +1366,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Specifies instance template to create the instance.
-     * This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-     * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-     * - projects/project/global/instanceTemplates/instanceTemplate
-     * - global/instanceTemplates/instanceTemplate
+     * Specifies instance template to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
      * </pre>
      *
-     * <code>string source_instance_template = 332423616;</code>
+     * <code>optional string source_instance_template = 332423616;</code>
      *
      * @param value The sourceInstanceTemplate to set.
      * @return This builder for chaining.
@@ -1433,14 +1387,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Specifies instance template to create the instance.
-     * This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-     * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-     * - projects/project/global/instanceTemplates/instanceTemplate
-     * - global/instanceTemplates/instanceTemplate
+     * Specifies instance template to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
      * </pre>
      *
-     * <code>string source_instance_template = 332423616;</code>
+     * <code>optional string source_instance_template = 332423616;</code>
      *
      * @return This builder for chaining.
      */
@@ -1454,14 +1404,10 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Specifies instance template to create the instance.
-     * This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-     * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-     * - projects/project/global/instanceTemplates/instanceTemplate
-     * - global/instanceTemplates/instanceTemplate
+     * Specifies instance template to create the instance. This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
      * </pre>
      *
-     * <code>string source_instance_template = 332423616;</code>
+     * <code>optional string source_instance_template = 332423616;</code>
      *
      * @param value The bytes for sourceInstanceTemplate to set.
      * @return This builder for chaining.

@@ -30,7 +30,7 @@ public interface HttpFaultInjectionOrBuilder
    * The specification for how client requests are aborted as part of fault injection.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpFaultAbort abort = 92611376;</code>
+   * <code>optional .google.cloud.compute.v1.HttpFaultAbort abort = 92611376;</code>
    *
    * @return Whether the abort field is set.
    */
@@ -42,7 +42,7 @@ public interface HttpFaultInjectionOrBuilder
    * The specification for how client requests are aborted as part of fault injection.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpFaultAbort abort = 92611376;</code>
+   * <code>optional .google.cloud.compute.v1.HttpFaultAbort abort = 92611376;</code>
    *
    * @return The abort.
    */
@@ -54,7 +54,7 @@ public interface HttpFaultInjectionOrBuilder
    * The specification for how client requests are aborted as part of fault injection.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpFaultAbort abort = 92611376;</code>
+   * <code>optional .google.cloud.compute.v1.HttpFaultAbort abort = 92611376;</code>
    */
   com.google.cloud.compute.v1.HttpFaultAbortOrBuilder getAbortOrBuilder();
 
@@ -65,7 +65,7 @@ public interface HttpFaultInjectionOrBuilder
    * The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpFaultDelay delay = 95467907;</code>
+   * <code>optional .google.cloud.compute.v1.HttpFaultDelay delay = 95467907;</code>
    *
    * @return Whether the delay field is set.
    */
@@ -77,7 +77,7 @@ public interface HttpFaultInjectionOrBuilder
    * The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpFaultDelay delay = 95467907;</code>
+   * <code>optional .google.cloud.compute.v1.HttpFaultDelay delay = 95467907;</code>
    *
    * @return The delay.
    */
@@ -89,7 +89,7 @@ public interface HttpFaultInjectionOrBuilder
    * The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpFaultDelay delay = 95467907;</code>
+   * <code>optional .google.cloud.compute.v1.HttpFaultDelay delay = 95467907;</code>
    */
   com.google.cloud.compute.v1.HttpFaultDelayOrBuilder getDelayOrBuilder();
 }

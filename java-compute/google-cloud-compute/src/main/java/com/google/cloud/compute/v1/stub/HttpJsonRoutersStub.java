@@ -27,11 +27,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListRoutersRequest;
 import com.google.cloud.compute.v1.DeleteRouterRequest;
@@ -41,6 +43,7 @@ import com.google.cloud.compute.v1.GetRouterStatusRouterRequest;
 import com.google.cloud.compute.v1.InsertRouterRequest;
 import com.google.cloud.compute.v1.ListRoutersRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchRouterRequest;
 import com.google.cloud.compute.v1.PreviewRouterRequest;
 import com.google.cloud.compute.v1.Router;
@@ -50,6 +53,7 @@ import com.google.cloud.compute.v1.RouterStatusResponse;
 import com.google.cloud.compute.v1.RoutersPreviewResponse;
 import com.google.cloud.compute.v1.UpdateRouterRequest;
 import com.google.cloud.compute.v1.VmEndpointNatMappingsList;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -67,6 +71,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRoutersStub extends RoutersStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<AggregatedListRoutersRequest, RouterAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor.<AggregatedListRoutersRequest, RouterAggregatedList>newBuilder()
@@ -118,6 +125,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<RouterAggregatedList>newBuilder()
                       .setDefaultInstance(RouterAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -153,7 +161,21 @@ public class HttpJsonRoutersStub extends RoutersStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (DeleteRouterRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                opName.append(":").append(request.getRegion());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<GetRouterRequest, Router> getMethodDescriptor =
@@ -185,6 +207,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Router>newBuilder()
                   .setDefaultInstance(Router.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -239,6 +262,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<VmEndpointNatMappingsList>newBuilder()
                       .setDefaultInstance(VmEndpointNatMappingsList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -272,6 +296,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<RouterStatusResponse>newBuilder()
                       .setDefaultInstance(RouterStatusResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -309,7 +334,21 @@ public class HttpJsonRoutersStub extends RoutersStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (InsertRouterRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                opName.append(":").append(request.getRegion());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<ListRoutersRequest, RouterList> listMethodDescriptor =
@@ -356,6 +395,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
           .setResponseParser(
               ProtoMessageResponseParser.<RouterList>newBuilder()
                   .setDefaultInstance(RouterList.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -394,7 +434,21 @@ public class HttpJsonRoutersStub extends RoutersStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (PatchRouterRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                opName.append(":").append(request.getRegion());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<PreviewRouterRequest, RoutersPreviewResponse>
@@ -430,6 +484,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<RoutersPreviewResponse>newBuilder()
                       .setDefaultInstance(RoutersPreviewResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -468,7 +523,21 @@ public class HttpJsonRoutersStub extends RoutersStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (UpdateRouterRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                opName.append(":").append(request.getRegion());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private final UnaryCallable<AggregatedListRoutersRequest, RouterAggregatedList>
@@ -476,6 +545,8 @@ public class HttpJsonRoutersStub extends RoutersStub {
   private final UnaryCallable<AggregatedListRoutersRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
   private final UnaryCallable<DeleteRouterRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteRouterRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetRouterRequest, Router> getCallable;
   private final UnaryCallable<GetNatMappingInfoRoutersRequest, VmEndpointNatMappingsList>
       getNatMappingInfoCallable;
@@ -484,13 +555,19 @@ public class HttpJsonRoutersStub extends RoutersStub {
   private final UnaryCallable<GetRouterStatusRouterRequest, RouterStatusResponse>
       getRouterStatusCallable;
   private final UnaryCallable<InsertRouterRequest, Operation> insertCallable;
+  private final OperationCallable<InsertRouterRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListRoutersRequest, RouterList> listCallable;
   private final UnaryCallable<ListRoutersRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<PatchRouterRequest, Operation> patchCallable;
+  private final OperationCallable<PatchRouterRequest, Operation, Operation> patchOperationCallable;
   private final UnaryCallable<PreviewRouterRequest, RoutersPreviewResponse> previewCallable;
   private final UnaryCallable<UpdateRouterRequest, Operation> updateCallable;
+  private final OperationCallable<UpdateRouterRequest, Operation, Operation>
+      updateOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRoutersStub create(RoutersStubSettings settings) throws IOException {
@@ -528,50 +605,62 @@ public class HttpJsonRoutersStub extends RoutersStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AggregatedListRoutersRequest, RouterAggregatedList>
         aggregatedListTransportSettings =
             HttpJsonCallSettings.<AggregatedListRoutersRequest, RouterAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeleteRouterRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteRouterRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetRouterRequest, Router> getTransportSettings =
         HttpJsonCallSettings.<GetRouterRequest, Router>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetNatMappingInfoRoutersRequest, VmEndpointNatMappingsList>
         getNatMappingInfoTransportSettings =
             HttpJsonCallSettings
                 .<GetNatMappingInfoRoutersRequest, VmEndpointNatMappingsList>newBuilder()
                 .setMethodDescriptor(getNatMappingInfoMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<GetRouterStatusRouterRequest, RouterStatusResponse>
         getRouterStatusTransportSettings =
             HttpJsonCallSettings.<GetRouterStatusRouterRequest, RouterStatusResponse>newBuilder()
                 .setMethodDescriptor(getRouterStatusMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<InsertRouterRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRouterRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListRoutersRequest, RouterList> listTransportSettings =
         HttpJsonCallSettings.<ListRoutersRequest, RouterList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<PatchRouterRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchRouterRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<PreviewRouterRequest, RoutersPreviewResponse> previewTransportSettings =
         HttpJsonCallSettings.<PreviewRouterRequest, RoutersPreviewResponse>newBuilder()
             .setMethodDescriptor(previewMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<UpdateRouterRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateRouterRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.aggregatedListCallable =
@@ -583,6 +672,12 @@ public class HttpJsonRoutersStub extends RoutersStub {
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
@@ -602,6 +697,12 @@ public class HttpJsonRoutersStub extends RoutersStub {
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -611,12 +712,24 @@ public class HttpJsonRoutersStub extends RoutersStub {
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.previewCallable =
         callableFactory.createUnaryCallable(
             previewTransportSettings, settings.previewSettings(), clientContext);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
+    this.updateOperationCallable =
+        callableFactory.createOperationCallable(
+            updateTransportSettings,
+            settings.updateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -656,6 +769,11 @@ public class HttpJsonRoutersStub extends RoutersStub {
   }
 
   @Override
+  public OperationCallable<DeleteRouterRequest, Operation, Operation> deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetRouterRequest, Router> getCallable() {
     return getCallable;
   }
@@ -684,6 +802,11 @@ public class HttpJsonRoutersStub extends RoutersStub {
   }
 
   @Override
+  public OperationCallable<InsertRouterRequest, Operation, Operation> insertOperationCallable() {
+    return insertOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<ListRoutersRequest, RouterList> listCallable() {
     return listCallable;
   }
@@ -699,6 +822,11 @@ public class HttpJsonRoutersStub extends RoutersStub {
   }
 
   @Override
+  public OperationCallable<PatchRouterRequest, Operation, Operation> patchOperationCallable() {
+    return patchOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<PreviewRouterRequest, RoutersPreviewResponse> previewCallable() {
     return previewCallable;
   }
@@ -706,6 +834,11 @@ public class HttpJsonRoutersStub extends RoutersStub {
   @Override
   public UnaryCallable<UpdateRouterRequest, Operation> updateCallable() {
     return updateCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateRouterRequest, Operation, Operation> updateOperationCallable() {
+    return updateOperationCallable;
   }
 
   @Override

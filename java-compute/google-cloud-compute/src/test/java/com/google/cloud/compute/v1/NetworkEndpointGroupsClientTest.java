@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonNetworkEndpointGroupsStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -38,6 +39,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -144,7 +146,7 @@ public class NetworkEndpointGroupsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -155,6 +157,7 @@ public class NetworkEndpointGroupsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -172,11 +175,13 @@ public class NetworkEndpointGroupsClientTest {
             NetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.attachNetworkEndpoints(
-            project,
-            zone,
-            networkEndpointGroup,
-            networkEndpointGroupsAttachEndpointsRequestResource);
+        client
+            .attachNetworkEndpointsAsync(
+                project,
+                zone,
+                networkEndpointGroup,
+                networkEndpointGroupsAttachEndpointsRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -208,11 +213,15 @@ public class NetworkEndpointGroupsClientTest {
       NetworkEndpointGroupsAttachEndpointsRequest
           networkEndpointGroupsAttachEndpointsRequestResource =
               NetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
-      client.attachNetworkEndpoints(
-          project, zone, networkEndpointGroup, networkEndpointGroupsAttachEndpointsRequestResource);
+      client
+          .attachNetworkEndpointsAsync(
+              project,
+              zone,
+              networkEndpointGroup,
+              networkEndpointGroupsAttachEndpointsRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -226,7 +235,7 @@ public class NetworkEndpointGroupsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -237,6 +246,7 @@ public class NetworkEndpointGroupsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -250,7 +260,7 @@ public class NetworkEndpointGroupsClientTest {
     String zone = "zone3744684";
     String networkEndpointGroup = "networkEndpointGroup-2120389028";
 
-    Operation actualResponse = client.delete(project, zone, networkEndpointGroup);
+    Operation actualResponse = client.deleteAsync(project, zone, networkEndpointGroup).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -279,10 +289,9 @@ public class NetworkEndpointGroupsClientTest {
       String project = "project-309310695";
       String zone = "zone3744684";
       String networkEndpointGroup = "networkEndpointGroup-2120389028";
-      client.delete(project, zone, networkEndpointGroup);
+      client.deleteAsync(project, zone, networkEndpointGroup).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -296,7 +305,7 @@ public class NetworkEndpointGroupsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -307,6 +316,7 @@ public class NetworkEndpointGroupsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -324,11 +334,13 @@ public class NetworkEndpointGroupsClientTest {
             NetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.detachNetworkEndpoints(
-            project,
-            zone,
-            networkEndpointGroup,
-            networkEndpointGroupsDetachEndpointsRequestResource);
+        client
+            .detachNetworkEndpointsAsync(
+                project,
+                zone,
+                networkEndpointGroup,
+                networkEndpointGroupsDetachEndpointsRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -360,11 +372,15 @@ public class NetworkEndpointGroupsClientTest {
       NetworkEndpointGroupsDetachEndpointsRequest
           networkEndpointGroupsDetachEndpointsRequestResource =
               NetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
-      client.detachNetworkEndpoints(
-          project, zone, networkEndpointGroup, networkEndpointGroupsDetachEndpointsRequestResource);
+      client
+          .detachNetworkEndpointsAsync(
+              project,
+              zone,
+              networkEndpointGroup,
+              networkEndpointGroupsDetachEndpointsRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -383,6 +399,7 @@ public class NetworkEndpointGroupsClientTest {
             .setKind("kind3292052")
             .setName("name3373707")
             .setNetwork("network1843485230")
+            .setNetworkEndpointType("networkEndpointType1733109693")
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setSize(3530753)
@@ -441,7 +458,7 @@ public class NetworkEndpointGroupsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -452,6 +469,7 @@ public class NetworkEndpointGroupsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -465,7 +483,8 @@ public class NetworkEndpointGroupsClientTest {
     String zone = "zone3744684";
     NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, zone, networkEndpointGroupResource);
+    Operation actualResponse =
+        client.insertAsync(project, zone, networkEndpointGroupResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -494,10 +513,9 @@ public class NetworkEndpointGroupsClientTest {
       String project = "project-309310695";
       String zone = "zone3744684";
       NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
-      client.insert(project, zone, networkEndpointGroupResource);
+      client.insertAsync(project, zone, networkEndpointGroupResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 

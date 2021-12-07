@@ -30,7 +30,7 @@ public interface ProjectOrBuilder
    * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
+   * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
    *
    * @return Whether the commonInstanceMetadata field is set.
    */
@@ -42,7 +42,7 @@ public interface ProjectOrBuilder
    * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
+   * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
    *
    * @return The commonInstanceMetadata.
    */
@@ -54,7 +54,7 @@ public interface ProjectOrBuilder
    * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
+   * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
    */
   com.google.cloud.compute.v1.MetadataOrBuilder getCommonInstanceMetadataOrBuilder();
 
@@ -65,7 +65,7 @@ public interface ProjectOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -77,7 +77,7 @@ public interface ProjectOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -89,7 +89,7 @@ public interface ProjectOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -100,10 +100,10 @@ public interface ProjectOrBuilder
    *
    * <pre>
    * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+   * Check the DefaultNetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
-   * </code>
+   * <code>optional string default_network_tier = 471753361;</code>
    *
    * @return Whether the defaultNetworkTier field is set.
    */
@@ -113,27 +113,27 @@ public interface ProjectOrBuilder
    *
    * <pre>
    * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+   * Check the DefaultNetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
-   * </code>
+   * <code>optional string default_network_tier = 471753361;</code>
    *
-   * @return The enum numeric value on the wire for defaultNetworkTier.
+   * @return The defaultNetworkTier.
    */
-  int getDefaultNetworkTierValue();
+  java.lang.String getDefaultNetworkTier();
   /**
    *
    *
    * <pre>
    * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+   * Check the DefaultNetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
-   * </code>
+   * <code>optional string default_network_tier = 471753361;</code>
    *
-   * @return The defaultNetworkTier.
+   * @return The bytes for defaultNetworkTier.
    */
-  com.google.cloud.compute.v1.Project.DefaultNetworkTier getDefaultNetworkTier();
+  com.google.protobuf.ByteString getDefaultNetworkTierBytes();
 
   /**
    *
@@ -142,7 +142,7 @@ public interface ProjectOrBuilder
    * [Output Only] Default service account used by VMs running in this project.
    * </pre>
    *
-   * <code>string default_service_account = 298712229;</code>
+   * <code>optional string default_service_account = 298712229;</code>
    *
    * @return Whether the defaultServiceAccount field is set.
    */
@@ -154,7 +154,7 @@ public interface ProjectOrBuilder
    * [Output Only] Default service account used by VMs running in this project.
    * </pre>
    *
-   * <code>string default_service_account = 298712229;</code>
+   * <code>optional string default_service_account = 298712229;</code>
    *
    * @return The defaultServiceAccount.
    */
@@ -166,7 +166,7 @@ public interface ProjectOrBuilder
    * [Output Only] Default service account used by VMs running in this project.
    * </pre>
    *
-   * <code>string default_service_account = 298712229;</code>
+   * <code>optional string default_service_account = 298712229;</code>
    *
    * @return The bytes for defaultServiceAccount.
    */
@@ -179,7 +179,7 @@ public interface ProjectOrBuilder
    * An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -191,7 +191,7 @@ public interface ProjectOrBuilder
    * An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -203,7 +203,7 @@ public interface ProjectOrBuilder
    * An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -264,10 +264,10 @@ public interface ProjectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is not the project ID, and is just a unique ID used by Compute Engine to identify resources.
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -276,10 +276,10 @@ public interface ProjectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is not the project ID, and is just a unique ID used by Compute Engine to identify resources.
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -292,7 +292,7 @@ public interface ProjectOrBuilder
    * [Output Only] Type of the resource. Always compute#project for projects.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -304,7 +304,7 @@ public interface ProjectOrBuilder
    * [Output Only] Type of the resource. Always compute#project for projects.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -316,7 +316,7 @@ public interface ProjectOrBuilder
    * [Output Only] Type of the resource. Always compute#project for projects.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -329,7 +329,7 @@ public interface ProjectOrBuilder
    * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -341,7 +341,7 @@ public interface ProjectOrBuilder
    * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -353,7 +353,7 @@ public interface ProjectOrBuilder
    * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -417,7 +417,7 @@ public interface ProjectOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -429,7 +429,7 @@ public interface ProjectOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -441,7 +441,7 @@ public interface ProjectOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -454,7 +454,8 @@ public interface ProjectOrBuilder
    * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+   * <code>optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;
+   * </code>
    *
    * @return Whether the usageExportLocation field is set.
    */
@@ -466,7 +467,8 @@ public interface ProjectOrBuilder
    * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+   * <code>optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;
+   * </code>
    *
    * @return The usageExportLocation.
    */
@@ -478,7 +480,8 @@ public interface ProjectOrBuilder
    * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+   * <code>optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;
+   * </code>
    */
   com.google.cloud.compute.v1.UsageExportLocationOrBuilder getUsageExportLocationOrBuilder();
 
@@ -487,9 +490,10 @@ public interface ProjectOrBuilder
    *
    * <pre>
    * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+   * Check the XpnProjectStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;</code>
+   * <code>optional string xpn_project_status = 228419265;</code>
    *
    * @return Whether the xpnProjectStatus field is set.
    */
@@ -499,23 +503,25 @@ public interface ProjectOrBuilder
    *
    * <pre>
    * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+   * Check the XpnProjectStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;</code>
+   * <code>optional string xpn_project_status = 228419265;</code>
    *
-   * @return The enum numeric value on the wire for xpnProjectStatus.
+   * @return The xpnProjectStatus.
    */
-  int getXpnProjectStatusValue();
+  java.lang.String getXpnProjectStatus();
   /**
    *
    *
    * <pre>
    * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+   * Check the XpnProjectStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;</code>
+   * <code>optional string xpn_project_status = 228419265;</code>
    *
-   * @return The xpnProjectStatus.
+   * @return The bytes for xpnProjectStatus.
    */
-  com.google.cloud.compute.v1.Project.XpnProjectStatus getXpnProjectStatus();
+  com.google.protobuf.ByteString getXpnProjectStatusBytes();
 }

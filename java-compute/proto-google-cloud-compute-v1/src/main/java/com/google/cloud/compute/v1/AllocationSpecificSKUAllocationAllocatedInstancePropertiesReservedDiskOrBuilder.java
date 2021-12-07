@@ -30,7 +30,7 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    * Specifies the size of the disk in base-2 GB.
    * </pre>
    *
-   * <code>int64 disk_size_gb = 316263735;</code>
+   * <code>optional int64 disk_size_gb = 316263735;</code>
    *
    * @return Whether the diskSizeGb field is set.
    */
@@ -42,7 +42,7 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    * Specifies the size of the disk in base-2 GB.
    * </pre>
    *
-   * <code>int64 disk_size_gb = 316263735;</code>
+   * <code>optional int64 disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
@@ -53,11 +53,10 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    *
    * <pre>
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Check the Interface enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;
-   * </code>
+   * <code>optional string interface = 502623545;</code>
    *
    * @return Whether the interface field is set.
    */
@@ -67,29 +66,25 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    *
    * <pre>
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Check the Interface enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;
-   * </code>
+   * <code>optional string interface = 502623545;</code>
    *
-   * @return The enum numeric value on the wire for interface.
+   * @return The interface.
    */
-  int getInterfaceValue();
+  java.lang.String getInterface();
   /**
    *
    *
    * <pre>
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Check the Interface enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;
-   * </code>
+   * <code>optional string interface = 502623545;</code>
    *
-   * @return The interface.
+   * @return The bytes for interface.
    */
-  com.google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk
-          .Interface
-      getInterface();
+  com.google.protobuf.ByteString getInterfaceBytes();
 }

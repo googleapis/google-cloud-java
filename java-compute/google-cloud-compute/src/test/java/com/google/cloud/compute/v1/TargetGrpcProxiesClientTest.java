@@ -27,12 +27,14 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonTargetGrpcProxiesStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -86,7 +88,7 @@ public class TargetGrpcProxiesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -97,6 +99,7 @@ public class TargetGrpcProxiesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -109,7 +112,7 @@ public class TargetGrpcProxiesClientTest {
     String project = "project-309310695";
     String targetGrpcProxy = "targetGrpcProxy1045500511";
 
-    Operation actualResponse = client.delete(project, targetGrpcProxy);
+    Operation actualResponse = client.deleteAsync(project, targetGrpcProxy).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -137,10 +140,9 @@ public class TargetGrpcProxiesClientTest {
     try {
       String project = "project-309310695";
       String targetGrpcProxy = "targetGrpcProxy1045500511";
-      client.delete(project, targetGrpcProxy);
+      client.deleteAsync(project, targetGrpcProxy).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -209,7 +211,7 @@ public class TargetGrpcProxiesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -220,6 +222,7 @@ public class TargetGrpcProxiesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -232,7 +235,7 @@ public class TargetGrpcProxiesClientTest {
     String project = "project-309310695";
     TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, targetGrpcProxyResource);
+    Operation actualResponse = client.insertAsync(project, targetGrpcProxyResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -260,10 +263,9 @@ public class TargetGrpcProxiesClientTest {
     try {
       String project = "project-309310695";
       TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
-      client.insert(project, targetGrpcProxyResource);
+      client.insertAsync(project, targetGrpcProxyResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -327,7 +329,7 @@ public class TargetGrpcProxiesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -338,6 +340,7 @@ public class TargetGrpcProxiesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -351,7 +354,8 @@ public class TargetGrpcProxiesClientTest {
     String targetGrpcProxy = "targetGrpcProxy1045500511";
     TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
 
-    Operation actualResponse = client.patch(project, targetGrpcProxy, targetGrpcProxyResource);
+    Operation actualResponse =
+        client.patchAsync(project, targetGrpcProxy, targetGrpcProxyResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -380,10 +384,9 @@ public class TargetGrpcProxiesClientTest {
       String project = "project-309310695";
       String targetGrpcProxy = "targetGrpcProxy1045500511";
       TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
-      client.patch(project, targetGrpcProxy, targetGrpcProxyResource);
+      client.patchAsync(project, targetGrpcProxy, targetGrpcProxyResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 }

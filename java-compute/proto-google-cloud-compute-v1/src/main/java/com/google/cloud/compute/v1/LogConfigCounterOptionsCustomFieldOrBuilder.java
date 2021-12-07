@@ -27,10 +27,10 @@ public interface LogConfigCounterOptionsCustomFieldOrBuilder
    *
    *
    * <pre>
-   * Name is the field name.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -39,10 +39,10 @@ public interface LogConfigCounterOptionsCustomFieldOrBuilder
    *
    *
    * <pre>
-   * Name is the field name.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -51,10 +51,10 @@ public interface LogConfigCounterOptionsCustomFieldOrBuilder
    *
    *
    * <pre>
-   * Name is the field name.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -64,10 +64,10 @@ public interface LogConfigCounterOptionsCustomFieldOrBuilder
    *
    *
    * <pre>
-   * Value is the field value. It is important that in contrast to the CounterOptions.field, the value here is a constant that is not derived from the IAMContext.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return Whether the value field is set.
    */
@@ -76,10 +76,10 @@ public interface LogConfigCounterOptionsCustomFieldOrBuilder
    *
    *
    * <pre>
-   * Value is the field value. It is important that in contrast to the CounterOptions.field, the value here is a constant that is not derived from the IAMContext.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return The value.
    */
@@ -88,10 +88,10 @@ public interface LogConfigCounterOptionsCustomFieldOrBuilder
    *
    *
    * <pre>
-   * Value is the field value. It is important that in contrast to the CounterOptions.field, the value here is a constant that is not derived from the IAMContext.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return The bytes for value.
    */

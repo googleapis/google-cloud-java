@@ -21,13 +21,13 @@ import com.google.cloud.compute.v1.Address;
 import com.google.cloud.compute.v1.AddressesClient;
 import com.google.cloud.compute.v1.AddressesScopedList;
 import com.google.cloud.compute.v1.AddressesSettings;
-import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.Operation.Status;
-import com.google.cloud.compute.v1.RegionOperationsClient;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
@@ -39,7 +39,6 @@ public class ITAddressesTest extends BaseTest {
 
   private static List<Address> addresses;
   private static AddressesClient addressesClient;
-  private static RegionOperationsClient regionOperationsClient;
   private static String name;
 
   @BeforeClass
@@ -47,7 +46,6 @@ public class ITAddressesTest extends BaseTest {
     addresses = new ArrayList<>();
     AddressesSettings addressesSettings = AddressesSettings.newBuilder().build();
     addressesClient = AddressesClient.create(addressesSettings);
-    regionOperationsClient = RegionOperationsClient.create();
   }
 
   @Before
@@ -56,9 +54,9 @@ public class ITAddressesTest extends BaseTest {
   }
 
   @AfterClass
-  public static void tearDown() {
+  public static void tearDown() throws ExecutionException, InterruptedException {
     for (Address address : addresses) {
-      addressesClient.delete(DEFAULT_PROJECT, DEFAULT_REGION, address.getName());
+      addressesClient.deleteAsync(DEFAULT_PROJECT, DEFAULT_REGION, address.getName()).get();
     }
     addressesClient.close();
   }
@@ -119,25 +117,13 @@ public class ITAddressesTest extends BaseTest {
 
   private void insertAddress(String description) {
     Address address = Address.newBuilder().setName(name).setDescription(description).build();
-    Operation operation = addressesClient.insert(DEFAULT_PROJECT, DEFAULT_REGION, address);
+    try {
+      addressesClient
+          .insertAsync(DEFAULT_PROJECT, DEFAULT_REGION, address)
+          .get(60, TimeUnit.SECONDS);
+    } catch (InterruptedException | ExecutionException | TimeoutException e) {
+      fail("Insert operation failed.");
+    }
     addresses.add(address);
-    boolean success = false;
-    long startTime = System.currentTimeMillis();
-    while ((System.currentTimeMillis() - startTime) < 15000) {
-      Operation op =
-          regionOperationsClient.get(DEFAULT_PROJECT, DEFAULT_REGION, operation.getName());
-      if (op.getStatus() == Status.DONE) {
-        success = true;
-        break;
-      }
-      try {
-        Thread.sleep(2000);
-      } catch (InterruptedException e) {
-        fail("Interrupted");
-      }
-    }
-    if (!success) {
-      fail("Insert did not finish with success.");
-    }
   }
 }

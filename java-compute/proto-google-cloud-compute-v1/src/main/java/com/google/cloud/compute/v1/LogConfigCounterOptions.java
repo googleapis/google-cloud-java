@@ -22,11 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Increment a streamz counter with the specified metric and field names.
- * Metric names should start with a '/', generally be lowercase-only, and end in "_count". Field names should not contain an initial slash. The actual exported metric names will have "/iam/policy" prepended.
- * Field names correspond to IAM request parameters and field values are their respective values.
- * Supported field names: - "authority", which is "[token]" if IAMContext.token is present, otherwise the value of IAMContext.authority_selector if present, and otherwise a representation of IAMContext.principal; or - "iam_principal", a representation of IAMContext.principal even if a token or authority selector is present; or - "" (empty string), resulting in a counter with no fields.
- * Examples: counter { metric: "/debug_access_count" field: "iam_principal" } ==&gt; increment counter /iam/policy/debug_access_count {iam_principal=[value of IAMContext.principal]}
+ * This is deprecated and has no effect. Do not use.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.LogConfigCounterOptions}
@@ -150,7 +146,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Custom fields.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -166,7 +162,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Custom fields.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -183,7 +179,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Custom fields.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -198,7 +194,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Custom fields.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -213,7 +209,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Custom fields.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -232,10 +228,10 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The field value to attribute.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string field = 97427706;</code>
+   * <code>optional string field = 97427706;</code>
    *
    * @return Whether the field field is set.
    */
@@ -247,10 +243,10 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The field value to attribute.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string field = 97427706;</code>
+   * <code>optional string field = 97427706;</code>
    *
    * @return The field.
    */
@@ -270,10 +266,10 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The field value to attribute.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string field = 97427706;</code>
+   * <code>optional string field = 97427706;</code>
    *
    * @return The bytes for field.
    */
@@ -296,10 +292,10 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The metric to update.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string metric = 533067184;</code>
+   * <code>optional string metric = 533067184;</code>
    *
    * @return Whether the metric field is set.
    */
@@ -311,10 +307,10 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The metric to update.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string metric = 533067184;</code>
+   * <code>optional string metric = 533067184;</code>
    *
    * @return The metric.
    */
@@ -334,10 +330,10 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The metric to update.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>string metric = 533067184;</code>
+   * <code>optional string metric = 533067184;</code>
    *
    * @return The bytes for metric.
    */
@@ -548,11 +544,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Increment a streamz counter with the specified metric and field names.
-   * Metric names should start with a '/', generally be lowercase-only, and end in "_count". Field names should not contain an initial slash. The actual exported metric names will have "/iam/policy" prepended.
-   * Field names correspond to IAM request parameters and field values are their respective values.
-   * Supported field names: - "authority", which is "[token]" if IAMContext.token is present, otherwise the value of IAMContext.authority_selector if present, and otherwise a representation of IAMContext.principal; or - "iam_principal", a representation of IAMContext.principal even if a token or authority selector is present; or - "" (empty string), resulting in a counter with no fields.
-   * Examples: counter { metric: "/debug_access_count" field: "iam_principal" } ==&gt; increment counter /iam/policy/debug_access_count {iam_principal=[value of IAMContext.principal]}
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.LogConfigCounterOptions}
@@ -793,7 +785,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Custom fields.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -812,7 +804,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Custom fields.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -830,7 +822,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Custom fields.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -849,7 +841,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Custom fields.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -874,7 +866,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Custom fields.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -897,7 +889,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Custom fields.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -922,7 +914,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Custom fields.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -947,7 +939,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Custom fields.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -969,7 +961,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Custom fields.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -992,7 +984,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Custom fields.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -1015,7 +1007,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Custom fields.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -1036,7 +1028,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Custom fields.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -1057,7 +1049,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Custom fields.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -1072,7 +1064,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Custom fields.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -1091,7 +1083,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Custom fields.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -1111,7 +1103,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Custom fields.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -1128,7 +1120,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Custom fields.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -1146,7 +1138,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Custom fields.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -1180,10 +1172,10 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The field value to attribute.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string field = 97427706;</code>
+     * <code>optional string field = 97427706;</code>
      *
      * @return Whether the field field is set.
      */
@@ -1194,10 +1186,10 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The field value to attribute.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string field = 97427706;</code>
+     * <code>optional string field = 97427706;</code>
      *
      * @return The field.
      */
@@ -1216,10 +1208,10 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The field value to attribute.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string field = 97427706;</code>
+     * <code>optional string field = 97427706;</code>
      *
      * @return The bytes for field.
      */
@@ -1238,10 +1230,10 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The field value to attribute.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string field = 97427706;</code>
+     * <code>optional string field = 97427706;</code>
      *
      * @param value The field to set.
      * @return This builder for chaining.
@@ -1259,10 +1251,10 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The field value to attribute.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string field = 97427706;</code>
+     * <code>optional string field = 97427706;</code>
      *
      * @return This builder for chaining.
      */
@@ -1276,10 +1268,10 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The field value to attribute.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string field = 97427706;</code>
+     * <code>optional string field = 97427706;</code>
      *
      * @param value The bytes for field to set.
      * @return This builder for chaining.
@@ -1300,10 +1292,10 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The metric to update.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string metric = 533067184;</code>
+     * <code>optional string metric = 533067184;</code>
      *
      * @return Whether the metric field is set.
      */
@@ -1314,10 +1306,10 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The metric to update.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string metric = 533067184;</code>
+     * <code>optional string metric = 533067184;</code>
      *
      * @return The metric.
      */
@@ -1336,10 +1328,10 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The metric to update.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string metric = 533067184;</code>
+     * <code>optional string metric = 533067184;</code>
      *
      * @return The bytes for metric.
      */
@@ -1358,10 +1350,10 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The metric to update.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string metric = 533067184;</code>
+     * <code>optional string metric = 533067184;</code>
      *
      * @param value The metric to set.
      * @return This builder for chaining.
@@ -1379,10 +1371,10 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The metric to update.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string metric = 533067184;</code>
+     * <code>optional string metric = 533067184;</code>
      *
      * @return This builder for chaining.
      */
@@ -1396,10 +1388,10 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The metric to update.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>string metric = 533067184;</code>
+     * <code>optional string metric = 533067184;</code>
      *
      * @param value The bytes for metric to set.
      * @return This builder for chaining.

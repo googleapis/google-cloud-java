@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.InterconnectsClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteInterconnectRequest;
 import com.google.cloud.compute.v1.GetDiagnosticsInterconnectRequest;
@@ -41,6 +42,11 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class InterconnectsStub implements BackgroundResource {
 
+  public OperationCallable<DeleteInterconnectRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteInterconnectRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
@@ -54,6 +60,11 @@ public abstract class InterconnectsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getDiagnosticsCallable()");
   }
 
+  public OperationCallable<InsertInterconnectRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
+  }
+
   public UnaryCallable<InsertInterconnectRequest, Operation> insertCallable() {
     throw new UnsupportedOperationException("Not implemented: insertCallable()");
   }
@@ -64,6 +75,11 @@ public abstract class InterconnectsStub implements BackgroundResource {
 
   public UnaryCallable<ListInterconnectsRequest, InterconnectList> listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<PatchInterconnectRequest, Operation, Operation>
+      patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
   }
 
   public UnaryCallable<PatchInterconnectRequest, Operation> patchCallable() {

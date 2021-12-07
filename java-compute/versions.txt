@@ -3,4 +3,3 @@
 
 google-cloud-compute:1.5.0-alpha:1.5.1-alpha-SNAPSHOT
 proto-google-cloud-compute-v1:1.5.0-alpha:1.5.1-alpha-SNAPSHOT
-grpc-google-cloud-compute-v1:1.5.0-alpha:1.5.1-alpha-SNAPSHOT

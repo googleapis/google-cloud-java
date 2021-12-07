@@ -82,7 +82,7 @@ public interface InstanceGroupManagersListPerInstanceConfigsRespOrBuilder
    * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
    * </pre>
    *
-   * <code>string next_page_token = 79797525;</code>
+   * <code>optional string next_page_token = 79797525;</code>
    *
    * @return Whether the nextPageToken field is set.
    */
@@ -94,7 +94,7 @@ public interface InstanceGroupManagersListPerInstanceConfigsRespOrBuilder
    * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
    * </pre>
    *
-   * <code>string next_page_token = 79797525;</code>
+   * <code>optional string next_page_token = 79797525;</code>
    *
    * @return The nextPageToken.
    */
@@ -106,7 +106,7 @@ public interface InstanceGroupManagersListPerInstanceConfigsRespOrBuilder
    * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
    * </pre>
    *
-   * <code>string next_page_token = 79797525;</code>
+   * <code>optional string next_page_token = 79797525;</code>
    *
    * @return The bytes for nextPageToken.
    */
@@ -119,7 +119,7 @@ public interface InstanceGroupManagersListPerInstanceConfigsRespOrBuilder
    * [Output Only] Informational warning message.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+   * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
    *
    * @return Whether the warning field is set.
    */
@@ -131,7 +131,7 @@ public interface InstanceGroupManagersListPerInstanceConfigsRespOrBuilder
    * [Output Only] Informational warning message.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+   * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
    *
    * @return The warning.
    */
@@ -143,7 +143,7 @@ public interface InstanceGroupManagersListPerInstanceConfigsRespOrBuilder
    * [Output Only] Informational warning message.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+   * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
    */
   com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder();
 }

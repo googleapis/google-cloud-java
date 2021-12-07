@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RegionAutoscalersStub;
@@ -45,7 +47,7 @@ import javax.annotation.Generated;
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String autoscaler = "autoscaler517258967";
- *   Operation response = regionAutoscalersClient.delete(project, region, autoscaler);
+ *   Autoscaler response = regionAutoscalersClient.get(project, region, autoscaler);
  * }
  * }</pre>
  *
@@ -162,7 +164,7 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   String autoscaler = "autoscaler517258967";
-   *   Operation response = regionAutoscalersClient.delete(project, region, autoscaler);
+   *   Operation response = regionAutoscalersClient.deleteAsync(project, region, autoscaler).get();
    * }
    * }</pre>
    *
@@ -171,14 +173,15 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * @param autoscaler Name of the autoscaler to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String region, String autoscaler) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String region, String autoscaler) {
     DeleteRegionAutoscalerRequest request =
         DeleteRegionAutoscalerRequest.newBuilder()
             .setProject(project)
             .setRegion(region)
             .setAutoscaler(autoscaler)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -196,15 +199,45 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = regionAutoscalersClient.delete(request);
+   *   Operation response = regionAutoscalersClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteRegionAutoscalerRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      DeleteRegionAutoscalerRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified autoscaler.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
+   *   DeleteRegionAutoscalerRequest request =
+   *       DeleteRegionAutoscalerRequest.newBuilder()
+   *           .setAutoscaler("autoscaler517258967")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionAutoscalersClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteRegionAutoscalerRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -322,7 +355,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
-   *   Operation response = regionAutoscalersClient.insert(project, region, autoscalerResource);
+   *   Operation response =
+   *       regionAutoscalersClient.insertAsync(project, region, autoscalerResource).get();
    * }
    * }</pre>
    *
@@ -331,14 +365,15 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * @param autoscalerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(String project, String region, Autoscaler autoscalerResource) {
+  public final OperationFuture<Operation, Operation> insertAsync(
+      String project, String region, Autoscaler autoscalerResource) {
     InsertRegionAutoscalerRequest request =
         InsertRegionAutoscalerRequest.newBuilder()
             .setProject(project)
             .setRegion(region)
             .setAutoscalerResource(autoscalerResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -356,15 +391,45 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = regionAutoscalersClient.insert(request);
+   *   Operation response = regionAutoscalersClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertRegionAutoscalerRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(
+      InsertRegionAutoscalerRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an autoscaler in the specified project using the data included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
+   *   InsertRegionAutoscalerRequest request =
+   *       InsertRegionAutoscalerRequest.newBuilder()
+   *           .setAutoscalerResource(Autoscaler.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionAutoscalersClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertRegionAutoscalerRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -529,7 +594,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
-   *   Operation response = regionAutoscalersClient.patch(project, region, autoscalerResource);
+   *   Operation response =
+   *       regionAutoscalersClient.patchAsync(project, region, autoscalerResource).get();
    * }
    * }</pre>
    *
@@ -538,14 +604,15 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * @param autoscalerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(String project, String region, Autoscaler autoscalerResource) {
+  public final OperationFuture<Operation, Operation> patchAsync(
+      String project, String region, Autoscaler autoscalerResource) {
     PatchRegionAutoscalerRequest request =
         PatchRegionAutoscalerRequest.newBuilder()
             .setProject(project)
             .setRegion(region)
             .setAutoscalerResource(autoscalerResource)
             .build();
-    return patch(request);
+    return patchAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -565,15 +632,47 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = regionAutoscalersClient.patch(request);
+   *   Operation response = regionAutoscalersClient.patchAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(PatchRegionAutoscalerRequest request) {
-    return patchCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> patchAsync(
+      PatchRegionAutoscalerRequest request) {
+    return patchOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an autoscaler in the specified project using the data included in the request. This
+   * method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
+   *   PatchRegionAutoscalerRequest request =
+   *       PatchRegionAutoscalerRequest.newBuilder()
+   *           .setAutoscaler("autoscaler517258967")
+   *           .setAutoscalerResource(Autoscaler.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionAutoscalersClient.patchOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PatchRegionAutoscalerRequest, Operation, Operation>
+      patchOperationCallable() {
+    return stub.patchOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -614,7 +713,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
-   *   Operation response = regionAutoscalersClient.update(project, region, autoscalerResource);
+   *   Operation response =
+   *       regionAutoscalersClient.updateAsync(project, region, autoscalerResource).get();
    * }
    * }</pre>
    *
@@ -623,14 +723,15 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * @param autoscalerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation update(String project, String region, Autoscaler autoscalerResource) {
+  public final OperationFuture<Operation, Operation> updateAsync(
+      String project, String region, Autoscaler autoscalerResource) {
     UpdateRegionAutoscalerRequest request =
         UpdateRegionAutoscalerRequest.newBuilder()
             .setProject(project)
             .setRegion(region)
             .setAutoscalerResource(autoscalerResource)
             .build();
-    return update(request);
+    return updateAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -649,15 +750,46 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = regionAutoscalersClient.update(request);
+   *   Operation response = regionAutoscalersClient.updateAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation update(UpdateRegionAutoscalerRequest request) {
-    return updateCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> updateAsync(
+      UpdateRegionAutoscalerRequest request) {
+    return updateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an autoscaler in the specified project using the data included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
+   *   UpdateRegionAutoscalerRequest request =
+   *       UpdateRegionAutoscalerRequest.newBuilder()
+   *           .setAutoscaler("autoscaler517258967")
+   *           .setAutoscalerResource(Autoscaler.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionAutoscalersClient.updateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateRegionAutoscalerRequest, Operation, Operation>
+      updateOperationCallable() {
+    return stub.updateOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Persistent Disk Snapshot resource.
- * You can use snapshots to back up data on a regular interval. For more information, read  Creating persistent disk snapshots. (== resource_for {$api_version}.snapshots ==)
+ * Represents a Persistent Disk Snapshot resource. You can use snapshots to back up data on a regular interval. For more information, read Creating persistent disk snapshots.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Snapshot}
@@ -51,8 +50,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     selfLink_ = "";
     sourceDisk_ = "";
     sourceDiskId_ = "";
-    status_ = 0;
-    storageBytesStatus_ = 0;
+    status_ = "";
+    storageBytesStatus_ = "";
     storageLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -167,11 +166,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
               labelFingerprint_ = s;
               break;
             }
-          case 1450082192:
+          case 1450082194:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00020000;
-              status_ = rawValue;
+              status_ = s;
               break;
             }
           case -1764857416:
@@ -259,11 +258,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
               satisfiesPzs_ = input.readBool();
               break;
             }
-          case -369054640:
+          case -369054638:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00080000;
-              storageBytesStatus_ = rawValue;
+              storageBytesStatus_ = s;
               break;
             }
           case -293404678:
@@ -370,15 +369,55 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>CREATING = 455564985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Snapshot creation is in progress.
+     * </pre>
+     *
+     * <code>CREATING = 455564985;</code>
+     */
     CREATING(455564985),
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Snapshot is currently being deleted.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     DELETING(528602024),
-    /** <code>FAILED = 455706685;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Snapshot creation failed.
+     * </pre>
+     *
+     * <code>FAILED = 455706685;</code>
+     */
     FAILED(455706685),
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Snapshot has been created successfully.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     READY(77848963),
-    /** <code>UPLOADING = 267603489;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Snapshot is being uploaded.
+     * </pre>
+     *
+     * <code>UPLOADING = 267603489;</code>
+     */
     UPLOADING(267603489),
     UNRECOGNIZED(-1),
     ;
@@ -393,15 +432,55 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>CREATING = 455564985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Snapshot creation is in progress.
+     * </pre>
+     *
+     * <code>CREATING = 455564985;</code>
+     */
     public static final int CREATING_VALUE = 455564985;
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Snapshot is currently being deleted.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     public static final int DELETING_VALUE = 528602024;
-    /** <code>FAILED = 455706685;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Snapshot creation failed.
+     * </pre>
+     *
+     * <code>FAILED = 455706685;</code>
+     */
     public static final int FAILED_VALUE = 455706685;
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Snapshot has been created successfully.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     public static final int READY_VALUE = 77848963;
-    /** <code>UPLOADING = 267603489;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Snapshot is being uploaded.
+     * </pre>
+     *
+     * <code>UPLOADING = 267603489;</code>
+     */
     public static final int UPLOADING_VALUE = 267603489;
 
     public final int getNumber() {
@@ -631,7 +710,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Set to true if snapshots are automatically created by applying resource policy on the target disk.
    * </pre>
    *
-   * <code>bool auto_created = 463922264;</code>
+   * <code>optional bool auto_created = 463922264;</code>
    *
    * @return Whether the autoCreated field is set.
    */
@@ -646,7 +725,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Set to true if snapshots are automatically created by applying resource policy on the target disk.
    * </pre>
    *
-   * <code>bool auto_created = 463922264;</code>
+   * <code>optional bool auto_created = 463922264;</code>
    *
    * @return The autoCreated.
    */
@@ -664,7 +743,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
    * </pre>
    *
-   * <code>string chain_name = 68644169;</code>
+   * <code>optional string chain_name = 68644169;</code>
    *
    * @return Whether the chainName field is set.
    */
@@ -679,7 +758,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
    * </pre>
    *
-   * <code>string chain_name = 68644169;</code>
+   * <code>optional string chain_name = 68644169;</code>
    *
    * @return The chainName.
    */
@@ -702,7 +781,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
    * </pre>
    *
-   * <code>string chain_name = 68644169;</code>
+   * <code>optional string chain_name = 68644169;</code>
    *
    * @return The bytes for chainName.
    */
@@ -728,7 +807,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -743,7 +822,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -766,7 +845,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -792,7 +871,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -807,7 +886,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -830,7 +909,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -856,7 +935,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Size of the source disk, specified in GB.
    * </pre>
    *
-   * <code>int64 disk_size_gb = 316263735;</code>
+   * <code>optional int64 disk_size_gb = 316263735;</code>
    *
    * @return Whether the diskSizeGb field is set.
    */
@@ -871,7 +950,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Size of the source disk, specified in GB.
    * </pre>
    *
-   * <code>int64 disk_size_gb = 316263735;</code>
+   * <code>optional int64 disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
@@ -889,7 +968,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
    * </pre>
    *
-   * <code>int64 download_bytes = 435054068;</code>
+   * <code>optional int64 download_bytes = 435054068;</code>
    *
    * @return Whether the downloadBytes field is set.
    */
@@ -904,7 +983,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
    * </pre>
    *
-   * <code>int64 download_bytes = 435054068;</code>
+   * <code>optional int64 download_bytes = 435054068;</code>
    *
    * @return The downloadBytes.
    */
@@ -922,7 +1001,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -937,7 +1016,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -955,7 +1034,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#snapshot for Snapshot resources.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -970,7 +1049,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#snapshot for Snapshot resources.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -993,7 +1072,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#snapshot for Snapshot resources.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -1016,11 +1095,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a snapshot.
+   * A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a snapshot.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return Whether the labelFingerprint field is set.
    */
@@ -1032,11 +1110,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a snapshot.
+   * A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a snapshot.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return The labelFingerprint.
    */
@@ -1056,11 +1133,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a snapshot.
+   * A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a snapshot.
    * </pre>
    *
-   * <code>string label_fingerprint = 178124825;</code>
+   * <code>optional string label_fingerprint = 178124825;</code>
    *
    * @return The bytes for labelFingerprint.
    */
@@ -1294,7 +1370,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * An opaque location hint used to place the snapshot close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return Whether the locationHint field is set.
    */
@@ -1309,7 +1385,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * An opaque location hint used to place the snapshot close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return The locationHint.
    */
@@ -1332,7 +1408,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * An opaque location hint used to place the snapshot close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 350519505;</code>
+   * <code>optional string location_hint = 350519505;</code>
    *
    * @return The bytes for locationHint.
    */
@@ -1358,7 +1434,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -1373,7 +1449,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -1396,7 +1472,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -1422,7 +1498,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Reserved for future use.
    * </pre>
    *
-   * <code>bool satisfies_pzs = 480964267;</code>
+   * <code>optional bool satisfies_pzs = 480964267;</code>
    *
    * @return Whether the satisfiesPzs field is set.
    */
@@ -1437,7 +1513,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Reserved for future use.
    * </pre>
    *
-   * <code>bool satisfies_pzs = 480964267;</code>
+   * <code>optional bool satisfies_pzs = 480964267;</code>
    *
    * @return The satisfiesPzs.
    */
@@ -1455,7 +1531,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -1470,7 +1546,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1493,7 +1569,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1516,13 +1592,12 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts the snapshot using a customer-supplied encryption key.
-   * After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request.
-   * Customer-supplied encryption keys do not protect access to metadata of the snapshot.
-   * If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
+   * Encrypts the snapshot using a customer-supplied encryption key. After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request. Customer-supplied encryption keys do not protect access to metadata of the snapshot. If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
+   * </code>
    *
    * @return Whether the snapshotEncryptionKey field is set.
    */
@@ -1534,13 +1609,12 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts the snapshot using a customer-supplied encryption key.
-   * After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request.
-   * Customer-supplied encryption keys do not protect access to metadata of the snapshot.
-   * If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
+   * Encrypts the snapshot using a customer-supplied encryption key. After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request. Customer-supplied encryption keys do not protect access to metadata of the snapshot. If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
+   * </code>
    *
    * @return The snapshotEncryptionKey.
    */
@@ -1554,13 +1628,12 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts the snapshot using a customer-supplied encryption key.
-   * After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request.
-   * Customer-supplied encryption keys do not protect access to metadata of the snapshot.
-   * If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
+   * Encrypts the snapshot using a customer-supplied encryption key. After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request. Customer-supplied encryption keys do not protect access to metadata of the snapshot. If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;</code>
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
@@ -1579,7 +1652,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * The source disk used to create this snapshot.
    * </pre>
    *
-   * <code>string source_disk = 451753793;</code>
+   * <code>optional string source_disk = 451753793;</code>
    *
    * @return Whether the sourceDisk field is set.
    */
@@ -1594,7 +1667,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * The source disk used to create this snapshot.
    * </pre>
    *
-   * <code>string source_disk = 451753793;</code>
+   * <code>optional string source_disk = 451753793;</code>
    *
    * @return The sourceDisk.
    */
@@ -1617,7 +1690,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * The source disk used to create this snapshot.
    * </pre>
    *
-   * <code>string source_disk = 451753793;</code>
+   * <code>optional string source_disk = 451753793;</code>
    *
    * @return The bytes for sourceDisk.
    */
@@ -1643,7 +1716,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
    * </code>
    *
    * @return Whether the sourceDiskEncryptionKey field is set.
@@ -1659,7 +1733,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
    * </code>
    *
    * @return The sourceDiskEncryptionKey.
@@ -1677,7 +1752,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
    * </code>
    */
   @java.lang.Override
@@ -1697,7 +1773,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
    * </pre>
    *
-   * <code>string source_disk_id = 454190809;</code>
+   * <code>optional string source_disk_id = 454190809;</code>
    *
    * @return Whether the sourceDiskId field is set.
    */
@@ -1712,7 +1788,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
    * </pre>
    *
-   * <code>string source_disk_id = 454190809;</code>
+   * <code>optional string source_disk_id = 454190809;</code>
    *
    * @return The sourceDiskId.
    */
@@ -1735,7 +1811,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
    * </pre>
    *
-   * <code>string source_disk_id = 454190809;</code>
+   * <code>optional string source_disk_id = 454190809;</code>
    *
    * @return The bytes for sourceDiskId.
    */
@@ -1753,15 +1829,16 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    *
    *
    * <pre>
    * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -1774,33 +1851,48 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
   @java.lang.Override
-  public int getStatusValue() {
-    return status_;
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.Snapshot.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Snapshot.Status result =
-        com.google.cloud.compute.v1.Snapshot.Status.valueOf(status_);
-    return result == null ? com.google.cloud.compute.v1.Snapshot.Status.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int STORAGE_BYTES_FIELD_NUMBER = 424631719;
@@ -1812,7 +1904,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
    * </pre>
    *
-   * <code>int64 storage_bytes = 424631719;</code>
+   * <code>optional int64 storage_bytes = 424631719;</code>
    *
    * @return Whether the storageBytes field is set.
    */
@@ -1827,7 +1919,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
    * </pre>
    *
-   * <code>int64 storage_bytes = 424631719;</code>
+   * <code>optional int64 storage_bytes = 424631719;</code>
    *
    * @return The storageBytes.
    */
@@ -1837,16 +1929,16 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STORAGE_BYTES_STATUS_FIELD_NUMBER = 490739082;
-  private int storageBytesStatus_;
+  private volatile java.lang.Object storageBytesStatus_;
   /**
    *
    *
    * <pre>
    * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;
-   * </code>
+   * <code>optional string storage_bytes_status = 490739082;</code>
    *
    * @return Whether the storageBytesStatus field is set.
    */
@@ -1859,37 +1951,48 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;
-   * </code>
+   * <code>optional string storage_bytes_status = 490739082;</code>
    *
-   * @return The enum numeric value on the wire for storageBytesStatus.
+   * @return The storageBytesStatus.
    */
   @java.lang.Override
-  public int getStorageBytesStatusValue() {
-    return storageBytesStatus_;
+  public java.lang.String getStorageBytesStatus() {
+    java.lang.Object ref = storageBytesStatus_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      storageBytesStatus_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;
-   * </code>
+   * <code>optional string storage_bytes_status = 490739082;</code>
    *
-   * @return The storageBytesStatus.
+   * @return The bytes for storageBytesStatus.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.Snapshot.StorageBytesStatus getStorageBytesStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Snapshot.StorageBytesStatus result =
-        com.google.cloud.compute.v1.Snapshot.StorageBytesStatus.valueOf(storageBytesStatus_);
-    return result == null
-        ? com.google.cloud.compute.v1.Snapshot.StorageBytesStatus.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getStorageBytesStatusBytes() {
+    java.lang.Object ref = storageBytesStatus_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      storageBytesStatus_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int STORAGE_LOCATIONS_FIELD_NUMBER = 328005274;
@@ -1997,7 +2100,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178124825, labelFingerprint_);
     }
     if (((bitField0_ & 0x00020000) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeInt64(316263735, diskSizeGb_);
@@ -2037,7 +2140,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       output.writeBool(480964267, satisfiesPzs_);
     }
     if (((bitField0_ & 0x00080000) != 0)) {
-      output.writeEnum(490739082, storageBytesStatus_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 490739082, storageBytesStatus_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
@@ -2092,7 +2195,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.GeneratedMessageV3.computeStringSize(178124825, labelFingerprint_);
     }
     if (((bitField0_ & 0x00020000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(316263735, diskSizeGb_);
@@ -2141,7 +2244,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964267, satisfiesPzs_);
     }
     if (((bitField0_ & 0x00080000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(490739082, storageBytesStatus_);
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(490739082, storageBytesStatus_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetLabels().getMap().entrySet()) {
@@ -2246,7 +2350,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus().equals(other.getStatus())) return false;
     }
     if (hasStorageBytes() != other.hasStorageBytes()) return false;
     if (hasStorageBytes()) {
@@ -2254,7 +2358,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStorageBytesStatus() != other.hasStorageBytesStatus()) return false;
     if (hasStorageBytesStatus()) {
-      if (storageBytesStatus_ != other.storageBytesStatus_) return false;
+      if (!getStorageBytesStatus().equals(other.getStorageBytesStatus())) return false;
     }
     if (!getStorageLocationsList().equals(other.getStorageLocationsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -2350,7 +2454,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     if (hasStorageBytes()) {
       hash = (37 * hash) + STORAGE_BYTES_FIELD_NUMBER;
@@ -2358,7 +2462,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStorageBytesStatus()) {
       hash = (37 * hash) + STORAGE_BYTES_STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + storageBytesStatus_;
+      hash = (53 * hash) + getStorageBytesStatus().hashCode();
     }
     if (getStorageLocationsCount() > 0) {
       hash = (37 * hash) + STORAGE_LOCATIONS_FIELD_NUMBER;
@@ -2467,8 +2571,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Persistent Disk Snapshot resource.
-   * You can use snapshots to back up data on a regular interval. For more information, read  Creating persistent disk snapshots. (== resource_for {$api_version}.snapshots ==)
+   * Represents a Persistent Disk Snapshot resource. You can use snapshots to back up data on a regular interval. For more information, read Creating persistent disk snapshots.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Snapshot}
@@ -2579,11 +2682,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00040000);
       sourceDiskId_ = "";
       bitField0_ = (bitField0_ & ~0x00080000);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00100000);
       storageBytes_ = 0L;
       bitField0_ = (bitField0_ & ~0x00200000);
-      storageBytesStatus_ = 0;
+      storageBytesStatus_ = "";
       bitField0_ = (bitField0_ & ~0x00400000);
       storageLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00800000);
@@ -2863,13 +2966,17 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00100000;
+        status_ = other.status_;
+        onChanged();
       }
       if (other.hasStorageBytes()) {
         setStorageBytes(other.getStorageBytes());
       }
       if (other.hasStorageBytesStatus()) {
-        setStorageBytesStatus(other.getStorageBytesStatus());
+        bitField0_ |= 0x00400000;
+        storageBytesStatus_ = other.storageBytesStatus_;
+        onChanged();
       }
       if (!other.storageLocations_.isEmpty()) {
         if (storageLocations_.isEmpty()) {
@@ -2920,7 +3027,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Set to true if snapshots are automatically created by applying resource policy on the target disk.
      * </pre>
      *
-     * <code>bool auto_created = 463922264;</code>
+     * <code>optional bool auto_created = 463922264;</code>
      *
      * @return Whether the autoCreated field is set.
      */
@@ -2935,7 +3042,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Set to true if snapshots are automatically created by applying resource policy on the target disk.
      * </pre>
      *
-     * <code>bool auto_created = 463922264;</code>
+     * <code>optional bool auto_created = 463922264;</code>
      *
      * @return The autoCreated.
      */
@@ -2950,7 +3057,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Set to true if snapshots are automatically created by applying resource policy on the target disk.
      * </pre>
      *
-     * <code>bool auto_created = 463922264;</code>
+     * <code>optional bool auto_created = 463922264;</code>
      *
      * @param value The autoCreated to set.
      * @return This builder for chaining.
@@ -2968,7 +3075,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Set to true if snapshots are automatically created by applying resource policy on the target disk.
      * </pre>
      *
-     * <code>bool auto_created = 463922264;</code>
+     * <code>optional bool auto_created = 463922264;</code>
      *
      * @return This builder for chaining.
      */
@@ -2987,7 +3094,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
      * </pre>
      *
-     * <code>string chain_name = 68644169;</code>
+     * <code>optional string chain_name = 68644169;</code>
      *
      * @return Whether the chainName field is set.
      */
@@ -3001,7 +3108,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
      * </pre>
      *
-     * <code>string chain_name = 68644169;</code>
+     * <code>optional string chain_name = 68644169;</code>
      *
      * @return The chainName.
      */
@@ -3023,7 +3130,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
      * </pre>
      *
-     * <code>string chain_name = 68644169;</code>
+     * <code>optional string chain_name = 68644169;</code>
      *
      * @return The bytes for chainName.
      */
@@ -3045,7 +3152,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
      * </pre>
      *
-     * <code>string chain_name = 68644169;</code>
+     * <code>optional string chain_name = 68644169;</code>
      *
      * @param value The chainName to set.
      * @return This builder for chaining.
@@ -3066,7 +3173,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
      * </pre>
      *
-     * <code>string chain_name = 68644169;</code>
+     * <code>optional string chain_name = 68644169;</code>
      *
      * @return This builder for chaining.
      */
@@ -3083,7 +3190,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
      * </pre>
      *
-     * <code>string chain_name = 68644169;</code>
+     * <code>optional string chain_name = 68644169;</code>
      *
      * @param value The bytes for chainName to set.
      * @return This builder for chaining.
@@ -3107,7 +3214,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -3121,7 +3228,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -3143,7 +3250,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -3165,7 +3272,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -3186,7 +3293,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -3203,7 +3310,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -3227,7 +3334,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -3241,7 +3348,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -3263,7 +3370,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -3285,7 +3392,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -3306,7 +3413,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -3323,7 +3430,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -3347,7 +3454,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Size of the source disk, specified in GB.
      * </pre>
      *
-     * <code>int64 disk_size_gb = 316263735;</code>
+     * <code>optional int64 disk_size_gb = 316263735;</code>
      *
      * @return Whether the diskSizeGb field is set.
      */
@@ -3362,7 +3469,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Size of the source disk, specified in GB.
      * </pre>
      *
-     * <code>int64 disk_size_gb = 316263735;</code>
+     * <code>optional int64 disk_size_gb = 316263735;</code>
      *
      * @return The diskSizeGb.
      */
@@ -3377,7 +3484,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Size of the source disk, specified in GB.
      * </pre>
      *
-     * <code>int64 disk_size_gb = 316263735;</code>
+     * <code>optional int64 disk_size_gb = 316263735;</code>
      *
      * @param value The diskSizeGb to set.
      * @return This builder for chaining.
@@ -3395,7 +3502,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Size of the source disk, specified in GB.
      * </pre>
      *
-     * <code>int64 disk_size_gb = 316263735;</code>
+     * <code>optional int64 disk_size_gb = 316263735;</code>
      *
      * @return This builder for chaining.
      */
@@ -3414,7 +3521,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
      * </pre>
      *
-     * <code>int64 download_bytes = 435054068;</code>
+     * <code>optional int64 download_bytes = 435054068;</code>
      *
      * @return Whether the downloadBytes field is set.
      */
@@ -3429,7 +3536,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
      * </pre>
      *
-     * <code>int64 download_bytes = 435054068;</code>
+     * <code>optional int64 download_bytes = 435054068;</code>
      *
      * @return The downloadBytes.
      */
@@ -3444,7 +3551,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
      * </pre>
      *
-     * <code>int64 download_bytes = 435054068;</code>
+     * <code>optional int64 download_bytes = 435054068;</code>
      *
      * @param value The downloadBytes to set.
      * @return This builder for chaining.
@@ -3462,7 +3569,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
      * </pre>
      *
-     * <code>int64 download_bytes = 435054068;</code>
+     * <code>optional int64 download_bytes = 435054068;</code>
      *
      * @return This builder for chaining.
      */
@@ -3481,7 +3588,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -3496,7 +3603,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -3511,7 +3618,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -3529,7 +3636,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -3548,7 +3655,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#snapshot for Snapshot resources.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -3562,7 +3669,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#snapshot for Snapshot resources.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -3584,7 +3691,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#snapshot for Snapshot resources.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -3606,7 +3713,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#snapshot for Snapshot resources.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -3627,7 +3734,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#snapshot for Snapshot resources.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -3644,7 +3751,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#snapshot for Snapshot resources.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -3665,11 +3772,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a snapshot.
+     * A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a snapshot.
      * </pre>
      *
-     * <code>string label_fingerprint = 178124825;</code>
+     * <code>optional string label_fingerprint = 178124825;</code>
      *
      * @return Whether the labelFingerprint field is set.
      */
@@ -3680,11 +3786,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a snapshot.
+     * A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a snapshot.
      * </pre>
      *
-     * <code>string label_fingerprint = 178124825;</code>
+     * <code>optional string label_fingerprint = 178124825;</code>
      *
      * @return The labelFingerprint.
      */
@@ -3703,11 +3808,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a snapshot.
+     * A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a snapshot.
      * </pre>
      *
-     * <code>string label_fingerprint = 178124825;</code>
+     * <code>optional string label_fingerprint = 178124825;</code>
      *
      * @return The bytes for labelFingerprint.
      */
@@ -3726,11 +3830,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a snapshot.
+     * A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a snapshot.
      * </pre>
      *
-     * <code>string label_fingerprint = 178124825;</code>
+     * <code>optional string label_fingerprint = 178124825;</code>
      *
      * @param value The labelFingerprint to set.
      * @return This builder for chaining.
@@ -3748,11 +3851,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a snapshot.
+     * A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a snapshot.
      * </pre>
      *
-     * <code>string label_fingerprint = 178124825;</code>
+     * <code>optional string label_fingerprint = 178124825;</code>
      *
      * @return This builder for chaining.
      */
@@ -3766,11 +3868,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a snapshot.
+     * A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a snapshot.
      * </pre>
      *
-     * <code>string label_fingerprint = 178124825;</code>
+     * <code>optional string label_fingerprint = 178124825;</code>
      *
      * @param value The bytes for labelFingerprint to set.
      * @return This builder for chaining.
@@ -4245,7 +4346,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the snapshot close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @return Whether the locationHint field is set.
      */
@@ -4259,7 +4360,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the snapshot close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @return The locationHint.
      */
@@ -4281,7 +4382,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the snapshot close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @return The bytes for locationHint.
      */
@@ -4303,7 +4404,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the snapshot close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @param value The locationHint to set.
      * @return This builder for chaining.
@@ -4324,7 +4425,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the snapshot close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @return This builder for chaining.
      */
@@ -4341,7 +4442,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the snapshot close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 350519505;</code>
+     * <code>optional string location_hint = 350519505;</code>
      *
      * @param value The bytes for locationHint to set.
      * @return This builder for chaining.
@@ -4365,7 +4466,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -4379,7 +4480,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -4401,7 +4502,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -4423,7 +4524,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -4444,7 +4545,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -4461,7 +4562,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -4485,7 +4586,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Reserved for future use.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 480964267;</code>
+     * <code>optional bool satisfies_pzs = 480964267;</code>
      *
      * @return Whether the satisfiesPzs field is set.
      */
@@ -4500,7 +4601,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Reserved for future use.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 480964267;</code>
+     * <code>optional bool satisfies_pzs = 480964267;</code>
      *
      * @return The satisfiesPzs.
      */
@@ -4515,7 +4616,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Reserved for future use.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 480964267;</code>
+     * <code>optional bool satisfies_pzs = 480964267;</code>
      *
      * @param value The satisfiesPzs to set.
      * @return This builder for chaining.
@@ -4533,7 +4634,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Reserved for future use.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 480964267;</code>
+     * <code>optional bool satisfies_pzs = 480964267;</code>
      *
      * @return This builder for chaining.
      */
@@ -4552,7 +4653,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -4566,7 +4667,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -4588,7 +4689,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -4610,7 +4711,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -4631,7 +4732,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -4648,7 +4749,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -4674,13 +4775,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the snapshot using a customer-supplied encryption key.
-     * After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request.
-     * Customer-supplied encryption keys do not protect access to metadata of the snapshot.
-     * If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
+     * Encrypts the snapshot using a customer-supplied encryption key. After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request. Customer-supplied encryption keys do not protect access to metadata of the snapshot. If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
      * </code>
      *
      * @return Whether the snapshotEncryptionKey field is set.
@@ -4692,13 +4791,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the snapshot using a customer-supplied encryption key.
-     * After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request.
-     * Customer-supplied encryption keys do not protect access to metadata of the snapshot.
-     * If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
+     * Encrypts the snapshot using a customer-supplied encryption key. After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request. Customer-supplied encryption keys do not protect access to metadata of the snapshot. If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
      * </code>
      *
      * @return The snapshotEncryptionKey.
@@ -4716,13 +4813,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the snapshot using a customer-supplied encryption key.
-     * After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request.
-     * Customer-supplied encryption keys do not protect access to metadata of the snapshot.
-     * If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
+     * Encrypts the snapshot using a customer-supplied encryption key. After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request. Customer-supplied encryption keys do not protect access to metadata of the snapshot. If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
      * </code>
      */
     public Builder setSnapshotEncryptionKey(
@@ -4743,13 +4838,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the snapshot using a customer-supplied encryption key.
-     * After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request.
-     * Customer-supplied encryption keys do not protect access to metadata of the snapshot.
-     * If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
+     * Encrypts the snapshot using a customer-supplied encryption key. After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request. Customer-supplied encryption keys do not protect access to metadata of the snapshot. If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
      * </code>
      */
     public Builder setSnapshotEncryptionKey(
@@ -4767,13 +4860,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the snapshot using a customer-supplied encryption key.
-     * After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request.
-     * Customer-supplied encryption keys do not protect access to metadata of the snapshot.
-     * If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
+     * Encrypts the snapshot using a customer-supplied encryption key. After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request. Customer-supplied encryption keys do not protect access to metadata of the snapshot. If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
      * </code>
      */
     public Builder mergeSnapshotEncryptionKey(
@@ -4801,13 +4892,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the snapshot using a customer-supplied encryption key.
-     * After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request.
-     * Customer-supplied encryption keys do not protect access to metadata of the snapshot.
-     * If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
+     * Encrypts the snapshot using a customer-supplied encryption key. After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request. Customer-supplied encryption keys do not protect access to metadata of the snapshot. If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
      * </code>
      */
     public Builder clearSnapshotEncryptionKey() {
@@ -4824,13 +4913,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the snapshot using a customer-supplied encryption key.
-     * After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request.
-     * Customer-supplied encryption keys do not protect access to metadata of the snapshot.
-     * If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
+     * Encrypts the snapshot using a customer-supplied encryption key. After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request. Customer-supplied encryption keys do not protect access to metadata of the snapshot. If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
      * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
@@ -4843,13 +4930,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the snapshot using a customer-supplied encryption key.
-     * After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request.
-     * Customer-supplied encryption keys do not protect access to metadata of the snapshot.
-     * If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
+     * Encrypts the snapshot using a customer-supplied encryption key. After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request. Customer-supplied encryption keys do not protect access to metadata of the snapshot. If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
      * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
@@ -4866,13 +4951,11 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the snapshot using a customer-supplied encryption key.
-     * After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request.
-     * Customer-supplied encryption keys do not protect access to metadata of the snapshot.
-     * If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
+     * Encrypts the snapshot using a customer-supplied encryption key. After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request. Customer-supplied encryption keys do not protect access to metadata of the snapshot. If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey snapshot_encryption_key = 43334526;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -4900,7 +4983,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * The source disk used to create this snapshot.
      * </pre>
      *
-     * <code>string source_disk = 451753793;</code>
+     * <code>optional string source_disk = 451753793;</code>
      *
      * @return Whether the sourceDisk field is set.
      */
@@ -4914,7 +4997,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * The source disk used to create this snapshot.
      * </pre>
      *
-     * <code>string source_disk = 451753793;</code>
+     * <code>optional string source_disk = 451753793;</code>
      *
      * @return The sourceDisk.
      */
@@ -4936,7 +5019,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * The source disk used to create this snapshot.
      * </pre>
      *
-     * <code>string source_disk = 451753793;</code>
+     * <code>optional string source_disk = 451753793;</code>
      *
      * @return The bytes for sourceDisk.
      */
@@ -4958,7 +5041,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * The source disk used to create this snapshot.
      * </pre>
      *
-     * <code>string source_disk = 451753793;</code>
+     * <code>optional string source_disk = 451753793;</code>
      *
      * @param value The sourceDisk to set.
      * @return This builder for chaining.
@@ -4979,7 +5062,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * The source disk used to create this snapshot.
      * </pre>
      *
-     * <code>string source_disk = 451753793;</code>
+     * <code>optional string source_disk = 451753793;</code>
      *
      * @return This builder for chaining.
      */
@@ -4996,7 +5079,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * The source disk used to create this snapshot.
      * </pre>
      *
-     * <code>string source_disk = 451753793;</code>
+     * <code>optional string source_disk = 451753793;</code>
      *
      * @param value The bytes for sourceDisk to set.
      * @return This builder for chaining.
@@ -5025,7 +5108,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
      * </code>
      *
      * @return Whether the sourceDiskEncryptionKey field is set.
@@ -5040,7 +5124,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
      * </code>
      *
      * @return The sourceDiskEncryptionKey.
@@ -5061,7 +5146,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
      * </code>
      */
     public Builder setSourceDiskEncryptionKey(
@@ -5085,7 +5171,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
      * </code>
      */
     public Builder setSourceDiskEncryptionKey(
@@ -5106,7 +5193,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
      * </code>
      */
     public Builder mergeSourceDiskEncryptionKey(
@@ -5137,7 +5225,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
      * </code>
      */
     public Builder clearSourceDiskEncryptionKey() {
@@ -5157,7 +5246,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
      * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
@@ -5173,7 +5263,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
      * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
@@ -5193,7 +5284,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -5221,7 +5313,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
      * </pre>
      *
-     * <code>string source_disk_id = 454190809;</code>
+     * <code>optional string source_disk_id = 454190809;</code>
      *
      * @return Whether the sourceDiskId field is set.
      */
@@ -5235,7 +5327,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
      * </pre>
      *
-     * <code>string source_disk_id = 454190809;</code>
+     * <code>optional string source_disk_id = 454190809;</code>
      *
      * @return The sourceDiskId.
      */
@@ -5257,7 +5349,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
      * </pre>
      *
-     * <code>string source_disk_id = 454190809;</code>
+     * <code>optional string source_disk_id = 454190809;</code>
      *
      * @return The bytes for sourceDiskId.
      */
@@ -5279,7 +5371,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
      * </pre>
      *
-     * <code>string source_disk_id = 454190809;</code>
+     * <code>optional string source_disk_id = 454190809;</code>
      *
      * @param value The sourceDiskId to set.
      * @return This builder for chaining.
@@ -5300,7 +5392,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
      * </pre>
      *
-     * <code>string source_disk_id = 454190809;</code>
+     * <code>optional string source_disk_id = 454190809;</code>
      *
      * @return This builder for chaining.
      */
@@ -5317,7 +5409,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
      * </pre>
      *
-     * <code>string source_disk_id = 454190809;</code>
+     * <code>optional string source_disk_id = 454190809;</code>
      *
      * @param value The bytes for sourceDiskId to set.
      * @return This builder for chaining.
@@ -5333,19 +5425,19 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      *
      *
      * <pre>
      * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
      * @return Whether the status field is set.
      */
-    @java.lang.Override
     public boolean hasStatus() {
       return ((bitField0_ & 0x00100000) != 0);
     }
@@ -5354,29 +5446,64 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The enum numeric value on the wire for status.
+     * @return The status.
      */
-    @java.lang.Override
-    public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @param value The enum numeric value on the wire for status to set.
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     *
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
+    public Builder setStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00100000;
       status_ = value;
       onChanged();
@@ -5387,37 +5514,16 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Snapshot.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Snapshot.Status result =
-          com.google.cloud.compute.v1.Snapshot.Status.valueOf(status_);
-      return result == null ? com.google.cloud.compute.v1.Snapshot.Status.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
-     *
-     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloud.compute.v1.Snapshot.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00100000;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
@@ -5426,15 +5532,21 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00100000);
-      status_ = 0;
+    public Builder setStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00100000;
+      status_ = value;
       onChanged();
       return this;
     }
@@ -5447,7 +5559,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
      * </pre>
      *
-     * <code>int64 storage_bytes = 424631719;</code>
+     * <code>optional int64 storage_bytes = 424631719;</code>
      *
      * @return Whether the storageBytes field is set.
      */
@@ -5462,7 +5574,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
      * </pre>
      *
-     * <code>int64 storage_bytes = 424631719;</code>
+     * <code>optional int64 storage_bytes = 424631719;</code>
      *
      * @return The storageBytes.
      */
@@ -5477,7 +5589,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
      * </pre>
      *
-     * <code>int64 storage_bytes = 424631719;</code>
+     * <code>optional int64 storage_bytes = 424631719;</code>
      *
      * @param value The storageBytes to set.
      * @return This builder for chaining.
@@ -5495,7 +5607,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
      * </pre>
      *
-     * <code>int64 storage_bytes = 424631719;</code>
+     * <code>optional int64 storage_bytes = 424631719;</code>
      *
      * @return This builder for chaining.
      */
@@ -5506,20 +5618,19 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int storageBytesStatus_ = 0;
+    private java.lang.Object storageBytesStatus_ = "";
     /**
      *
      *
      * <pre>
      * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;
-     * </code>
+     * <code>optional string storage_bytes_status = 490739082;</code>
      *
      * @return Whether the storageBytesStatus field is set.
      */
-    @java.lang.Override
     public boolean hasStorageBytesStatus() {
       return ((bitField0_ & 0x00400000) != 0);
     }
@@ -5528,31 +5639,64 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;
-     * </code>
+     * <code>optional string storage_bytes_status = 490739082;</code>
      *
-     * @return The enum numeric value on the wire for storageBytesStatus.
+     * @return The storageBytesStatus.
      */
-    @java.lang.Override
-    public int getStorageBytesStatusValue() {
-      return storageBytesStatus_;
+    public java.lang.String getStorageBytesStatus() {
+      java.lang.Object ref = storageBytesStatus_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        storageBytesStatus_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;
-     * </code>
+     * <code>optional string storage_bytes_status = 490739082;</code>
      *
-     * @param value The enum numeric value on the wire for storageBytesStatus to set.
+     * @return The bytes for storageBytesStatus.
+     */
+    public com.google.protobuf.ByteString getStorageBytesStatusBytes() {
+      java.lang.Object ref = storageBytesStatus_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        storageBytesStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Check the StorageBytesStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string storage_bytes_status = 490739082;</code>
+     *
+     * @param value The storageBytesStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setStorageBytesStatusValue(int value) {
+    public Builder setStorageBytesStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00400000;
       storageBytesStatus_ = value;
       onChanged();
@@ -5563,42 +5707,16 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;
-     * </code>
+     * <code>optional string storage_bytes_status = 490739082;</code>
      *
-     * @return The storageBytesStatus.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Snapshot.StorageBytesStatus getStorageBytesStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Snapshot.StorageBytesStatus result =
-          com.google.cloud.compute.v1.Snapshot.StorageBytesStatus.valueOf(storageBytesStatus_);
-      return result == null
-          ? com.google.cloud.compute.v1.Snapshot.StorageBytesStatus.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;
-     * </code>
-     *
-     * @param value The storageBytesStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setStorageBytesStatus(
-        com.google.cloud.compute.v1.Snapshot.StorageBytesStatus value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00400000;
-      storageBytesStatus_ = value.getNumber();
+    public Builder clearStorageBytesStatus() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      storageBytesStatus_ = getDefaultInstance().getStorageBytesStatus();
       onChanged();
       return this;
     }
@@ -5607,16 +5725,21 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;
-     * </code>
+     * <code>optional string storage_bytes_status = 490739082;</code>
      *
+     * @param value The bytes for storageBytesStatus to set.
      * @return This builder for chaining.
      */
-    public Builder clearStorageBytesStatus() {
-      bitField0_ = (bitField0_ & ~0x00400000);
-      storageBytesStatus_ = 0;
+    public Builder setStorageBytesStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00400000;
+      storageBytesStatus_ = value;
       onChanged();
       return this;
     }

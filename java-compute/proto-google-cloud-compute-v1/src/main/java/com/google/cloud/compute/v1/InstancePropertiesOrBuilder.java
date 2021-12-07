@@ -30,7 +30,8 @@ public interface InstancePropertiesOrBuilder
    * Controls for advanced machine-related behavior features.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+   * <code>
+   * optional .google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
    * </code>
    *
    * @return Whether the advancedMachineFeatures field is set.
@@ -43,7 +44,8 @@ public interface InstancePropertiesOrBuilder
    * Controls for advanced machine-related behavior features.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+   * <code>
+   * optional .google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
    * </code>
    *
    * @return The advancedMachineFeatures.
@@ -56,7 +58,8 @@ public interface InstancePropertiesOrBuilder
    * Controls for advanced machine-related behavior features.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+   * <code>
+   * optional .google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
    * </code>
    */
   com.google.cloud.compute.v1.AdvancedMachineFeaturesOrBuilder
@@ -69,7 +72,7 @@ public interface InstancePropertiesOrBuilder
    * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
    * </pre>
    *
-   * <code>bool can_ip_forward = 467731324;</code>
+   * <code>optional bool can_ip_forward = 467731324;</code>
    *
    * @return Whether the canIpForward field is set.
    */
@@ -81,7 +84,7 @@ public interface InstancePropertiesOrBuilder
    * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
    * </pre>
    *
-   * <code>bool can_ip_forward = 467731324;</code>
+   * <code>optional bool can_ip_forward = 467731324;</code>
    *
    * @return The canIpForward.
    */
@@ -95,7 +98,7 @@ public interface InstancePropertiesOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+   * optional .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
    * </code>
    *
    * @return Whether the confidentialInstanceConfig field is set.
@@ -109,7 +112,7 @@ public interface InstancePropertiesOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+   * optional .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
    * </code>
    *
    * @return The confidentialInstanceConfig.
@@ -123,7 +126,7 @@ public interface InstancePropertiesOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+   * optional .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
    * </code>
    */
   com.google.cloud.compute.v1.ConfidentialInstanceConfigOrBuilder
@@ -136,7 +139,7 @@ public interface InstancePropertiesOrBuilder
    * An optional text description for the instances that are created from these properties.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -148,7 +151,7 @@ public interface InstancePropertiesOrBuilder
    * An optional text description for the instances that are created from these properties.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -160,7 +163,7 @@ public interface InstancePropertiesOrBuilder
    * An optional text description for the instances that are created from these properties.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -336,7 +339,7 @@ public interface InstancePropertiesOrBuilder
    * The machine type to use for instances that are created from these properties.
    * </pre>
    *
-   * <code>string machine_type = 227711026;</code>
+   * <code>optional string machine_type = 227711026;</code>
    *
    * @return Whether the machineType field is set.
    */
@@ -348,7 +351,7 @@ public interface InstancePropertiesOrBuilder
    * The machine type to use for instances that are created from these properties.
    * </pre>
    *
-   * <code>string machine_type = 227711026;</code>
+   * <code>optional string machine_type = 227711026;</code>
    *
    * @return The machineType.
    */
@@ -360,7 +363,7 @@ public interface InstancePropertiesOrBuilder
    * The machine type to use for instances that are created from these properties.
    * </pre>
    *
-   * <code>string machine_type = 227711026;</code>
+   * <code>optional string machine_type = 227711026;</code>
    *
    * @return The bytes for machineType.
    */
@@ -373,7 +376,7 @@ public interface InstancePropertiesOrBuilder
    * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Metadata metadata = 86866735;</code>
+   * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
    *
    * @return Whether the metadata field is set.
    */
@@ -385,7 +388,7 @@ public interface InstancePropertiesOrBuilder
    * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Metadata metadata = 86866735;</code>
+   * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
    *
    * @return The metadata.
    */
@@ -397,7 +400,7 @@ public interface InstancePropertiesOrBuilder
    * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Metadata metadata = 86866735;</code>
+   * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
    */
   com.google.cloud.compute.v1.MetadataOrBuilder getMetadataOrBuilder();
 
@@ -408,7 +411,7 @@ public interface InstancePropertiesOrBuilder
    * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return Whether the minCpuPlatform field is set.
    */
@@ -420,7 +423,7 @@ public interface InstancePropertiesOrBuilder
    * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return The minCpuPlatform.
    */
@@ -432,7 +435,7 @@ public interface InstancePropertiesOrBuilder
    * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
    * </pre>
    *
-   * <code>string min_cpu_platform = 242912759;</code>
+   * <code>optional string min_cpu_platform = 242912759;</code>
    *
    * @return The bytes for minCpuPlatform.
    */
@@ -494,12 +497,11 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
-   * </code>
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
    *
    * @return Whether the privateIpv6GoogleAccess field is set.
    */
@@ -508,31 +510,28 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
-   * </code>
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
    *
-   * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
+   * @return The privateIpv6GoogleAccess.
    */
-  int getPrivateIpv6GoogleAccessValue();
+  java.lang.String getPrivateIpv6GoogleAccess();
   /**
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
-   * </code>
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
    *
-   * @return The privateIpv6GoogleAccess.
+   * @return The bytes for privateIpv6GoogleAccess.
    */
-  com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess
-      getPrivateIpv6GoogleAccess();
+  com.google.protobuf.ByteString getPrivateIpv6GoogleAccessBytes();
 
   /**
    *
@@ -541,7 +540,8 @@ public interface InstancePropertiesOrBuilder
    * Specifies the reservations that instances can consume from.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;</code>
+   * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
+   * </code>
    *
    * @return Whether the reservationAffinity field is set.
    */
@@ -553,7 +553,8 @@ public interface InstancePropertiesOrBuilder
    * Specifies the reservations that instances can consume from.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;</code>
+   * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
+   * </code>
    *
    * @return The reservationAffinity.
    */
@@ -565,7 +566,8 @@ public interface InstancePropertiesOrBuilder
    * Specifies the reservations that instances can consume from.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;</code>
+   * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
+   * </code>
    */
   com.google.cloud.compute.v1.ReservationAffinityOrBuilder getReservationAffinityOrBuilder();
 
@@ -627,7 +629,7 @@ public interface InstancePropertiesOrBuilder
    * Specifies the scheduling options for the instances that are created from these properties.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+   * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
    *
    * @return Whether the scheduling field is set.
    */
@@ -639,7 +641,7 @@ public interface InstancePropertiesOrBuilder
    * Specifies the scheduling options for the instances that are created from these properties.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+   * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
    *
    * @return The scheduling.
    */
@@ -651,7 +653,7 @@ public interface InstancePropertiesOrBuilder
    * Specifies the scheduling options for the instances that are created from these properties.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+   * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
    */
   com.google.cloud.compute.v1.SchedulingOrBuilder getSchedulingOrBuilder();
 
@@ -708,21 +710,24 @@ public interface InstancePropertiesOrBuilder
   com.google.cloud.compute.v1.ServiceAccountOrBuilder getServiceAccountsOrBuilder(int index);
 
   /**
-   * <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
    * </code>
    *
    * @return Whether the shieldedInstanceConfig field is set.
    */
   boolean hasShieldedInstanceConfig();
   /**
-   * <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
    * </code>
    *
    * @return The shieldedInstanceConfig.
    */
   com.google.cloud.compute.v1.ShieldedInstanceConfig getShieldedInstanceConfig();
   /**
-   * <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
    * </code>
    */
   com.google.cloud.compute.v1.ShieldedInstanceConfigOrBuilder getShieldedInstanceConfigOrBuilder();
@@ -734,7 +739,7 @@ public interface InstancePropertiesOrBuilder
    * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Tags tags = 3552281;</code>
+   * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
    *
    * @return Whether the tags field is set.
    */
@@ -746,7 +751,7 @@ public interface InstancePropertiesOrBuilder
    * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Tags tags = 3552281;</code>
+   * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
    *
    * @return The tags.
    */
@@ -758,7 +763,7 @@ public interface InstancePropertiesOrBuilder
    * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Tags tags = 3552281;</code>
+   * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
    */
   com.google.cloud.compute.v1.TagsOrBuilder getTagsOrBuilder();
 }

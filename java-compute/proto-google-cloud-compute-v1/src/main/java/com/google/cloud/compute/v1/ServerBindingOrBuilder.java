@@ -24,21 +24,42 @@ public interface ServerBindingOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.ServerBinding.Type type = 3575610;</code>
+   *
+   *
+   * <pre>
+   *
+   * Check the Type enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string type = 3575610;</code>
    *
    * @return Whether the type field is set.
    */
   boolean hasType();
   /**
-   * <code>.google.cloud.compute.v1.ServerBinding.Type type = 3575610;</code>
    *
-   * @return The enum numeric value on the wire for type.
-   */
-  int getTypeValue();
-  /**
-   * <code>.google.cloud.compute.v1.ServerBinding.Type type = 3575610;</code>
+   *
+   * <pre>
+   *
+   * Check the Type enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string type = 3575610;</code>
    *
    * @return The type.
    */
-  com.google.cloud.compute.v1.ServerBinding.Type getType();
+  java.lang.String getType();
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the Type enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string type = 3575610;</code>
+   *
+   * @return The bytes for type.
+   */
+  com.google.protobuf.ByteString getTypeBytes();
 }

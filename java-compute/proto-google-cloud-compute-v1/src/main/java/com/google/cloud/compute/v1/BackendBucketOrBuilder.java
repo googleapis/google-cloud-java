@@ -30,7 +30,7 @@ public interface BackendBucketOrBuilder
    * Cloud Storage bucket name.
    * </pre>
    *
-   * <code>string bucket_name = 283610048;</code>
+   * <code>optional string bucket_name = 283610048;</code>
    *
    * @return Whether the bucketName field is set.
    */
@@ -42,7 +42,7 @@ public interface BackendBucketOrBuilder
    * Cloud Storage bucket name.
    * </pre>
    *
-   * <code>string bucket_name = 283610048;</code>
+   * <code>optional string bucket_name = 283610048;</code>
    *
    * @return The bucketName.
    */
@@ -54,7 +54,7 @@ public interface BackendBucketOrBuilder
    * Cloud Storage bucket name.
    * </pre>
    *
-   * <code>string bucket_name = 283610048;</code>
+   * <code>optional string bucket_name = 283610048;</code>
    *
    * @return The bytes for bucketName.
    */
@@ -67,7 +67,7 @@ public interface BackendBucketOrBuilder
    * Cloud CDN configuration for this BackendBucket.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
+   * <code>optional .google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
    *
    * @return Whether the cdnPolicy field is set.
    */
@@ -79,7 +79,7 @@ public interface BackendBucketOrBuilder
    * Cloud CDN configuration for this BackendBucket.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
+   * <code>optional .google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
    *
    * @return The cdnPolicy.
    */
@@ -91,7 +91,7 @@ public interface BackendBucketOrBuilder
    * Cloud CDN configuration for this BackendBucket.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
+   * <code>optional .google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
    */
   com.google.cloud.compute.v1.BackendBucketCdnPolicyOrBuilder getCdnPolicyOrBuilder();
 
@@ -102,7 +102,7 @@ public interface BackendBucketOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -114,7 +114,7 @@ public interface BackendBucketOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -126,7 +126,7 @@ public interface BackendBucketOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -190,7 +190,7 @@ public interface BackendBucketOrBuilder
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -202,7 +202,7 @@ public interface BackendBucketOrBuilder
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -214,7 +214,7 @@ public interface BackendBucketOrBuilder
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -227,7 +227,7 @@ public interface BackendBucketOrBuilder
    * If true, enable Cloud CDN for this BackendBucket.
    * </pre>
    *
-   * <code>bool enable_cdn = 282942321;</code>
+   * <code>optional bool enable_cdn = 282942321;</code>
    *
    * @return Whether the enableCdn field is set.
    */
@@ -239,7 +239,7 @@ public interface BackendBucketOrBuilder
    * If true, enable Cloud CDN for this BackendBucket.
    * </pre>
    *
-   * <code>bool enable_cdn = 282942321;</code>
+   * <code>optional bool enable_cdn = 282942321;</code>
    *
    * @return The enableCdn.
    */
@@ -252,7 +252,7 @@ public interface BackendBucketOrBuilder
    * [Output Only] Unique identifier for the resource; defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -264,7 +264,7 @@ public interface BackendBucketOrBuilder
    * [Output Only] Unique identifier for the resource; defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -277,7 +277,7 @@ public interface BackendBucketOrBuilder
    * Type of the resource.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -289,7 +289,7 @@ public interface BackendBucketOrBuilder
    * Type of the resource.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -301,7 +301,7 @@ public interface BackendBucketOrBuilder
    * Type of the resource.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -314,7 +314,7 @@ public interface BackendBucketOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -326,7 +326,7 @@ public interface BackendBucketOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -338,7 +338,7 @@ public interface BackendBucketOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -351,7 +351,7 @@ public interface BackendBucketOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -363,7 +363,7 @@ public interface BackendBucketOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -375,7 +375,7 @@ public interface BackendBucketOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */

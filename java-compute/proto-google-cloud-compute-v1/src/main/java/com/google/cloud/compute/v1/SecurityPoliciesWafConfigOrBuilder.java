@@ -24,17 +24,17 @@ public interface SecurityPoliciesWafConfigOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.PreconfiguredWafSet waf_rules = 74899924;</code>
+   * <code>optional .google.cloud.compute.v1.PreconfiguredWafSet waf_rules = 74899924;</code>
    *
    * @return Whether the wafRules field is set.
    */
   boolean hasWafRules();
   /**
-   * <code>.google.cloud.compute.v1.PreconfiguredWafSet waf_rules = 74899924;</code>
+   * <code>optional .google.cloud.compute.v1.PreconfiguredWafSet waf_rules = 74899924;</code>
    *
    * @return The wafRules.
    */
   com.google.cloud.compute.v1.PreconfiguredWafSet getWafRules();
-  /** <code>.google.cloud.compute.v1.PreconfiguredWafSet waf_rules = 74899924;</code> */
+  /** <code>optional .google.cloud.compute.v1.PreconfiguredWafSet waf_rules = 74899924;</code> */
   com.google.cloud.compute.v1.PreconfiguredWafSetOrBuilder getWafRulesOrBuilder();
 }

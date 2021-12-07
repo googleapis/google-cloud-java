@@ -30,7 +30,7 @@ public interface ReservationOrBuilder
    * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
    * </pre>
    *
-   * <code>string commitment = 482134805;</code>
+   * <code>optional string commitment = 482134805;</code>
    *
    * @return Whether the commitment field is set.
    */
@@ -42,7 +42,7 @@ public interface ReservationOrBuilder
    * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
    * </pre>
    *
-   * <code>string commitment = 482134805;</code>
+   * <code>optional string commitment = 482134805;</code>
    *
    * @return The commitment.
    */
@@ -54,7 +54,7 @@ public interface ReservationOrBuilder
    * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
    * </pre>
    *
-   * <code>string commitment = 482134805;</code>
+   * <code>optional string commitment = 482134805;</code>
    *
    * @return The bytes for commitment.
    */
@@ -67,7 +67,7 @@ public interface ReservationOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -79,7 +79,7 @@ public interface ReservationOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -91,7 +91,7 @@ public interface ReservationOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -104,7 +104,7 @@ public interface ReservationOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -116,7 +116,7 @@ public interface ReservationOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -128,7 +128,7 @@ public interface ReservationOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -141,7 +141,7 @@ public interface ReservationOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -153,7 +153,7 @@ public interface ReservationOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -166,7 +166,7 @@ public interface ReservationOrBuilder
    * [Output Only] Type of the resource. Always compute#reservations for reservations.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -178,7 +178,7 @@ public interface ReservationOrBuilder
    * [Output Only] Type of the resource. Always compute#reservations for reservations.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -190,7 +190,7 @@ public interface ReservationOrBuilder
    * [Output Only] Type of the resource. Always compute#reservations for reservations.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -203,7 +203,7 @@ public interface ReservationOrBuilder
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -215,7 +215,7 @@ public interface ReservationOrBuilder
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -227,7 +227,7 @@ public interface ReservationOrBuilder
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -240,7 +240,7 @@ public interface ReservationOrBuilder
    * [Output Only] Reserved for future use.
    * </pre>
    *
-   * <code>bool satisfies_pzs = 480964267;</code>
+   * <code>optional bool satisfies_pzs = 480964267;</code>
    *
    * @return Whether the satisfiesPzs field is set.
    */
@@ -252,7 +252,7 @@ public interface ReservationOrBuilder
    * [Output Only] Reserved for future use.
    * </pre>
    *
-   * <code>bool satisfies_pzs = 480964267;</code>
+   * <code>optional bool satisfies_pzs = 480964267;</code>
    *
    * @return The satisfiesPzs.
    */
@@ -265,7 +265,7 @@ public interface ReservationOrBuilder
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -277,7 +277,7 @@ public interface ReservationOrBuilder
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -289,7 +289,7 @@ public interface ReservationOrBuilder
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -303,7 +303,7 @@ public interface ReservationOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
+   * optional .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
    * </code>
    *
    * @return Whether the specificReservation field is set.
@@ -317,7 +317,7 @@ public interface ReservationOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
+   * optional .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
    * </code>
    *
    * @return The specificReservation.
@@ -331,7 +331,7 @@ public interface ReservationOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
+   * optional .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
    * </code>
    */
   com.google.cloud.compute.v1.AllocationSpecificSKUReservationOrBuilder
@@ -344,7 +344,7 @@ public interface ReservationOrBuilder
    * Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
    * </pre>
    *
-   * <code>bool specific_reservation_required = 226550687;</code>
+   * <code>optional bool specific_reservation_required = 226550687;</code>
    *
    * @return Whether the specificReservationRequired field is set.
    */
@@ -356,7 +356,7 @@ public interface ReservationOrBuilder
    * Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
    * </pre>
    *
-   * <code>bool specific_reservation_required = 226550687;</code>
+   * <code>optional bool specific_reservation_required = 226550687;</code>
    *
    * @return The specificReservationRequired.
    */
@@ -367,9 +367,10 @@ public interface ReservationOrBuilder
    *
    * <pre>
    * [Output Only] The status of the reservation.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -379,25 +380,27 @@ public interface ReservationOrBuilder
    *
    * <pre>
    * [Output Only] The status of the reservation.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    *
    *
    * <pre>
    * [Output Only] The status of the reservation.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1.Reservation.Status getStatus();
+  com.google.protobuf.ByteString getStatusBytes();
 
   /**
    *
@@ -406,7 +409,7 @@ public interface ReservationOrBuilder
    * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return Whether the zone field is set.
    */
@@ -418,7 +421,7 @@ public interface ReservationOrBuilder
    * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The zone.
    */
@@ -430,7 +433,7 @@ public interface ReservationOrBuilder
    * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The bytes for zone.
    */

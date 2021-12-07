@@ -27,7 +27,7 @@ public interface AuditLogConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies the identities that do not cause logging for this type of permission. Follows the same format of [Binding.members][].
+   * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
    * </pre>
    *
    * <code>repeated string exempted_members = 232615576;</code>
@@ -39,7 +39,7 @@ public interface AuditLogConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies the identities that do not cause logging for this type of permission. Follows the same format of [Binding.members][].
+   * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
    * </pre>
    *
    * <code>repeated string exempted_members = 232615576;</code>
@@ -51,7 +51,7 @@ public interface AuditLogConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies the identities that do not cause logging for this type of permission. Follows the same format of [Binding.members][].
+   * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
    * </pre>
    *
    * <code>repeated string exempted_members = 232615576;</code>
@@ -64,7 +64,7 @@ public interface AuditLogConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies the identities that do not cause logging for this type of permission. Follows the same format of [Binding.members][].
+   * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
    * </pre>
    *
    * <code>repeated string exempted_members = 232615576;</code>
@@ -75,13 +75,25 @@ public interface AuditLogConfigOrBuilder
   com.google.protobuf.ByteString getExemptedMembersBytes(int index);
 
   /**
-   * <code>bool ignore_child_exemptions = 70141850;</code>
+   *
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * </pre>
+   *
+   * <code>optional bool ignore_child_exemptions = 70141850;</code>
    *
    * @return Whether the ignoreChildExemptions field is set.
    */
   boolean hasIgnoreChildExemptions();
   /**
-   * <code>bool ignore_child_exemptions = 70141850;</code>
+   *
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * </pre>
+   *
+   * <code>optional bool ignore_child_exemptions = 70141850;</code>
    *
    * @return The ignoreChildExemptions.
    */
@@ -92,9 +104,10 @@ public interface AuditLogConfigOrBuilder
    *
    * <pre>
    * The log type that this config enables.
+   * Check the LogType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
+   * <code>optional string log_type = 403115861;</code>
    *
    * @return Whether the logType field is set.
    */
@@ -104,23 +117,25 @@ public interface AuditLogConfigOrBuilder
    *
    * <pre>
    * The log type that this config enables.
+   * Check the LogType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
+   * <code>optional string log_type = 403115861;</code>
    *
-   * @return The enum numeric value on the wire for logType.
+   * @return The logType.
    */
-  int getLogTypeValue();
+  java.lang.String getLogType();
   /**
    *
    *
    * <pre>
    * The log type that this config enables.
+   * Check the LogType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
+   * <code>optional string log_type = 403115861;</code>
    *
-   * @return The logType.
+   * @return The bytes for logType.
    */
-  com.google.cloud.compute.v1.AuditLogConfig.LogType getLogType();
+  com.google.protobuf.ByteString getLogTypeBytes();
 }

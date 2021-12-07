@@ -26,6 +26,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -49,16 +50,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * GlobalForwardingRulesSettings.Builder globalForwardingRulesSettingsBuilder =
  *     GlobalForwardingRulesSettings.newBuilder();
  * globalForwardingRulesSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         globalForwardingRulesSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -75,6 +76,12 @@ public class GlobalForwardingRulesSettings extends ClientSettings<GlobalForwardi
     return ((GlobalForwardingRulesStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteGlobalForwardingRuleRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((GlobalForwardingRulesStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetGlobalForwardingRuleRequest, ForwardingRule> getSettings() {
     return ((GlobalForwardingRulesStubSettings) getStubSettings()).getSettings();
@@ -83,6 +90,12 @@ public class GlobalForwardingRulesSettings extends ClientSettings<GlobalForwardi
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertGlobalForwardingRuleRequest, Operation> insertSettings() {
     return ((GlobalForwardingRulesStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertGlobalForwardingRuleRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((GlobalForwardingRulesStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -96,14 +109,32 @@ public class GlobalForwardingRulesSettings extends ClientSettings<GlobalForwardi
     return ((GlobalForwardingRulesStubSettings) getStubSettings()).patchSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchGlobalForwardingRuleRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((GlobalForwardingRulesStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setLabels. */
   public UnaryCallSettings<SetLabelsGlobalForwardingRuleRequest, Operation> setLabelsSettings() {
     return ((GlobalForwardingRulesStubSettings) getStubSettings()).setLabelsSettings();
   }
 
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsGlobalForwardingRuleRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((GlobalForwardingRulesStubSettings) getStubSettings()).setLabelsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setTarget. */
   public UnaryCallSettings<SetTargetGlobalForwardingRuleRequest, Operation> setTargetSettings() {
     return ((GlobalForwardingRulesStubSettings) getStubSettings()).setTargetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setTarget. */
+  public OperationCallSettings<SetTargetGlobalForwardingRuleRequest, Operation, Operation>
+      setTargetOperationSettings() {
+    return ((GlobalForwardingRulesStubSettings) getStubSettings()).setTargetOperationSettings();
   }
 
   public static final GlobalForwardingRulesSettings create(GlobalForwardingRulesStubSettings stub)
@@ -211,6 +242,12 @@ public class GlobalForwardingRulesSettings extends ClientSettings<GlobalForwardi
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteGlobalForwardingRuleRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetGlobalForwardingRuleRequest, ForwardingRule> getSettings() {
       return getStubSettingsBuilder().getSettings();
@@ -220,6 +257,12 @@ public class GlobalForwardingRulesSettings extends ClientSettings<GlobalForwardi
     public UnaryCallSettings.Builder<InsertGlobalForwardingRuleRequest, Operation>
         insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertGlobalForwardingRuleRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -234,16 +277,34 @@ public class GlobalForwardingRulesSettings extends ClientSettings<GlobalForwardi
       return getStubSettingsBuilder().patchSettings();
     }
 
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchGlobalForwardingRuleRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setLabels. */
     public UnaryCallSettings.Builder<SetLabelsGlobalForwardingRuleRequest, Operation>
         setLabelsSettings() {
       return getStubSettingsBuilder().setLabelsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsGlobalForwardingRuleRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setTarget. */
     public UnaryCallSettings.Builder<SetTargetGlobalForwardingRuleRequest, Operation>
         setTargetSettings() {
       return getStubSettingsBuilder().setTargetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setTarget. */
+    public OperationCallSettings.Builder<SetTargetGlobalForwardingRuleRequest, Operation, Operation>
+        setTargetOperationSettings() {
+      return getStubSettingsBuilder().setTargetOperationSettings();
     }
 
     @Override

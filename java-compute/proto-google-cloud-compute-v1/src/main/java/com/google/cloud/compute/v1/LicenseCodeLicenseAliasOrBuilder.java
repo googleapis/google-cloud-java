@@ -30,7 +30,7 @@ public interface LicenseCodeLicenseAliasOrBuilder
    * [Output Only] Description of this License Code.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -42,7 +42,7 @@ public interface LicenseCodeLicenseAliasOrBuilder
    * [Output Only] Description of this License Code.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -54,7 +54,7 @@ public interface LicenseCodeLicenseAliasOrBuilder
    * [Output Only] Description of this License Code.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -67,7 +67,7 @@ public interface LicenseCodeLicenseAliasOrBuilder
    * [Output Only] URL of license corresponding to this License Code.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -79,7 +79,7 @@ public interface LicenseCodeLicenseAliasOrBuilder
    * [Output Only] URL of license corresponding to this License Code.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -91,7 +91,7 @@ public interface LicenseCodeLicenseAliasOrBuilder
    * [Output Only] URL of license corresponding to this License Code.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */

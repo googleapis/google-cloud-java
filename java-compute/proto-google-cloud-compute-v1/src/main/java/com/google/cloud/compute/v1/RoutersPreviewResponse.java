@@ -127,7 +127,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
    * Preview of given router.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Router resource = 195806222;</code>
+   * <code>optional .google.cloud.compute.v1.Router resource = 195806222;</code>
    *
    * @return Whether the resource field is set.
    */
@@ -142,7 +142,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
    * Preview of given router.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Router resource = 195806222;</code>
+   * <code>optional .google.cloud.compute.v1.Router resource = 195806222;</code>
    *
    * @return The resource.
    */
@@ -157,7 +157,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
    * Preview of given router.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Router resource = 195806222;</code>
+   * <code>optional .google.cloud.compute.v1.Router resource = 195806222;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.RouterOrBuilder getResourceOrBuilder() {
@@ -516,7 +516,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
      * Preview of given router.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Router resource = 195806222;</code>
+     * <code>optional .google.cloud.compute.v1.Router resource = 195806222;</code>
      *
      * @return Whether the resource field is set.
      */
@@ -530,7 +530,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
      * Preview of given router.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Router resource = 195806222;</code>
+     * <code>optional .google.cloud.compute.v1.Router resource = 195806222;</code>
      *
      * @return The resource.
      */
@@ -550,7 +550,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
      * Preview of given router.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Router resource = 195806222;</code>
+     * <code>optional .google.cloud.compute.v1.Router resource = 195806222;</code>
      */
     public Builder setResource(com.google.cloud.compute.v1.Router value) {
       if (resourceBuilder_ == null) {
@@ -572,7 +572,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
      * Preview of given router.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Router resource = 195806222;</code>
+     * <code>optional .google.cloud.compute.v1.Router resource = 195806222;</code>
      */
     public Builder setResource(com.google.cloud.compute.v1.Router.Builder builderForValue) {
       if (resourceBuilder_ == null) {
@@ -591,7 +591,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
      * Preview of given router.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Router resource = 195806222;</code>
+     * <code>optional .google.cloud.compute.v1.Router resource = 195806222;</code>
      */
     public Builder mergeResource(com.google.cloud.compute.v1.Router value) {
       if (resourceBuilder_ == null) {
@@ -619,7 +619,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
      * Preview of given router.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Router resource = 195806222;</code>
+     * <code>optional .google.cloud.compute.v1.Router resource = 195806222;</code>
      */
     public Builder clearResource() {
       if (resourceBuilder_ == null) {
@@ -638,7 +638,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
      * Preview of given router.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Router resource = 195806222;</code>
+     * <code>optional .google.cloud.compute.v1.Router resource = 195806222;</code>
      */
     public com.google.cloud.compute.v1.Router.Builder getResourceBuilder() {
       bitField0_ |= 0x00000001;
@@ -652,7 +652,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
      * Preview of given router.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Router resource = 195806222;</code>
+     * <code>optional .google.cloud.compute.v1.Router resource = 195806222;</code>
      */
     public com.google.cloud.compute.v1.RouterOrBuilder getResourceOrBuilder() {
       if (resourceBuilder_ != null) {
@@ -670,7 +670,7 @@ public final class RoutersPreviewResponse extends com.google.protobuf.GeneratedM
      * Preview of given router.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Router resource = 195806222;</code>
+     * <code>optional .google.cloud.compute.v1.Router resource = 195806222;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Router,

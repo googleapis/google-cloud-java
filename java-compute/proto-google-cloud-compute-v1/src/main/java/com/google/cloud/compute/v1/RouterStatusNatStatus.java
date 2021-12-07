@@ -42,6 +42,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     drainAutoAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     drainUserAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     name_ = "";
+    ruleStatus_ = java.util.Collections.emptyList();
     userAllocatedNatIpResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     userAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
@@ -83,12 +84,26 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
               name_ = s;
               break;
             }
+          case 1121785002:
+            {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                ruleStatus_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              ruleStatus_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus.parser(),
+                      extensionRegistry));
+              break;
+            }
           case 1702209210:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 userAllocatedNatIpResources_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000080;
               }
               userAllocatedNatIpResources_.add(s);
               break;
@@ -122,9 +137,9 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
           case -239941358:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                 userAllocatedNatIps_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000100;
               }
               userAllocatedNatIps_.add(s);
               break;
@@ -160,6 +175,9 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000040) != 0)) {
+        ruleStatus_ = java.util.Collections.unmodifiableList(ruleStatus_);
+      }
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
         userAllocatedNatIpResources_ = userAllocatedNatIpResources_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
@@ -168,7 +186,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         drainAutoAllocatedNatIps_ = drainAutoAllocatedNatIps_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
         userAllocatedNatIps_ = userAllocatedNatIps_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
@@ -387,7 +405,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when auto-allocation of NAT IPs is *not* used.
    * </pre>
    *
-   * <code>int32 min_extra_nat_ips_needed = 365786338;</code>
+   * <code>optional int32 min_extra_nat_ips_needed = 365786338;</code>
    *
    * @return Whether the minExtraNatIpsNeeded field is set.
    */
@@ -402,7 +420,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when auto-allocation of NAT IPs is *not* used.
    * </pre>
    *
-   * <code>int32 min_extra_nat_ips_needed = 365786338;</code>
+   * <code>optional int32 min_extra_nat_ips_needed = 365786338;</code>
    *
    * @return The minExtraNatIpsNeeded.
    */
@@ -420,7 +438,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * Unique name of this NAT.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -435,7 +453,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * Unique name of this NAT.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -458,7 +476,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * Unique name of this NAT.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -484,7 +502,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * Number of VM endpoints (i.e., Nics) that can use NAT.
    * </pre>
    *
-   * <code>int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
+   * <code>optional int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
    *
    * @return Whether the numVmEndpointsWithNatMappings field is set.
    */
@@ -499,13 +517,96 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * Number of VM endpoints (i.e., Nics) that can use NAT.
    * </pre>
    *
-   * <code>int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
+   * <code>optional int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
    *
    * @return The numVmEndpointsWithNatMappings.
    */
   @java.lang.Override
   public int getNumVmEndpointsWithNatMappings() {
     return numVmEndpointsWithNatMappings_;
+  }
+
+  public static final int RULE_STATUS_FIELD_NUMBER = 140223125;
+  private java.util.List<com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus>
+      ruleStatus_;
+  /**
+   *
+   *
+   * <pre>
+   * Status of rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus>
+      getRuleStatusList() {
+    return ruleStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Status of rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatusOrBuilder>
+      getRuleStatusOrBuilderList() {
+    return ruleStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Status of rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+   * </code>
+   */
+  @java.lang.Override
+  public int getRuleStatusCount() {
+    return ruleStatus_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Status of rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus getRuleStatus(int index) {
+    return ruleStatus_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Status of rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatusOrBuilder
+      getRuleStatusOrBuilder(int index) {
+    return ruleStatus_.get(index);
   }
 
   public static final int USER_ALLOCATED_NAT_IP_RESOURCES_FIELD_NUMBER = 212776151;
@@ -647,6 +748,9 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
+    for (int i = 0; i < ruleStatus_.size(); i++) {
+      output.writeMessage(140223125, ruleStatus_.get(i));
+    }
     for (int i = 0; i < userAllocatedNatIpResources_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 212776151, userAllocatedNatIpResources_.getRaw(i));
@@ -684,6 +788,10 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     size = 0;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
+    }
+    for (int i = 0; i < ruleStatus_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(140223125, ruleStatus_.get(i));
     }
     {
       int dataSize = 0;
@@ -769,6 +877,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       if (getNumVmEndpointsWithNatMappings() != other.getNumVmEndpointsWithNatMappings())
         return false;
     }
+    if (!getRuleStatusList().equals(other.getRuleStatusList())) return false;
     if (!getUserAllocatedNatIpResourcesList().equals(other.getUserAllocatedNatIpResourcesList()))
       return false;
     if (!getUserAllocatedNatIpsList().equals(other.getUserAllocatedNatIpsList())) return false;
@@ -806,6 +915,10 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     if (hasNumVmEndpointsWithNatMappings()) {
       hash = (37 * hash) + NUM_VM_ENDPOINTS_WITH_NAT_MAPPINGS_FIELD_NUMBER;
       hash = (53 * hash) + getNumVmEndpointsWithNatMappings();
+    }
+    if (getRuleStatusCount() > 0) {
+      hash = (37 * hash) + RULE_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getRuleStatusList().hashCode();
     }
     if (getUserAllocatedNatIpResourcesCount() > 0) {
       hash = (37 * hash) + USER_ALLOCATED_NAT_IP_RESOURCES_FIELD_NUMBER;
@@ -954,7 +1067,9 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getRuleStatusFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -972,10 +1087,16 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       bitField0_ = (bitField0_ & ~0x00000010);
       numVmEndpointsWithNatMappings_ = 0;
       bitField0_ = (bitField0_ & ~0x00000020);
+      if (ruleStatusBuilder_ == null) {
+        ruleStatus_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      } else {
+        ruleStatusBuilder_.clear();
+      }
       userAllocatedNatIpResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
-      userAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000080);
+      userAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -1032,14 +1153,23 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
         result.numVmEndpointsWithNatMappings_ = numVmEndpointsWithNatMappings_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (ruleStatusBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          ruleStatus_ = java.util.Collections.unmodifiableList(ruleStatus_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.ruleStatus_ = ruleStatus_;
+      } else {
+        result.ruleStatus_ = ruleStatusBuilder_.build();
+      }
+      if (((bitField0_ & 0x00000080) != 0)) {
         userAllocatedNatIpResources_ = userAllocatedNatIpResources_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
       }
       result.userAllocatedNatIpResources_ = userAllocatedNatIpResources_;
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         userAllocatedNatIps_ = userAllocatedNatIps_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.userAllocatedNatIps_ = userAllocatedNatIps_;
       result.bitField0_ = to_bitField0_;
@@ -1134,10 +1264,37 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       if (other.hasNumVmEndpointsWithNatMappings()) {
         setNumVmEndpointsWithNatMappings(other.getNumVmEndpointsWithNatMappings());
       }
+      if (ruleStatusBuilder_ == null) {
+        if (!other.ruleStatus_.isEmpty()) {
+          if (ruleStatus_.isEmpty()) {
+            ruleStatus_ = other.ruleStatus_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureRuleStatusIsMutable();
+            ruleStatus_.addAll(other.ruleStatus_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.ruleStatus_.isEmpty()) {
+          if (ruleStatusBuilder_.isEmpty()) {
+            ruleStatusBuilder_.dispose();
+            ruleStatusBuilder_ = null;
+            ruleStatus_ = other.ruleStatus_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            ruleStatusBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getRuleStatusFieldBuilder()
+                    : null;
+          } else {
+            ruleStatusBuilder_.addAllMessages(other.ruleStatus_);
+          }
+        }
+      }
       if (!other.userAllocatedNatIpResources_.isEmpty()) {
         if (userAllocatedNatIpResources_.isEmpty()) {
           userAllocatedNatIpResources_ = other.userAllocatedNatIpResources_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureUserAllocatedNatIpResourcesIsMutable();
           userAllocatedNatIpResources_.addAll(other.userAllocatedNatIpResources_);
@@ -1147,7 +1304,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       if (!other.userAllocatedNatIps_.isEmpty()) {
         if (userAllocatedNatIps_.isEmpty()) {
           userAllocatedNatIps_ = other.userAllocatedNatIps_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureUserAllocatedNatIpsIsMutable();
           userAllocatedNatIps_.addAll(other.userAllocatedNatIps_);
@@ -1700,7 +1857,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when auto-allocation of NAT IPs is *not* used.
      * </pre>
      *
-     * <code>int32 min_extra_nat_ips_needed = 365786338;</code>
+     * <code>optional int32 min_extra_nat_ips_needed = 365786338;</code>
      *
      * @return Whether the minExtraNatIpsNeeded field is set.
      */
@@ -1715,7 +1872,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when auto-allocation of NAT IPs is *not* used.
      * </pre>
      *
-     * <code>int32 min_extra_nat_ips_needed = 365786338;</code>
+     * <code>optional int32 min_extra_nat_ips_needed = 365786338;</code>
      *
      * @return The minExtraNatIpsNeeded.
      */
@@ -1730,7 +1887,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when auto-allocation of NAT IPs is *not* used.
      * </pre>
      *
-     * <code>int32 min_extra_nat_ips_needed = 365786338;</code>
+     * <code>optional int32 min_extra_nat_ips_needed = 365786338;</code>
      *
      * @param value The minExtraNatIpsNeeded to set.
      * @return This builder for chaining.
@@ -1748,7 +1905,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when auto-allocation of NAT IPs is *not* used.
      * </pre>
      *
-     * <code>int32 min_extra_nat_ips_needed = 365786338;</code>
+     * <code>optional int32 min_extra_nat_ips_needed = 365786338;</code>
      *
      * @return This builder for chaining.
      */
@@ -1767,7 +1924,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * Unique name of this NAT.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -1781,7 +1938,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * Unique name of this NAT.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -1803,7 +1960,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * Unique name of this NAT.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -1825,7 +1982,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * Unique name of this NAT.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1846,7 +2003,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * Unique name of this NAT.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -1863,7 +2020,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * Unique name of this NAT.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1887,7 +2044,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * Number of VM endpoints (i.e., Nics) that can use NAT.
      * </pre>
      *
-     * <code>int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
+     * <code>optional int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
      *
      * @return Whether the numVmEndpointsWithNatMappings field is set.
      */
@@ -1902,7 +2059,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * Number of VM endpoints (i.e., Nics) that can use NAT.
      * </pre>
      *
-     * <code>int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
+     * <code>optional int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
      *
      * @return The numVmEndpointsWithNatMappings.
      */
@@ -1917,7 +2074,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * Number of VM endpoints (i.e., Nics) that can use NAT.
      * </pre>
      *
-     * <code>int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
+     * <code>optional int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
      *
      * @param value The numVmEndpointsWithNatMappings to set.
      * @return This builder for chaining.
@@ -1935,7 +2092,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * Number of VM endpoints (i.e., Nics) that can use NAT.
      * </pre>
      *
-     * <code>int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
+     * <code>optional int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
      *
      * @return This builder for chaining.
      */
@@ -1946,14 +2103,417 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       return this;
     }
 
+    private java.util.List<com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus>
+        ruleStatus_ = java.util.Collections.emptyList();
+
+    private void ensureRuleStatusIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        ruleStatus_ =
+            new java.util.ArrayList<com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus>(
+                ruleStatus_);
+        bitField0_ |= 0x00000040;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus,
+            com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus.Builder,
+            com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatusOrBuilder>
+        ruleStatusBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Status of rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus>
+        getRuleStatusList() {
+      if (ruleStatusBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(ruleStatus_);
+      } else {
+        return ruleStatusBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+     * </code>
+     */
+    public int getRuleStatusCount() {
+      if (ruleStatusBuilder_ == null) {
+        return ruleStatus_.size();
+      } else {
+        return ruleStatusBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus getRuleStatus(int index) {
+      if (ruleStatusBuilder_ == null) {
+        return ruleStatus_.get(index);
+      } else {
+        return ruleStatusBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+     * </code>
+     */
+    public Builder setRuleStatus(
+        int index, com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus value) {
+      if (ruleStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRuleStatusIsMutable();
+        ruleStatus_.set(index, value);
+        onChanged();
+      } else {
+        ruleStatusBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+     * </code>
+     */
+    public Builder setRuleStatus(
+        int index,
+        com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus.Builder builderForValue) {
+      if (ruleStatusBuilder_ == null) {
+        ensureRuleStatusIsMutable();
+        ruleStatus_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        ruleStatusBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+     * </code>
+     */
+    public Builder addRuleStatus(
+        com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus value) {
+      if (ruleStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRuleStatusIsMutable();
+        ruleStatus_.add(value);
+        onChanged();
+      } else {
+        ruleStatusBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+     * </code>
+     */
+    public Builder addRuleStatus(
+        int index, com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus value) {
+      if (ruleStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRuleStatusIsMutable();
+        ruleStatus_.add(index, value);
+        onChanged();
+      } else {
+        ruleStatusBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+     * </code>
+     */
+    public Builder addRuleStatus(
+        com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus.Builder builderForValue) {
+      if (ruleStatusBuilder_ == null) {
+        ensureRuleStatusIsMutable();
+        ruleStatus_.add(builderForValue.build());
+        onChanged();
+      } else {
+        ruleStatusBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+     * </code>
+     */
+    public Builder addRuleStatus(
+        int index,
+        com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus.Builder builderForValue) {
+      if (ruleStatusBuilder_ == null) {
+        ensureRuleStatusIsMutable();
+        ruleStatus_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        ruleStatusBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+     * </code>
+     */
+    public Builder addAllRuleStatus(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus>
+            values) {
+      if (ruleStatusBuilder_ == null) {
+        ensureRuleStatusIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ruleStatus_);
+        onChanged();
+      } else {
+        ruleStatusBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+     * </code>
+     */
+    public Builder clearRuleStatus() {
+      if (ruleStatusBuilder_ == null) {
+        ruleStatus_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        ruleStatusBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+     * </code>
+     */
+    public Builder removeRuleStatus(int index) {
+      if (ruleStatusBuilder_ == null) {
+        ensureRuleStatusIsMutable();
+        ruleStatus_.remove(index);
+        onChanged();
+      } else {
+        ruleStatusBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus.Builder
+        getRuleStatusBuilder(int index) {
+      return getRuleStatusFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatusOrBuilder
+        getRuleStatusOrBuilder(int index) {
+      if (ruleStatusBuilder_ == null) {
+        return ruleStatus_.get(index);
+      } else {
+        return ruleStatusBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatusOrBuilder>
+        getRuleStatusOrBuilderList() {
+      if (ruleStatusBuilder_ != null) {
+        return ruleStatusBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(ruleStatus_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus.Builder
+        addRuleStatusBuilder() {
+      return getRuleStatusFieldBuilder()
+          .addBuilder(
+              com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus.Builder
+        addRuleStatusBuilder(int index) {
+      return getRuleStatusFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus.Builder>
+        getRuleStatusBuilderList() {
+      return getRuleStatusFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus,
+            com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus.Builder,
+            com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatusOrBuilder>
+        getRuleStatusFieldBuilder() {
+      if (ruleStatusBuilder_ == null) {
+        ruleStatusBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus,
+                com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus.Builder,
+                com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatusOrBuilder>(
+                ruleStatus_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
+        ruleStatus_ = null;
+      }
+      return ruleStatusBuilder_;
+    }
+
     private com.google.protobuf.LazyStringList userAllocatedNatIpResources_ =
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureUserAllocatedNatIpResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         userAllocatedNatIpResources_ =
             new com.google.protobuf.LazyStringArrayList(userAllocatedNatIpResources_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -2088,7 +2648,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      */
     public Builder clearUserAllocatedNatIpResources() {
       userAllocatedNatIpResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2119,9 +2679,9 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureUserAllocatedNatIpsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         userAllocatedNatIps_ = new com.google.protobuf.LazyStringArrayList(userAllocatedNatIps_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
       }
     }
     /**
@@ -2256,7 +2816,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      */
     public Builder clearUserAllocatedNatIps() {
       userAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }

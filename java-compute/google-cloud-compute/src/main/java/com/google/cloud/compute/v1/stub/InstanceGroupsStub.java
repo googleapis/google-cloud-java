@@ -21,6 +21,7 @@ import static com.google.cloud.compute.v1.InstanceGroupsClient.ListInstancesPage
 import static com.google.cloud.compute.v1.InstanceGroupsClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddInstancesInstanceGroupRequest;
 import com.google.cloud.compute.v1.AggregatedListInstanceGroupsRequest;
@@ -47,6 +48,11 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class InstanceGroupsStub implements BackgroundResource {
 
+  public OperationCallable<AddInstancesInstanceGroupRequest, Operation, Operation>
+      addInstancesOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: addInstancesOperationCallable()");
+  }
+
   public UnaryCallable<AddInstancesInstanceGroupRequest, Operation> addInstancesCallable() {
     throw new UnsupportedOperationException("Not implemented: addInstancesCallable()");
   }
@@ -61,12 +67,22 @@ public abstract class InstanceGroupsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<DeleteInstanceGroupRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteInstanceGroupRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetInstanceGroupRequest, InstanceGroup> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertInstanceGroupRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertInstanceGroupRequest, Operation> insertCallable() {
@@ -91,8 +107,18 @@ public abstract class InstanceGroupsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listInstancesCallable()");
   }
 
+  public OperationCallable<RemoveInstancesInstanceGroupRequest, Operation, Operation>
+      removeInstancesOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: removeInstancesOperationCallable()");
+  }
+
   public UnaryCallable<RemoveInstancesInstanceGroupRequest, Operation> removeInstancesCallable() {
     throw new UnsupportedOperationException("Not implemented: removeInstancesCallable()");
+  }
+
+  public OperationCallable<SetNamedPortsInstanceGroupRequest, Operation, Operation>
+      setNamedPortsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setNamedPortsOperationCallable()");
   }
 
   public UnaryCallable<SetNamedPortsInstanceGroupRequest, Operation> setNamedPortsCallable() {

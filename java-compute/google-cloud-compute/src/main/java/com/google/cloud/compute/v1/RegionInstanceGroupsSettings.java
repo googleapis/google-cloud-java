@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -96,6 +97,12 @@ public class RegionInstanceGroupsSettings extends ClientSettings<RegionInstanceG
   public UnaryCallSettings<SetNamedPortsRegionInstanceGroupRequest, Operation>
       setNamedPortsSettings() {
     return ((RegionInstanceGroupsStubSettings) getStubSettings()).setNamedPortsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setNamedPorts. */
+  public OperationCallSettings<SetNamedPortsRegionInstanceGroupRequest, Operation, Operation>
+      setNamedPortsOperationSettings() {
+    return ((RegionInstanceGroupsStubSettings) getStubSettings()).setNamedPortsOperationSettings();
   }
 
   public static final RegionInstanceGroupsSettings create(RegionInstanceGroupsStubSettings stub)
@@ -222,6 +229,13 @@ public class RegionInstanceGroupsSettings extends ClientSettings<RegionInstanceG
     public UnaryCallSettings.Builder<SetNamedPortsRegionInstanceGroupRequest, Operation>
         setNamedPortsSettings() {
       return getStubSettingsBuilder().setNamedPortsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setNamedPorts. */
+    public OperationCallSettings.Builder<
+            SetNamedPortsRegionInstanceGroupRequest, Operation, Operation>
+        setNamedPortsOperationSettings() {
+      return getStubSettingsBuilder().setNamedPortsOperationSettings();
     }
 
     @Override

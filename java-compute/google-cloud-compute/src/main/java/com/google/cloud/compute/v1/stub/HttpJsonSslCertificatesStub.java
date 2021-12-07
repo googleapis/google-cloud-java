@@ -26,11 +26,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListSslCertificatesRequest;
 import com.google.cloud.compute.v1.DeleteSslCertificateRequest;
@@ -38,9 +40,11 @@ import com.google.cloud.compute.v1.GetSslCertificateRequest;
 import com.google.cloud.compute.v1.InsertSslCertificateRequest;
 import com.google.cloud.compute.v1.ListSslCertificatesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.SslCertificate;
 import com.google.cloud.compute.v1.SslCertificateAggregatedList;
 import com.google.cloud.compute.v1.SslCertificateList;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -58,6 +62,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<
           AggregatedListSslCertificatesRequest, SslCertificateAggregatedList>
       aggregatedListMethodDescriptor =
@@ -111,6 +118,7 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<SslCertificateAggregatedList>newBuilder()
                       .setDefaultInstance(SslCertificateAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -147,7 +155,20 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteSslCertificateRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetSslCertificateRequest, SslCertificate>
@@ -180,6 +201,7 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<SslCertificate>newBuilder()
                       .setDefaultInstance(SslCertificate.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -219,7 +241,20 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertSslCertificateRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListSslCertificatesRequest, SslCertificateList>
@@ -269,6 +304,7 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<SslCertificateList>newBuilder()
                       .setDefaultInstance(SslCertificateList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -277,12 +313,17 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
   private final UnaryCallable<AggregatedListSslCertificatesRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
   private final UnaryCallable<DeleteSslCertificateRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteSslCertificateRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetSslCertificateRequest, SslCertificate> getCallable;
   private final UnaryCallable<InsertSslCertificateRequest, Operation> insertCallable;
+  private final OperationCallable<InsertSslCertificateRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListSslCertificatesRequest, SslCertificateList> listCallable;
   private final UnaryCallable<ListSslCertificatesRequest, ListPagedResponse> listPagedCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonSslCertificatesStub create(SslCertificatesStubSettings settings)
@@ -323,28 +364,35 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AggregatedListSslCertificatesRequest, SslCertificateAggregatedList>
         aggregatedListTransportSettings =
             HttpJsonCallSettings
                 .<AggregatedListSslCertificatesRequest, SslCertificateAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeleteSslCertificateRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteSslCertificateRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetSslCertificateRequest, SslCertificate> getTransportSettings =
         HttpJsonCallSettings.<GetSslCertificateRequest, SslCertificate>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertSslCertificateRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertSslCertificateRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListSslCertificatesRequest, SslCertificateList> listTransportSettings =
         HttpJsonCallSettings.<ListSslCertificatesRequest, SslCertificateList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.aggregatedListCallable =
@@ -356,12 +404,24 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -402,6 +462,12 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
   }
 
   @Override
+  public OperationCallable<DeleteSslCertificateRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetSslCertificateRequest, SslCertificate> getCallable() {
     return getCallable;
   }
@@ -409,6 +475,12 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
   @Override
   public UnaryCallable<InsertSslCertificateRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertSslCertificateRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override

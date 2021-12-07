@@ -26,6 +26,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -49,15 +50,15 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of addResourcePolicies to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * RegionDisksSettings.Builder regionDisksSettingsBuilder = RegionDisksSettings.newBuilder();
  * regionDisksSettingsBuilder
- *     .addResourcePoliciesSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         regionDisksSettingsBuilder
- *             .addResourcePoliciesSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -74,14 +75,32 @@ public class RegionDisksSettings extends ClientSettings<RegionDisksSettings> {
     return ((RegionDisksStubSettings) getStubSettings()).addResourcePoliciesSettings();
   }
 
+  /** Returns the object with the settings used for calls to addResourcePolicies. */
+  public OperationCallSettings<AddResourcePoliciesRegionDiskRequest, Operation, Operation>
+      addResourcePoliciesOperationSettings() {
+    return ((RegionDisksStubSettings) getStubSettings()).addResourcePoliciesOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to createSnapshot. */
   public UnaryCallSettings<CreateSnapshotRegionDiskRequest, Operation> createSnapshotSettings() {
     return ((RegionDisksStubSettings) getStubSettings()).createSnapshotSettings();
   }
 
+  /** Returns the object with the settings used for calls to createSnapshot. */
+  public OperationCallSettings<CreateSnapshotRegionDiskRequest, Operation, Operation>
+      createSnapshotOperationSettings() {
+    return ((RegionDisksStubSettings) getStubSettings()).createSnapshotOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteRegionDiskRequest, Operation> deleteSettings() {
     return ((RegionDisksStubSettings) getStubSettings()).deleteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteRegionDiskRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((RegionDisksStubSettings) getStubSettings()).deleteOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -99,6 +118,12 @@ public class RegionDisksSettings extends ClientSettings<RegionDisksSettings> {
     return ((RegionDisksStubSettings) getStubSettings()).insertSettings();
   }
 
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertRegionDiskRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((RegionDisksStubSettings) getStubSettings()).insertOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<ListRegionDisksRequest, DiskList, ListPagedResponse> listSettings() {
     return ((RegionDisksStubSettings) getStubSettings()).listSettings();
@@ -110,9 +135,21 @@ public class RegionDisksSettings extends ClientSettings<RegionDisksSettings> {
     return ((RegionDisksStubSettings) getStubSettings()).removeResourcePoliciesSettings();
   }
 
+  /** Returns the object with the settings used for calls to removeResourcePolicies. */
+  public OperationCallSettings<RemoveResourcePoliciesRegionDiskRequest, Operation, Operation>
+      removeResourcePoliciesOperationSettings() {
+    return ((RegionDisksStubSettings) getStubSettings()).removeResourcePoliciesOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to resize. */
   public UnaryCallSettings<ResizeRegionDiskRequest, Operation> resizeSettings() {
     return ((RegionDisksStubSettings) getStubSettings()).resizeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resize. */
+  public OperationCallSettings<ResizeRegionDiskRequest, Operation, Operation>
+      resizeOperationSettings() {
+    return ((RegionDisksStubSettings) getStubSettings()).resizeOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
@@ -123,6 +160,12 @@ public class RegionDisksSettings extends ClientSettings<RegionDisksSettings> {
   /** Returns the object with the settings used for calls to setLabels. */
   public UnaryCallSettings<SetLabelsRegionDiskRequest, Operation> setLabelsSettings() {
     return ((RegionDisksStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsRegionDiskRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((RegionDisksStubSettings) getStubSettings()).setLabelsOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to testIamPermissions. */
@@ -234,15 +277,33 @@ public class RegionDisksSettings extends ClientSettings<RegionDisksSettings> {
       return getStubSettingsBuilder().addResourcePoliciesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to addResourcePolicies. */
+    public OperationCallSettings.Builder<AddResourcePoliciesRegionDiskRequest, Operation, Operation>
+        addResourcePoliciesOperationSettings() {
+      return getStubSettingsBuilder().addResourcePoliciesOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createSnapshot. */
     public UnaryCallSettings.Builder<CreateSnapshotRegionDiskRequest, Operation>
         createSnapshotSettings() {
       return getStubSettingsBuilder().createSnapshotSettings();
     }
 
+    /** Returns the builder for the settings used for calls to createSnapshot. */
+    public OperationCallSettings.Builder<CreateSnapshotRegionDiskRequest, Operation, Operation>
+        createSnapshotOperationSettings() {
+      return getStubSettingsBuilder().createSnapshotOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteRegionDiskRequest, Operation> deleteSettings() {
       return getStubSettingsBuilder().deleteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteRegionDiskRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -260,6 +321,12 @@ public class RegionDisksSettings extends ClientSettings<RegionDisksSettings> {
       return getStubSettingsBuilder().insertSettings();
     }
 
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertRegionDiskRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to list. */
     public PagedCallSettings.Builder<ListRegionDisksRequest, DiskList, ListPagedResponse>
         listSettings() {
@@ -272,9 +339,22 @@ public class RegionDisksSettings extends ClientSettings<RegionDisksSettings> {
       return getStubSettingsBuilder().removeResourcePoliciesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to removeResourcePolicies. */
+    public OperationCallSettings.Builder<
+            RemoveResourcePoliciesRegionDiskRequest, Operation, Operation>
+        removeResourcePoliciesOperationSettings() {
+      return getStubSettingsBuilder().removeResourcePoliciesOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to resize. */
     public UnaryCallSettings.Builder<ResizeRegionDiskRequest, Operation> resizeSettings() {
       return getStubSettingsBuilder().resizeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resize. */
+    public OperationCallSettings.Builder<ResizeRegionDiskRequest, Operation, Operation>
+        resizeOperationSettings() {
+      return getStubSettingsBuilder().resizeOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */
@@ -285,6 +365,12 @@ public class RegionDisksSettings extends ClientSettings<RegionDisksSettings> {
     /** Returns the builder for the settings used for calls to setLabels. */
     public UnaryCallSettings.Builder<SetLabelsRegionDiskRequest, Operation> setLabelsSettings() {
       return getStubSettingsBuilder().setLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsRegionDiskRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */

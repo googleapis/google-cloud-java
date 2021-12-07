@@ -30,7 +30,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -42,7 +42,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -54,7 +54,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -67,7 +67,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] The deprecation status associated with this accelerator type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return Whether the deprecated field is set.
    */
@@ -79,7 +79,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] The deprecation status associated with this accelerator type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return The deprecated.
    */
@@ -91,7 +91,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] The deprecation status associated with this accelerator type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    */
   com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder();
 
@@ -102,7 +102,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -114,7 +114,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -126,7 +126,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -139,7 +139,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -151,7 +151,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -164,7 +164,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -176,7 +176,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -188,7 +188,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -201,7 +201,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] Maximum number of accelerator cards allowed per instance.
    * </pre>
    *
-   * <code>int32 maximum_cards_per_instance = 263814482;</code>
+   * <code>optional int32 maximum_cards_per_instance = 263814482;</code>
    *
    * @return Whether the maximumCardsPerInstance field is set.
    */
@@ -213,7 +213,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] Maximum number of accelerator cards allowed per instance.
    * </pre>
    *
-   * <code>int32 maximum_cards_per_instance = 263814482;</code>
+   * <code>optional int32 maximum_cards_per_instance = 263814482;</code>
    *
    * @return The maximumCardsPerInstance.
    */
@@ -226,7 +226,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] Name of the resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -238,7 +238,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] Name of the resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -250,7 +250,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] Name of the resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -263,7 +263,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] Server-defined, fully qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -275,7 +275,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] Server-defined, fully qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -287,7 +287,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] Server-defined, fully qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -300,7 +300,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] The name of the zone where the accelerator type resides, such as us-central1-a. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return Whether the zone field is set.
    */
@@ -312,7 +312,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] The name of the zone where the accelerator type resides, such as us-central1-a. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The zone.
    */
@@ -324,7 +324,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] The name of the zone where the accelerator type resides, such as us-central1-a. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The bytes for zone.
    */

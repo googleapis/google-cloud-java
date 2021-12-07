@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -50,15 +51,15 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * UrlMapsSettings.Builder urlMapsSettingsBuilder = UrlMapsSettings.newBuilder();
  * urlMapsSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         urlMapsSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -81,6 +82,12 @@ public class UrlMapsSettings extends ClientSettings<UrlMapsSettings> {
     return ((UrlMapsStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteUrlMapRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((UrlMapsStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetUrlMapRequest, UrlMap> getSettings() {
     return ((UrlMapsStubSettings) getStubSettings()).getSettings();
@@ -91,9 +98,21 @@ public class UrlMapsSettings extends ClientSettings<UrlMapsSettings> {
     return ((UrlMapsStubSettings) getStubSettings()).insertSettings();
   }
 
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertUrlMapRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((UrlMapsStubSettings) getStubSettings()).insertOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to invalidateCache. */
   public UnaryCallSettings<InvalidateCacheUrlMapRequest, Operation> invalidateCacheSettings() {
     return ((UrlMapsStubSettings) getStubSettings()).invalidateCacheSettings();
+  }
+
+  /** Returns the object with the settings used for calls to invalidateCache. */
+  public OperationCallSettings<InvalidateCacheUrlMapRequest, Operation, Operation>
+      invalidateCacheOperationSettings() {
+    return ((UrlMapsStubSettings) getStubSettings()).invalidateCacheOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -106,9 +125,20 @@ public class UrlMapsSettings extends ClientSettings<UrlMapsSettings> {
     return ((UrlMapsStubSettings) getStubSettings()).patchSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchUrlMapRequest, Operation, Operation> patchOperationSettings() {
+    return ((UrlMapsStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateUrlMapRequest, Operation> updateSettings() {
     return ((UrlMapsStubSettings) getStubSettings()).updateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateUrlMapRequest, Operation, Operation>
+      updateOperationSettings() {
+    return ((UrlMapsStubSettings) getStubSettings()).updateOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to validate. */
@@ -225,6 +255,12 @@ public class UrlMapsSettings extends ClientSettings<UrlMapsSettings> {
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteUrlMapRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetUrlMapRequest, UrlMap> getSettings() {
       return getStubSettingsBuilder().getSettings();
@@ -235,10 +271,22 @@ public class UrlMapsSettings extends ClientSettings<UrlMapsSettings> {
       return getStubSettingsBuilder().insertSettings();
     }
 
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertUrlMapRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to invalidateCache. */
     public UnaryCallSettings.Builder<InvalidateCacheUrlMapRequest, Operation>
         invalidateCacheSettings() {
       return getStubSettingsBuilder().invalidateCacheSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to invalidateCache. */
+    public OperationCallSettings.Builder<InvalidateCacheUrlMapRequest, Operation, Operation>
+        invalidateCacheOperationSettings() {
+      return getStubSettingsBuilder().invalidateCacheOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -252,9 +300,21 @@ public class UrlMapsSettings extends ClientSettings<UrlMapsSettings> {
       return getStubSettingsBuilder().patchSettings();
     }
 
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchUrlMapRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to update. */
     public UnaryCallSettings.Builder<UpdateUrlMapRequest, Operation> updateSettings() {
       return getStubSettingsBuilder().updateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public OperationCallSettings.Builder<UpdateUrlMapRequest, Operation, Operation>
+        updateOperationSettings() {
+      return getStubSettingsBuilder().updateOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to validate. */

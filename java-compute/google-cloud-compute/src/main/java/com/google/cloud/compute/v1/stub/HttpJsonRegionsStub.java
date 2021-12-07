@@ -35,6 +35,7 @@ import com.google.cloud.compute.v1.GetRegionRequest;
 import com.google.cloud.compute.v1.ListRegionsRequest;
 import com.google.cloud.compute.v1.Region;
 import com.google.cloud.compute.v1.RegionList;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,6 +53,8 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionsStub extends RegionsStub {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
   private static final ApiMethodDescriptor<GetRegionRequest, Region> getMethodDescriptor =
       ApiMethodDescriptor.<GetRegionRequest, Region>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Regions/Get")
@@ -80,6 +83,7 @@ public class HttpJsonRegionsStub extends RegionsStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Region>newBuilder()
                   .setDefaultInstance(Region.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -126,6 +130,7 @@ public class HttpJsonRegionsStub extends RegionsStub {
           .setResponseParser(
               ProtoMessageResponseParser.<RegionList>newBuilder()
                   .setDefaultInstance(RegionList.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -175,10 +180,12 @@ public class HttpJsonRegionsStub extends RegionsStub {
     HttpJsonCallSettings<GetRegionRequest, Region> getTransportSettings =
         HttpJsonCallSettings.<GetRegionRequest, Region>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListRegionsRequest, RegionList> listTransportSettings =
         HttpJsonCallSettings.<ListRegionsRequest, RegionList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.getCallable =

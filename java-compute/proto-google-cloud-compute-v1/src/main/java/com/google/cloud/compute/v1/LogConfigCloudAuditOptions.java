@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Write a Cloud Audit log
+ * This is deprecated and has no effect. Do not use.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.LogConfigCloudAuditOptions}
@@ -38,7 +38,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
   }
 
   private LogConfigCloudAuditOptions() {
-    logName_ = 0;
+    logName_ = "";
   }
 
   @java.lang.Override
@@ -88,11 +88,11 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
               bitField0_ |= 0x00000001;
               break;
             }
-          case -1071655632:
+          case -1071655630:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
-              logName_ = rawValue;
+              logName_ = s;
               break;
             }
           default:
@@ -133,7 +133,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The log_name to populate in the Cloud Audit Record.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName}
@@ -149,11 +149,35 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      * <code>UNDEFINED_LOG_NAME = 0;</code>
      */
     UNDEFINED_LOG_NAME(0),
-    /** <code>ADMIN_ACTIVITY = 427503135;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>ADMIN_ACTIVITY = 427503135;</code>
+     */
     ADMIN_ACTIVITY(427503135),
-    /** <code>DATA_ACCESS = 238070681;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>DATA_ACCESS = 238070681;</code>
+     */
     DATA_ACCESS(238070681),
-    /** <code>UNSPECIFIED_LOG_NAME = 410515182;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>UNSPECIFIED_LOG_NAME = 410515182;</code>
+     */
     UNSPECIFIED_LOG_NAME(410515182),
     UNRECOGNIZED(-1),
     ;
@@ -168,11 +192,35 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      * <code>UNDEFINED_LOG_NAME = 0;</code>
      */
     public static final int UNDEFINED_LOG_NAME_VALUE = 0;
-    /** <code>ADMIN_ACTIVITY = 427503135;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>ADMIN_ACTIVITY = 427503135;</code>
+     */
     public static final int ADMIN_ACTIVITY_VALUE = 427503135;
-    /** <code>DATA_ACCESS = 238070681;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>DATA_ACCESS = 238070681;</code>
+     */
     public static final int DATA_ACCESS_VALUE = 238070681;
-    /** <code>UNSPECIFIED_LOG_NAME = 410515182;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>UNSPECIFIED_LOG_NAME = 410515182;</code>
+     */
     public static final int UNSPECIFIED_LOG_NAME_VALUE = 410515182;
 
     public final int getNumber() {
@@ -269,11 +317,11 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Information used by the Cloud Audit Logging pipeline.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
+   * optional .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
    * </code>
    *
    * @return Whether the authorizationLoggingOptions field is set.
@@ -286,11 +334,11 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Information used by the Cloud Audit Logging pipeline.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
+   * optional .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
    * </code>
    *
    * @return The authorizationLoggingOptions.
@@ -305,11 +353,11 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Information used by the Cloud Audit Logging pipeline.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
+   * optional .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
    * </code>
    */
   @java.lang.Override
@@ -321,15 +369,16 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
   }
 
   public static final int LOG_NAME_FIELD_NUMBER = 402913958;
-  private int logName_;
+  private volatile java.lang.Object logName_;
   /**
    *
    *
    * <pre>
-   * The log_name to populate in the Cloud Audit Record.
+   * This is deprecated and has no effect. Do not use.
+   * Check the LogName enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
+   * <code>optional string log_name = 402913958;</code>
    *
    * @return Whether the logName field is set.
    */
@@ -341,36 +390,49 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The log_name to populate in the Cloud Audit Record.
+   * This is deprecated and has no effect. Do not use.
+   * Check the LogName enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
+   * <code>optional string log_name = 402913958;</code>
    *
-   * @return The enum numeric value on the wire for logName.
+   * @return The logName.
    */
   @java.lang.Override
-  public int getLogNameValue() {
-    return logName_;
+  public java.lang.String getLogName() {
+    java.lang.Object ref = logName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      logName_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * The log_name to populate in the Cloud Audit Record.
+   * This is deprecated and has no effect. Do not use.
+   * Check the LogName enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
+   * <code>optional string log_name = 402913958;</code>
    *
-   * @return The logName.
+   * @return The bytes for logName.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName getLogName() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName result =
-        com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName.valueOf(logName_);
-    return result == null
-        ? com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getLogNameBytes() {
+    java.lang.Object ref = logName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      logName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -391,7 +453,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
       output.writeMessage(217861624, getAuthorizationLoggingOptions());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(402913958, logName_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 402913958, logName_);
     }
     unknownFields.writeTo(output);
   }
@@ -408,7 +470,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
               217861624, getAuthorizationLoggingOptions());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(402913958, logName_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(402913958, logName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -433,7 +495,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
     }
     if (hasLogName() != other.hasLogName()) return false;
     if (hasLogName()) {
-      if (logName_ != other.logName_) return false;
+      if (!getLogName().equals(other.getLogName())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -452,7 +514,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
     }
     if (hasLogName()) {
       hash = (37 * hash) + LOG_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + logName_;
+      hash = (53 * hash) + getLogName().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -559,7 +621,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Write a Cloud Audit log
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.LogConfigCloudAuditOptions}
@@ -608,7 +670,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
         authorizationLoggingOptionsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      logName_ = 0;
+      logName_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
@@ -706,7 +768,9 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
         mergeAuthorizationLoggingOptions(other.getAuthorizationLoggingOptions());
       }
       if (other.hasLogName()) {
-        setLogName(other.getLogName());
+        bitField0_ |= 0x00000002;
+        logName_ = other.logName_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -750,11 +814,11 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Information used by the Cloud Audit Logging pipeline.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
+     * optional .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
      * </code>
      *
      * @return Whether the authorizationLoggingOptions field is set.
@@ -766,11 +830,11 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Information used by the Cloud Audit Logging pipeline.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
+     * optional .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
      * </code>
      *
      * @return The authorizationLoggingOptions.
@@ -789,11 +853,11 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Information used by the Cloud Audit Logging pipeline.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
+     * optional .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
      * </code>
      */
     public Builder setAuthorizationLoggingOptions(
@@ -814,11 +878,11 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Information used by the Cloud Audit Logging pipeline.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
+     * optional .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
      * </code>
      */
     public Builder setAuthorizationLoggingOptions(
@@ -836,11 +900,11 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Information used by the Cloud Audit Logging pipeline.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
+     * optional .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
      * </code>
      */
     public Builder mergeAuthorizationLoggingOptions(
@@ -869,11 +933,11 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Information used by the Cloud Audit Logging pipeline.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
+     * optional .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
      * </code>
      */
     public Builder clearAuthorizationLoggingOptions() {
@@ -890,11 +954,11 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Information used by the Cloud Audit Logging pipeline.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
+     * optional .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
      * </code>
      */
     public com.google.cloud.compute.v1.AuthorizationLoggingOptions.Builder
@@ -907,11 +971,11 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Information used by the Cloud Audit Logging pipeline.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
+     * optional .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
      * </code>
      */
     public com.google.cloud.compute.v1.AuthorizationLoggingOptionsOrBuilder
@@ -928,11 +992,11 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Information used by the Cloud Audit Logging pipeline.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
+     * optional .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -952,20 +1016,19 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
       return authorizationLoggingOptionsBuilder_;
     }
 
-    private int logName_ = 0;
+    private java.lang.Object logName_ = "";
     /**
      *
      *
      * <pre>
-     * The log_name to populate in the Cloud Audit Record.
+     * This is deprecated and has no effect. Do not use.
+     * Check the LogName enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
-     * </code>
+     * <code>optional string log_name = 402913958;</code>
      *
      * @return Whether the logName field is set.
      */
-    @java.lang.Override
     public boolean hasLogName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -973,32 +1036,65 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The log_name to populate in the Cloud Audit Record.
+     * This is deprecated and has no effect. Do not use.
+     * Check the LogName enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
-     * </code>
+     * <code>optional string log_name = 402913958;</code>
      *
-     * @return The enum numeric value on the wire for logName.
+     * @return The logName.
      */
-    @java.lang.Override
-    public int getLogNameValue() {
-      return logName_;
+    public java.lang.String getLogName() {
+      java.lang.Object ref = logName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        logName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * The log_name to populate in the Cloud Audit Record.
+     * This is deprecated and has no effect. Do not use.
+     * Check the LogName enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
-     * </code>
+     * <code>optional string log_name = 402913958;</code>
      *
-     * @param value The enum numeric value on the wire for logName to set.
+     * @return The bytes for logName.
+     */
+    public com.google.protobuf.ByteString getLogNameBytes() {
+      java.lang.Object ref = logName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        logName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * Check the LogName enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string log_name = 402913958;</code>
+     *
+     * @param value The logName to set.
      * @return This builder for chaining.
      */
-    public Builder setLogNameValue(int value) {
+    public Builder setLogName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000002;
       logName_ = value;
       onChanged();
@@ -1008,43 +1104,17 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The log_name to populate in the Cloud Audit Record.
+     * This is deprecated and has no effect. Do not use.
+     * Check the LogName enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
-     * </code>
+     * <code>optional string log_name = 402913958;</code>
      *
-     * @return The logName.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName getLogName() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName result =
-          com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName.valueOf(logName_);
-      return result == null
-          ? com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The log_name to populate in the Cloud Audit Record.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
-     * </code>
-     *
-     * @param value The logName to set.
      * @return This builder for chaining.
      */
-    public Builder setLogName(
-        com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      logName_ = value.getNumber();
+    public Builder clearLogName() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      logName_ = getDefaultInstance().getLogName();
       onChanged();
       return this;
     }
@@ -1052,17 +1122,22 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The log_name to populate in the Cloud Audit Record.
+     * This is deprecated and has no effect. Do not use.
+     * Check the LogName enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
-     * </code>
+     * <code>optional string log_name = 402913958;</code>
      *
+     * @param value The bytes for logName to set.
      * @return This builder for chaining.
      */
-    public Builder clearLogName() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      logName_ = 0;
+    public Builder setLogNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      logName_ = value;
       onChanged();
       return this;
     }

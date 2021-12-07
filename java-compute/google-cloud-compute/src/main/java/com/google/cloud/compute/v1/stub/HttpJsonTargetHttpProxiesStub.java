@@ -26,11 +26,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListTargetHttpProxiesRequest;
 import com.google.cloud.compute.v1.DeleteTargetHttpProxyRequest;
@@ -38,11 +40,13 @@ import com.google.cloud.compute.v1.GetTargetHttpProxyRequest;
 import com.google.cloud.compute.v1.InsertTargetHttpProxyRequest;
 import com.google.cloud.compute.v1.ListTargetHttpProxiesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchTargetHttpProxyRequest;
 import com.google.cloud.compute.v1.SetUrlMapTargetHttpProxyRequest;
 import com.google.cloud.compute.v1.TargetHttpProxy;
 import com.google.cloud.compute.v1.TargetHttpProxyAggregatedList;
 import com.google.cloud.compute.v1.TargetHttpProxyList;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -60,6 +64,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<
           AggregatedListTargetHttpProxiesRequest, TargetHttpProxyAggregatedList>
       aggregatedListMethodDescriptor =
@@ -113,6 +120,7 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetHttpProxyAggregatedList>newBuilder()
                       .setDefaultInstance(TargetHttpProxyAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -149,7 +157,20 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteTargetHttpProxyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetTargetHttpProxyRequest, TargetHttpProxy>
@@ -182,6 +203,7 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetHttpProxy>newBuilder()
                       .setDefaultInstance(TargetHttpProxy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -221,7 +243,20 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertTargetHttpProxyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListTargetHttpProxiesRequest, TargetHttpProxyList>
@@ -271,6 +306,7 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetHttpProxyList>newBuilder()
                       .setDefaultInstance(TargetHttpProxyList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -312,7 +348,20 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchTargetHttpProxyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetUrlMapTargetHttpProxyRequest, Operation>
@@ -353,7 +402,20 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetUrlMapTargetHttpProxyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<AggregatedListTargetHttpProxiesRequest, TargetHttpProxyAggregatedList>
@@ -361,14 +423,23 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
   private final UnaryCallable<AggregatedListTargetHttpProxiesRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
   private final UnaryCallable<DeleteTargetHttpProxyRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteTargetHttpProxyRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetTargetHttpProxyRequest, TargetHttpProxy> getCallable;
   private final UnaryCallable<InsertTargetHttpProxyRequest, Operation> insertCallable;
+  private final OperationCallable<InsertTargetHttpProxyRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListTargetHttpProxiesRequest, TargetHttpProxyList> listCallable;
   private final UnaryCallable<ListTargetHttpProxiesRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<PatchTargetHttpProxyRequest, Operation> patchCallable;
+  private final OperationCallable<PatchTargetHttpProxyRequest, Operation, Operation>
+      patchOperationCallable;
   private final UnaryCallable<SetUrlMapTargetHttpProxyRequest, Operation> setUrlMapCallable;
+  private final OperationCallable<SetUrlMapTargetHttpProxyRequest, Operation, Operation>
+      setUrlMapOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonTargetHttpProxiesStub create(TargetHttpProxiesStubSettings settings)
@@ -409,36 +480,45 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AggregatedListTargetHttpProxiesRequest, TargetHttpProxyAggregatedList>
         aggregatedListTransportSettings =
             HttpJsonCallSettings
                 .<AggregatedListTargetHttpProxiesRequest, TargetHttpProxyAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeleteTargetHttpProxyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteTargetHttpProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetTargetHttpProxyRequest, TargetHttpProxy> getTransportSettings =
         HttpJsonCallSettings.<GetTargetHttpProxyRequest, TargetHttpProxy>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertTargetHttpProxyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertTargetHttpProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListTargetHttpProxiesRequest, TargetHttpProxyList> listTransportSettings =
         HttpJsonCallSettings.<ListTargetHttpProxiesRequest, TargetHttpProxyList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<PatchTargetHttpProxyRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchTargetHttpProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetUrlMapTargetHttpProxyRequest, Operation> setUrlMapTransportSettings =
         HttpJsonCallSettings.<SetUrlMapTargetHttpProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(setUrlMapMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.aggregatedListCallable =
@@ -450,12 +530,24 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -465,9 +557,21 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setUrlMapCallable =
         callableFactory.createUnaryCallable(
             setUrlMapTransportSettings, settings.setUrlMapSettings(), clientContext);
+    this.setUrlMapOperationCallable =
+        callableFactory.createOperationCallable(
+            setUrlMapTransportSettings,
+            settings.setUrlMapOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -504,6 +608,12 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
   }
 
   @Override
+  public OperationCallable<DeleteTargetHttpProxyRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetTargetHttpProxyRequest, TargetHttpProxy> getCallable() {
     return getCallable;
   }
@@ -511,6 +621,12 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
   @Override
   public UnaryCallable<InsertTargetHttpProxyRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertTargetHttpProxyRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -529,8 +645,20 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
   }
 
   @Override
+  public OperationCallable<PatchTargetHttpProxyRequest, Operation, Operation>
+      patchOperationCallable() {
+    return patchOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetUrlMapTargetHttpProxyRequest, Operation> setUrlMapCallable() {
     return setUrlMapCallable;
+  }
+
+  @Override
+  public OperationCallable<SetUrlMapTargetHttpProxyRequest, Operation, Operation>
+      setUrlMapOperationCallable() {
+    return setUrlMapOperationCallable;
   }
 
   @Override

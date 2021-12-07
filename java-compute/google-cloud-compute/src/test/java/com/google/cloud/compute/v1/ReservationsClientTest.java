@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonReservationsStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -36,6 +37,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -141,7 +143,7 @@ public class ReservationsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -152,6 +154,7 @@ public class ReservationsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -165,7 +168,7 @@ public class ReservationsClientTest {
     String zone = "zone3744684";
     String reservation = "reservation-1563081780";
 
-    Operation actualResponse = client.delete(project, zone, reservation);
+    Operation actualResponse = client.deleteAsync(project, zone, reservation).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -194,10 +197,9 @@ public class ReservationsClientTest {
       String project = "project-309310695";
       String zone = "zone3744684";
       String reservation = "reservation-1563081780";
-      client.delete(project, zone, reservation);
+      client.deleteAsync(project, zone, reservation).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -215,6 +217,7 @@ public class ReservationsClientTest {
             .setSelfLink("selfLink1191800166")
             .setSpecificReservation(AllocationSpecificSKUReservation.newBuilder().build())
             .setSpecificReservationRequired(true)
+            .setStatus("status-892481550")
             .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
@@ -322,7 +325,7 @@ public class ReservationsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -333,6 +336,7 @@ public class ReservationsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -346,7 +350,7 @@ public class ReservationsClientTest {
     String zone = "zone3744684";
     Reservation reservationResource = Reservation.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, zone, reservationResource);
+    Operation actualResponse = client.insertAsync(project, zone, reservationResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -375,10 +379,9 @@ public class ReservationsClientTest {
       String project = "project-309310695";
       String zone = "zone3744684";
       Reservation reservationResource = Reservation.newBuilder().build();
-      client.insert(project, zone, reservationResource);
+      client.insertAsync(project, zone, reservationResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -444,7 +447,7 @@ public class ReservationsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -455,6 +458,7 @@ public class ReservationsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -471,7 +475,7 @@ public class ReservationsClientTest {
         ReservationsResizeRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.resize(project, zone, reservation, reservationsResizeRequestResource);
+        client.resizeAsync(project, zone, reservation, reservationsResizeRequestResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -502,10 +506,9 @@ public class ReservationsClientTest {
       String reservation = "reservation-1563081780";
       ReservationsResizeRequest reservationsResizeRequestResource =
           ReservationsResizeRequest.newBuilder().build();
-      client.resize(project, zone, reservation, reservationsResizeRequestResource);
+      client.resizeAsync(project, zone, reservation, reservationsResizeRequestResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 

@@ -28,10 +28,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.httpjson.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -83,15 +87,15 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of disableXpnHost to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * ProjectsStubSettings.Builder projectsSettingsBuilder = ProjectsStubSettings.newBuilder();
  * projectsSettingsBuilder
- *     .disableXpnHostSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         projectsSettingsBuilder
- *             .disableXpnHostSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -109,11 +113,19 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
           .build();
 
   private final UnaryCallSettings<DisableXpnHostProjectRequest, Operation> disableXpnHostSettings;
+  private final OperationCallSettings<DisableXpnHostProjectRequest, Operation, Operation>
+      disableXpnHostOperationSettings;
   private final UnaryCallSettings<DisableXpnResourceProjectRequest, Operation>
       disableXpnResourceSettings;
+  private final OperationCallSettings<DisableXpnResourceProjectRequest, Operation, Operation>
+      disableXpnResourceOperationSettings;
   private final UnaryCallSettings<EnableXpnHostProjectRequest, Operation> enableXpnHostSettings;
+  private final OperationCallSettings<EnableXpnHostProjectRequest, Operation, Operation>
+      enableXpnHostOperationSettings;
   private final UnaryCallSettings<EnableXpnResourceProjectRequest, Operation>
       enableXpnResourceSettings;
+  private final OperationCallSettings<EnableXpnResourceProjectRequest, Operation, Operation>
+      enableXpnResourceOperationSettings;
   private final UnaryCallSettings<GetProjectRequest, Project> getSettings;
   private final UnaryCallSettings<GetXpnHostProjectRequest, Project> getXpnHostSettings;
   private final PagedCallSettings<
@@ -123,13 +135,23 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
           ListXpnHostsProjectsRequest, XpnHostList, ListXpnHostsPagedResponse>
       listXpnHostsSettings;
   private final UnaryCallSettings<MoveDiskProjectRequest, Operation> moveDiskSettings;
+  private final OperationCallSettings<MoveDiskProjectRequest, Operation, Operation>
+      moveDiskOperationSettings;
   private final UnaryCallSettings<MoveInstanceProjectRequest, Operation> moveInstanceSettings;
+  private final OperationCallSettings<MoveInstanceProjectRequest, Operation, Operation>
+      moveInstanceOperationSettings;
   private final UnaryCallSettings<SetCommonInstanceMetadataProjectRequest, Operation>
       setCommonInstanceMetadataSettings;
+  private final OperationCallSettings<SetCommonInstanceMetadataProjectRequest, Operation, Operation>
+      setCommonInstanceMetadataOperationSettings;
   private final UnaryCallSettings<SetDefaultNetworkTierProjectRequest, Operation>
       setDefaultNetworkTierSettings;
+  private final OperationCallSettings<SetDefaultNetworkTierProjectRequest, Operation, Operation>
+      setDefaultNetworkTierOperationSettings;
   private final UnaryCallSettings<SetUsageExportBucketProjectRequest, Operation>
       setUsageExportBucketSettings;
+  private final OperationCallSettings<SetUsageExportBucketProjectRequest, Operation, Operation>
+      setUsageExportBucketOperationSettings;
 
   private static final PagedListDescriptor<
           GetXpnResourcesProjectsRequest, ProjectsGetXpnResources, XpnResourceId>
@@ -256,10 +278,22 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     return disableXpnHostSettings;
   }
 
+  /** Returns the object with the settings used for calls to disableXpnHost. */
+  public OperationCallSettings<DisableXpnHostProjectRequest, Operation, Operation>
+      disableXpnHostOperationSettings() {
+    return disableXpnHostOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to disableXpnResource. */
   public UnaryCallSettings<DisableXpnResourceProjectRequest, Operation>
       disableXpnResourceSettings() {
     return disableXpnResourceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to disableXpnResource. */
+  public OperationCallSettings<DisableXpnResourceProjectRequest, Operation, Operation>
+      disableXpnResourceOperationSettings() {
+    return disableXpnResourceOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to enableXpnHost. */
@@ -267,9 +301,21 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     return enableXpnHostSettings;
   }
 
+  /** Returns the object with the settings used for calls to enableXpnHost. */
+  public OperationCallSettings<EnableXpnHostProjectRequest, Operation, Operation>
+      enableXpnHostOperationSettings() {
+    return enableXpnHostOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to enableXpnResource. */
   public UnaryCallSettings<EnableXpnResourceProjectRequest, Operation> enableXpnResourceSettings() {
     return enableXpnResourceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to enableXpnResource. */
+  public OperationCallSettings<EnableXpnResourceProjectRequest, Operation, Operation>
+      enableXpnResourceOperationSettings() {
+    return enableXpnResourceOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -300,9 +346,21 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     return moveDiskSettings;
   }
 
+  /** Returns the object with the settings used for calls to moveDisk. */
+  public OperationCallSettings<MoveDiskProjectRequest, Operation, Operation>
+      moveDiskOperationSettings() {
+    return moveDiskOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to moveInstance. */
   public UnaryCallSettings<MoveInstanceProjectRequest, Operation> moveInstanceSettings() {
     return moveInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to moveInstance. */
+  public OperationCallSettings<MoveInstanceProjectRequest, Operation, Operation>
+      moveInstanceOperationSettings() {
+    return moveInstanceOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to setCommonInstanceMetadata. */
@@ -311,16 +369,34 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     return setCommonInstanceMetadataSettings;
   }
 
+  /** Returns the object with the settings used for calls to setCommonInstanceMetadata. */
+  public OperationCallSettings<SetCommonInstanceMetadataProjectRequest, Operation, Operation>
+      setCommonInstanceMetadataOperationSettings() {
+    return setCommonInstanceMetadataOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setDefaultNetworkTier. */
   public UnaryCallSettings<SetDefaultNetworkTierProjectRequest, Operation>
       setDefaultNetworkTierSettings() {
     return setDefaultNetworkTierSettings;
   }
 
+  /** Returns the object with the settings used for calls to setDefaultNetworkTier. */
+  public OperationCallSettings<SetDefaultNetworkTierProjectRequest, Operation, Operation>
+      setDefaultNetworkTierOperationSettings() {
+    return setDefaultNetworkTierOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setUsageExportBucket. */
   public UnaryCallSettings<SetUsageExportBucketProjectRequest, Operation>
       setUsageExportBucketSettings() {
     return setUsageExportBucketSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setUsageExportBucket. */
+  public OperationCallSettings<SetUsageExportBucketProjectRequest, Operation, Operation>
+      setUsageExportBucketOperationSettings() {
+    return setUsageExportBucketOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -357,7 +433,9 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return GoogleCredentialsProvider.newBuilder()
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        .setUseJwtAccessWithScope(true);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -398,18 +476,32 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     super(settingsBuilder);
 
     disableXpnHostSettings = settingsBuilder.disableXpnHostSettings().build();
+    disableXpnHostOperationSettings = settingsBuilder.disableXpnHostOperationSettings().build();
     disableXpnResourceSettings = settingsBuilder.disableXpnResourceSettings().build();
+    disableXpnResourceOperationSettings =
+        settingsBuilder.disableXpnResourceOperationSettings().build();
     enableXpnHostSettings = settingsBuilder.enableXpnHostSettings().build();
+    enableXpnHostOperationSettings = settingsBuilder.enableXpnHostOperationSettings().build();
     enableXpnResourceSettings = settingsBuilder.enableXpnResourceSettings().build();
+    enableXpnResourceOperationSettings =
+        settingsBuilder.enableXpnResourceOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     getXpnHostSettings = settingsBuilder.getXpnHostSettings().build();
     getXpnResourcesSettings = settingsBuilder.getXpnResourcesSettings().build();
     listXpnHostsSettings = settingsBuilder.listXpnHostsSettings().build();
     moveDiskSettings = settingsBuilder.moveDiskSettings().build();
+    moveDiskOperationSettings = settingsBuilder.moveDiskOperationSettings().build();
     moveInstanceSettings = settingsBuilder.moveInstanceSettings().build();
+    moveInstanceOperationSettings = settingsBuilder.moveInstanceOperationSettings().build();
     setCommonInstanceMetadataSettings = settingsBuilder.setCommonInstanceMetadataSettings().build();
+    setCommonInstanceMetadataOperationSettings =
+        settingsBuilder.setCommonInstanceMetadataOperationSettings().build();
     setDefaultNetworkTierSettings = settingsBuilder.setDefaultNetworkTierSettings().build();
+    setDefaultNetworkTierOperationSettings =
+        settingsBuilder.setDefaultNetworkTierOperationSettings().build();
     setUsageExportBucketSettings = settingsBuilder.setUsageExportBucketSettings().build();
+    setUsageExportBucketOperationSettings =
+        settingsBuilder.setUsageExportBucketOperationSettings().build();
   }
 
   /** Builder for ProjectsStubSettings. */
@@ -417,12 +509,22 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<DisableXpnHostProjectRequest, Operation>
         disableXpnHostSettings;
+    private final OperationCallSettings.Builder<DisableXpnHostProjectRequest, Operation, Operation>
+        disableXpnHostOperationSettings;
     private final UnaryCallSettings.Builder<DisableXpnResourceProjectRequest, Operation>
         disableXpnResourceSettings;
+    private final OperationCallSettings.Builder<
+            DisableXpnResourceProjectRequest, Operation, Operation>
+        disableXpnResourceOperationSettings;
     private final UnaryCallSettings.Builder<EnableXpnHostProjectRequest, Operation>
         enableXpnHostSettings;
+    private final OperationCallSettings.Builder<EnableXpnHostProjectRequest, Operation, Operation>
+        enableXpnHostOperationSettings;
     private final UnaryCallSettings.Builder<EnableXpnResourceProjectRequest, Operation>
         enableXpnResourceSettings;
+    private final OperationCallSettings.Builder<
+            EnableXpnResourceProjectRequest, Operation, Operation>
+        enableXpnResourceOperationSettings;
     private final UnaryCallSettings.Builder<GetProjectRequest, Project> getSettings;
     private final UnaryCallSettings.Builder<GetXpnHostProjectRequest, Project> getXpnHostSettings;
     private final PagedCallSettings.Builder<
@@ -432,14 +534,27 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
             ListXpnHostsProjectsRequest, XpnHostList, ListXpnHostsPagedResponse>
         listXpnHostsSettings;
     private final UnaryCallSettings.Builder<MoveDiskProjectRequest, Operation> moveDiskSettings;
+    private final OperationCallSettings.Builder<MoveDiskProjectRequest, Operation, Operation>
+        moveDiskOperationSettings;
     private final UnaryCallSettings.Builder<MoveInstanceProjectRequest, Operation>
         moveInstanceSettings;
+    private final OperationCallSettings.Builder<MoveInstanceProjectRequest, Operation, Operation>
+        moveInstanceOperationSettings;
     private final UnaryCallSettings.Builder<SetCommonInstanceMetadataProjectRequest, Operation>
         setCommonInstanceMetadataSettings;
+    private final OperationCallSettings.Builder<
+            SetCommonInstanceMetadataProjectRequest, Operation, Operation>
+        setCommonInstanceMetadataOperationSettings;
     private final UnaryCallSettings.Builder<SetDefaultNetworkTierProjectRequest, Operation>
         setDefaultNetworkTierSettings;
+    private final OperationCallSettings.Builder<
+            SetDefaultNetworkTierProjectRequest, Operation, Operation>
+        setDefaultNetworkTierOperationSettings;
     private final UnaryCallSettings.Builder<SetUsageExportBucketProjectRequest, Operation>
         setUsageExportBucketSettings;
+    private final OperationCallSettings.Builder<
+            SetUsageExportBucketProjectRequest, Operation, Operation>
+        setUsageExportBucketOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -491,18 +606,27 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
       super(clientContext);
 
       disableXpnHostSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      disableXpnHostOperationSettings = OperationCallSettings.newBuilder();
       disableXpnResourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      disableXpnResourceOperationSettings = OperationCallSettings.newBuilder();
       enableXpnHostSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      enableXpnHostOperationSettings = OperationCallSettings.newBuilder();
       enableXpnResourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      enableXpnResourceOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getXpnHostSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getXpnResourcesSettings = PagedCallSettings.newBuilder(GET_XPN_RESOURCES_PAGE_STR_FACT);
       listXpnHostsSettings = PagedCallSettings.newBuilder(LIST_XPN_HOSTS_PAGE_STR_FACT);
       moveDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      moveDiskOperationSettings = OperationCallSettings.newBuilder();
       moveInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      moveInstanceOperationSettings = OperationCallSettings.newBuilder();
       setCommonInstanceMetadataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setCommonInstanceMetadataOperationSettings = OperationCallSettings.newBuilder();
       setDefaultNetworkTierSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setDefaultNetworkTierOperationSettings = OperationCallSettings.newBuilder();
       setUsageExportBucketSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setUsageExportBucketOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -526,18 +650,31 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
       super(settings);
 
       disableXpnHostSettings = settings.disableXpnHostSettings.toBuilder();
+      disableXpnHostOperationSettings = settings.disableXpnHostOperationSettings.toBuilder();
       disableXpnResourceSettings = settings.disableXpnResourceSettings.toBuilder();
+      disableXpnResourceOperationSettings =
+          settings.disableXpnResourceOperationSettings.toBuilder();
       enableXpnHostSettings = settings.enableXpnHostSettings.toBuilder();
+      enableXpnHostOperationSettings = settings.enableXpnHostOperationSettings.toBuilder();
       enableXpnResourceSettings = settings.enableXpnResourceSettings.toBuilder();
+      enableXpnResourceOperationSettings = settings.enableXpnResourceOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       getXpnHostSettings = settings.getXpnHostSettings.toBuilder();
       getXpnResourcesSettings = settings.getXpnResourcesSettings.toBuilder();
       listXpnHostsSettings = settings.listXpnHostsSettings.toBuilder();
       moveDiskSettings = settings.moveDiskSettings.toBuilder();
+      moveDiskOperationSettings = settings.moveDiskOperationSettings.toBuilder();
       moveInstanceSettings = settings.moveInstanceSettings.toBuilder();
+      moveInstanceOperationSettings = settings.moveInstanceOperationSettings.toBuilder();
       setCommonInstanceMetadataSettings = settings.setCommonInstanceMetadataSettings.toBuilder();
+      setCommonInstanceMetadataOperationSettings =
+          settings.setCommonInstanceMetadataOperationSettings.toBuilder();
       setDefaultNetworkTierSettings = settings.setDefaultNetworkTierSettings.toBuilder();
+      setDefaultNetworkTierOperationSettings =
+          settings.setDefaultNetworkTierOperationSettings.toBuilder();
       setUsageExportBucketSettings = settings.setUsageExportBucketSettings.toBuilder();
+      setUsageExportBucketOperationSettings =
+          settings.setUsageExportBucketOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -635,6 +772,226 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .disableXpnHostOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DisableXpnHostProjectRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .disableXpnResourceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DisableXpnResourceProjectRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .enableXpnHostOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<EnableXpnHostProjectRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .enableXpnResourceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<EnableXpnResourceProjectRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .moveDiskOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<MoveDiskProjectRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .moveInstanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<MoveInstanceProjectRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setCommonInstanceMetadataOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetCommonInstanceMetadataProjectRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setDefaultNetworkTierOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetDefaultNetworkTierProjectRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setUsageExportBucketOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetUsageExportBucketProjectRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -659,10 +1016,26 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
       return disableXpnHostSettings;
     }
 
+    /** Returns the builder for the settings used for calls to disableXpnHost. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DisableXpnHostProjectRequest, Operation, Operation>
+        disableXpnHostOperationSettings() {
+      return disableXpnHostOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to disableXpnResource. */
     public UnaryCallSettings.Builder<DisableXpnResourceProjectRequest, Operation>
         disableXpnResourceSettings() {
       return disableXpnResourceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to disableXpnResource. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DisableXpnResourceProjectRequest, Operation, Operation>
+        disableXpnResourceOperationSettings() {
+      return disableXpnResourceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to enableXpnHost. */
@@ -671,10 +1044,26 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
       return enableXpnHostSettings;
     }
 
+    /** Returns the builder for the settings used for calls to enableXpnHost. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<EnableXpnHostProjectRequest, Operation, Operation>
+        enableXpnHostOperationSettings() {
+      return enableXpnHostOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to enableXpnResource. */
     public UnaryCallSettings.Builder<EnableXpnResourceProjectRequest, Operation>
         enableXpnResourceSettings() {
       return enableXpnResourceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to enableXpnResource. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<EnableXpnResourceProjectRequest, Operation, Operation>
+        enableXpnResourceOperationSettings() {
+      return enableXpnResourceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -706,9 +1095,25 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
       return moveDiskSettings;
     }
 
+    /** Returns the builder for the settings used for calls to moveDisk. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<MoveDiskProjectRequest, Operation, Operation>
+        moveDiskOperationSettings() {
+      return moveDiskOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to moveInstance. */
     public UnaryCallSettings.Builder<MoveInstanceProjectRequest, Operation> moveInstanceSettings() {
       return moveInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to moveInstance. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<MoveInstanceProjectRequest, Operation, Operation>
+        moveInstanceOperationSettings() {
+      return moveInstanceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to setCommonInstanceMetadata. */
@@ -717,16 +1122,41 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
       return setCommonInstanceMetadataSettings;
     }
 
+    /** Returns the builder for the settings used for calls to setCommonInstanceMetadata. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            SetCommonInstanceMetadataProjectRequest, Operation, Operation>
+        setCommonInstanceMetadataOperationSettings() {
+      return setCommonInstanceMetadataOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setDefaultNetworkTier. */
     public UnaryCallSettings.Builder<SetDefaultNetworkTierProjectRequest, Operation>
         setDefaultNetworkTierSettings() {
       return setDefaultNetworkTierSettings;
     }
 
+    /** Returns the builder for the settings used for calls to setDefaultNetworkTier. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetDefaultNetworkTierProjectRequest, Operation, Operation>
+        setDefaultNetworkTierOperationSettings() {
+      return setDefaultNetworkTierOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setUsageExportBucket. */
     public UnaryCallSettings.Builder<SetUsageExportBucketProjectRequest, Operation>
         setUsageExportBucketSettings() {
       return setUsageExportBucketSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setUsageExportBucket. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetUsageExportBucketProjectRequest, Operation, Operation>
+        setUsageExportBucketOperationSettings() {
+      return setUsageExportBucketOperationSettings;
     }
 
     @Override

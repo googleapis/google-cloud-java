@@ -26,6 +26,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -49,16 +50,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * PublicAdvertisedPrefixesSettings.Builder publicAdvertisedPrefixesSettingsBuilder =
  *     PublicAdvertisedPrefixesSettings.newBuilder();
  * publicAdvertisedPrefixesSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         publicAdvertisedPrefixesSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -76,6 +77,12 @@ public class PublicAdvertisedPrefixesSettings
     return ((PublicAdvertisedPrefixesStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeletePublicAdvertisedPrefixeRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((PublicAdvertisedPrefixesStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetPublicAdvertisedPrefixeRequest, PublicAdvertisedPrefix>
       getSettings() {
@@ -85,6 +92,12 @@ public class PublicAdvertisedPrefixesSettings
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertPublicAdvertisedPrefixeRequest, Operation> insertSettings() {
     return ((PublicAdvertisedPrefixesStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertPublicAdvertisedPrefixeRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((PublicAdvertisedPrefixesStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -97,6 +110,12 @@ public class PublicAdvertisedPrefixesSettings
   /** Returns the object with the settings used for calls to patch. */
   public UnaryCallSettings<PatchPublicAdvertisedPrefixeRequest, Operation> patchSettings() {
     return ((PublicAdvertisedPrefixesStubSettings) getStubSettings()).patchSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchPublicAdvertisedPrefixeRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((PublicAdvertisedPrefixesStubSettings) getStubSettings()).patchOperationSettings();
   }
 
   public static final PublicAdvertisedPrefixesSettings create(
@@ -204,6 +223,12 @@ public class PublicAdvertisedPrefixesSettings
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeletePublicAdvertisedPrefixeRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetPublicAdvertisedPrefixeRequest, PublicAdvertisedPrefix>
         getSettings() {
@@ -214,6 +239,12 @@ public class PublicAdvertisedPrefixesSettings
     public UnaryCallSettings.Builder<InsertPublicAdvertisedPrefixeRequest, Operation>
         insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertPublicAdvertisedPrefixeRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -227,6 +258,12 @@ public class PublicAdvertisedPrefixesSettings
     public UnaryCallSettings.Builder<PatchPublicAdvertisedPrefixeRequest, Operation>
         patchSettings() {
       return getStubSettingsBuilder().patchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchPublicAdvertisedPrefixeRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
     }
 
     @Override

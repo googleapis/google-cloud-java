@@ -226,12 +226,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any  weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any  weightedBackendServices.
-   * Only one of routeAction or urlRedirect must be set.
-   * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
+   * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only one of routeAction or urlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
+   * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
    *
    * @return Whether the routeAction field is set.
    */
@@ -243,12 +241,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any  weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any  weightedBackendServices.
-   * Only one of routeAction or urlRedirect must be set.
-   * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
+   * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only one of routeAction or urlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
+   * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
    *
    * @return The routeAction.
    */
@@ -262,12 +258,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any  weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any  weightedBackendServices.
-   * Only one of routeAction or urlRedirect must be set.
-   * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
+   * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only one of routeAction or urlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
+   * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.HttpRouteActionOrBuilder getRouteActionOrBuilder() {
@@ -282,11 +276,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any  weightedBackendServices, service must not be specified.
-   * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
+   * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>optional string service = 373540533;</code>
    *
    * @return Whether the service field is set.
    */
@@ -298,11 +291,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any  weightedBackendServices, service must not be specified.
-   * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
+   * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>optional string service = 373540533;</code>
    *
    * @return The service.
    */
@@ -322,11 +314,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any  weightedBackendServices, service must not be specified.
-   * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
+   * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>optional string service = 373540533;</code>
    *
    * @return The bytes for service.
    */
@@ -349,12 +340,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect.
-   * If urlRedirect is specified, service or routeAction must not be set.
-   * Not supported when the URL map is bound to target gRPC proxy.
+   * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. If urlRedirect is specified, service or routeAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
+   * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
    *
    * @return Whether the urlRedirect field is set.
    */
@@ -366,12 +355,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect.
-   * If urlRedirect is specified, service or routeAction must not be set.
-   * Not supported when the URL map is bound to target gRPC proxy.
+   * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. If urlRedirect is specified, service or routeAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
+   * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
    *
    * @return The urlRedirect.
    */
@@ -385,12 +372,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect.
-   * If urlRedirect is specified, service or routeAction must not be set.
-   * Not supported when the URL map is bound to target gRPC proxy.
+   * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. If urlRedirect is specified, service or routeAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
+   * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.HttpRedirectActionOrBuilder getUrlRedirectOrBuilder() {
@@ -1002,12 +987,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any  weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any  weightedBackendServices.
-     * Only one of routeAction or urlRedirect must be set.
-     * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
+     * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only one of routeAction or urlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
      *
      * @return Whether the routeAction field is set.
      */
@@ -1018,12 +1001,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any  weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any  weightedBackendServices.
-     * Only one of routeAction or urlRedirect must be set.
-     * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
+     * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only one of routeAction or urlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
      *
      * @return The routeAction.
      */
@@ -1040,12 +1021,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any  weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any  weightedBackendServices.
-     * Only one of routeAction or urlRedirect must be set.
-     * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
+     * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only one of routeAction or urlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
      */
     public Builder setRouteAction(com.google.cloud.compute.v1.HttpRouteAction value) {
       if (routeActionBuilder_ == null) {
@@ -1064,12 +1043,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any  weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any  weightedBackendServices.
-     * Only one of routeAction or urlRedirect must be set.
-     * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
+     * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only one of routeAction or urlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
      */
     public Builder setRouteAction(
         com.google.cloud.compute.v1.HttpRouteAction.Builder builderForValue) {
@@ -1086,12 +1063,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any  weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any  weightedBackendServices.
-     * Only one of routeAction or urlRedirect must be set.
-     * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
+     * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only one of routeAction or urlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
      */
     public Builder mergeRouteAction(com.google.cloud.compute.v1.HttpRouteAction value) {
       if (routeActionBuilder_ == null) {
@@ -1116,12 +1091,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any  weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any  weightedBackendServices.
-     * Only one of routeAction or urlRedirect must be set.
-     * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
+     * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only one of routeAction or urlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
      */
     public Builder clearRouteAction() {
       if (routeActionBuilder_ == null) {
@@ -1137,12 +1110,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any  weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any  weightedBackendServices.
-     * Only one of routeAction or urlRedirect must be set.
-     * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
+     * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only one of routeAction or urlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
      */
     public com.google.cloud.compute.v1.HttpRouteAction.Builder getRouteActionBuilder() {
       bitField0_ |= 0x00000002;
@@ -1153,12 +1124,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any  weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any  weightedBackendServices.
-     * Only one of routeAction or urlRedirect must be set.
-     * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
+     * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only one of routeAction or urlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
      */
     public com.google.cloud.compute.v1.HttpRouteActionOrBuilder getRouteActionOrBuilder() {
       if (routeActionBuilder_ != null) {
@@ -1173,12 +1142,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any  weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any  weightedBackendServices.
-     * Only one of routeAction or urlRedirect must be set.
-     * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
+     * In response to a matching path, the load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If routeAction specifies any weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only one of routeAction or urlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.HttpRouteAction,
@@ -1202,11 +1169,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any  weightedBackendServices, service must not be specified.
-     * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
+     * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @return Whether the service field is set.
      */
@@ -1217,11 +1183,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any  weightedBackendServices, service must not be specified.
-     * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
+     * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @return The service.
      */
@@ -1240,11 +1205,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any  weightedBackendServices, service must not be specified.
-     * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
+     * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @return The bytes for service.
      */
@@ -1263,11 +1227,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any  weightedBackendServices, service must not be specified.
-     * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
+     * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @param value The service to set.
      * @return This builder for chaining.
@@ -1285,11 +1248,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any  weightedBackendServices, service must not be specified.
-     * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
+     * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @return This builder for chaining.
      */
@@ -1303,11 +1265,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any  weightedBackendServices, service must not be specified.
-     * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
+     * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @param value The bytes for service to set.
      * @return This builder for chaining.
@@ -1333,12 +1294,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect.
-     * If urlRedirect is specified, service or routeAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
+     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. If urlRedirect is specified, service or routeAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
      *
      * @return Whether the urlRedirect field is set.
      */
@@ -1349,12 +1308,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect.
-     * If urlRedirect is specified, service or routeAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
+     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. If urlRedirect is specified, service or routeAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
      *
      * @return The urlRedirect.
      */
@@ -1371,12 +1328,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect.
-     * If urlRedirect is specified, service or routeAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
+     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. If urlRedirect is specified, service or routeAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
      */
     public Builder setUrlRedirect(com.google.cloud.compute.v1.HttpRedirectAction value) {
       if (urlRedirectBuilder_ == null) {
@@ -1395,12 +1350,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect.
-     * If urlRedirect is specified, service or routeAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
+     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. If urlRedirect is specified, service or routeAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
      */
     public Builder setUrlRedirect(
         com.google.cloud.compute.v1.HttpRedirectAction.Builder builderForValue) {
@@ -1417,12 +1370,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect.
-     * If urlRedirect is specified, service or routeAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
+     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. If urlRedirect is specified, service or routeAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
      */
     public Builder mergeUrlRedirect(com.google.cloud.compute.v1.HttpRedirectAction value) {
       if (urlRedirectBuilder_ == null) {
@@ -1448,12 +1399,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect.
-     * If urlRedirect is specified, service or routeAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
+     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. If urlRedirect is specified, service or routeAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
      */
     public Builder clearUrlRedirect() {
       if (urlRedirectBuilder_ == null) {
@@ -1469,12 +1418,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect.
-     * If urlRedirect is specified, service or routeAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
+     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. If urlRedirect is specified, service or routeAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
      */
     public com.google.cloud.compute.v1.HttpRedirectAction.Builder getUrlRedirectBuilder() {
       bitField0_ |= 0x00000008;
@@ -1485,12 +1432,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect.
-     * If urlRedirect is specified, service or routeAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
+     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. If urlRedirect is specified, service or routeAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
      */
     public com.google.cloud.compute.v1.HttpRedirectActionOrBuilder getUrlRedirectOrBuilder() {
       if (urlRedirectBuilder_ != null) {
@@ -1505,12 +1450,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect.
-     * If urlRedirect is specified, service or routeAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
+     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. If urlRedirect is specified, service or routeAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
+     * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.HttpRedirectAction,

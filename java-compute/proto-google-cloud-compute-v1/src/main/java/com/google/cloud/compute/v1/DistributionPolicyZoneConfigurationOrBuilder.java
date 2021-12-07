@@ -30,7 +30,7 @@ public interface DistributionPolicyZoneConfigurationOrBuilder
    * The URL of the zone. The zone must exist in the region where the managed instance group is located.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return Whether the zone field is set.
    */
@@ -42,7 +42,7 @@ public interface DistributionPolicyZoneConfigurationOrBuilder
    * The URL of the zone. The zone must exist in the region where the managed instance group is located.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The zone.
    */
@@ -54,7 +54,7 @@ public interface DistributionPolicyZoneConfigurationOrBuilder
    * The URL of the zone. The zone must exist in the region where the managed instance group is located.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The bytes for zone.
    */

@@ -127,7 +127,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
    * Number of accelerator cards exposed to the guest.
    * </pre>
    *
-   * <code>int32 guest_accelerator_count = 479079316;</code>
+   * <code>optional int32 guest_accelerator_count = 479079316;</code>
    *
    * @return Whether the guestAcceleratorCount field is set.
    */
@@ -142,7 +142,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
    * Number of accelerator cards exposed to the guest.
    * </pre>
    *
-   * <code>int32 guest_accelerator_count = 479079316;</code>
+   * <code>optional int32 guest_accelerator_count = 479079316;</code>
    *
    * @return The guestAcceleratorCount.
    */
@@ -160,7 +160,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
    * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
    * </pre>
    *
-   * <code>string guest_accelerator_type = 293064725;</code>
+   * <code>optional string guest_accelerator_type = 293064725;</code>
    *
    * @return Whether the guestAcceleratorType field is set.
    */
@@ -175,7 +175,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
    * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
    * </pre>
    *
-   * <code>string guest_accelerator_type = 293064725;</code>
+   * <code>optional string guest_accelerator_type = 293064725;</code>
    *
    * @return The guestAcceleratorType.
    */
@@ -198,7 +198,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
    * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
    * </pre>
    *
-   * <code>string guest_accelerator_type = 293064725;</code>
+   * <code>optional string guest_accelerator_type = 293064725;</code>
    *
    * @return The bytes for guestAcceleratorType.
    */
@@ -577,7 +577,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      * Number of accelerator cards exposed to the guest.
      * </pre>
      *
-     * <code>int32 guest_accelerator_count = 479079316;</code>
+     * <code>optional int32 guest_accelerator_count = 479079316;</code>
      *
      * @return Whether the guestAcceleratorCount field is set.
      */
@@ -592,7 +592,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      * Number of accelerator cards exposed to the guest.
      * </pre>
      *
-     * <code>int32 guest_accelerator_count = 479079316;</code>
+     * <code>optional int32 guest_accelerator_count = 479079316;</code>
      *
      * @return The guestAcceleratorCount.
      */
@@ -607,7 +607,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      * Number of accelerator cards exposed to the guest.
      * </pre>
      *
-     * <code>int32 guest_accelerator_count = 479079316;</code>
+     * <code>optional int32 guest_accelerator_count = 479079316;</code>
      *
      * @param value The guestAcceleratorCount to set.
      * @return This builder for chaining.
@@ -625,7 +625,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      * Number of accelerator cards exposed to the guest.
      * </pre>
      *
-     * <code>int32 guest_accelerator_count = 479079316;</code>
+     * <code>optional int32 guest_accelerator_count = 479079316;</code>
      *
      * @return This builder for chaining.
      */
@@ -644,7 +644,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
      * </pre>
      *
-     * <code>string guest_accelerator_type = 293064725;</code>
+     * <code>optional string guest_accelerator_type = 293064725;</code>
      *
      * @return Whether the guestAcceleratorType field is set.
      */
@@ -658,7 +658,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
      * </pre>
      *
-     * <code>string guest_accelerator_type = 293064725;</code>
+     * <code>optional string guest_accelerator_type = 293064725;</code>
      *
      * @return The guestAcceleratorType.
      */
@@ -680,7 +680,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
      * </pre>
      *
-     * <code>string guest_accelerator_type = 293064725;</code>
+     * <code>optional string guest_accelerator_type = 293064725;</code>
      *
      * @return The bytes for guestAcceleratorType.
      */
@@ -702,7 +702,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
      * </pre>
      *
-     * <code>string guest_accelerator_type = 293064725;</code>
+     * <code>optional string guest_accelerator_type = 293064725;</code>
      *
      * @param value The guestAcceleratorType to set.
      * @return This builder for chaining.
@@ -723,7 +723,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
      * </pre>
      *
-     * <code>string guest_accelerator_type = 293064725;</code>
+     * <code>optional string guest_accelerator_type = 293064725;</code>
      *
      * @return This builder for chaining.
      */
@@ -740,7 +740,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
      * </pre>
      *
-     * <code>string guest_accelerator_type = 293064725;</code>
+     * <code>optional string guest_accelerator_type = 293064725;</code>
      *
      * @param value The bytes for guestAcceleratorType to set.
      * @return This builder for chaining.

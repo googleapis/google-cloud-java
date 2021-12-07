@@ -30,7 +30,7 @@ public interface Int64RangeMatchOrBuilder
    * The end of the range (exclusive) in signed long integer format.
    * </pre>
    *
-   * <code>int64 range_end = 322439897;</code>
+   * <code>optional int64 range_end = 322439897;</code>
    *
    * @return Whether the rangeEnd field is set.
    */
@@ -42,7 +42,7 @@ public interface Int64RangeMatchOrBuilder
    * The end of the range (exclusive) in signed long integer format.
    * </pre>
    *
-   * <code>int64 range_end = 322439897;</code>
+   * <code>optional int64 range_end = 322439897;</code>
    *
    * @return The rangeEnd.
    */
@@ -55,7 +55,7 @@ public interface Int64RangeMatchOrBuilder
    * The start of the range (inclusive) in signed long integer format.
    * </pre>
    *
-   * <code>int64 range_start = 103333600;</code>
+   * <code>optional int64 range_start = 103333600;</code>
    *
    * @return Whether the rangeStart field is set.
    */
@@ -67,7 +67,7 @@ public interface Int64RangeMatchOrBuilder
    * The start of the range (inclusive) in signed long integer format.
    * </pre>
    *
-   * <code>int64 range_start = 103333600;</code>
+   * <code>optional int64 range_start = 103333600;</code>
    *
    * @return The rangeStart.
    */

@@ -130,7 +130,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
    * User-specified description for the IP range.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -145,7 +145,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
    * User-specified description for the IP range.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -168,7 +168,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
    * User-specified description for the IP range.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -194,7 +194,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
    * The IP range to advertise. The value must be a CIDR-formatted string.
    * </pre>
    *
-   * <code>string range = 108280125;</code>
+   * <code>optional string range = 108280125;</code>
    *
    * @return Whether the range field is set.
    */
@@ -209,7 +209,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
    * The IP range to advertise. The value must be a CIDR-formatted string.
    * </pre>
    *
-   * <code>string range = 108280125;</code>
+   * <code>optional string range = 108280125;</code>
    *
    * @return The range.
    */
@@ -232,7 +232,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
    * The IP range to advertise. The value must be a CIDR-formatted string.
    * </pre>
    *
-   * <code>string range = 108280125;</code>
+   * <code>optional string range = 108280125;</code>
    *
    * @return The bytes for range.
    */
@@ -614,7 +614,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * User-specified description for the IP range.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -628,7 +628,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * User-specified description for the IP range.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -650,7 +650,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * User-specified description for the IP range.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -672,7 +672,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * User-specified description for the IP range.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -693,7 +693,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * User-specified description for the IP range.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -710,7 +710,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * User-specified description for the IP range.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -734,7 +734,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * The IP range to advertise. The value must be a CIDR-formatted string.
      * </pre>
      *
-     * <code>string range = 108280125;</code>
+     * <code>optional string range = 108280125;</code>
      *
      * @return Whether the range field is set.
      */
@@ -748,7 +748,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * The IP range to advertise. The value must be a CIDR-formatted string.
      * </pre>
      *
-     * <code>string range = 108280125;</code>
+     * <code>optional string range = 108280125;</code>
      *
      * @return The range.
      */
@@ -770,7 +770,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * The IP range to advertise. The value must be a CIDR-formatted string.
      * </pre>
      *
-     * <code>string range = 108280125;</code>
+     * <code>optional string range = 108280125;</code>
      *
      * @return The bytes for range.
      */
@@ -792,7 +792,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * The IP range to advertise. The value must be a CIDR-formatted string.
      * </pre>
      *
-     * <code>string range = 108280125;</code>
+     * <code>optional string range = 108280125;</code>
      *
      * @param value The range to set.
      * @return This builder for chaining.
@@ -813,7 +813,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * The IP range to advertise. The value must be a CIDR-formatted string.
      * </pre>
      *
-     * <code>string range = 108280125;</code>
+     * <code>optional string range = 108280125;</code>
      *
      * @return This builder for chaining.
      */
@@ -830,7 +830,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * The IP range to advertise. The value must be a CIDR-formatted string.
      * </pre>
      *
-     * <code>string range = 108280125;</code>
+     * <code>optional string range = 108280125;</code>
      *
      * @param value The bytes for range to set.
      * @return This builder for chaining.

@@ -267,7 +267,7 @@ public final class UpdateRegionUrlMapRequest extends com.google.protobuf.Generat
    * begin_interface: MixerMutationRequestBuilder Request ID to support idempotency.
    * </pre>
    *
-   * <code>string request_id = 37109963;</code>
+   * <code>optional string request_id = 37109963;</code>
    *
    * @return Whether the requestId field is set.
    */
@@ -282,7 +282,7 @@ public final class UpdateRegionUrlMapRequest extends com.google.protobuf.Generat
    * begin_interface: MixerMutationRequestBuilder Request ID to support idempotency.
    * </pre>
    *
-   * <code>string request_id = 37109963;</code>
+   * <code>optional string request_id = 37109963;</code>
    *
    * @return The requestId.
    */
@@ -305,7 +305,7 @@ public final class UpdateRegionUrlMapRequest extends com.google.protobuf.Generat
    * begin_interface: MixerMutationRequestBuilder Request ID to support idempotency.
    * </pre>
    *
-   * <code>string request_id = 37109963;</code>
+   * <code>optional string request_id = 37109963;</code>
    *
    * @return The bytes for requestId.
    */
@@ -442,16 +442,16 @@ public final class UpdateRegionUrlMapRequest extends com.google.protobuf.Generat
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (urlMapResource_ != null) {
       output.writeMessage(168675425, getUrlMapResource());
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (!getUrlMapBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(urlMap_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 367020684, urlMap_);
     }
     unknownFields.writeTo(output);
@@ -466,17 +466,17 @@ public final class UpdateRegionUrlMapRequest extends com.google.protobuf.Generat
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (urlMapResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(168675425, getUrlMapResource());
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
-    if (!getUrlMapBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(urlMap_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(367020684, urlMap_);
     }
     size += unknownFields.getSerializedSize();
@@ -1075,7 +1075,7 @@ public final class UpdateRegionUrlMapRequest extends com.google.protobuf.Generat
      * begin_interface: MixerMutationRequestBuilder Request ID to support idempotency.
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @return Whether the requestId field is set.
      */
@@ -1089,7 +1089,7 @@ public final class UpdateRegionUrlMapRequest extends com.google.protobuf.Generat
      * begin_interface: MixerMutationRequestBuilder Request ID to support idempotency.
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @return The requestId.
      */
@@ -1111,7 +1111,7 @@ public final class UpdateRegionUrlMapRequest extends com.google.protobuf.Generat
      * begin_interface: MixerMutationRequestBuilder Request ID to support idempotency.
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @return The bytes for requestId.
      */
@@ -1133,7 +1133,7 @@ public final class UpdateRegionUrlMapRequest extends com.google.protobuf.Generat
      * begin_interface: MixerMutationRequestBuilder Request ID to support idempotency.
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @param value The requestId to set.
      * @return This builder for chaining.
@@ -1154,7 +1154,7 @@ public final class UpdateRegionUrlMapRequest extends com.google.protobuf.Generat
      * begin_interface: MixerMutationRequestBuilder Request ID to support idempotency.
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @return This builder for chaining.
      */
@@ -1171,7 +1171,7 @@ public final class UpdateRegionUrlMapRequest extends com.google.protobuf.Generat
      * begin_interface: MixerMutationRequestBuilder Request ID to support idempotency.
      * </pre>
      *
-     * <code>string request_id = 37109963;</code>
+     * <code>optional string request_id = 37109963;</code>
      *
      * @param value The bytes for requestId to set.
      * @return This builder for chaining.

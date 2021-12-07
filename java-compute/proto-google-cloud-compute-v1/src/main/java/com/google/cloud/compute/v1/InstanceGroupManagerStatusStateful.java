@@ -139,7 +139,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
    * [Output Only] A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful config even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.
    * </pre>
    *
-   * <code>bool has_stateful_config = 110474224;</code>
+   * <code>optional bool has_stateful_config = 110474224;</code>
    *
    * @return Whether the hasStatefulConfig field is set.
    */
@@ -154,7 +154,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
    * [Output Only] A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful config even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.
    * </pre>
    *
-   * <code>bool has_stateful_config = 110474224;</code>
+   * <code>optional bool has_stateful_config = 110474224;</code>
    *
    * @return The hasStatefulConfig.
    */
@@ -174,7 +174,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
    * </code>
    *
    * @return Whether the perInstanceConfigs field is set.
@@ -191,7 +191,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
    * </code>
    *
    * @return The perInstanceConfigs.
@@ -212,7 +212,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
    * </code>
    */
   @java.lang.Override
@@ -600,7 +600,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * [Output Only] A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful config even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.
      * </pre>
      *
-     * <code>bool has_stateful_config = 110474224;</code>
+     * <code>optional bool has_stateful_config = 110474224;</code>
      *
      * @return Whether the hasStatefulConfig field is set.
      */
@@ -615,7 +615,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * [Output Only] A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful config even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.
      * </pre>
      *
-     * <code>bool has_stateful_config = 110474224;</code>
+     * <code>optional bool has_stateful_config = 110474224;</code>
      *
      * @return The hasStatefulConfig.
      */
@@ -630,7 +630,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * [Output Only] A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful config even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.
      * </pre>
      *
-     * <code>bool has_stateful_config = 110474224;</code>
+     * <code>optional bool has_stateful_config = 110474224;</code>
      *
      * @param value The hasStatefulConfig to set.
      * @return This builder for chaining.
@@ -648,7 +648,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * [Output Only] A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful config even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.
      * </pre>
      *
-     * <code>bool has_stateful_config = 110474224;</code>
+     * <code>optional bool has_stateful_config = 110474224;</code>
      *
      * @return This builder for chaining.
      */
@@ -676,7 +676,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
      * </code>
      *
      * @return Whether the perInstanceConfigs field is set.
@@ -692,7 +692,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
      * </code>
      *
      * @return The perInstanceConfigs.
@@ -716,7 +716,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
      * </code>
      */
     public Builder setPerInstanceConfigs(
@@ -741,7 +741,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
      * </code>
      */
     public Builder setPerInstanceConfigs(
@@ -764,7 +764,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
      * </code>
      */
     public Builder mergePerInstanceConfigs(
@@ -798,7 +798,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
      * </code>
      */
     public Builder clearPerInstanceConfigs() {
@@ -819,7 +819,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs.Builder
@@ -836,7 +836,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigsOrBuilder
@@ -858,7 +858,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

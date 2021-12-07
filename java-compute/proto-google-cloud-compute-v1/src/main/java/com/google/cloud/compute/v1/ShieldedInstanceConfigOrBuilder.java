@@ -30,7 +30,7 @@ public interface ShieldedInstanceConfigOrBuilder
    * Defines whether the instance has integrity monitoring enabled. Enabled by default.
    * </pre>
    *
-   * <code>bool enable_integrity_monitoring = 409071030;</code>
+   * <code>optional bool enable_integrity_monitoring = 409071030;</code>
    *
    * @return Whether the enableIntegrityMonitoring field is set.
    */
@@ -42,7 +42,7 @@ public interface ShieldedInstanceConfigOrBuilder
    * Defines whether the instance has integrity monitoring enabled. Enabled by default.
    * </pre>
    *
-   * <code>bool enable_integrity_monitoring = 409071030;</code>
+   * <code>optional bool enable_integrity_monitoring = 409071030;</code>
    *
    * @return The enableIntegrityMonitoring.
    */
@@ -55,7 +55,7 @@ public interface ShieldedInstanceConfigOrBuilder
    * Defines whether the instance has Secure Boot enabled. Disabled by default.
    * </pre>
    *
-   * <code>bool enable_secure_boot = 123568638;</code>
+   * <code>optional bool enable_secure_boot = 123568638;</code>
    *
    * @return Whether the enableSecureBoot field is set.
    */
@@ -67,7 +67,7 @@ public interface ShieldedInstanceConfigOrBuilder
    * Defines whether the instance has Secure Boot enabled. Disabled by default.
    * </pre>
    *
-   * <code>bool enable_secure_boot = 123568638;</code>
+   * <code>optional bool enable_secure_boot = 123568638;</code>
    *
    * @return The enableSecureBoot.
    */
@@ -80,7 +80,7 @@ public interface ShieldedInstanceConfigOrBuilder
    * Defines whether the instance has the vTPM enabled. Enabled by default.
    * </pre>
    *
-   * <code>bool enable_vtpm = 181858935;</code>
+   * <code>optional bool enable_vtpm = 181858935;</code>
    *
    * @return Whether the enableVtpm field is set.
    */
@@ -92,7 +92,7 @@ public interface ShieldedInstanceConfigOrBuilder
    * Defines whether the instance has the vTPM enabled. Enabled by default.
    * </pre>
    *
-   * <code>bool enable_vtpm = 181858935;</code>
+   * <code>optional bool enable_vtpm = 181858935;</code>
    *
    * @return The enableVtpm.
    */

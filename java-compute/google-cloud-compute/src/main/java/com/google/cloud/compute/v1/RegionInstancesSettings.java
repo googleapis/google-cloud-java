@@ -24,6 +24,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.compute.v1.stub.RegionInstancesStubSettings;
@@ -69,6 +70,12 @@ public class RegionInstancesSettings extends ClientSettings<RegionInstancesSetti
   /** Returns the object with the settings used for calls to bulkInsert. */
   public UnaryCallSettings<BulkInsertRegionInstanceRequest, Operation> bulkInsertSettings() {
     return ((RegionInstancesStubSettings) getStubSettings()).bulkInsertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to bulkInsert. */
+  public OperationCallSettings<BulkInsertRegionInstanceRequest, Operation, Operation>
+      bulkInsertOperationSettings() {
+    return ((RegionInstancesStubSettings) getStubSettings()).bulkInsertOperationSettings();
   }
 
   public static final RegionInstancesSettings create(RegionInstancesStubSettings stub)
@@ -173,6 +180,12 @@ public class RegionInstancesSettings extends ClientSettings<RegionInstancesSetti
     public UnaryCallSettings.Builder<BulkInsertRegionInstanceRequest, Operation>
         bulkInsertSettings() {
       return getStubSettingsBuilder().bulkInsertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to bulkInsert. */
+    public OperationCallSettings.Builder<BulkInsertRegionInstanceRequest, Operation, Operation>
+        bulkInsertOperationSettings() {
+      return getStubSettingsBuilder().bulkInsertOperationSettings();
     }
 
     @Override

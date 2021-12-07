@@ -27,8 +27,7 @@ public interface MetadataFilterOrBuilder
    *
    *
    * <pre>
-   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-   * This list must not be empty and can have at the most 64 entries.
+   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -39,8 +38,7 @@ public interface MetadataFilterOrBuilder
    *
    *
    * <pre>
-   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-   * This list must not be empty and can have at the most 64 entries.
+   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -51,8 +49,7 @@ public interface MetadataFilterOrBuilder
    *
    *
    * <pre>
-   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-   * This list must not be empty and can have at the most 64 entries.
+   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -63,8 +60,7 @@ public interface MetadataFilterOrBuilder
    *
    *
    * <pre>
-   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-   * This list must not be empty and can have at the most 64 entries.
+   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -76,8 +72,7 @@ public interface MetadataFilterOrBuilder
    *
    *
    * <pre>
-   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-   * This list must not be empty and can have at the most 64 entries.
+   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -89,15 +84,11 @@ public interface MetadataFilterOrBuilder
    *
    *
    * <pre>
-   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match.
-   * Supported values are:
-   * - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata.
-   * - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Check the FilterMatchCriteria enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;
-   * </code>
+   * <code>optional string filter_match_criteria = 239970368;</code>
    *
    * @return Whether the filterMatchCriteria field is set.
    */
@@ -106,34 +97,26 @@ public interface MetadataFilterOrBuilder
    *
    *
    * <pre>
-   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match.
-   * Supported values are:
-   * - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata.
-   * - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Check the FilterMatchCriteria enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;
-   * </code>
+   * <code>optional string filter_match_criteria = 239970368;</code>
    *
-   * @return The enum numeric value on the wire for filterMatchCriteria.
+   * @return The filterMatchCriteria.
    */
-  int getFilterMatchCriteriaValue();
+  java.lang.String getFilterMatchCriteria();
   /**
    *
    *
    * <pre>
-   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match.
-   * Supported values are:
-   * - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata.
-   * - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Check the FilterMatchCriteria enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;
-   * </code>
+   * <code>optional string filter_match_criteria = 239970368;</code>
    *
-   * @return The filterMatchCriteria.
+   * @return The bytes for filterMatchCriteria.
    */
-  com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria getFilterMatchCriteria();
+  com.google.protobuf.ByteString getFilterMatchCriteriaBytes();
 }

@@ -124,7 +124,7 @@ public final class ResourcePolicyInstanceSchedulePolicySchedule
    * Specifies the frequency for the operation, using the unix-cron format.
    * </pre>
    *
-   * <code>string schedule = 375820951;</code>
+   * <code>optional string schedule = 375820951;</code>
    *
    * @return Whether the schedule field is set.
    */
@@ -139,7 +139,7 @@ public final class ResourcePolicyInstanceSchedulePolicySchedule
    * Specifies the frequency for the operation, using the unix-cron format.
    * </pre>
    *
-   * <code>string schedule = 375820951;</code>
+   * <code>optional string schedule = 375820951;</code>
    *
    * @return The schedule.
    */
@@ -162,7 +162,7 @@ public final class ResourcePolicyInstanceSchedulePolicySchedule
    * Specifies the frequency for the operation, using the unix-cron format.
    * </pre>
    *
-   * <code>string schedule = 375820951;</code>
+   * <code>optional string schedule = 375820951;</code>
    *
    * @return The bytes for schedule.
    */
@@ -532,7 +532,7 @@ public final class ResourcePolicyInstanceSchedulePolicySchedule
      * Specifies the frequency for the operation, using the unix-cron format.
      * </pre>
      *
-     * <code>string schedule = 375820951;</code>
+     * <code>optional string schedule = 375820951;</code>
      *
      * @return Whether the schedule field is set.
      */
@@ -546,7 +546,7 @@ public final class ResourcePolicyInstanceSchedulePolicySchedule
      * Specifies the frequency for the operation, using the unix-cron format.
      * </pre>
      *
-     * <code>string schedule = 375820951;</code>
+     * <code>optional string schedule = 375820951;</code>
      *
      * @return The schedule.
      */
@@ -568,7 +568,7 @@ public final class ResourcePolicyInstanceSchedulePolicySchedule
      * Specifies the frequency for the operation, using the unix-cron format.
      * </pre>
      *
-     * <code>string schedule = 375820951;</code>
+     * <code>optional string schedule = 375820951;</code>
      *
      * @return The bytes for schedule.
      */
@@ -590,7 +590,7 @@ public final class ResourcePolicyInstanceSchedulePolicySchedule
      * Specifies the frequency for the operation, using the unix-cron format.
      * </pre>
      *
-     * <code>string schedule = 375820951;</code>
+     * <code>optional string schedule = 375820951;</code>
      *
      * @param value The schedule to set.
      * @return This builder for chaining.
@@ -611,7 +611,7 @@ public final class ResourcePolicyInstanceSchedulePolicySchedule
      * Specifies the frequency for the operation, using the unix-cron format.
      * </pre>
      *
-     * <code>string schedule = 375820951;</code>
+     * <code>optional string schedule = 375820951;</code>
      *
      * @return This builder for chaining.
      */
@@ -628,7 +628,7 @@ public final class ResourcePolicyInstanceSchedulePolicySchedule
      * Specifies the frequency for the operation, using the unix-cron format.
      * </pre>
      *
-     * <code>string schedule = 375820951;</code>
+     * <code>optional string schedule = 375820951;</code>
      *
      * @param value The bytes for schedule to set.
      * @return This builder for chaining.

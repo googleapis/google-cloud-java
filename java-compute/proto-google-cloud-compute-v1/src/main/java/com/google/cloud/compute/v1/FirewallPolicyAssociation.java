@@ -153,7 +153,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
    * The target that the firewall policy is attached to.
    * </pre>
    *
-   * <code>string attachment_target = 175773741;</code>
+   * <code>optional string attachment_target = 175773741;</code>
    *
    * @return Whether the attachmentTarget field is set.
    */
@@ -168,7 +168,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
    * The target that the firewall policy is attached to.
    * </pre>
    *
-   * <code>string attachment_target = 175773741;</code>
+   * <code>optional string attachment_target = 175773741;</code>
    *
    * @return The attachmentTarget.
    */
@@ -191,7 +191,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
    * The target that the firewall policy is attached to.
    * </pre>
    *
-   * <code>string attachment_target = 175773741;</code>
+   * <code>optional string attachment_target = 175773741;</code>
    *
    * @return The bytes for attachmentTarget.
    */
@@ -217,7 +217,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
    * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy of the association.
    * </pre>
    *
-   * <code>string display_name = 4473832;</code>
+   * <code>optional string display_name = 4473832;</code>
    *
    * @return Whether the displayName field is set.
    */
@@ -232,7 +232,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
    * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy of the association.
    * </pre>
    *
-   * <code>string display_name = 4473832;</code>
+   * <code>optional string display_name = 4473832;</code>
    *
    * @return The displayName.
    */
@@ -255,7 +255,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
    * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy of the association.
    * </pre>
    *
-   * <code>string display_name = 4473832;</code>
+   * <code>optional string display_name = 4473832;</code>
    *
    * @return The bytes for displayName.
    */
@@ -281,7 +281,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
    * [Output Only] The firewall policy ID of the association.
    * </pre>
    *
-   * <code>string firewall_policy_id = 357211849;</code>
+   * <code>optional string firewall_policy_id = 357211849;</code>
    *
    * @return Whether the firewallPolicyId field is set.
    */
@@ -296,7 +296,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
    * [Output Only] The firewall policy ID of the association.
    * </pre>
    *
-   * <code>string firewall_policy_id = 357211849;</code>
+   * <code>optional string firewall_policy_id = 357211849;</code>
    *
    * @return The firewallPolicyId.
    */
@@ -319,7 +319,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
    * [Output Only] The firewall policy ID of the association.
    * </pre>
    *
-   * <code>string firewall_policy_id = 357211849;</code>
+   * <code>optional string firewall_policy_id = 357211849;</code>
    *
    * @return The bytes for firewallPolicyId.
    */
@@ -345,7 +345,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
    * The name for an association.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -360,7 +360,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
    * The name for an association.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -383,7 +383,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
    * The name for an association.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -409,7 +409,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
    * [Output Only] The short name of the firewall policy of the association.
    * </pre>
    *
-   * <code>string short_name = 492051566;</code>
+   * <code>optional string short_name = 492051566;</code>
    *
    * @return Whether the shortName field is set.
    */
@@ -424,7 +424,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
    * [Output Only] The short name of the firewall policy of the association.
    * </pre>
    *
-   * <code>string short_name = 492051566;</code>
+   * <code>optional string short_name = 492051566;</code>
    *
    * @return The shortName.
    */
@@ -447,7 +447,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
    * [Output Only] The short name of the firewall policy of the association.
    * </pre>
    *
-   * <code>string short_name = 492051566;</code>
+   * <code>optional string short_name = 492051566;</code>
    *
    * @return The bytes for shortName.
    */
@@ -906,7 +906,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * The target that the firewall policy is attached to.
      * </pre>
      *
-     * <code>string attachment_target = 175773741;</code>
+     * <code>optional string attachment_target = 175773741;</code>
      *
      * @return Whether the attachmentTarget field is set.
      */
@@ -920,7 +920,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * The target that the firewall policy is attached to.
      * </pre>
      *
-     * <code>string attachment_target = 175773741;</code>
+     * <code>optional string attachment_target = 175773741;</code>
      *
      * @return The attachmentTarget.
      */
@@ -942,7 +942,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * The target that the firewall policy is attached to.
      * </pre>
      *
-     * <code>string attachment_target = 175773741;</code>
+     * <code>optional string attachment_target = 175773741;</code>
      *
      * @return The bytes for attachmentTarget.
      */
@@ -964,7 +964,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * The target that the firewall policy is attached to.
      * </pre>
      *
-     * <code>string attachment_target = 175773741;</code>
+     * <code>optional string attachment_target = 175773741;</code>
      *
      * @param value The attachmentTarget to set.
      * @return This builder for chaining.
@@ -985,7 +985,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * The target that the firewall policy is attached to.
      * </pre>
      *
-     * <code>string attachment_target = 175773741;</code>
+     * <code>optional string attachment_target = 175773741;</code>
      *
      * @return This builder for chaining.
      */
@@ -1002,7 +1002,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * The target that the firewall policy is attached to.
      * </pre>
      *
-     * <code>string attachment_target = 175773741;</code>
+     * <code>optional string attachment_target = 175773741;</code>
      *
      * @param value The bytes for attachmentTarget to set.
      * @return This builder for chaining.
@@ -1026,7 +1026,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy of the association.
      * </pre>
      *
-     * <code>string display_name = 4473832;</code>
+     * <code>optional string display_name = 4473832;</code>
      *
      * @return Whether the displayName field is set.
      */
@@ -1040,7 +1040,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy of the association.
      * </pre>
      *
-     * <code>string display_name = 4473832;</code>
+     * <code>optional string display_name = 4473832;</code>
      *
      * @return The displayName.
      */
@@ -1062,7 +1062,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy of the association.
      * </pre>
      *
-     * <code>string display_name = 4473832;</code>
+     * <code>optional string display_name = 4473832;</code>
      *
      * @return The bytes for displayName.
      */
@@ -1084,7 +1084,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy of the association.
      * </pre>
      *
-     * <code>string display_name = 4473832;</code>
+     * <code>optional string display_name = 4473832;</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -1105,7 +1105,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy of the association.
      * </pre>
      *
-     * <code>string display_name = 4473832;</code>
+     * <code>optional string display_name = 4473832;</code>
      *
      * @return This builder for chaining.
      */
@@ -1122,7 +1122,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy of the association.
      * </pre>
      *
-     * <code>string display_name = 4473832;</code>
+     * <code>optional string display_name = 4473832;</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -1146,7 +1146,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * [Output Only] The firewall policy ID of the association.
      * </pre>
      *
-     * <code>string firewall_policy_id = 357211849;</code>
+     * <code>optional string firewall_policy_id = 357211849;</code>
      *
      * @return Whether the firewallPolicyId field is set.
      */
@@ -1160,7 +1160,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * [Output Only] The firewall policy ID of the association.
      * </pre>
      *
-     * <code>string firewall_policy_id = 357211849;</code>
+     * <code>optional string firewall_policy_id = 357211849;</code>
      *
      * @return The firewallPolicyId.
      */
@@ -1182,7 +1182,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * [Output Only] The firewall policy ID of the association.
      * </pre>
      *
-     * <code>string firewall_policy_id = 357211849;</code>
+     * <code>optional string firewall_policy_id = 357211849;</code>
      *
      * @return The bytes for firewallPolicyId.
      */
@@ -1204,7 +1204,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * [Output Only] The firewall policy ID of the association.
      * </pre>
      *
-     * <code>string firewall_policy_id = 357211849;</code>
+     * <code>optional string firewall_policy_id = 357211849;</code>
      *
      * @param value The firewallPolicyId to set.
      * @return This builder for chaining.
@@ -1225,7 +1225,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * [Output Only] The firewall policy ID of the association.
      * </pre>
      *
-     * <code>string firewall_policy_id = 357211849;</code>
+     * <code>optional string firewall_policy_id = 357211849;</code>
      *
      * @return This builder for chaining.
      */
@@ -1242,7 +1242,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * [Output Only] The firewall policy ID of the association.
      * </pre>
      *
-     * <code>string firewall_policy_id = 357211849;</code>
+     * <code>optional string firewall_policy_id = 357211849;</code>
      *
      * @param value The bytes for firewallPolicyId to set.
      * @return This builder for chaining.
@@ -1266,7 +1266,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * The name for an association.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -1280,7 +1280,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * The name for an association.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -1302,7 +1302,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * The name for an association.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -1324,7 +1324,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * The name for an association.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1345,7 +1345,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * The name for an association.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -1362,7 +1362,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * The name for an association.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1386,7 +1386,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * [Output Only] The short name of the firewall policy of the association.
      * </pre>
      *
-     * <code>string short_name = 492051566;</code>
+     * <code>optional string short_name = 492051566;</code>
      *
      * @return Whether the shortName field is set.
      */
@@ -1400,7 +1400,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * [Output Only] The short name of the firewall policy of the association.
      * </pre>
      *
-     * <code>string short_name = 492051566;</code>
+     * <code>optional string short_name = 492051566;</code>
      *
      * @return The shortName.
      */
@@ -1422,7 +1422,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * [Output Only] The short name of the firewall policy of the association.
      * </pre>
      *
-     * <code>string short_name = 492051566;</code>
+     * <code>optional string short_name = 492051566;</code>
      *
      * @return The bytes for shortName.
      */
@@ -1444,7 +1444,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * [Output Only] The short name of the firewall policy of the association.
      * </pre>
      *
-     * <code>string short_name = 492051566;</code>
+     * <code>optional string short_name = 492051566;</code>
      *
      * @param value The shortName to set.
      * @return This builder for chaining.
@@ -1465,7 +1465,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * [Output Only] The short name of the firewall policy of the association.
      * </pre>
      *
-     * <code>string short_name = 492051566;</code>
+     * <code>optional string short_name = 492051566;</code>
      *
      * @return This builder for chaining.
      */
@@ -1482,7 +1482,7 @@ public final class FirewallPolicyAssociation extends com.google.protobuf.Generat
      * [Output Only] The short name of the firewall policy of the association.
      * </pre>
      *
-     * <code>string short_name = 492051566;</code>
+     * <code>optional string short_name = 492051566;</code>
      *
      * @param value The bytes for shortName to set.
      * @return This builder for chaining.

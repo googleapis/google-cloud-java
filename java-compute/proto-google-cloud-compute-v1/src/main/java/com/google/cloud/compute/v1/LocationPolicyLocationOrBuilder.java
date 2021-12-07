@@ -27,10 +27,11 @@ public interface LocationPolicyLocationOrBuilder
    *
    *
    * <pre>
-   * Preference for a given locaction: ALLOW or DENY.
+   * Preference for a given location: ALLOW or DENY.
+   * Check the Preference enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;</code>
+   * <code>optional string preference = 150781147;</code>
    *
    * @return Whether the preference field is set.
    */
@@ -39,24 +40,26 @@ public interface LocationPolicyLocationOrBuilder
    *
    *
    * <pre>
-   * Preference for a given locaction: ALLOW or DENY.
+   * Preference for a given location: ALLOW or DENY.
+   * Check the Preference enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;</code>
+   * <code>optional string preference = 150781147;</code>
    *
-   * @return The enum numeric value on the wire for preference.
+   * @return The preference.
    */
-  int getPreferenceValue();
+  java.lang.String getPreference();
   /**
    *
    *
    * <pre>
-   * Preference for a given locaction: ALLOW or DENY.
+   * Preference for a given location: ALLOW or DENY.
+   * Check the Preference enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;</code>
+   * <code>optional string preference = 150781147;</code>
    *
-   * @return The preference.
+   * @return The bytes for preference.
    */
-  com.google.cloud.compute.v1.LocationPolicyLocation.Preference getPreference();
+  com.google.protobuf.ByteString getPreferenceBytes();
 }

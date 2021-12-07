@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -50,15 +51,15 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of addHealthCheck to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * TargetPoolsSettings.Builder targetPoolsSettingsBuilder = TargetPoolsSettings.newBuilder();
  * targetPoolsSettingsBuilder
- *     .addHealthCheckSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         targetPoolsSettingsBuilder
- *             .addHealthCheckSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -74,9 +75,21 @@ public class TargetPoolsSettings extends ClientSettings<TargetPoolsSettings> {
     return ((TargetPoolsStubSettings) getStubSettings()).addHealthCheckSettings();
   }
 
+  /** Returns the object with the settings used for calls to addHealthCheck. */
+  public OperationCallSettings<AddHealthCheckTargetPoolRequest, Operation, Operation>
+      addHealthCheckOperationSettings() {
+    return ((TargetPoolsStubSettings) getStubSettings()).addHealthCheckOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to addInstance. */
   public UnaryCallSettings<AddInstanceTargetPoolRequest, Operation> addInstanceSettings() {
     return ((TargetPoolsStubSettings) getStubSettings()).addInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addInstance. */
+  public OperationCallSettings<AddInstanceTargetPoolRequest, Operation, Operation>
+      addInstanceOperationSettings() {
+    return ((TargetPoolsStubSettings) getStubSettings()).addInstanceOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to aggregatedList. */
@@ -89,6 +102,12 @@ public class TargetPoolsSettings extends ClientSettings<TargetPoolsSettings> {
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteTargetPoolRequest, Operation> deleteSettings() {
     return ((TargetPoolsStubSettings) getStubSettings()).deleteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteTargetPoolRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((TargetPoolsStubSettings) getStubSettings()).deleteOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -107,6 +126,12 @@ public class TargetPoolsSettings extends ClientSettings<TargetPoolsSettings> {
     return ((TargetPoolsStubSettings) getStubSettings()).insertSettings();
   }
 
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertTargetPoolRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((TargetPoolsStubSettings) getStubSettings()).insertOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<ListTargetPoolsRequest, TargetPoolList, ListPagedResponse>
       listSettings() {
@@ -119,14 +144,32 @@ public class TargetPoolsSettings extends ClientSettings<TargetPoolsSettings> {
     return ((TargetPoolsStubSettings) getStubSettings()).removeHealthCheckSettings();
   }
 
+  /** Returns the object with the settings used for calls to removeHealthCheck. */
+  public OperationCallSettings<RemoveHealthCheckTargetPoolRequest, Operation, Operation>
+      removeHealthCheckOperationSettings() {
+    return ((TargetPoolsStubSettings) getStubSettings()).removeHealthCheckOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to removeInstance. */
   public UnaryCallSettings<RemoveInstanceTargetPoolRequest, Operation> removeInstanceSettings() {
     return ((TargetPoolsStubSettings) getStubSettings()).removeInstanceSettings();
   }
 
+  /** Returns the object with the settings used for calls to removeInstance. */
+  public OperationCallSettings<RemoveInstanceTargetPoolRequest, Operation, Operation>
+      removeInstanceOperationSettings() {
+    return ((TargetPoolsStubSettings) getStubSettings()).removeInstanceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setBackup. */
   public UnaryCallSettings<SetBackupTargetPoolRequest, Operation> setBackupSettings() {
     return ((TargetPoolsStubSettings) getStubSettings()).setBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setBackup. */
+  public OperationCallSettings<SetBackupTargetPoolRequest, Operation, Operation>
+      setBackupOperationSettings() {
+    return ((TargetPoolsStubSettings) getStubSettings()).setBackupOperationSettings();
   }
 
   public static final TargetPoolsSettings create(TargetPoolsStubSettings stub) throws IOException {
@@ -232,10 +275,22 @@ public class TargetPoolsSettings extends ClientSettings<TargetPoolsSettings> {
       return getStubSettingsBuilder().addHealthCheckSettings();
     }
 
+    /** Returns the builder for the settings used for calls to addHealthCheck. */
+    public OperationCallSettings.Builder<AddHealthCheckTargetPoolRequest, Operation, Operation>
+        addHealthCheckOperationSettings() {
+      return getStubSettingsBuilder().addHealthCheckOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to addInstance. */
     public UnaryCallSettings.Builder<AddInstanceTargetPoolRequest, Operation>
         addInstanceSettings() {
       return getStubSettingsBuilder().addInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addInstance. */
+    public OperationCallSettings.Builder<AddInstanceTargetPoolRequest, Operation, Operation>
+        addInstanceOperationSettings() {
+      return getStubSettingsBuilder().addInstanceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to aggregatedList. */
@@ -248,6 +303,12 @@ public class TargetPoolsSettings extends ClientSettings<TargetPoolsSettings> {
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteTargetPoolRequest, Operation> deleteSettings() {
       return getStubSettingsBuilder().deleteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteTargetPoolRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -266,6 +327,12 @@ public class TargetPoolsSettings extends ClientSettings<TargetPoolsSettings> {
       return getStubSettingsBuilder().insertSettings();
     }
 
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertTargetPoolRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to list. */
     public PagedCallSettings.Builder<ListTargetPoolsRequest, TargetPoolList, ListPagedResponse>
         listSettings() {
@@ -278,15 +345,33 @@ public class TargetPoolsSettings extends ClientSettings<TargetPoolsSettings> {
       return getStubSettingsBuilder().removeHealthCheckSettings();
     }
 
+    /** Returns the builder for the settings used for calls to removeHealthCheck. */
+    public OperationCallSettings.Builder<RemoveHealthCheckTargetPoolRequest, Operation, Operation>
+        removeHealthCheckOperationSettings() {
+      return getStubSettingsBuilder().removeHealthCheckOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to removeInstance. */
     public UnaryCallSettings.Builder<RemoveInstanceTargetPoolRequest, Operation>
         removeInstanceSettings() {
       return getStubSettingsBuilder().removeInstanceSettings();
     }
 
+    /** Returns the builder for the settings used for calls to removeInstance. */
+    public OperationCallSettings.Builder<RemoveInstanceTargetPoolRequest, Operation, Operation>
+        removeInstanceOperationSettings() {
+      return getStubSettingsBuilder().removeInstanceOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setBackup. */
     public UnaryCallSettings.Builder<SetBackupTargetPoolRequest, Operation> setBackupSettings() {
       return getStubSettingsBuilder().setBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setBackup. */
+    public OperationCallSettings.Builder<SetBackupTargetPoolRequest, Operation, Operation>
+        setBackupOperationSettings() {
+      return getStubSettingsBuilder().setBackupOperationSettings();
     }
 
     @Override

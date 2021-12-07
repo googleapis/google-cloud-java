@@ -35,6 +35,7 @@ import com.google.cloud.compute.v1.GetZoneRequest;
 import com.google.cloud.compute.v1.ListZonesRequest;
 import com.google.cloud.compute.v1.Zone;
 import com.google.cloud.compute.v1.ZoneList;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,6 +53,8 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonZonesStub extends ZonesStub {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
   private static final ApiMethodDescriptor<GetZoneRequest, Zone> getMethodDescriptor =
       ApiMethodDescriptor.<GetZoneRequest, Zone>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Zones/Get")
@@ -80,6 +83,7 @@ public class HttpJsonZonesStub extends ZonesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Zone>newBuilder()
                   .setDefaultInstance(Zone.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -126,6 +130,7 @@ public class HttpJsonZonesStub extends ZonesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<ZoneList>newBuilder()
                   .setDefaultInstance(ZoneList.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -175,10 +180,12 @@ public class HttpJsonZonesStub extends ZonesStub {
     HttpJsonCallSettings<GetZoneRequest, Zone> getTransportSettings =
         HttpJsonCallSettings.<GetZoneRequest, Zone>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListZonesRequest, ZoneList> listTransportSettings =
         HttpJsonCallSettings.<ListZonesRequest, ZoneList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.getCallable =

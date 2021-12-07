@@ -30,7 +30,7 @@ public interface FileContentBufferOrBuilder
    * The raw content in the secure keys file.
    * </pre>
    *
-   * <code>string content = 414659705;</code>
+   * <code>optional string content = 414659705;</code>
    *
    * @return Whether the content field is set.
    */
@@ -42,7 +42,7 @@ public interface FileContentBufferOrBuilder
    * The raw content in the secure keys file.
    * </pre>
    *
-   * <code>string content = 414659705;</code>
+   * <code>optional string content = 414659705;</code>
    *
    * @return The content.
    */
@@ -54,7 +54,7 @@ public interface FileContentBufferOrBuilder
    * The raw content in the secure keys file.
    * </pre>
    *
-   * <code>string content = 414659705;</code>
+   * <code>optional string content = 414659705;</code>
    *
    * @return The bytes for content.
    */
@@ -65,9 +65,10 @@ public interface FileContentBufferOrBuilder
    *
    * <pre>
    * The file type of source file.
+   * Check the FileType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+   * <code>optional string file_type = 294346781;</code>
    *
    * @return Whether the fileType field is set.
    */
@@ -77,23 +78,25 @@ public interface FileContentBufferOrBuilder
    *
    * <pre>
    * The file type of source file.
+   * Check the FileType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+   * <code>optional string file_type = 294346781;</code>
    *
-   * @return The enum numeric value on the wire for fileType.
+   * @return The fileType.
    */
-  int getFileTypeValue();
+  java.lang.String getFileType();
   /**
    *
    *
    * <pre>
    * The file type of source file.
+   * Check the FileType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+   * <code>optional string file_type = 294346781;</code>
    *
-   * @return The fileType.
+   * @return The bytes for fileType.
    */
-  com.google.cloud.compute.v1.FileContentBuffer.FileType getFileType();
+  com.google.protobuf.ByteString getFileTypeBytes();
 }

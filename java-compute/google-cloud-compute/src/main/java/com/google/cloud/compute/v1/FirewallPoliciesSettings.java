@@ -26,6 +26,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -49,16 +50,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of addAssociation to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * FirewallPoliciesSettings.Builder firewallPoliciesSettingsBuilder =
  *     FirewallPoliciesSettings.newBuilder();
  * firewallPoliciesSettingsBuilder
- *     .addAssociationSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         firewallPoliciesSettingsBuilder
- *             .addAssociationSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -75,9 +76,21 @@ public class FirewallPoliciesSettings extends ClientSettings<FirewallPoliciesSet
     return ((FirewallPoliciesStubSettings) getStubSettings()).addAssociationSettings();
   }
 
+  /** Returns the object with the settings used for calls to addAssociation. */
+  public OperationCallSettings<AddAssociationFirewallPolicyRequest, Operation, Operation>
+      addAssociationOperationSettings() {
+    return ((FirewallPoliciesStubSettings) getStubSettings()).addAssociationOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to addRule. */
   public UnaryCallSettings<AddRuleFirewallPolicyRequest, Operation> addRuleSettings() {
     return ((FirewallPoliciesStubSettings) getStubSettings()).addRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addRule. */
+  public OperationCallSettings<AddRuleFirewallPolicyRequest, Operation, Operation>
+      addRuleOperationSettings() {
+    return ((FirewallPoliciesStubSettings) getStubSettings()).addRuleOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to cloneRules. */
@@ -85,9 +98,21 @@ public class FirewallPoliciesSettings extends ClientSettings<FirewallPoliciesSet
     return ((FirewallPoliciesStubSettings) getStubSettings()).cloneRulesSettings();
   }
 
+  /** Returns the object with the settings used for calls to cloneRules. */
+  public OperationCallSettings<CloneRulesFirewallPolicyRequest, Operation, Operation>
+      cloneRulesOperationSettings() {
+    return ((FirewallPoliciesStubSettings) getStubSettings()).cloneRulesOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteFirewallPolicyRequest, Operation> deleteSettings() {
     return ((FirewallPoliciesStubSettings) getStubSettings()).deleteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteFirewallPolicyRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((FirewallPoliciesStubSettings) getStubSettings()).deleteOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -116,6 +141,12 @@ public class FirewallPoliciesSettings extends ClientSettings<FirewallPoliciesSet
     return ((FirewallPoliciesStubSettings) getStubSettings()).insertSettings();
   }
 
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertFirewallPolicyRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((FirewallPoliciesStubSettings) getStubSettings()).insertOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<ListFirewallPoliciesRequest, FirewallPolicyList, ListPagedResponse>
       listSettings() {
@@ -134,14 +165,32 @@ public class FirewallPoliciesSettings extends ClientSettings<FirewallPoliciesSet
     return ((FirewallPoliciesStubSettings) getStubSettings()).moveSettings();
   }
 
+  /** Returns the object with the settings used for calls to move. */
+  public OperationCallSettings<MoveFirewallPolicyRequest, Operation, Operation>
+      moveOperationSettings() {
+    return ((FirewallPoliciesStubSettings) getStubSettings()).moveOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to patch. */
   public UnaryCallSettings<PatchFirewallPolicyRequest, Operation> patchSettings() {
     return ((FirewallPoliciesStubSettings) getStubSettings()).patchSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchFirewallPolicyRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((FirewallPoliciesStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to patchRule. */
   public UnaryCallSettings<PatchRuleFirewallPolicyRequest, Operation> patchRuleSettings() {
     return ((FirewallPoliciesStubSettings) getStubSettings()).patchRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patchRule. */
+  public OperationCallSettings<PatchRuleFirewallPolicyRequest, Operation, Operation>
+      patchRuleOperationSettings() {
+    return ((FirewallPoliciesStubSettings) getStubSettings()).patchRuleOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to removeAssociation. */
@@ -150,9 +199,21 @@ public class FirewallPoliciesSettings extends ClientSettings<FirewallPoliciesSet
     return ((FirewallPoliciesStubSettings) getStubSettings()).removeAssociationSettings();
   }
 
+  /** Returns the object with the settings used for calls to removeAssociation. */
+  public OperationCallSettings<RemoveAssociationFirewallPolicyRequest, Operation, Operation>
+      removeAssociationOperationSettings() {
+    return ((FirewallPoliciesStubSettings) getStubSettings()).removeAssociationOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to removeRule. */
   public UnaryCallSettings<RemoveRuleFirewallPolicyRequest, Operation> removeRuleSettings() {
     return ((FirewallPoliciesStubSettings) getStubSettings()).removeRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeRule. */
+  public OperationCallSettings<RemoveRuleFirewallPolicyRequest, Operation, Operation>
+      removeRuleOperationSettings() {
+    return ((FirewallPoliciesStubSettings) getStubSettings()).removeRuleOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
@@ -270,9 +331,21 @@ public class FirewallPoliciesSettings extends ClientSettings<FirewallPoliciesSet
       return getStubSettingsBuilder().addAssociationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to addAssociation. */
+    public OperationCallSettings.Builder<AddAssociationFirewallPolicyRequest, Operation, Operation>
+        addAssociationOperationSettings() {
+      return getStubSettingsBuilder().addAssociationOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to addRule. */
     public UnaryCallSettings.Builder<AddRuleFirewallPolicyRequest, Operation> addRuleSettings() {
       return getStubSettingsBuilder().addRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addRule. */
+    public OperationCallSettings.Builder<AddRuleFirewallPolicyRequest, Operation, Operation>
+        addRuleOperationSettings() {
+      return getStubSettingsBuilder().addRuleOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to cloneRules. */
@@ -281,9 +354,21 @@ public class FirewallPoliciesSettings extends ClientSettings<FirewallPoliciesSet
       return getStubSettingsBuilder().cloneRulesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to cloneRules. */
+    public OperationCallSettings.Builder<CloneRulesFirewallPolicyRequest, Operation, Operation>
+        cloneRulesOperationSettings() {
+      return getStubSettingsBuilder().cloneRulesOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteFirewallPolicyRequest, Operation> deleteSettings() {
       return getStubSettingsBuilder().deleteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteFirewallPolicyRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -314,6 +399,12 @@ public class FirewallPoliciesSettings extends ClientSettings<FirewallPoliciesSet
       return getStubSettingsBuilder().insertSettings();
     }
 
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertFirewallPolicyRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to list. */
     public PagedCallSettings.Builder<
             ListFirewallPoliciesRequest, FirewallPolicyList, ListPagedResponse>
@@ -333,9 +424,21 @@ public class FirewallPoliciesSettings extends ClientSettings<FirewallPoliciesSet
       return getStubSettingsBuilder().moveSettings();
     }
 
+    /** Returns the builder for the settings used for calls to move. */
+    public OperationCallSettings.Builder<MoveFirewallPolicyRequest, Operation, Operation>
+        moveOperationSettings() {
+      return getStubSettingsBuilder().moveOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to patch. */
     public UnaryCallSettings.Builder<PatchFirewallPolicyRequest, Operation> patchSettings() {
       return getStubSettingsBuilder().patchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchFirewallPolicyRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to patchRule. */
@@ -344,16 +447,35 @@ public class FirewallPoliciesSettings extends ClientSettings<FirewallPoliciesSet
       return getStubSettingsBuilder().patchRuleSettings();
     }
 
+    /** Returns the builder for the settings used for calls to patchRule. */
+    public OperationCallSettings.Builder<PatchRuleFirewallPolicyRequest, Operation, Operation>
+        patchRuleOperationSettings() {
+      return getStubSettingsBuilder().patchRuleOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to removeAssociation. */
     public UnaryCallSettings.Builder<RemoveAssociationFirewallPolicyRequest, Operation>
         removeAssociationSettings() {
       return getStubSettingsBuilder().removeAssociationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to removeAssociation. */
+    public OperationCallSettings.Builder<
+            RemoveAssociationFirewallPolicyRequest, Operation, Operation>
+        removeAssociationOperationSettings() {
+      return getStubSettingsBuilder().removeAssociationOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to removeRule. */
     public UnaryCallSettings.Builder<RemoveRuleFirewallPolicyRequest, Operation>
         removeRuleSettings() {
       return getStubSettingsBuilder().removeRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeRule. */
+    public OperationCallSettings.Builder<RemoveRuleFirewallPolicyRequest, Operation, Operation>
+        removeRuleOperationSettings() {
+      return getStubSettingsBuilder().removeRuleOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

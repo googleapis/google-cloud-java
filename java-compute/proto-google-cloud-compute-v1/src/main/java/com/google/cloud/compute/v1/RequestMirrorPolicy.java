@@ -122,7 +122,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
    * The full or partial URL to the BackendService resource being mirrored to.
    * </pre>
    *
-   * <code>string backend_service = 306946058;</code>
+   * <code>optional string backend_service = 306946058;</code>
    *
    * @return Whether the backendService field is set.
    */
@@ -137,7 +137,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
    * The full or partial URL to the BackendService resource being mirrored to.
    * </pre>
    *
-   * <code>string backend_service = 306946058;</code>
+   * <code>optional string backend_service = 306946058;</code>
    *
    * @return The backendService.
    */
@@ -160,7 +160,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
    * The full or partial URL to the BackendService resource being mirrored to.
    * </pre>
    *
-   * <code>string backend_service = 306946058;</code>
+   * <code>optional string backend_service = 306946058;</code>
    *
    * @return The bytes for backendService.
    */
@@ -516,7 +516,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      * The full or partial URL to the BackendService resource being mirrored to.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>optional string backend_service = 306946058;</code>
      *
      * @return Whether the backendService field is set.
      */
@@ -530,7 +530,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      * The full or partial URL to the BackendService resource being mirrored to.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>optional string backend_service = 306946058;</code>
      *
      * @return The backendService.
      */
@@ -552,7 +552,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      * The full or partial URL to the BackendService resource being mirrored to.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>optional string backend_service = 306946058;</code>
      *
      * @return The bytes for backendService.
      */
@@ -574,7 +574,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      * The full or partial URL to the BackendService resource being mirrored to.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>optional string backend_service = 306946058;</code>
      *
      * @param value The backendService to set.
      * @return This builder for chaining.
@@ -595,7 +595,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      * The full or partial URL to the BackendService resource being mirrored to.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>optional string backend_service = 306946058;</code>
      *
      * @return This builder for chaining.
      */
@@ -612,7 +612,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      * The full or partial URL to the BackendService resource being mirrored to.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>optional string backend_service = 306946058;</code>
      *
      * @param value The bytes for backendService to set.
      * @return This builder for chaining.

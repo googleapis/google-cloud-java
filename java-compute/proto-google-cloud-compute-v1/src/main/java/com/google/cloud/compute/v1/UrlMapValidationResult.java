@@ -192,7 +192,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
    * Whether the given UrlMap can be successfully loaded. If false, 'loadErrors' indicates the reasons.
    * </pre>
    *
-   * <code>bool load_succeeded = 128326216;</code>
+   * <code>optional bool load_succeeded = 128326216;</code>
    *
    * @return Whether the loadSucceeded field is set.
    */
@@ -207,7 +207,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
    * Whether the given UrlMap can be successfully loaded. If false, 'loadErrors' indicates the reasons.
    * </pre>
    *
-   * <code>bool load_succeeded = 128326216;</code>
+   * <code>optional bool load_succeeded = 128326216;</code>
    *
    * @return The loadSucceeded.
    */
@@ -254,7 +254,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
    * If successfully loaded, this field indicates whether the test passed. If false, 'testFailures's indicate the reason of failure.
    * </pre>
    *
-   * <code>bool test_passed = 192708797;</code>
+   * <code>optional bool test_passed = 192708797;</code>
    *
    * @return Whether the testPassed field is set.
    */
@@ -269,7 +269,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
    * If successfully loaded, this field indicates whether the test passed. If false, 'testFailures's indicate the reason of failure.
    * </pre>
    *
-   * <code>bool test_passed = 192708797;</code>
+   * <code>optional bool test_passed = 192708797;</code>
    *
    * @return The testPassed.
    */
@@ -842,7 +842,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
      * Whether the given UrlMap can be successfully loaded. If false, 'loadErrors' indicates the reasons.
      * </pre>
      *
-     * <code>bool load_succeeded = 128326216;</code>
+     * <code>optional bool load_succeeded = 128326216;</code>
      *
      * @return Whether the loadSucceeded field is set.
      */
@@ -857,7 +857,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
      * Whether the given UrlMap can be successfully loaded. If false, 'loadErrors' indicates the reasons.
      * </pre>
      *
-     * <code>bool load_succeeded = 128326216;</code>
+     * <code>optional bool load_succeeded = 128326216;</code>
      *
      * @return The loadSucceeded.
      */
@@ -872,7 +872,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
      * Whether the given UrlMap can be successfully loaded. If false, 'loadErrors' indicates the reasons.
      * </pre>
      *
-     * <code>bool load_succeeded = 128326216;</code>
+     * <code>optional bool load_succeeded = 128326216;</code>
      *
      * @param value The loadSucceeded to set.
      * @return This builder for chaining.
@@ -890,7 +890,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
      * Whether the given UrlMap can be successfully loaded. If false, 'loadErrors' indicates the reasons.
      * </pre>
      *
-     * <code>bool load_succeeded = 128326216;</code>
+     * <code>optional bool load_succeeded = 128326216;</code>
      *
      * @return This builder for chaining.
      */
@@ -1116,7 +1116,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
      * If successfully loaded, this field indicates whether the test passed. If false, 'testFailures's indicate the reason of failure.
      * </pre>
      *
-     * <code>bool test_passed = 192708797;</code>
+     * <code>optional bool test_passed = 192708797;</code>
      *
      * @return Whether the testPassed field is set.
      */
@@ -1131,7 +1131,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
      * If successfully loaded, this field indicates whether the test passed. If false, 'testFailures's indicate the reason of failure.
      * </pre>
      *
-     * <code>bool test_passed = 192708797;</code>
+     * <code>optional bool test_passed = 192708797;</code>
      *
      * @return The testPassed.
      */
@@ -1146,7 +1146,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
      * If successfully loaded, this field indicates whether the test passed. If false, 'testFailures's indicate the reason of failure.
      * </pre>
      *
-     * <code>bool test_passed = 192708797;</code>
+     * <code>optional bool test_passed = 192708797;</code>
      *
      * @param value The testPassed to set.
      * @return This builder for chaining.
@@ -1164,7 +1164,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
      * If successfully loaded, this field indicates whether the test passed. If false, 'testFailures's indicate the reason of failure.
      * </pre>
      *
-     * <code>bool test_passed = 192708797;</code>
+     * <code>optional bool test_passed = 192708797;</code>
      *
      * @return This builder for chaining.
      */

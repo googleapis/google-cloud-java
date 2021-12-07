@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonUrlMapsStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -36,6 +37,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -140,7 +142,7 @@ public class UrlMapsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -151,6 +153,7 @@ public class UrlMapsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -163,7 +166,7 @@ public class UrlMapsClientTest {
     String project = "project-309310695";
     String urlMap = "urlMap-836780691";
 
-    Operation actualResponse = client.delete(project, urlMap);
+    Operation actualResponse = client.deleteAsync(project, urlMap).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -191,10 +194,9 @@ public class UrlMapsClientTest {
     try {
       String project = "project-309310695";
       String urlMap = "urlMap-836780691";
-      client.delete(project, urlMap);
+      client.deleteAsync(project, urlMap).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -268,7 +270,7 @@ public class UrlMapsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -279,6 +281,7 @@ public class UrlMapsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -291,7 +294,7 @@ public class UrlMapsClientTest {
     String project = "project-309310695";
     UrlMap urlMapResource = UrlMap.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, urlMapResource);
+    Operation actualResponse = client.insertAsync(project, urlMapResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -319,10 +322,9 @@ public class UrlMapsClientTest {
     try {
       String project = "project-309310695";
       UrlMap urlMapResource = UrlMap.newBuilder().build();
-      client.insert(project, urlMapResource);
+      client.insertAsync(project, urlMapResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -336,7 +338,7 @@ public class UrlMapsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -347,6 +349,7 @@ public class UrlMapsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -362,7 +365,7 @@ public class UrlMapsClientTest {
         CacheInvalidationRule.newBuilder().build();
 
     Operation actualResponse =
-        client.invalidateCache(project, urlMap, cacheInvalidationRuleResource);
+        client.invalidateCacheAsync(project, urlMap, cacheInvalidationRuleResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -392,10 +395,9 @@ public class UrlMapsClientTest {
       String urlMap = "urlMap-836780691";
       CacheInvalidationRule cacheInvalidationRuleResource =
           CacheInvalidationRule.newBuilder().build();
-      client.invalidateCache(project, urlMap, cacheInvalidationRuleResource);
+      client.invalidateCacheAsync(project, urlMap, cacheInvalidationRuleResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -459,7 +461,7 @@ public class UrlMapsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -470,6 +472,7 @@ public class UrlMapsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -483,7 +486,7 @@ public class UrlMapsClientTest {
     String urlMap = "urlMap-836780691";
     UrlMap urlMapResource = UrlMap.newBuilder().build();
 
-    Operation actualResponse = client.patch(project, urlMap, urlMapResource);
+    Operation actualResponse = client.patchAsync(project, urlMap, urlMapResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -512,10 +515,9 @@ public class UrlMapsClientTest {
       String project = "project-309310695";
       String urlMap = "urlMap-836780691";
       UrlMap urlMapResource = UrlMap.newBuilder().build();
-      client.patch(project, urlMap, urlMapResource);
+      client.patchAsync(project, urlMap, urlMapResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -529,7 +531,7 @@ public class UrlMapsClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -540,6 +542,7 @@ public class UrlMapsClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -553,7 +556,7 @@ public class UrlMapsClientTest {
     String urlMap = "urlMap-836780691";
     UrlMap urlMapResource = UrlMap.newBuilder().build();
 
-    Operation actualResponse = client.update(project, urlMap, urlMapResource);
+    Operation actualResponse = client.updateAsync(project, urlMap, urlMapResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -582,10 +585,9 @@ public class UrlMapsClientTest {
       String project = "project-309310695";
       String urlMap = "urlMap-836780691";
       UrlMap urlMapResource = UrlMap.newBuilder().build();
-      client.update(project, urlMap, urlMapResource);
+      client.updateAsync(project, urlMap, urlMapResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 

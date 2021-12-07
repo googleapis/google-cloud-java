@@ -35,6 +35,7 @@ import com.google.cloud.compute.v1.GetInterconnectLocationRequest;
 import com.google.cloud.compute.v1.InterconnectLocation;
 import com.google.cloud.compute.v1.InterconnectLocationList;
 import com.google.cloud.compute.v1.ListInterconnectLocationsRequest;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,6 +53,8 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonInterconnectLocationsStub extends InterconnectLocationsStub {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
   private static final ApiMethodDescriptor<GetInterconnectLocationRequest, InterconnectLocation>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetInterconnectLocationRequest, InterconnectLocation>newBuilder()
@@ -82,6 +85,7 @@ public class HttpJsonInterconnectLocationsStub extends InterconnectLocationsStub
               .setResponseParser(
                   ProtoMessageResponseParser.<InterconnectLocation>newBuilder()
                       .setDefaultInstance(InterconnectLocation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -134,6 +138,7 @@ public class HttpJsonInterconnectLocationsStub extends InterconnectLocationsStub
               .setResponseParser(
                   ProtoMessageResponseParser.<InterconnectLocationList>newBuilder()
                       .setDefaultInstance(InterconnectLocationList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -189,12 +194,14 @@ public class HttpJsonInterconnectLocationsStub extends InterconnectLocationsStub
         getTransportSettings =
             HttpJsonCallSettings.<GetInterconnectLocationRequest, InterconnectLocation>newBuilder()
                 .setMethodDescriptor(getMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<ListInterconnectLocationsRequest, InterconnectLocationList>
         listTransportSettings =
             HttpJsonCallSettings
                 .<ListInterconnectLocationsRequest, InterconnectLocationList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.getCallable =

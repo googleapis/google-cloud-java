@@ -30,7 +30,7 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
-   * <code>string peer_external_gateway = 384956173;</code>
+   * <code>optional string peer_external_gateway = 384956173;</code>
    *
    * @return Whether the peerExternalGateway field is set.
    */
@@ -42,7 +42,7 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
-   * <code>string peer_external_gateway = 384956173;</code>
+   * <code>optional string peer_external_gateway = 384956173;</code>
    *
    * @return The peerExternalGateway.
    */
@@ -54,7 +54,7 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
-   * <code>string peer_external_gateway = 384956173;</code>
+   * <code>optional string peer_external_gateway = 384956173;</code>
    *
    * @return The bytes for peerExternalGateway.
    */
@@ -67,7 +67,7 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
-   * <code>string peer_gcp_gateway = 281867452;</code>
+   * <code>optional string peer_gcp_gateway = 281867452;</code>
    *
    * @return Whether the peerGcpGateway field is set.
    */
@@ -79,7 +79,7 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
-   * <code>string peer_gcp_gateway = 281867452;</code>
+   * <code>optional string peer_gcp_gateway = 281867452;</code>
    *
    * @return The peerGcpGateway.
    */
@@ -91,7 +91,7 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
-   * <code>string peer_gcp_gateway = 281867452;</code>
+   * <code>optional string peer_gcp_gateway = 281867452;</code>
    *
    * @return The bytes for peerGcpGateway.
    */
@@ -105,7 +105,7 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
+   * optional .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
    * </code>
    *
    * @return Whether the state field is set.
@@ -119,7 +119,7 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
+   * optional .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
    * </code>
    *
    * @return The state.
@@ -133,7 +133,7 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
+   * optional .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState state = 109757585;
    * </code>
    */
   com.google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementStateOrBuilder

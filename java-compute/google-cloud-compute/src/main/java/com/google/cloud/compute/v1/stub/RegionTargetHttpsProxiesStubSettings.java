@@ -27,10 +27,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.httpjson.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -73,16 +77,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * RegionTargetHttpsProxiesStubSettings.Builder regionTargetHttpsProxiesSettingsBuilder =
  *     RegionTargetHttpsProxiesStubSettings.newBuilder();
  * regionTargetHttpsProxiesSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         regionTargetHttpsProxiesSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -102,15 +106,24 @@ public class RegionTargetHttpsProxiesStubSettings
           .build();
 
   private final UnaryCallSettings<DeleteRegionTargetHttpsProxyRequest, Operation> deleteSettings;
+  private final OperationCallSettings<DeleteRegionTargetHttpsProxyRequest, Operation, Operation>
+      deleteOperationSettings;
   private final UnaryCallSettings<GetRegionTargetHttpsProxyRequest, TargetHttpsProxy> getSettings;
   private final UnaryCallSettings<InsertRegionTargetHttpsProxyRequest, Operation> insertSettings;
+  private final OperationCallSettings<InsertRegionTargetHttpsProxyRequest, Operation, Operation>
+      insertOperationSettings;
   private final PagedCallSettings<
           ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList, ListPagedResponse>
       listSettings;
   private final UnaryCallSettings<SetSslCertificatesRegionTargetHttpsProxyRequest, Operation>
       setSslCertificatesSettings;
+  private final OperationCallSettings<
+          SetSslCertificatesRegionTargetHttpsProxyRequest, Operation, Operation>
+      setSslCertificatesOperationSettings;
   private final UnaryCallSettings<SetUrlMapRegionTargetHttpsProxyRequest, Operation>
       setUrlMapSettings;
+  private final OperationCallSettings<SetUrlMapRegionTargetHttpsProxyRequest, Operation, Operation>
+      setUrlMapOperationSettings;
 
   private static final PagedListDescriptor<
           ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList, TargetHttpsProxy>
@@ -179,6 +192,12 @@ public class RegionTargetHttpsProxiesStubSettings
     return deleteSettings;
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteRegionTargetHttpsProxyRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return deleteOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetRegionTargetHttpsProxyRequest, TargetHttpsProxy> getSettings() {
     return getSettings;
@@ -187,6 +206,12 @@ public class RegionTargetHttpsProxiesStubSettings
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertRegionTargetHttpsProxyRequest, Operation> insertSettings() {
     return insertSettings;
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertRegionTargetHttpsProxyRequest, Operation, Operation>
+      insertOperationSettings() {
+    return insertOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -202,9 +227,22 @@ public class RegionTargetHttpsProxiesStubSettings
     return setSslCertificatesSettings;
   }
 
+  /** Returns the object with the settings used for calls to setSslCertificates. */
+  public OperationCallSettings<
+          SetSslCertificatesRegionTargetHttpsProxyRequest, Operation, Operation>
+      setSslCertificatesOperationSettings() {
+    return setSslCertificatesOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setUrlMap. */
   public UnaryCallSettings<SetUrlMapRegionTargetHttpsProxyRequest, Operation> setUrlMapSettings() {
     return setUrlMapSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setUrlMap. */
+  public OperationCallSettings<SetUrlMapRegionTargetHttpsProxyRequest, Operation, Operation>
+      setUrlMapOperationSettings() {
+    return setUrlMapOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -241,7 +279,9 @@ public class RegionTargetHttpsProxiesStubSettings
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return GoogleCredentialsProvider.newBuilder()
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        .setUseJwtAccessWithScope(true);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -283,11 +323,16 @@ public class RegionTargetHttpsProxiesStubSettings
     super(settingsBuilder);
 
     deleteSettings = settingsBuilder.deleteSettings().build();
+    deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
+    insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     setSslCertificatesSettings = settingsBuilder.setSslCertificatesSettings().build();
+    setSslCertificatesOperationSettings =
+        settingsBuilder.setSslCertificatesOperationSettings().build();
     setUrlMapSettings = settingsBuilder.setUrlMapSettings().build();
+    setUrlMapOperationSettings = settingsBuilder.setUrlMapOperationSettings().build();
   }
 
   /** Builder for RegionTargetHttpsProxiesStubSettings. */
@@ -296,18 +341,30 @@ public class RegionTargetHttpsProxiesStubSettings
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<DeleteRegionTargetHttpsProxyRequest, Operation>
         deleteSettings;
+    private final OperationCallSettings.Builder<
+            DeleteRegionTargetHttpsProxyRequest, Operation, Operation>
+        deleteOperationSettings;
     private final UnaryCallSettings.Builder<GetRegionTargetHttpsProxyRequest, TargetHttpsProxy>
         getSettings;
     private final UnaryCallSettings.Builder<InsertRegionTargetHttpsProxyRequest, Operation>
         insertSettings;
+    private final OperationCallSettings.Builder<
+            InsertRegionTargetHttpsProxyRequest, Operation, Operation>
+        insertOperationSettings;
     private final PagedCallSettings.Builder<
             ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList, ListPagedResponse>
         listSettings;
     private final UnaryCallSettings.Builder<
             SetSslCertificatesRegionTargetHttpsProxyRequest, Operation>
         setSslCertificatesSettings;
+    private final OperationCallSettings.Builder<
+            SetSslCertificatesRegionTargetHttpsProxyRequest, Operation, Operation>
+        setSslCertificatesOperationSettings;
     private final UnaryCallSettings.Builder<SetUrlMapRegionTargetHttpsProxyRequest, Operation>
         setUrlMapSettings;
+    private final OperationCallSettings.Builder<
+            SetUrlMapRegionTargetHttpsProxyRequest, Operation, Operation>
+        setUrlMapOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -359,11 +416,15 @@ public class RegionTargetHttpsProxiesStubSettings
       super(clientContext);
 
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       setSslCertificatesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setSslCertificatesOperationSettings = OperationCallSettings.newBuilder();
       setUrlMapSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setUrlMapOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -380,11 +441,16 @@ public class RegionTargetHttpsProxiesStubSettings
       super(settings);
 
       deleteSettings = settings.deleteSettings.toBuilder();
+      deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
+      insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       setSslCertificatesSettings = settings.setSslCertificatesSettings.toBuilder();
+      setSslCertificatesOperationSettings =
+          settings.setSslCertificatesOperationSettings.toBuilder();
       setUrlMapSettings = settings.setUrlMapSettings.toBuilder();
+      setUrlMapOperationSettings = settings.setUrlMapOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -440,6 +506,106 @@ public class RegionTargetHttpsProxiesStubSettings
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .deleteOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteRegionTargetHttpsProxyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .insertOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<InsertRegionTargetHttpsProxyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setSslCertificatesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetSslCertificatesRegionTargetHttpsProxyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setUrlMapOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetUrlMapRegionTargetHttpsProxyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -464,6 +630,14 @@ public class RegionTargetHttpsProxiesStubSettings
       return deleteSettings;
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteRegionTargetHttpsProxyRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return deleteOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetRegionTargetHttpsProxyRequest, TargetHttpsProxy>
         getSettings() {
@@ -474,6 +648,14 @@ public class RegionTargetHttpsProxiesStubSettings
     public UnaryCallSettings.Builder<InsertRegionTargetHttpsProxyRequest, Operation>
         insertSettings() {
       return insertSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<InsertRegionTargetHttpsProxyRequest, Operation, Operation>
+        insertOperationSettings() {
+      return insertOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -489,10 +671,28 @@ public class RegionTargetHttpsProxiesStubSettings
       return setSslCertificatesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to setSslCertificates. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            SetSslCertificatesRegionTargetHttpsProxyRequest, Operation, Operation>
+        setSslCertificatesOperationSettings() {
+      return setSslCertificatesOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setUrlMap. */
     public UnaryCallSettings.Builder<SetUrlMapRegionTargetHttpsProxyRequest, Operation>
         setUrlMapSettings() {
       return setUrlMapSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setUrlMap. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            SetUrlMapRegionTargetHttpsProxyRequest, Operation, Operation>
+        setUrlMapOperationSettings() {
+      return setUrlMapOperationSettings;
     }
 
     @Override

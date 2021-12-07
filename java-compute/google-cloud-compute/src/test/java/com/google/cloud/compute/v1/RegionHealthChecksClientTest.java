@@ -27,12 +27,14 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonRegionHealthChecksStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -86,7 +88,7 @@ public class RegionHealthChecksClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -97,6 +99,7 @@ public class RegionHealthChecksClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -110,7 +113,7 @@ public class RegionHealthChecksClientTest {
     String region = "region-934795532";
     String healthCheck = "healthCheck-1938093044";
 
-    Operation actualResponse = client.delete(project, region, healthCheck);
+    Operation actualResponse = client.deleteAsync(project, region, healthCheck).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -139,10 +142,9 @@ public class RegionHealthChecksClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       String healthCheck = "healthCheck-1938093044";
-      client.delete(project, region, healthCheck);
+      client.deleteAsync(project, region, healthCheck).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -167,6 +169,7 @@ public class RegionHealthChecksClientTest {
             .setSslHealthCheck(SSLHealthCheck.newBuilder().build())
             .setTcpHealthCheck(TCPHealthCheck.newBuilder().build())
             .setTimeoutSec(-2067488653)
+            .setType("type3575610")
             .setUnhealthyThreshold(1838571216)
             .build();
     mockService.addResponse(expectedResponse);
@@ -221,7 +224,7 @@ public class RegionHealthChecksClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -232,6 +235,7 @@ public class RegionHealthChecksClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -245,7 +249,7 @@ public class RegionHealthChecksClientTest {
     String region = "region-934795532";
     HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, region, healthCheckResource);
+    Operation actualResponse = client.insertAsync(project, region, healthCheckResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -274,10 +278,9 @@ public class RegionHealthChecksClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-      client.insert(project, region, healthCheckResource);
+      client.insertAsync(project, region, healthCheckResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -343,7 +346,7 @@ public class RegionHealthChecksClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -354,6 +357,7 @@ public class RegionHealthChecksClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -368,7 +372,8 @@ public class RegionHealthChecksClientTest {
     String healthCheck = "healthCheck-1938093044";
     HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
 
-    Operation actualResponse = client.patch(project, region, healthCheck, healthCheckResource);
+    Operation actualResponse =
+        client.patchAsync(project, region, healthCheck, healthCheckResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -398,10 +403,9 @@ public class RegionHealthChecksClientTest {
       String region = "region-934795532";
       String healthCheck = "healthCheck-1938093044";
       HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-      client.patch(project, region, healthCheck, healthCheckResource);
+      client.patchAsync(project, region, healthCheck, healthCheckResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -415,7 +419,7 @@ public class RegionHealthChecksClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -426,6 +430,7 @@ public class RegionHealthChecksClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -440,7 +445,8 @@ public class RegionHealthChecksClientTest {
     String healthCheck = "healthCheck-1938093044";
     HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
 
-    Operation actualResponse = client.update(project, region, healthCheck, healthCheckResource);
+    Operation actualResponse =
+        client.updateAsync(project, region, healthCheck, healthCheckResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -470,10 +476,9 @@ public class RegionHealthChecksClientTest {
       String region = "region-934795532";
       String healthCheck = "healthCheck-1938093044";
       HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-      client.update(project, region, healthCheck, healthCheckResource);
+      client.updateAsync(project, region, healthCheck, healthCheckResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 }

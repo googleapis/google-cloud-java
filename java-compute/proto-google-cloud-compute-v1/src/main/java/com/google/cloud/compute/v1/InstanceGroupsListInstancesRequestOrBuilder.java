@@ -28,11 +28,10 @@ public interface InstanceGroupsListInstancesRequestOrBuilder
    *
    * <pre>
    * A filter for the state of the instances in the instance group. Valid options are ALL or RUNNING. If you do not specify this parameter the list includes all instances regardless of their state.
+   * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
-   * </code>
+   * <code>optional string instance_state = 92223591;</code>
    *
    * @return Whether the instanceState field is set.
    */
@@ -42,27 +41,25 @@ public interface InstanceGroupsListInstancesRequestOrBuilder
    *
    * <pre>
    * A filter for the state of the instances in the instance group. Valid options are ALL or RUNNING. If you do not specify this parameter the list includes all instances regardless of their state.
+   * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
-   * </code>
+   * <code>optional string instance_state = 92223591;</code>
    *
-   * @return The enum numeric value on the wire for instanceState.
+   * @return The instanceState.
    */
-  int getInstanceStateValue();
+  java.lang.String getInstanceState();
   /**
    *
    *
    * <pre>
    * A filter for the state of the instances in the instance group. Valid options are ALL or RUNNING. If you do not specify this parameter the list includes all instances regardless of their state.
+   * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
-   * </code>
+   * <code>optional string instance_state = 92223591;</code>
    *
-   * @return The instanceState.
+   * @return The bytes for instanceState.
    */
-  com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest.InstanceState getInstanceState();
+  com.google.protobuf.ByteString getInstanceStateBytes();
 }

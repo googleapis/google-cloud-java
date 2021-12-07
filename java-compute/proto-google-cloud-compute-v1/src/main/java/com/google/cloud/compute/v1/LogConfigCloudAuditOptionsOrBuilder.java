@@ -27,11 +27,11 @@ public interface LogConfigCloudAuditOptionsOrBuilder
    *
    *
    * <pre>
-   * Information used by the Cloud Audit Logging pipeline.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
+   * optional .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
    * </code>
    *
    * @return Whether the authorizationLoggingOptions field is set.
@@ -41,11 +41,11 @@ public interface LogConfigCloudAuditOptionsOrBuilder
    *
    *
    * <pre>
-   * Information used by the Cloud Audit Logging pipeline.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
+   * optional .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
    * </code>
    *
    * @return The authorizationLoggingOptions.
@@ -55,11 +55,11 @@ public interface LogConfigCloudAuditOptionsOrBuilder
    *
    *
    * <pre>
-   * Information used by the Cloud Audit Logging pipeline.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
+   * optional .google.cloud.compute.v1.AuthorizationLoggingOptions authorization_logging_options = 217861624;
    * </code>
    */
   com.google.cloud.compute.v1.AuthorizationLoggingOptionsOrBuilder
@@ -69,10 +69,11 @@ public interface LogConfigCloudAuditOptionsOrBuilder
    *
    *
    * <pre>
-   * The log_name to populate in the Cloud Audit Record.
+   * This is deprecated and has no effect. Do not use.
+   * Check the LogName enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
+   * <code>optional string log_name = 402913958;</code>
    *
    * @return Whether the logName field is set.
    */
@@ -81,24 +82,26 @@ public interface LogConfigCloudAuditOptionsOrBuilder
    *
    *
    * <pre>
-   * The log_name to populate in the Cloud Audit Record.
+   * This is deprecated and has no effect. Do not use.
+   * Check the LogName enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
+   * <code>optional string log_name = 402913958;</code>
    *
-   * @return The enum numeric value on the wire for logName.
+   * @return The logName.
    */
-  int getLogNameValue();
+  java.lang.String getLogName();
   /**
    *
    *
    * <pre>
-   * The log_name to populate in the Cloud Audit Record.
+   * This is deprecated and has no effect. Do not use.
+   * Check the LogName enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
+   * <code>optional string log_name = 402913958;</code>
    *
-   * @return The logName.
+   * @return The bytes for logName.
    */
-  com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName getLogName();
+  com.google.protobuf.ByteString getLogNameBytes();
 }

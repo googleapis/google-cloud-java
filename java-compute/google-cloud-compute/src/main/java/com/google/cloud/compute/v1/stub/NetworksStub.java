@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.NetworksClient.ListPagedResponse;
 import static com.google.cloud.compute.v1.NetworksClient.ListPeeringRoutesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddPeeringNetworkRequest;
 import com.google.cloud.compute.v1.DeleteNetworkRequest;
@@ -48,8 +49,17 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class NetworksStub implements BackgroundResource {
 
+  public OperationCallable<AddPeeringNetworkRequest, Operation, Operation>
+      addPeeringOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: addPeeringOperationCallable()");
+  }
+
   public UnaryCallable<AddPeeringNetworkRequest, Operation> addPeeringCallable() {
     throw new UnsupportedOperationException("Not implemented: addPeeringCallable()");
+  }
+
+  public OperationCallable<DeleteNetworkRequest, Operation, Operation> deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
   }
 
   public UnaryCallable<DeleteNetworkRequest, Operation> deleteCallable() {
@@ -63,6 +73,10 @@ public abstract class NetworksStub implements BackgroundResource {
   public UnaryCallable<GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
       getEffectiveFirewallsCallable() {
     throw new UnsupportedOperationException("Not implemented: getEffectiveFirewallsCallable()");
+  }
+
+  public OperationCallable<InsertNetworkRequest, Operation, Operation> insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertNetworkRequest, Operation> insertCallable() {
@@ -87,16 +101,36 @@ public abstract class NetworksStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listPeeringRoutesCallable()");
   }
 
+  public OperationCallable<PatchNetworkRequest, Operation, Operation> patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
+  }
+
   public UnaryCallable<PatchNetworkRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public OperationCallable<RemovePeeringNetworkRequest, Operation, Operation>
+      removePeeringOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: removePeeringOperationCallable()");
   }
 
   public UnaryCallable<RemovePeeringNetworkRequest, Operation> removePeeringCallable() {
     throw new UnsupportedOperationException("Not implemented: removePeeringCallable()");
   }
 
+  public OperationCallable<SwitchToCustomModeNetworkRequest, Operation, Operation>
+      switchToCustomModeOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: switchToCustomModeOperationCallable()");
+  }
+
   public UnaryCallable<SwitchToCustomModeNetworkRequest, Operation> switchToCustomModeCallable() {
     throw new UnsupportedOperationException("Not implemented: switchToCustomModeCallable()");
+  }
+
+  public OperationCallable<UpdatePeeringNetworkRequest, Operation, Operation>
+      updatePeeringOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updatePeeringOperationCallable()");
   }
 
   public UnaryCallable<UpdatePeeringNetworkRequest, Operation> updatePeeringCallable() {

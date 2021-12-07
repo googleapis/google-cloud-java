@@ -22,13 +22,14 @@ import com.google.api.gax.httpjson.testing.MockHttpService;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
-import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonRegionInstancesStub;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -82,7 +83,7 @@ public class RegionInstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -93,6 +94,7 @@ public class RegionInstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -108,7 +110,7 @@ public class RegionInstancesClientTest {
         BulkInsertInstanceResource.newBuilder().build();
 
     Operation actualResponse =
-        client.bulkInsert(project, region, bulkInsertInstanceResourceResource);
+        client.bulkInsertAsync(project, region, bulkInsertInstanceResourceResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -138,10 +140,9 @@ public class RegionInstancesClientTest {
       String region = "region-934795532";
       BulkInsertInstanceResource bulkInsertInstanceResourceResource =
           BulkInsertInstanceResource.newBuilder().build();
-      client.bulkInsert(project, region, bulkInsertInstanceResourceResource);
+      client.bulkInsertAsync(project, region, bulkInsertInstanceResourceResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 }

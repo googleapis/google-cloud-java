@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Cloud Storage Bucket resource.
- * This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For more information, read Backend Buckets.
+ * Represents a Cloud Storage Bucket resource. This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For more information, read Backend Buckets.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.BackendBucket}
@@ -206,7 +205,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * Cloud Storage bucket name.
    * </pre>
    *
-   * <code>string bucket_name = 283610048;</code>
+   * <code>optional string bucket_name = 283610048;</code>
    *
    * @return Whether the bucketName field is set.
    */
@@ -221,7 +220,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * Cloud Storage bucket name.
    * </pre>
    *
-   * <code>string bucket_name = 283610048;</code>
+   * <code>optional string bucket_name = 283610048;</code>
    *
    * @return The bucketName.
    */
@@ -244,7 +243,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * Cloud Storage bucket name.
    * </pre>
    *
-   * <code>string bucket_name = 283610048;</code>
+   * <code>optional string bucket_name = 283610048;</code>
    *
    * @return The bytes for bucketName.
    */
@@ -270,7 +269,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * Cloud CDN configuration for this BackendBucket.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
+   * <code>optional .google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
    *
    * @return Whether the cdnPolicy field is set.
    */
@@ -285,7 +284,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * Cloud CDN configuration for this BackendBucket.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
+   * <code>optional .google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
    *
    * @return The cdnPolicy.
    */
@@ -302,7 +301,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * Cloud CDN configuration for this BackendBucket.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
+   * <code>optional .google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.BackendBucketCdnPolicyOrBuilder getCdnPolicyOrBuilder() {
@@ -320,7 +319,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -335,7 +334,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -358,7 +357,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -445,7 +444,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -460,7 +459,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -483,7 +482,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -509,7 +508,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * If true, enable Cloud CDN for this BackendBucket.
    * </pre>
    *
-   * <code>bool enable_cdn = 282942321;</code>
+   * <code>optional bool enable_cdn = 282942321;</code>
    *
    * @return Whether the enableCdn field is set.
    */
@@ -524,7 +523,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * If true, enable Cloud CDN for this BackendBucket.
    * </pre>
    *
-   * <code>bool enable_cdn = 282942321;</code>
+   * <code>optional bool enable_cdn = 282942321;</code>
    *
    * @return The enableCdn.
    */
@@ -542,7 +541,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Unique identifier for the resource; defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -557,7 +556,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Unique identifier for the resource; defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -575,7 +574,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * Type of the resource.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -590,7 +589,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * Type of the resource.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -613,7 +612,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * Type of the resource.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -639,7 +638,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -654,7 +653,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -677,7 +676,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -703,7 +702,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -718,7 +717,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -741,7 +740,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1056,8 +1055,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Cloud Storage Bucket resource.
-   * This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For more information, read Backend Buckets.
+   * Represents a Cloud Storage Bucket resource. This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For more information, read Backend Buckets.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.BackendBucket}
@@ -1336,7 +1334,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Cloud Storage bucket name.
      * </pre>
      *
-     * <code>string bucket_name = 283610048;</code>
+     * <code>optional string bucket_name = 283610048;</code>
      *
      * @return Whether the bucketName field is set.
      */
@@ -1350,7 +1348,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Cloud Storage bucket name.
      * </pre>
      *
-     * <code>string bucket_name = 283610048;</code>
+     * <code>optional string bucket_name = 283610048;</code>
      *
      * @return The bucketName.
      */
@@ -1372,7 +1370,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Cloud Storage bucket name.
      * </pre>
      *
-     * <code>string bucket_name = 283610048;</code>
+     * <code>optional string bucket_name = 283610048;</code>
      *
      * @return The bytes for bucketName.
      */
@@ -1394,7 +1392,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Cloud Storage bucket name.
      * </pre>
      *
-     * <code>string bucket_name = 283610048;</code>
+     * <code>optional string bucket_name = 283610048;</code>
      *
      * @param value The bucketName to set.
      * @return This builder for chaining.
@@ -1415,7 +1413,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Cloud Storage bucket name.
      * </pre>
      *
-     * <code>string bucket_name = 283610048;</code>
+     * <code>optional string bucket_name = 283610048;</code>
      *
      * @return This builder for chaining.
      */
@@ -1432,7 +1430,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Cloud Storage bucket name.
      * </pre>
      *
-     * <code>string bucket_name = 283610048;</code>
+     * <code>optional string bucket_name = 283610048;</code>
      *
      * @param value The bytes for bucketName to set.
      * @return This builder for chaining.
@@ -1461,7 +1459,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Cloud CDN configuration for this BackendBucket.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
+     * <code>optional .google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
      *
      * @return Whether the cdnPolicy field is set.
      */
@@ -1475,7 +1473,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Cloud CDN configuration for this BackendBucket.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
+     * <code>optional .google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
      *
      * @return The cdnPolicy.
      */
@@ -1495,7 +1493,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Cloud CDN configuration for this BackendBucket.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
+     * <code>optional .google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
      */
     public Builder setCdnPolicy(com.google.cloud.compute.v1.BackendBucketCdnPolicy value) {
       if (cdnPolicyBuilder_ == null) {
@@ -1517,7 +1515,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Cloud CDN configuration for this BackendBucket.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
+     * <code>optional .google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
      */
     public Builder setCdnPolicy(
         com.google.cloud.compute.v1.BackendBucketCdnPolicy.Builder builderForValue) {
@@ -1537,7 +1535,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Cloud CDN configuration for this BackendBucket.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
+     * <code>optional .google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
      */
     public Builder mergeCdnPolicy(com.google.cloud.compute.v1.BackendBucketCdnPolicy value) {
       if (cdnPolicyBuilder_ == null) {
@@ -1566,7 +1564,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Cloud CDN configuration for this BackendBucket.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
+     * <code>optional .google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
      */
     public Builder clearCdnPolicy() {
       if (cdnPolicyBuilder_ == null) {
@@ -1585,7 +1583,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Cloud CDN configuration for this BackendBucket.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
+     * <code>optional .google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
      */
     public com.google.cloud.compute.v1.BackendBucketCdnPolicy.Builder getCdnPolicyBuilder() {
       bitField0_ |= 0x00000002;
@@ -1599,7 +1597,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Cloud CDN configuration for this BackendBucket.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
+     * <code>optional .google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
      */
     public com.google.cloud.compute.v1.BackendBucketCdnPolicyOrBuilder getCdnPolicyOrBuilder() {
       if (cdnPolicyBuilder_ != null) {
@@ -1617,7 +1615,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Cloud CDN configuration for this BackendBucket.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
+     * <code>optional .google.cloud.compute.v1.BackendBucketCdnPolicy cdn_policy = 213976452;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.BackendBucketCdnPolicy,
@@ -1644,7 +1642,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -1658,7 +1656,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -1680,7 +1678,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -1702,7 +1700,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -1723,7 +1721,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -1740,7 +1738,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -1933,7 +1931,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -1947,7 +1945,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1969,7 +1967,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1991,7 +1989,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2012,7 +2010,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -2029,7 +2027,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2053,7 +2051,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * If true, enable Cloud CDN for this BackendBucket.
      * </pre>
      *
-     * <code>bool enable_cdn = 282942321;</code>
+     * <code>optional bool enable_cdn = 282942321;</code>
      *
      * @return Whether the enableCdn field is set.
      */
@@ -2068,7 +2066,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * If true, enable Cloud CDN for this BackendBucket.
      * </pre>
      *
-     * <code>bool enable_cdn = 282942321;</code>
+     * <code>optional bool enable_cdn = 282942321;</code>
      *
      * @return The enableCdn.
      */
@@ -2083,7 +2081,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * If true, enable Cloud CDN for this BackendBucket.
      * </pre>
      *
-     * <code>bool enable_cdn = 282942321;</code>
+     * <code>optional bool enable_cdn = 282942321;</code>
      *
      * @param value The enableCdn to set.
      * @return This builder for chaining.
@@ -2101,7 +2099,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * If true, enable Cloud CDN for this BackendBucket.
      * </pre>
      *
-     * <code>bool enable_cdn = 282942321;</code>
+     * <code>optional bool enable_cdn = 282942321;</code>
      *
      * @return This builder for chaining.
      */
@@ -2120,7 +2118,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -2135,7 +2133,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -2150,7 +2148,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -2168,7 +2166,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -2187,7 +2185,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Type of the resource.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -2201,7 +2199,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Type of the resource.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -2223,7 +2221,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Type of the resource.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -2245,7 +2243,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Type of the resource.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -2266,7 +2264,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Type of the resource.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -2283,7 +2281,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Type of the resource.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -2307,7 +2305,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -2321,7 +2319,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -2343,7 +2341,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -2365,7 +2363,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2386,7 +2384,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -2403,7 +2401,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2427,7 +2425,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -2441,7 +2439,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -2463,7 +2461,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2485,7 +2483,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2506,7 +2504,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -2523,7 +2521,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.

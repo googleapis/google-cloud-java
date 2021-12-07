@@ -121,7 +121,7 @@ public final class AutoscalingPolicyLoadBalancingUtilization
    * Fraction of backend capacity utilization (set in HTTP(S) load balancing configuration) that the autoscaler maintains. Must be a positive float value. If not defined, the default is 0.8.
    * </pre>
    *
-   * <code>double utilization_target = 215905870;</code>
+   * <code>optional double utilization_target = 215905870;</code>
    *
    * @return Whether the utilizationTarget field is set.
    */
@@ -136,7 +136,7 @@ public final class AutoscalingPolicyLoadBalancingUtilization
    * Fraction of backend capacity utilization (set in HTTP(S) load balancing configuration) that the autoscaler maintains. Must be a positive float value. If not defined, the default is 0.8.
    * </pre>
    *
-   * <code>double utilization_target = 215905870;</code>
+   * <code>optional double utilization_target = 215905870;</code>
    *
    * @return The utilizationTarget.
    */
@@ -497,7 +497,7 @@ public final class AutoscalingPolicyLoadBalancingUtilization
      * Fraction of backend capacity utilization (set in HTTP(S) load balancing configuration) that the autoscaler maintains. Must be a positive float value. If not defined, the default is 0.8.
      * </pre>
      *
-     * <code>double utilization_target = 215905870;</code>
+     * <code>optional double utilization_target = 215905870;</code>
      *
      * @return Whether the utilizationTarget field is set.
      */
@@ -512,7 +512,7 @@ public final class AutoscalingPolicyLoadBalancingUtilization
      * Fraction of backend capacity utilization (set in HTTP(S) load balancing configuration) that the autoscaler maintains. Must be a positive float value. If not defined, the default is 0.8.
      * </pre>
      *
-     * <code>double utilization_target = 215905870;</code>
+     * <code>optional double utilization_target = 215905870;</code>
      *
      * @return The utilizationTarget.
      */
@@ -527,7 +527,7 @@ public final class AutoscalingPolicyLoadBalancingUtilization
      * Fraction of backend capacity utilization (set in HTTP(S) load balancing configuration) that the autoscaler maintains. Must be a positive float value. If not defined, the default is 0.8.
      * </pre>
      *
-     * <code>double utilization_target = 215905870;</code>
+     * <code>optional double utilization_target = 215905870;</code>
      *
      * @param value The utilizationTarget to set.
      * @return This builder for chaining.
@@ -545,7 +545,7 @@ public final class AutoscalingPolicyLoadBalancingUtilization
      * Fraction of backend capacity utilization (set in HTTP(S) load balancing configuration) that the autoscaler maintains. Must be a positive float value. If not defined, the default is 0.8.
      * </pre>
      *
-     * <code>double utilization_target = 215905870;</code>
+     * <code>optional double utilization_target = 215905870;</code>
      *
      * @return This builder for chaining.
      */

@@ -126,13 +126,10 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The URL of the destination zone to move the disk. This can be a full or partial URL. For example, the following are all valid URLs to a zone:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone
-   * - projects/project/zones/zone
-   * - zones/zone
+   * The URL of the destination zone to move the disk. This can be a full or partial URL. For example, the following are all valid URLs to a zone: - https://www.googleapis.com/compute/v1/projects/project/zones/zone - projects/project/zones/zone - zones/zone
    * </pre>
    *
-   * <code>string destination_zone = 131854653;</code>
+   * <code>optional string destination_zone = 131854653;</code>
    *
    * @return Whether the destinationZone field is set.
    */
@@ -144,13 +141,10 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The URL of the destination zone to move the disk. This can be a full or partial URL. For example, the following are all valid URLs to a zone:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone
-   * - projects/project/zones/zone
-   * - zones/zone
+   * The URL of the destination zone to move the disk. This can be a full or partial URL. For example, the following are all valid URLs to a zone: - https://www.googleapis.com/compute/v1/projects/project/zones/zone - projects/project/zones/zone - zones/zone
    * </pre>
    *
-   * <code>string destination_zone = 131854653;</code>
+   * <code>optional string destination_zone = 131854653;</code>
    *
    * @return The destinationZone.
    */
@@ -170,13 +164,10 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The URL of the destination zone to move the disk. This can be a full or partial URL. For example, the following are all valid URLs to a zone:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone
-   * - projects/project/zones/zone
-   * - zones/zone
+   * The URL of the destination zone to move the disk. This can be a full or partial URL. For example, the following are all valid URLs to a zone: - https://www.googleapis.com/compute/v1/projects/project/zones/zone - projects/project/zones/zone - zones/zone
    * </pre>
    *
-   * <code>string destination_zone = 131854653;</code>
+   * <code>optional string destination_zone = 131854653;</code>
    *
    * @return The bytes for destinationZone.
    */
@@ -199,13 +190,10 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The URL of the target disk to move. This can be a full or partial URL. For example, the following are all valid URLs to a disk:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-   * - projects/project/zones/zone/disks/disk
-   * - zones/zone/disks/disk
+   * The URL of the target disk to move. This can be a full or partial URL. For example, the following are all valid URLs to a disk: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk
    * </pre>
    *
-   * <code>string target_disk = 62433163;</code>
+   * <code>optional string target_disk = 62433163;</code>
    *
    * @return Whether the targetDisk field is set.
    */
@@ -217,13 +205,10 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The URL of the target disk to move. This can be a full or partial URL. For example, the following are all valid URLs to a disk:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-   * - projects/project/zones/zone/disks/disk
-   * - zones/zone/disks/disk
+   * The URL of the target disk to move. This can be a full or partial URL. For example, the following are all valid URLs to a disk: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk
    * </pre>
    *
-   * <code>string target_disk = 62433163;</code>
+   * <code>optional string target_disk = 62433163;</code>
    *
    * @return The targetDisk.
    */
@@ -243,13 +228,10 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The URL of the target disk to move. This can be a full or partial URL. For example, the following are all valid URLs to a disk:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-   * - projects/project/zones/zone/disks/disk
-   * - zones/zone/disks/disk
+   * The URL of the target disk to move. This can be a full or partial URL. For example, the following are all valid URLs to a disk: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk
    * </pre>
    *
-   * <code>string target_disk = 62433163;</code>
+   * <code>optional string target_disk = 62433163;</code>
    *
    * @return The bytes for targetDisk.
    */
@@ -625,13 +607,10 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The URL of the destination zone to move the disk. This can be a full or partial URL. For example, the following are all valid URLs to a zone:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone
-     * - projects/project/zones/zone
-     * - zones/zone
+     * The URL of the destination zone to move the disk. This can be a full or partial URL. For example, the following are all valid URLs to a zone: - https://www.googleapis.com/compute/v1/projects/project/zones/zone - projects/project/zones/zone - zones/zone
      * </pre>
      *
-     * <code>string destination_zone = 131854653;</code>
+     * <code>optional string destination_zone = 131854653;</code>
      *
      * @return Whether the destinationZone field is set.
      */
@@ -642,13 +621,10 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The URL of the destination zone to move the disk. This can be a full or partial URL. For example, the following are all valid URLs to a zone:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone
-     * - projects/project/zones/zone
-     * - zones/zone
+     * The URL of the destination zone to move the disk. This can be a full or partial URL. For example, the following are all valid URLs to a zone: - https://www.googleapis.com/compute/v1/projects/project/zones/zone - projects/project/zones/zone - zones/zone
      * </pre>
      *
-     * <code>string destination_zone = 131854653;</code>
+     * <code>optional string destination_zone = 131854653;</code>
      *
      * @return The destinationZone.
      */
@@ -667,13 +643,10 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The URL of the destination zone to move the disk. This can be a full or partial URL. For example, the following are all valid URLs to a zone:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone
-     * - projects/project/zones/zone
-     * - zones/zone
+     * The URL of the destination zone to move the disk. This can be a full or partial URL. For example, the following are all valid URLs to a zone: - https://www.googleapis.com/compute/v1/projects/project/zones/zone - projects/project/zones/zone - zones/zone
      * </pre>
      *
-     * <code>string destination_zone = 131854653;</code>
+     * <code>optional string destination_zone = 131854653;</code>
      *
      * @return The bytes for destinationZone.
      */
@@ -692,13 +665,10 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The URL of the destination zone to move the disk. This can be a full or partial URL. For example, the following are all valid URLs to a zone:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone
-     * - projects/project/zones/zone
-     * - zones/zone
+     * The URL of the destination zone to move the disk. This can be a full or partial URL. For example, the following are all valid URLs to a zone: - https://www.googleapis.com/compute/v1/projects/project/zones/zone - projects/project/zones/zone - zones/zone
      * </pre>
      *
-     * <code>string destination_zone = 131854653;</code>
+     * <code>optional string destination_zone = 131854653;</code>
      *
      * @param value The destinationZone to set.
      * @return This builder for chaining.
@@ -716,13 +686,10 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The URL of the destination zone to move the disk. This can be a full or partial URL. For example, the following are all valid URLs to a zone:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone
-     * - projects/project/zones/zone
-     * - zones/zone
+     * The URL of the destination zone to move the disk. This can be a full or partial URL. For example, the following are all valid URLs to a zone: - https://www.googleapis.com/compute/v1/projects/project/zones/zone - projects/project/zones/zone - zones/zone
      * </pre>
      *
-     * <code>string destination_zone = 131854653;</code>
+     * <code>optional string destination_zone = 131854653;</code>
      *
      * @return This builder for chaining.
      */
@@ -736,13 +703,10 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The URL of the destination zone to move the disk. This can be a full or partial URL. For example, the following are all valid URLs to a zone:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone
-     * - projects/project/zones/zone
-     * - zones/zone
+     * The URL of the destination zone to move the disk. This can be a full or partial URL. For example, the following are all valid URLs to a zone: - https://www.googleapis.com/compute/v1/projects/project/zones/zone - projects/project/zones/zone - zones/zone
      * </pre>
      *
-     * <code>string destination_zone = 131854653;</code>
+     * <code>optional string destination_zone = 131854653;</code>
      *
      * @param value The bytes for destinationZone to set.
      * @return This builder for chaining.
@@ -763,13 +727,10 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The URL of the target disk to move. This can be a full or partial URL. For example, the following are all valid URLs to a disk:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-     * - projects/project/zones/zone/disks/disk
-     * - zones/zone/disks/disk
+     * The URL of the target disk to move. This can be a full or partial URL. For example, the following are all valid URLs to a disk: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk
      * </pre>
      *
-     * <code>string target_disk = 62433163;</code>
+     * <code>optional string target_disk = 62433163;</code>
      *
      * @return Whether the targetDisk field is set.
      */
@@ -780,13 +741,10 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The URL of the target disk to move. This can be a full or partial URL. For example, the following are all valid URLs to a disk:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-     * - projects/project/zones/zone/disks/disk
-     * - zones/zone/disks/disk
+     * The URL of the target disk to move. This can be a full or partial URL. For example, the following are all valid URLs to a disk: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk
      * </pre>
      *
-     * <code>string target_disk = 62433163;</code>
+     * <code>optional string target_disk = 62433163;</code>
      *
      * @return The targetDisk.
      */
@@ -805,13 +763,10 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The URL of the target disk to move. This can be a full or partial URL. For example, the following are all valid URLs to a disk:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-     * - projects/project/zones/zone/disks/disk
-     * - zones/zone/disks/disk
+     * The URL of the target disk to move. This can be a full or partial URL. For example, the following are all valid URLs to a disk: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk
      * </pre>
      *
-     * <code>string target_disk = 62433163;</code>
+     * <code>optional string target_disk = 62433163;</code>
      *
      * @return The bytes for targetDisk.
      */
@@ -830,13 +785,10 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The URL of the target disk to move. This can be a full or partial URL. For example, the following are all valid URLs to a disk:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-     * - projects/project/zones/zone/disks/disk
-     * - zones/zone/disks/disk
+     * The URL of the target disk to move. This can be a full or partial URL. For example, the following are all valid URLs to a disk: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk
      * </pre>
      *
-     * <code>string target_disk = 62433163;</code>
+     * <code>optional string target_disk = 62433163;</code>
      *
      * @param value The targetDisk to set.
      * @return This builder for chaining.
@@ -854,13 +806,10 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The URL of the target disk to move. This can be a full or partial URL. For example, the following are all valid URLs to a disk:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-     * - projects/project/zones/zone/disks/disk
-     * - zones/zone/disks/disk
+     * The URL of the target disk to move. This can be a full or partial URL. For example, the following are all valid URLs to a disk: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk
      * </pre>
      *
-     * <code>string target_disk = 62433163;</code>
+     * <code>optional string target_disk = 62433163;</code>
      *
      * @return This builder for chaining.
      */
@@ -874,13 +823,10 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The URL of the target disk to move. This can be a full or partial URL. For example, the following are all valid URLs to a disk:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-     * - projects/project/zones/zone/disks/disk
-     * - zones/zone/disks/disk
+     * The URL of the target disk to move. This can be a full or partial URL. For example, the following are all valid URLs to a disk: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk
      * </pre>
      *
-     * <code>string target_disk = 62433163;</code>
+     * <code>optional string target_disk = 62433163;</code>
      *
      * @param value The bytes for targetDisk to set.
      * @return This builder for chaining.

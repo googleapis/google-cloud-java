@@ -39,7 +39,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
   private PacketMirroringFilter() {
     iPProtocols_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     cidrRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    direction_ = 0;
+    direction_ = "";
   }
 
   @java.lang.Override
@@ -82,11 +82,11 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
               iPProtocols_.add(s);
               break;
             }
-          case 889207800:
+          case 889207802:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              direction_ = rawValue;
+              direction_ = s;
               break;
             }
           case -391753718:
@@ -159,11 +159,35 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * <code>UNDEFINED_DIRECTION = 0;</code>
      */
     UNDEFINED_DIRECTION(0),
-    /** <code>BOTH = 2044801;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Default, both directions are mirrored.
+     * </pre>
+     *
+     * <code>BOTH = 2044801;</code>
+     */
     BOTH(2044801),
-    /** <code>EGRESS = 432880501;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Only egress traffic is mirrored.
+     * </pre>
+     *
+     * <code>EGRESS = 432880501;</code>
+     */
     EGRESS(432880501),
-    /** <code>INGRESS = 516931221;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Only ingress traffic is mirrored.
+     * </pre>
+     *
+     * <code>INGRESS = 516931221;</code>
+     */
     INGRESS(516931221),
     UNRECOGNIZED(-1),
     ;
@@ -178,11 +202,35 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * <code>UNDEFINED_DIRECTION = 0;</code>
      */
     public static final int UNDEFINED_DIRECTION_VALUE = 0;
-    /** <code>BOTH = 2044801;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Default, both directions are mirrored.
+     * </pre>
+     *
+     * <code>BOTH = 2044801;</code>
+     */
     public static final int BOTH_VALUE = 2044801;
-    /** <code>EGRESS = 432880501;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Only egress traffic is mirrored.
+     * </pre>
+     *
+     * <code>EGRESS = 432880501;</code>
+     */
     public static final int EGRESS_VALUE = 432880501;
-    /** <code>INGRESS = 516931221;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Only ingress traffic is mirrored.
+     * </pre>
+     *
+     * <code>INGRESS = 516931221;</code>
+     */
     public static final int INGRESS_VALUE = 516931221;
 
     public final int getNumber() {
@@ -396,15 +444,16 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DIRECTION_FIELD_NUMBER = 111150975;
-  private int direction_;
+  private volatile java.lang.Object direction_;
   /**
    *
    *
    * <pre>
    * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringFilter.Direction direction = 111150975;</code>
+   * <code>optional string direction = 111150975;</code>
    *
    * @return Whether the direction field is set.
    */
@@ -417,35 +466,48 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringFilter.Direction direction = 111150975;</code>
+   * <code>optional string direction = 111150975;</code>
    *
-   * @return The enum numeric value on the wire for direction.
+   * @return The direction.
    */
   @java.lang.Override
-  public int getDirectionValue() {
-    return direction_;
+  public java.lang.String getDirection() {
+    java.lang.Object ref = direction_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      direction_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringFilter.Direction direction = 111150975;</code>
+   * <code>optional string direction = 111150975;</code>
    *
-   * @return The direction.
+   * @return The bytes for direction.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.PacketMirroringFilter.Direction getDirection() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.PacketMirroringFilter.Direction result =
-        com.google.cloud.compute.v1.PacketMirroringFilter.Direction.valueOf(direction_);
-    return result == null
-        ? com.google.cloud.compute.v1.PacketMirroringFilter.Direction.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getDirectionBytes() {
+    java.lang.Object ref = direction_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      direction_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -466,7 +528,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98544854, iPProtocols_.getRaw(i));
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(111150975, direction_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 111150975, direction_);
     }
     for (int i = 0; i < cidrRanges_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 487901697, cidrRanges_.getRaw(i));
@@ -489,7 +551,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       size += 5 * getIPProtocolsList().size();
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(111150975, direction_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(111150975, direction_);
     }
     {
       int dataSize = 0;
@@ -519,7 +581,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
     if (!getCidrRangesList().equals(other.getCidrRangesList())) return false;
     if (hasDirection() != other.hasDirection()) return false;
     if (hasDirection()) {
-      if (direction_ != other.direction_) return false;
+      if (!getDirection().equals(other.getDirection())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -542,7 +604,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
     }
     if (hasDirection()) {
       hash = (37 * hash) + DIRECTION_FIELD_NUMBER;
-      hash = (53 * hash) + direction_;
+      hash = (53 * hash) + getDirection().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -692,7 +754,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       bitField0_ = (bitField0_ & ~0x00000001);
       cidrRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
-      direction_ = 0;
+      direction_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
@@ -809,7 +871,9 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
         onChanged();
       }
       if (other.hasDirection()) {
-        setDirection(other.getDirection());
+        bitField0_ |= 0x00000004;
+        direction_ = other.direction_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1179,19 +1243,19 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       return this;
     }
 
-    private int direction_ = 0;
+    private java.lang.Object direction_ = "";
     /**
      *
      *
      * <pre>
      * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter.Direction direction = 111150975;</code>
+     * <code>optional string direction = 111150975;</code>
      *
      * @return Whether the direction field is set.
      */
-    @java.lang.Override
     public boolean hasDirection() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -1200,29 +1264,64 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter.Direction direction = 111150975;</code>
+     * <code>optional string direction = 111150975;</code>
      *
-     * @return The enum numeric value on the wire for direction.
+     * @return The direction.
      */
-    @java.lang.Override
-    public int getDirectionValue() {
-      return direction_;
+    public java.lang.String getDirection() {
+      java.lang.Object ref = direction_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        direction_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter.Direction direction = 111150975;</code>
+     * <code>optional string direction = 111150975;</code>
      *
-     * @param value The enum numeric value on the wire for direction to set.
+     * @return The bytes for direction.
+     */
+    public com.google.protobuf.ByteString getDirectionBytes() {
+      java.lang.Object ref = direction_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        direction_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+     * Check the Direction enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string direction = 111150975;</code>
+     *
+     * @param value The direction to set.
      * @return This builder for chaining.
      */
-    public Builder setDirectionValue(int value) {
+    public Builder setDirection(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000004;
       direction_ = value;
       onChanged();
@@ -1233,39 +1332,16 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter.Direction direction = 111150975;</code>
+     * <code>optional string direction = 111150975;</code>
      *
-     * @return The direction.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.PacketMirroringFilter.Direction getDirection() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.PacketMirroringFilter.Direction result =
-          com.google.cloud.compute.v1.PacketMirroringFilter.Direction.valueOf(direction_);
-      return result == null
-          ? com.google.cloud.compute.v1.PacketMirroringFilter.Direction.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter.Direction direction = 111150975;</code>
-     *
-     * @param value The direction to set.
      * @return This builder for chaining.
      */
-    public Builder setDirection(com.google.cloud.compute.v1.PacketMirroringFilter.Direction value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000004;
-      direction_ = value.getNumber();
+    public Builder clearDirection() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      direction_ = getDefaultInstance().getDirection();
       onChanged();
       return this;
     }
@@ -1274,15 +1350,21 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter.Direction direction = 111150975;</code>
+     * <code>optional string direction = 111150975;</code>
      *
+     * @param value The bytes for direction to set.
      * @return This builder for chaining.
      */
-    public Builder clearDirection() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      direction_ = 0;
+    public Builder setDirectionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000004;
+      direction_ = value;
       onChanged();
       return this;
     }

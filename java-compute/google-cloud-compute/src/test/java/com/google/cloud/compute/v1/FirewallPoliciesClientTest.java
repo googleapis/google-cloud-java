@@ -27,12 +27,14 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonFirewallPoliciesStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -86,7 +88,7 @@ public class FirewallPoliciesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -97,6 +99,7 @@ public class FirewallPoliciesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -111,7 +114,7 @@ public class FirewallPoliciesClientTest {
         FirewallPolicyAssociation.newBuilder().build();
 
     Operation actualResponse =
-        client.addAssociation(firewallPolicy, firewallPolicyAssociationResource);
+        client.addAssociationAsync(firewallPolicy, firewallPolicyAssociationResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -140,10 +143,9 @@ public class FirewallPoliciesClientTest {
       String firewallPolicy = "firewallPolicy1819692626";
       FirewallPolicyAssociation firewallPolicyAssociationResource =
           FirewallPolicyAssociation.newBuilder().build();
-      client.addAssociation(firewallPolicy, firewallPolicyAssociationResource);
+      client.addAssociationAsync(firewallPolicy, firewallPolicyAssociationResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -157,7 +159,7 @@ public class FirewallPoliciesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -168,6 +170,7 @@ public class FirewallPoliciesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -180,7 +183,8 @@ public class FirewallPoliciesClientTest {
     String firewallPolicy = "firewallPolicy1819692626";
     FirewallPolicyRule firewallPolicyRuleResource = FirewallPolicyRule.newBuilder().build();
 
-    Operation actualResponse = client.addRule(firewallPolicy, firewallPolicyRuleResource);
+    Operation actualResponse =
+        client.addRuleAsync(firewallPolicy, firewallPolicyRuleResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -208,10 +212,9 @@ public class FirewallPoliciesClientTest {
     try {
       String firewallPolicy = "firewallPolicy1819692626";
       FirewallPolicyRule firewallPolicyRuleResource = FirewallPolicyRule.newBuilder().build();
-      client.addRule(firewallPolicy, firewallPolicyRuleResource);
+      client.addRuleAsync(firewallPolicy, firewallPolicyRuleResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -225,7 +228,7 @@ public class FirewallPoliciesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -236,6 +239,7 @@ public class FirewallPoliciesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -247,7 +251,7 @@ public class FirewallPoliciesClientTest {
 
     String firewallPolicy = "firewallPolicy1819692626";
 
-    Operation actualResponse = client.cloneRules(firewallPolicy);
+    Operation actualResponse = client.cloneRulesAsync(firewallPolicy).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -274,10 +278,9 @@ public class FirewallPoliciesClientTest {
 
     try {
       String firewallPolicy = "firewallPolicy1819692626";
-      client.cloneRules(firewallPolicy);
+      client.cloneRulesAsync(firewallPolicy).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -291,7 +294,7 @@ public class FirewallPoliciesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -302,6 +305,7 @@ public class FirewallPoliciesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -313,7 +317,7 @@ public class FirewallPoliciesClientTest {
 
     String firewallPolicy = "firewallPolicy1819692626";
 
-    Operation actualResponse = client.delete(firewallPolicy);
+    Operation actualResponse = client.deleteAsync(firewallPolicy).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -340,10 +344,9 @@ public class FirewallPoliciesClientTest {
 
     try {
       String firewallPolicy = "firewallPolicy1819692626";
-      client.delete(firewallPolicy);
+      client.deleteAsync(firewallPolicy).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -507,6 +510,7 @@ public class FirewallPoliciesClientTest {
         FirewallPolicyRule.newBuilder()
             .setAction("action-1422950858")
             .setDescription("description-1724546052")
+            .setDirection("direction-962590849")
             .setDisabled(true)
             .setEnableLogging(true)
             .setKind("kind3292052")
@@ -564,7 +568,7 @@ public class FirewallPoliciesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -575,6 +579,7 @@ public class FirewallPoliciesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -584,9 +589,10 @@ public class FirewallPoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    String parentId = "parentId1175162725";
     FirewallPolicy firewallPolicyResource = FirewallPolicy.newBuilder().build();
 
-    Operation actualResponse = client.insert(firewallPolicyResource);
+    Operation actualResponse = client.insertAsync(parentId, firewallPolicyResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -612,11 +618,11 @@ public class FirewallPoliciesClientTest {
     mockService.addException(exception);
 
     try {
+      String parentId = "parentId1175162725";
       FirewallPolicy firewallPolicyResource = FirewallPolicy.newBuilder().build();
-      client.insert(firewallPolicyResource);
+      client.insertAsync(parentId, firewallPolicyResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -732,7 +738,7 @@ public class FirewallPoliciesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -743,6 +749,7 @@ public class FirewallPoliciesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -753,8 +760,9 @@ public class FirewallPoliciesClientTest {
     mockService.addResponse(expectedResponse);
 
     String firewallPolicy = "firewallPolicy1819692626";
+    String parentId = "parentId1175162725";
 
-    Operation actualResponse = client.move(firewallPolicy);
+    Operation actualResponse = client.moveAsync(firewallPolicy, parentId).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -781,10 +789,10 @@ public class FirewallPoliciesClientTest {
 
     try {
       String firewallPolicy = "firewallPolicy1819692626";
-      client.move(firewallPolicy);
+      String parentId = "parentId1175162725";
+      client.moveAsync(firewallPolicy, parentId).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -798,7 +806,7 @@ public class FirewallPoliciesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -809,6 +817,7 @@ public class FirewallPoliciesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -821,7 +830,7 @@ public class FirewallPoliciesClientTest {
     String firewallPolicy = "firewallPolicy1819692626";
     FirewallPolicy firewallPolicyResource = FirewallPolicy.newBuilder().build();
 
-    Operation actualResponse = client.patch(firewallPolicy, firewallPolicyResource);
+    Operation actualResponse = client.patchAsync(firewallPolicy, firewallPolicyResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -849,10 +858,9 @@ public class FirewallPoliciesClientTest {
     try {
       String firewallPolicy = "firewallPolicy1819692626";
       FirewallPolicy firewallPolicyResource = FirewallPolicy.newBuilder().build();
-      client.patch(firewallPolicy, firewallPolicyResource);
+      client.patchAsync(firewallPolicy, firewallPolicyResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -866,7 +874,7 @@ public class FirewallPoliciesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -877,6 +885,7 @@ public class FirewallPoliciesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -889,7 +898,8 @@ public class FirewallPoliciesClientTest {
     String firewallPolicy = "firewallPolicy1819692626";
     FirewallPolicyRule firewallPolicyRuleResource = FirewallPolicyRule.newBuilder().build();
 
-    Operation actualResponse = client.patchRule(firewallPolicy, firewallPolicyRuleResource);
+    Operation actualResponse =
+        client.patchRuleAsync(firewallPolicy, firewallPolicyRuleResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -917,10 +927,9 @@ public class FirewallPoliciesClientTest {
     try {
       String firewallPolicy = "firewallPolicy1819692626";
       FirewallPolicyRule firewallPolicyRuleResource = FirewallPolicyRule.newBuilder().build();
-      client.patchRule(firewallPolicy, firewallPolicyRuleResource);
+      client.patchRuleAsync(firewallPolicy, firewallPolicyRuleResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -934,7 +943,7 @@ public class FirewallPoliciesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -945,6 +954,7 @@ public class FirewallPoliciesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -956,7 +966,7 @@ public class FirewallPoliciesClientTest {
 
     String firewallPolicy = "firewallPolicy1819692626";
 
-    Operation actualResponse = client.removeAssociation(firewallPolicy);
+    Operation actualResponse = client.removeAssociationAsync(firewallPolicy).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -983,10 +993,9 @@ public class FirewallPoliciesClientTest {
 
     try {
       String firewallPolicy = "firewallPolicy1819692626";
-      client.removeAssociation(firewallPolicy);
+      client.removeAssociationAsync(firewallPolicy).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -1000,7 +1009,7 @@ public class FirewallPoliciesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -1011,6 +1020,7 @@ public class FirewallPoliciesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -1022,7 +1032,7 @@ public class FirewallPoliciesClientTest {
 
     String firewallPolicy = "firewallPolicy1819692626";
 
-    Operation actualResponse = client.removeRule(firewallPolicy);
+    Operation actualResponse = client.removeRuleAsync(firewallPolicy).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1049,10 +1059,9 @@ public class FirewallPoliciesClientTest {
 
     try {
       String firewallPolicy = "firewallPolicy1819692626";
-      client.removeRule(firewallPolicy);
+      client.removeRuleAsync(firewallPolicy).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 

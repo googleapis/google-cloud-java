@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.ResourcePoliciesStub;
@@ -46,7 +48,7 @@ import javax.annotation.Generated;
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String resourcePolicy = "resourcePolicy-130903328";
- *   Operation response = resourcePoliciesClient.delete(project, region, resourcePolicy);
+ *   ResourcePolicy response = resourcePoliciesClient.get(project, region, resourcePolicy);
  * }
  * }</pre>
  *
@@ -292,7 +294,8 @@ public class ResourcePoliciesClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   String resourcePolicy = "resourcePolicy-130903328";
-   *   Operation response = resourcePoliciesClient.delete(project, region, resourcePolicy);
+   *   Operation response =
+   *       resourcePoliciesClient.deleteAsync(project, region, resourcePolicy).get();
    * }
    * }</pre>
    *
@@ -301,14 +304,15 @@ public class ResourcePoliciesClient implements BackgroundResource {
    * @param resourcePolicy Name of the resource policy to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String region, String resourcePolicy) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String region, String resourcePolicy) {
     DeleteResourcePolicyRequest request =
         DeleteResourcePolicyRequest.newBuilder()
             .setProject(project)
             .setRegion(region)
             .setResourcePolicy(resourcePolicy)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -326,15 +330,45 @@ public class ResourcePoliciesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setResourcePolicy("resourcePolicy-130903328")
    *           .build();
-   *   Operation response = resourcePoliciesClient.delete(request);
+   *   Operation response = resourcePoliciesClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteResourcePolicyRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      DeleteResourcePolicyRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified resource policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
+   *   DeleteResourcePolicyRequest request =
+   *       DeleteResourcePolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setResourcePolicy("resourcePolicy-130903328")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       resourcePoliciesClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteResourcePolicyRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -536,7 +570,8 @@ public class ResourcePoliciesClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   ResourcePolicy resourcePolicyResource = ResourcePolicy.newBuilder().build();
-   *   Operation response = resourcePoliciesClient.insert(project, region, resourcePolicyResource);
+   *   Operation response =
+   *       resourcePoliciesClient.insertAsync(project, region, resourcePolicyResource).get();
    * }
    * }</pre>
    *
@@ -545,7 +580,7 @@ public class ResourcePoliciesClient implements BackgroundResource {
    * @param resourcePolicyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(
+  public final OperationFuture<Operation, Operation> insertAsync(
       String project, String region, ResourcePolicy resourcePolicyResource) {
     InsertResourcePolicyRequest request =
         InsertResourcePolicyRequest.newBuilder()
@@ -553,7 +588,7 @@ public class ResourcePoliciesClient implements BackgroundResource {
             .setRegion(region)
             .setResourcePolicyResource(resourcePolicyResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -571,15 +606,45 @@ public class ResourcePoliciesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setResourcePolicyResource(ResourcePolicy.newBuilder().build())
    *           .build();
-   *   Operation response = resourcePoliciesClient.insert(request);
+   *   Operation response = resourcePoliciesClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertResourcePolicyRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(
+      InsertResourcePolicyRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new resource policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
+   *   InsertResourcePolicyRequest request =
+   *       InsertResourcePolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setResourcePolicyResource(ResourcePolicy.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       resourcePoliciesClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertResourcePolicyRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -28,9 +28,10 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    *
    * <pre>
    * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+   * Check the Day enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
+   * <code>optional string day = 99228;</code>
    *
    * @return Whether the day field is set.
    */
@@ -40,25 +41,27 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    *
    * <pre>
    * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+   * Check the Day enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
+   * <code>optional string day = 99228;</code>
    *
-   * @return The enum numeric value on the wire for day.
+   * @return The day.
    */
-  int getDayValue();
+  java.lang.String getDay();
   /**
    *
    *
    * <pre>
    * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+   * Check the Day enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
+   * <code>optional string day = 99228;</code>
    *
-   * @return The day.
+   * @return The bytes for day.
    */
-  com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day getDay();
+  com.google.protobuf.ByteString getDayBytes();
 
   /**
    *
@@ -67,7 +70,7 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
    * </pre>
    *
-   * <code>string duration = 155471252;</code>
+   * <code>optional string duration = 155471252;</code>
    *
    * @return Whether the duration field is set.
    */
@@ -79,7 +82,7 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
    * </pre>
    *
-   * <code>string duration = 155471252;</code>
+   * <code>optional string duration = 155471252;</code>
    *
    * @return The duration.
    */
@@ -91,7 +94,7 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
    * </pre>
    *
-   * <code>string duration = 155471252;</code>
+   * <code>optional string duration = 155471252;</code>
    *
    * @return The bytes for duration.
    */
@@ -104,7 +107,7 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return Whether the startTime field is set.
    */
@@ -116,7 +119,7 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return The startTime.
    */
@@ -128,7 +131,7 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
    * </pre>
    *
-   * <code>string start_time = 37467274;</code>
+   * <code>optional string start_time = 37467274;</code>
    *
    * @return The bytes for startTime.
    */

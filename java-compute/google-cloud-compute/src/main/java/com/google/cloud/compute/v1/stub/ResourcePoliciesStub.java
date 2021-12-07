@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.ResourcePoliciesClient.AggregatedListP
 import static com.google.cloud.compute.v1.ResourcePoliciesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListResourcePoliciesRequest;
 import com.google.cloud.compute.v1.DeleteResourcePolicyRequest;
@@ -56,6 +57,11 @@ public abstract class ResourcePoliciesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<DeleteResourcePolicyRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteResourcePolicyRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
@@ -66,6 +72,11 @@ public abstract class ResourcePoliciesStub implements BackgroundResource {
 
   public UnaryCallable<GetIamPolicyResourcePolicyRequest, Policy> getIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public OperationCallable<InsertResourcePolicyRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertResourcePolicyRequest, Operation> insertCallable() {

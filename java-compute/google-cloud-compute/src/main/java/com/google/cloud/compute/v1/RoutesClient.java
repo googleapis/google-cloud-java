@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RoutesStub;
@@ -44,7 +46,7 @@ import javax.annotation.Generated;
  * try (RoutesClient routesClient = RoutesClient.create()) {
  *   String project = "project-309310695";
  *   String route = "route108704329";
- *   Operation response = routesClient.delete(project, route);
+ *   Route response = routesClient.get(project, route);
  * }
  * }</pre>
  *
@@ -154,7 +156,7 @@ public class RoutesClient implements BackgroundResource {
    * try (RoutesClient routesClient = RoutesClient.create()) {
    *   String project = "project-309310695";
    *   String route = "route108704329";
-   *   Operation response = routesClient.delete(project, route);
+   *   Operation response = routesClient.deleteAsync(project, route).get();
    * }
    * }</pre>
    *
@@ -162,10 +164,10 @@ public class RoutesClient implements BackgroundResource {
    * @param route Name of the Route resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String route) {
+  public final OperationFuture<Operation, Operation> deleteAsync(String project, String route) {
     DeleteRouteRequest request =
         DeleteRouteRequest.newBuilder().setProject(project).setRoute(route).build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -182,15 +184,43 @@ public class RoutesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setRoute("route108704329")
    *           .build();
-   *   Operation response = routesClient.delete(request);
+   *   Operation response = routesClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteRouteRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(DeleteRouteRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified Route resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RoutesClient routesClient = RoutesClient.create()) {
+   *   DeleteRouteRequest request =
+   *       DeleteRouteRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setRoute("route108704329")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       routesClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteRouteRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -301,7 +331,7 @@ public class RoutesClient implements BackgroundResource {
    * try (RoutesClient routesClient = RoutesClient.create()) {
    *   String project = "project-309310695";
    *   Route routeResource = Route.newBuilder().build();
-   *   Operation response = routesClient.insert(project, routeResource);
+   *   Operation response = routesClient.insertAsync(project, routeResource).get();
    * }
    * }</pre>
    *
@@ -309,10 +339,11 @@ public class RoutesClient implements BackgroundResource {
    * @param routeResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(String project, Route routeResource) {
+  public final OperationFuture<Operation, Operation> insertAsync(
+      String project, Route routeResource) {
     InsertRouteRequest request =
         InsertRouteRequest.newBuilder().setProject(project).setRouteResource(routeResource).build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -329,15 +360,43 @@ public class RoutesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setRouteResource(Route.newBuilder().build())
    *           .build();
-   *   Operation response = routesClient.insert(request);
+   *   Operation response = routesClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertRouteRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(InsertRouteRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Route resource in the specified project using the data included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RoutesClient routesClient = RoutesClient.create()) {
+   *   InsertRouteRequest request =
+   *       InsertRouteRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setRouteResource(Route.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       routesClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertRouteRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

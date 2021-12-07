@@ -212,7 +212,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Informational warning which replaces the list of disks when the list is empty.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+   * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
    *
    * @return Whether the warning field is set.
    */
@@ -227,7 +227,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Informational warning which replaces the list of disks when the list is empty.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+   * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
    *
    * @return The warning.
    */
@@ -242,7 +242,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Informational warning which replaces the list of disks when the list is empty.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+   * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
@@ -999,7 +999,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Informational warning which replaces the list of disks when the list is empty.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      *
      * @return Whether the warning field is set.
      */
@@ -1013,7 +1013,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Informational warning which replaces the list of disks when the list is empty.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      *
      * @return The warning.
      */
@@ -1033,7 +1033,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Informational warning which replaces the list of disks when the list is empty.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public Builder setWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
@@ -1055,7 +1055,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Informational warning which replaces the list of disks when the list is empty.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public Builder setWarning(com.google.cloud.compute.v1.Warning.Builder builderForValue) {
       if (warningBuilder_ == null) {
@@ -1074,7 +1074,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Informational warning which replaces the list of disks when the list is empty.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public Builder mergeWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
@@ -1102,7 +1102,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Informational warning which replaces the list of disks when the list is empty.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public Builder clearWarning() {
       if (warningBuilder_ == null) {
@@ -1121,7 +1121,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Informational warning which replaces the list of disks when the list is empty.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.Warning.Builder getWarningBuilder() {
       bitField0_ |= 0x00000002;
@@ -1135,7 +1135,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Informational warning which replaces the list of disks when the list is empty.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
       if (warningBuilder_ != null) {
@@ -1153,7 +1153,7 @@ public final class DisksScopedList extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Informational warning which replaces the list of disks when the list is empty.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+     * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Warning,

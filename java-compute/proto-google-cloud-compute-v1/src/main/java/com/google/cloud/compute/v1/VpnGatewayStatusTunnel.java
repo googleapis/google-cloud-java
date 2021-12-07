@@ -134,7 +134,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
    * The VPN gateway interface this VPN tunnel is associated with.
    * </pre>
    *
-   * <code>uint32 local_gateway_interface = 158764330;</code>
+   * <code>optional uint32 local_gateway_interface = 158764330;</code>
    *
    * @return Whether the localGatewayInterface field is set.
    */
@@ -149,7 +149,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
    * The VPN gateway interface this VPN tunnel is associated with.
    * </pre>
    *
-   * <code>uint32 local_gateway_interface = 158764330;</code>
+   * <code>optional uint32 local_gateway_interface = 158764330;</code>
    *
    * @return The localGatewayInterface.
    */
@@ -167,7 +167,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
    * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or GCP VPN gateway.
    * </pre>
    *
-   * <code>uint32 peer_gateway_interface = 214380385;</code>
+   * <code>optional uint32 peer_gateway_interface = 214380385;</code>
    *
    * @return Whether the peerGatewayInterface field is set.
    */
@@ -182,7 +182,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
    * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or GCP VPN gateway.
    * </pre>
    *
-   * <code>uint32 peer_gateway_interface = 214380385;</code>
+   * <code>optional uint32 peer_gateway_interface = 214380385;</code>
    *
    * @return The peerGatewayInterface.
    */
@@ -200,7 +200,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
    * URL reference to the VPN tunnel.
    * </pre>
    *
-   * <code>string tunnel_url = 78975256;</code>
+   * <code>optional string tunnel_url = 78975256;</code>
    *
    * @return Whether the tunnelUrl field is set.
    */
@@ -215,7 +215,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
    * URL reference to the VPN tunnel.
    * </pre>
    *
-   * <code>string tunnel_url = 78975256;</code>
+   * <code>optional string tunnel_url = 78975256;</code>
    *
    * @return The tunnelUrl.
    */
@@ -238,7 +238,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
    * URL reference to the VPN tunnel.
    * </pre>
    *
-   * <code>string tunnel_url = 78975256;</code>
+   * <code>optional string tunnel_url = 78975256;</code>
    *
    * @return The bytes for tunnelUrl.
    */
@@ -644,7 +644,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * The VPN gateway interface this VPN tunnel is associated with.
      * </pre>
      *
-     * <code>uint32 local_gateway_interface = 158764330;</code>
+     * <code>optional uint32 local_gateway_interface = 158764330;</code>
      *
      * @return Whether the localGatewayInterface field is set.
      */
@@ -659,7 +659,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * The VPN gateway interface this VPN tunnel is associated with.
      * </pre>
      *
-     * <code>uint32 local_gateway_interface = 158764330;</code>
+     * <code>optional uint32 local_gateway_interface = 158764330;</code>
      *
      * @return The localGatewayInterface.
      */
@@ -674,7 +674,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * The VPN gateway interface this VPN tunnel is associated with.
      * </pre>
      *
-     * <code>uint32 local_gateway_interface = 158764330;</code>
+     * <code>optional uint32 local_gateway_interface = 158764330;</code>
      *
      * @param value The localGatewayInterface to set.
      * @return This builder for chaining.
@@ -692,7 +692,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * The VPN gateway interface this VPN tunnel is associated with.
      * </pre>
      *
-     * <code>uint32 local_gateway_interface = 158764330;</code>
+     * <code>optional uint32 local_gateway_interface = 158764330;</code>
      *
      * @return This builder for chaining.
      */
@@ -711,7 +711,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or GCP VPN gateway.
      * </pre>
      *
-     * <code>uint32 peer_gateway_interface = 214380385;</code>
+     * <code>optional uint32 peer_gateway_interface = 214380385;</code>
      *
      * @return Whether the peerGatewayInterface field is set.
      */
@@ -726,7 +726,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or GCP VPN gateway.
      * </pre>
      *
-     * <code>uint32 peer_gateway_interface = 214380385;</code>
+     * <code>optional uint32 peer_gateway_interface = 214380385;</code>
      *
      * @return The peerGatewayInterface.
      */
@@ -741,7 +741,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or GCP VPN gateway.
      * </pre>
      *
-     * <code>uint32 peer_gateway_interface = 214380385;</code>
+     * <code>optional uint32 peer_gateway_interface = 214380385;</code>
      *
      * @param value The peerGatewayInterface to set.
      * @return This builder for chaining.
@@ -759,7 +759,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or GCP VPN gateway.
      * </pre>
      *
-     * <code>uint32 peer_gateway_interface = 214380385;</code>
+     * <code>optional uint32 peer_gateway_interface = 214380385;</code>
      *
      * @return This builder for chaining.
      */
@@ -778,7 +778,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * URL reference to the VPN tunnel.
      * </pre>
      *
-     * <code>string tunnel_url = 78975256;</code>
+     * <code>optional string tunnel_url = 78975256;</code>
      *
      * @return Whether the tunnelUrl field is set.
      */
@@ -792,7 +792,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * URL reference to the VPN tunnel.
      * </pre>
      *
-     * <code>string tunnel_url = 78975256;</code>
+     * <code>optional string tunnel_url = 78975256;</code>
      *
      * @return The tunnelUrl.
      */
@@ -814,7 +814,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * URL reference to the VPN tunnel.
      * </pre>
      *
-     * <code>string tunnel_url = 78975256;</code>
+     * <code>optional string tunnel_url = 78975256;</code>
      *
      * @return The bytes for tunnelUrl.
      */
@@ -836,7 +836,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * URL reference to the VPN tunnel.
      * </pre>
      *
-     * <code>string tunnel_url = 78975256;</code>
+     * <code>optional string tunnel_url = 78975256;</code>
      *
      * @param value The tunnelUrl to set.
      * @return This builder for chaining.
@@ -857,7 +857,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * URL reference to the VPN tunnel.
      * </pre>
      *
-     * <code>string tunnel_url = 78975256;</code>
+     * <code>optional string tunnel_url = 78975256;</code>
      *
      * @return This builder for chaining.
      */
@@ -874,7 +874,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * URL reference to the VPN tunnel.
      * </pre>
      *
-     * <code>string tunnel_url = 78975256;</code>
+     * <code>optional string tunnel_url = 78975256;</code>
      *
      * @param value The bytes for tunnelUrl to set.
      * @return This builder for chaining.

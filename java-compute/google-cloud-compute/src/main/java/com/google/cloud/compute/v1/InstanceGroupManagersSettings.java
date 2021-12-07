@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -53,16 +54,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of abandonInstances to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * InstanceGroupManagersSettings.Builder instanceGroupManagersSettingsBuilder =
  *     InstanceGroupManagersSettings.newBuilder();
  * instanceGroupManagersSettingsBuilder
- *     .abandonInstancesSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         instanceGroupManagersSettingsBuilder
- *             .abandonInstancesSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -78,6 +79,13 @@ public class InstanceGroupManagersSettings extends ClientSettings<InstanceGroupM
   public UnaryCallSettings<AbandonInstancesInstanceGroupManagerRequest, Operation>
       abandonInstancesSettings() {
     return ((InstanceGroupManagersStubSettings) getStubSettings()).abandonInstancesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to abandonInstances. */
+  public OperationCallSettings<AbandonInstancesInstanceGroupManagerRequest, Operation, Operation>
+      abandonInstancesOperationSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings())
+        .abandonInstancesOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to aggregatedList. */
@@ -96,15 +104,36 @@ public class InstanceGroupManagersSettings extends ClientSettings<InstanceGroupM
         .applyUpdatesToInstancesSettings();
   }
 
+  /** Returns the object with the settings used for calls to applyUpdatesToInstances. */
+  public OperationCallSettings<
+          ApplyUpdatesToInstancesInstanceGroupManagerRequest, Operation, Operation>
+      applyUpdatesToInstancesOperationSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings())
+        .applyUpdatesToInstancesOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to createInstances. */
   public UnaryCallSettings<CreateInstancesInstanceGroupManagerRequest, Operation>
       createInstancesSettings() {
     return ((InstanceGroupManagersStubSettings) getStubSettings()).createInstancesSettings();
   }
 
+  /** Returns the object with the settings used for calls to createInstances. */
+  public OperationCallSettings<CreateInstancesInstanceGroupManagerRequest, Operation, Operation>
+      createInstancesOperationSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings())
+        .createInstancesOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteInstanceGroupManagerRequest, Operation> deleteSettings() {
     return ((InstanceGroupManagersStubSettings) getStubSettings()).deleteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteInstanceGroupManagerRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings()).deleteOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteInstances. */
@@ -113,11 +142,26 @@ public class InstanceGroupManagersSettings extends ClientSettings<InstanceGroupM
     return ((InstanceGroupManagersStubSettings) getStubSettings()).deleteInstancesSettings();
   }
 
+  /** Returns the object with the settings used for calls to deleteInstances. */
+  public OperationCallSettings<DeleteInstancesInstanceGroupManagerRequest, Operation, Operation>
+      deleteInstancesOperationSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings())
+        .deleteInstancesOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deletePerInstanceConfigs. */
   public UnaryCallSettings<DeletePerInstanceConfigsInstanceGroupManagerRequest, Operation>
       deletePerInstanceConfigsSettings() {
     return ((InstanceGroupManagersStubSettings) getStubSettings())
         .deletePerInstanceConfigsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deletePerInstanceConfigs. */
+  public OperationCallSettings<
+          DeletePerInstanceConfigsInstanceGroupManagerRequest, Operation, Operation>
+      deletePerInstanceConfigsOperationSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings())
+        .deletePerInstanceConfigsOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -128,6 +172,12 @@ public class InstanceGroupManagersSettings extends ClientSettings<InstanceGroupM
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertInstanceGroupManagerRequest, Operation> insertSettings() {
     return ((InstanceGroupManagersStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertInstanceGroupManagerRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -169,11 +219,25 @@ public class InstanceGroupManagersSettings extends ClientSettings<InstanceGroupM
     return ((InstanceGroupManagersStubSettings) getStubSettings()).patchSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchInstanceGroupManagerRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to patchPerInstanceConfigs. */
   public UnaryCallSettings<PatchPerInstanceConfigsInstanceGroupManagerRequest, Operation>
       patchPerInstanceConfigsSettings() {
     return ((InstanceGroupManagersStubSettings) getStubSettings())
         .patchPerInstanceConfigsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patchPerInstanceConfigs. */
+  public OperationCallSettings<
+          PatchPerInstanceConfigsInstanceGroupManagerRequest, Operation, Operation>
+      patchPerInstanceConfigsOperationSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings())
+        .patchPerInstanceConfigsOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to recreateInstances. */
@@ -182,9 +246,22 @@ public class InstanceGroupManagersSettings extends ClientSettings<InstanceGroupM
     return ((InstanceGroupManagersStubSettings) getStubSettings()).recreateInstancesSettings();
   }
 
+  /** Returns the object with the settings used for calls to recreateInstances. */
+  public OperationCallSettings<RecreateInstancesInstanceGroupManagerRequest, Operation, Operation>
+      recreateInstancesOperationSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings())
+        .recreateInstancesOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to resize. */
   public UnaryCallSettings<ResizeInstanceGroupManagerRequest, Operation> resizeSettings() {
     return ((InstanceGroupManagersStubSettings) getStubSettings()).resizeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resize. */
+  public OperationCallSettings<ResizeInstanceGroupManagerRequest, Operation, Operation>
+      resizeOperationSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings()).resizeOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to setInstanceTemplate. */
@@ -193,10 +270,24 @@ public class InstanceGroupManagersSettings extends ClientSettings<InstanceGroupM
     return ((InstanceGroupManagersStubSettings) getStubSettings()).setInstanceTemplateSettings();
   }
 
+  /** Returns the object with the settings used for calls to setInstanceTemplate. */
+  public OperationCallSettings<SetInstanceTemplateInstanceGroupManagerRequest, Operation, Operation>
+      setInstanceTemplateOperationSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings())
+        .setInstanceTemplateOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setTargetPools. */
   public UnaryCallSettings<SetTargetPoolsInstanceGroupManagerRequest, Operation>
       setTargetPoolsSettings() {
     return ((InstanceGroupManagersStubSettings) getStubSettings()).setTargetPoolsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setTargetPools. */
+  public OperationCallSettings<SetTargetPoolsInstanceGroupManagerRequest, Operation, Operation>
+      setTargetPoolsOperationSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings())
+        .setTargetPoolsOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to updatePerInstanceConfigs. */
@@ -204,6 +295,14 @@ public class InstanceGroupManagersSettings extends ClientSettings<InstanceGroupM
       updatePerInstanceConfigsSettings() {
     return ((InstanceGroupManagersStubSettings) getStubSettings())
         .updatePerInstanceConfigsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updatePerInstanceConfigs. */
+  public OperationCallSettings<
+          UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation, Operation>
+      updatePerInstanceConfigsOperationSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings())
+        .updatePerInstanceConfigsOperationSettings();
   }
 
   public static final InstanceGroupManagersSettings create(InstanceGroupManagersStubSettings stub)
@@ -311,6 +410,13 @@ public class InstanceGroupManagersSettings extends ClientSettings<InstanceGroupM
       return getStubSettingsBuilder().abandonInstancesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to abandonInstances. */
+    public OperationCallSettings.Builder<
+            AbandonInstancesInstanceGroupManagerRequest, Operation, Operation>
+        abandonInstancesOperationSettings() {
+      return getStubSettingsBuilder().abandonInstancesOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to aggregatedList. */
     public PagedCallSettings.Builder<
             AggregatedListInstanceGroupManagersRequest,
@@ -326,10 +432,24 @@ public class InstanceGroupManagersSettings extends ClientSettings<InstanceGroupM
       return getStubSettingsBuilder().applyUpdatesToInstancesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to applyUpdatesToInstances. */
+    public OperationCallSettings.Builder<
+            ApplyUpdatesToInstancesInstanceGroupManagerRequest, Operation, Operation>
+        applyUpdatesToInstancesOperationSettings() {
+      return getStubSettingsBuilder().applyUpdatesToInstancesOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createInstances. */
     public UnaryCallSettings.Builder<CreateInstancesInstanceGroupManagerRequest, Operation>
         createInstancesSettings() {
       return getStubSettingsBuilder().createInstancesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createInstances. */
+    public OperationCallSettings.Builder<
+            CreateInstancesInstanceGroupManagerRequest, Operation, Operation>
+        createInstancesOperationSettings() {
+      return getStubSettingsBuilder().createInstancesOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to delete. */
@@ -338,16 +458,36 @@ public class InstanceGroupManagersSettings extends ClientSettings<InstanceGroupM
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteInstanceGroupManagerRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteInstances. */
     public UnaryCallSettings.Builder<DeleteInstancesInstanceGroupManagerRequest, Operation>
         deleteInstancesSettings() {
       return getStubSettingsBuilder().deleteInstancesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to deleteInstances. */
+    public OperationCallSettings.Builder<
+            DeleteInstancesInstanceGroupManagerRequest, Operation, Operation>
+        deleteInstancesOperationSettings() {
+      return getStubSettingsBuilder().deleteInstancesOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deletePerInstanceConfigs. */
     public UnaryCallSettings.Builder<DeletePerInstanceConfigsInstanceGroupManagerRequest, Operation>
         deletePerInstanceConfigsSettings() {
       return getStubSettingsBuilder().deletePerInstanceConfigsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deletePerInstanceConfigs. */
+    public OperationCallSettings.Builder<
+            DeletePerInstanceConfigsInstanceGroupManagerRequest, Operation, Operation>
+        deletePerInstanceConfigsOperationSettings() {
+      return getStubSettingsBuilder().deletePerInstanceConfigsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -360,6 +500,12 @@ public class InstanceGroupManagersSettings extends ClientSettings<InstanceGroupM
     public UnaryCallSettings.Builder<InsertInstanceGroupManagerRequest, Operation>
         insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertInstanceGroupManagerRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -401,10 +547,23 @@ public class InstanceGroupManagersSettings extends ClientSettings<InstanceGroupM
       return getStubSettingsBuilder().patchSettings();
     }
 
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchInstanceGroupManagerRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to patchPerInstanceConfigs. */
     public UnaryCallSettings.Builder<PatchPerInstanceConfigsInstanceGroupManagerRequest, Operation>
         patchPerInstanceConfigsSettings() {
       return getStubSettingsBuilder().patchPerInstanceConfigsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patchPerInstanceConfigs. */
+    public OperationCallSettings.Builder<
+            PatchPerInstanceConfigsInstanceGroupManagerRequest, Operation, Operation>
+        patchPerInstanceConfigsOperationSettings() {
+      return getStubSettingsBuilder().patchPerInstanceConfigsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to recreateInstances. */
@@ -413,10 +572,23 @@ public class InstanceGroupManagersSettings extends ClientSettings<InstanceGroupM
       return getStubSettingsBuilder().recreateInstancesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to recreateInstances. */
+    public OperationCallSettings.Builder<
+            RecreateInstancesInstanceGroupManagerRequest, Operation, Operation>
+        recreateInstancesOperationSettings() {
+      return getStubSettingsBuilder().recreateInstancesOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to resize. */
     public UnaryCallSettings.Builder<ResizeInstanceGroupManagerRequest, Operation>
         resizeSettings() {
       return getStubSettingsBuilder().resizeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resize. */
+    public OperationCallSettings.Builder<ResizeInstanceGroupManagerRequest, Operation, Operation>
+        resizeOperationSettings() {
+      return getStubSettingsBuilder().resizeOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setInstanceTemplate. */
@@ -425,16 +597,37 @@ public class InstanceGroupManagersSettings extends ClientSettings<InstanceGroupM
       return getStubSettingsBuilder().setInstanceTemplateSettings();
     }
 
+    /** Returns the builder for the settings used for calls to setInstanceTemplate. */
+    public OperationCallSettings.Builder<
+            SetInstanceTemplateInstanceGroupManagerRequest, Operation, Operation>
+        setInstanceTemplateOperationSettings() {
+      return getStubSettingsBuilder().setInstanceTemplateOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setTargetPools. */
     public UnaryCallSettings.Builder<SetTargetPoolsInstanceGroupManagerRequest, Operation>
         setTargetPoolsSettings() {
       return getStubSettingsBuilder().setTargetPoolsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to setTargetPools. */
+    public OperationCallSettings.Builder<
+            SetTargetPoolsInstanceGroupManagerRequest, Operation, Operation>
+        setTargetPoolsOperationSettings() {
+      return getStubSettingsBuilder().setTargetPoolsOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to updatePerInstanceConfigs. */
     public UnaryCallSettings.Builder<UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation>
         updatePerInstanceConfigsSettings() {
       return getStubSettingsBuilder().updatePerInstanceConfigsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePerInstanceConfigs. */
+    public OperationCallSettings.Builder<
+            UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation, Operation>
+        updatePerInstanceConfigsOperationSettings() {
+      return getStubSettingsBuilder().updatePerInstanceConfigsOperationSettings();
     }
 
     @Override

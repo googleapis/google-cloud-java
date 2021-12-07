@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Firewall Policy resource. (== resource_for {$api_version}.firewallPolicies ==)
+ * Represents a Firewall Policy resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.FirewallPolicy}
@@ -315,7 +315,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -330,7 +330,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -353,7 +353,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -379,7 +379,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -394,7 +394,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -417,7 +417,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -440,10 +440,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Depreacted, please use short name instead. User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string display_name = 4473832;</code>
+   * <code>optional string display_name = 4473832;</code>
    *
    * @return Whether the displayName field is set.
    */
@@ -455,10 +455,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Depreacted, please use short name instead. User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string display_name = 4473832;</code>
+   * <code>optional string display_name = 4473832;</code>
    *
    * @return The displayName.
    */
@@ -478,10 +478,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Depreacted, please use short name instead. User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string display_name = 4473832;</code>
+   * <code>optional string display_name = 4473832;</code>
    *
    * @return The bytes for displayName.
    */
@@ -504,11 +504,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make get() request to the firewall policy.
+   * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return Whether the fingerprint field is set.
    */
@@ -520,11 +519,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make get() request to the firewall policy.
+   * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The fingerprint.
    */
@@ -544,11 +542,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make get() request to the firewall policy.
+   * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The bytes for fingerprint.
    */
@@ -574,7 +571,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -589,7 +586,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -607,7 +604,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -622,7 +619,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -645,7 +642,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -671,7 +668,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Name of the resource. It is a numeric ID allocated by GCP which uniquely identifies the Firewall Policy.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -686,7 +683,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Name of the resource. It is a numeric ID allocated by GCP which uniquely identifies the Firewall Policy.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -709,7 +706,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Name of the resource. It is a numeric ID allocated by GCP which uniquely identifies the Firewall Policy.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -735,7 +732,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The parent of the firewall policy.
    * </pre>
    *
-   * <code>string parent = 78317738;</code>
+   * <code>optional string parent = 78317738;</code>
    *
    * @return Whether the parent field is set.
    */
@@ -750,7 +747,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The parent of the firewall policy.
    * </pre>
    *
-   * <code>string parent = 78317738;</code>
+   * <code>optional string parent = 78317738;</code>
    *
    * @return The parent.
    */
@@ -773,7 +770,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The parent of the firewall policy.
    * </pre>
    *
-   * <code>string parent = 78317738;</code>
+   * <code>optional string parent = 78317738;</code>
    *
    * @return The bytes for parent.
    */
@@ -799,7 +796,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Total count of all firewall policy rule tuples. A firewall policy can not exceed a set number of tuples.
    * </pre>
    *
-   * <code>int32 rule_tuple_count = 388342037;</code>
+   * <code>optional int32 rule_tuple_count = 388342037;</code>
    *
    * @return Whether the ruleTupleCount field is set.
    */
@@ -814,7 +811,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Total count of all firewall policy rule tuples. A firewall policy can not exceed a set number of tuples.
    * </pre>
    *
-   * <code>int32 rule_tuple_count = 388342037;</code>
+   * <code>optional int32 rule_tuple_count = 388342037;</code>
    *
    * @return The ruleTupleCount.
    */
@@ -901,7 +898,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -916,7 +913,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -939,7 +936,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -965,7 +962,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
-   * <code>string self_link_with_id = 44520962;</code>
+   * <code>optional string self_link_with_id = 44520962;</code>
    *
    * @return Whether the selfLinkWithId field is set.
    */
@@ -980,7 +977,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
-   * <code>string self_link_with_id = 44520962;</code>
+   * <code>optional string self_link_with_id = 44520962;</code>
    *
    * @return The selfLinkWithId.
    */
@@ -1003,7 +1000,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
-   * <code>string self_link_with_id = 44520962;</code>
+   * <code>optional string self_link_with_id = 44520962;</code>
    *
    * @return The bytes for selfLinkWithId.
    */
@@ -1026,10 +1023,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string short_name = 492051566;</code>
+   * <code>optional string short_name = 492051566;</code>
    *
    * @return Whether the shortName field is set.
    */
@@ -1041,10 +1038,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string short_name = 492051566;</code>
+   * <code>optional string short_name = 492051566;</code>
    *
    * @return The shortName.
    */
@@ -1064,10 +1061,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string short_name = 492051566;</code>
+   * <code>optional string short_name = 492051566;</code>
    *
    * @return The bytes for shortName.
    */
@@ -1430,7 +1427,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Firewall Policy resource. (== resource_for {$api_version}.firewallPolicies ==)
+   * Represents a Firewall Policy resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.FirewallPolicy}
@@ -2182,7 +2179,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -2196,7 +2193,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -2218,7 +2215,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -2240,7 +2237,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -2261,7 +2258,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -2278,7 +2275,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -2302,7 +2299,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -2316,7 +2313,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -2338,7 +2335,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -2360,7 +2357,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2381,7 +2378,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -2398,7 +2395,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2419,10 +2416,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Depreacted, please use short name instead. User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string display_name = 4473832;</code>
+     * <code>optional string display_name = 4473832;</code>
      *
      * @return Whether the displayName field is set.
      */
@@ -2433,10 +2430,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Depreacted, please use short name instead. User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string display_name = 4473832;</code>
+     * <code>optional string display_name = 4473832;</code>
      *
      * @return The displayName.
      */
@@ -2455,10 +2452,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Depreacted, please use short name instead. User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string display_name = 4473832;</code>
+     * <code>optional string display_name = 4473832;</code>
      *
      * @return The bytes for displayName.
      */
@@ -2477,10 +2474,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Depreacted, please use short name instead. User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string display_name = 4473832;</code>
+     * <code>optional string display_name = 4473832;</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -2498,10 +2495,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Depreacted, please use short name instead. User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string display_name = 4473832;</code>
+     * <code>optional string display_name = 4473832;</code>
      *
      * @return This builder for chaining.
      */
@@ -2515,10 +2512,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Depreacted, please use short name instead. User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string display_name = 4473832;</code>
+     * <code>optional string display_name = 4473832;</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -2539,11 +2536,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make get() request to the firewall policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return Whether the fingerprint field is set.
      */
@@ -2554,11 +2550,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make get() request to the firewall policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The fingerprint.
      */
@@ -2577,11 +2572,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make get() request to the firewall policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The bytes for fingerprint.
      */
@@ -2600,11 +2594,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make get() request to the firewall policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The fingerprint to set.
      * @return This builder for chaining.
@@ -2622,11 +2615,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make get() request to the firewall policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return This builder for chaining.
      */
@@ -2640,11 +2632,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make get() request to the firewall policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The bytes for fingerprint to set.
      * @return This builder for chaining.
@@ -2668,7 +2659,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -2683,7 +2674,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -2698,7 +2689,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -2716,7 +2707,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -2735,7 +2726,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -2749,7 +2740,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -2771,7 +2762,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -2793,7 +2784,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -2814,7 +2805,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -2831,7 +2822,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -2855,7 +2846,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the resource. It is a numeric ID allocated by GCP which uniquely identifies the Firewall Policy.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -2869,7 +2860,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the resource. It is a numeric ID allocated by GCP which uniquely identifies the Firewall Policy.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -2891,7 +2882,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the resource. It is a numeric ID allocated by GCP which uniquely identifies the Firewall Policy.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -2913,7 +2904,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the resource. It is a numeric ID allocated by GCP which uniquely identifies the Firewall Policy.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2934,7 +2925,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the resource. It is a numeric ID allocated by GCP which uniquely identifies the Firewall Policy.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -2951,7 +2942,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the resource. It is a numeric ID allocated by GCP which uniquely identifies the Firewall Policy.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2975,7 +2966,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The parent of the firewall policy.
      * </pre>
      *
-     * <code>string parent = 78317738;</code>
+     * <code>optional string parent = 78317738;</code>
      *
      * @return Whether the parent field is set.
      */
@@ -2989,7 +2980,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The parent of the firewall policy.
      * </pre>
      *
-     * <code>string parent = 78317738;</code>
+     * <code>optional string parent = 78317738;</code>
      *
      * @return The parent.
      */
@@ -3011,7 +3002,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The parent of the firewall policy.
      * </pre>
      *
-     * <code>string parent = 78317738;</code>
+     * <code>optional string parent = 78317738;</code>
      *
      * @return The bytes for parent.
      */
@@ -3033,7 +3024,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The parent of the firewall policy.
      * </pre>
      *
-     * <code>string parent = 78317738;</code>
+     * <code>optional string parent = 78317738;</code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -3054,7 +3045,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The parent of the firewall policy.
      * </pre>
      *
-     * <code>string parent = 78317738;</code>
+     * <code>optional string parent = 78317738;</code>
      *
      * @return This builder for chaining.
      */
@@ -3071,7 +3062,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The parent of the firewall policy.
      * </pre>
      *
-     * <code>string parent = 78317738;</code>
+     * <code>optional string parent = 78317738;</code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -3095,7 +3086,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Total count of all firewall policy rule tuples. A firewall policy can not exceed a set number of tuples.
      * </pre>
      *
-     * <code>int32 rule_tuple_count = 388342037;</code>
+     * <code>optional int32 rule_tuple_count = 388342037;</code>
      *
      * @return Whether the ruleTupleCount field is set.
      */
@@ -3110,7 +3101,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Total count of all firewall policy rule tuples. A firewall policy can not exceed a set number of tuples.
      * </pre>
      *
-     * <code>int32 rule_tuple_count = 388342037;</code>
+     * <code>optional int32 rule_tuple_count = 388342037;</code>
      *
      * @return The ruleTupleCount.
      */
@@ -3125,7 +3116,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Total count of all firewall policy rule tuples. A firewall policy can not exceed a set number of tuples.
      * </pre>
      *
-     * <code>int32 rule_tuple_count = 388342037;</code>
+     * <code>optional int32 rule_tuple_count = 388342037;</code>
      *
      * @param value The ruleTupleCount to set.
      * @return This builder for chaining.
@@ -3143,7 +3134,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Total count of all firewall policy rule tuples. A firewall policy can not exceed a set number of tuples.
      * </pre>
      *
-     * <code>int32 rule_tuple_count = 388342037;</code>
+     * <code>optional int32 rule_tuple_count = 388342037;</code>
      *
      * @return This builder for chaining.
      */
@@ -3512,7 +3503,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -3526,7 +3517,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -3548,7 +3539,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3570,7 +3561,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3591,7 +3582,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -3608,7 +3599,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -3632,7 +3623,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
-     * <code>string self_link_with_id = 44520962;</code>
+     * <code>optional string self_link_with_id = 44520962;</code>
      *
      * @return Whether the selfLinkWithId field is set.
      */
@@ -3646,7 +3637,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
-     * <code>string self_link_with_id = 44520962;</code>
+     * <code>optional string self_link_with_id = 44520962;</code>
      *
      * @return The selfLinkWithId.
      */
@@ -3668,7 +3659,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
-     * <code>string self_link_with_id = 44520962;</code>
+     * <code>optional string self_link_with_id = 44520962;</code>
      *
      * @return The bytes for selfLinkWithId.
      */
@@ -3690,7 +3681,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
-     * <code>string self_link_with_id = 44520962;</code>
+     * <code>optional string self_link_with_id = 44520962;</code>
      *
      * @param value The selfLinkWithId to set.
      * @return This builder for chaining.
@@ -3711,7 +3702,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
-     * <code>string self_link_with_id = 44520962;</code>
+     * <code>optional string self_link_with_id = 44520962;</code>
      *
      * @return This builder for chaining.
      */
@@ -3728,7 +3719,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
-     * <code>string self_link_with_id = 44520962;</code>
+     * <code>optional string self_link_with_id = 44520962;</code>
      *
      * @param value The bytes for selfLinkWithId to set.
      * @return This builder for chaining.
@@ -3749,10 +3740,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string short_name = 492051566;</code>
+     * <code>optional string short_name = 492051566;</code>
      *
      * @return Whether the shortName field is set.
      */
@@ -3763,10 +3754,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string short_name = 492051566;</code>
+     * <code>optional string short_name = 492051566;</code>
      *
      * @return The shortName.
      */
@@ -3785,10 +3776,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string short_name = 492051566;</code>
+     * <code>optional string short_name = 492051566;</code>
      *
      * @return The bytes for shortName.
      */
@@ -3807,10 +3798,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string short_name = 492051566;</code>
+     * <code>optional string short_name = 492051566;</code>
      *
      * @param value The shortName to set.
      * @return This builder for chaining.
@@ -3828,10 +3819,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string short_name = 492051566;</code>
+     * <code>optional string short_name = 492051566;</code>
      *
      * @return This builder for chaining.
      */
@@ -3845,10 +3836,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * User-provided name of the Organization firewall plicy. The name should be unique in the organization in which the firewall policy is created. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string short_name = 492051566;</code>
+     * <code>optional string short_name = 492051566;</code>
      *
      * @param value The bytes for shortName to set.
      * @return This builder for chaining.

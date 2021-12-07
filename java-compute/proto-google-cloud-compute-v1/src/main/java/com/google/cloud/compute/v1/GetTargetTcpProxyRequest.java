@@ -231,10 +231,10 @@ public final class GetTargetTcpProxyRequest extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (!getTargetTcpProxyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetTcpProxy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 503065442, targetTcpProxy_);
     }
     unknownFields.writeTo(output);
@@ -246,10 +246,10 @@ public final class GetTargetTcpProxyRequest extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
-    if (!getTargetTcpProxyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetTcpProxy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(503065442, targetTcpProxy_);
     }
     size += unknownFields.getSerializedSize();

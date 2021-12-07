@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a regional Commitment resource.
- * Creating a commitment resource means that you are purchasing a committed use contract with an explicit start and end time. You can create commitments based on vCPUs and memory usage and receive discounted rates. For full details, read Signing Up for Committed Use Discounts. (== resource_for {$api_version}.regionCommitments ==)
+ * Represents a regional Commitment resource. Creating a commitment resource means that you are purchasing a committed use contract with an explicit start and end time. You can create commitments based on vCPUs and memory usage and receive discounted rates. For full details, read Signing Up for Committed Use Discounts.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Commitment}
@@ -39,20 +38,21 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Commitment() {
-    category_ = 0;
+    category_ = "";
     creationTimestamp_ = "";
     description_ = "";
     endTimestamp_ = "";
     kind_ = "";
     name_ = "";
-    plan_ = 0;
+    plan_ = "";
     region_ = "";
     reservations_ = java.util.Collections.emptyList();
     resources_ = java.util.Collections.emptyList();
     selfLink_ = "";
     startTimestamp_ = "";
-    status_ = 0;
+    status_ = "";
     statusMessage_ = "";
+    type_ = "";
   }
 
   @java.lang.Override
@@ -105,11 +105,18 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
               name_ = s;
               break;
             }
-          case 27547976:
+          case 27547978:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000100;
-              plan_ = rawValue;
+              plan_ = s;
+              break;
+            }
+          case 28604882:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00004000;
+              type_ = s;
               break;
             }
           case 244202930:
@@ -119,11 +126,11 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
               creationTimestamp_ = s;
               break;
             }
-          case 404088816:
+          case 404088818:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              category_ = rawValue;
+              category_ = s;
               break;
             }
           case 669166538:
@@ -152,11 +159,11 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
                       com.google.cloud.compute.v1.ResourceCommitment.parser(), extensionRegistry));
               break;
             }
-          case 1450082192:
+          case 1450082194:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00001000;
-              status_ = rawValue;
+              status_ = s;
               break;
             }
           case -1915542062:
@@ -654,17 +661,179 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Commitment.Status)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.Commitment.Type}
+   */
+  public enum Type implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_TYPE = 0;</code>
+     */
+    UNDEFINED_TYPE(0),
+    /** <code>ACCELERATOR_OPTIMIZED = 280848403;</code> */
+    ACCELERATOR_OPTIMIZED(280848403),
+    /** <code>COMPUTE_OPTIMIZED = 158349023;</code> */
+    COMPUTE_OPTIMIZED(158349023),
+    /** <code>GENERAL_PURPOSE = 299793543;</code> */
+    GENERAL_PURPOSE(299793543),
+    /** <code>GENERAL_PURPOSE_E2 = 301911877;</code> */
+    GENERAL_PURPOSE_E2(301911877),
+    /** <code>GENERAL_PURPOSE_N2 = 301912156;</code> */
+    GENERAL_PURPOSE_N2(301912156),
+    /** <code>GENERAL_PURPOSE_N2D = 232471400;</code> */
+    GENERAL_PURPOSE_N2D(232471400),
+    /** <code>MEMORY_OPTIMIZED = 281753417;</code> */
+    MEMORY_OPTIMIZED(281753417),
+    /** <code>TYPE_UNSPECIFIED = 437714322;</code> */
+    TYPE_UNSPECIFIED(437714322),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_TYPE = 0;</code>
+     */
+    public static final int UNDEFINED_TYPE_VALUE = 0;
+    /** <code>ACCELERATOR_OPTIMIZED = 280848403;</code> */
+    public static final int ACCELERATOR_OPTIMIZED_VALUE = 280848403;
+    /** <code>COMPUTE_OPTIMIZED = 158349023;</code> */
+    public static final int COMPUTE_OPTIMIZED_VALUE = 158349023;
+    /** <code>GENERAL_PURPOSE = 299793543;</code> */
+    public static final int GENERAL_PURPOSE_VALUE = 299793543;
+    /** <code>GENERAL_PURPOSE_E2 = 301911877;</code> */
+    public static final int GENERAL_PURPOSE_E2_VALUE = 301911877;
+    /** <code>GENERAL_PURPOSE_N2 = 301912156;</code> */
+    public static final int GENERAL_PURPOSE_N2_VALUE = 301912156;
+    /** <code>GENERAL_PURPOSE_N2D = 232471400;</code> */
+    public static final int GENERAL_PURPOSE_N2D_VALUE = 232471400;
+    /** <code>MEMORY_OPTIMIZED = 281753417;</code> */
+    public static final int MEMORY_OPTIMIZED_VALUE = 281753417;
+    /** <code>TYPE_UNSPECIFIED = 437714322;</code> */
+    public static final int TYPE_UNSPECIFIED_VALUE = 437714322;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Type valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Type forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_TYPE;
+        case 280848403:
+          return ACCELERATOR_OPTIMIZED;
+        case 158349023:
+          return COMPUTE_OPTIMIZED;
+        case 299793543:
+          return GENERAL_PURPOSE;
+        case 301911877:
+          return GENERAL_PURPOSE_E2;
+        case 301912156:
+          return GENERAL_PURPOSE_N2;
+        case 232471400:
+          return GENERAL_PURPOSE_N2D;
+        case 281753417:
+          return MEMORY_OPTIMIZED;
+        case 437714322:
+          return TYPE_UNSPECIFIED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+          public Type findValueByNumber(int number) {
+            return Type.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.Commitment.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final Type[] VALUES = values();
+
+    public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Type(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Commitment.Type)
+  }
+
   private int bitField0_;
   public static final int CATEGORY_FIELD_NUMBER = 50511102;
-  private int category_;
+  private volatile java.lang.Object category_;
   /**
    *
    *
    * <pre>
    * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+   * Check the Category enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
+   * <code>optional string category = 50511102;</code>
    *
    * @return Whether the category field is set.
    */
@@ -677,33 +846,48 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+   * Check the Category enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
+   * <code>optional string category = 50511102;</code>
    *
-   * @return The enum numeric value on the wire for category.
+   * @return The category.
    */
   @java.lang.Override
-  public int getCategoryValue() {
-    return category_;
+  public java.lang.String getCategory() {
+    java.lang.Object ref = category_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      category_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+   * Check the Category enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
+   * <code>optional string category = 50511102;</code>
    *
-   * @return The category.
+   * @return The bytes for category.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.Commitment.Category getCategory() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Commitment.Category result =
-        com.google.cloud.compute.v1.Commitment.Category.valueOf(category_);
-    return result == null ? com.google.cloud.compute.v1.Commitment.Category.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getCategoryBytes() {
+    java.lang.Object ref = category_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      category_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
@@ -715,7 +899,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -730,7 +914,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -753,7 +937,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -779,7 +963,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -794,7 +978,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -817,7 +1001,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -843,7 +1027,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Commitment end time in RFC3339 text format.
    * </pre>
    *
-   * <code>string end_timestamp = 468096690;</code>
+   * <code>optional string end_timestamp = 468096690;</code>
    *
    * @return Whether the endTimestamp field is set.
    */
@@ -858,7 +1042,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Commitment end time in RFC3339 text format.
    * </pre>
    *
-   * <code>string end_timestamp = 468096690;</code>
+   * <code>optional string end_timestamp = 468096690;</code>
    *
    * @return The endTimestamp.
    */
@@ -881,7 +1065,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Commitment end time in RFC3339 text format.
    * </pre>
    *
-   * <code>string end_timestamp = 468096690;</code>
+   * <code>optional string end_timestamp = 468096690;</code>
    *
    * @return The bytes for endTimestamp.
    */
@@ -907,7 +1091,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -922,7 +1106,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -940,7 +1124,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#commitment for commitments.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -955,7 +1139,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#commitment for commitments.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -978,7 +1162,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#commitment for commitments.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -1004,7 +1188,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * The license specification required as part of a license commitment.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+   * <code>optional .google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;
+   * </code>
    *
    * @return Whether the licenseResource field is set.
    */
@@ -1019,7 +1204,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * The license specification required as part of a license commitment.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+   * <code>optional .google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;
+   * </code>
    *
    * @return The licenseResource.
    */
@@ -1036,7 +1222,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * The license specification required as part of a license commitment.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+   * <code>optional .google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.LicenseResourceCommitmentOrBuilder
@@ -1055,7 +1242,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -1070,7 +1257,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -1093,7 +1280,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -1111,15 +1298,16 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PLAN_FIELD_NUMBER = 3443497;
-  private int plan_;
+  private volatile java.lang.Object plan_;
   /**
    *
    *
    * <pre>
    * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+   * Check the Plan enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
+   * <code>optional string plan = 3443497;</code>
    *
    * @return Whether the plan field is set.
    */
@@ -1132,33 +1320,48 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+   * Check the Plan enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
+   * <code>optional string plan = 3443497;</code>
    *
-   * @return The enum numeric value on the wire for plan.
+   * @return The plan.
    */
   @java.lang.Override
-  public int getPlanValue() {
-    return plan_;
+  public java.lang.String getPlan() {
+    java.lang.Object ref = plan_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      plan_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+   * Check the Plan enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
+   * <code>optional string plan = 3443497;</code>
    *
-   * @return The plan.
+   * @return The bytes for plan.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.Commitment.Plan getPlan() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Commitment.Plan result =
-        com.google.cloud.compute.v1.Commitment.Plan.valueOf(plan_);
-    return result == null ? com.google.cloud.compute.v1.Commitment.Plan.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getPlanBytes() {
+    java.lang.Object ref = plan_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      plan_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
@@ -1170,7 +1373,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where this commitment may be used.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -1185,7 +1388,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where this commitment may be used.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -1208,7 +1411,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] URL of the region where this commitment may be used.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -1372,7 +1575,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -1387,7 +1590,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1410,7 +1613,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1436,7 +1639,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Commitment start time in RFC3339 text format.
    * </pre>
    *
-   * <code>string start_timestamp = 83645817;</code>
+   * <code>optional string start_timestamp = 83645817;</code>
    *
    * @return Whether the startTimestamp field is set.
    */
@@ -1451,7 +1654,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Commitment start time in RFC3339 text format.
    * </pre>
    *
-   * <code>string start_timestamp = 83645817;</code>
+   * <code>optional string start_timestamp = 83645817;</code>
    *
    * @return The startTimestamp.
    */
@@ -1474,7 +1677,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Commitment start time in RFC3339 text format.
    * </pre>
    *
-   * <code>string start_timestamp = 83645817;</code>
+   * <code>optional string start_timestamp = 83645817;</code>
    *
    * @return The bytes for startTimestamp.
    */
@@ -1492,15 +1695,16 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    *
    *
    * <pre>
    * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -1513,33 +1717,48 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
   @java.lang.Override
-  public int getStatusValue() {
-    return status_;
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.Commitment.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Commitment.Status result =
-        com.google.cloud.compute.v1.Commitment.Status.valueOf(status_);
-    return result == null ? com.google.cloud.compute.v1.Commitment.Status.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int STATUS_MESSAGE_FIELD_NUMBER = 297428154;
@@ -1551,7 +1770,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return Whether the statusMessage field is set.
    */
@@ -1566,7 +1785,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return The statusMessage.
    */
@@ -1589,7 +1808,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>optional string status_message = 297428154;</code>
    *
    * @return The bytes for statusMessage.
    */
@@ -1600,6 +1819,73 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       statusMessage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TYPE_FIELD_NUMBER = 3575610;
+  private volatile java.lang.Object type_;
+  /**
+   *
+   *
+   * <pre>
+   * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+   * Check the Type enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string type = 3575610;</code>
+   *
+   * @return Whether the type field is set.
+   */
+  @java.lang.Override
+  public boolean hasType() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+   * Check the Type enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string type = 3575610;</code>
+   *
+   * @return The type.
+   */
+  @java.lang.Override
+  public java.lang.String getType() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      type_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+   * Check the Type enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string type = 3575610;</code>
+   *
+   * @return The bytes for type.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTypeBytes() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      type_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -1630,13 +1916,16 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
-      output.writeEnum(3443497, plan_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3443497, plan_);
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(50511102, category_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 50511102, category_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 83645817, startTimestamp_);
@@ -1648,7 +1937,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(164412965, resources_.get(i));
     }
     if (((bitField0_ & 0x00001000) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 297428154, statusMessage_);
@@ -1687,14 +1976,17 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3443497, plan_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3443497, plan_);
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(50511102, category_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(50511102, category_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(83645817, startTimestamp_);
@@ -1707,7 +1999,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(164412965, resources_.get(i));
     }
     if (((bitField0_ & 0x00001000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(297428154, statusMessage_);
@@ -1746,7 +2038,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
 
     if (hasCategory() != other.hasCategory()) return false;
     if (hasCategory()) {
-      if (category_ != other.category_) return false;
+      if (!getCategory().equals(other.getCategory())) return false;
     }
     if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
     if (hasCreationTimestamp()) {
@@ -1778,7 +2070,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasPlan() != other.hasPlan()) return false;
     if (hasPlan()) {
-      if (plan_ != other.plan_) return false;
+      if (!getPlan().equals(other.getPlan())) return false;
     }
     if (hasRegion() != other.hasRegion()) return false;
     if (hasRegion()) {
@@ -1796,11 +2088,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus().equals(other.getStatus())) return false;
     }
     if (hasStatusMessage() != other.hasStatusMessage()) return false;
     if (hasStatusMessage()) {
       if (!getStatusMessage().equals(other.getStatusMessage())) return false;
+    }
+    if (hasType() != other.hasType()) return false;
+    if (hasType()) {
+      if (!getType().equals(other.getType())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1815,7 +2111,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasCategory()) {
       hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
-      hash = (53 * hash) + category_;
+      hash = (53 * hash) + getCategory().hashCode();
     }
     if (hasCreationTimestamp()) {
       hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
@@ -1847,7 +2143,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasPlan()) {
       hash = (37 * hash) + PLAN_FIELD_NUMBER;
-      hash = (53 * hash) + plan_;
+      hash = (53 * hash) + getPlan().hashCode();
     }
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -1871,11 +2167,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     if (hasStatusMessage()) {
       hash = (37 * hash) + STATUS_MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getStatusMessage().hashCode();
+    }
+    if (hasType()) {
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1981,8 +2281,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a regional Commitment resource.
-   * Creating a commitment resource means that you are purchasing a committed use contract with an explicit start and end time. You can create commitments based on vCPUs and memory usage and receive discounted rates. For full details, read Signing Up for Committed Use Discounts. (== resource_for {$api_version}.regionCommitments ==)
+   * Represents a regional Commitment resource. Creating a commitment resource means that you are purchasing a committed use contract with an explicit start and end time. You can create commitments based on vCPUs and memory usage and receive discounted rates. For full details, read Signing Up for Committed Use Discounts.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Commitment}
@@ -2027,7 +2326,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      category_ = 0;
+      category_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -2047,7 +2346,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000040);
       name_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
-      plan_ = 0;
+      plan_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
       region_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
@@ -2067,10 +2366,12 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00001000);
       startTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00002000);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00004000);
       statusMessage_ = "";
       bitField0_ = (bitField0_ & ~0x00008000);
+      type_ = "";
+      bitField0_ = (bitField0_ & ~0x00010000);
       return this;
     }
 
@@ -2178,6 +2479,10 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00002000;
       }
       result.statusMessage_ = statusMessage_;
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        to_bitField0_ |= 0x00004000;
+      }
+      result.type_ = type_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -2229,7 +2534,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.Commitment other) {
       if (other == com.google.cloud.compute.v1.Commitment.getDefaultInstance()) return this;
       if (other.hasCategory()) {
-        setCategory(other.getCategory());
+        bitField0_ |= 0x00000001;
+        category_ = other.category_;
+        onChanged();
       }
       if (other.hasCreationTimestamp()) {
         bitField0_ |= 0x00000002;
@@ -2263,7 +2570,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasPlan()) {
-        setPlan(other.getPlan());
+        bitField0_ |= 0x00000100;
+        plan_ = other.plan_;
+        onChanged();
       }
       if (other.hasRegion()) {
         bitField0_ |= 0x00000200;
@@ -2335,11 +2644,18 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00004000;
+        status_ = other.status_;
+        onChanged();
       }
       if (other.hasStatusMessage()) {
         bitField0_ |= 0x00008000;
         statusMessage_ = other.statusMessage_;
+        onChanged();
+      }
+      if (other.hasType()) {
+        bitField0_ |= 0x00010000;
+        type_ = other.type_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -2373,19 +2689,19 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private int category_ = 0;
+    private java.lang.Object category_ = "";
     /**
      *
      *
      * <pre>
      * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+     * Check the Category enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
+     * <code>optional string category = 50511102;</code>
      *
      * @return Whether the category field is set.
      */
-    @java.lang.Override
     public boolean hasCategory() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -2394,29 +2710,64 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+     * Check the Category enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
+     * <code>optional string category = 50511102;</code>
      *
-     * @return The enum numeric value on the wire for category.
+     * @return The category.
      */
-    @java.lang.Override
-    public int getCategoryValue() {
-      return category_;
+    public java.lang.String getCategory() {
+      java.lang.Object ref = category_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        category_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+     * Check the Category enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
+     * <code>optional string category = 50511102;</code>
      *
-     * @param value The enum numeric value on the wire for category to set.
+     * @return The bytes for category.
+     */
+    public com.google.protobuf.ByteString getCategoryBytes() {
+      java.lang.Object ref = category_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        category_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+     * Check the Category enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string category = 50511102;</code>
+     *
+     * @param value The category to set.
      * @return This builder for chaining.
      */
-    public Builder setCategoryValue(int value) {
+    public Builder setCategory(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000001;
       category_ = value;
       onChanged();
@@ -2427,37 +2778,16 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+     * Check the Category enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
+     * <code>optional string category = 50511102;</code>
      *
-     * @return The category.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Commitment.Category getCategory() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Commitment.Category result =
-          com.google.cloud.compute.v1.Commitment.Category.valueOf(category_);
-      return result == null ? com.google.cloud.compute.v1.Commitment.Category.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
-     *
-     * @param value The category to set.
      * @return This builder for chaining.
      */
-    public Builder setCategory(com.google.cloud.compute.v1.Commitment.Category value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      category_ = value.getNumber();
+    public Builder clearCategory() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      category_ = getDefaultInstance().getCategory();
       onChanged();
       return this;
     }
@@ -2466,15 +2796,21 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+     * Check the Category enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
+     * <code>optional string category = 50511102;</code>
      *
+     * @param value The bytes for category to set.
      * @return This builder for chaining.
      */
-    public Builder clearCategory() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      category_ = 0;
+    public Builder setCategoryBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      category_ = value;
       onChanged();
       return this;
     }
@@ -2487,7 +2823,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -2501,7 +2837,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -2523,7 +2859,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -2545,7 +2881,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -2566,7 +2902,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -2583,7 +2919,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -2607,7 +2943,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -2621,7 +2957,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -2643,7 +2979,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -2665,7 +3001,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2686,7 +3022,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -2703,7 +3039,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2727,7 +3063,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Commitment end time in RFC3339 text format.
      * </pre>
      *
-     * <code>string end_timestamp = 468096690;</code>
+     * <code>optional string end_timestamp = 468096690;</code>
      *
      * @return Whether the endTimestamp field is set.
      */
@@ -2741,7 +3077,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Commitment end time in RFC3339 text format.
      * </pre>
      *
-     * <code>string end_timestamp = 468096690;</code>
+     * <code>optional string end_timestamp = 468096690;</code>
      *
      * @return The endTimestamp.
      */
@@ -2763,7 +3099,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Commitment end time in RFC3339 text format.
      * </pre>
      *
-     * <code>string end_timestamp = 468096690;</code>
+     * <code>optional string end_timestamp = 468096690;</code>
      *
      * @return The bytes for endTimestamp.
      */
@@ -2785,7 +3121,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Commitment end time in RFC3339 text format.
      * </pre>
      *
-     * <code>string end_timestamp = 468096690;</code>
+     * <code>optional string end_timestamp = 468096690;</code>
      *
      * @param value The endTimestamp to set.
      * @return This builder for chaining.
@@ -2806,7 +3142,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Commitment end time in RFC3339 text format.
      * </pre>
      *
-     * <code>string end_timestamp = 468096690;</code>
+     * <code>optional string end_timestamp = 468096690;</code>
      *
      * @return This builder for chaining.
      */
@@ -2823,7 +3159,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Commitment end time in RFC3339 text format.
      * </pre>
      *
-     * <code>string end_timestamp = 468096690;</code>
+     * <code>optional string end_timestamp = 468096690;</code>
      *
      * @param value The bytes for endTimestamp to set.
      * @return This builder for chaining.
@@ -2847,7 +3183,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -2862,7 +3198,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -2877,7 +3213,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -2895,7 +3231,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -2914,7 +3250,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#commitment for commitments.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -2928,7 +3264,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#commitment for commitments.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -2950,7 +3286,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#commitment for commitments.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -2972,7 +3308,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#commitment for commitments.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -2993,7 +3329,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#commitment for commitments.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -3010,7 +3346,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#commitment for commitments.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -3039,7 +3375,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * The license specification required as part of a license commitment.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;
+     * </code>
      *
      * @return Whether the licenseResource field is set.
      */
@@ -3053,7 +3391,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * The license specification required as part of a license commitment.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;
+     * </code>
      *
      * @return The licenseResource.
      */
@@ -3073,7 +3413,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * The license specification required as part of a license commitment.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;
+     * </code>
      */
     public Builder setLicenseResource(com.google.cloud.compute.v1.LicenseResourceCommitment value) {
       if (licenseResourceBuilder_ == null) {
@@ -3095,7 +3437,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * The license specification required as part of a license commitment.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;
+     * </code>
      */
     public Builder setLicenseResource(
         com.google.cloud.compute.v1.LicenseResourceCommitment.Builder builderForValue) {
@@ -3115,7 +3459,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * The license specification required as part of a license commitment.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;
+     * </code>
      */
     public Builder mergeLicenseResource(
         com.google.cloud.compute.v1.LicenseResourceCommitment value) {
@@ -3145,7 +3491,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * The license specification required as part of a license commitment.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;
+     * </code>
      */
     public Builder clearLicenseResource() {
       if (licenseResourceBuilder_ == null) {
@@ -3164,7 +3512,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * The license specification required as part of a license commitment.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;
+     * </code>
      */
     public com.google.cloud.compute.v1.LicenseResourceCommitment.Builder
         getLicenseResourceBuilder() {
@@ -3179,7 +3529,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * The license specification required as part of a license commitment.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;
+     * </code>
      */
     public com.google.cloud.compute.v1.LicenseResourceCommitmentOrBuilder
         getLicenseResourceOrBuilder() {
@@ -3198,7 +3550,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * The license specification required as part of a license commitment.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.LicenseResourceCommitment,
@@ -3225,7 +3579,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -3239,7 +3593,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -3261,7 +3615,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -3283,7 +3637,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -3304,7 +3658,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -3321,7 +3675,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -3337,19 +3691,19 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int plan_ = 0;
+    private java.lang.Object plan_ = "";
     /**
      *
      *
      * <pre>
      * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * Check the Plan enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
+     * <code>optional string plan = 3443497;</code>
      *
      * @return Whether the plan field is set.
      */
-    @java.lang.Override
     public boolean hasPlan() {
       return ((bitField0_ & 0x00000100) != 0);
     }
@@ -3358,29 +3712,64 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * Check the Plan enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
+     * <code>optional string plan = 3443497;</code>
      *
-     * @return The enum numeric value on the wire for plan.
+     * @return The plan.
      */
-    @java.lang.Override
-    public int getPlanValue() {
-      return plan_;
+    public java.lang.String getPlan() {
+      java.lang.Object ref = plan_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        plan_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * Check the Plan enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
+     * <code>optional string plan = 3443497;</code>
      *
-     * @param value The enum numeric value on the wire for plan to set.
+     * @return The bytes for plan.
+     */
+    public com.google.protobuf.ByteString getPlanBytes() {
+      java.lang.Object ref = plan_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        plan_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * Check the Plan enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string plan = 3443497;</code>
+     *
+     * @param value The plan to set.
      * @return This builder for chaining.
      */
-    public Builder setPlanValue(int value) {
+    public Builder setPlan(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000100;
       plan_ = value;
       onChanged();
@@ -3391,37 +3780,16 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * Check the Plan enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
+     * <code>optional string plan = 3443497;</code>
      *
-     * @return The plan.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Commitment.Plan getPlan() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Commitment.Plan result =
-          com.google.cloud.compute.v1.Commitment.Plan.valueOf(plan_);
-      return result == null ? com.google.cloud.compute.v1.Commitment.Plan.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
-     *
-     * @param value The plan to set.
      * @return This builder for chaining.
      */
-    public Builder setPlan(com.google.cloud.compute.v1.Commitment.Plan value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000100;
-      plan_ = value.getNumber();
+    public Builder clearPlan() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      plan_ = getDefaultInstance().getPlan();
       onChanged();
       return this;
     }
@@ -3430,15 +3798,21 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * Check the Plan enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
+     * <code>optional string plan = 3443497;</code>
      *
+     * @param value The bytes for plan to set.
      * @return This builder for chaining.
      */
-    public Builder clearPlan() {
-      bitField0_ = (bitField0_ & ~0x00000100);
-      plan_ = 0;
+    public Builder setPlanBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000100;
+      plan_ = value;
       onChanged();
       return this;
     }
@@ -3451,7 +3825,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where this commitment may be used.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return Whether the region field is set.
      */
@@ -3465,7 +3839,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where this commitment may be used.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The region.
      */
@@ -3487,7 +3861,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where this commitment may be used.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The bytes for region.
      */
@@ -3509,7 +3883,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where this commitment may be used.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -3530,7 +3904,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where this commitment may be used.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return This builder for chaining.
      */
@@ -3547,7 +3921,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] URL of the region where this commitment may be used.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.
@@ -4274,7 +4648,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -4288,7 +4662,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -4310,7 +4684,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -4332,7 +4706,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -4353,7 +4727,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -4370,7 +4744,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -4394,7 +4768,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Commitment start time in RFC3339 text format.
      * </pre>
      *
-     * <code>string start_timestamp = 83645817;</code>
+     * <code>optional string start_timestamp = 83645817;</code>
      *
      * @return Whether the startTimestamp field is set.
      */
@@ -4408,7 +4782,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Commitment start time in RFC3339 text format.
      * </pre>
      *
-     * <code>string start_timestamp = 83645817;</code>
+     * <code>optional string start_timestamp = 83645817;</code>
      *
      * @return The startTimestamp.
      */
@@ -4430,7 +4804,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Commitment start time in RFC3339 text format.
      * </pre>
      *
-     * <code>string start_timestamp = 83645817;</code>
+     * <code>optional string start_timestamp = 83645817;</code>
      *
      * @return The bytes for startTimestamp.
      */
@@ -4452,7 +4826,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Commitment start time in RFC3339 text format.
      * </pre>
      *
-     * <code>string start_timestamp = 83645817;</code>
+     * <code>optional string start_timestamp = 83645817;</code>
      *
      * @param value The startTimestamp to set.
      * @return This builder for chaining.
@@ -4473,7 +4847,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Commitment start time in RFC3339 text format.
      * </pre>
      *
-     * <code>string start_timestamp = 83645817;</code>
+     * <code>optional string start_timestamp = 83645817;</code>
      *
      * @return This builder for chaining.
      */
@@ -4490,7 +4864,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Commitment start time in RFC3339 text format.
      * </pre>
      *
-     * <code>string start_timestamp = 83645817;</code>
+     * <code>optional string start_timestamp = 83645817;</code>
      *
      * @param value The bytes for startTimestamp to set.
      * @return This builder for chaining.
@@ -4506,19 +4880,19 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      *
      *
      * <pre>
      * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
      * @return Whether the status field is set.
      */
-    @java.lang.Override
     public boolean hasStatus() {
       return ((bitField0_ & 0x00004000) != 0);
     }
@@ -4527,29 +4901,64 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The enum numeric value on the wire for status.
+     * @return The status.
      */
-    @java.lang.Override
-    public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @param value The enum numeric value on the wire for status to set.
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     *
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
+    public Builder setStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00004000;
       status_ = value;
       onChanged();
@@ -4560,37 +4969,16 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Commitment.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Commitment.Status result =
-          com.google.cloud.compute.v1.Commitment.Status.valueOf(status_);
-      return result == null ? com.google.cloud.compute.v1.Commitment.Status.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
-     *
-     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloud.compute.v1.Commitment.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00004000;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
@@ -4599,15 +4987,21 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00004000);
-      status_ = 0;
+    public Builder setStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00004000;
+      status_ = value;
       onChanged();
       return this;
     }
@@ -4620,7 +5014,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>optional string status_message = 297428154;</code>
      *
      * @return Whether the statusMessage field is set.
      */
@@ -4634,7 +5028,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>optional string status_message = 297428154;</code>
      *
      * @return The statusMessage.
      */
@@ -4656,7 +5050,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>optional string status_message = 297428154;</code>
      *
      * @return The bytes for statusMessage.
      */
@@ -4678,7 +5072,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>optional string status_message = 297428154;</code>
      *
      * @param value The statusMessage to set.
      * @return This builder for chaining.
@@ -4699,7 +5093,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>optional string status_message = 297428154;</code>
      *
      * @return This builder for chaining.
      */
@@ -4716,7 +5110,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>optional string status_message = 297428154;</code>
      *
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
@@ -4728,6 +5122,132 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       bitField0_ |= 0x00008000;
       statusMessage_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object type_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     *
+     * @return Whether the type field is set.
+     */
+    public boolean hasType() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     *
+     * @return The type.
+     */
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     *
+     * @return The bytes for type.
+     */
+    public com.google.protobuf.ByteString getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00010000;
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      type_ = getDefaultInstance().getType();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     *
+     * @param value The bytes for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00010000;
+      type_ = value;
       onChanged();
       return this;
     }

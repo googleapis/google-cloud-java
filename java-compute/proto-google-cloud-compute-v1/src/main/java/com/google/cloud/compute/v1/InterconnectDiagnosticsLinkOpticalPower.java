@@ -39,7 +39,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
   }
 
   private InterconnectDiagnosticsLinkOpticalPower() {
-    state_ = 0;
+    state_ = "";
   }
 
   @java.lang.Override
@@ -72,11 +72,11 @@ public final class InterconnectDiagnosticsLinkOpticalPower
           case 0:
             done = true;
             break;
-          case 878060680:
+          case 878060682:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              state_ = rawValue;
+              state_ = s;
               break;
             }
           case 895781773:
@@ -123,12 +123,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
    *
    *
    * <pre>
-   * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
-   * - OK: The value has not crossed a warning threshold.
-   * - LOW_WARNING: The value has crossed below the low warning threshold.
-   * - HIGH_WARNING: The value has crossed above the high warning threshold.
-   * - LOW_ALARM: The value has crossed below the low alarm threshold.
-   * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+   * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include: - OK: The value has not crossed a warning threshold. - LOW_WARNING: The value has crossed below the low warning threshold. - HIGH_WARNING: The value has crossed above the high warning threshold. - LOW_ALARM: The value has crossed below the low alarm threshold. - HIGH_ALARM: The value has crossed above the high alarm threshold.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State}
@@ -144,15 +139,55 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>HIGH_ALARM = 305363284;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The value has crossed above the high alarm threshold.
+     * </pre>
+     *
+     * <code>HIGH_ALARM = 305363284;</code>
+     */
     HIGH_ALARM(305363284),
-    /** <code>HIGH_WARNING = 220984799;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The value of the current optical power has crossed above the high warning threshold.
+     * </pre>
+     *
+     * <code>HIGH_WARNING = 220984799;</code>
+     */
     HIGH_WARNING(220984799),
-    /** <code>LOW_ALARM = 316659046;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The value of the current optical power has crossed below the low alarm threshold.
+     * </pre>
+     *
+     * <code>LOW_ALARM = 316659046;</code>
+     */
     LOW_ALARM(316659046),
-    /** <code>LOW_WARNING = 338793841;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The value of the current optical power has crossed below the low warning threshold.
+     * </pre>
+     *
+     * <code>LOW_WARNING = 338793841;</code>
+     */
     LOW_WARNING(338793841),
-    /** <code>OK = 2524;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The value of the current optical power has not crossed a warning threshold.
+     * </pre>
+     *
+     * <code>OK = 2524;</code>
+     */
     OK(2524),
     UNRECOGNIZED(-1),
     ;
@@ -167,15 +202,55 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>HIGH_ALARM = 305363284;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The value has crossed above the high alarm threshold.
+     * </pre>
+     *
+     * <code>HIGH_ALARM = 305363284;</code>
+     */
     public static final int HIGH_ALARM_VALUE = 305363284;
-    /** <code>HIGH_WARNING = 220984799;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The value of the current optical power has crossed above the high warning threshold.
+     * </pre>
+     *
+     * <code>HIGH_WARNING = 220984799;</code>
+     */
     public static final int HIGH_WARNING_VALUE = 220984799;
-    /** <code>LOW_ALARM = 316659046;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The value of the current optical power has crossed below the low alarm threshold.
+     * </pre>
+     *
+     * <code>LOW_ALARM = 316659046;</code>
+     */
     public static final int LOW_ALARM_VALUE = 316659046;
-    /** <code>LOW_WARNING = 338793841;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The value of the current optical power has crossed below the low warning threshold.
+     * </pre>
+     *
+     * <code>LOW_WARNING = 338793841;</code>
+     */
     public static final int LOW_WARNING_VALUE = 338793841;
-    /** <code>OK = 2524;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The value of the current optical power has not crossed a warning threshold.
+     * </pre>
+     *
+     * <code>OK = 2524;</code>
+     */
     public static final int OK_VALUE = 2524;
 
     public final int getNumber() {
@@ -271,21 +346,16 @@ public final class InterconnectDiagnosticsLinkOpticalPower
 
   private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 109757585;
-  private int state_;
+  private volatile java.lang.Object state_;
   /**
    *
    *
    * <pre>
-   * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
-   * - OK: The value has not crossed a warning threshold.
-   * - LOW_WARNING: The value has crossed below the low warning threshold.
-   * - HIGH_WARNING: The value has crossed above the high warning threshold.
-   * - LOW_ALARM: The value has crossed below the low alarm threshold.
-   * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+   * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include: - OK: The value has not crossed a warning threshold. - LOW_WARNING: The value has crossed below the low warning threshold. - HIGH_WARNING: The value has crossed above the high warning threshold. - LOW_ALARM: The value has crossed below the low alarm threshold. - HIGH_ALARM: The value has crossed above the high alarm threshold.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State state = 109757585;
-   * </code>
+   * <code>optional string state = 109757585;</code>
    *
    * @return Whether the state field is set.
    */
@@ -297,48 +367,49 @@ public final class InterconnectDiagnosticsLinkOpticalPower
    *
    *
    * <pre>
-   * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
-   * - OK: The value has not crossed a warning threshold.
-   * - LOW_WARNING: The value has crossed below the low warning threshold.
-   * - HIGH_WARNING: The value has crossed above the high warning threshold.
-   * - LOW_ALARM: The value has crossed below the low alarm threshold.
-   * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+   * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include: - OK: The value has not crossed a warning threshold. - LOW_WARNING: The value has crossed below the low warning threshold. - HIGH_WARNING: The value has crossed above the high warning threshold. - LOW_ALARM: The value has crossed below the low alarm threshold. - HIGH_ALARM: The value has crossed above the high alarm threshold.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State state = 109757585;
-   * </code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The enum numeric value on the wire for state.
+   * @return The state.
    */
   @java.lang.Override
-  public int getStateValue() {
-    return state_;
+  public java.lang.String getState() {
+    java.lang.Object ref = state_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      state_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
-   * - OK: The value has not crossed a warning threshold.
-   * - LOW_WARNING: The value has crossed below the low warning threshold.
-   * - HIGH_WARNING: The value has crossed above the high warning threshold.
-   * - LOW_ALARM: The value has crossed below the low alarm threshold.
-   * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+   * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include: - OK: The value has not crossed a warning threshold. - LOW_WARNING: The value has crossed below the low warning threshold. - HIGH_WARNING: The value has crossed above the high warning threshold. - LOW_ALARM: The value has crossed below the low alarm threshold. - HIGH_ALARM: The value has crossed above the high alarm threshold.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State state = 109757585;
-   * </code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The state.
+   * @return The bytes for state.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State getState() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State result =
-        com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State.valueOf(state_);
-    return result == null
-        ? com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getStateBytes() {
+    java.lang.Object ref = state_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      state_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int VALUE_FIELD_NUMBER = 111972721;
@@ -350,7 +421,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
    * Value of the current receiving or transmitting optical power, read in dBm. Take a known good optical value, give it a 10% margin and trigger warnings relative to that value. In general, a -7dBm warning and a -11dBm alarm are good optical value estimates for most links.
    * </pre>
    *
-   * <code>float value = 111972721;</code>
+   * <code>optional float value = 111972721;</code>
    *
    * @return Whether the value field is set.
    */
@@ -365,7 +436,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
    * Value of the current receiving or transmitting optical power, read in dBm. Take a known good optical value, give it a 10% margin and trigger warnings relative to that value. In general, a -7dBm warning and a -11dBm alarm are good optical value estimates for most links.
    * </pre>
    *
-   * <code>float value = 111972721;</code>
+   * <code>optional float value = 111972721;</code>
    *
    * @return The value.
    */
@@ -389,7 +460,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(109757585, state_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 109757585, state_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeFloat(111972721, value_);
@@ -404,7 +475,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(109757585, state_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757585, state_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(111972721, value_);
@@ -427,7 +498,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
 
     if (hasState() != other.hasState()) return false;
     if (hasState()) {
-      if (state_ != other.state_) return false;
+      if (!getState().equals(other.getState())) return false;
     }
     if (hasValue() != other.hasValue()) return false;
     if (hasValue()) {
@@ -447,7 +518,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasState()) {
       hash = (37 * hash) + STATE_FIELD_NUMBER;
-      hash = (53 * hash) + state_;
+      hash = (53 * hash) + getState().hashCode();
     }
     if (hasValue()) {
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
@@ -600,7 +671,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      state_ = 0;
+      state_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       value_ = 0F;
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -698,7 +769,9 @@ public final class InterconnectDiagnosticsLinkOpticalPower
           == com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower
               .getDefaultInstance()) return this;
       if (other.hasState()) {
-        setState(other.getState());
+        bitField0_ |= 0x00000001;
+        state_ = other.state_;
+        onChanged();
       }
       if (other.hasValue()) {
         setValue(other.getValue());
@@ -736,26 +809,19 @@ public final class InterconnectDiagnosticsLinkOpticalPower
 
     private int bitField0_;
 
-    private int state_ = 0;
+    private java.lang.Object state_ = "";
     /**
      *
      *
      * <pre>
-     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
-     * - OK: The value has not crossed a warning threshold.
-     * - LOW_WARNING: The value has crossed below the low warning threshold.
-     * - HIGH_WARNING: The value has crossed above the high warning threshold.
-     * - LOW_ALARM: The value has crossed below the low alarm threshold.
-     * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include: - OK: The value has not crossed a warning threshold. - LOW_WARNING: The value has crossed below the low warning threshold. - HIGH_WARNING: The value has crossed above the high warning threshold. - LOW_ALARM: The value has crossed below the low alarm threshold. - HIGH_ALARM: The value has crossed above the high alarm threshold.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State state = 109757585;
-     * </code>
+     * <code>optional string state = 109757585;</code>
      *
      * @return Whether the state field is set.
      */
-    @java.lang.Override
     public boolean hasState() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -763,44 +829,65 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      *
      *
      * <pre>
-     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
-     * - OK: The value has not crossed a warning threshold.
-     * - LOW_WARNING: The value has crossed below the low warning threshold.
-     * - HIGH_WARNING: The value has crossed above the high warning threshold.
-     * - LOW_ALARM: The value has crossed below the low alarm threshold.
-     * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include: - OK: The value has not crossed a warning threshold. - LOW_WARNING: The value has crossed below the low warning threshold. - HIGH_WARNING: The value has crossed above the high warning threshold. - LOW_ALARM: The value has crossed below the low alarm threshold. - HIGH_ALARM: The value has crossed above the high alarm threshold.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State state = 109757585;
-     * </code>
+     * <code>optional string state = 109757585;</code>
      *
-     * @return The enum numeric value on the wire for state.
+     * @return The state.
      */
-    @java.lang.Override
-    public int getStateValue() {
-      return state_;
+    public java.lang.String getState() {
+      java.lang.Object ref = state_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        state_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
-     * - OK: The value has not crossed a warning threshold.
-     * - LOW_WARNING: The value has crossed below the low warning threshold.
-     * - HIGH_WARNING: The value has crossed above the high warning threshold.
-     * - LOW_ALARM: The value has crossed below the low alarm threshold.
-     * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include: - OK: The value has not crossed a warning threshold. - LOW_WARNING: The value has crossed below the low warning threshold. - HIGH_WARNING: The value has crossed above the high warning threshold. - LOW_ALARM: The value has crossed below the low alarm threshold. - HIGH_ALARM: The value has crossed above the high alarm threshold.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State state = 109757585;
-     * </code>
+     * <code>optional string state = 109757585;</code>
      *
-     * @param value The enum numeric value on the wire for state to set.
+     * @return The bytes for state.
+     */
+    public com.google.protobuf.ByteString getStateBytes() {
+      java.lang.Object ref = state_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        state_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include: - OK: The value has not crossed a warning threshold. - LOW_WARNING: The value has crossed below the low warning threshold. - HIGH_WARNING: The value has crossed above the high warning threshold. - LOW_ALARM: The value has crossed below the low alarm threshold. - HIGH_ALARM: The value has crossed above the high alarm threshold.
+     * Check the State enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string state = 109757585;</code>
+     *
+     * @param value The state to set.
      * @return This builder for chaining.
      */
-    public Builder setStateValue(int value) {
+    public Builder setState(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000001;
       state_ = value;
       onChanged();
@@ -810,55 +897,17 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      *
      *
      * <pre>
-     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
-     * - OK: The value has not crossed a warning threshold.
-     * - LOW_WARNING: The value has crossed below the low warning threshold.
-     * - HIGH_WARNING: The value has crossed above the high warning threshold.
-     * - LOW_ALARM: The value has crossed below the low alarm threshold.
-     * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include: - OK: The value has not crossed a warning threshold. - LOW_WARNING: The value has crossed below the low warning threshold. - HIGH_WARNING: The value has crossed above the high warning threshold. - LOW_ALARM: The value has crossed below the low alarm threshold. - HIGH_ALARM: The value has crossed above the high alarm threshold.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State state = 109757585;
-     * </code>
+     * <code>optional string state = 109757585;</code>
      *
-     * @return The state.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State getState() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State result =
-          com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State.valueOf(state_);
-      return result == null
-          ? com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
-     * - OK: The value has not crossed a warning threshold.
-     * - LOW_WARNING: The value has crossed below the low warning threshold.
-     * - HIGH_WARNING: The value has crossed above the high warning threshold.
-     * - LOW_ALARM: The value has crossed below the low alarm threshold.
-     * - HIGH_ALARM: The value has crossed above the high alarm threshold.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State state = 109757585;
-     * </code>
-     *
-     * @param value The state to set.
      * @return This builder for chaining.
      */
-    public Builder setState(
-        com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      state_ = value.getNumber();
+    public Builder clearState() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      state_ = getDefaultInstance().getState();
       onChanged();
       return this;
     }
@@ -866,23 +915,22 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      *
      *
      * <pre>
-     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
-     * - OK: The value has not crossed a warning threshold.
-     * - LOW_WARNING: The value has crossed below the low warning threshold.
-     * - HIGH_WARNING: The value has crossed above the high warning threshold.
-     * - LOW_ALARM: The value has crossed below the low alarm threshold.
-     * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include: - OK: The value has not crossed a warning threshold. - LOW_WARNING: The value has crossed below the low warning threshold. - HIGH_WARNING: The value has crossed above the high warning threshold. - LOW_ALARM: The value has crossed below the low alarm threshold. - HIGH_ALARM: The value has crossed above the high alarm threshold.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State state = 109757585;
-     * </code>
+     * <code>optional string state = 109757585;</code>
      *
+     * @param value The bytes for state to set.
      * @return This builder for chaining.
      */
-    public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      state_ = 0;
+    public Builder setStateBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      state_ = value;
       onChanged();
       return this;
     }
@@ -895,7 +943,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * Value of the current receiving or transmitting optical power, read in dBm. Take a known good optical value, give it a 10% margin and trigger warnings relative to that value. In general, a -7dBm warning and a -11dBm alarm are good optical value estimates for most links.
      * </pre>
      *
-     * <code>float value = 111972721;</code>
+     * <code>optional float value = 111972721;</code>
      *
      * @return Whether the value field is set.
      */
@@ -910,7 +958,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * Value of the current receiving or transmitting optical power, read in dBm. Take a known good optical value, give it a 10% margin and trigger warnings relative to that value. In general, a -7dBm warning and a -11dBm alarm are good optical value estimates for most links.
      * </pre>
      *
-     * <code>float value = 111972721;</code>
+     * <code>optional float value = 111972721;</code>
      *
      * @return The value.
      */
@@ -925,7 +973,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * Value of the current receiving or transmitting optical power, read in dBm. Take a known good optical value, give it a 10% margin and trigger warnings relative to that value. In general, a -7dBm warning and a -11dBm alarm are good optical value estimates for most links.
      * </pre>
      *
-     * <code>float value = 111972721;</code>
+     * <code>optional float value = 111972721;</code>
      *
      * @param value The value to set.
      * @return This builder for chaining.
@@ -943,7 +991,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * Value of the current receiving or transmitting optical power, read in dBm. Take a known good optical value, give it a 10% margin and trigger warnings relative to that value. In general, a -7dBm warning and a -11dBm alarm are good optical value estimates for most links.
      * </pre>
      *
-     * <code>float value = 111972721;</code>
+     * <code>optional float value = 111972721;</code>
      *
      * @return This builder for chaining.
      */

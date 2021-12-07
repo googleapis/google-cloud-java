@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonInstancesStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -38,6 +39,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -90,7 +92,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -101,6 +103,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -117,7 +120,9 @@ public class InstancesClientTest {
     AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
 
     Operation actualResponse =
-        client.addAccessConfig(project, zone, instance, networkInterface, accessConfigResource);
+        client
+            .addAccessConfigAsync(project, zone, instance, networkInterface, accessConfigResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -148,10 +153,11 @@ public class InstancesClientTest {
       String instance = "instance555127957";
       String networkInterface = "networkInterface-341981525";
       AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
-      client.addAccessConfig(project, zone, instance, networkInterface, accessConfigResource);
+      client
+          .addAccessConfigAsync(project, zone, instance, networkInterface, accessConfigResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -165,7 +171,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -176,6 +182,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -192,8 +199,10 @@ public class InstancesClientTest {
         InstancesAddResourcePoliciesRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.addResourcePolicies(
-            project, zone, instance, instancesAddResourcePoliciesRequestResource);
+        client
+            .addResourcePoliciesAsync(
+                project, zone, instance, instancesAddResourcePoliciesRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -224,11 +233,12 @@ public class InstancesClientTest {
       String instance = "instance555127957";
       InstancesAddResourcePoliciesRequest instancesAddResourcePoliciesRequestResource =
           InstancesAddResourcePoliciesRequest.newBuilder().build();
-      client.addResourcePolicies(
-          project, zone, instance, instancesAddResourcePoliciesRequestResource);
+      client
+          .addResourcePoliciesAsync(
+              project, zone, instance, instancesAddResourcePoliciesRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -294,7 +304,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -305,6 +315,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -319,7 +330,8 @@ public class InstancesClientTest {
     String instance = "instance555127957";
     AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
 
-    Operation actualResponse = client.attachDisk(project, zone, instance, attachedDiskResource);
+    Operation actualResponse =
+        client.attachDiskAsync(project, zone, instance, attachedDiskResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -349,10 +361,9 @@ public class InstancesClientTest {
       String zone = "zone3744684";
       String instance = "instance555127957";
       AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
-      client.attachDisk(project, zone, instance, attachedDiskResource);
+      client.attachDiskAsync(project, zone, instance, attachedDiskResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -366,7 +377,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -377,6 +388,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -391,7 +403,8 @@ public class InstancesClientTest {
     BulkInsertInstanceResource bulkInsertInstanceResourceResource =
         BulkInsertInstanceResource.newBuilder().build();
 
-    Operation actualResponse = client.bulkInsert(project, zone, bulkInsertInstanceResourceResource);
+    Operation actualResponse =
+        client.bulkInsertAsync(project, zone, bulkInsertInstanceResourceResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -421,10 +434,9 @@ public class InstancesClientTest {
       String zone = "zone3744684";
       BulkInsertInstanceResource bulkInsertInstanceResourceResource =
           BulkInsertInstanceResource.newBuilder().build();
-      client.bulkInsert(project, zone, bulkInsertInstanceResourceResource);
+      client.bulkInsertAsync(project, zone, bulkInsertInstanceResourceResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -438,7 +450,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -449,6 +461,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -462,7 +475,7 @@ public class InstancesClientTest {
     String zone = "zone3744684";
     String instance = "instance555127957";
 
-    Operation actualResponse = client.delete(project, zone, instance);
+    Operation actualResponse = client.deleteAsync(project, zone, instance).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -491,10 +504,9 @@ public class InstancesClientTest {
       String project = "project-309310695";
       String zone = "zone3744684";
       String instance = "instance555127957";
-      client.delete(project, zone, instance);
+      client.deleteAsync(project, zone, instance).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -508,7 +520,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -519,6 +531,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -535,7 +548,9 @@ public class InstancesClientTest {
     String networkInterface = "networkInterface-341981525";
 
     Operation actualResponse =
-        client.deleteAccessConfig(project, zone, instance, accessConfig, networkInterface);
+        client
+            .deleteAccessConfigAsync(project, zone, instance, accessConfig, networkInterface)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -566,10 +581,9 @@ public class InstancesClientTest {
       String instance = "instance555127957";
       String accessConfig = "accessConfig1549765062";
       String networkInterface = "networkInterface-341981525";
-      client.deleteAccessConfig(project, zone, instance, accessConfig, networkInterface);
+      client.deleteAccessConfigAsync(project, zone, instance, accessConfig, networkInterface).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -583,7 +597,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -594,6 +608,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -608,7 +623,7 @@ public class InstancesClientTest {
     String instance = "instance555127957";
     String deviceName = "deviceName780988929";
 
-    Operation actualResponse = client.detachDisk(project, zone, instance, deviceName);
+    Operation actualResponse = client.detachDiskAsync(project, zone, instance, deviceName).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -638,10 +653,9 @@ public class InstancesClientTest {
       String zone = "zone3744684";
       String instance = "instance555127957";
       String deviceName = "deviceName780988929";
-      client.detachDisk(project, zone, instance, deviceName);
+      client.detachDiskAsync(project, zone, instance, deviceName).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -673,6 +687,7 @@ public class InstancesClientTest {
             .setMinCpuPlatform("minCpuPlatform1549557897")
             .setName("name3373707")
             .addAllNetworkInterfaces(new ArrayList<NetworkInterface>())
+            .setPrivateIpv6GoogleAccess("privateIpv6GoogleAccess-1729571801")
             .setReservationAffinity(ReservationAffinity.newBuilder().build())
             .addAllResourcePolicies(new ArrayList<String>())
             .setSatisfiesPzs(true)
@@ -683,6 +698,7 @@ public class InstancesClientTest {
             .setShieldedInstanceIntegrityPolicy(
                 ShieldedInstanceIntegrityPolicy.newBuilder().build())
             .setStartRestricted(true)
+            .setStatus("status-892481550")
             .setStatusMessage("statusMessage-958704715")
             .setTags(Tags.newBuilder().build())
             .setZone("zone3744684")
@@ -1047,7 +1063,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -1058,6 +1074,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -1071,7 +1088,7 @@ public class InstancesClientTest {
     String zone = "zone3744684";
     Instance instanceResource = Instance.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, zone, instanceResource);
+    Operation actualResponse = client.insertAsync(project, zone, instanceResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1100,10 +1117,9 @@ public class InstancesClientTest {
       String project = "project-309310695";
       String zone = "zone3744684";
       Instance instanceResource = Instance.newBuilder().build();
-      client.insert(project, zone, instanceResource);
+      client.insertAsync(project, zone, instanceResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -1223,7 +1239,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -1234,6 +1250,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -1250,8 +1267,10 @@ public class InstancesClientTest {
         InstancesRemoveResourcePoliciesRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.removeResourcePolicies(
-            project, zone, instance, instancesRemoveResourcePoliciesRequestResource);
+        client
+            .removeResourcePoliciesAsync(
+                project, zone, instance, instancesRemoveResourcePoliciesRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1282,11 +1301,12 @@ public class InstancesClientTest {
       String instance = "instance555127957";
       InstancesRemoveResourcePoliciesRequest instancesRemoveResourcePoliciesRequestResource =
           InstancesRemoveResourcePoliciesRequest.newBuilder().build();
-      client.removeResourcePolicies(
-          project, zone, instance, instancesRemoveResourcePoliciesRequestResource);
+      client
+          .removeResourcePoliciesAsync(
+              project, zone, instance, instancesRemoveResourcePoliciesRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -1300,7 +1320,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -1311,6 +1331,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -1324,7 +1345,7 @@ public class InstancesClientTest {
     String zone = "zone3744684";
     String instance = "instance555127957";
 
-    Operation actualResponse = client.reset(project, zone, instance);
+    Operation actualResponse = client.resetAsync(project, zone, instance).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1353,7 +1374,53 @@ public class InstancesClientTest {
       String project = "project-309310695";
       String zone = "zone3744684";
       String instance = "instance555127957";
-      client.reset(project, zone, instance);
+      client.resetAsync(project, zone, instance).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void sendDiagnosticInterruptTest() throws Exception {
+    SendDiagnosticInterruptInstanceResponse expectedResponse =
+        SendDiagnosticInterruptInstanceResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-309310695";
+    String zone = "zone3744684";
+    String instance = "instance555127957";
+
+    SendDiagnosticInterruptInstanceResponse actualResponse =
+        client.sendDiagnosticInterrupt(project, zone, instance);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void sendDiagnosticInterruptExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-309310695";
+      String zone = "zone3744684";
+      String instance = "instance555127957";
+      client.sendDiagnosticInterrupt(project, zone, instance);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -1370,7 +1437,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -1381,6 +1448,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -1394,7 +1462,7 @@ public class InstancesClientTest {
     String zone = "zone3744684";
     String resource = "resource-341064690";
 
-    Operation actualResponse = client.setDeletionProtection(project, zone, resource);
+    Operation actualResponse = client.setDeletionProtectionAsync(project, zone, resource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1423,10 +1491,9 @@ public class InstancesClientTest {
       String project = "project-309310695";
       String zone = "zone3744684";
       String resource = "resource-341064690";
-      client.setDeletionProtection(project, zone, resource);
+      client.setDeletionProtectionAsync(project, zone, resource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -1440,7 +1507,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -1451,6 +1518,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -1467,7 +1535,7 @@ public class InstancesClientTest {
     String deviceName = "deviceName780988929";
 
     Operation actualResponse =
-        client.setDiskAutoDelete(project, zone, instance, autoDelete, deviceName);
+        client.setDiskAutoDeleteAsync(project, zone, instance, autoDelete, deviceName).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1498,10 +1566,9 @@ public class InstancesClientTest {
       String instance = "instance555127957";
       boolean autoDelete = true;
       String deviceName = "deviceName780988929";
-      client.setDiskAutoDelete(project, zone, instance, autoDelete, deviceName);
+      client.setDiskAutoDeleteAsync(project, zone, instance, autoDelete, deviceName).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -1571,7 +1638,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -1582,6 +1649,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -1598,7 +1666,7 @@ public class InstancesClientTest {
         InstancesSetLabelsRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.setLabels(project, zone, instance, instancesSetLabelsRequestResource);
+        client.setLabelsAsync(project, zone, instance, instancesSetLabelsRequestResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1629,10 +1697,9 @@ public class InstancesClientTest {
       String instance = "instance555127957";
       InstancesSetLabelsRequest instancesSetLabelsRequestResource =
           InstancesSetLabelsRequest.newBuilder().build();
-      client.setLabels(project, zone, instance, instancesSetLabelsRequestResource);
+      client.setLabelsAsync(project, zone, instance, instancesSetLabelsRequestResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -1646,7 +1713,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -1657,6 +1724,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -1673,8 +1741,10 @@ public class InstancesClientTest {
         InstancesSetMachineResourcesRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.setMachineResources(
-            project, zone, instance, instancesSetMachineResourcesRequestResource);
+        client
+            .setMachineResourcesAsync(
+                project, zone, instance, instancesSetMachineResourcesRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1705,11 +1775,12 @@ public class InstancesClientTest {
       String instance = "instance555127957";
       InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource =
           InstancesSetMachineResourcesRequest.newBuilder().build();
-      client.setMachineResources(
-          project, zone, instance, instancesSetMachineResourcesRequestResource);
+      client
+          .setMachineResourcesAsync(
+              project, zone, instance, instancesSetMachineResourcesRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -1723,7 +1794,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -1734,6 +1805,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -1750,7 +1822,9 @@ public class InstancesClientTest {
         InstancesSetMachineTypeRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.setMachineType(project, zone, instance, instancesSetMachineTypeRequestResource);
+        client
+            .setMachineTypeAsync(project, zone, instance, instancesSetMachineTypeRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1781,10 +1855,11 @@ public class InstancesClientTest {
       String instance = "instance555127957";
       InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource =
           InstancesSetMachineTypeRequest.newBuilder().build();
-      client.setMachineType(project, zone, instance, instancesSetMachineTypeRequestResource);
+      client
+          .setMachineTypeAsync(project, zone, instance, instancesSetMachineTypeRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -1798,7 +1873,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -1809,6 +1884,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -1823,7 +1899,8 @@ public class InstancesClientTest {
     String instance = "instance555127957";
     Metadata metadataResource = Metadata.newBuilder().build();
 
-    Operation actualResponse = client.setMetadata(project, zone, instance, metadataResource);
+    Operation actualResponse =
+        client.setMetadataAsync(project, zone, instance, metadataResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1853,10 +1930,9 @@ public class InstancesClientTest {
       String zone = "zone3744684";
       String instance = "instance555127957";
       Metadata metadataResource = Metadata.newBuilder().build();
-      client.setMetadata(project, zone, instance, metadataResource);
+      client.setMetadataAsync(project, zone, instance, metadataResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -1870,7 +1946,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -1881,6 +1957,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -1897,8 +1974,10 @@ public class InstancesClientTest {
         InstancesSetMinCpuPlatformRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.setMinCpuPlatform(
-            project, zone, instance, instancesSetMinCpuPlatformRequestResource);
+        client
+            .setMinCpuPlatformAsync(
+                project, zone, instance, instancesSetMinCpuPlatformRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1929,10 +2008,12 @@ public class InstancesClientTest {
       String instance = "instance555127957";
       InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource =
           InstancesSetMinCpuPlatformRequest.newBuilder().build();
-      client.setMinCpuPlatform(project, zone, instance, instancesSetMinCpuPlatformRequestResource);
+      client
+          .setMinCpuPlatformAsync(
+              project, zone, instance, instancesSetMinCpuPlatformRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -1946,7 +2027,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -1957,6 +2038,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -1971,7 +2053,8 @@ public class InstancesClientTest {
     String instance = "instance555127957";
     Scheduling schedulingResource = Scheduling.newBuilder().build();
 
-    Operation actualResponse = client.setScheduling(project, zone, instance, schedulingResource);
+    Operation actualResponse =
+        client.setSchedulingAsync(project, zone, instance, schedulingResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -2001,10 +2084,9 @@ public class InstancesClientTest {
       String zone = "zone3744684";
       String instance = "instance555127957";
       Scheduling schedulingResource = Scheduling.newBuilder().build();
-      client.setScheduling(project, zone, instance, schedulingResource);
+      client.setSchedulingAsync(project, zone, instance, schedulingResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -2018,7 +2100,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -2029,6 +2111,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -2045,8 +2128,10 @@ public class InstancesClientTest {
         InstancesSetServiceAccountRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.setServiceAccount(
-            project, zone, instance, instancesSetServiceAccountRequestResource);
+        client
+            .setServiceAccountAsync(
+                project, zone, instance, instancesSetServiceAccountRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -2077,10 +2162,12 @@ public class InstancesClientTest {
       String instance = "instance555127957";
       InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource =
           InstancesSetServiceAccountRequest.newBuilder().build();
-      client.setServiceAccount(project, zone, instance, instancesSetServiceAccountRequestResource);
+      client
+          .setServiceAccountAsync(
+              project, zone, instance, instancesSetServiceAccountRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -2094,7 +2181,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -2105,6 +2192,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -2121,8 +2209,10 @@ public class InstancesClientTest {
         ShieldedInstanceIntegrityPolicy.newBuilder().build();
 
     Operation actualResponse =
-        client.setShieldedInstanceIntegrityPolicy(
-            project, zone, instance, shieldedInstanceIntegrityPolicyResource);
+        client
+            .setShieldedInstanceIntegrityPolicyAsync(
+                project, zone, instance, shieldedInstanceIntegrityPolicyResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -2153,11 +2243,12 @@ public class InstancesClientTest {
       String instance = "instance555127957";
       ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicyResource =
           ShieldedInstanceIntegrityPolicy.newBuilder().build();
-      client.setShieldedInstanceIntegrityPolicy(
-          project, zone, instance, shieldedInstanceIntegrityPolicyResource);
+      client
+          .setShieldedInstanceIntegrityPolicyAsync(
+              project, zone, instance, shieldedInstanceIntegrityPolicyResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -2171,7 +2262,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -2182,6 +2273,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -2196,7 +2288,7 @@ public class InstancesClientTest {
     String instance = "instance555127957";
     Tags tagsResource = Tags.newBuilder().build();
 
-    Operation actualResponse = client.setTags(project, zone, instance, tagsResource);
+    Operation actualResponse = client.setTagsAsync(project, zone, instance, tagsResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -2226,10 +2318,9 @@ public class InstancesClientTest {
       String zone = "zone3744684";
       String instance = "instance555127957";
       Tags tagsResource = Tags.newBuilder().build();
-      client.setTags(project, zone, instance, tagsResource);
+      client.setTagsAsync(project, zone, instance, tagsResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -2243,7 +2334,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -2254,6 +2345,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -2267,7 +2359,7 @@ public class InstancesClientTest {
     String zone = "zone3744684";
     String instance = "instance555127957";
 
-    Operation actualResponse = client.simulateMaintenanceEvent(project, zone, instance);
+    Operation actualResponse = client.simulateMaintenanceEventAsync(project, zone, instance).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -2296,10 +2388,9 @@ public class InstancesClientTest {
       String project = "project-309310695";
       String zone = "zone3744684";
       String instance = "instance555127957";
-      client.simulateMaintenanceEvent(project, zone, instance);
+      client.simulateMaintenanceEventAsync(project, zone, instance).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -2313,7 +2404,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -2324,6 +2415,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -2337,7 +2429,7 @@ public class InstancesClientTest {
     String zone = "zone3744684";
     String instance = "instance555127957";
 
-    Operation actualResponse = client.start(project, zone, instance);
+    Operation actualResponse = client.startAsync(project, zone, instance).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -2366,10 +2458,9 @@ public class InstancesClientTest {
       String project = "project-309310695";
       String zone = "zone3744684";
       String instance = "instance555127957";
-      client.start(project, zone, instance);
+      client.startAsync(project, zone, instance).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -2383,7 +2474,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -2394,6 +2485,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -2410,8 +2502,10 @@ public class InstancesClientTest {
         InstancesStartWithEncryptionKeyRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.startWithEncryptionKey(
-            project, zone, instance, instancesStartWithEncryptionKeyRequestResource);
+        client
+            .startWithEncryptionKeyAsync(
+                project, zone, instance, instancesStartWithEncryptionKeyRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -2442,11 +2536,12 @@ public class InstancesClientTest {
       String instance = "instance555127957";
       InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource =
           InstancesStartWithEncryptionKeyRequest.newBuilder().build();
-      client.startWithEncryptionKey(
-          project, zone, instance, instancesStartWithEncryptionKeyRequestResource);
+      client
+          .startWithEncryptionKeyAsync(
+              project, zone, instance, instancesStartWithEncryptionKeyRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -2460,7 +2555,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -2471,6 +2566,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -2484,7 +2580,7 @@ public class InstancesClientTest {
     String zone = "zone3744684";
     String instance = "instance555127957";
 
-    Operation actualResponse = client.stop(project, zone, instance);
+    Operation actualResponse = client.stopAsync(project, zone, instance).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -2513,10 +2609,9 @@ public class InstancesClientTest {
       String project = "project-309310695";
       String zone = "zone3744684";
       String instance = "instance555127957";
-      client.stop(project, zone, instance);
+      client.stopAsync(project, zone, instance).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -2581,7 +2676,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -2592,6 +2687,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -2606,7 +2702,7 @@ public class InstancesClientTest {
     String instance = "instance555127957";
     Instance instanceResource = Instance.newBuilder().build();
 
-    Operation actualResponse = client.update(project, zone, instance, instanceResource);
+    Operation actualResponse = client.updateAsync(project, zone, instance, instanceResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -2636,10 +2732,9 @@ public class InstancesClientTest {
       String zone = "zone3744684";
       String instance = "instance555127957";
       Instance instanceResource = Instance.newBuilder().build();
-      client.update(project, zone, instance, instanceResource);
+      client.updateAsync(project, zone, instance, instanceResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -2653,7 +2748,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -2664,6 +2759,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -2680,7 +2776,10 @@ public class InstancesClientTest {
     AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
 
     Operation actualResponse =
-        client.updateAccessConfig(project, zone, instance, networkInterface, accessConfigResource);
+        client
+            .updateAccessConfigAsync(
+                project, zone, instance, networkInterface, accessConfigResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -2711,10 +2810,11 @@ public class InstancesClientTest {
       String instance = "instance555127957";
       String networkInterface = "networkInterface-341981525";
       AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
-      client.updateAccessConfig(project, zone, instance, networkInterface, accessConfigResource);
+      client
+          .updateAccessConfigAsync(project, zone, instance, networkInterface, accessConfigResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -2728,7 +2828,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -2739,6 +2839,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -2754,7 +2855,7 @@ public class InstancesClientTest {
     DisplayDevice displayDeviceResource = DisplayDevice.newBuilder().build();
 
     Operation actualResponse =
-        client.updateDisplayDevice(project, zone, instance, displayDeviceResource);
+        client.updateDisplayDeviceAsync(project, zone, instance, displayDeviceResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -2784,10 +2885,9 @@ public class InstancesClientTest {
       String zone = "zone3744684";
       String instance = "instance555127957";
       DisplayDevice displayDeviceResource = DisplayDevice.newBuilder().build();
-      client.updateDisplayDevice(project, zone, instance, displayDeviceResource);
+      client.updateDisplayDeviceAsync(project, zone, instance, displayDeviceResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -2801,7 +2901,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -2812,6 +2912,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -2828,8 +2929,10 @@ public class InstancesClientTest {
     NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
 
     Operation actualResponse =
-        client.updateNetworkInterface(
-            project, zone, instance, networkInterface, networkInterfaceResource);
+        client
+            .updateNetworkInterfaceAsync(
+                project, zone, instance, networkInterface, networkInterfaceResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -2860,11 +2963,12 @@ public class InstancesClientTest {
       String instance = "instance555127957";
       String networkInterface = "networkInterface-341981525";
       NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
-      client.updateNetworkInterface(
-          project, zone, instance, networkInterface, networkInterfaceResource);
+      client
+          .updateNetworkInterfaceAsync(
+              project, zone, instance, networkInterface, networkInterfaceResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -2878,7 +2982,7 @@ public class InstancesClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -2889,6 +2993,7 @@ public class InstancesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -2905,8 +3010,10 @@ public class InstancesClientTest {
         ShieldedInstanceConfig.newBuilder().build();
 
     Operation actualResponse =
-        client.updateShieldedInstanceConfig(
-            project, zone, instance, shieldedInstanceConfigResource);
+        client
+            .updateShieldedInstanceConfigAsync(
+                project, zone, instance, shieldedInstanceConfigResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -2937,10 +3044,12 @@ public class InstancesClientTest {
       String instance = "instance555127957";
       ShieldedInstanceConfig shieldedInstanceConfigResource =
           ShieldedInstanceConfig.newBuilder().build();
-      client.updateShieldedInstanceConfig(project, zone, instance, shieldedInstanceConfigResource);
+      client
+          .updateShieldedInstanceConfigAsync(
+              project, zone, instance, shieldedInstanceConfigResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 }

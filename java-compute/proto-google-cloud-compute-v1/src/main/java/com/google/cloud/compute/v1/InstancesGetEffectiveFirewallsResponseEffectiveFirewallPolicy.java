@@ -44,7 +44,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     name_ = "";
     rules_ = java.util.Collections.emptyList();
     shortName_ = "";
-    type_ = 0;
+    type_ = "";
   }
 
   @java.lang.Override
@@ -84,11 +84,11 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
               name_ = s;
               break;
             }
-          case 28604880:
+          case 28604882:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
-              type_ = rawValue;
+              type_ = s;
               break;
             }
           case 35790658:
@@ -294,7 +294,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
    * </pre>
    *
-   * <code>string display_name = 4473832;</code>
+   * <code>optional string display_name = 4473832;</code>
    *
    * @return Whether the displayName field is set.
    */
@@ -309,7 +309,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
    * </pre>
    *
-   * <code>string display_name = 4473832;</code>
+   * <code>optional string display_name = 4473832;</code>
    *
    * @return The displayName.
    */
@@ -332,7 +332,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
    * </pre>
    *
-   * <code>string display_name = 4473832;</code>
+   * <code>optional string display_name = 4473832;</code>
    *
    * @return The bytes for displayName.
    */
@@ -358,7 +358,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    * [Output Only] The name of the firewall policy.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -373,7 +373,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    * [Output Only] The name of the firewall policy.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -396,7 +396,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    * [Output Only] The name of the firewall policy.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -491,7 +491,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    * [Output Only] The short name of the firewall policy.
    * </pre>
    *
-   * <code>string short_name = 492051566;</code>
+   * <code>optional string short_name = 492051566;</code>
    *
    * @return Whether the shortName field is set.
    */
@@ -506,7 +506,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    * [Output Only] The short name of the firewall policy.
    * </pre>
    *
-   * <code>string short_name = 492051566;</code>
+   * <code>optional string short_name = 492051566;</code>
    *
    * @return The shortName.
    */
@@ -529,7 +529,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    * [Output Only] The short name of the firewall policy.
    * </pre>
    *
-   * <code>string short_name = 492051566;</code>
+   * <code>optional string short_name = 492051566;</code>
    *
    * @return The bytes for shortName.
    */
@@ -547,17 +547,16 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private int type_;
+  private volatile java.lang.Object type_;
   /**
    *
    *
    * <pre>
    * [Output Only] The type of the firewall policy.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type type = 3575610;
-   * </code>
+   * <code>optional string type = 3575610;</code>
    *
    * @return Whether the type field is set.
    */
@@ -570,44 +569,48 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    *
    * <pre>
    * [Output Only] The type of the firewall policy.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type type = 3575610;
-   * </code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The enum numeric value on the wire for type.
+   * @return The type.
    */
   @java.lang.Override
-  public int getTypeValue() {
-    return type_;
+  public java.lang.String getType() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      type_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * [Output Only] The type of the firewall policy.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type type = 3575610;
-   * </code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The type.
+   * @return The bytes for type.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
-          .Type
-      getType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type
-        result =
-            com.google.cloud.compute.v1
-                .InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type.valueOf(type_);
-    return result == null
-        ? com.google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
-            .Type.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getTypeBytes() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      type_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -628,7 +631,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeEnum(3575610, type_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4473832, displayName_);
@@ -652,7 +655,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3575610, type_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4473832, displayName_);
@@ -700,7 +703,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     }
     if (hasType() != other.hasType()) return false;
     if (hasType()) {
-      if (type_ != other.type_) return false;
+      if (!getType().equals(other.getType())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -731,7 +734,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     }
     if (hasType()) {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
+      hash = (53 * hash) + getType().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -916,7 +919,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       shortName_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
-      type_ = 0;
+      type_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
@@ -1083,7 +1086,9 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         onChanged();
       }
       if (other.hasType()) {
-        setType(other.getType());
+        bitField0_ |= 0x00000010;
+        type_ = other.type_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1128,7 +1133,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
      * </pre>
      *
-     * <code>string display_name = 4473832;</code>
+     * <code>optional string display_name = 4473832;</code>
      *
      * @return Whether the displayName field is set.
      */
@@ -1142,7 +1147,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
      * </pre>
      *
-     * <code>string display_name = 4473832;</code>
+     * <code>optional string display_name = 4473832;</code>
      *
      * @return The displayName.
      */
@@ -1164,7 +1169,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
      * </pre>
      *
-     * <code>string display_name = 4473832;</code>
+     * <code>optional string display_name = 4473832;</code>
      *
      * @return The bytes for displayName.
      */
@@ -1186,7 +1191,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
      * </pre>
      *
-     * <code>string display_name = 4473832;</code>
+     * <code>optional string display_name = 4473832;</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -1207,7 +1212,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
      * </pre>
      *
-     * <code>string display_name = 4473832;</code>
+     * <code>optional string display_name = 4473832;</code>
      *
      * @return This builder for chaining.
      */
@@ -1224,7 +1229,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
      * </pre>
      *
-     * <code>string display_name = 4473832;</code>
+     * <code>optional string display_name = 4473832;</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -1248,7 +1253,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * [Output Only] The name of the firewall policy.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -1262,7 +1267,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * [Output Only] The name of the firewall policy.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -1284,7 +1289,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * [Output Only] The name of the firewall policy.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -1306,7 +1311,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * [Output Only] The name of the firewall policy.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1327,7 +1332,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * [Output Only] The name of the firewall policy.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -1344,7 +1349,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * [Output Only] The name of the firewall policy.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1718,7 +1723,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * [Output Only] The short name of the firewall policy.
      * </pre>
      *
-     * <code>string short_name = 492051566;</code>
+     * <code>optional string short_name = 492051566;</code>
      *
      * @return Whether the shortName field is set.
      */
@@ -1732,7 +1737,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * [Output Only] The short name of the firewall policy.
      * </pre>
      *
-     * <code>string short_name = 492051566;</code>
+     * <code>optional string short_name = 492051566;</code>
      *
      * @return The shortName.
      */
@@ -1754,7 +1759,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * [Output Only] The short name of the firewall policy.
      * </pre>
      *
-     * <code>string short_name = 492051566;</code>
+     * <code>optional string short_name = 492051566;</code>
      *
      * @return The bytes for shortName.
      */
@@ -1776,7 +1781,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * [Output Only] The short name of the firewall policy.
      * </pre>
      *
-     * <code>string short_name = 492051566;</code>
+     * <code>optional string short_name = 492051566;</code>
      *
      * @param value The shortName to set.
      * @return This builder for chaining.
@@ -1797,7 +1802,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * [Output Only] The short name of the firewall policy.
      * </pre>
      *
-     * <code>string short_name = 492051566;</code>
+     * <code>optional string short_name = 492051566;</code>
      *
      * @return This builder for chaining.
      */
@@ -1814,7 +1819,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * [Output Only] The short name of the firewall policy.
      * </pre>
      *
-     * <code>string short_name = 492051566;</code>
+     * <code>optional string short_name = 492051566;</code>
      *
      * @param value The bytes for shortName to set.
      * @return This builder for chaining.
@@ -1830,21 +1835,19 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       return this;
     }
 
-    private int type_ = 0;
+    private java.lang.Object type_ = "";
     /**
      *
      *
      * <pre>
      * [Output Only] The type of the firewall policy.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type type = 3575610;
-     * </code>
+     * <code>optional string type = 3575610;</code>
      *
      * @return Whether the type field is set.
      */
-    @java.lang.Override
     public boolean hasType() {
       return ((bitField0_ & 0x00000010) != 0);
     }
@@ -1853,33 +1856,64 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      * <pre>
      * [Output Only] The type of the firewall policy.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type type = 3575610;
-     * </code>
+     * <code>optional string type = 3575610;</code>
      *
-     * @return The enum numeric value on the wire for type.
+     * @return The type.
      */
-    @java.lang.Override
-    public int getTypeValue() {
-      return type_;
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * [Output Only] The type of the firewall policy.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type type = 3575610;
-     * </code>
+     * <code>optional string type = 3575610;</code>
      *
-     * @param value The enum numeric value on the wire for type to set.
+     * @return The bytes for type.
+     */
+    public com.google.protobuf.ByteString getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The type of the firewall policy.
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     *
+     * @param value The type to set.
      * @return This builder for chaining.
      */
-    public Builder setTypeValue(int value) {
+    public Builder setType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000010;
       type_ = value;
       onChanged();
@@ -1890,52 +1924,16 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      * <pre>
      * [Output Only] The type of the firewall policy.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type type = 3575610;
-     * </code>
+     * <code>optional string type = 3575610;</code>
      *
-     * @return The type.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
-            .Type
-        getType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type
-          result =
-              com.google.cloud.compute.v1
-                  .InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type.valueOf(
-                  type_);
-      return result == null
-          ? com.google.cloud.compute.v1
-              .InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The type of the firewall policy.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type type = 3575610;
-     * </code>
-     *
-     * @param value The type to set.
      * @return This builder for chaining.
      */
-    public Builder setType(
-        com.google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
-                .Type
-            value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000010;
-      type_ = value.getNumber();
+    public Builder clearType() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      type_ = getDefaultInstance().getType();
       onChanged();
       return this;
     }
@@ -1944,17 +1942,21 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      * <pre>
      * [Output Only] The type of the firewall policy.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type type = 3575610;
-     * </code>
+     * <code>optional string type = 3575610;</code>
      *
+     * @param value The bytes for type to set.
      * @return This builder for chaining.
      */
-    public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      type_ = 0;
+    public Builder setTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000010;
+      type_ = value;
       onChanged();
       return this;
     }

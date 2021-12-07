@@ -128,7 +128,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] A key that provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement, or a warning about invalid network settings (for example, if an instance attempts to perform IP forwarding but is not enabled for IP forwarding).
    * </pre>
    *
-   * <code>string key = 106079;</code>
+   * <code>optional string key = 106079;</code>
    *
    * @return Whether the key field is set.
    */
@@ -143,7 +143,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] A key that provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement, or a warning about invalid network settings (for example, if an instance attempts to perform IP forwarding but is not enabled for IP forwarding).
    * </pre>
    *
-   * <code>string key = 106079;</code>
+   * <code>optional string key = 106079;</code>
    *
    * @return The key.
    */
@@ -166,7 +166,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] A key that provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement, or a warning about invalid network settings (for example, if an instance attempts to perform IP forwarding but is not enabled for IP forwarding).
    * </pre>
    *
-   * <code>string key = 106079;</code>
+   * <code>optional string key = 106079;</code>
    *
    * @return The bytes for key.
    */
@@ -192,7 +192,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] A warning data value corresponding to the key.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return Whether the value field is set.
    */
@@ -207,7 +207,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] A warning data value corresponding to the key.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return The value.
    */
@@ -230,7 +230,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] A warning data value corresponding to the key.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return The bytes for value.
    */
@@ -606,7 +606,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A key that provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement, or a warning about invalid network settings (for example, if an instance attempts to perform IP forwarding but is not enabled for IP forwarding).
      * </pre>
      *
-     * <code>string key = 106079;</code>
+     * <code>optional string key = 106079;</code>
      *
      * @return Whether the key field is set.
      */
@@ -620,7 +620,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A key that provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement, or a warning about invalid network settings (for example, if an instance attempts to perform IP forwarding but is not enabled for IP forwarding).
      * </pre>
      *
-     * <code>string key = 106079;</code>
+     * <code>optional string key = 106079;</code>
      *
      * @return The key.
      */
@@ -642,7 +642,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A key that provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement, or a warning about invalid network settings (for example, if an instance attempts to perform IP forwarding but is not enabled for IP forwarding).
      * </pre>
      *
-     * <code>string key = 106079;</code>
+     * <code>optional string key = 106079;</code>
      *
      * @return The bytes for key.
      */
@@ -664,7 +664,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A key that provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement, or a warning about invalid network settings (for example, if an instance attempts to perform IP forwarding but is not enabled for IP forwarding).
      * </pre>
      *
-     * <code>string key = 106079;</code>
+     * <code>optional string key = 106079;</code>
      *
      * @param value The key to set.
      * @return This builder for chaining.
@@ -685,7 +685,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A key that provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement, or a warning about invalid network settings (for example, if an instance attempts to perform IP forwarding but is not enabled for IP forwarding).
      * </pre>
      *
-     * <code>string key = 106079;</code>
+     * <code>optional string key = 106079;</code>
      *
      * @return This builder for chaining.
      */
@@ -702,7 +702,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A key that provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement, or a warning about invalid network settings (for example, if an instance attempts to perform IP forwarding but is not enabled for IP forwarding).
      * </pre>
      *
-     * <code>string key = 106079;</code>
+     * <code>optional string key = 106079;</code>
      *
      * @param value The bytes for key to set.
      * @return This builder for chaining.
@@ -726,7 +726,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A warning data value corresponding to the key.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @return Whether the value field is set.
      */
@@ -740,7 +740,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A warning data value corresponding to the key.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @return The value.
      */
@@ -762,7 +762,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A warning data value corresponding to the key.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @return The bytes for value.
      */
@@ -784,7 +784,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A warning data value corresponding to the key.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @param value The value to set.
      * @return This builder for chaining.
@@ -805,7 +805,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A warning data value corresponding to the key.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @return This builder for chaining.
      */
@@ -822,7 +822,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A warning data value corresponding to the key.
      * </pre>
      *
-     * <code>string value = 111972721;</code>
+     * <code>optional string value = 111972721;</code>
      *
      * @param value The bytes for value to set.
      * @return This builder for chaining.

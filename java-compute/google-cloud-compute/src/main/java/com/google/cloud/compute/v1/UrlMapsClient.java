@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.UrlMapsStub;
@@ -45,7 +47,7 @@ import javax.annotation.Generated;
  * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
  *   String project = "project-309310695";
  *   String urlMap = "urlMap-836780691";
- *   Operation response = urlMapsClient.delete(project, urlMap);
+ *   UrlMap response = urlMapsClient.get(project, urlMap);
  * }
  * }</pre>
  *
@@ -286,7 +288,7 @@ public class UrlMapsClient implements BackgroundResource {
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   String project = "project-309310695";
    *   String urlMap = "urlMap-836780691";
-   *   Operation response = urlMapsClient.delete(project, urlMap);
+   *   Operation response = urlMapsClient.deleteAsync(project, urlMap).get();
    * }
    * }</pre>
    *
@@ -294,10 +296,10 @@ public class UrlMapsClient implements BackgroundResource {
    * @param urlMap Name of the UrlMap resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String urlMap) {
+  public final OperationFuture<Operation, Operation> deleteAsync(String project, String urlMap) {
     DeleteUrlMapRequest request =
         DeleteUrlMapRequest.newBuilder().setProject(project).setUrlMap(urlMap).build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -314,15 +316,43 @@ public class UrlMapsClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setUrlMap("urlMap-836780691")
    *           .build();
-   *   Operation response = urlMapsClient.delete(request);
+   *   Operation response = urlMapsClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteUrlMapRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(DeleteUrlMapRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified UrlMap resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
+   *   DeleteUrlMapRequest request =
+   *       DeleteUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMap("urlMap-836780691")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       urlMapsClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteUrlMapRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -433,7 +463,7 @@ public class UrlMapsClient implements BackgroundResource {
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   String project = "project-309310695";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
-   *   Operation response = urlMapsClient.insert(project, urlMapResource);
+   *   Operation response = urlMapsClient.insertAsync(project, urlMapResource).get();
    * }
    * }</pre>
    *
@@ -441,13 +471,14 @@ public class UrlMapsClient implements BackgroundResource {
    * @param urlMapResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(String project, UrlMap urlMapResource) {
+  public final OperationFuture<Operation, Operation> insertAsync(
+      String project, UrlMap urlMapResource) {
     InsertUrlMapRequest request =
         InsertUrlMapRequest.newBuilder()
             .setProject(project)
             .setUrlMapResource(urlMapResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -464,15 +495,43 @@ public class UrlMapsClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setUrlMapResource(UrlMap.newBuilder().build())
    *           .build();
-   *   Operation response = urlMapsClient.insert(request);
+   *   Operation response = urlMapsClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertUrlMapRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(InsertUrlMapRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a UrlMap resource in the specified project using the data included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
+   *   InsertUrlMapRequest request =
+   *       InsertUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMapResource(UrlMap.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       urlMapsClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertUrlMapRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -502,9 +561,7 @@ public class UrlMapsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Initiates a cache invalidation operation, invalidating the specified path, scoped to the
-   * specified UrlMap.
-   *
-   * <p>For more information, see [Invalidating cached
+   * specified UrlMap. For more information, see [Invalidating cached
    * content](/cdn/docs/invalidating-cached-content).
    *
    * <p>Sample code:
@@ -516,7 +573,7 @@ public class UrlMapsClient implements BackgroundResource {
    *   CacheInvalidationRule cacheInvalidationRuleResource =
    *       CacheInvalidationRule.newBuilder().build();
    *   Operation response =
-   *       urlMapsClient.invalidateCache(project, urlMap, cacheInvalidationRuleResource);
+   *       urlMapsClient.invalidateCacheAsync(project, urlMap, cacheInvalidationRuleResource).get();
    * }
    * }</pre>
    *
@@ -525,7 +582,7 @@ public class UrlMapsClient implements BackgroundResource {
    * @param cacheInvalidationRuleResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation invalidateCache(
+  public final OperationFuture<Operation, Operation> invalidateCacheAsync(
       String project, String urlMap, CacheInvalidationRule cacheInvalidationRuleResource) {
     InvalidateCacheUrlMapRequest request =
         InvalidateCacheUrlMapRequest.newBuilder()
@@ -533,15 +590,13 @@ public class UrlMapsClient implements BackgroundResource {
             .setUrlMap(urlMap)
             .setCacheInvalidationRuleResource(cacheInvalidationRuleResource)
             .build();
-    return invalidateCache(request);
+    return invalidateCacheAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Initiates a cache invalidation operation, invalidating the specified path, scoped to the
-   * specified UrlMap.
-   *
-   * <p>For more information, see [Invalidating cached
+   * specified UrlMap. For more information, see [Invalidating cached
    * content](/cdn/docs/invalidating-cached-content).
    *
    * <p>Sample code:
@@ -555,23 +610,53 @@ public class UrlMapsClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setUrlMap("urlMap-836780691")
    *           .build();
-   *   Operation response = urlMapsClient.invalidateCache(request);
+   *   Operation response = urlMapsClient.invalidateCacheAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation invalidateCache(InvalidateCacheUrlMapRequest request) {
-    return invalidateCacheCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> invalidateCacheAsync(
+      InvalidateCacheUrlMapRequest request) {
+    return invalidateCacheOperationCallable().futureCall(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Initiates a cache invalidation operation, invalidating the specified path, scoped to the
-   * specified UrlMap.
+   * specified UrlMap. For more information, see [Invalidating cached
+   * content](/cdn/docs/invalidating-cached-content).
    *
-   * <p>For more information, see [Invalidating cached
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
+   *   InvalidateCacheUrlMapRequest request =
+   *       InvalidateCacheUrlMapRequest.newBuilder()
+   *           .setCacheInvalidationRuleResource(CacheInvalidationRule.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMap("urlMap-836780691")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       urlMapsClient.invalidateCacheOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InvalidateCacheUrlMapRequest, Operation, Operation>
+      invalidateCacheOperationCallable() {
+    return stub.invalidateCacheOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initiates a cache invalidation operation, invalidating the specified path, scoped to the
+   * specified UrlMap. For more information, see [Invalidating cached
    * content](/cdn/docs/invalidating-cached-content).
    *
    * <p>Sample code:
@@ -725,7 +810,7 @@ public class UrlMapsClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String urlMap = "urlMap-836780691";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
-   *   Operation response = urlMapsClient.patch(project, urlMap, urlMapResource);
+   *   Operation response = urlMapsClient.patchAsync(project, urlMap, urlMapResource).get();
    * }
    * }</pre>
    *
@@ -734,14 +819,15 @@ public class UrlMapsClient implements BackgroundResource {
    * @param urlMapResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(String project, String urlMap, UrlMap urlMapResource) {
+  public final OperationFuture<Operation, Operation> patchAsync(
+      String project, String urlMap, UrlMap urlMapResource) {
     PatchUrlMapRequest request =
         PatchUrlMapRequest.newBuilder()
             .setProject(project)
             .setUrlMap(urlMap)
             .setUrlMapResource(urlMapResource)
             .build();
-    return patch(request);
+    return patchAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -760,15 +846,45 @@ public class UrlMapsClient implements BackgroundResource {
    *           .setUrlMap("urlMap-836780691")
    *           .setUrlMapResource(UrlMap.newBuilder().build())
    *           .build();
-   *   Operation response = urlMapsClient.patch(request);
+   *   Operation response = urlMapsClient.patchAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(PatchUrlMapRequest request) {
-    return patchCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> patchAsync(PatchUrlMapRequest request) {
+    return patchOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches the specified UrlMap resource with the data included in the request. This method
+   * supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
+   *   PatchUrlMapRequest request =
+   *       PatchUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMap("urlMap-836780691")
+   *           .setUrlMapResource(UrlMap.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       urlMapsClient.patchOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PatchUrlMapRequest, Operation, Operation>
+      patchOperationCallable() {
+    return stub.patchOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -808,7 +924,7 @@ public class UrlMapsClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String urlMap = "urlMap-836780691";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
-   *   Operation response = urlMapsClient.update(project, urlMap, urlMapResource);
+   *   Operation response = urlMapsClient.updateAsync(project, urlMap, urlMapResource).get();
    * }
    * }</pre>
    *
@@ -817,14 +933,15 @@ public class UrlMapsClient implements BackgroundResource {
    * @param urlMapResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation update(String project, String urlMap, UrlMap urlMapResource) {
+  public final OperationFuture<Operation, Operation> updateAsync(
+      String project, String urlMap, UrlMap urlMapResource) {
     UpdateUrlMapRequest request =
         UpdateUrlMapRequest.newBuilder()
             .setProject(project)
             .setUrlMap(urlMap)
             .setUrlMapResource(urlMapResource)
             .build();
-    return update(request);
+    return updateAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -842,15 +959,44 @@ public class UrlMapsClient implements BackgroundResource {
    *           .setUrlMap("urlMap-836780691")
    *           .setUrlMapResource(UrlMap.newBuilder().build())
    *           .build();
-   *   Operation response = urlMapsClient.update(request);
+   *   Operation response = urlMapsClient.updateAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation update(UpdateUrlMapRequest request) {
-    return updateCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> updateAsync(UpdateUrlMapRequest request) {
+    return updateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified UrlMap resource with the data included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
+   *   UpdateUrlMapRequest request =
+   *       UpdateUrlMapRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setUrlMap("urlMap-836780691")
+   *           .setUrlMapResource(UrlMap.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       urlMapsClient.updateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateUrlMapRequest, Operation, Operation>
+      updateOperationCallable() {
+    return stub.updateOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

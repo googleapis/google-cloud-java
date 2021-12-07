@@ -84,7 +84,8 @@ public interface NetworkEndpointGroupOrBuilder
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+   * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;
+   * </code>
    *
    * @return Whether the appEngine field is set.
    */
@@ -96,7 +97,8 @@ public interface NetworkEndpointGroupOrBuilder
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+   * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;
+   * </code>
    *
    * @return The appEngine.
    */
@@ -108,7 +110,8 @@ public interface NetworkEndpointGroupOrBuilder
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+   * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;
+   * </code>
    */
   com.google.cloud.compute.v1.NetworkEndpointGroupAppEngineOrBuilder getAppEngineOrBuilder();
 
@@ -119,7 +122,8 @@ public interface NetworkEndpointGroupOrBuilder
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
+   * <code>
+   * optional .google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
    * </code>
    *
    * @return Whether the cloudFunction field is set.
@@ -132,7 +136,8 @@ public interface NetworkEndpointGroupOrBuilder
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
+   * <code>
+   * optional .google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
    * </code>
    *
    * @return The cloudFunction.
@@ -145,7 +150,8 @@ public interface NetworkEndpointGroupOrBuilder
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
+   * <code>
+   * optional .google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
    * </code>
    */
   com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunctionOrBuilder
@@ -158,7 +164,8 @@ public interface NetworkEndpointGroupOrBuilder
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;</code>
+   * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;
+   * </code>
    *
    * @return Whether the cloudRun field is set.
    */
@@ -170,7 +177,8 @@ public interface NetworkEndpointGroupOrBuilder
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;</code>
+   * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;
+   * </code>
    *
    * @return The cloudRun.
    */
@@ -182,7 +190,8 @@ public interface NetworkEndpointGroupOrBuilder
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;</code>
+   * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;
+   * </code>
    */
   com.google.cloud.compute.v1.NetworkEndpointGroupCloudRunOrBuilder getCloudRunOrBuilder();
 
@@ -193,7 +202,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -205,7 +214,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -217,7 +226,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -230,7 +239,7 @@ public interface NetworkEndpointGroupOrBuilder
    * The default port used if the port number is not specified in the network endpoint.
    * </pre>
    *
-   * <code>int32 default_port = 423377855;</code>
+   * <code>optional int32 default_port = 423377855;</code>
    *
    * @return Whether the defaultPort field is set.
    */
@@ -242,7 +251,7 @@ public interface NetworkEndpointGroupOrBuilder
    * The default port used if the port number is not specified in the network endpoint.
    * </pre>
    *
-   * <code>int32 default_port = 423377855;</code>
+   * <code>optional int32 default_port = 423377855;</code>
    *
    * @return The defaultPort.
    */
@@ -255,7 +264,7 @@ public interface NetworkEndpointGroupOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -267,7 +276,7 @@ public interface NetworkEndpointGroupOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -279,7 +288,7 @@ public interface NetworkEndpointGroupOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -292,7 +301,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -304,7 +313,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -317,7 +326,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output Only] Type of the resource. Always compute#networkEndpointGroup for network endpoint group.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -329,7 +338,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output Only] Type of the resource. Always compute#networkEndpointGroup for network endpoint group.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -341,7 +350,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output Only] Type of the resource. Always compute#networkEndpointGroup for network endpoint group.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -354,7 +363,7 @@ public interface NetworkEndpointGroupOrBuilder
    * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -366,7 +375,7 @@ public interface NetworkEndpointGroupOrBuilder
    * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -378,7 +387,7 @@ public interface NetworkEndpointGroupOrBuilder
    * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -391,7 +400,7 @@ public interface NetworkEndpointGroupOrBuilder
    * The URL of the network to which all network endpoints in the NEG belong. Uses "default" project network if unspecified.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return Whether the network field is set.
    */
@@ -403,7 +412,7 @@ public interface NetworkEndpointGroupOrBuilder
    * The URL of the network to which all network endpoints in the NEG belong. Uses "default" project network if unspecified.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The network.
    */
@@ -415,7 +424,7 @@ public interface NetworkEndpointGroupOrBuilder
    * The URL of the network to which all network endpoints in the NEG belong. Uses "default" project network if unspecified.
    * </pre>
    *
-   * <code>string network = 232872494;</code>
+   * <code>optional string network = 232872494;</code>
    *
    * @return The bytes for network.
    */
@@ -425,12 +434,11 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, or SERVERLESS.
+   * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
+   * Check the NetworkEndpointType enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;
-   * </code>
+   * <code>optional string network_endpoint_type = 118301523;</code>
    *
    * @return Whether the networkEndpointType field is set.
    */
@@ -439,30 +447,28 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, or SERVERLESS.
+   * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
+   * Check the NetworkEndpointType enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;
-   * </code>
+   * <code>optional string network_endpoint_type = 118301523;</code>
    *
-   * @return The enum numeric value on the wire for networkEndpointType.
+   * @return The networkEndpointType.
    */
-  int getNetworkEndpointTypeValue();
+  java.lang.String getNetworkEndpointType();
   /**
    *
    *
    * <pre>
-   * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, or SERVERLESS.
+   * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
+   * Check the NetworkEndpointType enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;
-   * </code>
+   * <code>optional string network_endpoint_type = 118301523;</code>
    *
-   * @return The networkEndpointType.
+   * @return The bytes for networkEndpointType.
    */
-  com.google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType getNetworkEndpointType();
+  com.google.protobuf.ByteString getNetworkEndpointTypeBytes();
 
   /**
    *
@@ -471,7 +477,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output Only] The URL of the region where the network endpoint group is located.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -483,7 +489,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output Only] The URL of the region where the network endpoint group is located.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -495,7 +501,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output Only] The URL of the region where the network endpoint group is located.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -508,7 +514,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -520,7 +526,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -532,7 +538,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -545,7 +551,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output only] Number of network endpoints in the network endpoint group.
    * </pre>
    *
-   * <code>int32 size = 3530753;</code>
+   * <code>optional int32 size = 3530753;</code>
    *
    * @return Whether the size field is set.
    */
@@ -557,7 +563,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output only] Number of network endpoints in the network endpoint group.
    * </pre>
    *
-   * <code>int32 size = 3530753;</code>
+   * <code>optional int32 size = 3530753;</code>
    *
    * @return The size.
    */
@@ -570,7 +576,7 @@ public interface NetworkEndpointGroupOrBuilder
    * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>optional string subnetwork = 307827694;</code>
    *
    * @return Whether the subnetwork field is set.
    */
@@ -582,7 +588,7 @@ public interface NetworkEndpointGroupOrBuilder
    * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>optional string subnetwork = 307827694;</code>
    *
    * @return The subnetwork.
    */
@@ -594,7 +600,7 @@ public interface NetworkEndpointGroupOrBuilder
    * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>optional string subnetwork = 307827694;</code>
    *
    * @return The bytes for subnetwork.
    */
@@ -607,7 +613,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output Only] The URL of the zone where the network endpoint group is located.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return Whether the zone field is set.
    */
@@ -619,7 +625,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output Only] The URL of the zone where the network endpoint group is located.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The zone.
    */
@@ -631,7 +637,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output Only] The URL of the zone where the network endpoint group is located.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The bytes for zone.
    */

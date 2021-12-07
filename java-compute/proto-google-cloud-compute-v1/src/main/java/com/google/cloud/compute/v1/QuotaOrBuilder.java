@@ -30,7 +30,7 @@ public interface QuotaOrBuilder
    * [Output Only] Quota limit for this metric.
    * </pre>
    *
-   * <code>double limit = 102976443;</code>
+   * <code>optional double limit = 102976443;</code>
    *
    * @return Whether the limit field is set.
    */
@@ -42,7 +42,7 @@ public interface QuotaOrBuilder
    * [Output Only] Quota limit for this metric.
    * </pre>
    *
-   * <code>double limit = 102976443;</code>
+   * <code>optional double limit = 102976443;</code>
    *
    * @return The limit.
    */
@@ -53,9 +53,10 @@ public interface QuotaOrBuilder
    *
    * <pre>
    * [Output Only] Name of the quota metric.
+   * Check the Metric enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+   * <code>optional string metric = 533067184;</code>
    *
    * @return Whether the metric field is set.
    */
@@ -65,25 +66,27 @@ public interface QuotaOrBuilder
    *
    * <pre>
    * [Output Only] Name of the quota metric.
+   * Check the Metric enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+   * <code>optional string metric = 533067184;</code>
    *
-   * @return The enum numeric value on the wire for metric.
+   * @return The metric.
    */
-  int getMetricValue();
+  java.lang.String getMetric();
   /**
    *
    *
    * <pre>
    * [Output Only] Name of the quota metric.
+   * Check the Metric enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+   * <code>optional string metric = 533067184;</code>
    *
-   * @return The metric.
+   * @return The bytes for metric.
    */
-  com.google.cloud.compute.v1.Quota.Metric getMetric();
+  com.google.protobuf.ByteString getMetricBytes();
 
   /**
    *
@@ -92,7 +95,7 @@ public interface QuotaOrBuilder
    * [Output Only] Owning resource. This is the resource on which this quota is applied.
    * </pre>
    *
-   * <code>string owner = 106164915;</code>
+   * <code>optional string owner = 106164915;</code>
    *
    * @return Whether the owner field is set.
    */
@@ -104,7 +107,7 @@ public interface QuotaOrBuilder
    * [Output Only] Owning resource. This is the resource on which this quota is applied.
    * </pre>
    *
-   * <code>string owner = 106164915;</code>
+   * <code>optional string owner = 106164915;</code>
    *
    * @return The owner.
    */
@@ -116,7 +119,7 @@ public interface QuotaOrBuilder
    * [Output Only] Owning resource. This is the resource on which this quota is applied.
    * </pre>
    *
-   * <code>string owner = 106164915;</code>
+   * <code>optional string owner = 106164915;</code>
    *
    * @return The bytes for owner.
    */
@@ -129,7 +132,7 @@ public interface QuotaOrBuilder
    * [Output Only] Current usage of this metric.
    * </pre>
    *
-   * <code>double usage = 111574433;</code>
+   * <code>optional double usage = 111574433;</code>
    *
    * @return Whether the usage field is set.
    */
@@ -141,7 +144,7 @@ public interface QuotaOrBuilder
    * [Output Only] Current usage of this metric.
    * </pre>
    *
-   * <code>double usage = 111574433;</code>
+   * <code>optional double usage = 111574433;</code>
    *
    * @return The usage.
    */

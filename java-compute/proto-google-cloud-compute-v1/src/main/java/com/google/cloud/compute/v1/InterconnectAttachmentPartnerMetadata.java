@@ -140,7 +140,7 @@ public final class InterconnectAttachmentPartnerMetadata
    * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string interconnect_name = 514963356;</code>
+   * <code>optional string interconnect_name = 514963356;</code>
    *
    * @return Whether the interconnectName field is set.
    */
@@ -155,7 +155,7 @@ public final class InterconnectAttachmentPartnerMetadata
    * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string interconnect_name = 514963356;</code>
+   * <code>optional string interconnect_name = 514963356;</code>
    *
    * @return The interconnectName.
    */
@@ -178,7 +178,7 @@ public final class InterconnectAttachmentPartnerMetadata
    * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string interconnect_name = 514963356;</code>
+   * <code>optional string interconnect_name = 514963356;</code>
    *
    * @return The bytes for interconnectName.
    */
@@ -204,7 +204,7 @@ public final class InterconnectAttachmentPartnerMetadata
    * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string partner_name = 161747874;</code>
+   * <code>optional string partner_name = 161747874;</code>
    *
    * @return Whether the partnerName field is set.
    */
@@ -219,7 +219,7 @@ public final class InterconnectAttachmentPartnerMetadata
    * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string partner_name = 161747874;</code>
+   * <code>optional string partner_name = 161747874;</code>
    *
    * @return The partnerName.
    */
@@ -242,7 +242,7 @@ public final class InterconnectAttachmentPartnerMetadata
    * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string partner_name = 161747874;</code>
+   * <code>optional string partner_name = 161747874;</code>
    *
    * @return The bytes for partnerName.
    */
@@ -268,7 +268,7 @@ public final class InterconnectAttachmentPartnerMetadata
    * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string portal_url = 269182748;</code>
+   * <code>optional string portal_url = 269182748;</code>
    *
    * @return Whether the portalUrl field is set.
    */
@@ -283,7 +283,7 @@ public final class InterconnectAttachmentPartnerMetadata
    * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string portal_url = 269182748;</code>
+   * <code>optional string portal_url = 269182748;</code>
    *
    * @return The portalUrl.
    */
@@ -306,7 +306,7 @@ public final class InterconnectAttachmentPartnerMetadata
    * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string portal_url = 269182748;</code>
+   * <code>optional string portal_url = 269182748;</code>
    *
    * @return The bytes for portalUrl.
    */
@@ -721,7 +721,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string interconnect_name = 514963356;</code>
+     * <code>optional string interconnect_name = 514963356;</code>
      *
      * @return Whether the interconnectName field is set.
      */
@@ -735,7 +735,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string interconnect_name = 514963356;</code>
+     * <code>optional string interconnect_name = 514963356;</code>
      *
      * @return The interconnectName.
      */
@@ -757,7 +757,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string interconnect_name = 514963356;</code>
+     * <code>optional string interconnect_name = 514963356;</code>
      *
      * @return The bytes for interconnectName.
      */
@@ -779,7 +779,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string interconnect_name = 514963356;</code>
+     * <code>optional string interconnect_name = 514963356;</code>
      *
      * @param value The interconnectName to set.
      * @return This builder for chaining.
@@ -800,7 +800,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string interconnect_name = 514963356;</code>
+     * <code>optional string interconnect_name = 514963356;</code>
      *
      * @return This builder for chaining.
      */
@@ -817,7 +817,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string interconnect_name = 514963356;</code>
+     * <code>optional string interconnect_name = 514963356;</code>
      *
      * @param value The bytes for interconnectName to set.
      * @return This builder for chaining.
@@ -841,7 +841,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string partner_name = 161747874;</code>
+     * <code>optional string partner_name = 161747874;</code>
      *
      * @return Whether the partnerName field is set.
      */
@@ -855,7 +855,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string partner_name = 161747874;</code>
+     * <code>optional string partner_name = 161747874;</code>
      *
      * @return The partnerName.
      */
@@ -877,7 +877,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string partner_name = 161747874;</code>
+     * <code>optional string partner_name = 161747874;</code>
      *
      * @return The bytes for partnerName.
      */
@@ -899,7 +899,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string partner_name = 161747874;</code>
+     * <code>optional string partner_name = 161747874;</code>
      *
      * @param value The partnerName to set.
      * @return This builder for chaining.
@@ -920,7 +920,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string partner_name = 161747874;</code>
+     * <code>optional string partner_name = 161747874;</code>
      *
      * @return This builder for chaining.
      */
@@ -937,7 +937,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string partner_name = 161747874;</code>
+     * <code>optional string partner_name = 161747874;</code>
      *
      * @param value The bytes for partnerName to set.
      * @return This builder for chaining.
@@ -961,7 +961,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string portal_url = 269182748;</code>
+     * <code>optional string portal_url = 269182748;</code>
      *
      * @return Whether the portalUrl field is set.
      */
@@ -975,7 +975,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string portal_url = 269182748;</code>
+     * <code>optional string portal_url = 269182748;</code>
      *
      * @return The portalUrl.
      */
@@ -997,7 +997,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string portal_url = 269182748;</code>
+     * <code>optional string portal_url = 269182748;</code>
      *
      * @return The bytes for portalUrl.
      */
@@ -1019,7 +1019,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string portal_url = 269182748;</code>
+     * <code>optional string portal_url = 269182748;</code>
      *
      * @param value The portalUrl to set.
      * @return This builder for chaining.
@@ -1040,7 +1040,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string portal_url = 269182748;</code>
+     * <code>optional string portal_url = 269182748;</code>
      *
      * @return This builder for chaining.
      */
@@ -1057,7 +1057,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string portal_url = 269182748;</code>
+     * <code>optional string portal_url = 269182748;</code>
      *
      * @param value The bytes for portalUrl to set.
      * @return This builder for chaining.

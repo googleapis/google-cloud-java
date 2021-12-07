@@ -21,6 +21,7 @@ import static com.google.cloud.compute.v1.InstancesClient.ListPagedResponse;
 import static com.google.cloud.compute.v1.InstancesClient.ListReferrersPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddAccessConfigInstanceRequest;
 import com.google.cloud.compute.v1.AddResourcePoliciesInstanceRequest;
@@ -51,6 +52,8 @@ import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceRequest;
 import com.google.cloud.compute.v1.ResetInstanceRequest;
 import com.google.cloud.compute.v1.Screenshot;
+import com.google.cloud.compute.v1.SendDiagnosticInterruptInstanceRequest;
+import com.google.cloud.compute.v1.SendDiagnosticInterruptInstanceResponse;
 import com.google.cloud.compute.v1.SerialPortOutput;
 import com.google.cloud.compute.v1.SetDeletionProtectionInstanceRequest;
 import com.google.cloud.compute.v1.SetDiskAutoDeleteInstanceRequest;
@@ -87,8 +90,19 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class InstancesStub implements BackgroundResource {
 
+  public OperationCallable<AddAccessConfigInstanceRequest, Operation, Operation>
+      addAccessConfigOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: addAccessConfigOperationCallable()");
+  }
+
   public UnaryCallable<AddAccessConfigInstanceRequest, Operation> addAccessConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: addAccessConfigCallable()");
+  }
+
+  public OperationCallable<AddResourcePoliciesInstanceRequest, Operation, Operation>
+      addResourcePoliciesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: addResourcePoliciesOperationCallable()");
   }
 
   public UnaryCallable<AddResourcePoliciesInstanceRequest, Operation>
@@ -106,20 +120,45 @@ public abstract class InstancesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<AttachDiskInstanceRequest, Operation, Operation>
+      attachDiskOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: attachDiskOperationCallable()");
+  }
+
   public UnaryCallable<AttachDiskInstanceRequest, Operation> attachDiskCallable() {
     throw new UnsupportedOperationException("Not implemented: attachDiskCallable()");
+  }
+
+  public OperationCallable<BulkInsertInstanceRequest, Operation, Operation>
+      bulkInsertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: bulkInsertOperationCallable()");
   }
 
   public UnaryCallable<BulkInsertInstanceRequest, Operation> bulkInsertCallable() {
     throw new UnsupportedOperationException("Not implemented: bulkInsertCallable()");
   }
 
+  public OperationCallable<DeleteInstanceRequest, Operation, Operation> deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteInstanceRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
+  public OperationCallable<DeleteAccessConfigInstanceRequest, Operation, Operation>
+      deleteAccessConfigOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteAccessConfigOperationCallable()");
+  }
+
   public UnaryCallable<DeleteAccessConfigInstanceRequest, Operation> deleteAccessConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteAccessConfigCallable()");
+  }
+
+  public OperationCallable<DetachDiskInstanceRequest, Operation, Operation>
+      detachDiskOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: detachDiskOperationCallable()");
   }
 
   public UnaryCallable<DetachDiskInstanceRequest, Operation> detachDiskCallable() {
@@ -159,6 +198,10 @@ public abstract class InstancesStub implements BackgroundResource {
         "Not implemented: getShieldedInstanceIdentityCallable()");
   }
 
+  public OperationCallable<InsertInstanceRequest, Operation, Operation> insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
+  }
+
   public UnaryCallable<InsertInstanceRequest, Operation> insertCallable() {
     throw new UnsupportedOperationException("Not implemented: insertCallable()");
   }
@@ -181,18 +224,46 @@ public abstract class InstancesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listReferrersCallable()");
   }
 
+  public OperationCallable<RemoveResourcePoliciesInstanceRequest, Operation, Operation>
+      removeResourcePoliciesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: removeResourcePoliciesOperationCallable()");
+  }
+
   public UnaryCallable<RemoveResourcePoliciesInstanceRequest, Operation>
       removeResourcePoliciesCallable() {
     throw new UnsupportedOperationException("Not implemented: removeResourcePoliciesCallable()");
+  }
+
+  public OperationCallable<ResetInstanceRequest, Operation, Operation> resetOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: resetOperationCallable()");
   }
 
   public UnaryCallable<ResetInstanceRequest, Operation> resetCallable() {
     throw new UnsupportedOperationException("Not implemented: resetCallable()");
   }
 
+  public UnaryCallable<
+          SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+      sendDiagnosticInterruptCallable() {
+    throw new UnsupportedOperationException("Not implemented: sendDiagnosticInterruptCallable()");
+  }
+
+  public OperationCallable<SetDeletionProtectionInstanceRequest, Operation, Operation>
+      setDeletionProtectionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setDeletionProtectionOperationCallable()");
+  }
+
   public UnaryCallable<SetDeletionProtectionInstanceRequest, Operation>
       setDeletionProtectionCallable() {
     throw new UnsupportedOperationException("Not implemented: setDeletionProtectionCallable()");
+  }
+
+  public OperationCallable<SetDiskAutoDeleteInstanceRequest, Operation, Operation>
+      setDiskAutoDeleteOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setDiskAutoDeleteOperationCallable()");
   }
 
   public UnaryCallable<SetDiskAutoDeleteInstanceRequest, Operation> setDiskAutoDeleteCallable() {
@@ -203,8 +274,19 @@ public abstract class InstancesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
   }
 
+  public OperationCallable<SetLabelsInstanceRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsOperationCallable()");
+  }
+
   public UnaryCallable<SetLabelsInstanceRequest, Operation> setLabelsCallable() {
     throw new UnsupportedOperationException("Not implemented: setLabelsCallable()");
+  }
+
+  public OperationCallable<SetMachineResourcesInstanceRequest, Operation, Operation>
+      setMachineResourcesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setMachineResourcesOperationCallable()");
   }
 
   public UnaryCallable<SetMachineResourcesInstanceRequest, Operation>
@@ -212,24 +294,57 @@ public abstract class InstancesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: setMachineResourcesCallable()");
   }
 
+  public OperationCallable<SetMachineTypeInstanceRequest, Operation, Operation>
+      setMachineTypeOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setMachineTypeOperationCallable()");
+  }
+
   public UnaryCallable<SetMachineTypeInstanceRequest, Operation> setMachineTypeCallable() {
     throw new UnsupportedOperationException("Not implemented: setMachineTypeCallable()");
+  }
+
+  public OperationCallable<SetMetadataInstanceRequest, Operation, Operation>
+      setMetadataOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setMetadataOperationCallable()");
   }
 
   public UnaryCallable<SetMetadataInstanceRequest, Operation> setMetadataCallable() {
     throw new UnsupportedOperationException("Not implemented: setMetadataCallable()");
   }
 
+  public OperationCallable<SetMinCpuPlatformInstanceRequest, Operation, Operation>
+      setMinCpuPlatformOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setMinCpuPlatformOperationCallable()");
+  }
+
   public UnaryCallable<SetMinCpuPlatformInstanceRequest, Operation> setMinCpuPlatformCallable() {
     throw new UnsupportedOperationException("Not implemented: setMinCpuPlatformCallable()");
+  }
+
+  public OperationCallable<SetSchedulingInstanceRequest, Operation, Operation>
+      setSchedulingOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setSchedulingOperationCallable()");
   }
 
   public UnaryCallable<SetSchedulingInstanceRequest, Operation> setSchedulingCallable() {
     throw new UnsupportedOperationException("Not implemented: setSchedulingCallable()");
   }
 
+  public OperationCallable<SetServiceAccountInstanceRequest, Operation, Operation>
+      setServiceAccountOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setServiceAccountOperationCallable()");
+  }
+
   public UnaryCallable<SetServiceAccountInstanceRequest, Operation> setServiceAccountCallable() {
     throw new UnsupportedOperationException("Not implemented: setServiceAccountCallable()");
+  }
+
+  public OperationCallable<SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation, Operation>
+      setShieldedInstanceIntegrityPolicyOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setShieldedInstanceIntegrityPolicyOperationCallable()");
   }
 
   public UnaryCallable<SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation>
@@ -238,8 +353,19 @@ public abstract class InstancesStub implements BackgroundResource {
         "Not implemented: setShieldedInstanceIntegrityPolicyCallable()");
   }
 
+  public OperationCallable<SetTagsInstanceRequest, Operation, Operation>
+      setTagsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setTagsOperationCallable()");
+  }
+
   public UnaryCallable<SetTagsInstanceRequest, Operation> setTagsCallable() {
     throw new UnsupportedOperationException("Not implemented: setTagsCallable()");
+  }
+
+  public OperationCallable<SimulateMaintenanceEventInstanceRequest, Operation, Operation>
+      simulateMaintenanceEventOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: simulateMaintenanceEventOperationCallable()");
   }
 
   public UnaryCallable<SimulateMaintenanceEventInstanceRequest, Operation>
@@ -247,13 +373,27 @@ public abstract class InstancesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: simulateMaintenanceEventCallable()");
   }
 
+  public OperationCallable<StartInstanceRequest, Operation, Operation> startOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: startOperationCallable()");
+  }
+
   public UnaryCallable<StartInstanceRequest, Operation> startCallable() {
     throw new UnsupportedOperationException("Not implemented: startCallable()");
+  }
+
+  public OperationCallable<StartWithEncryptionKeyInstanceRequest, Operation, Operation>
+      startWithEncryptionKeyOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: startWithEncryptionKeyOperationCallable()");
   }
 
   public UnaryCallable<StartWithEncryptionKeyInstanceRequest, Operation>
       startWithEncryptionKeyCallable() {
     throw new UnsupportedOperationException("Not implemented: startWithEncryptionKeyCallable()");
+  }
+
+  public OperationCallable<StopInstanceRequest, Operation, Operation> stopOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: stopOperationCallable()");
   }
 
   public UnaryCallable<StopInstanceRequest, Operation> stopCallable() {
@@ -265,12 +405,28 @@ public abstract class InstancesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
+  public OperationCallable<UpdateInstanceRequest, Operation, Operation> updateOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOperationCallable()");
+  }
+
   public UnaryCallable<UpdateInstanceRequest, Operation> updateCallable() {
     throw new UnsupportedOperationException("Not implemented: updateCallable()");
   }
 
+  public OperationCallable<UpdateAccessConfigInstanceRequest, Operation, Operation>
+      updateAccessConfigOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateAccessConfigOperationCallable()");
+  }
+
   public UnaryCallable<UpdateAccessConfigInstanceRequest, Operation> updateAccessConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: updateAccessConfigCallable()");
+  }
+
+  public OperationCallable<UpdateDisplayDeviceInstanceRequest, Operation, Operation>
+      updateDisplayDeviceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateDisplayDeviceOperationCallable()");
   }
 
   public UnaryCallable<UpdateDisplayDeviceInstanceRequest, Operation>
@@ -278,9 +434,21 @@ public abstract class InstancesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateDisplayDeviceCallable()");
   }
 
+  public OperationCallable<UpdateNetworkInterfaceInstanceRequest, Operation, Operation>
+      updateNetworkInterfaceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateNetworkInterfaceOperationCallable()");
+  }
+
   public UnaryCallable<UpdateNetworkInterfaceInstanceRequest, Operation>
       updateNetworkInterfaceCallable() {
     throw new UnsupportedOperationException("Not implemented: updateNetworkInterfaceCallable()");
+  }
+
+  public OperationCallable<UpdateShieldedInstanceConfigInstanceRequest, Operation, Operation>
+      updateShieldedInstanceConfigOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateShieldedInstanceConfigOperationCallable()");
   }
 
   public UnaryCallable<UpdateShieldedInstanceConfigInstanceRequest, Operation>

@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.TargetGrpcProxiesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteTargetGrpcProxyRequest;
 import com.google.cloud.compute.v1.GetTargetGrpcProxyRequest;
@@ -39,12 +40,22 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class TargetGrpcProxiesStub implements BackgroundResource {
 
+  public OperationCallable<DeleteTargetGrpcProxyRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteTargetGrpcProxyRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetTargetGrpcProxyRequest, TargetGrpcProxy> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertTargetGrpcProxyRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertTargetGrpcProxyRequest, Operation> insertCallable() {
@@ -57,6 +68,11 @@ public abstract class TargetGrpcProxiesStub implements BackgroundResource {
 
   public UnaryCallable<ListTargetGrpcProxiesRequest, TargetGrpcProxyList> listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<PatchTargetGrpcProxyRequest, Operation, Operation>
+      patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
   }
 
   public UnaryCallable<PatchTargetGrpcProxyRequest, Operation> patchCallable() {

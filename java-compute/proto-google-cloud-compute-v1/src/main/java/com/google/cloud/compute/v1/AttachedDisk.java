@@ -40,12 +40,12 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
   private AttachedDisk() {
     deviceName_ = "";
     guestOsFeatures_ = java.util.Collections.emptyList();
-    interface_ = 0;
+    interface_ = "";
     kind_ = "";
     licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    mode_ = 0;
+    mode_ = "";
     source_ = "";
-    type_ = 0;
+    type_ = "";
   }
 
   @java.lang.Override
@@ -91,18 +91,18 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
               kind_ = s;
               break;
             }
-          case 26856728:
+          case 26856730:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000200;
-              mode_ = rawValue;
+              mode_ = s;
               break;
             }
-          case 28604880:
+          case 28604882:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00001000;
-              type_ = rawValue;
+              type_ = s;
               break;
             }
           case 141576362:
@@ -209,11 +209,11 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
               autoDelete_ = input.readBool();
               break;
             }
-          case -273978936:
+          case -273978934:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000080;
-              interface_ = rawValue;
+              interface_ = s;
               break;
             }
           default:
@@ -401,9 +401,25 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_MODE = 0;</code>
      */
     UNDEFINED_MODE(0),
-    /** <code>READ_ONLY = 91950261;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Attaches this disk in read-only mode. Multiple virtual machines can use a disk in read-only mode at a time.
+     * </pre>
+     *
+     * <code>READ_ONLY = 91950261;</code>
+     */
     READ_ONLY(91950261),
-    /** <code>READ_WRITE = 173607894;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * *[Default]* Attaches this disk in read-write mode. Only one virtual machine at a time can be attached to a disk in read-write mode.
+     * </pre>
+     *
+     * <code>READ_WRITE = 173607894;</code>
+     */
     READ_WRITE(173607894),
     UNRECOGNIZED(-1),
     ;
@@ -418,9 +434,25 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_MODE = 0;</code>
      */
     public static final int UNDEFINED_MODE_VALUE = 0;
-    /** <code>READ_ONLY = 91950261;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Attaches this disk in read-only mode. Multiple virtual machines can use a disk in read-only mode at a time.
+     * </pre>
+     *
+     * <code>READ_ONLY = 91950261;</code>
+     */
     public static final int READ_ONLY_VALUE = 91950261;
-    /** <code>READ_WRITE = 173607894;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * *[Default]* Attaches this disk in read-write mode. Only one virtual machine at a time can be attached to a disk in read-write mode.
+     * </pre>
+     *
+     * <code>READ_WRITE = 173607894;</code>
+     */
     public static final int READ_WRITE_VALUE = 173607894;
 
     public final int getNumber() {
@@ -641,7 +673,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
    * </pre>
    *
-   * <code>bool auto_delete = 464761403;</code>
+   * <code>optional bool auto_delete = 464761403;</code>
    *
    * @return Whether the autoDelete field is set.
    */
@@ -656,7 +688,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
    * </pre>
    *
-   * <code>bool auto_delete = 464761403;</code>
+   * <code>optional bool auto_delete = 464761403;</code>
    *
    * @return The autoDelete.
    */
@@ -674,7 +706,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * Indicates that this is a boot disk. The virtual machine will use the first partition of the disk for its root filesystem.
    * </pre>
    *
-   * <code>bool boot = 3029746;</code>
+   * <code>optional bool boot = 3029746;</code>
    *
    * @return Whether the boot field is set.
    */
@@ -689,7 +721,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * Indicates that this is a boot disk. The virtual machine will use the first partition of the disk for its root filesystem.
    * </pre>
    *
-   * <code>bool boot = 3029746;</code>
+   * <code>optional bool boot = 3029746;</code>
    *
    * @return The boot.
    */
@@ -704,11 +736,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance.
-   * If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks.
+   * Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance. If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks.
    * </pre>
    *
-   * <code>string device_name = 67541716;</code>
+   * <code>optional string device_name = 67541716;</code>
    *
    * @return Whether the deviceName field is set.
    */
@@ -720,11 +751,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance.
-   * If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks.
+   * Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance. If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks.
    * </pre>
    *
-   * <code>string device_name = 67541716;</code>
+   * <code>optional string device_name = 67541716;</code>
    *
    * @return The deviceName.
    */
@@ -744,11 +774,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance.
-   * If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks.
+   * Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance. If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks.
    * </pre>
    *
-   * <code>string device_name = 67541716;</code>
+   * <code>optional string device_name = 67541716;</code>
    *
    * @return The bytes for deviceName.
    */
@@ -771,14 +800,11 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts or decrypts a disk using a customer-supplied encryption key.
-   * If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key.
-   * If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance.
-   * If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
-   * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
+   * Encrypts or decrypts a disk using a customer-supplied encryption key. If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key. If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance. If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later. Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+   * </code>
    *
    * @return Whether the diskEncryptionKey field is set.
    */
@@ -790,14 +816,11 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts or decrypts a disk using a customer-supplied encryption key.
-   * If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key.
-   * If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance.
-   * If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
-   * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
+   * Encrypts or decrypts a disk using a customer-supplied encryption key. If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key. If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance. If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later. Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+   * </code>
    *
    * @return The diskEncryptionKey.
    */
@@ -811,14 +834,11 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts or decrypts a disk using a customer-supplied encryption key.
-   * If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key.
-   * If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance.
-   * If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
-   * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
+   * Encrypts or decrypts a disk using a customer-supplied encryption key. If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key. If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance. If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later. Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
@@ -837,7 +857,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * The size of the disk in GB.
    * </pre>
    *
-   * <code>int64 disk_size_gb = 316263735;</code>
+   * <code>optional int64 disk_size_gb = 316263735;</code>
    *
    * @return Whether the diskSizeGb field is set.
    */
@@ -852,7 +872,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * The size of the disk in GB.
    * </pre>
    *
-   * <code>int64 disk_size_gb = 316263735;</code>
+   * <code>optional int64 disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
@@ -867,7 +887,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -880,7 +900,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -894,7 +914,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -907,7 +927,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -920,7 +940,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -940,7 +960,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] A zero-based index to this disk, where 0 is reserved for the boot disk. If you have many disks attached to an instance, each disk would have a unique index number.
    * </pre>
    *
-   * <code>int32 index = 100346066;</code>
+   * <code>optional int32 index = 100346066;</code>
    *
    * @return Whether the index field is set.
    */
@@ -955,7 +975,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] A zero-based index to this disk, where 0 is reserved for the boot disk. If you have many disks attached to an instance, each disk would have a unique index number.
    * </pre>
    *
-   * <code>int32 index = 100346066;</code>
+   * <code>optional int32 index = 100346066;</code>
    *
    * @return The index.
    */
@@ -970,11 +990,11 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance.
-   * This property is mutually exclusive with the source property; you can only define one or the other, but not both.
+   * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance. This property is mutually exclusive with the source property; you can only define one or the other, but not both.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
+   * <code>
+   * optional .google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
    * </code>
    *
    * @return Whether the initializeParams field is set.
@@ -987,11 +1007,11 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance.
-   * This property is mutually exclusive with the source property; you can only define one or the other, but not both.
+   * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance. This property is mutually exclusive with the source property; you can only define one or the other, but not both.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
+   * <code>
+   * optional .google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
    * </code>
    *
    * @return The initializeParams.
@@ -1006,11 +1026,11 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance.
-   * This property is mutually exclusive with the source property; you can only define one or the other, but not both.
+   * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance. This property is mutually exclusive with the source property; you can only define one or the other, but not both.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
+   * <code>
+   * optional .google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
    * </code>
    */
   @java.lang.Override
@@ -1022,15 +1042,16 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INTERFACE_FIELD_NUMBER = 502623545;
-  private int interface_;
+  private volatile java.lang.Object interface_;
   /**
    *
    *
    * <pre>
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Check the Interface enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+   * <code>optional string interface = 502623545;</code>
    *
    * @return Whether the interface field is set.
    */
@@ -1043,35 +1064,48 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Check the Interface enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+   * <code>optional string interface = 502623545;</code>
    *
-   * @return The enum numeric value on the wire for interface.
+   * @return The interface.
    */
   @java.lang.Override
-  public int getInterfaceValue() {
-    return interface_;
+  public java.lang.String getInterface() {
+    java.lang.Object ref = interface_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      interface_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Check the Interface enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+   * <code>optional string interface = 502623545;</code>
    *
-   * @return The interface.
+   * @return The bytes for interface.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.AttachedDisk.Interface getInterface() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.AttachedDisk.Interface result =
-        com.google.cloud.compute.v1.AttachedDisk.Interface.valueOf(interface_);
-    return result == null
-        ? com.google.cloud.compute.v1.AttachedDisk.Interface.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getInterfaceBytes() {
+    java.lang.Object ref = interface_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      interface_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
@@ -1083,7 +1117,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -1098,7 +1132,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -1121,7 +1155,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -1200,15 +1234,16 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MODE_FIELD_NUMBER = 3357091;
-  private int mode_;
+  private volatile java.lang.Object mode_;
   /**
    *
    *
    * <pre>
    * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
+   * <code>optional string mode = 3357091;</code>
    *
    * @return Whether the mode field is set.
    */
@@ -1221,33 +1256,48 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
+   * <code>optional string mode = 3357091;</code>
    *
-   * @return The enum numeric value on the wire for mode.
+   * @return The mode.
    */
   @java.lang.Override
-  public int getModeValue() {
-    return mode_;
+  public java.lang.String getMode() {
+    java.lang.Object ref = mode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      mode_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
+   * <code>optional string mode = 3357091;</code>
    *
-   * @return The mode.
+   * @return The bytes for mode.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.AttachedDisk.Mode getMode() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.AttachedDisk.Mode result =
-        com.google.cloud.compute.v1.AttachedDisk.Mode.valueOf(mode_);
-    return result == null ? com.google.cloud.compute.v1.AttachedDisk.Mode.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getModeBytes() {
+    java.lang.Object ref = mode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      mode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int SHIELDED_INSTANCE_INITIAL_STATE_FIELD_NUMBER = 192356867;
@@ -1259,7 +1309,8 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] shielded vm initial state stored on disk
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
+   * <code>
+   * optional .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
    * </code>
    *
    * @return Whether the shieldedInstanceInitialState field is set.
@@ -1275,7 +1326,8 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] shielded vm initial state stored on disk
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
+   * <code>
+   * optional .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
    * </code>
    *
    * @return The shieldedInstanceInitialState.
@@ -1293,7 +1345,8 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] shielded vm initial state stored on disk
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
+   * <code>
+   * optional .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
    * </code>
    */
   @java.lang.Override
@@ -1310,12 +1363,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-   * If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks.
-   * Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
+   * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks. Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
    * </pre>
    *
-   * <code>string source = 177235995;</code>
+   * <code>optional string source = 177235995;</code>
    *
    * @return Whether the source field is set.
    */
@@ -1327,12 +1378,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-   * If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks.
-   * Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
+   * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks. Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
    * </pre>
    *
-   * <code>string source = 177235995;</code>
+   * <code>optional string source = 177235995;</code>
    *
    * @return The source.
    */
@@ -1352,12 +1401,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-   * If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks.
-   * Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
+   * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks. Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
    * </pre>
    *
-   * <code>string source = 177235995;</code>
+   * <code>optional string source = 177235995;</code>
    *
    * @return The bytes for source.
    */
@@ -1375,15 +1422,16 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private int type_;
+  private volatile java.lang.Object type_;
   /**
    *
    *
    * <pre>
    * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
    * @return Whether the type field is set.
    */
@@ -1396,33 +1444,48 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The enum numeric value on the wire for type.
+   * @return The type.
    */
   @java.lang.Override
-  public int getTypeValue() {
-    return type_;
+  public java.lang.String getType() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      type_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The type.
+   * @return The bytes for type.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.AttachedDisk.Type getType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.AttachedDisk.Type result =
-        com.google.cloud.compute.v1.AttachedDisk.Type.valueOf(type_);
-    return result == null ? com.google.cloud.compute.v1.AttachedDisk.Type.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getTypeBytes() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      type_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1446,10 +1509,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      output.writeEnum(3357091, mode_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3357091, mode_);
     }
     if (((bitField0_ & 0x00001000) != 0)) {
-      output.writeEnum(3575610, type_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(17697045, getInitializeParams());
@@ -1482,7 +1545,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       output.writeBool(464761403, autoDelete_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      output.writeEnum(502623545, interface_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 502623545, interface_);
     }
     unknownFields.writeTo(output);
   }
@@ -1500,10 +1563,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3357091, mode_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3357091, mode_);
     }
     if (((bitField0_ & 0x00001000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3575610, type_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size +=
@@ -1548,7 +1611,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(464761403, autoDelete_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(502623545, interface_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(502623545, interface_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1596,7 +1659,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasInterface() != other.hasInterface()) return false;
     if (hasInterface()) {
-      if (interface_ != other.interface_) return false;
+      if (!getInterface().equals(other.getInterface())) return false;
     }
     if (hasKind() != other.hasKind()) return false;
     if (hasKind()) {
@@ -1605,7 +1668,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     if (!getLicensesList().equals(other.getLicensesList())) return false;
     if (hasMode() != other.hasMode()) return false;
     if (hasMode()) {
-      if (mode_ != other.mode_) return false;
+      if (!getMode().equals(other.getMode())) return false;
     }
     if (hasShieldedInstanceInitialState() != other.hasShieldedInstanceInitialState()) return false;
     if (hasShieldedInstanceInitialState()) {
@@ -1618,7 +1681,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasType() != other.hasType()) return false;
     if (hasType()) {
-      if (type_ != other.type_) return false;
+      if (!getType().equals(other.getType())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1665,7 +1728,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasInterface()) {
       hash = (37 * hash) + INTERFACE_FIELD_NUMBER;
-      hash = (53 * hash) + interface_;
+      hash = (53 * hash) + getInterface().hashCode();
     }
     if (hasKind()) {
       hash = (37 * hash) + KIND_FIELD_NUMBER;
@@ -1677,7 +1740,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasMode()) {
       hash = (37 * hash) + MODE_FIELD_NUMBER;
-      hash = (53 * hash) + mode_;
+      hash = (53 * hash) + getMode().hashCode();
     }
     if (hasShieldedInstanceInitialState()) {
       hash = (37 * hash) + SHIELDED_INSTANCE_INITIAL_STATE_FIELD_NUMBER;
@@ -1689,7 +1752,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasType()) {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
+      hash = (53 * hash) + getType().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1869,13 +1932,13 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         initializeParamsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000080);
-      interface_ = 0;
+      interface_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
       kind_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
       licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000400);
-      mode_ = 0;
+      mode_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
       if (shieldedInstanceInitialStateBuilder_ == null) {
         shieldedInstanceInitialState_ = null;
@@ -1885,7 +1948,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00001000);
       source_ = "";
       bitField0_ = (bitField0_ & ~0x00002000);
-      type_ = 0;
+      type_ = "";
       bitField0_ = (bitField0_ & ~0x00004000);
       return this;
     }
@@ -2095,7 +2158,9 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         mergeInitializeParams(other.getInitializeParams());
       }
       if (other.hasInterface()) {
-        setInterface(other.getInterface());
+        bitField0_ |= 0x00000100;
+        interface_ = other.interface_;
+        onChanged();
       }
       if (other.hasKind()) {
         bitField0_ |= 0x00000200;
@@ -2113,7 +2178,9 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasMode()) {
-        setMode(other.getMode());
+        bitField0_ |= 0x00000800;
+        mode_ = other.mode_;
+        onChanged();
       }
       if (other.hasShieldedInstanceInitialState()) {
         mergeShieldedInstanceInitialState(other.getShieldedInstanceInitialState());
@@ -2124,7 +2191,9 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasType()) {
-        setType(other.getType());
+        bitField0_ |= 0x00004000;
+        type_ = other.type_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2165,7 +2234,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
      * </pre>
      *
-     * <code>bool auto_delete = 464761403;</code>
+     * <code>optional bool auto_delete = 464761403;</code>
      *
      * @return Whether the autoDelete field is set.
      */
@@ -2180,7 +2249,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
      * </pre>
      *
-     * <code>bool auto_delete = 464761403;</code>
+     * <code>optional bool auto_delete = 464761403;</code>
      *
      * @return The autoDelete.
      */
@@ -2195,7 +2264,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
      * </pre>
      *
-     * <code>bool auto_delete = 464761403;</code>
+     * <code>optional bool auto_delete = 464761403;</code>
      *
      * @param value The autoDelete to set.
      * @return This builder for chaining.
@@ -2213,7 +2282,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
      * </pre>
      *
-     * <code>bool auto_delete = 464761403;</code>
+     * <code>optional bool auto_delete = 464761403;</code>
      *
      * @return This builder for chaining.
      */
@@ -2232,7 +2301,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Indicates that this is a boot disk. The virtual machine will use the first partition of the disk for its root filesystem.
      * </pre>
      *
-     * <code>bool boot = 3029746;</code>
+     * <code>optional bool boot = 3029746;</code>
      *
      * @return Whether the boot field is set.
      */
@@ -2247,7 +2316,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Indicates that this is a boot disk. The virtual machine will use the first partition of the disk for its root filesystem.
      * </pre>
      *
-     * <code>bool boot = 3029746;</code>
+     * <code>optional bool boot = 3029746;</code>
      *
      * @return The boot.
      */
@@ -2262,7 +2331,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Indicates that this is a boot disk. The virtual machine will use the first partition of the disk for its root filesystem.
      * </pre>
      *
-     * <code>bool boot = 3029746;</code>
+     * <code>optional bool boot = 3029746;</code>
      *
      * @param value The boot to set.
      * @return This builder for chaining.
@@ -2280,7 +2349,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Indicates that this is a boot disk. The virtual machine will use the first partition of the disk for its root filesystem.
      * </pre>
      *
-     * <code>bool boot = 3029746;</code>
+     * <code>optional bool boot = 3029746;</code>
      *
      * @return This builder for chaining.
      */
@@ -2296,11 +2365,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance.
-     * If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks.
+     * Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance. If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks.
      * </pre>
      *
-     * <code>string device_name = 67541716;</code>
+     * <code>optional string device_name = 67541716;</code>
      *
      * @return Whether the deviceName field is set.
      */
@@ -2311,11 +2379,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance.
-     * If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks.
+     * Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance. If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks.
      * </pre>
      *
-     * <code>string device_name = 67541716;</code>
+     * <code>optional string device_name = 67541716;</code>
      *
      * @return The deviceName.
      */
@@ -2334,11 +2401,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance.
-     * If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks.
+     * Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance. If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks.
      * </pre>
      *
-     * <code>string device_name = 67541716;</code>
+     * <code>optional string device_name = 67541716;</code>
      *
      * @return The bytes for deviceName.
      */
@@ -2357,11 +2423,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance.
-     * If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks.
+     * Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance. If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks.
      * </pre>
      *
-     * <code>string device_name = 67541716;</code>
+     * <code>optional string device_name = 67541716;</code>
      *
      * @param value The deviceName to set.
      * @return This builder for chaining.
@@ -2379,11 +2444,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance.
-     * If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks.
+     * Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance. If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks.
      * </pre>
      *
-     * <code>string device_name = 67541716;</code>
+     * <code>optional string device_name = 67541716;</code>
      *
      * @return This builder for chaining.
      */
@@ -2397,11 +2461,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance.
-     * If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks.
+     * Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance. If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks.
      * </pre>
      *
-     * <code>string device_name = 67541716;</code>
+     * <code>optional string device_name = 67541716;</code>
      *
      * @param value The bytes for deviceName to set.
      * @return This builder for chaining.
@@ -2427,14 +2490,12 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts or decrypts a disk using a customer-supplied encryption key.
-     * If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key.
-     * If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance.
-     * If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
-     * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
+     * Encrypts or decrypts a disk using a customer-supplied encryption key. If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key. If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance. If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later. Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      *
      * @return Whether the diskEncryptionKey field is set.
      */
@@ -2445,14 +2506,12 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts or decrypts a disk using a customer-supplied encryption key.
-     * If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key.
-     * If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance.
-     * If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
-     * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
+     * Encrypts or decrypts a disk using a customer-supplied encryption key. If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key. If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance. If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later. Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      *
      * @return The diskEncryptionKey.
      */
@@ -2469,14 +2528,12 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts or decrypts a disk using a customer-supplied encryption key.
-     * If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key.
-     * If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance.
-     * If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
-     * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
+     * Encrypts or decrypts a disk using a customer-supplied encryption key. If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key. If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance. If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later. Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     public Builder setDiskEncryptionKey(com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (diskEncryptionKeyBuilder_ == null) {
@@ -2495,14 +2552,12 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts or decrypts a disk using a customer-supplied encryption key.
-     * If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key.
-     * If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance.
-     * If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
-     * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
+     * Encrypts or decrypts a disk using a customer-supplied encryption key. If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key. If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance. If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later. Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     public Builder setDiskEncryptionKey(
         com.google.cloud.compute.v1.CustomerEncryptionKey.Builder builderForValue) {
@@ -2519,14 +2574,12 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts or decrypts a disk using a customer-supplied encryption key.
-     * If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key.
-     * If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance.
-     * If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
-     * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
+     * Encrypts or decrypts a disk using a customer-supplied encryption key. If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key. If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance. If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later. Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     public Builder mergeDiskEncryptionKey(com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (diskEncryptionKeyBuilder_ == null) {
@@ -2552,14 +2605,12 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts or decrypts a disk using a customer-supplied encryption key.
-     * If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key.
-     * If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance.
-     * If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
-     * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
+     * Encrypts or decrypts a disk using a customer-supplied encryption key. If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key. If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance. If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later. Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     public Builder clearDiskEncryptionKey() {
       if (diskEncryptionKeyBuilder_ == null) {
@@ -2575,14 +2626,12 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts or decrypts a disk using a customer-supplied encryption key.
-     * If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key.
-     * If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance.
-     * If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
-     * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
+     * Encrypts or decrypts a disk using a customer-supplied encryption key. If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key. If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance. If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later. Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder getDiskEncryptionKeyBuilder() {
       bitField0_ |= 0x00000008;
@@ -2593,14 +2642,12 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts or decrypts a disk using a customer-supplied encryption key.
-     * If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key.
-     * If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance.
-     * If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
-     * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
+     * Encrypts or decrypts a disk using a customer-supplied encryption key. If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key. If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance. If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later. Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
         getDiskEncryptionKeyOrBuilder() {
@@ -2616,14 +2663,12 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts or decrypts a disk using a customer-supplied encryption key.
-     * If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key.
-     * If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance.
-     * If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
-     * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
+     * Encrypts or decrypts a disk using a customer-supplied encryption key. If you are creating a new disk, this field encrypts the new disk using an encryption key that you provide. If you are attaching an existing disk that is already encrypted, this field decrypts the disk using the customer-supplied encryption key. If you encrypt a disk using a customer-supplied key, you must provide the same key again when you attempt to use this resource at a later time. For example, you must provide the key when you create a snapshot or an image from the disk or when you attach the disk to a virtual machine instance. If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later. Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.CustomerEncryptionKey,
@@ -2650,7 +2695,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * The size of the disk in GB.
      * </pre>
      *
-     * <code>int64 disk_size_gb = 316263735;</code>
+     * <code>optional int64 disk_size_gb = 316263735;</code>
      *
      * @return Whether the diskSizeGb field is set.
      */
@@ -2665,7 +2710,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * The size of the disk in GB.
      * </pre>
      *
-     * <code>int64 disk_size_gb = 316263735;</code>
+     * <code>optional int64 disk_size_gb = 316263735;</code>
      *
      * @return The diskSizeGb.
      */
@@ -2680,7 +2725,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * The size of the disk in GB.
      * </pre>
      *
-     * <code>int64 disk_size_gb = 316263735;</code>
+     * <code>optional int64 disk_size_gb = 316263735;</code>
      *
      * @param value The diskSizeGb to set.
      * @return This builder for chaining.
@@ -2698,7 +2743,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * The size of the disk in GB.
      * </pre>
      *
-     * <code>int64 disk_size_gb = 316263735;</code>
+     * <code>optional int64 disk_size_gb = 316263735;</code>
      *
      * @return This builder for chaining.
      */
@@ -2730,7 +2775,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -2746,7 +2791,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -2762,7 +2807,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -2778,7 +2823,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -2800,7 +2845,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -2820,7 +2865,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -2842,7 +2887,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -2864,7 +2909,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -2884,7 +2929,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -2904,7 +2949,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -2924,7 +2969,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -2943,7 +2988,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -2962,7 +3007,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -2974,7 +3019,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -2991,7 +3036,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3008,7 +3053,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3021,7 +3066,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3034,7 +3079,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3072,7 +3117,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A zero-based index to this disk, where 0 is reserved for the boot disk. If you have many disks attached to an instance, each disk would have a unique index number.
      * </pre>
      *
-     * <code>int32 index = 100346066;</code>
+     * <code>optional int32 index = 100346066;</code>
      *
      * @return Whether the index field is set.
      */
@@ -3087,7 +3132,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A zero-based index to this disk, where 0 is reserved for the boot disk. If you have many disks attached to an instance, each disk would have a unique index number.
      * </pre>
      *
-     * <code>int32 index = 100346066;</code>
+     * <code>optional int32 index = 100346066;</code>
      *
      * @return The index.
      */
@@ -3102,7 +3147,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A zero-based index to this disk, where 0 is reserved for the boot disk. If you have many disks attached to an instance, each disk would have a unique index number.
      * </pre>
      *
-     * <code>int32 index = 100346066;</code>
+     * <code>optional int32 index = 100346066;</code>
      *
      * @param value The index to set.
      * @return This builder for chaining.
@@ -3120,7 +3165,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A zero-based index to this disk, where 0 is reserved for the boot disk. If you have many disks attached to an instance, each disk would have a unique index number.
      * </pre>
      *
-     * <code>int32 index = 100346066;</code>
+     * <code>optional int32 index = 100346066;</code>
      *
      * @return This builder for chaining.
      */
@@ -3141,11 +3186,11 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance.
-     * This property is mutually exclusive with the source property; you can only define one or the other, but not both.
+     * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance. This property is mutually exclusive with the source property; you can only define one or the other, but not both.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
+     * <code>
+     * optional .google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
      * </code>
      *
      * @return Whether the initializeParams field is set.
@@ -3157,11 +3202,11 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance.
-     * This property is mutually exclusive with the source property; you can only define one or the other, but not both.
+     * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance. This property is mutually exclusive with the source property; you can only define one or the other, but not both.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
+     * <code>
+     * optional .google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
      * </code>
      *
      * @return The initializeParams.
@@ -3179,11 +3224,11 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance.
-     * This property is mutually exclusive with the source property; you can only define one or the other, but not both.
+     * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance. This property is mutually exclusive with the source property; you can only define one or the other, but not both.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
+     * <code>
+     * optional .google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
      * </code>
      */
     public Builder setInitializeParams(
@@ -3204,11 +3249,11 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance.
-     * This property is mutually exclusive with the source property; you can only define one or the other, but not both.
+     * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance. This property is mutually exclusive with the source property; you can only define one or the other, but not both.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
+     * <code>
+     * optional .google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
      * </code>
      */
     public Builder setInitializeParams(
@@ -3226,11 +3271,11 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance.
-     * This property is mutually exclusive with the source property; you can only define one or the other, but not both.
+     * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance. This property is mutually exclusive with the source property; you can only define one or the other, but not both.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
+     * <code>
+     * optional .google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
      * </code>
      */
     public Builder mergeInitializeParams(
@@ -3258,11 +3303,11 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance.
-     * This property is mutually exclusive with the source property; you can only define one or the other, but not both.
+     * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance. This property is mutually exclusive with the source property; you can only define one or the other, but not both.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
+     * <code>
+     * optional .google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
      * </code>
      */
     public Builder clearInitializeParams() {
@@ -3279,11 +3324,11 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance.
-     * This property is mutually exclusive with the source property; you can only define one or the other, but not both.
+     * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance. This property is mutually exclusive with the source property; you can only define one or the other, but not both.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
+     * <code>
+     * optional .google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
      * </code>
      */
     public com.google.cloud.compute.v1.AttachedDiskInitializeParams.Builder
@@ -3296,11 +3341,11 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance.
-     * This property is mutually exclusive with the source property; you can only define one or the other, but not both.
+     * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance. This property is mutually exclusive with the source property; you can only define one or the other, but not both.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
+     * <code>
+     * optional .google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
      * </code>
      */
     public com.google.cloud.compute.v1.AttachedDiskInitializeParamsOrBuilder
@@ -3317,11 +3362,11 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance.
-     * This property is mutually exclusive with the source property; you can only define one or the other, but not both.
+     * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance. This property is mutually exclusive with the source property; you can only define one or the other, but not both.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
+     * <code>
+     * optional .google.cloud.compute.v1.AttachedDiskInitializeParams initialize_params = 17697045;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3341,19 +3386,19 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       return initializeParamsBuilder_;
     }
 
-    private int interface_ = 0;
+    private java.lang.Object interface_ = "";
     /**
      *
      *
      * <pre>
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+     * <code>optional string interface = 502623545;</code>
      *
      * @return Whether the interface field is set.
      */
-    @java.lang.Override
     public boolean hasInterface() {
       return ((bitField0_ & 0x00000100) != 0);
     }
@@ -3362,29 +3407,64 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+     * <code>optional string interface = 502623545;</code>
      *
-     * @return The enum numeric value on the wire for interface.
+     * @return The interface.
      */
-    @java.lang.Override
-    public int getInterfaceValue() {
-      return interface_;
+    public java.lang.String getInterface() {
+      java.lang.Object ref = interface_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        interface_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+     * <code>optional string interface = 502623545;</code>
      *
-     * @param value The enum numeric value on the wire for interface to set.
+     * @return The bytes for interface.
+     */
+    public com.google.protobuf.ByteString getInterfaceBytes() {
+      java.lang.Object ref = interface_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        interface_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string interface = 502623545;</code>
+     *
+     * @param value The interface to set.
      * @return This builder for chaining.
      */
-    public Builder setInterfaceValue(int value) {
+    public Builder setInterface(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000100;
       interface_ = value;
       onChanged();
@@ -3395,39 +3475,16 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+     * <code>optional string interface = 502623545;</code>
      *
-     * @return The interface.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.AttachedDisk.Interface getInterface() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.AttachedDisk.Interface result =
-          com.google.cloud.compute.v1.AttachedDisk.Interface.valueOf(interface_);
-      return result == null
-          ? com.google.cloud.compute.v1.AttachedDisk.Interface.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
-     *
-     * @param value The interface to set.
      * @return This builder for chaining.
      */
-    public Builder setInterface(com.google.cloud.compute.v1.AttachedDisk.Interface value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000100;
-      interface_ = value.getNumber();
+    public Builder clearInterface() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      interface_ = getDefaultInstance().getInterface();
       onChanged();
       return this;
     }
@@ -3436,15 +3493,21 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+     * <code>optional string interface = 502623545;</code>
      *
+     * @param value The bytes for interface to set.
      * @return This builder for chaining.
      */
-    public Builder clearInterface() {
-      bitField0_ = (bitField0_ & ~0x00000100);
-      interface_ = 0;
+    public Builder setInterfaceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000100;
+      interface_ = value;
       onChanged();
       return this;
     }
@@ -3457,7 +3520,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -3471,7 +3534,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -3493,7 +3556,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -3515,7 +3578,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -3536,7 +3599,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -3553,7 +3616,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -3737,19 +3800,19 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int mode_ = 0;
+    private java.lang.Object mode_ = "";
     /**
      *
      *
      * <pre>
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
+     * <code>optional string mode = 3357091;</code>
      *
      * @return Whether the mode field is set.
      */
-    @java.lang.Override
     public boolean hasMode() {
       return ((bitField0_ & 0x00000800) != 0);
     }
@@ -3758,29 +3821,64 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
+     * <code>optional string mode = 3357091;</code>
      *
-     * @return The enum numeric value on the wire for mode.
+     * @return The mode.
      */
-    @java.lang.Override
-    public int getModeValue() {
-      return mode_;
+    public java.lang.String getMode() {
+      java.lang.Object ref = mode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
+     * <code>optional string mode = 3357091;</code>
      *
-     * @param value The enum numeric value on the wire for mode to set.
+     * @return The bytes for mode.
+     */
+    public com.google.protobuf.ByteString getModeBytes() {
+      java.lang.Object ref = mode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        mode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string mode = 3357091;</code>
+     *
+     * @param value The mode to set.
      * @return This builder for chaining.
      */
-    public Builder setModeValue(int value) {
+    public Builder setMode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000800;
       mode_ = value;
       onChanged();
@@ -3791,37 +3889,16 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
+     * <code>optional string mode = 3357091;</code>
      *
-     * @return The mode.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.AttachedDisk.Mode getMode() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.AttachedDisk.Mode result =
-          com.google.cloud.compute.v1.AttachedDisk.Mode.valueOf(mode_);
-      return result == null ? com.google.cloud.compute.v1.AttachedDisk.Mode.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
-     *
-     * @param value The mode to set.
      * @return This builder for chaining.
      */
-    public Builder setMode(com.google.cloud.compute.v1.AttachedDisk.Mode value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000800;
-      mode_ = value.getNumber();
+    public Builder clearMode() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      mode_ = getDefaultInstance().getMode();
       onChanged();
       return this;
     }
@@ -3830,15 +3907,21 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
+     * <code>optional string mode = 3357091;</code>
      *
+     * @param value The bytes for mode to set.
      * @return This builder for chaining.
      */
-    public Builder clearMode() {
-      bitField0_ = (bitField0_ & ~0x00000800);
-      mode_ = 0;
+    public Builder setModeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000800;
+      mode_ = value;
       onChanged();
       return this;
     }
@@ -3857,7 +3940,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
+     * optional .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
      * </code>
      *
      * @return Whether the shieldedInstanceInitialState field is set.
@@ -3873,7 +3956,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
+     * optional .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
      * </code>
      *
      * @return The shieldedInstanceInitialState.
@@ -3895,7 +3978,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
+     * optional .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
      * </code>
      */
     public Builder setShieldedInstanceInitialState(
@@ -3920,7 +4003,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
+     * optional .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
      * </code>
      */
     public Builder setShieldedInstanceInitialState(
@@ -3942,7 +4025,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
+     * optional .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
      * </code>
      */
     public Builder mergeShieldedInstanceInitialState(
@@ -3975,7 +4058,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
+     * optional .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
      * </code>
      */
     public Builder clearShieldedInstanceInitialState() {
@@ -3996,7 +4079,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
+     * optional .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
      * </code>
      */
     public com.google.cloud.compute.v1.InitialStateConfig.Builder
@@ -4013,7 +4096,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
+     * optional .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
      * </code>
      */
     public com.google.cloud.compute.v1.InitialStateConfigOrBuilder
@@ -4034,7 +4117,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
+     * optional .google.cloud.compute.v1.InitialStateConfig shielded_instance_initial_state = 192356867;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -4059,12 +4142,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-     * If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks.
-     * Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
+     * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks. Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
      * </pre>
      *
-     * <code>string source = 177235995;</code>
+     * <code>optional string source = 177235995;</code>
      *
      * @return Whether the source field is set.
      */
@@ -4075,12 +4156,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-     * If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks.
-     * Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
+     * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks. Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
      * </pre>
      *
-     * <code>string source = 177235995;</code>
+     * <code>optional string source = 177235995;</code>
      *
      * @return The source.
      */
@@ -4099,12 +4178,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-     * If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks.
-     * Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
+     * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks. Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
      * </pre>
      *
-     * <code>string source = 177235995;</code>
+     * <code>optional string source = 177235995;</code>
      *
      * @return The bytes for source.
      */
@@ -4123,12 +4200,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-     * If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks.
-     * Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
+     * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks. Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
      * </pre>
      *
-     * <code>string source = 177235995;</code>
+     * <code>optional string source = 177235995;</code>
      *
      * @param value The source to set.
      * @return This builder for chaining.
@@ -4146,12 +4221,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-     * If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks.
-     * Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
+     * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks. Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
      * </pre>
      *
-     * <code>string source = 177235995;</code>
+     * <code>optional string source = 177235995;</code>
      *
      * @return This builder for chaining.
      */
@@ -4165,12 +4238,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-     * If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks.
-     * Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
+     * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks. Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
      * </pre>
      *
-     * <code>string source = 177235995;</code>
+     * <code>optional string source = 177235995;</code>
      *
      * @param value The bytes for source to set.
      * @return This builder for chaining.
@@ -4186,19 +4257,19 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int type_ = 0;
+    private java.lang.Object type_ = "";
     /**
      *
      *
      * <pre>
      * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
      * @return Whether the type field is set.
      */
-    @java.lang.Override
     public boolean hasType() {
       return ((bitField0_ & 0x00004000) != 0);
     }
@@ -4207,29 +4278,64 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
-     * @return The enum numeric value on the wire for type.
+     * @return The type.
      */
-    @java.lang.Override
-    public int getTypeValue() {
-      return type_;
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
-     * @param value The enum numeric value on the wire for type to set.
+     * @return The bytes for type.
+     */
+    public com.google.protobuf.ByteString getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     *
+     * @param value The type to set.
      * @return This builder for chaining.
      */
-    public Builder setTypeValue(int value) {
+    public Builder setType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00004000;
       type_ = value;
       onChanged();
@@ -4240,37 +4346,16 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
-     * @return The type.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.AttachedDisk.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.AttachedDisk.Type result =
-          com.google.cloud.compute.v1.AttachedDisk.Type.valueOf(type_);
-      return result == null ? com.google.cloud.compute.v1.AttachedDisk.Type.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
-     *
-     * @param value The type to set.
      * @return This builder for chaining.
      */
-    public Builder setType(com.google.cloud.compute.v1.AttachedDisk.Type value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00004000;
-      type_ = value.getNumber();
+    public Builder clearType() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      type_ = getDefaultInstance().getType();
       onChanged();
       return this;
     }
@@ -4279,15 +4364,21 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      *
+     * @param value The bytes for type to set.
      * @return This builder for chaining.
      */
-    public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00004000);
-      type_ = 0;
+    public Builder setTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00004000;
+      type_ = value;
       onChanged();
       return this;
     }

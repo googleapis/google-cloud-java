@@ -120,7 +120,7 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
    * Updates the integrity policy baseline using the measurements from the VM instance's most recent boot.
    * </pre>
    *
-   * <code>bool update_auto_learn_policy = 245490215;</code>
+   * <code>optional bool update_auto_learn_policy = 245490215;</code>
    *
    * @return Whether the updateAutoLearnPolicy field is set.
    */
@@ -135,7 +135,7 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
    * Updates the integrity policy baseline using the measurements from the VM instance's most recent boot.
    * </pre>
    *
-   * <code>bool update_auto_learn_policy = 245490215;</code>
+   * <code>optional bool update_auto_learn_policy = 245490215;</code>
    *
    * @return The updateAutoLearnPolicy.
    */
@@ -484,7 +484,7 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
      * Updates the integrity policy baseline using the measurements from the VM instance's most recent boot.
      * </pre>
      *
-     * <code>bool update_auto_learn_policy = 245490215;</code>
+     * <code>optional bool update_auto_learn_policy = 245490215;</code>
      *
      * @return Whether the updateAutoLearnPolicy field is set.
      */
@@ -499,7 +499,7 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
      * Updates the integrity policy baseline using the measurements from the VM instance's most recent boot.
      * </pre>
      *
-     * <code>bool update_auto_learn_policy = 245490215;</code>
+     * <code>optional bool update_auto_learn_policy = 245490215;</code>
      *
      * @return The updateAutoLearnPolicy.
      */
@@ -514,7 +514,7 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
      * Updates the integrity policy baseline using the measurements from the VM instance's most recent boot.
      * </pre>
      *
-     * <code>bool update_auto_learn_policy = 245490215;</code>
+     * <code>optional bool update_auto_learn_policy = 245490215;</code>
      *
      * @param value The updateAutoLearnPolicy to set.
      * @return This builder for chaining.
@@ -532,7 +532,7 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
      * Updates the integrity policy baseline using the measurements from the VM instance's most recent boot.
      * </pre>
      *
-     * <code>bool update_auto_learn_policy = 245490215;</code>
+     * <code>optional bool update_auto_learn_policy = 245490215;</code>
      *
      * @return This builder for chaining.
      */

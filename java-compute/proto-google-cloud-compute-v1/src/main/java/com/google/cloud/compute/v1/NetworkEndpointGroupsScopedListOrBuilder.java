@@ -93,7 +93,7 @@ public interface NetworkEndpointGroupsScopedListOrBuilder
    * [Output Only] An informational warning that replaces the list of network endpoint groups when the list is empty.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+   * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
    *
    * @return Whether the warning field is set.
    */
@@ -105,7 +105,7 @@ public interface NetworkEndpointGroupsScopedListOrBuilder
    * [Output Only] An informational warning that replaces the list of network endpoint groups when the list is empty.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+   * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
    *
    * @return The warning.
    */
@@ -117,7 +117,7 @@ public interface NetworkEndpointGroupsScopedListOrBuilder
    * [Output Only] An informational warning that replaces the list of network endpoint groups when the list is empty.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
+   * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
    */
   com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder();
 }

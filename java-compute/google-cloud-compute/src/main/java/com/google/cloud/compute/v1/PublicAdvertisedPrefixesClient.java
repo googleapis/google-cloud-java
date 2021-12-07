@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.PublicAdvertisedPrefixesStub;
@@ -45,7 +47,8 @@ import javax.annotation.Generated;
  *     PublicAdvertisedPrefixesClient.create()) {
  *   String project = "project-309310695";
  *   String publicAdvertisedPrefix = "publicAdvertisedPrefix1506440856";
- *   Operation response = publicAdvertisedPrefixesClient.delete(project, publicAdvertisedPrefix);
+ *   PublicAdvertisedPrefix response =
+ *       publicAdvertisedPrefixesClient.get(project, publicAdvertisedPrefix);
  * }
  * }</pre>
  *
@@ -164,7 +167,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    *     PublicAdvertisedPrefixesClient.create()) {
    *   String project = "project-309310695";
    *   String publicAdvertisedPrefix = "publicAdvertisedPrefix1506440856";
-   *   Operation response = publicAdvertisedPrefixesClient.delete(project, publicAdvertisedPrefix);
+   *   Operation response =
+   *       publicAdvertisedPrefixesClient.deleteAsync(project, publicAdvertisedPrefix).get();
    * }
    * }</pre>
    *
@@ -172,13 +176,14 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * @param publicAdvertisedPrefix Name of the PublicAdvertisedPrefix resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String publicAdvertisedPrefix) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String publicAdvertisedPrefix) {
     DeletePublicAdvertisedPrefixeRequest request =
         DeletePublicAdvertisedPrefixeRequest.newBuilder()
             .setProject(project)
             .setPublicAdvertisedPrefix(publicAdvertisedPrefix)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -196,15 +201,45 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    *           .setPublicAdvertisedPrefix("publicAdvertisedPrefix1506440856")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = publicAdvertisedPrefixesClient.delete(request);
+   *   Operation response = publicAdvertisedPrefixesClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeletePublicAdvertisedPrefixeRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      DeletePublicAdvertisedPrefixeRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified PublicAdvertisedPrefix
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   DeletePublicAdvertisedPrefixeRequest request =
+   *       DeletePublicAdvertisedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicAdvertisedPrefix("publicAdvertisedPrefix1506440856")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       publicAdvertisedPrefixesClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeletePublicAdvertisedPrefixeRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -327,7 +362,7 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    *   PublicAdvertisedPrefix publicAdvertisedPrefixResource =
    *       PublicAdvertisedPrefix.newBuilder().build();
    *   Operation response =
-   *       publicAdvertisedPrefixesClient.insert(project, publicAdvertisedPrefixResource);
+   *       publicAdvertisedPrefixesClient.insertAsync(project, publicAdvertisedPrefixResource).get();
    * }
    * }</pre>
    *
@@ -335,14 +370,14 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * @param publicAdvertisedPrefixResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(
+  public final OperationFuture<Operation, Operation> insertAsync(
       String project, PublicAdvertisedPrefix publicAdvertisedPrefixResource) {
     InsertPublicAdvertisedPrefixeRequest request =
         InsertPublicAdvertisedPrefixeRequest.newBuilder()
             .setProject(project)
             .setPublicAdvertisedPrefixResource(publicAdvertisedPrefixResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -361,15 +396,46 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    *           .setPublicAdvertisedPrefixResource(PublicAdvertisedPrefix.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = publicAdvertisedPrefixesClient.insert(request);
+   *   Operation response = publicAdvertisedPrefixesClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertPublicAdvertisedPrefixeRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(
+      InsertPublicAdvertisedPrefixeRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a PublicAdvertisedPrefix in the specified project using the parameters that are
+   * included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   InsertPublicAdvertisedPrefixeRequest request =
+   *       InsertPublicAdvertisedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicAdvertisedPrefixResource(PublicAdvertisedPrefix.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       publicAdvertisedPrefixesClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertPublicAdvertisedPrefixeRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -543,8 +609,9 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    *   PublicAdvertisedPrefix publicAdvertisedPrefixResource =
    *       PublicAdvertisedPrefix.newBuilder().build();
    *   Operation response =
-   *       publicAdvertisedPrefixesClient.patch(
-   *           project, publicAdvertisedPrefix, publicAdvertisedPrefixResource);
+   *       publicAdvertisedPrefixesClient
+   *           .patchAsync(project, publicAdvertisedPrefix, publicAdvertisedPrefixResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -553,7 +620,7 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * @param publicAdvertisedPrefixResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(
+  public final OperationFuture<Operation, Operation> patchAsync(
       String project,
       String publicAdvertisedPrefix,
       PublicAdvertisedPrefix publicAdvertisedPrefixResource) {
@@ -563,7 +630,7 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
             .setPublicAdvertisedPrefix(publicAdvertisedPrefix)
             .setPublicAdvertisedPrefixResource(publicAdvertisedPrefixResource)
             .build();
-    return patch(request);
+    return patchAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -583,15 +650,47 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    *           .setPublicAdvertisedPrefixResource(PublicAdvertisedPrefix.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = publicAdvertisedPrefixesClient.patch(request);
+   *   Operation response = publicAdvertisedPrefixesClient.patchAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(PatchPublicAdvertisedPrefixeRequest request) {
-    return patchCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> patchAsync(
+      PatchPublicAdvertisedPrefixeRequest request) {
+    return patchOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches the specified Router resource with the data included in the request. This method
+   * supports PATCH semantics and uses JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   PatchPublicAdvertisedPrefixeRequest request =
+   *       PatchPublicAdvertisedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicAdvertisedPrefix("publicAdvertisedPrefix1506440856")
+   *           .setPublicAdvertisedPrefixResource(PublicAdvertisedPrefix.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       publicAdvertisedPrefixesClient.patchOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PatchPublicAdvertisedPrefixeRequest, Operation, Operation>
+      patchOperationCallable() {
+    return stub.patchOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

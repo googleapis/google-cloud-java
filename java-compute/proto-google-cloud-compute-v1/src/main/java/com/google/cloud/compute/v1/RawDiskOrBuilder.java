@@ -28,9 +28,10 @@ public interface RawDiskOrBuilder
    *
    * <pre>
    * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+   * Check the ContainerType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+   * <code>optional string container_type = 318809144;</code>
    *
    * @return Whether the containerType field is set.
    */
@@ -40,25 +41,27 @@ public interface RawDiskOrBuilder
    *
    * <pre>
    * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+   * Check the ContainerType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+   * <code>optional string container_type = 318809144;</code>
    *
-   * @return The enum numeric value on the wire for containerType.
+   * @return The containerType.
    */
-  int getContainerTypeValue();
+  java.lang.String getContainerType();
   /**
    *
    *
    * <pre>
    * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+   * Check the ContainerType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+   * <code>optional string container_type = 318809144;</code>
    *
-   * @return The containerType.
+   * @return The bytes for containerType.
    */
-  com.google.cloud.compute.v1.RawDisk.ContainerType getContainerType();
+  com.google.protobuf.ByteString getContainerTypeBytes();
 
   /**
    *
@@ -67,7 +70,7 @@ public interface RawDiskOrBuilder
    * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
    * </pre>
    *
-   * <code>string sha1_checksum = 314444349;</code>
+   * <code>optional string sha1_checksum = 314444349;</code>
    *
    * @return Whether the sha1Checksum field is set.
    */
@@ -79,7 +82,7 @@ public interface RawDiskOrBuilder
    * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
    * </pre>
    *
-   * <code>string sha1_checksum = 314444349;</code>
+   * <code>optional string sha1_checksum = 314444349;</code>
    *
    * @return The sha1Checksum.
    */
@@ -91,7 +94,7 @@ public interface RawDiskOrBuilder
    * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
    * </pre>
    *
-   * <code>string sha1_checksum = 314444349;</code>
+   * <code>optional string sha1_checksum = 314444349;</code>
    *
    * @return The bytes for sha1Checksum.
    */
@@ -101,10 +104,10 @@ public interface RawDiskOrBuilder
    *
    *
    * <pre>
-   * The full Google Cloud Storage URL where the disk image is stored. You must provide either this property or the sourceDisk property but not both.
+   * The full Google Cloud Storage URL where the raw disk image archive is stored. The following are valid formats for the URL: - https://storage.googleapis.com/bucket_name/image_archive_name - https://storage.googleapis.com/bucket_name/folder_name/ image_archive_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
-   * <code>string source = 177235995;</code>
+   * <code>optional string source = 177235995;</code>
    *
    * @return Whether the source field is set.
    */
@@ -113,10 +116,10 @@ public interface RawDiskOrBuilder
    *
    *
    * <pre>
-   * The full Google Cloud Storage URL where the disk image is stored. You must provide either this property or the sourceDisk property but not both.
+   * The full Google Cloud Storage URL where the raw disk image archive is stored. The following are valid formats for the URL: - https://storage.googleapis.com/bucket_name/image_archive_name - https://storage.googleapis.com/bucket_name/folder_name/ image_archive_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
-   * <code>string source = 177235995;</code>
+   * <code>optional string source = 177235995;</code>
    *
    * @return The source.
    */
@@ -125,10 +128,10 @@ public interface RawDiskOrBuilder
    *
    *
    * <pre>
-   * The full Google Cloud Storage URL where the disk image is stored. You must provide either this property or the sourceDisk property but not both.
+   * The full Google Cloud Storage URL where the raw disk image archive is stored. The following are valid formats for the URL: - https://storage.googleapis.com/bucket_name/image_archive_name - https://storage.googleapis.com/bucket_name/folder_name/ image_archive_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
-   * <code>string source = 177235995;</code>
+   * <code>optional string source = 177235995;</code>
    *
    * @return The bytes for source.
    */

@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -50,16 +51,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of attachNetworkEndpoints to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * GlobalNetworkEndpointGroupsSettings.Builder globalNetworkEndpointGroupsSettingsBuilder =
  *     GlobalNetworkEndpointGroupsSettings.newBuilder();
  * globalNetworkEndpointGroupsSettingsBuilder
- *     .attachNetworkEndpointsSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         globalNetworkEndpointGroupsSettingsBuilder
- *             .attachNetworkEndpointsSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -79,9 +80,23 @@ public class GlobalNetworkEndpointGroupsSettings
         .attachNetworkEndpointsSettings();
   }
 
+  /** Returns the object with the settings used for calls to attachNetworkEndpoints. */
+  public OperationCallSettings<
+          AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      attachNetworkEndpointsOperationSettings() {
+    return ((GlobalNetworkEndpointGroupsStubSettings) getStubSettings())
+        .attachNetworkEndpointsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteGlobalNetworkEndpointGroupRequest, Operation> deleteSettings() {
     return ((GlobalNetworkEndpointGroupsStubSettings) getStubSettings()).deleteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((GlobalNetworkEndpointGroupsStubSettings) getStubSettings()).deleteOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to detachNetworkEndpoints. */
@@ -89,6 +104,14 @@ public class GlobalNetworkEndpointGroupsSettings
       detachNetworkEndpointsSettings() {
     return ((GlobalNetworkEndpointGroupsStubSettings) getStubSettings())
         .detachNetworkEndpointsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to detachNetworkEndpoints. */
+  public OperationCallSettings<
+          DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      detachNetworkEndpointsOperationSettings() {
+    return ((GlobalNetworkEndpointGroupsStubSettings) getStubSettings())
+        .detachNetworkEndpointsOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -100,6 +123,12 @@ public class GlobalNetworkEndpointGroupsSettings
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertGlobalNetworkEndpointGroupRequest, Operation> insertSettings() {
     return ((GlobalNetworkEndpointGroupsStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertGlobalNetworkEndpointGroupRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((GlobalNetworkEndpointGroupsStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -225,10 +254,24 @@ public class GlobalNetworkEndpointGroupsSettings
       return getStubSettingsBuilder().attachNetworkEndpointsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to attachNetworkEndpoints. */
+    public OperationCallSettings.Builder<
+            AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation, Operation>
+        attachNetworkEndpointsOperationSettings() {
+      return getStubSettingsBuilder().attachNetworkEndpointsOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteGlobalNetworkEndpointGroupRequest, Operation>
         deleteSettings() {
       return getStubSettingsBuilder().deleteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<
+            DeleteGlobalNetworkEndpointGroupRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to detachNetworkEndpoints. */
@@ -236,6 +279,13 @@ public class GlobalNetworkEndpointGroupsSettings
             DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation>
         detachNetworkEndpointsSettings() {
       return getStubSettingsBuilder().detachNetworkEndpointsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to detachNetworkEndpoints. */
+    public OperationCallSettings.Builder<
+            DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest, Operation, Operation>
+        detachNetworkEndpointsOperationSettings() {
+      return getStubSettingsBuilder().detachNetworkEndpointsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -248,6 +298,13 @@ public class GlobalNetworkEndpointGroupsSettings
     public UnaryCallSettings.Builder<InsertGlobalNetworkEndpointGroupRequest, Operation>
         insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<
+            InsertGlobalNetworkEndpointGroupRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */

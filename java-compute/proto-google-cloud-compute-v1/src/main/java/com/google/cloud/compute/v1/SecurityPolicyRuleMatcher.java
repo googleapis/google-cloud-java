@@ -38,7 +38,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
   }
 
   private SecurityPolicyRuleMatcher() {
-    versionedExpr_ = 0;
+    versionedExpr_ = "";
   }
 
   @java.lang.Override
@@ -103,11 +103,11 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
               bitField0_ |= 0x00000001;
               break;
             }
-          case -1716679192:
+          case -1716679190:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
-              versionedExpr_ = rawValue;
+              versionedExpr_ = s;
               break;
             }
           default:
@@ -164,7 +164,15 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * <code>UNDEFINED_VERSIONED_EXPR = 0;</code>
      */
     UNDEFINED_VERSIONED_EXPR(0),
-    /** <code>SRC_IPS_V1 = 70925961;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Matches the source IP address of a request to the IP ranges supplied in config.
+     * </pre>
+     *
+     * <code>SRC_IPS_V1 = 70925961;</code>
+     */
     SRC_IPS_V1(70925961),
     UNRECOGNIZED(-1),
     ;
@@ -179,7 +187,15 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * <code>UNDEFINED_VERSIONED_EXPR = 0;</code>
      */
     public static final int UNDEFINED_VERSIONED_EXPR_VALUE = 0;
-    /** <code>SRC_IPS_V1 = 70925961;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Matches the source IP address of a request to the IP ranges supplied in config.
+     * </pre>
+     *
+     * <code>SRC_IPS_V1 = 70925961;</code>
+     */
     public static final int SRC_IPS_V1_VALUE = 70925961;
 
     public final int getNumber() {
@@ -275,7 +291,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;</code>
+   * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
+   * </code>
    *
    * @return Whether the config field is set.
    */
@@ -290,7 +307,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;</code>
+   * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
+   * </code>
    *
    * @return The config.
    */
@@ -307,7 +325,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;</code>
+   * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfigOrBuilder getConfigOrBuilder() {
@@ -325,7 +344,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Expr expr = 3127797;</code>
+   * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
    *
    * @return Whether the expr field is set.
    */
@@ -340,7 +359,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Expr expr = 3127797;</code>
+   * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
    *
    * @return The expr.
    */
@@ -355,7 +374,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Expr expr = 3127797;</code>
+   * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ExprOrBuilder getExprOrBuilder() {
@@ -363,17 +382,16 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
   }
 
   public static final int VERSIONED_EXPR_FIELD_NUMBER = 322286013;
-  private int versionedExpr_;
+  private volatile java.lang.Object versionedExpr_;
   /**
    *
    *
    * <pre>
    * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+   * Check the VersionedExpr enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
-   * </code>
+   * <code>optional string versioned_expr = 322286013;</code>
    *
    * @return Whether the versionedExpr field is set.
    */
@@ -386,39 +404,48 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    * <pre>
    * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+   * Check the VersionedExpr enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
-   * </code>
+   * <code>optional string versioned_expr = 322286013;</code>
    *
-   * @return The enum numeric value on the wire for versionedExpr.
+   * @return The versionedExpr.
    */
   @java.lang.Override
-  public int getVersionedExprValue() {
-    return versionedExpr_;
+  public java.lang.String getVersionedExpr() {
+    java.lang.Object ref = versionedExpr_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      versionedExpr_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+   * Check the VersionedExpr enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
-   * </code>
+   * <code>optional string versioned_expr = 322286013;</code>
    *
-   * @return The versionedExpr.
+   * @return The bytes for versionedExpr.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr getVersionedExpr() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr result =
-        com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr.valueOf(versionedExpr_);
-    return result == null
-        ? com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getVersionedExprBytes() {
+    java.lang.Object ref = versionedExpr_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      versionedExpr_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -442,7 +469,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       output.writeMessage(255820610, getConfig());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeEnum(322286013, versionedExpr_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 322286013, versionedExpr_);
     }
     unknownFields.writeTo(output);
   }
@@ -460,7 +487,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(255820610, getConfig());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(322286013, versionedExpr_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(322286013, versionedExpr_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -488,7 +515,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     }
     if (hasVersionedExpr() != other.hasVersionedExpr()) return false;
     if (hasVersionedExpr()) {
-      if (versionedExpr_ != other.versionedExpr_) return false;
+      if (!getVersionedExpr().equals(other.getVersionedExpr())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -511,7 +538,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     }
     if (hasVersionedExpr()) {
       hash = (37 * hash) + VERSIONED_EXPR_FIELD_NUMBER;
-      hash = (53 * hash) + versionedExpr_;
+      hash = (53 * hash) + getVersionedExpr().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -674,7 +701,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
         exprBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
-      versionedExpr_ = 0;
+      versionedExpr_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
@@ -783,7 +810,9 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
         mergeExpr(other.getExpr());
       }
       if (other.hasVersionedExpr()) {
-        setVersionedExpr(other.getVersionedExpr());
+        bitField0_ |= 0x00000004;
+        versionedExpr_ = other.versionedExpr_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -830,7 +859,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;</code>
+     * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
+     * </code>
      *
      * @return Whether the config field is set.
      */
@@ -844,7 +874,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;</code>
+     * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
+     * </code>
      *
      * @return The config.
      */
@@ -864,7 +895,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;</code>
+     * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
+     * </code>
      */
     public Builder setConfig(com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig value) {
       if (configBuilder_ == null) {
@@ -886,7 +918,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;</code>
+     * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
+     * </code>
      */
     public Builder setConfig(
         com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig.Builder builderForValue) {
@@ -906,7 +939,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;</code>
+     * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
+     * </code>
      */
     public Builder mergeConfig(com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig value) {
       if (configBuilder_ == null) {
@@ -936,7 +970,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;</code>
+     * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
+     * </code>
      */
     public Builder clearConfig() {
       if (configBuilder_ == null) {
@@ -955,7 +990,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;</code>
+     * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
+     * </code>
      */
     public com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig.Builder getConfigBuilder() {
       bitField0_ |= 0x00000001;
@@ -969,7 +1005,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;</code>
+     * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
+     * </code>
      */
     public com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfigOrBuilder
         getConfigOrBuilder() {
@@ -988,7 +1025,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;</code>
+     * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig,
@@ -1020,7 +1058,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Expr expr = 3127797;</code>
+     * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
      *
      * @return Whether the expr field is set.
      */
@@ -1034,7 +1072,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Expr expr = 3127797;</code>
+     * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
      *
      * @return The expr.
      */
@@ -1052,7 +1090,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Expr expr = 3127797;</code>
+     * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
      */
     public Builder setExpr(com.google.cloud.compute.v1.Expr value) {
       if (exprBuilder_ == null) {
@@ -1074,7 +1112,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Expr expr = 3127797;</code>
+     * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
      */
     public Builder setExpr(com.google.cloud.compute.v1.Expr.Builder builderForValue) {
       if (exprBuilder_ == null) {
@@ -1093,7 +1131,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Expr expr = 3127797;</code>
+     * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
      */
     public Builder mergeExpr(com.google.cloud.compute.v1.Expr value) {
       if (exprBuilder_ == null) {
@@ -1119,7 +1157,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Expr expr = 3127797;</code>
+     * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
      */
     public Builder clearExpr() {
       if (exprBuilder_ == null) {
@@ -1138,7 +1176,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Expr expr = 3127797;</code>
+     * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
      */
     public com.google.cloud.compute.v1.Expr.Builder getExprBuilder() {
       bitField0_ |= 0x00000002;
@@ -1152,7 +1190,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Expr expr = 3127797;</code>
+     * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
      */
     public com.google.cloud.compute.v1.ExprOrBuilder getExprOrBuilder() {
       if (exprBuilder_ != null) {
@@ -1168,7 +1206,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Expr expr = 3127797;</code>
+     * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Expr,
@@ -1187,21 +1225,19 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       return exprBuilder_;
     }
 
-    private int versionedExpr_ = 0;
+    private java.lang.Object versionedExpr_ = "";
     /**
      *
      *
      * <pre>
      * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+     * Check the VersionedExpr enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
-     * </code>
+     * <code>optional string versioned_expr = 322286013;</code>
      *
      * @return Whether the versionedExpr field is set.
      */
-    @java.lang.Override
     public boolean hasVersionedExpr() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -1210,33 +1246,64 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      * <pre>
      * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+     * Check the VersionedExpr enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
-     * </code>
+     * <code>optional string versioned_expr = 322286013;</code>
      *
-     * @return The enum numeric value on the wire for versionedExpr.
+     * @return The versionedExpr.
      */
-    @java.lang.Override
-    public int getVersionedExprValue() {
-      return versionedExpr_;
+    public java.lang.String getVersionedExpr() {
+      java.lang.Object ref = versionedExpr_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        versionedExpr_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+     * Check the VersionedExpr enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
-     * </code>
+     * <code>optional string versioned_expr = 322286013;</code>
      *
-     * @param value The enum numeric value on the wire for versionedExpr to set.
+     * @return The bytes for versionedExpr.
+     */
+    public com.google.protobuf.ByteString getVersionedExprBytes() {
+      java.lang.Object ref = versionedExpr_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        versionedExpr_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+     * Check the VersionedExpr enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string versioned_expr = 322286013;</code>
+     *
+     * @param value The versionedExpr to set.
      * @return This builder for chaining.
      */
-    public Builder setVersionedExprValue(int value) {
+    public Builder setVersionedExpr(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000004;
       versionedExpr_ = value;
       onChanged();
@@ -1247,45 +1314,16 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      * <pre>
      * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+     * Check the VersionedExpr enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
-     * </code>
+     * <code>optional string versioned_expr = 322286013;</code>
      *
-     * @return The versionedExpr.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr getVersionedExpr() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr result =
-          com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr.valueOf(
-              versionedExpr_);
-      return result == null
-          ? com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
-     * </code>
-     *
-     * @param value The versionedExpr to set.
      * @return This builder for chaining.
      */
-    public Builder setVersionedExpr(
-        com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000004;
-      versionedExpr_ = value.getNumber();
+    public Builder clearVersionedExpr() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      versionedExpr_ = getDefaultInstance().getVersionedExpr();
       onChanged();
       return this;
     }
@@ -1294,17 +1332,21 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      * <pre>
      * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+     * Check the VersionedExpr enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
-     * </code>
+     * <code>optional string versioned_expr = 322286013;</code>
      *
+     * @param value The bytes for versionedExpr to set.
      * @return This builder for chaining.
      */
-    public Builder clearVersionedExpr() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      versionedExpr_ = 0;
+    public Builder setVersionedExprBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000004;
+      versionedExpr_ = value;
       onChanged();
       return this;
     }

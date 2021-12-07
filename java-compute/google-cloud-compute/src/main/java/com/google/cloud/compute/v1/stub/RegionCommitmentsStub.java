@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.RegionCommitmentsClient.AggregatedList
 import static com.google.cloud.compute.v1.RegionCommitmentsClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListRegionCommitmentsRequest;
 import com.google.cloud.compute.v1.Commitment;
@@ -52,6 +53,11 @@ public abstract class RegionCommitmentsStub implements BackgroundResource {
 
   public UnaryCallable<GetRegionCommitmentRequest, Commitment> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertRegionCommitmentRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertRegionCommitmentRequest, Operation> insertCallable() {

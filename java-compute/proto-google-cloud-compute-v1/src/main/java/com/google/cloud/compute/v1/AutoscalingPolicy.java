@@ -39,7 +39,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
 
   private AutoscalingPolicy() {
     customMetricUtilizations_ = java.util.Collections.emptyList();
-    mode_ = 0;
+    mode_ = "";
   }
 
   @java.lang.Override
@@ -72,11 +72,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
           case 0:
             done = true;
             break;
-          case 26856728:
+          case 26856730:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000020;
-              mode_ = rawValue;
+              mode_ = s;
               break;
             }
           case 498619000:
@@ -253,13 +253,45 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_MODE = 0;</code>
      */
     UNDEFINED_MODE(0),
-    /** <code>OFF = 78159;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Do not automatically scale the MIG in or out. The recommended_size field contains the size of MIG that would be set if the actuation mode was enabled.
+     * </pre>
+     *
+     * <code>OFF = 78159;</code>
+     */
     OFF(78159),
-    /** <code>ON = 2527;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Automatically scale the MIG in and out according to the policy.
+     * </pre>
+     *
+     * <code>ON = 2527;</code>
+     */
     ON(2527),
-    /** <code>ONLY_SCALE_OUT = 152713670;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Automatically create VMs according to the policy, but do not scale the MIG in.
+     * </pre>
+     *
+     * <code>ONLY_SCALE_OUT = 152713670;</code>
+     */
     ONLY_SCALE_OUT(152713670),
-    /** <code>ONLY_UP = 478095374;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Automatically create VMs according to the policy, but do not scale the MIG in.
+     * </pre>
+     *
+     * <code>ONLY_UP = 478095374;</code>
+     */
     ONLY_UP(478095374),
     UNRECOGNIZED(-1),
     ;
@@ -274,13 +306,45 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_MODE = 0;</code>
      */
     public static final int UNDEFINED_MODE_VALUE = 0;
-    /** <code>OFF = 78159;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Do not automatically scale the MIG in or out. The recommended_size field contains the size of MIG that would be set if the actuation mode was enabled.
+     * </pre>
+     *
+     * <code>OFF = 78159;</code>
+     */
     public static final int OFF_VALUE = 78159;
-    /** <code>ON = 2527;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Automatically scale the MIG in and out according to the policy.
+     * </pre>
+     *
+     * <code>ON = 2527;</code>
+     */
     public static final int ON_VALUE = 2527;
-    /** <code>ONLY_SCALE_OUT = 152713670;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Automatically create VMs according to the policy, but do not scale the MIG in.
+     * </pre>
+     *
+     * <code>ONLY_SCALE_OUT = 152713670;</code>
+     */
     public static final int ONLY_SCALE_OUT_VALUE = 152713670;
-    /** <code>ONLY_UP = 478095374;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Automatically create VMs according to the policy, but do not scale the MIG in.
+     * </pre>
+     *
+     * <code>ONLY_UP = 478095374;</code>
+     */
     public static final int ONLY_UP_VALUE = 478095374;
 
     public final int getNumber() {
@@ -377,11 +441,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
-   * Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
+   * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds. Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
    * </pre>
    *
-   * <code>int32 cool_down_period_sec = 107692954;</code>
+   * <code>optional int32 cool_down_period_sec = 107692954;</code>
    *
    * @return Whether the coolDownPeriodSec field is set.
    */
@@ -393,11 +456,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
-   * Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
+   * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds. Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
    * </pre>
    *
-   * <code>int32 cool_down_period_sec = 107692954;</code>
+   * <code>optional int32 cool_down_period_sec = 107692954;</code>
    *
    * @return The coolDownPeriodSec.
    */
@@ -415,7 +477,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
+   * <code>
+   * optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
    * </code>
    *
    * @return Whether the cpuUtilization field is set.
@@ -431,7 +494,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
+   * <code>
+   * optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
    * </code>
    *
    * @return The cpuUtilization.
@@ -449,7 +513,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
+   * <code>
+   * optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
    * </code>
    */
   @java.lang.Override
@@ -555,7 +620,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
+   * optional .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
    * </code>
    *
    * @return Whether the loadBalancingUtilization field is set.
@@ -572,7 +637,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
+   * optional .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
    * </code>
    *
    * @return The loadBalancingUtilization.
@@ -592,7 +657,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
+   * optional .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
    * </code>
    */
   @java.lang.Override
@@ -612,7 +677,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
    * </pre>
    *
-   * <code>int32 max_num_replicas = 62327375;</code>
+   * <code>optional int32 max_num_replicas = 62327375;</code>
    *
    * @return Whether the maxNumReplicas field is set.
    */
@@ -627,7 +692,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
    * </pre>
    *
-   * <code>int32 max_num_replicas = 62327375;</code>
+   * <code>optional int32 max_num_replicas = 62327375;</code>
    *
    * @return The maxNumReplicas.
    */
@@ -645,7 +710,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
    * </pre>
    *
-   * <code>int32 min_num_replicas = 535329825;</code>
+   * <code>optional int32 min_num_replicas = 535329825;</code>
    *
    * @return Whether the minNumReplicas field is set.
    */
@@ -660,7 +725,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
    * </pre>
    *
-   * <code>int32 min_num_replicas = 535329825;</code>
+   * <code>optional int32 min_num_replicas = 535329825;</code>
    *
    * @return The minNumReplicas.
    */
@@ -670,15 +735,16 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MODE_FIELD_NUMBER = 3357091;
-  private int mode_;
+  private volatile java.lang.Object mode_;
   /**
    *
    *
    * <pre>
    * Defines operating mode for this policy.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AutoscalingPolicy.Mode mode = 3357091;</code>
+   * <code>optional string mode = 3357091;</code>
    *
    * @return Whether the mode field is set.
    */
@@ -691,41 +757,55 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Defines operating mode for this policy.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AutoscalingPolicy.Mode mode = 3357091;</code>
+   * <code>optional string mode = 3357091;</code>
    *
-   * @return The enum numeric value on the wire for mode.
+   * @return The mode.
    */
   @java.lang.Override
-  public int getModeValue() {
-    return mode_;
+  public java.lang.String getMode() {
+    java.lang.Object ref = mode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      mode_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * Defines operating mode for this policy.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AutoscalingPolicy.Mode mode = 3357091;</code>
+   * <code>optional string mode = 3357091;</code>
    *
-   * @return The mode.
+   * @return The bytes for mode.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.AutoscalingPolicy.Mode getMode() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.AutoscalingPolicy.Mode result =
-        com.google.cloud.compute.v1.AutoscalingPolicy.Mode.valueOf(mode_);
-    return result == null
-        ? com.google.cloud.compute.v1.AutoscalingPolicy.Mode.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getModeBytes() {
+    java.lang.Object ref = mode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      mode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int SCALE_IN_CONTROL_FIELD_NUMBER = 527670872;
   private com.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scaleInControl_;
   /**
-   * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
+   * <code>
+   * optional .google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
    * </code>
    *
    * @return Whether the scaleInControl field is set.
@@ -735,7 +815,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     return ((bitField0_ & 0x00000040) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
+   * <code>
+   * optional .google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
    * </code>
    *
    * @return The scaleInControl.
@@ -747,7 +828,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         : scaleInControl_;
   }
   /**
-   * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
+   * <code>
+   * optional .google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
    * </code>
    */
   @java.lang.Override
@@ -898,7 +980,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000020) != 0)) {
-      output.writeEnum(3357091, mode_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3357091, mode_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeInt32(62327375, maxNumReplicas_);
@@ -936,7 +1018,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
 
     size = 0;
     if (((bitField0_ & 0x00000020) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3357091, mode_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3357091, mode_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(62327375, maxNumReplicas_);
@@ -1019,7 +1101,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     }
     if (hasMode() != other.hasMode()) return false;
     if (hasMode()) {
-      if (mode_ != other.mode_) return false;
+      if (!getMode().equals(other.getMode())) return false;
     }
     if (hasScaleInControl() != other.hasScaleInControl()) return false;
     if (hasScaleInControl()) {
@@ -1063,7 +1145,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     }
     if (hasMode()) {
       hash = (37 * hash) + MODE_FIELD_NUMBER;
-      hash = (53 * hash) + mode_;
+      hash = (53 * hash) + getMode().hashCode();
     }
     if (hasScaleInControl()) {
       hash = (37 * hash) + SCALE_IN_CONTROL_FIELD_NUMBER;
@@ -1267,7 +1349,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       bitField0_ = (bitField0_ & ~0x00000010);
       minNumReplicas_ = 0;
       bitField0_ = (bitField0_ & ~0x00000020);
-      mode_ = 0;
+      mode_ = "";
       bitField0_ = (bitField0_ & ~0x00000040);
       if (scaleInControlBuilder_ == null) {
         scaleInControl_ = null;
@@ -1450,7 +1532,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         setMinNumReplicas(other.getMinNumReplicas());
       }
       if (other.hasMode()) {
-        setMode(other.getMode());
+        bitField0_ |= 0x00000040;
+        mode_ = other.mode_;
+        onChanged();
       }
       if (other.hasScaleInControl()) {
         mergeScaleInControl(other.getScaleInControl());
@@ -1492,11 +1576,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
-     * Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
+     * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds. Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
      * </pre>
      *
-     * <code>int32 cool_down_period_sec = 107692954;</code>
+     * <code>optional int32 cool_down_period_sec = 107692954;</code>
      *
      * @return Whether the coolDownPeriodSec field is set.
      */
@@ -1508,11 +1591,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
-     * Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
+     * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds. Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
      * </pre>
      *
-     * <code>int32 cool_down_period_sec = 107692954;</code>
+     * <code>optional int32 cool_down_period_sec = 107692954;</code>
      *
      * @return The coolDownPeriodSec.
      */
@@ -1524,11 +1606,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
-     * Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
+     * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds. Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
      * </pre>
      *
-     * <code>int32 cool_down_period_sec = 107692954;</code>
+     * <code>optional int32 cool_down_period_sec = 107692954;</code>
      *
      * @param value The coolDownPeriodSec to set.
      * @return This builder for chaining.
@@ -1543,11 +1624,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
-     * Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
+     * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds. Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
      * </pre>
      *
-     * <code>int32 cool_down_period_sec = 107692954;</code>
+     * <code>optional int32 cool_down_period_sec = 107692954;</code>
      *
      * @return This builder for chaining.
      */
@@ -1571,7 +1651,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
+     * <code>
+     * optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
      * </code>
      *
      * @return Whether the cpuUtilization field is set.
@@ -1586,7 +1667,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
+     * <code>
+     * optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
      * </code>
      *
      * @return The cpuUtilization.
@@ -1607,7 +1689,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
+     * <code>
+     * optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
      * </code>
      */
     public Builder setCpuUtilization(
@@ -1631,7 +1714,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
+     * <code>
+     * optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
      * </code>
      */
     public Builder setCpuUtilization(
@@ -1652,7 +1736,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
+     * <code>
+     * optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
      * </code>
      */
     public Builder mergeCpuUtilization(
@@ -1685,7 +1770,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
+     * <code>
+     * optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
      * </code>
      */
     public Builder clearCpuUtilization() {
@@ -1705,7 +1791,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
+     * <code>
+     * optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.Builder
@@ -1721,7 +1808,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
+     * <code>
+     * optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilizationOrBuilder
@@ -1741,7 +1829,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
+     * <code>
+     * optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2191,7 +2280,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
+     * optional .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
      * </code>
      *
      * @return Whether the loadBalancingUtilization field is set.
@@ -2207,7 +2296,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
+     * optional .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
      * </code>
      *
      * @return The loadBalancingUtilization.
@@ -2231,7 +2320,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
+     * optional .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
      * </code>
      */
     public Builder setLoadBalancingUtilization(
@@ -2256,7 +2345,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
+     * optional .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
      * </code>
      */
     public Builder setLoadBalancingUtilization(
@@ -2279,7 +2368,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
+     * optional .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
      * </code>
      */
     public Builder mergeLoadBalancingUtilization(
@@ -2313,7 +2402,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
+     * optional .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
      * </code>
      */
     public Builder clearLoadBalancingUtilization() {
@@ -2334,7 +2423,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
+     * optional .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization.Builder
@@ -2351,7 +2440,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
+     * optional .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilizationOrBuilder
@@ -2373,7 +2462,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
+     * optional .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2401,7 +2490,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
      * </pre>
      *
-     * <code>int32 max_num_replicas = 62327375;</code>
+     * <code>optional int32 max_num_replicas = 62327375;</code>
      *
      * @return Whether the maxNumReplicas field is set.
      */
@@ -2416,7 +2505,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
      * </pre>
      *
-     * <code>int32 max_num_replicas = 62327375;</code>
+     * <code>optional int32 max_num_replicas = 62327375;</code>
      *
      * @return The maxNumReplicas.
      */
@@ -2431,7 +2520,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
      * </pre>
      *
-     * <code>int32 max_num_replicas = 62327375;</code>
+     * <code>optional int32 max_num_replicas = 62327375;</code>
      *
      * @param value The maxNumReplicas to set.
      * @return This builder for chaining.
@@ -2449,7 +2538,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
      * </pre>
      *
-     * <code>int32 max_num_replicas = 62327375;</code>
+     * <code>optional int32 max_num_replicas = 62327375;</code>
      *
      * @return This builder for chaining.
      */
@@ -2468,7 +2557,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
      * </pre>
      *
-     * <code>int32 min_num_replicas = 535329825;</code>
+     * <code>optional int32 min_num_replicas = 535329825;</code>
      *
      * @return Whether the minNumReplicas field is set.
      */
@@ -2483,7 +2572,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
      * </pre>
      *
-     * <code>int32 min_num_replicas = 535329825;</code>
+     * <code>optional int32 min_num_replicas = 535329825;</code>
      *
      * @return The minNumReplicas.
      */
@@ -2498,7 +2587,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
      * </pre>
      *
-     * <code>int32 min_num_replicas = 535329825;</code>
+     * <code>optional int32 min_num_replicas = 535329825;</code>
      *
      * @param value The minNumReplicas to set.
      * @return This builder for chaining.
@@ -2516,7 +2605,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
      * </pre>
      *
-     * <code>int32 min_num_replicas = 535329825;</code>
+     * <code>optional int32 min_num_replicas = 535329825;</code>
      *
      * @return This builder for chaining.
      */
@@ -2527,19 +2616,19 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private int mode_ = 0;
+    private java.lang.Object mode_ = "";
     /**
      *
      *
      * <pre>
      * Defines operating mode for this policy.
+     * Check the Mode enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicy.Mode mode = 3357091;</code>
+     * <code>optional string mode = 3357091;</code>
      *
      * @return Whether the mode field is set.
      */
-    @java.lang.Override
     public boolean hasMode() {
       return ((bitField0_ & 0x00000040) != 0);
     }
@@ -2548,29 +2637,64 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Defines operating mode for this policy.
+     * Check the Mode enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicy.Mode mode = 3357091;</code>
+     * <code>optional string mode = 3357091;</code>
      *
-     * @return The enum numeric value on the wire for mode.
+     * @return The mode.
      */
-    @java.lang.Override
-    public int getModeValue() {
-      return mode_;
+    public java.lang.String getMode() {
+      java.lang.Object ref = mode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * Defines operating mode for this policy.
+     * Check the Mode enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicy.Mode mode = 3357091;</code>
+     * <code>optional string mode = 3357091;</code>
      *
-     * @param value The enum numeric value on the wire for mode to set.
+     * @return The bytes for mode.
+     */
+    public com.google.protobuf.ByteString getModeBytes() {
+      java.lang.Object ref = mode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        mode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines operating mode for this policy.
+     * Check the Mode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string mode = 3357091;</code>
+     *
+     * @param value The mode to set.
      * @return This builder for chaining.
      */
-    public Builder setModeValue(int value) {
+    public Builder setMode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000040;
       mode_ = value;
       onChanged();
@@ -2581,39 +2705,16 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Defines operating mode for this policy.
+     * Check the Mode enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicy.Mode mode = 3357091;</code>
+     * <code>optional string mode = 3357091;</code>
      *
-     * @return The mode.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.AutoscalingPolicy.Mode getMode() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.AutoscalingPolicy.Mode result =
-          com.google.cloud.compute.v1.AutoscalingPolicy.Mode.valueOf(mode_);
-      return result == null
-          ? com.google.cloud.compute.v1.AutoscalingPolicy.Mode.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Defines operating mode for this policy.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicy.Mode mode = 3357091;</code>
-     *
-     * @param value The mode to set.
      * @return This builder for chaining.
      */
-    public Builder setMode(com.google.cloud.compute.v1.AutoscalingPolicy.Mode value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000040;
-      mode_ = value.getNumber();
+    public Builder clearMode() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      mode_ = getDefaultInstance().getMode();
       onChanged();
       return this;
     }
@@ -2622,15 +2723,21 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Defines operating mode for this policy.
+     * Check the Mode enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicy.Mode mode = 3357091;</code>
+     * <code>optional string mode = 3357091;</code>
      *
+     * @param value The bytes for mode to set.
      * @return This builder for chaining.
      */
-    public Builder clearMode() {
-      bitField0_ = (bitField0_ & ~0x00000040);
-      mode_ = 0;
+    public Builder setModeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000040;
+      mode_ = value;
       onChanged();
       return this;
     }
@@ -2642,7 +2749,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
             com.google.cloud.compute.v1.AutoscalingPolicyScaleInControlOrBuilder>
         scaleInControlBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
+     * <code>
+     * optional .google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
      * </code>
      *
      * @return Whether the scaleInControl field is set.
@@ -2651,7 +2759,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
+     * <code>
+     * optional .google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
      * </code>
      *
      * @return The scaleInControl.
@@ -2666,7 +2775,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
+     * <code>
+     * optional .google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
      * </code>
      */
     public Builder setScaleInControl(
@@ -2684,7 +2794,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
+     * <code>
+     * optional .google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
      * </code>
      */
     public Builder setScaleInControl(
@@ -2699,7 +2810,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
+     * <code>
+     * optional .google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
      * </code>
      */
     public Builder mergeScaleInControl(
@@ -2726,7 +2838,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
+     * <code>
+     * optional .google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
      * </code>
      */
     public Builder clearScaleInControl() {
@@ -2740,7 +2853,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
+     * <code>
+     * optional .google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalingPolicyScaleInControl.Builder
@@ -2750,7 +2864,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       return getScaleInControlFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
+     * <code>
+     * optional .google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalingPolicyScaleInControlOrBuilder
@@ -2764,7 +2879,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
+     * <code>
+     * optional .google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

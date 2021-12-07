@@ -25,11 +25,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteRegionNotificationEndpointRequest;
 import com.google.cloud.compute.v1.GetRegionNotificationEndpointRequest;
@@ -38,6 +40,8 @@ import com.google.cloud.compute.v1.ListRegionNotificationEndpointsRequest;
 import com.google.cloud.compute.v1.NotificationEndpoint;
 import com.google.cloud.compute.v1.NotificationEndpointList;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,6 +59,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationEndpointsStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<DeleteRegionNotificationEndpointRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionNotificationEndpointRequest, Operation>newBuilder()
@@ -89,7 +96,21 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteRegionNotificationEndpointRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -125,6 +146,7 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
               .setResponseParser(
                   ProtoMessageResponseParser.<NotificationEndpoint>newBuilder()
                       .setDefaultInstance(NotificationEndpoint.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -165,7 +187,21 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertRegionNotificationEndpointRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -218,19 +254,25 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
               .setResponseParser(
                   ProtoMessageResponseParser.<NotificationEndpointList>newBuilder()
                       .setDefaultInstance(NotificationEndpointList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
   private final UnaryCallable<DeleteRegionNotificationEndpointRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteRegionNotificationEndpointRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetRegionNotificationEndpointRequest, NotificationEndpoint>
       getCallable;
   private final UnaryCallable<InsertRegionNotificationEndpointRequest, Operation> insertCallable;
+  private final OperationCallable<InsertRegionNotificationEndpointRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListRegionNotificationEndpointsRequest, NotificationEndpointList>
       listCallable;
   private final UnaryCallable<ListRegionNotificationEndpointsRequest, ListPagedResponse>
       listPagedCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionNotificationEndpointsStub create(
@@ -274,39 +316,57 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<DeleteRegionNotificationEndpointRequest, Operation>
         deleteTransportSettings =
             HttpJsonCallSettings.<DeleteRegionNotificationEndpointRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<GetRegionNotificationEndpointRequest, NotificationEndpoint>
         getTransportSettings =
             HttpJsonCallSettings
                 .<GetRegionNotificationEndpointRequest, NotificationEndpoint>newBuilder()
                 .setMethodDescriptor(getMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<InsertRegionNotificationEndpointRequest, Operation>
         insertTransportSettings =
             HttpJsonCallSettings.<InsertRegionNotificationEndpointRequest, Operation>newBuilder()
                 .setMethodDescriptor(insertMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<ListRegionNotificationEndpointsRequest, NotificationEndpointList>
         listTransportSettings =
             HttpJsonCallSettings
                 .<ListRegionNotificationEndpointsRequest, NotificationEndpointList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -334,6 +394,12 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
   }
 
   @Override
+  public OperationCallable<DeleteRegionNotificationEndpointRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetRegionNotificationEndpointRequest, NotificationEndpoint> getCallable() {
     return getCallable;
   }
@@ -341,6 +407,12 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
   @Override
   public UnaryCallable<InsertRegionNotificationEndpointRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertRegionNotificationEndpointRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override

@@ -30,7 +30,7 @@ public interface ConfidentialInstanceConfigOrBuilder
    * Defines whether the instance should have confidential compute enabled.
    * </pre>
    *
-   * <code>bool enable_confidential_compute = 102135228;</code>
+   * <code>optional bool enable_confidential_compute = 102135228;</code>
    *
    * @return Whether the enableConfidentialCompute field is set.
    */
@@ -42,7 +42,7 @@ public interface ConfidentialInstanceConfigOrBuilder
    * Defines whether the instance should have confidential compute enabled.
    * </pre>
    *
-   * <code>bool enable_confidential_compute = 102135228;</code>
+   * <code>optional bool enable_confidential_compute = 102135228;</code>
    *
    * @return The enableConfidentialCompute.
    */

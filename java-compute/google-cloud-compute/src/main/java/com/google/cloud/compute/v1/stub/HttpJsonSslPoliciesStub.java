@@ -25,11 +25,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteSslPolicyRequest;
 import com.google.cloud.compute.v1.GetSslPolicyRequest;
@@ -37,10 +39,12 @@ import com.google.cloud.compute.v1.InsertSslPolicyRequest;
 import com.google.cloud.compute.v1.ListAvailableFeaturesSslPoliciesRequest;
 import com.google.cloud.compute.v1.ListSslPoliciesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchSslPolicyRequest;
 import com.google.cloud.compute.v1.SslPoliciesList;
 import com.google.cloud.compute.v1.SslPoliciesListAvailableFeaturesResponse;
 import com.google.cloud.compute.v1.SslPolicy;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -58,6 +62,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<DeleteSslPolicyRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteSslPolicyRequest, Operation>newBuilder()
@@ -90,7 +97,20 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteSslPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetSslPolicyRequest, SslPolicy> getMethodDescriptor =
@@ -121,6 +141,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<SslPolicy>newBuilder()
                   .setDefaultInstance(SslPolicy.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -158,7 +179,20 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertSslPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListSslPoliciesRequest, SslPoliciesList>
@@ -208,6 +242,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<SslPoliciesList>newBuilder()
                       .setDefaultInstance(SslPoliciesList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -262,6 +297,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                   ProtoMessageResponseParser.<SslPoliciesListAvailableFeaturesResponse>newBuilder()
                       .setDefaultInstance(
                           SslPoliciesListAvailableFeaturesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -299,20 +335,40 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (PatchSslPolicyRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private final UnaryCallable<DeleteSslPolicyRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteSslPolicyRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetSslPolicyRequest, SslPolicy> getCallable;
   private final UnaryCallable<InsertSslPolicyRequest, Operation> insertCallable;
+  private final OperationCallable<InsertSslPolicyRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListSslPoliciesRequest, SslPoliciesList> listCallable;
   private final UnaryCallable<ListSslPoliciesRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<
           ListAvailableFeaturesSslPoliciesRequest, SslPoliciesListAvailableFeaturesResponse>
       listAvailableFeaturesCallable;
   private final UnaryCallable<PatchSslPolicyRequest, Operation> patchCallable;
+  private final OperationCallable<PatchSslPolicyRequest, Operation, Operation>
+      patchOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonSslPoliciesStub create(SslPoliciesStubSettings settings)
@@ -352,22 +408,28 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<DeleteSslPolicyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteSslPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetSslPolicyRequest, SslPolicy> getTransportSettings =
         HttpJsonCallSettings.<GetSslPolicyRequest, SslPolicy>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertSslPolicyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertSslPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListSslPoliciesRequest, SslPoliciesList> listTransportSettings =
         HttpJsonCallSettings.<ListSslPoliciesRequest, SslPoliciesList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<
             ListAvailableFeaturesSslPoliciesRequest, SslPoliciesListAvailableFeaturesResponse>
@@ -376,21 +438,35 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                 .<ListAvailableFeaturesSslPoliciesRequest, SslPoliciesListAvailableFeaturesResponse>
                     newBuilder()
                 .setMethodDescriptor(listAvailableFeaturesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<PatchSslPolicyRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchSslPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -405,6 +481,12 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -428,6 +510,11 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
   }
 
   @Override
+  public OperationCallable<DeleteSslPolicyRequest, Operation, Operation> deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetSslPolicyRequest, SslPolicy> getCallable() {
     return getCallable;
   }
@@ -435,6 +522,11 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
   @Override
   public UnaryCallable<InsertSslPolicyRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertSslPolicyRequest, Operation, Operation> insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -457,6 +549,11 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
   @Override
   public UnaryCallable<PatchSslPolicyRequest, Operation> patchCallable() {
     return patchCallable;
+  }
+
+  @Override
+  public OperationCallable<PatchSslPolicyRequest, Operation, Operation> patchOperationCallable() {
+    return patchOperationCallable;
   }
 
   @Override

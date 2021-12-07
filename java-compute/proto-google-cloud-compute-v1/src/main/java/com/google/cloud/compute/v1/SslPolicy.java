@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an SSL Policy resource.
- * Use SSL policies to control the SSL features, such as versions and cipher suites, offered by an HTTPS or SSL Proxy load balancer. For more information, read  SSL Policy Concepts. (== resource_for {$api_version}.sslPolicies ==)
+ * Represents an SSL Policy resource. Use SSL policies to control the SSL features, such as versions and cipher suites, offered by an HTTPS or SSL Proxy load balancer. For more information, read SSL Policy Concepts.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.SslPolicy}
@@ -45,9 +44,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     enabledFeatures_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     fingerprint_ = "";
     kind_ = "";
-    minTlsVersion_ = 0;
+    minTlsVersion_ = "";
     name_ = "";
-    profile_ = 0;
+    profile_ = "";
     selfLink_ = "";
     warnings_ = java.util.Collections.emptyList();
   }
@@ -102,11 +101,11 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
               name_ = s;
               break;
             }
-          case 65247544:
+          case 65247546:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000020;
-              minTlsVersion_ = rawValue;
+              minTlsVersion_ = s;
               break;
             }
           case 244202930:
@@ -126,11 +125,11 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
               customFeatures_.add(s);
               break;
             }
-          case 1819561288:
+          case 1819561290:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000080;
-              profile_ = rawValue;
+              profile_ = s;
               break;
             }
           case 1877428002:
@@ -238,11 +237,35 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_MIN_TLS_VERSION = 0;</code>
      */
     UNDEFINED_MIN_TLS_VERSION(0),
-    /** <code>TLS_1_0 = 33116734;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * TLS 1.0
+     * </pre>
+     *
+     * <code>TLS_1_0 = 33116734;</code>
+     */
     TLS_1_0(33116734),
-    /** <code>TLS_1_1 = 33116735;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * TLS 1.1
+     * </pre>
+     *
+     * <code>TLS_1_1 = 33116735;</code>
+     */
     TLS_1_1(33116735),
-    /** <code>TLS_1_2 = 33116736;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * TLS 1.2
+     * </pre>
+     *
+     * <code>TLS_1_2 = 33116736;</code>
+     */
     TLS_1_2(33116736),
     UNRECOGNIZED(-1),
     ;
@@ -257,11 +280,35 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_MIN_TLS_VERSION = 0;</code>
      */
     public static final int UNDEFINED_MIN_TLS_VERSION_VALUE = 0;
-    /** <code>TLS_1_0 = 33116734;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * TLS 1.0
+     * </pre>
+     *
+     * <code>TLS_1_0 = 33116734;</code>
+     */
     public static final int TLS_1_0_VALUE = 33116734;
-    /** <code>TLS_1_1 = 33116735;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * TLS 1.1
+     * </pre>
+     *
+     * <code>TLS_1_1 = 33116735;</code>
+     */
     public static final int TLS_1_1_VALUE = 33116735;
-    /** <code>TLS_1_2 = 33116736;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * TLS 1.2
+     * </pre>
+     *
+     * <code>TLS_1_2 = 33116736;</code>
+     */
     public static final int TLS_1_2_VALUE = 33116736;
 
     public final int getNumber() {
@@ -369,13 +416,45 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PROFILE = 0;</code>
      */
     UNDEFINED_PROFILE(0),
-    /** <code>COMPATIBLE = 179357396;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Compatible profile. Allows the broadset set of clients, even those which support only out-of-date SSL features to negotiate with the load balancer.
+     * </pre>
+     *
+     * <code>COMPATIBLE = 179357396;</code>
+     */
     COMPATIBLE(179357396),
-    /** <code>CUSTOM = 388595569;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Custom profile. Allow only the set of allowed SSL features specified in the customFeatures field.
+     * </pre>
+     *
+     * <code>CUSTOM = 388595569;</code>
+     */
     CUSTOM(388595569),
-    /** <code>MODERN = 132013855;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Modern profile. Supports a wide set of SSL features, allowing modern clients to negotiate SSL with the load balancer.
+     * </pre>
+     *
+     * <code>MODERN = 132013855;</code>
+     */
     MODERN(132013855),
-    /** <code>RESTRICTED = 261551195;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Restricted profile. Supports a reduced set of SSL features, intended to meet stricter compliance requirements.
+     * </pre>
+     *
+     * <code>RESTRICTED = 261551195;</code>
+     */
     RESTRICTED(261551195),
     UNRECOGNIZED(-1),
     ;
@@ -390,13 +469,45 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PROFILE = 0;</code>
      */
     public static final int UNDEFINED_PROFILE_VALUE = 0;
-    /** <code>COMPATIBLE = 179357396;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Compatible profile. Allows the broadset set of clients, even those which support only out-of-date SSL features to negotiate with the load balancer.
+     * </pre>
+     *
+     * <code>COMPATIBLE = 179357396;</code>
+     */
     public static final int COMPATIBLE_VALUE = 179357396;
-    /** <code>CUSTOM = 388595569;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Custom profile. Allow only the set of allowed SSL features specified in the customFeatures field.
+     * </pre>
+     *
+     * <code>CUSTOM = 388595569;</code>
+     */
     public static final int CUSTOM_VALUE = 388595569;
-    /** <code>MODERN = 132013855;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Modern profile. Supports a wide set of SSL features, allowing modern clients to negotiate SSL with the load balancer.
+     * </pre>
+     *
+     * <code>MODERN = 132013855;</code>
+     */
     public static final int MODERN_VALUE = 132013855;
-    /** <code>RESTRICTED = 261551195;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Restricted profile. Supports a reduced set of SSL features, intended to meet stricter compliance requirements.
+     * </pre>
+     *
+     * <code>RESTRICTED = 261551195;</code>
+     */
     public static final int RESTRICTED_VALUE = 261551195;
 
     public final int getNumber() {
@@ -496,7 +607,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -511,7 +622,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -534,7 +645,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -557,8 +668,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features enabled when the selected profile is CUSTOM. The
-   * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+   * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
    * </pre>
    *
    * <code>repeated string custom_features = 34789707;</code>
@@ -572,8 +682,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features enabled when the selected profile is CUSTOM. The
-   * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+   * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
    * </pre>
    *
    * <code>repeated string custom_features = 34789707;</code>
@@ -587,8 +696,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features enabled when the selected profile is CUSTOM. The
-   * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+   * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
    * </pre>
    *
    * <code>repeated string custom_features = 34789707;</code>
@@ -603,8 +711,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features enabled when the selected profile is CUSTOM. The
-   * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+   * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
    * </pre>
    *
    * <code>repeated string custom_features = 34789707;</code>
@@ -625,7 +732,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -640,7 +747,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -663,7 +770,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -747,11 +854,10 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return Whether the fingerprint field is set.
    */
@@ -763,11 +869,10 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The fingerprint.
    */
@@ -787,11 +892,10 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The bytes for fingerprint.
    */
@@ -817,7 +921,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -832,7 +936,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -850,7 +954,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -865,7 +969,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -888,7 +992,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -906,15 +1010,16 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MIN_TLS_VERSION_FIELD_NUMBER = 8155943;
-  private int minTlsVersion_;
+  private volatile java.lang.Object minTlsVersion_;
   /**
    *
    *
    * <pre>
    * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+   * Check the MinTlsVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
+   * <code>optional string min_tls_version = 8155943;</code>
    *
    * @return Whether the minTlsVersion field is set.
    */
@@ -927,35 +1032,48 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+   * Check the MinTlsVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
+   * <code>optional string min_tls_version = 8155943;</code>
    *
-   * @return The enum numeric value on the wire for minTlsVersion.
+   * @return The minTlsVersion.
    */
   @java.lang.Override
-  public int getMinTlsVersionValue() {
-    return minTlsVersion_;
+  public java.lang.String getMinTlsVersion() {
+    java.lang.Object ref = minTlsVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      minTlsVersion_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+   * Check the MinTlsVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
+   * <code>optional string min_tls_version = 8155943;</code>
    *
-   * @return The minTlsVersion.
+   * @return The bytes for minTlsVersion.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.SslPolicy.MinTlsVersion getMinTlsVersion() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.SslPolicy.MinTlsVersion result =
-        com.google.cloud.compute.v1.SslPolicy.MinTlsVersion.valueOf(minTlsVersion_);
-    return result == null
-        ? com.google.cloud.compute.v1.SslPolicy.MinTlsVersion.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getMinTlsVersionBytes() {
+    java.lang.Object ref = minTlsVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      minTlsVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
@@ -967,7 +1085,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -982,7 +1100,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -1005,7 +1123,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -1023,15 +1141,16 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROFILE_FIELD_NUMBER = 227445161;
-  private int profile_;
+  private volatile java.lang.Object profile_;
   /**
    *
    *
    * <pre>
    * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+   * Check the Profile enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
+   * <code>optional string profile = 227445161;</code>
    *
    * @return Whether the profile field is set.
    */
@@ -1044,33 +1163,48 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+   * Check the Profile enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
+   * <code>optional string profile = 227445161;</code>
    *
-   * @return The enum numeric value on the wire for profile.
+   * @return The profile.
    */
   @java.lang.Override
-  public int getProfileValue() {
-    return profile_;
+  public java.lang.String getProfile() {
+    java.lang.Object ref = profile_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      profile_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+   * Check the Profile enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
+   * <code>optional string profile = 227445161;</code>
    *
-   * @return The profile.
+   * @return The bytes for profile.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.SslPolicy.Profile getProfile() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.SslPolicy.Profile result =
-        com.google.cloud.compute.v1.SslPolicy.Profile.valueOf(profile_);
-    return result == null ? com.google.cloud.compute.v1.SslPolicy.Profile.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getProfileBytes() {
+    java.lang.Object ref = profile_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      profile_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
@@ -1082,7 +1216,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -1097,7 +1231,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1120,7 +1254,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1230,7 +1364,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
-      output.writeEnum(8155943, minTlsVersion_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8155943, minTlsVersion_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
@@ -1240,7 +1374,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
           output, 34789707, customFeatures_.getRaw(i));
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      output.writeEnum(227445161, profile_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 227445161, profile_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
@@ -1277,7 +1411,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(8155943, minTlsVersion_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8155943, minTlsVersion_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
@@ -1292,7 +1426,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       size += 5 * getCustomFeaturesList().size();
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(227445161, profile_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227445161, profile_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
@@ -1353,7 +1487,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasMinTlsVersion() != other.hasMinTlsVersion()) return false;
     if (hasMinTlsVersion()) {
-      if (minTlsVersion_ != other.minTlsVersion_) return false;
+      if (!getMinTlsVersion().equals(other.getMinTlsVersion())) return false;
     }
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
@@ -1361,7 +1495,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasProfile() != other.hasProfile()) return false;
     if (hasProfile()) {
-      if (profile_ != other.profile_) return false;
+      if (!getProfile().equals(other.getProfile())) return false;
     }
     if (hasSelfLink() != other.hasSelfLink()) return false;
     if (hasSelfLink()) {
@@ -1409,7 +1543,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasMinTlsVersion()) {
       hash = (37 * hash) + MIN_TLS_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + minTlsVersion_;
+      hash = (53 * hash) + getMinTlsVersion().hashCode();
     }
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
@@ -1417,7 +1551,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasProfile()) {
       hash = (37 * hash) + PROFILE_FIELD_NUMBER;
-      hash = (53 * hash) + profile_;
+      hash = (53 * hash) + getProfile().hashCode();
     }
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
@@ -1530,8 +1664,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents an SSL Policy resource.
-   * Use SSL policies to control the SSL features, such as versions and cipher suites, offered by an HTTPS or SSL Proxy load balancer. For more information, read  SSL Policy Concepts. (== resource_for {$api_version}.sslPolicies ==)
+   * Represents an SSL Policy resource. Use SSL policies to control the SSL features, such as versions and cipher suites, offered by an HTTPS or SSL Proxy load balancer. For more information, read SSL Policy Concepts.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.SslPolicy}
@@ -1588,11 +1721,11 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000020);
       kind_ = "";
       bitField0_ = (bitField0_ & ~0x00000040);
-      minTlsVersion_ = 0;
+      minTlsVersion_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
       name_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
-      profile_ = 0;
+      profile_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
       selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
@@ -1780,7 +1913,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasMinTlsVersion()) {
-        setMinTlsVersion(other.getMinTlsVersion());
+        bitField0_ |= 0x00000080;
+        minTlsVersion_ = other.minTlsVersion_;
+        onChanged();
       }
       if (other.hasName()) {
         bitField0_ |= 0x00000100;
@@ -1788,7 +1923,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasProfile()) {
-        setProfile(other.getProfile());
+        bitField0_ |= 0x00000200;
+        profile_ = other.profile_;
+        onChanged();
       }
       if (other.hasSelfLink()) {
         bitField0_ |= 0x00000400;
@@ -1861,7 +1998,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -1875,7 +2012,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -1897,7 +2034,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -1919,7 +2056,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -1940,7 +2077,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -1957,7 +2094,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -1986,8 +2123,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The
-     * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2001,8 +2137,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The
-     * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2016,8 +2151,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The
-     * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2032,8 +2166,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The
-     * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2048,8 +2181,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The
-     * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2071,8 +2203,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The
-     * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2093,8 +2224,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The
-     * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2112,8 +2242,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The
-     * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2130,8 +2259,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The
-     * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2158,7 +2286,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -2172,7 +2300,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -2194,7 +2322,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -2216,7 +2344,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2237,7 +2365,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -2254,7 +2382,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2443,11 +2571,10 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return Whether the fingerprint field is set.
      */
@@ -2458,11 +2585,10 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The fingerprint.
      */
@@ -2481,11 +2607,10 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The bytes for fingerprint.
      */
@@ -2504,11 +2629,10 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The fingerprint to set.
      * @return This builder for chaining.
@@ -2526,11 +2650,10 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return This builder for chaining.
      */
@@ -2544,11 +2667,10 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The bytes for fingerprint to set.
      * @return This builder for chaining.
@@ -2572,7 +2694,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -2587,7 +2709,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -2602,7 +2724,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -2620,7 +2742,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -2639,7 +2761,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -2653,7 +2775,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -2675,7 +2797,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -2697,7 +2819,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -2718,7 +2840,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -2735,7 +2857,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -2751,19 +2873,19 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int minTlsVersion_ = 0;
+    private java.lang.Object minTlsVersion_ = "";
     /**
      *
      *
      * <pre>
      * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * Check the MinTlsVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
+     * <code>optional string min_tls_version = 8155943;</code>
      *
      * @return Whether the minTlsVersion field is set.
      */
-    @java.lang.Override
     public boolean hasMinTlsVersion() {
       return ((bitField0_ & 0x00000080) != 0);
     }
@@ -2772,29 +2894,64 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * Check the MinTlsVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
+     * <code>optional string min_tls_version = 8155943;</code>
      *
-     * @return The enum numeric value on the wire for minTlsVersion.
+     * @return The minTlsVersion.
      */
-    @java.lang.Override
-    public int getMinTlsVersionValue() {
-      return minTlsVersion_;
+    public java.lang.String getMinTlsVersion() {
+      java.lang.Object ref = minTlsVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        minTlsVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * Check the MinTlsVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
+     * <code>optional string min_tls_version = 8155943;</code>
      *
-     * @param value The enum numeric value on the wire for minTlsVersion to set.
+     * @return The bytes for minTlsVersion.
+     */
+    public com.google.protobuf.ByteString getMinTlsVersionBytes() {
+      java.lang.Object ref = minTlsVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        minTlsVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * Check the MinTlsVersion enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string min_tls_version = 8155943;</code>
+     *
+     * @param value The minTlsVersion to set.
      * @return This builder for chaining.
      */
-    public Builder setMinTlsVersionValue(int value) {
+    public Builder setMinTlsVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000080;
       minTlsVersion_ = value;
       onChanged();
@@ -2805,39 +2962,16 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * Check the MinTlsVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
+     * <code>optional string min_tls_version = 8155943;</code>
      *
-     * @return The minTlsVersion.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.SslPolicy.MinTlsVersion getMinTlsVersion() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.SslPolicy.MinTlsVersion result =
-          com.google.cloud.compute.v1.SslPolicy.MinTlsVersion.valueOf(minTlsVersion_);
-      return result == null
-          ? com.google.cloud.compute.v1.SslPolicy.MinTlsVersion.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
-     *
-     * @param value The minTlsVersion to set.
      * @return This builder for chaining.
      */
-    public Builder setMinTlsVersion(com.google.cloud.compute.v1.SslPolicy.MinTlsVersion value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000080;
-      minTlsVersion_ = value.getNumber();
+    public Builder clearMinTlsVersion() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      minTlsVersion_ = getDefaultInstance().getMinTlsVersion();
       onChanged();
       return this;
     }
@@ -2846,15 +2980,21 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * Check the MinTlsVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
+     * <code>optional string min_tls_version = 8155943;</code>
      *
+     * @param value The bytes for minTlsVersion to set.
      * @return This builder for chaining.
      */
-    public Builder clearMinTlsVersion() {
-      bitField0_ = (bitField0_ & ~0x00000080);
-      minTlsVersion_ = 0;
+    public Builder setMinTlsVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000080;
+      minTlsVersion_ = value;
       onChanged();
       return this;
     }
@@ -2867,7 +3007,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -2881,7 +3021,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -2903,7 +3043,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -2925,7 +3065,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2946,7 +3086,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -2963,7 +3103,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2979,19 +3119,19 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int profile_ = 0;
+    private java.lang.Object profile_ = "";
     /**
      *
      *
      * <pre>
      * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Check the Profile enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
+     * <code>optional string profile = 227445161;</code>
      *
      * @return Whether the profile field is set.
      */
-    @java.lang.Override
     public boolean hasProfile() {
       return ((bitField0_ & 0x00000200) != 0);
     }
@@ -3000,29 +3140,64 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Check the Profile enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
+     * <code>optional string profile = 227445161;</code>
      *
-     * @return The enum numeric value on the wire for profile.
+     * @return The profile.
      */
-    @java.lang.Override
-    public int getProfileValue() {
-      return profile_;
+    public java.lang.String getProfile() {
+      java.lang.Object ref = profile_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        profile_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Check the Profile enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
+     * <code>optional string profile = 227445161;</code>
      *
-     * @param value The enum numeric value on the wire for profile to set.
+     * @return The bytes for profile.
+     */
+    public com.google.protobuf.ByteString getProfileBytes() {
+      java.lang.Object ref = profile_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        profile_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Check the Profile enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string profile = 227445161;</code>
+     *
+     * @param value The profile to set.
      * @return This builder for chaining.
      */
-    public Builder setProfileValue(int value) {
+    public Builder setProfile(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000200;
       profile_ = value;
       onChanged();
@@ -3033,37 +3208,16 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Check the Profile enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
+     * <code>optional string profile = 227445161;</code>
      *
-     * @return The profile.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.SslPolicy.Profile getProfile() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.SslPolicy.Profile result =
-          com.google.cloud.compute.v1.SslPolicy.Profile.valueOf(profile_);
-      return result == null ? com.google.cloud.compute.v1.SslPolicy.Profile.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
-     *
-     * @param value The profile to set.
      * @return This builder for chaining.
      */
-    public Builder setProfile(com.google.cloud.compute.v1.SslPolicy.Profile value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000200;
-      profile_ = value.getNumber();
+    public Builder clearProfile() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      profile_ = getDefaultInstance().getProfile();
       onChanged();
       return this;
     }
@@ -3072,15 +3226,21 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Check the Profile enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
+     * <code>optional string profile = 227445161;</code>
      *
+     * @param value The bytes for profile to set.
      * @return This builder for chaining.
      */
-    public Builder clearProfile() {
-      bitField0_ = (bitField0_ & ~0x00000200);
-      profile_ = 0;
+    public Builder setProfileBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000200;
+      profile_ = value;
       onChanged();
       return this;
     }
@@ -3093,7 +3253,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -3107,7 +3267,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -3129,7 +3289,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3151,7 +3311,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3172,7 +3332,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -3189,7 +3349,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.

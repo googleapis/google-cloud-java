@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.InstanceGroupManagersStub;
@@ -47,15 +49,8 @@ import javax.annotation.Generated;
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
  *   String instanceGroupManager = "instanceGroupManager-388242077";
- *   InstanceGroupManagersAbandonInstancesRequest
- *       instanceGroupManagersAbandonInstancesRequestResource =
- *           InstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
- *   Operation response =
- *       instanceGroupManagersClient.abandonInstances(
- *           project,
- *           zone,
- *           instanceGroupManager,
- *           instanceGroupManagersAbandonInstancesRequestResource);
+ *   InstanceGroupManager response =
+ *       instanceGroupManagersClient.get(project, zone, instanceGroupManager);
  * }
  * }</pre>
  *
@@ -169,13 +164,10 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * managed instance group by the number of instances that you abandon. This operation is marked as
    * DONE when the action is scheduled even if the instances have not yet been removed from the
    * group. You must separately verify the status of the abandoning action with the
-   * listmanagedinstances method.
-   *
-   * <p>If the group is part of a backend service that has enabled connection draining, it can take
-   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
-   * removed or deleted.
-   *
-   * <p>You can specify a maximum of 1000 instances with this method per request.
+   * listmanagedinstances method. If the group is part of a backend service that has enabled
+   * connection draining, it can take up to 60 seconds after the connection draining duration has
+   * elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000
+   * instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -189,11 +181,13 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *       instanceGroupManagersAbandonInstancesRequestResource =
    *           InstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
    *   Operation response =
-   *       instanceGroupManagersClient.abandonInstances(
-   *           project,
-   *           zone,
-   *           instanceGroupManager,
-   *           instanceGroupManagersAbandonInstancesRequestResource);
+   *       instanceGroupManagersClient
+   *           .abandonInstancesAsync(
+   *               project,
+   *               zone,
+   *               instanceGroupManager,
+   *               instanceGroupManagersAbandonInstancesRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -203,7 +197,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * @param instanceGroupManagersAbandonInstancesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation abandonInstances(
+  public final OperationFuture<Operation, Operation> abandonInstancesAsync(
       String project,
       String zone,
       String instanceGroupManager,
@@ -217,7 +211,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
             .setInstanceGroupManagersAbandonInstancesRequestResource(
                 instanceGroupManagersAbandonInstancesRequestResource)
             .build();
-    return abandonInstances(request);
+    return abandonInstancesAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -228,13 +222,10 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * managed instance group by the number of instances that you abandon. This operation is marked as
    * DONE when the action is scheduled even if the instances have not yet been removed from the
    * group. You must separately verify the status of the abandoning action with the
-   * listmanagedinstances method.
-   *
-   * <p>If the group is part of a backend service that has enabled connection draining, it can take
-   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
-   * removed or deleted.
-   *
-   * <p>You can specify a maximum of 1000 instances with this method per request.
+   * listmanagedinstances method. If the group is part of a backend service that has enabled
+   * connection draining, it can take up to 60 seconds after the connection draining duration has
+   * elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000
+   * instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -250,15 +241,18 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instanceGroupManagersClient.abandonInstances(request);
+   *   Operation response = instanceGroupManagersClient.abandonInstancesAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation abandonInstances(AbandonInstancesInstanceGroupManagerRequest request) {
-    return abandonInstancesCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> abandonInstancesAsync(
+      AbandonInstancesInstanceGroupManagerRequest request) {
+    return abandonInstancesOperationCallable().futureCall(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -269,13 +263,49 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * managed instance group by the number of instances that you abandon. This operation is marked as
    * DONE when the action is scheduled even if the instances have not yet been removed from the
    * group. You must separately verify the status of the abandoning action with the
-   * listmanagedinstances method.
+   * listmanagedinstances method. If the group is part of a backend service that has enabled
+   * connection draining, it can take up to 60 seconds after the connection draining duration has
+   * elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000
+   * instances with this method per request.
    *
-   * <p>If the group is part of a backend service that has enabled connection draining, it can take
-   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
-   * removed or deleted.
+   * <p>Sample code:
    *
-   * <p>You can specify a maximum of 1000 instances with this method per request.
+   * <pre>{@code
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   AbandonInstancesInstanceGroupManagerRequest request =
+   *       AbandonInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersAbandonInstancesRequestResource(
+   *               InstanceGroupManagersAbandonInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient.abandonInstancesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<AbandonInstancesInstanceGroupManagerRequest, Operation, Operation>
+      abandonInstancesOperationCallable() {
+    return stub.abandonInstancesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances to be removed from the managed instance group. Abandoning an
+   * instance does not delete the instance, but it does remove the instance from any target pools
+   * that are applied by the managed instance group. This method reduces the targetSize of the
+   * managed instance group by the number of instances that you abandon. This operation is marked as
+   * DONE when the action is scheduled even if the instances have not yet been removed from the
+   * group. You must separately verify the status of the abandoning action with the
+   * listmanagedinstances method. If the group is part of a backend service that has enabled
+   * connection draining, it can take up to 60 seconds after the connection draining duration has
+   * elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000
+   * instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -455,11 +485,13 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *   InstanceGroupManagersApplyUpdatesRequest instanceGroupManagersApplyUpdatesRequestResource =
    *       InstanceGroupManagersApplyUpdatesRequest.newBuilder().build();
    *   Operation response =
-   *       instanceGroupManagersClient.applyUpdatesToInstances(
-   *           project,
-   *           zone,
-   *           instanceGroupManager,
-   *           instanceGroupManagersApplyUpdatesRequestResource);
+   *       instanceGroupManagersClient
+   *           .applyUpdatesToInstancesAsync(
+   *               project,
+   *               zone,
+   *               instanceGroupManager,
+   *               instanceGroupManagersApplyUpdatesRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -470,7 +502,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * @param instanceGroupManagersApplyUpdatesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation applyUpdatesToInstances(
+  public final OperationFuture<Operation, Operation> applyUpdatesToInstancesAsync(
       String project,
       String zone,
       String instanceGroupManager,
@@ -483,7 +515,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
             .setInstanceGroupManagersApplyUpdatesRequestResource(
                 instanceGroupManagersApplyUpdatesRequestResource)
             .build();
-    return applyUpdatesToInstances(request);
+    return applyUpdatesToInstancesAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -504,16 +536,51 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instanceGroupManagersClient.applyUpdatesToInstances(request);
+   *   Operation response = instanceGroupManagersClient.applyUpdatesToInstancesAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation applyUpdatesToInstances(
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> applyUpdatesToInstancesAsync(
       ApplyUpdatesToInstancesInstanceGroupManagerRequest request) {
-    return applyUpdatesToInstancesCallable().call(request);
+    return applyUpdatesToInstancesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Applies changes to selected instances on the managed instance group. This method can be used to
+   * apply new overrides and/or new versions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   ApplyUpdatesToInstancesInstanceGroupManagerRequest request =
+   *       ApplyUpdatesToInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersApplyUpdatesRequestResource(
+   *               InstanceGroupManagersApplyUpdatesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient
+   *           .applyUpdatesToInstancesOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ApplyUpdatesToInstancesInstanceGroupManagerRequest, Operation, Operation>
+      applyUpdatesToInstancesOperationCallable() {
+    return stub.applyUpdatesToInstancesOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -566,11 +633,13 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *       instanceGroupManagersCreateInstancesRequestResource =
    *           InstanceGroupManagersCreateInstancesRequest.newBuilder().build();
    *   Operation response =
-   *       instanceGroupManagersClient.createInstances(
-   *           project,
-   *           zone,
-   *           instanceGroupManager,
-   *           instanceGroupManagersCreateInstancesRequestResource);
+   *       instanceGroupManagersClient
+   *           .createInstancesAsync(
+   *               project,
+   *               zone,
+   *               instanceGroupManager,
+   *               instanceGroupManagersCreateInstancesRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -582,7 +651,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * @param instanceGroupManagersCreateInstancesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation createInstances(
+  public final OperationFuture<Operation, Operation> createInstancesAsync(
       String project,
       String zone,
       String instanceGroupManager,
@@ -596,7 +665,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
             .setInstanceGroupManagersCreateInstancesRequestResource(
                 instanceGroupManagersCreateInstancesRequestResource)
             .build();
-    return createInstances(request);
+    return createInstancesAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -621,15 +690,52 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instanceGroupManagersClient.createInstances(request);
+   *   Operation response = instanceGroupManagersClient.createInstancesAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation createInstances(CreateInstancesInstanceGroupManagerRequest request) {
-    return createInstancesCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> createInstancesAsync(
+      CreateInstancesInstanceGroupManagerRequest request) {
+    return createInstancesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates instances with per-instance configs in this managed instance group. Instances are
+   * created using the current instance template. The create instances operation is marked DONE if
+   * the createInstances request is successful. The underlying actions take additional time. You
+   * must separately verify the status of the creating or actions with the listmanagedinstances
+   * method.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   CreateInstancesInstanceGroupManagerRequest request =
+   *       CreateInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersCreateInstancesRequestResource(
+   *               InstanceGroupManagersCreateInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient.createInstancesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateInstancesInstanceGroupManagerRequest, Operation, Operation>
+      createInstancesOperationCallable() {
+    return stub.createInstancesOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -680,7 +786,8 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
    *   String instanceGroupManager = "instanceGroupManager-388242077";
-   *   Operation response = instanceGroupManagersClient.delete(project, zone, instanceGroupManager);
+   *   Operation response =
+   *       instanceGroupManagersClient.deleteAsync(project, zone, instanceGroupManager).get();
    * }
    * }</pre>
    *
@@ -689,14 +796,15 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * @param instanceGroupManager The name of the managed instance group to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String zone, String instanceGroupManager) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String zone, String instanceGroupManager) {
     DeleteInstanceGroupManagerRequest request =
         DeleteInstanceGroupManagerRequest.newBuilder()
             .setProject(project)
             .setZone(zone)
             .setInstanceGroupManager(instanceGroupManager)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -717,15 +825,48 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instanceGroupManagersClient.delete(request);
+   *   Operation response = instanceGroupManagersClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteInstanceGroupManagerRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      DeleteInstanceGroupManagerRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified managed instance group and all of the instances in that group. Note that
+   * the instance group must not belong to a backend service. Read Deleting an instance group for
+   * more information.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   DeleteInstanceGroupManagerRequest request =
+   *       DeleteInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteInstanceGroupManagerRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -764,13 +905,10 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * reduces the targetSize of the managed instance group by the number of instances that you
    * delete. This operation is marked as DONE when the action is scheduled even if the instances are
    * still being deleted. You must separately verify the status of the deleting action with the
-   * listmanagedinstances method.
-   *
-   * <p>If the group is part of a backend service that has enabled connection draining, it can take
-   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
-   * removed or deleted.
-   *
-   * <p>You can specify a maximum of 1000 instances with this method per request.
+   * listmanagedinstances method. If the group is part of a backend service that has enabled
+   * connection draining, it can take up to 60 seconds after the connection draining duration has
+   * elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000
+   * instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -784,11 +922,13 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *       instanceGroupManagersDeleteInstancesRequestResource =
    *           InstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
    *   Operation response =
-   *       instanceGroupManagersClient.deleteInstances(
-   *           project,
-   *           zone,
-   *           instanceGroupManager,
-   *           instanceGroupManagersDeleteInstancesRequestResource);
+   *       instanceGroupManagersClient
+   *           .deleteInstancesAsync(
+   *               project,
+   *               zone,
+   *               instanceGroupManager,
+   *               instanceGroupManagersDeleteInstancesRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -798,7 +938,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * @param instanceGroupManagersDeleteInstancesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation deleteInstances(
+  public final OperationFuture<Operation, Operation> deleteInstancesAsync(
       String project,
       String zone,
       String instanceGroupManager,
@@ -812,7 +952,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
             .setInstanceGroupManagersDeleteInstancesRequestResource(
                 instanceGroupManagersDeleteInstancesRequestResource)
             .build();
-    return deleteInstances(request);
+    return deleteInstancesAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -822,13 +962,10 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * reduces the targetSize of the managed instance group by the number of instances that you
    * delete. This operation is marked as DONE when the action is scheduled even if the instances are
    * still being deleted. You must separately verify the status of the deleting action with the
-   * listmanagedinstances method.
-   *
-   * <p>If the group is part of a backend service that has enabled connection draining, it can take
-   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
-   * removed or deleted.
-   *
-   * <p>You can specify a maximum of 1000 instances with this method per request.
+   * listmanagedinstances method. If the group is part of a backend service that has enabled
+   * connection draining, it can take up to 60 seconds after the connection draining duration has
+   * elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000
+   * instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -844,15 +981,18 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instanceGroupManagersClient.deleteInstances(request);
+   *   Operation response = instanceGroupManagersClient.deleteInstancesAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation deleteInstances(DeleteInstancesInstanceGroupManagerRequest request) {
-    return deleteInstancesCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteInstancesAsync(
+      DeleteInstancesInstanceGroupManagerRequest request) {
+    return deleteInstancesOperationCallable().futureCall(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -862,13 +1002,48 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * reduces the targetSize of the managed instance group by the number of instances that you
    * delete. This operation is marked as DONE when the action is scheduled even if the instances are
    * still being deleted. You must separately verify the status of the deleting action with the
-   * listmanagedinstances method.
+   * listmanagedinstances method. If the group is part of a backend service that has enabled
+   * connection draining, it can take up to 60 seconds after the connection draining duration has
+   * elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000
+   * instances with this method per request.
    *
-   * <p>If the group is part of a backend service that has enabled connection draining, it can take
-   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
-   * removed or deleted.
+   * <p>Sample code:
    *
-   * <p>You can specify a maximum of 1000 instances with this method per request.
+   * <pre>{@code
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   DeleteInstancesInstanceGroupManagerRequest request =
+   *       DeleteInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersDeleteInstancesRequestResource(
+   *               InstanceGroupManagersDeleteInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient.deleteInstancesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteInstancesInstanceGroupManagerRequest, Operation, Operation>
+      deleteInstancesOperationCallable() {
+    return stub.deleteInstancesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified instances in the managed instance group for immediate deletion. The
+   * instances are also removed from any target pools of which they were a member. This method
+   * reduces the targetSize of the managed instance group by the number of instances that you
+   * delete. This operation is marked as DONE when the action is scheduled even if the instances are
+   * still being deleted. You must separately verify the status of the deleting action with the
+   * listmanagedinstances method. If the group is part of a backend service that has enabled
+   * connection draining, it can take up to 60 seconds after the connection draining duration has
+   * elapsed before the VM instance is removed or deleted. You can specify a maximum of 1000
+   * instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -912,11 +1087,13 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *       instanceGroupManagersDeletePerInstanceConfigsReqResource =
    *           InstanceGroupManagersDeletePerInstanceConfigsReq.newBuilder().build();
    *   Operation response =
-   *       instanceGroupManagersClient.deletePerInstanceConfigs(
-   *           project,
-   *           zone,
-   *           instanceGroupManager,
-   *           instanceGroupManagersDeletePerInstanceConfigsReqResource);
+   *       instanceGroupManagersClient
+   *           .deletePerInstanceConfigsAsync(
+   *               project,
+   *               zone,
+   *               instanceGroupManager,
+   *               instanceGroupManagersDeletePerInstanceConfigsReqResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -929,7 +1106,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *     request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation deletePerInstanceConfigs(
+  public final OperationFuture<Operation, Operation> deletePerInstanceConfigsAsync(
       String project,
       String zone,
       String instanceGroupManager,
@@ -943,7 +1120,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
             .setInstanceGroupManagersDeletePerInstanceConfigsReqResource(
                 instanceGroupManagersDeletePerInstanceConfigsReqResource)
             .build();
-    return deletePerInstanceConfigs(request);
+    return deletePerInstanceConfigsAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -963,16 +1140,50 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instanceGroupManagersClient.deletePerInstanceConfigs(request);
+   *   Operation response = instanceGroupManagersClient.deletePerInstanceConfigsAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation deletePerInstanceConfigs(
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deletePerInstanceConfigsAsync(
       DeletePerInstanceConfigsInstanceGroupManagerRequest request) {
-    return deletePerInstanceConfigsCallable().call(request);
+    return deletePerInstanceConfigsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes selected per-instance configs for the managed instance group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   DeletePerInstanceConfigsInstanceGroupManagerRequest request =
+   *       DeletePerInstanceConfigsInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersDeletePerInstanceConfigsReqResource(
+   *               InstanceGroupManagersDeletePerInstanceConfigsReq.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient
+   *           .deletePerInstanceConfigsOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          DeletePerInstanceConfigsInstanceGroupManagerRequest, Operation, Operation>
+      deletePerInstanceConfigsOperationCallable() {
+    return stub.deletePerInstanceConfigsOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1097,10 +1308,8 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * the group is created, instances in the group are created using the specified instance template.
    * This operation is marked as DONE when the group is created even if the instances in the group
    * have not yet been created. You must separately verify the status of the individual instances
-   * with the listmanagedinstances method.
-   *
-   * <p>A managed instance group can have up to 1000 VM instances per group. Please contact Cloud
-   * Support if you need an increase in this limit.
+   * with the listmanagedinstances method. A managed instance group can have up to 1000 VM instances
+   * per group. Please contact Cloud Support if you need an increase in this limit.
    *
    * <p>Sample code:
    *
@@ -1111,7 +1320,9 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *   String zone = "zone3744684";
    *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   Operation response =
-   *       instanceGroupManagersClient.insert(project, zone, instanceGroupManagerResource);
+   *       instanceGroupManagersClient
+   *           .insertAsync(project, zone, instanceGroupManagerResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -1120,7 +1331,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * @param instanceGroupManagerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(
+  public final OperationFuture<Operation, Operation> insertAsync(
       String project, String zone, InstanceGroupManager instanceGroupManagerResource) {
     InsertInstanceGroupManagerRequest request =
         InsertInstanceGroupManagerRequest.newBuilder()
@@ -1128,7 +1339,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
             .setZone(zone)
             .setInstanceGroupManagerResource(instanceGroupManagerResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1137,10 +1348,8 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * the group is created, instances in the group are created using the specified instance template.
    * This operation is marked as DONE when the group is created even if the instances in the group
    * have not yet been created. You must separately verify the status of the individual instances
-   * with the listmanagedinstances method.
-   *
-   * <p>A managed instance group can have up to 1000 VM instances per group. Please contact Cloud
-   * Support if you need an increase in this limit.
+   * with the listmanagedinstances method. A managed instance group can have up to 1000 VM instances
+   * per group. Please contact Cloud Support if you need an increase in this limit.
    *
    * <p>Sample code:
    *
@@ -1154,15 +1363,18 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instanceGroupManagersClient.insert(request);
+   *   Operation response = instanceGroupManagersClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertInstanceGroupManagerRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(
+      InsertInstanceGroupManagerRequest request) {
+    return insertOperationCallable().futureCall(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1171,10 +1383,41 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * the group is created, instances in the group are created using the specified instance template.
    * This operation is marked as DONE when the group is created even if the instances in the group
    * have not yet been created. You must separately verify the status of the individual instances
-   * with the listmanagedinstances method.
+   * with the listmanagedinstances method. A managed instance group can have up to 1000 VM instances
+   * per group. Please contact Cloud Support if you need an increase in this limit.
    *
-   * <p>A managed instance group can have up to 1000 VM instances per group. Please contact Cloud
-   * Support if you need an increase in this limit.
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   InsertInstanceGroupManagerRequest request =
+   *       InsertInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManagerResource(InstanceGroupManager.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertInstanceGroupManagerRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a managed instance group using the information that you specify in the request. After
+   * the group is created, instances in the group are created using the specified instance template.
+   * This operation is marked as DONE when the group is created even if the instances in the group
+   * have not yet been created. You must separately verify the status of the individual instances
+   * with the listmanagedinstances method. A managed instance group can have up to 1000 VM instances
+   * per group. Please contact Cloud Support if you need an increase in this limit.
    *
    * <p>Sample code:
    *
@@ -1363,7 +1606,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *     to RFC1035.
    * @param instanceGroupManager The name of the managed instance group. It must be a string that
    *     meets the requirements in RFC1035, or an unsigned long integer: must match regexp pattern:
-   *     (?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)|[1-9][0-9]{0,19}.
+   *     (?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)|1-9{0,19}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListErrorsPagedResponse listErrors(
@@ -1818,7 +2061,10 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * operation is marked as DONE when the group is patched even if the instances in the group are
    * still in the process of being patched. You must separately verify the status of the individual
    * instances with the listManagedInstances method. This method supports PATCH semantics and uses
-   * the JSON merge patch format and processing rules.
+   * the JSON merge patch format and processing rules. If you update your group to specify a new
+   * template or instance configuration, it's possible that your intended specification for each VM
+   * in the group is different from the current state of that VM. To learn how to apply an updated
+   * configuration to the VMs in a MIG, see Updating instances in a MIG.
    *
    * <p>Sample code:
    *
@@ -1830,8 +2076,9 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "instanceGroupManager-388242077";
    *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   Operation response =
-   *       instanceGroupManagersClient.patch(
-   *           project, zone, instanceGroupManager, instanceGroupManagerResource);
+   *       instanceGroupManagersClient
+   *           .patchAsync(project, zone, instanceGroupManager, instanceGroupManagerResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -1841,7 +2088,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * @param instanceGroupManagerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(
+  public final OperationFuture<Operation, Operation> patchAsync(
       String project,
       String zone,
       String instanceGroupManager,
@@ -1853,7 +2100,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
             .setInstanceGroupManager(instanceGroupManager)
             .setInstanceGroupManagerResource(instanceGroupManagerResource)
             .build();
-    return patch(request);
+    return patchAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1862,7 +2109,10 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * operation is marked as DONE when the group is patched even if the instances in the group are
    * still in the process of being patched. You must separately verify the status of the individual
    * instances with the listManagedInstances method. This method supports PATCH semantics and uses
-   * the JSON merge patch format and processing rules.
+   * the JSON merge patch format and processing rules. If you update your group to specify a new
+   * template or instance configuration, it's possible that your intended specification for each VM
+   * in the group is different from the current state of that VM. To learn how to apply an updated
+   * configuration to the VMs in a MIG, see Updating instances in a MIG.
    *
    * <p>Sample code:
    *
@@ -1877,15 +2127,18 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instanceGroupManagersClient.patch(request);
+   *   Operation response = instanceGroupManagersClient.patchAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(PatchInstanceGroupManagerRequest request) {
-    return patchCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> patchAsync(
+      PatchInstanceGroupManagerRequest request) {
+    return patchOperationCallable().futureCall(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1894,7 +2147,46 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * operation is marked as DONE when the group is patched even if the instances in the group are
    * still in the process of being patched. You must separately verify the status of the individual
    * instances with the listManagedInstances method. This method supports PATCH semantics and uses
-   * the JSON merge patch format and processing rules.
+   * the JSON merge patch format and processing rules. If you update your group to specify a new
+   * template or instance configuration, it's possible that your intended specification for each VM
+   * in the group is different from the current state of that VM. To learn how to apply an updated
+   * configuration to the VMs in a MIG, see Updating instances in a MIG.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   PatchInstanceGroupManagerRequest request =
+   *       PatchInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagerResource(InstanceGroupManager.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient.patchOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PatchInstanceGroupManagerRequest, Operation, Operation>
+      patchOperationCallable() {
+    return stub.patchOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a managed instance group using the information that you specify in the request. This
+   * operation is marked as DONE when the group is patched even if the instances in the group are
+   * still in the process of being patched. You must separately verify the status of the individual
+   * instances with the listManagedInstances method. This method supports PATCH semantics and uses
+   * the JSON merge patch format and processing rules. If you update your group to specify a new
+   * template or instance configuration, it's possible that your intended specification for each VM
+   * in the group is different from the current state of that VM. To learn how to apply an updated
+   * configuration to the VMs in a MIG, see Updating instances in a MIG.
    *
    * <p>Sample code:
    *
@@ -1936,11 +2228,13 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *       instanceGroupManagersPatchPerInstanceConfigsReqResource =
    *           InstanceGroupManagersPatchPerInstanceConfigsReq.newBuilder().build();
    *   Operation response =
-   *       instanceGroupManagersClient.patchPerInstanceConfigs(
-   *           project,
-   *           zone,
-   *           instanceGroupManager,
-   *           instanceGroupManagersPatchPerInstanceConfigsReqResource);
+   *       instanceGroupManagersClient
+   *           .patchPerInstanceConfigsAsync(
+   *               project,
+   *               zone,
+   *               instanceGroupManager,
+   *               instanceGroupManagersPatchPerInstanceConfigsReqResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -1953,7 +2247,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *     request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patchPerInstanceConfigs(
+  public final OperationFuture<Operation, Operation> patchPerInstanceConfigsAsync(
       String project,
       String zone,
       String instanceGroupManager,
@@ -1967,7 +2261,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
             .setInstanceGroupManagersPatchPerInstanceConfigsReqResource(
                 instanceGroupManagersPatchPerInstanceConfigsReqResource)
             .build();
-    return patchPerInstanceConfigs(request);
+    return patchPerInstanceConfigsAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1989,16 +2283,52 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instanceGroupManagersClient.patchPerInstanceConfigs(request);
+   *   Operation response = instanceGroupManagersClient.patchPerInstanceConfigsAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patchPerInstanceConfigs(
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> patchPerInstanceConfigsAsync(
       PatchPerInstanceConfigsInstanceGroupManagerRequest request) {
-    return patchPerInstanceConfigsCallable().call(request);
+    return patchPerInstanceConfigsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Inserts or patches per-instance configs for the managed instance group. perInstanceConfig.name
+   * serves as a key used to distinguish whether to perform insert or patch.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   PatchPerInstanceConfigsInstanceGroupManagerRequest request =
+   *       PatchPerInstanceConfigsInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersPatchPerInstanceConfigsReqResource(
+   *               InstanceGroupManagersPatchPerInstanceConfigsReq.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient
+   *           .patchPerInstanceConfigsOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          PatchPerInstanceConfigsInstanceGroupManagerRequest, Operation, Operation>
+      patchPerInstanceConfigsOperationCallable() {
+    return stub.patchPerInstanceConfigsOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2038,13 +2368,10 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * Each instance is recreated using the group's current configuration. This operation is marked as
    * DONE when the flag is set even if the instances have not yet been recreated. You must
    * separately verify the status of each instance by checking its currentAction field; for more
-   * information, see Checking the status of managed instances.
-   *
-   * <p>If the group is part of a backend service that has enabled connection draining, it can take
-   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
-   * removed or deleted.
-   *
-   * <p>You can specify a maximum of 1000 instances with this method per request.
+   * information, see Checking the status of managed instances. If the group is part of a backend
+   * service that has enabled connection draining, it can take up to 60 seconds after the connection
+   * draining duration has elapsed before the VM instance is removed or deleted. You can specify a
+   * maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -2058,11 +2385,13 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *       instanceGroupManagersRecreateInstancesRequestResource =
    *           InstanceGroupManagersRecreateInstancesRequest.newBuilder().build();
    *   Operation response =
-   *       instanceGroupManagersClient.recreateInstances(
-   *           project,
-   *           zone,
-   *           instanceGroupManager,
-   *           instanceGroupManagersRecreateInstancesRequestResource);
+   *       instanceGroupManagersClient
+   *           .recreateInstancesAsync(
+   *               project,
+   *               zone,
+   *               instanceGroupManager,
+   *               instanceGroupManagersRecreateInstancesRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -2072,7 +2401,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * @param instanceGroupManagersRecreateInstancesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation recreateInstances(
+  public final OperationFuture<Operation, Operation> recreateInstancesAsync(
       String project,
       String zone,
       String instanceGroupManager,
@@ -2086,7 +2415,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
             .setInstanceGroupManagersRecreateInstancesRequestResource(
                 instanceGroupManagersRecreateInstancesRequestResource)
             .build();
-    return recreateInstances(request);
+    return recreateInstancesAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2095,13 +2424,10 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * Each instance is recreated using the group's current configuration. This operation is marked as
    * DONE when the flag is set even if the instances have not yet been recreated. You must
    * separately verify the status of each instance by checking its currentAction field; for more
-   * information, see Checking the status of managed instances.
-   *
-   * <p>If the group is part of a backend service that has enabled connection draining, it can take
-   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
-   * removed or deleted.
-   *
-   * <p>You can specify a maximum of 1000 instances with this method per request.
+   * information, see Checking the status of managed instances. If the group is part of a backend
+   * service that has enabled connection draining, it can take up to 60 seconds after the connection
+   * draining duration has elapsed before the VM instance is removed or deleted. You can specify a
+   * maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -2117,15 +2443,18 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instanceGroupManagersClient.recreateInstances(request);
+   *   Operation response = instanceGroupManagersClient.recreateInstancesAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation recreateInstances(RecreateInstancesInstanceGroupManagerRequest request) {
-    return recreateInstancesCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> recreateInstancesAsync(
+      RecreateInstancesInstanceGroupManagerRequest request) {
+    return recreateInstancesOperationCallable().futureCall(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2134,13 +2463,47 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * Each instance is recreated using the group's current configuration. This operation is marked as
    * DONE when the flag is set even if the instances have not yet been recreated. You must
    * separately verify the status of each instance by checking its currentAction field; for more
-   * information, see Checking the status of managed instances.
+   * information, see Checking the status of managed instances. If the group is part of a backend
+   * service that has enabled connection draining, it can take up to 60 seconds after the connection
+   * draining duration has elapsed before the VM instance is removed or deleted. You can specify a
+   * maximum of 1000 instances with this method per request.
    *
-   * <p>If the group is part of a backend service that has enabled connection draining, it can take
-   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
-   * removed or deleted.
+   * <p>Sample code:
    *
-   * <p>You can specify a maximum of 1000 instances with this method per request.
+   * <pre>{@code
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   RecreateInstancesInstanceGroupManagerRequest request =
+   *       RecreateInstancesInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersRecreateInstancesRequestResource(
+   *               InstanceGroupManagersRecreateInstancesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient.recreateInstancesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<RecreateInstancesInstanceGroupManagerRequest, Operation, Operation>
+      recreateInstancesOperationCallable() {
+    return stub.recreateInstancesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Flags the specified VM instances in the managed instance group to be immediately recreated.
+   * Each instance is recreated using the group's current configuration. This operation is marked as
+   * DONE when the flag is set even if the instances have not yet been recreated. You must
+   * separately verify the status of each instance by checking its currentAction field; for more
+   * information, see Checking the status of managed instances. If the group is part of a backend
+   * service that has enabled connection draining, it can take up to 60 seconds after the connection
+   * draining duration has elapsed before the VM instance is removed or deleted. You can specify a
+   * maximum of 1000 instances with this method per request.
    *
    * <p>Sample code:
    *
@@ -2174,20 +2537,14 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * using the current instance template. If you decrease the size, the group deletes instances. The
    * resize operation is marked DONE when the resize actions are scheduled even if the group has not
    * yet added or deleted any instances. You must separately verify the status of the creating or
-   * deleting actions with the listmanagedinstances method.
-   *
-   * <p>When resizing down, the instance group arbitrarily chooses the order in which VMs are
-   * deleted. The group takes into account some VM attributes when making the selection including:
-   *
-   * <p>+ The status of the VM instance. + The health of the VM instance. + The instance template
-   * version the VM is based on. + For regional managed instance groups, the location of the VM
-   * instance.
-   *
-   * <p>This list is subject to change.
-   *
-   * <p>If the group is part of a backend service that has enabled connection draining, it can take
-   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
-   * removed or deleted.
+   * deleting actions with the listmanagedinstances method. When resizing down, the instance group
+   * arbitrarily chooses the order in which VMs are deleted. The group takes into account some VM
+   * attributes when making the selection including: + The status of the VM instance. + The health
+   * of the VM instance. + The instance template version the VM is based on. + For regional managed
+   * instance groups, the location of the VM instance. This list is subject to change. If the group
+   * is part of a backend service that has enabled connection draining, it can take up to 60 seconds
+   * after the connection draining duration has elapsed before the VM instance is removed or
+   * deleted.
    *
    * <p>Sample code:
    *
@@ -2199,7 +2556,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "instanceGroupManager-388242077";
    *   int size = 3530753;
    *   Operation response =
-   *       instanceGroupManagersClient.resize(project, zone, instanceGroupManager, size);
+   *       instanceGroupManagersClient.resizeAsync(project, zone, instanceGroupManager, size).get();
    * }
    * }</pre>
    *
@@ -2211,7 +2568,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *     instances specified by this parameter.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation resize(
+  public final OperationFuture<Operation, Operation> resizeAsync(
       String project, String zone, String instanceGroupManager, int size) {
     ResizeInstanceGroupManagerRequest request =
         ResizeInstanceGroupManagerRequest.newBuilder()
@@ -2220,7 +2577,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
             .setInstanceGroupManager(instanceGroupManager)
             .setSize(size)
             .build();
-    return resize(request);
+    return resizeAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2229,20 +2586,14 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * using the current instance template. If you decrease the size, the group deletes instances. The
    * resize operation is marked DONE when the resize actions are scheduled even if the group has not
    * yet added or deleted any instances. You must separately verify the status of the creating or
-   * deleting actions with the listmanagedinstances method.
-   *
-   * <p>When resizing down, the instance group arbitrarily chooses the order in which VMs are
-   * deleted. The group takes into account some VM attributes when making the selection including:
-   *
-   * <p>+ The status of the VM instance. + The health of the VM instance. + The instance template
-   * version the VM is based on. + For regional managed instance groups, the location of the VM
-   * instance.
-   *
-   * <p>This list is subject to change.
-   *
-   * <p>If the group is part of a backend service that has enabled connection draining, it can take
-   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
-   * removed or deleted.
+   * deleting actions with the listmanagedinstances method. When resizing down, the instance group
+   * arbitrarily chooses the order in which VMs are deleted. The group takes into account some VM
+   * attributes when making the selection including: + The status of the VM instance. + The health
+   * of the VM instance. + The instance template version the VM is based on. + For regional managed
+   * instance groups, the location of the VM instance. This list is subject to change. If the group
+   * is part of a backend service that has enabled connection draining, it can take up to 60 seconds
+   * after the connection draining duration has elapsed before the VM instance is removed or
+   * deleted.
    *
    * <p>Sample code:
    *
@@ -2257,15 +2608,18 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setSize(3530753)
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instanceGroupManagersClient.resize(request);
+   *   Operation response = instanceGroupManagersClient.resizeAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation resize(ResizeInstanceGroupManagerRequest request) {
-    return resizeCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> resizeAsync(
+      ResizeInstanceGroupManagerRequest request) {
+    return resizeOperationCallable().futureCall(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2274,20 +2628,54 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * using the current instance template. If you decrease the size, the group deletes instances. The
    * resize operation is marked DONE when the resize actions are scheduled even if the group has not
    * yet added or deleted any instances. You must separately verify the status of the creating or
-   * deleting actions with the listmanagedinstances method.
+   * deleting actions with the listmanagedinstances method. When resizing down, the instance group
+   * arbitrarily chooses the order in which VMs are deleted. The group takes into account some VM
+   * attributes when making the selection including: + The status of the VM instance. + The health
+   * of the VM instance. + The instance template version the VM is based on. + For regional managed
+   * instance groups, the location of the VM instance. This list is subject to change. If the group
+   * is part of a backend service that has enabled connection draining, it can take up to 60 seconds
+   * after the connection draining duration has elapsed before the VM instance is removed or
+   * deleted.
    *
-   * <p>When resizing down, the instance group arbitrarily chooses the order in which VMs are
-   * deleted. The group takes into account some VM attributes when making the selection including:
+   * <p>Sample code:
    *
-   * <p>+ The status of the VM instance. + The health of the VM instance. + The instance template
-   * version the VM is based on. + For regional managed instance groups, the location of the VM
-   * instance.
-   *
-   * <p>This list is subject to change.
-   *
-   * <p>If the group is part of a backend service that has enabled connection draining, it can take
-   * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
-   * removed or deleted.
+   * <pre>{@code
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   ResizeInstanceGroupManagerRequest request =
+   *       ResizeInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSize(3530753)
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient.resizeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ResizeInstanceGroupManagerRequest, Operation, Operation>
+      resizeOperationCallable() {
+    return stub.resizeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resizes the managed instance group. If you increase the size, the group creates new instances
+   * using the current instance template. If you decrease the size, the group deletes instances. The
+   * resize operation is marked DONE when the resize actions are scheduled even if the group has not
+   * yet added or deleted any instances. You must separately verify the status of the creating or
+   * deleting actions with the listmanagedinstances method. When resizing down, the instance group
+   * arbitrarily chooses the order in which VMs are deleted. The group takes into account some VM
+   * attributes when making the selection including: + The status of the VM instance. + The health
+   * of the VM instance. + The instance template version the VM is based on. + For regional managed
+   * instance groups, the location of the VM instance. This list is subject to change. If the group
+   * is part of a backend service that has enabled connection draining, it can take up to 60 seconds
+   * after the connection draining duration has elapsed before the VM instance is removed or
+   * deleted.
    *
    * <p>Sample code:
    *
@@ -2331,11 +2719,13 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *       instanceGroupManagersSetInstanceTemplateRequestResource =
    *           InstanceGroupManagersSetInstanceTemplateRequest.newBuilder().build();
    *   Operation response =
-   *       instanceGroupManagersClient.setInstanceTemplate(
-   *           project,
-   *           zone,
-   *           instanceGroupManager,
-   *           instanceGroupManagersSetInstanceTemplateRequestResource);
+   *       instanceGroupManagersClient
+   *           .setInstanceTemplateAsync(
+   *               project,
+   *               zone,
+   *               instanceGroupManager,
+   *               instanceGroupManagersSetInstanceTemplateRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -2346,7 +2736,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *     request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setInstanceTemplate(
+  public final OperationFuture<Operation, Operation> setInstanceTemplateAsync(
       String project,
       String zone,
       String instanceGroupManager,
@@ -2360,7 +2750,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
             .setInstanceGroupManagersSetInstanceTemplateRequestResource(
                 instanceGroupManagersSetInstanceTemplateRequestResource)
             .build();
-    return setInstanceTemplate(request);
+    return setInstanceTemplateAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2383,16 +2773,51 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instanceGroupManagersClient.setInstanceTemplate(request);
+   *   Operation response = instanceGroupManagersClient.setInstanceTemplateAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setInstanceTemplate(
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setInstanceTemplateAsync(
       SetInstanceTemplateInstanceGroupManagerRequest request) {
-    return setInstanceTemplateCallable().call(request);
+    return setInstanceTemplateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Specifies the instance template to use when creating new instances in this group. The templates
+   * for existing instances in the group do not change unless you run recreateInstances, run
+   * applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   SetInstanceTemplateInstanceGroupManagerRequest request =
+   *       SetInstanceTemplateInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersSetInstanceTemplateRequestResource(
+   *               InstanceGroupManagersSetInstanceTemplateRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient.setInstanceTemplateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          SetInstanceTemplateInstanceGroupManagerRequest, Operation, Operation>
+      setInstanceTemplateOperationCallable() {
+    return stub.setInstanceTemplateOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2447,11 +2872,13 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *       instanceGroupManagersSetTargetPoolsRequestResource =
    *           InstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
    *   Operation response =
-   *       instanceGroupManagersClient.setTargetPools(
-   *           project,
-   *           zone,
-   *           instanceGroupManager,
-   *           instanceGroupManagersSetTargetPoolsRequestResource);
+   *       instanceGroupManagersClient
+   *           .setTargetPoolsAsync(
+   *               project,
+   *               zone,
+   *               instanceGroupManager,
+   *               instanceGroupManagersSetTargetPoolsRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -2461,7 +2888,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * @param instanceGroupManagersSetTargetPoolsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setTargetPools(
+  public final OperationFuture<Operation, Operation> setTargetPoolsAsync(
       String project,
       String zone,
       String instanceGroupManager,
@@ -2475,7 +2902,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
             .setInstanceGroupManagersSetTargetPoolsRequestResource(
                 instanceGroupManagersSetTargetPoolsRequestResource)
             .build();
-    return setTargetPools(request);
+    return setTargetPoolsAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2500,15 +2927,52 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instanceGroupManagersClient.setTargetPools(request);
+   *   Operation response = instanceGroupManagersClient.setTargetPoolsAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setTargetPools(SetTargetPoolsInstanceGroupManagerRequest request) {
-    return setTargetPoolsCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setTargetPoolsAsync(
+      SetTargetPoolsInstanceGroupManagerRequest request) {
+    return setTargetPoolsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modifies the target pools to which all instances in this managed instance group are assigned.
+   * The target pools automatically apply to all of the instances in the managed instance group.
+   * This operation is marked DONE when you make the request even if the instances have not yet been
+   * added to their target pools. The change might take some time to apply to all of the instances
+   * in the group depending on the size of the group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   SetTargetPoolsInstanceGroupManagerRequest request =
+   *       SetTargetPoolsInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersSetTargetPoolsRequestResource(
+   *               InstanceGroupManagersSetTargetPoolsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient.setTargetPoolsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetTargetPoolsInstanceGroupManagerRequest, Operation, Operation>
+      setTargetPoolsOperationCallable() {
+    return stub.setTargetPoolsOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2562,11 +3026,13 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *       instanceGroupManagersUpdatePerInstanceConfigsReqResource =
    *           InstanceGroupManagersUpdatePerInstanceConfigsReq.newBuilder().build();
    *   Operation response =
-   *       instanceGroupManagersClient.updatePerInstanceConfigs(
-   *           project,
-   *           zone,
-   *           instanceGroupManager,
-   *           instanceGroupManagersUpdatePerInstanceConfigsReqResource);
+   *       instanceGroupManagersClient
+   *           .updatePerInstanceConfigsAsync(
+   *               project,
+   *               zone,
+   *               instanceGroupManager,
+   *               instanceGroupManagersUpdatePerInstanceConfigsReqResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -2579,7 +3045,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *     request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation updatePerInstanceConfigs(
+  public final OperationFuture<Operation, Operation> updatePerInstanceConfigsAsync(
       String project,
       String zone,
       String instanceGroupManager,
@@ -2593,7 +3059,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
             .setInstanceGroupManagersUpdatePerInstanceConfigsReqResource(
                 instanceGroupManagersUpdatePerInstanceConfigsReqResource)
             .build();
-    return updatePerInstanceConfigs(request);
+    return updatePerInstanceConfigsAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2615,16 +3081,52 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instanceGroupManagersClient.updatePerInstanceConfigs(request);
+   *   Operation response = instanceGroupManagersClient.updatePerInstanceConfigsAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation updatePerInstanceConfigs(
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> updatePerInstanceConfigsAsync(
       UpdatePerInstanceConfigsInstanceGroupManagerRequest request) {
-    return updatePerInstanceConfigsCallable().call(request);
+    return updatePerInstanceConfigsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Inserts or updates per-instance configs for the managed instance group. perInstanceConfig.name
+   * serves as a key used to distinguish whether to perform insert or patch.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstanceGroupManagersClient instanceGroupManagersClient =
+   *     InstanceGroupManagersClient.create()) {
+   *   UpdatePerInstanceConfigsInstanceGroupManagerRequest request =
+   *       UpdatePerInstanceConfigsInstanceGroupManagerRequest.newBuilder()
+   *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setInstanceGroupManagersUpdatePerInstanceConfigsReqResource(
+   *               InstanceGroupManagersUpdatePerInstanceConfigsReq.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instanceGroupManagersClient
+   *           .updatePerInstanceConfigsOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdatePerInstanceConfigsInstanceGroupManagerRequest, Operation, Operation>
+      updatePerInstanceConfigsOperationCallable() {
+    return stub.updatePerInstanceConfigsOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

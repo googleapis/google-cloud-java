@@ -176,7 +176,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
+   * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
    * </code>
    *
    * @return Whether the retentionPolicy field is set.
@@ -193,7 +193,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
+   * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
    * </code>
    *
    * @return The retentionPolicy.
@@ -214,7 +214,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
+   * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
    * </code>
    */
   @java.lang.Override
@@ -236,7 +236,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+   * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
    * </code>
    *
    * @return Whether the schedule field is set.
@@ -253,7 +253,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+   * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
    * </code>
    *
    * @return The schedule.
@@ -273,7 +273,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+   * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
    * </code>
    */
   @java.lang.Override
@@ -296,7 +296,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
+   * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
    * </code>
    *
    * @return Whether the snapshotProperties field is set.
@@ -313,7 +313,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
+   * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
    * </code>
    *
    * @return The snapshotProperties.
@@ -334,7 +334,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
+   * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
    * </code>
    */
   @java.lang.Override
@@ -774,7 +774,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
      * </code>
      *
      * @return Whether the retentionPolicy field is set.
@@ -790,7 +790,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
      * </code>
      *
      * @return The retentionPolicy.
@@ -814,7 +814,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
      * </code>
      */
     public Builder setRetentionPolicy(
@@ -839,7 +839,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
      * </code>
      */
     public Builder setRetentionPolicy(
@@ -862,7 +862,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
      * </code>
      */
     public Builder mergeRetentionPolicy(
@@ -896,7 +896,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
      * </code>
      */
     public Builder clearRetentionPolicy() {
@@ -917,7 +917,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
      * </code>
      */
     public com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.Builder
@@ -934,7 +934,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
      * </code>
      */
     public com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicyOrBuilder
@@ -956,7 +956,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy retention_policy = 68625779;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -993,7 +993,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
      * </code>
      *
      * @return Whether the schedule field is set.
@@ -1009,7 +1009,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
      * </code>
      *
      * @return The schedule.
@@ -1032,7 +1032,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
      * </code>
      */
     public Builder setSchedule(
@@ -1057,7 +1057,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
      * </code>
      */
     public Builder setSchedule(
@@ -1080,7 +1080,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
      * </code>
      */
     public Builder mergeSchedule(
@@ -1114,7 +1114,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
      * </code>
      */
     public Builder clearSchedule() {
@@ -1135,7 +1135,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
      * </code>
      */
     public com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule.Builder
@@ -1152,7 +1152,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
      * </code>
      */
     public com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyScheduleOrBuilder
@@ -1174,7 +1174,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1211,7 +1211,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
      * </code>
      *
      * @return Whether the snapshotProperties field is set.
@@ -1227,7 +1227,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
      * </code>
      *
      * @return The snapshotProperties.
@@ -1251,7 +1251,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
      * </code>
      */
     public Builder setSnapshotProperties(
@@ -1276,7 +1276,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
      * </code>
      */
     public Builder setSnapshotProperties(
@@ -1299,7 +1299,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
      * </code>
      */
     public Builder mergeSnapshotProperties(
@@ -1333,7 +1333,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
      * </code>
      */
     public Builder clearSnapshotProperties() {
@@ -1354,7 +1354,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
      * </code>
      */
     public com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties
@@ -1372,7 +1372,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
      * </code>
      */
     public com.google.cloud.compute.v1
@@ -1395,7 +1395,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
+     * optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties snapshot_properties = 185371278;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

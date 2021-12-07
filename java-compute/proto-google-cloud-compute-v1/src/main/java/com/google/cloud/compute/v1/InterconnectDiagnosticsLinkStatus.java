@@ -279,7 +279,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    * The unique ID for this link assigned during turn up by Google.
    * </pre>
    *
-   * <code>string circuit_id = 225180977;</code>
+   * <code>optional string circuit_id = 225180977;</code>
    *
    * @return Whether the circuitId field is set.
    */
@@ -294,7 +294,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    * The unique ID for this link assigned during turn up by Google.
    * </pre>
    *
-   * <code>string circuit_id = 225180977;</code>
+   * <code>optional string circuit_id = 225180977;</code>
    *
    * @return The circuitId.
    */
@@ -317,7 +317,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    * The unique ID for this link assigned during turn up by Google.
    * </pre>
    *
-   * <code>string circuit_id = 225180977;</code>
+   * <code>optional string circuit_id = 225180977;</code>
    *
    * @return The bytes for circuitId.
    */
@@ -343,7 +343,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    * The Demarc address assigned by Google and provided in the LoA.
    * </pre>
    *
-   * <code>string google_demarc = 51084;</code>
+   * <code>optional string google_demarc = 51084;</code>
    *
    * @return Whether the googleDemarc field is set.
    */
@@ -358,7 +358,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    * The Demarc address assigned by Google and provided in the LoA.
    * </pre>
    *
-   * <code>string google_demarc = 51084;</code>
+   * <code>optional string google_demarc = 51084;</code>
    *
    * @return The googleDemarc.
    */
@@ -381,7 +381,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    * The Demarc address assigned by Google and provided in the LoA.
    * </pre>
    *
-   * <code>string google_demarc = 51084;</code>
+   * <code>optional string google_demarc = 51084;</code>
    *
    * @return The bytes for googleDemarc.
    */
@@ -401,7 +401,8 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
   public static final int LACP_STATUS_FIELD_NUMBER = 361210415;
   private com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacpStatus_;
   /**
-   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
+   * <code>
+   * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
    * </code>
    *
    * @return Whether the lacpStatus field is set.
@@ -411,7 +412,8 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
+   * <code>
+   * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
    * </code>
    *
    * @return The lacpStatus.
@@ -423,7 +425,8 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
         : lacpStatus_;
   }
   /**
-   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
+   * <code>
+   * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
    * </code>
    */
   @java.lang.Override
@@ -445,7 +448,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
+   * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
    * </code>
    *
    * @return Whether the receivingOpticalPower field is set.
@@ -462,7 +465,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
+   * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
    * </code>
    *
    * @return The receivingOpticalPower.
@@ -482,7 +485,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
+   * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
    * </code>
    */
   @java.lang.Override
@@ -504,7 +507,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
+   * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
    * </code>
    *
    * @return Whether the transmittingOpticalPower field is set.
@@ -521,7 +524,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
+   * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
    * </code>
    *
    * @return The transmittingOpticalPower.
@@ -541,7 +544,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
+   * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
    * </code>
    */
   @java.lang.Override
@@ -1478,7 +1481,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * The unique ID for this link assigned during turn up by Google.
      * </pre>
      *
-     * <code>string circuit_id = 225180977;</code>
+     * <code>optional string circuit_id = 225180977;</code>
      *
      * @return Whether the circuitId field is set.
      */
@@ -1492,7 +1495,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * The unique ID for this link assigned during turn up by Google.
      * </pre>
      *
-     * <code>string circuit_id = 225180977;</code>
+     * <code>optional string circuit_id = 225180977;</code>
      *
      * @return The circuitId.
      */
@@ -1514,7 +1517,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * The unique ID for this link assigned during turn up by Google.
      * </pre>
      *
-     * <code>string circuit_id = 225180977;</code>
+     * <code>optional string circuit_id = 225180977;</code>
      *
      * @return The bytes for circuitId.
      */
@@ -1536,7 +1539,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * The unique ID for this link assigned during turn up by Google.
      * </pre>
      *
-     * <code>string circuit_id = 225180977;</code>
+     * <code>optional string circuit_id = 225180977;</code>
      *
      * @param value The circuitId to set.
      * @return This builder for chaining.
@@ -1557,7 +1560,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * The unique ID for this link assigned during turn up by Google.
      * </pre>
      *
-     * <code>string circuit_id = 225180977;</code>
+     * <code>optional string circuit_id = 225180977;</code>
      *
      * @return This builder for chaining.
      */
@@ -1574,7 +1577,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * The unique ID for this link assigned during turn up by Google.
      * </pre>
      *
-     * <code>string circuit_id = 225180977;</code>
+     * <code>optional string circuit_id = 225180977;</code>
      *
      * @param value The bytes for circuitId to set.
      * @return This builder for chaining.
@@ -1598,7 +1601,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * The Demarc address assigned by Google and provided in the LoA.
      * </pre>
      *
-     * <code>string google_demarc = 51084;</code>
+     * <code>optional string google_demarc = 51084;</code>
      *
      * @return Whether the googleDemarc field is set.
      */
@@ -1612,7 +1615,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * The Demarc address assigned by Google and provided in the LoA.
      * </pre>
      *
-     * <code>string google_demarc = 51084;</code>
+     * <code>optional string google_demarc = 51084;</code>
      *
      * @return The googleDemarc.
      */
@@ -1634,7 +1637,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * The Demarc address assigned by Google and provided in the LoA.
      * </pre>
      *
-     * <code>string google_demarc = 51084;</code>
+     * <code>optional string google_demarc = 51084;</code>
      *
      * @return The bytes for googleDemarc.
      */
@@ -1656,7 +1659,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * The Demarc address assigned by Google and provided in the LoA.
      * </pre>
      *
-     * <code>string google_demarc = 51084;</code>
+     * <code>optional string google_demarc = 51084;</code>
      *
      * @param value The googleDemarc to set.
      * @return This builder for chaining.
@@ -1677,7 +1680,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * The Demarc address assigned by Google and provided in the LoA.
      * </pre>
      *
-     * <code>string google_demarc = 51084;</code>
+     * <code>optional string google_demarc = 51084;</code>
      *
      * @return This builder for chaining.
      */
@@ -1694,7 +1697,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * The Demarc address assigned by Google and provided in the LoA.
      * </pre>
      *
-     * <code>string google_demarc = 51084;</code>
+     * <code>optional string google_demarc = 51084;</code>
      *
      * @param value The bytes for googleDemarc to set.
      * @return This builder for chaining.
@@ -1717,7 +1720,8 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
             com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatusOrBuilder>
         lacpStatusBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
      * </code>
      *
      * @return Whether the lacpStatus field is set.
@@ -1726,7 +1730,8 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
      * </code>
      *
      * @return The lacpStatus.
@@ -1741,7 +1746,8 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
      * </code>
      */
     public Builder setLacpStatus(
@@ -1759,7 +1765,8 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
      * </code>
      */
     public Builder setLacpStatus(
@@ -1774,7 +1781,8 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
      * </code>
      */
     public Builder mergeLacpStatus(
@@ -1801,7 +1809,8 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
      * </code>
      */
     public Builder clearLacpStatus() {
@@ -1815,7 +1824,8 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.Builder
@@ -1825,7 +1835,8 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       return getLacpStatusFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatusOrBuilder
@@ -1839,7 +1850,8 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1874,7 +1886,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
      * </code>
      *
      * @return Whether the receivingOpticalPower field is set.
@@ -1890,7 +1902,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
      * </code>
      *
      * @return The receivingOpticalPower.
@@ -1914,7 +1926,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
      * </code>
      */
     public Builder setReceivingOpticalPower(
@@ -1939,7 +1951,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
      * </code>
      */
     public Builder setReceivingOpticalPower(
@@ -1962,7 +1974,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
      * </code>
      */
     public Builder mergeReceivingOpticalPower(
@@ -1996,7 +2008,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
      * </code>
      */
     public Builder clearReceivingOpticalPower() {
@@ -2017,7 +2029,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.Builder
@@ -2034,7 +2046,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPowerOrBuilder
@@ -2056,7 +2068,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower receiving_optical_power = 244717279;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2091,7 +2103,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
      * </code>
      *
      * @return Whether the transmittingOpticalPower field is set.
@@ -2107,7 +2119,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
      * </code>
      *
      * @return The transmittingOpticalPower.
@@ -2131,7 +2143,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
      * </code>
      */
     public Builder setTransmittingOpticalPower(
@@ -2156,7 +2168,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
      * </code>
      */
     public Builder setTransmittingOpticalPower(
@@ -2179,7 +2191,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
      * </code>
      */
     public Builder mergeTransmittingOpticalPower(
@@ -2213,7 +2225,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
      * </code>
      */
     public Builder clearTransmittingOpticalPower() {
@@ -2234,7 +2246,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.Builder
@@ -2251,7 +2263,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPowerOrBuilder
@@ -2273,7 +2285,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
+     * optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

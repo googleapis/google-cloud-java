@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Zone resource.
- * A zone is a deployment area. These deployment areas are subsets of a region. For example the zone us-east1-a is located in the us-east1 region. For more information, read Regions and Zones. (== resource_for {$api_version}.zones ==)
+ * Represents a Zone resource. A zone is a deployment area. These deployment areas are subsets of a region. For example the zone us-east1-a is located in the us-east1 region. For more information, read Regions and Zones.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Zone}
@@ -46,7 +45,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     region_ = "";
     selfLink_ = "";
-    status_ = 0;
+    status_ = "";
   }
 
   @java.lang.Override
@@ -129,11 +128,11 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
               availableCpuPlatforms_.add(s);
               break;
             }
-          case 1450082192:
+          case 1450082194:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000100;
-              status_ = rawValue;
+              status_ = s;
               break;
             }
           case -911466526:
@@ -398,7 +397,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -413,7 +412,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -436,7 +435,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -462,7 +461,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The deprecation status associated with this zone.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return Whether the deprecated field is set.
    */
@@ -477,7 +476,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The deprecation status associated with this zone.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return The deprecated.
    */
@@ -494,7 +493,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The deprecation status associated with this zone.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder() {
@@ -512,7 +511,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -527,7 +526,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -550,7 +549,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -576,7 +575,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -591,7 +590,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -609,7 +608,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#zone for zones.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -624,7 +623,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#zone for zones.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -647,7 +646,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#zone for zones.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -673,7 +672,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Name of the resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -688,7 +687,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Name of the resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -711,7 +710,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Name of the resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -737,7 +736,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Full URL reference to the region which hosts the zone.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -752,7 +751,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Full URL reference to the region which hosts the zone.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -775,7 +774,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Full URL reference to the region which hosts the zone.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -801,7 +800,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -816,7 +815,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -839,7 +838,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -857,15 +856,16 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    *
    *
    * <pre>
    * [Output Only] Status of the zone, either UP or DOWN.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Zone.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -878,33 +878,48 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * [Output Only] Status of the zone, either UP or DOWN.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Zone.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
   @java.lang.Override
-  public int getStatusValue() {
-    return status_;
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * [Output Only] Status of the zone, either UP or DOWN.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Zone.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.Zone.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Zone.Status result =
-        com.google.cloud.compute.v1.Zone.Status.valueOf(status_);
-    return result == null ? com.google.cloud.compute.v1.Zone.Status.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int SUPPORTS_PZS_FIELD_NUMBER = 83983214;
@@ -916,7 +931,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Reserved for future use.
    * </pre>
    *
-   * <code>bool supports_pzs = 83983214;</code>
+   * <code>optional bool supports_pzs = 83983214;</code>
    *
    * @return Whether the supportsPzs field is set.
    */
@@ -931,7 +946,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Reserved for future use.
    * </pre>
    *
-   * <code>bool supports_pzs = 83983214;</code>
+   * <code>optional bool supports_pzs = 83983214;</code>
    *
    * @return The supportsPzs.
    */
@@ -977,7 +992,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
           output, 175536531, availableCpuPlatforms_.getRaw(i));
     }
     if (((bitField0_ & 0x00000100) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
@@ -1025,7 +1040,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       size += 5 * getAvailableCpuPlatformsList().size();
     }
     if (((bitField0_ & 0x00000100) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
@@ -1086,7 +1101,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus().equals(other.getStatus())) return false;
     }
     if (hasSupportsPzs() != other.hasSupportsPzs()) return false;
     if (hasSupportsPzs()) {
@@ -1141,7 +1156,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     if (hasSupportsPzs()) {
       hash = (37 * hash) + SUPPORTS_PZS_FIELD_NUMBER;
@@ -1250,8 +1265,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Zone resource.
-   * A zone is a deployment area. These deployment areas are subsets of a region. For example the zone us-east1-a is located in the us-east1 region. For more information, read Regions and Zones. (== resource_for {$api_version}.zones ==)
+   * Represents a Zone resource. A zone is a deployment area. These deployment areas are subsets of a region. For example the zone us-east1-a is located in the us-east1 region. For more information, read Regions and Zones.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Zone}
@@ -1316,7 +1330,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000080);
       selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
       supportsPzs_ = false;
       bitField0_ = (bitField0_ & ~0x00000400);
@@ -1494,7 +1508,9 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00000200;
+        status_ = other.status_;
+        onChanged();
       }
       if (other.hasSupportsPzs()) {
         setSupportsPzs(other.getSupportsPzs());
@@ -1707,7 +1723,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -1721,7 +1737,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -1743,7 +1759,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -1765,7 +1781,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -1786,7 +1802,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -1803,7 +1819,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -1832,7 +1848,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this zone.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      *
      * @return Whether the deprecated field is set.
      */
@@ -1846,7 +1862,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this zone.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      *
      * @return The deprecated.
      */
@@ -1866,7 +1882,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this zone.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public Builder setDeprecated(com.google.cloud.compute.v1.DeprecationStatus value) {
       if (deprecatedBuilder_ == null) {
@@ -1888,7 +1904,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this zone.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public Builder setDeprecated(
         com.google.cloud.compute.v1.DeprecationStatus.Builder builderForValue) {
@@ -1908,7 +1924,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this zone.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public Builder mergeDeprecated(com.google.cloud.compute.v1.DeprecationStatus value) {
       if (deprecatedBuilder_ == null) {
@@ -1936,7 +1952,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this zone.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public Builder clearDeprecated() {
       if (deprecatedBuilder_ == null) {
@@ -1955,7 +1971,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this zone.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public com.google.cloud.compute.v1.DeprecationStatus.Builder getDeprecatedBuilder() {
       bitField0_ |= 0x00000004;
@@ -1969,7 +1985,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this zone.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder() {
       if (deprecatedBuilder_ != null) {
@@ -1987,7 +2003,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this zone.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.DeprecationStatus,
@@ -2014,7 +2030,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -2028,7 +2044,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -2050,7 +2066,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -2072,7 +2088,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2093,7 +2109,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -2110,7 +2126,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2134,7 +2150,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -2149,7 +2165,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -2164,7 +2180,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -2182,7 +2198,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -2201,7 +2217,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#zone for zones.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -2215,7 +2231,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#zone for zones.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -2237,7 +2253,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#zone for zones.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -2259,7 +2275,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#zone for zones.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -2280,7 +2296,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#zone for zones.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -2297,7 +2313,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#zone for zones.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -2321,7 +2337,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the resource.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -2335,7 +2351,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the resource.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -2357,7 +2373,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the resource.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -2379,7 +2395,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the resource.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2400,7 +2416,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the resource.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -2417,7 +2433,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the resource.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2441,7 +2457,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Full URL reference to the region which hosts the zone.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return Whether the region field is set.
      */
@@ -2455,7 +2471,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Full URL reference to the region which hosts the zone.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The region.
      */
@@ -2477,7 +2493,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Full URL reference to the region which hosts the zone.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The bytes for region.
      */
@@ -2499,7 +2515,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Full URL reference to the region which hosts the zone.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -2520,7 +2536,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Full URL reference to the region which hosts the zone.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return This builder for chaining.
      */
@@ -2537,7 +2553,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Full URL reference to the region which hosts the zone.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.
@@ -2561,7 +2577,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -2575,7 +2591,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -2597,7 +2613,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2619,7 +2635,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2640,7 +2656,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -2657,7 +2673,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2673,19 +2689,19 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      *
      *
      * <pre>
      * [Output Only] Status of the zone, either UP or DOWN.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Zone.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
      * @return Whether the status field is set.
      */
-    @java.lang.Override
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000200) != 0);
     }
@@ -2694,29 +2710,64 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] Status of the zone, either UP or DOWN.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Zone.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The enum numeric value on the wire for status.
+     * @return The status.
      */
-    @java.lang.Override
-    public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * [Output Only] Status of the zone, either UP or DOWN.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Zone.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @param value The enum numeric value on the wire for status to set.
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Status of the zone, either UP or DOWN.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     *
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
+    public Builder setStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000200;
       status_ = value;
       onChanged();
@@ -2727,37 +2778,16 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] Status of the zone, either UP or DOWN.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Zone.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Zone.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Zone.Status result =
-          com.google.cloud.compute.v1.Zone.Status.valueOf(status_);
-      return result == null ? com.google.cloud.compute.v1.Zone.Status.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] Status of the zone, either UP or DOWN.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.Zone.Status status = 181260274;</code>
-     *
-     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloud.compute.v1.Zone.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000200;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
@@ -2766,15 +2796,21 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output Only] Status of the zone, either UP or DOWN.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Zone.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      *
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000200);
-      status_ = 0;
+    public Builder setStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000200;
+      status_ = value;
       onChanged();
       return this;
     }
@@ -2787,7 +2823,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Reserved for future use.
      * </pre>
      *
-     * <code>bool supports_pzs = 83983214;</code>
+     * <code>optional bool supports_pzs = 83983214;</code>
      *
      * @return Whether the supportsPzs field is set.
      */
@@ -2802,7 +2838,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Reserved for future use.
      * </pre>
      *
-     * <code>bool supports_pzs = 83983214;</code>
+     * <code>optional bool supports_pzs = 83983214;</code>
      *
      * @return The supportsPzs.
      */
@@ -2817,7 +2853,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Reserved for future use.
      * </pre>
      *
-     * <code>bool supports_pzs = 83983214;</code>
+     * <code>optional bool supports_pzs = 83983214;</code>
      *
      * @param value The supportsPzs to set.
      * @return This builder for chaining.
@@ -2835,7 +2871,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Reserved for future use.
      * </pre>
      *
-     * <code>bool supports_pzs = 83983214;</code>
+     * <code>optional bool supports_pzs = 83983214;</code>
      *
      * @return This builder for chaining.
      */

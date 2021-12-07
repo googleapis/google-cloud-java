@@ -45,7 +45,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     ipCidrRange_ = "";
     name_ = "";
     region_ = "";
-    status_ = 0;
+    status_ = "";
   }
 
   @java.lang.Override
@@ -99,11 +99,11 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
               region_ = s;
               break;
             }
-          case 1450082192:
+          case 1450082194:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000040;
-              status_ = rawValue;
+              status_ = s;
               break;
             }
           case -1474023688:
@@ -300,7 +300,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    * Name of the project scoping this PublicDelegatedSubPrefix.
    * </pre>
    *
-   * <code>string delegatee_project = 414860634;</code>
+   * <code>optional string delegatee_project = 414860634;</code>
    *
    * @return Whether the delegateeProject field is set.
    */
@@ -315,7 +315,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    * Name of the project scoping this PublicDelegatedSubPrefix.
    * </pre>
    *
-   * <code>string delegatee_project = 414860634;</code>
+   * <code>optional string delegatee_project = 414860634;</code>
    *
    * @return The delegateeProject.
    */
@@ -338,7 +338,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    * Name of the project scoping this PublicDelegatedSubPrefix.
    * </pre>
    *
-   * <code>string delegatee_project = 414860634;</code>
+   * <code>optional string delegatee_project = 414860634;</code>
    *
    * @return The bytes for delegateeProject.
    */
@@ -364,7 +364,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -379,7 +379,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -402,7 +402,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -428,7 +428,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return Whether the ipCidrRange field is set.
    */
@@ -443,7 +443,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return The ipCidrRange.
    */
@@ -466,7 +466,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return The bytes for ipCidrRange.
    */
@@ -492,7 +492,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    * Whether the sub prefix is delegated to create Address resources in the delegatee project.
    * </pre>
    *
-   * <code>bool is_address = 352617951;</code>
+   * <code>optional bool is_address = 352617951;</code>
    *
    * @return Whether the isAddress field is set.
    */
@@ -507,7 +507,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    * Whether the sub prefix is delegated to create Address resources in the delegatee project.
    * </pre>
    *
-   * <code>bool is_address = 352617951;</code>
+   * <code>optional bool is_address = 352617951;</code>
    *
    * @return The isAddress.
    */
@@ -525,7 +525,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    * The name of the sub public delegated prefix.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -540,7 +540,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    * The name of the sub public delegated prefix.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -563,7 +563,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    * The name of the sub public delegated prefix.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -589,7 +589,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -604,7 +604,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -627,7 +627,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -645,17 +645,16 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    *
    *
    * <pre>
    * [Output Only] The status of the sub public delegated prefix.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status status = 181260274;
-   * </code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -668,42 +667,48 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    *
    * <pre>
    * [Output Only] The status of the sub public delegated prefix.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status status = 181260274;
-   * </code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
   @java.lang.Override
-  public int getStatusValue() {
-    return status_;
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * [Output Only] The status of the sub public delegated prefix.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status status = 181260274;
-   * </code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status
-      getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status result =
-        com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status.valueOf(
-            status_);
-    return result == null
-        ? com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status
-            .UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -730,7 +735,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeBool(352617951, isAddress_);
@@ -760,7 +765,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(352617951, isAddress_);
@@ -815,7 +820,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus().equals(other.getStatus())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -854,7 +859,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1017,7 +1022,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       bitField0_ = (bitField0_ & ~0x00000010);
       region_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
@@ -1164,7 +1169,9 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         onChanged();
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00000040;
+        status_ = other.status_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1208,7 +1215,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * Name of the project scoping this PublicDelegatedSubPrefix.
      * </pre>
      *
-     * <code>string delegatee_project = 414860634;</code>
+     * <code>optional string delegatee_project = 414860634;</code>
      *
      * @return Whether the delegateeProject field is set.
      */
@@ -1222,7 +1229,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * Name of the project scoping this PublicDelegatedSubPrefix.
      * </pre>
      *
-     * <code>string delegatee_project = 414860634;</code>
+     * <code>optional string delegatee_project = 414860634;</code>
      *
      * @return The delegateeProject.
      */
@@ -1244,7 +1251,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * Name of the project scoping this PublicDelegatedSubPrefix.
      * </pre>
      *
-     * <code>string delegatee_project = 414860634;</code>
+     * <code>optional string delegatee_project = 414860634;</code>
      *
      * @return The bytes for delegateeProject.
      */
@@ -1266,7 +1273,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * Name of the project scoping this PublicDelegatedSubPrefix.
      * </pre>
      *
-     * <code>string delegatee_project = 414860634;</code>
+     * <code>optional string delegatee_project = 414860634;</code>
      *
      * @param value The delegateeProject to set.
      * @return This builder for chaining.
@@ -1287,7 +1294,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * Name of the project scoping this PublicDelegatedSubPrefix.
      * </pre>
      *
-     * <code>string delegatee_project = 414860634;</code>
+     * <code>optional string delegatee_project = 414860634;</code>
      *
      * @return This builder for chaining.
      */
@@ -1304,7 +1311,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * Name of the project scoping this PublicDelegatedSubPrefix.
      * </pre>
      *
-     * <code>string delegatee_project = 414860634;</code>
+     * <code>optional string delegatee_project = 414860634;</code>
      *
      * @param value The bytes for delegateeProject to set.
      * @return This builder for chaining.
@@ -1328,7 +1335,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -1342,7 +1349,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1364,7 +1371,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1386,7 +1393,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1407,7 +1414,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -1424,7 +1431,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1448,7 +1455,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return Whether the ipCidrRange field is set.
      */
@@ -1462,7 +1469,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return The ipCidrRange.
      */
@@ -1484,7 +1491,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return The bytes for ipCidrRange.
      */
@@ -1506,7 +1513,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @param value The ipCidrRange to set.
      * @return This builder for chaining.
@@ -1527,7 +1534,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return This builder for chaining.
      */
@@ -1544,7 +1551,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @param value The bytes for ipCidrRange to set.
      * @return This builder for chaining.
@@ -1568,7 +1575,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * Whether the sub prefix is delegated to create Address resources in the delegatee project.
      * </pre>
      *
-     * <code>bool is_address = 352617951;</code>
+     * <code>optional bool is_address = 352617951;</code>
      *
      * @return Whether the isAddress field is set.
      */
@@ -1583,7 +1590,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * Whether the sub prefix is delegated to create Address resources in the delegatee project.
      * </pre>
      *
-     * <code>bool is_address = 352617951;</code>
+     * <code>optional bool is_address = 352617951;</code>
      *
      * @return The isAddress.
      */
@@ -1598,7 +1605,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * Whether the sub prefix is delegated to create Address resources in the delegatee project.
      * </pre>
      *
-     * <code>bool is_address = 352617951;</code>
+     * <code>optional bool is_address = 352617951;</code>
      *
      * @param value The isAddress to set.
      * @return This builder for chaining.
@@ -1616,7 +1623,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * Whether the sub prefix is delegated to create Address resources in the delegatee project.
      * </pre>
      *
-     * <code>bool is_address = 352617951;</code>
+     * <code>optional bool is_address = 352617951;</code>
      *
      * @return This builder for chaining.
      */
@@ -1635,7 +1642,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * The name of the sub public delegated prefix.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -1649,7 +1656,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * The name of the sub public delegated prefix.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -1671,7 +1678,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * The name of the sub public delegated prefix.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -1693,7 +1700,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * The name of the sub public delegated prefix.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1714,7 +1721,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * The name of the sub public delegated prefix.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -1731,7 +1738,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * The name of the sub public delegated prefix.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1755,7 +1762,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return Whether the region field is set.
      */
@@ -1769,7 +1776,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The region.
      */
@@ -1791,7 +1798,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The bytes for region.
      */
@@ -1813,7 +1820,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -1834,7 +1841,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return This builder for chaining.
      */
@@ -1851,7 +1858,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.
@@ -1867,21 +1874,19 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       return this;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      *
      *
      * <pre>
      * [Output Only] The status of the sub public delegated prefix.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status status = 181260274;
-     * </code>
+     * <code>optional string status = 181260274;</code>
      *
      * @return Whether the status field is set.
      */
-    @java.lang.Override
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000040) != 0);
     }
@@ -1890,33 +1895,64 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      * <pre>
      * [Output Only] The status of the sub public delegated prefix.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status status = 181260274;
-     * </code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The enum numeric value on the wire for status.
+     * @return The status.
      */
-    @java.lang.Override
-    public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * [Output Only] The status of the sub public delegated prefix.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status status = 181260274;
-     * </code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @param value The enum numeric value on the wire for status to set.
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The status of the sub public delegated prefix.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     *
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
+    public Builder setStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000040;
       status_ = value;
       onChanged();
@@ -1927,47 +1963,16 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      * <pre>
      * [Output Only] The status of the sub public delegated prefix.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status status = 181260274;
-     * </code>
+     * <code>optional string status = 181260274;</code>
      *
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status
-        getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status result =
-          com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status.valueOf(
-              status_);
-      return result == null
-          ? com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status
-              .UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Output Only] The status of the sub public delegated prefix.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status status = 181260274;
-     * </code>
-     *
-     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(
-        com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000040;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
@@ -1976,17 +1981,21 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      * <pre>
      * [Output Only] The status of the sub public delegated prefix.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status status = 181260274;
-     * </code>
+     * <code>optional string status = 181260274;</code>
      *
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000040);
-      status_ = 0;
+    public Builder setStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000040;
+      status_ = value;
       onChanged();
       return this;
     }

@@ -80,7 +80,7 @@ public interface GetGuestAttributesInstanceRequestOrBuilder
    * Specifies the guest attributes path to be queried.
    * </pre>
    *
-   * <code>string query_path = 368591164;</code>
+   * <code>optional string query_path = 368591164;</code>
    *
    * @return Whether the queryPath field is set.
    */
@@ -92,7 +92,7 @@ public interface GetGuestAttributesInstanceRequestOrBuilder
    * Specifies the guest attributes path to be queried.
    * </pre>
    *
-   * <code>string query_path = 368591164;</code>
+   * <code>optional string query_path = 368591164;</code>
    *
    * @return The queryPath.
    */
@@ -104,7 +104,7 @@ public interface GetGuestAttributesInstanceRequestOrBuilder
    * Specifies the guest attributes path to be queried.
    * </pre>
    *
-   * <code>string query_path = 368591164;</code>
+   * <code>optional string query_path = 368591164;</code>
    *
    * @return The bytes for queryPath.
    */
@@ -117,7 +117,7 @@ public interface GetGuestAttributesInstanceRequestOrBuilder
    * Specifies the key for the guest attributes entry.
    * </pre>
    *
-   * <code>string variable_key = 164364828;</code>
+   * <code>optional string variable_key = 164364828;</code>
    *
    * @return Whether the variableKey field is set.
    */
@@ -129,7 +129,7 @@ public interface GetGuestAttributesInstanceRequestOrBuilder
    * Specifies the key for the guest attributes entry.
    * </pre>
    *
-   * <code>string variable_key = 164364828;</code>
+   * <code>optional string variable_key = 164364828;</code>
    *
    * @return The variableKey.
    */
@@ -141,7 +141,7 @@ public interface GetGuestAttributesInstanceRequestOrBuilder
    * Specifies the key for the guest attributes entry.
    * </pre>
    *
-   * <code>string variable_key = 164364828;</code>
+   * <code>optional string variable_key = 164364828;</code>
    *
    * @return The bytes for variableKey.
    */

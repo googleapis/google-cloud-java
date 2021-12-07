@@ -140,7 +140,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
    * Service Directory namespace to register the forwarding rule under.
    * </pre>
    *
-   * <code>string namespace = 178476379;</code>
+   * <code>optional string namespace = 178476379;</code>
    *
    * @return Whether the namespace field is set.
    */
@@ -155,7 +155,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
    * Service Directory namespace to register the forwarding rule under.
    * </pre>
    *
-   * <code>string namespace = 178476379;</code>
+   * <code>optional string namespace = 178476379;</code>
    *
    * @return The namespace.
    */
@@ -178,7 +178,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
    * Service Directory namespace to register the forwarding rule under.
    * </pre>
    *
-   * <code>string namespace = 178476379;</code>
+   * <code>optional string namespace = 178476379;</code>
    *
    * @return The bytes for namespace.
    */
@@ -204,7 +204,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
    * Service Directory service to register the forwarding rule under.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>optional string service = 373540533;</code>
    *
    * @return Whether the service field is set.
    */
@@ -219,7 +219,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
    * Service Directory service to register the forwarding rule under.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>optional string service = 373540533;</code>
    *
    * @return The service.
    */
@@ -242,7 +242,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
    * Service Directory service to register the forwarding rule under.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>optional string service = 373540533;</code>
    *
    * @return The bytes for service.
    */
@@ -268,7 +268,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
    * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs Forwarding Rules on the same network should use the same Service Directory region.
    * </pre>
    *
-   * <code>string service_directory_region = 74030416;</code>
+   * <code>optional string service_directory_region = 74030416;</code>
    *
    * @return Whether the serviceDirectoryRegion field is set.
    */
@@ -283,7 +283,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
    * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs Forwarding Rules on the same network should use the same Service Directory region.
    * </pre>
    *
-   * <code>string service_directory_region = 74030416;</code>
+   * <code>optional string service_directory_region = 74030416;</code>
    *
    * @return The serviceDirectoryRegion.
    */
@@ -306,7 +306,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
    * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs Forwarding Rules on the same network should use the same Service Directory region.
    * </pre>
    *
-   * <code>string service_directory_region = 74030416;</code>
+   * <code>optional string service_directory_region = 74030416;</code>
    *
    * @return The bytes for serviceDirectoryRegion.
    */
@@ -725,7 +725,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * Service Directory namespace to register the forwarding rule under.
      * </pre>
      *
-     * <code>string namespace = 178476379;</code>
+     * <code>optional string namespace = 178476379;</code>
      *
      * @return Whether the namespace field is set.
      */
@@ -739,7 +739,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * Service Directory namespace to register the forwarding rule under.
      * </pre>
      *
-     * <code>string namespace = 178476379;</code>
+     * <code>optional string namespace = 178476379;</code>
      *
      * @return The namespace.
      */
@@ -761,7 +761,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * Service Directory namespace to register the forwarding rule under.
      * </pre>
      *
-     * <code>string namespace = 178476379;</code>
+     * <code>optional string namespace = 178476379;</code>
      *
      * @return The bytes for namespace.
      */
@@ -783,7 +783,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * Service Directory namespace to register the forwarding rule under.
      * </pre>
      *
-     * <code>string namespace = 178476379;</code>
+     * <code>optional string namespace = 178476379;</code>
      *
      * @param value The namespace to set.
      * @return This builder for chaining.
@@ -804,7 +804,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * Service Directory namespace to register the forwarding rule under.
      * </pre>
      *
-     * <code>string namespace = 178476379;</code>
+     * <code>optional string namespace = 178476379;</code>
      *
      * @return This builder for chaining.
      */
@@ -821,7 +821,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * Service Directory namespace to register the forwarding rule under.
      * </pre>
      *
-     * <code>string namespace = 178476379;</code>
+     * <code>optional string namespace = 178476379;</code>
      *
      * @param value The bytes for namespace to set.
      * @return This builder for chaining.
@@ -845,7 +845,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * Service Directory service to register the forwarding rule under.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @return Whether the service field is set.
      */
@@ -859,7 +859,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * Service Directory service to register the forwarding rule under.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @return The service.
      */
@@ -881,7 +881,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * Service Directory service to register the forwarding rule under.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @return The bytes for service.
      */
@@ -903,7 +903,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * Service Directory service to register the forwarding rule under.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @param value The service to set.
      * @return This builder for chaining.
@@ -924,7 +924,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * Service Directory service to register the forwarding rule under.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @return This builder for chaining.
      */
@@ -941,7 +941,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * Service Directory service to register the forwarding rule under.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>optional string service = 373540533;</code>
      *
      * @param value The bytes for service to set.
      * @return This builder for chaining.
@@ -965,7 +965,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs Forwarding Rules on the same network should use the same Service Directory region.
      * </pre>
      *
-     * <code>string service_directory_region = 74030416;</code>
+     * <code>optional string service_directory_region = 74030416;</code>
      *
      * @return Whether the serviceDirectoryRegion field is set.
      */
@@ -979,7 +979,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs Forwarding Rules on the same network should use the same Service Directory region.
      * </pre>
      *
-     * <code>string service_directory_region = 74030416;</code>
+     * <code>optional string service_directory_region = 74030416;</code>
      *
      * @return The serviceDirectoryRegion.
      */
@@ -1001,7 +1001,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs Forwarding Rules on the same network should use the same Service Directory region.
      * </pre>
      *
-     * <code>string service_directory_region = 74030416;</code>
+     * <code>optional string service_directory_region = 74030416;</code>
      *
      * @return The bytes for serviceDirectoryRegion.
      */
@@ -1023,7 +1023,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs Forwarding Rules on the same network should use the same Service Directory region.
      * </pre>
      *
-     * <code>string service_directory_region = 74030416;</code>
+     * <code>optional string service_directory_region = 74030416;</code>
      *
      * @param value The serviceDirectoryRegion to set.
      * @return This builder for chaining.
@@ -1044,7 +1044,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs Forwarding Rules on the same network should use the same Service Directory region.
      * </pre>
      *
-     * <code>string service_directory_region = 74030416;</code>
+     * <code>optional string service_directory_region = 74030416;</code>
      *
      * @return This builder for chaining.
      */
@@ -1061,7 +1061,7 @@ public final class ForwardingRuleServiceDirectoryRegistration
      * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs Forwarding Rules on the same network should use the same Service Directory region.
      * </pre>
      *
-     * <code>string service_directory_region = 74030416;</code>
+     * <code>optional string service_directory_region = 74030416;</code>
      *
      * @param value The bytes for serviceDirectoryRegion to set.
      * @return This builder for chaining.

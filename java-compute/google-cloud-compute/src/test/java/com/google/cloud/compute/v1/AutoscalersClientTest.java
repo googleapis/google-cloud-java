@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonAutoscalersStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -37,6 +38,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -142,7 +144,7 @@ public class AutoscalersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -153,6 +155,7 @@ public class AutoscalersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -166,7 +169,7 @@ public class AutoscalersClientTest {
     String zone = "zone3744684";
     String autoscaler = "autoscaler517258967";
 
-    Operation actualResponse = client.delete(project, zone, autoscaler);
+    Operation actualResponse = client.deleteAsync(project, zone, autoscaler).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -195,10 +198,9 @@ public class AutoscalersClientTest {
       String project = "project-309310695";
       String zone = "zone3744684";
       String autoscaler = "autoscaler517258967";
-      client.delete(project, zone, autoscaler);
+      client.deleteAsync(project, zone, autoscaler).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -216,6 +218,7 @@ public class AutoscalersClientTest {
             .setRegion("region-934795532")
             .putAllScalingScheduleStatus(new HashMap<String, ScalingScheduleStatus>())
             .setSelfLink("selfLink1191800166")
+            .setStatus("status-892481550")
             .addAllStatusDetails(new ArrayList<AutoscalerStatusDetails>())
             .setTarget("target-880905839")
             .setZone("zone3744684")
@@ -272,7 +275,7 @@ public class AutoscalersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -283,6 +286,7 @@ public class AutoscalersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -296,7 +300,7 @@ public class AutoscalersClientTest {
     String zone = "zone3744684";
     Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, zone, autoscalerResource);
+    Operation actualResponse = client.insertAsync(project, zone, autoscalerResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -325,10 +329,9 @@ public class AutoscalersClientTest {
       String project = "project-309310695";
       String zone = "zone3744684";
       Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
-      client.insert(project, zone, autoscalerResource);
+      client.insertAsync(project, zone, autoscalerResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -394,7 +397,7 @@ public class AutoscalersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -405,6 +408,7 @@ public class AutoscalersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -418,7 +422,7 @@ public class AutoscalersClientTest {
     String zone = "zone3744684";
     Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
-    Operation actualResponse = client.patch(project, zone, autoscalerResource);
+    Operation actualResponse = client.patchAsync(project, zone, autoscalerResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -447,10 +451,9 @@ public class AutoscalersClientTest {
       String project = "project-309310695";
       String zone = "zone3744684";
       Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
-      client.patch(project, zone, autoscalerResource);
+      client.patchAsync(project, zone, autoscalerResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -464,7 +467,7 @@ public class AutoscalersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -475,6 +478,7 @@ public class AutoscalersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -488,7 +492,7 @@ public class AutoscalersClientTest {
     String zone = "zone3744684";
     Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
-    Operation actualResponse = client.update(project, zone, autoscalerResource);
+    Operation actualResponse = client.updateAsync(project, zone, autoscalerResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -517,10 +521,9 @@ public class AutoscalersClientTest {
       String project = "project-309310695";
       String zone = "zone3744684";
       Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
-      client.update(project, zone, autoscalerResource);
+      client.updateAsync(project, zone, autoscalerResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 }

@@ -27,13 +27,10 @@ public interface GRPCHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-   * - Empty service_name means the overall status of all services at the backend.
-   * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-   * The grpc_service_name can only be ASCII.
+   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
    * </pre>
    *
-   * <code>string grpc_service_name = 136533078;</code>
+   * <code>optional string grpc_service_name = 136533078;</code>
    *
    * @return Whether the grpcServiceName field is set.
    */
@@ -42,13 +39,10 @@ public interface GRPCHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-   * - Empty service_name means the overall status of all services at the backend.
-   * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-   * The grpc_service_name can only be ASCII.
+   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
    * </pre>
    *
-   * <code>string grpc_service_name = 136533078;</code>
+   * <code>optional string grpc_service_name = 136533078;</code>
    *
    * @return The grpcServiceName.
    */
@@ -57,13 +51,10 @@ public interface GRPCHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-   * - Empty service_name means the overall status of all services at the backend.
-   * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-   * The grpc_service_name can only be ASCII.
+   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
    * </pre>
    *
-   * <code>string grpc_service_name = 136533078;</code>
+   * <code>optional string grpc_service_name = 136533078;</code>
    *
    * @return The bytes for grpcServiceName.
    */
@@ -76,7 +67,7 @@ public interface GRPCHealthCheckOrBuilder
    * The port number for the health check request. Must be specified if port_name and port_specification are not set or if port_specification is USE_FIXED_PORT. Valid values are 1 through 65535.
    * </pre>
    *
-   * <code>int32 port = 3446913;</code>
+   * <code>optional int32 port = 3446913;</code>
    *
    * @return Whether the port field is set.
    */
@@ -88,7 +79,7 @@ public interface GRPCHealthCheckOrBuilder
    * The port number for the health check request. Must be specified if port_name and port_specification are not set or if port_specification is USE_FIXED_PORT. Valid values are 1 through 65535.
    * </pre>
    *
-   * <code>int32 port = 3446913;</code>
+   * <code>optional int32 port = 3446913;</code>
    *
    * @return The port.
    */
@@ -101,7 +92,7 @@ public interface GRPCHealthCheckOrBuilder
    * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence. The port_name should conform to RFC1035.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return Whether the portName field is set.
    */
@@ -113,7 +104,7 @@ public interface GRPCHealthCheckOrBuilder
    * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence. The port_name should conform to RFC1035.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return The portName.
    */
@@ -125,7 +116,7 @@ public interface GRPCHealthCheckOrBuilder
    * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence. The port_name should conform to RFC1035.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return The bytes for portName.
    */
@@ -135,15 +126,11 @@ public interface GRPCHealthCheckOrBuilder
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;
-   * </code>
+   * <code>optional string port_specification = 51590597;</code>
    *
    * @return Whether the portSpecification field is set.
    */
@@ -152,34 +139,26 @@ public interface GRPCHealthCheckOrBuilder
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;
-   * </code>
+   * <code>optional string port_specification = 51590597;</code>
    *
-   * @return The enum numeric value on the wire for portSpecification.
+   * @return The portSpecification.
    */
-  int getPortSpecificationValue();
+  java.lang.String getPortSpecification();
   /**
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;
-   * </code>
+   * <code>optional string port_specification = 51590597;</code>
    *
-   * @return The portSpecification.
+   * @return The bytes for portSpecification.
    */
-  com.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification getPortSpecification();
+  com.google.protobuf.ByteString getPortSpecificationBytes();
 }

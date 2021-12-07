@@ -22,10 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Managed Instance Group resource.
- * An instance group is a collection of VM instances that you can manage as a single entity. For more information, read Instance groups.
- * For zonal Managed Instance Group, use the instanceGroupManagers resource.
- * For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (== resource_for {$api_version}.instanceGroupManagers ==) (== resource_for {$api_version}.regionInstanceGroupManagers ==)
+ * Represents a Managed Instance Group resource. An instance group is a collection of VM instances that you can manage as a single entity. For more information, read Instance groups. For zonal Managed Instance Group, use the instanceGroupManagers resource. For regional Managed Instance Group, use the regionInstanceGroupManagers resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InstanceGroupManager}
@@ -451,7 +448,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
    * </pre>
    *
-   * <code>string base_instance_name = 389106439;</code>
+   * <code>optional string base_instance_name = 389106439;</code>
    *
    * @return Whether the baseInstanceName field is set.
    */
@@ -466,7 +463,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
    * </pre>
    *
-   * <code>string base_instance_name = 389106439;</code>
+   * <code>optional string base_instance_name = 389106439;</code>
    *
    * @return The baseInstanceName.
    */
@@ -489,7 +486,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
    * </pre>
    *
-   * <code>string base_instance_name = 389106439;</code>
+   * <code>optional string base_instance_name = 389106439;</code>
    *
    * @return The bytes for baseInstanceName.
    */
@@ -515,7 +512,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -530,7 +527,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -553,7 +550,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -579,7 +576,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The list of instance actions and the number of instances in this managed instance group that are scheduled for each of those actions.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
    * </code>
    *
    * @return Whether the currentActions field is set.
@@ -595,7 +593,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The list of instance actions and the number of instances in this managed instance group that are scheduled for each of those actions.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
    * </code>
    *
    * @return The currentActions.
@@ -613,7 +612,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The list of instance actions and the number of instances in this managed instance group that are scheduled for each of those actions.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
    * </code>
    */
   @java.lang.Override
@@ -630,10 +630,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -645,10 +645,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -668,10 +668,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -697,7 +697,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+   * <code>optional .google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;
+   * </code>
    *
    * @return Whether the distributionPolicy field is set.
    */
@@ -712,7 +713,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+   * <code>optional .google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;
+   * </code>
    *
    * @return The distributionPolicy.
    */
@@ -729,7 +731,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+   * <code>optional .google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DistributionPolicyOrBuilder getDistributionPolicyOrBuilder() {
@@ -744,11 +747,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return Whether the fingerprint field is set.
    */
@@ -760,11 +762,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The fingerprint.
    */
@@ -784,11 +785,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The bytes for fingerprint.
    */
@@ -814,7 +814,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] A unique identifier for this resource type. The server generates this identifier.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -829,7 +829,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] A unique identifier for this resource type. The server generates this identifier.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -847,7 +847,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The URL of the Instance Group resource.
    * </pre>
    *
-   * <code>string instance_group = 81095253;</code>
+   * <code>optional string instance_group = 81095253;</code>
    *
    * @return Whether the instanceGroup field is set.
    */
@@ -862,7 +862,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The URL of the Instance Group resource.
    * </pre>
    *
-   * <code>string instance_group = 81095253;</code>
+   * <code>optional string instance_group = 81095253;</code>
    *
    * @return The instanceGroup.
    */
@@ -885,7 +885,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The URL of the Instance Group resource.
    * </pre>
    *
-   * <code>string instance_group = 81095253;</code>
+   * <code>optional string instance_group = 81095253;</code>
    *
    * @return The bytes for instanceGroup.
    */
@@ -911,7 +911,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>optional string instance_template = 309248228;</code>
    *
    * @return Whether the instanceTemplate field is set.
    */
@@ -926,7 +926,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>optional string instance_template = 309248228;</code>
    *
    * @return The instanceTemplate.
    */
@@ -949,7 +949,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>optional string instance_template = 309248228;</code>
    *
    * @return The bytes for instanceTemplate.
    */
@@ -975,7 +975,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -990,7 +990,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -1013,7 +1013,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -1039,7 +1039,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -1054,7 +1054,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -1077,7 +1077,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -1172,7 +1172,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The URL of the region where the managed instance group resides (for regional resources).
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -1187,7 +1187,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The URL of the region where the managed instance group resides (for regional resources).
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -1210,7 +1210,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The URL of the region where the managed instance group resides (for regional resources).
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -1236,7 +1236,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The URL for this managed instance group. The server defines this URL.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -1251,7 +1251,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The URL for this managed instance group. The server defines this URL.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1274,7 +1274,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The URL for this managed instance group. The server defines this URL.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1300,7 +1300,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * Stateful configuration for this Instanced Group Manager
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
+   * <code>optional .google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
    *
    * @return Whether the statefulPolicy field is set.
    */
@@ -1315,7 +1315,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * Stateful configuration for this Instanced Group Manager
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
+   * <code>optional .google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
    *
    * @return The statefulPolicy.
    */
@@ -1332,7 +1332,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * Stateful configuration for this Instanced Group Manager
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
+   * <code>optional .google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.StatefulPolicyOrBuilder getStatefulPolicyOrBuilder() {
@@ -1350,7 +1350,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The status of this managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
+   * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -1365,7 +1365,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The status of this managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
+   * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
    *
    * @return The status.
    */
@@ -1382,7 +1382,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The status of this managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
+   * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.InstanceGroupManagerStatusOrBuilder getStatusOrBuilder() {
@@ -1461,7 +1461,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
    * </pre>
    *
-   * <code>int32 target_size = 62880239;</code>
+   * <code>optional int32 target_size = 62880239;</code>
    *
    * @return Whether the targetSize field is set.
    */
@@ -1476,7 +1476,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
    * </pre>
    *
-   * <code>int32 target_size = 62880239;</code>
+   * <code>optional int32 target_size = 62880239;</code>
    *
    * @return The targetSize.
    */
@@ -1494,7 +1494,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * The update policy for this managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
    * </code>
    *
    * @return Whether the updatePolicy field is set.
@@ -1510,7 +1511,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * The update policy for this managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
    * </code>
    *
    * @return The updatePolicy.
@@ -1528,7 +1530,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * The update policy for this managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
    * </code>
    */
   @java.lang.Override
@@ -1545,8 +1548,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Specifies the instance templates used by this managed instance group to create instances.
-   * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+   * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -1560,8 +1562,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Specifies the instance templates used by this managed instance group to create instances.
-   * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+   * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -1576,8 +1577,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Specifies the instance templates used by this managed instance group to create instances.
-   * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+   * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -1591,8 +1591,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Specifies the instance templates used by this managed instance group to create instances.
-   * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+   * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -1606,8 +1605,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Specifies the instance templates used by this managed instance group to create instances.
-   * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+   * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -1628,7 +1626,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return Whether the zone field is set.
    */
@@ -1643,7 +1641,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The zone.
    */
@@ -1666,7 +1664,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The bytes for zone.
    */
@@ -2149,10 +2147,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Represents a Managed Instance Group resource.
-   * An instance group is a collection of VM instances that you can manage as a single entity. For more information, read Instance groups.
-   * For zonal Managed Instance Group, use the instanceGroupManagers resource.
-   * For regional Managed Instance Group, use the regionInstanceGroupManagers resource. (== resource_for {$api_version}.instanceGroupManagers ==) (== resource_for {$api_version}.regionInstanceGroupManagers ==)
+   * Represents a Managed Instance Group resource. An instance group is a collection of VM instances that you can manage as a single entity. For more information, read Instance groups. For zonal Managed Instance Group, use the instanceGroupManagers resource. For regional Managed Instance Group, use the regionInstanceGroupManagers resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InstanceGroupManager}
@@ -3099,7 +3094,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
      * </pre>
      *
-     * <code>string base_instance_name = 389106439;</code>
+     * <code>optional string base_instance_name = 389106439;</code>
      *
      * @return Whether the baseInstanceName field is set.
      */
@@ -3113,7 +3108,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
      * </pre>
      *
-     * <code>string base_instance_name = 389106439;</code>
+     * <code>optional string base_instance_name = 389106439;</code>
      *
      * @return The baseInstanceName.
      */
@@ -3135,7 +3130,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
      * </pre>
      *
-     * <code>string base_instance_name = 389106439;</code>
+     * <code>optional string base_instance_name = 389106439;</code>
      *
      * @return The bytes for baseInstanceName.
      */
@@ -3157,7 +3152,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
      * </pre>
      *
-     * <code>string base_instance_name = 389106439;</code>
+     * <code>optional string base_instance_name = 389106439;</code>
      *
      * @param value The baseInstanceName to set.
      * @return This builder for chaining.
@@ -3178,7 +3173,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
      * </pre>
      *
-     * <code>string base_instance_name = 389106439;</code>
+     * <code>optional string base_instance_name = 389106439;</code>
      *
      * @return This builder for chaining.
      */
@@ -3195,7 +3190,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
      * </pre>
      *
-     * <code>string base_instance_name = 389106439;</code>
+     * <code>optional string base_instance_name = 389106439;</code>
      *
      * @param value The bytes for baseInstanceName to set.
      * @return This builder for chaining.
@@ -3219,7 +3214,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -3233,7 +3228,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -3255,7 +3250,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -3277,7 +3272,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -3298,7 +3293,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -3315,7 +3310,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -3345,7 +3340,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
      * </code>
      *
      * @return Whether the currentActions field is set.
@@ -3361,7 +3356,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
      * </code>
      *
      * @return The currentActions.
@@ -3383,7 +3378,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
      * </code>
      */
     public Builder setCurrentActions(
@@ -3408,7 +3403,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
      * </code>
      */
     public Builder setCurrentActions(
@@ -3430,7 +3425,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
      * </code>
      */
     public Builder mergeCurrentActions(
@@ -3464,7 +3459,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
      * </code>
      */
     public Builder clearCurrentActions() {
@@ -3485,7 +3480,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerActionsSummary.Builder
@@ -3502,7 +3497,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerActionsSummaryOrBuilder
@@ -3523,7 +3518,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
+     * optional .google.cloud.compute.v1.InstanceGroupManagerActionsSummary current_actions = 164045879;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3548,10 +3543,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -3562,10 +3557,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -3584,10 +3579,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -3606,10 +3601,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -3627,10 +3622,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -3644,10 +3639,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -3676,7 +3671,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+     * <code>optional .google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;
+     * </code>
      *
      * @return Whether the distributionPolicy field is set.
      */
@@ -3690,7 +3686,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+     * <code>optional .google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;
+     * </code>
      *
      * @return The distributionPolicy.
      */
@@ -3710,7 +3707,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+     * <code>optional .google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;
+     * </code>
      */
     public Builder setDistributionPolicy(com.google.cloud.compute.v1.DistributionPolicy value) {
       if (distributionPolicyBuilder_ == null) {
@@ -3732,7 +3730,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+     * <code>optional .google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;
+     * </code>
      */
     public Builder setDistributionPolicy(
         com.google.cloud.compute.v1.DistributionPolicy.Builder builderForValue) {
@@ -3752,7 +3751,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+     * <code>optional .google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;
+     * </code>
      */
     public Builder mergeDistributionPolicy(com.google.cloud.compute.v1.DistributionPolicy value) {
       if (distributionPolicyBuilder_ == null) {
@@ -3781,7 +3781,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+     * <code>optional .google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;
+     * </code>
      */
     public Builder clearDistributionPolicy() {
       if (distributionPolicyBuilder_ == null) {
@@ -3800,7 +3801,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+     * <code>optional .google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;
+     * </code>
      */
     public com.google.cloud.compute.v1.DistributionPolicy.Builder getDistributionPolicyBuilder() {
       bitField0_ |= 0x00000020;
@@ -3814,7 +3816,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+     * <code>optional .google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;
+     * </code>
      */
     public com.google.cloud.compute.v1.DistributionPolicyOrBuilder
         getDistributionPolicyOrBuilder() {
@@ -3833,7 +3836,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+     * <code>optional .google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.DistributionPolicy,
@@ -3857,11 +3861,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+     * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return Whether the fingerprint field is set.
      */
@@ -3872,11 +3875,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+     * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The fingerprint.
      */
@@ -3895,11 +3897,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+     * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return The bytes for fingerprint.
      */
@@ -3918,11 +3919,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+     * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The fingerprint to set.
      * @return This builder for chaining.
@@ -3940,11 +3940,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+     * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @return This builder for chaining.
      */
@@ -3958,11 +3957,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+     * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
      * </pre>
      *
-     * <code>string fingerprint = 234678500;</code>
+     * <code>optional string fingerprint = 234678500;</code>
      *
      * @param value The bytes for fingerprint to set.
      * @return This builder for chaining.
@@ -3986,7 +3984,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] A unique identifier for this resource type. The server generates this identifier.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -4001,7 +3999,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] A unique identifier for this resource type. The server generates this identifier.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -4016,7 +4014,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] A unique identifier for this resource type. The server generates this identifier.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -4034,7 +4032,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] A unique identifier for this resource type. The server generates this identifier.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -4053,7 +4051,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL of the Instance Group resource.
      * </pre>
      *
-     * <code>string instance_group = 81095253;</code>
+     * <code>optional string instance_group = 81095253;</code>
      *
      * @return Whether the instanceGroup field is set.
      */
@@ -4067,7 +4065,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL of the Instance Group resource.
      * </pre>
      *
-     * <code>string instance_group = 81095253;</code>
+     * <code>optional string instance_group = 81095253;</code>
      *
      * @return The instanceGroup.
      */
@@ -4089,7 +4087,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL of the Instance Group resource.
      * </pre>
      *
-     * <code>string instance_group = 81095253;</code>
+     * <code>optional string instance_group = 81095253;</code>
      *
      * @return The bytes for instanceGroup.
      */
@@ -4111,7 +4109,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL of the Instance Group resource.
      * </pre>
      *
-     * <code>string instance_group = 81095253;</code>
+     * <code>optional string instance_group = 81095253;</code>
      *
      * @param value The instanceGroup to set.
      * @return This builder for chaining.
@@ -4132,7 +4130,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL of the Instance Group resource.
      * </pre>
      *
-     * <code>string instance_group = 81095253;</code>
+     * <code>optional string instance_group = 81095253;</code>
      *
      * @return This builder for chaining.
      */
@@ -4149,7 +4147,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL of the Instance Group resource.
      * </pre>
      *
-     * <code>string instance_group = 81095253;</code>
+     * <code>optional string instance_group = 81095253;</code>
      *
      * @param value The bytes for instanceGroup to set.
      * @return This builder for chaining.
@@ -4173,7 +4171,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @return Whether the instanceTemplate field is set.
      */
@@ -4187,7 +4185,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @return The instanceTemplate.
      */
@@ -4209,7 +4207,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @return The bytes for instanceTemplate.
      */
@@ -4231,7 +4229,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @param value The instanceTemplate to set.
      * @return This builder for chaining.
@@ -4252,7 +4250,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @return This builder for chaining.
      */
@@ -4269,7 +4267,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @param value The bytes for instanceTemplate to set.
      * @return This builder for chaining.
@@ -4293,7 +4291,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -4307,7 +4305,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -4329,7 +4327,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -4351,7 +4349,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -4372,7 +4370,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -4389,7 +4387,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -4413,7 +4411,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -4427,7 +4425,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -4449,7 +4447,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -4471,7 +4469,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -4492,7 +4490,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -4509,7 +4507,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -4882,7 +4880,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL of the region where the managed instance group resides (for regional resources).
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return Whether the region field is set.
      */
@@ -4896,7 +4894,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL of the region where the managed instance group resides (for regional resources).
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The region.
      */
@@ -4918,7 +4916,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL of the region where the managed instance group resides (for regional resources).
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return The bytes for region.
      */
@@ -4940,7 +4938,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL of the region where the managed instance group resides (for regional resources).
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -4961,7 +4959,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL of the region where the managed instance group resides (for regional resources).
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @return This builder for chaining.
      */
@@ -4978,7 +4976,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL of the region where the managed instance group resides (for regional resources).
      * </pre>
      *
-     * <code>string region = 138946292;</code>
+     * <code>optional string region = 138946292;</code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.
@@ -5002,7 +5000,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL for this managed instance group. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -5016,7 +5014,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL for this managed instance group. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -5038,7 +5036,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL for this managed instance group. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -5060,7 +5058,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL for this managed instance group. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -5081,7 +5079,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL for this managed instance group. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -5098,7 +5096,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL for this managed instance group. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -5127,7 +5125,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Stateful configuration for this Instanced Group Manager
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
+     * <code>optional .google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
      *
      * @return Whether the statefulPolicy field is set.
      */
@@ -5141,7 +5139,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Stateful configuration for this Instanced Group Manager
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
+     * <code>optional .google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
      *
      * @return The statefulPolicy.
      */
@@ -5161,7 +5159,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Stateful configuration for this Instanced Group Manager
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
+     * <code>optional .google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
      */
     public Builder setStatefulPolicy(com.google.cloud.compute.v1.StatefulPolicy value) {
       if (statefulPolicyBuilder_ == null) {
@@ -5183,7 +5181,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Stateful configuration for this Instanced Group Manager
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
+     * <code>optional .google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
      */
     public Builder setStatefulPolicy(
         com.google.cloud.compute.v1.StatefulPolicy.Builder builderForValue) {
@@ -5203,7 +5201,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Stateful configuration for this Instanced Group Manager
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
+     * <code>optional .google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
      */
     public Builder mergeStatefulPolicy(com.google.cloud.compute.v1.StatefulPolicy value) {
       if (statefulPolicyBuilder_ == null) {
@@ -5231,7 +5229,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Stateful configuration for this Instanced Group Manager
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
+     * <code>optional .google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
      */
     public Builder clearStatefulPolicy() {
       if (statefulPolicyBuilder_ == null) {
@@ -5250,7 +5248,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Stateful configuration for this Instanced Group Manager
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
+     * <code>optional .google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
      */
     public com.google.cloud.compute.v1.StatefulPolicy.Builder getStatefulPolicyBuilder() {
       bitField0_ |= 0x00008000;
@@ -5264,7 +5262,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Stateful configuration for this Instanced Group Manager
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
+     * <code>optional .google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
      */
     public com.google.cloud.compute.v1.StatefulPolicyOrBuilder getStatefulPolicyOrBuilder() {
       if (statefulPolicyBuilder_ != null) {
@@ -5282,7 +5280,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Stateful configuration for this Instanced Group Manager
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
+     * <code>optional .google.cloud.compute.v1.StatefulPolicy stateful_policy = 47538565;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.StatefulPolicy,
@@ -5314,7 +5312,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The status of this managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
+     * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
      *
      * @return Whether the status field is set.
      */
@@ -5328,7 +5326,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The status of this managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
+     * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
      *
      * @return The status.
      */
@@ -5348,7 +5346,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The status of this managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
+     * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
      */
     public Builder setStatus(com.google.cloud.compute.v1.InstanceGroupManagerStatus value) {
       if (statusBuilder_ == null) {
@@ -5370,7 +5368,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The status of this managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
+     * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
      */
     public Builder setStatus(
         com.google.cloud.compute.v1.InstanceGroupManagerStatus.Builder builderForValue) {
@@ -5390,7 +5388,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The status of this managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
+     * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
      */
     public Builder mergeStatus(com.google.cloud.compute.v1.InstanceGroupManagerStatus value) {
       if (statusBuilder_ == null) {
@@ -5419,7 +5417,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The status of this managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
+     * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
      */
     public Builder clearStatus() {
       if (statusBuilder_ == null) {
@@ -5438,7 +5436,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The status of this managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
+     * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatus.Builder getStatusBuilder() {
       bitField0_ |= 0x00010000;
@@ -5452,7 +5450,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The status of this managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
+     * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusOrBuilder getStatusOrBuilder() {
       if (statusBuilder_ != null) {
@@ -5470,7 +5468,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The status of this managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
+     * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.InstanceGroupManagerStatus,
@@ -5665,7 +5663,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
      * </pre>
      *
-     * <code>int32 target_size = 62880239;</code>
+     * <code>optional int32 target_size = 62880239;</code>
      *
      * @return Whether the targetSize field is set.
      */
@@ -5680,7 +5678,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
      * </pre>
      *
-     * <code>int32 target_size = 62880239;</code>
+     * <code>optional int32 target_size = 62880239;</code>
      *
      * @return The targetSize.
      */
@@ -5695,7 +5693,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
      * </pre>
      *
-     * <code>int32 target_size = 62880239;</code>
+     * <code>optional int32 target_size = 62880239;</code>
      *
      * @param value The targetSize to set.
      * @return This builder for chaining.
@@ -5713,7 +5711,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
      * </pre>
      *
-     * <code>int32 target_size = 62880239;</code>
+     * <code>optional int32 target_size = 62880239;</code>
      *
      * @return This builder for chaining.
      */
@@ -5737,7 +5735,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The update policy for this managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
      * </code>
      *
      * @return Whether the updatePolicy field is set.
@@ -5752,7 +5751,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The update policy for this managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
      * </code>
      *
      * @return The updatePolicy.
@@ -5773,7 +5773,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The update policy for this managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
      * </code>
      */
     public Builder setUpdatePolicy(
@@ -5797,7 +5798,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The update policy for this managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
      * </code>
      */
     public Builder setUpdatePolicy(
@@ -5818,7 +5820,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The update policy for this managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
      * </code>
      */
     public Builder mergeUpdatePolicy(
@@ -5850,7 +5853,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The update policy for this managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
      * </code>
      */
     public Builder clearUpdatePolicy() {
@@ -5870,7 +5874,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The update policy for this managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy.Builder
@@ -5886,7 +5891,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The update policy for this managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicyOrBuilder
@@ -5906,7 +5912,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The update policy for this managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy update_policy = 175809896;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -5948,8 +5955,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the instance templates used by this managed instance group to create instances.
-     * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+     * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -5967,8 +5973,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the instance templates used by this managed instance group to create instances.
-     * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+     * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -5985,8 +5990,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the instance templates used by this managed instance group to create instances.
-     * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+     * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -6003,8 +6007,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the instance templates used by this managed instance group to create instances.
-     * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+     * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -6028,8 +6031,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the instance templates used by this managed instance group to create instances.
-     * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+     * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -6051,8 +6053,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the instance templates used by this managed instance group to create instances.
-     * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+     * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -6075,8 +6076,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the instance templates used by this managed instance group to create instances.
-     * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+     * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -6100,8 +6100,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the instance templates used by this managed instance group to create instances.
-     * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+     * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -6122,8 +6121,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the instance templates used by this managed instance group to create instances.
-     * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+     * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -6145,8 +6143,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the instance templates used by this managed instance group to create instances.
-     * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+     * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -6168,8 +6165,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the instance templates used by this managed instance group to create instances.
-     * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+     * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -6189,8 +6185,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the instance templates used by this managed instance group to create instances.
-     * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+     * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -6210,8 +6205,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the instance templates used by this managed instance group to create instances.
-     * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+     * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -6225,8 +6219,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the instance templates used by this managed instance group to create instances.
-     * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+     * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -6244,8 +6237,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the instance templates used by this managed instance group to create instances.
-     * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+     * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -6264,8 +6256,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the instance templates used by this managed instance group to create instances.
-     * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+     * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -6279,8 +6270,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the instance templates used by this managed instance group to create instances.
-     * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+     * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -6296,8 +6286,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the instance templates used by this managed instance group to create instances.
-     * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+     * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -6333,7 +6322,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return Whether the zone field is set.
      */
@@ -6347,7 +6336,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return The zone.
      */
@@ -6369,7 +6358,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return The bytes for zone.
      */
@@ -6391,7 +6380,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @param value The zone to set.
      * @return This builder for chaining.
@@ -6412,7 +6401,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return This builder for chaining.
      */
@@ -6429,7 +6418,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @param value The bytes for zone to set.
      * @return This builder for chaining.

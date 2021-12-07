@@ -25,17 +25,20 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteSnapshotRequest;
 import com.google.cloud.compute.v1.GetIamPolicySnapshotRequest;
 import com.google.cloud.compute.v1.GetSnapshotRequest;
 import com.google.cloud.compute.v1.ListSnapshotsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicySnapshotRequest;
 import com.google.cloud.compute.v1.SetLabelsSnapshotRequest;
@@ -43,6 +46,7 @@ import com.google.cloud.compute.v1.Snapshot;
 import com.google.cloud.compute.v1.SnapshotList;
 import com.google.cloud.compute.v1.TestIamPermissionsSnapshotRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -60,6 +64,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonSnapshotsStub extends SnapshotsStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<DeleteSnapshotRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteSnapshotRequest, Operation>newBuilder()
@@ -92,7 +99,20 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteSnapshotRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetSnapshotRequest, Snapshot> getMethodDescriptor =
@@ -123,6 +143,7 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Snapshot>newBuilder()
                   .setDefaultInstance(Snapshot.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -161,6 +182,7 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -211,6 +233,7 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<SnapshotList>newBuilder()
                       .setDefaultInstance(SnapshotList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -248,6 +271,7 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
                       .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -285,7 +309,20 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetLabelsSnapshotRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -324,20 +361,26 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
                       .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
   private final UnaryCallable<DeleteSnapshotRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteSnapshotRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetSnapshotRequest, Snapshot> getCallable;
   private final UnaryCallable<GetIamPolicySnapshotRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<ListSnapshotsRequest, SnapshotList> listCallable;
   private final UnaryCallable<ListSnapshotsRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<SetIamPolicySnapshotRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<SetLabelsSnapshotRequest, Operation> setLabelsCallable;
+  private final OperationCallable<SetLabelsSnapshotRequest, Operation, Operation>
+      setLabelsOperationCallable;
   private final UnaryCallable<TestIamPermissionsSnapshotRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonSnapshotsStub create(SnapshotsStubSettings settings)
@@ -376,41 +419,56 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<DeleteSnapshotRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteSnapshotRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetSnapshotRequest, Snapshot> getTransportSettings =
         HttpJsonCallSettings.<GetSnapshotRequest, Snapshot>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetIamPolicySnapshotRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicySnapshotRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListSnapshotsRequest, SnapshotList> listTransportSettings =
         HttpJsonCallSettings.<ListSnapshotsRequest, SnapshotList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetIamPolicySnapshotRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicySnapshotRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetLabelsSnapshotRequest, Operation> setLabelsTransportSettings =
         HttpJsonCallSettings.<SetLabelsSnapshotRequest, Operation>newBuilder()
             .setMethodDescriptor(setLabelsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<TestIamPermissionsSnapshotRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings
                 .<TestIamPermissionsSnapshotRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
@@ -429,6 +487,12 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
     this.setLabelsCallable =
         callableFactory.createUnaryCallable(
             setLabelsTransportSettings, settings.setLabelsSettings(), clientContext);
+    this.setLabelsOperationCallable =
+        callableFactory.createOperationCallable(
+            setLabelsTransportSettings,
+            settings.setLabelsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.testIamPermissionsCallable =
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
@@ -455,6 +519,11 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
   @Override
   public UnaryCallable<DeleteSnapshotRequest, Operation> deleteCallable() {
     return deleteCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteSnapshotRequest, Operation, Operation> deleteOperationCallable() {
+    return deleteOperationCallable;
   }
 
   @Override
@@ -485,6 +554,12 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
   @Override
   public UnaryCallable<SetLabelsSnapshotRequest, Operation> setLabelsCallable() {
     return setLabelsCallable;
+  }
+
+  @Override
+  public OperationCallable<SetLabelsSnapshotRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return setLabelsOperationCallable;
   }
 
   @Override

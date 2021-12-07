@@ -253,7 +253,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
    * Specifies the guest attributes path to be queried.
    * </pre>
    *
-   * <code>string query_path = 368591164;</code>
+   * <code>optional string query_path = 368591164;</code>
    *
    * @return Whether the queryPath field is set.
    */
@@ -268,7 +268,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
    * Specifies the guest attributes path to be queried.
    * </pre>
    *
-   * <code>string query_path = 368591164;</code>
+   * <code>optional string query_path = 368591164;</code>
    *
    * @return The queryPath.
    */
@@ -291,7 +291,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
    * Specifies the guest attributes path to be queried.
    * </pre>
    *
-   * <code>string query_path = 368591164;</code>
+   * <code>optional string query_path = 368591164;</code>
    *
    * @return The bytes for queryPath.
    */
@@ -317,7 +317,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
    * Specifies the key for the guest attributes entry.
    * </pre>
    *
-   * <code>string variable_key = 164364828;</code>
+   * <code>optional string variable_key = 164364828;</code>
    *
    * @return Whether the variableKey field is set.
    */
@@ -332,7 +332,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
    * Specifies the key for the guest attributes entry.
    * </pre>
    *
-   * <code>string variable_key = 164364828;</code>
+   * <code>optional string variable_key = 164364828;</code>
    *
    * @return The variableKey.
    */
@@ -355,7 +355,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
    * Specifies the key for the guest attributes entry.
    * </pre>
    *
-   * <code>string variable_key = 164364828;</code>
+   * <code>optional string variable_key = 164364828;</code>
    *
    * @return The bytes for variableKey.
    */
@@ -435,16 +435,16 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (!getInstanceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instance_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 164364828, variableKey_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -459,16 +459,16 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
     if (size != -1) return size;
 
     size = 0;
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (!getInstanceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instance_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(164364828, variableKey_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -1050,7 +1050,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the guest attributes path to be queried.
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>optional string query_path = 368591164;</code>
      *
      * @return Whether the queryPath field is set.
      */
@@ -1064,7 +1064,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the guest attributes path to be queried.
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>optional string query_path = 368591164;</code>
      *
      * @return The queryPath.
      */
@@ -1086,7 +1086,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the guest attributes path to be queried.
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>optional string query_path = 368591164;</code>
      *
      * @return The bytes for queryPath.
      */
@@ -1108,7 +1108,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the guest attributes path to be queried.
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>optional string query_path = 368591164;</code>
      *
      * @param value The queryPath to set.
      * @return This builder for chaining.
@@ -1129,7 +1129,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the guest attributes path to be queried.
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>optional string query_path = 368591164;</code>
      *
      * @return This builder for chaining.
      */
@@ -1146,7 +1146,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the guest attributes path to be queried.
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>optional string query_path = 368591164;</code>
      *
      * @param value The bytes for queryPath to set.
      * @return This builder for chaining.
@@ -1170,7 +1170,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the key for the guest attributes entry.
      * </pre>
      *
-     * <code>string variable_key = 164364828;</code>
+     * <code>optional string variable_key = 164364828;</code>
      *
      * @return Whether the variableKey field is set.
      */
@@ -1184,7 +1184,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the key for the guest attributes entry.
      * </pre>
      *
-     * <code>string variable_key = 164364828;</code>
+     * <code>optional string variable_key = 164364828;</code>
      *
      * @return The variableKey.
      */
@@ -1206,7 +1206,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the key for the guest attributes entry.
      * </pre>
      *
-     * <code>string variable_key = 164364828;</code>
+     * <code>optional string variable_key = 164364828;</code>
      *
      * @return The bytes for variableKey.
      */
@@ -1228,7 +1228,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the key for the guest attributes entry.
      * </pre>
      *
-     * <code>string variable_key = 164364828;</code>
+     * <code>optional string variable_key = 164364828;</code>
      *
      * @param value The variableKey to set.
      * @return This builder for chaining.
@@ -1249,7 +1249,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the key for the guest attributes entry.
      * </pre>
      *
-     * <code>string variable_key = 164364828;</code>
+     * <code>optional string variable_key = 164364828;</code>
      *
      * @return This builder for chaining.
      */
@@ -1266,7 +1266,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the key for the guest attributes entry.
      * </pre>
      *
-     * <code>string variable_key = 164364828;</code>
+     * <code>optional string variable_key = 164364828;</code>
      *
      * @param value The bytes for variableKey to set.
      * @return This builder for chaining.

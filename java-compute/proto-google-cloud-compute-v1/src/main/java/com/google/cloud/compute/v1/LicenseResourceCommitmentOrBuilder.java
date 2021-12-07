@@ -30,7 +30,7 @@ public interface LicenseResourceCommitmentOrBuilder
    * The number of licenses purchased.
    * </pre>
    *
-   * <code>int64 amount = 196759640;</code>
+   * <code>optional int64 amount = 196759640;</code>
    *
    * @return Whether the amount field is set.
    */
@@ -42,7 +42,7 @@ public interface LicenseResourceCommitmentOrBuilder
    * The number of licenses purchased.
    * </pre>
    *
-   * <code>int64 amount = 196759640;</code>
+   * <code>optional int64 amount = 196759640;</code>
    *
    * @return The amount.
    */
@@ -55,7 +55,7 @@ public interface LicenseResourceCommitmentOrBuilder
    * Specifies the core range of the instance for which this license applies.
    * </pre>
    *
-   * <code>string cores_per_license = 32482324;</code>
+   * <code>optional string cores_per_license = 32482324;</code>
    *
    * @return Whether the coresPerLicense field is set.
    */
@@ -67,7 +67,7 @@ public interface LicenseResourceCommitmentOrBuilder
    * Specifies the core range of the instance for which this license applies.
    * </pre>
    *
-   * <code>string cores_per_license = 32482324;</code>
+   * <code>optional string cores_per_license = 32482324;</code>
    *
    * @return The coresPerLicense.
    */
@@ -79,7 +79,7 @@ public interface LicenseResourceCommitmentOrBuilder
    * Specifies the core range of the instance for which this license applies.
    * </pre>
    *
-   * <code>string cores_per_license = 32482324;</code>
+   * <code>optional string cores_per_license = 32482324;</code>
    *
    * @return The bytes for coresPerLicense.
    */
@@ -92,7 +92,7 @@ public interface LicenseResourceCommitmentOrBuilder
    * Any applicable license URI.
    * </pre>
    *
-   * <code>string license = 166757441;</code>
+   * <code>optional string license = 166757441;</code>
    *
    * @return Whether the license field is set.
    */
@@ -104,7 +104,7 @@ public interface LicenseResourceCommitmentOrBuilder
    * Any applicable license URI.
    * </pre>
    *
-   * <code>string license = 166757441;</code>
+   * <code>optional string license = 166757441;</code>
    *
    * @return The license.
    */
@@ -116,7 +116,7 @@ public interface LicenseResourceCommitmentOrBuilder
    * Any applicable license URI.
    * </pre>
    *
-   * <code>string license = 166757441;</code>
+   * <code>optional string license = 166757441;</code>
    *
    * @return The bytes for license.
    */

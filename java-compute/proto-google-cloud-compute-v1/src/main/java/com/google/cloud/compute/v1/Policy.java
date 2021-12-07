@@ -22,14 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources.
- * A `Policy` is a collection of `bindings`. A `binding` binds one or more `members` to a single `role`. Members can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role.
- * For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
- * **JSON example:**
- * { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike&#64;example.com", "group:admins&#64;example.com", "domain:google.com", "serviceAccount:my-project-id&#64;appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve&#64;example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time &lt; timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 }
- * **YAML example:**
- * bindings: - members: - user:mike&#64;example.com - group:admins&#64;example.com - domain:google.com - serviceAccount:my-project-id&#64;appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve&#64;example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time &lt; timestamp('2020-10-01T00:00:00.000Z') - etag: BwWWja0YfJA= - version: 3
- * For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/).
+ * An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members` to a single `role`. Members can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike&#64;example.com", "group:admins&#64;example.com", "domain:google.com", "serviceAccount:my-project-id&#64;appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve&#64;example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time &lt; timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } **YAML example:** bindings: - members: - user:mike&#64;example.com - group:admins&#64;example.com - domain:google.com - serviceAccount:my-project-id&#64;appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve&#64;example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time &lt; timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/).
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Policy}
@@ -320,11 +313,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy.
-   * **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
+   * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
    * </pre>
    *
-   * <code>string etag = 3123477;</code>
+   * <code>optional string etag = 3123477;</code>
    *
    * @return Whether the etag field is set.
    */
@@ -336,11 +328,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy.
-   * **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
+   * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
    * </pre>
    *
-   * <code>string etag = 3123477;</code>
+   * <code>optional string etag = 3123477;</code>
    *
    * @return The etag.
    */
@@ -360,11 +351,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy.
-   * **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
+   * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
    * </pre>
    *
-   * <code>string etag = 3123477;</code>
+   * <code>optional string etag = 3123477;</code>
    *
    * @return The bytes for etag.
    */
@@ -384,7 +374,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   public static final int IAM_OWNED_FIELD_NUMBER = 450566203;
   private boolean iamOwned_;
   /**
-   * <code>bool iam_owned = 450566203;</code>
+   *
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * </pre>
+   *
+   * <code>optional bool iam_owned = 450566203;</code>
    *
    * @return Whether the iamOwned field is set.
    */
@@ -393,7 +389,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>bool iam_owned = 450566203;</code>
+   *
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * </pre>
+   *
+   * <code>optional bool iam_owned = 450566203;</code>
    *
    * @return The iamOwned.
    */
@@ -408,7 +410,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -421,7 +423,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -435,7 +437,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -448,7 +450,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -461,7 +463,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -477,16 +479,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the format of the policy.
-   * Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected.
-   * Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations:
-   * * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions
-   * **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
-   * If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset.
-   * To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+   * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
    * </pre>
    *
-   * <code>int32 version = 351608024;</code>
+   * <code>optional int32 version = 351608024;</code>
    *
    * @return Whether the version field is set.
    */
@@ -498,16 +494,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the format of the policy.
-   * Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected.
-   * Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations:
-   * * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions
-   * **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
-   * If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset.
-   * To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+   * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
    * </pre>
    *
-   * <code>int32 version = 351608024;</code>
+   * <code>optional int32 version = 351608024;</code>
    *
    * @return The version.
    */
@@ -744,14 +734,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources.
-   * A `Policy` is a collection of `bindings`. A `binding` binds one or more `members` to a single `role`. Members can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role.
-   * For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
-   * **JSON example:**
-   * { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike&#64;example.com", "group:admins&#64;example.com", "domain:google.com", "serviceAccount:my-project-id&#64;appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve&#64;example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time &lt; timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 }
-   * **YAML example:**
-   * bindings: - members: - user:mike&#64;example.com - group:admins&#64;example.com - domain:google.com - serviceAccount:my-project-id&#64;appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve&#64;example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time &lt; timestamp('2020-10-01T00:00:00.000Z') - etag: BwWWja0YfJA= - version: 3
-   * For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/).
+   * An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members` to a single `role`. Members can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** { "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [ "user:mike&#64;example.com", "group:admins&#64;example.com", "domain:google.com", "serviceAccount:my-project-id&#64;appspot.gserviceaccount.com" ] }, { "role": "roles/resourcemanager.organizationViewer", "members": [ "user:eve&#64;example.com" ], "condition": { "title": "expirable access", "description": "Does not grant access after Sep 2020", "expression": "request.time &lt; timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag": "BwWWja0YfJA=", "version": 3 } **YAML example:** bindings: - members: - user:mike&#64;example.com - group:admins&#64;example.com - domain:google.com - serviceAccount:my-project-id&#64;appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve&#64;example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time &lt; timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/).
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Policy}
@@ -1764,11 +1747,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy.
-     * **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
+     * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
      * </pre>
      *
-     * <code>string etag = 3123477;</code>
+     * <code>optional string etag = 3123477;</code>
      *
      * @return Whether the etag field is set.
      */
@@ -1779,11 +1761,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy.
-     * **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
+     * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
      * </pre>
      *
-     * <code>string etag = 3123477;</code>
+     * <code>optional string etag = 3123477;</code>
      *
      * @return The etag.
      */
@@ -1802,11 +1783,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy.
-     * **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
+     * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
      * </pre>
      *
-     * <code>string etag = 3123477;</code>
+     * <code>optional string etag = 3123477;</code>
      *
      * @return The bytes for etag.
      */
@@ -1825,11 +1805,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy.
-     * **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
+     * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
      * </pre>
      *
-     * <code>string etag = 3123477;</code>
+     * <code>optional string etag = 3123477;</code>
      *
      * @param value The etag to set.
      * @return This builder for chaining.
@@ -1847,11 +1826,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy.
-     * **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
+     * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
      * </pre>
      *
-     * <code>string etag = 3123477;</code>
+     * <code>optional string etag = 3123477;</code>
      *
      * @return This builder for chaining.
      */
@@ -1865,11 +1843,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy.
-     * **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
+     * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
      * </pre>
      *
-     * <code>string etag = 3123477;</code>
+     * <code>optional string etag = 3123477;</code>
      *
      * @param value The bytes for etag to set.
      * @return This builder for chaining.
@@ -1887,7 +1864,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
 
     private boolean iamOwned_;
     /**
-     * <code>bool iam_owned = 450566203;</code>
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>optional bool iam_owned = 450566203;</code>
      *
      * @return Whether the iamOwned field is set.
      */
@@ -1896,7 +1879,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>bool iam_owned = 450566203;</code>
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>optional bool iam_owned = 450566203;</code>
      *
      * @return The iamOwned.
      */
@@ -1905,7 +1894,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       return iamOwned_;
     }
     /**
-     * <code>bool iam_owned = 450566203;</code>
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>optional bool iam_owned = 450566203;</code>
      *
      * @param value The iamOwned to set.
      * @return This builder for chaining.
@@ -1917,7 +1912,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>bool iam_owned = 450566203;</code>
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>optional bool iam_owned = 450566203;</code>
      *
      * @return This builder for chaining.
      */
@@ -1948,7 +1949,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -1964,7 +1965,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -1980,7 +1981,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -1996,7 +1997,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -2018,7 +2019,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -2037,7 +2038,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -2059,7 +2060,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -2081,7 +2082,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -2100,7 +2101,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -2119,7 +2120,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -2139,7 +2140,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -2158,7 +2159,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -2177,7 +2178,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -2189,7 +2190,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -2205,7 +2206,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -2222,7 +2223,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -2235,7 +2236,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -2248,7 +2249,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If more than one rule is specified, the rules are applied in the following manner: - All matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
@@ -2279,16 +2280,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the format of the policy.
-     * Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected.
-     * Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations:
-     * * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions
-     * **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
-     * If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset.
-     * To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+     * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
      * </pre>
      *
-     * <code>int32 version = 351608024;</code>
+     * <code>optional int32 version = 351608024;</code>
      *
      * @return Whether the version field is set.
      */
@@ -2300,16 +2295,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the format of the policy.
-     * Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected.
-     * Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations:
-     * * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions
-     * **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
-     * If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset.
-     * To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+     * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
      * </pre>
      *
-     * <code>int32 version = 351608024;</code>
+     * <code>optional int32 version = 351608024;</code>
      *
      * @return The version.
      */
@@ -2321,16 +2310,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the format of the policy.
-     * Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected.
-     * Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations:
-     * * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions
-     * **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
-     * If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset.
-     * To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+     * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
      * </pre>
      *
-     * <code>int32 version = 351608024;</code>
+     * <code>optional int32 version = 351608024;</code>
      *
      * @param value The version to set.
      * @return This builder for chaining.
@@ -2345,16 +2328,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the format of the policy.
-     * Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected.
-     * Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations:
-     * * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions
-     * **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
-     * If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset.
-     * To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+     * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
      * </pre>
      *
-     * <code>int32 version = 351608024;</code>
+     * <code>optional int32 version = 351608024;</code>
      *
      * @return This builder for chaining.
      */

@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance.
- * This property is mutually exclusive with the source property; you can only define one or the other, but not both.
+ * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance. This property is mutually exclusive with the source property; you can only define one or the other, but not both.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.AttachedDiskInitializeParams}
@@ -42,7 +41,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     description_ = "";
     diskName_ = "";
     diskType_ = "";
-    onUpdateAction_ = 0;
+    onUpdateAction_ = "";
     resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     sourceImage_ = "";
     sourceSnapshot_ = "";
@@ -122,11 +121,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
               provisionedIops_ = input.readInt64();
               break;
             }
-          case 1619615840:
+          case 1619615842:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
-              onUpdateAction_ = rawValue;
+              onUpdateAction_ = s;
               break;
             }
           case -1865532718:
@@ -257,11 +256,35 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * <code>UNDEFINED_ON_UPDATE_ACTION = 0;</code>
      */
     UNDEFINED_ON_UPDATE_ACTION(0),
-    /** <code>RECREATE_DISK = 494767853;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Always recreate the disk.
+     * </pre>
+     *
+     * <code>RECREATE_DISK = 494767853;</code>
+     */
     RECREATE_DISK(494767853),
-    /** <code>RECREATE_DISK_IF_SOURCE_CHANGED = 398099712;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Recreate the disk if source (image, snapshot) of this disk is different from source of existing disk.
+     * </pre>
+     *
+     * <code>RECREATE_DISK_IF_SOURCE_CHANGED = 398099712;</code>
+     */
     RECREATE_DISK_IF_SOURCE_CHANGED(398099712),
-    /** <code>USE_EXISTING_DISK = 232682233;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Use the existing disk, this is the default behaviour.
+     * </pre>
+     *
+     * <code>USE_EXISTING_DISK = 232682233;</code>
+     */
     USE_EXISTING_DISK(232682233),
     UNRECOGNIZED(-1),
     ;
@@ -276,11 +299,35 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * <code>UNDEFINED_ON_UPDATE_ACTION = 0;</code>
      */
     public static final int UNDEFINED_ON_UPDATE_ACTION_VALUE = 0;
-    /** <code>RECREATE_DISK = 494767853;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Always recreate the disk.
+     * </pre>
+     *
+     * <code>RECREATE_DISK = 494767853;</code>
+     */
     public static final int RECREATE_DISK_VALUE = 494767853;
-    /** <code>RECREATE_DISK_IF_SOURCE_CHANGED = 398099712;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Recreate the disk if source (image, snapshot) of this disk is different from source of existing disk.
+     * </pre>
+     *
+     * <code>RECREATE_DISK_IF_SOURCE_CHANGED = 398099712;</code>
+     */
     public static final int RECREATE_DISK_IF_SOURCE_CHANGED_VALUE = 398099712;
-    /** <code>USE_EXISTING_DISK = 232682233;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Use the existing disk, this is the default behaviour.
+     * </pre>
+     *
+     * <code>USE_EXISTING_DISK = 232682233;</code>
+     */
     public static final int USE_EXISTING_DISK_VALUE = 232682233;
 
     public final int getNumber() {
@@ -380,7 +427,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * An optional description. Provide this property when creating the disk.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -395,7 +442,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * An optional description. Provide this property when creating the disk.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -418,7 +465,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * An optional description. Provide this property when creating the disk.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -444,7 +491,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * Specifies the disk name. If not specified, the default is to use the name of the instance. If a disk with the same name already exists in the given region, the existing disk is attached to the new instance and the new disk is not created.
    * </pre>
    *
-   * <code>string disk_name = 92807149;</code>
+   * <code>optional string disk_name = 92807149;</code>
    *
    * @return Whether the diskName field is set.
    */
@@ -459,7 +506,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * Specifies the disk name. If not specified, the default is to use the name of the instance. If a disk with the same name already exists in the given region, the existing disk is attached to the new instance and the new disk is not created.
    * </pre>
    *
-   * <code>string disk_name = 92807149;</code>
+   * <code>optional string disk_name = 92807149;</code>
    *
    * @return The diskName.
    */
@@ -482,7 +529,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * Specifies the disk name. If not specified, the default is to use the name of the instance. If a disk with the same name already exists in the given region, the existing disk is attached to the new instance and the new disk is not created.
    * </pre>
    *
-   * <code>string disk_name = 92807149;</code>
+   * <code>optional string disk_name = 92807149;</code>
    *
    * @return The bytes for diskName.
    */
@@ -508,7 +555,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
    * </pre>
    *
-   * <code>int64 disk_size_gb = 316263735;</code>
+   * <code>optional int64 disk_size_gb = 316263735;</code>
    *
    * @return Whether the diskSizeGb field is set.
    */
@@ -523,7 +570,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
    * </pre>
    *
-   * <code>int64 disk_size_gb = 316263735;</code>
+   * <code>optional int64 disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
@@ -538,15 +585,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example:
-   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
-   * Other values include pd-ssd and local-ssd. If you define this field, you can provide either the full or partial URL. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/diskType
-   * - projects/project/zones/zone/diskTypes/diskType
-   * - zones/zone/diskTypes/diskType  Note that for InstanceTemplate, this is the name of the disk type, not URL.
+   * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/pd-standard For a full list of acceptable values, see Persistent disk types. If you define this field, you can provide either the full or partial URL. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/diskType - projects/project/zones/zone/diskTypes/diskType - zones/zone/diskTypes/diskType Note that for InstanceTemplate, this is the name of the disk type, not URL.
    * </pre>
    *
-   * <code>string disk_type = 93009052;</code>
+   * <code>optional string disk_type = 93009052;</code>
    *
    * @return Whether the diskType field is set.
    */
@@ -558,15 +600,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example:
-   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
-   * Other values include pd-ssd and local-ssd. If you define this field, you can provide either the full or partial URL. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/diskType
-   * - projects/project/zones/zone/diskTypes/diskType
-   * - zones/zone/diskTypes/diskType  Note that for InstanceTemplate, this is the name of the disk type, not URL.
+   * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/pd-standard For a full list of acceptable values, see Persistent disk types. If you define this field, you can provide either the full or partial URL. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/diskType - projects/project/zones/zone/diskTypes/diskType - zones/zone/diskTypes/diskType Note that for InstanceTemplate, this is the name of the disk type, not URL.
    * </pre>
    *
-   * <code>string disk_type = 93009052;</code>
+   * <code>optional string disk_type = 93009052;</code>
    *
    * @return The diskType.
    */
@@ -586,15 +623,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example:
-   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
-   * Other values include pd-ssd and local-ssd. If you define this field, you can provide either the full or partial URL. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/diskType
-   * - projects/project/zones/zone/diskTypes/diskType
-   * - zones/zone/diskTypes/diskType  Note that for InstanceTemplate, this is the name of the disk type, not URL.
+   * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/pd-standard For a full list of acceptable values, see Persistent disk types. If you define this field, you can provide either the full or partial URL. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/diskType - projects/project/zones/zone/diskTypes/diskType - zones/zone/diskTypes/diskType Note that for InstanceTemplate, this is the name of the disk type, not URL.
    * </pre>
    *
-   * <code>string disk_type = 93009052;</code>
+   * <code>optional string disk_type = 93009052;</code>
    *
    * @return The bytes for diskType.
    */
@@ -710,17 +742,16 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
   }
 
   public static final int ON_UPDATE_ACTION_FIELD_NUMBER = 202451980;
-  private int onUpdateAction_;
+  private volatile java.lang.Object onUpdateAction_;
   /**
    *
    *
    * <pre>
    * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+   * Check the OnUpdateAction enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;
-   * </code>
+   * <code>optional string on_update_action = 202451980;</code>
    *
    * @return Whether the onUpdateAction field is set.
    */
@@ -733,41 +764,48 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    *
    * <pre>
    * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+   * Check the OnUpdateAction enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;
-   * </code>
+   * <code>optional string on_update_action = 202451980;</code>
    *
-   * @return The enum numeric value on the wire for onUpdateAction.
+   * @return The onUpdateAction.
    */
   @java.lang.Override
-  public int getOnUpdateActionValue() {
-    return onUpdateAction_;
+  public java.lang.String getOnUpdateAction() {
+    java.lang.Object ref = onUpdateAction_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      onUpdateAction_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+   * Check the OnUpdateAction enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;
-   * </code>
+   * <code>optional string on_update_action = 202451980;</code>
    *
-   * @return The onUpdateAction.
+   * @return The bytes for onUpdateAction.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction
-      getOnUpdateAction() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction result =
-        com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction.valueOf(
-            onUpdateAction_);
-    return result == null
-        ? com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getOnUpdateActionBytes() {
+    java.lang.Object ref = onUpdateAction_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      onUpdateAction_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PROVISIONED_IOPS_FIELD_NUMBER = 186769108;
@@ -776,10 +814,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Indicates how many IOPS must be provisioned for the disk.
+   * Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see the Extreme persistent disk documentation.
    * </pre>
    *
-   * <code>int64 provisioned_iops = 186769108;</code>
+   * <code>optional int64 provisioned_iops = 186769108;</code>
    *
    * @return Whether the provisionedIops field is set.
    */
@@ -791,10 +829,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Indicates how many IOPS must be provisioned for the disk.
+   * Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see the Extreme persistent disk documentation.
    * </pre>
    *
-   * <code>int64 provisioned_iops = 186769108;</code>
+   * <code>optional int64 provisioned_iops = 186769108;</code>
    *
    * @return The provisionedIops.
    */
@@ -870,19 +908,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-   * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-   * projects/debian-cloud/global/images/family/debian-9
-   * Alternatively, use a specific version of a public operating system image:
-   * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-   * To create a disk with a custom image that you created, specify the image name in the following format:
-   * global/images/my-custom-image
-   * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-   * global/images/family/my-image-family
-   * If the source image is deleted later, this field will not be set.
+   * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family If the source image is deleted later, this field will not be set.
    * </pre>
    *
-   * <code>string source_image = 50443319;</code>
+   * <code>optional string source_image = 50443319;</code>
    *
    * @return Whether the sourceImage field is set.
    */
@@ -894,19 +923,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-   * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-   * projects/debian-cloud/global/images/family/debian-9
-   * Alternatively, use a specific version of a public operating system image:
-   * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-   * To create a disk with a custom image that you created, specify the image name in the following format:
-   * global/images/my-custom-image
-   * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-   * global/images/family/my-image-family
-   * If the source image is deleted later, this field will not be set.
+   * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family If the source image is deleted later, this field will not be set.
    * </pre>
    *
-   * <code>string source_image = 50443319;</code>
+   * <code>optional string source_image = 50443319;</code>
    *
    * @return The sourceImage.
    */
@@ -926,19 +946,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-   * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-   * projects/debian-cloud/global/images/family/debian-9
-   * Alternatively, use a specific version of a public operating system image:
-   * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-   * To create a disk with a custom image that you created, specify the image name in the following format:
-   * global/images/my-custom-image
-   * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-   * global/images/family/my-image-family
-   * If the source image is deleted later, this field will not be set.
+   * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family If the source image is deleted later, this field will not be set.
    * </pre>
    *
-   * <code>string source_image = 50443319;</code>
+   * <code>optional string source_image = 50443319;</code>
    *
    * @return The bytes for sourceImage.
    */
@@ -961,11 +972,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
-   * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
+   * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key. Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    *
    * @return Whether the sourceImageEncryptionKey field is set.
@@ -978,11 +989,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
-   * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
+   * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key. Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    *
    * @return The sourceImageEncryptionKey.
@@ -997,11 +1008,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
-   * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
+   * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key. Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    */
   @java.lang.Override
@@ -1018,13 +1029,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD.
-   * To create a disk with a snapshot that you created, specify the snapshot name in the following format:
-   * global/snapshots/my-backup
-   * If the source snapshot is deleted later, this field will not be set.
+   * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD. To create a disk with a snapshot that you created, specify the snapshot name in the following format: global/snapshots/my-backup If the source snapshot is deleted later, this field will not be set.
    * </pre>
    *
-   * <code>string source_snapshot = 126061928;</code>
+   * <code>optional string source_snapshot = 126061928;</code>
    *
    * @return Whether the sourceSnapshot field is set.
    */
@@ -1036,13 +1044,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD.
-   * To create a disk with a snapshot that you created, specify the snapshot name in the following format:
-   * global/snapshots/my-backup
-   * If the source snapshot is deleted later, this field will not be set.
+   * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD. To create a disk with a snapshot that you created, specify the snapshot name in the following format: global/snapshots/my-backup If the source snapshot is deleted later, this field will not be set.
    * </pre>
    *
-   * <code>string source_snapshot = 126061928;</code>
+   * <code>optional string source_snapshot = 126061928;</code>
    *
    * @return The sourceSnapshot.
    */
@@ -1062,13 +1067,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD.
-   * To create a disk with a snapshot that you created, specify the snapshot name in the following format:
-   * global/snapshots/my-backup
-   * If the source snapshot is deleted later, this field will not be set.
+   * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD. To create a disk with a snapshot that you created, specify the snapshot name in the following format: global/snapshots/my-backup If the source snapshot is deleted later, this field will not be set.
    * </pre>
    *
-   * <code>string source_snapshot = 126061928;</code>
+   * <code>optional string source_snapshot = 126061928;</code>
    *
    * @return The bytes for sourceSnapshot.
    */
@@ -1095,7 +1097,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    *
    * @return Whether the sourceSnapshotEncryptionKey field is set.
@@ -1112,7 +1114,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    *
    * @return The sourceSnapshotEncryptionKey.
@@ -1131,7 +1133,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    */
   @java.lang.Override
@@ -1176,7 +1178,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       output.writeInt64(186769108, provisionedIops_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeEnum(202451980, onUpdateAction_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 202451980, onUpdateAction_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(303679322, getSourceSnapshotEncryptionKey());
@@ -1225,7 +1227,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(186769108, provisionedIops_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(202451980, onUpdateAction_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(202451980, onUpdateAction_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       size +=
@@ -1288,7 +1290,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (hasOnUpdateAction() != other.hasOnUpdateAction()) return false;
     if (hasOnUpdateAction()) {
-      if (onUpdateAction_ != other.onUpdateAction_) return false;
+      if (!getOnUpdateAction().equals(other.getOnUpdateAction())) return false;
     }
     if (hasProvisionedIops() != other.hasProvisionedIops()) return false;
     if (hasProvisionedIops()) {
@@ -1345,7 +1347,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     }
     if (hasOnUpdateAction()) {
       hash = (37 * hash) + ON_UPDATE_ACTION_FIELD_NUMBER;
-      hash = (53 * hash) + onUpdateAction_;
+      hash = (53 * hash) + getOnUpdateAction().hashCode();
     }
     if (hasProvisionedIops()) {
       hash = (37 * hash) + PROVISIONED_IOPS_FIELD_NUMBER;
@@ -1476,8 +1478,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance.
-   * This property is mutually exclusive with the source property; you can only define one or the other, but not both.
+   * [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance. This property is mutually exclusive with the source property; you can only define one or the other, but not both.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.AttachedDiskInitializeParams}
@@ -1550,7 +1551,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       diskType_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().clear();
-      onUpdateAction_ = 0;
+      onUpdateAction_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
       provisionedIops_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000040);
@@ -1727,7 +1728,9 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       if (other.hasOnUpdateAction()) {
-        setOnUpdateAction(other.getOnUpdateAction());
+        bitField0_ |= 0x00000020;
+        onUpdateAction_ = other.onUpdateAction_;
+        onChanged();
       }
       if (other.hasProvisionedIops()) {
         setProvisionedIops(other.getProvisionedIops());
@@ -1798,7 +1801,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * An optional description. Provide this property when creating the disk.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -1812,7 +1815,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * An optional description. Provide this property when creating the disk.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1834,7 +1837,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * An optional description. Provide this property when creating the disk.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1856,7 +1859,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * An optional description. Provide this property when creating the disk.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1877,7 +1880,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * An optional description. Provide this property when creating the disk.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -1894,7 +1897,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * An optional description. Provide this property when creating the disk.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1918,7 +1921,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Specifies the disk name. If not specified, the default is to use the name of the instance. If a disk with the same name already exists in the given region, the existing disk is attached to the new instance and the new disk is not created.
      * </pre>
      *
-     * <code>string disk_name = 92807149;</code>
+     * <code>optional string disk_name = 92807149;</code>
      *
      * @return Whether the diskName field is set.
      */
@@ -1932,7 +1935,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Specifies the disk name. If not specified, the default is to use the name of the instance. If a disk with the same name already exists in the given region, the existing disk is attached to the new instance and the new disk is not created.
      * </pre>
      *
-     * <code>string disk_name = 92807149;</code>
+     * <code>optional string disk_name = 92807149;</code>
      *
      * @return The diskName.
      */
@@ -1954,7 +1957,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Specifies the disk name. If not specified, the default is to use the name of the instance. If a disk with the same name already exists in the given region, the existing disk is attached to the new instance and the new disk is not created.
      * </pre>
      *
-     * <code>string disk_name = 92807149;</code>
+     * <code>optional string disk_name = 92807149;</code>
      *
      * @return The bytes for diskName.
      */
@@ -1976,7 +1979,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Specifies the disk name. If not specified, the default is to use the name of the instance. If a disk with the same name already exists in the given region, the existing disk is attached to the new instance and the new disk is not created.
      * </pre>
      *
-     * <code>string disk_name = 92807149;</code>
+     * <code>optional string disk_name = 92807149;</code>
      *
      * @param value The diskName to set.
      * @return This builder for chaining.
@@ -1997,7 +2000,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Specifies the disk name. If not specified, the default is to use the name of the instance. If a disk with the same name already exists in the given region, the existing disk is attached to the new instance and the new disk is not created.
      * </pre>
      *
-     * <code>string disk_name = 92807149;</code>
+     * <code>optional string disk_name = 92807149;</code>
      *
      * @return This builder for chaining.
      */
@@ -2014,7 +2017,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Specifies the disk name. If not specified, the default is to use the name of the instance. If a disk with the same name already exists in the given region, the existing disk is attached to the new instance and the new disk is not created.
      * </pre>
      *
-     * <code>string disk_name = 92807149;</code>
+     * <code>optional string disk_name = 92807149;</code>
      *
      * @param value The bytes for diskName to set.
      * @return This builder for chaining.
@@ -2038,7 +2041,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
      * </pre>
      *
-     * <code>int64 disk_size_gb = 316263735;</code>
+     * <code>optional int64 disk_size_gb = 316263735;</code>
      *
      * @return Whether the diskSizeGb field is set.
      */
@@ -2053,7 +2056,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
      * </pre>
      *
-     * <code>int64 disk_size_gb = 316263735;</code>
+     * <code>optional int64 disk_size_gb = 316263735;</code>
      *
      * @return The diskSizeGb.
      */
@@ -2068,7 +2071,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
      * </pre>
      *
-     * <code>int64 disk_size_gb = 316263735;</code>
+     * <code>optional int64 disk_size_gb = 316263735;</code>
      *
      * @param value The diskSizeGb to set.
      * @return This builder for chaining.
@@ -2086,7 +2089,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
      * </pre>
      *
-     * <code>int64 disk_size_gb = 316263735;</code>
+     * <code>optional int64 disk_size_gb = 316263735;</code>
      *
      * @return This builder for chaining.
      */
@@ -2102,15 +2105,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example:
-     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
-     * Other values include pd-ssd and local-ssd. If you define this field, you can provide either the full or partial URL. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/diskType
-     * - projects/project/zones/zone/diskTypes/diskType
-     * - zones/zone/diskTypes/diskType  Note that for InstanceTemplate, this is the name of the disk type, not URL.
+     * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/pd-standard For a full list of acceptable values, see Persistent disk types. If you define this field, you can provide either the full or partial URL. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/diskType - projects/project/zones/zone/diskTypes/diskType - zones/zone/diskTypes/diskType Note that for InstanceTemplate, this is the name of the disk type, not URL.
      * </pre>
      *
-     * <code>string disk_type = 93009052;</code>
+     * <code>optional string disk_type = 93009052;</code>
      *
      * @return Whether the diskType field is set.
      */
@@ -2121,15 +2119,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example:
-     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
-     * Other values include pd-ssd and local-ssd. If you define this field, you can provide either the full or partial URL. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/diskType
-     * - projects/project/zones/zone/diskTypes/diskType
-     * - zones/zone/diskTypes/diskType  Note that for InstanceTemplate, this is the name of the disk type, not URL.
+     * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/pd-standard For a full list of acceptable values, see Persistent disk types. If you define this field, you can provide either the full or partial URL. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/diskType - projects/project/zones/zone/diskTypes/diskType - zones/zone/diskTypes/diskType Note that for InstanceTemplate, this is the name of the disk type, not URL.
      * </pre>
      *
-     * <code>string disk_type = 93009052;</code>
+     * <code>optional string disk_type = 93009052;</code>
      *
      * @return The diskType.
      */
@@ -2148,15 +2141,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example:
-     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
-     * Other values include pd-ssd and local-ssd. If you define this field, you can provide either the full or partial URL. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/diskType
-     * - projects/project/zones/zone/diskTypes/diskType
-     * - zones/zone/diskTypes/diskType  Note that for InstanceTemplate, this is the name of the disk type, not URL.
+     * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/pd-standard For a full list of acceptable values, see Persistent disk types. If you define this field, you can provide either the full or partial URL. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/diskType - projects/project/zones/zone/diskTypes/diskType - zones/zone/diskTypes/diskType Note that for InstanceTemplate, this is the name of the disk type, not URL.
      * </pre>
      *
-     * <code>string disk_type = 93009052;</code>
+     * <code>optional string disk_type = 93009052;</code>
      *
      * @return The bytes for diskType.
      */
@@ -2175,15 +2163,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example:
-     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
-     * Other values include pd-ssd and local-ssd. If you define this field, you can provide either the full or partial URL. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/diskType
-     * - projects/project/zones/zone/diskTypes/diskType
-     * - zones/zone/diskTypes/diskType  Note that for InstanceTemplate, this is the name of the disk type, not URL.
+     * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/pd-standard For a full list of acceptable values, see Persistent disk types. If you define this field, you can provide either the full or partial URL. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/diskType - projects/project/zones/zone/diskTypes/diskType - zones/zone/diskTypes/diskType Note that for InstanceTemplate, this is the name of the disk type, not URL.
      * </pre>
      *
-     * <code>string disk_type = 93009052;</code>
+     * <code>optional string disk_type = 93009052;</code>
      *
      * @param value The diskType to set.
      * @return This builder for chaining.
@@ -2201,15 +2184,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example:
-     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
-     * Other values include pd-ssd and local-ssd. If you define this field, you can provide either the full or partial URL. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/diskType
-     * - projects/project/zones/zone/diskTypes/diskType
-     * - zones/zone/diskTypes/diskType  Note that for InstanceTemplate, this is the name of the disk type, not URL.
+     * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/pd-standard For a full list of acceptable values, see Persistent disk types. If you define this field, you can provide either the full or partial URL. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/diskType - projects/project/zones/zone/diskTypes/diskType - zones/zone/diskTypes/diskType Note that for InstanceTemplate, this is the name of the disk type, not URL.
      * </pre>
      *
-     * <code>string disk_type = 93009052;</code>
+     * <code>optional string disk_type = 93009052;</code>
      *
      * @return This builder for chaining.
      */
@@ -2223,15 +2201,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example:
-     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
-     * Other values include pd-ssd and local-ssd. If you define this field, you can provide either the full or partial URL. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/diskType
-     * - projects/project/zones/zone/diskTypes/diskType
-     * - zones/zone/diskTypes/diskType  Note that for InstanceTemplate, this is the name of the disk type, not URL.
+     * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/pd-standard For a full list of acceptable values, see Persistent disk types. If you define this field, you can provide either the full or partial URL. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/diskType - projects/project/zones/zone/diskTypes/diskType - zones/zone/diskTypes/diskType Note that for InstanceTemplate, this is the name of the disk type, not URL.
      * </pre>
      *
-     * <code>string disk_type = 93009052;</code>
+     * <code>optional string disk_type = 93009052;</code>
      *
      * @param value The bytes for diskType to set.
      * @return This builder for chaining.
@@ -2404,21 +2377,19 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       return this;
     }
 
-    private int onUpdateAction_ = 0;
+    private java.lang.Object onUpdateAction_ = "";
     /**
      *
      *
      * <pre>
      * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+     * Check the OnUpdateAction enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;
-     * </code>
+     * <code>optional string on_update_action = 202451980;</code>
      *
      * @return Whether the onUpdateAction field is set.
      */
-    @java.lang.Override
     public boolean hasOnUpdateAction() {
       return ((bitField0_ & 0x00000020) != 0);
     }
@@ -2427,33 +2398,64 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      * <pre>
      * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+     * Check the OnUpdateAction enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;
-     * </code>
+     * <code>optional string on_update_action = 202451980;</code>
      *
-     * @return The enum numeric value on the wire for onUpdateAction.
+     * @return The onUpdateAction.
      */
-    @java.lang.Override
-    public int getOnUpdateActionValue() {
-      return onUpdateAction_;
+    public java.lang.String getOnUpdateAction() {
+      java.lang.Object ref = onUpdateAction_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        onUpdateAction_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+     * Check the OnUpdateAction enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;
-     * </code>
+     * <code>optional string on_update_action = 202451980;</code>
      *
-     * @param value The enum numeric value on the wire for onUpdateAction to set.
+     * @return The bytes for onUpdateAction.
+     */
+    public com.google.protobuf.ByteString getOnUpdateActionBytes() {
+      java.lang.Object ref = onUpdateAction_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        onUpdateAction_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+     * Check the OnUpdateAction enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string on_update_action = 202451980;</code>
+     *
+     * @param value The onUpdateAction to set.
      * @return This builder for chaining.
      */
-    public Builder setOnUpdateActionValue(int value) {
+    public Builder setOnUpdateAction(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000020;
       onUpdateAction_ = value;
       onChanged();
@@ -2464,46 +2466,16 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      * <pre>
      * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+     * Check the OnUpdateAction enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;
-     * </code>
+     * <code>optional string on_update_action = 202451980;</code>
      *
-     * @return The onUpdateAction.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction
-        getOnUpdateAction() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction result =
-          com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction.valueOf(
-              onUpdateAction_);
-      return result == null
-          ? com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;
-     * </code>
-     *
-     * @param value The onUpdateAction to set.
      * @return This builder for chaining.
      */
-    public Builder setOnUpdateAction(
-        com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000020;
-      onUpdateAction_ = value.getNumber();
+    public Builder clearOnUpdateAction() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onUpdateAction_ = getDefaultInstance().getOnUpdateAction();
       onChanged();
       return this;
     }
@@ -2512,17 +2484,21 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      * <pre>
      * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+     * Check the OnUpdateAction enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;
-     * </code>
+     * <code>optional string on_update_action = 202451980;</code>
      *
+     * @param value The bytes for onUpdateAction to set.
      * @return This builder for chaining.
      */
-    public Builder clearOnUpdateAction() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      onUpdateAction_ = 0;
+    public Builder setOnUpdateActionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000020;
+      onUpdateAction_ = value;
       onChanged();
       return this;
     }
@@ -2532,10 +2508,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Indicates how many IOPS must be provisioned for the disk.
+     * Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see the Extreme persistent disk documentation.
      * </pre>
      *
-     * <code>int64 provisioned_iops = 186769108;</code>
+     * <code>optional int64 provisioned_iops = 186769108;</code>
      *
      * @return Whether the provisionedIops field is set.
      */
@@ -2547,10 +2523,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Indicates how many IOPS must be provisioned for the disk.
+     * Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see the Extreme persistent disk documentation.
      * </pre>
      *
-     * <code>int64 provisioned_iops = 186769108;</code>
+     * <code>optional int64 provisioned_iops = 186769108;</code>
      *
      * @return The provisionedIops.
      */
@@ -2562,10 +2538,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Indicates how many IOPS must be provisioned for the disk.
+     * Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see the Extreme persistent disk documentation.
      * </pre>
      *
-     * <code>int64 provisioned_iops = 186769108;</code>
+     * <code>optional int64 provisioned_iops = 186769108;</code>
      *
      * @param value The provisionedIops to set.
      * @return This builder for chaining.
@@ -2580,10 +2556,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Indicates how many IOPS must be provisioned for the disk.
+     * Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see the Extreme persistent disk documentation.
      * </pre>
      *
-     * <code>int64 provisioned_iops = 186769108;</code>
+     * <code>optional int64 provisioned_iops = 186769108;</code>
      *
      * @return This builder for chaining.
      */
@@ -2767,19 +2743,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-     * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-     * projects/debian-cloud/global/images/family/debian-9
-     * Alternatively, use a specific version of a public operating system image:
-     * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-     * To create a disk with a custom image that you created, specify the image name in the following format:
-     * global/images/my-custom-image
-     * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-     * global/images/family/my-image-family
-     * If the source image is deleted later, this field will not be set.
+     * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family If the source image is deleted later, this field will not be set.
      * </pre>
      *
-     * <code>string source_image = 50443319;</code>
+     * <code>optional string source_image = 50443319;</code>
      *
      * @return Whether the sourceImage field is set.
      */
@@ -2790,19 +2757,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-     * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-     * projects/debian-cloud/global/images/family/debian-9
-     * Alternatively, use a specific version of a public operating system image:
-     * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-     * To create a disk with a custom image that you created, specify the image name in the following format:
-     * global/images/my-custom-image
-     * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-     * global/images/family/my-image-family
-     * If the source image is deleted later, this field will not be set.
+     * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family If the source image is deleted later, this field will not be set.
      * </pre>
      *
-     * <code>string source_image = 50443319;</code>
+     * <code>optional string source_image = 50443319;</code>
      *
      * @return The sourceImage.
      */
@@ -2821,19 +2779,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-     * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-     * projects/debian-cloud/global/images/family/debian-9
-     * Alternatively, use a specific version of a public operating system image:
-     * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-     * To create a disk with a custom image that you created, specify the image name in the following format:
-     * global/images/my-custom-image
-     * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-     * global/images/family/my-image-family
-     * If the source image is deleted later, this field will not be set.
+     * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family If the source image is deleted later, this field will not be set.
      * </pre>
      *
-     * <code>string source_image = 50443319;</code>
+     * <code>optional string source_image = 50443319;</code>
      *
      * @return The bytes for sourceImage.
      */
@@ -2852,19 +2801,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-     * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-     * projects/debian-cloud/global/images/family/debian-9
-     * Alternatively, use a specific version of a public operating system image:
-     * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-     * To create a disk with a custom image that you created, specify the image name in the following format:
-     * global/images/my-custom-image
-     * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-     * global/images/family/my-image-family
-     * If the source image is deleted later, this field will not be set.
+     * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family If the source image is deleted later, this field will not be set.
      * </pre>
      *
-     * <code>string source_image = 50443319;</code>
+     * <code>optional string source_image = 50443319;</code>
      *
      * @param value The sourceImage to set.
      * @return This builder for chaining.
@@ -2882,19 +2822,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-     * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-     * projects/debian-cloud/global/images/family/debian-9
-     * Alternatively, use a specific version of a public operating system image:
-     * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-     * To create a disk with a custom image that you created, specify the image name in the following format:
-     * global/images/my-custom-image
-     * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-     * global/images/family/my-image-family
-     * If the source image is deleted later, this field will not be set.
+     * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family If the source image is deleted later, this field will not be set.
      * </pre>
      *
-     * <code>string source_image = 50443319;</code>
+     * <code>optional string source_image = 50443319;</code>
      *
      * @return This builder for chaining.
      */
@@ -2908,19 +2839,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
-     * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
-     * projects/debian-cloud/global/images/family/debian-9
-     * Alternatively, use a specific version of a public operating system image:
-     * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
-     * To create a disk with a custom image that you created, specify the image name in the following format:
-     * global/images/my-custom-image
-     * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
-     * global/images/family/my-image-family
-     * If the source image is deleted later, this field will not be set.
+     * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family If the source image is deleted later, this field will not be set.
      * </pre>
      *
-     * <code>string source_image = 50443319;</code>
+     * <code>optional string source_image = 50443319;</code>
      *
      * @param value The bytes for sourceImage to set.
      * @return This builder for chaining.
@@ -2946,11 +2868,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
-     * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
+     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key. Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      *
      * @return Whether the sourceImageEncryptionKey field is set.
@@ -2962,11 +2884,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
-     * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
+     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key. Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      *
      * @return The sourceImageEncryptionKey.
@@ -2984,11 +2906,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
-     * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
+     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key. Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     public Builder setSourceImageEncryptionKey(
@@ -3009,11 +2931,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
-     * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
+     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key. Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     public Builder setSourceImageEncryptionKey(
@@ -3031,11 +2953,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
-     * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
+     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key. Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     public Builder mergeSourceImageEncryptionKey(
@@ -3064,11 +2986,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
-     * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
+     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key. Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     public Builder clearSourceImageEncryptionKey() {
@@ -3085,11 +3007,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
-     * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
+     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key. Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
@@ -3102,11 +3024,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
-     * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
+     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key. Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
@@ -3123,11 +3045,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
-     * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
+     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key. Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3152,13 +3074,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD.
-     * To create a disk with a snapshot that you created, specify the snapshot name in the following format:
-     * global/snapshots/my-backup
-     * If the source snapshot is deleted later, this field will not be set.
+     * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD. To create a disk with a snapshot that you created, specify the snapshot name in the following format: global/snapshots/my-backup If the source snapshot is deleted later, this field will not be set.
      * </pre>
      *
-     * <code>string source_snapshot = 126061928;</code>
+     * <code>optional string source_snapshot = 126061928;</code>
      *
      * @return Whether the sourceSnapshot field is set.
      */
@@ -3169,13 +3088,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD.
-     * To create a disk with a snapshot that you created, specify the snapshot name in the following format:
-     * global/snapshots/my-backup
-     * If the source snapshot is deleted later, this field will not be set.
+     * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD. To create a disk with a snapshot that you created, specify the snapshot name in the following format: global/snapshots/my-backup If the source snapshot is deleted later, this field will not be set.
      * </pre>
      *
-     * <code>string source_snapshot = 126061928;</code>
+     * <code>optional string source_snapshot = 126061928;</code>
      *
      * @return The sourceSnapshot.
      */
@@ -3194,13 +3110,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD.
-     * To create a disk with a snapshot that you created, specify the snapshot name in the following format:
-     * global/snapshots/my-backup
-     * If the source snapshot is deleted later, this field will not be set.
+     * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD. To create a disk with a snapshot that you created, specify the snapshot name in the following format: global/snapshots/my-backup If the source snapshot is deleted later, this field will not be set.
      * </pre>
      *
-     * <code>string source_snapshot = 126061928;</code>
+     * <code>optional string source_snapshot = 126061928;</code>
      *
      * @return The bytes for sourceSnapshot.
      */
@@ -3219,13 +3132,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD.
-     * To create a disk with a snapshot that you created, specify the snapshot name in the following format:
-     * global/snapshots/my-backup
-     * If the source snapshot is deleted later, this field will not be set.
+     * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD. To create a disk with a snapshot that you created, specify the snapshot name in the following format: global/snapshots/my-backup If the source snapshot is deleted later, this field will not be set.
      * </pre>
      *
-     * <code>string source_snapshot = 126061928;</code>
+     * <code>optional string source_snapshot = 126061928;</code>
      *
      * @param value The sourceSnapshot to set.
      * @return This builder for chaining.
@@ -3243,13 +3153,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD.
-     * To create a disk with a snapshot that you created, specify the snapshot name in the following format:
-     * global/snapshots/my-backup
-     * If the source snapshot is deleted later, this field will not be set.
+     * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD. To create a disk with a snapshot that you created, specify the snapshot name in the following format: global/snapshots/my-backup If the source snapshot is deleted later, this field will not be set.
      * </pre>
      *
-     * <code>string source_snapshot = 126061928;</code>
+     * <code>optional string source_snapshot = 126061928;</code>
      *
      * @return This builder for chaining.
      */
@@ -3263,13 +3170,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD.
-     * To create a disk with a snapshot that you created, specify the snapshot name in the following format:
-     * global/snapshots/my-backup
-     * If the source snapshot is deleted later, this field will not be set.
+     * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD. To create a disk with a snapshot that you created, specify the snapshot name in the following format: global/snapshots/my-backup If the source snapshot is deleted later, this field will not be set.
      * </pre>
      *
-     * <code>string source_snapshot = 126061928;</code>
+     * <code>optional string source_snapshot = 126061928;</code>
      *
      * @param value The bytes for sourceSnapshot to set.
      * @return This builder for chaining.
@@ -3299,7 +3203,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      *
      * @return Whether the sourceSnapshotEncryptionKey field is set.
@@ -3315,7 +3219,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      *
      * @return The sourceSnapshotEncryptionKey.
@@ -3337,7 +3241,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     public Builder setSourceSnapshotEncryptionKey(
@@ -3362,7 +3266,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     public Builder setSourceSnapshotEncryptionKey(
@@ -3384,7 +3288,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     public Builder mergeSourceSnapshotEncryptionKey(
@@ -3417,7 +3321,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     public Builder clearSourceSnapshotEncryptionKey() {
@@ -3438,7 +3342,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
@@ -3455,7 +3359,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
@@ -3476,7 +3380,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

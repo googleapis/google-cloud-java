@@ -30,7 +30,7 @@ public interface ScalingScheduleStatusOrBuilder
    * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_start_time = 34545107;</code>
+   * <code>optional string last_start_time = 34545107;</code>
    *
    * @return Whether the lastStartTime field is set.
    */
@@ -42,7 +42,7 @@ public interface ScalingScheduleStatusOrBuilder
    * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_start_time = 34545107;</code>
+   * <code>optional string last_start_time = 34545107;</code>
    *
    * @return The lastStartTime.
    */
@@ -54,7 +54,7 @@ public interface ScalingScheduleStatusOrBuilder
    * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_start_time = 34545107;</code>
+   * <code>optional string last_start_time = 34545107;</code>
    *
    * @return The bytes for lastStartTime.
    */
@@ -67,7 +67,7 @@ public interface ScalingScheduleStatusOrBuilder
    * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
    * </pre>
    *
-   * <code>string next_start_time = 97270102;</code>
+   * <code>optional string next_start_time = 97270102;</code>
    *
    * @return Whether the nextStartTime field is set.
    */
@@ -79,7 +79,7 @@ public interface ScalingScheduleStatusOrBuilder
    * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
    * </pre>
    *
-   * <code>string next_start_time = 97270102;</code>
+   * <code>optional string next_start_time = 97270102;</code>
    *
    * @return The nextStartTime.
    */
@@ -91,7 +91,7 @@ public interface ScalingScheduleStatusOrBuilder
    * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
    * </pre>
    *
-   * <code>string next_start_time = 97270102;</code>
+   * <code>optional string next_start_time = 97270102;</code>
    *
    * @return The bytes for nextStartTime.
    */
@@ -102,9 +102,10 @@ public interface ScalingScheduleStatusOrBuilder
    *
    * <pre>
    * [Output Only] The current state of a scaling schedule.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ScalingScheduleStatus.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
    * @return Whether the state field is set.
    */
@@ -114,23 +115,25 @@ public interface ScalingScheduleStatusOrBuilder
    *
    * <pre>
    * [Output Only] The current state of a scaling schedule.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ScalingScheduleStatus.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The enum numeric value on the wire for state.
+   * @return The state.
    */
-  int getStateValue();
+  java.lang.String getState();
   /**
    *
    *
    * <pre>
    * [Output Only] The current state of a scaling schedule.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ScalingScheduleStatus.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The state.
+   * @return The bytes for state.
    */
-  com.google.cloud.compute.v1.ScalingScheduleStatus.State getState();
+  com.google.protobuf.ByteString getStateBytes();
 }

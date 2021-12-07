@@ -129,7 +129,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
    * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>optional string instance_template = 309248228;</code>
    *
    * @return Whether the instanceTemplate field is set.
    */
@@ -144,7 +144,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
    * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>optional string instance_template = 309248228;</code>
    *
    * @return The instanceTemplate.
    */
@@ -167,7 +167,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
    * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>optional string instance_template = 309248228;</code>
    *
    * @return The bytes for instanceTemplate.
    */
@@ -193,7 +193,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
    * [Output Only] Name of the version.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -208,7 +208,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
    * [Output Only] Name of the version.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -231,7 +231,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
    * [Output Only] Name of the version.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -613,7 +613,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @return Whether the instanceTemplate field is set.
      */
@@ -627,7 +627,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @return The instanceTemplate.
      */
@@ -649,7 +649,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @return The bytes for instanceTemplate.
      */
@@ -671,7 +671,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @param value The instanceTemplate to set.
      * @return This builder for chaining.
@@ -692,7 +692,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @return This builder for chaining.
      */
@@ -709,7 +709,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>optional string instance_template = 309248228;</code>
      *
      * @param value The bytes for instanceTemplate to set.
      * @return This builder for chaining.
@@ -733,7 +733,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] Name of the version.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -747,7 +747,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] Name of the version.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -769,7 +769,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] Name of the version.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -791,7 +791,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] Name of the version.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -812,7 +812,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] Name of the version.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -829,7 +829,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] Name of the version.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

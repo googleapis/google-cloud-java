@@ -30,7 +30,7 @@ public interface SSLHealthCheckOrBuilder
    * The TCP port number for the health check request. The default value is 443. Valid values are 1 through 65535.
    * </pre>
    *
-   * <code>int32 port = 3446913;</code>
+   * <code>optional int32 port = 3446913;</code>
    *
    * @return Whether the port field is set.
    */
@@ -42,7 +42,7 @@ public interface SSLHealthCheckOrBuilder
    * The TCP port number for the health check request. The default value is 443. Valid values are 1 through 65535.
    * </pre>
    *
-   * <code>int32 port = 3446913;</code>
+   * <code>optional int32 port = 3446913;</code>
    *
    * @return The port.
    */
@@ -55,7 +55,7 @@ public interface SSLHealthCheckOrBuilder
    * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return Whether the portName field is set.
    */
@@ -67,7 +67,7 @@ public interface SSLHealthCheckOrBuilder
    * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return The portName.
    */
@@ -79,7 +79,7 @@ public interface SSLHealthCheckOrBuilder
    * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return The bytes for portName.
    */
@@ -89,15 +89,11 @@ public interface SSLHealthCheckOrBuilder
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, SSL health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, SSL health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SSLHealthCheck.PortSpecification port_specification = 51590597;
-   * </code>
+   * <code>optional string port_specification = 51590597;</code>
    *
    * @return Whether the portSpecification field is set.
    */
@@ -106,45 +102,38 @@ public interface SSLHealthCheckOrBuilder
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, SSL health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, SSL health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SSLHealthCheck.PortSpecification port_specification = 51590597;
-   * </code>
+   * <code>optional string port_specification = 51590597;</code>
    *
-   * @return The enum numeric value on the wire for portSpecification.
+   * @return The portSpecification.
    */
-  int getPortSpecificationValue();
+  java.lang.String getPortSpecification();
   /**
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, SSL health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, SSL health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SSLHealthCheck.PortSpecification port_specification = 51590597;
-   * </code>
+   * <code>optional string port_specification = 51590597;</code>
    *
-   * @return The portSpecification.
+   * @return The bytes for portSpecification.
    */
-  com.google.cloud.compute.v1.SSLHealthCheck.PortSpecification getPortSpecification();
+  com.google.protobuf.ByteString getPortSpecificationBytes();
 
   /**
    *
    *
    * <pre>
    * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SSLHealthCheck.ProxyHeader proxy_header = 160374142;</code>
+   * <code>optional string proxy_header = 160374142;</code>
    *
    * @return Whether the proxyHeader field is set.
    */
@@ -154,25 +143,27 @@ public interface SSLHealthCheckOrBuilder
    *
    * <pre>
    * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SSLHealthCheck.ProxyHeader proxy_header = 160374142;</code>
+   * <code>optional string proxy_header = 160374142;</code>
    *
-   * @return The enum numeric value on the wire for proxyHeader.
+   * @return The proxyHeader.
    */
-  int getProxyHeaderValue();
+  java.lang.String getProxyHeader();
   /**
    *
    *
    * <pre>
    * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SSLHealthCheck.ProxyHeader proxy_header = 160374142;</code>
+   * <code>optional string proxy_header = 160374142;</code>
    *
-   * @return The proxyHeader.
+   * @return The bytes for proxyHeader.
    */
-  com.google.cloud.compute.v1.SSLHealthCheck.ProxyHeader getProxyHeader();
+  com.google.protobuf.ByteString getProxyHeaderBytes();
 
   /**
    *
@@ -181,7 +172,7 @@ public interface SSLHealthCheckOrBuilder
    * The application data to send once the SSL connection has been established (default value is empty). If both request and response are empty, the connection establishment alone will indicate health. The request data can only be ASCII.
    * </pre>
    *
-   * <code>string request = 21951119;</code>
+   * <code>optional string request = 21951119;</code>
    *
    * @return Whether the request field is set.
    */
@@ -193,7 +184,7 @@ public interface SSLHealthCheckOrBuilder
    * The application data to send once the SSL connection has been established (default value is empty). If both request and response are empty, the connection establishment alone will indicate health. The request data can only be ASCII.
    * </pre>
    *
-   * <code>string request = 21951119;</code>
+   * <code>optional string request = 21951119;</code>
    *
    * @return The request.
    */
@@ -205,7 +196,7 @@ public interface SSLHealthCheckOrBuilder
    * The application data to send once the SSL connection has been established (default value is empty). If both request and response are empty, the connection establishment alone will indicate health. The request data can only be ASCII.
    * </pre>
    *
-   * <code>string request = 21951119;</code>
+   * <code>optional string request = 21951119;</code>
    *
    * @return The bytes for request.
    */
@@ -218,7 +209,7 @@ public interface SSLHealthCheckOrBuilder
    * The bytes to match against the beginning of the response data. If left empty (the default value), any response will indicate health. The response data can only be ASCII.
    * </pre>
    *
-   * <code>string response = 196547649;</code>
+   * <code>optional string response = 196547649;</code>
    *
    * @return Whether the response field is set.
    */
@@ -230,7 +221,7 @@ public interface SSLHealthCheckOrBuilder
    * The bytes to match against the beginning of the response data. If left empty (the default value), any response will indicate health. The response data can only be ASCII.
    * </pre>
    *
-   * <code>string response = 196547649;</code>
+   * <code>optional string response = 196547649;</code>
    *
    * @return The response.
    */
@@ -242,7 +233,7 @@ public interface SSLHealthCheckOrBuilder
    * The bytes to match against the beginning of the response data. If left empty (the default value), any response will indicate health. The response data can only be ASCII.
    * </pre>
    *
-   * <code>string response = 196547649;</code>
+   * <code>optional string response = 196547649;</code>
    *
    * @return The bytes for response.
    */

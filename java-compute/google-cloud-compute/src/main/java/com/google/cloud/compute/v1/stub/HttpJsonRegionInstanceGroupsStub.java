@@ -26,20 +26,24 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.GetRegionInstanceGroupRequest;
 import com.google.cloud.compute.v1.InstanceGroup;
 import com.google.cloud.compute.v1.ListInstancesRegionInstanceGroupsRequest;
 import com.google.cloud.compute.v1.ListRegionInstanceGroupsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.RegionInstanceGroupList;
 import com.google.cloud.compute.v1.RegionInstanceGroupsListInstances;
 import com.google.cloud.compute.v1.SetNamedPortsRegionInstanceGroupRequest;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -57,6 +61,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<GetRegionInstanceGroupRequest, InstanceGroup>
       getMethodDescriptor =
           ApiMethodDescriptor.<GetRegionInstanceGroupRequest, InstanceGroup>newBuilder()
@@ -88,6 +95,7 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<InstanceGroup>newBuilder()
                       .setDefaultInstance(InstanceGroup.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -139,6 +147,7 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<RegionInstanceGroupList>newBuilder()
                       .setDefaultInstance(RegionInstanceGroupList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -202,6 +211,7 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<RegionInstanceGroupsListInstances>newBuilder()
                       .setDefaultInstance(RegionInstanceGroupsListInstances.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -245,7 +255,21 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetNamedPortsRegionInstanceGroupRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<GetRegionInstanceGroupRequest, InstanceGroup> getCallable;
@@ -259,8 +283,11 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
       listInstancesPagedCallable;
   private final UnaryCallable<SetNamedPortsRegionInstanceGroupRequest, Operation>
       setNamedPortsCallable;
+  private final OperationCallable<SetNamedPortsRegionInstanceGroupRequest, Operation, Operation>
+      setNamedPortsOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionInstanceGroupsStub create(
@@ -301,16 +328,20 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<GetRegionInstanceGroupRequest, InstanceGroup> getTransportSettings =
         HttpJsonCallSettings.<GetRegionInstanceGroupRequest, InstanceGroup>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListRegionInstanceGroupsRequest, RegionInstanceGroupList>
         listTransportSettings =
             HttpJsonCallSettings
                 .<ListRegionInstanceGroupsRequest, RegionInstanceGroupList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<
             ListInstancesRegionInstanceGroupsRequest, RegionInstanceGroupsListInstances>
@@ -319,11 +350,13 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
                 .<ListInstancesRegionInstanceGroupsRequest, RegionInstanceGroupsListInstances>
                     newBuilder()
                 .setMethodDescriptor(listInstancesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<SetNamedPortsRegionInstanceGroupRequest, Operation>
         setNamedPortsTransportSettings =
             HttpJsonCallSettings.<SetNamedPortsRegionInstanceGroupRequest, Operation>newBuilder()
                 .setMethodDescriptor(setNamedPortsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.getCallable =
@@ -344,6 +377,12 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
     this.setNamedPortsCallable =
         callableFactory.createUnaryCallable(
             setNamedPortsTransportSettings, settings.setNamedPortsSettings(), clientContext);
+    this.setNamedPortsOperationCallable =
+        callableFactory.createOperationCallable(
+            setNamedPortsTransportSettings,
+            settings.setNamedPortsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -389,6 +428,12 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
   @Override
   public UnaryCallable<SetNamedPortsRegionInstanceGroupRequest, Operation> setNamedPortsCallable() {
     return setNamedPortsCallable;
+  }
+
+  @Override
+  public OperationCallable<SetNamedPortsRegionInstanceGroupRequest, Operation, Operation>
+      setNamedPortsOperationCallable() {
+    return setNamedPortsOperationCallable;
   }
 
   @Override

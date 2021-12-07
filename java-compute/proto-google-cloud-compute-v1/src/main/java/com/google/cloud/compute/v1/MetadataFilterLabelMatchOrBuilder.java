@@ -27,11 +27,10 @@ public interface MetadataFilterLabelMatchOrBuilder
    *
    *
    * <pre>
-   * Name of metadata label.
-   * The name can have a maximum length of 1024 characters and must be at least 1 character long.
+   * Name of metadata label. The name can have a maximum length of 1024 characters and must be at least 1 character long.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -40,11 +39,10 @@ public interface MetadataFilterLabelMatchOrBuilder
    *
    *
    * <pre>
-   * Name of metadata label.
-   * The name can have a maximum length of 1024 characters and must be at least 1 character long.
+   * Name of metadata label. The name can have a maximum length of 1024 characters and must be at least 1 character long.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -53,11 +51,10 @@ public interface MetadataFilterLabelMatchOrBuilder
    *
    *
    * <pre>
-   * Name of metadata label.
-   * The name can have a maximum length of 1024 characters and must be at least 1 character long.
+   * Name of metadata label. The name can have a maximum length of 1024 characters and must be at least 1 character long.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -67,11 +64,10 @@ public interface MetadataFilterLabelMatchOrBuilder
    *
    *
    * <pre>
-   * The value of the label must match the specified value.
-   * value can have a maximum length of 1024 characters.
+   * The value of the label must match the specified value. value can have a maximum length of 1024 characters.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return Whether the value field is set.
    */
@@ -80,11 +76,10 @@ public interface MetadataFilterLabelMatchOrBuilder
    *
    *
    * <pre>
-   * The value of the label must match the specified value.
-   * value can have a maximum length of 1024 characters.
+   * The value of the label must match the specified value. value can have a maximum length of 1024 characters.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return The value.
    */
@@ -93,11 +88,10 @@ public interface MetadataFilterLabelMatchOrBuilder
    *
    *
    * <pre>
-   * The value of the label must match the specified value.
-   * value can have a maximum length of 1024 characters.
+   * The value of the label must match the specified value. value can have a maximum length of 1024 characters.
    * </pre>
    *
-   * <code>string value = 111972721;</code>
+   * <code>optional string value = 111972721;</code>
    *
    * @return The bytes for value.
    */

@@ -144,7 +144,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
    * [Output Only] Type of resource. Always compute#projectsGetXpnResources for lists of service resources (a.k.a service projects)
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -159,7 +159,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
    * [Output Only] Type of resource. Always compute#projectsGetXpnResources for lists of service resources (a.k.a service projects)
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -182,7 +182,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
    * [Output Only] Type of resource. Always compute#projectsGetXpnResources for lists of service resources (a.k.a service projects)
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -208,7 +208,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
    * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
    * </pre>
    *
-   * <code>string next_page_token = 79797525;</code>
+   * <code>optional string next_page_token = 79797525;</code>
    *
    * @return Whether the nextPageToken field is set.
    */
@@ -223,7 +223,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
    * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
    * </pre>
    *
-   * <code>string next_page_token = 79797525;</code>
+   * <code>optional string next_page_token = 79797525;</code>
    *
    * @return The nextPageToken.
    */
@@ -246,7 +246,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
    * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
    * </pre>
    *
-   * <code>string next_page_token = 79797525;</code>
+   * <code>optional string next_page_token = 79797525;</code>
    *
    * @return The bytes for nextPageToken.
    */
@@ -752,7 +752,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
      * [Output Only] Type of resource. Always compute#projectsGetXpnResources for lists of service resources (a.k.a service projects)
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -766,7 +766,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
      * [Output Only] Type of resource. Always compute#projectsGetXpnResources for lists of service resources (a.k.a service projects)
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -788,7 +788,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
      * [Output Only] Type of resource. Always compute#projectsGetXpnResources for lists of service resources (a.k.a service projects)
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -810,7 +810,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
      * [Output Only] Type of resource. Always compute#projectsGetXpnResources for lists of service resources (a.k.a service projects)
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -831,7 +831,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
      * [Output Only] Type of resource. Always compute#projectsGetXpnResources for lists of service resources (a.k.a service projects)
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -848,7 +848,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
      * [Output Only] Type of resource. Always compute#projectsGetXpnResources for lists of service resources (a.k.a service projects)
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -872,7 +872,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
      * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
      * </pre>
      *
-     * <code>string next_page_token = 79797525;</code>
+     * <code>optional string next_page_token = 79797525;</code>
      *
      * @return Whether the nextPageToken field is set.
      */
@@ -886,7 +886,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
      * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
      * </pre>
      *
-     * <code>string next_page_token = 79797525;</code>
+     * <code>optional string next_page_token = 79797525;</code>
      *
      * @return The nextPageToken.
      */
@@ -908,7 +908,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
      * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
      * </pre>
      *
-     * <code>string next_page_token = 79797525;</code>
+     * <code>optional string next_page_token = 79797525;</code>
      *
      * @return The bytes for nextPageToken.
      */
@@ -930,7 +930,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
      * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
      * </pre>
      *
-     * <code>string next_page_token = 79797525;</code>
+     * <code>optional string next_page_token = 79797525;</code>
      *
      * @param value The nextPageToken to set.
      * @return This builder for chaining.
@@ -951,7 +951,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
      * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
      * </pre>
      *
-     * <code>string next_page_token = 79797525;</code>
+     * <code>optional string next_page_token = 79797525;</code>
      *
      * @return This builder for chaining.
      */
@@ -968,7 +968,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
      * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
      * </pre>
      *
-     * <code>string next_page_token = 79797525;</code>
+     * <code>optional string next_page_token = 79797525;</code>
      *
      * @param value The bytes for nextPageToken to set.
      * @return This builder for chaining.

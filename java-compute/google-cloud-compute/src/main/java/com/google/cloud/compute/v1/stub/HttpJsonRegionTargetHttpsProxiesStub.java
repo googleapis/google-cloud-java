@@ -25,21 +25,25 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.GetRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.InsertRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.ListRegionTargetHttpsProxiesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.SetSslCertificatesRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetUrlMapRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.TargetHttpsProxy;
 import com.google.cloud.compute.v1.TargetHttpsProxyList;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -57,6 +61,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxiesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<DeleteRegionTargetHttpsProxyRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionTargetHttpsProxyRequest, Operation>newBuilder()
@@ -91,7 +98,21 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteRegionTargetHttpsProxyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetRegionTargetHttpsProxyRequest, TargetHttpsProxy>
@@ -125,6 +146,7 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetHttpsProxy>newBuilder()
                       .setDefaultInstance(TargetHttpsProxy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -165,7 +187,21 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertRegionTargetHttpsProxyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<
@@ -218,6 +254,7 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetHttpsProxyList>newBuilder()
                       .setDefaultInstance(TargetHttpsProxyList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -265,7 +302,21 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetSslCertificatesRegionTargetHttpsProxyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetUrlMapRegionTargetHttpsProxyRequest, Operation>
@@ -307,21 +358,45 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetUrlMapRegionTargetHttpsProxyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<DeleteRegionTargetHttpsProxyRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteRegionTargetHttpsProxyRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetRegionTargetHttpsProxyRequest, TargetHttpsProxy> getCallable;
   private final UnaryCallable<InsertRegionTargetHttpsProxyRequest, Operation> insertCallable;
+  private final OperationCallable<InsertRegionTargetHttpsProxyRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList>
       listCallable;
   private final UnaryCallable<ListRegionTargetHttpsProxiesRequest, ListPagedResponse>
       listPagedCallable;
   private final UnaryCallable<SetSslCertificatesRegionTargetHttpsProxyRequest, Operation>
       setSslCertificatesCallable;
+  private final OperationCallable<
+          SetSslCertificatesRegionTargetHttpsProxyRequest, Operation, Operation>
+      setSslCertificatesOperationCallable;
   private final UnaryCallable<SetUrlMapRegionTargetHttpsProxyRequest, Operation> setUrlMapCallable;
+  private final OperationCallable<SetUrlMapRegionTargetHttpsProxyRequest, Operation, Operation>
+      setUrlMapOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionTargetHttpsProxiesStub create(
@@ -363,46 +438,66 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<DeleteRegionTargetHttpsProxyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteRegionTargetHttpsProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetRegionTargetHttpsProxyRequest, TargetHttpsProxy> getTransportSettings =
         HttpJsonCallSettings.<GetRegionTargetHttpsProxyRequest, TargetHttpsProxy>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertRegionTargetHttpsProxyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionTargetHttpsProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList>
         listTransportSettings =
             HttpJsonCallSettings
                 .<ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<SetSslCertificatesRegionTargetHttpsProxyRequest, Operation>
         setSslCertificatesTransportSettings =
             HttpJsonCallSettings
                 .<SetSslCertificatesRegionTargetHttpsProxyRequest, Operation>newBuilder()
                 .setMethodDescriptor(setSslCertificatesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<SetUrlMapRegionTargetHttpsProxyRequest, Operation>
         setUrlMapTransportSettings =
             HttpJsonCallSettings.<SetUrlMapRegionTargetHttpsProxyRequest, Operation>newBuilder()
                 .setMethodDescriptor(setUrlMapMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -414,9 +509,21 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
             setSslCertificatesTransportSettings,
             settings.setSslCertificatesSettings(),
             clientContext);
+    this.setSslCertificatesOperationCallable =
+        callableFactory.createOperationCallable(
+            setSslCertificatesTransportSettings,
+            settings.setSslCertificatesOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setUrlMapCallable =
         callableFactory.createUnaryCallable(
             setUrlMapTransportSettings, settings.setUrlMapSettings(), clientContext);
+    this.setUrlMapOperationCallable =
+        callableFactory.createOperationCallable(
+            setUrlMapTransportSettings,
+            settings.setUrlMapOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -440,6 +547,12 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
   }
 
   @Override
+  public OperationCallable<DeleteRegionTargetHttpsProxyRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetRegionTargetHttpsProxyRequest, TargetHttpsProxy> getCallable() {
     return getCallable;
   }
@@ -447,6 +560,12 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
   @Override
   public UnaryCallable<InsertRegionTargetHttpsProxyRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertRegionTargetHttpsProxyRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -466,8 +585,20 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
   }
 
   @Override
+  public OperationCallable<SetSslCertificatesRegionTargetHttpsProxyRequest, Operation, Operation>
+      setSslCertificatesOperationCallable() {
+    return setSslCertificatesOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetUrlMapRegionTargetHttpsProxyRequest, Operation> setUrlMapCallable() {
     return setUrlMapCallable;
+  }
+
+  @Override
+  public OperationCallable<SetUrlMapRegionTargetHttpsProxyRequest, Operation, Operation>
+      setUrlMapOperationCallable() {
+    return setUrlMapOperationCallable;
   }
 
   @Override

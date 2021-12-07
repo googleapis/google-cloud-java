@@ -119,7 +119,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
    * Defines whether the instance has Display enabled.
    * </pre>
    *
-   * <code>bool enable_display = 14266886;</code>
+   * <code>optional bool enable_display = 14266886;</code>
    *
    * @return Whether the enableDisplay field is set.
    */
@@ -134,7 +134,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
    * Defines whether the instance has Display enabled.
    * </pre>
    *
-   * <code>bool enable_display = 14266886;</code>
+   * <code>optional bool enable_display = 14266886;</code>
    *
    * @return The enableDisplay.
    */
@@ -479,7 +479,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
      * Defines whether the instance has Display enabled.
      * </pre>
      *
-     * <code>bool enable_display = 14266886;</code>
+     * <code>optional bool enable_display = 14266886;</code>
      *
      * @return Whether the enableDisplay field is set.
      */
@@ -494,7 +494,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
      * Defines whether the instance has Display enabled.
      * </pre>
      *
-     * <code>bool enable_display = 14266886;</code>
+     * <code>optional bool enable_display = 14266886;</code>
      *
      * @return The enableDisplay.
      */
@@ -509,7 +509,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
      * Defines whether the instance has Display enabled.
      * </pre>
      *
-     * <code>bool enable_display = 14266886;</code>
+     * <code>optional bool enable_display = 14266886;</code>
      *
      * @param value The enableDisplay to set.
      * @return This builder for chaining.
@@ -527,7 +527,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
      * Defines whether the instance has Display enabled.
      * </pre>
      *
-     * <code>bool enable_display = 14266886;</code>
+     * <code>optional bool enable_display = 14266886;</code>
      *
      * @return This builder for chaining.
      */

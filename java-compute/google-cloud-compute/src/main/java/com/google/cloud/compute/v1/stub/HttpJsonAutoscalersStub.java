@@ -26,11 +26,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListAutoscalersRequest;
 import com.google.cloud.compute.v1.Autoscaler;
@@ -41,8 +43,10 @@ import com.google.cloud.compute.v1.GetAutoscalerRequest;
 import com.google.cloud.compute.v1.InsertAutoscalerRequest;
 import com.google.cloud.compute.v1.ListAutoscalersRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchAutoscalerRequest;
 import com.google.cloud.compute.v1.UpdateAutoscalerRequest;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -60,6 +64,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonAutoscalersStub extends AutoscalersStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<
           AggregatedListAutoscalersRequest, AutoscalerAggregatedList>
       aggregatedListMethodDescriptor =
@@ -113,6 +120,7 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<AutoscalerAggregatedList>newBuilder()
                       .setDefaultInstance(AutoscalerAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -149,7 +157,21 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteAutoscalerRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetAutoscalerRequest, Autoscaler> getMethodDescriptor =
@@ -181,6 +203,7 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Autoscaler>newBuilder()
                   .setDefaultInstance(Autoscaler.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -219,7 +242,21 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertAutoscalerRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListAutoscalersRequest, AutoscalerList>
@@ -270,6 +307,7 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<AutoscalerList>newBuilder()
                       .setDefaultInstance(AutoscalerList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -312,7 +350,21 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchAutoscalerRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<UpdateAutoscalerRequest, Operation>
@@ -354,7 +406,21 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (UpdateAutoscalerRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<AggregatedListAutoscalersRequest, AutoscalerAggregatedList>
@@ -362,14 +428,23 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
   private final UnaryCallable<AggregatedListAutoscalersRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
   private final UnaryCallable<DeleteAutoscalerRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteAutoscalerRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetAutoscalerRequest, Autoscaler> getCallable;
   private final UnaryCallable<InsertAutoscalerRequest, Operation> insertCallable;
+  private final OperationCallable<InsertAutoscalerRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListAutoscalersRequest, AutoscalerList> listCallable;
   private final UnaryCallable<ListAutoscalersRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<PatchAutoscalerRequest, Operation> patchCallable;
+  private final OperationCallable<PatchAutoscalerRequest, Operation, Operation>
+      patchOperationCallable;
   private final UnaryCallable<UpdateAutoscalerRequest, Operation> updateCallable;
+  private final OperationCallable<UpdateAutoscalerRequest, Operation, Operation>
+      updateOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonAutoscalersStub create(AutoscalersStubSettings settings)
@@ -409,36 +484,44 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub = HttpJsonZoneOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AggregatedListAutoscalersRequest, AutoscalerAggregatedList>
         aggregatedListTransportSettings =
             HttpJsonCallSettings
                 .<AggregatedListAutoscalersRequest, AutoscalerAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeleteAutoscalerRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteAutoscalerRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetAutoscalerRequest, Autoscaler> getTransportSettings =
         HttpJsonCallSettings.<GetAutoscalerRequest, Autoscaler>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertAutoscalerRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertAutoscalerRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListAutoscalersRequest, AutoscalerList> listTransportSettings =
         HttpJsonCallSettings.<ListAutoscalersRequest, AutoscalerList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<PatchAutoscalerRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchAutoscalerRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<UpdateAutoscalerRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateAutoscalerRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.aggregatedListCallable =
@@ -450,12 +533,24 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -465,9 +560,21 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
+    this.updateOperationCallable =
+        callableFactory.createOperationCallable(
+            updateTransportSettings,
+            settings.updateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -504,6 +611,12 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
   }
 
   @Override
+  public OperationCallable<DeleteAutoscalerRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetAutoscalerRequest, Autoscaler> getCallable() {
     return getCallable;
   }
@@ -511,6 +624,12 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
   @Override
   public UnaryCallable<InsertAutoscalerRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertAutoscalerRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -529,8 +648,19 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
   }
 
   @Override
+  public OperationCallable<PatchAutoscalerRequest, Operation, Operation> patchOperationCallable() {
+    return patchOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateAutoscalerRequest, Operation> updateCallable() {
     return updateCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAutoscalerRequest, Operation, Operation>
+      updateOperationCallable() {
+    return updateOperationCallable;
   }
 
   @Override

@@ -45,7 +45,7 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String address = "address-1147692044";
- *   Operation response = addressesClient.delete(project, region, address);
+ *   Address response = addressesClient.get(project, region, address);
  * }
  * }</pre>
  *
@@ -60,7 +60,7 @@
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
  *   String autoscaler = "autoscaler517258967";
- *   Operation response = autoscalersClient.delete(project, zone, autoscaler);
+ *   Autoscaler response = autoscalersClient.get(project, zone, autoscaler);
  * }
  * }</pre>
  *
@@ -74,9 +74,7 @@
  * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
  *   String project = "project-309310695";
  *   String backendBucket = "backendBucket713751966";
- *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
- *   Operation response =
- *       backendBucketsClient.addSignedUrlKey(project, backendBucket, signedUrlKeyResource);
+ *   BackendBucket response = backendBucketsClient.get(project, backendBucket);
  * }
  * }</pre>
  *
@@ -90,9 +88,7 @@
  * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
  *   String project = "project-309310695";
  *   String backendService = "backendService-1884714623";
- *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
- *   Operation response =
- *       backendServicesClient.addSignedUrlKey(project, backendService, signedUrlKeyResource);
+ *   BackendService response = backendServicesClient.get(project, backendService);
  * }
  * }</pre>
  *
@@ -122,11 +118,7 @@
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
  *   String disk = "disk3083677";
- *   DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource =
- *       DisksAddResourcePoliciesRequest.newBuilder().build();
- *   Operation response =
- *       disksClient.addResourcePolicies(
- *           project, zone, disk, disksAddResourcePoliciesRequestResource);
+ *   Disk response = disksClient.get(project, zone, disk);
  * }
  * }</pre>
  *
@@ -140,7 +132,7 @@
  * try (ExternalVpnGatewaysClient externalVpnGatewaysClient = ExternalVpnGatewaysClient.create()) {
  *   String project = "project-309310695";
  *   String externalVpnGateway = "externalVpnGateway-1140582181";
- *   Operation response = externalVpnGatewaysClient.delete(project, externalVpnGateway);
+ *   ExternalVpnGateway response = externalVpnGatewaysClient.get(project, externalVpnGateway);
  * }
  * }</pre>
  *
@@ -153,10 +145,7 @@
  * <pre>{@code
  * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
  *   String firewallPolicy = "firewallPolicy1819692626";
- *   FirewallPolicyAssociation firewallPolicyAssociationResource =
- *       FirewallPolicyAssociation.newBuilder().build();
- *   Operation response =
- *       firewallPoliciesClient.addAssociation(firewallPolicy, firewallPolicyAssociationResource);
+ *   FirewallPolicy response = firewallPoliciesClient.get(firewallPolicy);
  * }
  * }</pre>
  *
@@ -170,7 +159,7 @@
  * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
  *   String project = "project-309310695";
  *   String firewall = "firewall-562725632";
- *   Operation response = firewallsClient.delete(project, firewall);
+ *   Firewall response = firewallsClient.get(project, firewall);
  * }
  * }</pre>
  *
@@ -185,7 +174,7 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String forwardingRule = "forwardingRule-1429104743";
- *   Operation response = forwardingRulesClient.delete(project, region, forwardingRule);
+ *   ForwardingRule response = forwardingRulesClient.get(project, region, forwardingRule);
  * }
  * }</pre>
  *
@@ -199,7 +188,7 @@
  * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
  *   String project = "project-309310695";
  *   String address = "address-1147692044";
- *   Operation response = globalAddressesClient.delete(project, address);
+ *   Address response = globalAddressesClient.get(project, address);
  * }
  * }</pre>
  *
@@ -214,7 +203,7 @@
  *     GlobalForwardingRulesClient.create()) {
  *   String project = "project-309310695";
  *   String forwardingRule = "forwardingRule-1429104743";
- *   Operation response = globalForwardingRulesClient.delete(project, forwardingRule);
+ *   ForwardingRule response = globalForwardingRulesClient.get(project, forwardingRule);
  * }
  * }</pre>
  *
@@ -229,14 +218,8 @@
  *     GlobalNetworkEndpointGroupsClient.create()) {
  *   String project = "project-309310695";
  *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
- *   GlobalNetworkEndpointGroupsAttachEndpointsRequest
- *       globalNetworkEndpointGroupsAttachEndpointsRequestResource =
- *           GlobalNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
- *   Operation response =
- *       globalNetworkEndpointGroupsClient.attachNetworkEndpoints(
- *           project,
- *           networkEndpointGroup,
- *           globalNetworkEndpointGroupsAttachEndpointsRequestResource);
+ *   NetworkEndpointGroup response =
+ *       globalNetworkEndpointGroupsClient.get(project, networkEndpointGroup);
  * }
  * }</pre>
  *
@@ -280,8 +263,8 @@
  *     GlobalPublicDelegatedPrefixesClient.create()) {
  *   String project = "project-309310695";
  *   String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
- *   Operation response =
- *       globalPublicDelegatedPrefixesClient.delete(project, publicDelegatedPrefix);
+ *   PublicDelegatedPrefix response =
+ *       globalPublicDelegatedPrefixesClient.get(project, publicDelegatedPrefix);
  * }
  * }</pre>
  *
@@ -295,7 +278,22 @@
  * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
  *   String project = "project-309310695";
  *   String healthCheck = "healthCheck-1938093044";
- *   Operation response = healthChecksClient.delete(project, healthCheck);
+ *   HealthCheck response = healthChecksClient.get(project, healthCheck);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ImageFamilyViewsClient =======================
+ *
+ * <p>Service Description: The ImageFamilyViews API.
+ *
+ * <p>Sample for ImageFamilyViewsClient:
+ *
+ * <pre>{@code
+ * try (ImageFamilyViewsClient imageFamilyViewsClient = ImageFamilyViewsClient.create()) {
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String family = "family-1281860764";
+ *   ImageFamilyView response = imageFamilyViewsClient.get(project, zone, family);
  * }
  * }</pre>
  *
@@ -309,7 +307,7 @@
  * try (ImagesClient imagesClient = ImagesClient.create()) {
  *   String project = "project-309310695";
  *   String image = "image100313435";
- *   Operation response = imagesClient.delete(project, image);
+ *   Image response = imagesClient.get(project, image);
  * }
  * }</pre>
  *
@@ -325,15 +323,8 @@
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
  *   String instanceGroupManager = "instanceGroupManager-388242077";
- *   InstanceGroupManagersAbandonInstancesRequest
- *       instanceGroupManagersAbandonInstancesRequestResource =
- *           InstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
- *   Operation response =
- *       instanceGroupManagersClient.abandonInstances(
- *           project,
- *           zone,
- *           instanceGroupManager,
- *           instanceGroupManagersAbandonInstancesRequestResource);
+ *   InstanceGroupManager response =
+ *       instanceGroupManagersClient.get(project, zone, instanceGroupManager);
  * }
  * }</pre>
  *
@@ -348,11 +339,7 @@
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
  *   String instanceGroup = "instanceGroup-1404696854";
- *   InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource =
- *       InstanceGroupsAddInstancesRequest.newBuilder().build();
- *   Operation response =
- *       instanceGroupsClient.addInstances(
- *           project, zone, instanceGroup, instanceGroupsAddInstancesRequestResource);
+ *   InstanceGroup response = instanceGroupsClient.get(project, zone, instanceGroup);
  * }
  * }</pre>
  *
@@ -366,7 +353,7 @@
  * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
  *   String project = "project-309310695";
  *   String instanceTemplate = "instanceTemplate1009541167";
- *   Operation response = instanceTemplatesClient.delete(project, instanceTemplate);
+ *   InstanceTemplate response = instanceTemplatesClient.get(project, instanceTemplate);
  * }
  * }</pre>
  *
@@ -381,11 +368,7 @@
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
  *   String instance = "instance555127957";
- *   String networkInterface = "networkInterface-341981525";
- *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
- *   Operation response =
- *       instancesClient.addAccessConfig(
- *           project, zone, instance, networkInterface, accessConfigResource);
+ *   Instance response = instancesClient.get(project, zone, instance);
  * }
  * }</pre>
  *
@@ -401,8 +384,8 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String interconnectAttachment = "interconnectAttachment1869250641";
- *   Operation response =
- *       interconnectAttachmentsClient.delete(project, region, interconnectAttachment);
+ *   InterconnectAttachment response =
+ *       interconnectAttachmentsClient.get(project, region, interconnectAttachment);
  * }
  * }</pre>
  *
@@ -432,7 +415,7 @@
  * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
  *   String project = "project-309310695";
  *   String interconnect = "interconnect-849140594";
- *   Operation response = interconnectsClient.delete(project, interconnect);
+ *   Interconnect response = interconnectsClient.get(project, interconnect);
  * }
  * }</pre>
  *
@@ -460,7 +443,7 @@
  * try (LicensesClient licensesClient = LicensesClient.create()) {
  *   String project = "project-309310695";
  *   String license = "license166757441";
- *   Operation response = licensesClient.delete(project, license);
+ *   License response = licensesClient.get(project, license);
  * }
  * }</pre>
  *
@@ -491,15 +474,8 @@
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
  *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
- *   NetworkEndpointGroupsAttachEndpointsRequest
- *       networkEndpointGroupsAttachEndpointsRequestResource =
- *           NetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
- *   Operation response =
- *       networkEndpointGroupsClient.attachNetworkEndpoints(
- *           project,
- *           zone,
- *           networkEndpointGroup,
- *           networkEndpointGroupsAttachEndpointsRequestResource);
+ *   NetworkEndpointGroup response =
+ *       networkEndpointGroupsClient.get(project, zone, networkEndpointGroup);
  * }
  * }</pre>
  *
@@ -513,10 +489,7 @@
  * try (NetworksClient networksClient = NetworksClient.create()) {
  *   String project = "project-309310695";
  *   String network = "network1843485230";
- *   NetworksAddPeeringRequest networksAddPeeringRequestResource =
- *       NetworksAddPeeringRequest.newBuilder().build();
- *   Operation response =
- *       networksClient.addPeering(project, network, networksAddPeeringRequestResource);
+ *   Network response = networksClient.get(project, network);
  * }
  * }</pre>
  *
@@ -531,10 +504,7 @@
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
  *   String nodeGroup = "nodeGroup443599261";
- *   NodeGroupsAddNodesRequest nodeGroupsAddNodesRequestResource =
- *       NodeGroupsAddNodesRequest.newBuilder().build();
- *   Operation response =
- *       nodeGroupsClient.addNodes(project, zone, nodeGroup, nodeGroupsAddNodesRequestResource);
+ *   NodeGroup response = nodeGroupsClient.get(project, zone, nodeGroup);
  * }
  * }</pre>
  *
@@ -549,7 +519,7 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String nodeTemplate = "nodeTemplate2118368412";
- *   Operation response = nodeTemplatesClient.delete(project, region, nodeTemplate);
+ *   NodeTemplate response = nodeTemplatesClient.get(project, region, nodeTemplate);
  * }
  * }</pre>
  *
@@ -579,7 +549,7 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String packetMirroring = "packetMirroring1405520923";
- *   Operation response = packetMirroringsClient.delete(project, region, packetMirroring);
+ *   PacketMirroring response = packetMirroringsClient.get(project, region, packetMirroring);
  * }
  * }</pre>
  *
@@ -592,7 +562,7 @@
  * <pre>{@code
  * try (ProjectsClient projectsClient = ProjectsClient.create()) {
  *   String project = "project-309310695";
- *   Operation response = projectsClient.disableXpnHost(project);
+ *   Project response = projectsClient.get(project);
  * }
  * }</pre>
  *
@@ -607,7 +577,8 @@
  *     PublicAdvertisedPrefixesClient.create()) {
  *   String project = "project-309310695";
  *   String publicAdvertisedPrefix = "publicAdvertisedPrefix1506440856";
- *   Operation response = publicAdvertisedPrefixesClient.delete(project, publicAdvertisedPrefix);
+ *   PublicAdvertisedPrefix response =
+ *       publicAdvertisedPrefixesClient.get(project, publicAdvertisedPrefix);
  * }
  * }</pre>
  *
@@ -623,8 +594,8 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
- *   Operation response =
- *       publicDelegatedPrefixesClient.delete(project, region, publicDelegatedPrefix);
+ *   PublicDelegatedPrefix response =
+ *       publicDelegatedPrefixesClient.get(project, region, publicDelegatedPrefix);
  * }
  * }</pre>
  *
@@ -639,7 +610,7 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String autoscaler = "autoscaler517258967";
- *   Operation response = regionAutoscalersClient.delete(project, region, autoscaler);
+ *   Autoscaler response = regionAutoscalersClient.get(project, region, autoscaler);
  * }
  * }</pre>
  *
@@ -655,7 +626,7 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String backendService = "backendService-1884714623";
- *   Operation response = regionBackendServicesClient.delete(project, region, backendService);
+ *   BackendService response = regionBackendServicesClient.get(project, region, backendService);
  * }
  * }</pre>
  *
@@ -700,11 +671,7 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String disk = "disk3083677";
- *   RegionDisksAddResourcePoliciesRequest regionDisksAddResourcePoliciesRequestResource =
- *       RegionDisksAddResourcePoliciesRequest.newBuilder().build();
- *   Operation response =
- *       regionDisksClient.addResourcePolicies(
- *           project, region, disk, regionDisksAddResourcePoliciesRequestResource);
+ *   Disk response = regionDisksClient.get(project, region, disk);
  * }
  * }</pre>
  *
@@ -720,8 +687,8 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String healthCheckService = "healthCheckService-917902071";
- *   Operation response =
- *       regionHealthCheckServicesClient.delete(project, region, healthCheckService);
+ *   HealthCheckService response =
+ *       regionHealthCheckServicesClient.get(project, region, healthCheckService);
  * }
  * }</pre>
  *
@@ -736,7 +703,7 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String healthCheck = "healthCheck-1938093044";
- *   Operation response = regionHealthChecksClient.delete(project, region, healthCheck);
+ *   HealthCheck response = regionHealthChecksClient.get(project, region, healthCheck);
  * }
  * }</pre>
  *
@@ -752,15 +719,8 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String instanceGroupManager = "instanceGroupManager-388242077";
- *   RegionInstanceGroupManagersAbandonInstancesRequest
- *       regionInstanceGroupManagersAbandonInstancesRequestResource =
- *           RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
- *   Operation response =
- *       regionInstanceGroupManagersClient.abandonInstances(
- *           project,
- *           region,
- *           instanceGroupManager,
- *           regionInstanceGroupManagersAbandonInstancesRequestResource);
+ *   InstanceGroupManager response =
+ *       regionInstanceGroupManagersClient.get(project, region, instanceGroupManager);
  * }
  * }</pre>
  *
@@ -793,7 +753,9 @@
  *   BulkInsertInstanceResource bulkInsertInstanceResourceResource =
  *       BulkInsertInstanceResource.newBuilder().build();
  *   Operation response =
- *       regionInstancesClient.bulkInsert(project, region, bulkInsertInstanceResourceResource);
+ *       regionInstancesClient
+ *           .bulkInsertAsync(project, region, bulkInsertInstanceResourceResource)
+ *           .get();
  * }
  * }</pre>
  *
@@ -809,8 +771,8 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
- *   Operation response =
- *       regionNetworkEndpointGroupsClient.delete(project, region, networkEndpointGroup);
+ *   NetworkEndpointGroup response =
+ *       regionNetworkEndpointGroupsClient.get(project, region, networkEndpointGroup);
  * }
  * }</pre>
  *
@@ -826,8 +788,8 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String notificationEndpoint = "notificationEndpoint-354029664";
- *   Operation response =
- *       regionNotificationEndpointsClient.delete(project, region, notificationEndpoint);
+ *   NotificationEndpoint response =
+ *       regionNotificationEndpointsClient.get(project, region, notificationEndpoint);
  * }
  * }</pre>
  *
@@ -859,7 +821,7 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String sslCertificate = "sslCertificate-1304941589";
- *   Operation response = regionSslCertificatesClient.delete(project, region, sslCertificate);
+ *   SslCertificate response = regionSslCertificatesClient.get(project, region, sslCertificate);
  * }
  * }</pre>
  *
@@ -875,7 +837,8 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String targetHttpProxy = "targetHttpProxy-1944074187";
- *   Operation response = regionTargetHttpProxiesClient.delete(project, region, targetHttpProxy);
+ *   TargetHttpProxy response =
+ *       regionTargetHttpProxiesClient.get(project, region, targetHttpProxy);
  * }
  * }</pre>
  *
@@ -891,7 +854,8 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String targetHttpsProxy = "targetHttpsProxy833943732";
- *   Operation response = regionTargetHttpsProxiesClient.delete(project, region, targetHttpsProxy);
+ *   TargetHttpsProxy response =
+ *       regionTargetHttpsProxiesClient.get(project, region, targetHttpsProxy);
  * }
  * }</pre>
  *
@@ -906,7 +870,7 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String urlMap = "urlMap-836780691";
- *   Operation response = regionUrlMapsClient.delete(project, region, urlMap);
+ *   UrlMap response = regionUrlMapsClient.get(project, region, urlMap);
  * }
  * }</pre>
  *
@@ -935,7 +899,7 @@
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
  *   String reservation = "reservation-1563081780";
- *   Operation response = reservationsClient.delete(project, zone, reservation);
+ *   Reservation response = reservationsClient.get(project, zone, reservation);
  * }
  * }</pre>
  *
@@ -950,7 +914,7 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String resourcePolicy = "resourcePolicy-130903328";
- *   Operation response = resourcePoliciesClient.delete(project, region, resourcePolicy);
+ *   ResourcePolicy response = resourcePoliciesClient.get(project, region, resourcePolicy);
  * }
  * }</pre>
  *
@@ -965,7 +929,7 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String router = "router-925132983";
- *   Operation response = routersClient.delete(project, region, router);
+ *   Router response = routersClient.get(project, region, router);
  * }
  * }</pre>
  *
@@ -979,7 +943,7 @@
  * try (RoutesClient routesClient = RoutesClient.create()) {
  *   String project = "project-309310695";
  *   String route = "route108704329";
- *   Operation response = routesClient.delete(project, route);
+ *   Route response = routesClient.get(project, route);
  * }
  * }</pre>
  *
@@ -993,9 +957,22 @@
  * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
  *   String project = "project-309310695";
  *   String securityPolicy = "securityPolicy-788621166";
- *   SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
- *   Operation response =
- *       securityPoliciesClient.addRule(project, securityPolicy, securityPolicyRuleResource);
+ *   SecurityPolicy response = securityPoliciesClient.get(project, securityPolicy);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ServiceAttachmentsClient =======================
+ *
+ * <p>Service Description: The ServiceAttachments API.
+ *
+ * <p>Sample for ServiceAttachmentsClient:
+ *
+ * <pre>{@code
+ * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String serviceAttachment = "serviceAttachment-398467656";
+ *   ServiceAttachment response = serviceAttachmentsClient.get(project, region, serviceAttachment);
  * }
  * }</pre>
  *
@@ -1009,7 +986,7 @@
  * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
  *   String project = "project-309310695";
  *   String snapshot = "snapshot284874180";
- *   Operation response = snapshotsClient.delete(project, snapshot);
+ *   Snapshot response = snapshotsClient.get(project, snapshot);
  * }
  * }</pre>
  *
@@ -1023,7 +1000,7 @@
  * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
  *   String project = "project-309310695";
  *   String sslCertificate = "sslCertificate-1304941589";
- *   Operation response = sslCertificatesClient.delete(project, sslCertificate);
+ *   SslCertificate response = sslCertificatesClient.get(project, sslCertificate);
  * }
  * }</pre>
  *
@@ -1037,7 +1014,7 @@
  * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
  *   String project = "project-309310695";
  *   String sslPolicy = "sslPolicy618174046";
- *   Operation response = sslPoliciesClient.delete(project, sslPolicy);
+ *   SslPolicy response = sslPoliciesClient.get(project, sslPolicy);
  * }
  * }</pre>
  *
@@ -1052,7 +1029,7 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String subnetwork = "subnetwork-1302785042";
- *   Operation response = subnetworksClient.delete(project, region, subnetwork);
+ *   Subnetwork response = subnetworksClient.get(project, region, subnetwork);
  * }
  * }</pre>
  *
@@ -1066,7 +1043,7 @@
  * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
  *   String project = "project-309310695";
  *   String targetGrpcProxy = "targetGrpcProxy1045500511";
- *   Operation response = targetGrpcProxiesClient.delete(project, targetGrpcProxy);
+ *   TargetGrpcProxy response = targetGrpcProxiesClient.get(project, targetGrpcProxy);
  * }
  * }</pre>
  *
@@ -1080,7 +1057,7 @@
  * try (TargetHttpProxiesClient targetHttpProxiesClient = TargetHttpProxiesClient.create()) {
  *   String project = "project-309310695";
  *   String targetHttpProxy = "targetHttpProxy-1944074187";
- *   Operation response = targetHttpProxiesClient.delete(project, targetHttpProxy);
+ *   TargetHttpProxy response = targetHttpProxiesClient.get(project, targetHttpProxy);
  * }
  * }</pre>
  *
@@ -1094,7 +1071,7 @@
  * try (TargetHttpsProxiesClient targetHttpsProxiesClient = TargetHttpsProxiesClient.create()) {
  *   String project = "project-309310695";
  *   String targetHttpsProxy = "targetHttpsProxy833943732";
- *   Operation response = targetHttpsProxiesClient.delete(project, targetHttpsProxy);
+ *   TargetHttpsProxy response = targetHttpsProxiesClient.get(project, targetHttpsProxy);
  * }
  * }</pre>
  *
@@ -1109,7 +1086,7 @@
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
  *   String targetInstance = "targetInstance-1036957370";
- *   Operation response = targetInstancesClient.delete(project, zone, targetInstance);
+ *   TargetInstance response = targetInstancesClient.get(project, zone, targetInstance);
  * }
  * }</pre>
  *
@@ -1124,11 +1101,7 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String targetPool = "targetPool486493517";
- *   TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource =
- *       TargetPoolsAddHealthCheckRequest.newBuilder().build();
- *   Operation response =
- *       targetPoolsClient.addHealthCheck(
- *           project, region, targetPool, targetPoolsAddHealthCheckRequestResource);
+ *   TargetPool response = targetPoolsClient.get(project, region, targetPool);
  * }
  * }</pre>
  *
@@ -1142,7 +1115,7 @@
  * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
  *   String project = "project-309310695";
  *   String targetSslProxy = "targetSslProxy-879314829";
- *   Operation response = targetSslProxiesClient.delete(project, targetSslProxy);
+ *   TargetSslProxy response = targetSslProxiesClient.get(project, targetSslProxy);
  * }
  * }</pre>
  *
@@ -1156,7 +1129,7 @@
  * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
  *   String project = "project-309310695";
  *   String targetTcpProxy = "targetTcpProxy-337144898";
- *   Operation response = targetTcpProxiesClient.delete(project, targetTcpProxy);
+ *   TargetTcpProxy response = targetTcpProxiesClient.get(project, targetTcpProxy);
  * }
  * }</pre>
  *
@@ -1171,7 +1144,7 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String targetVpnGateway = "targetVpnGateway935274273";
- *   Operation response = targetVpnGatewaysClient.delete(project, region, targetVpnGateway);
+ *   TargetVpnGateway response = targetVpnGatewaysClient.get(project, region, targetVpnGateway);
  * }
  * }</pre>
  *
@@ -1185,7 +1158,7 @@
  * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
  *   String project = "project-309310695";
  *   String urlMap = "urlMap-836780691";
- *   Operation response = urlMapsClient.delete(project, urlMap);
+ *   UrlMap response = urlMapsClient.get(project, urlMap);
  * }
  * }</pre>
  *
@@ -1200,7 +1173,7 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String vpnGateway = "vpnGateway1920916144";
- *   Operation response = vpnGatewaysClient.delete(project, region, vpnGateway);
+ *   VpnGateway response = vpnGatewaysClient.get(project, region, vpnGateway);
  * }
  * }</pre>
  *
@@ -1215,7 +1188,7 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String vpnTunnel = "vpnTunnel452443772";
- *   Operation response = vpnTunnelsClient.delete(project, region, vpnTunnel);
+ *   VpnTunnel response = vpnTunnelsClient.get(project, region, vpnTunnel);
  * }
  * }</pre>
  *

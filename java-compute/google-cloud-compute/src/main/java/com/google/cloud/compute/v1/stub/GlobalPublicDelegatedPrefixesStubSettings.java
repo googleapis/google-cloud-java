@@ -27,10 +27,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.httpjson.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -72,16 +76,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * GlobalPublicDelegatedPrefixesStubSettings.Builder globalPublicDelegatedPrefixesSettingsBuilder =
  *     GlobalPublicDelegatedPrefixesStubSettings.newBuilder();
  * globalPublicDelegatedPrefixesSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         globalPublicDelegatedPrefixesSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -102,15 +106,24 @@ public class GlobalPublicDelegatedPrefixesStubSettings
 
   private final UnaryCallSettings<DeleteGlobalPublicDelegatedPrefixeRequest, Operation>
       deleteSettings;
+  private final OperationCallSettings<
+          DeleteGlobalPublicDelegatedPrefixeRequest, Operation, Operation>
+      deleteOperationSettings;
   private final UnaryCallSettings<GetGlobalPublicDelegatedPrefixeRequest, PublicDelegatedPrefix>
       getSettings;
   private final UnaryCallSettings<InsertGlobalPublicDelegatedPrefixeRequest, Operation>
       insertSettings;
+  private final OperationCallSettings<
+          InsertGlobalPublicDelegatedPrefixeRequest, Operation, Operation>
+      insertOperationSettings;
   private final PagedCallSettings<
           ListGlobalPublicDelegatedPrefixesRequest, PublicDelegatedPrefixList, ListPagedResponse>
       listSettings;
   private final UnaryCallSettings<PatchGlobalPublicDelegatedPrefixeRequest, Operation>
       patchSettings;
+  private final OperationCallSettings<
+          PatchGlobalPublicDelegatedPrefixeRequest, Operation, Operation>
+      patchOperationSettings;
 
   private static final PagedListDescriptor<
           ListGlobalPublicDelegatedPrefixesRequest,
@@ -189,6 +202,12 @@ public class GlobalPublicDelegatedPrefixesStubSettings
     return deleteSettings;
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteGlobalPublicDelegatedPrefixeRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return deleteOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetGlobalPublicDelegatedPrefixeRequest, PublicDelegatedPrefix>
       getSettings() {
@@ -198,6 +217,12 @@ public class GlobalPublicDelegatedPrefixesStubSettings
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertGlobalPublicDelegatedPrefixeRequest, Operation> insertSettings() {
     return insertSettings;
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertGlobalPublicDelegatedPrefixeRequest, Operation, Operation>
+      insertOperationSettings() {
+    return insertOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -210,6 +235,12 @@ public class GlobalPublicDelegatedPrefixesStubSettings
   /** Returns the object with the settings used for calls to patch. */
   public UnaryCallSettings<PatchGlobalPublicDelegatedPrefixeRequest, Operation> patchSettings() {
     return patchSettings;
+  }
+
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchGlobalPublicDelegatedPrefixeRequest, Operation, Operation>
+      patchOperationSettings() {
+    return patchOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -246,7 +277,9 @@ public class GlobalPublicDelegatedPrefixesStubSettings
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return GoogleCredentialsProvider.newBuilder()
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        .setUseJwtAccessWithScope(true);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -289,10 +322,13 @@ public class GlobalPublicDelegatedPrefixesStubSettings
     super(settingsBuilder);
 
     deleteSettings = settingsBuilder.deleteSettings().build();
+    deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
+    insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
+    patchOperationSettings = settingsBuilder.patchOperationSettings().build();
   }
 
   /** Builder for GlobalPublicDelegatedPrefixesStubSettings. */
@@ -301,16 +337,25 @@ public class GlobalPublicDelegatedPrefixesStubSettings
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<DeleteGlobalPublicDelegatedPrefixeRequest, Operation>
         deleteSettings;
+    private final OperationCallSettings.Builder<
+            DeleteGlobalPublicDelegatedPrefixeRequest, Operation, Operation>
+        deleteOperationSettings;
     private final UnaryCallSettings.Builder<
             GetGlobalPublicDelegatedPrefixeRequest, PublicDelegatedPrefix>
         getSettings;
     private final UnaryCallSettings.Builder<InsertGlobalPublicDelegatedPrefixeRequest, Operation>
         insertSettings;
+    private final OperationCallSettings.Builder<
+            InsertGlobalPublicDelegatedPrefixeRequest, Operation, Operation>
+        insertOperationSettings;
     private final PagedCallSettings.Builder<
             ListGlobalPublicDelegatedPrefixesRequest, PublicDelegatedPrefixList, ListPagedResponse>
         listSettings;
     private final UnaryCallSettings.Builder<PatchGlobalPublicDelegatedPrefixeRequest, Operation>
         patchSettings;
+    private final OperationCallSettings.Builder<
+            PatchGlobalPublicDelegatedPrefixeRequest, Operation, Operation>
+        patchOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -362,10 +407,13 @@ public class GlobalPublicDelegatedPrefixesStubSettings
       super(clientContext);
 
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      patchOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -377,10 +425,13 @@ public class GlobalPublicDelegatedPrefixesStubSettings
       super(settings);
 
       deleteSettings = settings.deleteSettings.toBuilder();
+      deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
+      insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
+      patchOperationSettings = settings.patchOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -426,6 +477,81 @@ public class GlobalPublicDelegatedPrefixesStubSettings
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .deleteOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteGlobalPublicDelegatedPrefixeRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .insertOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<InsertGlobalPublicDelegatedPrefixeRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .patchOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PatchGlobalPublicDelegatedPrefixeRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -450,6 +576,15 @@ public class GlobalPublicDelegatedPrefixesStubSettings
       return deleteSettings;
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            DeleteGlobalPublicDelegatedPrefixeRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return deleteOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetGlobalPublicDelegatedPrefixeRequest, PublicDelegatedPrefix>
         getSettings() {
@@ -460,6 +595,15 @@ public class GlobalPublicDelegatedPrefixesStubSettings
     public UnaryCallSettings.Builder<InsertGlobalPublicDelegatedPrefixeRequest, Operation>
         insertSettings() {
       return insertSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            InsertGlobalPublicDelegatedPrefixeRequest, Operation, Operation>
+        insertOperationSettings() {
+      return insertOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -473,6 +617,15 @@ public class GlobalPublicDelegatedPrefixesStubSettings
     public UnaryCallSettings.Builder<PatchGlobalPublicDelegatedPrefixeRequest, Operation>
         patchSettings() {
       return patchSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            PatchGlobalPublicDelegatedPrefixeRequest, Operation, Operation>
+        patchOperationSettings() {
+      return patchOperationSettings;
     }
 
     @Override

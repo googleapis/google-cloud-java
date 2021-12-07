@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represent a sole-tenant Node Type resource.
- * Each node within a node group must have a node type. A node type specifies the total amount of cores and memory for that node. Currently, the only available node type is n1-node-96-624 node type that has 96 vCPUs and 624 GB of memory, available in multiple zones. For more information read Node types. (== resource_for {$api_version}.nodeTypes ==)
+ * Represent a sole-tenant Node Type resource. Each node within a node group must have a node type. A node type specifies the total amount of cores and memory for that node. Currently, the only available node type is n1-node-96-624 node type that has 96 vCPUs and 624 GB of memory, available in multiple zones. For more information read Node types.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.NodeType}
@@ -211,7 +210,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The CPU platform used by this node type.
    * </pre>
    *
-   * <code>string cpu_platform = 410285354;</code>
+   * <code>optional string cpu_platform = 410285354;</code>
    *
    * @return Whether the cpuPlatform field is set.
    */
@@ -226,7 +225,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The CPU platform used by this node type.
    * </pre>
    *
-   * <code>string cpu_platform = 410285354;</code>
+   * <code>optional string cpu_platform = 410285354;</code>
    *
    * @return The cpuPlatform.
    */
@@ -249,7 +248,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The CPU platform used by this node type.
    * </pre>
    *
-   * <code>string cpu_platform = 410285354;</code>
+   * <code>optional string cpu_platform = 410285354;</code>
    *
    * @return The bytes for cpuPlatform.
    */
@@ -275,7 +274,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -290,7 +289,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -313,7 +312,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -339,7 +338,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The deprecation status associated with this node type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return Whether the deprecated field is set.
    */
@@ -354,7 +353,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The deprecation status associated with this node type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return The deprecated.
    */
@@ -371,7 +370,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The deprecation status associated with this node type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder() {
@@ -389,7 +388,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -404,7 +403,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -427,7 +426,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -453,7 +452,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The number of virtual CPUs that are available to the node type.
    * </pre>
    *
-   * <code>int32 guest_cpus = 393356754;</code>
+   * <code>optional int32 guest_cpus = 393356754;</code>
    *
    * @return Whether the guestCpus field is set.
    */
@@ -468,7 +467,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The number of virtual CPUs that are available to the node type.
    * </pre>
    *
-   * <code>int32 guest_cpus = 393356754;</code>
+   * <code>optional int32 guest_cpus = 393356754;</code>
    *
    * @return The guestCpus.
    */
@@ -486,7 +485,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -501,7 +500,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -519,7 +518,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The type of the resource. Always compute#nodeType for node types.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -534,7 +533,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The type of the resource. Always compute#nodeType for node types.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -557,7 +556,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The type of the resource. Always compute#nodeType for node types.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -583,7 +582,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Local SSD available to the node type, defined in GB.
    * </pre>
    *
-   * <code>int32 local_ssd_gb = 329237578;</code>
+   * <code>optional int32 local_ssd_gb = 329237578;</code>
    *
    * @return Whether the localSsdGb field is set.
    */
@@ -598,7 +597,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Local SSD available to the node type, defined in GB.
    * </pre>
    *
-   * <code>int32 local_ssd_gb = 329237578;</code>
+   * <code>optional int32 local_ssd_gb = 329237578;</code>
    *
    * @return The localSsdGb.
    */
@@ -616,7 +615,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The amount of physical memory available to the node type, defined in MB.
    * </pre>
    *
-   * <code>int32 memory_mb = 116001171;</code>
+   * <code>optional int32 memory_mb = 116001171;</code>
    *
    * @return Whether the memoryMb field is set.
    */
@@ -631,7 +630,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The amount of physical memory available to the node type, defined in MB.
    * </pre>
    *
-   * <code>int32 memory_mb = 116001171;</code>
+   * <code>optional int32 memory_mb = 116001171;</code>
    *
    * @return The memoryMb.
    */
@@ -649,7 +648,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Name of the resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -664,7 +663,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Name of the resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -687,7 +686,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Name of the resource.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -713,7 +712,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -728,7 +727,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -751,7 +750,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -777,7 +776,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The name of the zone where the node type resides, such as us-central1-a.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return Whether the zone field is set.
    */
@@ -792,7 +791,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The name of the zone where the node type resides, such as us-central1-a.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The zone.
    */
@@ -815,7 +814,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The name of the zone where the node type resides, such as us-central1-a.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The bytes for zone.
    */
@@ -1153,8 +1152,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represent a sole-tenant Node Type resource.
-   * Each node within a node group must have a node type. A node type specifies the total amount of cores and memory for that node. Currently, the only available node type is n1-node-96-624 node type that has 96 vCPUs and 624 GB of memory, available in multiple zones. For more information read Node types. (== resource_for {$api_version}.nodeTypes ==)
+   * Represent a sole-tenant Node Type resource. Each node within a node group must have a node type. A node type specifies the total amount of cores and memory for that node. Currently, the only available node type is n1-node-96-624 node type that has 96 vCPUs and 624 GB of memory, available in multiple zones. For more information read Node types.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.NodeType}
@@ -1444,7 +1442,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The CPU platform used by this node type.
      * </pre>
      *
-     * <code>string cpu_platform = 410285354;</code>
+     * <code>optional string cpu_platform = 410285354;</code>
      *
      * @return Whether the cpuPlatform field is set.
      */
@@ -1458,7 +1456,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The CPU platform used by this node type.
      * </pre>
      *
-     * <code>string cpu_platform = 410285354;</code>
+     * <code>optional string cpu_platform = 410285354;</code>
      *
      * @return The cpuPlatform.
      */
@@ -1480,7 +1478,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The CPU platform used by this node type.
      * </pre>
      *
-     * <code>string cpu_platform = 410285354;</code>
+     * <code>optional string cpu_platform = 410285354;</code>
      *
      * @return The bytes for cpuPlatform.
      */
@@ -1502,7 +1500,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The CPU platform used by this node type.
      * </pre>
      *
-     * <code>string cpu_platform = 410285354;</code>
+     * <code>optional string cpu_platform = 410285354;</code>
      *
      * @param value The cpuPlatform to set.
      * @return This builder for chaining.
@@ -1523,7 +1521,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The CPU platform used by this node type.
      * </pre>
      *
-     * <code>string cpu_platform = 410285354;</code>
+     * <code>optional string cpu_platform = 410285354;</code>
      *
      * @return This builder for chaining.
      */
@@ -1540,7 +1538,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The CPU platform used by this node type.
      * </pre>
      *
-     * <code>string cpu_platform = 410285354;</code>
+     * <code>optional string cpu_platform = 410285354;</code>
      *
      * @param value The bytes for cpuPlatform to set.
      * @return This builder for chaining.
@@ -1564,7 +1562,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return Whether the creationTimestamp field is set.
      */
@@ -1578,7 +1576,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The creationTimestamp.
      */
@@ -1600,7 +1598,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return The bytes for creationTimestamp.
      */
@@ -1622,7 +1620,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The creationTimestamp to set.
      * @return This builder for chaining.
@@ -1643,7 +1641,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @return This builder for chaining.
      */
@@ -1660,7 +1658,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Creation timestamp in RFC3339 text format.
      * </pre>
      *
-     * <code>string creation_timestamp = 30525366;</code>
+     * <code>optional string creation_timestamp = 30525366;</code>
      *
      * @param value The bytes for creationTimestamp to set.
      * @return This builder for chaining.
@@ -1689,7 +1687,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      *
      * @return Whether the deprecated field is set.
      */
@@ -1703,7 +1701,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      *
      * @return The deprecated.
      */
@@ -1723,7 +1721,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public Builder setDeprecated(com.google.cloud.compute.v1.DeprecationStatus value) {
       if (deprecatedBuilder_ == null) {
@@ -1745,7 +1743,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public Builder setDeprecated(
         com.google.cloud.compute.v1.DeprecationStatus.Builder builderForValue) {
@@ -1765,7 +1763,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public Builder mergeDeprecated(com.google.cloud.compute.v1.DeprecationStatus value) {
       if (deprecatedBuilder_ == null) {
@@ -1793,7 +1791,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public Builder clearDeprecated() {
       if (deprecatedBuilder_ == null) {
@@ -1812,7 +1810,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public com.google.cloud.compute.v1.DeprecationStatus.Builder getDeprecatedBuilder() {
       bitField0_ |= 0x00000004;
@@ -1826,7 +1824,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder() {
       if (deprecatedBuilder_ != null) {
@@ -1844,7 +1842,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.DeprecationStatus,
@@ -1871,7 +1869,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -1885,7 +1883,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1907,7 +1905,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1929,7 +1927,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1950,7 +1948,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -1967,7 +1965,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1991,7 +1989,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The number of virtual CPUs that are available to the node type.
      * </pre>
      *
-     * <code>int32 guest_cpus = 393356754;</code>
+     * <code>optional int32 guest_cpus = 393356754;</code>
      *
      * @return Whether the guestCpus field is set.
      */
@@ -2006,7 +2004,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The number of virtual CPUs that are available to the node type.
      * </pre>
      *
-     * <code>int32 guest_cpus = 393356754;</code>
+     * <code>optional int32 guest_cpus = 393356754;</code>
      *
      * @return The guestCpus.
      */
@@ -2021,7 +2019,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The number of virtual CPUs that are available to the node type.
      * </pre>
      *
-     * <code>int32 guest_cpus = 393356754;</code>
+     * <code>optional int32 guest_cpus = 393356754;</code>
      *
      * @param value The guestCpus to set.
      * @return This builder for chaining.
@@ -2039,7 +2037,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The number of virtual CPUs that are available to the node type.
      * </pre>
      *
-     * <code>int32 guest_cpus = 393356754;</code>
+     * <code>optional int32 guest_cpus = 393356754;</code>
      *
      * @return This builder for chaining.
      */
@@ -2058,7 +2056,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -2073,7 +2071,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return The id.
      */
@@ -2088,7 +2086,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -2106,7 +2104,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      * </pre>
      *
-     * <code>uint64 id = 3355;</code>
+     * <code>optional uint64 id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -2125,7 +2123,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of the resource. Always compute#nodeType for node types.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -2139,7 +2137,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of the resource. Always compute#nodeType for node types.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -2161,7 +2159,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of the resource. Always compute#nodeType for node types.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -2183,7 +2181,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of the resource. Always compute#nodeType for node types.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -2204,7 +2202,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of the resource. Always compute#nodeType for node types.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -2221,7 +2219,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The type of the resource. Always compute#nodeType for node types.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -2245,7 +2243,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Local SSD available to the node type, defined in GB.
      * </pre>
      *
-     * <code>int32 local_ssd_gb = 329237578;</code>
+     * <code>optional int32 local_ssd_gb = 329237578;</code>
      *
      * @return Whether the localSsdGb field is set.
      */
@@ -2260,7 +2258,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Local SSD available to the node type, defined in GB.
      * </pre>
      *
-     * <code>int32 local_ssd_gb = 329237578;</code>
+     * <code>optional int32 local_ssd_gb = 329237578;</code>
      *
      * @return The localSsdGb.
      */
@@ -2275,7 +2273,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Local SSD available to the node type, defined in GB.
      * </pre>
      *
-     * <code>int32 local_ssd_gb = 329237578;</code>
+     * <code>optional int32 local_ssd_gb = 329237578;</code>
      *
      * @param value The localSsdGb to set.
      * @return This builder for chaining.
@@ -2293,7 +2291,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Local SSD available to the node type, defined in GB.
      * </pre>
      *
-     * <code>int32 local_ssd_gb = 329237578;</code>
+     * <code>optional int32 local_ssd_gb = 329237578;</code>
      *
      * @return This builder for chaining.
      */
@@ -2312,7 +2310,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The amount of physical memory available to the node type, defined in MB.
      * </pre>
      *
-     * <code>int32 memory_mb = 116001171;</code>
+     * <code>optional int32 memory_mb = 116001171;</code>
      *
      * @return Whether the memoryMb field is set.
      */
@@ -2327,7 +2325,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The amount of physical memory available to the node type, defined in MB.
      * </pre>
      *
-     * <code>int32 memory_mb = 116001171;</code>
+     * <code>optional int32 memory_mb = 116001171;</code>
      *
      * @return The memoryMb.
      */
@@ -2342,7 +2340,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The amount of physical memory available to the node type, defined in MB.
      * </pre>
      *
-     * <code>int32 memory_mb = 116001171;</code>
+     * <code>optional int32 memory_mb = 116001171;</code>
      *
      * @param value The memoryMb to set.
      * @return This builder for chaining.
@@ -2360,7 +2358,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The amount of physical memory available to the node type, defined in MB.
      * </pre>
      *
-     * <code>int32 memory_mb = 116001171;</code>
+     * <code>optional int32 memory_mb = 116001171;</code>
      *
      * @return This builder for chaining.
      */
@@ -2379,7 +2377,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the resource.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -2393,7 +2391,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the resource.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -2415,7 +2413,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the resource.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -2437,7 +2435,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the resource.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2458,7 +2456,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the resource.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -2475,7 +2473,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the resource.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2499,7 +2497,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return Whether the selfLink field is set.
      */
@@ -2513,7 +2511,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -2535,7 +2533,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2557,7 +2555,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2578,7 +2576,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
@@ -2595,7 +2593,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>optional string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2619,7 +2617,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The name of the zone where the node type resides, such as us-central1-a.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return Whether the zone field is set.
      */
@@ -2633,7 +2631,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The name of the zone where the node type resides, such as us-central1-a.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return The zone.
      */
@@ -2655,7 +2653,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The name of the zone where the node type resides, such as us-central1-a.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return The bytes for zone.
      */
@@ -2677,7 +2675,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The name of the zone where the node type resides, such as us-central1-a.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @param value The zone to set.
      * @return This builder for chaining.
@@ -2698,7 +2696,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The name of the zone where the node type resides, such as us-central1-a.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return This builder for chaining.
      */
@@ -2715,7 +2713,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The name of the zone where the node type resides, such as us-central1-a.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @param value The bytes for zone to set.
      * @return This builder for chaining.

@@ -28,9 +28,10 @@ public interface WarningsOrBuilder
    *
    * <pre>
    * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+   * Check the Code enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warnings.Code code = 3059181;</code>
+   * <code>optional string code = 3059181;</code>
    *
    * @return Whether the code field is set.
    */
@@ -40,32 +41,33 @@ public interface WarningsOrBuilder
    *
    * <pre>
    * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+   * Check the Code enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warnings.Code code = 3059181;</code>
+   * <code>optional string code = 3059181;</code>
    *
-   * @return The enum numeric value on the wire for code.
+   * @return The code.
    */
-  int getCodeValue();
+  java.lang.String getCode();
   /**
    *
    *
    * <pre>
    * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+   * Check the Code enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Warnings.Code code = 3059181;</code>
+   * <code>optional string code = 3059181;</code>
    *
-   * @return The code.
+   * @return The bytes for code.
    */
-  com.google.cloud.compute.v1.Warnings.Code getCode();
+  com.google.protobuf.ByteString getCodeBytes();
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Metadata about this warning in key: value format. For example:
-   * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -75,8 +77,7 @@ public interface WarningsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Metadata about this warning in key: value format. For example:
-   * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -86,8 +87,7 @@ public interface WarningsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Metadata about this warning in key: value format. For example:
-   * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -97,8 +97,7 @@ public interface WarningsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Metadata about this warning in key: value format. For example:
-   * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -108,8 +107,7 @@ public interface WarningsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Metadata about this warning in key: value format. For example:
-   * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -123,7 +121,7 @@ public interface WarningsOrBuilder
    * [Output Only] A human-readable description of the warning code.
    * </pre>
    *
-   * <code>string message = 418054151;</code>
+   * <code>optional string message = 418054151;</code>
    *
    * @return Whether the message field is set.
    */
@@ -135,7 +133,7 @@ public interface WarningsOrBuilder
    * [Output Only] A human-readable description of the warning code.
    * </pre>
    *
-   * <code>string message = 418054151;</code>
+   * <code>optional string message = 418054151;</code>
    *
    * @return The message.
    */
@@ -147,7 +145,7 @@ public interface WarningsOrBuilder
    * [Output Only] A human-readable description of the warning code.
    * </pre>
    *
-   * <code>string message = 418054151;</code>
+   * <code>optional string message = 418054151;</code>
    *
    * @return The bytes for message.
    */

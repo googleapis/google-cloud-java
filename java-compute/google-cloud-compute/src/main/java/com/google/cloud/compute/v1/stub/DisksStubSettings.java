@@ -28,10 +28,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.httpjson.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -87,15 +91,15 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of addResourcePolicies to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * DisksStubSettings.Builder disksSettingsBuilder = DisksStubSettings.newBuilder();
  * disksSettingsBuilder
- *     .addResourcePoliciesSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         disksSettingsBuilder
- *             .addResourcePoliciesSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -114,20 +118,34 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
 
   private final UnaryCallSettings<AddResourcePoliciesDiskRequest, Operation>
       addResourcePoliciesSettings;
+  private final OperationCallSettings<AddResourcePoliciesDiskRequest, Operation, Operation>
+      addResourcePoliciesOperationSettings;
   private final PagedCallSettings<
           AggregatedListDisksRequest, DiskAggregatedList, AggregatedListPagedResponse>
       aggregatedListSettings;
   private final UnaryCallSettings<CreateSnapshotDiskRequest, Operation> createSnapshotSettings;
+  private final OperationCallSettings<CreateSnapshotDiskRequest, Operation, Operation>
+      createSnapshotOperationSettings;
   private final UnaryCallSettings<DeleteDiskRequest, Operation> deleteSettings;
+  private final OperationCallSettings<DeleteDiskRequest, Operation, Operation>
+      deleteOperationSettings;
   private final UnaryCallSettings<GetDiskRequest, Disk> getSettings;
   private final UnaryCallSettings<GetIamPolicyDiskRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<InsertDiskRequest, Operation> insertSettings;
+  private final OperationCallSettings<InsertDiskRequest, Operation, Operation>
+      insertOperationSettings;
   private final PagedCallSettings<ListDisksRequest, DiskList, ListPagedResponse> listSettings;
   private final UnaryCallSettings<RemoveResourcePoliciesDiskRequest, Operation>
       removeResourcePoliciesSettings;
+  private final OperationCallSettings<RemoveResourcePoliciesDiskRequest, Operation, Operation>
+      removeResourcePoliciesOperationSettings;
   private final UnaryCallSettings<ResizeDiskRequest, Operation> resizeSettings;
+  private final OperationCallSettings<ResizeDiskRequest, Operation, Operation>
+      resizeOperationSettings;
   private final UnaryCallSettings<SetIamPolicyDiskRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<SetLabelsDiskRequest, Operation> setLabelsSettings;
+  private final OperationCallSettings<SetLabelsDiskRequest, Operation, Operation>
+      setLabelsOperationSettings;
   private final UnaryCallSettings<TestIamPermissionsDiskRequest, TestPermissionsResponse>
       testIamPermissionsSettings;
 
@@ -249,6 +267,12 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
     return addResourcePoliciesSettings;
   }
 
+  /** Returns the object with the settings used for calls to addResourcePolicies. */
+  public OperationCallSettings<AddResourcePoliciesDiskRequest, Operation, Operation>
+      addResourcePoliciesOperationSettings() {
+    return addResourcePoliciesOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to aggregatedList. */
   public PagedCallSettings<
           AggregatedListDisksRequest, DiskAggregatedList, AggregatedListPagedResponse>
@@ -261,9 +285,20 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
     return createSnapshotSettings;
   }
 
+  /** Returns the object with the settings used for calls to createSnapshot. */
+  public OperationCallSettings<CreateSnapshotDiskRequest, Operation, Operation>
+      createSnapshotOperationSettings() {
+    return createSnapshotOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteDiskRequest, Operation> deleteSettings() {
     return deleteSettings;
+  }
+
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteDiskRequest, Operation, Operation> deleteOperationSettings() {
+    return deleteOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -281,6 +316,11 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
     return insertSettings;
   }
 
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertDiskRequest, Operation, Operation> insertOperationSettings() {
+    return insertOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<ListDisksRequest, DiskList, ListPagedResponse> listSettings() {
     return listSettings;
@@ -292,9 +332,20 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
     return removeResourcePoliciesSettings;
   }
 
+  /** Returns the object with the settings used for calls to removeResourcePolicies. */
+  public OperationCallSettings<RemoveResourcePoliciesDiskRequest, Operation, Operation>
+      removeResourcePoliciesOperationSettings() {
+    return removeResourcePoliciesOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to resize. */
   public UnaryCallSettings<ResizeDiskRequest, Operation> resizeSettings() {
     return resizeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to resize. */
+  public OperationCallSettings<ResizeDiskRequest, Operation, Operation> resizeOperationSettings() {
+    return resizeOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
@@ -305,6 +356,12 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
   /** Returns the object with the settings used for calls to setLabels. */
   public UnaryCallSettings<SetLabelsDiskRequest, Operation> setLabelsSettings() {
     return setLabelsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsDiskRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return setLabelsOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to testIamPermissions. */
@@ -347,7 +404,9 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return GoogleCredentialsProvider.newBuilder()
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        .setUseJwtAccessWithScope(true);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -388,17 +447,26 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
     super(settingsBuilder);
 
     addResourcePoliciesSettings = settingsBuilder.addResourcePoliciesSettings().build();
+    addResourcePoliciesOperationSettings =
+        settingsBuilder.addResourcePoliciesOperationSettings().build();
     aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     createSnapshotSettings = settingsBuilder.createSnapshotSettings().build();
+    createSnapshotOperationSettings = settingsBuilder.createSnapshotOperationSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
+    deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
+    insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     removeResourcePoliciesSettings = settingsBuilder.removeResourcePoliciesSettings().build();
+    removeResourcePoliciesOperationSettings =
+        settingsBuilder.removeResourcePoliciesOperationSettings().build();
     resizeSettings = settingsBuilder.resizeSettings().build();
+    resizeOperationSettings = settingsBuilder.resizeOperationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     setLabelsSettings = settingsBuilder.setLabelsSettings().build();
+    setLabelsOperationSettings = settingsBuilder.setLabelsOperationSettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
@@ -407,22 +475,38 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<AddResourcePoliciesDiskRequest, Operation>
         addResourcePoliciesSettings;
+    private final OperationCallSettings.Builder<
+            AddResourcePoliciesDiskRequest, Operation, Operation>
+        addResourcePoliciesOperationSettings;
     private final PagedCallSettings.Builder<
             AggregatedListDisksRequest, DiskAggregatedList, AggregatedListPagedResponse>
         aggregatedListSettings;
     private final UnaryCallSettings.Builder<CreateSnapshotDiskRequest, Operation>
         createSnapshotSettings;
+    private final OperationCallSettings.Builder<CreateSnapshotDiskRequest, Operation, Operation>
+        createSnapshotOperationSettings;
     private final UnaryCallSettings.Builder<DeleteDiskRequest, Operation> deleteSettings;
+    private final OperationCallSettings.Builder<DeleteDiskRequest, Operation, Operation>
+        deleteOperationSettings;
     private final UnaryCallSettings.Builder<GetDiskRequest, Disk> getSettings;
     private final UnaryCallSettings.Builder<GetIamPolicyDiskRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<InsertDiskRequest, Operation> insertSettings;
+    private final OperationCallSettings.Builder<InsertDiskRequest, Operation, Operation>
+        insertOperationSettings;
     private final PagedCallSettings.Builder<ListDisksRequest, DiskList, ListPagedResponse>
         listSettings;
     private final UnaryCallSettings.Builder<RemoveResourcePoliciesDiskRequest, Operation>
         removeResourcePoliciesSettings;
+    private final OperationCallSettings.Builder<
+            RemoveResourcePoliciesDiskRequest, Operation, Operation>
+        removeResourcePoliciesOperationSettings;
     private final UnaryCallSettings.Builder<ResizeDiskRequest, Operation> resizeSettings;
+    private final OperationCallSettings.Builder<ResizeDiskRequest, Operation, Operation>
+        resizeOperationSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyDiskRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<SetLabelsDiskRequest, Operation> setLabelsSettings;
+    private final OperationCallSettings.Builder<SetLabelsDiskRequest, Operation, Operation>
+        setLabelsOperationSettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsDiskRequest, TestPermissionsResponse>
         testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -476,17 +560,24 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
       super(clientContext);
 
       addResourcePoliciesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addResourcePoliciesOperationSettings = OperationCallSettings.newBuilder();
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       createSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createSnapshotOperationSettings = OperationCallSettings.newBuilder();
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       removeResourcePoliciesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      removeResourcePoliciesOperationSettings = OperationCallSettings.newBuilder();
       resizeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      resizeOperationSettings = OperationCallSettings.newBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setLabelsOperationSettings = OperationCallSettings.newBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -511,17 +602,26 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
       super(settings);
 
       addResourcePoliciesSettings = settings.addResourcePoliciesSettings.toBuilder();
+      addResourcePoliciesOperationSettings =
+          settings.addResourcePoliciesOperationSettings.toBuilder();
       aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       createSnapshotSettings = settings.createSnapshotSettings.toBuilder();
+      createSnapshotOperationSettings = settings.createSnapshotOperationSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
+      deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
+      insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       removeResourcePoliciesSettings = settings.removeResourcePoliciesSettings.toBuilder();
+      removeResourcePoliciesOperationSettings =
+          settings.removeResourcePoliciesOperationSettings.toBuilder();
       resizeSettings = settings.resizeSettings.toBuilder();
+      resizeOperationSettings = settings.resizeOperationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       setLabelsSettings = settings.setLabelsSettings.toBuilder();
+      setLabelsOperationSettings = settings.setLabelsOperationSettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -620,6 +720,172 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .addResourcePoliciesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AddResourcePoliciesDiskRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .createSnapshotOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateSnapshotDiskRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .deleteOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<DeleteDiskRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .insertOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<InsertDiskRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .removeResourcePoliciesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RemoveResourcePoliciesDiskRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .resizeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<ResizeDiskRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setLabelsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetLabelsDiskRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -644,6 +910,14 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
       return addResourcePoliciesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to addResourcePolicies. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<AddResourcePoliciesDiskRequest, Operation, Operation>
+        addResourcePoliciesOperationSettings() {
+      return addResourcePoliciesOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to aggregatedList. */
     public PagedCallSettings.Builder<
             AggregatedListDisksRequest, DiskAggregatedList, AggregatedListPagedResponse>
@@ -657,9 +931,25 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
       return createSnapshotSettings;
     }
 
+    /** Returns the builder for the settings used for calls to createSnapshot. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CreateSnapshotDiskRequest, Operation, Operation>
+        createSnapshotOperationSettings() {
+      return createSnapshotOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteDiskRequest, Operation> deleteSettings() {
       return deleteSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to delete. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteDiskRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return deleteOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -677,6 +967,14 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
       return insertSettings;
     }
 
+    /** Returns the builder for the settings used for calls to insert. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<InsertDiskRequest, Operation, Operation>
+        insertOperationSettings() {
+      return insertOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to list. */
     public PagedCallSettings.Builder<ListDisksRequest, DiskList, ListPagedResponse> listSettings() {
       return listSettings;
@@ -688,9 +986,25 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
       return removeResourcePoliciesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to removeResourcePolicies. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<RemoveResourcePoliciesDiskRequest, Operation, Operation>
+        removeResourcePoliciesOperationSettings() {
+      return removeResourcePoliciesOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to resize. */
     public UnaryCallSettings.Builder<ResizeDiskRequest, Operation> resizeSettings() {
       return resizeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to resize. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<ResizeDiskRequest, Operation, Operation>
+        resizeOperationSettings() {
+      return resizeOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */
@@ -701,6 +1015,14 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
     /** Returns the builder for the settings used for calls to setLabels. */
     public UnaryCallSettings.Builder<SetLabelsDiskRequest, Operation> setLabelsSettings() {
       return setLabelsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetLabelsDiskRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return setLabelsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */

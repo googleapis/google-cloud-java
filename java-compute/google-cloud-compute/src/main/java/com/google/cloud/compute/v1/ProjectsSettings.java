@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -50,15 +51,15 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of disableXpnHost to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * ProjectsSettings.Builder projectsSettingsBuilder = ProjectsSettings.newBuilder();
  * projectsSettingsBuilder
- *     .disableXpnHostSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         projectsSettingsBuilder
- *             .disableXpnHostSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -74,10 +75,22 @@ public class ProjectsSettings extends ClientSettings<ProjectsSettings> {
     return ((ProjectsStubSettings) getStubSettings()).disableXpnHostSettings();
   }
 
+  /** Returns the object with the settings used for calls to disableXpnHost. */
+  public OperationCallSettings<DisableXpnHostProjectRequest, Operation, Operation>
+      disableXpnHostOperationSettings() {
+    return ((ProjectsStubSettings) getStubSettings()).disableXpnHostOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to disableXpnResource. */
   public UnaryCallSettings<DisableXpnResourceProjectRequest, Operation>
       disableXpnResourceSettings() {
     return ((ProjectsStubSettings) getStubSettings()).disableXpnResourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to disableXpnResource. */
+  public OperationCallSettings<DisableXpnResourceProjectRequest, Operation, Operation>
+      disableXpnResourceOperationSettings() {
+    return ((ProjectsStubSettings) getStubSettings()).disableXpnResourceOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to enableXpnHost. */
@@ -85,9 +98,21 @@ public class ProjectsSettings extends ClientSettings<ProjectsSettings> {
     return ((ProjectsStubSettings) getStubSettings()).enableXpnHostSettings();
   }
 
+  /** Returns the object with the settings used for calls to enableXpnHost. */
+  public OperationCallSettings<EnableXpnHostProjectRequest, Operation, Operation>
+      enableXpnHostOperationSettings() {
+    return ((ProjectsStubSettings) getStubSettings()).enableXpnHostOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to enableXpnResource. */
   public UnaryCallSettings<EnableXpnResourceProjectRequest, Operation> enableXpnResourceSettings() {
     return ((ProjectsStubSettings) getStubSettings()).enableXpnResourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to enableXpnResource. */
+  public OperationCallSettings<EnableXpnResourceProjectRequest, Operation, Operation>
+      enableXpnResourceOperationSettings() {
+    return ((ProjectsStubSettings) getStubSettings()).enableXpnResourceOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -118,9 +143,21 @@ public class ProjectsSettings extends ClientSettings<ProjectsSettings> {
     return ((ProjectsStubSettings) getStubSettings()).moveDiskSettings();
   }
 
+  /** Returns the object with the settings used for calls to moveDisk. */
+  public OperationCallSettings<MoveDiskProjectRequest, Operation, Operation>
+      moveDiskOperationSettings() {
+    return ((ProjectsStubSettings) getStubSettings()).moveDiskOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to moveInstance. */
   public UnaryCallSettings<MoveInstanceProjectRequest, Operation> moveInstanceSettings() {
     return ((ProjectsStubSettings) getStubSettings()).moveInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to moveInstance. */
+  public OperationCallSettings<MoveInstanceProjectRequest, Operation, Operation>
+      moveInstanceOperationSettings() {
+    return ((ProjectsStubSettings) getStubSettings()).moveInstanceOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to setCommonInstanceMetadata. */
@@ -129,16 +166,34 @@ public class ProjectsSettings extends ClientSettings<ProjectsSettings> {
     return ((ProjectsStubSettings) getStubSettings()).setCommonInstanceMetadataSettings();
   }
 
+  /** Returns the object with the settings used for calls to setCommonInstanceMetadata. */
+  public OperationCallSettings<SetCommonInstanceMetadataProjectRequest, Operation, Operation>
+      setCommonInstanceMetadataOperationSettings() {
+    return ((ProjectsStubSettings) getStubSettings()).setCommonInstanceMetadataOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setDefaultNetworkTier. */
   public UnaryCallSettings<SetDefaultNetworkTierProjectRequest, Operation>
       setDefaultNetworkTierSettings() {
     return ((ProjectsStubSettings) getStubSettings()).setDefaultNetworkTierSettings();
   }
 
+  /** Returns the object with the settings used for calls to setDefaultNetworkTier. */
+  public OperationCallSettings<SetDefaultNetworkTierProjectRequest, Operation, Operation>
+      setDefaultNetworkTierOperationSettings() {
+    return ((ProjectsStubSettings) getStubSettings()).setDefaultNetworkTierOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setUsageExportBucket. */
   public UnaryCallSettings<SetUsageExportBucketProjectRequest, Operation>
       setUsageExportBucketSettings() {
     return ((ProjectsStubSettings) getStubSettings()).setUsageExportBucketSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setUsageExportBucket. */
+  public OperationCallSettings<SetUsageExportBucketProjectRequest, Operation, Operation>
+      setUsageExportBucketOperationSettings() {
+    return ((ProjectsStubSettings) getStubSettings()).setUsageExportBucketOperationSettings();
   }
 
   public static final ProjectsSettings create(ProjectsStubSettings stub) throws IOException {
@@ -244,10 +299,22 @@ public class ProjectsSettings extends ClientSettings<ProjectsSettings> {
       return getStubSettingsBuilder().disableXpnHostSettings();
     }
 
+    /** Returns the builder for the settings used for calls to disableXpnHost. */
+    public OperationCallSettings.Builder<DisableXpnHostProjectRequest, Operation, Operation>
+        disableXpnHostOperationSettings() {
+      return getStubSettingsBuilder().disableXpnHostOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to disableXpnResource. */
     public UnaryCallSettings.Builder<DisableXpnResourceProjectRequest, Operation>
         disableXpnResourceSettings() {
       return getStubSettingsBuilder().disableXpnResourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to disableXpnResource. */
+    public OperationCallSettings.Builder<DisableXpnResourceProjectRequest, Operation, Operation>
+        disableXpnResourceOperationSettings() {
+      return getStubSettingsBuilder().disableXpnResourceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to enableXpnHost. */
@@ -256,10 +323,22 @@ public class ProjectsSettings extends ClientSettings<ProjectsSettings> {
       return getStubSettingsBuilder().enableXpnHostSettings();
     }
 
+    /** Returns the builder for the settings used for calls to enableXpnHost. */
+    public OperationCallSettings.Builder<EnableXpnHostProjectRequest, Operation, Operation>
+        enableXpnHostOperationSettings() {
+      return getStubSettingsBuilder().enableXpnHostOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to enableXpnResource. */
     public UnaryCallSettings.Builder<EnableXpnResourceProjectRequest, Operation>
         enableXpnResourceSettings() {
       return getStubSettingsBuilder().enableXpnResourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to enableXpnResource. */
+    public OperationCallSettings.Builder<EnableXpnResourceProjectRequest, Operation, Operation>
+        enableXpnResourceOperationSettings() {
+      return getStubSettingsBuilder().enableXpnResourceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -291,9 +370,21 @@ public class ProjectsSettings extends ClientSettings<ProjectsSettings> {
       return getStubSettingsBuilder().moveDiskSettings();
     }
 
+    /** Returns the builder for the settings used for calls to moveDisk. */
+    public OperationCallSettings.Builder<MoveDiskProjectRequest, Operation, Operation>
+        moveDiskOperationSettings() {
+      return getStubSettingsBuilder().moveDiskOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to moveInstance. */
     public UnaryCallSettings.Builder<MoveInstanceProjectRequest, Operation> moveInstanceSettings() {
       return getStubSettingsBuilder().moveInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to moveInstance. */
+    public OperationCallSettings.Builder<MoveInstanceProjectRequest, Operation, Operation>
+        moveInstanceOperationSettings() {
+      return getStubSettingsBuilder().moveInstanceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setCommonInstanceMetadata. */
@@ -302,16 +393,35 @@ public class ProjectsSettings extends ClientSettings<ProjectsSettings> {
       return getStubSettingsBuilder().setCommonInstanceMetadataSettings();
     }
 
+    /** Returns the builder for the settings used for calls to setCommonInstanceMetadata. */
+    public OperationCallSettings.Builder<
+            SetCommonInstanceMetadataProjectRequest, Operation, Operation>
+        setCommonInstanceMetadataOperationSettings() {
+      return getStubSettingsBuilder().setCommonInstanceMetadataOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setDefaultNetworkTier. */
     public UnaryCallSettings.Builder<SetDefaultNetworkTierProjectRequest, Operation>
         setDefaultNetworkTierSettings() {
       return getStubSettingsBuilder().setDefaultNetworkTierSettings();
     }
 
+    /** Returns the builder for the settings used for calls to setDefaultNetworkTier. */
+    public OperationCallSettings.Builder<SetDefaultNetworkTierProjectRequest, Operation, Operation>
+        setDefaultNetworkTierOperationSettings() {
+      return getStubSettingsBuilder().setDefaultNetworkTierOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setUsageExportBucket. */
     public UnaryCallSettings.Builder<SetUsageExportBucketProjectRequest, Operation>
         setUsageExportBucketSettings() {
       return getStubSettingsBuilder().setUsageExportBucketSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setUsageExportBucket. */
+    public OperationCallSettings.Builder<SetUsageExportBucketProjectRequest, Operation, Operation>
+        setUsageExportBucketOperationSettings() {
+      return getStubSettingsBuilder().setUsageExportBucketOperationSettings();
     }
 
     @Override

@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -50,15 +51,15 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * AutoscalersSettings.Builder autoscalersSettingsBuilder = AutoscalersSettings.newBuilder();
  * autoscalersSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         autoscalersSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -81,6 +82,12 @@ public class AutoscalersSettings extends ClientSettings<AutoscalersSettings> {
     return ((AutoscalersStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteAutoscalerRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((AutoscalersStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetAutoscalerRequest, Autoscaler> getSettings() {
     return ((AutoscalersStubSettings) getStubSettings()).getSettings();
@@ -89,6 +96,12 @@ public class AutoscalersSettings extends ClientSettings<AutoscalersSettings> {
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertAutoscalerRequest, Operation> insertSettings() {
     return ((AutoscalersStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertAutoscalerRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((AutoscalersStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -102,9 +115,21 @@ public class AutoscalersSettings extends ClientSettings<AutoscalersSettings> {
     return ((AutoscalersStubSettings) getStubSettings()).patchSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchAutoscalerRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((AutoscalersStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateAutoscalerRequest, Operation> updateSettings() {
     return ((AutoscalersStubSettings) getStubSettings()).updateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateAutoscalerRequest, Operation, Operation>
+      updateOperationSettings() {
+    return ((AutoscalersStubSettings) getStubSettings()).updateOperationSettings();
   }
 
   public static final AutoscalersSettings create(AutoscalersStubSettings stub) throws IOException {
@@ -216,6 +241,12 @@ public class AutoscalersSettings extends ClientSettings<AutoscalersSettings> {
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteAutoscalerRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetAutoscalerRequest, Autoscaler> getSettings() {
       return getStubSettingsBuilder().getSettings();
@@ -224,6 +255,12 @@ public class AutoscalersSettings extends ClientSettings<AutoscalersSettings> {
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertAutoscalerRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertAutoscalerRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -237,9 +274,21 @@ public class AutoscalersSettings extends ClientSettings<AutoscalersSettings> {
       return getStubSettingsBuilder().patchSettings();
     }
 
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchAutoscalerRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to update. */
     public UnaryCallSettings.Builder<UpdateAutoscalerRequest, Operation> updateSettings() {
       return getStubSettingsBuilder().updateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public OperationCallSettings.Builder<UpdateAutoscalerRequest, Operation, Operation>
+        updateOperationSettings() {
+      return getStubSettingsBuilder().updateOperationSettings();
     }
 
     @Override

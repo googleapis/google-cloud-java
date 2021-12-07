@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -50,15 +51,15 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * NodeTemplatesSettings.Builder nodeTemplatesSettingsBuilder = NodeTemplatesSettings.newBuilder();
  * nodeTemplatesSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         nodeTemplatesSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -83,6 +84,12 @@ public class NodeTemplatesSettings extends ClientSettings<NodeTemplatesSettings>
     return ((NodeTemplatesStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteNodeTemplateRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((NodeTemplatesStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetNodeTemplateRequest, NodeTemplate> getSettings() {
     return ((NodeTemplatesStubSettings) getStubSettings()).getSettings();
@@ -96,6 +103,12 @@ public class NodeTemplatesSettings extends ClientSettings<NodeTemplatesSettings>
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertNodeTemplateRequest, Operation> insertSettings() {
     return ((NodeTemplatesStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertNodeTemplateRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((NodeTemplatesStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -227,6 +240,12 @@ public class NodeTemplatesSettings extends ClientSettings<NodeTemplatesSettings>
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteNodeTemplateRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetNodeTemplateRequest, NodeTemplate> getSettings() {
       return getStubSettingsBuilder().getSettings();
@@ -241,6 +260,12 @@ public class NodeTemplatesSettings extends ClientSettings<NodeTemplatesSettings>
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertNodeTemplateRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertNodeTemplateRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */

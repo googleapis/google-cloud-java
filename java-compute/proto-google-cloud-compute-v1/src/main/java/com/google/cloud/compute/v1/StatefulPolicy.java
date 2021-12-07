@@ -123,7 +123,8 @@ public final class StatefulPolicy extends com.google.protobuf.GeneratedMessageV3
   public static final int PRESERVED_STATE_FIELD_NUMBER = 2634026;
   private com.google.cloud.compute.v1.StatefulPolicyPreservedState preservedState_;
   /**
-   * <code>.google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;</code>
+   * <code>optional .google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;
+   * </code>
    *
    * @return Whether the preservedState field is set.
    */
@@ -132,7 +133,8 @@ public final class StatefulPolicy extends com.google.protobuf.GeneratedMessageV3
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;</code>
+   * <code>optional .google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;
+   * </code>
    *
    * @return The preservedState.
    */
@@ -143,7 +145,8 @@ public final class StatefulPolicy extends com.google.protobuf.GeneratedMessageV3
         : preservedState_;
   }
   /**
-   * <code>.google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;</code>
+   * <code>optional .google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.StatefulPolicyPreservedStateOrBuilder
@@ -498,7 +501,9 @@ public final class StatefulPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.StatefulPolicyPreservedStateOrBuilder>
         preservedStateBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;
+     * </code>
      *
      * @return Whether the preservedState field is set.
      */
@@ -506,7 +511,9 @@ public final class StatefulPolicy extends com.google.protobuf.GeneratedMessageV3
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;
+     * </code>
      *
      * @return The preservedState.
      */
@@ -520,7 +527,9 @@ public final class StatefulPolicy extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;
+     * </code>
      */
     public Builder setPreservedState(
         com.google.cloud.compute.v1.StatefulPolicyPreservedState value) {
@@ -537,7 +546,9 @@ public final class StatefulPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;
+     * </code>
      */
     public Builder setPreservedState(
         com.google.cloud.compute.v1.StatefulPolicyPreservedState.Builder builderForValue) {
@@ -551,7 +562,9 @@ public final class StatefulPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;
+     * </code>
      */
     public Builder mergePreservedState(
         com.google.cloud.compute.v1.StatefulPolicyPreservedState value) {
@@ -575,7 +588,9 @@ public final class StatefulPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;
+     * </code>
      */
     public Builder clearPreservedState() {
       if (preservedStateBuilder_ == null) {
@@ -588,7 +603,9 @@ public final class StatefulPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;
+     * </code>
      */
     public com.google.cloud.compute.v1.StatefulPolicyPreservedState.Builder
         getPreservedStateBuilder() {
@@ -597,7 +614,9 @@ public final class StatefulPolicy extends com.google.protobuf.GeneratedMessageV3
       return getPreservedStateFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;
+     * </code>
      */
     public com.google.cloud.compute.v1.StatefulPolicyPreservedStateOrBuilder
         getPreservedStateOrBuilder() {
@@ -610,7 +629,9 @@ public final class StatefulPolicy extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;</code>
+     * <code>
+     * optional .google.cloud.compute.v1.StatefulPolicyPreservedState preserved_state = 2634026;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.StatefulPolicyPreservedState,

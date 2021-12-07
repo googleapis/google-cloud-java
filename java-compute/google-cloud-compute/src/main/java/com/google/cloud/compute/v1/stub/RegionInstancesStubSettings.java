@@ -24,9 +24,13 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.httpjson.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -84,10 +88,18 @@ public class RegionInstancesStubSettings extends StubSettings<RegionInstancesStu
           .build();
 
   private final UnaryCallSettings<BulkInsertRegionInstanceRequest, Operation> bulkInsertSettings;
+  private final OperationCallSettings<BulkInsertRegionInstanceRequest, Operation, Operation>
+      bulkInsertOperationSettings;
 
   /** Returns the object with the settings used for calls to bulkInsert. */
   public UnaryCallSettings<BulkInsertRegionInstanceRequest, Operation> bulkInsertSettings() {
     return bulkInsertSettings;
+  }
+
+  /** Returns the object with the settings used for calls to bulkInsert. */
+  public OperationCallSettings<BulkInsertRegionInstanceRequest, Operation, Operation>
+      bulkInsertOperationSettings() {
+    return bulkInsertOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -124,7 +136,9 @@ public class RegionInstancesStubSettings extends StubSettings<RegionInstancesStu
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return GoogleCredentialsProvider.newBuilder()
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        .setUseJwtAccessWithScope(true);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -166,6 +180,7 @@ public class RegionInstancesStubSettings extends StubSettings<RegionInstancesStu
     super(settingsBuilder);
 
     bulkInsertSettings = settingsBuilder.bulkInsertSettings().build();
+    bulkInsertOperationSettings = settingsBuilder.bulkInsertOperationSettings().build();
   }
 
   /** Builder for RegionInstancesStubSettings. */
@@ -173,6 +188,9 @@ public class RegionInstancesStubSettings extends StubSettings<RegionInstancesStu
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<BulkInsertRegionInstanceRequest, Operation>
         bulkInsertSettings;
+    private final OperationCallSettings.Builder<
+            BulkInsertRegionInstanceRequest, Operation, Operation>
+        bulkInsertOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -208,6 +226,7 @@ public class RegionInstancesStubSettings extends StubSettings<RegionInstancesStu
       super(clientContext);
 
       bulkInsertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      bulkInsertOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(bulkInsertSettings);
@@ -218,6 +237,7 @@ public class RegionInstancesStubSettings extends StubSettings<RegionInstancesStu
       super(settings);
 
       bulkInsertSettings = settings.bulkInsertSettings.toBuilder();
+      bulkInsertOperationSettings = settings.bulkInsertOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(bulkInsertSettings);
@@ -242,6 +262,30 @@ public class RegionInstancesStubSettings extends StubSettings<RegionInstancesStu
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .bulkInsertOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BulkInsertRegionInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -264,6 +308,14 @@ public class RegionInstancesStubSettings extends StubSettings<RegionInstancesStu
     public UnaryCallSettings.Builder<BulkInsertRegionInstanceRequest, Operation>
         bulkInsertSettings() {
       return bulkInsertSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to bulkInsert. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<BulkInsertRegionInstanceRequest, Operation, Operation>
+        bulkInsertOperationSettings() {
+      return bulkInsertOperationSettings;
     }
 
     @Override

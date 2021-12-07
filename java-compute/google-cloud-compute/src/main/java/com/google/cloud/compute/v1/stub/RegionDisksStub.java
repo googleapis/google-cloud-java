@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.RegionDisksClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddResourcePoliciesRegionDiskRequest;
 import com.google.cloud.compute.v1.CreateSnapshotRegionDiskRequest;
@@ -48,13 +49,29 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class RegionDisksStub implements BackgroundResource {
 
+  public OperationCallable<AddResourcePoliciesRegionDiskRequest, Operation, Operation>
+      addResourcePoliciesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: addResourcePoliciesOperationCallable()");
+  }
+
   public UnaryCallable<AddResourcePoliciesRegionDiskRequest, Operation>
       addResourcePoliciesCallable() {
     throw new UnsupportedOperationException("Not implemented: addResourcePoliciesCallable()");
   }
 
+  public OperationCallable<CreateSnapshotRegionDiskRequest, Operation, Operation>
+      createSnapshotOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createSnapshotOperationCallable()");
+  }
+
   public UnaryCallable<CreateSnapshotRegionDiskRequest, Operation> createSnapshotCallable() {
     throw new UnsupportedOperationException("Not implemented: createSnapshotCallable()");
+  }
+
+  public OperationCallable<DeleteRegionDiskRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
   }
 
   public UnaryCallable<DeleteRegionDiskRequest, Operation> deleteCallable() {
@@ -69,6 +86,11 @@ public abstract class RegionDisksStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
   }
 
+  public OperationCallable<InsertRegionDiskRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
+  }
+
   public UnaryCallable<InsertRegionDiskRequest, Operation> insertCallable() {
     throw new UnsupportedOperationException("Not implemented: insertCallable()");
   }
@@ -81,9 +103,20 @@ public abstract class RegionDisksStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
   }
 
+  public OperationCallable<RemoveResourcePoliciesRegionDiskRequest, Operation, Operation>
+      removeResourcePoliciesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: removeResourcePoliciesOperationCallable()");
+  }
+
   public UnaryCallable<RemoveResourcePoliciesRegionDiskRequest, Operation>
       removeResourcePoliciesCallable() {
     throw new UnsupportedOperationException("Not implemented: removeResourcePoliciesCallable()");
+  }
+
+  public OperationCallable<ResizeRegionDiskRequest, Operation, Operation>
+      resizeOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: resizeOperationCallable()");
   }
 
   public UnaryCallable<ResizeRegionDiskRequest, Operation> resizeCallable() {
@@ -92,6 +125,11 @@ public abstract class RegionDisksStub implements BackgroundResource {
 
   public UnaryCallable<SetIamPolicyRegionDiskRequest, Policy> setIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public OperationCallable<SetLabelsRegionDiskRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsOperationCallable()");
   }
 
   public UnaryCallable<SetLabelsRegionDiskRequest, Operation> setLabelsCallable() {

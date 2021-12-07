@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Specifies what kind of log the caller must write
+ * This is deprecated and has no effect. Do not use.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.LogConfig}
@@ -161,10 +161,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud audit options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+   * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;
+   * </code>
    *
    * @return Whether the cloudAudit field is set.
    */
@@ -176,10 +177,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud audit options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+   * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;
+   * </code>
    *
    * @return The cloudAudit.
    */
@@ -193,10 +195,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud audit options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+   * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.LogConfigCloudAuditOptionsOrBuilder getCloudAuditOrBuilder() {
@@ -211,10 +214,10 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Counter options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+   * <code>optional .google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
    *
    * @return Whether the counter field is set.
    */
@@ -226,10 +229,10 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Counter options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+   * <code>optional .google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
    *
    * @return The counter.
    */
@@ -243,10 +246,10 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Counter options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+   * <code>optional .google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.LogConfigCounterOptionsOrBuilder getCounterOrBuilder() {
@@ -261,10 +264,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Data access options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+   * <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;
+   * </code>
    *
    * @return Whether the dataAccess field is set.
    */
@@ -276,10 +280,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Data access options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+   * <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;
+   * </code>
    *
    * @return The dataAccess.
    */
@@ -293,10 +298,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Data access options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+   * <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.LogConfigDataAccessOptionsOrBuilder getDataAccessOrBuilder() {
@@ -499,7 +505,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies what kind of log the caller must write
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.LogConfig}
@@ -715,10 +721,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud audit options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;
+     * </code>
      *
      * @return Whether the cloudAudit field is set.
      */
@@ -729,10 +736,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud audit options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;
+     * </code>
      *
      * @return The cloudAudit.
      */
@@ -749,10 +757,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud audit options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;
+     * </code>
      */
     public Builder setCloudAudit(com.google.cloud.compute.v1.LogConfigCloudAuditOptions value) {
       if (cloudAuditBuilder_ == null) {
@@ -771,10 +780,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud audit options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;
+     * </code>
      */
     public Builder setCloudAudit(
         com.google.cloud.compute.v1.LogConfigCloudAuditOptions.Builder builderForValue) {
@@ -791,10 +801,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud audit options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;
+     * </code>
      */
     public Builder mergeCloudAudit(com.google.cloud.compute.v1.LogConfigCloudAuditOptions value) {
       if (cloudAuditBuilder_ == null) {
@@ -820,10 +831,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud audit options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;
+     * </code>
      */
     public Builder clearCloudAudit() {
       if (cloudAuditBuilder_ == null) {
@@ -839,10 +851,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud audit options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;
+     * </code>
      */
     public com.google.cloud.compute.v1.LogConfigCloudAuditOptions.Builder getCloudAuditBuilder() {
       bitField0_ |= 0x00000001;
@@ -853,10 +866,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud audit options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;
+     * </code>
      */
     public com.google.cloud.compute.v1.LogConfigCloudAuditOptionsOrBuilder
         getCloudAuditOrBuilder() {
@@ -872,10 +886,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud audit options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.LogConfigCloudAuditOptions,
@@ -904,10 +919,10 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Counter options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
      *
      * @return Whether the counter field is set.
      */
@@ -918,10 +933,10 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Counter options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
      *
      * @return The counter.
      */
@@ -938,10 +953,10 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Counter options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
      */
     public Builder setCounter(com.google.cloud.compute.v1.LogConfigCounterOptions value) {
       if (counterBuilder_ == null) {
@@ -960,10 +975,10 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Counter options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
      */
     public Builder setCounter(
         com.google.cloud.compute.v1.LogConfigCounterOptions.Builder builderForValue) {
@@ -980,10 +995,10 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Counter options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
      */
     public Builder mergeCounter(com.google.cloud.compute.v1.LogConfigCounterOptions value) {
       if (counterBuilder_ == null) {
@@ -1009,10 +1024,10 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Counter options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
      */
     public Builder clearCounter() {
       if (counterBuilder_ == null) {
@@ -1028,10 +1043,10 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Counter options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
      */
     public com.google.cloud.compute.v1.LogConfigCounterOptions.Builder getCounterBuilder() {
       bitField0_ |= 0x00000002;
@@ -1042,10 +1057,10 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Counter options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
      */
     public com.google.cloud.compute.v1.LogConfigCounterOptionsOrBuilder getCounterOrBuilder() {
       if (counterBuilder_ != null) {
@@ -1060,10 +1075,10 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Counter options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.LogConfigCounterOptions,
@@ -1092,10 +1107,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Data access options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;
+     * </code>
      *
      * @return Whether the dataAccess field is set.
      */
@@ -1106,10 +1122,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Data access options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;
+     * </code>
      *
      * @return The dataAccess.
      */
@@ -1126,10 +1143,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Data access options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;
+     * </code>
      */
     public Builder setDataAccess(com.google.cloud.compute.v1.LogConfigDataAccessOptions value) {
       if (dataAccessBuilder_ == null) {
@@ -1148,10 +1166,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Data access options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;
+     * </code>
      */
     public Builder setDataAccess(
         com.google.cloud.compute.v1.LogConfigDataAccessOptions.Builder builderForValue) {
@@ -1168,10 +1187,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Data access options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;
+     * </code>
      */
     public Builder mergeDataAccess(com.google.cloud.compute.v1.LogConfigDataAccessOptions value) {
       if (dataAccessBuilder_ == null) {
@@ -1197,10 +1217,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Data access options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;
+     * </code>
      */
     public Builder clearDataAccess() {
       if (dataAccessBuilder_ == null) {
@@ -1216,10 +1237,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Data access options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;
+     * </code>
      */
     public com.google.cloud.compute.v1.LogConfigDataAccessOptions.Builder getDataAccessBuilder() {
       bitField0_ |= 0x00000004;
@@ -1230,10 +1252,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Data access options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;
+     * </code>
      */
     public com.google.cloud.compute.v1.LogConfigDataAccessOptionsOrBuilder
         getDataAccessOrBuilder() {
@@ -1249,10 +1272,11 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Data access options.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+     * <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.LogConfigDataAccessOptions,

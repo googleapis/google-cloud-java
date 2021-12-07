@@ -115,7 +115,7 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
   public static final int FORWARDING_RULE_FIELD_NUMBER = 269964030;
   private volatile java.lang.Object forwardingRule_;
   /**
-   * <code>string forwarding_rule = 269964030;</code>
+   * <code>optional string forwarding_rule = 269964030;</code>
    *
    * @return Whether the forwardingRule field is set.
    */
@@ -124,7 +124,7 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>string forwarding_rule = 269964030;</code>
+   * <code>optional string forwarding_rule = 269964030;</code>
    *
    * @return The forwardingRule.
    */
@@ -141,7 +141,7 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
     }
   }
   /**
-   * <code>string forwarding_rule = 269964030;</code>
+   * <code>optional string forwarding_rule = 269964030;</code>
    *
    * @return The bytes for forwardingRule.
    */
@@ -491,7 +491,7 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
 
     private java.lang.Object forwardingRule_ = "";
     /**
-     * <code>string forwarding_rule = 269964030;</code>
+     * <code>optional string forwarding_rule = 269964030;</code>
      *
      * @return Whether the forwardingRule field is set.
      */
@@ -499,7 +499,7 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>string forwarding_rule = 269964030;</code>
+     * <code>optional string forwarding_rule = 269964030;</code>
      *
      * @return The forwardingRule.
      */
@@ -515,7 +515,7 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
       }
     }
     /**
-     * <code>string forwarding_rule = 269964030;</code>
+     * <code>optional string forwarding_rule = 269964030;</code>
      *
      * @return The bytes for forwardingRule.
      */
@@ -531,7 +531,7 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
       }
     }
     /**
-     * <code>string forwarding_rule = 269964030;</code>
+     * <code>optional string forwarding_rule = 269964030;</code>
      *
      * @param value The forwardingRule to set.
      * @return This builder for chaining.
@@ -546,7 +546,7 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
       return this;
     }
     /**
-     * <code>string forwarding_rule = 269964030;</code>
+     * <code>optional string forwarding_rule = 269964030;</code>
      *
      * @return This builder for chaining.
      */
@@ -557,7 +557,7 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
       return this;
     }
     /**
-     * <code>string forwarding_rule = 269964030;</code>
+     * <code>optional string forwarding_rule = 269964030;</code>
      *
      * @param value The bytes for forwardingRule to set.
      * @return This builder for chaining.

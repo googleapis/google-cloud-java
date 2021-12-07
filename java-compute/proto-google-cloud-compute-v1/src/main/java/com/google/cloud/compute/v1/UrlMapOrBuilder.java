@@ -30,7 +30,7 @@ public interface UrlMapOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return Whether the creationTimestamp field is set.
    */
@@ -42,7 +42,7 @@ public interface UrlMapOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The creationTimestamp.
    */
@@ -54,7 +54,7 @@ public interface UrlMapOrBuilder
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string creation_timestamp = 30525366;</code>
+   * <code>optional string creation_timestamp = 30525366;</code>
    *
    * @return The bytes for creationTimestamp.
    */
@@ -64,13 +64,11 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
-   * Only one of defaultRouteAction or defaultUrlRedirect must be set.
-   * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction.
-   * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * defaultRouteAction takes effect when none of the hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction. defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+   * <code>optional .google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;
+   * </code>
    *
    * @return Whether the defaultRouteAction field is set.
    */
@@ -79,13 +77,11 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
-   * Only one of defaultRouteAction or defaultUrlRedirect must be set.
-   * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction.
-   * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * defaultRouteAction takes effect when none of the hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction. defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+   * <code>optional .google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;
+   * </code>
    *
    * @return The defaultRouteAction.
    */
@@ -94,13 +90,11 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
-   * Only one of defaultRouteAction or defaultUrlRedirect must be set.
-   * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction.
-   * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * defaultRouteAction takes effect when none of the hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction. defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+   * <code>optional .google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;
+   * </code>
    */
   com.google.cloud.compute.v1.HttpRouteActionOrBuilder getDefaultRouteActionOrBuilder();
 
@@ -108,12 +102,10 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified.
-   * Only one of defaultService, defaultUrlRedirect  or defaultRouteAction.weightedBackendService must be set.
-   * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of defaultService, defaultUrlRedirect or defaultRouteAction.weightedBackendService must be set. defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>string default_service = 370242231;</code>
+   * <code>optional string default_service = 370242231;</code>
    *
    * @return Whether the defaultService field is set.
    */
@@ -122,12 +114,10 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified.
-   * Only one of defaultService, defaultUrlRedirect  or defaultRouteAction.weightedBackendService must be set.
-   * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of defaultService, defaultUrlRedirect or defaultRouteAction.weightedBackendService must be set. defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>string default_service = 370242231;</code>
+   * <code>optional string default_service = 370242231;</code>
    *
    * @return The defaultService.
    */
@@ -136,12 +126,10 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified.
-   * Only one of defaultService, defaultUrlRedirect  or defaultRouteAction.weightedBackendService must be set.
-   * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of defaultService, defaultUrlRedirect or defaultRouteAction.weightedBackendService must be set. defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>string default_service = 370242231;</code>
+   * <code>optional string default_service = 370242231;</code>
    *
    * @return The bytes for defaultService.
    */
@@ -151,12 +139,11 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
-   * If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
-   * Not supported when the URL map is bound to target gRPC proxy.
+   * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+   * <code>optional .google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;
+   * </code>
    *
    * @return Whether the defaultUrlRedirect field is set.
    */
@@ -165,12 +152,11 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
-   * If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
-   * Not supported when the URL map is bound to target gRPC proxy.
+   * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+   * <code>optional .google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;
+   * </code>
    *
    * @return The defaultUrlRedirect.
    */
@@ -179,12 +165,11 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
-   * If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
-   * Not supported when the URL map is bound to target gRPC proxy.
+   * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set. Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+   * <code>optional .google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;
+   * </code>
    */
   com.google.cloud.compute.v1.HttpRedirectActionOrBuilder getDefaultUrlRedirectOrBuilder();
 
@@ -195,7 +180,7 @@ public interface UrlMapOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -207,7 +192,7 @@ public interface UrlMapOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -219,7 +204,7 @@ public interface UrlMapOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -229,11 +214,10 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a UrlMap.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a UrlMap.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return Whether the fingerprint field is set.
    */
@@ -242,11 +226,10 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a UrlMap.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a UrlMap.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The fingerprint.
    */
@@ -255,11 +238,10 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a UrlMap.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a UrlMap.
    * </pre>
    *
-   * <code>string fingerprint = 234678500;</code>
+   * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The bytes for fingerprint.
    */
@@ -269,13 +251,10 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * Specifies changes to request and response headers that need to take effect for the selected backendService.
-   * The headerAction specified here take effect after headerAction specified under pathMatcher.
-   * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-   * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Specifies changes to request and response headers that need to take effect for the selected backendService. The headerAction specified here take effect after headerAction specified under pathMatcher. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
    *
    * @return Whether the headerAction field is set.
    */
@@ -284,13 +263,10 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * Specifies changes to request and response headers that need to take effect for the selected backendService.
-   * The headerAction specified here take effect after headerAction specified under pathMatcher.
-   * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-   * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Specifies changes to request and response headers that need to take effect for the selected backendService. The headerAction specified here take effect after headerAction specified under pathMatcher. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
    *
    * @return The headerAction.
    */
@@ -299,13 +275,10 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * Specifies changes to request and response headers that need to take effect for the selected backendService.
-   * The headerAction specified here take effect after headerAction specified under pathMatcher.
-   * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-   * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Specifies changes to request and response headers that need to take effect for the selected backendService. The headerAction specified here take effect after headerAction specified under pathMatcher. Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
    */
   com.google.cloud.compute.v1.HttpHeaderActionOrBuilder getHeaderActionOrBuilder();
 
@@ -368,7 +341,7 @@ public interface UrlMapOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -380,7 +353,7 @@ public interface UrlMapOrBuilder
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
-   * <code>uint64 id = 3355;</code>
+   * <code>optional uint64 id = 3355;</code>
    *
    * @return The id.
    */
@@ -393,7 +366,7 @@ public interface UrlMapOrBuilder
    * [Output Only] Type of the resource. Always compute#urlMaps for url maps.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -405,7 +378,7 @@ public interface UrlMapOrBuilder
    * [Output Only] Type of the resource. Always compute#urlMaps for url maps.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -417,7 +390,7 @@ public interface UrlMapOrBuilder
    * [Output Only] Type of the resource. Always compute#urlMaps for url maps.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -430,7 +403,7 @@ public interface UrlMapOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -442,7 +415,7 @@ public interface UrlMapOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -454,7 +427,7 @@ public interface UrlMapOrBuilder
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -519,7 +492,7 @@ public interface UrlMapOrBuilder
    * [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -531,7 +504,7 @@ public interface UrlMapOrBuilder
    * [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -543,7 +516,7 @@ public interface UrlMapOrBuilder
    * [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -556,7 +529,7 @@ public interface UrlMapOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return Whether the selfLink field is set.
    */
@@ -568,7 +541,7 @@ public interface UrlMapOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -580,7 +553,7 @@ public interface UrlMapOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>optional string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -590,8 +563,7 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-   * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -601,8 +573,7 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-   * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -612,8 +583,7 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-   * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -623,8 +593,7 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-   * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
@@ -634,8 +603,7 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-   * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>

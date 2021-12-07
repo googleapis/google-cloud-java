@@ -130,7 +130,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
    * The IP alias ranges to allocate for this interface. This IP CIDR range must belong to the specified subnetwork and cannot contain IP addresses reserved by system or used by other network interfaces. This range may be a single IP address (such as 10.2.3.4), a netmask (such as /24) or a CIDR-formatted string (such as 10.1.2.0/24).
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return Whether the ipCidrRange field is set.
    */
@@ -145,7 +145,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
    * The IP alias ranges to allocate for this interface. This IP CIDR range must belong to the specified subnetwork and cannot contain IP addresses reserved by system or used by other network interfaces. This range may be a single IP address (such as 10.2.3.4), a netmask (such as /24) or a CIDR-formatted string (such as 10.1.2.0/24).
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return The ipCidrRange.
    */
@@ -168,7 +168,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
    * The IP alias ranges to allocate for this interface. This IP CIDR range must belong to the specified subnetwork and cannot contain IP addresses reserved by system or used by other network interfaces. This range may be a single IP address (such as 10.2.3.4), a netmask (such as /24) or a CIDR-formatted string (such as 10.1.2.0/24).
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return The bytes for ipCidrRange.
    */
@@ -194,7 +194,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
    * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
    * </pre>
    *
-   * <code>string subnetwork_range_name = 387995966;</code>
+   * <code>optional string subnetwork_range_name = 387995966;</code>
    *
    * @return Whether the subnetworkRangeName field is set.
    */
@@ -209,7 +209,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
    * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
    * </pre>
    *
-   * <code>string subnetwork_range_name = 387995966;</code>
+   * <code>optional string subnetwork_range_name = 387995966;</code>
    *
    * @return The subnetworkRangeName.
    */
@@ -232,7 +232,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
    * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
    * </pre>
    *
-   * <code>string subnetwork_range_name = 387995966;</code>
+   * <code>optional string subnetwork_range_name = 387995966;</code>
    *
    * @return The bytes for subnetworkRangeName.
    */
@@ -612,7 +612,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
      * The IP alias ranges to allocate for this interface. This IP CIDR range must belong to the specified subnetwork and cannot contain IP addresses reserved by system or used by other network interfaces. This range may be a single IP address (such as 10.2.3.4), a netmask (such as /24) or a CIDR-formatted string (such as 10.1.2.0/24).
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return Whether the ipCidrRange field is set.
      */
@@ -626,7 +626,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
      * The IP alias ranges to allocate for this interface. This IP CIDR range must belong to the specified subnetwork and cannot contain IP addresses reserved by system or used by other network interfaces. This range may be a single IP address (such as 10.2.3.4), a netmask (such as /24) or a CIDR-formatted string (such as 10.1.2.0/24).
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return The ipCidrRange.
      */
@@ -648,7 +648,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
      * The IP alias ranges to allocate for this interface. This IP CIDR range must belong to the specified subnetwork and cannot contain IP addresses reserved by system or used by other network interfaces. This range may be a single IP address (such as 10.2.3.4), a netmask (such as /24) or a CIDR-formatted string (such as 10.1.2.0/24).
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return The bytes for ipCidrRange.
      */
@@ -670,7 +670,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
      * The IP alias ranges to allocate for this interface. This IP CIDR range must belong to the specified subnetwork and cannot contain IP addresses reserved by system or used by other network interfaces. This range may be a single IP address (such as 10.2.3.4), a netmask (such as /24) or a CIDR-formatted string (such as 10.1.2.0/24).
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @param value The ipCidrRange to set.
      * @return This builder for chaining.
@@ -691,7 +691,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
      * The IP alias ranges to allocate for this interface. This IP CIDR range must belong to the specified subnetwork and cannot contain IP addresses reserved by system or used by other network interfaces. This range may be a single IP address (such as 10.2.3.4), a netmask (such as /24) or a CIDR-formatted string (such as 10.1.2.0/24).
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @return This builder for chaining.
      */
@@ -708,7 +708,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
      * The IP alias ranges to allocate for this interface. This IP CIDR range must belong to the specified subnetwork and cannot contain IP addresses reserved by system or used by other network interfaces. This range may be a single IP address (such as 10.2.3.4), a netmask (such as /24) or a CIDR-formatted string (such as 10.1.2.0/24).
      * </pre>
      *
-     * <code>string ip_cidr_range = 98117322;</code>
+     * <code>optional string ip_cidr_range = 98117322;</code>
      *
      * @param value The bytes for ipCidrRange to set.
      * @return This builder for chaining.
@@ -732,7 +732,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
      * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
      * </pre>
      *
-     * <code>string subnetwork_range_name = 387995966;</code>
+     * <code>optional string subnetwork_range_name = 387995966;</code>
      *
      * @return Whether the subnetworkRangeName field is set.
      */
@@ -746,7 +746,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
      * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
      * </pre>
      *
-     * <code>string subnetwork_range_name = 387995966;</code>
+     * <code>optional string subnetwork_range_name = 387995966;</code>
      *
      * @return The subnetworkRangeName.
      */
@@ -768,7 +768,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
      * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
      * </pre>
      *
-     * <code>string subnetwork_range_name = 387995966;</code>
+     * <code>optional string subnetwork_range_name = 387995966;</code>
      *
      * @return The bytes for subnetworkRangeName.
      */
@@ -790,7 +790,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
      * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
      * </pre>
      *
-     * <code>string subnetwork_range_name = 387995966;</code>
+     * <code>optional string subnetwork_range_name = 387995966;</code>
      *
      * @param value The subnetworkRangeName to set.
      * @return This builder for chaining.
@@ -811,7 +811,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
      * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
      * </pre>
      *
-     * <code>string subnetwork_range_name = 387995966;</code>
+     * <code>optional string subnetwork_range_name = 387995966;</code>
      *
      * @return This builder for chaining.
      */
@@ -828,7 +828,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
      * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
      * </pre>
      *
-     * <code>string subnetwork_range_name = 387995966;</code>
+     * <code>optional string subnetwork_range_name = 387995966;</code>
      *
      * @param value The bytes for subnetworkRangeName to set.
      * @return This builder for chaining.

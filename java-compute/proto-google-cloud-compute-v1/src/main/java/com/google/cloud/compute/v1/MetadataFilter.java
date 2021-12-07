@@ -22,9 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Opaque filter criteria used by loadbalancers to restrict routing configuration to a limited set of loadbalancing proxies. Proxies and sidecars involved in loadbalancing would typically present metadata to the loadbalancers which need to match criteria specified here. If a match takes place, the relevant configuration is made available to those proxies.
- * For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata.
- * An example for using metadataFilters would be: if loadbalancing involves  Envoys, they will only receive routing configuration when values in metadataFilters match values supplied in &lt;a href="https://www.envoyproxy.io/docs/envoy/latest/api-v2/api/v2/core/base.proto#envoy-api-msg-core-node" Node metadata of their XDS requests to loadbalancers.
+ * Opaque filter criteria used by loadbalancers to restrict routing configuration to a limited set of loadbalancing proxies. Proxies and sidecars involved in loadbalancing would typically present metadata to the loadbalancers which need to match criteria specified here. If a match takes place, the relevant configuration is made available to those proxies. For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata. An example for using metadataFilters would be: if loadbalancing involves Envoys, they will only receive routing configuration when values in metadataFilters match values supplied in of their XDS requests to loadbalancers.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.MetadataFilter}
@@ -41,7 +39,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
 
   private MetadataFilter() {
     filterLabels_ = java.util.Collections.emptyList();
-    filterMatchCriteria_ = 0;
+    filterMatchCriteria_ = "";
   }
 
   @java.lang.Override
@@ -74,11 +72,11 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 1919762944:
+          case 1919762946:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              filterMatchCriteria_ = rawValue;
+              filterMatchCriteria_ = s;
               break;
             }
           case -1831742158:
@@ -135,10 +133,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match.
-   * Supported values are:
-   * - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata.
-   * - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria}
@@ -154,11 +149,35 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_FILTER_MATCH_CRITERIA = 0;</code>
      */
     UNDEFINED_FILTER_MATCH_CRITERIA(0),
-    /** <code>MATCH_ALL = 180663271;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Specifies that all filterLabels must match for the metadataFilter to be considered a match.
+     * </pre>
+     *
+     * <code>MATCH_ALL = 180663271;</code>
+     */
     MATCH_ALL(180663271),
-    /** <code>MATCH_ANY = 180663346;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Specifies that any filterLabel must match for the metadataFilter to be considered a match.
+     * </pre>
+     *
+     * <code>MATCH_ANY = 180663346;</code>
+     */
     MATCH_ANY(180663346),
-    /** <code>NOT_SET = 163646646;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the match criteria was not set. A metadataFilter must never be created with this value.
+     * </pre>
+     *
+     * <code>NOT_SET = 163646646;</code>
+     */
     NOT_SET(163646646),
     UNRECOGNIZED(-1),
     ;
@@ -173,11 +192,35 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_FILTER_MATCH_CRITERIA = 0;</code>
      */
     public static final int UNDEFINED_FILTER_MATCH_CRITERIA_VALUE = 0;
-    /** <code>MATCH_ALL = 180663271;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Specifies that all filterLabels must match for the metadataFilter to be considered a match.
+     * </pre>
+     *
+     * <code>MATCH_ALL = 180663271;</code>
+     */
     public static final int MATCH_ALL_VALUE = 180663271;
-    /** <code>MATCH_ANY = 180663346;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Specifies that any filterLabel must match for the metadataFilter to be considered a match.
+     * </pre>
+     *
+     * <code>MATCH_ANY = 180663346;</code>
+     */
     public static final int MATCH_ANY_VALUE = 180663346;
-    /** <code>NOT_SET = 163646646;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the match criteria was not set. A metadataFilter must never be created with this value.
+     * </pre>
+     *
+     * <code>NOT_SET = 163646646;</code>
+     */
     public static final int NOT_SET_VALUE = 163646646;
 
     public final int getNumber() {
@@ -275,8 +318,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-   * This list must not be empty and can have at the most 64 entries.
+   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -291,8 +333,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-   * This list must not be empty and can have at the most 64 entries.
+   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -307,8 +348,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-   * This list must not be empty and can have at the most 64 entries.
+   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -322,8 +362,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-   * This list must not be empty and can have at the most 64 entries.
+   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -337,8 +376,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-   * This list must not be empty and can have at the most 64 entries.
+   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -351,20 +389,16 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILTER_MATCH_CRITERIA_FIELD_NUMBER = 239970368;
-  private int filterMatchCriteria_;
+  private volatile java.lang.Object filterMatchCriteria_;
   /**
    *
    *
    * <pre>
-   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match.
-   * Supported values are:
-   * - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata.
-   * - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Check the FilterMatchCriteria enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;
-   * </code>
+   * <code>optional string filter_match_criteria = 239970368;</code>
    *
    * @return Whether the filterMatchCriteria field is set.
    */
@@ -376,47 +410,49 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match.
-   * Supported values are:
-   * - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata.
-   * - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Check the FilterMatchCriteria enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;
-   * </code>
+   * <code>optional string filter_match_criteria = 239970368;</code>
    *
-   * @return The enum numeric value on the wire for filterMatchCriteria.
+   * @return The filterMatchCriteria.
    */
   @java.lang.Override
-  public int getFilterMatchCriteriaValue() {
-    return filterMatchCriteria_;
+  public java.lang.String getFilterMatchCriteria() {
+    java.lang.Object ref = filterMatchCriteria_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filterMatchCriteria_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match.
-   * Supported values are:
-   * - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata.
-   * - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Check the FilterMatchCriteria enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;
-   * </code>
+   * <code>optional string filter_match_criteria = 239970368;</code>
    *
-   * @return The filterMatchCriteria.
+   * @return The bytes for filterMatchCriteria.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria getFilterMatchCriteria() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria result =
-        com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria.valueOf(
-            filterMatchCriteria_);
-    return result == null
-        ? com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getFilterMatchCriteriaBytes() {
+    java.lang.Object ref = filterMatchCriteria_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filterMatchCriteria_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -434,7 +470,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(239970368, filterMatchCriteria_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 239970368, filterMatchCriteria_);
     }
     for (int i = 0; i < filterLabels_.size(); i++) {
       output.writeMessage(307903142, filterLabels_.get(i));
@@ -450,7 +486,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeEnumSize(239970368, filterMatchCriteria_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(239970368, filterMatchCriteria_);
     }
     for (int i = 0; i < filterLabels_.size(); i++) {
       size +=
@@ -475,7 +511,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
     if (!getFilterLabelsList().equals(other.getFilterLabelsList())) return false;
     if (hasFilterMatchCriteria() != other.hasFilterMatchCriteria()) return false;
     if (hasFilterMatchCriteria()) {
-      if (filterMatchCriteria_ != other.filterMatchCriteria_) return false;
+      if (!getFilterMatchCriteria().equals(other.getFilterMatchCriteria())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -494,7 +530,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasFilterMatchCriteria()) {
       hash = (37 * hash) + FILTER_MATCH_CRITERIA_FIELD_NUMBER;
-      hash = (53 * hash) + filterMatchCriteria_;
+      hash = (53 * hash) + getFilterMatchCriteria().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -600,9 +636,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Opaque filter criteria used by loadbalancers to restrict routing configuration to a limited set of loadbalancing proxies. Proxies and sidecars involved in loadbalancing would typically present metadata to the loadbalancers which need to match criteria specified here. If a match takes place, the relevant configuration is made available to those proxies.
-   * For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata.
-   * An example for using metadataFilters would be: if loadbalancing involves  Envoys, they will only receive routing configuration when values in metadataFilters match values supplied in &lt;a href="https://www.envoyproxy.io/docs/envoy/latest/api-v2/api/v2/core/base.proto#envoy-api-msg-core-node" Node metadata of their XDS requests to loadbalancers.
+   * Opaque filter criteria used by loadbalancers to restrict routing configuration to a limited set of loadbalancing proxies. Proxies and sidecars involved in loadbalancing would typically present metadata to the loadbalancers which need to match criteria specified here. If a match takes place, the relevant configuration is made available to those proxies. For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata. An example for using metadataFilters would be: if loadbalancing involves Envoys, they will only receive routing configuration when values in metadataFilters match values supplied in of their XDS requests to loadbalancers.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.MetadataFilter}
@@ -651,7 +685,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       } else {
         filterLabelsBuilder_.clear();
       }
-      filterMatchCriteria_ = 0;
+      filterMatchCriteria_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
@@ -773,7 +807,9 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasFilterMatchCriteria()) {
-        setFilterMatchCriteria(other.getFilterMatchCriteria());
+        bitField0_ |= 0x00000002;
+        filterMatchCriteria_ = other.filterMatchCriteria_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -828,8 +864,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-     * This list must not be empty and can have at the most 64 entries.
+     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -847,8 +882,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-     * This list must not be empty and can have at the most 64 entries.
+     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -865,8 +899,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-     * This list must not be empty and can have at the most 64 entries.
+     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -883,8 +916,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-     * This list must not be empty and can have at the most 64 entries.
+     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -908,8 +940,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-     * This list must not be empty and can have at the most 64 entries.
+     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -930,8 +961,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-     * This list must not be empty and can have at the most 64 entries.
+     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -954,8 +984,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-     * This list must not be empty and can have at the most 64 entries.
+     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -979,8 +1008,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-     * This list must not be empty and can have at the most 64 entries.
+     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -1001,8 +1029,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-     * This list must not be empty and can have at the most 64 entries.
+     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -1023,8 +1050,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-     * This list must not be empty and can have at the most 64 entries.
+     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -1045,8 +1071,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-     * This list must not be empty and can have at the most 64 entries.
+     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -1066,8 +1091,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-     * This list must not be empty and can have at the most 64 entries.
+     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -1087,8 +1111,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-     * This list must not be empty and can have at the most 64 entries.
+     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -1102,8 +1125,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-     * This list must not be empty and can have at the most 64 entries.
+     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -1121,8 +1143,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-     * This list must not be empty and can have at the most 64 entries.
+     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -1140,8 +1161,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-     * This list must not be empty and can have at the most 64 entries.
+     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -1155,8 +1175,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-     * This list must not be empty and can have at the most 64 entries.
+     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -1172,8 +1191,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-     * This list must not be empty and can have at the most 64 entries.
+     * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -1201,24 +1219,19 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       return filterLabelsBuilder_;
     }
 
-    private int filterMatchCriteria_ = 0;
+    private java.lang.Object filterMatchCriteria_ = "";
     /**
      *
      *
      * <pre>
-     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match.
-     * Supported values are:
-     * - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata.
-     * - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * Check the FilterMatchCriteria enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;
-     * </code>
+     * <code>optional string filter_match_criteria = 239970368;</code>
      *
      * @return Whether the filterMatchCriteria field is set.
      */
-    @java.lang.Override
     public boolean hasFilterMatchCriteria() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -1226,40 +1239,65 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match.
-     * Supported values are:
-     * - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata.
-     * - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * Check the FilterMatchCriteria enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;
-     * </code>
+     * <code>optional string filter_match_criteria = 239970368;</code>
      *
-     * @return The enum numeric value on the wire for filterMatchCriteria.
+     * @return The filterMatchCriteria.
      */
-    @java.lang.Override
-    public int getFilterMatchCriteriaValue() {
-      return filterMatchCriteria_;
+    public java.lang.String getFilterMatchCriteria() {
+      java.lang.Object ref = filterMatchCriteria_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filterMatchCriteria_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match.
-     * Supported values are:
-     * - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata.
-     * - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * Check the FilterMatchCriteria enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;
-     * </code>
+     * <code>optional string filter_match_criteria = 239970368;</code>
      *
-     * @param value The enum numeric value on the wire for filterMatchCriteria to set.
+     * @return The bytes for filterMatchCriteria.
+     */
+    public com.google.protobuf.ByteString getFilterMatchCriteriaBytes() {
+      java.lang.Object ref = filterMatchCriteria_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filterMatchCriteria_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * Check the FilterMatchCriteria enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string filter_match_criteria = 239970368;</code>
+     *
+     * @param value The filterMatchCriteria to set.
      * @return This builder for chaining.
      */
-    public Builder setFilterMatchCriteriaValue(int value) {
+    public Builder setFilterMatchCriteria(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000002;
       filterMatchCriteria_ = value;
       onChanged();
@@ -1269,52 +1307,17 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match.
-     * Supported values are:
-     * - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata.
-     * - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * Check the FilterMatchCriteria enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;
-     * </code>
+     * <code>optional string filter_match_criteria = 239970368;</code>
      *
-     * @return The filterMatchCriteria.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria getFilterMatchCriteria() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria result =
-          com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria.valueOf(
-              filterMatchCriteria_);
-      return result == null
-          ? com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match.
-     * Supported values are:
-     * - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata.
-     * - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;
-     * </code>
-     *
-     * @param value The filterMatchCriteria to set.
      * @return This builder for chaining.
      */
-    public Builder setFilterMatchCriteria(
-        com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      filterMatchCriteria_ = value.getNumber();
+    public Builder clearFilterMatchCriteria() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      filterMatchCriteria_ = getDefaultInstance().getFilterMatchCriteria();
       onChanged();
       return this;
     }
@@ -1322,21 +1325,22 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match.
-     * Supported values are:
-     * - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata.
-     * - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * Check the FilterMatchCriteria enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;
-     * </code>
+     * <code>optional string filter_match_criteria = 239970368;</code>
      *
+     * @param value The bytes for filterMatchCriteria to set.
      * @return This builder for chaining.
      */
-    public Builder clearFilterMatchCriteria() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      filterMatchCriteria_ = 0;
+    public Builder setFilterMatchCriteriaBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      filterMatchCriteria_ = value;
       onChanged();
       return this;
     }

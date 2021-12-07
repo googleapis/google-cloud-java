@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.InstancesStub;
@@ -46,11 +48,7 @@ import javax.annotation.Generated;
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
  *   String instance = "instance555127957";
- *   String networkInterface = "networkInterface-341981525";
- *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
- *   Operation response =
- *       instancesClient.addAccessConfig(
- *           project, zone, instance, networkInterface, accessConfigResource);
+ *   Instance response = instancesClient.get(project, zone, instance);
  * }
  * }</pre>
  *
@@ -165,8 +163,9 @@ public class InstancesClient implements BackgroundResource {
    *   String networkInterface = "networkInterface-341981525";
    *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
    *   Operation response =
-   *       instancesClient.addAccessConfig(
-   *           project, zone, instance, networkInterface, accessConfigResource);
+   *       instancesClient
+   *           .addAccessConfigAsync(project, zone, instance, networkInterface, accessConfigResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -177,7 +176,7 @@ public class InstancesClient implements BackgroundResource {
    * @param accessConfigResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation addAccessConfig(
+  public final OperationFuture<Operation, Operation> addAccessConfigAsync(
       String project,
       String zone,
       String instance,
@@ -191,7 +190,7 @@ public class InstancesClient implements BackgroundResource {
             .setNetworkInterface(networkInterface)
             .setAccessConfigResource(accessConfigResource)
             .build();
-    return addAccessConfig(request);
+    return addAccessConfigAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -211,15 +210,47 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.addAccessConfig(request);
+   *   Operation response = instancesClient.addAccessConfigAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation addAccessConfig(AddAccessConfigInstanceRequest request) {
-    return addAccessConfigCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> addAccessConfigAsync(
+      AddAccessConfigInstanceRequest request) {
+    return addAccessConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds an access config to an instance's network interface.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   AddAccessConfigInstanceRequest request =
+   *       AddAccessConfigInstanceRequest.newBuilder()
+   *           .setAccessConfigResource(AccessConfig.newBuilder().build())
+   *           .setInstance("instance555127957")
+   *           .setNetworkInterface("networkInterface-341981525")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.addAccessConfigOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<AddAccessConfigInstanceRequest, Operation, Operation>
+      addAccessConfigOperationCallable() {
+    return stub.addAccessConfigOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -264,8 +295,10 @@ public class InstancesClient implements BackgroundResource {
    *   InstancesAddResourcePoliciesRequest instancesAddResourcePoliciesRequestResource =
    *       InstancesAddResourcePoliciesRequest.newBuilder().build();
    *   Operation response =
-   *       instancesClient.addResourcePolicies(
-   *           project, zone, instance, instancesAddResourcePoliciesRequestResource);
+   *       instancesClient
+   *           .addResourcePoliciesAsync(
+   *               project, zone, instance, instancesAddResourcePoliciesRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -275,7 +308,7 @@ public class InstancesClient implements BackgroundResource {
    * @param instancesAddResourcePoliciesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation addResourcePolicies(
+  public final OperationFuture<Operation, Operation> addResourcePoliciesAsync(
       String project,
       String zone,
       String instance,
@@ -288,7 +321,7 @@ public class InstancesClient implements BackgroundResource {
             .setInstancesAddResourcePoliciesRequestResource(
                 instancesAddResourcePoliciesRequestResource)
             .build();
-    return addResourcePolicies(request);
+    return addResourcePoliciesAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -309,15 +342,48 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.addResourcePolicies(request);
+   *   Operation response = instancesClient.addResourcePoliciesAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation addResourcePolicies(AddResourcePoliciesInstanceRequest request) {
-    return addResourcePoliciesCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> addResourcePoliciesAsync(
+      AddResourcePoliciesInstanceRequest request) {
+    return addResourcePoliciesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds existing resource policies to an instance. You can only add one policy right now which
+   * will be applied to this instance for scheduling live migrations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   AddResourcePoliciesInstanceRequest request =
+   *       AddResourcePoliciesInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesAddResourcePoliciesRequestResource(
+   *               InstancesAddResourcePoliciesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.addResourcePoliciesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<AddResourcePoliciesInstanceRequest, Operation, Operation>
+      addResourcePoliciesOperationCallable() {
+    return stub.addResourcePoliciesOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -352,7 +418,9 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves aggregated list of all of the instances in your project across all regions and zones.
+   * Retrieves an aggregated list of all of the instances in your project across all regions and
+   * zones. The performance of this method degrades when a filter is specified on a project that has
+   * a very large number of instances.
    *
    * <p>Sample code:
    *
@@ -377,7 +445,9 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves aggregated list of all of the instances in your project across all regions and zones.
+   * Retrieves an aggregated list of all of the instances in your project across all regions and
+   * zones. The performance of this method degrades when a filter is specified on a project that has
+   * a very large number of instances.
    *
    * <p>Sample code:
    *
@@ -409,7 +479,9 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves aggregated list of all of the instances in your project across all regions and zones.
+   * Retrieves an aggregated list of all of the instances in your project across all regions and
+   * zones. The performance of this method degrades when a filter is specified on a project that has
+   * a very large number of instances.
    *
    * <p>Sample code:
    *
@@ -441,7 +513,9 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves aggregated list of all of the instances in your project across all regions and zones.
+   * Retrieves an aggregated list of all of the instances in your project across all regions and
+   * zones. The performance of this method degrades when a filter is specified on a project that has
+   * a very large number of instances.
    *
    * <p>Sample code:
    *
@@ -492,7 +566,7 @@ public class InstancesClient implements BackgroundResource {
    *   String instance = "instance555127957";
    *   AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
    *   Operation response =
-   *       instancesClient.attachDisk(project, zone, instance, attachedDiskResource);
+   *       instancesClient.attachDiskAsync(project, zone, instance, attachedDiskResource).get();
    * }
    * }</pre>
    *
@@ -502,7 +576,7 @@ public class InstancesClient implements BackgroundResource {
    * @param attachedDiskResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation attachDisk(
+  public final OperationFuture<Operation, Operation> attachDiskAsync(
       String project, String zone, String instance, AttachedDisk attachedDiskResource) {
     AttachDiskInstanceRequest request =
         AttachDiskInstanceRequest.newBuilder()
@@ -511,7 +585,7 @@ public class InstancesClient implements BackgroundResource {
             .setInstance(instance)
             .setAttachedDiskResource(attachedDiskResource)
             .build();
-    return attachDisk(request);
+    return attachDiskAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -533,15 +607,49 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.attachDisk(request);
+   *   Operation response = instancesClient.attachDiskAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation attachDisk(AttachDiskInstanceRequest request) {
-    return attachDiskCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> attachDiskAsync(
+      AttachDiskInstanceRequest request) {
+    return attachDiskOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Attaches an existing Disk resource to an instance. You must first create the disk before you
+   * can attach it. It is not possible to create and attach a disk at the same time. For more
+   * information, read Adding a persistent disk to your instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   AttachDiskInstanceRequest request =
+   *       AttachDiskInstanceRequest.newBuilder()
+   *           .setAttachedDiskResource(AttachedDisk.newBuilder().build())
+   *           .setForceAttach(true)
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.attachDiskOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<AttachDiskInstanceRequest, Operation, Operation>
+      attachDiskOperationCallable() {
+    return stub.attachDiskOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -586,7 +694,7 @@ public class InstancesClient implements BackgroundResource {
    *   BulkInsertInstanceResource bulkInsertInstanceResourceResource =
    *       BulkInsertInstanceResource.newBuilder().build();
    *   Operation response =
-   *       instancesClient.bulkInsert(project, zone, bulkInsertInstanceResourceResource);
+   *       instancesClient.bulkInsertAsync(project, zone, bulkInsertInstanceResourceResource).get();
    * }
    * }</pre>
    *
@@ -595,7 +703,7 @@ public class InstancesClient implements BackgroundResource {
    * @param bulkInsertInstanceResourceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation bulkInsert(
+  public final OperationFuture<Operation, Operation> bulkInsertAsync(
       String project, String zone, BulkInsertInstanceResource bulkInsertInstanceResourceResource) {
     BulkInsertInstanceRequest request =
         BulkInsertInstanceRequest.newBuilder()
@@ -603,7 +711,7 @@ public class InstancesClient implements BackgroundResource {
             .setZone(zone)
             .setBulkInsertInstanceResourceResource(bulkInsertInstanceResourceResource)
             .build();
-    return bulkInsert(request);
+    return bulkInsertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -622,15 +730,46 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.bulkInsert(request);
+   *   Operation response = instancesClient.bulkInsertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation bulkInsert(BulkInsertInstanceRequest request) {
-    return bulkInsertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> bulkInsertAsync(
+      BulkInsertInstanceRequest request) {
+    return bulkInsertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates multiple instances. Count specifies the number of instances to create.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   BulkInsertInstanceRequest request =
+   *       BulkInsertInstanceRequest.newBuilder()
+   *           .setBulkInsertInstanceResourceResource(
+   *               BulkInsertInstanceResource.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.bulkInsertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<BulkInsertInstanceRequest, Operation, Operation>
+      bulkInsertOperationCallable() {
+    return stub.bulkInsertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -670,7 +809,7 @@ public class InstancesClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
    *   String instance = "instance555127957";
-   *   Operation response = instancesClient.delete(project, zone, instance);
+   *   Operation response = instancesClient.deleteAsync(project, zone, instance).get();
    * }
    * }</pre>
    *
@@ -679,14 +818,15 @@ public class InstancesClient implements BackgroundResource {
    * @param instance Name of the instance resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String zone, String instance) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String zone, String instance) {
     DeleteInstanceRequest request =
         DeleteInstanceRequest.newBuilder()
             .setProject(project)
             .setZone(zone)
             .setInstance(instance)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -704,15 +844,44 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.delete(request);
+   *   Operation response = instancesClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteInstanceRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(DeleteInstanceRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified Instance resource. For more information, see Deleting an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   DeleteInstanceRequest request =
+   *       DeleteInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteInstanceRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -754,8 +923,9 @@ public class InstancesClient implements BackgroundResource {
    *   String accessConfig = "accessConfig1549765062";
    *   String networkInterface = "networkInterface-341981525";
    *   Operation response =
-   *       instancesClient.deleteAccessConfig(
-   *           project, zone, instance, accessConfig, networkInterface);
+   *       instancesClient
+   *           .deleteAccessConfigAsync(project, zone, instance, accessConfig, networkInterface)
+   *           .get();
    * }
    * }</pre>
    *
@@ -766,7 +936,7 @@ public class InstancesClient implements BackgroundResource {
    * @param networkInterface The name of the network interface.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation deleteAccessConfig(
+  public final OperationFuture<Operation, Operation> deleteAccessConfigAsync(
       String project, String zone, String instance, String accessConfig, String networkInterface) {
     DeleteAccessConfigInstanceRequest request =
         DeleteAccessConfigInstanceRequest.newBuilder()
@@ -776,7 +946,7 @@ public class InstancesClient implements BackgroundResource {
             .setAccessConfig(accessConfig)
             .setNetworkInterface(networkInterface)
             .build();
-    return deleteAccessConfig(request);
+    return deleteAccessConfigAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -796,15 +966,47 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.deleteAccessConfig(request);
+   *   Operation response = instancesClient.deleteAccessConfigAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation deleteAccessConfig(DeleteAccessConfigInstanceRequest request) {
-    return deleteAccessConfigCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAccessConfigAsync(
+      DeleteAccessConfigInstanceRequest request) {
+    return deleteAccessConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an access config from an instance's network interface.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   DeleteAccessConfigInstanceRequest request =
+   *       DeleteAccessConfigInstanceRequest.newBuilder()
+   *           .setAccessConfig("accessConfig1549765062")
+   *           .setInstance("instance555127957")
+   *           .setNetworkInterface("networkInterface-341981525")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.deleteAccessConfigOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteAccessConfigInstanceRequest, Operation, Operation>
+      deleteAccessConfigOperationCallable() {
+    return stub.deleteAccessConfigOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -848,7 +1050,8 @@ public class InstancesClient implements BackgroundResource {
    *   String zone = "zone3744684";
    *   String instance = "instance555127957";
    *   String deviceName = "deviceName780988929";
-   *   Operation response = instancesClient.detachDisk(project, zone, instance, deviceName);
+   *   Operation response =
+   *       instancesClient.detachDiskAsync(project, zone, instance, deviceName).get();
    * }
    * }</pre>
    *
@@ -859,7 +1062,7 @@ public class InstancesClient implements BackgroundResource {
    *     to view currently attached disks and device names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation detachDisk(
+  public final OperationFuture<Operation, Operation> detachDiskAsync(
       String project, String zone, String instance, String deviceName) {
     DetachDiskInstanceRequest request =
         DetachDiskInstanceRequest.newBuilder()
@@ -868,7 +1071,7 @@ public class InstancesClient implements BackgroundResource {
             .setInstance(instance)
             .setDeviceName(deviceName)
             .build();
-    return detachDisk(request);
+    return detachDiskAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -887,15 +1090,46 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.detachDisk(request);
+   *   Operation response = instancesClient.detachDiskAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation detachDisk(DetachDiskInstanceRequest request) {
-    return detachDiskCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> detachDiskAsync(
+      DetachDiskInstanceRequest request) {
+    return detachDiskOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Detaches a disk from an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   DetachDiskInstanceRequest request =
+   *       DetachDiskInstanceRequest.newBuilder()
+   *           .setDeviceName("deviceName780988929")
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.detachDiskOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DetachDiskInstanceRequest, Operation, Operation>
+      detachDiskOperationCallable() {
+    return stub.detachDiskOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1525,7 +1759,7 @@ public class InstancesClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
    *   Instance instanceResource = Instance.newBuilder().build();
-   *   Operation response = instancesClient.insert(project, zone, instanceResource);
+   *   Operation response = instancesClient.insertAsync(project, zone, instanceResource).get();
    * }
    * }</pre>
    *
@@ -1534,14 +1768,15 @@ public class InstancesClient implements BackgroundResource {
    * @param instanceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(String project, String zone, Instance instanceResource) {
+  public final OperationFuture<Operation, Operation> insertAsync(
+      String project, String zone, Instance instanceResource) {
     InsertInstanceRequest request =
         InsertInstanceRequest.newBuilder()
             .setProject(project)
             .setZone(zone)
             .setInstanceResource(instanceResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1560,15 +1795,45 @@ public class InstancesClient implements BackgroundResource {
    *           .setSourceInstanceTemplate("sourceInstanceTemplate949712490")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.insert(request);
+   *   Operation response = instancesClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertInstanceRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(InsertInstanceRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an instance resource in the specified project using the data included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   InsertInstanceRequest request =
+   *       InsertInstanceRequest.newBuilder()
+   *           .setInstanceResource(Instance.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSourceInstanceTemplate("sourceInstanceTemplate949712490")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertInstanceRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1882,8 +2147,10 @@ public class InstancesClient implements BackgroundResource {
    *   InstancesRemoveResourcePoliciesRequest instancesRemoveResourcePoliciesRequestResource =
    *       InstancesRemoveResourcePoliciesRequest.newBuilder().build();
    *   Operation response =
-   *       instancesClient.removeResourcePolicies(
-   *           project, zone, instance, instancesRemoveResourcePoliciesRequestResource);
+   *       instancesClient
+   *           .removeResourcePoliciesAsync(
+   *               project, zone, instance, instancesRemoveResourcePoliciesRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -1893,7 +2160,7 @@ public class InstancesClient implements BackgroundResource {
    * @param instancesRemoveResourcePoliciesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation removeResourcePolicies(
+  public final OperationFuture<Operation, Operation> removeResourcePoliciesAsync(
       String project,
       String zone,
       String instance,
@@ -1906,7 +2173,7 @@ public class InstancesClient implements BackgroundResource {
             .setInstancesRemoveResourcePoliciesRequestResource(
                 instancesRemoveResourcePoliciesRequestResource)
             .build();
-    return removeResourcePolicies(request);
+    return removeResourcePoliciesAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1926,15 +2193,47 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.removeResourcePolicies(request);
+   *   Operation response = instancesClient.removeResourcePoliciesAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation removeResourcePolicies(RemoveResourcePoliciesInstanceRequest request) {
-    return removeResourcePoliciesCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> removeResourcePoliciesAsync(
+      RemoveResourcePoliciesInstanceRequest request) {
+    return removeResourcePoliciesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes resource policies from an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   RemoveResourcePoliciesInstanceRequest request =
+   *       RemoveResourcePoliciesInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesRemoveResourcePoliciesRequestResource(
+   *               InstancesRemoveResourcePoliciesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.removeResourcePoliciesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<RemoveResourcePoliciesInstanceRequest, Operation, Operation>
+      removeResourcePoliciesOperationCallable() {
+    return stub.removeResourcePoliciesOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1978,7 +2277,7 @@ public class InstancesClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
    *   String instance = "instance555127957";
-   *   Operation response = instancesClient.reset(project, zone, instance);
+   *   Operation response = instancesClient.resetAsync(project, zone, instance).get();
    * }
    * }</pre>
    *
@@ -1987,14 +2286,15 @@ public class InstancesClient implements BackgroundResource {
    * @param instance Name of the instance scoping this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation reset(String project, String zone, String instance) {
+  public final OperationFuture<Operation, Operation> resetAsync(
+      String project, String zone, String instance) {
     ResetInstanceRequest request =
         ResetInstanceRequest.newBuilder()
             .setProject(project)
             .setZone(zone)
             .setInstance(instance)
             .build();
-    return reset(request);
+    return resetAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2013,15 +2313,45 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.reset(request);
+   *   Operation response = instancesClient.resetAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation reset(ResetInstanceRequest request) {
-    return resetCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> resetAsync(ResetInstanceRequest request) {
+    return resetOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Performs a reset on the instance. This is a hard reset the VM does not do a graceful shutdown.
+   * For more information, see Resetting an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   ResetInstanceRequest request =
+   *       ResetInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.resetOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ResetInstanceRequest, Operation, Operation>
+      resetOperationCallable() {
+    return stub.resetOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2052,6 +2382,92 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Sends diagnostic interrupt to the instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   SendDiagnosticInterruptInstanceResponse response =
+   *       instancesClient.sendDiagnosticInterrupt(project, zone, instance);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param instance Name of the instance scoping this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SendDiagnosticInterruptInstanceResponse sendDiagnosticInterrupt(
+      String project, String zone, String instance) {
+    SendDiagnosticInterruptInstanceRequest request =
+        SendDiagnosticInterruptInstanceRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setInstance(instance)
+            .build();
+    return sendDiagnosticInterrupt(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sends diagnostic interrupt to the instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SendDiagnosticInterruptInstanceRequest request =
+   *       SendDiagnosticInterruptInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   SendDiagnosticInterruptInstanceResponse response =
+   *       instancesClient.sendDiagnosticInterrupt(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SendDiagnosticInterruptInstanceResponse sendDiagnosticInterrupt(
+      SendDiagnosticInterruptInstanceRequest request) {
+    return sendDiagnosticInterruptCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sends diagnostic interrupt to the instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SendDiagnosticInterruptInstanceRequest request =
+   *       SendDiagnosticInterruptInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<SendDiagnosticInterruptInstanceResponse> future =
+   *       instancesClient.sendDiagnosticInterruptCallable().futureCall(request);
+   *   // Do something.
+   *   SendDiagnosticInterruptInstanceResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+      sendDiagnosticInterruptCallable() {
+    return stub.sendDiagnosticInterruptCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Sets deletion protection on the instance.
    *
    * <p>Sample code:
@@ -2061,7 +2477,8 @@ public class InstancesClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
    *   String resource = "resource-341064690";
-   *   Operation response = instancesClient.setDeletionProtection(project, zone, resource);
+   *   Operation response =
+   *       instancesClient.setDeletionProtectionAsync(project, zone, resource).get();
    * }
    * }</pre>
    *
@@ -2070,14 +2487,15 @@ public class InstancesClient implements BackgroundResource {
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setDeletionProtection(String project, String zone, String resource) {
+  public final OperationFuture<Operation, Operation> setDeletionProtectionAsync(
+      String project, String zone, String resource) {
     SetDeletionProtectionInstanceRequest request =
         SetDeletionProtectionInstanceRequest.newBuilder()
             .setProject(project)
             .setZone(zone)
             .setResource(resource)
             .build();
-    return setDeletionProtection(request);
+    return setDeletionProtectionAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2096,15 +2514,46 @@ public class InstancesClient implements BackgroundResource {
    *           .setResource("resource-341064690")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.setDeletionProtection(request);
+   *   Operation response = instancesClient.setDeletionProtectionAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setDeletionProtection(SetDeletionProtectionInstanceRequest request) {
-    return setDeletionProtectionCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setDeletionProtectionAsync(
+      SetDeletionProtectionInstanceRequest request) {
+    return setDeletionProtectionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets deletion protection on the instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SetDeletionProtectionInstanceRequest request =
+   *       SetDeletionProtectionInstanceRequest.newBuilder()
+   *           .setDeletionProtection(true)
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.setDeletionProtectionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetDeletionProtectionInstanceRequest, Operation, Operation>
+      setDeletionProtectionOperationCallable() {
+    return stub.setDeletionProtectionOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2149,7 +2598,9 @@ public class InstancesClient implements BackgroundResource {
    *   boolean autoDelete = true;
    *   String deviceName = "deviceName780988929";
    *   Operation response =
-   *       instancesClient.setDiskAutoDelete(project, zone, instance, autoDelete, deviceName);
+   *       instancesClient
+   *           .setDiskAutoDeleteAsync(project, zone, instance, autoDelete, deviceName)
+   *           .get();
    * }
    * }</pre>
    *
@@ -2161,7 +2612,7 @@ public class InstancesClient implements BackgroundResource {
    *     to view currently attached disks and device names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setDiskAutoDelete(
+  public final OperationFuture<Operation, Operation> setDiskAutoDeleteAsync(
       String project, String zone, String instance, boolean autoDelete, String deviceName) {
     SetDiskAutoDeleteInstanceRequest request =
         SetDiskAutoDeleteInstanceRequest.newBuilder()
@@ -2171,7 +2622,7 @@ public class InstancesClient implements BackgroundResource {
             .setAutoDelete(autoDelete)
             .setDeviceName(deviceName)
             .build();
-    return setDiskAutoDelete(request);
+    return setDiskAutoDeleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2191,15 +2642,47 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.setDiskAutoDelete(request);
+   *   Operation response = instancesClient.setDiskAutoDeleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setDiskAutoDelete(SetDiskAutoDeleteInstanceRequest request) {
-    return setDiskAutoDeleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setDiskAutoDeleteAsync(
+      SetDiskAutoDeleteInstanceRequest request) {
+    return setDiskAutoDeleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the auto-delete flag for a disk attached to an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SetDiskAutoDeleteInstanceRequest request =
+   *       SetDiskAutoDeleteInstanceRequest.newBuilder()
+   *           .setAutoDelete(true)
+   *           .setDeviceName("deviceName780988929")
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.setDiskAutoDeleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetDiskAutoDeleteInstanceRequest, Operation, Operation>
+      setDiskAutoDeleteOperationCallable() {
+    return stub.setDiskAutoDeleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2334,7 +2817,9 @@ public class InstancesClient implements BackgroundResource {
    *   InstancesSetLabelsRequest instancesSetLabelsRequestResource =
    *       InstancesSetLabelsRequest.newBuilder().build();
    *   Operation response =
-   *       instancesClient.setLabels(project, zone, instance, instancesSetLabelsRequestResource);
+   *       instancesClient
+   *           .setLabelsAsync(project, zone, instance, instancesSetLabelsRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -2344,7 +2829,7 @@ public class InstancesClient implements BackgroundResource {
    * @param instancesSetLabelsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setLabels(
+  public final OperationFuture<Operation, Operation> setLabelsAsync(
       String project,
       String zone,
       String instance,
@@ -2356,7 +2841,7 @@ public class InstancesClient implements BackgroundResource {
             .setInstance(instance)
             .setInstancesSetLabelsRequestResource(instancesSetLabelsRequestResource)
             .build();
-    return setLabels(request);
+    return setLabelsAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2376,15 +2861,47 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.setLabels(request);
+   *   Operation response = instancesClient.setLabelsAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setLabels(SetLabelsInstanceRequest request) {
-    return setLabelsCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setLabelsAsync(
+      SetLabelsInstanceRequest request) {
+    return setLabelsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets labels on an instance. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SetLabelsInstanceRequest request =
+   *       SetLabelsInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesSetLabelsRequestResource(InstancesSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.setLabelsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetLabelsInstanceRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return stub.setLabelsOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2429,8 +2946,10 @@ public class InstancesClient implements BackgroundResource {
    *   InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource =
    *       InstancesSetMachineResourcesRequest.newBuilder().build();
    *   Operation response =
-   *       instancesClient.setMachineResources(
-   *           project, zone, instance, instancesSetMachineResourcesRequestResource);
+   *       instancesClient
+   *           .setMachineResourcesAsync(
+   *               project, zone, instance, instancesSetMachineResourcesRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -2440,7 +2959,7 @@ public class InstancesClient implements BackgroundResource {
    * @param instancesSetMachineResourcesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setMachineResources(
+  public final OperationFuture<Operation, Operation> setMachineResourcesAsync(
       String project,
       String zone,
       String instance,
@@ -2453,7 +2972,7 @@ public class InstancesClient implements BackgroundResource {
             .setInstancesSetMachineResourcesRequestResource(
                 instancesSetMachineResourcesRequestResource)
             .build();
-    return setMachineResources(request);
+    return setMachineResourcesAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2474,15 +2993,48 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.setMachineResources(request);
+   *   Operation response = instancesClient.setMachineResourcesAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setMachineResources(SetMachineResourcesInstanceRequest request) {
-    return setMachineResourcesCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setMachineResourcesAsync(
+      SetMachineResourcesInstanceRequest request) {
+    return setMachineResourcesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Changes the number and/or type of accelerator for a stopped instance to the values specified in
+   * the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SetMachineResourcesInstanceRequest request =
+   *       SetMachineResourcesInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesSetMachineResourcesRequestResource(
+   *               InstancesSetMachineResourcesRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.setMachineResourcesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetMachineResourcesInstanceRequest, Operation, Operation>
+      setMachineResourcesOperationCallable() {
+    return stub.setMachineResourcesOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2529,8 +3081,9 @@ public class InstancesClient implements BackgroundResource {
    *   InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource =
    *       InstancesSetMachineTypeRequest.newBuilder().build();
    *   Operation response =
-   *       instancesClient.setMachineType(
-   *           project, zone, instance, instancesSetMachineTypeRequestResource);
+   *       instancesClient
+   *           .setMachineTypeAsync(project, zone, instance, instancesSetMachineTypeRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -2540,7 +3093,7 @@ public class InstancesClient implements BackgroundResource {
    * @param instancesSetMachineTypeRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setMachineType(
+  public final OperationFuture<Operation, Operation> setMachineTypeAsync(
       String project,
       String zone,
       String instance,
@@ -2552,7 +3105,7 @@ public class InstancesClient implements BackgroundResource {
             .setInstance(instance)
             .setInstancesSetMachineTypeRequestResource(instancesSetMachineTypeRequestResource)
             .build();
-    return setMachineType(request);
+    return setMachineTypeAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2572,15 +3125,47 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.setMachineType(request);
+   *   Operation response = instancesClient.setMachineTypeAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setMachineType(SetMachineTypeInstanceRequest request) {
-    return setMachineTypeCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setMachineTypeAsync(
+      SetMachineTypeInstanceRequest request) {
+    return setMachineTypeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Changes the machine type for a stopped instance to the machine type specified in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SetMachineTypeInstanceRequest request =
+   *       SetMachineTypeInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesSetMachineTypeRequestResource(
+   *               InstancesSetMachineTypeRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.setMachineTypeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetMachineTypeInstanceRequest, Operation, Operation>
+      setMachineTypeOperationCallable() {
+    return stub.setMachineTypeOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2622,7 +3207,8 @@ public class InstancesClient implements BackgroundResource {
    *   String zone = "zone3744684";
    *   String instance = "instance555127957";
    *   Metadata metadataResource = Metadata.newBuilder().build();
-   *   Operation response = instancesClient.setMetadata(project, zone, instance, metadataResource);
+   *   Operation response =
+   *       instancesClient.setMetadataAsync(project, zone, instance, metadataResource).get();
    * }
    * }</pre>
    *
@@ -2632,7 +3218,7 @@ public class InstancesClient implements BackgroundResource {
    * @param metadataResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setMetadata(
+  public final OperationFuture<Operation, Operation> setMetadataAsync(
       String project, String zone, String instance, Metadata metadataResource) {
     SetMetadataInstanceRequest request =
         SetMetadataInstanceRequest.newBuilder()
@@ -2641,7 +3227,7 @@ public class InstancesClient implements BackgroundResource {
             .setInstance(instance)
             .setMetadataResource(metadataResource)
             .build();
-    return setMetadata(request);
+    return setMetadataAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2660,15 +3246,46 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.setMetadata(request);
+   *   Operation response = instancesClient.setMetadataAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setMetadata(SetMetadataInstanceRequest request) {
-    return setMetadataCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setMetadataAsync(
+      SetMetadataInstanceRequest request) {
+    return setMetadataOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets metadata for the specified instance to the data included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SetMetadataInstanceRequest request =
+   *       SetMetadataInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setMetadataResource(Metadata.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.setMetadataOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetMetadataInstanceRequest, Operation, Operation>
+      setMetadataOperationCallable() {
+    return stub.setMetadataOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2712,8 +3329,10 @@ public class InstancesClient implements BackgroundResource {
    *   InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource =
    *       InstancesSetMinCpuPlatformRequest.newBuilder().build();
    *   Operation response =
-   *       instancesClient.setMinCpuPlatform(
-   *           project, zone, instance, instancesSetMinCpuPlatformRequestResource);
+   *       instancesClient
+   *           .setMinCpuPlatformAsync(
+   *               project, zone, instance, instancesSetMinCpuPlatformRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -2723,7 +3342,7 @@ public class InstancesClient implements BackgroundResource {
    * @param instancesSetMinCpuPlatformRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setMinCpuPlatform(
+  public final OperationFuture<Operation, Operation> setMinCpuPlatformAsync(
       String project,
       String zone,
       String instance,
@@ -2735,7 +3354,7 @@ public class InstancesClient implements BackgroundResource {
             .setInstance(instance)
             .setInstancesSetMinCpuPlatformRequestResource(instancesSetMinCpuPlatformRequestResource)
             .build();
-    return setMinCpuPlatform(request);
+    return setMinCpuPlatformAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2756,15 +3375,48 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.setMinCpuPlatform(request);
+   *   Operation response = instancesClient.setMinCpuPlatformAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setMinCpuPlatform(SetMinCpuPlatformInstanceRequest request) {
-    return setMinCpuPlatformCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setMinCpuPlatformAsync(
+      SetMinCpuPlatformInstanceRequest request) {
+    return setMinCpuPlatformOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Changes the minimum CPU platform that this instance should use. This method can only be called
+   * on a stopped instance. For more information, read Specifying a Minimum CPU Platform.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SetMinCpuPlatformInstanceRequest request =
+   *       SetMinCpuPlatformInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesSetMinCpuPlatformRequestResource(
+   *               InstancesSetMinCpuPlatformRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.setMinCpuPlatformOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetMinCpuPlatformInstanceRequest, Operation, Operation>
+      setMinCpuPlatformOperationCallable() {
+    return stub.setMinCpuPlatformOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2811,7 +3463,7 @@ public class InstancesClient implements BackgroundResource {
    *   String instance = "instance555127957";
    *   Scheduling schedulingResource = Scheduling.newBuilder().build();
    *   Operation response =
-   *       instancesClient.setScheduling(project, zone, instance, schedulingResource);
+   *       instancesClient.setSchedulingAsync(project, zone, instance, schedulingResource).get();
    * }
    * }</pre>
    *
@@ -2821,7 +3473,7 @@ public class InstancesClient implements BackgroundResource {
    * @param schedulingResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setScheduling(
+  public final OperationFuture<Operation, Operation> setSchedulingAsync(
       String project, String zone, String instance, Scheduling schedulingResource) {
     SetSchedulingInstanceRequest request =
         SetSchedulingInstanceRequest.newBuilder()
@@ -2830,7 +3482,7 @@ public class InstancesClient implements BackgroundResource {
             .setInstance(instance)
             .setSchedulingResource(schedulingResource)
             .build();
-    return setScheduling(request);
+    return setSchedulingAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2851,15 +3503,48 @@ public class InstancesClient implements BackgroundResource {
    *           .setSchedulingResource(Scheduling.newBuilder().build())
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.setScheduling(request);
+   *   Operation response = instancesClient.setSchedulingAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setScheduling(SetSchedulingInstanceRequest request) {
-    return setSchedulingCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setSchedulingAsync(
+      SetSchedulingInstanceRequest request) {
+    return setSchedulingOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets an instance's scheduling options. You can only call this method on a stopped instance,
+   * that is, a VM instance that is in a `TERMINATED` state. See Instance Life Cycle for more
+   * information on the possible instance states.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SetSchedulingInstanceRequest request =
+   *       SetSchedulingInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSchedulingResource(Scheduling.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.setSchedulingOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetSchedulingInstanceRequest, Operation, Operation>
+      setSchedulingOperationCallable() {
+    return stub.setSchedulingOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2905,8 +3590,10 @@ public class InstancesClient implements BackgroundResource {
    *   InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource =
    *       InstancesSetServiceAccountRequest.newBuilder().build();
    *   Operation response =
-   *       instancesClient.setServiceAccount(
-   *           project, zone, instance, instancesSetServiceAccountRequestResource);
+   *       instancesClient
+   *           .setServiceAccountAsync(
+   *               project, zone, instance, instancesSetServiceAccountRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -2916,7 +3603,7 @@ public class InstancesClient implements BackgroundResource {
    * @param instancesSetServiceAccountRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setServiceAccount(
+  public final OperationFuture<Operation, Operation> setServiceAccountAsync(
       String project,
       String zone,
       String instance,
@@ -2928,7 +3615,7 @@ public class InstancesClient implements BackgroundResource {
             .setInstance(instance)
             .setInstancesSetServiceAccountRequestResource(instancesSetServiceAccountRequestResource)
             .build();
-    return setServiceAccount(request);
+    return setServiceAccountAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2949,15 +3636,48 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.setServiceAccount(request);
+   *   Operation response = instancesClient.setServiceAccountAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setServiceAccount(SetServiceAccountInstanceRequest request) {
-    return setServiceAccountCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setServiceAccountAsync(
+      SetServiceAccountInstanceRequest request) {
+    return setServiceAccountOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the service account on the instance. For more information, read Changing the service
+   * account and access scopes for an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SetServiceAccountInstanceRequest request =
+   *       SetServiceAccountInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesSetServiceAccountRequestResource(
+   *               InstancesSetServiceAccountRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.setServiceAccountOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetServiceAccountInstanceRequest, Operation, Operation>
+      setServiceAccountOperationCallable() {
+    return stub.setServiceAccountOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3005,8 +3725,10 @@ public class InstancesClient implements BackgroundResource {
    *   ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicyResource =
    *       ShieldedInstanceIntegrityPolicy.newBuilder().build();
    *   Operation response =
-   *       instancesClient.setShieldedInstanceIntegrityPolicy(
-   *           project, zone, instance, shieldedInstanceIntegrityPolicyResource);
+   *       instancesClient
+   *           .setShieldedInstanceIntegrityPolicyAsync(
+   *               project, zone, instance, shieldedInstanceIntegrityPolicyResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -3016,7 +3738,7 @@ public class InstancesClient implements BackgroundResource {
    * @param shieldedInstanceIntegrityPolicyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setShieldedInstanceIntegrityPolicy(
+  public final OperationFuture<Operation, Operation> setShieldedInstanceIntegrityPolicyAsync(
       String project,
       String zone,
       String instance,
@@ -3028,7 +3750,7 @@ public class InstancesClient implements BackgroundResource {
             .setInstance(instance)
             .setShieldedInstanceIntegrityPolicyResource(shieldedInstanceIntegrityPolicyResource)
             .build();
-    return setShieldedInstanceIntegrityPolicy(request);
+    return setShieldedInstanceIntegrityPolicyAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3050,16 +3772,50 @@ public class InstancesClient implements BackgroundResource {
    *               ShieldedInstanceIntegrityPolicy.newBuilder().build())
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.setShieldedInstanceIntegrityPolicy(request);
+   *   Operation response = instancesClient.setShieldedInstanceIntegrityPolicyAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setShieldedInstanceIntegrityPolicy(
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setShieldedInstanceIntegrityPolicyAsync(
       SetShieldedInstanceIntegrityPolicyInstanceRequest request) {
-    return setShieldedInstanceIntegrityPolicyCallable().call(request);
+    return setShieldedInstanceIntegrityPolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the Shielded Instance integrity policy for an instance. You can only use this method on a
+   * running instance. This method supports PATCH semantics and uses the JSON merge patch format and
+   * processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SetShieldedInstanceIntegrityPolicyInstanceRequest request =
+   *       SetShieldedInstanceIntegrityPolicyInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setShieldedInstanceIntegrityPolicyResource(
+   *               ShieldedInstanceIntegrityPolicy.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.setShieldedInstanceIntegrityPolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation, Operation>
+      setShieldedInstanceIntegrityPolicyOperationCallable() {
+    return stub.setShieldedInstanceIntegrityPolicyOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3105,7 +3861,8 @@ public class InstancesClient implements BackgroundResource {
    *   String zone = "zone3744684";
    *   String instance = "instance555127957";
    *   Tags tagsResource = Tags.newBuilder().build();
-   *   Operation response = instancesClient.setTags(project, zone, instance, tagsResource);
+   *   Operation response =
+   *       instancesClient.setTagsAsync(project, zone, instance, tagsResource).get();
    * }
    * }</pre>
    *
@@ -3115,7 +3872,8 @@ public class InstancesClient implements BackgroundResource {
    * @param tagsResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setTags(String project, String zone, String instance, Tags tagsResource) {
+  public final OperationFuture<Operation, Operation> setTagsAsync(
+      String project, String zone, String instance, Tags tagsResource) {
     SetTagsInstanceRequest request =
         SetTagsInstanceRequest.newBuilder()
             .setProject(project)
@@ -3123,7 +3881,7 @@ public class InstancesClient implements BackgroundResource {
             .setInstance(instance)
             .setTagsResource(tagsResource)
             .build();
-    return setTags(request);
+    return setTagsAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3142,15 +3900,45 @@ public class InstancesClient implements BackgroundResource {
    *           .setTagsResource(Tags.newBuilder().build())
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.setTags(request);
+   *   Operation response = instancesClient.setTagsAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setTags(SetTagsInstanceRequest request) {
-    return setTagsCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setTagsAsync(SetTagsInstanceRequest request) {
+    return setTagsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets network tags for the specified instance to the data included in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SetTagsInstanceRequest request =
+   *       SetTagsInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setTagsResource(Tags.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.setTagsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetTagsInstanceRequest, Operation, Operation>
+      setTagsOperationCallable() {
+    return stub.setTagsOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3190,7 +3978,8 @@ public class InstancesClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
    *   String instance = "instance555127957";
-   *   Operation response = instancesClient.simulateMaintenanceEvent(project, zone, instance);
+   *   Operation response =
+   *       instancesClient.simulateMaintenanceEventAsync(project, zone, instance).get();
    * }
    * }</pre>
    *
@@ -3199,14 +3988,15 @@ public class InstancesClient implements BackgroundResource {
    * @param instance Name of the instance scoping this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation simulateMaintenanceEvent(String project, String zone, String instance) {
+  public final OperationFuture<Operation, Operation> simulateMaintenanceEventAsync(
+      String project, String zone, String instance) {
     SimulateMaintenanceEventInstanceRequest request =
         SimulateMaintenanceEventInstanceRequest.newBuilder()
             .setProject(project)
             .setZone(zone)
             .setInstance(instance)
             .build();
-    return simulateMaintenanceEvent(request);
+    return simulateMaintenanceEventAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3223,15 +4013,44 @@ public class InstancesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.simulateMaintenanceEvent(request);
+   *   Operation response = instancesClient.simulateMaintenanceEventAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation simulateMaintenanceEvent(SimulateMaintenanceEventInstanceRequest request) {
-    return simulateMaintenanceEventCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> simulateMaintenanceEventAsync(
+      SimulateMaintenanceEventInstanceRequest request) {
+    return simulateMaintenanceEventOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Simulates a maintenance event on the instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SimulateMaintenanceEventInstanceRequest request =
+   *       SimulateMaintenanceEventInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.simulateMaintenanceEventOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SimulateMaintenanceEventInstanceRequest, Operation, Operation>
+      simulateMaintenanceEventOperationCallable() {
+    return stub.simulateMaintenanceEventOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3272,7 +4091,7 @@ public class InstancesClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
    *   String instance = "instance555127957";
-   *   Operation response = instancesClient.start(project, zone, instance);
+   *   Operation response = instancesClient.startAsync(project, zone, instance).get();
    * }
    * }</pre>
    *
@@ -3281,14 +4100,15 @@ public class InstancesClient implements BackgroundResource {
    * @param instance Name of the instance resource to start.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation start(String project, String zone, String instance) {
+  public final OperationFuture<Operation, Operation> startAsync(
+      String project, String zone, String instance) {
     StartInstanceRequest request =
         StartInstanceRequest.newBuilder()
             .setProject(project)
             .setZone(zone)
             .setInstance(instance)
             .build();
-    return start(request);
+    return startAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3307,15 +4127,45 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.start(request);
+   *   Operation response = instancesClient.startAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation start(StartInstanceRequest request) {
-    return startCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> startAsync(StartInstanceRequest request) {
+    return startOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts an instance that was stopped using the instances().stop method. For more information,
+   * see Restart an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   StartInstanceRequest request =
+   *       StartInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.startOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<StartInstanceRequest, Operation, Operation>
+      startOperationCallable() {
+    return stub.startOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3359,8 +4209,10 @@ public class InstancesClient implements BackgroundResource {
    *   InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource =
    *       InstancesStartWithEncryptionKeyRequest.newBuilder().build();
    *   Operation response =
-   *       instancesClient.startWithEncryptionKey(
-   *           project, zone, instance, instancesStartWithEncryptionKeyRequestResource);
+   *       instancesClient
+   *           .startWithEncryptionKeyAsync(
+   *               project, zone, instance, instancesStartWithEncryptionKeyRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -3370,7 +4222,7 @@ public class InstancesClient implements BackgroundResource {
    * @param instancesStartWithEncryptionKeyRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation startWithEncryptionKey(
+  public final OperationFuture<Operation, Operation> startWithEncryptionKeyAsync(
       String project,
       String zone,
       String instance,
@@ -3383,7 +4235,7 @@ public class InstancesClient implements BackgroundResource {
             .setInstancesStartWithEncryptionKeyRequestResource(
                 instancesStartWithEncryptionKeyRequestResource)
             .build();
-    return startWithEncryptionKey(request);
+    return startWithEncryptionKeyAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3404,15 +4256,48 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.startWithEncryptionKey(request);
+   *   Operation response = instancesClient.startWithEncryptionKeyAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation startWithEncryptionKey(StartWithEncryptionKeyInstanceRequest request) {
-    return startWithEncryptionKeyCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> startWithEncryptionKeyAsync(
+      StartWithEncryptionKeyInstanceRequest request) {
+    return startWithEncryptionKeyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts an instance that was stopped using the instances().stop method. For more information,
+   * see Restart an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   StartWithEncryptionKeyInstanceRequest request =
+   *       StartWithEncryptionKeyInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesStartWithEncryptionKeyRequestResource(
+   *               InstancesStartWithEncryptionKeyRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.startWithEncryptionKeyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<StartWithEncryptionKeyInstanceRequest, Operation, Operation>
+      startWithEncryptionKeyOperationCallable() {
+    return stub.startWithEncryptionKeyOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3459,7 +4344,7 @@ public class InstancesClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
    *   String instance = "instance555127957";
-   *   Operation response = instancesClient.stop(project, zone, instance);
+   *   Operation response = instancesClient.stopAsync(project, zone, instance).get();
    * }
    * }</pre>
    *
@@ -3468,14 +4353,15 @@ public class InstancesClient implements BackgroundResource {
    * @param instance Name of the instance resource to stop.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation stop(String project, String zone, String instance) {
+  public final OperationFuture<Operation, Operation> stopAsync(
+      String project, String zone, String instance) {
     StopInstanceRequest request =
         StopInstanceRequest.newBuilder()
             .setProject(project)
             .setZone(zone)
             .setInstance(instance)
             .build();
-    return stop(request);
+    return stopAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3496,15 +4382,47 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.stop(request);
+   *   Operation response = instancesClient.stopAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation stop(StopInstanceRequest request) {
-    return stopCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> stopAsync(StopInstanceRequest request) {
+    return stopOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops a running instance, shutting it down cleanly, and allows you to restart the instance at a
+   * later time. Stopped instances do not incur VM usage charges while they are stopped. However,
+   * resources that the VM is using, such as persistent disks and static IP addresses, will continue
+   * to be charged until they are deleted. For more information, see Stopping an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   StopInstanceRequest request =
+   *       StopInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.stopOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<StopInstanceRequest, Operation, Operation>
+      stopOperationCallable() {
+    return stub.stopOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3643,7 +4561,8 @@ public class InstancesClient implements BackgroundResource {
    *   String zone = "zone3744684";
    *   String instance = "instance555127957";
    *   Instance instanceResource = Instance.newBuilder().build();
-   *   Operation response = instancesClient.update(project, zone, instance, instanceResource);
+   *   Operation response =
+   *       instancesClient.updateAsync(project, zone, instance, instanceResource).get();
    * }
    * }</pre>
    *
@@ -3653,7 +4572,7 @@ public class InstancesClient implements BackgroundResource {
    * @param instanceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation update(
+  public final OperationFuture<Operation, Operation> updateAsync(
       String project, String zone, String instance, Instance instanceResource) {
     UpdateInstanceRequest request =
         UpdateInstanceRequest.newBuilder()
@@ -3662,7 +4581,7 @@ public class InstancesClient implements BackgroundResource {
             .setInstance(instance)
             .setInstanceResource(instanceResource)
             .build();
-    return update(request);
+    return updateAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3685,15 +4604,49 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.update(request);
+   *   Operation response = instancesClient.updateAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation update(UpdateInstanceRequest request) {
-    return updateCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> updateAsync(UpdateInstanceRequest request) {
+    return updateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an instance only if the necessary resources are available. This method can update only
+   * a specific set of instance properties. See Updating a running instance for a list of updatable
+   * instance properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   UpdateInstanceRequest request =
+   *       UpdateInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstanceResource(Instance.newBuilder().build())
+   *           .setMinimalAction("minimalAction624261943")
+   *           .setMostDisruptiveAllowedAction("mostDisruptiveAllowedAction-1597376488")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.updateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateInstanceRequest, Operation, Operation>
+      updateOperationCallable() {
+    return stub.updateOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3742,8 +4695,10 @@ public class InstancesClient implements BackgroundResource {
    *   String networkInterface = "networkInterface-341981525";
    *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
    *   Operation response =
-   *       instancesClient.updateAccessConfig(
-   *           project, zone, instance, networkInterface, accessConfigResource);
+   *       instancesClient
+   *           .updateAccessConfigAsync(
+   *               project, zone, instance, networkInterface, accessConfigResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -3754,7 +4709,7 @@ public class InstancesClient implements BackgroundResource {
    * @param accessConfigResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation updateAccessConfig(
+  public final OperationFuture<Operation, Operation> updateAccessConfigAsync(
       String project,
       String zone,
       String instance,
@@ -3768,7 +4723,7 @@ public class InstancesClient implements BackgroundResource {
             .setNetworkInterface(networkInterface)
             .setAccessConfigResource(accessConfigResource)
             .build();
-    return updateAccessConfig(request);
+    return updateAccessConfigAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3790,15 +4745,49 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.updateAccessConfig(request);
+   *   Operation response = instancesClient.updateAccessConfigAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation updateAccessConfig(UpdateAccessConfigInstanceRequest request) {
-    return updateAccessConfigCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> updateAccessConfigAsync(
+      UpdateAccessConfigInstanceRequest request) {
+    return updateAccessConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified access config from an instance's network interface with the data included
+   * in the request. This method supports PATCH semantics and uses the JSON merge patch format and
+   * processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   UpdateAccessConfigInstanceRequest request =
+   *       UpdateAccessConfigInstanceRequest.newBuilder()
+   *           .setAccessConfigResource(AccessConfig.newBuilder().build())
+   *           .setInstance("instance555127957")
+   *           .setNetworkInterface("networkInterface-341981525")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.updateAccessConfigOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateAccessConfigInstanceRequest, Operation, Operation>
+      updateAccessConfigOperationCallable() {
+    return stub.updateAccessConfigOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3847,7 +4836,9 @@ public class InstancesClient implements BackgroundResource {
    *   String instance = "instance555127957";
    *   DisplayDevice displayDeviceResource = DisplayDevice.newBuilder().build();
    *   Operation response =
-   *       instancesClient.updateDisplayDevice(project, zone, instance, displayDeviceResource);
+   *       instancesClient
+   *           .updateDisplayDeviceAsync(project, zone, instance, displayDeviceResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -3857,7 +4848,7 @@ public class InstancesClient implements BackgroundResource {
    * @param displayDeviceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation updateDisplayDevice(
+  public final OperationFuture<Operation, Operation> updateDisplayDeviceAsync(
       String project, String zone, String instance, DisplayDevice displayDeviceResource) {
     UpdateDisplayDeviceInstanceRequest request =
         UpdateDisplayDeviceInstanceRequest.newBuilder()
@@ -3866,7 +4857,7 @@ public class InstancesClient implements BackgroundResource {
             .setInstance(instance)
             .setDisplayDeviceResource(displayDeviceResource)
             .build();
-    return updateDisplayDevice(request);
+    return updateDisplayDeviceAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3887,15 +4878,48 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.updateDisplayDevice(request);
+   *   Operation response = instancesClient.updateDisplayDeviceAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation updateDisplayDevice(UpdateDisplayDeviceInstanceRequest request) {
-    return updateDisplayDeviceCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> updateDisplayDeviceAsync(
+      UpdateDisplayDeviceInstanceRequest request) {
+    return updateDisplayDeviceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the Display config for a VM instance. You can only use this method on a stopped VM
+   * instance. This method supports PATCH semantics and uses the JSON merge patch format and
+   * processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   UpdateDisplayDeviceInstanceRequest request =
+   *       UpdateDisplayDeviceInstanceRequest.newBuilder()
+   *           .setDisplayDeviceResource(DisplayDevice.newBuilder().build())
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.updateDisplayDeviceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateDisplayDeviceInstanceRequest, Operation, Operation>
+      updateDisplayDeviceOperationCallable() {
+    return stub.updateDisplayDeviceOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3945,8 +4969,10 @@ public class InstancesClient implements BackgroundResource {
    *   String networkInterface = "networkInterface-341981525";
    *   NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
    *   Operation response =
-   *       instancesClient.updateNetworkInterface(
-   *           project, zone, instance, networkInterface, networkInterfaceResource);
+   *       instancesClient
+   *           .updateNetworkInterfaceAsync(
+   *               project, zone, instance, networkInterface, networkInterfaceResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -3957,7 +4983,7 @@ public class InstancesClient implements BackgroundResource {
    * @param networkInterfaceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation updateNetworkInterface(
+  public final OperationFuture<Operation, Operation> updateNetworkInterfaceAsync(
       String project,
       String zone,
       String instance,
@@ -3971,7 +4997,7 @@ public class InstancesClient implements BackgroundResource {
             .setNetworkInterface(networkInterface)
             .setNetworkInterfaceResource(networkInterfaceResource)
             .build();
-    return updateNetworkInterface(request);
+    return updateNetworkInterfaceAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3994,15 +5020,50 @@ public class InstancesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.updateNetworkInterface(request);
+   *   Operation response = instancesClient.updateNetworkInterfaceAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation updateNetworkInterface(UpdateNetworkInterfaceInstanceRequest request) {
-    return updateNetworkInterfaceCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> updateNetworkInterfaceAsync(
+      UpdateNetworkInterfaceInstanceRequest request) {
+    return updateNetworkInterfaceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an instance's network interface. This method can only update an interface's alias IP
+   * range and attached network. See Modifying alias IP ranges for an existing instance for
+   * instructions on changing alias IP ranges. See Migrating a VM between networks for instructions
+   * on migrating an interface. This method follows PATCH semantics.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   UpdateNetworkInterfaceInstanceRequest request =
+   *       UpdateNetworkInterfaceInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setNetworkInterface("networkInterface-341981525")
+   *           .setNetworkInterfaceResource(NetworkInterface.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.updateNetworkInterfaceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateNetworkInterfaceInstanceRequest, Operation, Operation>
+      updateNetworkInterfaceOperationCallable() {
+    return stub.updateNetworkInterfaceOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -4053,8 +5114,10 @@ public class InstancesClient implements BackgroundResource {
    *   ShieldedInstanceConfig shieldedInstanceConfigResource =
    *       ShieldedInstanceConfig.newBuilder().build();
    *   Operation response =
-   *       instancesClient.updateShieldedInstanceConfig(
-   *           project, zone, instance, shieldedInstanceConfigResource);
+   *       instancesClient
+   *           .updateShieldedInstanceConfigAsync(
+   *               project, zone, instance, shieldedInstanceConfigResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -4064,7 +5127,7 @@ public class InstancesClient implements BackgroundResource {
    * @param shieldedInstanceConfigResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation updateShieldedInstanceConfig(
+  public final OperationFuture<Operation, Operation> updateShieldedInstanceConfigAsync(
       String project,
       String zone,
       String instance,
@@ -4076,7 +5139,7 @@ public class InstancesClient implements BackgroundResource {
             .setInstance(instance)
             .setShieldedInstanceConfigResource(shieldedInstanceConfigResource)
             .build();
-    return updateShieldedInstanceConfig(request);
+    return updateShieldedInstanceConfigAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -4097,16 +5160,48 @@ public class InstancesClient implements BackgroundResource {
    *           .setShieldedInstanceConfigResource(ShieldedInstanceConfig.newBuilder().build())
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = instancesClient.updateShieldedInstanceConfig(request);
+   *   Operation response = instancesClient.updateShieldedInstanceConfigAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation updateShieldedInstanceConfig(
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> updateShieldedInstanceConfigAsync(
       UpdateShieldedInstanceConfigInstanceRequest request) {
-    return updateShieldedInstanceConfigCallable().call(request);
+    return updateShieldedInstanceConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the Shielded Instance config for an instance. You can only use this method on a stopped
+   * instance. This method supports PATCH semantics and uses the JSON merge patch format and
+   * processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   UpdateShieldedInstanceConfigInstanceRequest request =
+   *       UpdateShieldedInstanceConfigInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setShieldedInstanceConfigResource(ShieldedInstanceConfig.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.updateShieldedInstanceConfigOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateShieldedInstanceConfigInstanceRequest, Operation, Operation>
+      updateShieldedInstanceConfigOperationCallable() {
+    return stub.updateShieldedInstanceConfigOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

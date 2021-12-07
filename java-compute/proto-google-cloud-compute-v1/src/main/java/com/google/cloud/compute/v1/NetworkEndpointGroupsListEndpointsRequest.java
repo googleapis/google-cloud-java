@@ -39,7 +39,7 @@ public final class NetworkEndpointGroupsListEndpointsRequest
   }
 
   private NetworkEndpointGroupsListEndpointsRequest() {
-    healthStatus_ = 0;
+    healthStatus_ = "";
   }
 
   @java.lang.Override
@@ -72,11 +72,11 @@ public final class NetworkEndpointGroupsListEndpointsRequest
           case 0:
             done = true;
             break;
-          case -1250600536:
+          case -1250600534:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              healthStatus_ = rawValue;
+              healthStatus_ = s;
               break;
             }
           default:
@@ -134,9 +134,25 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      * <code>UNDEFINED_HEALTH_STATUS = 0;</code>
      */
     UNDEFINED_HEALTH_STATUS(0),
-    /** <code>SHOW = 2544381;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Show the health status for each network endpoint. Impacts latency of the call.
+     * </pre>
+     *
+     * <code>SHOW = 2544381;</code>
+     */
     SHOW(2544381),
-    /** <code>SKIP = 2547071;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Health status for network endpoints will not be provided.
+     * </pre>
+     *
+     * <code>SKIP = 2547071;</code>
+     */
     SKIP(2547071),
     UNRECOGNIZED(-1),
     ;
@@ -151,9 +167,25 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      * <code>UNDEFINED_HEALTH_STATUS = 0;</code>
      */
     public static final int UNDEFINED_HEALTH_STATUS_VALUE = 0;
-    /** <code>SHOW = 2544381;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Show the health status for each network endpoint. Impacts latency of the call.
+     * </pre>
+     *
+     * <code>SHOW = 2544381;</code>
+     */
     public static final int SHOW_VALUE = 2544381;
-    /** <code>SKIP = 2547071;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Health status for network endpoints will not be provided.
+     * </pre>
+     *
+     * <code>SKIP = 2547071;</code>
+     */
     public static final int SKIP_VALUE = 2547071;
 
     public final int getNumber() {
@@ -243,17 +275,16 @@ public final class NetworkEndpointGroupsListEndpointsRequest
 
   private int bitField0_;
   public static final int HEALTH_STATUS_FIELD_NUMBER = 380545845;
-  private int healthStatus_;
+  private volatile java.lang.Object healthStatus_;
   /**
    *
    *
    * <pre>
    * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+   * Check the HealthStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
-   * </code>
+   * <code>optional string health_status = 380545845;</code>
    *
    * @return Whether the healthStatus field is set.
    */
@@ -266,42 +297,48 @@ public final class NetworkEndpointGroupsListEndpointsRequest
    *
    * <pre>
    * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+   * Check the HealthStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
-   * </code>
+   * <code>optional string health_status = 380545845;</code>
    *
-   * @return The enum numeric value on the wire for healthStatus.
+   * @return The healthStatus.
    */
   @java.lang.Override
-  public int getHealthStatusValue() {
-    return healthStatus_;
+  public java.lang.String getHealthStatus() {
+    java.lang.Object ref = healthStatus_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      healthStatus_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+   * Check the HealthStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
-   * </code>
+   * <code>optional string health_status = 380545845;</code>
    *
-   * @return The healthStatus.
+   * @return The bytes for healthStatus.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus
-      getHealthStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus result =
-        com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus.valueOf(
-            healthStatus_);
-    return result == null
-        ? com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus
-            .UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getHealthStatusBytes() {
+    java.lang.Object ref = healthStatus_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      healthStatus_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -319,7 +356,7 @@ public final class NetworkEndpointGroupsListEndpointsRequest
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(380545845, healthStatus_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 380545845, healthStatus_);
     }
     unknownFields.writeTo(output);
   }
@@ -331,7 +368,7 @@ public final class NetworkEndpointGroupsListEndpointsRequest
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(380545845, healthStatus_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(380545845, healthStatus_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -351,7 +388,7 @@ public final class NetworkEndpointGroupsListEndpointsRequest
 
     if (hasHealthStatus() != other.hasHealthStatus()) return false;
     if (hasHealthStatus()) {
-      if (healthStatus_ != other.healthStatus_) return false;
+      if (!getHealthStatus().equals(other.getHealthStatus())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -366,7 +403,7 @@ public final class NetworkEndpointGroupsListEndpointsRequest
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasHealthStatus()) {
       hash = (37 * hash) + HEALTH_STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + healthStatus_;
+      hash = (53 * hash) + getHealthStatus().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -515,7 +552,7 @@ public final class NetworkEndpointGroupsListEndpointsRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      healthStatus_ = 0;
+      healthStatus_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
@@ -607,7 +644,9 @@ public final class NetworkEndpointGroupsListEndpointsRequest
           == com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest
               .getDefaultInstance()) return this;
       if (other.hasHealthStatus()) {
-        setHealthStatus(other.getHealthStatus());
+        bitField0_ |= 0x00000001;
+        healthStatus_ = other.healthStatus_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -642,21 +681,19 @@ public final class NetworkEndpointGroupsListEndpointsRequest
 
     private int bitField0_;
 
-    private int healthStatus_ = 0;
+    private java.lang.Object healthStatus_ = "";
     /**
      *
      *
      * <pre>
      * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+     * Check the HealthStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
-     * </code>
+     * <code>optional string health_status = 380545845;</code>
      *
      * @return Whether the healthStatus field is set.
      */
-    @java.lang.Override
     public boolean hasHealthStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -665,33 +702,64 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      *
      * <pre>
      * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+     * Check the HealthStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
-     * </code>
+     * <code>optional string health_status = 380545845;</code>
      *
-     * @return The enum numeric value on the wire for healthStatus.
+     * @return The healthStatus.
      */
-    @java.lang.Override
-    public int getHealthStatusValue() {
-      return healthStatus_;
+    public java.lang.String getHealthStatus() {
+      java.lang.Object ref = healthStatus_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        healthStatus_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+     * Check the HealthStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
-     * </code>
+     * <code>optional string health_status = 380545845;</code>
      *
-     * @param value The enum numeric value on the wire for healthStatus to set.
+     * @return The bytes for healthStatus.
+     */
+    public com.google.protobuf.ByteString getHealthStatusBytes() {
+      java.lang.Object ref = healthStatus_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        healthStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+     * Check the HealthStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string health_status = 380545845;</code>
+     *
+     * @param value The healthStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setHealthStatusValue(int value) {
+    public Builder setHealthStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000001;
       healthStatus_ = value;
       onChanged();
@@ -702,47 +770,16 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      *
      * <pre>
      * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+     * Check the HealthStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
-     * </code>
+     * <code>optional string health_status = 380545845;</code>
      *
-     * @return The healthStatus.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus
-        getHealthStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus result =
-          com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus
-              .valueOf(healthStatus_);
-      return result == null
-          ? com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus
-              .UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
-     * </code>
-     *
-     * @param value The healthStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setHealthStatus(
-        com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      healthStatus_ = value.getNumber();
+    public Builder clearHealthStatus() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      healthStatus_ = getDefaultInstance().getHealthStatus();
       onChanged();
       return this;
     }
@@ -751,17 +788,21 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      *
      * <pre>
      * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+     * Check the HealthStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
-     * </code>
+     * <code>optional string health_status = 380545845;</code>
      *
+     * @param value The bytes for healthStatus to set.
      * @return This builder for chaining.
      */
-    public Builder clearHealthStatus() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      healthStatus_ = 0;
+    public Builder setHealthStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      healthStatus_ = value;
       onChanged();
       return this;
     }

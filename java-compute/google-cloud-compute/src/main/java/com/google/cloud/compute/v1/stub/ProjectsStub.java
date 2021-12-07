@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.ProjectsClient.GetXpnResourcesPagedRes
 import static com.google.cloud.compute.v1.ProjectsClient.ListXpnHostsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DisableXpnHostProjectRequest;
 import com.google.cloud.compute.v1.DisableXpnResourceProjectRequest;
@@ -49,16 +50,38 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class ProjectsStub implements BackgroundResource {
 
+  public OperationCallable<DisableXpnHostProjectRequest, Operation, Operation>
+      disableXpnHostOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: disableXpnHostOperationCallable()");
+  }
+
   public UnaryCallable<DisableXpnHostProjectRequest, Operation> disableXpnHostCallable() {
     throw new UnsupportedOperationException("Not implemented: disableXpnHostCallable()");
+  }
+
+  public OperationCallable<DisableXpnResourceProjectRequest, Operation, Operation>
+      disableXpnResourceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: disableXpnResourceOperationCallable()");
   }
 
   public UnaryCallable<DisableXpnResourceProjectRequest, Operation> disableXpnResourceCallable() {
     throw new UnsupportedOperationException("Not implemented: disableXpnResourceCallable()");
   }
 
+  public OperationCallable<EnableXpnHostProjectRequest, Operation, Operation>
+      enableXpnHostOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: enableXpnHostOperationCallable()");
+  }
+
   public UnaryCallable<EnableXpnHostProjectRequest, Operation> enableXpnHostCallable() {
     throw new UnsupportedOperationException("Not implemented: enableXpnHostCallable()");
+  }
+
+  public OperationCallable<EnableXpnResourceProjectRequest, Operation, Operation>
+      enableXpnResourceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: enableXpnResourceOperationCallable()");
   }
 
   public UnaryCallable<EnableXpnResourceProjectRequest, Operation> enableXpnResourceCallable() {
@@ -92,12 +115,28 @@ public abstract class ProjectsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listXpnHostsCallable()");
   }
 
+  public OperationCallable<MoveDiskProjectRequest, Operation, Operation>
+      moveDiskOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: moveDiskOperationCallable()");
+  }
+
   public UnaryCallable<MoveDiskProjectRequest, Operation> moveDiskCallable() {
     throw new UnsupportedOperationException("Not implemented: moveDiskCallable()");
   }
 
+  public OperationCallable<MoveInstanceProjectRequest, Operation, Operation>
+      moveInstanceOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: moveInstanceOperationCallable()");
+  }
+
   public UnaryCallable<MoveInstanceProjectRequest, Operation> moveInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: moveInstanceCallable()");
+  }
+
+  public OperationCallable<SetCommonInstanceMetadataProjectRequest, Operation, Operation>
+      setCommonInstanceMetadataOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setCommonInstanceMetadataOperationCallable()");
   }
 
   public UnaryCallable<SetCommonInstanceMetadataProjectRequest, Operation>
@@ -105,9 +144,21 @@ public abstract class ProjectsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: setCommonInstanceMetadataCallable()");
   }
 
+  public OperationCallable<SetDefaultNetworkTierProjectRequest, Operation, Operation>
+      setDefaultNetworkTierOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setDefaultNetworkTierOperationCallable()");
+  }
+
   public UnaryCallable<SetDefaultNetworkTierProjectRequest, Operation>
       setDefaultNetworkTierCallable() {
     throw new UnsupportedOperationException("Not implemented: setDefaultNetworkTierCallable()");
+  }
+
+  public OperationCallable<SetUsageExportBucketProjectRequest, Operation, Operation>
+      setUsageExportBucketOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setUsageExportBucketOperationCallable()");
   }
 
   public UnaryCallable<SetUsageExportBucketProjectRequest, Operation>

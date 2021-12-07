@@ -122,7 +122,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
    * Full or partial URL of the node template resource to be updated for this node group.
    * </pre>
    *
-   * <code>string node_template = 323154455;</code>
+   * <code>optional string node_template = 323154455;</code>
    *
    * @return Whether the nodeTemplate field is set.
    */
@@ -137,7 +137,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
    * Full or partial URL of the node template resource to be updated for this node group.
    * </pre>
    *
-   * <code>string node_template = 323154455;</code>
+   * <code>optional string node_template = 323154455;</code>
    *
    * @return The nodeTemplate.
    */
@@ -160,7 +160,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
    * Full or partial URL of the node template resource to be updated for this node group.
    * </pre>
    *
-   * <code>string node_template = 323154455;</code>
+   * <code>optional string node_template = 323154455;</code>
    *
    * @return The bytes for nodeTemplate.
    */
@@ -519,7 +519,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
      * Full or partial URL of the node template resource to be updated for this node group.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>optional string node_template = 323154455;</code>
      *
      * @return Whether the nodeTemplate field is set.
      */
@@ -533,7 +533,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
      * Full or partial URL of the node template resource to be updated for this node group.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>optional string node_template = 323154455;</code>
      *
      * @return The nodeTemplate.
      */
@@ -555,7 +555,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
      * Full or partial URL of the node template resource to be updated for this node group.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>optional string node_template = 323154455;</code>
      *
      * @return The bytes for nodeTemplate.
      */
@@ -577,7 +577,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
      * Full or partial URL of the node template resource to be updated for this node group.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>optional string node_template = 323154455;</code>
      *
      * @param value The nodeTemplate to set.
      * @return This builder for chaining.
@@ -598,7 +598,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
      * Full or partial URL of the node template resource to be updated for this node group.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>optional string node_template = 323154455;</code>
      *
      * @return This builder for chaining.
      */
@@ -615,7 +615,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
      * Full or partial URL of the node template resource to be updated for this node group.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>optional string node_template = 323154455;</code>
      *
      * @param value The bytes for nodeTemplate to set.
      * @return This builder for chaining.

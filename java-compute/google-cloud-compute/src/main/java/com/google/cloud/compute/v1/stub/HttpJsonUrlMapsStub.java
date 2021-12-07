@@ -26,11 +26,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListUrlMapsRequest;
 import com.google.cloud.compute.v1.DeleteUrlMapRequest;
@@ -39,6 +41,7 @@ import com.google.cloud.compute.v1.InsertUrlMapRequest;
 import com.google.cloud.compute.v1.InvalidateCacheUrlMapRequest;
 import com.google.cloud.compute.v1.ListUrlMapsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchUrlMapRequest;
 import com.google.cloud.compute.v1.UpdateUrlMapRequest;
 import com.google.cloud.compute.v1.UrlMap;
@@ -46,6 +49,7 @@ import com.google.cloud.compute.v1.UrlMapList;
 import com.google.cloud.compute.v1.UrlMapsAggregatedList;
 import com.google.cloud.compute.v1.UrlMapsValidateResponse;
 import com.google.cloud.compute.v1.ValidateUrlMapRequest;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -63,6 +67,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonUrlMapsStub extends UrlMapsStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<AggregatedListUrlMapsRequest, UrlMapsAggregatedList>
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor.<AggregatedListUrlMapsRequest, UrlMapsAggregatedList>newBuilder()
@@ -114,6 +121,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<UrlMapsAggregatedList>newBuilder()
                       .setDefaultInstance(UrlMapsAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -148,7 +156,20 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (DeleteUrlMapRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<GetUrlMapRequest, UrlMap> getMethodDescriptor =
@@ -179,6 +200,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
           .setResponseParser(
               ProtoMessageResponseParser.<UrlMap>newBuilder()
                   .setDefaultInstance(UrlMap.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -215,7 +237,20 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (InsertUrlMapRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<InvalidateCacheUrlMapRequest, Operation>
@@ -255,7 +290,20 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InvalidateCacheUrlMapRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListUrlMapsRequest, UrlMapList> listMethodDescriptor =
@@ -301,6 +349,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
           .setResponseParser(
               ProtoMessageResponseParser.<UrlMapList>newBuilder()
                   .setDefaultInstance(UrlMapList.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
 
@@ -338,7 +387,20 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (PatchUrlMapRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<UpdateUrlMapRequest, Operation> updateMethodDescriptor =
@@ -375,7 +437,20 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
                   .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
                   .build())
+          .setOperationSnapshotFactory(
+              (UpdateUrlMapRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
           .build();
 
   private static final ApiMethodDescriptor<ValidateUrlMapRequest, UrlMapsValidateResponse>
@@ -412,6 +487,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<UrlMapsValidateResponse>newBuilder()
                       .setDefaultInstance(UrlMapsValidateResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -420,16 +496,26 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
   private final UnaryCallable<AggregatedListUrlMapsRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
   private final UnaryCallable<DeleteUrlMapRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteUrlMapRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetUrlMapRequest, UrlMap> getCallable;
   private final UnaryCallable<InsertUrlMapRequest, Operation> insertCallable;
+  private final OperationCallable<InsertUrlMapRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<InvalidateCacheUrlMapRequest, Operation> invalidateCacheCallable;
+  private final OperationCallable<InvalidateCacheUrlMapRequest, Operation, Operation>
+      invalidateCacheOperationCallable;
   private final UnaryCallable<ListUrlMapsRequest, UrlMapList> listCallable;
   private final UnaryCallable<ListUrlMapsRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<PatchUrlMapRequest, Operation> patchCallable;
+  private final OperationCallable<PatchUrlMapRequest, Operation, Operation> patchOperationCallable;
   private final UnaryCallable<UpdateUrlMapRequest, Operation> updateCallable;
+  private final OperationCallable<UpdateUrlMapRequest, Operation, Operation>
+      updateOperationCallable;
   private final UnaryCallable<ValidateUrlMapRequest, UrlMapsValidateResponse> validateCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonUrlMapsStub create(UrlMapsStubSettings settings) throws IOException {
@@ -467,43 +553,54 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AggregatedListUrlMapsRequest, UrlMapsAggregatedList>
         aggregatedListTransportSettings =
             HttpJsonCallSettings.<AggregatedListUrlMapsRequest, UrlMapsAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<DeleteUrlMapRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteUrlMapRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetUrlMapRequest, UrlMap> getTransportSettings =
         HttpJsonCallSettings.<GetUrlMapRequest, UrlMap>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertUrlMapRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertUrlMapRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InvalidateCacheUrlMapRequest, Operation> invalidateCacheTransportSettings =
         HttpJsonCallSettings.<InvalidateCacheUrlMapRequest, Operation>newBuilder()
             .setMethodDescriptor(invalidateCacheMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListUrlMapsRequest, UrlMapList> listTransportSettings =
         HttpJsonCallSettings.<ListUrlMapsRequest, UrlMapList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<PatchUrlMapRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchUrlMapRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<UpdateUrlMapRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateUrlMapRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ValidateUrlMapRequest, UrlMapsValidateResponse> validateTransportSettings =
         HttpJsonCallSettings.<ValidateUrlMapRequest, UrlMapsValidateResponse>newBuilder()
             .setMethodDescriptor(validateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.aggregatedListCallable =
@@ -515,15 +612,33 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.invalidateCacheCallable =
         callableFactory.createUnaryCallable(
             invalidateCacheTransportSettings, settings.invalidateCacheSettings(), clientContext);
+    this.invalidateCacheOperationCallable =
+        callableFactory.createOperationCallable(
+            invalidateCacheTransportSettings,
+            settings.invalidateCacheOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -533,9 +648,21 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
+    this.updateOperationCallable =
+        callableFactory.createOperationCallable(
+            updateTransportSettings,
+            settings.updateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.validateCallable =
         callableFactory.createUnaryCallable(
             validateTransportSettings, settings.validateSettings(), clientContext);
@@ -577,6 +704,11 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
   }
 
   @Override
+  public OperationCallable<DeleteUrlMapRequest, Operation, Operation> deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetUrlMapRequest, UrlMap> getCallable() {
     return getCallable;
   }
@@ -587,8 +719,19 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
   }
 
   @Override
+  public OperationCallable<InsertUrlMapRequest, Operation, Operation> insertOperationCallable() {
+    return insertOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<InvalidateCacheUrlMapRequest, Operation> invalidateCacheCallable() {
     return invalidateCacheCallable;
+  }
+
+  @Override
+  public OperationCallable<InvalidateCacheUrlMapRequest, Operation, Operation>
+      invalidateCacheOperationCallable() {
+    return invalidateCacheOperationCallable;
   }
 
   @Override
@@ -607,8 +750,18 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
   }
 
   @Override
+  public OperationCallable<PatchUrlMapRequest, Operation, Operation> patchOperationCallable() {
+    return patchOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateUrlMapRequest, Operation> updateCallable() {
     return updateCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateUrlMapRequest, Operation, Operation> updateOperationCallable() {
+    return updateOperationCallable;
   }
 
   @Override

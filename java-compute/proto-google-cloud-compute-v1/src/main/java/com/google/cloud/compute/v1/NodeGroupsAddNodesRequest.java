@@ -118,7 +118,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
    * Count of additional nodes to be added to the node group.
    * </pre>
    *
-   * <code>int32 additional_node_count = 134997930;</code>
+   * <code>optional int32 additional_node_count = 134997930;</code>
    *
    * @return Whether the additionalNodeCount field is set.
    */
@@ -133,7 +133,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
    * Count of additional nodes to be added to the node group.
    * </pre>
    *
-   * <code>int32 additional_node_count = 134997930;</code>
+   * <code>optional int32 additional_node_count = 134997930;</code>
    *
    * @return The additionalNodeCount.
    */
@@ -481,7 +481,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
      * Count of additional nodes to be added to the node group.
      * </pre>
      *
-     * <code>int32 additional_node_count = 134997930;</code>
+     * <code>optional int32 additional_node_count = 134997930;</code>
      *
      * @return Whether the additionalNodeCount field is set.
      */
@@ -496,7 +496,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
      * Count of additional nodes to be added to the node group.
      * </pre>
      *
-     * <code>int32 additional_node_count = 134997930;</code>
+     * <code>optional int32 additional_node_count = 134997930;</code>
      *
      * @return The additionalNodeCount.
      */
@@ -511,7 +511,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
      * Count of additional nodes to be added to the node group.
      * </pre>
      *
-     * <code>int32 additional_node_count = 134997930;</code>
+     * <code>optional int32 additional_node_count = 134997930;</code>
      *
      * @param value The additionalNodeCount to set.
      * @return This builder for chaining.
@@ -529,7 +529,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
      * Count of additional nodes to be added to the node group.
      * </pre>
      *
-     * <code>int32 additional_node_count = 134997930;</code>
+     * <code>optional int32 additional_node_count = 134997930;</code>
      *
      * @return This builder for chaining.
      */

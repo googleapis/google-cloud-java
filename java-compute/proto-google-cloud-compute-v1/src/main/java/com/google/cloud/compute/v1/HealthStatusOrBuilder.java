@@ -84,7 +84,7 @@ public interface HealthStatusOrBuilder
    * URL of the forwarding rule associated with the health status of the instance.
    * </pre>
    *
-   * <code>string forwarding_rule = 269964030;</code>
+   * <code>optional string forwarding_rule = 269964030;</code>
    *
    * @return Whether the forwardingRule field is set.
    */
@@ -96,7 +96,7 @@ public interface HealthStatusOrBuilder
    * URL of the forwarding rule associated with the health status of the instance.
    * </pre>
    *
-   * <code>string forwarding_rule = 269964030;</code>
+   * <code>optional string forwarding_rule = 269964030;</code>
    *
    * @return The forwardingRule.
    */
@@ -108,7 +108,7 @@ public interface HealthStatusOrBuilder
    * URL of the forwarding rule associated with the health status of the instance.
    * </pre>
    *
-   * <code>string forwarding_rule = 269964030;</code>
+   * <code>optional string forwarding_rule = 269964030;</code>
    *
    * @return The bytes for forwardingRule.
    */
@@ -121,7 +121,7 @@ public interface HealthStatusOrBuilder
    * A forwarding rule IP address assigned to this instance.
    * </pre>
    *
-   * <code>string forwarding_rule_ip = 172250632;</code>
+   * <code>optional string forwarding_rule_ip = 172250632;</code>
    *
    * @return Whether the forwardingRuleIp field is set.
    */
@@ -133,7 +133,7 @@ public interface HealthStatusOrBuilder
    * A forwarding rule IP address assigned to this instance.
    * </pre>
    *
-   * <code>string forwarding_rule_ip = 172250632;</code>
+   * <code>optional string forwarding_rule_ip = 172250632;</code>
    *
    * @return The forwardingRuleIp.
    */
@@ -145,7 +145,7 @@ public interface HealthStatusOrBuilder
    * A forwarding rule IP address assigned to this instance.
    * </pre>
    *
-   * <code>string forwarding_rule_ip = 172250632;</code>
+   * <code>optional string forwarding_rule_ip = 172250632;</code>
    *
    * @return The bytes for forwardingRuleIp.
    */
@@ -156,9 +156,10 @@ public interface HealthStatusOrBuilder
    *
    * <pre>
    * Health state of the instance.
+   * Check the HealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+   * <code>optional string health_state = 324007150;</code>
    *
    * @return Whether the healthState field is set.
    */
@@ -168,25 +169,27 @@ public interface HealthStatusOrBuilder
    *
    * <pre>
    * Health state of the instance.
+   * Check the HealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+   * <code>optional string health_state = 324007150;</code>
    *
-   * @return The enum numeric value on the wire for healthState.
+   * @return The healthState.
    */
-  int getHealthStateValue();
+  java.lang.String getHealthState();
   /**
    *
    *
    * <pre>
    * Health state of the instance.
+   * Check the HealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+   * <code>optional string health_state = 324007150;</code>
    *
-   * @return The healthState.
+   * @return The bytes for healthState.
    */
-  com.google.cloud.compute.v1.HealthStatus.HealthState getHealthState();
+  com.google.protobuf.ByteString getHealthStateBytes();
 
   /**
    *
@@ -195,7 +198,7 @@ public interface HealthStatusOrBuilder
    * URL of the instance resource.
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return Whether the instance field is set.
    */
@@ -207,7 +210,7 @@ public interface HealthStatusOrBuilder
    * URL of the instance resource.
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return The instance.
    */
@@ -219,7 +222,7 @@ public interface HealthStatusOrBuilder
    * URL of the instance resource.
    * </pre>
    *
-   * <code>string instance = 18257045;</code>
+   * <code>optional string instance = 18257045;</code>
    *
    * @return The bytes for instance.
    */
@@ -232,7 +235,7 @@ public interface HealthStatusOrBuilder
    * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return Whether the ipAddress field is set.
    */
@@ -244,7 +247,7 @@ public interface HealthStatusOrBuilder
    * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return The ipAddress.
    */
@@ -256,7 +259,7 @@ public interface HealthStatusOrBuilder
    * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return The bytes for ipAddress.
    */
@@ -269,7 +272,7 @@ public interface HealthStatusOrBuilder
    * The named port of the instance group, not necessarily the port that is health-checked.
    * </pre>
    *
-   * <code>int32 port = 3446913;</code>
+   * <code>optional int32 port = 3446913;</code>
    *
    * @return Whether the port field is set.
    */
@@ -281,47 +284,68 @@ public interface HealthStatusOrBuilder
    * The named port of the instance group, not necessarily the port that is health-checked.
    * </pre>
    *
-   * <code>int32 port = 3446913;</code>
+   * <code>optional int32 port = 3446913;</code>
    *
    * @return The port.
    */
   int getPort();
 
   /**
-   * <code>string weight = 282149496;</code>
+   * <code>optional string weight = 282149496;</code>
    *
    * @return Whether the weight field is set.
    */
   boolean hasWeight();
   /**
-   * <code>string weight = 282149496;</code>
+   * <code>optional string weight = 282149496;</code>
    *
    * @return The weight.
    */
   java.lang.String getWeight();
   /**
-   * <code>string weight = 282149496;</code>
+   * <code>optional string weight = 282149496;</code>
    *
    * @return The bytes for weight.
    */
   com.google.protobuf.ByteString getWeightBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
+   *
+   *
+   * <pre>
+   *
+   * Check the WeightError enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string weight_error = 522501505;</code>
    *
    * @return Whether the weightError field is set.
    */
   boolean hasWeightError();
   /**
-   * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
    *
-   * @return The enum numeric value on the wire for weightError.
-   */
-  int getWeightErrorValue();
-  /**
-   * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
+   *
+   * <pre>
+   *
+   * Check the WeightError enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string weight_error = 522501505;</code>
    *
    * @return The weightError.
    */
-  com.google.cloud.compute.v1.HealthStatus.WeightError getWeightError();
+  java.lang.String getWeightError();
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the WeightError enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string weight_error = 522501505;</code>
+   *
+   * @return The bytes for weightError.
+   */
+  com.google.protobuf.ByteString getWeightErrorBytes();
 }

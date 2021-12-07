@@ -135,7 +135,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
    * Specifies the value of the fixed delay interval.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+   * <code>optional .google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
    *
    * @return Whether the fixedDelay field is set.
    */
@@ -150,7 +150,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
    * Specifies the value of the fixed delay interval.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+   * <code>optional .google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
    *
    * @return The fixedDelay.
    */
@@ -167,7 +167,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
    * Specifies the value of the fixed delay interval.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+   * <code>optional .google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DurationOrBuilder getFixedDelayOrBuilder() {
@@ -182,11 +182,10 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection.
-   * The value must be between 0.0 and 100.0 inclusive.
+   * The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection. The value must be between 0.0 and 100.0 inclusive.
    * </pre>
    *
-   * <code>double percentage = 151909018;</code>
+   * <code>optional double percentage = 151909018;</code>
    *
    * @return Whether the percentage field is set.
    */
@@ -198,11 +197,10 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection.
-   * The value must be between 0.0 and 100.0 inclusive.
+   * The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection. The value must be between 0.0 and 100.0 inclusive.
    * </pre>
    *
-   * <code>double percentage = 151909018;</code>
+   * <code>optional double percentage = 151909018;</code>
    *
    * @return The percentage.
    */
@@ -589,7 +587,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * <code>optional .google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
      *
      * @return Whether the fixedDelay field is set.
      */
@@ -603,7 +601,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * <code>optional .google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
      *
      * @return The fixedDelay.
      */
@@ -623,7 +621,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * <code>optional .google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
      */
     public Builder setFixedDelay(com.google.cloud.compute.v1.Duration value) {
       if (fixedDelayBuilder_ == null) {
@@ -645,7 +643,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * <code>optional .google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
      */
     public Builder setFixedDelay(com.google.cloud.compute.v1.Duration.Builder builderForValue) {
       if (fixedDelayBuilder_ == null) {
@@ -664,7 +662,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * <code>optional .google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
      */
     public Builder mergeFixedDelay(com.google.cloud.compute.v1.Duration value) {
       if (fixedDelayBuilder_ == null) {
@@ -692,7 +690,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * <code>optional .google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
      */
     public Builder clearFixedDelay() {
       if (fixedDelayBuilder_ == null) {
@@ -711,7 +709,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * <code>optional .google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getFixedDelayBuilder() {
       bitField0_ |= 0x00000001;
@@ -725,7 +723,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * <code>optional .google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
      */
     public com.google.cloud.compute.v1.DurationOrBuilder getFixedDelayOrBuilder() {
       if (fixedDelayBuilder_ != null) {
@@ -743,7 +741,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * <code>optional .google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Duration,
@@ -767,11 +765,10 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection.
-     * The value must be between 0.0 and 100.0 inclusive.
+     * The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection. The value must be between 0.0 and 100.0 inclusive.
      * </pre>
      *
-     * <code>double percentage = 151909018;</code>
+     * <code>optional double percentage = 151909018;</code>
      *
      * @return Whether the percentage field is set.
      */
@@ -783,11 +780,10 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection.
-     * The value must be between 0.0 and 100.0 inclusive.
+     * The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection. The value must be between 0.0 and 100.0 inclusive.
      * </pre>
      *
-     * <code>double percentage = 151909018;</code>
+     * <code>optional double percentage = 151909018;</code>
      *
      * @return The percentage.
      */
@@ -799,11 +795,10 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection.
-     * The value must be between 0.0 and 100.0 inclusive.
+     * The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection. The value must be between 0.0 and 100.0 inclusive.
      * </pre>
      *
-     * <code>double percentage = 151909018;</code>
+     * <code>optional double percentage = 151909018;</code>
      *
      * @param value The percentage to set.
      * @return This builder for chaining.
@@ -818,11 +813,10 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection.
-     * The value must be between 0.0 and 100.0 inclusive.
+     * The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection. The value must be between 0.0 and 100.0 inclusive.
      * </pre>
      *
-     * <code>double percentage = 151909018;</code>
+     * <code>optional double percentage = 151909018;</code>
      *
      * @return This builder for chaining.
      */

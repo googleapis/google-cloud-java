@@ -123,7 +123,7 @@ public final class DistributionPolicyZoneConfiguration
    * The URL of the zone. The zone must exist in the region where the managed instance group is located.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return Whether the zone field is set.
    */
@@ -138,7 +138,7 @@ public final class DistributionPolicyZoneConfiguration
    * The URL of the zone. The zone must exist in the region where the managed instance group is located.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The zone.
    */
@@ -161,7 +161,7 @@ public final class DistributionPolicyZoneConfiguration
    * The URL of the zone. The zone must exist in the region where the managed instance group is located.
    * </pre>
    *
-   * <code>string zone = 3744684;</code>
+   * <code>optional string zone = 3744684;</code>
    *
    * @return The bytes for zone.
    */
@@ -522,7 +522,7 @@ public final class DistributionPolicyZoneConfiguration
      * The URL of the zone. The zone must exist in the region where the managed instance group is located.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return Whether the zone field is set.
      */
@@ -536,7 +536,7 @@ public final class DistributionPolicyZoneConfiguration
      * The URL of the zone. The zone must exist in the region where the managed instance group is located.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return The zone.
      */
@@ -558,7 +558,7 @@ public final class DistributionPolicyZoneConfiguration
      * The URL of the zone. The zone must exist in the region where the managed instance group is located.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return The bytes for zone.
      */
@@ -580,7 +580,7 @@ public final class DistributionPolicyZoneConfiguration
      * The URL of the zone. The zone must exist in the region where the managed instance group is located.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @param value The zone to set.
      * @return This builder for chaining.
@@ -601,7 +601,7 @@ public final class DistributionPolicyZoneConfiguration
      * The URL of the zone. The zone must exist in the region where the managed instance group is located.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @return This builder for chaining.
      */
@@ -618,7 +618,7 @@ public final class DistributionPolicyZoneConfiguration
      * The URL of the zone. The zone must exist in the region where the managed instance group is located.
      * </pre>
      *
-     * <code>string zone = 3744684;</code>
+     * <code>optional string zone = 3744684;</code>
      *
      * @param value The bytes for zone to set.
      * @return This builder for chaining.

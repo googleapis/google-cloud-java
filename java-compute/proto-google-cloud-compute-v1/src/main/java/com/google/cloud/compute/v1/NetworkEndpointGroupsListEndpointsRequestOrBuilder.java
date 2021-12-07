@@ -28,11 +28,10 @@ public interface NetworkEndpointGroupsListEndpointsRequestOrBuilder
    *
    * <pre>
    * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+   * Check the HealthStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
-   * </code>
+   * <code>optional string health_status = 380545845;</code>
    *
    * @return Whether the healthStatus field is set.
    */
@@ -42,28 +41,25 @@ public interface NetworkEndpointGroupsListEndpointsRequestOrBuilder
    *
    * <pre>
    * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+   * Check the HealthStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
-   * </code>
+   * <code>optional string health_status = 380545845;</code>
    *
-   * @return The enum numeric value on the wire for healthStatus.
+   * @return The healthStatus.
    */
-  int getHealthStatusValue();
+  java.lang.String getHealthStatus();
   /**
    *
    *
    * <pre>
    * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+   * Check the HealthStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
-   * </code>
+   * <code>optional string health_status = 380545845;</code>
    *
-   * @return The healthStatus.
+   * @return The bytes for healthStatus.
    */
-  com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus
-      getHealthStatus();
+  com.google.protobuf.ByteString getHealthStatusBytes();
 }

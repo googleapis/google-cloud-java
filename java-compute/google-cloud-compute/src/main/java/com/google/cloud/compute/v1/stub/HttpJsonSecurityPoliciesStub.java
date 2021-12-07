@@ -25,11 +25,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddRuleSecurityPolicyRequest;
 import com.google.cloud.compute.v1.DeleteSecurityPolicyRequest;
@@ -39,6 +41,7 @@ import com.google.cloud.compute.v1.InsertSecurityPolicyRequest;
 import com.google.cloud.compute.v1.ListPreconfiguredExpressionSetsSecurityPoliciesRequest;
 import com.google.cloud.compute.v1.ListSecurityPoliciesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchRuleSecurityPolicyRequest;
 import com.google.cloud.compute.v1.PatchSecurityPolicyRequest;
 import com.google.cloud.compute.v1.RemoveRuleSecurityPolicyRequest;
@@ -46,6 +49,7 @@ import com.google.cloud.compute.v1.SecurityPoliciesListPreconfiguredExpressionSe
 import com.google.cloud.compute.v1.SecurityPolicy;
 import com.google.cloud.compute.v1.SecurityPolicyList;
 import com.google.cloud.compute.v1.SecurityPolicyRule;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -63,6 +67,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<AddRuleSecurityPolicyRequest, Operation>
       addRuleMethodDescriptor =
           ApiMethodDescriptor.<AddRuleSecurityPolicyRequest, Operation>newBuilder()
@@ -98,7 +105,20 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (AddRuleSecurityPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<DeleteSecurityPolicyRequest, Operation>
@@ -134,7 +154,20 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteSecurityPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetSecurityPolicyRequest, SecurityPolicy>
@@ -167,6 +200,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<SecurityPolicy>newBuilder()
                       .setDefaultInstance(SecurityPolicy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -203,6 +237,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<SecurityPolicyRule>newBuilder()
                       .setDefaultInstance(SecurityPolicyRule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -242,7 +277,20 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertSecurityPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListSecurityPoliciesRequest, SecurityPolicyList>
@@ -292,6 +340,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<SecurityPolicyList>newBuilder()
                       .setDefaultInstance(SecurityPolicyList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -354,6 +403,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                       .setDefaultInstance(
                           SecurityPoliciesListPreconfiguredExpressionSetsResponse
                               .getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -395,7 +445,20 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchSecurityPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<PatchRuleSecurityPolicyRequest, Operation>
@@ -436,7 +499,20 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (PatchRuleSecurityPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<RemoveRuleSecurityPolicyRequest, Operation>
@@ -472,14 +548,33 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (RemoveRuleSecurityPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<AddRuleSecurityPolicyRequest, Operation> addRuleCallable;
+  private final OperationCallable<AddRuleSecurityPolicyRequest, Operation, Operation>
+      addRuleOperationCallable;
   private final UnaryCallable<DeleteSecurityPolicyRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteSecurityPolicyRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetSecurityPolicyRequest, SecurityPolicy> getCallable;
   private final UnaryCallable<GetRuleSecurityPolicyRequest, SecurityPolicyRule> getRuleCallable;
   private final UnaryCallable<InsertSecurityPolicyRequest, Operation> insertCallable;
+  private final OperationCallable<InsertSecurityPolicyRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListSecurityPoliciesRequest, SecurityPolicyList> listCallable;
   private final UnaryCallable<ListSecurityPoliciesRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<
@@ -487,10 +582,17 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
           SecurityPoliciesListPreconfiguredExpressionSetsResponse>
       listPreconfiguredExpressionSetsCallable;
   private final UnaryCallable<PatchSecurityPolicyRequest, Operation> patchCallable;
+  private final OperationCallable<PatchSecurityPolicyRequest, Operation, Operation>
+      patchOperationCallable;
   private final UnaryCallable<PatchRuleSecurityPolicyRequest, Operation> patchRuleCallable;
+  private final OperationCallable<PatchRuleSecurityPolicyRequest, Operation, Operation>
+      patchRuleOperationCallable;
   private final UnaryCallable<RemoveRuleSecurityPolicyRequest, Operation> removeRuleCallable;
+  private final OperationCallable<RemoveRuleSecurityPolicyRequest, Operation, Operation>
+      removeRuleOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonSecurityPoliciesStub create(SecurityPoliciesStubSettings settings)
@@ -531,31 +633,39 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AddRuleSecurityPolicyRequest, Operation> addRuleTransportSettings =
         HttpJsonCallSettings.<AddRuleSecurityPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(addRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<DeleteSecurityPolicyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteSecurityPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetSecurityPolicyRequest, SecurityPolicy> getTransportSettings =
         HttpJsonCallSettings.<GetSecurityPolicyRequest, SecurityPolicy>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetRuleSecurityPolicyRequest, SecurityPolicyRule>
         getRuleTransportSettings =
             HttpJsonCallSettings.<GetRuleSecurityPolicyRequest, SecurityPolicyRule>newBuilder()
                 .setMethodDescriptor(getRuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<InsertSecurityPolicyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertSecurityPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListSecurityPoliciesRequest, SecurityPolicyList> listTransportSettings =
         HttpJsonCallSettings.<ListSecurityPoliciesRequest, SecurityPolicyList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<
             ListPreconfiguredExpressionSetsSecurityPoliciesRequest,
@@ -566,26 +676,42 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                     SecurityPoliciesListPreconfiguredExpressionSetsResponse>
                     newBuilder()
                 .setMethodDescriptor(listPreconfiguredExpressionSetsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<PatchSecurityPolicyRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchSecurityPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<PatchRuleSecurityPolicyRequest, Operation> patchRuleTransportSettings =
         HttpJsonCallSettings.<PatchRuleSecurityPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(patchRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<RemoveRuleSecurityPolicyRequest, Operation> removeRuleTransportSettings =
         HttpJsonCallSettings.<RemoveRuleSecurityPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(removeRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.addRuleCallable =
         callableFactory.createUnaryCallable(
             addRuleTransportSettings, settings.addRuleSettings(), clientContext);
+    this.addRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            addRuleTransportSettings,
+            settings.addRuleOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
@@ -595,6 +721,12 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -609,12 +741,30 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.patchRuleCallable =
         callableFactory.createUnaryCallable(
             patchRuleTransportSettings, settings.patchRuleSettings(), clientContext);
+    this.patchRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            patchRuleTransportSettings,
+            settings.patchRuleOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.removeRuleCallable =
         callableFactory.createUnaryCallable(
             removeRuleTransportSettings, settings.removeRuleSettings(), clientContext);
+    this.removeRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            removeRuleTransportSettings,
+            settings.removeRuleOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -642,8 +792,20 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
   }
 
   @Override
+  public OperationCallable<AddRuleSecurityPolicyRequest, Operation, Operation>
+      addRuleOperationCallable() {
+    return addRuleOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteSecurityPolicyRequest, Operation> deleteCallable() {
     return deleteCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteSecurityPolicyRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
   }
 
   @Override
@@ -659,6 +821,12 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
   @Override
   public UnaryCallable<InsertSecurityPolicyRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertSecurityPolicyRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -685,13 +853,31 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
   }
 
   @Override
+  public OperationCallable<PatchSecurityPolicyRequest, Operation, Operation>
+      patchOperationCallable() {
+    return patchOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchRuleSecurityPolicyRequest, Operation> patchRuleCallable() {
     return patchRuleCallable;
   }
 
   @Override
+  public OperationCallable<PatchRuleSecurityPolicyRequest, Operation, Operation>
+      patchRuleOperationCallable() {
+    return patchRuleOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<RemoveRuleSecurityPolicyRequest, Operation> removeRuleCallable() {
     return removeRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<RemoveRuleSecurityPolicyRequest, Operation, Operation>
+      removeRuleOperationCallable() {
+    return removeRuleOperationCallable;
   }
 
   @Override

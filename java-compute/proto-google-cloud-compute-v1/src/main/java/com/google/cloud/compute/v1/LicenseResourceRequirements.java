@@ -124,7 +124,7 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
    * Minimum number of guest cpus required to use the Instance. Enforced at Instance creation and Instance start.
    * </pre>
    *
-   * <code>int32 min_guest_cpu_count = 477964836;</code>
+   * <code>optional int32 min_guest_cpu_count = 477964836;</code>
    *
    * @return Whether the minGuestCpuCount field is set.
    */
@@ -139,7 +139,7 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
    * Minimum number of guest cpus required to use the Instance. Enforced at Instance creation and Instance start.
    * </pre>
    *
-   * <code>int32 min_guest_cpu_count = 477964836;</code>
+   * <code>optional int32 min_guest_cpu_count = 477964836;</code>
    *
    * @return The minGuestCpuCount.
    */
@@ -157,7 +157,7 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
    * Minimum memory required to use the Instance. Enforced at Instance creation and Instance start.
    * </pre>
    *
-   * <code>int32 min_memory_mb = 504785894;</code>
+   * <code>optional int32 min_memory_mb = 504785894;</code>
    *
    * @return Whether the minMemoryMb field is set.
    */
@@ -172,7 +172,7 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
    * Minimum memory required to use the Instance. Enforced at Instance creation and Instance start.
    * </pre>
    *
-   * <code>int32 min_memory_mb = 504785894;</code>
+   * <code>optional int32 min_memory_mb = 504785894;</code>
    *
    * @return The minMemoryMb.
    */
@@ -542,7 +542,7 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
      * Minimum number of guest cpus required to use the Instance. Enforced at Instance creation and Instance start.
      * </pre>
      *
-     * <code>int32 min_guest_cpu_count = 477964836;</code>
+     * <code>optional int32 min_guest_cpu_count = 477964836;</code>
      *
      * @return Whether the minGuestCpuCount field is set.
      */
@@ -557,7 +557,7 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
      * Minimum number of guest cpus required to use the Instance. Enforced at Instance creation and Instance start.
      * </pre>
      *
-     * <code>int32 min_guest_cpu_count = 477964836;</code>
+     * <code>optional int32 min_guest_cpu_count = 477964836;</code>
      *
      * @return The minGuestCpuCount.
      */
@@ -572,7 +572,7 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
      * Minimum number of guest cpus required to use the Instance. Enforced at Instance creation and Instance start.
      * </pre>
      *
-     * <code>int32 min_guest_cpu_count = 477964836;</code>
+     * <code>optional int32 min_guest_cpu_count = 477964836;</code>
      *
      * @param value The minGuestCpuCount to set.
      * @return This builder for chaining.
@@ -590,7 +590,7 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
      * Minimum number of guest cpus required to use the Instance. Enforced at Instance creation and Instance start.
      * </pre>
      *
-     * <code>int32 min_guest_cpu_count = 477964836;</code>
+     * <code>optional int32 min_guest_cpu_count = 477964836;</code>
      *
      * @return This builder for chaining.
      */
@@ -609,7 +609,7 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
      * Minimum memory required to use the Instance. Enforced at Instance creation and Instance start.
      * </pre>
      *
-     * <code>int32 min_memory_mb = 504785894;</code>
+     * <code>optional int32 min_memory_mb = 504785894;</code>
      *
      * @return Whether the minMemoryMb field is set.
      */
@@ -624,7 +624,7 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
      * Minimum memory required to use the Instance. Enforced at Instance creation and Instance start.
      * </pre>
      *
-     * <code>int32 min_memory_mb = 504785894;</code>
+     * <code>optional int32 min_memory_mb = 504785894;</code>
      *
      * @return The minMemoryMb.
      */
@@ -639,7 +639,7 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
      * Minimum memory required to use the Instance. Enforced at Instance creation and Instance start.
      * </pre>
      *
-     * <code>int32 min_memory_mb = 504785894;</code>
+     * <code>optional int32 min_memory_mb = 504785894;</code>
      *
      * @param value The minMemoryMb to set.
      * @return This builder for chaining.
@@ -657,7 +657,7 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
      * Minimum memory required to use the Instance. Enforced at Instance creation and Instance start.
      * </pre>
      *
-     * <code>int32 min_memory_mb = 504785894;</code>
+     * <code>optional int32 min_memory_mb = 504785894;</code>
      *
      * @return This builder for chaining.
      */

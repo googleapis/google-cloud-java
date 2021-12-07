@@ -26,11 +26,13 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListRegionCommitmentsRequest;
 import com.google.cloud.compute.v1.Commitment;
@@ -40,6 +42,8 @@ import com.google.cloud.compute.v1.GetRegionCommitmentRequest;
 import com.google.cloud.compute.v1.InsertRegionCommitmentRequest;
 import com.google.cloud.compute.v1.ListRegionCommitmentsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -57,6 +61,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<
           AggregatedListRegionCommitmentsRequest, CommitmentAggregatedList>
       aggregatedListMethodDescriptor =
@@ -110,6 +117,7 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<CommitmentAggregatedList>newBuilder()
                       .setDefaultInstance(CommitmentAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -143,6 +151,7 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Commitment>newBuilder()
                       .setDefaultInstance(Commitment.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -181,7 +190,21 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertRegionCommitmentRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListRegionCommitmentsRequest, CommitmentList>
@@ -232,6 +255,7 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<CommitmentList>newBuilder()
                       .setDefaultInstance(CommitmentList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -241,10 +265,13 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
       aggregatedListPagedCallable;
   private final UnaryCallable<GetRegionCommitmentRequest, Commitment> getCallable;
   private final UnaryCallable<InsertRegionCommitmentRequest, Operation> insertCallable;
+  private final OperationCallable<InsertRegionCommitmentRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListRegionCommitmentsRequest, CommitmentList> listCallable;
   private final UnaryCallable<ListRegionCommitmentsRequest, ListPagedResponse> listPagedCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonRegionCommitmentsStub create(RegionCommitmentsStubSettings settings)
@@ -285,24 +312,30 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<AggregatedListRegionCommitmentsRequest, CommitmentAggregatedList>
         aggregatedListTransportSettings =
             HttpJsonCallSettings
                 .<AggregatedListRegionCommitmentsRequest, CommitmentAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<GetRegionCommitmentRequest, Commitment> getTransportSettings =
         HttpJsonCallSettings.<GetRegionCommitmentRequest, Commitment>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertRegionCommitmentRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionCommitmentRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListRegionCommitmentsRequest, CommitmentList> listTransportSettings =
         HttpJsonCallSettings.<ListRegionCommitmentsRequest, CommitmentList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
 
     this.aggregatedListCallable =
@@ -317,6 +350,12 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -358,6 +397,12 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
   @Override
   public UnaryCallable<InsertRegionCommitmentRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertRegionCommitmentRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override

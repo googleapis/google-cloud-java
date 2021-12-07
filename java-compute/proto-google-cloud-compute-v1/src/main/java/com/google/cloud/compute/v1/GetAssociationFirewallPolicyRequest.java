@@ -181,7 +181,7 @@ public final class GetAssociationFirewallPolicyRequest
    * The name of the association to get from the firewall policy.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -196,7 +196,7 @@ public final class GetAssociationFirewallPolicyRequest
    * The name of the association to get from the firewall policy.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -219,7 +219,7 @@ public final class GetAssociationFirewallPolicyRequest
    * The name of the association to get from the firewall policy.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -253,7 +253,7 @@ public final class GetAssociationFirewallPolicyRequest
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (!getFirewallPolicyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firewallPolicy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 498173265, firewallPolicy_);
     }
     unknownFields.writeTo(output);
@@ -268,7 +268,7 @@ public final class GetAssociationFirewallPolicyRequest
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (!getFirewallPolicyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firewallPolicy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(498173265, firewallPolicy_);
     }
     size += unknownFields.getSerializedSize();
@@ -703,7 +703,7 @@ public final class GetAssociationFirewallPolicyRequest
      * The name of the association to get from the firewall policy.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -717,7 +717,7 @@ public final class GetAssociationFirewallPolicyRequest
      * The name of the association to get from the firewall policy.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -739,7 +739,7 @@ public final class GetAssociationFirewallPolicyRequest
      * The name of the association to get from the firewall policy.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -761,7 +761,7 @@ public final class GetAssociationFirewallPolicyRequest
      * The name of the association to get from the firewall policy.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -782,7 +782,7 @@ public final class GetAssociationFirewallPolicyRequest
      * The name of the association to get from the firewall policy.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -799,7 +799,7 @@ public final class GetAssociationFirewallPolicyRequest
      * The name of the association to get from the firewall policy.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.InterconnectAttachmentsClient.Aggregat
 import static com.google.cloud.compute.v1.InterconnectAttachmentsClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListInterconnectAttachmentsRequest;
 import com.google.cloud.compute.v1.DeleteInterconnectAttachmentRequest;
@@ -53,12 +54,22 @@ public abstract class InterconnectAttachmentsStub implements BackgroundResource 
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<DeleteInterconnectAttachmentRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteInterconnectAttachmentRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetInterconnectAttachmentRequest, InterconnectAttachment> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertInterconnectAttachmentRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertInterconnectAttachmentRequest, Operation> insertCallable() {
@@ -72,6 +83,11 @@ public abstract class InterconnectAttachmentsStub implements BackgroundResource 
   public UnaryCallable<ListInterconnectAttachmentsRequest, InterconnectAttachmentList>
       listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<PatchInterconnectAttachmentRequest, Operation, Operation>
+      patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
   }
 
   public UnaryCallable<PatchInterconnectAttachmentRequest, Operation> patchCallable() {

@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -50,16 +51,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of addSignedUrlKey to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * BackendServicesSettings.Builder backendServicesSettingsBuilder =
  *     BackendServicesSettings.newBuilder();
  * backendServicesSettingsBuilder
- *     .addSignedUrlKeySettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         backendServicesSettingsBuilder
- *             .addSignedUrlKeySettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -76,6 +77,12 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
     return ((BackendServicesStubSettings) getStubSettings()).addSignedUrlKeySettings();
   }
 
+  /** Returns the object with the settings used for calls to addSignedUrlKey. */
+  public OperationCallSettings<AddSignedUrlKeyBackendServiceRequest, Operation, Operation>
+      addSignedUrlKeyOperationSettings() {
+    return ((BackendServicesStubSettings) getStubSettings()).addSignedUrlKeyOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to aggregatedList. */
   public PagedCallSettings<
           AggregatedListBackendServicesRequest,
@@ -90,10 +97,22 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
     return ((BackendServicesStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteBackendServiceRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((BackendServicesStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteSignedUrlKey. */
   public UnaryCallSettings<DeleteSignedUrlKeyBackendServiceRequest, Operation>
       deleteSignedUrlKeySettings() {
     return ((BackendServicesStubSettings) getStubSettings()).deleteSignedUrlKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSignedUrlKey. */
+  public OperationCallSettings<DeleteSignedUrlKeyBackendServiceRequest, Operation, Operation>
+      deleteSignedUrlKeyOperationSettings() {
+    return ((BackendServicesStubSettings) getStubSettings()).deleteSignedUrlKeyOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -112,6 +131,12 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
     return ((BackendServicesStubSettings) getStubSettings()).insertSettings();
   }
 
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertBackendServiceRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((BackendServicesStubSettings) getStubSettings()).insertOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<ListBackendServicesRequest, BackendServiceList, ListPagedResponse>
       listSettings() {
@@ -123,15 +148,33 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
     return ((BackendServicesStubSettings) getStubSettings()).patchSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchBackendServiceRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((BackendServicesStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setSecurityPolicy. */
   public UnaryCallSettings<SetSecurityPolicyBackendServiceRequest, Operation>
       setSecurityPolicySettings() {
     return ((BackendServicesStubSettings) getStubSettings()).setSecurityPolicySettings();
   }
 
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public OperationCallSettings<SetSecurityPolicyBackendServiceRequest, Operation, Operation>
+      setSecurityPolicyOperationSettings() {
+    return ((BackendServicesStubSettings) getStubSettings()).setSecurityPolicyOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateBackendServiceRequest, Operation> updateSettings() {
     return ((BackendServicesStubSettings) getStubSettings()).updateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateBackendServiceRequest, Operation, Operation>
+      updateOperationSettings() {
+    return ((BackendServicesStubSettings) getStubSettings()).updateOperationSettings();
   }
 
   public static final BackendServicesSettings create(BackendServicesStubSettings stub)
@@ -238,6 +281,12 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
       return getStubSettingsBuilder().addSignedUrlKeySettings();
     }
 
+    /** Returns the builder for the settings used for calls to addSignedUrlKey. */
+    public OperationCallSettings.Builder<AddSignedUrlKeyBackendServiceRequest, Operation, Operation>
+        addSignedUrlKeyOperationSettings() {
+      return getStubSettingsBuilder().addSignedUrlKeyOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to aggregatedList. */
     public PagedCallSettings.Builder<
             AggregatedListBackendServicesRequest,
@@ -252,10 +301,23 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteBackendServiceRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteSignedUrlKey. */
     public UnaryCallSettings.Builder<DeleteSignedUrlKeyBackendServiceRequest, Operation>
         deleteSignedUrlKeySettings() {
       return getStubSettingsBuilder().deleteSignedUrlKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSignedUrlKey. */
+    public OperationCallSettings.Builder<
+            DeleteSignedUrlKeyBackendServiceRequest, Operation, Operation>
+        deleteSignedUrlKeyOperationSettings() {
+      return getStubSettingsBuilder().deleteSignedUrlKeyOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -274,6 +336,12 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
       return getStubSettingsBuilder().insertSettings();
     }
 
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertBackendServiceRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to list. */
     public PagedCallSettings.Builder<
             ListBackendServicesRequest, BackendServiceList, ListPagedResponse>
@@ -286,15 +354,34 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
       return getStubSettingsBuilder().patchSettings();
     }
 
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchBackendServiceRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setSecurityPolicy. */
     public UnaryCallSettings.Builder<SetSecurityPolicyBackendServiceRequest, Operation>
         setSecurityPolicySettings() {
       return getStubSettingsBuilder().setSecurityPolicySettings();
     }
 
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public OperationCallSettings.Builder<
+            SetSecurityPolicyBackendServiceRequest, Operation, Operation>
+        setSecurityPolicyOperationSettings() {
+      return getStubSettingsBuilder().setSecurityPolicyOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to update. */
     public UnaryCallSettings.Builder<UpdateBackendServiceRequest, Operation> updateSettings() {
       return getStubSettingsBuilder().updateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public OperationCallSettings.Builder<UpdateBackendServiceRequest, Operation, Operation>
+        updateOperationSettings() {
+      return getStubSettingsBuilder().updateOperationSettings();
     }
 
     @Override

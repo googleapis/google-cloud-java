@@ -30,7 +30,7 @@ public interface FirewallPolicyRuleOrBuilder
    * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
    * </pre>
    *
-   * <code>string action = 187661878;</code>
+   * <code>optional string action = 187661878;</code>
    *
    * @return Whether the action field is set.
    */
@@ -42,7 +42,7 @@ public interface FirewallPolicyRuleOrBuilder
    * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
    * </pre>
    *
-   * <code>string action = 187661878;</code>
+   * <code>optional string action = 187661878;</code>
    *
    * @return The action.
    */
@@ -54,7 +54,7 @@ public interface FirewallPolicyRuleOrBuilder
    * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
    * </pre>
    *
-   * <code>string action = 187661878;</code>
+   * <code>optional string action = 187661878;</code>
    *
    * @return The bytes for action.
    */
@@ -67,7 +67,7 @@ public interface FirewallPolicyRuleOrBuilder
    * An optional description for this resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -79,7 +79,7 @@ public interface FirewallPolicyRuleOrBuilder
    * An optional description for this resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -91,7 +91,7 @@ public interface FirewallPolicyRuleOrBuilder
    * An optional description for this resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -102,9 +102,10 @@ public interface FirewallPolicyRuleOrBuilder
    *
    * <pre>
    * The direction in which this rule applies.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallPolicyRule.Direction direction = 111150975;</code>
+   * <code>optional string direction = 111150975;</code>
    *
    * @return Whether the direction field is set.
    */
@@ -114,25 +115,27 @@ public interface FirewallPolicyRuleOrBuilder
    *
    * <pre>
    * The direction in which this rule applies.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallPolicyRule.Direction direction = 111150975;</code>
+   * <code>optional string direction = 111150975;</code>
    *
-   * @return The enum numeric value on the wire for direction.
+   * @return The direction.
    */
-  int getDirectionValue();
+  java.lang.String getDirection();
   /**
    *
    *
    * <pre>
    * The direction in which this rule applies.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallPolicyRule.Direction direction = 111150975;</code>
+   * <code>optional string direction = 111150975;</code>
    *
-   * @return The direction.
+   * @return The bytes for direction.
    */
-  com.google.cloud.compute.v1.FirewallPolicyRule.Direction getDirection();
+  com.google.protobuf.ByteString getDirectionBytes();
 
   /**
    *
@@ -141,7 +144,7 @@ public interface FirewallPolicyRuleOrBuilder
    * Denotes whether the firewall policy rule is disabled. When set to true, the firewall policy rule is not enforced and traffic behaves as if it did not exist. If this is unspecified, the firewall policy rule will be enabled.
    * </pre>
    *
-   * <code>bool disabled = 270940796;</code>
+   * <code>optional bool disabled = 270940796;</code>
    *
    * @return Whether the disabled field is set.
    */
@@ -153,7 +156,7 @@ public interface FirewallPolicyRuleOrBuilder
    * Denotes whether the firewall policy rule is disabled. When set to true, the firewall policy rule is not enforced and traffic behaves as if it did not exist. If this is unspecified, the firewall policy rule will be enabled.
    * </pre>
    *
-   * <code>bool disabled = 270940796;</code>
+   * <code>optional bool disabled = 270940796;</code>
    *
    * @return The disabled.
    */
@@ -166,7 +169,7 @@ public interface FirewallPolicyRuleOrBuilder
    * Denotes whether to enable logging for a particular rule. If logging is enabled, logs will be exported to the configured export destination in Stackdriver. Logs may be exported to BigQuery or Pub/Sub. Note: you cannot enable logging on "goto_next" rules.
    * </pre>
    *
-   * <code>bool enable_logging = 295396515;</code>
+   * <code>optional bool enable_logging = 295396515;</code>
    *
    * @return Whether the enableLogging field is set.
    */
@@ -178,7 +181,7 @@ public interface FirewallPolicyRuleOrBuilder
    * Denotes whether to enable logging for a particular rule. If logging is enabled, logs will be exported to the configured export destination in Stackdriver. Logs may be exported to BigQuery or Pub/Sub. Note: you cannot enable logging on "goto_next" rules.
    * </pre>
    *
-   * <code>bool enable_logging = 295396515;</code>
+   * <code>optional bool enable_logging = 295396515;</code>
    *
    * @return The enableLogging.
    */
@@ -191,7 +194,7 @@ public interface FirewallPolicyRuleOrBuilder
    * [Output only] Type of the resource. Always compute#firewallPolicyRule for firewall policy rules
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -203,7 +206,7 @@ public interface FirewallPolicyRuleOrBuilder
    * [Output only] Type of the resource. Always compute#firewallPolicyRule for firewall policy rules
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -215,7 +218,7 @@ public interface FirewallPolicyRuleOrBuilder
    * [Output only] Type of the resource. Always compute#firewallPolicyRule for firewall policy rules
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -228,7 +231,7 @@ public interface FirewallPolicyRuleOrBuilder
    * A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
+   * <code>optional .google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
    *
    * @return Whether the match field is set.
    */
@@ -240,7 +243,7 @@ public interface FirewallPolicyRuleOrBuilder
    * A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
+   * <code>optional .google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
    *
    * @return The match.
    */
@@ -252,7 +255,7 @@ public interface FirewallPolicyRuleOrBuilder
    * A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
+   * <code>optional .google.cloud.compute.v1.FirewallPolicyRuleMatcher match = 103668165;</code>
    */
   com.google.cloud.compute.v1.FirewallPolicyRuleMatcherOrBuilder getMatchOrBuilder();
 
@@ -263,7 +266,7 @@ public interface FirewallPolicyRuleOrBuilder
    * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
    * </pre>
    *
-   * <code>int32 priority = 445151652;</code>
+   * <code>optional int32 priority = 445151652;</code>
    *
    * @return Whether the priority field is set.
    */
@@ -275,7 +278,7 @@ public interface FirewallPolicyRuleOrBuilder
    * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
    * </pre>
    *
-   * <code>int32 priority = 445151652;</code>
+   * <code>optional int32 priority = 445151652;</code>
    *
    * @return The priority.
    */
@@ -288,7 +291,7 @@ public interface FirewallPolicyRuleOrBuilder
    * [Output Only] Calculation of the complexity of a single firewall policy rule.
    * </pre>
    *
-   * <code>int32 rule_tuple_count = 388342037;</code>
+   * <code>optional int32 rule_tuple_count = 388342037;</code>
    *
    * @return Whether the ruleTupleCount field is set.
    */
@@ -300,7 +303,7 @@ public interface FirewallPolicyRuleOrBuilder
    * [Output Only] Calculation of the complexity of a single firewall policy rule.
    * </pre>
    *
-   * <code>int32 rule_tuple_count = 388342037;</code>
+   * <code>optional int32 rule_tuple_count = 388342037;</code>
    *
    * @return The ruleTupleCount.
    */

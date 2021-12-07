@@ -41,10 +41,10 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   private InterconnectOutageNotification() {
     affectedCircuits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     description_ = "";
-    issueType_ = 0;
+    issueType_ = "";
     name_ = "";
-    source_ = 0;
-    state_ = 0;
+    source_ = "";
+    state_ = "";
   }
 
   @java.lang.Override
@@ -90,11 +90,11 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
               startTime_ = input.readInt64();
               break;
             }
-          case 878060680:
+          case 878060682:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000040;
-              state_ = rawValue;
+              state_ = s;
               break;
             }
           case 919510408:
@@ -103,11 +103,11 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
               endTime_ = input.readInt64();
               break;
             }
-          case 1417887960:
+          case 1417887962:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
-              source_ = rawValue;
+              source_ = s;
               break;
             }
           case 1421736106:
@@ -120,11 +120,11 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
               affectedCircuits_.add(s);
               break;
             }
-          case -1337854208:
+          case -1337854206:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
-              issueType_ = rawValue;
+              issueType_ = s;
               break;
             }
           case -911466526:
@@ -175,9 +175,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Form this outage is expected to take, which can take one of the following values:
-   * - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window.
-   * - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+   * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InterconnectOutageNotification.IssueType}
@@ -193,13 +191,45 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * <code>UNDEFINED_ISSUE_TYPE = 0;</code>
      */
     UNDEFINED_ISSUE_TYPE(0),
-    /** <code>IT_OUTAGE = 175779973;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * [Deprecated] The Interconnect may be completely out of service for some or all of the specified window.
+     * </pre>
+     *
+     * <code>IT_OUTAGE = 175779973;</code>
+     */
     IT_OUTAGE(175779973),
-    /** <code>IT_PARTIAL_OUTAGE = 92103971;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * [Deprecated] Some circuits comprising the Interconnect will be out of service during the expected window. The interconnect as a whole should remain up, albeit with reduced bandwidth.
+     * </pre>
+     *
+     * <code>IT_PARTIAL_OUTAGE = 92103971;</code>
+     */
     IT_PARTIAL_OUTAGE(92103971),
-    /** <code>OUTAGE = 195285745;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The Interconnect may be completely out of service for some or all of the specified window.
+     * </pre>
+     *
+     * <code>OUTAGE = 195285745;</code>
+     */
     OUTAGE(195285745),
-    /** <code>PARTIAL_OUTAGE = 147053455;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Some circuits comprising the Interconnect will be out of service during the expected window. The interconnect as a whole should remain up, albeit with reduced bandwidth.
+     * </pre>
+     *
+     * <code>PARTIAL_OUTAGE = 147053455;</code>
+     */
     PARTIAL_OUTAGE(147053455),
     UNRECOGNIZED(-1),
     ;
@@ -214,13 +244,45 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * <code>UNDEFINED_ISSUE_TYPE = 0;</code>
      */
     public static final int UNDEFINED_ISSUE_TYPE_VALUE = 0;
-    /** <code>IT_OUTAGE = 175779973;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * [Deprecated] The Interconnect may be completely out of service for some or all of the specified window.
+     * </pre>
+     *
+     * <code>IT_OUTAGE = 175779973;</code>
+     */
     public static final int IT_OUTAGE_VALUE = 175779973;
-    /** <code>IT_PARTIAL_OUTAGE = 92103971;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * [Deprecated] Some circuits comprising the Interconnect will be out of service during the expected window. The interconnect as a whole should remain up, albeit with reduced bandwidth.
+     * </pre>
+     *
+     * <code>IT_PARTIAL_OUTAGE = 92103971;</code>
+     */
     public static final int IT_PARTIAL_OUTAGE_VALUE = 92103971;
-    /** <code>OUTAGE = 195285745;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The Interconnect may be completely out of service for some or all of the specified window.
+     * </pre>
+     *
+     * <code>OUTAGE = 195285745;</code>
+     */
     public static final int OUTAGE_VALUE = 195285745;
-    /** <code>PARTIAL_OUTAGE = 147053455;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Some circuits comprising the Interconnect will be out of service during the expected window. The interconnect as a whole should remain up, albeit with reduced bandwidth.
+     * </pre>
+     *
+     * <code>PARTIAL_OUTAGE = 147053455;</code>
+     */
     public static final int PARTIAL_OUTAGE_VALUE = 147053455;
 
     public final int getNumber() {
@@ -316,8 +378,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The party that generated this notification, which can take the following value:
-   * - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+   * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InterconnectOutageNotification.Source}
@@ -333,9 +394,25 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * <code>UNDEFINED_SOURCE = 0;</code>
      */
     UNDEFINED_SOURCE(0),
-    /** <code>GOOGLE = 497439289;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This notification was generated by Google.
+     * </pre>
+     *
+     * <code>GOOGLE = 497439289;</code>
+     */
     GOOGLE(497439289),
-    /** <code>NSRC_GOOGLE = 510574562;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * [Deprecated] This notification was generated by Google.
+     * </pre>
+     *
+     * <code>NSRC_GOOGLE = 510574562;</code>
+     */
     NSRC_GOOGLE(510574562),
     UNRECOGNIZED(-1),
     ;
@@ -350,9 +427,25 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * <code>UNDEFINED_SOURCE = 0;</code>
      */
     public static final int UNDEFINED_SOURCE_VALUE = 0;
-    /** <code>GOOGLE = 497439289;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This notification was generated by Google.
+     * </pre>
+     *
+     * <code>GOOGLE = 497439289;</code>
+     */
     public static final int GOOGLE_VALUE = 497439289;
-    /** <code>NSRC_GOOGLE = 510574562;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * [Deprecated] This notification was generated by Google.
+     * </pre>
+     *
+     * <code>NSRC_GOOGLE = 510574562;</code>
+     */
     public static final int NSRC_GOOGLE_VALUE = 510574562;
 
     public final int getNumber() {
@@ -444,9 +537,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * State of this notification, which can take one of the following values:
-   * - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling.
-   * - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+   * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InterconnectOutageNotification.State}
@@ -462,15 +553,55 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This outage notification is active. The event could be in the future, present, or past. See start_time and end_time for scheduling.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     ACTIVE(314733318),
-    /** <code>CANCELLED = 41957681;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The outage associated with this notification was cancelled before the outage was due to start.
+     * </pre>
+     *
+     * <code>CANCELLED = 41957681;</code>
+     */
     CANCELLED(41957681),
-    /** <code>COMPLETED = 309921323;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The outage associated with this notification is complete.
+     * </pre>
+     *
+     * <code>COMPLETED = 309921323;</code>
+     */
     COMPLETED(309921323),
-    /** <code>NS_ACTIVE = 252563136;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * [Deprecated] This outage notification is active. The event could be in the future, present, or past. See start_time and end_time for scheduling.
+     * </pre>
+     *
+     * <code>NS_ACTIVE = 252563136;</code>
+     */
     NS_ACTIVE(252563136),
-    /** <code>NS_CANCELED = 506579411;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * [Deprecated] The outage associated with this notification was canceled before the outage was due to start.
+     * </pre>
+     *
+     * <code>NS_CANCELED = 506579411;</code>
+     */
     NS_CANCELED(506579411),
     UNRECOGNIZED(-1),
     ;
@@ -485,15 +616,55 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This outage notification is active. The event could be in the future, present, or past. See start_time and end_time for scheduling.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     public static final int ACTIVE_VALUE = 314733318;
-    /** <code>CANCELLED = 41957681;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The outage associated with this notification was cancelled before the outage was due to start.
+     * </pre>
+     *
+     * <code>CANCELLED = 41957681;</code>
+     */
     public static final int CANCELLED_VALUE = 41957681;
-    /** <code>COMPLETED = 309921323;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The outage associated with this notification is complete.
+     * </pre>
+     *
+     * <code>COMPLETED = 309921323;</code>
+     */
     public static final int COMPLETED_VALUE = 309921323;
-    /** <code>NS_ACTIVE = 252563136;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * [Deprecated] This outage notification is active. The event could be in the future, present, or past. See start_time and end_time for scheduling.
+     * </pre>
+     *
+     * <code>NS_ACTIVE = 252563136;</code>
+     */
     public static final int NS_ACTIVE_VALUE = 252563136;
-    /** <code>NS_CANCELED = 506579411;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * [Deprecated] The outage associated with this notification was canceled before the outage was due to start.
+     * </pre>
+     *
+     * <code>NS_CANCELED = 506579411;</code>
+     */
     public static final int NS_CANCELED_VALUE = 506579411;
 
     public final int getNumber() {
@@ -658,7 +829,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    * A description about the purpose of the outage.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -673,7 +844,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    * A description about the purpose of the outage.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -696,7 +867,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    * A description about the purpose of the outage.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -722,7 +893,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    * Scheduled end time for the outage (milliseconds since Unix epoch).
    * </pre>
    *
-   * <code>int64 end_time = 114938801;</code>
+   * <code>optional int64 end_time = 114938801;</code>
    *
    * @return Whether the endTime field is set.
    */
@@ -737,7 +908,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    * Scheduled end time for the outage (milliseconds since Unix epoch).
    * </pre>
    *
-   * <code>int64 end_time = 114938801;</code>
+   * <code>optional int64 end_time = 114938801;</code>
    *
    * @return The endTime.
    */
@@ -747,18 +918,16 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   }
 
   public static final int ISSUE_TYPE_FIELD_NUMBER = 369639136;
-  private int issueType_;
+  private volatile java.lang.Object issueType_;
   /**
    *
    *
    * <pre>
-   * Form this outage is expected to take, which can take one of the following values:
-   * - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window.
-   * - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+   * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+   * Check the IssueType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 369639136;
-   * </code>
+   * <code>optional string issue_type = 369639136;</code>
    *
    * @return Whether the issueType field is set.
    */
@@ -770,42 +939,49 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Form this outage is expected to take, which can take one of the following values:
-   * - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window.
-   * - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+   * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+   * Check the IssueType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 369639136;
-   * </code>
+   * <code>optional string issue_type = 369639136;</code>
    *
-   * @return The enum numeric value on the wire for issueType.
+   * @return The issueType.
    */
   @java.lang.Override
-  public int getIssueTypeValue() {
-    return issueType_;
+  public java.lang.String getIssueType() {
+    java.lang.Object ref = issueType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      issueType_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * Form this outage is expected to take, which can take one of the following values:
-   * - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window.
-   * - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+   * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+   * Check the IssueType enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 369639136;
-   * </code>
+   * <code>optional string issue_type = 369639136;</code>
    *
-   * @return The issueType.
+   * @return The bytes for issueType.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.InterconnectOutageNotification.IssueType getIssueType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.InterconnectOutageNotification.IssueType result =
-        com.google.cloud.compute.v1.InterconnectOutageNotification.IssueType.valueOf(issueType_);
-    return result == null
-        ? com.google.cloud.compute.v1.InterconnectOutageNotification.IssueType.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getIssueTypeBytes() {
+    java.lang.Object ref = issueType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      issueType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
@@ -817,7 +993,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    * Unique identifier for this outage notification.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -832,7 +1008,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    * Unique identifier for this outage notification.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -855,7 +1031,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    * Unique identifier for this outage notification.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -873,16 +1049,16 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   }
 
   public static final int SOURCE_FIELD_NUMBER = 177235995;
-  private int source_;
+  private volatile java.lang.Object source_;
   /**
    *
    *
    * <pre>
-   * The party that generated this notification, which can take the following value:
-   * - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+   * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+   * Check the Source enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.Source source = 177235995;</code>
+   * <code>optional string source = 177235995;</code>
    *
    * @return Whether the source field is set.
    */
@@ -894,38 +1070,49 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The party that generated this notification, which can take the following value:
-   * - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+   * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+   * Check the Source enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.Source source = 177235995;</code>
+   * <code>optional string source = 177235995;</code>
    *
-   * @return The enum numeric value on the wire for source.
+   * @return The source.
    */
   @java.lang.Override
-  public int getSourceValue() {
-    return source_;
+  public java.lang.String getSource() {
+    java.lang.Object ref = source_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      source_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * The party that generated this notification, which can take the following value:
-   * - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+   * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+   * Check the Source enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.Source source = 177235995;</code>
+   * <code>optional string source = 177235995;</code>
    *
-   * @return The source.
+   * @return The bytes for source.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.InterconnectOutageNotification.Source getSource() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.InterconnectOutageNotification.Source result =
-        com.google.cloud.compute.v1.InterconnectOutageNotification.Source.valueOf(source_);
-    return result == null
-        ? com.google.cloud.compute.v1.InterconnectOutageNotification.Source.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getSourceBytes() {
+    java.lang.Object ref = source_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      source_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int START_TIME_FIELD_NUMBER = 37467274;
@@ -937,7 +1124,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    * Scheduled start time for the outage (milliseconds since Unix epoch).
    * </pre>
    *
-   * <code>int64 start_time = 37467274;</code>
+   * <code>optional int64 start_time = 37467274;</code>
    *
    * @return Whether the startTime field is set.
    */
@@ -952,7 +1139,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    * Scheduled start time for the outage (milliseconds since Unix epoch).
    * </pre>
    *
-   * <code>int64 start_time = 37467274;</code>
+   * <code>optional int64 start_time = 37467274;</code>
    *
    * @return The startTime.
    */
@@ -962,17 +1149,16 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   }
 
   public static final int STATE_FIELD_NUMBER = 109757585;
-  private int state_;
+  private volatile java.lang.Object state_;
   /**
    *
    *
    * <pre>
-   * State of this notification, which can take one of the following values:
-   * - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling.
-   * - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+   * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
    * @return Whether the state field is set.
    */
@@ -984,40 +1170,49 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * State of this notification, which can take one of the following values:
-   * - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling.
-   * - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+   * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The enum numeric value on the wire for state.
+   * @return The state.
    */
   @java.lang.Override
-  public int getStateValue() {
-    return state_;
+  public java.lang.String getState() {
+    java.lang.Object ref = state_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      state_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * State of this notification, which can take one of the following values:
-   * - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling.
-   * - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+   * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    *
-   * @return The state.
+   * @return The bytes for state.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.InterconnectOutageNotification.State getState() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.InterconnectOutageNotification.State result =
-        com.google.cloud.compute.v1.InterconnectOutageNotification.State.valueOf(state_);
-    return result == null
-        ? com.google.cloud.compute.v1.InterconnectOutageNotification.State.UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getStateBytes() {
+    java.lang.Object ref = state_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      state_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1041,20 +1236,20 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       output.writeInt64(37467274, startTime_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      output.writeEnum(109757585, state_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 109757585, state_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt64(114938801, endTime_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeEnum(177235995, source_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 177235995, source_);
     }
     for (int i = 0; i < affectedCircuits_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 177717013, affectedCircuits_.getRaw(i));
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeEnum(369639136, issueType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 369639136, issueType_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
@@ -1075,13 +1270,13 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(37467274, startTime_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(109757585, state_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757585, state_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(114938801, endTime_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(177235995, source_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(177235995, source_);
     }
     {
       int dataSize = 0;
@@ -1092,7 +1287,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       size += 5 * getAffectedCircuitsList().size();
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(369639136, issueType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(369639136, issueType_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
@@ -1124,7 +1319,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     }
     if (hasIssueType() != other.hasIssueType()) return false;
     if (hasIssueType()) {
-      if (issueType_ != other.issueType_) return false;
+      if (!getIssueType().equals(other.getIssueType())) return false;
     }
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
@@ -1132,7 +1327,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     }
     if (hasSource() != other.hasSource()) return false;
     if (hasSource()) {
-      if (source_ != other.source_) return false;
+      if (!getSource().equals(other.getSource())) return false;
     }
     if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
@@ -1140,7 +1335,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     }
     if (hasState() != other.hasState()) return false;
     if (hasState()) {
-      if (state_ != other.state_) return false;
+      if (!getState().equals(other.getState())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1167,7 +1362,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     }
     if (hasIssueType()) {
       hash = (37 * hash) + ISSUE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + issueType_;
+      hash = (53 * hash) + getIssueType().hashCode();
     }
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
@@ -1175,7 +1370,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     }
     if (hasSource()) {
       hash = (37 * hash) + SOURCE_FIELD_NUMBER;
-      hash = (53 * hash) + source_;
+      hash = (53 * hash) + getSource().hashCode();
     }
     if (hasStartTime()) {
       hash = (37 * hash) + START_TIME_FIELD_NUMBER;
@@ -1183,7 +1378,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     }
     if (hasState()) {
       hash = (37 * hash) + STATE_FIELD_NUMBER;
-      hash = (53 * hash) + state_;
+      hash = (53 * hash) + getState().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1337,15 +1532,15 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       bitField0_ = (bitField0_ & ~0x00000002);
       endTime_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000004);
-      issueType_ = 0;
+      issueType_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
       name_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
-      source_ = 0;
+      source_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
       startTime_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000040);
-      state_ = 0;
+      state_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
@@ -1479,7 +1674,9 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
         setEndTime(other.getEndTime());
       }
       if (other.hasIssueType()) {
-        setIssueType(other.getIssueType());
+        bitField0_ |= 0x00000008;
+        issueType_ = other.issueType_;
+        onChanged();
       }
       if (other.hasName()) {
         bitField0_ |= 0x00000010;
@@ -1487,13 +1684,17 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
         onChanged();
       }
       if (other.hasSource()) {
-        setSource(other.getSource());
+        bitField0_ |= 0x00000020;
+        source_ = other.source_;
+        onChanged();
       }
       if (other.hasStartTime()) {
         setStartTime(other.getStartTime());
       }
       if (other.hasState()) {
-        setState(other.getState());
+        bitField0_ |= 0x00000080;
+        state_ = other.state_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1703,7 +1904,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * A description about the purpose of the outage.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return Whether the description field is set.
      */
@@ -1717,7 +1918,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * A description about the purpose of the outage.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1739,7 +1940,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * A description about the purpose of the outage.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1761,7 +1962,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * A description about the purpose of the outage.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1782,7 +1983,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * A description about the purpose of the outage.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
@@ -1799,7 +2000,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * A description about the purpose of the outage.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1823,7 +2024,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Scheduled end time for the outage (milliseconds since Unix epoch).
      * </pre>
      *
-     * <code>int64 end_time = 114938801;</code>
+     * <code>optional int64 end_time = 114938801;</code>
      *
      * @return Whether the endTime field is set.
      */
@@ -1838,7 +2039,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Scheduled end time for the outage (milliseconds since Unix epoch).
      * </pre>
      *
-     * <code>int64 end_time = 114938801;</code>
+     * <code>optional int64 end_time = 114938801;</code>
      *
      * @return The endTime.
      */
@@ -1853,7 +2054,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Scheduled end time for the outage (milliseconds since Unix epoch).
      * </pre>
      *
-     * <code>int64 end_time = 114938801;</code>
+     * <code>optional int64 end_time = 114938801;</code>
      *
      * @param value The endTime to set.
      * @return This builder for chaining.
@@ -1871,7 +2072,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Scheduled end time for the outage (milliseconds since Unix epoch).
      * </pre>
      *
-     * <code>int64 end_time = 114938801;</code>
+     * <code>optional int64 end_time = 114938801;</code>
      *
      * @return This builder for chaining.
      */
@@ -1882,23 +2083,19 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       return this;
     }
 
-    private int issueType_ = 0;
+    private java.lang.Object issueType_ = "";
     /**
      *
      *
      * <pre>
-     * Form this outage is expected to take, which can take one of the following values:
-     * - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window.
-     * - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+     * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+     * Check the IssueType enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 369639136;
-     * </code>
+     * <code>optional string issue_type = 369639136;</code>
      *
      * @return Whether the issueType field is set.
      */
-    @java.lang.Override
     public boolean hasIssueType() {
       return ((bitField0_ & 0x00000008) != 0);
     }
@@ -1906,38 +2103,65 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Form this outage is expected to take, which can take one of the following values:
-     * - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window.
-     * - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+     * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+     * Check the IssueType enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 369639136;
-     * </code>
+     * <code>optional string issue_type = 369639136;</code>
      *
-     * @return The enum numeric value on the wire for issueType.
+     * @return The issueType.
      */
-    @java.lang.Override
-    public int getIssueTypeValue() {
-      return issueType_;
+    public java.lang.String getIssueType() {
+      java.lang.Object ref = issueType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        issueType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * Form this outage is expected to take, which can take one of the following values:
-     * - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window.
-     * - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+     * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+     * Check the IssueType enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 369639136;
-     * </code>
+     * <code>optional string issue_type = 369639136;</code>
      *
-     * @param value The enum numeric value on the wire for issueType to set.
+     * @return The bytes for issueType.
+     */
+    public com.google.protobuf.ByteString getIssueTypeBytes() {
+      java.lang.Object ref = issueType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        issueType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+     * Check the IssueType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string issue_type = 369639136;</code>
+     *
+     * @param value The issueType to set.
      * @return This builder for chaining.
      */
-    public Builder setIssueTypeValue(int value) {
+    public Builder setIssueType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000008;
       issueType_ = value;
       onChanged();
@@ -1947,49 +2171,17 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Form this outage is expected to take, which can take one of the following values:
-     * - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window.
-     * - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+     * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+     * Check the IssueType enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 369639136;
-     * </code>
+     * <code>optional string issue_type = 369639136;</code>
      *
-     * @return The issueType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.InterconnectOutageNotification.IssueType getIssueType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.InterconnectOutageNotification.IssueType result =
-          com.google.cloud.compute.v1.InterconnectOutageNotification.IssueType.valueOf(issueType_);
-      return result == null
-          ? com.google.cloud.compute.v1.InterconnectOutageNotification.IssueType.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Form this outage is expected to take, which can take one of the following values:
-     * - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window.
-     * - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 369639136;
-     * </code>
-     *
-     * @param value The issueType to set.
      * @return This builder for chaining.
      */
-    public Builder setIssueType(
-        com.google.cloud.compute.v1.InterconnectOutageNotification.IssueType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000008;
-      issueType_ = value.getNumber();
+    public Builder clearIssueType() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      issueType_ = getDefaultInstance().getIssueType();
       onChanged();
       return this;
     }
@@ -1997,20 +2189,22 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Form this outage is expected to take, which can take one of the following values:
-     * - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window.
-     * - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+     * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+     * Check the IssueType enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 369639136;
-     * </code>
+     * <code>optional string issue_type = 369639136;</code>
      *
+     * @param value The bytes for issueType to set.
      * @return This builder for chaining.
      */
-    public Builder clearIssueType() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      issueType_ = 0;
+    public Builder setIssueTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000008;
+      issueType_ = value;
       onChanged();
       return this;
     }
@@ -2023,7 +2217,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Unique identifier for this outage notification.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -2037,7 +2231,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Unique identifier for this outage notification.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -2059,7 +2253,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Unique identifier for this outage notification.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -2081,7 +2275,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Unique identifier for this outage notification.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2102,7 +2296,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Unique identifier for this outage notification.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -2119,7 +2313,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Unique identifier for this outage notification.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2135,21 +2329,19 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       return this;
     }
 
-    private int source_ = 0;
+    private java.lang.Object source_ = "";
     /**
      *
      *
      * <pre>
-     * The party that generated this notification, which can take the following value:
-     * - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+     * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+     * Check the Source enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InterconnectOutageNotification.Source source = 177235995;
-     * </code>
+     * <code>optional string source = 177235995;</code>
      *
      * @return Whether the source field is set.
      */
-    @java.lang.Override
     public boolean hasSource() {
       return ((bitField0_ & 0x00000020) != 0);
     }
@@ -2157,34 +2349,65 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The party that generated this notification, which can take the following value:
-     * - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+     * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+     * Check the Source enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InterconnectOutageNotification.Source source = 177235995;
-     * </code>
+     * <code>optional string source = 177235995;</code>
      *
-     * @return The enum numeric value on the wire for source.
+     * @return The source.
      */
-    @java.lang.Override
-    public int getSourceValue() {
-      return source_;
+    public java.lang.String getSource() {
+      java.lang.Object ref = source_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        source_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * The party that generated this notification, which can take the following value:
-     * - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+     * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+     * Check the Source enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InterconnectOutageNotification.Source source = 177235995;
-     * </code>
+     * <code>optional string source = 177235995;</code>
      *
-     * @param value The enum numeric value on the wire for source to set.
+     * @return The bytes for source.
+     */
+    public com.google.protobuf.ByteString getSourceBytes() {
+      java.lang.Object ref = source_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        source_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+     * Check the Source enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string source = 177235995;</code>
+     *
+     * @param value The source to set.
      * @return This builder for chaining.
      */
-    public Builder setSourceValue(int value) {
+    public Builder setSource(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000020;
       source_ = value;
       onChanged();
@@ -2194,45 +2417,17 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The party that generated this notification, which can take the following value:
-     * - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+     * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+     * Check the Source enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InterconnectOutageNotification.Source source = 177235995;
-     * </code>
+     * <code>optional string source = 177235995;</code>
      *
-     * @return The source.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.InterconnectOutageNotification.Source getSource() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.InterconnectOutageNotification.Source result =
-          com.google.cloud.compute.v1.InterconnectOutageNotification.Source.valueOf(source_);
-      return result == null
-          ? com.google.cloud.compute.v1.InterconnectOutageNotification.Source.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The party that generated this notification, which can take the following value:
-     * - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.InterconnectOutageNotification.Source source = 177235995;
-     * </code>
-     *
-     * @param value The source to set.
      * @return This builder for chaining.
      */
-    public Builder setSource(
-        com.google.cloud.compute.v1.InterconnectOutageNotification.Source value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000020;
-      source_ = value.getNumber();
+    public Builder clearSource() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      source_ = getDefaultInstance().getSource();
       onChanged();
       return this;
     }
@@ -2240,18 +2435,22 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The party that generated this notification, which can take the following value:
-     * - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+     * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+     * Check the Source enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InterconnectOutageNotification.Source source = 177235995;
-     * </code>
+     * <code>optional string source = 177235995;</code>
      *
+     * @param value The bytes for source to set.
      * @return This builder for chaining.
      */
-    public Builder clearSource() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      source_ = 0;
+    public Builder setSourceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000020;
+      source_ = value;
       onChanged();
       return this;
     }
@@ -2264,7 +2463,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Scheduled start time for the outage (milliseconds since Unix epoch).
      * </pre>
      *
-     * <code>int64 start_time = 37467274;</code>
+     * <code>optional int64 start_time = 37467274;</code>
      *
      * @return Whether the startTime field is set.
      */
@@ -2279,7 +2478,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Scheduled start time for the outage (milliseconds since Unix epoch).
      * </pre>
      *
-     * <code>int64 start_time = 37467274;</code>
+     * <code>optional int64 start_time = 37467274;</code>
      *
      * @return The startTime.
      */
@@ -2294,7 +2493,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Scheduled start time for the outage (milliseconds since Unix epoch).
      * </pre>
      *
-     * <code>int64 start_time = 37467274;</code>
+     * <code>optional int64 start_time = 37467274;</code>
      *
      * @param value The startTime to set.
      * @return This builder for chaining.
@@ -2312,7 +2511,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * Scheduled start time for the outage (milliseconds since Unix epoch).
      * </pre>
      *
-     * <code>int64 start_time = 37467274;</code>
+     * <code>optional int64 start_time = 37467274;</code>
      *
      * @return This builder for chaining.
      */
@@ -2323,21 +2522,19 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       return this;
     }
 
-    private int state_ = 0;
+    private java.lang.Object state_ = "";
     /**
      *
      *
      * <pre>
-     * State of this notification, which can take one of the following values:
-     * - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling.
-     * - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+     * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InterconnectOutageNotification.State state = 109757585;</code>
+     * <code>optional string state = 109757585;</code>
      *
      * @return Whether the state field is set.
      */
-    @java.lang.Override
     public boolean hasState() {
       return ((bitField0_ & 0x00000080) != 0);
     }
@@ -2345,34 +2542,65 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * State of this notification, which can take one of the following values:
-     * - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling.
-     * - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+     * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InterconnectOutageNotification.State state = 109757585;</code>
+     * <code>optional string state = 109757585;</code>
      *
-     * @return The enum numeric value on the wire for state.
+     * @return The state.
      */
-    @java.lang.Override
-    public int getStateValue() {
-      return state_;
+    public java.lang.String getState() {
+      java.lang.Object ref = state_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        state_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * State of this notification, which can take one of the following values:
-     * - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling.
-     * - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+     * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InterconnectOutageNotification.State state = 109757585;</code>
+     * <code>optional string state = 109757585;</code>
      *
-     * @param value The enum numeric value on the wire for state to set.
+     * @return The bytes for state.
+     */
+    public com.google.protobuf.ByteString getStateBytes() {
+      java.lang.Object ref = state_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        state_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+     * Check the State enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string state = 109757585;</code>
+     *
+     * @param value The state to set.
      * @return This builder for chaining.
      */
-    public Builder setStateValue(int value) {
+    public Builder setState(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000080;
       state_ = value;
       onChanged();
@@ -2382,45 +2610,17 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * State of this notification, which can take one of the following values:
-     * - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling.
-     * - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+     * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InterconnectOutageNotification.State state = 109757585;</code>
+     * <code>optional string state = 109757585;</code>
      *
-     * @return The state.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.InterconnectOutageNotification.State getState() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.InterconnectOutageNotification.State result =
-          com.google.cloud.compute.v1.InterconnectOutageNotification.State.valueOf(state_);
-      return result == null
-          ? com.google.cloud.compute.v1.InterconnectOutageNotification.State.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * State of this notification, which can take one of the following values:
-     * - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling.
-     * - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.InterconnectOutageNotification.State state = 109757585;</code>
-     *
-     * @param value The state to set.
      * @return This builder for chaining.
      */
-    public Builder setState(
-        com.google.cloud.compute.v1.InterconnectOutageNotification.State value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000080;
-      state_ = value.getNumber();
+    public Builder clearState() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      state_ = getDefaultInstance().getState();
       onChanged();
       return this;
     }
@@ -2428,18 +2628,22 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * State of this notification, which can take one of the following values:
-     * - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling.
-     * - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+     * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.InterconnectOutageNotification.State state = 109757585;</code>
+     * <code>optional string state = 109757585;</code>
      *
+     * @param value The bytes for state to set.
      * @return This builder for chaining.
      */
-    public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000080);
-      state_ = 0;
+    public Builder setStateBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000080;
+      state_ = value;
       onChanged();
       return this;
     }

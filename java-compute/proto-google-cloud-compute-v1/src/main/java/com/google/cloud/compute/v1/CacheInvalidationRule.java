@@ -129,7 +129,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
    * If set, this invalidation rule will only apply to requests with a Host header matching host.
    * </pre>
    *
-   * <code>string host = 3208616;</code>
+   * <code>optional string host = 3208616;</code>
    *
    * @return Whether the host field is set.
    */
@@ -144,7 +144,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
    * If set, this invalidation rule will only apply to requests with a Host header matching host.
    * </pre>
    *
-   * <code>string host = 3208616;</code>
+   * <code>optional string host = 3208616;</code>
    *
    * @return The host.
    */
@@ -167,7 +167,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
    * If set, this invalidation rule will only apply to requests with a Host header matching host.
    * </pre>
    *
-   * <code>string host = 3208616;</code>
+   * <code>optional string host = 3208616;</code>
    *
    * @return The bytes for host.
    */
@@ -187,7 +187,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
   public static final int PATH_FIELD_NUMBER = 3433509;
   private volatile java.lang.Object path_;
   /**
-   * <code>string path = 3433509;</code>
+   * <code>optional string path = 3433509;</code>
    *
    * @return Whether the path field is set.
    */
@@ -196,7 +196,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>string path = 3433509;</code>
+   * <code>optional string path = 3433509;</code>
    *
    * @return The path.
    */
@@ -213,7 +213,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     }
   }
   /**
-   * <code>string path = 3433509;</code>
+   * <code>optional string path = 3433509;</code>
    *
    * @return The bytes for path.
    */
@@ -594,7 +594,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      * If set, this invalidation rule will only apply to requests with a Host header matching host.
      * </pre>
      *
-     * <code>string host = 3208616;</code>
+     * <code>optional string host = 3208616;</code>
      *
      * @return Whether the host field is set.
      */
@@ -608,7 +608,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      * If set, this invalidation rule will only apply to requests with a Host header matching host.
      * </pre>
      *
-     * <code>string host = 3208616;</code>
+     * <code>optional string host = 3208616;</code>
      *
      * @return The host.
      */
@@ -630,7 +630,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      * If set, this invalidation rule will only apply to requests with a Host header matching host.
      * </pre>
      *
-     * <code>string host = 3208616;</code>
+     * <code>optional string host = 3208616;</code>
      *
      * @return The bytes for host.
      */
@@ -652,7 +652,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      * If set, this invalidation rule will only apply to requests with a Host header matching host.
      * </pre>
      *
-     * <code>string host = 3208616;</code>
+     * <code>optional string host = 3208616;</code>
      *
      * @param value The host to set.
      * @return This builder for chaining.
@@ -673,7 +673,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      * If set, this invalidation rule will only apply to requests with a Host header matching host.
      * </pre>
      *
-     * <code>string host = 3208616;</code>
+     * <code>optional string host = 3208616;</code>
      *
      * @return This builder for chaining.
      */
@@ -690,7 +690,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      * If set, this invalidation rule will only apply to requests with a Host header matching host.
      * </pre>
      *
-     * <code>string host = 3208616;</code>
+     * <code>optional string host = 3208616;</code>
      *
      * @param value The bytes for host to set.
      * @return This builder for chaining.
@@ -708,7 +708,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
 
     private java.lang.Object path_ = "";
     /**
-     * <code>string path = 3433509;</code>
+     * <code>optional string path = 3433509;</code>
      *
      * @return Whether the path field is set.
      */
@@ -716,7 +716,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>string path = 3433509;</code>
+     * <code>optional string path = 3433509;</code>
      *
      * @return The path.
      */
@@ -732,7 +732,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       }
     }
     /**
-     * <code>string path = 3433509;</code>
+     * <code>optional string path = 3433509;</code>
      *
      * @return The bytes for path.
      */
@@ -748,7 +748,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       }
     }
     /**
-     * <code>string path = 3433509;</code>
+     * <code>optional string path = 3433509;</code>
      *
      * @param value The path to set.
      * @return This builder for chaining.
@@ -763,7 +763,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     * <code>string path = 3433509;</code>
+     * <code>optional string path = 3433509;</code>
      *
      * @return This builder for chaining.
      */
@@ -774,7 +774,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     * <code>string path = 3433509;</code>
+     * <code>optional string path = 3433509;</code>
      *
      * @param value The bytes for path to set.
      * @return This builder for chaining.

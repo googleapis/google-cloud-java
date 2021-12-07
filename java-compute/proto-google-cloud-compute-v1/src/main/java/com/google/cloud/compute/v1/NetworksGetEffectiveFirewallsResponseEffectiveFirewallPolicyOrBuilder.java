@@ -30,7 +30,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
    * </pre>
    *
-   * <code>string display_name = 4473832;</code>
+   * <code>optional string display_name = 4473832;</code>
    *
    * @return Whether the displayName field is set.
    */
@@ -42,7 +42,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
    * </pre>
    *
-   * <code>string display_name = 4473832;</code>
+   * <code>optional string display_name = 4473832;</code>
    *
    * @return The displayName.
    */
@@ -54,7 +54,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
    * </pre>
    *
-   * <code>string display_name = 4473832;</code>
+   * <code>optional string display_name = 4473832;</code>
    *
    * @return The bytes for displayName.
    */
@@ -67,7 +67,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * [Output Only] The name of the firewall policy.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -79,7 +79,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * [Output Only] The name of the firewall policy.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -91,7 +91,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * [Output Only] The name of the firewall policy.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -156,7 +156,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * [Output Only] The short name of the firewall policy.
    * </pre>
    *
-   * <code>string short_name = 492051566;</code>
+   * <code>optional string short_name = 492051566;</code>
    *
    * @return Whether the shortName field is set.
    */
@@ -168,7 +168,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * [Output Only] The short name of the firewall policy.
    * </pre>
    *
-   * <code>string short_name = 492051566;</code>
+   * <code>optional string short_name = 492051566;</code>
    *
    * @return The shortName.
    */
@@ -180,7 +180,7 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    * [Output Only] The short name of the firewall policy.
    * </pre>
    *
-   * <code>string short_name = 492051566;</code>
+   * <code>optional string short_name = 492051566;</code>
    *
    * @return The bytes for shortName.
    */
@@ -191,11 +191,10 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    *
    * <pre>
    * [Output Only] The type of the firewall policy.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type type = 3575610;
-   * </code>
+   * <code>optional string type = 3575610;</code>
    *
    * @return Whether the type field is set.
    */
@@ -205,28 +204,25 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    *
    * <pre>
    * [Output Only] The type of the firewall policy.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type type = 3575610;
-   * </code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The enum numeric value on the wire for type.
+   * @return The type.
    */
-  int getTypeValue();
+  java.lang.String getType();
   /**
    *
    *
    * <pre>
    * [Output Only] The type of the firewall policy.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type type = 3575610;
-   * </code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The type.
+   * @return The bytes for type.
    */
-  com.google.cloud.compute.v1.NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type
-      getType();
+  com.google.protobuf.ByteString getTypeBytes();
 }

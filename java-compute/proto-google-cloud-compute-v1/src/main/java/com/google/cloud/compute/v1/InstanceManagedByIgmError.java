@@ -159,7 +159,8 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    * [Output Only] Contents of the error.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
    * </code>
    *
    * @return Whether the error field is set.
@@ -175,7 +176,8 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    * [Output Only] Contents of the error.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
    * </code>
    *
    * @return The error.
@@ -194,7 +196,8 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    * [Output Only] Contents of the error.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
    * </code>
    */
   @java.lang.Override
@@ -217,7 +220,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+   * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
    * </code>
    *
    * @return Whether the instanceActionDetails field is set.
@@ -234,7 +237,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+   * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
    * </code>
    *
    * @return The instanceActionDetails.
@@ -255,7 +258,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+   * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
    * </code>
    */
   @java.lang.Override
@@ -276,7 +279,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string timestamp = 55126294;</code>
+   * <code>optional string timestamp = 55126294;</code>
    *
    * @return Whether the timestamp field is set.
    */
@@ -291,7 +294,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string timestamp = 55126294;</code>
+   * <code>optional string timestamp = 55126294;</code>
    *
    * @return The timestamp.
    */
@@ -314,7 +317,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string timestamp = 55126294;</code>
+   * <code>optional string timestamp = 55126294;</code>
    *
    * @return The bytes for timestamp.
    */
@@ -744,7 +747,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
+     * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
      * </code>
      *
      * @return Whether the error field is set.
@@ -760,7 +763,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
+     * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
      * </code>
      *
      * @return The error.
@@ -783,7 +786,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
+     * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
      * </code>
      */
     public Builder setError(
@@ -808,7 +811,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
+     * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
      * </code>
      */
     public Builder setError(
@@ -831,7 +834,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
+     * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
      * </code>
      */
     public Builder mergeError(
@@ -865,7 +868,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
+     * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
      * </code>
      */
     public Builder clearError() {
@@ -886,7 +889,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
+     * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError.Builder
@@ -903,7 +906,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
+     * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
@@ -925,7 +928,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
+     * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error = 96784904;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -960,7 +963,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+     * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
      * </code>
      *
      * @return Whether the instanceActionDetails field is set.
@@ -976,7 +979,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+     * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
      * </code>
      *
      * @return The instanceActionDetails.
@@ -1000,7 +1003,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+     * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
      * </code>
      */
     public Builder setInstanceActionDetails(
@@ -1025,7 +1028,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+     * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
      * </code>
      */
     public Builder setInstanceActionDetails(
@@ -1048,7 +1051,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+     * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
      * </code>
      */
     public Builder mergeInstanceActionDetails(
@@ -1082,7 +1085,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+     * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
      * </code>
      */
     public Builder clearInstanceActionDetails() {
@@ -1103,7 +1106,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+     * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Builder
@@ -1120,7 +1123,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+     * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
@@ -1142,7 +1145,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+     * optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1171,7 +1174,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string timestamp = 55126294;</code>
+     * <code>optional string timestamp = 55126294;</code>
      *
      * @return Whether the timestamp field is set.
      */
@@ -1185,7 +1188,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string timestamp = 55126294;</code>
+     * <code>optional string timestamp = 55126294;</code>
      *
      * @return The timestamp.
      */
@@ -1207,7 +1210,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string timestamp = 55126294;</code>
+     * <code>optional string timestamp = 55126294;</code>
      *
      * @return The bytes for timestamp.
      */
@@ -1229,7 +1232,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string timestamp = 55126294;</code>
+     * <code>optional string timestamp = 55126294;</code>
      *
      * @param value The timestamp to set.
      * @return This builder for chaining.
@@ -1250,7 +1253,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string timestamp = 55126294;</code>
+     * <code>optional string timestamp = 55126294;</code>
      *
      * @return This builder for chaining.
      */
@@ -1267,7 +1270,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string timestamp = 55126294;</code>
+     * <code>optional string timestamp = 55126294;</code>
      *
      * @param value The bytes for timestamp to set.
      * @return This builder for chaining.

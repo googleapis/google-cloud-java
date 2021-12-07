@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.ReservationsStub;
@@ -46,7 +48,7 @@ import javax.annotation.Generated;
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
  *   String reservation = "reservation-1563081780";
- *   Operation response = reservationsClient.delete(project, zone, reservation);
+ *   Reservation response = reservationsClient.get(project, zone, reservation);
  * }
  * }</pre>
  *
@@ -288,7 +290,7 @@ public class ReservationsClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
    *   String reservation = "reservation-1563081780";
-   *   Operation response = reservationsClient.delete(project, zone, reservation);
+   *   Operation response = reservationsClient.deleteAsync(project, zone, reservation).get();
    * }
    * }</pre>
    *
@@ -297,14 +299,15 @@ public class ReservationsClient implements BackgroundResource {
    * @param reservation Name of the reservation to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String zone, String reservation) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String zone, String reservation) {
     DeleteReservationRequest request =
         DeleteReservationRequest.newBuilder()
             .setProject(project)
             .setZone(zone)
             .setReservation(reservation)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -322,15 +325,44 @@ public class ReservationsClient implements BackgroundResource {
    *           .setReservation("reservation-1563081780")
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = reservationsClient.delete(request);
+   *   Operation response = reservationsClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteReservationRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(DeleteReservationRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified reservation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
+   *   DeleteReservationRequest request =
+   *       DeleteReservationRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservation("reservation-1563081780")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       reservationsClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteReservationRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -532,7 +564,7 @@ public class ReservationsClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
    *   Reservation reservationResource = Reservation.newBuilder().build();
-   *   Operation response = reservationsClient.insert(project, zone, reservationResource);
+   *   Operation response = reservationsClient.insertAsync(project, zone, reservationResource).get();
    * }
    * }</pre>
    *
@@ -541,14 +573,15 @@ public class ReservationsClient implements BackgroundResource {
    * @param reservationResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(String project, String zone, Reservation reservationResource) {
+  public final OperationFuture<Operation, Operation> insertAsync(
+      String project, String zone, Reservation reservationResource) {
     InsertReservationRequest request =
         InsertReservationRequest.newBuilder()
             .setProject(project)
             .setZone(zone)
             .setReservationResource(reservationResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -566,15 +599,44 @@ public class ReservationsClient implements BackgroundResource {
    *           .setReservationResource(Reservation.newBuilder().build())
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = reservationsClient.insert(request);
+   *   Operation response = reservationsClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertReservationRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(InsertReservationRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new reservation. For more information, read Reserving zonal resources.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
+   *   InsertReservationRequest request =
+   *       InsertReservationRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservationResource(Reservation.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       reservationsClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertReservationRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -745,7 +807,9 @@ public class ReservationsClient implements BackgroundResource {
    *   ReservationsResizeRequest reservationsResizeRequestResource =
    *       ReservationsResizeRequest.newBuilder().build();
    *   Operation response =
-   *       reservationsClient.resize(project, zone, reservation, reservationsResizeRequestResource);
+   *       reservationsClient
+   *           .resizeAsync(project, zone, reservation, reservationsResizeRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -755,7 +819,7 @@ public class ReservationsClient implements BackgroundResource {
    * @param reservationsResizeRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation resize(
+  public final OperationFuture<Operation, Operation> resizeAsync(
       String project,
       String zone,
       String reservation,
@@ -767,7 +831,7 @@ public class ReservationsClient implements BackgroundResource {
             .setReservation(reservation)
             .setReservationsResizeRequestResource(reservationsResizeRequestResource)
             .build();
-    return resize(request);
+    return resizeAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -787,15 +851,46 @@ public class ReservationsClient implements BackgroundResource {
    *           .setReservationsResizeRequestResource(ReservationsResizeRequest.newBuilder().build())
    *           .setZone("zone3744684")
    *           .build();
-   *   Operation response = reservationsClient.resize(request);
+   *   Operation response = reservationsClient.resizeAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation resize(ResizeReservationRequest request) {
-    return resizeCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> resizeAsync(ResizeReservationRequest request) {
+    return resizeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resizes the reservation (applicable to standalone reservations only). For more information,
+   * read Modifying reservations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
+   *   ResizeReservationRequest request =
+   *       ResizeReservationRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservation("reservation-1563081780")
+   *           .setReservationsResizeRequestResource(ReservationsResizeRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       reservationsClient.resizeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ResizeReservationRequest, Operation, Operation>
+      resizeOperationCallable() {
+    return stub.resizeOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

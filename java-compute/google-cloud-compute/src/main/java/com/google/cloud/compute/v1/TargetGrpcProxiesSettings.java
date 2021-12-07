@@ -26,6 +26,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -49,16 +50,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * TargetGrpcProxiesSettings.Builder targetGrpcProxiesSettingsBuilder =
  *     TargetGrpcProxiesSettings.newBuilder();
  * targetGrpcProxiesSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         targetGrpcProxiesSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -74,6 +75,12 @@ public class TargetGrpcProxiesSettings extends ClientSettings<TargetGrpcProxiesS
     return ((TargetGrpcProxiesStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteTargetGrpcProxyRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((TargetGrpcProxiesStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetTargetGrpcProxyRequest, TargetGrpcProxy> getSettings() {
     return ((TargetGrpcProxiesStubSettings) getStubSettings()).getSettings();
@@ -82,6 +89,12 @@ public class TargetGrpcProxiesSettings extends ClientSettings<TargetGrpcProxiesS
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertTargetGrpcProxyRequest, Operation> insertSettings() {
     return ((TargetGrpcProxiesStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertTargetGrpcProxyRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((TargetGrpcProxiesStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -93,6 +106,12 @@ public class TargetGrpcProxiesSettings extends ClientSettings<TargetGrpcProxiesS
   /** Returns the object with the settings used for calls to patch. */
   public UnaryCallSettings<PatchTargetGrpcProxyRequest, Operation> patchSettings() {
     return ((TargetGrpcProxiesStubSettings) getStubSettings()).patchSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchTargetGrpcProxyRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((TargetGrpcProxiesStubSettings) getStubSettings()).patchOperationSettings();
   }
 
   public static final TargetGrpcProxiesSettings create(TargetGrpcProxiesStubSettings stub)
@@ -198,6 +217,12 @@ public class TargetGrpcProxiesSettings extends ClientSettings<TargetGrpcProxiesS
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteTargetGrpcProxyRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetTargetGrpcProxyRequest, TargetGrpcProxy> getSettings() {
       return getStubSettingsBuilder().getSettings();
@@ -206,6 +231,12 @@ public class TargetGrpcProxiesSettings extends ClientSettings<TargetGrpcProxiesS
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertTargetGrpcProxyRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertTargetGrpcProxyRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -218,6 +249,12 @@ public class TargetGrpcProxiesSettings extends ClientSettings<TargetGrpcProxiesS
     /** Returns the builder for the settings used for calls to patch. */
     public UnaryCallSettings.Builder<PatchTargetGrpcProxyRequest, Operation> patchSettings() {
       return getStubSettingsBuilder().patchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchTargetGrpcProxyRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
     }
 
     @Override

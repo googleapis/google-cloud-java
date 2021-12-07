@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonSubnetworksStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -37,6 +38,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -142,7 +144,7 @@ public class SubnetworksClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -153,6 +155,7 @@ public class SubnetworksClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -166,7 +169,7 @@ public class SubnetworksClientTest {
     String region = "region-934795532";
     String subnetwork = "subnetwork-1302785042";
 
-    Operation actualResponse = client.delete(project, region, subnetwork);
+    Operation actualResponse = client.deleteAsync(project, region, subnetwork).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -195,10 +198,9 @@ public class SubnetworksClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       String subnetwork = "subnetwork-1302785042";
-      client.delete(project, region, subnetwork);
+      client.deleteAsync(project, region, subnetwork).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -212,7 +214,7 @@ public class SubnetworksClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -223,6 +225,7 @@ public class SubnetworksClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -239,8 +242,10 @@ public class SubnetworksClientTest {
         SubnetworksExpandIpCidrRangeRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.expandIpCidrRange(
-            project, region, subnetwork, subnetworksExpandIpCidrRangeRequestResource);
+        client
+            .expandIpCidrRangeAsync(
+                project, region, subnetwork, subnetworksExpandIpCidrRangeRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -271,11 +276,12 @@ public class SubnetworksClientTest {
       String subnetwork = "subnetwork-1302785042";
       SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource =
           SubnetworksExpandIpCidrRangeRequest.newBuilder().build();
-      client.expandIpCidrRange(
-          project, region, subnetwork, subnetworksExpandIpCidrRangeRequestResource);
+      client
+          .expandIpCidrRangeAsync(
+              project, region, subnetwork, subnetworksExpandIpCidrRangeRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -286,19 +292,26 @@ public class SubnetworksClientTest {
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setEnableFlowLogs(true)
+            .setExternalIpv6Prefix("externalIpv6Prefix-219545212")
             .setFingerprint("fingerprint-1375934236")
             .setGatewayAddress("gatewayAddress1860901136")
             .setId(3355)
             .setIpCidrRange("ipCidrRange-866375486")
+            .setIpv6AccessType("ipv6AccessType606780421")
             .setIpv6CidrRange("ipv6CidrRange885760002")
             .setKind("kind3292052")
             .setLogConfig(SubnetworkLogConfig.newBuilder().build())
             .setName("name3373707")
             .setNetwork("network1843485230")
             .setPrivateIpGoogleAccess(true)
+            .setPrivateIpv6GoogleAccess("privateIpv6GoogleAccess-1729571801")
+            .setPurpose("purpose-220463842")
             .setRegion("region-934795532")
+            .setRole("role3506294")
             .addAllSecondaryIpRanges(new ArrayList<SubnetworkSecondaryRange>())
             .setSelfLink("selfLink1191800166")
+            .setStackType("stackType1727939042")
+            .setState("state109757585")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -405,7 +418,7 @@ public class SubnetworksClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -416,6 +429,7 @@ public class SubnetworksClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -429,7 +443,7 @@ public class SubnetworksClientTest {
     String region = "region-934795532";
     Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, region, subnetworkResource);
+    Operation actualResponse = client.insertAsync(project, region, subnetworkResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -458,10 +472,9 @@ public class SubnetworksClientTest {
       String project = "project-309310695";
       String region = "region-934795532";
       Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
-      client.insert(project, region, subnetworkResource);
+      client.insertAsync(project, region, subnetworkResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -577,7 +590,7 @@ public class SubnetworksClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -588,6 +601,7 @@ public class SubnetworksClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -602,7 +616,8 @@ public class SubnetworksClientTest {
     String subnetwork = "subnetwork-1302785042";
     Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
 
-    Operation actualResponse = client.patch(project, region, subnetwork, subnetworkResource);
+    Operation actualResponse =
+        client.patchAsync(project, region, subnetwork, subnetworkResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -632,10 +647,9 @@ public class SubnetworksClientTest {
       String region = "region-934795532";
       String subnetwork = "subnetwork-1302785042";
       Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
-      client.patch(project, region, subnetwork, subnetworkResource);
+      client.patchAsync(project, region, subnetwork, subnetworkResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -707,7 +721,7 @@ public class SubnetworksClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -718,6 +732,7 @@ public class SubnetworksClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -734,8 +749,10 @@ public class SubnetworksClientTest {
         SubnetworksSetPrivateIpGoogleAccessRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.setPrivateIpGoogleAccess(
-            project, region, subnetwork, subnetworksSetPrivateIpGoogleAccessRequestResource);
+        client
+            .setPrivateIpGoogleAccessAsync(
+                project, region, subnetwork, subnetworksSetPrivateIpGoogleAccessRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -767,11 +784,12 @@ public class SubnetworksClientTest {
       SubnetworksSetPrivateIpGoogleAccessRequest
           subnetworksSetPrivateIpGoogleAccessRequestResource =
               SubnetworksSetPrivateIpGoogleAccessRequest.newBuilder().build();
-      client.setPrivateIpGoogleAccess(
-          project, region, subnetwork, subnetworksSetPrivateIpGoogleAccessRequestResource);
+      client
+          .setPrivateIpGoogleAccessAsync(
+              project, region, subnetwork, subnetworksSetPrivateIpGoogleAccessRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 

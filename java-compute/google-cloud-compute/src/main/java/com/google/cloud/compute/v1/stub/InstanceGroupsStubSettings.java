@@ -29,10 +29,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.httpjson.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -84,16 +88,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of addInstances to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * InstanceGroupsStubSettings.Builder instanceGroupsSettingsBuilder =
  *     InstanceGroupsStubSettings.newBuilder();
  * instanceGroupsSettingsBuilder
- *     .addInstancesSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         instanceGroupsSettingsBuilder
- *             .addInstancesSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -111,14 +115,20 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
           .build();
 
   private final UnaryCallSettings<AddInstancesInstanceGroupRequest, Operation> addInstancesSettings;
+  private final OperationCallSettings<AddInstancesInstanceGroupRequest, Operation, Operation>
+      addInstancesOperationSettings;
   private final PagedCallSettings<
           AggregatedListInstanceGroupsRequest,
           InstanceGroupAggregatedList,
           AggregatedListPagedResponse>
       aggregatedListSettings;
   private final UnaryCallSettings<DeleteInstanceGroupRequest, Operation> deleteSettings;
+  private final OperationCallSettings<DeleteInstanceGroupRequest, Operation, Operation>
+      deleteOperationSettings;
   private final UnaryCallSettings<GetInstanceGroupRequest, InstanceGroup> getSettings;
   private final UnaryCallSettings<InsertInstanceGroupRequest, Operation> insertSettings;
+  private final OperationCallSettings<InsertInstanceGroupRequest, Operation, Operation>
+      insertOperationSettings;
   private final PagedCallSettings<ListInstanceGroupsRequest, InstanceGroupList, ListPagedResponse>
       listSettings;
   private final PagedCallSettings<
@@ -128,8 +138,12 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
       listInstancesSettings;
   private final UnaryCallSettings<RemoveInstancesInstanceGroupRequest, Operation>
       removeInstancesSettings;
+  private final OperationCallSettings<RemoveInstancesInstanceGroupRequest, Operation, Operation>
+      removeInstancesOperationSettings;
   private final UnaryCallSettings<SetNamedPortsInstanceGroupRequest, Operation>
       setNamedPortsSettings;
+  private final OperationCallSettings<SetNamedPortsInstanceGroupRequest, Operation, Operation>
+      setNamedPortsOperationSettings;
 
   private static final PagedListDescriptor<
           AggregatedListInstanceGroupsRequest,
@@ -340,6 +354,12 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
     return addInstancesSettings;
   }
 
+  /** Returns the object with the settings used for calls to addInstances. */
+  public OperationCallSettings<AddInstancesInstanceGroupRequest, Operation, Operation>
+      addInstancesOperationSettings() {
+    return addInstancesOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to aggregatedList. */
   public PagedCallSettings<
           AggregatedListInstanceGroupsRequest,
@@ -354,6 +374,12 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
     return deleteSettings;
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteInstanceGroupRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return deleteOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetInstanceGroupRequest, InstanceGroup> getSettings() {
     return getSettings;
@@ -362,6 +388,12 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertInstanceGroupRequest, Operation> insertSettings() {
     return insertSettings;
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertInstanceGroupRequest, Operation, Operation>
+      insertOperationSettings() {
+    return insertOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -385,9 +417,21 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
     return removeInstancesSettings;
   }
 
+  /** Returns the object with the settings used for calls to removeInstances. */
+  public OperationCallSettings<RemoveInstancesInstanceGroupRequest, Operation, Operation>
+      removeInstancesOperationSettings() {
+    return removeInstancesOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setNamedPorts. */
   public UnaryCallSettings<SetNamedPortsInstanceGroupRequest, Operation> setNamedPortsSettings() {
     return setNamedPortsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setNamedPorts. */
+  public OperationCallSettings<SetNamedPortsInstanceGroupRequest, Operation, Operation>
+      setNamedPortsOperationSettings() {
+    return setNamedPortsOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -424,7 +468,9 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return GoogleCredentialsProvider.newBuilder()
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        .setUseJwtAccessWithScope(true);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -466,14 +512,19 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
     super(settingsBuilder);
 
     addInstancesSettings = settingsBuilder.addInstancesSettings().build();
+    addInstancesOperationSettings = settingsBuilder.addInstancesOperationSettings().build();
     aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
+    deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
+    insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     listInstancesSettings = settingsBuilder.listInstancesSettings().build();
     removeInstancesSettings = settingsBuilder.removeInstancesSettings().build();
+    removeInstancesOperationSettings = settingsBuilder.removeInstancesOperationSettings().build();
     setNamedPortsSettings = settingsBuilder.setNamedPortsSettings().build();
+    setNamedPortsOperationSettings = settingsBuilder.setNamedPortsOperationSettings().build();
   }
 
   /** Builder for InstanceGroupsStubSettings. */
@@ -481,14 +532,21 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<AddInstancesInstanceGroupRequest, Operation>
         addInstancesSettings;
+    private final OperationCallSettings.Builder<
+            AddInstancesInstanceGroupRequest, Operation, Operation>
+        addInstancesOperationSettings;
     private final PagedCallSettings.Builder<
             AggregatedListInstanceGroupsRequest,
             InstanceGroupAggregatedList,
             AggregatedListPagedResponse>
         aggregatedListSettings;
     private final UnaryCallSettings.Builder<DeleteInstanceGroupRequest, Operation> deleteSettings;
+    private final OperationCallSettings.Builder<DeleteInstanceGroupRequest, Operation, Operation>
+        deleteOperationSettings;
     private final UnaryCallSettings.Builder<GetInstanceGroupRequest, InstanceGroup> getSettings;
     private final UnaryCallSettings.Builder<InsertInstanceGroupRequest, Operation> insertSettings;
+    private final OperationCallSettings.Builder<InsertInstanceGroupRequest, Operation, Operation>
+        insertOperationSettings;
     private final PagedCallSettings.Builder<
             ListInstanceGroupsRequest, InstanceGroupList, ListPagedResponse>
         listSettings;
@@ -499,8 +557,14 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
         listInstancesSettings;
     private final UnaryCallSettings.Builder<RemoveInstancesInstanceGroupRequest, Operation>
         removeInstancesSettings;
+    private final OperationCallSettings.Builder<
+            RemoveInstancesInstanceGroupRequest, Operation, Operation>
+        removeInstancesOperationSettings;
     private final UnaryCallSettings.Builder<SetNamedPortsInstanceGroupRequest, Operation>
         setNamedPortsSettings;
+    private final OperationCallSettings.Builder<
+            SetNamedPortsInstanceGroupRequest, Operation, Operation>
+        setNamedPortsOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -552,14 +616,19 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
       super(clientContext);
 
       addInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addInstancesOperationSettings = OperationCallSettings.newBuilder();
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       listInstancesSettings = PagedCallSettings.newBuilder(LIST_INSTANCES_PAGE_STR_FACT);
       removeInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      removeInstancesOperationSettings = OperationCallSettings.newBuilder();
       setNamedPortsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setNamedPortsOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -579,14 +648,19 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
       super(settings);
 
       addInstancesSettings = settings.addInstancesSettings.toBuilder();
+      addInstancesOperationSettings = settings.addInstancesOperationSettings.toBuilder();
       aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
+      deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
+      insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       listInstancesSettings = settings.listInstancesSettings.toBuilder();
       removeInstancesSettings = settings.removeInstancesSettings.toBuilder();
+      removeInstancesOperationSettings = settings.removeInstancesOperationSettings.toBuilder();
       setNamedPortsSettings = settings.setNamedPortsSettings.toBuilder();
+      setNamedPortsOperationSettings = settings.setNamedPortsOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -660,6 +734,129 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .addInstancesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AddInstancesInstanceGroupRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .deleteOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteInstanceGroupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .insertOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<InsertInstanceGroupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .removeInstancesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RemoveInstancesInstanceGroupRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setNamedPortsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetNamedPortsInstanceGroupRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -684,6 +881,14 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
       return addInstancesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to addInstances. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<AddInstancesInstanceGroupRequest, Operation, Operation>
+        addInstancesOperationSettings() {
+      return addInstancesOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to aggregatedList. */
     public PagedCallSettings.Builder<
             AggregatedListInstanceGroupsRequest,
@@ -698,6 +903,14 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
       return deleteSettings;
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteInstanceGroupRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return deleteOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetInstanceGroupRequest, InstanceGroup> getSettings() {
       return getSettings;
@@ -706,6 +919,14 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertInstanceGroupRequest, Operation> insertSettings() {
       return insertSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<InsertInstanceGroupRequest, Operation, Operation>
+        insertOperationSettings() {
+      return insertOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to list. */
@@ -730,10 +951,26 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
       return removeInstancesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to removeInstances. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<RemoveInstancesInstanceGroupRequest, Operation, Operation>
+        removeInstancesOperationSettings() {
+      return removeInstancesOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setNamedPorts. */
     public UnaryCallSettings.Builder<SetNamedPortsInstanceGroupRequest, Operation>
         setNamedPortsSettings() {
       return setNamedPortsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setNamedPorts. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetNamedPortsInstanceGroupRequest, Operation, Operation>
+        setNamedPortsOperationSettings() {
+      return setNamedPortsOperationSettings;
     }
 
     @Override

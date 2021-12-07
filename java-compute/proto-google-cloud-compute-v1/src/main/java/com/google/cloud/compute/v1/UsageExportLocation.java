@@ -130,7 +130,7 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
    * The name of an existing bucket in Cloud Storage where the usage report object is stored. The Google Service Account is granted write access to this bucket. This can either be the bucket name by itself, such as example-bucket, or the bucket name with gs:// or https://storage.googleapis.com/ in front of it, such as gs://example-bucket.
    * </pre>
    *
-   * <code>string bucket_name = 283610048;</code>
+   * <code>optional string bucket_name = 283610048;</code>
    *
    * @return Whether the bucketName field is set.
    */
@@ -145,7 +145,7 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
    * The name of an existing bucket in Cloud Storage where the usage report object is stored. The Google Service Account is granted write access to this bucket. This can either be the bucket name by itself, such as example-bucket, or the bucket name with gs:// or https://storage.googleapis.com/ in front of it, such as gs://example-bucket.
    * </pre>
    *
-   * <code>string bucket_name = 283610048;</code>
+   * <code>optional string bucket_name = 283610048;</code>
    *
    * @return The bucketName.
    */
@@ -168,7 +168,7 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
    * The name of an existing bucket in Cloud Storage where the usage report object is stored. The Google Service Account is granted write access to this bucket. This can either be the bucket name by itself, such as example-bucket, or the bucket name with gs:// or https://storage.googleapis.com/ in front of it, such as gs://example-bucket.
    * </pre>
    *
-   * <code>string bucket_name = 283610048;</code>
+   * <code>optional string bucket_name = 283610048;</code>
    *
    * @return The bytes for bucketName.
    */
@@ -191,10 +191,10 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
+   * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage_gce. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
    * </pre>
    *
-   * <code>string report_name_prefix = 320198715;</code>
+   * <code>optional string report_name_prefix = 320198715;</code>
    *
    * @return Whether the reportNamePrefix field is set.
    */
@@ -206,10 +206,10 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
+   * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage_gce. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
    * </pre>
    *
-   * <code>string report_name_prefix = 320198715;</code>
+   * <code>optional string report_name_prefix = 320198715;</code>
    *
    * @return The reportNamePrefix.
    */
@@ -229,10 +229,10 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
+   * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage_gce. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
    * </pre>
    *
-   * <code>string report_name_prefix = 320198715;</code>
+   * <code>optional string report_name_prefix = 320198715;</code>
    *
    * @return The bytes for reportNamePrefix.
    */
@@ -614,7 +614,7 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
      * The name of an existing bucket in Cloud Storage where the usage report object is stored. The Google Service Account is granted write access to this bucket. This can either be the bucket name by itself, such as example-bucket, or the bucket name with gs:// or https://storage.googleapis.com/ in front of it, such as gs://example-bucket.
      * </pre>
      *
-     * <code>string bucket_name = 283610048;</code>
+     * <code>optional string bucket_name = 283610048;</code>
      *
      * @return Whether the bucketName field is set.
      */
@@ -628,7 +628,7 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
      * The name of an existing bucket in Cloud Storage where the usage report object is stored. The Google Service Account is granted write access to this bucket. This can either be the bucket name by itself, such as example-bucket, or the bucket name with gs:// or https://storage.googleapis.com/ in front of it, such as gs://example-bucket.
      * </pre>
      *
-     * <code>string bucket_name = 283610048;</code>
+     * <code>optional string bucket_name = 283610048;</code>
      *
      * @return The bucketName.
      */
@@ -650,7 +650,7 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
      * The name of an existing bucket in Cloud Storage where the usage report object is stored. The Google Service Account is granted write access to this bucket. This can either be the bucket name by itself, such as example-bucket, or the bucket name with gs:// or https://storage.googleapis.com/ in front of it, such as gs://example-bucket.
      * </pre>
      *
-     * <code>string bucket_name = 283610048;</code>
+     * <code>optional string bucket_name = 283610048;</code>
      *
      * @return The bytes for bucketName.
      */
@@ -672,7 +672,7 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
      * The name of an existing bucket in Cloud Storage where the usage report object is stored. The Google Service Account is granted write access to this bucket. This can either be the bucket name by itself, such as example-bucket, or the bucket name with gs:// or https://storage.googleapis.com/ in front of it, such as gs://example-bucket.
      * </pre>
      *
-     * <code>string bucket_name = 283610048;</code>
+     * <code>optional string bucket_name = 283610048;</code>
      *
      * @param value The bucketName to set.
      * @return This builder for chaining.
@@ -693,7 +693,7 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
      * The name of an existing bucket in Cloud Storage where the usage report object is stored. The Google Service Account is granted write access to this bucket. This can either be the bucket name by itself, such as example-bucket, or the bucket name with gs:// or https://storage.googleapis.com/ in front of it, such as gs://example-bucket.
      * </pre>
      *
-     * <code>string bucket_name = 283610048;</code>
+     * <code>optional string bucket_name = 283610048;</code>
      *
      * @return This builder for chaining.
      */
@@ -710,7 +710,7 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
      * The name of an existing bucket in Cloud Storage where the usage report object is stored. The Google Service Account is granted write access to this bucket. This can either be the bucket name by itself, such as example-bucket, or the bucket name with gs:// or https://storage.googleapis.com/ in front of it, such as gs://example-bucket.
      * </pre>
      *
-     * <code>string bucket_name = 283610048;</code>
+     * <code>optional string bucket_name = 283610048;</code>
      *
      * @param value The bytes for bucketName to set.
      * @return This builder for chaining.
@@ -731,10 +731,10 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
+     * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage_gce. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
      * </pre>
      *
-     * <code>string report_name_prefix = 320198715;</code>
+     * <code>optional string report_name_prefix = 320198715;</code>
      *
      * @return Whether the reportNamePrefix field is set.
      */
@@ -745,10 +745,10 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
+     * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage_gce. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
      * </pre>
      *
-     * <code>string report_name_prefix = 320198715;</code>
+     * <code>optional string report_name_prefix = 320198715;</code>
      *
      * @return The reportNamePrefix.
      */
@@ -767,10 +767,10 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
+     * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage_gce. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
      * </pre>
      *
-     * <code>string report_name_prefix = 320198715;</code>
+     * <code>optional string report_name_prefix = 320198715;</code>
      *
      * @return The bytes for reportNamePrefix.
      */
@@ -789,10 +789,10 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
+     * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage_gce. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
      * </pre>
      *
-     * <code>string report_name_prefix = 320198715;</code>
+     * <code>optional string report_name_prefix = 320198715;</code>
      *
      * @param value The reportNamePrefix to set.
      * @return This builder for chaining.
@@ -810,10 +810,10 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
+     * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage_gce. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
      * </pre>
      *
-     * <code>string report_name_prefix = 320198715;</code>
+     * <code>optional string report_name_prefix = 320198715;</code>
      *
      * @return This builder for chaining.
      */
@@ -827,10 +827,10 @@ public final class UsageExportLocation extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
+     * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage_gce. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
      * </pre>
      *
-     * <code>string report_name_prefix = 320198715;</code>
+     * <code>optional string report_name_prefix = 320198715;</code>
      *
      * @param value The bytes for reportNamePrefix to set.
      * @return This builder for chaining.

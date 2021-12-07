@@ -88,7 +88,7 @@ public interface PatchRegionUrlMapRequestOrBuilder
    * begin_interface: MixerMutationRequestBuilder Request ID to support idempotency.
    * </pre>
    *
-   * <code>string request_id = 37109963;</code>
+   * <code>optional string request_id = 37109963;</code>
    *
    * @return Whether the requestId field is set.
    */
@@ -100,7 +100,7 @@ public interface PatchRegionUrlMapRequestOrBuilder
    * begin_interface: MixerMutationRequestBuilder Request ID to support idempotency.
    * </pre>
    *
-   * <code>string request_id = 37109963;</code>
+   * <code>optional string request_id = 37109963;</code>
    *
    * @return The requestId.
    */
@@ -112,7 +112,7 @@ public interface PatchRegionUrlMapRequestOrBuilder
    * begin_interface: MixerMutationRequestBuilder Request ID to support idempotency.
    * </pre>
    *
-   * <code>string request_id = 37109963;</code>
+   * <code>optional string request_id = 37109963;</code>
    *
    * @return The bytes for requestId.
    */

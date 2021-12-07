@@ -39,7 +39,7 @@ public final class RegionInstanceGroupsListInstancesRequest
   }
 
   private RegionInstanceGroupsListInstancesRequest() {
-    instanceState_ = 0;
+    instanceState_ = "";
     portName_ = "";
   }
 
@@ -80,11 +80,11 @@ public final class RegionInstanceGroupsListInstancesRequest
               portName_ = s;
               break;
             }
-          case 737788728:
+          case 737788730:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              instanceState_ = rawValue;
+              instanceState_ = s;
               break;
             }
           default:
@@ -142,9 +142,25 @@ public final class RegionInstanceGroupsListInstancesRequest
      * <code>UNDEFINED_INSTANCE_STATE = 0;</code>
      */
     UNDEFINED_INSTANCE_STATE(0),
-    /** <code>ALL = 64897;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Matches any status of the instances, running, non-running and others.
+     * </pre>
+     *
+     * <code>ALL = 64897;</code>
+     */
     ALL(64897),
-    /** <code>RUNNING = 121282975;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Instance is in RUNNING state if it is running.
+     * </pre>
+     *
+     * <code>RUNNING = 121282975;</code>
+     */
     RUNNING(121282975),
     UNRECOGNIZED(-1),
     ;
@@ -159,9 +175,25 @@ public final class RegionInstanceGroupsListInstancesRequest
      * <code>UNDEFINED_INSTANCE_STATE = 0;</code>
      */
     public static final int UNDEFINED_INSTANCE_STATE_VALUE = 0;
-    /** <code>ALL = 64897;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Matches any status of the instances, running, non-running and others.
+     * </pre>
+     *
+     * <code>ALL = 64897;</code>
+     */
     public static final int ALL_VALUE = 64897;
-    /** <code>RUNNING = 121282975;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Instance is in RUNNING state if it is running.
+     * </pre>
+     *
+     * <code>RUNNING = 121282975;</code>
+     */
     public static final int RUNNING_VALUE = 121282975;
 
     public final int getNumber() {
@@ -251,17 +283,16 @@ public final class RegionInstanceGroupsListInstancesRequest
 
   private int bitField0_;
   public static final int INSTANCE_STATE_FIELD_NUMBER = 92223591;
-  private int instanceState_;
+  private volatile java.lang.Object instanceState_;
   /**
    *
    *
    * <pre>
    * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+   * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
-   * </code>
+   * <code>optional string instance_state = 92223591;</code>
    *
    * @return Whether the instanceState field is set.
    */
@@ -274,42 +305,48 @@ public final class RegionInstanceGroupsListInstancesRequest
    *
    * <pre>
    * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+   * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
-   * </code>
+   * <code>optional string instance_state = 92223591;</code>
    *
-   * @return The enum numeric value on the wire for instanceState.
+   * @return The instanceState.
    */
   @java.lang.Override
-  public int getInstanceStateValue() {
-    return instanceState_;
+  public java.lang.String getInstanceState() {
+    java.lang.Object ref = instanceState_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      instanceState_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
    * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+   * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
-   * </code>
+   * <code>optional string instance_state = 92223591;</code>
    *
-   * @return The instanceState.
+   * @return The bytes for instanceState.
    */
   @java.lang.Override
-  public com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState
-      getInstanceState() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState result =
-        com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState.valueOf(
-            instanceState_);
-    return result == null
-        ? com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState
-            .UNRECOGNIZED
-        : result;
+  public com.google.protobuf.ByteString getInstanceStateBytes() {
+    java.lang.Object ref = instanceState_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      instanceState_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PORT_NAME_FIELD_NUMBER = 41534345;
@@ -321,7 +358,7 @@ public final class RegionInstanceGroupsListInstancesRequest
    * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return Whether the portName field is set.
    */
@@ -336,7 +373,7 @@ public final class RegionInstanceGroupsListInstancesRequest
    * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return The portName.
    */
@@ -359,7 +396,7 @@ public final class RegionInstanceGroupsListInstancesRequest
    * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
    * </pre>
    *
-   * <code>string port_name = 41534345;</code>
+   * <code>optional string port_name = 41534345;</code>
    *
    * @return The bytes for portName.
    */
@@ -394,7 +431,7 @@ public final class RegionInstanceGroupsListInstancesRequest
       com.google.protobuf.GeneratedMessageV3.writeString(output, 41534345, portName_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(92223591, instanceState_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 92223591, instanceState_);
     }
     unknownFields.writeTo(output);
   }
@@ -409,7 +446,7 @@ public final class RegionInstanceGroupsListInstancesRequest
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(41534345, portName_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(92223591, instanceState_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(92223591, instanceState_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -429,7 +466,7 @@ public final class RegionInstanceGroupsListInstancesRequest
 
     if (hasInstanceState() != other.hasInstanceState()) return false;
     if (hasInstanceState()) {
-      if (instanceState_ != other.instanceState_) return false;
+      if (!getInstanceState().equals(other.getInstanceState())) return false;
     }
     if (hasPortName() != other.hasPortName()) return false;
     if (hasPortName()) {
@@ -448,7 +485,7 @@ public final class RegionInstanceGroupsListInstancesRequest
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasInstanceState()) {
       hash = (37 * hash) + INSTANCE_STATE_FIELD_NUMBER;
-      hash = (53 * hash) + instanceState_;
+      hash = (53 * hash) + getInstanceState().hashCode();
     }
     if (hasPortName()) {
       hash = (37 * hash) + PORT_NAME_FIELD_NUMBER;
@@ -601,7 +638,7 @@ public final class RegionInstanceGroupsListInstancesRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      instanceState_ = 0;
+      instanceState_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       portName_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -699,7 +736,9 @@ public final class RegionInstanceGroupsListInstancesRequest
           == com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest
               .getDefaultInstance()) return this;
       if (other.hasInstanceState()) {
-        setInstanceState(other.getInstanceState());
+        bitField0_ |= 0x00000001;
+        instanceState_ = other.instanceState_;
+        onChanged();
       }
       if (other.hasPortName()) {
         bitField0_ |= 0x00000002;
@@ -739,21 +778,19 @@ public final class RegionInstanceGroupsListInstancesRequest
 
     private int bitField0_;
 
-    private int instanceState_ = 0;
+    private java.lang.Object instanceState_ = "";
     /**
      *
      *
      * <pre>
      * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+     * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
-     * </code>
+     * <code>optional string instance_state = 92223591;</code>
      *
      * @return Whether the instanceState field is set.
      */
-    @java.lang.Override
     public boolean hasInstanceState() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -762,33 +799,64 @@ public final class RegionInstanceGroupsListInstancesRequest
      *
      * <pre>
      * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+     * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
-     * </code>
+     * <code>optional string instance_state = 92223591;</code>
      *
-     * @return The enum numeric value on the wire for instanceState.
+     * @return The instanceState.
      */
-    @java.lang.Override
-    public int getInstanceStateValue() {
-      return instanceState_;
+    public java.lang.String getInstanceState() {
+      java.lang.Object ref = instanceState_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instanceState_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
      * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+     * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
-     * </code>
+     * <code>optional string instance_state = 92223591;</code>
      *
-     * @param value The enum numeric value on the wire for instanceState to set.
+     * @return The bytes for instanceState.
+     */
+    public com.google.protobuf.ByteString getInstanceStateBytes() {
+      java.lang.Object ref = instanceState_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        instanceState_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+     * Check the InstanceState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string instance_state = 92223591;</code>
+     *
+     * @param value The instanceState to set.
      * @return This builder for chaining.
      */
-    public Builder setInstanceStateValue(int value) {
+    public Builder setInstanceState(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       bitField0_ |= 0x00000001;
       instanceState_ = value;
       onChanged();
@@ -799,47 +867,16 @@ public final class RegionInstanceGroupsListInstancesRequest
      *
      * <pre>
      * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+     * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
-     * </code>
+     * <code>optional string instance_state = 92223591;</code>
      *
-     * @return The instanceState.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState
-        getInstanceState() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState result =
-          com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState
-              .valueOf(instanceState_);
-      return result == null
-          ? com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState
-              .UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
-     * </code>
-     *
-     * @param value The instanceState to set.
      * @return This builder for chaining.
      */
-    public Builder setInstanceState(
-        com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      instanceState_ = value.getNumber();
+    public Builder clearInstanceState() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      instanceState_ = getDefaultInstance().getInstanceState();
       onChanged();
       return this;
     }
@@ -848,17 +885,21 @@ public final class RegionInstanceGroupsListInstancesRequest
      *
      * <pre>
      * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+     * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
-     * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
-     * </code>
+     * <code>optional string instance_state = 92223591;</code>
      *
+     * @param value The bytes for instanceState to set.
      * @return This builder for chaining.
      */
-    public Builder clearInstanceState() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      instanceState_ = 0;
+    public Builder setInstanceStateBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      instanceState_ = value;
       onChanged();
       return this;
     }
@@ -871,7 +912,7 @@ public final class RegionInstanceGroupsListInstancesRequest
      * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @return Whether the portName field is set.
      */
@@ -885,7 +926,7 @@ public final class RegionInstanceGroupsListInstancesRequest
      * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @return The portName.
      */
@@ -907,7 +948,7 @@ public final class RegionInstanceGroupsListInstancesRequest
      * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @return The bytes for portName.
      */
@@ -929,7 +970,7 @@ public final class RegionInstanceGroupsListInstancesRequest
      * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @param value The portName to set.
      * @return This builder for chaining.
@@ -950,7 +991,7 @@ public final class RegionInstanceGroupsListInstancesRequest
      * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @return This builder for chaining.
      */
@@ -967,7 +1008,7 @@ public final class RegionInstanceGroupsListInstancesRequest
      * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
      * </pre>
      *
-     * <code>string port_name = 41534345;</code>
+     * <code>optional string port_name = 41534345;</code>
      *
      * @param value The bytes for portName to set.
      * @return This builder for chaining.

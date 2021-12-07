@@ -137,7 +137,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The error type identifier for this error.
    * </pre>
    *
-   * <code>string code = 3059181;</code>
+   * <code>optional string code = 3059181;</code>
    *
    * @return Whether the code field is set.
    */
@@ -152,7 +152,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The error type identifier for this error.
    * </pre>
    *
-   * <code>string code = 3059181;</code>
+   * <code>optional string code = 3059181;</code>
    *
    * @return The code.
    */
@@ -175,7 +175,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The error type identifier for this error.
    * </pre>
    *
-   * <code>string code = 3059181;</code>
+   * <code>optional string code = 3059181;</code>
    *
    * @return The bytes for code.
    */
@@ -201,7 +201,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Indicates the field in the request that caused the error. This property is optional.
    * </pre>
    *
-   * <code>string location = 290430901;</code>
+   * <code>optional string location = 290430901;</code>
    *
    * @return Whether the location field is set.
    */
@@ -216,7 +216,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Indicates the field in the request that caused the error. This property is optional.
    * </pre>
    *
-   * <code>string location = 290430901;</code>
+   * <code>optional string location = 290430901;</code>
    *
    * @return The location.
    */
@@ -239,7 +239,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Indicates the field in the request that caused the error. This property is optional.
    * </pre>
    *
-   * <code>string location = 290430901;</code>
+   * <code>optional string location = 290430901;</code>
    *
    * @return The bytes for location.
    */
@@ -265,7 +265,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional, human-readable error message.
    * </pre>
    *
-   * <code>string message = 418054151;</code>
+   * <code>optional string message = 418054151;</code>
    *
    * @return Whether the message field is set.
    */
@@ -280,7 +280,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional, human-readable error message.
    * </pre>
    *
-   * <code>string message = 418054151;</code>
+   * <code>optional string message = 418054151;</code>
    *
    * @return The message.
    */
@@ -303,7 +303,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional, human-readable error message.
    * </pre>
    *
-   * <code>string message = 418054151;</code>
+   * <code>optional string message = 418054151;</code>
    *
    * @return The bytes for message.
    */
@@ -704,7 +704,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The error type identifier for this error.
      * </pre>
      *
-     * <code>string code = 3059181;</code>
+     * <code>optional string code = 3059181;</code>
      *
      * @return Whether the code field is set.
      */
@@ -718,7 +718,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The error type identifier for this error.
      * </pre>
      *
-     * <code>string code = 3059181;</code>
+     * <code>optional string code = 3059181;</code>
      *
      * @return The code.
      */
@@ -740,7 +740,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The error type identifier for this error.
      * </pre>
      *
-     * <code>string code = 3059181;</code>
+     * <code>optional string code = 3059181;</code>
      *
      * @return The bytes for code.
      */
@@ -762,7 +762,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The error type identifier for this error.
      * </pre>
      *
-     * <code>string code = 3059181;</code>
+     * <code>optional string code = 3059181;</code>
      *
      * @param value The code to set.
      * @return This builder for chaining.
@@ -783,7 +783,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The error type identifier for this error.
      * </pre>
      *
-     * <code>string code = 3059181;</code>
+     * <code>optional string code = 3059181;</code>
      *
      * @return This builder for chaining.
      */
@@ -800,7 +800,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The error type identifier for this error.
      * </pre>
      *
-     * <code>string code = 3059181;</code>
+     * <code>optional string code = 3059181;</code>
      *
      * @param value The bytes for code to set.
      * @return This builder for chaining.
@@ -824,7 +824,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Indicates the field in the request that caused the error. This property is optional.
      * </pre>
      *
-     * <code>string location = 290430901;</code>
+     * <code>optional string location = 290430901;</code>
      *
      * @return Whether the location field is set.
      */
@@ -838,7 +838,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Indicates the field in the request that caused the error. This property is optional.
      * </pre>
      *
-     * <code>string location = 290430901;</code>
+     * <code>optional string location = 290430901;</code>
      *
      * @return The location.
      */
@@ -860,7 +860,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Indicates the field in the request that caused the error. This property is optional.
      * </pre>
      *
-     * <code>string location = 290430901;</code>
+     * <code>optional string location = 290430901;</code>
      *
      * @return The bytes for location.
      */
@@ -882,7 +882,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Indicates the field in the request that caused the error. This property is optional.
      * </pre>
      *
-     * <code>string location = 290430901;</code>
+     * <code>optional string location = 290430901;</code>
      *
      * @param value The location to set.
      * @return This builder for chaining.
@@ -903,7 +903,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Indicates the field in the request that caused the error. This property is optional.
      * </pre>
      *
-     * <code>string location = 290430901;</code>
+     * <code>optional string location = 290430901;</code>
      *
      * @return This builder for chaining.
      */
@@ -920,7 +920,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Indicates the field in the request that caused the error. This property is optional.
      * </pre>
      *
-     * <code>string location = 290430901;</code>
+     * <code>optional string location = 290430901;</code>
      *
      * @param value The bytes for location to set.
      * @return This builder for chaining.
@@ -944,7 +944,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable error message.
      * </pre>
      *
-     * <code>string message = 418054151;</code>
+     * <code>optional string message = 418054151;</code>
      *
      * @return Whether the message field is set.
      */
@@ -958,7 +958,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable error message.
      * </pre>
      *
-     * <code>string message = 418054151;</code>
+     * <code>optional string message = 418054151;</code>
      *
      * @return The message.
      */
@@ -980,7 +980,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable error message.
      * </pre>
      *
-     * <code>string message = 418054151;</code>
+     * <code>optional string message = 418054151;</code>
      *
      * @return The bytes for message.
      */
@@ -1002,7 +1002,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable error message.
      * </pre>
      *
-     * <code>string message = 418054151;</code>
+     * <code>optional string message = 418054151;</code>
      *
      * @param value The message to set.
      * @return This builder for chaining.
@@ -1023,7 +1023,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable error message.
      * </pre>
      *
-     * <code>string message = 418054151;</code>
+     * <code>optional string message = 418054151;</code>
      *
      * @return This builder for chaining.
      */
@@ -1040,7 +1040,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable error message.
      * </pre>
      *
-     * <code>string message = 418054151;</code>
+     * <code>optional string message = 418054151;</code>
      *
      * @param value The bytes for message to set.
      * @return This builder for chaining.

@@ -21,6 +21,7 @@ import static com.google.cloud.compute.v1.RoutersClient.GetNatMappingInfoPagedRe
 import static com.google.cloud.compute.v1.RoutersClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListRoutersRequest;
 import com.google.cloud.compute.v1.DeleteRouterRequest;
@@ -60,6 +61,10 @@ public abstract class RoutersStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<DeleteRouterRequest, Operation, Operation> deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteRouterRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
@@ -83,6 +88,10 @@ public abstract class RoutersStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getRouterStatusCallable()");
   }
 
+  public OperationCallable<InsertRouterRequest, Operation, Operation> insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
+  }
+
   public UnaryCallable<InsertRouterRequest, Operation> insertCallable() {
     throw new UnsupportedOperationException("Not implemented: insertCallable()");
   }
@@ -95,12 +104,20 @@ public abstract class RoutersStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
   }
 
+  public OperationCallable<PatchRouterRequest, Operation, Operation> patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
+  }
+
   public UnaryCallable<PatchRouterRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
   }
 
   public UnaryCallable<PreviewRouterRequest, RoutersPreviewResponse> previewCallable() {
     throw new UnsupportedOperationException("Not implemented: previewCallable()");
+  }
+
+  public OperationCallable<UpdateRouterRequest, Operation, Operation> updateOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOperationCallable()");
   }
 
   public UnaryCallable<UpdateRouterRequest, Operation> updateCallable() {

@@ -30,7 +30,7 @@ public interface ProjectsDisableXpnResourceRequestOrBuilder
    * Service resource (a.k.a service project) ID.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
+   * <code>optional .google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
    *
    * @return Whether the xpnResource field is set.
    */
@@ -42,7 +42,7 @@ public interface ProjectsDisableXpnResourceRequestOrBuilder
    * Service resource (a.k.a service project) ID.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
+   * <code>optional .google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
    *
    * @return The xpnResource.
    */
@@ -54,7 +54,7 @@ public interface ProjectsDisableXpnResourceRequestOrBuilder
    * Service resource (a.k.a service project) ID.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
+   * <code>optional .google.cloud.compute.v1.XpnResourceId xpn_resource = 133384631;</code>
    */
   com.google.cloud.compute.v1.XpnResourceIdOrBuilder getXpnResourceOrBuilder();
 }

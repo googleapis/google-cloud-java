@@ -31,6 +31,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonInstanceGroupManagersStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -39,6 +40,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -92,7 +94,7 @@ public class InstanceGroupManagersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -103,6 +105,7 @@ public class InstanceGroupManagersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -120,11 +123,13 @@ public class InstanceGroupManagersClientTest {
             InstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.abandonInstances(
-            project,
-            zone,
-            instanceGroupManager,
-            instanceGroupManagersAbandonInstancesRequestResource);
+        client
+            .abandonInstancesAsync(
+                project,
+                zone,
+                instanceGroupManager,
+                instanceGroupManagersAbandonInstancesRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -156,14 +161,15 @@ public class InstanceGroupManagersClientTest {
       InstanceGroupManagersAbandonInstancesRequest
           instanceGroupManagersAbandonInstancesRequestResource =
               InstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
-      client.abandonInstances(
-          project,
-          zone,
-          instanceGroupManager,
-          instanceGroupManagersAbandonInstancesRequestResource);
+      client
+          .abandonInstancesAsync(
+              project,
+              zone,
+              instanceGroupManager,
+              instanceGroupManagersAbandonInstancesRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -230,7 +236,7 @@ public class InstanceGroupManagersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -241,6 +247,7 @@ public class InstanceGroupManagersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -257,8 +264,13 @@ public class InstanceGroupManagersClientTest {
         InstanceGroupManagersApplyUpdatesRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.applyUpdatesToInstances(
-            project, zone, instanceGroupManager, instanceGroupManagersApplyUpdatesRequestResource);
+        client
+            .applyUpdatesToInstancesAsync(
+                project,
+                zone,
+                instanceGroupManager,
+                instanceGroupManagersApplyUpdatesRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -289,11 +301,12 @@ public class InstanceGroupManagersClientTest {
       String instanceGroupManager = "instanceGroupManager-388242077";
       InstanceGroupManagersApplyUpdatesRequest instanceGroupManagersApplyUpdatesRequestResource =
           InstanceGroupManagersApplyUpdatesRequest.newBuilder().build();
-      client.applyUpdatesToInstances(
-          project, zone, instanceGroupManager, instanceGroupManagersApplyUpdatesRequestResource);
+      client
+          .applyUpdatesToInstancesAsync(
+              project, zone, instanceGroupManager, instanceGroupManagersApplyUpdatesRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -307,7 +320,7 @@ public class InstanceGroupManagersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -318,6 +331,7 @@ public class InstanceGroupManagersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -335,11 +349,13 @@ public class InstanceGroupManagersClientTest {
             InstanceGroupManagersCreateInstancesRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.createInstances(
-            project,
-            zone,
-            instanceGroupManager,
-            instanceGroupManagersCreateInstancesRequestResource);
+        client
+            .createInstancesAsync(
+                project,
+                zone,
+                instanceGroupManager,
+                instanceGroupManagersCreateInstancesRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -371,11 +387,15 @@ public class InstanceGroupManagersClientTest {
       InstanceGroupManagersCreateInstancesRequest
           instanceGroupManagersCreateInstancesRequestResource =
               InstanceGroupManagersCreateInstancesRequest.newBuilder().build();
-      client.createInstances(
-          project, zone, instanceGroupManager, instanceGroupManagersCreateInstancesRequestResource);
+      client
+          .createInstancesAsync(
+              project,
+              zone,
+              instanceGroupManager,
+              instanceGroupManagersCreateInstancesRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -389,7 +409,7 @@ public class InstanceGroupManagersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -400,6 +420,7 @@ public class InstanceGroupManagersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -413,7 +434,7 @@ public class InstanceGroupManagersClientTest {
     String zone = "zone3744684";
     String instanceGroupManager = "instanceGroupManager-388242077";
 
-    Operation actualResponse = client.delete(project, zone, instanceGroupManager);
+    Operation actualResponse = client.deleteAsync(project, zone, instanceGroupManager).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -442,10 +463,9 @@ public class InstanceGroupManagersClientTest {
       String project = "project-309310695";
       String zone = "zone3744684";
       String instanceGroupManager = "instanceGroupManager-388242077";
-      client.delete(project, zone, instanceGroupManager);
+      client.deleteAsync(project, zone, instanceGroupManager).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -459,7 +479,7 @@ public class InstanceGroupManagersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -470,6 +490,7 @@ public class InstanceGroupManagersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -487,11 +508,13 @@ public class InstanceGroupManagersClientTest {
             InstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.deleteInstances(
-            project,
-            zone,
-            instanceGroupManager,
-            instanceGroupManagersDeleteInstancesRequestResource);
+        client
+            .deleteInstancesAsync(
+                project,
+                zone,
+                instanceGroupManager,
+                instanceGroupManagersDeleteInstancesRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -523,11 +546,15 @@ public class InstanceGroupManagersClientTest {
       InstanceGroupManagersDeleteInstancesRequest
           instanceGroupManagersDeleteInstancesRequestResource =
               InstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
-      client.deleteInstances(
-          project, zone, instanceGroupManager, instanceGroupManagersDeleteInstancesRequestResource);
+      client
+          .deleteInstancesAsync(
+              project,
+              zone,
+              instanceGroupManager,
+              instanceGroupManagersDeleteInstancesRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -541,7 +568,7 @@ public class InstanceGroupManagersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -552,6 +579,7 @@ public class InstanceGroupManagersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -569,11 +597,13 @@ public class InstanceGroupManagersClientTest {
             InstanceGroupManagersDeletePerInstanceConfigsReq.newBuilder().build();
 
     Operation actualResponse =
-        client.deletePerInstanceConfigs(
-            project,
-            zone,
-            instanceGroupManager,
-            instanceGroupManagersDeletePerInstanceConfigsReqResource);
+        client
+            .deletePerInstanceConfigsAsync(
+                project,
+                zone,
+                instanceGroupManager,
+                instanceGroupManagersDeletePerInstanceConfigsReqResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -605,14 +635,15 @@ public class InstanceGroupManagersClientTest {
       InstanceGroupManagersDeletePerInstanceConfigsReq
           instanceGroupManagersDeletePerInstanceConfigsReqResource =
               InstanceGroupManagersDeletePerInstanceConfigsReq.newBuilder().build();
-      client.deletePerInstanceConfigs(
-          project,
-          zone,
-          instanceGroupManager,
-          instanceGroupManagersDeletePerInstanceConfigsReqResource);
+      client
+          .deletePerInstanceConfigsAsync(
+              project,
+              zone,
+              instanceGroupManager,
+              instanceGroupManagersDeletePerInstanceConfigsReqResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -695,7 +726,7 @@ public class InstanceGroupManagersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -706,6 +737,7 @@ public class InstanceGroupManagersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -719,7 +751,8 @@ public class InstanceGroupManagersClientTest {
     String zone = "zone3744684";
     InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, zone, instanceGroupManagerResource);
+    Operation actualResponse =
+        client.insertAsync(project, zone, instanceGroupManagerResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -748,10 +781,9 @@ public class InstanceGroupManagersClientTest {
       String project = "project-309310695";
       String zone = "zone3744684";
       InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
-      client.insert(project, zone, instanceGroupManagerResource);
+      client.insertAsync(project, zone, instanceGroupManagerResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -982,7 +1014,7 @@ public class InstanceGroupManagersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -993,6 +1025,7 @@ public class InstanceGroupManagersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -1008,7 +1041,7 @@ public class InstanceGroupManagersClientTest {
     InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
 
     Operation actualResponse =
-        client.patch(project, zone, instanceGroupManager, instanceGroupManagerResource);
+        client.patchAsync(project, zone, instanceGroupManager, instanceGroupManagerResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1038,10 +1071,9 @@ public class InstanceGroupManagersClientTest {
       String zone = "zone3744684";
       String instanceGroupManager = "instanceGroupManager-388242077";
       InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
-      client.patch(project, zone, instanceGroupManager, instanceGroupManagerResource);
+      client.patchAsync(project, zone, instanceGroupManager, instanceGroupManagerResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -1055,7 +1087,7 @@ public class InstanceGroupManagersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -1066,6 +1098,7 @@ public class InstanceGroupManagersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -1083,11 +1116,13 @@ public class InstanceGroupManagersClientTest {
             InstanceGroupManagersPatchPerInstanceConfigsReq.newBuilder().build();
 
     Operation actualResponse =
-        client.patchPerInstanceConfigs(
-            project,
-            zone,
-            instanceGroupManager,
-            instanceGroupManagersPatchPerInstanceConfigsReqResource);
+        client
+            .patchPerInstanceConfigsAsync(
+                project,
+                zone,
+                instanceGroupManager,
+                instanceGroupManagersPatchPerInstanceConfigsReqResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1119,14 +1154,15 @@ public class InstanceGroupManagersClientTest {
       InstanceGroupManagersPatchPerInstanceConfigsReq
           instanceGroupManagersPatchPerInstanceConfigsReqResource =
               InstanceGroupManagersPatchPerInstanceConfigsReq.newBuilder().build();
-      client.patchPerInstanceConfigs(
-          project,
-          zone,
-          instanceGroupManager,
-          instanceGroupManagersPatchPerInstanceConfigsReqResource);
+      client
+          .patchPerInstanceConfigsAsync(
+              project,
+              zone,
+              instanceGroupManager,
+              instanceGroupManagersPatchPerInstanceConfigsReqResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -1140,7 +1176,7 @@ public class InstanceGroupManagersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -1151,6 +1187,7 @@ public class InstanceGroupManagersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -1168,11 +1205,13 @@ public class InstanceGroupManagersClientTest {
             InstanceGroupManagersRecreateInstancesRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.recreateInstances(
-            project,
-            zone,
-            instanceGroupManager,
-            instanceGroupManagersRecreateInstancesRequestResource);
+        client
+            .recreateInstancesAsync(
+                project,
+                zone,
+                instanceGroupManager,
+                instanceGroupManagersRecreateInstancesRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1204,14 +1243,15 @@ public class InstanceGroupManagersClientTest {
       InstanceGroupManagersRecreateInstancesRequest
           instanceGroupManagersRecreateInstancesRequestResource =
               InstanceGroupManagersRecreateInstancesRequest.newBuilder().build();
-      client.recreateInstances(
-          project,
-          zone,
-          instanceGroupManager,
-          instanceGroupManagersRecreateInstancesRequestResource);
+      client
+          .recreateInstancesAsync(
+              project,
+              zone,
+              instanceGroupManager,
+              instanceGroupManagersRecreateInstancesRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -1225,7 +1265,7 @@ public class InstanceGroupManagersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -1236,6 +1276,7 @@ public class InstanceGroupManagersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -1250,7 +1291,7 @@ public class InstanceGroupManagersClientTest {
     String instanceGroupManager = "instanceGroupManager-388242077";
     int size = 3530753;
 
-    Operation actualResponse = client.resize(project, zone, instanceGroupManager, size);
+    Operation actualResponse = client.resizeAsync(project, zone, instanceGroupManager, size).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1280,10 +1321,9 @@ public class InstanceGroupManagersClientTest {
       String zone = "zone3744684";
       String instanceGroupManager = "instanceGroupManager-388242077";
       int size = 3530753;
-      client.resize(project, zone, instanceGroupManager, size);
+      client.resizeAsync(project, zone, instanceGroupManager, size).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -1297,7 +1337,7 @@ public class InstanceGroupManagersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -1308,6 +1348,7 @@ public class InstanceGroupManagersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -1325,11 +1366,13 @@ public class InstanceGroupManagersClientTest {
             InstanceGroupManagersSetInstanceTemplateRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.setInstanceTemplate(
-            project,
-            zone,
-            instanceGroupManager,
-            instanceGroupManagersSetInstanceTemplateRequestResource);
+        client
+            .setInstanceTemplateAsync(
+                project,
+                zone,
+                instanceGroupManager,
+                instanceGroupManagersSetInstanceTemplateRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1361,14 +1404,15 @@ public class InstanceGroupManagersClientTest {
       InstanceGroupManagersSetInstanceTemplateRequest
           instanceGroupManagersSetInstanceTemplateRequestResource =
               InstanceGroupManagersSetInstanceTemplateRequest.newBuilder().build();
-      client.setInstanceTemplate(
-          project,
-          zone,
-          instanceGroupManager,
-          instanceGroupManagersSetInstanceTemplateRequestResource);
+      client
+          .setInstanceTemplateAsync(
+              project,
+              zone,
+              instanceGroupManager,
+              instanceGroupManagersSetInstanceTemplateRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -1382,7 +1426,7 @@ public class InstanceGroupManagersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -1393,6 +1437,7 @@ public class InstanceGroupManagersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -1409,11 +1454,13 @@ public class InstanceGroupManagersClientTest {
         InstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.setTargetPools(
-            project,
-            zone,
-            instanceGroupManager,
-            instanceGroupManagersSetTargetPoolsRequestResource);
+        client
+            .setTargetPoolsAsync(
+                project,
+                zone,
+                instanceGroupManager,
+                instanceGroupManagersSetTargetPoolsRequestResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1445,11 +1492,15 @@ public class InstanceGroupManagersClientTest {
       InstanceGroupManagersSetTargetPoolsRequest
           instanceGroupManagersSetTargetPoolsRequestResource =
               InstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
-      client.setTargetPools(
-          project, zone, instanceGroupManager, instanceGroupManagersSetTargetPoolsRequestResource);
+      client
+          .setTargetPoolsAsync(
+              project,
+              zone,
+              instanceGroupManager,
+              instanceGroupManagersSetTargetPoolsRequestResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -1463,7 +1514,7 @@ public class InstanceGroupManagersClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -1474,6 +1525,7 @@ public class InstanceGroupManagersClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -1491,11 +1543,13 @@ public class InstanceGroupManagersClientTest {
             InstanceGroupManagersUpdatePerInstanceConfigsReq.newBuilder().build();
 
     Operation actualResponse =
-        client.updatePerInstanceConfigs(
-            project,
-            zone,
-            instanceGroupManager,
-            instanceGroupManagersUpdatePerInstanceConfigsReqResource);
+        client
+            .updatePerInstanceConfigsAsync(
+                project,
+                zone,
+                instanceGroupManager,
+                instanceGroupManagersUpdatePerInstanceConfigsReqResource)
+            .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -1527,14 +1581,15 @@ public class InstanceGroupManagersClientTest {
       InstanceGroupManagersUpdatePerInstanceConfigsReq
           instanceGroupManagersUpdatePerInstanceConfigsReqResource =
               InstanceGroupManagersUpdatePerInstanceConfigsReq.newBuilder().build();
-      client.updatePerInstanceConfigs(
-          project,
-          zone,
-          instanceGroupManager,
-          instanceGroupManagersUpdatePerInstanceConfigsReqResource);
+      client
+          .updatePerInstanceConfigsAsync(
+              project,
+              zone,
+              instanceGroupManager,
+              instanceGroupManagersUpdatePerInstanceConfigsReqResource)
+          .get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 }

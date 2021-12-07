@@ -30,7 +30,7 @@ public interface XpnResourceIdOrBuilder
    * The ID of the service resource. In the case of projects, this field supports project id (e.g., my-project-123) and project number (e.g. 12345678).
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>optional string id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -42,7 +42,7 @@ public interface XpnResourceIdOrBuilder
    * The ID of the service resource. In the case of projects, this field supports project id (e.g., my-project-123) and project number (e.g. 12345678).
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>optional string id = 3355;</code>
    *
    * @return The id.
    */
@@ -54,7 +54,7 @@ public interface XpnResourceIdOrBuilder
    * The ID of the service resource. In the case of projects, this field supports project id (e.g., my-project-123) and project number (e.g. 12345678).
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>optional string id = 3355;</code>
    *
    * @return The bytes for id.
    */
@@ -65,9 +65,10 @@ public interface XpnResourceIdOrBuilder
    *
    * <pre>
    * The type of the service resource.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.XpnResourceId.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
    * @return Whether the type field is set.
    */
@@ -77,23 +78,25 @@ public interface XpnResourceIdOrBuilder
    *
    * <pre>
    * The type of the service resource.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.XpnResourceId.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The enum numeric value on the wire for type.
+   * @return The type.
    */
-  int getTypeValue();
+  java.lang.String getType();
   /**
    *
    *
    * <pre>
    * The type of the service resource.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.XpnResourceId.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    *
-   * @return The type.
+   * @return The bytes for type.
    */
-  com.google.cloud.compute.v1.XpnResourceId.Type getType();
+  com.google.protobuf.ByteString getTypeBytes();
 }

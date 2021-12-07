@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.ForwardingRulesStub;
@@ -46,7 +48,7 @@ import javax.annotation.Generated;
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String forwardingRule = "forwardingRule-1429104743";
- *   Operation response = forwardingRulesClient.delete(project, region, forwardingRule);
+ *   ForwardingRule response = forwardingRulesClient.get(project, region, forwardingRule);
  * }
  * }</pre>
  *
@@ -292,7 +294,7 @@ public class ForwardingRulesClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   String forwardingRule = "forwardingRule-1429104743";
-   *   Operation response = forwardingRulesClient.delete(project, region, forwardingRule);
+   *   Operation response = forwardingRulesClient.deleteAsync(project, region, forwardingRule).get();
    * }
    * }</pre>
    *
@@ -301,14 +303,15 @@ public class ForwardingRulesClient implements BackgroundResource {
    * @param forwardingRule Name of the ForwardingRule resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String region, String forwardingRule) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String region, String forwardingRule) {
     DeleteForwardingRuleRequest request =
         DeleteForwardingRuleRequest.newBuilder()
             .setProject(project)
             .setRegion(region)
             .setForwardingRule(forwardingRule)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -326,15 +329,45 @@ public class ForwardingRulesClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = forwardingRulesClient.delete(request);
+   *   Operation response = forwardingRulesClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteForwardingRuleRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      DeleteForwardingRuleRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified ForwardingRule resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
+   *   DeleteForwardingRuleRequest request =
+   *       DeleteForwardingRuleRequest.newBuilder()
+   *           .setForwardingRule("forwardingRule-1429104743")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       forwardingRulesClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteForwardingRuleRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -453,7 +486,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
-   *   Operation response = forwardingRulesClient.insert(project, region, forwardingRuleResource);
+   *   Operation response =
+   *       forwardingRulesClient.insertAsync(project, region, forwardingRuleResource).get();
    * }
    * }</pre>
    *
@@ -462,7 +496,7 @@ public class ForwardingRulesClient implements BackgroundResource {
    * @param forwardingRuleResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(
+  public final OperationFuture<Operation, Operation> insertAsync(
       String project, String region, ForwardingRule forwardingRuleResource) {
     InsertForwardingRuleRequest request =
         InsertForwardingRuleRequest.newBuilder()
@@ -470,7 +504,7 @@ public class ForwardingRulesClient implements BackgroundResource {
             .setRegion(region)
             .setForwardingRuleResource(forwardingRuleResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -489,15 +523,46 @@ public class ForwardingRulesClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = forwardingRulesClient.insert(request);
+   *   Operation response = forwardingRulesClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertForwardingRuleRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(
+      InsertForwardingRuleRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ForwardingRule resource in the specified project and region using the data included
+   * in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
+   *   InsertForwardingRuleRequest request =
+   *       InsertForwardingRuleRequest.newBuilder()
+   *           .setForwardingRuleResource(ForwardingRule.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       forwardingRulesClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertForwardingRuleRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -666,7 +731,9 @@ public class ForwardingRulesClient implements BackgroundResource {
    *   String forwardingRule = "forwardingRule-1429104743";
    *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
    *   Operation response =
-   *       forwardingRulesClient.patch(project, region, forwardingRule, forwardingRuleResource);
+   *       forwardingRulesClient
+   *           .patchAsync(project, region, forwardingRule, forwardingRuleResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -676,7 +743,7 @@ public class ForwardingRulesClient implements BackgroundResource {
    * @param forwardingRuleResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(
+  public final OperationFuture<Operation, Operation> patchAsync(
       String project, String region, String forwardingRule, ForwardingRule forwardingRuleResource) {
     PatchForwardingRuleRequest request =
         PatchForwardingRuleRequest.newBuilder()
@@ -685,7 +752,7 @@ public class ForwardingRulesClient implements BackgroundResource {
             .setForwardingRule(forwardingRule)
             .setForwardingRuleResource(forwardingRuleResource)
             .build();
-    return patch(request);
+    return patchAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -706,15 +773,48 @@ public class ForwardingRulesClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
    *           .build();
-   *   Operation response = forwardingRulesClient.patch(request);
+   *   Operation response = forwardingRulesClient.patchAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation patch(PatchForwardingRuleRequest request) {
-    return patchCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> patchAsync(
+      PatchForwardingRuleRequest request) {
+    return patchOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified forwarding rule with the data included in the request. This method
+   * supports PATCH semantics and uses the JSON merge patch format and processing rules. Currently,
+   * you can only patch the network_tier field.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
+   *   PatchForwardingRuleRequest request =
+   *       PatchForwardingRuleRequest.newBuilder()
+   *           .setForwardingRule("forwardingRule-1429104743")
+   *           .setForwardingRuleResource(ForwardingRule.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       forwardingRulesClient.patchOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PatchForwardingRuleRequest, Operation, Operation>
+      patchOperationCallable() {
+    return stub.patchOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -760,8 +860,9 @@ public class ForwardingRulesClient implements BackgroundResource {
    *   RegionSetLabelsRequest regionSetLabelsRequestResource =
    *       RegionSetLabelsRequest.newBuilder().build();
    *   Operation response =
-   *       forwardingRulesClient.setLabels(
-   *           project, region, resource, regionSetLabelsRequestResource);
+   *       forwardingRulesClient
+   *           .setLabelsAsync(project, region, resource, regionSetLabelsRequestResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -771,7 +872,7 @@ public class ForwardingRulesClient implements BackgroundResource {
    * @param regionSetLabelsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setLabels(
+  public final OperationFuture<Operation, Operation> setLabelsAsync(
       String project,
       String region,
       String resource,
@@ -783,7 +884,7 @@ public class ForwardingRulesClient implements BackgroundResource {
             .setResource(resource)
             .setRegionSetLabelsRequestResource(regionSetLabelsRequestResource)
             .build();
-    return setLabels(request);
+    return setLabelsAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -803,15 +904,47 @@ public class ForwardingRulesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setResource("resource-341064690")
    *           .build();
-   *   Operation response = forwardingRulesClient.setLabels(request);
+   *   Operation response = forwardingRulesClient.setLabelsAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setLabels(SetLabelsForwardingRuleRequest request) {
-    return setLabelsCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setLabelsAsync(
+      SetLabelsForwardingRuleRequest request) {
+    return setLabelsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on the specified resource. To learn more about labels, read the Labeling
+   * Resources documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
+   *   SetLabelsForwardingRuleRequest request =
+   *       SetLabelsForwardingRuleRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetLabelsRequestResource(RegionSetLabelsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       forwardingRulesClient.setLabelsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetLabelsForwardingRuleRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return stub.setLabelsOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -855,7 +988,9 @@ public class ForwardingRulesClient implements BackgroundResource {
    *   String forwardingRule = "forwardingRule-1429104743";
    *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
    *   Operation response =
-   *       forwardingRulesClient.setTarget(project, region, forwardingRule, targetReferenceResource);
+   *       forwardingRulesClient
+   *           .setTargetAsync(project, region, forwardingRule, targetReferenceResource)
+   *           .get();
    * }
    * }</pre>
    *
@@ -865,7 +1000,7 @@ public class ForwardingRulesClient implements BackgroundResource {
    * @param targetReferenceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setTarget(
+  public final OperationFuture<Operation, Operation> setTargetAsync(
       String project,
       String region,
       String forwardingRule,
@@ -877,7 +1012,7 @@ public class ForwardingRulesClient implements BackgroundResource {
             .setForwardingRule(forwardingRule)
             .setTargetReferenceResource(targetReferenceResource)
             .build();
-    return setTarget(request);
+    return setTargetAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -897,15 +1032,47 @@ public class ForwardingRulesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setTargetReferenceResource(TargetReference.newBuilder().build())
    *           .build();
-   *   Operation response = forwardingRulesClient.setTarget(request);
+   *   Operation response = forwardingRulesClient.setTargetAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation setTarget(SetTargetForwardingRuleRequest request) {
-    return setTargetCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setTargetAsync(
+      SetTargetForwardingRuleRequest request) {
+    return setTargetOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Changes target URL for forwarding rule. The new target should be of the same type as the old
+   * target.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
+   *   SetTargetForwardingRuleRequest request =
+   *       SetTargetForwardingRuleRequest.newBuilder()
+   *           .setForwardingRule("forwardingRule-1429104743")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetReferenceResource(TargetReference.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       forwardingRulesClient.setTargetOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetTargetForwardingRuleRequest, Operation, Operation>
+      setTargetOperationCallable() {
+    return stub.setTargetOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

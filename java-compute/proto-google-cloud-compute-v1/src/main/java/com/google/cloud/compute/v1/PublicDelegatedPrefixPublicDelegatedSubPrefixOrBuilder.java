@@ -30,7 +30,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * Name of the project scoping this PublicDelegatedSubPrefix.
    * </pre>
    *
-   * <code>string delegatee_project = 414860634;</code>
+   * <code>optional string delegatee_project = 414860634;</code>
    *
    * @return Whether the delegateeProject field is set.
    */
@@ -42,7 +42,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * Name of the project scoping this PublicDelegatedSubPrefix.
    * </pre>
    *
-   * <code>string delegatee_project = 414860634;</code>
+   * <code>optional string delegatee_project = 414860634;</code>
    *
    * @return The delegateeProject.
    */
@@ -54,7 +54,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * Name of the project scoping this PublicDelegatedSubPrefix.
    * </pre>
    *
-   * <code>string delegatee_project = 414860634;</code>
+   * <code>optional string delegatee_project = 414860634;</code>
    *
    * @return The bytes for delegateeProject.
    */
@@ -67,7 +67,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return Whether the description field is set.
    */
@@ -79,7 +79,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -91,7 +91,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>optional string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -104,7 +104,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return Whether the ipCidrRange field is set.
    */
@@ -116,7 +116,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return The ipCidrRange.
    */
@@ -128,7 +128,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
    * </pre>
    *
-   * <code>string ip_cidr_range = 98117322;</code>
+   * <code>optional string ip_cidr_range = 98117322;</code>
    *
    * @return The bytes for ipCidrRange.
    */
@@ -141,7 +141,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * Whether the sub prefix is delegated to create Address resources in the delegatee project.
    * </pre>
    *
-   * <code>bool is_address = 352617951;</code>
+   * <code>optional bool is_address = 352617951;</code>
    *
    * @return Whether the isAddress field is set.
    */
@@ -153,7 +153,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * Whether the sub prefix is delegated to create Address resources in the delegatee project.
    * </pre>
    *
-   * <code>bool is_address = 352617951;</code>
+   * <code>optional bool is_address = 352617951;</code>
    *
    * @return The isAddress.
    */
@@ -166,7 +166,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * The name of the sub public delegated prefix.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -178,7 +178,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * The name of the sub public delegated prefix.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -190,7 +190,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * The name of the sub public delegated prefix.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -203,7 +203,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return Whether the region field is set.
    */
@@ -215,7 +215,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The region.
    */
@@ -227,7 +227,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
    * </pre>
    *
-   * <code>string region = 138946292;</code>
+   * <code>optional string region = 138946292;</code>
    *
    * @return The bytes for region.
    */
@@ -238,11 +238,10 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    * <pre>
    * [Output Only] The status of the sub public delegated prefix.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status status = 181260274;
-   * </code>
+   * <code>optional string status = 181260274;</code>
    *
    * @return Whether the status field is set.
    */
@@ -252,27 +251,25 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    * <pre>
    * [Output Only] The status of the sub public delegated prefix.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status status = 181260274;
-   * </code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The enum numeric value on the wire for status.
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    *
    *
    * <pre>
    * [Output Only] The status of the sub public delegated prefix.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status status = 181260274;
-   * </code>
+   * <code>optional string status = 181260274;</code>
    *
-   * @return The status.
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status getStatus();
+  com.google.protobuf.ByteString getStatusBytes();
 }

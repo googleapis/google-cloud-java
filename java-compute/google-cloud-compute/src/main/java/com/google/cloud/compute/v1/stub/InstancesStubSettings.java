@@ -29,10 +29,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.httpjson.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -73,6 +77,8 @@ import com.google.cloud.compute.v1.Reference;
 import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceRequest;
 import com.google.cloud.compute.v1.ResetInstanceRequest;
 import com.google.cloud.compute.v1.Screenshot;
+import com.google.cloud.compute.v1.SendDiagnosticInterruptInstanceRequest;
+import com.google.cloud.compute.v1.SendDiagnosticInterruptInstanceResponse;
 import com.google.cloud.compute.v1.SerialPortOutput;
 import com.google.cloud.compute.v1.SetDeletionProtectionInstanceRequest;
 import com.google.cloud.compute.v1.SetDiskAutoDeleteInstanceRequest;
@@ -124,15 +130,15 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of addAccessConfig to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * InstancesStubSettings.Builder instancesSettingsBuilder = InstancesStubSettings.newBuilder();
  * instancesSettingsBuilder
- *     .addAccessConfigSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         instancesSettingsBuilder
- *             .addAccessConfigSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -151,17 +157,31 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
   private final UnaryCallSettings<AddAccessConfigInstanceRequest, Operation>
       addAccessConfigSettings;
+  private final OperationCallSettings<AddAccessConfigInstanceRequest, Operation, Operation>
+      addAccessConfigOperationSettings;
   private final UnaryCallSettings<AddResourcePoliciesInstanceRequest, Operation>
       addResourcePoliciesSettings;
+  private final OperationCallSettings<AddResourcePoliciesInstanceRequest, Operation, Operation>
+      addResourcePoliciesOperationSettings;
   private final PagedCallSettings<
           AggregatedListInstancesRequest, InstanceAggregatedList, AggregatedListPagedResponse>
       aggregatedListSettings;
   private final UnaryCallSettings<AttachDiskInstanceRequest, Operation> attachDiskSettings;
+  private final OperationCallSettings<AttachDiskInstanceRequest, Operation, Operation>
+      attachDiskOperationSettings;
   private final UnaryCallSettings<BulkInsertInstanceRequest, Operation> bulkInsertSettings;
+  private final OperationCallSettings<BulkInsertInstanceRequest, Operation, Operation>
+      bulkInsertOperationSettings;
   private final UnaryCallSettings<DeleteInstanceRequest, Operation> deleteSettings;
+  private final OperationCallSettings<DeleteInstanceRequest, Operation, Operation>
+      deleteOperationSettings;
   private final UnaryCallSettings<DeleteAccessConfigInstanceRequest, Operation>
       deleteAccessConfigSettings;
+  private final OperationCallSettings<DeleteAccessConfigInstanceRequest, Operation, Operation>
+      deleteAccessConfigOperationSettings;
   private final UnaryCallSettings<DetachDiskInstanceRequest, Operation> detachDiskSettings;
+  private final OperationCallSettings<DetachDiskInstanceRequest, Operation, Operation>
+      detachDiskOperationSettings;
   private final UnaryCallSettings<GetInstanceRequest, Instance> getSettings;
   private final UnaryCallSettings<
           GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
@@ -176,6 +196,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           GetShieldedInstanceIdentityInstanceRequest, ShieldedInstanceIdentity>
       getShieldedInstanceIdentitySettings;
   private final UnaryCallSettings<InsertInstanceRequest, Operation> insertSettings;
+  private final OperationCallSettings<InsertInstanceRequest, Operation, Operation>
+      insertOperationSettings;
   private final PagedCallSettings<ListInstancesRequest, InstanceList, ListPagedResponse>
       listSettings;
   private final PagedCallSettings<
@@ -183,42 +205,91 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       listReferrersSettings;
   private final UnaryCallSettings<RemoveResourcePoliciesInstanceRequest, Operation>
       removeResourcePoliciesSettings;
+  private final OperationCallSettings<RemoveResourcePoliciesInstanceRequest, Operation, Operation>
+      removeResourcePoliciesOperationSettings;
   private final UnaryCallSettings<ResetInstanceRequest, Operation> resetSettings;
+  private final OperationCallSettings<ResetInstanceRequest, Operation, Operation>
+      resetOperationSettings;
+  private final UnaryCallSettings<
+          SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+      sendDiagnosticInterruptSettings;
   private final UnaryCallSettings<SetDeletionProtectionInstanceRequest, Operation>
       setDeletionProtectionSettings;
+  private final OperationCallSettings<SetDeletionProtectionInstanceRequest, Operation, Operation>
+      setDeletionProtectionOperationSettings;
   private final UnaryCallSettings<SetDiskAutoDeleteInstanceRequest, Operation>
       setDiskAutoDeleteSettings;
+  private final OperationCallSettings<SetDiskAutoDeleteInstanceRequest, Operation, Operation>
+      setDiskAutoDeleteOperationSettings;
   private final UnaryCallSettings<SetIamPolicyInstanceRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<SetLabelsInstanceRequest, Operation> setLabelsSettings;
+  private final OperationCallSettings<SetLabelsInstanceRequest, Operation, Operation>
+      setLabelsOperationSettings;
   private final UnaryCallSettings<SetMachineResourcesInstanceRequest, Operation>
       setMachineResourcesSettings;
+  private final OperationCallSettings<SetMachineResourcesInstanceRequest, Operation, Operation>
+      setMachineResourcesOperationSettings;
   private final UnaryCallSettings<SetMachineTypeInstanceRequest, Operation> setMachineTypeSettings;
+  private final OperationCallSettings<SetMachineTypeInstanceRequest, Operation, Operation>
+      setMachineTypeOperationSettings;
   private final UnaryCallSettings<SetMetadataInstanceRequest, Operation> setMetadataSettings;
+  private final OperationCallSettings<SetMetadataInstanceRequest, Operation, Operation>
+      setMetadataOperationSettings;
   private final UnaryCallSettings<SetMinCpuPlatformInstanceRequest, Operation>
       setMinCpuPlatformSettings;
+  private final OperationCallSettings<SetMinCpuPlatformInstanceRequest, Operation, Operation>
+      setMinCpuPlatformOperationSettings;
   private final UnaryCallSettings<SetSchedulingInstanceRequest, Operation> setSchedulingSettings;
+  private final OperationCallSettings<SetSchedulingInstanceRequest, Operation, Operation>
+      setSchedulingOperationSettings;
   private final UnaryCallSettings<SetServiceAccountInstanceRequest, Operation>
       setServiceAccountSettings;
+  private final OperationCallSettings<SetServiceAccountInstanceRequest, Operation, Operation>
+      setServiceAccountOperationSettings;
   private final UnaryCallSettings<SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation>
       setShieldedInstanceIntegrityPolicySettings;
+  private final OperationCallSettings<
+          SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation, Operation>
+      setShieldedInstanceIntegrityPolicyOperationSettings;
   private final UnaryCallSettings<SetTagsInstanceRequest, Operation> setTagsSettings;
+  private final OperationCallSettings<SetTagsInstanceRequest, Operation, Operation>
+      setTagsOperationSettings;
   private final UnaryCallSettings<SimulateMaintenanceEventInstanceRequest, Operation>
       simulateMaintenanceEventSettings;
+  private final OperationCallSettings<SimulateMaintenanceEventInstanceRequest, Operation, Operation>
+      simulateMaintenanceEventOperationSettings;
   private final UnaryCallSettings<StartInstanceRequest, Operation> startSettings;
+  private final OperationCallSettings<StartInstanceRequest, Operation, Operation>
+      startOperationSettings;
   private final UnaryCallSettings<StartWithEncryptionKeyInstanceRequest, Operation>
       startWithEncryptionKeySettings;
+  private final OperationCallSettings<StartWithEncryptionKeyInstanceRequest, Operation, Operation>
+      startWithEncryptionKeyOperationSettings;
   private final UnaryCallSettings<StopInstanceRequest, Operation> stopSettings;
+  private final OperationCallSettings<StopInstanceRequest, Operation, Operation>
+      stopOperationSettings;
   private final UnaryCallSettings<TestIamPermissionsInstanceRequest, TestPermissionsResponse>
       testIamPermissionsSettings;
   private final UnaryCallSettings<UpdateInstanceRequest, Operation> updateSettings;
+  private final OperationCallSettings<UpdateInstanceRequest, Operation, Operation>
+      updateOperationSettings;
   private final UnaryCallSettings<UpdateAccessConfigInstanceRequest, Operation>
       updateAccessConfigSettings;
+  private final OperationCallSettings<UpdateAccessConfigInstanceRequest, Operation, Operation>
+      updateAccessConfigOperationSettings;
   private final UnaryCallSettings<UpdateDisplayDeviceInstanceRequest, Operation>
       updateDisplayDeviceSettings;
+  private final OperationCallSettings<UpdateDisplayDeviceInstanceRequest, Operation, Operation>
+      updateDisplayDeviceOperationSettings;
   private final UnaryCallSettings<UpdateNetworkInterfaceInstanceRequest, Operation>
       updateNetworkInterfaceSettings;
+  private final OperationCallSettings<UpdateNetworkInterfaceInstanceRequest, Operation, Operation>
+      updateNetworkInterfaceOperationSettings;
   private final UnaryCallSettings<UpdateShieldedInstanceConfigInstanceRequest, Operation>
       updateShieldedInstanceConfigSettings;
+  private final OperationCallSettings<
+          UpdateShieldedInstanceConfigInstanceRequest, Operation, Operation>
+      updateShieldedInstanceConfigOperationSettings;
 
   private static final PagedListDescriptor<
           AggregatedListInstancesRequest,
@@ -407,10 +478,22 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return addAccessConfigSettings;
   }
 
+  /** Returns the object with the settings used for calls to addAccessConfig. */
+  public OperationCallSettings<AddAccessConfigInstanceRequest, Operation, Operation>
+      addAccessConfigOperationSettings() {
+    return addAccessConfigOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to addResourcePolicies. */
   public UnaryCallSettings<AddResourcePoliciesInstanceRequest, Operation>
       addResourcePoliciesSettings() {
     return addResourcePoliciesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to addResourcePolicies. */
+  public OperationCallSettings<AddResourcePoliciesInstanceRequest, Operation, Operation>
+      addResourcePoliciesOperationSettings() {
+    return addResourcePoliciesOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to aggregatedList. */
@@ -425,14 +508,32 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return attachDiskSettings;
   }
 
+  /** Returns the object with the settings used for calls to attachDisk. */
+  public OperationCallSettings<AttachDiskInstanceRequest, Operation, Operation>
+      attachDiskOperationSettings() {
+    return attachDiskOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to bulkInsert. */
   public UnaryCallSettings<BulkInsertInstanceRequest, Operation> bulkInsertSettings() {
     return bulkInsertSettings;
   }
 
+  /** Returns the object with the settings used for calls to bulkInsert. */
+  public OperationCallSettings<BulkInsertInstanceRequest, Operation, Operation>
+      bulkInsertOperationSettings() {
+    return bulkInsertOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteInstanceRequest, Operation> deleteSettings() {
     return deleteSettings;
+  }
+
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteInstanceRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return deleteOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteAccessConfig. */
@@ -441,9 +542,21 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return deleteAccessConfigSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteAccessConfig. */
+  public OperationCallSettings<DeleteAccessConfigInstanceRequest, Operation, Operation>
+      deleteAccessConfigOperationSettings() {
+    return deleteAccessConfigOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to detachDisk. */
   public UnaryCallSettings<DetachDiskInstanceRequest, Operation> detachDiskSettings() {
     return detachDiskSettings;
+  }
+
+  /** Returns the object with the settings used for calls to detachDisk. */
+  public OperationCallSettings<DetachDiskInstanceRequest, Operation, Operation>
+      detachDiskOperationSettings() {
+    return detachDiskOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -491,6 +604,12 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return insertSettings;
   }
 
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertInstanceRequest, Operation, Operation>
+      insertOperationSettings() {
+    return insertOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<ListInstancesRequest, InstanceList, ListPagedResponse> listSettings() {
     return listSettings;
@@ -509,9 +628,28 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return removeResourcePoliciesSettings;
   }
 
+  /** Returns the object with the settings used for calls to removeResourcePolicies. */
+  public OperationCallSettings<RemoveResourcePoliciesInstanceRequest, Operation, Operation>
+      removeResourcePoliciesOperationSettings() {
+    return removeResourcePoliciesOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to reset. */
   public UnaryCallSettings<ResetInstanceRequest, Operation> resetSettings() {
     return resetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to reset. */
+  public OperationCallSettings<ResetInstanceRequest, Operation, Operation>
+      resetOperationSettings() {
+    return resetOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to sendDiagnosticInterrupt. */
+  public UnaryCallSettings<
+          SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+      sendDiagnosticInterruptSettings() {
+    return sendDiagnosticInterruptSettings;
   }
 
   /** Returns the object with the settings used for calls to setDeletionProtection. */
@@ -520,10 +658,22 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return setDeletionProtectionSettings;
   }
 
+  /** Returns the object with the settings used for calls to setDeletionProtection. */
+  public OperationCallSettings<SetDeletionProtectionInstanceRequest, Operation, Operation>
+      setDeletionProtectionOperationSettings() {
+    return setDeletionProtectionOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setDiskAutoDelete. */
   public UnaryCallSettings<SetDiskAutoDeleteInstanceRequest, Operation>
       setDiskAutoDeleteSettings() {
     return setDiskAutoDeleteSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setDiskAutoDelete. */
+  public OperationCallSettings<SetDiskAutoDeleteInstanceRequest, Operation, Operation>
+      setDiskAutoDeleteOperationSettings() {
+    return setDiskAutoDeleteOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
@@ -536,10 +686,22 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return setLabelsSettings;
   }
 
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsInstanceRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return setLabelsOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setMachineResources. */
   public UnaryCallSettings<SetMachineResourcesInstanceRequest, Operation>
       setMachineResourcesSettings() {
     return setMachineResourcesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setMachineResources. */
+  public OperationCallSettings<SetMachineResourcesInstanceRequest, Operation, Operation>
+      setMachineResourcesOperationSettings() {
+    return setMachineResourcesOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to setMachineType. */
@@ -547,9 +709,21 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return setMachineTypeSettings;
   }
 
+  /** Returns the object with the settings used for calls to setMachineType. */
+  public OperationCallSettings<SetMachineTypeInstanceRequest, Operation, Operation>
+      setMachineTypeOperationSettings() {
+    return setMachineTypeOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setMetadata. */
   public UnaryCallSettings<SetMetadataInstanceRequest, Operation> setMetadataSettings() {
     return setMetadataSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setMetadata. */
+  public OperationCallSettings<SetMetadataInstanceRequest, Operation, Operation>
+      setMetadataOperationSettings() {
+    return setMetadataOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to setMinCpuPlatform. */
@@ -558,9 +732,21 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return setMinCpuPlatformSettings;
   }
 
+  /** Returns the object with the settings used for calls to setMinCpuPlatform. */
+  public OperationCallSettings<SetMinCpuPlatformInstanceRequest, Operation, Operation>
+      setMinCpuPlatformOperationSettings() {
+    return setMinCpuPlatformOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setScheduling. */
   public UnaryCallSettings<SetSchedulingInstanceRequest, Operation> setSchedulingSettings() {
     return setSchedulingSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setScheduling. */
+  public OperationCallSettings<SetSchedulingInstanceRequest, Operation, Operation>
+      setSchedulingOperationSettings() {
+    return setSchedulingOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to setServiceAccount. */
@@ -569,15 +755,34 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return setServiceAccountSettings;
   }
 
+  /** Returns the object with the settings used for calls to setServiceAccount. */
+  public OperationCallSettings<SetServiceAccountInstanceRequest, Operation, Operation>
+      setServiceAccountOperationSettings() {
+    return setServiceAccountOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setShieldedInstanceIntegrityPolicy. */
   public UnaryCallSettings<SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation>
       setShieldedInstanceIntegrityPolicySettings() {
     return setShieldedInstanceIntegrityPolicySettings;
   }
 
+  /** Returns the object with the settings used for calls to setShieldedInstanceIntegrityPolicy. */
+  public OperationCallSettings<
+          SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation, Operation>
+      setShieldedInstanceIntegrityPolicyOperationSettings() {
+    return setShieldedInstanceIntegrityPolicyOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setTags. */
   public UnaryCallSettings<SetTagsInstanceRequest, Operation> setTagsSettings() {
     return setTagsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setTags. */
+  public OperationCallSettings<SetTagsInstanceRequest, Operation, Operation>
+      setTagsOperationSettings() {
+    return setTagsOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to simulateMaintenanceEvent. */
@@ -586,9 +791,21 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return simulateMaintenanceEventSettings;
   }
 
+  /** Returns the object with the settings used for calls to simulateMaintenanceEvent. */
+  public OperationCallSettings<SimulateMaintenanceEventInstanceRequest, Operation, Operation>
+      simulateMaintenanceEventOperationSettings() {
+    return simulateMaintenanceEventOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to start. */
   public UnaryCallSettings<StartInstanceRequest, Operation> startSettings() {
     return startSettings;
+  }
+
+  /** Returns the object with the settings used for calls to start. */
+  public OperationCallSettings<StartInstanceRequest, Operation, Operation>
+      startOperationSettings() {
+    return startOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to startWithEncryptionKey. */
@@ -597,9 +814,20 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return startWithEncryptionKeySettings;
   }
 
+  /** Returns the object with the settings used for calls to startWithEncryptionKey. */
+  public OperationCallSettings<StartWithEncryptionKeyInstanceRequest, Operation, Operation>
+      startWithEncryptionKeyOperationSettings() {
+    return startWithEncryptionKeyOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to stop. */
   public UnaryCallSettings<StopInstanceRequest, Operation> stopSettings() {
     return stopSettings;
+  }
+
+  /** Returns the object with the settings used for calls to stop. */
+  public OperationCallSettings<StopInstanceRequest, Operation, Operation> stopOperationSettings() {
+    return stopOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to testIamPermissions. */
@@ -613,10 +841,22 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return updateSettings;
   }
 
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateInstanceRequest, Operation, Operation>
+      updateOperationSettings() {
+    return updateOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateAccessConfig. */
   public UnaryCallSettings<UpdateAccessConfigInstanceRequest, Operation>
       updateAccessConfigSettings() {
     return updateAccessConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAccessConfig. */
+  public OperationCallSettings<UpdateAccessConfigInstanceRequest, Operation, Operation>
+      updateAccessConfigOperationSettings() {
+    return updateAccessConfigOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to updateDisplayDevice. */
@@ -625,16 +865,34 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return updateDisplayDeviceSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateDisplayDevice. */
+  public OperationCallSettings<UpdateDisplayDeviceInstanceRequest, Operation, Operation>
+      updateDisplayDeviceOperationSettings() {
+    return updateDisplayDeviceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateNetworkInterface. */
   public UnaryCallSettings<UpdateNetworkInterfaceInstanceRequest, Operation>
       updateNetworkInterfaceSettings() {
     return updateNetworkInterfaceSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateNetworkInterface. */
+  public OperationCallSettings<UpdateNetworkInterfaceInstanceRequest, Operation, Operation>
+      updateNetworkInterfaceOperationSettings() {
+    return updateNetworkInterfaceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateShieldedInstanceConfig. */
   public UnaryCallSettings<UpdateShieldedInstanceConfigInstanceRequest, Operation>
       updateShieldedInstanceConfigSettings() {
     return updateShieldedInstanceConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateShieldedInstanceConfig. */
+  public OperationCallSettings<UpdateShieldedInstanceConfigInstanceRequest, Operation, Operation>
+      updateShieldedInstanceConfigOperationSettings() {
+    return updateShieldedInstanceConfigOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -671,7 +929,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return GoogleCredentialsProvider.newBuilder()
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        .setUseJwtAccessWithScope(true);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -712,13 +972,22 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     super(settingsBuilder);
 
     addAccessConfigSettings = settingsBuilder.addAccessConfigSettings().build();
+    addAccessConfigOperationSettings = settingsBuilder.addAccessConfigOperationSettings().build();
     addResourcePoliciesSettings = settingsBuilder.addResourcePoliciesSettings().build();
+    addResourcePoliciesOperationSettings =
+        settingsBuilder.addResourcePoliciesOperationSettings().build();
     aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     attachDiskSettings = settingsBuilder.attachDiskSettings().build();
+    attachDiskOperationSettings = settingsBuilder.attachDiskOperationSettings().build();
     bulkInsertSettings = settingsBuilder.bulkInsertSettings().build();
+    bulkInsertOperationSettings = settingsBuilder.bulkInsertOperationSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
+    deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     deleteAccessConfigSettings = settingsBuilder.deleteAccessConfigSettings().build();
+    deleteAccessConfigOperationSettings =
+        settingsBuilder.deleteAccessConfigOperationSettings().build();
     detachDiskSettings = settingsBuilder.detachDiskSettings().build();
+    detachDiskOperationSettings = settingsBuilder.detachDiskOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     getEffectiveFirewallsSettings = settingsBuilder.getEffectiveFirewallsSettings().build();
     getGuestAttributesSettings = settingsBuilder.getGuestAttributesSettings().build();
@@ -728,34 +997,71 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     getShieldedInstanceIdentitySettings =
         settingsBuilder.getShieldedInstanceIdentitySettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
+    insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     listReferrersSettings = settingsBuilder.listReferrersSettings().build();
     removeResourcePoliciesSettings = settingsBuilder.removeResourcePoliciesSettings().build();
+    removeResourcePoliciesOperationSettings =
+        settingsBuilder.removeResourcePoliciesOperationSettings().build();
     resetSettings = settingsBuilder.resetSettings().build();
+    resetOperationSettings = settingsBuilder.resetOperationSettings().build();
+    sendDiagnosticInterruptSettings = settingsBuilder.sendDiagnosticInterruptSettings().build();
     setDeletionProtectionSettings = settingsBuilder.setDeletionProtectionSettings().build();
+    setDeletionProtectionOperationSettings =
+        settingsBuilder.setDeletionProtectionOperationSettings().build();
     setDiskAutoDeleteSettings = settingsBuilder.setDiskAutoDeleteSettings().build();
+    setDiskAutoDeleteOperationSettings =
+        settingsBuilder.setDiskAutoDeleteOperationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     setLabelsSettings = settingsBuilder.setLabelsSettings().build();
+    setLabelsOperationSettings = settingsBuilder.setLabelsOperationSettings().build();
     setMachineResourcesSettings = settingsBuilder.setMachineResourcesSettings().build();
+    setMachineResourcesOperationSettings =
+        settingsBuilder.setMachineResourcesOperationSettings().build();
     setMachineTypeSettings = settingsBuilder.setMachineTypeSettings().build();
+    setMachineTypeOperationSettings = settingsBuilder.setMachineTypeOperationSettings().build();
     setMetadataSettings = settingsBuilder.setMetadataSettings().build();
+    setMetadataOperationSettings = settingsBuilder.setMetadataOperationSettings().build();
     setMinCpuPlatformSettings = settingsBuilder.setMinCpuPlatformSettings().build();
+    setMinCpuPlatformOperationSettings =
+        settingsBuilder.setMinCpuPlatformOperationSettings().build();
     setSchedulingSettings = settingsBuilder.setSchedulingSettings().build();
+    setSchedulingOperationSettings = settingsBuilder.setSchedulingOperationSettings().build();
     setServiceAccountSettings = settingsBuilder.setServiceAccountSettings().build();
+    setServiceAccountOperationSettings =
+        settingsBuilder.setServiceAccountOperationSettings().build();
     setShieldedInstanceIntegrityPolicySettings =
         settingsBuilder.setShieldedInstanceIntegrityPolicySettings().build();
+    setShieldedInstanceIntegrityPolicyOperationSettings =
+        settingsBuilder.setShieldedInstanceIntegrityPolicyOperationSettings().build();
     setTagsSettings = settingsBuilder.setTagsSettings().build();
+    setTagsOperationSettings = settingsBuilder.setTagsOperationSettings().build();
     simulateMaintenanceEventSettings = settingsBuilder.simulateMaintenanceEventSettings().build();
+    simulateMaintenanceEventOperationSettings =
+        settingsBuilder.simulateMaintenanceEventOperationSettings().build();
     startSettings = settingsBuilder.startSettings().build();
+    startOperationSettings = settingsBuilder.startOperationSettings().build();
     startWithEncryptionKeySettings = settingsBuilder.startWithEncryptionKeySettings().build();
+    startWithEncryptionKeyOperationSettings =
+        settingsBuilder.startWithEncryptionKeyOperationSettings().build();
     stopSettings = settingsBuilder.stopSettings().build();
+    stopOperationSettings = settingsBuilder.stopOperationSettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
+    updateOperationSettings = settingsBuilder.updateOperationSettings().build();
     updateAccessConfigSettings = settingsBuilder.updateAccessConfigSettings().build();
+    updateAccessConfigOperationSettings =
+        settingsBuilder.updateAccessConfigOperationSettings().build();
     updateDisplayDeviceSettings = settingsBuilder.updateDisplayDeviceSettings().build();
+    updateDisplayDeviceOperationSettings =
+        settingsBuilder.updateDisplayDeviceOperationSettings().build();
     updateNetworkInterfaceSettings = settingsBuilder.updateNetworkInterfaceSettings().build();
+    updateNetworkInterfaceOperationSettings =
+        settingsBuilder.updateNetworkInterfaceOperationSettings().build();
     updateShieldedInstanceConfigSettings =
         settingsBuilder.updateShieldedInstanceConfigSettings().build();
+    updateShieldedInstanceConfigOperationSettings =
+        settingsBuilder.updateShieldedInstanceConfigOperationSettings().build();
   }
 
   /** Builder for InstancesStubSettings. */
@@ -763,20 +1069,37 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<AddAccessConfigInstanceRequest, Operation>
         addAccessConfigSettings;
+    private final OperationCallSettings.Builder<
+            AddAccessConfigInstanceRequest, Operation, Operation>
+        addAccessConfigOperationSettings;
     private final UnaryCallSettings.Builder<AddResourcePoliciesInstanceRequest, Operation>
         addResourcePoliciesSettings;
+    private final OperationCallSettings.Builder<
+            AddResourcePoliciesInstanceRequest, Operation, Operation>
+        addResourcePoliciesOperationSettings;
     private final PagedCallSettings.Builder<
             AggregatedListInstancesRequest, InstanceAggregatedList, AggregatedListPagedResponse>
         aggregatedListSettings;
     private final UnaryCallSettings.Builder<AttachDiskInstanceRequest, Operation>
         attachDiskSettings;
+    private final OperationCallSettings.Builder<AttachDiskInstanceRequest, Operation, Operation>
+        attachDiskOperationSettings;
     private final UnaryCallSettings.Builder<BulkInsertInstanceRequest, Operation>
         bulkInsertSettings;
+    private final OperationCallSettings.Builder<BulkInsertInstanceRequest, Operation, Operation>
+        bulkInsertOperationSettings;
     private final UnaryCallSettings.Builder<DeleteInstanceRequest, Operation> deleteSettings;
+    private final OperationCallSettings.Builder<DeleteInstanceRequest, Operation, Operation>
+        deleteOperationSettings;
     private final UnaryCallSettings.Builder<DeleteAccessConfigInstanceRequest, Operation>
         deleteAccessConfigSettings;
+    private final OperationCallSettings.Builder<
+            DeleteAccessConfigInstanceRequest, Operation, Operation>
+        deleteAccessConfigOperationSettings;
     private final UnaryCallSettings.Builder<DetachDiskInstanceRequest, Operation>
         detachDiskSettings;
+    private final OperationCallSettings.Builder<DetachDiskInstanceRequest, Operation, Operation>
+        detachDiskOperationSettings;
     private final UnaryCallSettings.Builder<GetInstanceRequest, Instance> getSettings;
     private final UnaryCallSettings.Builder<
             GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
@@ -793,6 +1116,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
             GetShieldedInstanceIdentityInstanceRequest, ShieldedInstanceIdentity>
         getShieldedInstanceIdentitySettings;
     private final UnaryCallSettings.Builder<InsertInstanceRequest, Operation> insertSettings;
+    private final OperationCallSettings.Builder<InsertInstanceRequest, Operation, Operation>
+        insertOperationSettings;
     private final PagedCallSettings.Builder<ListInstancesRequest, InstanceList, ListPagedResponse>
         listSettings;
     private final PagedCallSettings.Builder<
@@ -800,48 +1125,108 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
         listReferrersSettings;
     private final UnaryCallSettings.Builder<RemoveResourcePoliciesInstanceRequest, Operation>
         removeResourcePoliciesSettings;
+    private final OperationCallSettings.Builder<
+            RemoveResourcePoliciesInstanceRequest, Operation, Operation>
+        removeResourcePoliciesOperationSettings;
     private final UnaryCallSettings.Builder<ResetInstanceRequest, Operation> resetSettings;
+    private final OperationCallSettings.Builder<ResetInstanceRequest, Operation, Operation>
+        resetOperationSettings;
+    private final UnaryCallSettings.Builder<
+            SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+        sendDiagnosticInterruptSettings;
     private final UnaryCallSettings.Builder<SetDeletionProtectionInstanceRequest, Operation>
         setDeletionProtectionSettings;
+    private final OperationCallSettings.Builder<
+            SetDeletionProtectionInstanceRequest, Operation, Operation>
+        setDeletionProtectionOperationSettings;
     private final UnaryCallSettings.Builder<SetDiskAutoDeleteInstanceRequest, Operation>
         setDiskAutoDeleteSettings;
+    private final OperationCallSettings.Builder<
+            SetDiskAutoDeleteInstanceRequest, Operation, Operation>
+        setDiskAutoDeleteOperationSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyInstanceRequest, Policy>
         setIamPolicySettings;
     private final UnaryCallSettings.Builder<SetLabelsInstanceRequest, Operation> setLabelsSettings;
+    private final OperationCallSettings.Builder<SetLabelsInstanceRequest, Operation, Operation>
+        setLabelsOperationSettings;
     private final UnaryCallSettings.Builder<SetMachineResourcesInstanceRequest, Operation>
         setMachineResourcesSettings;
+    private final OperationCallSettings.Builder<
+            SetMachineResourcesInstanceRequest, Operation, Operation>
+        setMachineResourcesOperationSettings;
     private final UnaryCallSettings.Builder<SetMachineTypeInstanceRequest, Operation>
         setMachineTypeSettings;
+    private final OperationCallSettings.Builder<SetMachineTypeInstanceRequest, Operation, Operation>
+        setMachineTypeOperationSettings;
     private final UnaryCallSettings.Builder<SetMetadataInstanceRequest, Operation>
         setMetadataSettings;
+    private final OperationCallSettings.Builder<SetMetadataInstanceRequest, Operation, Operation>
+        setMetadataOperationSettings;
     private final UnaryCallSettings.Builder<SetMinCpuPlatformInstanceRequest, Operation>
         setMinCpuPlatformSettings;
+    private final OperationCallSettings.Builder<
+            SetMinCpuPlatformInstanceRequest, Operation, Operation>
+        setMinCpuPlatformOperationSettings;
     private final UnaryCallSettings.Builder<SetSchedulingInstanceRequest, Operation>
         setSchedulingSettings;
+    private final OperationCallSettings.Builder<SetSchedulingInstanceRequest, Operation, Operation>
+        setSchedulingOperationSettings;
     private final UnaryCallSettings.Builder<SetServiceAccountInstanceRequest, Operation>
         setServiceAccountSettings;
+    private final OperationCallSettings.Builder<
+            SetServiceAccountInstanceRequest, Operation, Operation>
+        setServiceAccountOperationSettings;
     private final UnaryCallSettings.Builder<
             SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation>
         setShieldedInstanceIntegrityPolicySettings;
+    private final OperationCallSettings.Builder<
+            SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation, Operation>
+        setShieldedInstanceIntegrityPolicyOperationSettings;
     private final UnaryCallSettings.Builder<SetTagsInstanceRequest, Operation> setTagsSettings;
+    private final OperationCallSettings.Builder<SetTagsInstanceRequest, Operation, Operation>
+        setTagsOperationSettings;
     private final UnaryCallSettings.Builder<SimulateMaintenanceEventInstanceRequest, Operation>
         simulateMaintenanceEventSettings;
+    private final OperationCallSettings.Builder<
+            SimulateMaintenanceEventInstanceRequest, Operation, Operation>
+        simulateMaintenanceEventOperationSettings;
     private final UnaryCallSettings.Builder<StartInstanceRequest, Operation> startSettings;
+    private final OperationCallSettings.Builder<StartInstanceRequest, Operation, Operation>
+        startOperationSettings;
     private final UnaryCallSettings.Builder<StartWithEncryptionKeyInstanceRequest, Operation>
         startWithEncryptionKeySettings;
+    private final OperationCallSettings.Builder<
+            StartWithEncryptionKeyInstanceRequest, Operation, Operation>
+        startWithEncryptionKeyOperationSettings;
     private final UnaryCallSettings.Builder<StopInstanceRequest, Operation> stopSettings;
+    private final OperationCallSettings.Builder<StopInstanceRequest, Operation, Operation>
+        stopOperationSettings;
     private final UnaryCallSettings.Builder<
             TestIamPermissionsInstanceRequest, TestPermissionsResponse>
         testIamPermissionsSettings;
     private final UnaryCallSettings.Builder<UpdateInstanceRequest, Operation> updateSettings;
+    private final OperationCallSettings.Builder<UpdateInstanceRequest, Operation, Operation>
+        updateOperationSettings;
     private final UnaryCallSettings.Builder<UpdateAccessConfigInstanceRequest, Operation>
         updateAccessConfigSettings;
+    private final OperationCallSettings.Builder<
+            UpdateAccessConfigInstanceRequest, Operation, Operation>
+        updateAccessConfigOperationSettings;
     private final UnaryCallSettings.Builder<UpdateDisplayDeviceInstanceRequest, Operation>
         updateDisplayDeviceSettings;
+    private final OperationCallSettings.Builder<
+            UpdateDisplayDeviceInstanceRequest, Operation, Operation>
+        updateDisplayDeviceOperationSettings;
     private final UnaryCallSettings.Builder<UpdateNetworkInterfaceInstanceRequest, Operation>
         updateNetworkInterfaceSettings;
+    private final OperationCallSettings.Builder<
+            UpdateNetworkInterfaceInstanceRequest, Operation, Operation>
+        updateNetworkInterfaceOperationSettings;
     private final UnaryCallSettings.Builder<UpdateShieldedInstanceConfigInstanceRequest, Operation>
         updateShieldedInstanceConfigSettings;
+    private final OperationCallSettings.Builder<
+            UpdateShieldedInstanceConfigInstanceRequest, Operation, Operation>
+        updateShieldedInstanceConfigOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -893,13 +1278,20 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       super(clientContext);
 
       addAccessConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addAccessConfigOperationSettings = OperationCallSettings.newBuilder();
       addResourcePoliciesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addResourcePoliciesOperationSettings = OperationCallSettings.newBuilder();
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       attachDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      attachDiskOperationSettings = OperationCallSettings.newBuilder();
       bulkInsertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      bulkInsertOperationSettings = OperationCallSettings.newBuilder();
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteOperationSettings = OperationCallSettings.newBuilder();
       deleteAccessConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteAccessConfigOperationSettings = OperationCallSettings.newBuilder();
       detachDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      detachDiskOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getEffectiveFirewallsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getGuestAttributesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -908,32 +1300,56 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       getSerialPortOutputSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getShieldedInstanceIdentitySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       listReferrersSettings = PagedCallSettings.newBuilder(LIST_REFERRERS_PAGE_STR_FACT);
       removeResourcePoliciesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      removeResourcePoliciesOperationSettings = OperationCallSettings.newBuilder();
       resetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      resetOperationSettings = OperationCallSettings.newBuilder();
+      sendDiagnosticInterruptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setDeletionProtectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setDeletionProtectionOperationSettings = OperationCallSettings.newBuilder();
       setDiskAutoDeleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setDiskAutoDeleteOperationSettings = OperationCallSettings.newBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setLabelsOperationSettings = OperationCallSettings.newBuilder();
       setMachineResourcesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setMachineResourcesOperationSettings = OperationCallSettings.newBuilder();
       setMachineTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setMachineTypeOperationSettings = OperationCallSettings.newBuilder();
       setMetadataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setMetadataOperationSettings = OperationCallSettings.newBuilder();
       setMinCpuPlatformSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setMinCpuPlatformOperationSettings = OperationCallSettings.newBuilder();
       setSchedulingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setSchedulingOperationSettings = OperationCallSettings.newBuilder();
       setServiceAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setServiceAccountOperationSettings = OperationCallSettings.newBuilder();
       setShieldedInstanceIntegrityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setShieldedInstanceIntegrityPolicyOperationSettings = OperationCallSettings.newBuilder();
       setTagsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setTagsOperationSettings = OperationCallSettings.newBuilder();
       simulateMaintenanceEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      simulateMaintenanceEventOperationSettings = OperationCallSettings.newBuilder();
       startSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      startOperationSettings = OperationCallSettings.newBuilder();
       startWithEncryptionKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      startWithEncryptionKeyOperationSettings = OperationCallSettings.newBuilder();
       stopSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      stopOperationSettings = OperationCallSettings.newBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateOperationSettings = OperationCallSettings.newBuilder();
       updateAccessConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAccessConfigOperationSettings = OperationCallSettings.newBuilder();
       updateDisplayDeviceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateDisplayDeviceOperationSettings = OperationCallSettings.newBuilder();
       updateNetworkInterfaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateNetworkInterfaceOperationSettings = OperationCallSettings.newBuilder();
       updateShieldedInstanceConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateShieldedInstanceConfigOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -957,6 +1373,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               listReferrersSettings,
               removeResourcePoliciesSettings,
               resetSettings,
+              sendDiagnosticInterruptSettings,
               setDeletionProtectionSettings,
               setDiskAutoDeleteSettings,
               setIamPolicySettings,
@@ -986,13 +1403,22 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       super(settings);
 
       addAccessConfigSettings = settings.addAccessConfigSettings.toBuilder();
+      addAccessConfigOperationSettings = settings.addAccessConfigOperationSettings.toBuilder();
       addResourcePoliciesSettings = settings.addResourcePoliciesSettings.toBuilder();
+      addResourcePoliciesOperationSettings =
+          settings.addResourcePoliciesOperationSettings.toBuilder();
       aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       attachDiskSettings = settings.attachDiskSettings.toBuilder();
+      attachDiskOperationSettings = settings.attachDiskOperationSettings.toBuilder();
       bulkInsertSettings = settings.bulkInsertSettings.toBuilder();
+      bulkInsertOperationSettings = settings.bulkInsertOperationSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
+      deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       deleteAccessConfigSettings = settings.deleteAccessConfigSettings.toBuilder();
+      deleteAccessConfigOperationSettings =
+          settings.deleteAccessConfigOperationSettings.toBuilder();
       detachDiskSettings = settings.detachDiskSettings.toBuilder();
+      detachDiskOperationSettings = settings.detachDiskOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       getEffectiveFirewallsSettings = settings.getEffectiveFirewallsSettings.toBuilder();
       getGuestAttributesSettings = settings.getGuestAttributesSettings.toBuilder();
@@ -1002,34 +1428,68 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       getShieldedInstanceIdentitySettings =
           settings.getShieldedInstanceIdentitySettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
+      insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       listReferrersSettings = settings.listReferrersSettings.toBuilder();
       removeResourcePoliciesSettings = settings.removeResourcePoliciesSettings.toBuilder();
+      removeResourcePoliciesOperationSettings =
+          settings.removeResourcePoliciesOperationSettings.toBuilder();
       resetSettings = settings.resetSettings.toBuilder();
+      resetOperationSettings = settings.resetOperationSettings.toBuilder();
+      sendDiagnosticInterruptSettings = settings.sendDiagnosticInterruptSettings.toBuilder();
       setDeletionProtectionSettings = settings.setDeletionProtectionSettings.toBuilder();
+      setDeletionProtectionOperationSettings =
+          settings.setDeletionProtectionOperationSettings.toBuilder();
       setDiskAutoDeleteSettings = settings.setDiskAutoDeleteSettings.toBuilder();
+      setDiskAutoDeleteOperationSettings = settings.setDiskAutoDeleteOperationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       setLabelsSettings = settings.setLabelsSettings.toBuilder();
+      setLabelsOperationSettings = settings.setLabelsOperationSettings.toBuilder();
       setMachineResourcesSettings = settings.setMachineResourcesSettings.toBuilder();
+      setMachineResourcesOperationSettings =
+          settings.setMachineResourcesOperationSettings.toBuilder();
       setMachineTypeSettings = settings.setMachineTypeSettings.toBuilder();
+      setMachineTypeOperationSettings = settings.setMachineTypeOperationSettings.toBuilder();
       setMetadataSettings = settings.setMetadataSettings.toBuilder();
+      setMetadataOperationSettings = settings.setMetadataOperationSettings.toBuilder();
       setMinCpuPlatformSettings = settings.setMinCpuPlatformSettings.toBuilder();
+      setMinCpuPlatformOperationSettings = settings.setMinCpuPlatformOperationSettings.toBuilder();
       setSchedulingSettings = settings.setSchedulingSettings.toBuilder();
+      setSchedulingOperationSettings = settings.setSchedulingOperationSettings.toBuilder();
       setServiceAccountSettings = settings.setServiceAccountSettings.toBuilder();
+      setServiceAccountOperationSettings = settings.setServiceAccountOperationSettings.toBuilder();
       setShieldedInstanceIntegrityPolicySettings =
           settings.setShieldedInstanceIntegrityPolicySettings.toBuilder();
+      setShieldedInstanceIntegrityPolicyOperationSettings =
+          settings.setShieldedInstanceIntegrityPolicyOperationSettings.toBuilder();
       setTagsSettings = settings.setTagsSettings.toBuilder();
+      setTagsOperationSettings = settings.setTagsOperationSettings.toBuilder();
       simulateMaintenanceEventSettings = settings.simulateMaintenanceEventSettings.toBuilder();
+      simulateMaintenanceEventOperationSettings =
+          settings.simulateMaintenanceEventOperationSettings.toBuilder();
       startSettings = settings.startSettings.toBuilder();
+      startOperationSettings = settings.startOperationSettings.toBuilder();
       startWithEncryptionKeySettings = settings.startWithEncryptionKeySettings.toBuilder();
+      startWithEncryptionKeyOperationSettings =
+          settings.startWithEncryptionKeyOperationSettings.toBuilder();
       stopSettings = settings.stopSettings.toBuilder();
+      stopOperationSettings = settings.stopOperationSettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
+      updateOperationSettings = settings.updateOperationSettings.toBuilder();
       updateAccessConfigSettings = settings.updateAccessConfigSettings.toBuilder();
+      updateAccessConfigOperationSettings =
+          settings.updateAccessConfigOperationSettings.toBuilder();
       updateDisplayDeviceSettings = settings.updateDisplayDeviceSettings.toBuilder();
+      updateDisplayDeviceOperationSettings =
+          settings.updateDisplayDeviceOperationSettings.toBuilder();
       updateNetworkInterfaceSettings = settings.updateNetworkInterfaceSettings.toBuilder();
+      updateNetworkInterfaceOperationSettings =
+          settings.updateNetworkInterfaceOperationSettings.toBuilder();
       updateShieldedInstanceConfigSettings =
           settings.updateShieldedInstanceConfigSettings.toBuilder();
+      updateShieldedInstanceConfigOperationSettings =
+          settings.updateShieldedInstanceConfigOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1053,6 +1513,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               listReferrersSettings,
               removeResourcePoliciesSettings,
               resetSettings,
+              sendDiagnosticInterruptSettings,
               setDeletionProtectionSettings,
               setDiskAutoDeleteSettings,
               setIamPolicySettings,
@@ -1192,6 +1653,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .sendDiagnosticInterruptSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .setDeletionProtectionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -1301,6 +1767,741 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .addAccessConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AddAccessConfigInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .addResourcePoliciesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AddResourcePoliciesInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .attachDiskOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AttachDiskInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .bulkInsertOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BulkInsertInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .deleteOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .deleteAccessConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteAccessConfigInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .detachDiskOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DetachDiskInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .insertOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<InsertInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .removeResourcePoliciesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RemoveResourcePoliciesInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .resetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ResetInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setDeletionProtectionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetDeletionProtectionInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setDiskAutoDeleteOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetDiskAutoDeleteInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setLabelsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetLabelsInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setMachineResourcesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetMachineResourcesInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setMachineTypeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetMachineTypeInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setMetadataOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetMetadataInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setMinCpuPlatformOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetMinCpuPlatformInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setSchedulingOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetSchedulingInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setServiceAccountOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetServiceAccountInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setShieldedInstanceIntegrityPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetShieldedInstanceIntegrityPolicyInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setTagsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetTagsInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .simulateMaintenanceEventOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SimulateMaintenanceEventInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .startOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<StartInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .startWithEncryptionKeyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<StartWithEncryptionKeyInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .stopOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<StopInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .updateOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .updateAccessConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateAccessConfigInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .updateDisplayDeviceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateDisplayDeviceInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .updateNetworkInterfaceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateNetworkInterfaceInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .updateShieldedInstanceConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateShieldedInstanceConfigInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1325,10 +2526,26 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       return addAccessConfigSettings;
     }
 
+    /** Returns the builder for the settings used for calls to addAccessConfig. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<AddAccessConfigInstanceRequest, Operation, Operation>
+        addAccessConfigOperationSettings() {
+      return addAccessConfigOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to addResourcePolicies. */
     public UnaryCallSettings.Builder<AddResourcePoliciesInstanceRequest, Operation>
         addResourcePoliciesSettings() {
       return addResourcePoliciesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addResourcePolicies. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<AddResourcePoliciesInstanceRequest, Operation, Operation>
+        addResourcePoliciesOperationSettings() {
+      return addResourcePoliciesOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to aggregatedList. */
@@ -1343,14 +2560,38 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       return attachDiskSettings;
     }
 
+    /** Returns the builder for the settings used for calls to attachDisk. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<AttachDiskInstanceRequest, Operation, Operation>
+        attachDiskOperationSettings() {
+      return attachDiskOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to bulkInsert. */
     public UnaryCallSettings.Builder<BulkInsertInstanceRequest, Operation> bulkInsertSettings() {
       return bulkInsertSettings;
     }
 
+    /** Returns the builder for the settings used for calls to bulkInsert. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<BulkInsertInstanceRequest, Operation, Operation>
+        bulkInsertOperationSettings() {
+      return bulkInsertOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteInstanceRequest, Operation> deleteSettings() {
       return deleteSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to delete. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteInstanceRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return deleteOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteAccessConfig. */
@@ -1359,9 +2600,25 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       return deleteAccessConfigSettings;
     }
 
+    /** Returns the builder for the settings used for calls to deleteAccessConfig. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteAccessConfigInstanceRequest, Operation, Operation>
+        deleteAccessConfigOperationSettings() {
+      return deleteAccessConfigOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to detachDisk. */
     public UnaryCallSettings.Builder<DetachDiskInstanceRequest, Operation> detachDiskSettings() {
       return detachDiskSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to detachDisk. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DetachDiskInstanceRequest, Operation, Operation>
+        detachDiskOperationSettings() {
+      return detachDiskOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -1411,6 +2668,14 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       return insertSettings;
     }
 
+    /** Returns the builder for the settings used for calls to insert. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<InsertInstanceRequest, Operation, Operation>
+        insertOperationSettings() {
+      return insertOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to list. */
     public PagedCallSettings.Builder<ListInstancesRequest, InstanceList, ListPagedResponse>
         listSettings() {
@@ -1430,9 +2695,33 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       return removeResourcePoliciesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to removeResourcePolicies. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            RemoveResourcePoliciesInstanceRequest, Operation, Operation>
+        removeResourcePoliciesOperationSettings() {
+      return removeResourcePoliciesOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to reset. */
     public UnaryCallSettings.Builder<ResetInstanceRequest, Operation> resetSettings() {
       return resetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to reset. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<ResetInstanceRequest, Operation, Operation>
+        resetOperationSettings() {
+      return resetOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to sendDiagnosticInterrupt. */
+    public UnaryCallSettings.Builder<
+            SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+        sendDiagnosticInterruptSettings() {
+      return sendDiagnosticInterruptSettings;
     }
 
     /** Returns the builder for the settings used for calls to setDeletionProtection. */
@@ -1441,10 +2730,26 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       return setDeletionProtectionSettings;
     }
 
+    /** Returns the builder for the settings used for calls to setDeletionProtection. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetDeletionProtectionInstanceRequest, Operation, Operation>
+        setDeletionProtectionOperationSettings() {
+      return setDeletionProtectionOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setDiskAutoDelete. */
     public UnaryCallSettings.Builder<SetDiskAutoDeleteInstanceRequest, Operation>
         setDiskAutoDeleteSettings() {
       return setDiskAutoDeleteSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setDiskAutoDelete. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetDiskAutoDeleteInstanceRequest, Operation, Operation>
+        setDiskAutoDeleteOperationSettings() {
+      return setDiskAutoDeleteOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */
@@ -1457,10 +2762,26 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       return setLabelsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to setLabels. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetLabelsInstanceRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return setLabelsOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setMachineResources. */
     public UnaryCallSettings.Builder<SetMachineResourcesInstanceRequest, Operation>
         setMachineResourcesSettings() {
       return setMachineResourcesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setMachineResources. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetMachineResourcesInstanceRequest, Operation, Operation>
+        setMachineResourcesOperationSettings() {
+      return setMachineResourcesOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to setMachineType. */
@@ -1469,9 +2790,25 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       return setMachineTypeSettings;
     }
 
+    /** Returns the builder for the settings used for calls to setMachineType. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetMachineTypeInstanceRequest, Operation, Operation>
+        setMachineTypeOperationSettings() {
+      return setMachineTypeOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setMetadata. */
     public UnaryCallSettings.Builder<SetMetadataInstanceRequest, Operation> setMetadataSettings() {
       return setMetadataSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setMetadata. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetMetadataInstanceRequest, Operation, Operation>
+        setMetadataOperationSettings() {
+      return setMetadataOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to setMinCpuPlatform. */
@@ -1480,16 +2817,40 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       return setMinCpuPlatformSettings;
     }
 
+    /** Returns the builder for the settings used for calls to setMinCpuPlatform. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetMinCpuPlatformInstanceRequest, Operation, Operation>
+        setMinCpuPlatformOperationSettings() {
+      return setMinCpuPlatformOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setScheduling. */
     public UnaryCallSettings.Builder<SetSchedulingInstanceRequest, Operation>
         setSchedulingSettings() {
       return setSchedulingSettings;
     }
 
+    /** Returns the builder for the settings used for calls to setScheduling. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetSchedulingInstanceRequest, Operation, Operation>
+        setSchedulingOperationSettings() {
+      return setSchedulingOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setServiceAccount. */
     public UnaryCallSettings.Builder<SetServiceAccountInstanceRequest, Operation>
         setServiceAccountSettings() {
       return setServiceAccountSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setServiceAccount. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetServiceAccountInstanceRequest, Operation, Operation>
+        setServiceAccountOperationSettings() {
+      return setServiceAccountOperationSettings;
     }
 
     /**
@@ -1500,9 +2861,28 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       return setShieldedInstanceIntegrityPolicySettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to setShieldedInstanceIntegrityPolicy.
+     */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation, Operation>
+        setShieldedInstanceIntegrityPolicyOperationSettings() {
+      return setShieldedInstanceIntegrityPolicyOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setTags. */
     public UnaryCallSettings.Builder<SetTagsInstanceRequest, Operation> setTagsSettings() {
       return setTagsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setTags. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetTagsInstanceRequest, Operation, Operation>
+        setTagsOperationSettings() {
+      return setTagsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to simulateMaintenanceEvent. */
@@ -1511,9 +2891,26 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       return simulateMaintenanceEventSettings;
     }
 
+    /** Returns the builder for the settings used for calls to simulateMaintenanceEvent. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            SimulateMaintenanceEventInstanceRequest, Operation, Operation>
+        simulateMaintenanceEventOperationSettings() {
+      return simulateMaintenanceEventOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to start. */
     public UnaryCallSettings.Builder<StartInstanceRequest, Operation> startSettings() {
       return startSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to start. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<StartInstanceRequest, Operation, Operation>
+        startOperationSettings() {
+      return startOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to startWithEncryptionKey. */
@@ -1522,9 +2919,26 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       return startWithEncryptionKeySettings;
     }
 
+    /** Returns the builder for the settings used for calls to startWithEncryptionKey. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            StartWithEncryptionKeyInstanceRequest, Operation, Operation>
+        startWithEncryptionKeyOperationSettings() {
+      return startWithEncryptionKeyOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to stop. */
     public UnaryCallSettings.Builder<StopInstanceRequest, Operation> stopSettings() {
       return stopSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to stop. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<StopInstanceRequest, Operation, Operation>
+        stopOperationSettings() {
+      return stopOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */
@@ -1538,10 +2952,26 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       return updateSettings;
     }
 
+    /** Returns the builder for the settings used for calls to update. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdateInstanceRequest, Operation, Operation>
+        updateOperationSettings() {
+      return updateOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to updateAccessConfig. */
     public UnaryCallSettings.Builder<UpdateAccessConfigInstanceRequest, Operation>
         updateAccessConfigSettings() {
       return updateAccessConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAccessConfig. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdateAccessConfigInstanceRequest, Operation, Operation>
+        updateAccessConfigOperationSettings() {
+      return updateAccessConfigOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateDisplayDevice. */
@@ -1550,16 +2980,42 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       return updateDisplayDeviceSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateDisplayDevice. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdateDisplayDeviceInstanceRequest, Operation, Operation>
+        updateDisplayDeviceOperationSettings() {
+      return updateDisplayDeviceOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to updateNetworkInterface. */
     public UnaryCallSettings.Builder<UpdateNetworkInterfaceInstanceRequest, Operation>
         updateNetworkInterfaceSettings() {
       return updateNetworkInterfaceSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateNetworkInterface. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            UpdateNetworkInterfaceInstanceRequest, Operation, Operation>
+        updateNetworkInterfaceOperationSettings() {
+      return updateNetworkInterfaceOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to updateShieldedInstanceConfig. */
     public UnaryCallSettings.Builder<UpdateShieldedInstanceConfigInstanceRequest, Operation>
         updateShieldedInstanceConfigSettings() {
       return updateShieldedInstanceConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateShieldedInstanceConfig. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            UpdateShieldedInstanceConfigInstanceRequest, Operation, Operation>
+        updateShieldedInstanceConfigOperationSettings() {
+      return updateShieldedInstanceConfigOperationSettings;
     }
 
     @Override

@@ -125,7 +125,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
    * This field is only temporary. It will be removed. Do not use it.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return Whether the name field is set.
    */
@@ -140,7 +140,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
    * This field is only temporary. It will be removed. Do not use it.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
@@ -163,7 +163,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
    * This field is only temporary. It will be removed. Do not use it.
    * </pre>
    *
-   * <code>string name = 3373707;</code>
+   * <code>optional string name = 3373707;</code>
    *
    * @return The bytes for name.
    */
@@ -540,7 +540,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      * This field is only temporary. It will be removed. Do not use it.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return Whether the name field is set.
      */
@@ -554,7 +554,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      * This field is only temporary. It will be removed. Do not use it.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The name.
      */
@@ -576,7 +576,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      * This field is only temporary. It will be removed. Do not use it.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return The bytes for name.
      */
@@ -598,7 +598,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      * This field is only temporary. It will be removed. Do not use it.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -619,7 +619,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      * This field is only temporary. It will be removed. Do not use it.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @return This builder for chaining.
      */
@@ -636,7 +636,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      * This field is only temporary. It will be removed. Do not use it.
      * </pre>
      *
-     * <code>string name = 3373707;</code>
+     * <code>optional string name = 3373707;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

@@ -30,7 +30,7 @@ public interface DiskInstantiationConfigOrBuilder
    * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
    * </pre>
    *
-   * <code>bool auto_delete = 464761403;</code>
+   * <code>optional bool auto_delete = 464761403;</code>
    *
    * @return Whether the autoDelete field is set.
    */
@@ -42,7 +42,7 @@ public interface DiskInstantiationConfigOrBuilder
    * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
    * </pre>
    *
-   * <code>bool auto_delete = 464761403;</code>
+   * <code>optional bool auto_delete = 464761403;</code>
    *
    * @return The autoDelete.
    */
@@ -55,7 +55,7 @@ public interface DiskInstantiationConfigOrBuilder
    * The custom source image to be used to restore this disk when instantiating this instance template.
    * </pre>
    *
-   * <code>string custom_image = 184123149;</code>
+   * <code>optional string custom_image = 184123149;</code>
    *
    * @return Whether the customImage field is set.
    */
@@ -67,7 +67,7 @@ public interface DiskInstantiationConfigOrBuilder
    * The custom source image to be used to restore this disk when instantiating this instance template.
    * </pre>
    *
-   * <code>string custom_image = 184123149;</code>
+   * <code>optional string custom_image = 184123149;</code>
    *
    * @return The customImage.
    */
@@ -79,7 +79,7 @@ public interface DiskInstantiationConfigOrBuilder
    * The custom source image to be used to restore this disk when instantiating this instance template.
    * </pre>
    *
-   * <code>string custom_image = 184123149;</code>
+   * <code>optional string custom_image = 184123149;</code>
    *
    * @return The bytes for customImage.
    */
@@ -92,7 +92,7 @@ public interface DiskInstantiationConfigOrBuilder
    * Specifies the device name of the disk to which the configurations apply to.
    * </pre>
    *
-   * <code>string device_name = 67541716;</code>
+   * <code>optional string device_name = 67541716;</code>
    *
    * @return Whether the deviceName field is set.
    */
@@ -104,7 +104,7 @@ public interface DiskInstantiationConfigOrBuilder
    * Specifies the device name of the disk to which the configurations apply to.
    * </pre>
    *
-   * <code>string device_name = 67541716;</code>
+   * <code>optional string device_name = 67541716;</code>
    *
    * @return The deviceName.
    */
@@ -116,7 +116,7 @@ public interface DiskInstantiationConfigOrBuilder
    * Specifies the device name of the disk to which the configurations apply to.
    * </pre>
    *
-   * <code>string device_name = 67541716;</code>
+   * <code>optional string device_name = 67541716;</code>
    *
    * @return The bytes for deviceName.
    */
@@ -126,17 +126,11 @@ public interface DiskInstantiationConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies whether to include the disk and what image to use. Possible values are:
-   * - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks.
-   * - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks.
-   * - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks.
-   * - attach-read-only: to attach a read-only disk. Applicable to read-only disks.
-   * - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+   * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+   * Check the InstantiateFrom enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
-   * </code>
+   * <code>optional string instantiate_from = 393383903;</code>
    *
    * @return Whether the instantiateFrom field is set.
    */
@@ -145,38 +139,26 @@ public interface DiskInstantiationConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies whether to include the disk and what image to use. Possible values are:
-   * - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks.
-   * - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks.
-   * - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks.
-   * - attach-read-only: to attach a read-only disk. Applicable to read-only disks.
-   * - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+   * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+   * Check the InstantiateFrom enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
-   * </code>
+   * <code>optional string instantiate_from = 393383903;</code>
    *
-   * @return The enum numeric value on the wire for instantiateFrom.
+   * @return The instantiateFrom.
    */
-  int getInstantiateFromValue();
+  java.lang.String getInstantiateFrom();
   /**
    *
    *
    * <pre>
-   * Specifies whether to include the disk and what image to use. Possible values are:
-   * - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks.
-   * - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks.
-   * - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks.
-   * - attach-read-only: to attach a read-only disk. Applicable to read-only disks.
-   * - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+   * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+   * Check the InstantiateFrom enum for the list of possible values.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
-   * </code>
+   * <code>optional string instantiate_from = 393383903;</code>
    *
-   * @return The instantiateFrom.
+   * @return The bytes for instantiateFrom.
    */
-  com.google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom getInstantiateFrom();
+  com.google.protobuf.ByteString getInstantiateFromBytes();
 }

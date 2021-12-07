@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -50,16 +51,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * TargetVpnGatewaysSettings.Builder targetVpnGatewaysSettingsBuilder =
  *     TargetVpnGatewaysSettings.newBuilder();
  * targetVpnGatewaysSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         targetVpnGatewaysSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -84,6 +85,12 @@ public class TargetVpnGatewaysSettings extends ClientSettings<TargetVpnGatewaysS
     return ((TargetVpnGatewaysStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteTargetVpnGatewayRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((TargetVpnGatewaysStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetTargetVpnGatewayRequest, TargetVpnGateway> getSettings() {
     return ((TargetVpnGatewaysStubSettings) getStubSettings()).getSettings();
@@ -92,6 +99,12 @@ public class TargetVpnGatewaysSettings extends ClientSettings<TargetVpnGatewaysS
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertTargetVpnGatewayRequest, Operation> insertSettings() {
     return ((TargetVpnGatewaysStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertTargetVpnGatewayRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((TargetVpnGatewaysStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -212,6 +225,12 @@ public class TargetVpnGatewaysSettings extends ClientSettings<TargetVpnGatewaysS
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteTargetVpnGatewayRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetTargetVpnGatewayRequest, TargetVpnGateway> getSettings() {
       return getStubSettingsBuilder().getSettings();
@@ -220,6 +239,12 @@ public class TargetVpnGatewaysSettings extends ClientSettings<TargetVpnGatewaysS
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertTargetVpnGatewayRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertTargetVpnGatewayRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */

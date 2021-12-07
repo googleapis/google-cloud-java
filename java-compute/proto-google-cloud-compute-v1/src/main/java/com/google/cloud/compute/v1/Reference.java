@@ -146,7 +146,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#reference for references.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return Whether the kind field is set.
    */
@@ -161,7 +161,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#reference for references.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The kind.
    */
@@ -184,7 +184,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Type of the resource. Always compute#reference for references.
    * </pre>
    *
-   * <code>string kind = 3292052;</code>
+   * <code>optional string kind = 3292052;</code>
    *
    * @return The bytes for kind.
    */
@@ -207,11 +207,10 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A description of the reference type with no implied semantics. Possible values include:
-   * - MEMBER_OF
+   * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
    * </pre>
    *
-   * <code>string reference_type = 247521198;</code>
+   * <code>optional string reference_type = 247521198;</code>
    *
    * @return Whether the referenceType field is set.
    */
@@ -223,11 +222,10 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A description of the reference type with no implied semantics. Possible values include:
-   * - MEMBER_OF
+   * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
    * </pre>
    *
-   * <code>string reference_type = 247521198;</code>
+   * <code>optional string reference_type = 247521198;</code>
    *
    * @return The referenceType.
    */
@@ -247,11 +245,10 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A description of the reference type with no implied semantics. Possible values include:
-   * - MEMBER_OF
+   * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
    * </pre>
    *
-   * <code>string reference_type = 247521198;</code>
+   * <code>optional string reference_type = 247521198;</code>
    *
    * @return The bytes for referenceType.
    */
@@ -277,7 +274,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    * URL of the resource which refers to the target.
    * </pre>
    *
-   * <code>string referrer = 351173663;</code>
+   * <code>optional string referrer = 351173663;</code>
    *
    * @return Whether the referrer field is set.
    */
@@ -292,7 +289,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    * URL of the resource which refers to the target.
    * </pre>
    *
-   * <code>string referrer = 351173663;</code>
+   * <code>optional string referrer = 351173663;</code>
    *
    * @return The referrer.
    */
@@ -315,7 +312,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    * URL of the resource which refers to the target.
    * </pre>
    *
-   * <code>string referrer = 351173663;</code>
+   * <code>optional string referrer = 351173663;</code>
    *
    * @return The bytes for referrer.
    */
@@ -341,7 +338,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    * URL of the resource to which this reference points.
    * </pre>
    *
-   * <code>string target = 192835985;</code>
+   * <code>optional string target = 192835985;</code>
    *
    * @return Whether the target field is set.
    */
@@ -356,7 +353,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    * URL of the resource to which this reference points.
    * </pre>
    *
-   * <code>string target = 192835985;</code>
+   * <code>optional string target = 192835985;</code>
    *
    * @return The target.
    */
@@ -379,7 +376,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    * URL of the resource to which this reference points.
    * </pre>
    *
-   * <code>string target = 192835985;</code>
+   * <code>optional string target = 192835985;</code>
    *
    * @return The bytes for target.
    */
@@ -807,7 +804,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#reference for references.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return Whether the kind field is set.
      */
@@ -821,7 +818,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#reference for references.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The kind.
      */
@@ -843,7 +840,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#reference for references.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return The bytes for kind.
      */
@@ -865,7 +862,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#reference for references.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -886,7 +883,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#reference for references.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @return This builder for chaining.
      */
@@ -903,7 +900,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Type of the resource. Always compute#reference for references.
      * </pre>
      *
-     * <code>string kind = 3292052;</code>
+     * <code>optional string kind = 3292052;</code>
      *
      * @param value The bytes for kind to set.
      * @return This builder for chaining.
@@ -924,11 +921,10 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of the reference type with no implied semantics. Possible values include:
-     * - MEMBER_OF
+     * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
      * </pre>
      *
-     * <code>string reference_type = 247521198;</code>
+     * <code>optional string reference_type = 247521198;</code>
      *
      * @return Whether the referenceType field is set.
      */
@@ -939,11 +935,10 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of the reference type with no implied semantics. Possible values include:
-     * - MEMBER_OF
+     * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
      * </pre>
      *
-     * <code>string reference_type = 247521198;</code>
+     * <code>optional string reference_type = 247521198;</code>
      *
      * @return The referenceType.
      */
@@ -962,11 +957,10 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of the reference type with no implied semantics. Possible values include:
-     * - MEMBER_OF
+     * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
      * </pre>
      *
-     * <code>string reference_type = 247521198;</code>
+     * <code>optional string reference_type = 247521198;</code>
      *
      * @return The bytes for referenceType.
      */
@@ -985,11 +979,10 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of the reference type with no implied semantics. Possible values include:
-     * - MEMBER_OF
+     * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
      * </pre>
      *
-     * <code>string reference_type = 247521198;</code>
+     * <code>optional string reference_type = 247521198;</code>
      *
      * @param value The referenceType to set.
      * @return This builder for chaining.
@@ -1007,11 +1000,10 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of the reference type with no implied semantics. Possible values include:
-     * - MEMBER_OF
+     * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
      * </pre>
      *
-     * <code>string reference_type = 247521198;</code>
+     * <code>optional string reference_type = 247521198;</code>
      *
      * @return This builder for chaining.
      */
@@ -1025,11 +1017,10 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of the reference type with no implied semantics. Possible values include:
-     * - MEMBER_OF
+     * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
      * </pre>
      *
-     * <code>string reference_type = 247521198;</code>
+     * <code>optional string reference_type = 247521198;</code>
      *
      * @param value The bytes for referenceType to set.
      * @return This builder for chaining.
@@ -1053,7 +1044,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource which refers to the target.
      * </pre>
      *
-     * <code>string referrer = 351173663;</code>
+     * <code>optional string referrer = 351173663;</code>
      *
      * @return Whether the referrer field is set.
      */
@@ -1067,7 +1058,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource which refers to the target.
      * </pre>
      *
-     * <code>string referrer = 351173663;</code>
+     * <code>optional string referrer = 351173663;</code>
      *
      * @return The referrer.
      */
@@ -1089,7 +1080,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource which refers to the target.
      * </pre>
      *
-     * <code>string referrer = 351173663;</code>
+     * <code>optional string referrer = 351173663;</code>
      *
      * @return The bytes for referrer.
      */
@@ -1111,7 +1102,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource which refers to the target.
      * </pre>
      *
-     * <code>string referrer = 351173663;</code>
+     * <code>optional string referrer = 351173663;</code>
      *
      * @param value The referrer to set.
      * @return This builder for chaining.
@@ -1132,7 +1123,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource which refers to the target.
      * </pre>
      *
-     * <code>string referrer = 351173663;</code>
+     * <code>optional string referrer = 351173663;</code>
      *
      * @return This builder for chaining.
      */
@@ -1149,7 +1140,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource which refers to the target.
      * </pre>
      *
-     * <code>string referrer = 351173663;</code>
+     * <code>optional string referrer = 351173663;</code>
      *
      * @param value The bytes for referrer to set.
      * @return This builder for chaining.
@@ -1173,7 +1164,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource to which this reference points.
      * </pre>
      *
-     * <code>string target = 192835985;</code>
+     * <code>optional string target = 192835985;</code>
      *
      * @return Whether the target field is set.
      */
@@ -1187,7 +1178,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource to which this reference points.
      * </pre>
      *
-     * <code>string target = 192835985;</code>
+     * <code>optional string target = 192835985;</code>
      *
      * @return The target.
      */
@@ -1209,7 +1200,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource to which this reference points.
      * </pre>
      *
-     * <code>string target = 192835985;</code>
+     * <code>optional string target = 192835985;</code>
      *
      * @return The bytes for target.
      */
@@ -1231,7 +1222,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource to which this reference points.
      * </pre>
      *
-     * <code>string target = 192835985;</code>
+     * <code>optional string target = 192835985;</code>
      *
      * @param value The target to set.
      * @return This builder for chaining.
@@ -1252,7 +1243,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource to which this reference points.
      * </pre>
      *
-     * <code>string target = 192835985;</code>
+     * <code>optional string target = 192835985;</code>
      *
      * @return This builder for chaining.
      */
@@ -1269,7 +1260,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource to which this reference points.
      * </pre>
      *
-     * <code>string target = 192835985;</code>
+     * <code>optional string target = 192835985;</code>
      *
      * @param value The bytes for target to set.
      * @return This builder for chaining.

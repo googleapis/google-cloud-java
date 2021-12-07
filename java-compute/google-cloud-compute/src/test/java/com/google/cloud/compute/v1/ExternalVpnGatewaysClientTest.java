@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.stub.HttpJsonExternalVpnGatewaysStub;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -34,6 +35,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -87,7 +89,7 @@ public class ExternalVpnGatewaysClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -98,6 +100,7 @@ public class ExternalVpnGatewaysClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -110,7 +113,7 @@ public class ExternalVpnGatewaysClientTest {
     String project = "project-309310695";
     String externalVpnGateway = "externalVpnGateway-1140582181";
 
-    Operation actualResponse = client.delete(project, externalVpnGateway);
+    Operation actualResponse = client.deleteAsync(project, externalVpnGateway).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -138,10 +141,9 @@ public class ExternalVpnGatewaysClientTest {
     try {
       String project = "project-309310695";
       String externalVpnGateway = "externalVpnGateway-1140582181";
-      client.delete(project, externalVpnGateway);
+      client.deleteAsync(project, externalVpnGateway).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -157,6 +159,7 @@ public class ExternalVpnGatewaysClientTest {
             .setLabelFingerprint("labelFingerprint379449680")
             .putAllLabels(new HashMap<String, String>())
             .setName("name3373707")
+            .setRedundancyType("redundancyType1705637879")
             .setSelfLink("selfLink1191800166")
             .build();
     mockService.addResponse(expectedResponse);
@@ -209,7 +212,7 @@ public class ExternalVpnGatewaysClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -220,6 +223,7 @@ public class ExternalVpnGatewaysClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -232,7 +236,7 @@ public class ExternalVpnGatewaysClientTest {
     String project = "project-309310695";
     ExternalVpnGateway externalVpnGatewayResource = ExternalVpnGateway.newBuilder().build();
 
-    Operation actualResponse = client.insert(project, externalVpnGatewayResource);
+    Operation actualResponse = client.insertAsync(project, externalVpnGatewayResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -260,10 +264,9 @@ public class ExternalVpnGatewaysClientTest {
     try {
       String project = "project-309310695";
       ExternalVpnGateway externalVpnGatewayResource = ExternalVpnGateway.newBuilder().build();
-      client.insert(project, externalVpnGatewayResource);
+      client.insertAsync(project, externalVpnGatewayResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 
@@ -327,7 +330,7 @@ public class ExternalVpnGatewaysClientTest {
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
-            .setHttpErrorStatusCode(1386087020)
+            .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
             .setKind("kind3292052")
@@ -338,6 +341,7 @@ public class ExternalVpnGatewaysClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
             .setTargetId(-815576439)
             .setTargetLink("targetLink486368555")
@@ -352,7 +356,8 @@ public class ExternalVpnGatewaysClientTest {
     GlobalSetLabelsRequest globalSetLabelsRequestResource =
         GlobalSetLabelsRequest.newBuilder().build();
 
-    Operation actualResponse = client.setLabels(project, resource, globalSetLabelsRequestResource);
+    Operation actualResponse =
+        client.setLabelsAsync(project, resource, globalSetLabelsRequestResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -382,10 +387,9 @@ public class ExternalVpnGatewaysClientTest {
       String resource = "resource-341064690";
       GlobalSetLabelsRequest globalSetLabelsRequestResource =
           GlobalSetLabelsRequest.newBuilder().build();
-      client.setLabels(project, resource, globalSetLabelsRequestResource);
+      client.setLabelsAsync(project, resource, globalSetLabelsRequestResource).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+    } catch (ExecutionException e) {
     }
   }
 

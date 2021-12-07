@@ -30,7 +30,7 @@ public interface InterconnectDiagnosticsARPEntryOrBuilder
    * The IP address of this ARP neighbor.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return Whether the ipAddress field is set.
    */
@@ -42,7 +42,7 @@ public interface InterconnectDiagnosticsARPEntryOrBuilder
    * The IP address of this ARP neighbor.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return The ipAddress.
    */
@@ -54,7 +54,7 @@ public interface InterconnectDiagnosticsARPEntryOrBuilder
    * The IP address of this ARP neighbor.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>optional string ip_address = 406272220;</code>
    *
    * @return The bytes for ipAddress.
    */
@@ -67,7 +67,7 @@ public interface InterconnectDiagnosticsARPEntryOrBuilder
    * The MAC address of this ARP neighbor.
    * </pre>
    *
-   * <code>string mac_address = 332540164;</code>
+   * <code>optional string mac_address = 332540164;</code>
    *
    * @return Whether the macAddress field is set.
    */
@@ -79,7 +79,7 @@ public interface InterconnectDiagnosticsARPEntryOrBuilder
    * The MAC address of this ARP neighbor.
    * </pre>
    *
-   * <code>string mac_address = 332540164;</code>
+   * <code>optional string mac_address = 332540164;</code>
    *
    * @return The macAddress.
    */
@@ -91,7 +91,7 @@ public interface InterconnectDiagnosticsARPEntryOrBuilder
    * The MAC address of this ARP neighbor.
    * </pre>
    *
-   * <code>string mac_address = 332540164;</code>
+   * <code>optional string mac_address = 332540164;</code>
    *
    * @return The bytes for macAddress.
    */

@@ -88,7 +88,7 @@ public interface NetworkEndpointWithHealthStatusOrBuilder
    * [Output only] The network endpoint;
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
+   * <code>optional .google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
    *
    * @return Whether the networkEndpoint field is set.
    */
@@ -100,7 +100,7 @@ public interface NetworkEndpointWithHealthStatusOrBuilder
    * [Output only] The network endpoint;
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
+   * <code>optional .google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
    *
    * @return The networkEndpoint.
    */
@@ -112,7 +112,7 @@ public interface NetworkEndpointWithHealthStatusOrBuilder
    * [Output only] The network endpoint;
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
+   * <code>optional .google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
    */
   com.google.cloud.compute.v1.NetworkEndpointOrBuilder getNetworkEndpointOrBuilder();
 }

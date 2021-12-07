@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -50,15 +51,15 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of delete to 30 seconds:
+ * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
  * VpnTunnelsSettings.Builder vpnTunnelsSettingsBuilder = VpnTunnelsSettings.newBuilder();
  * vpnTunnelsSettingsBuilder
- *     .deleteSettings()
+ *     .getSettings()
  *     .setRetrySettings(
  *         vpnTunnelsSettingsBuilder
- *             .deleteSettings()
+ *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -81,6 +82,12 @@ public class VpnTunnelsSettings extends ClientSettings<VpnTunnelsSettings> {
     return ((VpnTunnelsStubSettings) getStubSettings()).deleteSettings();
   }
 
+  /** Returns the object with the settings used for calls to delete. */
+  public OperationCallSettings<DeleteVpnTunnelRequest, Operation, Operation>
+      deleteOperationSettings() {
+    return ((VpnTunnelsStubSettings) getStubSettings()).deleteOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetVpnTunnelRequest, VpnTunnel> getSettings() {
     return ((VpnTunnelsStubSettings) getStubSettings()).getSettings();
@@ -89,6 +96,12 @@ public class VpnTunnelsSettings extends ClientSettings<VpnTunnelsSettings> {
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertVpnTunnelRequest, Operation> insertSettings() {
     return ((VpnTunnelsStubSettings) getStubSettings()).insertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public OperationCallSettings<InsertVpnTunnelRequest, Operation, Operation>
+      insertOperationSettings() {
+    return ((VpnTunnelsStubSettings) getStubSettings()).insertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to list. */
@@ -205,6 +218,12 @@ public class VpnTunnelsSettings extends ClientSettings<VpnTunnelsSettings> {
       return getStubSettingsBuilder().deleteSettings();
     }
 
+    /** Returns the builder for the settings used for calls to delete. */
+    public OperationCallSettings.Builder<DeleteVpnTunnelRequest, Operation, Operation>
+        deleteOperationSettings() {
+      return getStubSettingsBuilder().deleteOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetVpnTunnelRequest, VpnTunnel> getSettings() {
       return getStubSettingsBuilder().getSettings();
@@ -213,6 +232,12 @@ public class VpnTunnelsSettings extends ClientSettings<VpnTunnelsSettings> {
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertVpnTunnelRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public OperationCallSettings.Builder<InsertVpnTunnelRequest, Operation, Operation>
+        insertOperationSettings() {
+      return getStubSettingsBuilder().insertOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to list. */

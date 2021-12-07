@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RegionSslCertificatesStub;
@@ -46,7 +48,7 @@ import javax.annotation.Generated;
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   String sslCertificate = "sslCertificate-1304941589";
- *   Operation response = regionSslCertificatesClient.delete(project, region, sslCertificate);
+ *   SslCertificate response = regionSslCertificatesClient.get(project, region, sslCertificate);
  * }
  * }</pre>
  *
@@ -164,7 +166,8 @@ public class RegionSslCertificatesClient implements BackgroundResource {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
    *   String sslCertificate = "sslCertificate-1304941589";
-   *   Operation response = regionSslCertificatesClient.delete(project, region, sslCertificate);
+   *   Operation response =
+   *       regionSslCertificatesClient.deleteAsync(project, region, sslCertificate).get();
    * }
    * }</pre>
    *
@@ -173,14 +176,15 @@ public class RegionSslCertificatesClient implements BackgroundResource {
    * @param sslCertificate Name of the SslCertificate resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(String project, String region, String sslCertificate) {
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      String project, String region, String sslCertificate) {
     DeleteRegionSslCertificateRequest request =
         DeleteRegionSslCertificateRequest.newBuilder()
             .setProject(project)
             .setRegion(region)
             .setSslCertificate(sslCertificate)
             .build();
-    return delete(request);
+    return deleteAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -199,15 +203,46 @@ public class RegionSslCertificatesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setSslCertificate("sslCertificate-1304941589")
    *           .build();
-   *   Operation response = regionSslCertificatesClient.delete(request);
+   *   Operation response = regionSslCertificatesClient.deleteAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation delete(DeleteRegionSslCertificateRequest request) {
-    return deleteCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> deleteAsync(
+      DeleteRegionSslCertificateRequest request) {
+    return deleteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified SslCertificate resource in the region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionSslCertificatesClient regionSslCertificatesClient =
+   *     RegionSslCertificatesClient.create()) {
+   *   DeleteRegionSslCertificateRequest request =
+   *       DeleteRegionSslCertificateRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSslCertificate("sslCertificate-1304941589")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionSslCertificatesClient.deleteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteRegionSslCertificateRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return stub.deleteOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -337,7 +372,7 @@ public class RegionSslCertificatesClient implements BackgroundResource {
    *   String region = "region-934795532";
    *   SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
    *   Operation response =
-   *       regionSslCertificatesClient.insert(project, region, sslCertificateResource);
+   *       regionSslCertificatesClient.insertAsync(project, region, sslCertificateResource).get();
    * }
    * }</pre>
    *
@@ -346,7 +381,7 @@ public class RegionSslCertificatesClient implements BackgroundResource {
    * @param sslCertificateResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(
+  public final OperationFuture<Operation, Operation> insertAsync(
       String project, String region, SslCertificate sslCertificateResource) {
     InsertRegionSslCertificateRequest request =
         InsertRegionSslCertificateRequest.newBuilder()
@@ -354,7 +389,7 @@ public class RegionSslCertificatesClient implements BackgroundResource {
             .setRegion(region)
             .setSslCertificateResource(sslCertificateResource)
             .build();
-    return insert(request);
+    return insertAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -374,15 +409,47 @@ public class RegionSslCertificatesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setSslCertificateResource(SslCertificate.newBuilder().build())
    *           .build();
-   *   Operation response = regionSslCertificatesClient.insert(request);
+   *   Operation response = regionSslCertificatesClient.insertAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation insert(InsertRegionSslCertificateRequest request) {
-    return insertCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> insertAsync(
+      InsertRegionSslCertificateRequest request) {
+    return insertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a SslCertificate resource in the specified project and region using the data included
+   * in the request
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionSslCertificatesClient regionSslCertificatesClient =
+   *     RegionSslCertificatesClient.create()) {
+   *   InsertRegionSslCertificateRequest request =
+   *       InsertRegionSslCertificateRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setSslCertificateResource(SslCertificate.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionSslCertificatesClient.insertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InsertRegionSslCertificateRequest, Operation, Operation>
+      insertOperationCallable() {
+    return stub.insertOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

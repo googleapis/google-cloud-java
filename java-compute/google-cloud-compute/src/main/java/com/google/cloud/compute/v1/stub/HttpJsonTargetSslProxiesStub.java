@@ -25,23 +25,27 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteTargetSslProxyRequest;
 import com.google.cloud.compute.v1.GetTargetSslProxyRequest;
 import com.google.cloud.compute.v1.InsertTargetSslProxyRequest;
 import com.google.cloud.compute.v1.ListTargetSslProxiesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.SetBackendServiceTargetSslProxyRequest;
 import com.google.cloud.compute.v1.SetProxyHeaderTargetSslProxyRequest;
 import com.google.cloud.compute.v1.SetSslCertificatesTargetSslProxyRequest;
 import com.google.cloud.compute.v1.SetSslPolicyTargetSslProxyRequest;
 import com.google.cloud.compute.v1.TargetSslProxy;
 import com.google.cloud.compute.v1.TargetSslProxyList;
+import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -59,6 +63,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
   private static final ApiMethodDescriptor<DeleteTargetSslProxyRequest, Operation>
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteTargetSslProxyRequest, Operation>newBuilder()
@@ -92,7 +99,20 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (DeleteTargetSslProxyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetTargetSslProxyRequest, TargetSslProxy>
@@ -125,6 +145,7 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetSslProxy>newBuilder()
                       .setDefaultInstance(TargetSslProxy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -164,7 +185,20 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (InsertTargetSslProxyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<ListTargetSslProxiesRequest, TargetSslProxyList>
@@ -214,6 +248,7 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetSslProxyList>newBuilder()
                       .setDefaultInstance(TargetSslProxyList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
@@ -256,7 +291,20 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetBackendServiceTargetSslProxyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetProxyHeaderTargetSslProxyRequest, Operation>
@@ -297,7 +345,20 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetProxyHeaderTargetSslProxyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetSslCertificatesTargetSslProxyRequest, Operation>
@@ -339,7 +400,20 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetSslCertificatesTargetSslProxyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<SetSslPolicyTargetSslProxyRequest, Operation>
@@ -380,23 +454,49 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .setOperationSnapshotFactory(
+                  (SetSslPolicyTargetSslProxyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private final UnaryCallable<DeleteTargetSslProxyRequest, Operation> deleteCallable;
+  private final OperationCallable<DeleteTargetSslProxyRequest, Operation, Operation>
+      deleteOperationCallable;
   private final UnaryCallable<GetTargetSslProxyRequest, TargetSslProxy> getCallable;
   private final UnaryCallable<InsertTargetSslProxyRequest, Operation> insertCallable;
+  private final OperationCallable<InsertTargetSslProxyRequest, Operation, Operation>
+      insertOperationCallable;
   private final UnaryCallable<ListTargetSslProxiesRequest, TargetSslProxyList> listCallable;
   private final UnaryCallable<ListTargetSslProxiesRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<SetBackendServiceTargetSslProxyRequest, Operation>
       setBackendServiceCallable;
+  private final OperationCallable<SetBackendServiceTargetSslProxyRequest, Operation, Operation>
+      setBackendServiceOperationCallable;
   private final UnaryCallable<SetProxyHeaderTargetSslProxyRequest, Operation>
       setProxyHeaderCallable;
+  private final OperationCallable<SetProxyHeaderTargetSslProxyRequest, Operation, Operation>
+      setProxyHeaderOperationCallable;
   private final UnaryCallable<SetSslCertificatesTargetSslProxyRequest, Operation>
       setSslCertificatesCallable;
+  private final OperationCallable<SetSslCertificatesTargetSslProxyRequest, Operation, Operation>
+      setSslCertificatesOperationCallable;
   private final UnaryCallable<SetSslPolicyTargetSslProxyRequest, Operation> setSslPolicyCallable;
+  private final OperationCallable<SetSslPolicyTargetSslProxyRequest, Operation, Operation>
+      setSslPolicyOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonTargetSslProxiesStub create(TargetSslProxiesStubSettings settings)
@@ -437,53 +537,75 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<DeleteTargetSslProxyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteTargetSslProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetTargetSslProxyRequest, TargetSslProxy> getTransportSettings =
         HttpJsonCallSettings.<GetTargetSslProxyRequest, TargetSslProxy>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<InsertTargetSslProxyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertTargetSslProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListTargetSslProxiesRequest, TargetSslProxyList> listTransportSettings =
         HttpJsonCallSettings.<ListTargetSslProxiesRequest, TargetSslProxyList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<SetBackendServiceTargetSslProxyRequest, Operation>
         setBackendServiceTransportSettings =
             HttpJsonCallSettings.<SetBackendServiceTargetSslProxyRequest, Operation>newBuilder()
                 .setMethodDescriptor(setBackendServiceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<SetProxyHeaderTargetSslProxyRequest, Operation>
         setProxyHeaderTransportSettings =
             HttpJsonCallSettings.<SetProxyHeaderTargetSslProxyRequest, Operation>newBuilder()
                 .setMethodDescriptor(setProxyHeaderMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<SetSslCertificatesTargetSslProxyRequest, Operation>
         setSslCertificatesTransportSettings =
             HttpJsonCallSettings.<SetSslCertificatesTargetSslProxyRequest, Operation>newBuilder()
                 .setMethodDescriptor(setSslCertificatesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<SetSslPolicyTargetSslProxyRequest, Operation>
         setSslPolicyTransportSettings =
             HttpJsonCallSettings.<SetSslPolicyTargetSslProxyRequest, Operation>newBuilder()
                 .setMethodDescriptor(setSslPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
                 .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
+    this.deleteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTransportSettings,
+            settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
+    this.insertOperationCallable =
+        callableFactory.createOperationCallable(
+            insertTransportSettings,
+            settings.insertOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -495,17 +617,41 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
             setBackendServiceTransportSettings,
             settings.setBackendServiceSettings(),
             clientContext);
+    this.setBackendServiceOperationCallable =
+        callableFactory.createOperationCallable(
+            setBackendServiceTransportSettings,
+            settings.setBackendServiceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setProxyHeaderCallable =
         callableFactory.createUnaryCallable(
             setProxyHeaderTransportSettings, settings.setProxyHeaderSettings(), clientContext);
+    this.setProxyHeaderOperationCallable =
+        callableFactory.createOperationCallable(
+            setProxyHeaderTransportSettings,
+            settings.setProxyHeaderOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setSslCertificatesCallable =
         callableFactory.createUnaryCallable(
             setSslCertificatesTransportSettings,
             settings.setSslCertificatesSettings(),
             clientContext);
+    this.setSslCertificatesOperationCallable =
+        callableFactory.createOperationCallable(
+            setSslCertificatesTransportSettings,
+            settings.setSslCertificatesOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setSslPolicyCallable =
         callableFactory.createUnaryCallable(
             setSslPolicyTransportSettings, settings.setSslPolicySettings(), clientContext);
+    this.setSslPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            setSslPolicyTransportSettings,
+            settings.setSslPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -531,6 +677,12 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
   }
 
   @Override
+  public OperationCallable<DeleteTargetSslProxyRequest, Operation, Operation>
+      deleteOperationCallable() {
+    return deleteOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetTargetSslProxyRequest, TargetSslProxy> getCallable() {
     return getCallable;
   }
@@ -538,6 +690,12 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
   @Override
   public UnaryCallable<InsertTargetSslProxyRequest, Operation> insertCallable() {
     return insertCallable;
+  }
+
+  @Override
+  public OperationCallable<InsertTargetSslProxyRequest, Operation, Operation>
+      insertOperationCallable() {
+    return insertOperationCallable;
   }
 
   @Override
@@ -557,8 +715,20 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
   }
 
   @Override
+  public OperationCallable<SetBackendServiceTargetSslProxyRequest, Operation, Operation>
+      setBackendServiceOperationCallable() {
+    return setBackendServiceOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetProxyHeaderTargetSslProxyRequest, Operation> setProxyHeaderCallable() {
     return setProxyHeaderCallable;
+  }
+
+  @Override
+  public OperationCallable<SetProxyHeaderTargetSslProxyRequest, Operation, Operation>
+      setProxyHeaderOperationCallable() {
+    return setProxyHeaderOperationCallable;
   }
 
   @Override
@@ -568,8 +738,20 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
   }
 
   @Override
+  public OperationCallable<SetSslCertificatesTargetSslProxyRequest, Operation, Operation>
+      setSslCertificatesOperationCallable() {
+    return setSslCertificatesOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetSslPolicyTargetSslProxyRequest, Operation> setSslPolicyCallable() {
     return setSslPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<SetSslPolicyTargetSslProxyRequest, Operation, Operation>
+      setSslPolicyOperationCallable() {
+    return setSslPolicyOperationCallable;
   }
 
   @Override

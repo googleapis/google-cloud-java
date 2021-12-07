@@ -287,10 +287,10 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Google specified expression set ID. The format should be: - E.g. XSS-20170329
+   * Google specified expression set ID. The format should be: - E.g. XSS-20170329 required
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>optional string id = 3355;</code>
    *
    * @return Whether the id field is set.
    */
@@ -302,10 +302,10 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Google specified expression set ID. The format should be: - E.g. XSS-20170329
+   * Google specified expression set ID. The format should be: - E.g. XSS-20170329 required
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>optional string id = 3355;</code>
    *
    * @return The id.
    */
@@ -325,10 +325,10 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Google specified expression set ID. The format should be: - E.g. XSS-20170329
+   * Google specified expression set ID. The format should be: - E.g. XSS-20170329 required
    * </pre>
    *
-   * <code>string id = 3355;</code>
+   * <code>optional string id = 3355;</code>
    *
    * @return The bytes for id.
    */
@@ -1314,10 +1314,10 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Google specified expression set ID. The format should be: - E.g. XSS-20170329
+     * Google specified expression set ID. The format should be: - E.g. XSS-20170329 required
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>optional string id = 3355;</code>
      *
      * @return Whether the id field is set.
      */
@@ -1328,10 +1328,10 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Google specified expression set ID. The format should be: - E.g. XSS-20170329
+     * Google specified expression set ID. The format should be: - E.g. XSS-20170329 required
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>optional string id = 3355;</code>
      *
      * @return The id.
      */
@@ -1350,10 +1350,10 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Google specified expression set ID. The format should be: - E.g. XSS-20170329
+     * Google specified expression set ID. The format should be: - E.g. XSS-20170329 required
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>optional string id = 3355;</code>
      *
      * @return The bytes for id.
      */
@@ -1372,10 +1372,10 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Google specified expression set ID. The format should be: - E.g. XSS-20170329
+     * Google specified expression set ID. The format should be: - E.g. XSS-20170329 required
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>optional string id = 3355;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -1393,10 +1393,10 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Google specified expression set ID. The format should be: - E.g. XSS-20170329
+     * Google specified expression set ID. The format should be: - E.g. XSS-20170329 required
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>optional string id = 3355;</code>
      *
      * @return This builder for chaining.
      */
@@ -1410,10 +1410,10 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Google specified expression set ID. The format should be: - E.g. XSS-20170329
+     * Google specified expression set ID. The format should be: - E.g. XSS-20170329 required
      * </pre>
      *
-     * <code>string id = 3355;</code>
+     * <code>optional string id = 3355;</code>
      *
      * @param value The bytes for id to set.
      * @return This builder for chaining.

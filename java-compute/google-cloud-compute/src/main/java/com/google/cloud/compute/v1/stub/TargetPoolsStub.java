@@ -20,6 +20,7 @@ import static com.google.cloud.compute.v1.TargetPoolsClient.AggregatedListPagedR
 import static com.google.cloud.compute.v1.TargetPoolsClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddHealthCheckTargetPoolRequest;
 import com.google.cloud.compute.v1.AddInstanceTargetPoolRequest;
@@ -48,8 +49,18 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class TargetPoolsStub implements BackgroundResource {
 
+  public OperationCallable<AddHealthCheckTargetPoolRequest, Operation, Operation>
+      addHealthCheckOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: addHealthCheckOperationCallable()");
+  }
+
   public UnaryCallable<AddHealthCheckTargetPoolRequest, Operation> addHealthCheckCallable() {
     throw new UnsupportedOperationException("Not implemented: addHealthCheckCallable()");
+  }
+
+  public OperationCallable<AddInstanceTargetPoolRequest, Operation, Operation>
+      addInstanceOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: addInstanceOperationCallable()");
   }
 
   public UnaryCallable<AddInstanceTargetPoolRequest, Operation> addInstanceCallable() {
@@ -66,6 +77,11 @@ public abstract class TargetPoolsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
+  public OperationCallable<DeleteTargetPoolRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteTargetPoolRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
@@ -76,6 +92,11 @@ public abstract class TargetPoolsStub implements BackgroundResource {
 
   public UnaryCallable<GetHealthTargetPoolRequest, TargetPoolInstanceHealth> getHealthCallable() {
     throw new UnsupportedOperationException("Not implemented: getHealthCallable()");
+  }
+
+  public OperationCallable<InsertTargetPoolRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertTargetPoolRequest, Operation> insertCallable() {
@@ -90,12 +111,28 @@ public abstract class TargetPoolsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
   }
 
+  public OperationCallable<RemoveHealthCheckTargetPoolRequest, Operation, Operation>
+      removeHealthCheckOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: removeHealthCheckOperationCallable()");
+  }
+
   public UnaryCallable<RemoveHealthCheckTargetPoolRequest, Operation> removeHealthCheckCallable() {
     throw new UnsupportedOperationException("Not implemented: removeHealthCheckCallable()");
   }
 
+  public OperationCallable<RemoveInstanceTargetPoolRequest, Operation, Operation>
+      removeInstanceOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: removeInstanceOperationCallable()");
+  }
+
   public UnaryCallable<RemoveInstanceTargetPoolRequest, Operation> removeInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: removeInstanceCallable()");
+  }
+
+  public OperationCallable<SetBackupTargetPoolRequest, Operation, Operation>
+      setBackupOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setBackupOperationCallable()");
   }
 
   public UnaryCallable<SetBackupTargetPoolRequest, Operation> setBackupCallable() {

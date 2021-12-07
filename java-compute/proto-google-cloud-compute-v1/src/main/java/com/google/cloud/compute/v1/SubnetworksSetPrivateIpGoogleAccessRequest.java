@@ -114,7 +114,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
   public static final int PRIVATE_IP_GOOGLE_ACCESS_FIELD_NUMBER = 421491790;
   private boolean privateIpGoogleAccess_;
   /**
-   * <code>bool private_ip_google_access = 421491790;</code>
+   * <code>optional bool private_ip_google_access = 421491790;</code>
    *
    * @return Whether the privateIpGoogleAccess field is set.
    */
@@ -123,7 +123,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>bool private_ip_google_access = 421491790;</code>
+   * <code>optional bool private_ip_google_access = 421491790;</code>
    *
    * @return The privateIpGoogleAccess.
    */
@@ -474,7 +474,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
 
     private boolean privateIpGoogleAccess_;
     /**
-     * <code>bool private_ip_google_access = 421491790;</code>
+     * <code>optional bool private_ip_google_access = 421491790;</code>
      *
      * @return Whether the privateIpGoogleAccess field is set.
      */
@@ -483,7 +483,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>bool private_ip_google_access = 421491790;</code>
+     * <code>optional bool private_ip_google_access = 421491790;</code>
      *
      * @return The privateIpGoogleAccess.
      */
@@ -492,7 +492,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
       return privateIpGoogleAccess_;
     }
     /**
-     * <code>bool private_ip_google_access = 421491790;</code>
+     * <code>optional bool private_ip_google_access = 421491790;</code>
      *
      * @param value The privateIpGoogleAccess to set.
      * @return This builder for chaining.
@@ -504,7 +504,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
       return this;
     }
     /**
-     * <code>bool private_ip_google_access = 421491790;</code>
+     * <code>optional bool private_ip_google_access = 421491790;</code>
      *
      * @return This builder for chaining.
      */

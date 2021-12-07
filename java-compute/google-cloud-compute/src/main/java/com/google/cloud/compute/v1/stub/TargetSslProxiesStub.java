@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.TargetSslProxiesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteTargetSslProxyRequest;
 import com.google.cloud.compute.v1.GetTargetSslProxyRequest;
@@ -42,12 +43,22 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class TargetSslProxiesStub implements BackgroundResource {
 
+  public OperationCallable<DeleteTargetSslProxyRequest, Operation, Operation>
+      deleteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");
+  }
+
   public UnaryCallable<DeleteTargetSslProxyRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
 
   public UnaryCallable<GetTargetSslProxyRequest, TargetSslProxy> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public OperationCallable<InsertTargetSslProxyRequest, Operation, Operation>
+      insertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
 
   public UnaryCallable<InsertTargetSslProxyRequest, Operation> insertCallable() {
@@ -62,18 +73,40 @@ public abstract class TargetSslProxiesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
   }
 
+  public OperationCallable<SetBackendServiceTargetSslProxyRequest, Operation, Operation>
+      setBackendServiceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setBackendServiceOperationCallable()");
+  }
+
   public UnaryCallable<SetBackendServiceTargetSslProxyRequest, Operation>
       setBackendServiceCallable() {
     throw new UnsupportedOperationException("Not implemented: setBackendServiceCallable()");
+  }
+
+  public OperationCallable<SetProxyHeaderTargetSslProxyRequest, Operation, Operation>
+      setProxyHeaderOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setProxyHeaderOperationCallable()");
   }
 
   public UnaryCallable<SetProxyHeaderTargetSslProxyRequest, Operation> setProxyHeaderCallable() {
     throw new UnsupportedOperationException("Not implemented: setProxyHeaderCallable()");
   }
 
+  public OperationCallable<SetSslCertificatesTargetSslProxyRequest, Operation, Operation>
+      setSslCertificatesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setSslCertificatesOperationCallable()");
+  }
+
   public UnaryCallable<SetSslCertificatesTargetSslProxyRequest, Operation>
       setSslCertificatesCallable() {
     throw new UnsupportedOperationException("Not implemented: setSslCertificatesCallable()");
+  }
+
+  public OperationCallable<SetSslPolicyTargetSslProxyRequest, Operation, Operation>
+      setSslPolicyOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setSslPolicyOperationCallable()");
   }
 
   public UnaryCallable<SetSslPolicyTargetSslProxyRequest, Operation> setSslPolicyCallable() {
