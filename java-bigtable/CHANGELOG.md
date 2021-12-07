@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.0](https://www.github.com/googleapis/java-bigtable/compare/v2.3.1...v2.4.0) (2021-12-07)
+
+
+### Features
+
+* cluster autoscaling ([#1092](https://www.github.com/googleapis/java-bigtable/issues/1092)) ([fa4fe14](https://www.github.com/googleapis/java-bigtable/commit/fa4fe149a6a59600afe75f805f2503d3b45e5032))
+
 ### [2.3.1](https://www.github.com/googleapis/java-bigtable/compare/v2.3.0...v2.3.1) (2021-12-03)
 
 
