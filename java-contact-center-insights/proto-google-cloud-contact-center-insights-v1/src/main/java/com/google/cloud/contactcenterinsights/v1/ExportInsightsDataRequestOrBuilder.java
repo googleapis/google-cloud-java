@@ -151,6 +151,36 @@ public interface ExportInsightsDataRequestOrBuilder
    */
   com.google.protobuf.ByteString getKmsKeyBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Options for what to do if the destination table already exists.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition write_disposition = 5;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for writeDisposition.
+   */
+  int getWriteDispositionValue();
+  /**
+   *
+   *
+   * <pre>
+   * Options for what to do if the destination table already exists.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition write_disposition = 5;
+   * </code>
+   *
+   * @return The writeDisposition.
+   */
+  com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition
+      getWriteDisposition();
+
   public com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.DestinationCase
       getDestinationCase();
 }
