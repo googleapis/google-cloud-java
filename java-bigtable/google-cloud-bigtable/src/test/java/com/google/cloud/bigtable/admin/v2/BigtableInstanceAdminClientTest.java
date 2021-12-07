@@ -27,8 +27,12 @@ import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.rpc.testing.FakeOperationSnapshot;
+import com.google.bigtable.admin.v2.AutoscalingLimits;
+import com.google.bigtable.admin.v2.AutoscalingTargets;
 import com.google.bigtable.admin.v2.CreateInstanceMetadata;
 import com.google.bigtable.admin.v2.GetInstanceRequest;
+import com.google.bigtable.admin.v2.PartialUpdateClusterMetadata;
+import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.bigtable.admin.v2.UpdateClusterMetadata;
 import com.google.bigtable.admin.v2.UpdateInstanceMetadata;
 import com.google.cloud.Identity;
@@ -40,6 +44,7 @@ import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.MultiClusterRoutingPolicy;
 import com.google.cloud.bigtable.admin.v2.models.Cluster;
+import com.google.cloud.bigtable.admin.v2.models.ClusterAutoscalingConfig;
 import com.google.cloud.bigtable.admin.v2.models.CreateAppProfileRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateClusterRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
@@ -92,6 +97,19 @@ public class BigtableInstanceAdminClientTest {
       NameUtil.formatAppProfileName(PROJECT_ID, INSTANCE_ID, APP_PROFILE_ID);
 
   private BigtableInstanceAdminClient adminClient;
+
+  private final com.google.bigtable.admin.v2.Cluster.ClusterConfig clusterConfig =
+      com.google.bigtable.admin.v2.Cluster.ClusterConfig.newBuilder()
+          .setClusterAutoscalingConfig(
+              com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.newBuilder()
+                  .setAutoscalingLimits(
+                      AutoscalingLimits.newBuilder()
+                          .setMaxServeNodes(10)
+                          .setMinServeNodes(2)
+                          .build())
+                  .setAutoscalingTargets(
+                      AutoscalingTargets.newBuilder().setCpuUtilizationPercent(22).build()))
+          .build();
 
   @Mock private BigtableInstanceAdminStub mockStub;
 
@@ -148,6 +166,13 @@ public class BigtableInstanceAdminClientTest {
           com.google.bigtable.admin.v2.Cluster,
           UpdateClusterMetadata>
       mockUpdateClusterCallable;
+
+  @Mock
+  private OperationCallable<
+          PartialUpdateClusterRequest,
+          com.google.bigtable.admin.v2.Cluster,
+          PartialUpdateClusterMetadata>
+      mockPartialUpdateClusterCallable;
 
   @Mock
   private UnaryCallable<com.google.bigtable.admin.v2.DeleteClusterRequest, Empty>
@@ -249,11 +274,95 @@ public class BigtableInstanceAdminClientTest {
   }
 
   @Test
+  public void testCreateInstanceAutoscaling() {
+    Mockito.when(mockStub.createInstanceOperationCallable()).thenReturn(mockCreateInstanceCallable);
+
+    // Setup
+    AutoscalingLimits autoscalingLimits =
+        AutoscalingLimits.newBuilder().setMaxServeNodes(5).setMinServeNodes(1).build();
+    AutoscalingTargets autoscalingTargets =
+        AutoscalingTargets.newBuilder().setCpuUtilizationPercent(49).build();
+    com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig clusterAutoscalingConfig =
+        com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.newBuilder()
+            .setAutoscalingLimits(autoscalingLimits)
+            .setAutoscalingTargets(autoscalingTargets)
+            .build();
+    com.google.bigtable.admin.v2.CreateInstanceRequest expectedRequest =
+        com.google.bigtable.admin.v2.CreateInstanceRequest.newBuilder()
+            .setParent(PROJECT_NAME)
+            .setInstanceId(INSTANCE_ID)
+            .setInstance(
+                com.google.bigtable.admin.v2.Instance.newBuilder()
+                    .setType(com.google.bigtable.admin.v2.Instance.Type.DEVELOPMENT)
+                    .setDisplayName(INSTANCE_ID))
+            .putClusters(
+                "cluster1",
+                com.google.bigtable.admin.v2.Cluster.newBuilder()
+                    .setLocation("projects/my-project/locations/us-east1-c")
+                    .setClusterConfig(
+                        com.google.bigtable.admin.v2.Cluster.ClusterConfig.newBuilder()
+                            .setClusterAutoscalingConfig(clusterAutoscalingConfig)
+                            .build())
+                    .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
+                    .build())
+            .build();
+
+    com.google.bigtable.admin.v2.Instance expectedResponse =
+        com.google.bigtable.admin.v2.Instance.newBuilder().setName(INSTANCE_NAME).build();
+
+    mockOperationResult(mockCreateInstanceCallable, expectedRequest, expectedResponse);
+
+    // Execute
+    ClusterAutoscalingConfig autoscalingConfig =
+        ClusterAutoscalingConfig.of(INSTANCE_ID, "cluster1")
+            .setCpuUtilizationTargetPercent(49)
+            .setMaxNodes(5)
+            .setMinNodes(1);
+    Instance actualResult =
+        adminClient.createInstance(
+            CreateInstanceRequest.of(INSTANCE_ID)
+                .setType(Instance.Type.DEVELOPMENT)
+                .addCluster("cluster1", "us-east1-c", autoscalingConfig, StorageType.SSD));
+
+    // Verify
+    assertThat(actualResult).isEqualTo(Instance.fromProto(expectedResponse));
+  }
+
+  @Test
   public void testUpdateInstance() {
     // Setup
     Mockito.when(mockStub.partialUpdateInstanceOperationCallable())
         .thenReturn(mockUpdateInstanceCallable);
 
+    com.google.bigtable.admin.v2.PartialUpdateInstanceRequest expectedRequest =
+        com.google.bigtable.admin.v2.PartialUpdateInstanceRequest.newBuilder()
+            .setUpdateMask(FieldMask.newBuilder().addPaths("display_name"))
+            .setInstance(
+                com.google.bigtable.admin.v2.Instance.newBuilder()
+                    .setName(INSTANCE_NAME)
+                    .setDisplayName("new display name"))
+            .build();
+
+    com.google.bigtable.admin.v2.Instance expectedResponse =
+        com.google.bigtable.admin.v2.Instance.newBuilder().setName(INSTANCE_NAME).build();
+
+    mockOperationResult(mockUpdateInstanceCallable, expectedRequest, expectedResponse);
+
+    // Execute
+    Instance actualResult =
+        adminClient.updateInstance(
+            UpdateInstanceRequest.of(INSTANCE_ID).setDisplayName("new display name"));
+
+    // Verify
+    assertThat(actualResult).isEqualTo(Instance.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testUpdateCluster() {
+    Mockito.when(mockStub.partialUpdateInstanceOperationCallable())
+        .thenReturn(mockUpdateInstanceCallable);
+
+    // Setup
     com.google.bigtable.admin.v2.PartialUpdateInstanceRequest expectedRequest =
         com.google.bigtable.admin.v2.PartialUpdateInstanceRequest.newBuilder()
             .setUpdateMask(FieldMask.newBuilder().addPaths("display_name"))
@@ -434,6 +543,40 @@ public class BigtableInstanceAdminClientTest {
   }
 
   @Test
+  public void testCreateClusterAutoscaling() {
+    Mockito.when(mockStub.createClusterOperationCallable()).thenReturn(mockCreateClusterCallable);
+
+    // Setup
+    com.google.bigtable.admin.v2.CreateClusterRequest expectedRequest =
+        com.google.bigtable.admin.v2.CreateClusterRequest.newBuilder()
+            .setParent(INSTANCE_NAME)
+            .setClusterId(CLUSTER_ID)
+            .setCluster(
+                com.google.bigtable.admin.v2.Cluster.newBuilder()
+                    .setLocation("projects/my-project/locations/us-east1-c")
+                    .setClusterConfig(clusterConfig)
+                    .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD))
+            .build();
+    com.google.bigtable.admin.v2.Cluster expectedResponse =
+        com.google.bigtable.admin.v2.Cluster.newBuilder().setName(CLUSTER_NAME).build();
+    mockOperationResult(mockCreateClusterCallable, expectedRequest, expectedResponse);
+
+    // Execute
+    Cluster actualResult =
+        adminClient.createCluster(
+            CreateClusterRequest.of(INSTANCE_ID, CLUSTER_ID)
+                .setZone("us-east1-c")
+                .setScalingMode(
+                    ClusterAutoscalingConfig.of(INSTANCE_ID, CLUSTER_ID)
+                        .setMinNodes(2)
+                        .setMaxNodes(10)
+                        .setCpuUtilizationTargetPercent(22))
+                .setStorageType(StorageType.SSD));
+    // Verify
+    assertThat(actualResult).isEqualTo(Cluster.fromProto(expectedResponse));
+  }
+
+  @Test
   public void testGetCluster() {
     // Setup
     Mockito.when(mockStub.getClusterCallable()).thenReturn(mockGetClusterCallable);
@@ -544,6 +687,91 @@ public class BigtableInstanceAdminClientTest {
 
     // Execute
     Cluster actualResult = adminClient.resizeCluster(INSTANCE_ID, CLUSTER_ID, 30);
+
+    // Verify
+    assertThat(actualResult).isEqualTo(Cluster.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testDisableAutoscaling() {
+    Mockito.when(mockStub.partialUpdateClusterOperationCallable())
+        .thenReturn(mockPartialUpdateClusterCallable);
+
+    // Setup
+    com.google.bigtable.admin.v2.Cluster cluster =
+        com.google.bigtable.admin.v2.Cluster.newBuilder()
+            .setName(CLUSTER_NAME)
+            .setClusterConfig(
+                com.google.bigtable.admin.v2.Cluster.ClusterConfig.newBuilder().build())
+            .setServeNodes(30)
+            .build();
+    PartialUpdateClusterRequest expectedRequest =
+        PartialUpdateClusterRequest.newBuilder()
+            .setCluster(cluster)
+            .setUpdateMask(
+                FieldMask.newBuilder()
+                    .addPaths("cluster_config.cluster_autoscaling_config")
+                    .addPaths("serve_nodes")
+                    .build())
+            .build();
+
+    com.google.bigtable.admin.v2.Cluster expectedResponse =
+        com.google.bigtable.admin.v2.Cluster.newBuilder()
+            .setName(CLUSTER_NAME)
+            .setLocation(NameUtil.formatLocationName(PROJECT_ID, "us-east1-c"))
+            .setServeNodes(30)
+            .build();
+
+    mockOperationResult(mockPartialUpdateClusterCallable, expectedRequest, expectedResponse);
+
+    // Execute
+    Cluster actualResult = adminClient.disableClusterAutoscaling(INSTANCE_ID, CLUSTER_ID, 30);
+
+    // Verify
+    assertThat(actualResult).isEqualTo(Cluster.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testPartialUpdateCluster() {
+    Mockito.when(mockStub.partialUpdateClusterOperationCallable())
+        .thenReturn(mockPartialUpdateClusterCallable);
+
+    // Setup
+    com.google.bigtable.admin.v2.Cluster cluster =
+        com.google.bigtable.admin.v2.Cluster.newBuilder()
+            .setName(CLUSTER_NAME)
+            .setClusterConfig(clusterConfig)
+            .build();
+
+    PartialUpdateClusterRequest expectedRequest =
+        PartialUpdateClusterRequest.newBuilder()
+            .setCluster(cluster)
+            .setUpdateMask(
+                FieldMask.newBuilder()
+                    .addPaths(
+                        "cluster_config.cluster_autoscaling_config.autoscaling_limits.max_serve_nodes")
+                    .addPaths(
+                        "cluster_config.cluster_autoscaling_config.autoscaling_limits.min_serve_nodes")
+                    .addPaths(
+                        "cluster_config.cluster_autoscaling_config.autoscaling_targets.cpu_utilization_percent")
+                    .build())
+            .build();
+
+    com.google.bigtable.admin.v2.Cluster expectedResponse =
+        com.google.bigtable.admin.v2.Cluster.newBuilder()
+            .setName(CLUSTER_NAME)
+            .setLocation(NameUtil.formatLocationName(PROJECT_ID, "us-east1-c"))
+            .setClusterConfig(clusterConfig)
+            .build();
+    mockOperationResult(mockPartialUpdateClusterCallable, expectedRequest, expectedResponse);
+
+    // Execute
+    Cluster actualResult =
+        adminClient.updateClusterAutoscalingConfig(
+            ClusterAutoscalingConfig.of(INSTANCE_ID, CLUSTER_ID)
+                .setMaxNodes(10)
+                .setMinNodes(2)
+                .setCpuUtilizationTargetPercent(22));
 
     // Verify
     assertThat(actualResult).isEqualTo(Cluster.fromProto(expectedResponse));

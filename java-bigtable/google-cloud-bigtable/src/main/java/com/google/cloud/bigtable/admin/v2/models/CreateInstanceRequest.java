@@ -119,7 +119,7 @@ public final class CreateInstanceRequest {
   }
 
   /**
-   * Adds a cluster to the instance request.
+   * Adds a cluster to the instance request with manual scaling enabled.
    *
    * <p>All new instances must have at least one cluster. DEVELOPMENT instances must have exactly
    * one cluster.
@@ -141,6 +141,34 @@ public final class CreateInstanceRequest {
         CreateClusterRequest.of("ignored-instance-id", clusterId)
             .setZone(zone)
             .setServeNodes(serveNodes)
+            .setStorageType(storageType);
+    clusterRequests.add(clusterRequest);
+
+    return this;
+  }
+
+  /**
+   * Adds a cluster to the instance request with autoscaling enabled.
+   *
+   * <p>All new instances must have at least one cluster. DEVELOPMENT instances must have exactly
+   * one cluster.
+   *
+   * @param clusterId the name of the cluster.
+   * @param zone the zone where the cluster will be created.
+   * @param clusterAutoscalingConfig the autoscaling config that sets the min serve nodes, max serve
+   *     nodes, and CPU utilization percentage
+   * @param storageType the type of storage used by this cluster to serve its parent instance's
+   *     tables.
+   */
+  public CreateInstanceRequest addCluster(
+      @Nonnull String clusterId,
+      @Nonnull String zone,
+      @Nonnull ClusterAutoscalingConfig clusterAutoscalingConfig,
+      @Nonnull StorageType storageType) {
+    CreateClusterRequest clusterRequest =
+        CreateClusterRequest.of("ignored-instance-id", clusterId)
+            .setZone(zone)
+            .setScalingMode(clusterAutoscalingConfig)
             .setStorageType(storageType);
     clusterRequests.add(clusterRequest);
 

@@ -84,10 +84,57 @@ public final class CreateClusterRequest {
   /**
    * Sets the number of nodes allocated to this cluster. More nodes enable higher throughput and
    * more consistent performance.
+   *
+   * @deprecated Please use CreateClusterRequest#setScalingMode instead
    */
   @SuppressWarnings("WeakerAccess")
+  @Deprecated
   public CreateClusterRequest setServeNodes(int numNodes) {
     proto.getClusterBuilder().setServeNodes(numNodes);
+    return this;
+  }
+
+  /**
+   * Sets the scaling node to manual and sets the number of nodes allocated to this cluster. More
+   * nodes enable higher throughput and more consistent performance.
+   */
+  public CreateClusterRequest setScalingMode(@Nonnull StaticClusterSize staticClusterSize) {
+    Preconditions.checkState(staticClusterSize.getClusterSize() > 0, "Serve nodes must be > 0");
+    if (proto.getCluster().getClusterConfig().hasClusterAutoscalingConfig()) {
+      throw new IllegalArgumentException(
+          "Autoscaling is already set. To enable manual scaling, do not set the max nodes, min nodes, and CPU percentage.");
+    }
+    proto.getClusterBuilder().setServeNodes(staticClusterSize.getClusterSize());
+    return this;
+  }
+
+  /**
+   * Sets the scaling mode to autoscaling by accepting an AutoscalingConfig where min nodes, max
+   * nodes, and CPU utlization percent target are set.
+   */
+  public CreateClusterRequest setScalingMode(@Nonnull ClusterAutoscalingConfig autoscalingConfig) {
+    int minNodes = autoscalingConfig.getMinNodes();
+    int maxNodes = autoscalingConfig.getMaxNodes();
+    int cpuTargetPercent = autoscalingConfig.getCpuUtilizationTargetPercent();
+
+    proto
+        .getClusterBuilder()
+        .getClusterConfigBuilder()
+        .getClusterAutoscalingConfigBuilder()
+        .getAutoscalingLimitsBuilder()
+        .setMinServeNodes(minNodes);
+    proto
+        .getClusterBuilder()
+        .getClusterConfigBuilder()
+        .getClusterAutoscalingConfigBuilder()
+        .getAutoscalingLimitsBuilder()
+        .setMaxServeNodes(maxNodes);
+    proto
+        .getClusterBuilder()
+        .getClusterConfigBuilder()
+        .getClusterAutoscalingConfigBuilder()
+        .getAutoscalingTargetsBuilder()
+        .setCpuUtilizationPercent(cpuTargetPercent);
     return this;
   }
 

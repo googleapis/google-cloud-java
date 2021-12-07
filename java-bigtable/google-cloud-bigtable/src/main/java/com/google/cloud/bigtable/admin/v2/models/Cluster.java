@@ -148,6 +148,36 @@ public class Cluster {
     return stateProto.getServeNodes();
   }
 
+  /** Get the minimum number of nodes to scale down to. */
+  public int getAutoscalingMinServeNodes() {
+    return stateProto
+        .getClusterConfig()
+        .getClusterAutoscalingConfig()
+        .getAutoscalingLimits()
+        .getMinServeNodes();
+  }
+
+  /** Get the maximum number of nodes to scale up to. */
+  public int getAutoscalingMaxServeNodes() {
+    return stateProto
+        .getClusterConfig()
+        .getClusterAutoscalingConfig()
+        .getAutoscalingLimits()
+        .getMaxServeNodes();
+  }
+
+  /**
+   * Get the cpu utilization that the Autoscaler should be trying to achieve. This number is on a
+   * scale from 0 (no utilization) to 100 (total utilization).
+   */
+  public int getAutoscalingCpuPercentageTarget() {
+    return stateProto
+        .getClusterConfig()
+        .getClusterAutoscalingConfig()
+        .getAutoscalingTargets()
+        .getCpuUtilizationPercent();
+  }
+
   /**
    * The type of storage used by this cluster to serve its parent instance's tables, unless
    * explicitly overridden.

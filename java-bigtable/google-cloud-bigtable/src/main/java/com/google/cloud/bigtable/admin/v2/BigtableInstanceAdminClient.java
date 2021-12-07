@@ -24,6 +24,7 @@ import com.google.api.gax.rpc.NotFoundException;
 import com.google.bigtable.admin.v2.DeleteAppProfileRequest;
 import com.google.bigtable.admin.v2.GetAppProfileRequest;
 import com.google.bigtable.admin.v2.ListAppProfilesRequest;
+import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.cloud.Policy;
 import com.google.cloud.Policy.DefaultMarshaller;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPage;
@@ -31,6 +32,7 @@ import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAp
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile;
 import com.google.cloud.bigtable.admin.v2.models.Cluster;
+import com.google.cloud.bigtable.admin.v2.models.ClusterAutoscalingConfig;
 import com.google.cloud.bigtable.admin.v2.models.CreateAppProfileRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateClusterRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
@@ -49,6 +51,7 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
+import com.google.protobuf.util.FieldMaskUtil;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -660,8 +663,10 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   }
 
   /**
-   * Modifies the cluster's node count. Please note that only clusters that belong to a production
-   * instance can be resized.
+   * Modifies the cluster's node count for manual scaling. If autoscaling is already enabled, manual
+   * scaling will be silently ignored. If you wish to disable autoscaling and enable manual scaling,
+   * please use {@link BigtableInstanceAdminClient#disableClusterAutoscaling(String, String, int)}
+   * instead. Please note that only clusters that belong to a production instance can be resized.
    *
    * <p>Sample code:
    *
@@ -676,8 +681,11 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   }
 
   /**
-   * Asynchronously modifies the cluster's node count. Please note that only clusters that belong to
-   * a production instance can be resized.
+   * Asynchronously modifies the cluster's node count for manual scaling. If autoscaling is already
+   * enabled, manual scaling will be silently ignored. If you wish to disable autoscaling and enable
+   * manual scaling, please use {@link BigtableInstanceAdminClient#disableClusterAutoscaling(String,
+   * String, int)} instead. Please note that only clusters that belong to a production instance can
+   * be resized.
    *
    * <pre>{@code
    * ApiFuture<Cluster> clusterFuture = client.resizeCluster("my-instance", "my-cluster", 30);
@@ -704,6 +712,109 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
             return Cluster.fromProto(proto);
           }
         },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Modifies the cluster's autoscaling config. This will enable autoscaling and disable manual
+   * scaling if the cluster is manually scaled. Please note that only clusters that belong to a
+   * production instance can enable autoscaling.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ClusterAutoscalingConfig clusterAutoscalingConfig =
+   *      ClusterAutoscalingConfig.of("my-instance", "my-cluster")
+   *          .setMinNodes(1)
+   *          .setMaxNodes(4)
+   *          .setCpuUtilizationTargetPercent(40);
+   * Cluster cluster = client.updateClusterAutoscalingConfig(clusterAutoscalingConfig);
+   * }</pre>
+   */
+  public Cluster updateClusterAutoscalingConfig(
+      @Nonnull ClusterAutoscalingConfig clusterAutoscalingConfig) {
+    return ApiExceptions.callAndTranslateApiException(
+        updateClusterAutoscalingConfigAsync(clusterAutoscalingConfig));
+  }
+
+  /**
+   * Asynchronously modifies the cluster's autoscaling config. This will enable autoscaling and
+   * disable manual scaling if the cluster is manually scaled. Please note that only clusters that
+   * belong to a production instance can enable autoscaling.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ClusterAutoscalingConfig clusterAutoscalingConfig =
+   *      ClusterAutoscalingConfig.of(targetInstanceId, targetClusterId)
+   *          .setMinNodes(1)
+   *          .setMaxNodes(4)
+   *          .setCpuUtilizationTargetPercent(40);
+   *
+   *  ApiFuture<Cluster> clusterApiFuture = client.updateClusterAutoscalingConfigAsync(clusterAutoscalingConfig);
+   *  Cluster cluster = clusterApiFuture.get();
+   * }</pre>
+   */
+  public ApiFuture<Cluster> updateClusterAutoscalingConfigAsync(
+      @Nonnull ClusterAutoscalingConfig clusterAutoscalingConfig) {
+    PartialUpdateClusterRequest proto = clusterAutoscalingConfig.toProto(projectId);
+
+    return ApiFutures.transform(
+        stub.partialUpdateClusterOperationCallable().futureCall(proto),
+        Cluster::fromProto,
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Disables autoscaling and enables manual scaling by setting a static node count for the cluster.
+   * Please note that only clusters that belong to a production instance can be resized.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * Cluster cluster = client.disableClusterAutoscaling("my-instance", "my-cluster", 3);
+   * }</pre>
+   */
+  public Cluster disableClusterAutoscaling(String instanceId, String clusterId, int staticSize) {
+    return ApiExceptions.callAndTranslateApiException(
+        disableClusterAutoscalingAsync(instanceId, clusterId, staticSize));
+  }
+
+  /**
+   * Asynchronously disables autoscaling and enables manual scaling by setting a static node count
+   * for the cluster. Please note that only clusters that belong to a production instance can be
+   * resized.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Cluster> clusterApiFuture = client.disableClusterAutoscalingAsync("my-instance", "my-cluster", 3);
+   * Cluster cluster = clusterApiFuture.get();
+   * }</pre>
+   */
+  public ApiFuture<Cluster> disableClusterAutoscalingAsync(
+      String instanceId, String clusterId, int staticSize) {
+    String name = NameUtil.formatClusterName(projectId, instanceId, clusterId);
+
+    com.google.bigtable.admin.v2.Cluster request =
+        com.google.bigtable.admin.v2.Cluster.newBuilder()
+            .setName(name)
+            .setServeNodes(staticSize)
+            .setClusterConfig(
+                com.google.bigtable.admin.v2.Cluster.ClusterConfig.getDefaultInstance())
+            .build();
+
+    PartialUpdateClusterRequest partialUpdateClusterRequest =
+        PartialUpdateClusterRequest.newBuilder()
+            .setUpdateMask(
+                FieldMaskUtil.fromStringList(
+                    com.google.bigtable.admin.v2.Cluster.class,
+                    Lists.newArrayList("cluster_config.cluster_autoscaling_config", "serve_nodes")))
+            .setCluster(request)
+            .build();
+    return ApiFutures.transform(
+        stub.partialUpdateClusterOperationCallable().futureCall(partialUpdateClusterRequest),
+        Cluster::fromProto,
         MoreExecutors.directExecutor());
   }
 
