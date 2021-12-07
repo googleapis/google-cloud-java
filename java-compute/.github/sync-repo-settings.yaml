@@ -37,6 +37,7 @@ branchProtectionRules:
   - "units (11)"
   - "Kokoro - Test: Integration"
   - "cla/google"
+  - OwlBot Post Processor
 - pattern: 0.x-alpha
   # Can admins overwrite branch protection.
   # Defaults to `true`
