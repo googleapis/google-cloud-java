@@ -41,10 +41,10 @@ class SpannerBenchWrapperImpl extends SpannerBenchWrapperImplBase {
   private Spanner spanner;
   private DatabaseClient dbClient;
 
-  public SpannerBenchWrapperImpl() {
+  public SpannerBenchWrapperImpl(String spannerEmulatorHost) {
     final SpannerOptions.Builder optionsBuilder = SpannerOptions.newBuilder();
     final SpannerOptions options = optionsBuilder
-        .setEmulatorHost("localhost:9010")
+        .setEmulatorHost(spannerEmulatorHost)
         .build();
     spanner = options.getService();
 
