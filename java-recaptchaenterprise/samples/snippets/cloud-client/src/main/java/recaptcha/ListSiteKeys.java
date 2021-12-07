@@ -19,6 +19,7 @@ package recaptcha;
 // [START recaptcha_enterprise_list_site_keys]
 
 import com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient;
+import com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPagedResponse;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ProjectName;
@@ -36,9 +37,9 @@ public class ListSiteKeys {
   /**
    * List all keys present under the given project ID.
    *
-   * @param projectID: GCloud Project ID.
+   * @param projectID : GCloud Project ID.
    */
-  public static void listSiteKeys(String projectID) throws IOException {
+  public static ListKeysPagedResponse listSiteKeys(String projectID) throws IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the `client.close()` method on the client to safely
@@ -48,10 +49,12 @@ public class ListSiteKeys {
       ListKeysRequest listKeysRequest =
           ListKeysRequest.newBuilder().setParent(ProjectName.of(projectID).toString()).build();
 
+      ListKeysPagedResponse response = client.listKeys(listKeysRequest);
       System.out.println("Listing reCAPTCHA site keys: ");
-      for (Key key : client.listKeys(listKeysRequest).iterateAll()) {
+      for (Key key : response.iterateAll()) {
         System.out.println(key.getName());
       }
+      return response;
     }
   }
 }
