@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.6.0](https://www.github.com/googleapis/java-compute/compare/v1.5.0...v1.6.0) (2021-12-07)
+
+
+### Features
+
+* Introduce automatic LRO polling, integrate latest compute API definitions ([#583](https://www.github.com/googleapis/java-compute/issues/583)) ([90f7b41](https://www.github.com/googleapis/java-compute/commit/90f7b41dfc91a45981786a2eeed2f21bf82febeb))
+* Introduce automatic LRO polling; all LRO methods now return `OperationFuture<>` instead of `Operation` and poling is done automatically; calling `cancel()` on the future will cancel polling but not the operation itself on the server side. ([90f7b41](https://www.github.com/googleapis/java-compute/commit/90f7b41dfc91a45981786a2eeed2f21bf82febeb))
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#571](https://www.github.com/googleapis/java-compute/issues/571)) ([b280ec0](https://www.github.com/googleapis/java-compute/commit/b280ec0781b13ae479c21202bfbc4c7c90d5868f))
+* rename `IPProtocol` to `IPProtocolEnum` ([90f7b41](https://www.github.com/googleapis/java-compute/commit/90f7b41dfc91a45981786a2eeed2f21bf82febeb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#579](https://www.github.com/googleapis/java-compute/issues/579)) ([54bbe3a](https://www.github.com/googleapis/java-compute/commit/54bbe3a5c5e3c2d86fa6cde9182fae2349641f2e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.1 ([#586](https://www.github.com/googleapis/java-compute/issues/586)) ([100e21f](https://www.github.com/googleapis/java-compute/commit/100e21ffedc6b4a92b668985b09e1aa9afd5f3c8))
+
 ## [1.5.0](https://www.github.com/googleapis/java-compute/compare/v1.4.4...v1.5.0) (2021-10-21)
 
 
