@@ -2,4 +2,4 @@ product: true
 staleness:
   pullrequest: true
   old: 30
-  critical: 60
+  extraold: 60
