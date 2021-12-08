@@ -155,10 +155,13 @@ public class GcpManagedChannelOptions {
     // If every channel in the pool has at least this amount of concurrent streams then a new channel will be created
     // in the pool unless the pool reached its maximum size.
     private final int concurrentStreamsLowWatermark;
+    // Use round-robin channel selection for affinity binding calls.
+    private final boolean useRoundRobinOnBind;
 
     public GcpChannelPoolOptions(Builder builder) {
       maxSize = builder.maxSize;
       concurrentStreamsLowWatermark = builder.concurrentStreamsLowWatermark;
+      useRoundRobinOnBind = builder.useRoundRobinOnBind;
     }
 
     public int getMaxSize() {
@@ -179,9 +182,14 @@ public class GcpManagedChannelOptions {
       return new GcpChannelPoolOptions.Builder(options);
     }
 
+    public boolean isUseRoundRobinOnBind() {
+      return useRoundRobinOnBind;
+    }
+
     public static class Builder {
       private int maxSize = GcpManagedChannel.DEFAULT_MAX_CHANNEL;
       private int concurrentStreamsLowWatermark = GcpManagedChannel.DEFAULT_MAX_STREAM;
+      private boolean useRoundRobinOnBind = false;
 
       public Builder() {}
 
@@ -192,6 +200,7 @@ public class GcpManagedChannelOptions {
         }
         this.maxSize = options.getMaxSize();
         this.concurrentStreamsLowWatermark = options.getConcurrentStreamsLowWatermark();
+        this.useRoundRobinOnBind = options.isUseRoundRobinOnBind();
       }
 
       public GcpChannelPoolOptions build() {
@@ -219,6 +228,16 @@ public class GcpManagedChannelOptions {
        */
       public Builder setConcurrentStreamsLowWatermark(int concurrentStreamsLowWatermark) {
         this.concurrentStreamsLowWatermark = concurrentStreamsLowWatermark;
+        return this;
+      }
+
+      /**
+       * Enables/disables using round-robin channel selection for affinity binding calls.
+       *
+       * @param enabled If true, use round-robin channel selection for affinity binding calls.
+       */
+      public Builder setUseRoundRobinOnBind(boolean enabled) {
+        this.useRoundRobinOnBind = enabled;
         return this;
       }
     }
