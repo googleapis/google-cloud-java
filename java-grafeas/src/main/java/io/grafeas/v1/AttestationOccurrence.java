@@ -48,6 +48,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
   private AttestationOccurrence() {
     serializedPayload_ = com.google.protobuf.ByteString.EMPTY;
     signatures_ = java.util.Collections.emptyList();
+    jwts_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -95,6 +96,15 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
                   input.readMessage(io.grafeas.v1.Signature.parser(), extensionRegistry));
               break;
             }
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                jwts_ = new java.util.ArrayList<io.grafeas.v1.Jwt>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              jwts_.add(input.readMessage(io.grafeas.v1.Jwt.parser(), extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -111,6 +121,9 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         signatures_ = java.util.Collections.unmodifiableList(signatures_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        jwts_ = java.util.Collections.unmodifiableList(jwts_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -233,6 +246,114 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     return signatures_.get(index);
   }
 
+  public static final int JWTS_FIELD_NUMBER = 3;
+  private java.util.List<io.grafeas.v1.Jwt> jwts_;
+  /**
+   *
+   *
+   * <pre>
+   * One or more JWTs encoding a self-contained attestation.
+   * Each JWT encodes the payload that it verifies within the JWT itself.
+   * Verifier implementation SHOULD ignore the `serialized_payload` field
+   * when verifying these JWTs.
+   * If only JWTs are present on this AttestationOccurrence, then the
+   * `serialized_payload` SHOULD be left empty.
+   * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+   * Occurrence, but this is not validated by Grafeas metadata API
+   * implementations.  The JWT itself is opaque to Grafeas.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<io.grafeas.v1.Jwt> getJwtsList() {
+    return jwts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * One or more JWTs encoding a self-contained attestation.
+   * Each JWT encodes the payload that it verifies within the JWT itself.
+   * Verifier implementation SHOULD ignore the `serialized_payload` field
+   * when verifying these JWTs.
+   * If only JWTs are present on this AttestationOccurrence, then the
+   * `serialized_payload` SHOULD be left empty.
+   * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+   * Occurrence, but this is not validated by Grafeas metadata API
+   * implementations.  The JWT itself is opaque to Grafeas.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends io.grafeas.v1.JwtOrBuilder> getJwtsOrBuilderList() {
+    return jwts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * One or more JWTs encoding a self-contained attestation.
+   * Each JWT encodes the payload that it verifies within the JWT itself.
+   * Verifier implementation SHOULD ignore the `serialized_payload` field
+   * when verifying these JWTs.
+   * If only JWTs are present on this AttestationOccurrence, then the
+   * `serialized_payload` SHOULD be left empty.
+   * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+   * Occurrence, but this is not validated by Grafeas metadata API
+   * implementations.  The JWT itself is opaque to Grafeas.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+   */
+  @java.lang.Override
+  public int getJwtsCount() {
+    return jwts_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * One or more JWTs encoding a self-contained attestation.
+   * Each JWT encodes the payload that it verifies within the JWT itself.
+   * Verifier implementation SHOULD ignore the `serialized_payload` field
+   * when verifying these JWTs.
+   * If only JWTs are present on this AttestationOccurrence, then the
+   * `serialized_payload` SHOULD be left empty.
+   * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+   * Occurrence, but this is not validated by Grafeas metadata API
+   * implementations.  The JWT itself is opaque to Grafeas.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.Jwt getJwts(int index) {
+    return jwts_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * One or more JWTs encoding a self-contained attestation.
+   * Each JWT encodes the payload that it verifies within the JWT itself.
+   * Verifier implementation SHOULD ignore the `serialized_payload` field
+   * when verifying these JWTs.
+   * If only JWTs are present on this AttestationOccurrence, then the
+   * `serialized_payload` SHOULD be left empty.
+   * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+   * Occurrence, but this is not validated by Grafeas metadata API
+   * implementations.  The JWT itself is opaque to Grafeas.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.JwtOrBuilder getJwtsOrBuilder(int index) {
+    return jwts_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -253,6 +374,9 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < signatures_.size(); i++) {
       output.writeMessage(2, signatures_.get(i));
     }
+    for (int i = 0; i < jwts_.size(); i++) {
+      output.writeMessage(3, jwts_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -267,6 +391,9 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     }
     for (int i = 0; i < signatures_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, signatures_.get(i));
+    }
+    for (int i = 0; i < jwts_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, jwts_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -285,6 +412,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
 
     if (!getSerializedPayload().equals(other.getSerializedPayload())) return false;
     if (!getSignaturesList().equals(other.getSignaturesList())) return false;
+    if (!getJwtsList().equals(other.getJwtsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -301,6 +429,10 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     if (getSignaturesCount() > 0) {
       hash = (37 * hash) + SIGNATURES_FIELD_NUMBER;
       hash = (53 * hash) + getSignaturesList().hashCode();
+    }
+    if (getJwtsCount() > 0) {
+      hash = (37 * hash) + JWTS_FIELD_NUMBER;
+      hash = (53 * hash) + getJwtsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -448,6 +580,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getSignaturesFieldBuilder();
+        getJwtsFieldBuilder();
       }
     }
 
@@ -461,6 +594,12 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         signaturesBuilder_.clear();
+      }
+      if (jwtsBuilder_ == null) {
+        jwts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        jwtsBuilder_.clear();
       }
       return this;
     }
@@ -497,6 +636,15 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
         result.signatures_ = signatures_;
       } else {
         result.signatures_ = signaturesBuilder_.build();
+      }
+      if (jwtsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          jwts_ = java.util.Collections.unmodifiableList(jwts_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.jwts_ = jwts_;
+      } else {
+        result.jwts_ = jwtsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -574,6 +722,33 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
                     : null;
           } else {
             signaturesBuilder_.addAllMessages(other.signatures_);
+          }
+        }
+      }
+      if (jwtsBuilder_ == null) {
+        if (!other.jwts_.isEmpty()) {
+          if (jwts_.isEmpty()) {
+            jwts_ = other.jwts_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureJwtsIsMutable();
+            jwts_.addAll(other.jwts_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.jwts_.isEmpty()) {
+          if (jwtsBuilder_.isEmpty()) {
+            jwtsBuilder_.dispose();
+            jwtsBuilder_ = null;
+            jwts_ = other.jwts_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            jwtsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getJwtsFieldBuilder()
+                    : null;
+          } else {
+            jwtsBuilder_.addAllMessages(other.jwts_);
           }
         }
       }
@@ -1061,6 +1236,485 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
         signatures_ = null;
       }
       return signaturesBuilder_;
+    }
+
+    private java.util.List<io.grafeas.v1.Jwt> jwts_ = java.util.Collections.emptyList();
+
+    private void ensureJwtsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        jwts_ = new java.util.ArrayList<io.grafeas.v1.Jwt>(jwts_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            io.grafeas.v1.Jwt, io.grafeas.v1.Jwt.Builder, io.grafeas.v1.JwtOrBuilder>
+        jwtsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * One or more JWTs encoding a self-contained attestation.
+     * Each JWT encodes the payload that it verifies within the JWT itself.
+     * Verifier implementation SHOULD ignore the `serialized_payload` field
+     * when verifying these JWTs.
+     * If only JWTs are present on this AttestationOccurrence, then the
+     * `serialized_payload` SHOULD be left empty.
+     * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+     * Occurrence, but this is not validated by Grafeas metadata API
+     * implementations.  The JWT itself is opaque to Grafeas.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+     */
+    public java.util.List<io.grafeas.v1.Jwt> getJwtsList() {
+      if (jwtsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(jwts_);
+      } else {
+        return jwtsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more JWTs encoding a self-contained attestation.
+     * Each JWT encodes the payload that it verifies within the JWT itself.
+     * Verifier implementation SHOULD ignore the `serialized_payload` field
+     * when verifying these JWTs.
+     * If only JWTs are present on this AttestationOccurrence, then the
+     * `serialized_payload` SHOULD be left empty.
+     * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+     * Occurrence, but this is not validated by Grafeas metadata API
+     * implementations.  The JWT itself is opaque to Grafeas.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+     */
+    public int getJwtsCount() {
+      if (jwtsBuilder_ == null) {
+        return jwts_.size();
+      } else {
+        return jwtsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more JWTs encoding a self-contained attestation.
+     * Each JWT encodes the payload that it verifies within the JWT itself.
+     * Verifier implementation SHOULD ignore the `serialized_payload` field
+     * when verifying these JWTs.
+     * If only JWTs are present on this AttestationOccurrence, then the
+     * `serialized_payload` SHOULD be left empty.
+     * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+     * Occurrence, but this is not validated by Grafeas metadata API
+     * implementations.  The JWT itself is opaque to Grafeas.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+     */
+    public io.grafeas.v1.Jwt getJwts(int index) {
+      if (jwtsBuilder_ == null) {
+        return jwts_.get(index);
+      } else {
+        return jwtsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more JWTs encoding a self-contained attestation.
+     * Each JWT encodes the payload that it verifies within the JWT itself.
+     * Verifier implementation SHOULD ignore the `serialized_payload` field
+     * when verifying these JWTs.
+     * If only JWTs are present on this AttestationOccurrence, then the
+     * `serialized_payload` SHOULD be left empty.
+     * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+     * Occurrence, but this is not validated by Grafeas metadata API
+     * implementations.  The JWT itself is opaque to Grafeas.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+     */
+    public Builder setJwts(int index, io.grafeas.v1.Jwt value) {
+      if (jwtsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureJwtsIsMutable();
+        jwts_.set(index, value);
+        onChanged();
+      } else {
+        jwtsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more JWTs encoding a self-contained attestation.
+     * Each JWT encodes the payload that it verifies within the JWT itself.
+     * Verifier implementation SHOULD ignore the `serialized_payload` field
+     * when verifying these JWTs.
+     * If only JWTs are present on this AttestationOccurrence, then the
+     * `serialized_payload` SHOULD be left empty.
+     * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+     * Occurrence, but this is not validated by Grafeas metadata API
+     * implementations.  The JWT itself is opaque to Grafeas.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+     */
+    public Builder setJwts(int index, io.grafeas.v1.Jwt.Builder builderForValue) {
+      if (jwtsBuilder_ == null) {
+        ensureJwtsIsMutable();
+        jwts_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        jwtsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more JWTs encoding a self-contained attestation.
+     * Each JWT encodes the payload that it verifies within the JWT itself.
+     * Verifier implementation SHOULD ignore the `serialized_payload` field
+     * when verifying these JWTs.
+     * If only JWTs are present on this AttestationOccurrence, then the
+     * `serialized_payload` SHOULD be left empty.
+     * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+     * Occurrence, but this is not validated by Grafeas metadata API
+     * implementations.  The JWT itself is opaque to Grafeas.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+     */
+    public Builder addJwts(io.grafeas.v1.Jwt value) {
+      if (jwtsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureJwtsIsMutable();
+        jwts_.add(value);
+        onChanged();
+      } else {
+        jwtsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more JWTs encoding a self-contained attestation.
+     * Each JWT encodes the payload that it verifies within the JWT itself.
+     * Verifier implementation SHOULD ignore the `serialized_payload` field
+     * when verifying these JWTs.
+     * If only JWTs are present on this AttestationOccurrence, then the
+     * `serialized_payload` SHOULD be left empty.
+     * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+     * Occurrence, but this is not validated by Grafeas metadata API
+     * implementations.  The JWT itself is opaque to Grafeas.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+     */
+    public Builder addJwts(int index, io.grafeas.v1.Jwt value) {
+      if (jwtsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureJwtsIsMutable();
+        jwts_.add(index, value);
+        onChanged();
+      } else {
+        jwtsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more JWTs encoding a self-contained attestation.
+     * Each JWT encodes the payload that it verifies within the JWT itself.
+     * Verifier implementation SHOULD ignore the `serialized_payload` field
+     * when verifying these JWTs.
+     * If only JWTs are present on this AttestationOccurrence, then the
+     * `serialized_payload` SHOULD be left empty.
+     * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+     * Occurrence, but this is not validated by Grafeas metadata API
+     * implementations.  The JWT itself is opaque to Grafeas.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+     */
+    public Builder addJwts(io.grafeas.v1.Jwt.Builder builderForValue) {
+      if (jwtsBuilder_ == null) {
+        ensureJwtsIsMutable();
+        jwts_.add(builderForValue.build());
+        onChanged();
+      } else {
+        jwtsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more JWTs encoding a self-contained attestation.
+     * Each JWT encodes the payload that it verifies within the JWT itself.
+     * Verifier implementation SHOULD ignore the `serialized_payload` field
+     * when verifying these JWTs.
+     * If only JWTs are present on this AttestationOccurrence, then the
+     * `serialized_payload` SHOULD be left empty.
+     * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+     * Occurrence, but this is not validated by Grafeas metadata API
+     * implementations.  The JWT itself is opaque to Grafeas.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+     */
+    public Builder addJwts(int index, io.grafeas.v1.Jwt.Builder builderForValue) {
+      if (jwtsBuilder_ == null) {
+        ensureJwtsIsMutable();
+        jwts_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        jwtsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more JWTs encoding a self-contained attestation.
+     * Each JWT encodes the payload that it verifies within the JWT itself.
+     * Verifier implementation SHOULD ignore the `serialized_payload` field
+     * when verifying these JWTs.
+     * If only JWTs are present on this AttestationOccurrence, then the
+     * `serialized_payload` SHOULD be left empty.
+     * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+     * Occurrence, but this is not validated by Grafeas metadata API
+     * implementations.  The JWT itself is opaque to Grafeas.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+     */
+    public Builder addAllJwts(java.lang.Iterable<? extends io.grafeas.v1.Jwt> values) {
+      if (jwtsBuilder_ == null) {
+        ensureJwtsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, jwts_);
+        onChanged();
+      } else {
+        jwtsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more JWTs encoding a self-contained attestation.
+     * Each JWT encodes the payload that it verifies within the JWT itself.
+     * Verifier implementation SHOULD ignore the `serialized_payload` field
+     * when verifying these JWTs.
+     * If only JWTs are present on this AttestationOccurrence, then the
+     * `serialized_payload` SHOULD be left empty.
+     * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+     * Occurrence, but this is not validated by Grafeas metadata API
+     * implementations.  The JWT itself is opaque to Grafeas.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+     */
+    public Builder clearJwts() {
+      if (jwtsBuilder_ == null) {
+        jwts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        jwtsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more JWTs encoding a self-contained attestation.
+     * Each JWT encodes the payload that it verifies within the JWT itself.
+     * Verifier implementation SHOULD ignore the `serialized_payload` field
+     * when verifying these JWTs.
+     * If only JWTs are present on this AttestationOccurrence, then the
+     * `serialized_payload` SHOULD be left empty.
+     * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+     * Occurrence, but this is not validated by Grafeas metadata API
+     * implementations.  The JWT itself is opaque to Grafeas.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+     */
+    public Builder removeJwts(int index) {
+      if (jwtsBuilder_ == null) {
+        ensureJwtsIsMutable();
+        jwts_.remove(index);
+        onChanged();
+      } else {
+        jwtsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more JWTs encoding a self-contained attestation.
+     * Each JWT encodes the payload that it verifies within the JWT itself.
+     * Verifier implementation SHOULD ignore the `serialized_payload` field
+     * when verifying these JWTs.
+     * If only JWTs are present on this AttestationOccurrence, then the
+     * `serialized_payload` SHOULD be left empty.
+     * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+     * Occurrence, but this is not validated by Grafeas metadata API
+     * implementations.  The JWT itself is opaque to Grafeas.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+     */
+    public io.grafeas.v1.Jwt.Builder getJwtsBuilder(int index) {
+      return getJwtsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more JWTs encoding a self-contained attestation.
+     * Each JWT encodes the payload that it verifies within the JWT itself.
+     * Verifier implementation SHOULD ignore the `serialized_payload` field
+     * when verifying these JWTs.
+     * If only JWTs are present on this AttestationOccurrence, then the
+     * `serialized_payload` SHOULD be left empty.
+     * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+     * Occurrence, but this is not validated by Grafeas metadata API
+     * implementations.  The JWT itself is opaque to Grafeas.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+     */
+    public io.grafeas.v1.JwtOrBuilder getJwtsOrBuilder(int index) {
+      if (jwtsBuilder_ == null) {
+        return jwts_.get(index);
+      } else {
+        return jwtsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more JWTs encoding a self-contained attestation.
+     * Each JWT encodes the payload that it verifies within the JWT itself.
+     * Verifier implementation SHOULD ignore the `serialized_payload` field
+     * when verifying these JWTs.
+     * If only JWTs are present on this AttestationOccurrence, then the
+     * `serialized_payload` SHOULD be left empty.
+     * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+     * Occurrence, but this is not validated by Grafeas metadata API
+     * implementations.  The JWT itself is opaque to Grafeas.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+     */
+    public java.util.List<? extends io.grafeas.v1.JwtOrBuilder> getJwtsOrBuilderList() {
+      if (jwtsBuilder_ != null) {
+        return jwtsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(jwts_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more JWTs encoding a self-contained attestation.
+     * Each JWT encodes the payload that it verifies within the JWT itself.
+     * Verifier implementation SHOULD ignore the `serialized_payload` field
+     * when verifying these JWTs.
+     * If only JWTs are present on this AttestationOccurrence, then the
+     * `serialized_payload` SHOULD be left empty.
+     * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+     * Occurrence, but this is not validated by Grafeas metadata API
+     * implementations.  The JWT itself is opaque to Grafeas.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+     */
+    public io.grafeas.v1.Jwt.Builder addJwtsBuilder() {
+      return getJwtsFieldBuilder().addBuilder(io.grafeas.v1.Jwt.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more JWTs encoding a self-contained attestation.
+     * Each JWT encodes the payload that it verifies within the JWT itself.
+     * Verifier implementation SHOULD ignore the `serialized_payload` field
+     * when verifying these JWTs.
+     * If only JWTs are present on this AttestationOccurrence, then the
+     * `serialized_payload` SHOULD be left empty.
+     * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+     * Occurrence, but this is not validated by Grafeas metadata API
+     * implementations.  The JWT itself is opaque to Grafeas.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+     */
+    public io.grafeas.v1.Jwt.Builder addJwtsBuilder(int index) {
+      return getJwtsFieldBuilder().addBuilder(index, io.grafeas.v1.Jwt.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more JWTs encoding a self-contained attestation.
+     * Each JWT encodes the payload that it verifies within the JWT itself.
+     * Verifier implementation SHOULD ignore the `serialized_payload` field
+     * when verifying these JWTs.
+     * If only JWTs are present on this AttestationOccurrence, then the
+     * `serialized_payload` SHOULD be left empty.
+     * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+     * Occurrence, but this is not validated by Grafeas metadata API
+     * implementations.  The JWT itself is opaque to Grafeas.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+     */
+    public java.util.List<io.grafeas.v1.Jwt.Builder> getJwtsBuilderList() {
+      return getJwtsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            io.grafeas.v1.Jwt, io.grafeas.v1.Jwt.Builder, io.grafeas.v1.JwtOrBuilder>
+        getJwtsFieldBuilder() {
+      if (jwtsBuilder_ == null) {
+        jwtsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                io.grafeas.v1.Jwt, io.grafeas.v1.Jwt.Builder, io.grafeas.v1.JwtOrBuilder>(
+                jwts_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        jwts_ = null;
+      }
+      return jwtsBuilder_;
     }
 
     @java.lang.Override

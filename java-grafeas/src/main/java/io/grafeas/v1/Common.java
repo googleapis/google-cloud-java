@@ -36,6 +36,14 @@ public final class Common {
       internal_static_grafeas_v1_Signature_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_Signature_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_grafeas_v1_Envelope_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_Envelope_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_grafeas_v1_EnvelopeSignature_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_EnvelopeSignature_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -48,13 +56,18 @@ public final class Common {
       "\n\027grafeas/v1/common.proto\022\ngrafeas.v1\"(\n"
           + "\nRelatedUrl\022\013\n\003url\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\""
           + "5\n\tSignature\022\021\n\tsignature\030\001 \001(\014\022\025\n\rpubli"
-          + "c_key_id\030\002 \001(\t*\230\001\n\010NoteKind\022\031\n\025NOTE_KIND"
-          + "_UNSPECIFIED\020\000\022\021\n\rVULNERABILITY\020\001\022\t\n\005BUI"
-          + "LD\020\002\022\t\n\005IMAGE\020\003\022\013\n\007PACKAGE\020\004\022\016\n\nDEPLOYME"
-          + "NT\020\005\022\r\n\tDISCOVERY\020\006\022\017\n\013ATTESTATION\020\007\022\013\n\007"
-          + "UPGRADE\020\010BQ\n\rio.grafeas.v1P\001Z8google.gol"
-          + "ang.org/genproto/googleapis/grafeas/v1;g"
-          + "rafeas\242\002\003GRAb\006proto3"
+          + "c_key_id\030\002 \001(\t\"d\n\010Envelope\022\017\n\007payload\030\001 "
+          + "\001(\014\022\024\n\014payload_type\030\002 \001(\t\0221\n\nsignatures\030"
+          + "\003 \003(\0132\035.grafeas.v1.EnvelopeSignature\"/\n\021"
+          + "EnvelopeSignature\022\013\n\003sig\030\001 \001(\014\022\r\n\005keyid\030"
+          + "\002 \001(\t*\276\001\n\010NoteKind\022\031\n\025NOTE_KIND_UNSPECIF"
+          + "IED\020\000\022\021\n\rVULNERABILITY\020\001\022\t\n\005BUILD\020\002\022\t\n\005I"
+          + "MAGE\020\003\022\013\n\007PACKAGE\020\004\022\016\n\nDEPLOYMENT\020\005\022\r\n\tD"
+          + "ISCOVERY\020\006\022\017\n\013ATTESTATION\020\007\022\013\n\007UPGRADE\020\010"
+          + "\022\016\n\nCOMPLIANCE\020\t\022\024\n\020DSSE_ATTESTATION\020\nBQ"
+          + "\n\rio.grafeas.v1P\001Z8google.golang.org/gen"
+          + "proto/googleapis/grafeas/v1;grafeas\242\002\003GR"
+          + "Ab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -72,6 +85,21 @@ public final class Common {
             internal_static_grafeas_v1_Signature_descriptor,
             new java.lang.String[] {
               "Signature", "PublicKeyId",
+            });
+    internal_static_grafeas_v1_Envelope_descriptor = getDescriptor().getMessageTypes().get(2);
+    internal_static_grafeas_v1_Envelope_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_Envelope_descriptor,
+            new java.lang.String[] {
+              "Payload", "PayloadType", "Signatures",
+            });
+    internal_static_grafeas_v1_EnvelopeSignature_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_grafeas_v1_EnvelopeSignature_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_EnvelopeSignature_descriptor,
+            new java.lang.String[] {
+              "Sig", "Keyid",
             });
   }
 

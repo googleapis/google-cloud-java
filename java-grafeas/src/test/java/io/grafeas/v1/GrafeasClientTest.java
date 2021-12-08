@@ -97,6 +97,7 @@ public class GrafeasClientTest {
             .setRemediation("remediation779381797")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEnvelope(Envelope.newBuilder().build())
             .build();
     mockGrafeas.addResponse(expectedResponse);
 
@@ -141,6 +142,7 @@ public class GrafeasClientTest {
             .setRemediation("remediation779381797")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEnvelope(Envelope.newBuilder().build())
             .build();
     mockGrafeas.addResponse(expectedResponse);
 
@@ -347,6 +349,7 @@ public class GrafeasClientTest {
             .setRemediation("remediation779381797")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEnvelope(Envelope.newBuilder().build())
             .build();
     mockGrafeas.addResponse(expectedResponse);
 
@@ -394,6 +397,7 @@ public class GrafeasClientTest {
             .setRemediation("remediation779381797")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEnvelope(Envelope.newBuilder().build())
             .build();
     mockGrafeas.addResponse(expectedResponse);
 
@@ -527,6 +531,7 @@ public class GrafeasClientTest {
             .setRemediation("remediation779381797")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEnvelope(Envelope.newBuilder().build())
             .build();
     mockGrafeas.addResponse(expectedResponse);
 
@@ -577,6 +582,7 @@ public class GrafeasClientTest {
             .setRemediation("remediation779381797")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEnvelope(Envelope.newBuilder().build())
             .build();
     mockGrafeas.addResponse(expectedResponse);
 

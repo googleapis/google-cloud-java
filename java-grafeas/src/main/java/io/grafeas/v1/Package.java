@@ -68,16 +68,16 @@ public final class Package {
           + "ame\030\001 \001(\t\022.\n\014distribution\030\n \003(\0132\030.grafea"
           + "s.v1.Distribution\"I\n\021PackageOccurrence\022\014"
           + "\n\004name\030\001 \001(\t\022&\n\010location\030\002 \003(\0132\024.grafeas"
-          + ".v1.Location\"\315\001\n\007Version\022\r\n\005epoch\030\001 \001(\005\022"
-          + "\014\n\004name\030\002 \001(\t\022\020\n\010revision\030\003 \001(\t\022-\n\004kind\030"
-          + "\004 \001(\0162\037.grafeas.v1.Version.VersionKind\022\021"
-          + "\n\tfull_name\030\005 \001(\t\"Q\n\013VersionKind\022\034\n\030VERS"
-          + "ION_KIND_UNSPECIFIED\020\000\022\n\n\006NORMAL\020\001\022\013\n\007MI"
-          + "NIMUM\020\002\022\013\n\007MAXIMUM\020\003*>\n\014Architecture\022\034\n\030"
-          + "ARCHITECTURE_UNSPECIFIED\020\000\022\007\n\003X86\020\001\022\007\n\003X"
-          + "64\020\002BQ\n\rio.grafeas.v1P\001Z8google.golang.o"
-          + "rg/genproto/googleapis/grafeas/v1;grafea"
-          + "s\242\002\003GRAb\006proto3"
+          + ".v1.Location\"\340\001\n\007Version\022\r\n\005epoch\030\001 \001(\005\022"
+          + "\014\n\004name\030\002 \001(\t\022\020\n\010revision\030\003 \001(\t\022\021\n\tinclu"
+          + "sive\030\006 \001(\010\022-\n\004kind\030\004 \001(\0162\037.grafeas.v1.Ve"
+          + "rsion.VersionKind\022\021\n\tfull_name\030\005 \001(\t\"Q\n\013"
+          + "VersionKind\022\034\n\030VERSION_KIND_UNSPECIFIED\020"
+          + "\000\022\n\n\006NORMAL\020\001\022\013\n\007MINIMUM\020\002\022\013\n\007MAXIMUM\020\003*"
+          + ">\n\014Architecture\022\034\n\030ARCHITECTURE_UNSPECIF"
+          + "IED\020\000\022\007\n\003X86\020\001\022\007\n\003X64\020\002BQ\n\rio.grafeas.v1"
+          + "P\001Z8google.golang.org/genproto/googleapi"
+          + "s/grafeas/v1;grafeas\242\002\003GRAb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -116,7 +116,7 @@ public final class Package {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_grafeas_v1_Version_descriptor,
             new java.lang.String[] {
-              "Epoch", "Name", "Revision", "Kind", "FullName",
+              "Epoch", "Name", "Revision", "Inclusive", "Kind", "FullName",
             });
   }
 

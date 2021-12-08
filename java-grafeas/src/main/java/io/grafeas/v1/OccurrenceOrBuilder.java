@@ -514,5 +514,110 @@ public interface OccurrenceOrBuilder
    */
   io.grafeas.v1.UpgradeOccurrenceOrBuilder getUpgradeOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Describes a compliance violation on a linked resource.
+   * </pre>
+   *
+   * <code>.grafeas.v1.ComplianceOccurrence compliance = 16;</code>
+   *
+   * @return Whether the compliance field is set.
+   */
+  boolean hasCompliance();
+  /**
+   *
+   *
+   * <pre>
+   * Describes a compliance violation on a linked resource.
+   * </pre>
+   *
+   * <code>.grafeas.v1.ComplianceOccurrence compliance = 16;</code>
+   *
+   * @return The compliance.
+   */
+  io.grafeas.v1.ComplianceOccurrence getCompliance();
+  /**
+   *
+   *
+   * <pre>
+   * Describes a compliance violation on a linked resource.
+   * </pre>
+   *
+   * <code>.grafeas.v1.ComplianceOccurrence compliance = 16;</code>
+   */
+  io.grafeas.v1.ComplianceOccurrenceOrBuilder getComplianceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Describes an attestation of an artifact using dsse.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DSSEAttestationOccurrence dsse_attestation = 17;</code>
+   *
+   * @return Whether the dsseAttestation field is set.
+   */
+  boolean hasDsseAttestation();
+  /**
+   *
+   *
+   * <pre>
+   * Describes an attestation of an artifact using dsse.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DSSEAttestationOccurrence dsse_attestation = 17;</code>
+   *
+   * @return The dsseAttestation.
+   */
+  io.grafeas.v1.DSSEAttestationOccurrence getDsseAttestation();
+  /**
+   *
+   *
+   * <pre>
+   * Describes an attestation of an artifact using dsse.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DSSEAttestationOccurrence dsse_attestation = 17;</code>
+   */
+  io.grafeas.v1.DSSEAttestationOccurrenceOrBuilder getDsseAttestationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * https://github.com/secure-systems-lab/dsse
+   * </pre>
+   *
+   * <code>.grafeas.v1.Envelope envelope = 18;</code>
+   *
+   * @return Whether the envelope field is set.
+   */
+  boolean hasEnvelope();
+  /**
+   *
+   *
+   * <pre>
+   * https://github.com/secure-systems-lab/dsse
+   * </pre>
+   *
+   * <code>.grafeas.v1.Envelope envelope = 18;</code>
+   *
+   * @return The envelope.
+   */
+  io.grafeas.v1.Envelope getEnvelope();
+  /**
+   *
+   *
+   * <pre>
+   * https://github.com/secure-systems-lab/dsse
+   * </pre>
+   *
+   * <code>.grafeas.v1.Envelope envelope = 18;</code>
+   */
+  io.grafeas.v1.EnvelopeOrBuilder getEnvelopeOrBuilder();
+
   public io.grafeas.v1.Occurrence.DetailsCase getDetailsCase();
 }

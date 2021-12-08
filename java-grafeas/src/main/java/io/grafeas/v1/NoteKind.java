@@ -33,7 +33,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Unknown.
+   * Default value. This value is unused.
    * </pre>
    *
    * <code>NOTE_KIND_UNSPECIFIED = 0;</code>
@@ -119,6 +119,26 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPGRADE = 8;</code>
    */
   UPGRADE(8),
+  /**
+   *
+   *
+   * <pre>
+   * This represents a Compliance Note
+   * </pre>
+   *
+   * <code>COMPLIANCE = 9;</code>
+   */
+  COMPLIANCE(9),
+  /**
+   *
+   *
+   * <pre>
+   * This represents a DSSE attestation Note
+   * </pre>
+   *
+   * <code>DSSE_ATTESTATION = 10;</code>
+   */
+  DSSE_ATTESTATION(10),
   UNRECOGNIZED(-1),
   ;
 
@@ -126,7 +146,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Unknown.
+   * Default value. This value is unused.
    * </pre>
    *
    * <code>NOTE_KIND_UNSPECIFIED = 0;</code>
@@ -212,6 +232,26 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPGRADE = 8;</code>
    */
   public static final int UPGRADE_VALUE = 8;
+  /**
+   *
+   *
+   * <pre>
+   * This represents a Compliance Note
+   * </pre>
+   *
+   * <code>COMPLIANCE = 9;</code>
+   */
+  public static final int COMPLIANCE_VALUE = 9;
+  /**
+   *
+   *
+   * <pre>
+   * This represents a DSSE attestation Note
+   * </pre>
+   *
+   * <code>DSSE_ATTESTATION = 10;</code>
+   */
+  public static final int DSSE_ATTESTATION_VALUE = 10;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -255,6 +295,10 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
         return ATTESTATION;
       case 8:
         return UPGRADE;
+      case 9:
+        return COMPLIANCE;
+      case 10:
+        return DSSE_ATTESTATION;
       default:
         return null;
     }

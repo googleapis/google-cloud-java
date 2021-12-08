@@ -621,5 +621,75 @@ public interface NoteOrBuilder
    */
   io.grafeas.v1.UpgradeNoteOrBuilder getUpgradeOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a compliance check.
+   * </pre>
+   *
+   * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
+   *
+   * @return Whether the compliance field is set.
+   */
+  boolean hasCompliance();
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a compliance check.
+   * </pre>
+   *
+   * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
+   *
+   * @return The compliance.
+   */
+  io.grafeas.v1.ComplianceNote getCompliance();
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a compliance check.
+   * </pre>
+   *
+   * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
+   */
+  io.grafeas.v1.ComplianceNoteOrBuilder getComplianceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a dsse attestation note.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
+   *
+   * @return Whether the dsseAttestation field is set.
+   */
+  boolean hasDsseAttestation();
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a dsse attestation note.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
+   *
+   * @return The dsseAttestation.
+   */
+  io.grafeas.v1.DSSEAttestationNote getDsseAttestation();
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a dsse attestation note.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
+   */
+  io.grafeas.v1.DSSEAttestationNoteOrBuilder getDsseAttestationOrBuilder();
+
   public io.grafeas.v1.Note.TypeCase getTypeCase();
 }

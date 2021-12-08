@@ -36,6 +36,9 @@ public final class Attestation {
       internal_static_grafeas_v1_AttestationNote_Hint_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_AttestationNote_Hint_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor internal_static_grafeas_v1_Jwt_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_Jwt_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_grafeas_v1_AttestationOccurrence_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -53,11 +56,13 @@ public final class Attestation {
           + "v1\032\027grafeas/v1/common.proto\"f\n\017Attestati"
           + "onNote\022.\n\004hint\030\001 \001(\0132 .grafeas.v1.Attest"
           + "ationNote.Hint\032#\n\004Hint\022\033\n\023human_readable"
-          + "_name\030\001 \001(\t\"^\n\025AttestationOccurrence\022\032\n\022"
-          + "serialized_payload\030\001 \001(\014\022)\n\nsignatures\030\002"
-          + " \003(\0132\025.grafeas.v1.SignatureBQ\n\rio.grafea"
-          + "s.v1P\001Z8google.golang.org/genproto/googl"
-          + "eapis/grafeas/v1;grafeas\242\002\003GRAb\006proto3"
+          + "_name\030\001 \001(\t\"\032\n\003Jwt\022\023\n\013compact_jwt\030\001 \001(\t\""
+          + "}\n\025AttestationOccurrence\022\032\n\022serialized_p"
+          + "ayload\030\001 \001(\014\022)\n\nsignatures\030\002 \003(\0132\025.grafe"
+          + "as.v1.Signature\022\035\n\004jwts\030\003 \003(\0132\017.grafeas."
+          + "v1.JwtBQ\n\rio.grafeas.v1P\001Z8google.golang"
+          + ".org/genproto/googleapis/grafeas/v1;graf"
+          + "eas\242\002\003GRAb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -81,13 +86,20 @@ public final class Attestation {
             new java.lang.String[] {
               "HumanReadableName",
             });
+    internal_static_grafeas_v1_Jwt_descriptor = getDescriptor().getMessageTypes().get(1);
+    internal_static_grafeas_v1_Jwt_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_Jwt_descriptor,
+            new java.lang.String[] {
+              "CompactJwt",
+            });
     internal_static_grafeas_v1_AttestationOccurrence_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(2);
     internal_static_grafeas_v1_AttestationOccurrence_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_grafeas_v1_AttestationOccurrence_descriptor,
             new java.lang.String[] {
-              "SerializedPayload", "Signatures",
+              "SerializedPayload", "Signatures", "Jwts",
             });
     io.grafeas.v1.Common.getDescriptor();
   }

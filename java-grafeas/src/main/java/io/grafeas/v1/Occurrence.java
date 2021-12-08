@@ -262,6 +262,51 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
               detailsCase_ = 15;
               break;
             }
+          case 130:
+            {
+              io.grafeas.v1.ComplianceOccurrence.Builder subBuilder = null;
+              if (detailsCase_ == 16) {
+                subBuilder = ((io.grafeas.v1.ComplianceOccurrence) details_).toBuilder();
+              }
+              details_ =
+                  input.readMessage(io.grafeas.v1.ComplianceOccurrence.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.grafeas.v1.ComplianceOccurrence) details_);
+                details_ = subBuilder.buildPartial();
+              }
+              detailsCase_ = 16;
+              break;
+            }
+          case 138:
+            {
+              io.grafeas.v1.DSSEAttestationOccurrence.Builder subBuilder = null;
+              if (detailsCase_ == 17) {
+                subBuilder = ((io.grafeas.v1.DSSEAttestationOccurrence) details_).toBuilder();
+              }
+              details_ =
+                  input.readMessage(
+                      io.grafeas.v1.DSSEAttestationOccurrence.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.grafeas.v1.DSSEAttestationOccurrence) details_);
+                details_ = subBuilder.buildPartial();
+              }
+              detailsCase_ = 17;
+              break;
+            }
+          case 146:
+            {
+              io.grafeas.v1.Envelope.Builder subBuilder = null;
+              if (envelope_ != null) {
+                subBuilder = envelope_.toBuilder();
+              }
+              envelope_ = input.readMessage(io.grafeas.v1.Envelope.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(envelope_);
+                envelope_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -308,6 +353,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     DISCOVERY(13),
     ATTESTATION(14),
     UPGRADE(15),
+    COMPLIANCE(16),
+    DSSE_ATTESTATION(17),
     DETAILS_NOT_SET(0);
     private final int value;
 
@@ -342,6 +389,10 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
           return ATTESTATION;
         case 15:
           return UPGRADE;
+        case 16:
+          return COMPLIANCE;
+        case 17:
+          return DSSE_ATTESTATION;
         case 0:
           return DETAILS_NOT_SET;
         default:
@@ -1104,6 +1155,154 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     return io.grafeas.v1.UpgradeOccurrence.getDefaultInstance();
   }
 
+  public static final int COMPLIANCE_FIELD_NUMBER = 16;
+  /**
+   *
+   *
+   * <pre>
+   * Describes a compliance violation on a linked resource.
+   * </pre>
+   *
+   * <code>.grafeas.v1.ComplianceOccurrence compliance = 16;</code>
+   *
+   * @return Whether the compliance field is set.
+   */
+  @java.lang.Override
+  public boolean hasCompliance() {
+    return detailsCase_ == 16;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Describes a compliance violation on a linked resource.
+   * </pre>
+   *
+   * <code>.grafeas.v1.ComplianceOccurrence compliance = 16;</code>
+   *
+   * @return The compliance.
+   */
+  @java.lang.Override
+  public io.grafeas.v1.ComplianceOccurrence getCompliance() {
+    if (detailsCase_ == 16) {
+      return (io.grafeas.v1.ComplianceOccurrence) details_;
+    }
+    return io.grafeas.v1.ComplianceOccurrence.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Describes a compliance violation on a linked resource.
+   * </pre>
+   *
+   * <code>.grafeas.v1.ComplianceOccurrence compliance = 16;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.ComplianceOccurrenceOrBuilder getComplianceOrBuilder() {
+    if (detailsCase_ == 16) {
+      return (io.grafeas.v1.ComplianceOccurrence) details_;
+    }
+    return io.grafeas.v1.ComplianceOccurrence.getDefaultInstance();
+  }
+
+  public static final int DSSE_ATTESTATION_FIELD_NUMBER = 17;
+  /**
+   *
+   *
+   * <pre>
+   * Describes an attestation of an artifact using dsse.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DSSEAttestationOccurrence dsse_attestation = 17;</code>
+   *
+   * @return Whether the dsseAttestation field is set.
+   */
+  @java.lang.Override
+  public boolean hasDsseAttestation() {
+    return detailsCase_ == 17;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Describes an attestation of an artifact using dsse.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DSSEAttestationOccurrence dsse_attestation = 17;</code>
+   *
+   * @return The dsseAttestation.
+   */
+  @java.lang.Override
+  public io.grafeas.v1.DSSEAttestationOccurrence getDsseAttestation() {
+    if (detailsCase_ == 17) {
+      return (io.grafeas.v1.DSSEAttestationOccurrence) details_;
+    }
+    return io.grafeas.v1.DSSEAttestationOccurrence.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Describes an attestation of an artifact using dsse.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DSSEAttestationOccurrence dsse_attestation = 17;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.DSSEAttestationOccurrenceOrBuilder getDsseAttestationOrBuilder() {
+    if (detailsCase_ == 17) {
+      return (io.grafeas.v1.DSSEAttestationOccurrence) details_;
+    }
+    return io.grafeas.v1.DSSEAttestationOccurrence.getDefaultInstance();
+  }
+
+  public static final int ENVELOPE_FIELD_NUMBER = 18;
+  private io.grafeas.v1.Envelope envelope_;
+  /**
+   *
+   *
+   * <pre>
+   * https://github.com/secure-systems-lab/dsse
+   * </pre>
+   *
+   * <code>.grafeas.v1.Envelope envelope = 18;</code>
+   *
+   * @return Whether the envelope field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnvelope() {
+    return envelope_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * https://github.com/secure-systems-lab/dsse
+   * </pre>
+   *
+   * <code>.grafeas.v1.Envelope envelope = 18;</code>
+   *
+   * @return The envelope.
+   */
+  @java.lang.Override
+  public io.grafeas.v1.Envelope getEnvelope() {
+    return envelope_ == null ? io.grafeas.v1.Envelope.getDefaultInstance() : envelope_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * https://github.com/secure-systems-lab/dsse
+   * </pre>
+   *
+   * <code>.grafeas.v1.Envelope envelope = 18;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.EnvelopeOrBuilder getEnvelopeOrBuilder() {
+    return getEnvelope();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1162,6 +1361,15 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     }
     if (detailsCase_ == 15) {
       output.writeMessage(15, (io.grafeas.v1.UpgradeOccurrence) details_);
+    }
+    if (detailsCase_ == 16) {
+      output.writeMessage(16, (io.grafeas.v1.ComplianceOccurrence) details_);
+    }
+    if (detailsCase_ == 17) {
+      output.writeMessage(17, (io.grafeas.v1.DSSEAttestationOccurrence) details_);
+    }
+    if (envelope_ != null) {
+      output.writeMessage(18, getEnvelope());
     }
     unknownFields.writeTo(output);
   }
@@ -1233,6 +1441,19 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               15, (io.grafeas.v1.UpgradeOccurrence) details_);
     }
+    if (detailsCase_ == 16) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              16, (io.grafeas.v1.ComplianceOccurrence) details_);
+    }
+    if (detailsCase_ == 17) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              17, (io.grafeas.v1.DSSEAttestationOccurrence) details_);
+    }
+    if (envelope_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getEnvelope());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1261,6 +1482,10 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (hasEnvelope() != other.hasEnvelope()) return false;
+    if (hasEnvelope()) {
+      if (!getEnvelope().equals(other.getEnvelope())) return false;
+    }
     if (!getDetailsCase().equals(other.getDetailsCase())) return false;
     switch (detailsCase_) {
       case 8:
@@ -1286,6 +1511,12 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         break;
       case 15:
         if (!getUpgrade().equals(other.getUpgrade())) return false;
+        break;
+      case 16:
+        if (!getCompliance().equals(other.getCompliance())) return false;
+        break;
+      case 17:
+        if (!getDsseAttestation().equals(other.getDsseAttestation())) return false;
         break;
       case 0:
       default:
@@ -1319,6 +1550,10 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
+    if (hasEnvelope()) {
+      hash = (37 * hash) + ENVELOPE_FIELD_NUMBER;
+      hash = (53 * hash) + getEnvelope().hashCode();
+    }
     switch (detailsCase_) {
       case 8:
         hash = (37 * hash) + VULNERABILITY_FIELD_NUMBER;
@@ -1351,6 +1586,14 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       case 15:
         hash = (37 * hash) + UPGRADE_FIELD_NUMBER;
         hash = (53 * hash) + getUpgrade().hashCode();
+        break;
+      case 16:
+        hash = (37 * hash) + COMPLIANCE_FIELD_NUMBER;
+        hash = (53 * hash) + getCompliance().hashCode();
+        break;
+      case 17:
+        hash = (37 * hash) + DSSE_ATTESTATION_FIELD_NUMBER;
+        hash = (53 * hash) + getDsseAttestation().hashCode();
         break;
       case 0:
       default:
@@ -1519,6 +1762,12 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
         updateTimeBuilder_ = null;
       }
+      if (envelopeBuilder_ == null) {
+        envelope_ = null;
+      } else {
+        envelope_ = null;
+        envelopeBuilder_ = null;
+      }
       detailsCase_ = 0;
       details_ = null;
       return this;
@@ -1617,6 +1866,25 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
           result.details_ = upgradeBuilder_.build();
         }
       }
+      if (detailsCase_ == 16) {
+        if (complianceBuilder_ == null) {
+          result.details_ = details_;
+        } else {
+          result.details_ = complianceBuilder_.build();
+        }
+      }
+      if (detailsCase_ == 17) {
+        if (dsseAttestationBuilder_ == null) {
+          result.details_ = details_;
+        } else {
+          result.details_ = dsseAttestationBuilder_.build();
+        }
+      }
+      if (envelopeBuilder_ == null) {
+        result.envelope_ = envelope_;
+      } else {
+        result.envelope_ = envelopeBuilder_.build();
+      }
       result.detailsCase_ = detailsCase_;
       onBuilt();
       return result;
@@ -1692,6 +1960,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
+      if (other.hasEnvelope()) {
+        mergeEnvelope(other.getEnvelope());
+      }
       switch (other.getDetailsCase()) {
         case VULNERABILITY:
           {
@@ -1731,6 +2002,16 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         case UPGRADE:
           {
             mergeUpgrade(other.getUpgrade());
+            break;
+          }
+        case COMPLIANCE:
+          {
+            mergeCompliance(other.getCompliance());
+            break;
+          }
+        case DSSE_ATTESTATION:
+          {
+            mergeDsseAttestation(other.getDsseAttestation());
             break;
           }
         case DETAILS_NOT_SET:
@@ -4342,6 +4623,594 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return upgradeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.ComplianceOccurrence,
+            io.grafeas.v1.ComplianceOccurrence.Builder,
+            io.grafeas.v1.ComplianceOccurrenceOrBuilder>
+        complianceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Describes a compliance violation on a linked resource.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceOccurrence compliance = 16;</code>
+     *
+     * @return Whether the compliance field is set.
+     */
+    @java.lang.Override
+    public boolean hasCompliance() {
+      return detailsCase_ == 16;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes a compliance violation on a linked resource.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceOccurrence compliance = 16;</code>
+     *
+     * @return The compliance.
+     */
+    @java.lang.Override
+    public io.grafeas.v1.ComplianceOccurrence getCompliance() {
+      if (complianceBuilder_ == null) {
+        if (detailsCase_ == 16) {
+          return (io.grafeas.v1.ComplianceOccurrence) details_;
+        }
+        return io.grafeas.v1.ComplianceOccurrence.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 16) {
+          return complianceBuilder_.getMessage();
+        }
+        return io.grafeas.v1.ComplianceOccurrence.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes a compliance violation on a linked resource.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceOccurrence compliance = 16;</code>
+     */
+    public Builder setCompliance(io.grafeas.v1.ComplianceOccurrence value) {
+      if (complianceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        complianceBuilder_.setMessage(value);
+      }
+      detailsCase_ = 16;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes a compliance violation on a linked resource.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceOccurrence compliance = 16;</code>
+     */
+    public Builder setCompliance(io.grafeas.v1.ComplianceOccurrence.Builder builderForValue) {
+      if (complianceBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        complianceBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 16;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes a compliance violation on a linked resource.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceOccurrence compliance = 16;</code>
+     */
+    public Builder mergeCompliance(io.grafeas.v1.ComplianceOccurrence value) {
+      if (complianceBuilder_ == null) {
+        if (detailsCase_ == 16
+            && details_ != io.grafeas.v1.ComplianceOccurrence.getDefaultInstance()) {
+          details_ =
+              io.grafeas.v1.ComplianceOccurrence.newBuilder(
+                      (io.grafeas.v1.ComplianceOccurrence) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 16) {
+          complianceBuilder_.mergeFrom(value);
+        }
+        complianceBuilder_.setMessage(value);
+      }
+      detailsCase_ = 16;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes a compliance violation on a linked resource.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceOccurrence compliance = 16;</code>
+     */
+    public Builder clearCompliance() {
+      if (complianceBuilder_ == null) {
+        if (detailsCase_ == 16) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 16) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        complianceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes a compliance violation on a linked resource.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceOccurrence compliance = 16;</code>
+     */
+    public io.grafeas.v1.ComplianceOccurrence.Builder getComplianceBuilder() {
+      return getComplianceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes a compliance violation on a linked resource.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceOccurrence compliance = 16;</code>
+     */
+    @java.lang.Override
+    public io.grafeas.v1.ComplianceOccurrenceOrBuilder getComplianceOrBuilder() {
+      if ((detailsCase_ == 16) && (complianceBuilder_ != null)) {
+        return complianceBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 16) {
+          return (io.grafeas.v1.ComplianceOccurrence) details_;
+        }
+        return io.grafeas.v1.ComplianceOccurrence.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes a compliance violation on a linked resource.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceOccurrence compliance = 16;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.ComplianceOccurrence,
+            io.grafeas.v1.ComplianceOccurrence.Builder,
+            io.grafeas.v1.ComplianceOccurrenceOrBuilder>
+        getComplianceFieldBuilder() {
+      if (complianceBuilder_ == null) {
+        if (!(detailsCase_ == 16)) {
+          details_ = io.grafeas.v1.ComplianceOccurrence.getDefaultInstance();
+        }
+        complianceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.ComplianceOccurrence,
+                io.grafeas.v1.ComplianceOccurrence.Builder,
+                io.grafeas.v1.ComplianceOccurrenceOrBuilder>(
+                (io.grafeas.v1.ComplianceOccurrence) details_, getParentForChildren(), isClean());
+        details_ = null;
+      }
+      detailsCase_ = 16;
+      onChanged();
+      ;
+      return complianceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.DSSEAttestationOccurrence,
+            io.grafeas.v1.DSSEAttestationOccurrence.Builder,
+            io.grafeas.v1.DSSEAttestationOccurrenceOrBuilder>
+        dsseAttestationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Describes an attestation of an artifact using dsse.
+     * </pre>
+     *
+     * <code>.grafeas.v1.DSSEAttestationOccurrence dsse_attestation = 17;</code>
+     *
+     * @return Whether the dsseAttestation field is set.
+     */
+    @java.lang.Override
+    public boolean hasDsseAttestation() {
+      return detailsCase_ == 17;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes an attestation of an artifact using dsse.
+     * </pre>
+     *
+     * <code>.grafeas.v1.DSSEAttestationOccurrence dsse_attestation = 17;</code>
+     *
+     * @return The dsseAttestation.
+     */
+    @java.lang.Override
+    public io.grafeas.v1.DSSEAttestationOccurrence getDsseAttestation() {
+      if (dsseAttestationBuilder_ == null) {
+        if (detailsCase_ == 17) {
+          return (io.grafeas.v1.DSSEAttestationOccurrence) details_;
+        }
+        return io.grafeas.v1.DSSEAttestationOccurrence.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 17) {
+          return dsseAttestationBuilder_.getMessage();
+        }
+        return io.grafeas.v1.DSSEAttestationOccurrence.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes an attestation of an artifact using dsse.
+     * </pre>
+     *
+     * <code>.grafeas.v1.DSSEAttestationOccurrence dsse_attestation = 17;</code>
+     */
+    public Builder setDsseAttestation(io.grafeas.v1.DSSEAttestationOccurrence value) {
+      if (dsseAttestationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        dsseAttestationBuilder_.setMessage(value);
+      }
+      detailsCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes an attestation of an artifact using dsse.
+     * </pre>
+     *
+     * <code>.grafeas.v1.DSSEAttestationOccurrence dsse_attestation = 17;</code>
+     */
+    public Builder setDsseAttestation(
+        io.grafeas.v1.DSSEAttestationOccurrence.Builder builderForValue) {
+      if (dsseAttestationBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        dsseAttestationBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes an attestation of an artifact using dsse.
+     * </pre>
+     *
+     * <code>.grafeas.v1.DSSEAttestationOccurrence dsse_attestation = 17;</code>
+     */
+    public Builder mergeDsseAttestation(io.grafeas.v1.DSSEAttestationOccurrence value) {
+      if (dsseAttestationBuilder_ == null) {
+        if (detailsCase_ == 17
+            && details_ != io.grafeas.v1.DSSEAttestationOccurrence.getDefaultInstance()) {
+          details_ =
+              io.grafeas.v1.DSSEAttestationOccurrence.newBuilder(
+                      (io.grafeas.v1.DSSEAttestationOccurrence) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 17) {
+          dsseAttestationBuilder_.mergeFrom(value);
+        }
+        dsseAttestationBuilder_.setMessage(value);
+      }
+      detailsCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes an attestation of an artifact using dsse.
+     * </pre>
+     *
+     * <code>.grafeas.v1.DSSEAttestationOccurrence dsse_attestation = 17;</code>
+     */
+    public Builder clearDsseAttestation() {
+      if (dsseAttestationBuilder_ == null) {
+        if (detailsCase_ == 17) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 17) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        dsseAttestationBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes an attestation of an artifact using dsse.
+     * </pre>
+     *
+     * <code>.grafeas.v1.DSSEAttestationOccurrence dsse_attestation = 17;</code>
+     */
+    public io.grafeas.v1.DSSEAttestationOccurrence.Builder getDsseAttestationBuilder() {
+      return getDsseAttestationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes an attestation of an artifact using dsse.
+     * </pre>
+     *
+     * <code>.grafeas.v1.DSSEAttestationOccurrence dsse_attestation = 17;</code>
+     */
+    @java.lang.Override
+    public io.grafeas.v1.DSSEAttestationOccurrenceOrBuilder getDsseAttestationOrBuilder() {
+      if ((detailsCase_ == 17) && (dsseAttestationBuilder_ != null)) {
+        return dsseAttestationBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 17) {
+          return (io.grafeas.v1.DSSEAttestationOccurrence) details_;
+        }
+        return io.grafeas.v1.DSSEAttestationOccurrence.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes an attestation of an artifact using dsse.
+     * </pre>
+     *
+     * <code>.grafeas.v1.DSSEAttestationOccurrence dsse_attestation = 17;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.DSSEAttestationOccurrence,
+            io.grafeas.v1.DSSEAttestationOccurrence.Builder,
+            io.grafeas.v1.DSSEAttestationOccurrenceOrBuilder>
+        getDsseAttestationFieldBuilder() {
+      if (dsseAttestationBuilder_ == null) {
+        if (!(detailsCase_ == 17)) {
+          details_ = io.grafeas.v1.DSSEAttestationOccurrence.getDefaultInstance();
+        }
+        dsseAttestationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.DSSEAttestationOccurrence,
+                io.grafeas.v1.DSSEAttestationOccurrence.Builder,
+                io.grafeas.v1.DSSEAttestationOccurrenceOrBuilder>(
+                (io.grafeas.v1.DSSEAttestationOccurrence) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 17;
+      onChanged();
+      ;
+      return dsseAttestationBuilder_;
+    }
+
+    private io.grafeas.v1.Envelope envelope_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.Envelope, io.grafeas.v1.Envelope.Builder, io.grafeas.v1.EnvelopeOrBuilder>
+        envelopeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * https://github.com/secure-systems-lab/dsse
+     * </pre>
+     *
+     * <code>.grafeas.v1.Envelope envelope = 18;</code>
+     *
+     * @return Whether the envelope field is set.
+     */
+    public boolean hasEnvelope() {
+      return envelopeBuilder_ != null || envelope_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * https://github.com/secure-systems-lab/dsse
+     * </pre>
+     *
+     * <code>.grafeas.v1.Envelope envelope = 18;</code>
+     *
+     * @return The envelope.
+     */
+    public io.grafeas.v1.Envelope getEnvelope() {
+      if (envelopeBuilder_ == null) {
+        return envelope_ == null ? io.grafeas.v1.Envelope.getDefaultInstance() : envelope_;
+      } else {
+        return envelopeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * https://github.com/secure-systems-lab/dsse
+     * </pre>
+     *
+     * <code>.grafeas.v1.Envelope envelope = 18;</code>
+     */
+    public Builder setEnvelope(io.grafeas.v1.Envelope value) {
+      if (envelopeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        envelope_ = value;
+        onChanged();
+      } else {
+        envelopeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * https://github.com/secure-systems-lab/dsse
+     * </pre>
+     *
+     * <code>.grafeas.v1.Envelope envelope = 18;</code>
+     */
+    public Builder setEnvelope(io.grafeas.v1.Envelope.Builder builderForValue) {
+      if (envelopeBuilder_ == null) {
+        envelope_ = builderForValue.build();
+        onChanged();
+      } else {
+        envelopeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * https://github.com/secure-systems-lab/dsse
+     * </pre>
+     *
+     * <code>.grafeas.v1.Envelope envelope = 18;</code>
+     */
+    public Builder mergeEnvelope(io.grafeas.v1.Envelope value) {
+      if (envelopeBuilder_ == null) {
+        if (envelope_ != null) {
+          envelope_ = io.grafeas.v1.Envelope.newBuilder(envelope_).mergeFrom(value).buildPartial();
+        } else {
+          envelope_ = value;
+        }
+        onChanged();
+      } else {
+        envelopeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * https://github.com/secure-systems-lab/dsse
+     * </pre>
+     *
+     * <code>.grafeas.v1.Envelope envelope = 18;</code>
+     */
+    public Builder clearEnvelope() {
+      if (envelopeBuilder_ == null) {
+        envelope_ = null;
+        onChanged();
+      } else {
+        envelope_ = null;
+        envelopeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * https://github.com/secure-systems-lab/dsse
+     * </pre>
+     *
+     * <code>.grafeas.v1.Envelope envelope = 18;</code>
+     */
+    public io.grafeas.v1.Envelope.Builder getEnvelopeBuilder() {
+
+      onChanged();
+      return getEnvelopeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * https://github.com/secure-systems-lab/dsse
+     * </pre>
+     *
+     * <code>.grafeas.v1.Envelope envelope = 18;</code>
+     */
+    public io.grafeas.v1.EnvelopeOrBuilder getEnvelopeOrBuilder() {
+      if (envelopeBuilder_ != null) {
+        return envelopeBuilder_.getMessageOrBuilder();
+      } else {
+        return envelope_ == null ? io.grafeas.v1.Envelope.getDefaultInstance() : envelope_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * https://github.com/secure-systems-lab/dsse
+     * </pre>
+     *
+     * <code>.grafeas.v1.Envelope envelope = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.Envelope, io.grafeas.v1.Envelope.Builder, io.grafeas.v1.EnvelopeOrBuilder>
+        getEnvelopeFieldBuilder() {
+      if (envelopeBuilder_ == null) {
+        envelopeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.Envelope,
+                io.grafeas.v1.Envelope.Builder,
+                io.grafeas.v1.EnvelopeOrBuilder>(getEnvelope(), getParentForChildren(), isClean());
+        envelope_ = null;
+      }
+      return envelopeBuilder_;
     }
 
     @java.lang.Override

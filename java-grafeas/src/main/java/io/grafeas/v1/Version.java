@@ -107,6 +107,11 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
               fullName_ = s;
               break;
             }
+          case 48:
+            {
+              inclusive_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -435,6 +440,29 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int INCLUSIVE_FIELD_NUMBER = 6;
+  private boolean inclusive_;
+  /**
+   *
+   *
+   * <pre>
+   * Whether this version is specifying part of an inclusive range. Grafeas
+   * does not have the capability to specify version ranges; instead we have
+   * fields that specify start version and end versions. At times this is
+   * insufficient - we also need to specify whether the version is included in
+   * the range or is excluded from the range. This boolean is expected to be set
+   * to true when the version is included in a range.
+   * </pre>
+   *
+   * <code>bool inclusive = 6;</code>
+   *
+   * @return The inclusive.
+   */
+  @java.lang.Override
+  public boolean getInclusive() {
+    return inclusive_;
+  }
+
   public static final int KIND_FIELD_NUMBER = 4;
   private int kind_;
   /**
@@ -552,6 +580,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, fullName_);
     }
+    if (inclusive_ != false) {
+      output.writeBool(6, inclusive_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -576,6 +607,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, fullName_);
     }
+    if (inclusive_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, inclusive_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -594,6 +628,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     if (getEpoch() != other.getEpoch()) return false;
     if (!getName().equals(other.getName())) return false;
     if (!getRevision().equals(other.getRevision())) return false;
+    if (getInclusive() != other.getInclusive()) return false;
     if (kind_ != other.kind_) return false;
     if (!getFullName().equals(other.getFullName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -613,6 +648,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + REVISION_FIELD_NUMBER;
     hash = (53 * hash) + getRevision().hashCode();
+    hash = (37 * hash) + INCLUSIVE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInclusive());
     hash = (37 * hash) + KIND_FIELD_NUMBER;
     hash = (53 * hash) + kind_;
     hash = (37 * hash) + FULL_NAME_FIELD_NUMBER;
@@ -764,6 +801,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
 
       revision_ = "";
 
+      inclusive_ = false;
+
       kind_ = 0;
 
       fullName_ = "";
@@ -796,6 +835,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       result.epoch_ = epoch_;
       result.name_ = name_;
       result.revision_ = revision_;
+      result.inclusive_ = inclusive_;
       result.kind_ = kind_;
       result.fullName_ = fullName_;
       onBuilt();
@@ -857,6 +897,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       if (!other.getRevision().isEmpty()) {
         revision_ = other.revision_;
         onChanged();
+      }
+      if (other.getInclusive() != false) {
+        setInclusive(other.getInclusive());
       }
       if (other.kind_ != 0) {
         setKindValue(other.getKindValue());
@@ -1159,6 +1202,73 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       revision_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean inclusive_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether this version is specifying part of an inclusive range. Grafeas
+     * does not have the capability to specify version ranges; instead we have
+     * fields that specify start version and end versions. At times this is
+     * insufficient - we also need to specify whether the version is included in
+     * the range or is excluded from the range. This boolean is expected to be set
+     * to true when the version is included in a range.
+     * </pre>
+     *
+     * <code>bool inclusive = 6;</code>
+     *
+     * @return The inclusive.
+     */
+    @java.lang.Override
+    public boolean getInclusive() {
+      return inclusive_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether this version is specifying part of an inclusive range. Grafeas
+     * does not have the capability to specify version ranges; instead we have
+     * fields that specify start version and end versions. At times this is
+     * insufficient - we also need to specify whether the version is included in
+     * the range or is excluded from the range. This boolean is expected to be set
+     * to true when the version is included in a range.
+     * </pre>
+     *
+     * <code>bool inclusive = 6;</code>
+     *
+     * @param value The inclusive to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInclusive(boolean value) {
+
+      inclusive_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether this version is specifying part of an inclusive range. Grafeas
+     * does not have the capability to specify version ranges; instead we have
+     * fields that specify start version and end versions. At times this is
+     * insufficient - we also need to specify whether the version is included in
+     * the range or is excluded from the range. This boolean is expected to be set
+     * to true when the version is included in a range.
+     * </pre>
+     *
+     * <code>bool inclusive = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInclusive() {
+
+      inclusive_ = false;
       onChanged();
       return this;
     }

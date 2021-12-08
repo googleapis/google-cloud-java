@@ -283,6 +283,35 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
               typeCase_ = 17;
               break;
             }
+          case 146:
+            {
+              io.grafeas.v1.ComplianceNote.Builder subBuilder = null;
+              if (typeCase_ == 18) {
+                subBuilder = ((io.grafeas.v1.ComplianceNote) type_).toBuilder();
+              }
+              type_ = input.readMessage(io.grafeas.v1.ComplianceNote.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.grafeas.v1.ComplianceNote) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 18;
+              break;
+            }
+          case 154:
+            {
+              io.grafeas.v1.DSSEAttestationNote.Builder subBuilder = null;
+              if (typeCase_ == 19) {
+                subBuilder = ((io.grafeas.v1.DSSEAttestationNote) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(io.grafeas.v1.DSSEAttestationNote.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.grafeas.v1.DSSEAttestationNote) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 19;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -335,6 +364,8 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     DISCOVERY(15),
     ATTESTATION(16),
     UPGRADE(17),
+    COMPLIANCE(18),
+    DSSE_ATTESTATION(19),
     TYPE_NOT_SET(0);
     private final int value;
 
@@ -369,6 +400,10 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
           return ATTESTATION;
         case 17:
           return UPGRADE;
+        case 18:
+          return COMPLIANCE;
+        case 19:
+          return DSSE_ATTESTATION;
         case 0:
           return TYPE_NOT_SET;
         default:
@@ -1254,6 +1289,108 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return io.grafeas.v1.UpgradeNote.getDefaultInstance();
   }
 
+  public static final int COMPLIANCE_FIELD_NUMBER = 18;
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a compliance check.
+   * </pre>
+   *
+   * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
+   *
+   * @return Whether the compliance field is set.
+   */
+  @java.lang.Override
+  public boolean hasCompliance() {
+    return typeCase_ == 18;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a compliance check.
+   * </pre>
+   *
+   * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
+   *
+   * @return The compliance.
+   */
+  @java.lang.Override
+  public io.grafeas.v1.ComplianceNote getCompliance() {
+    if (typeCase_ == 18) {
+      return (io.grafeas.v1.ComplianceNote) type_;
+    }
+    return io.grafeas.v1.ComplianceNote.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a compliance check.
+   * </pre>
+   *
+   * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.ComplianceNoteOrBuilder getComplianceOrBuilder() {
+    if (typeCase_ == 18) {
+      return (io.grafeas.v1.ComplianceNote) type_;
+    }
+    return io.grafeas.v1.ComplianceNote.getDefaultInstance();
+  }
+
+  public static final int DSSE_ATTESTATION_FIELD_NUMBER = 19;
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a dsse attestation note.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
+   *
+   * @return Whether the dsseAttestation field is set.
+   */
+  @java.lang.Override
+  public boolean hasDsseAttestation() {
+    return typeCase_ == 19;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a dsse attestation note.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
+   *
+   * @return The dsseAttestation.
+   */
+  @java.lang.Override
+  public io.grafeas.v1.DSSEAttestationNote getDsseAttestation() {
+    if (typeCase_ == 19) {
+      return (io.grafeas.v1.DSSEAttestationNote) type_;
+    }
+    return io.grafeas.v1.DSSEAttestationNote.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a dsse attestation note.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.DSSEAttestationNoteOrBuilder getDsseAttestationOrBuilder() {
+    if (typeCase_ == 19) {
+      return (io.grafeas.v1.DSSEAttestationNote) type_;
+    }
+    return io.grafeas.v1.DSSEAttestationNote.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1318,6 +1455,12 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
     if (typeCase_ == 17) {
       output.writeMessage(17, (io.grafeas.v1.UpgradeNote) type_);
+    }
+    if (typeCase_ == 18) {
+      output.writeMessage(18, (io.grafeas.v1.ComplianceNote) type_);
+    }
+    if (typeCase_ == 19) {
+      output.writeMessage(19, (io.grafeas.v1.DSSEAttestationNote) type_);
     }
     unknownFields.writeTo(output);
   }
@@ -1400,6 +1543,16 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               17, (io.grafeas.v1.UpgradeNote) type_);
     }
+    if (typeCase_ == 18) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              18, (io.grafeas.v1.ComplianceNote) type_);
+    }
+    if (typeCase_ == 19) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              19, (io.grafeas.v1.DSSEAttestationNote) type_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1458,6 +1611,12 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         break;
       case 17:
         if (!getUpgrade().equals(other.getUpgrade())) return false;
+        break;
+      case 18:
+        if (!getCompliance().equals(other.getCompliance())) return false;
+        break;
+      case 19:
+        if (!getDsseAttestation().equals(other.getDsseAttestation())) return false;
         break;
       case 0:
       default:
@@ -1533,6 +1692,14 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       case 17:
         hash = (37 * hash) + UPGRADE_FIELD_NUMBER;
         hash = (53 * hash) + getUpgrade().hashCode();
+        break;
+      case 18:
+        hash = (37 * hash) + COMPLIANCE_FIELD_NUMBER;
+        hash = (53 * hash) + getCompliance().hashCode();
+        break;
+      case 19:
+        hash = (37 * hash) + DSSE_ATTESTATION_FIELD_NUMBER;
+        hash = (53 * hash) + getDsseAttestation().hashCode();
         break;
       case 0:
       default:
@@ -1830,6 +1997,20 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
           result.type_ = upgradeBuilder_.build();
         }
       }
+      if (typeCase_ == 18) {
+        if (complianceBuilder_ == null) {
+          result.type_ = type_;
+        } else {
+          result.type_ = complianceBuilder_.build();
+        }
+      }
+      if (typeCase_ == 19) {
+        if (dsseAttestationBuilder_ == null) {
+          result.type_ = type_;
+        } else {
+          result.type_ = dsseAttestationBuilder_.build();
+        }
+      }
       result.typeCase_ = typeCase_;
       onBuilt();
       return result;
@@ -1980,6 +2161,16 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         case UPGRADE:
           {
             mergeUpgrade(other.getUpgrade());
+            break;
+          }
+        case COMPLIANCE:
+          {
+            mergeCompliance(other.getCompliance());
+            break;
+          }
+        case DSSE_ATTESTATION:
+          {
+            mergeDsseAttestation(other.getDsseAttestation());
             break;
           }
         case TYPE_NOT_SET:
@@ -5161,6 +5352,415 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return upgradeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.ComplianceNote,
+            io.grafeas.v1.ComplianceNote.Builder,
+            io.grafeas.v1.ComplianceNoteOrBuilder>
+        complianceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a compliance check.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
+     *
+     * @return Whether the compliance field is set.
+     */
+    @java.lang.Override
+    public boolean hasCompliance() {
+      return typeCase_ == 18;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a compliance check.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
+     *
+     * @return The compliance.
+     */
+    @java.lang.Override
+    public io.grafeas.v1.ComplianceNote getCompliance() {
+      if (complianceBuilder_ == null) {
+        if (typeCase_ == 18) {
+          return (io.grafeas.v1.ComplianceNote) type_;
+        }
+        return io.grafeas.v1.ComplianceNote.getDefaultInstance();
+      } else {
+        if (typeCase_ == 18) {
+          return complianceBuilder_.getMessage();
+        }
+        return io.grafeas.v1.ComplianceNote.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a compliance check.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
+     */
+    public Builder setCompliance(io.grafeas.v1.ComplianceNote value) {
+      if (complianceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        complianceBuilder_.setMessage(value);
+      }
+      typeCase_ = 18;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a compliance check.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
+     */
+    public Builder setCompliance(io.grafeas.v1.ComplianceNote.Builder builderForValue) {
+      if (complianceBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        complianceBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 18;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a compliance check.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
+     */
+    public Builder mergeCompliance(io.grafeas.v1.ComplianceNote value) {
+      if (complianceBuilder_ == null) {
+        if (typeCase_ == 18 && type_ != io.grafeas.v1.ComplianceNote.getDefaultInstance()) {
+          type_ =
+              io.grafeas.v1.ComplianceNote.newBuilder((io.grafeas.v1.ComplianceNote) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 18) {
+          complianceBuilder_.mergeFrom(value);
+        }
+        complianceBuilder_.setMessage(value);
+      }
+      typeCase_ = 18;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a compliance check.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
+     */
+    public Builder clearCompliance() {
+      if (complianceBuilder_ == null) {
+        if (typeCase_ == 18) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 18) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        complianceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a compliance check.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
+     */
+    public io.grafeas.v1.ComplianceNote.Builder getComplianceBuilder() {
+      return getComplianceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a compliance check.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
+     */
+    @java.lang.Override
+    public io.grafeas.v1.ComplianceNoteOrBuilder getComplianceOrBuilder() {
+      if ((typeCase_ == 18) && (complianceBuilder_ != null)) {
+        return complianceBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 18) {
+          return (io.grafeas.v1.ComplianceNote) type_;
+        }
+        return io.grafeas.v1.ComplianceNote.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a compliance check.
+     * </pre>
+     *
+     * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.ComplianceNote,
+            io.grafeas.v1.ComplianceNote.Builder,
+            io.grafeas.v1.ComplianceNoteOrBuilder>
+        getComplianceFieldBuilder() {
+      if (complianceBuilder_ == null) {
+        if (!(typeCase_ == 18)) {
+          type_ = io.grafeas.v1.ComplianceNote.getDefaultInstance();
+        }
+        complianceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.ComplianceNote,
+                io.grafeas.v1.ComplianceNote.Builder,
+                io.grafeas.v1.ComplianceNoteOrBuilder>(
+                (io.grafeas.v1.ComplianceNote) type_, getParentForChildren(), isClean());
+        type_ = null;
+      }
+      typeCase_ = 18;
+      onChanged();
+      ;
+      return complianceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.DSSEAttestationNote,
+            io.grafeas.v1.DSSEAttestationNote.Builder,
+            io.grafeas.v1.DSSEAttestationNoteOrBuilder>
+        dsseAttestationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a dsse attestation note.
+     * </pre>
+     *
+     * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
+     *
+     * @return Whether the dsseAttestation field is set.
+     */
+    @java.lang.Override
+    public boolean hasDsseAttestation() {
+      return typeCase_ == 19;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a dsse attestation note.
+     * </pre>
+     *
+     * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
+     *
+     * @return The dsseAttestation.
+     */
+    @java.lang.Override
+    public io.grafeas.v1.DSSEAttestationNote getDsseAttestation() {
+      if (dsseAttestationBuilder_ == null) {
+        if (typeCase_ == 19) {
+          return (io.grafeas.v1.DSSEAttestationNote) type_;
+        }
+        return io.grafeas.v1.DSSEAttestationNote.getDefaultInstance();
+      } else {
+        if (typeCase_ == 19) {
+          return dsseAttestationBuilder_.getMessage();
+        }
+        return io.grafeas.v1.DSSEAttestationNote.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a dsse attestation note.
+     * </pre>
+     *
+     * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
+     */
+    public Builder setDsseAttestation(io.grafeas.v1.DSSEAttestationNote value) {
+      if (dsseAttestationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        dsseAttestationBuilder_.setMessage(value);
+      }
+      typeCase_ = 19;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a dsse attestation note.
+     * </pre>
+     *
+     * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
+     */
+    public Builder setDsseAttestation(io.grafeas.v1.DSSEAttestationNote.Builder builderForValue) {
+      if (dsseAttestationBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        dsseAttestationBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 19;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a dsse attestation note.
+     * </pre>
+     *
+     * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
+     */
+    public Builder mergeDsseAttestation(io.grafeas.v1.DSSEAttestationNote value) {
+      if (dsseAttestationBuilder_ == null) {
+        if (typeCase_ == 19 && type_ != io.grafeas.v1.DSSEAttestationNote.getDefaultInstance()) {
+          type_ =
+              io.grafeas.v1.DSSEAttestationNote.newBuilder(
+                      (io.grafeas.v1.DSSEAttestationNote) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 19) {
+          dsseAttestationBuilder_.mergeFrom(value);
+        }
+        dsseAttestationBuilder_.setMessage(value);
+      }
+      typeCase_ = 19;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a dsse attestation note.
+     * </pre>
+     *
+     * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
+     */
+    public Builder clearDsseAttestation() {
+      if (dsseAttestationBuilder_ == null) {
+        if (typeCase_ == 19) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 19) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        dsseAttestationBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a dsse attestation note.
+     * </pre>
+     *
+     * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
+     */
+    public io.grafeas.v1.DSSEAttestationNote.Builder getDsseAttestationBuilder() {
+      return getDsseAttestationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a dsse attestation note.
+     * </pre>
+     *
+     * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
+     */
+    @java.lang.Override
+    public io.grafeas.v1.DSSEAttestationNoteOrBuilder getDsseAttestationOrBuilder() {
+      if ((typeCase_ == 19) && (dsseAttestationBuilder_ != null)) {
+        return dsseAttestationBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 19) {
+          return (io.grafeas.v1.DSSEAttestationNote) type_;
+        }
+        return io.grafeas.v1.DSSEAttestationNote.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a dsse attestation note.
+     * </pre>
+     *
+     * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.DSSEAttestationNote,
+            io.grafeas.v1.DSSEAttestationNote.Builder,
+            io.grafeas.v1.DSSEAttestationNoteOrBuilder>
+        getDsseAttestationFieldBuilder() {
+      if (dsseAttestationBuilder_ == null) {
+        if (!(typeCase_ == 19)) {
+          type_ = io.grafeas.v1.DSSEAttestationNote.getDefaultInstance();
+        }
+        dsseAttestationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.DSSEAttestationNote,
+                io.grafeas.v1.DSSEAttestationNote.Builder,
+                io.grafeas.v1.DSSEAttestationNoteOrBuilder>(
+                (io.grafeas.v1.DSSEAttestationNote) type_, getParentForChildren(), isClean());
+        type_ = null;
+      }
+      typeCase_ = 19;
+      onChanged();
+      ;
+      return dsseAttestationBuilder_;
     }
 
     @java.lang.Override

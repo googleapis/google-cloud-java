@@ -103,4 +103,95 @@ public interface AttestationOccurrenceOrBuilder
    * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
    */
   io.grafeas.v1.SignatureOrBuilder getSignaturesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * One or more JWTs encoding a self-contained attestation.
+   * Each JWT encodes the payload that it verifies within the JWT itself.
+   * Verifier implementation SHOULD ignore the `serialized_payload` field
+   * when verifying these JWTs.
+   * If only JWTs are present on this AttestationOccurrence, then the
+   * `serialized_payload` SHOULD be left empty.
+   * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+   * Occurrence, but this is not validated by Grafeas metadata API
+   * implementations.  The JWT itself is opaque to Grafeas.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+   */
+  java.util.List<io.grafeas.v1.Jwt> getJwtsList();
+  /**
+   *
+   *
+   * <pre>
+   * One or more JWTs encoding a self-contained attestation.
+   * Each JWT encodes the payload that it verifies within the JWT itself.
+   * Verifier implementation SHOULD ignore the `serialized_payload` field
+   * when verifying these JWTs.
+   * If only JWTs are present on this AttestationOccurrence, then the
+   * `serialized_payload` SHOULD be left empty.
+   * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+   * Occurrence, but this is not validated by Grafeas metadata API
+   * implementations.  The JWT itself is opaque to Grafeas.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+   */
+  io.grafeas.v1.Jwt getJwts(int index);
+  /**
+   *
+   *
+   * <pre>
+   * One or more JWTs encoding a self-contained attestation.
+   * Each JWT encodes the payload that it verifies within the JWT itself.
+   * Verifier implementation SHOULD ignore the `serialized_payload` field
+   * when verifying these JWTs.
+   * If only JWTs are present on this AttestationOccurrence, then the
+   * `serialized_payload` SHOULD be left empty.
+   * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+   * Occurrence, but this is not validated by Grafeas metadata API
+   * implementations.  The JWT itself is opaque to Grafeas.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+   */
+  int getJwtsCount();
+  /**
+   *
+   *
+   * <pre>
+   * One or more JWTs encoding a self-contained attestation.
+   * Each JWT encodes the payload that it verifies within the JWT itself.
+   * Verifier implementation SHOULD ignore the `serialized_payload` field
+   * when verifying these JWTs.
+   * If only JWTs are present on this AttestationOccurrence, then the
+   * `serialized_payload` SHOULD be left empty.
+   * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+   * Occurrence, but this is not validated by Grafeas metadata API
+   * implementations.  The JWT itself is opaque to Grafeas.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+   */
+  java.util.List<? extends io.grafeas.v1.JwtOrBuilder> getJwtsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * One or more JWTs encoding a self-contained attestation.
+   * Each JWT encodes the payload that it verifies within the JWT itself.
+   * Verifier implementation SHOULD ignore the `serialized_payload` field
+   * when verifying these JWTs.
+   * If only JWTs are present on this AttestationOccurrence, then the
+   * `serialized_payload` SHOULD be left empty.
+   * Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+   * Occurrence, but this is not validated by Grafeas metadata API
+   * implementations.  The JWT itself is opaque to Grafeas.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
+   */
+  io.grafeas.v1.JwtOrBuilder getJwtsOrBuilder(int index);
 }
