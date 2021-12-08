@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.7.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.6.5...v2.7.0) (2021-12-07)
+
+
+### Features
+
+* add write_mode support for BigQuery Storage Write API v1 ([#1441](https://www.github.com/googleapis/java-bigquerystorage/issues/1441)) ([ffe0670](https://www.github.com/googleapis/java-bigquerystorage/commit/ffe067011a79eb96e36f12cb738c34e2763e7c59))
+
+
+### Bug Fixes
+
+* **java:** add -ntp flag to native image testing command ([#1299](https://www.github.com/googleapis/java-bigquerystorage/issues/1299)) ([#1439](https://www.github.com/googleapis/java-bigquerystorage/issues/1439)) ([b6a880c](https://www.github.com/googleapis/java-bigquerystorage/commit/b6a880c90acd195d5f4294de343d81cffe8c359a))
+
 ### [2.6.5](https://www.github.com/googleapis/java-bigquerystorage/compare/v2.6.4...v2.6.5) (2021-12-05)
 
 
