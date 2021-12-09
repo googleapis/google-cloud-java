@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage-transfer</artifactId>
-      <version>0.2.1</version>
+      <version>0.2.2</version>
     </dependency>
     <!-- [END storage-transfer_install_without_bom] -->
 
