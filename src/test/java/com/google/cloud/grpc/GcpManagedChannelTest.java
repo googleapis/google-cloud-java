@@ -22,6 +22,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import com.google.cloud.grpc.GcpManagedChannel.ChannelRef;
+import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpResiliencyOptions;
 import com.google.cloud.grpc.MetricRegistryTestUtils.FakeMetricRegistry;
@@ -127,6 +128,51 @@ public final class GcpManagedChannelTest {
     assertEquals(0, gcpChannel.channelRefs.size());
     assertEquals(3, gcpChannel.getMaxSize());
     assertEquals(2, gcpChannel.getStreamsLowWatermark());
+    assertEquals(3, gcpChannel.methodToAffinity.size());
+  }
+
+  @Test
+  public void testUsesPoolOptions() {
+    resetGcpChannel();
+    GcpChannelPoolOptions poolOptions = GcpChannelPoolOptions.newBuilder()
+            .setMaxSize(5)
+            .setConcurrentStreamsLowWatermark(50)
+            .build();
+    GcpManagedChannelOptions options = GcpManagedChannelOptions.newBuilder()
+            .withChannelPoolOptions(poolOptions)
+            .build();
+    gcpChannel =
+            (GcpManagedChannel)
+                    GcpManagedChannelBuilder.forDelegateBuilder(builder)
+                            .withOptions(options)
+                            .build();
+    assertEquals(0, gcpChannel.channelRefs.size());
+    assertEquals(5, gcpChannel.getMaxSize());
+    assertEquals(50, gcpChannel.getStreamsLowWatermark());
+  }
+
+  @Test
+  public void testPoolOptionsOverrideApiConfig() {
+    resetGcpChannel();
+    final URL resource = GcpManagedChannelTest.class.getClassLoader().getResource(API_FILE);
+    assertNotNull(resource);
+    File configFile = new File(resource.getFile());
+    GcpChannelPoolOptions poolOptions = GcpChannelPoolOptions.newBuilder()
+            .setMaxSize(5)
+            .setConcurrentStreamsLowWatermark(50)
+            .build();
+    GcpManagedChannelOptions options = GcpManagedChannelOptions.newBuilder()
+            .withChannelPoolOptions(poolOptions)
+            .build();
+    gcpChannel =
+            (GcpManagedChannel)
+                    GcpManagedChannelBuilder.forDelegateBuilder(builder)
+                            .withApiConfigJsonFile(configFile)
+                            .withOptions(options)
+                            .build();
+    assertEquals(0, gcpChannel.channelRefs.size());
+    assertEquals(5, gcpChannel.getMaxSize());
+    assertEquals(50, gcpChannel.getStreamsLowWatermark());
     assertEquals(3, gcpChannel.methodToAffinity.size());
   }
 

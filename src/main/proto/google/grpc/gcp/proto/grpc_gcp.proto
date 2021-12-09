@@ -21,14 +21,19 @@ option java_outer_classname = "GcpExtensionProto";
 option java_package = "com.google.cloud.grpc.proto";
 
 message ApiConfig {
+  // Deprecated. Use GcpManagedChannelOptions.GcpChannelPoolOptions class.
   // The channel pool configurations.
-  ChannelPoolConfig channel_pool = 2;
+  ChannelPoolConfig channel_pool = 2 [deprecated = true];
 
   // The method configurations.
   repeated MethodConfig method = 1001;
 }
 
+
+// Deprecated. Use GcpManagedChannelOptions.GcpChannelPoolOptions class.
 message ChannelPoolConfig {
+  option deprecated = true;
+
   // The max number of channels in the pool.
   uint32 max_size = 1;
   // The idle timeout (seconds) of channels without bound affinity sessions.

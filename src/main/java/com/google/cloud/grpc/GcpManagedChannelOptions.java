@@ -29,17 +29,25 @@ import javax.annotation.Nullable;
 public class GcpManagedChannelOptions {
   private static final Logger logger = Logger.getLogger(GcpManagedChannelOptions.class.getName());
 
+  @Nullable private final GcpChannelPoolOptions channelPoolOptions;
   @Nullable private final GcpMetricsOptions metricsOptions;
   @Nullable private final GcpResiliencyOptions resiliencyOptions;
 
   public GcpManagedChannelOptions() {
+    channelPoolOptions = null;
     metricsOptions = null;
     resiliencyOptions = null;
   }
 
   public GcpManagedChannelOptions(Builder builder) {
+    channelPoolOptions = builder.channelPoolOptions;
     metricsOptions = builder.metricsOptions;
     resiliencyOptions = builder.resiliencyOptions;
+  }
+
+  @Nullable
+  public GcpChannelPoolOptions getChannelPoolOptions() {
+    return channelPoolOptions;
   }
 
   @Nullable
@@ -63,18 +71,31 @@ public class GcpManagedChannelOptions {
   }
 
   public static class Builder {
+    private GcpChannelPoolOptions channelPoolOptions;
     private GcpMetricsOptions metricsOptions;
     private GcpResiliencyOptions resiliencyOptions;
 
     public Builder() {}
 
     public Builder(GcpManagedChannelOptions options) {
+      this.channelPoolOptions = options.getChannelPoolOptions();
       this.metricsOptions = options.getMetricsOptions();
       this.resiliencyOptions = options.getResiliencyOptions();
     }
 
     public GcpManagedChannelOptions build() {
       return new GcpManagedChannelOptions(this);
+    }
+
+    /**
+     * Sets the channel pool configuration for the {@link GcpManagedChannel}.
+     *
+     * @param channelPoolOptions a {@link GcpChannelPoolOptions} to use as a channel pool
+     *                           configuration.
+     */
+    public Builder withChannelPoolOptions(GcpChannelPoolOptions channelPoolOptions) {
+      this.channelPoolOptions = channelPoolOptions;
+      return this;
     }
 
     /**
@@ -124,6 +145,82 @@ public class GcpManagedChannelOptions {
     public Builder withResiliencyOptions(GcpResiliencyOptions resiliencyOptions) {
       this.resiliencyOptions = resiliencyOptions;
       return this;
+    }
+  }
+
+  /** Channel pool configuration for the GCP managed channel. */
+  public static class GcpChannelPoolOptions {
+    // The maximum number of channels in the pool.
+    private final int maxSize;
+    // If every channel in the pool has at least this amount of concurrent streams then a new channel will be created
+    // in the pool unless the pool reached its maximum size.
+    private final int concurrentStreamsLowWatermark;
+
+    public GcpChannelPoolOptions(Builder builder) {
+      maxSize = builder.maxSize;
+      concurrentStreamsLowWatermark = builder.concurrentStreamsLowWatermark;
+    }
+
+    public int getMaxSize() {
+      return maxSize;
+    }
+
+    public int getConcurrentStreamsLowWatermark() {
+      return concurrentStreamsLowWatermark;
+    }
+
+    /** Creates a new GcpChannelPoolOptions.Builder. */
+    public static GcpChannelPoolOptions.Builder newBuilder() {
+      return new GcpChannelPoolOptions.Builder();
+    }
+
+    /** Creates a new GcpChannelPoolOptions.Builder from GcpChannelPoolOptions. */
+    public static GcpChannelPoolOptions.Builder newBuilder(GcpChannelPoolOptions options) {
+      return new GcpChannelPoolOptions.Builder(options);
+    }
+
+    public static class Builder {
+      private int maxSize = GcpManagedChannel.DEFAULT_MAX_CHANNEL;
+      private int concurrentStreamsLowWatermark = GcpManagedChannel.DEFAULT_MAX_STREAM;
+
+      public Builder() {}
+
+      public Builder(GcpChannelPoolOptions options) {
+        this();
+        if (options == null) {
+          return;
+        }
+        this.maxSize = options.getMaxSize();
+        this.concurrentStreamsLowWatermark = options.getConcurrentStreamsLowWatermark();
+      }
+
+      public GcpChannelPoolOptions build() {
+        return new GcpChannelPoolOptions(this);
+      }
+
+      /**
+       * Sets the maximum size of the channel pool.
+       *
+       * @param maxSize maximum number of channels the pool can have.
+       */
+      public Builder setMaxSize(int maxSize) {
+        Preconditions.checkArgument(maxSize > 0, "Channel pool size must be positive.");
+        this.maxSize = maxSize;
+        return this;
+      }
+
+      /**
+       * Sets the concurrent streams low watermark.
+       * If every channel in the pool has at least this amount of concurrent streams then a new
+       * channel will be created in the pool unless the pool reached its maximum size.
+       *
+       * @param concurrentStreamsLowWatermark number of streams every channel must reach before adding a new channel
+       *                                      to the pool.
+       */
+      public Builder setConcurrentStreamsLowWatermark(int concurrentStreamsLowWatermark) {
+        this.concurrentStreamsLowWatermark = concurrentStreamsLowWatermark;
+        return this;
+      }
     }
   }
 

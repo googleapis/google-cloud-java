@@ -63,7 +63,10 @@ public class GcpManagedChannelBuilder extends ForwardingChannelBuilder<GcpManage
     return new GcpManagedChannelBuilder(delegate);
   }
 
-  /** Sets the channel pool size. This will override the pool size configuration in ApiConfig. */
+  /** Sets the maximum channel pool size. This will override the pool size configuration in ApiConfig.
+   * Deprecated. Use maxSize in GcpManagedChannelOptions.GcpChannelPoolOptions.
+   */
+  @Deprecated
   public GcpManagedChannelBuilder setPoolSize(int poolSize) {
     this.poolSize = poolSize;
     return this;

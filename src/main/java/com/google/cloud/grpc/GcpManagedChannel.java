@@ -59,8 +59,8 @@ import javax.annotation.Nullable;
 public class GcpManagedChannel extends ManagedChannel {
   private static final Logger logger = Logger.getLogger(GcpManagedChannel.class.getName());
   static final AtomicInteger channelPoolIndex = new AtomicInteger();
-  private static final int DEFAULT_MAX_CHANNEL = 10;
-  private static final int DEFAULT_MAX_STREAM = 100;
+  static final int DEFAULT_MAX_CHANNEL = 10;
+  static final int DEFAULT_MAX_STREAM = 100;
 
   private final ManagedChannelBuilder<?> delegateChannelBuilder;
   private final GcpManagedChannelOptions options;
@@ -141,21 +141,17 @@ public class GcpManagedChannel extends ManagedChannel {
    * @param options the options for GcpManagedChannel.
    */
   public GcpManagedChannel(
-      ManagedChannelBuilder<?> delegateChannelBuilder,
-      ApiConfig apiConfig,
-      int poolSize,
-      GcpManagedChannelOptions options) {
+          ManagedChannelBuilder<?> delegateChannelBuilder,
+          ApiConfig apiConfig,
+          GcpManagedChannelOptions options) {
     loadApiConfig(apiConfig);
-    if (poolSize != 0) {
-      this.maxSize = poolSize;
-    }
     this.delegateChannelBuilder = delegateChannelBuilder;
     this.options = options;
     initOptions();
     if (options.getResiliencyOptions() != null) {
       fallbackEnabled = options.getResiliencyOptions().isNotReadyFallbackEnabled();
       unresponsiveDetectionEnabled =
-          options.getResiliencyOptions().isUnresponsiveDetectionEnabled();
+              options.getResiliencyOptions().isUnresponsiveDetectionEnabled();
       unresponsiveMs = options.getResiliencyOptions().getUnresponsiveDetectionMs();
       unresponsiveDropCount = options.getResiliencyOptions().getUnresponsiveDetectionDroppedCount();
     } else {
@@ -166,7 +162,35 @@ public class GcpManagedChannel extends ManagedChannel {
     }
   }
 
+  /**
+   * Constructor for GcpManagedChannel.
+   * Deprecated. Use the one without the poolSize and set the maximum pool size in options. However, note that if
+   * setting the pool size from options then concurrent streams low watermark (even the default one) will be also taken
+   * from the options and not apiConfig.
+   *
+   * @param delegateChannelBuilder the underlying delegate ManagedChannelBuilder.
+   * @param apiConfig the ApiConfig object for configuring GcpManagedChannel.
+   * @param poolSize maximum number of channels the pool can have.
+   * @param options the options for GcpManagedChannel.
+   */
+  @Deprecated
+  public GcpManagedChannel(
+      ManagedChannelBuilder<?> delegateChannelBuilder,
+      ApiConfig apiConfig,
+      int poolSize,
+      GcpManagedChannelOptions options) {
+    this(delegateChannelBuilder, apiConfig, options);
+    if (poolSize != 0) {
+      this.maxSize = poolSize;
+    }
+  }
+
   private void initOptions() {
+    GcpManagedChannelOptions.GcpChannelPoolOptions poolOptions = options.getChannelPoolOptions();
+    if (poolOptions != null) {
+      this.maxSize = poolOptions.getMaxSize();
+      this.maxConcurrentStreamsLowWatermark = poolOptions.getConcurrentStreamsLowWatermark();
+    }
     initMetrics();
   }
 
